@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const lessons = await getCollection('japanese');
+  return lessons.map((lesson) => ({ params: { id: lesson.id }, props: { lesson } }));
+}
+
+const { lesson } = Astro.props;
+const { Content, headings } = await render(lesson);
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title={`${lesson.data.title} · Japan IT / AI Daily`} description={lesson.data.description}>
+  <div class="container report-layout">
+    <article class="prose">
+      <div class="eyebrow">{lesson.data.date.toLocaleDateString('ja-JP')} · JLPT + IT日本語</div>
+      <h1>{lesson.data.title}</h1>
+      <p class="meta">{lesson.data.description}</p>
+      <div class="tags">{lesson.data.levels.map((level:string) => <span class="tag">{level}</span>)}</div>
+      <p class="learning-back"><a href={`${base}japanese/`}>← 日本語学习一覧へ</a></p>
+      <Content />
+    </article>
+    <aside class="toc" aria-label="On this page">
+      <h4>目次</h4>
+      {headings.filter((h:any)=>h.depth <= 3).map((h:any)=><a href={`#${h.slug}`}>{h.text}</a>)}
+    </aside>
+  </div>
+</BaseLayout>
