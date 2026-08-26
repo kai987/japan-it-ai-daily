@@ -221,7 +221,15 @@
   .learning-stats{gap:16px;overflow-x:auto;padding-bottom:4px}.learning-stats>div{min-width:78px}
   .learning-stats strong{font-size:1.35rem}
   .lesson-row{grid-template-columns:1fr;gap:7px;padding:18px 0}
-  .lesson-counts{justify-items:start;grid-auto-flow:column;justify-content:start;gap:12px}
+  .lesson-counts{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    width:100%;
+    gap:12px;
+  }
+  .lesson-counts span{white-space:nowrap}
+  .lesson-counts strong{margin-left:auto;margin-top:0;white-space:nowrap}
   .level-filters{gap:6px}.level-filter{padding:7px 11px;font-size:.84rem}
   .study-section{margin-top:42px}
   .study-section-heading{align-items:flex-start;flex-direction:column;gap:8px;margin-bottom:18px}
