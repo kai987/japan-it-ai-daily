@@ -9,6 +9,16 @@ export async function getStaticPaths() {
 
 const { report } = Astro.props;
 const { Content, headings } = await render(report);
+const lessons = await getCollection('japanese');
+const reportBody = ((report as any).body ?? '') as string;
+const hasNativeJapanese = reportBody.includes('## C.');
+const supplement = hasNativeJapanese ? undefined : lessons.find((lesson) => lesson.id === report.id);
+const renderedSupplement = supplement ? await render(supplement) : undefined;
+const SupplementContent = renderedSupplement?.Content;
+const tocHeadings = [
+  ...headings,
+  ...(renderedSupplement?.headings ?? [])
+].filter((heading:any) => heading.depth <= 3);
 ---
 <BaseLayout title={`${report.data.title} · Japan IT / AI Daily`} description={report.data.description}>
   <div class="container report-layout">
@@ -18,10 +28,16 @@ const { Content, headings } = await render(report);
       <p class="meta">{report.data.description}</p>
       <div class="tags">{report.data.topics.map((topic:string) => <span class="tag">{topic}</span>)}</div>
       <Content />
+      {SupplementContent && (
+        <section class="learning-supplement">
+          <div class="supplement-note">历史日报补生成 · JLPT 等级为学习参考</div>
+          <SupplementContent />
+        </section>
+      )}
     </article>
     <aside class="toc" aria-label="On this page">
       <h4>目次</h4>
-      {headings.filter((h:any)=>h.depth <= 3).map((h:any)=><a href={`#${h.slug}`}>{h.text}</a>)}
+      {tocHeadings.map((heading:any)=><a href={`#${heading.slug}`}>{heading.text}</a>)}
     </aside>
   </div>
 </BaseLayout>
