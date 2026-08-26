@@ -1,10 +1,107 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+const lessons = (await getCollection('japanese')).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
+const totalVocabulary = lessons.reduce((sum, lesson) => sum + lesson.data.vocabularyCount, 0);
+const totalGrammar = lessons.reduce((sum, lesson) => sum + lesson.data.grammarCount, 0);
+const levels = ['全部', 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
 ---
 <BaseLayout title="日本語 · Japan IT / AI Daily">
-  <section class="hero"><div class="container"><div class="eyebrow">JLPT + IT日本語</div><h1>日本語学习</h1><p>从每日推荐文章中提取 JLPT 词汇、语法和 IT/AI 专业表达，按参考等级整理。</p></div></section>
-  <section class="section"><div class="container grid-two">
-    <div class="panel"><h3>JLPT 词汇</h3><p>N5/N4、N3、N2、N1 参考等级。JMdict/EDICT 用于辅助校对读音、词性与基本释义。</p></div>
-    <div class="panel"><h3>IT / AI 日本語</h3><p>MCP、RAG、Runtime、認証、認可、脆弱性、可観測性等专业表达单独整理。</p></div>
-  </div></section>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">JLPT + IT日本語</div>
+      <h1>日本語学习</h1>
+      <p>从每日推荐文章中提取 JLPT 词汇、语法和 IT/AI 专业表达。历史日报也会补生成学习材料，让技术新闻同时变成长期可复习的技术日语语料库。</p>
+      <div class="learning-stats" aria-label="Japanese learning statistics">
+        <div><strong>{lessons.length}</strong><span>学习日</span></div>
+        <div><strong>{totalVocabulary}</strong><span>词汇条目</span></div>
+        <div><strong>{totalGrammar}</strong><span>语法条目</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-two">
+      <a class="panel learning-entry" href="#lessons">
+        <div class="entry-kicker">Vocabulary & Grammar</div>
+        <h3>JLPT 词汇・语法 →</h3>
+        <p>N5/N4、N3、N2、N1 均为学习参考等级。可按等级筛选每日学习内容。</p>
+      </a>
+      <a class="panel learning-entry" href={`?level=IT%2FAI#lessons`}>
+        <div class="entry-kicker">Tech Japanese</div>
+        <h3>IT / AI 日本語 →</h3>
+        <p>MCP、RAG、Runtime、認証、認可、脆弱性、可観測性等专业表达按日报主题持续积累。</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="lessons" style="background:var(--surface)">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <div class="eyebrow">Daily Japanese lessons</div>
+          <h2>每日 C. 日本語学习</h2>
+        </div>
+        <span class="meta">JMdict/EDICT 用于辅助校对读音、词性和基本释义；JLPT 等级为学习参考。</span>
+      </div>
+
+      <div class="level-filters" role="group" aria-label="JLPT level filters">
+        {levels.map((level) => (
+          <button class="level-filter" type="button" data-level-filter={level} aria-pressed={level === '全部' ? 'true' : 'false'}>{level}</button>
+        ))}
+      </div>
+
+      <div class="lesson-list" id="lesson-list">
+        {lessons.length ? lessons.map((lesson) => (
+          <a class="lesson-row" href={`${base}japanese/${lesson.id}/`} data-levels={lesson.data.levels.join('|')}>
+            <div class="lesson-date">{lesson.data.date.toLocaleDateString('ja-JP')}</div>
+            <div class="lesson-main">
+              <h3>{lesson.data.title}</h3>
+              <p>{lesson.data.description}</p>
+              <div class="tags compact-tags">
+                {lesson.data.levels.map((level:string) => <span class="tag">{level}</span>)}
+                {lesson.data.topics.slice(0,3).map((topic:string) => <span class="tag topic-tag">{topic}</span>)}
+              </div>
+            </div>
+            <div class="lesson-counts">
+              <span>{lesson.data.vocabularyCount} 词</span>
+              <span>{lesson.data.grammarCount} 语法</span>
+              <strong>学习 →</strong>
+            </div>
+          </a>
+        )) : (
+          <div class="panel">历史 C 部分正在生成。完成后会按日期显示在这里。</div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const buttons = [...document.querySelectorAll('[data-level-filter]')];
+      const rows = [...document.querySelectorAll('[data-levels]')];
+      if (!buttons.length || !rows.length) return;
+
+      const setFilter = (level) => {
+        buttons.forEach((button) => {
+          const active = button.dataset.levelFilter === level;
+          button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        rows.forEach((row) => {
+          const levels = (row.dataset.levels || '').split('|');
+          row.hidden = level !== '全部' && !levels.includes(level);
+        });
+        const url = new URL(window.location.href);
+        if (level === '全部') url.searchParams.delete('level');
+        else url.searchParams.set('level', level);
+        history.replaceState(null, '', `${url.pathname}${url.search}${url.hash || '#lessons'}`);
+      };
+
+      buttons.forEach((button) => button.addEventListener('click', () => setFilter(button.dataset.levelFilter || '全部')));
+      const initial = new URL(window.location.href).searchParams.get('level') || '全部';
+      setFilter(buttons.some((button) => button.dataset.levelFilter === initial) ? initial : '全部');
+    })();
+  </script>
 </BaseLayout>
