@@ -11,7 +11,7 @@ const { report } = Astro.props;
 const { Content, headings } = await render(report);
 const lessons = await getCollection('japanese');
 const reportBody = ((report as any).body ?? '') as string;
-const hasNativeJapanese = reportBody.includes('## C.');
+const hasNativeJapanese = reportBody.includes('## C.') || report.id === '2026-08-26';
 const supplement = hasNativeJapanese ? undefined : lessons.find((lesson) => lesson.id === report.id);
 const renderedSupplement = supplement ? await render(supplement) : undefined;
 const SupplementContent = renderedSupplement?.Content;
