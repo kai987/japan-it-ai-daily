@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const reports = await getCollection('daily');
+  return reports.map((report) => ({ params: { id: report.id }, props: { report } }));
+}
+
+const { report } = Astro.props;
+const { Content, headings } = await render(report);
+---
+<BaseLayout title={`${report.data.title} · Japan IT / AI Daily`} description={report.data.description}>
+  <div class="container report-layout">
+    <article class="prose">
+      <div class="eyebrow">{report.data.date.toLocaleDateString('ja-JP')}</div>
+      <h1>{report.data.title}</h1>
+      <p class="meta">{report.data.description}</p>
+      <div class="tags">{report.data.topics.map((topic:string) => <span class="tag">{topic}</span>)}</div>
+      <Content />
+    </article>
+    <aside class="toc" aria-label="On this page">
+      <h4>目次</h4>
+      {headings.filter((h:any)=>h.depth <= 3).map((h:any)=><a href={`#${h.slug}`}>{h.text}</a>)}
+    </aside>
+  </div>
+</BaseLayout>
