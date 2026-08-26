@@ -54,24 +54,27 @@ const levels = ['全部', 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
       </div>
 
       <div class="lesson-list" id="lesson-list">
-        {lessons.length ? lessons.map((lesson) => (
-          <a class="lesson-row" href={`${base}japanese/${lesson.id}/`} data-levels={lesson.data.levels.join('|')}>
-            <div class="lesson-date">{lesson.data.date.toLocaleDateString('ja-JP')}</div>
-            <div class="lesson-main">
-              <h3>{lesson.data.title}</h3>
-              <p>{lesson.data.description}</p>
-              <div class="tags compact-tags">
-                {lesson.data.levels.map((level:string) => <span class="tag">{level}</span>)}
-                {lesson.data.topics.slice(0,3).map((topic:string) => <span class="tag topic-tag">{topic}</span>)}
+        {lessons.length ? lessons.map((lesson) => {
+          const lessonLevels = ['N5/N4', ...lesson.data.levels];
+          return (
+            <a class="lesson-row" href={`${base}japanese/${lesson.id}/`} data-levels={lessonLevels.join('|')}>
+              <div class="lesson-date">{lesson.data.date.toLocaleDateString('ja-JP')}</div>
+              <div class="lesson-main">
+                <h3>{lesson.data.title}</h3>
+                <p>{lesson.data.description}</p>
+                <div class="tags compact-tags">
+                  {lessonLevels.map((level:string) => <span class="tag">{level}</span>)}
+                  {lesson.data.topics.slice(0,3).map((topic:string) => <span class="tag topic-tag">{topic}</span>)}
+                </div>
               </div>
-            </div>
-            <div class="lesson-counts">
-              <span>{lesson.data.vocabularyCount} 词</span>
-              <span>{lesson.data.grammarCount} 语法</span>
-              <strong>学习 →</strong>
-            </div>
-          </a>
-        )) : (
+              <div class="lesson-counts">
+                <span>{lesson.data.vocabularyCount} 词</span>
+                <span>{lesson.data.grammarCount} 语法</span>
+                <strong>学习 →</strong>
+              </div>
+            </a>
+          );
+        }) : (
           <div class="panel">历史 C 部分正在生成。完成后会按日期显示在这里。</div>
         )}
       </div>
