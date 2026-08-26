@@ -1,0 +1,260 @@
+/* Responsive layout + scroll-aware TOC */
+
+/* Anchor targets should not disappear under the sticky header. */
+.prose h2[id],
+.prose h3[id],
+.study-section[id],
+.study-level-group[id]{
+  scroll-margin-top:116px;
+}
+
+/* Desktop TOC: scrollable, active section highlighted. */
+.toc{
+  max-height:calc(100vh - 116px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scrollbar-color:var(--border) transparent;
+  padding-right:6px;
+}
+.toc::-webkit-scrollbar{width:5px}
+.toc::-webkit-scrollbar-thumb{background:var(--border);border-radius:999px}
+.toc a{
+  position:relative;
+  margin-left:-20px;
+  padding:6px 10px 6px 18px;
+  border-left:2px solid transparent;
+  border-radius:0 8px 8px 0;
+  transition:color .16s ease,background-color .16s ease,border-color .16s ease,font-weight .16s ease;
+}
+.toc a.is-active,
+.toc a[aria-current='location']{
+  color:var(--accent);
+  background:var(--accent-soft);
+  border-left-color:var(--accent);
+  font-weight:720;
+}
+
+.mobile-toc{display:none}
+.mobile-menu-toggle{display:none}
+
+/* Keep wide pages comfortable before switching to mobile. */
+@media(max-width:1080px){
+  .report-layout{grid-template-columns:minmax(0,1fr) 220px;gap:36px}
+  .container{width:min(calc(100% - 32px),var(--max))}
+}
+
+@media(max-width:800px){
+  html{scroll-padding-top:110px}
+  html.nav-open{overflow:hidden}
+
+  .container{width:min(calc(100% - 24px),var(--max))}
+
+  /* Header / mobile navigation */
+  .site-header{z-index:40}
+  .nav{height:60px;gap:10px;position:relative}
+  .brand{
+    min-width:0;
+    max-width:calc(100vw - 132px);
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:.94rem;
+  }
+  .nav-actions{gap:8px}
+  .theme-toggle,.mobile-menu-toggle{
+    width:36px;height:36px;box-shadow:none;background:var(--surface-elevated)
+  }
+  .mobile-menu-toggle{
+    display:inline-grid;
+    place-items:center;
+    flex:0 0 auto;
+    border:1px solid var(--border);
+    border-radius:999px;
+    color:var(--text);
+    cursor:pointer;
+  }
+  .mobile-menu-toggle svg{
+    width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round
+  }
+  .mobile-menu-toggle:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 28%,transparent);outline-offset:2px}
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:54px;
+    left:0;
+    right:0;
+    z-index:45;
+    flex-direction:column;
+    align-items:stretch;
+    gap:2px;
+    padding:8px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:var(--surface-elevated);
+    box-shadow:0 14px 36px rgba(15,20,35,.16);
+    color:var(--text);
+  }
+  .nav-links.is-open{display:flex}
+  .nav-links a{
+    width:100%;
+    padding:10px 12px;
+    border-radius:9px;
+    font-size:.95rem;
+  }
+  .nav-links a:hover{background:var(--surface);color:var(--accent)}
+
+  /* Main content */
+  .hero{padding:36px 0 27px}
+  .hero h1{font-size:clamp(2.1rem,10.5vw,2.8rem);line-height:1.06;letter-spacing:-.045em;margin-bottom:14px}
+  .hero p{font-size:1rem;line-height:1.7}
+  .eyebrow{font-size:.82rem}
+  .tags{margin-top:18px;gap:6px}.tag{padding:5px 9px;font-size:.78rem}
+  .section{padding:30px 0}
+  .section-title{gap:8px;margin-bottom:16px}
+  .section-title h2{font-size:1.35rem}
+  .grid-two{grid-template-columns:1fr;gap:12px}
+  .panel{padding:18px;border-radius:12px}
+
+  .report-layout{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+    padding:18px 0 60px;
+  }
+  .prose{min-width:0;overflow-wrap:anywhere}
+  .prose h1{font-size:clamp(1.8rem,8vw,2.2rem);line-height:1.25;letter-spacing:-.035em;margin-top:12px}
+  .prose h2{font-size:1.38rem;margin-top:2.35rem;padding-top:1rem}
+  .prose h3{font-size:1.14rem;margin-top:1.65rem;line-height:1.45}
+  .prose p,.prose li{font-size:.98rem;line-height:1.8}
+  .prose blockquote{margin:16px 0;padding:12px 14px}
+  .prose pre{max-width:100%;font-size:.82rem;padding:13px;-webkit-overflow-scrolling:touch}
+  .prose table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .prose img,.prose video,.prose iframe{max-width:100%;height:auto}
+
+  /* Desktop TOC becomes a sticky, collapsible mobile TOC. */
+  .report-layout>.toc{display:none}
+  .mobile-toc{
+    display:block;
+    position:sticky;
+    top:68px;
+    z-index:17;
+    width:100%;
+    margin:0 0 20px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:var(--header);
+    box-shadow:0 7px 22px rgba(20,24,36,.08);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+  }
+  .mobile-toc summary{
+    min-height:46px;
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr) 16px;
+    align-items:center;
+    gap:10px;
+    padding:0 12px;
+    cursor:pointer;
+    list-style:none;
+    user-select:none;
+  }
+  .mobile-toc summary::-webkit-details-marker{display:none}
+  .mobile-toc-label{font-size:.82rem;font-weight:780;color:var(--text)}
+  .mobile-toc-current{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    color:var(--muted);
+    font-size:.8rem;
+    text-align:right;
+  }
+  .mobile-toc-chevron{
+    width:8px;height:8px;
+    border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;
+    transform:rotate(45deg) translate(-1px,-1px);
+    transition:transform .16s ease;
+    justify-self:center;
+  }
+  .mobile-toc[open] .mobile-toc-chevron{transform:rotate(225deg) translate(-1px,-1px)}
+  .mobile-toc-links{
+    max-height:min(46vh,360px);
+    overflow-y:auto;
+    padding:4px 8px 10px;
+    border-top:1px solid var(--border);
+    overscroll-behavior:contain;
+  }
+  .mobile-toc-links a{
+    display:block;
+    padding:8px 10px;
+    border-radius:8px;
+    color:var(--muted);
+    font-size:.86rem;
+    line-height:1.45;
+  }
+  .mobile-toc-links a.is-active,
+  .mobile-toc-links a[aria-current='location']{
+    color:var(--accent);
+    background:var(--accent-soft);
+    font-weight:720;
+  }
+
+  /* Home / Top 5 */
+  .top-item{grid-template-columns:30px minmax(0,1fr);gap:10px 12px;padding:17px 0}
+  .rank{font-size:.95rem}
+  .top-item h3{font-size:1rem;line-height:1.5}
+  .why{font-size:.9rem;line-height:1.65}
+  .story-side{
+    grid-column:2;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    gap:8px 12px;
+  }
+  .date,.external-label{font-size:.78rem}
+
+  .archive-row{grid-template-columns:1fr;gap:3px;padding:16px 0}
+  .archive-row .meta{font-size:.8rem}
+
+  /* Japanese learning */
+  .learning-stats{gap:16px;overflow-x:auto;padding-bottom:4px}.learning-stats>div{min-width:78px}
+  .learning-stats strong{font-size:1.35rem}
+  .lesson-row{grid-template-columns:1fr;gap:7px;padding:18px 0}
+  .lesson-counts{justify-items:start;grid-auto-flow:column;justify-content:start;gap:12px}
+  .level-filters{gap:6px}.level-filter{padding:7px 11px;font-size:.84rem}
+  .study-section{margin-top:42px}
+  .study-section-heading{align-items:flex-start;flex-direction:column;gap:8px;margin-bottom:18px}
+  .study-section-heading>p{text-align:left;font-size:.86rem}
+  .study-card-grid,.grammar-card-grid,.technical-term-grid,.legacy-lesson ul,.legacy-lesson ol{grid-template-columns:1fr;gap:12px}
+  .study-card{padding:17px;border-radius:13px}
+  .study-card-header{gap:10px;margin-bottom:14px}
+  .study-card-header h3{font-size:1.14rem}
+  .reading{font-size:.82rem}
+  .level-badge{font-size:.68rem;padding:4px 7px}
+  .phrase-list{gap:6px}.phrase-list span{font-size:.8rem;padding:5px 7px}
+  .example-box{padding:12px;margin-top:14px}
+  .technical-term-card{padding:16px}
+  .remember-section{padding:18px}.remember-row{grid-template-columns:1fr;gap:8px}
+  .remember-chips{gap:6px}.remember-chips span{font-size:.78rem;padding:5px 8px}
+
+  footer{padding:24px 0 36px;font-size:.8rem}
+}
+
+@media(max-width:520px){
+  .container{width:min(calc(100% - 20px),var(--max))}
+  .brand{font-size:.9rem;max-width:calc(100vw - 124px)}
+  .hero{padding-top:30px}
+  .hero h1{font-size:clamp(2rem,11vw,2.5rem)}
+  .panel{padding:16px}
+  .prose h1{font-size:1.75rem}
+  .prose h2{font-size:1.3rem}
+  .study-card-header{flex-direction:column}
+  .level-badge{align-self:flex-start}
+  .mobile-toc{top:66px}
+  .mobile-toc-current{max-width:48vw}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .toc a,.mobile-toc-chevron,.nav-links{transition:none}
+}
