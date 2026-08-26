@@ -22,4 +22,17 @@ const daily = defineCollection({
   })
 });
 
-export const collections = { daily };
+const japanese = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/japanese' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    description: z.string(),
+    topics: z.array(z.string()).default([]),
+    levels: z.array(z.enum(['N5/N4', 'N3', 'N2', 'N1', 'IT/AI'])).default([]),
+    vocabularyCount: z.number().int().nonnegative().default(0),
+    grammarCount: z.number().int().nonnegative().default(0)
+  })
+});
+
+export const collections = { daily, japanese };
