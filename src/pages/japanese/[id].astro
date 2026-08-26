@@ -10,20 +10,173 @@ export async function getStaticPaths() {
 const { lesson } = Astro.props;
 const { Content, headings } = await render(lesson);
 const base = import.meta.env.BASE_URL;
+const hasStructuredCards = lesson.data.vocabulary.length > 0 || lesson.data.grammar.length > 0;
+const jlptOrder = ['N5/N4', 'N3', 'N2', 'N1'];
+const vocabGroups = jlptOrder
+  .map((level) => ({ level, items: lesson.data.vocabulary.filter((item) => item.level === level) }))
+  .filter((group) => group.items.length > 0);
 ---
 <BaseLayout title={`${lesson.data.title} · Japan IT / AI Daily`} description={lesson.data.description}>
-  <div class="container report-layout">
-    <article class="prose">
+  <div class="container report-layout lesson-detail">
+    <article class="prose lesson-prose">
       <div class="eyebrow">{lesson.data.date.toLocaleDateString('ja-JP')} · JLPT + IT日本語</div>
       <h1>{lesson.data.title}</h1>
       <p class="meta">{lesson.data.description}</p>
       <div class="tags">{lesson.data.levels.map((level:string) => <span class="tag">{level}</span>)}</div>
       <p class="learning-back"><a href={`${base}japanese/`}>← 日本語学习一覧へ</a></p>
-      <Content />
+
+      {hasStructuredCards ? (
+        <>
+          <section class="study-section" id="c-1-jlpt-vocabulary">
+            <div class="study-section-heading">
+              <div>
+                <div class="entry-kicker">C-1 · Vocabulary</div>
+                <h2>JLPT 词汇（参考等级）</h2>
+              </div>
+              <p>JMdict/EDICT 可用于辅助校对读音、词性和基本词义；JLPT 等级仅作为学习参考。</p>
+            </div>
+
+            {vocabGroups.map((group) => (
+              <section class="study-level-group" id={`vocab-${group.level.toLowerCase().replace('/','-')}`}>
+                <div class="study-level-title"><span>{group.level}</span><small>{group.items.length} words</small></div>
+                <div class="study-card-grid">
+                  {group.items.map((item) => (
+                    <article class="study-card vocabulary-card">
+                      <header class="study-card-header">
+                        <div>
+                          <h3>{item.term}<span class="reading">（{item.reading}）</span></h3>
+                          <div class="study-pos">{item.partOfSpeech}</div>
+                        </div>
+                        <span class="level-badge">参考：{item.level}</span>
+                      </header>
+
+                      <div class="study-field">
+                        <span class="study-label">中文</span>
+                        <p class="study-meaning">{item.meaningZh}</p>
+                      </div>
+
+                      {item.collocations.length > 0 && (
+                        <div class="study-field">
+                          <span class="study-label">常用搭配</span>
+                          <div class="phrase-list">
+                            {item.collocations.map((phrase) => <span>{phrase}</span>)}
+                          </div>
+                        </div>
+                      )}
+
+                      <div class="study-field">
+                        <span class="study-label">技术语境</span>
+                        <p>{item.noteZh}</p>
+                      </div>
+
+                      <div class="example-box">
+                        <span class="study-label">IT / AI 例句</span>
+                        <p lang="ja">{item.exampleJa}</p>
+                        {item.exampleZh && <small>{item.exampleZh}</small>}
+                      </div>
+
+                      {item.nuanceZh && (
+                        <div class="nuance-note">
+                          <span class="study-label">表达提示</span>
+                          <p>{item.nuanceZh}</p>
+                        </div>
+                      )}
+                    </article>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </section>
+
+          {lesson.data.technicalTerms.length > 0 && (
+            <section class="study-section" id="c-2-it-ai-terms">
+              <div class="study-section-heading">
+                <div>
+                  <div class="entry-kicker">C-2 · Technical Terms</div>
+                  <h2>IT / AI 专业词汇</h2>
+                </div>
+                <p>技术外来语和复合专业词不强行划入 JLPT 等级。</p>
+              </div>
+              <div class="technical-term-grid">
+                {lesson.data.technicalTerms.map((item) => (
+                  <article class="technical-term-card">
+                    <h3>{item.term}</h3>
+                    {item.japanese && <div class="meta">{item.japanese}</div>}
+                    <p><strong>{item.meaningZh}</strong></p>
+                    <p>{item.contextZh}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <section class="study-section" id="c-3-jlpt-grammar">
+            <div class="study-section-heading">
+              <div>
+                <div class="entry-kicker">C-3 · Grammar</div>
+                <h2>JLPT 语法（参考等级）</h2>
+              </div>
+              <p>优先选择技术说明、比较优缺点和面试回答中复用率高的表达。</p>
+            </div>
+            <div class="grammar-card-grid">
+              {lesson.data.grammar.map((item) => (
+                <article class="study-card grammar-card">
+                  <header class="study-card-header">
+                    <h3>{item.pattern}</h3>
+                    <span class="level-badge">参考：{item.level}</span>
+                  </header>
+                  <div class="study-field">
+                    <span class="study-label">中文</span>
+                    <p class="study-meaning">{item.meaningZh}</p>
+                  </div>
+                  <div class="grammar-structure"><span>结构</span><code>{item.structure}</code></div>
+                  <div class="study-field">
+                    <span class="study-label">使用场景</span>
+                    <p>{item.usageZh}</p>
+                  </div>
+                  <div class="example-box">
+                    <span class="study-label">IT / AI 例句</span>
+                    <p lang="ja">{item.exampleJa}</p>
+                    {item.exampleZh && <small>{item.exampleZh}</small>}
+                  </div>
+                  {item.noteZh && (
+                    <div class="nuance-note"><span class="study-label">注意</span><p>{item.noteZh}</p></div>
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
+
+          {(lesson.data.mustRememberWords.length > 0 || lesson.data.mustRememberGrammar.length > 0) && (
+            <section class="study-section remember-section" id="c-4-must-remember">
+              <div class="entry-kicker">C-4 · Review</div>
+              <h2>今日必背</h2>
+              {lesson.data.mustRememberWords.length > 0 && (
+                <div class="remember-row"><strong>10词</strong><div class="remember-chips">{lesson.data.mustRememberWords.map((item) => <span>{item}</span>)}</div></div>
+              )}
+              {lesson.data.mustRememberGrammar.length > 0 && (
+                <div class="remember-row"><strong>5语法</strong><div class="remember-chips">{lesson.data.mustRememberGrammar.map((item) => <span>{item}</span>)}</div></div>
+              )}
+            </section>
+          )}
+        </>
+      ) : (
+        <div class="legacy-lesson"><Content /></div>
+      )}
     </article>
+
     <aside class="toc" aria-label="On this page">
       <h4>目次</h4>
-      {headings.filter((h:any)=>h.depth <= 3).map((h:any)=><a href={`#${h.slug}`}>{h.text}</a>)}
+      {hasStructuredCards ? (
+        <>
+          <a href="#c-1-jlpt-vocabulary">C-1. JLPT 词汇</a>
+          {lesson.data.technicalTerms.length > 0 && <a href="#c-2-it-ai-terms">C-2. IT / AI 专业词汇</a>}
+          <a href="#c-3-jlpt-grammar">C-3. JLPT 语法</a>
+          {(lesson.data.mustRememberWords.length > 0 || lesson.data.mustRememberGrammar.length > 0) && <a href="#c-4-must-remember">C-4. 今日必背</a>}
+        </>
+      ) : (
+        headings.filter((h:any)=>h.depth <= 3).map((h:any)=><a href={`#${h.slug}`}>{h.text}</a>)
+      )}
     </aside>
   </div>
 </BaseLayout>
