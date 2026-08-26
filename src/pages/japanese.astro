@@ -39,7 +39,7 @@ const levels = ['全部', 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
 
   <section class="section" id="lessons" style="background:var(--surface)">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title lesson-section-title">
         <div>
           <div class="eyebrow">Daily Japanese lessons</div>
           <h2>每日 C. 日本語学习</h2>
@@ -78,33 +78,192 @@ const levels = ['全部', 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
           <div class="panel">历史 C 部分正在生成。完成后会按日期显示在这里。</div>
         )}
       </div>
+
+      <p class="lesson-empty" hidden>这个等级暂时没有学习内容。</p>
+
+      <nav class="lesson-pagination" aria-label="日本語学习分页" hidden>
+        <button class="lesson-pagination-nav lesson-pagination-prev" type="button" aria-label="上一页">← 上一页</button>
+        <div class="lesson-pagination-pages" aria-label="页码"></div>
+        <button class="lesson-pagination-nav lesson-pagination-next" type="button" aria-label="下一页">下一页 →</button>
+        <div class="lesson-pagination-status" aria-live="polite"></div>
+      </nav>
     </div>
   </section>
 
   <script is:inline>
     (() => {
-      const buttons = [...document.querySelectorAll('[data-level-filter]')];
-      const rows = [...document.querySelectorAll('[data-levels]')];
+      const PAGE_SIZE = 10;
+      const buttons = Array.from(document.querySelectorAll('[data-level-filter]'));
+      const rows = Array.from(document.querySelectorAll('[data-levels]')).filter((row) => row instanceof HTMLElement);
+      const pagination = document.querySelector('.lesson-pagination');
+      const pageContainer = document.querySelector('.lesson-pagination-pages');
+      const prev = document.querySelector('.lesson-pagination-prev');
+      const next = document.querySelector('.lesson-pagination-next');
+      const status = document.querySelector('.lesson-pagination-status');
+      const empty = document.querySelector('.lesson-empty');
+      const lessonsSection = document.querySelector('#lessons');
       if (!buttons.length || !rows.length) return;
 
-      const setFilter = (level) => {
-        buttons.forEach((button) => {
-          const active = button.dataset.levelFilter === level;
-          button.setAttribute('aria-pressed', active ? 'true' : 'false');
-        });
-        rows.forEach((row) => {
-          const levels = (row.dataset.levels || '').split('|');
-          row.hidden = level !== '全部' && !levels.includes(level);
-        });
-        const url = new URL(window.location.href);
-        if (level === '全部') url.searchParams.delete('level');
-        else url.searchParams.set('level', level);
-        history.replaceState(null, '', `${url.pathname}${url.search}${url.hash || '#lessons'}`);
+      const initialUrl = new URL(window.location.href);
+      const allowedLevels = buttons.map((button) => button instanceof HTMLButtonElement ? button.dataset.levelFilter : '').filter(Boolean);
+      const requestedLevel = initialUrl.searchParams.get('level') || '全部';
+      let currentLevel = allowedLevels.includes(requestedLevel) ? requestedLevel : '全部';
+      const requestedPage = Number.parseInt(initialUrl.searchParams.get('page') || '1', 10);
+      let currentPage = Number.isFinite(requestedPage) && requestedPage > 0 ? requestedPage : 1;
+
+      const getFilteredRows = () => rows.filter((row) => {
+        const rowLevels = (row.dataset.levels || '').split('|');
+        return currentLevel === '全部' || rowLevels.includes(currentLevel);
+      });
+
+      const pageNumbers = (totalPages, page) => {
+        if (totalPages <= 7) return Array.from({ length: totalPages }, (_, index) => index + 1);
+        const values = new Set([1, totalPages, page - 1, page, page + 1]);
+        return Array.from(values)
+          .filter((value) => value >= 1 && value <= totalPages)
+          .sort((a, b) => a - b);
       };
 
-      buttons.forEach((button) => button.addEventListener('click', () => setFilter(button.dataset.levelFilter || '全部')));
-      const initial = new URL(window.location.href).searchParams.get('level') || '全部';
-      setFilter(buttons.some((button) => button.dataset.levelFilter === initial) ? initial : '全部');
+      const syncUrl = () => {
+        const url = new URL(window.location.href);
+        if (currentLevel === '全部') url.searchParams.delete('level');
+        else url.searchParams.set('level', currentLevel);
+        if (currentPage <= 1) url.searchParams.delete('page');
+        else url.searchParams.set('page', String(currentPage));
+        url.hash = 'lessons';
+        history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+      };
+
+      const scrollToLessons = () => {
+        if (!(lessonsSection instanceof HTMLElement)) return;
+        lessonsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+
+      const renderPagination = (filteredRows) => {
+        const totalItems = filteredRows.length;
+        const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+        currentPage = Math.min(Math.max(1, currentPage), totalPages);
+
+        if (pagination instanceof HTMLElement) pagination.hidden = totalItems <= PAGE_SIZE;
+        if (prev instanceof HTMLButtonElement) prev.disabled = currentPage <= 1;
+        if (next instanceof HTMLButtonElement) next.disabled = currentPage >= totalPages;
+
+        if (pageContainer instanceof HTMLElement) {
+          pageContainer.replaceChildren();
+          const pages = pageNumbers(totalPages, currentPage);
+          let previousPage = 0;
+          pages.forEach((page) => {
+            if (previousPage && page - previousPage > 1) {
+              const ellipsis = document.createElement('span');
+              ellipsis.className = 'lesson-pagination-ellipsis';
+              ellipsis.textContent = '…';
+              ellipsis.setAttribute('aria-hidden', 'true');
+              pageContainer.appendChild(ellipsis);
+            }
+
+            const pageButton = document.createElement('button');
+            pageButton.type = 'button';
+            pageButton.className = 'lesson-pagination-page';
+            pageButton.textContent = String(page);
+            pageButton.setAttribute('aria-label', `第 ${page} 页`);
+            if (page === currentPage) {
+              pageButton.setAttribute('aria-current', 'page');
+              pageButton.title = `当前第 ${page} 页`;
+            }
+            pageButton.addEventListener('click', () => {
+              if (page === currentPage) return;
+              currentPage = page;
+              render(true);
+            });
+            pageContainer.appendChild(pageButton);
+            previousPage = page;
+          });
+        }
+
+        if (status instanceof HTMLElement) {
+          if (!totalItems) status.textContent = '';
+          else {
+            const start = (currentPage - 1) * PAGE_SIZE + 1;
+            const end = Math.min(currentPage * PAGE_SIZE, totalItems);
+            status.textContent = `${start}–${end} / ${totalItems}`;
+          }
+        }
+      };
+
+      const render = (shouldScroll = false) => {
+        const filteredRows = getFilteredRows();
+        const totalPages = Math.max(1, Math.ceil(filteredRows.length / PAGE_SIZE));
+        currentPage = Math.min(Math.max(1, currentPage), totalPages);
+        const pageStart = (currentPage - 1) * PAGE_SIZE;
+        const visibleSet = new Set(filteredRows.slice(pageStart, pageStart + PAGE_SIZE));
+
+        rows.forEach((row) => {
+          row.hidden = !visibleSet.has(row);
+        });
+
+        buttons.forEach((button) => {
+          if (!(button instanceof HTMLButtonElement)) return;
+          const active = button.dataset.levelFilter === currentLevel;
+          button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+
+        if (empty instanceof HTMLElement) empty.hidden = filteredRows.length !== 0;
+        renderPagination(filteredRows);
+        syncUrl();
+        if (shouldScroll) scrollToLessons();
+      };
+
+      buttons.forEach((button) => button.addEventListener('click', () => {
+        if (!(button instanceof HTMLButtonElement)) return;
+        currentLevel = button.dataset.levelFilter || '全部';
+        currentPage = 1;
+        render(false);
+      }));
+
+      if (prev instanceof HTMLButtonElement) {
+        prev.addEventListener('click', () => {
+          if (currentPage <= 1) return;
+          currentPage -= 1;
+          render(true);
+        });
+      }
+
+      if (next instanceof HTMLButtonElement) {
+        next.addEventListener('click', () => {
+          const totalPages = Math.ceil(getFilteredRows().length / PAGE_SIZE);
+          if (currentPage >= totalPages) return;
+          currentPage += 1;
+          render(true);
+        });
+      }
+
+      render(false);
     })();
   </script>
+
+  <style>
+    .lesson-section-title{scroll-margin-top:92px}
+    .lesson-empty{padding:36px 0;text-align:center;color:var(--muted)}
+    .lesson-pagination{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"prev pages next" "status status status";align-items:center;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--border)}
+    .lesson-pagination[hidden]{display:none}
+    .lesson-pagination-prev{grid-area:prev}.lesson-pagination-pages{grid-area:pages}.lesson-pagination-next{grid-area:next}.lesson-pagination-status{grid-area:status}
+    .lesson-pagination-pages{display:flex;align-items:center;justify-content:center;gap:6px;min-width:0}
+    .lesson-pagination-nav,.lesson-pagination-page{border:1px solid var(--border);background:var(--surface-elevated);color:var(--subtle-text);cursor:pointer;font-weight:700;transition:.16s ease}
+    .lesson-pagination-nav{min-height:40px;border-radius:10px;padding:8px 13px;font-size:.82rem;white-space:nowrap}
+    .lesson-pagination-page{width:40px;height:40px;border-radius:10px;padding:0;font-size:.84rem}
+    .lesson-pagination-nav:hover:not(:disabled),.lesson-pagination-page:hover{border-color:var(--accent);color:var(--accent)}
+    .lesson-pagination-page[aria-current='page']{border-color:var(--accent);background:var(--accent);color:#fff;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent)}
+    .lesson-pagination-page[aria-current='page']:hover{color:#fff}
+    .lesson-pagination-nav:disabled{opacity:.38;cursor:not-allowed}
+    .lesson-pagination-ellipsis{display:inline-grid;place-items:center;width:24px;color:var(--muted)}
+    .lesson-pagination-status{text-align:center;color:var(--muted);font-size:.78rem;font-variant-numeric:tabular-nums}
+
+    @media(max-width:700px){
+      .lesson-pagination{grid-template-columns:1fr 1fr;grid-template-areas:"prev next" "pages pages" "status status";gap:10px}
+      .lesson-pagination-pages{overflow-x:auto;justify-content:flex-start;padding-bottom:2px;scrollbar-width:none}
+      .lesson-pagination-pages::-webkit-scrollbar{display:none}
+      .lesson-pagination-prev,.lesson-pagination-next{width:100%}
+      .lesson-pagination-page{flex:0 0 38px;width:38px;height:38px}
+    }
+  </style>
 </BaseLayout>
