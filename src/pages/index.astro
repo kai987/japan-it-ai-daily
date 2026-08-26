@@ -28,17 +28,29 @@ const top = latest?.data.top ?? [];
       </div>
       {top.length ? (
         <div class="top-list">
-          {top.slice(0,5).map((item:any, i:number) => (
-            <article class="top-item">
-              <div class="rank">{String(i+1).padStart(2,'0')}</div>
-              <div>
-                <h3>{item.title}</h3>
-                <div class="meta">{item.source}{item.topic ? ` · ${item.topic}` : ''}</div>
-                {item.why && <div class="why">{item.why}</div>}
-              </div>
-              <div class="date">{latest.data.date.toLocaleDateString('ja-JP')}</div>
-            </article>
-          ))}
+          {top.slice(0,5).map((item:any, i:number) => {
+            const story = (
+              <>
+                <div class="rank">{String(i+1).padStart(2,'0')}</div>
+                <div>
+                  <h3>{item.title}</h3>
+                  <div class="meta">{item.source}{item.topic ? ` · ${item.topic}` : ''}</div>
+                  {item.why && <div class="why">{item.why}</div>}
+                </div>
+                <div class="story-side">
+                  <div class="date">{latest.data.date.toLocaleDateString('ja-JP')}</div>
+                  {item.url && <div class="external-label">原文 ↗</div>}
+                </div>
+              </>
+            );
+            return item.url ? (
+              <a class="top-item top-item-link" href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`${item.title}（原文を新しいタブで開く）`}>
+                {story}
+              </a>
+            ) : (
+              <article class="top-item">{story}</article>
+            );
+          })}
         </div>
       ) : (
         <div class="panel">第一份日报发布后，这里会自动显示当天 Top 5。</div>
