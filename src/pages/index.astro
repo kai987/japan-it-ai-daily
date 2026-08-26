@@ -48,11 +48,11 @@ const top = latest?.data.top ?? [];
 
   <section class="section" style="background:var(--surface)">
     <div class="container grid-two">
-      <a class="panel" href={latest ? `${base}daily/${latest.id}/#knowledge` : `${base}archive/`}>
+      <a class="panel" href={`${base}knowledge/`}>
         <h3>B. 重点知识｜重要ポイント</h3>
         <p>把当天 Top 5 的技术内容整理为中日双语知识点，便于复习和面试表达。</p>
       </a>
-      <a class="panel" href={latest ? `${base}daily/${latest.id}/#japanese` : `${base}japanese/`}>
+      <a class="panel" href={`${base}japanese/`}>
         <h3>C. 日本語学习｜JLPT + IT日本語</h3>
         <p>从当天文章提取 JLPT 词汇、语法和 IT/AI 专业日语，按难度分级整理。</p>
       </a>
