@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+const reports = (await getCollection('daily')).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
+const latest = reports[0];
+const recent = reports.slice(0, 6);
+const top = latest?.data.top ?? [];
+---
+<BaseLayout title="Japan IT / AI Daily">
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Daily report · 日本時間</div>
+      <h1>日本 IT / AI 日报</h1>
+      <p>日本のIT・AI技術ニュースを、AIエンジニア面接と技術日本語の視点から毎日整理。記事を読むだけでなく、知識として残し、面接で話せる形までまとめます。</p>
+      <div class="tags">
+        <span class="tag">AI Agent</span><span class="tag">MCP</span><span class="tag">RAG</span><span class="tag">Security</span><span class="tag">React / Next.js</span><span class="tag">Cloud</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>今日最值得看的 5 篇</h2>
+        {latest && <a href={`${base}daily/${latest.id}/`}>阅读全文 →</a>}
+      </div>
+      {top.length ? (
+        <div class="top-list">
+          {top.slice(0,5).map((item:any, i:number) => (
+            <article class="top-item">
+              <div class="rank">{String(i+1).padStart(2,'0')}</div>
+              <div>
+                <h3>{item.title}</h3>
+                <div class="meta">{item.source}{item.topic ? ` · ${item.topic}` : ''}</div>
+                {item.why && <div class="why">{item.why}</div>}
+              </div>
+              <div class="date">{latest.data.date.toLocaleDateString('ja-JP')}</div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="panel">第一份日报发布后，这里会自动显示当天 Top 5。</div>
+      )}
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface)">
+    <div class="container grid-two">
+      <a class="panel" href={latest ? `${base}daily/${latest.id}/#knowledge` : `${base}archive/`}>
+        <h3>B. 重点知识｜重要ポイント</h3>
+        <p>把当天 Top 5 的技术内容整理为中日双语知识点，便于复习和面试表达。</p>
+      </a>
+      <a class="panel" href={latest ? `${base}daily/${latest.id}/#japanese` : `${base}japanese/`}>
+        <h3>C. 日本語学习｜JLPT + IT日本語</h3>
+        <p>从当天文章提取 JLPT 词汇、语法和 IT/AI 专业日语，按难度分级整理。</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title"><h2>最近日报</h2><a href={`${base}archive/`}>全部归档 →</a></div>
+      <div class="archive-list">
+        {recent.map((report) => (
+          <a class="archive-row" href={`${base}daily/${report.id}/`}>
+            <div class="meta">{report.data.date.toLocaleDateString('ja-JP')}</div>
+            <div><strong>{report.data.title}</strong><div class="meta">{report.data.description}</div></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
