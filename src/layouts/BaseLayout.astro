@@ -60,12 +60,10 @@ const base = import.meta.env.BASE_URL;
       (() => {
         const button = document.querySelector('.theme-toggle');
         if (!(button instanceof HTMLButtonElement)) return;
-
         const syncLabel = () => {
           const dark = document.documentElement.dataset.theme === 'dark';
           button.setAttribute('aria-label', dark ? 'ライトモードに切り替える' : 'ダークモードに切り替える');
         };
-
         syncLabel();
         button.addEventListener('click', () => {
           const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
@@ -79,19 +77,16 @@ const base = import.meta.env.BASE_URL;
         const button = document.querySelector('.mobile-menu-toggle');
         const nav = document.querySelector('.nav-links');
         if (!(button instanceof HTMLButtonElement) || !(nav instanceof HTMLElement)) return;
-
         const setOpen = (open) => {
           nav.classList.toggle('is-open', open);
           button.setAttribute('aria-expanded', String(open));
           button.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
           document.documentElement.classList.toggle('nav-open', open);
         };
-
         button.addEventListener('click', (event) => {
           event.stopPropagation();
           setOpen(!nav.classList.contains('is-open'));
         });
-
         nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
         document.addEventListener('click', (event) => {
           if (!nav.classList.contains('is-open')) return;
@@ -109,7 +104,7 @@ const base = import.meta.env.BASE_URL;
       (() => {
         const desktopToc = document.querySelector('.report-layout > .toc');
         const layout = document.querySelector('.report-layout');
-        const article = layout?.querySelector(':scope > article');
+        const article = layout?.querySelector('article');
         if (!(desktopToc instanceof HTMLElement) || !(layout instanceof HTMLElement) || !(article instanceof HTMLElement)) return;
 
         const sourceLinks = Array.from(desktopToc.querySelectorAll('a[href^="#"]'));
@@ -122,7 +117,6 @@ const base = import.meta.env.BASE_URL;
         const mobileNav = document.createElement('nav');
         mobileNav.className = 'mobile-toc-links';
         mobileNav.setAttribute('aria-label', 'Mobile table of contents');
-
         sourceLinks.forEach((link) => {
           const clone = link.cloneNode(true);
           if (clone instanceof HTMLAnchorElement) mobileNav.appendChild(clone);
@@ -142,7 +136,7 @@ const base = import.meta.env.BASE_URL;
             seen.add(id);
             return { id, element };
           })
-          .filter(Boolean);
+          .filter((target) => target !== null);
 
         if (!targets.length) return;
         const currentLabel = mobileToc.querySelector('.mobile-toc-current');
@@ -165,7 +159,6 @@ const base = import.meta.env.BASE_URL;
             }
           });
           if (currentLabel instanceof HTMLElement && activeText) currentLabel.textContent = activeText;
-
           const activeDesktop = desktopToc.querySelector('a.is-active');
           if (activeDesktop instanceof HTMLElement && desktopToc.scrollHeight > desktopToc.clientHeight) {
             const desired = activeDesktop.offsetTop - desktopToc.clientHeight / 2 + activeDesktop.offsetHeight / 2;
@@ -182,12 +175,9 @@ const base = import.meta.env.BASE_URL;
             if (target.element.getBoundingClientRect().top <= offset) current = target;
             else break;
           }
-          if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) {
-            current = targets[targets.length - 1];
-          }
+          if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) current = targets[targets.length - 1];
           setActive(current.id);
         };
-
         const requestUpdate = () => {
           if (ticking) return;
           ticking = true;
@@ -203,7 +193,6 @@ const base = import.meta.env.BASE_URL;
             setTimeout(requestUpdate, 180);
           });
         });
-
         window.addEventListener('scroll', requestUpdate, { passive: true });
         window.addEventListener('resize', requestUpdate);
         window.addEventListener('hashchange', requestUpdate);
