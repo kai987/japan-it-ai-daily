@@ -22,6 +22,39 @@ const daily = defineCollection({
   })
 });
 
+const level = z.enum(['N5/N4', 'N3', 'N2', 'N1', 'IT/AI']);
+
+const vocabularyItem = z.object({
+  term: z.string(),
+  reading: z.string(),
+  partOfSpeech: z.string(),
+  meaningZh: z.string(),
+  level,
+  collocations: z.array(z.string()).default([]),
+  noteZh: z.string(),
+  exampleJa: z.string(),
+  exampleZh: z.string().optional(),
+  nuanceZh: z.string().optional()
+});
+
+const grammarItem = z.object({
+  pattern: z.string(),
+  level,
+  meaningZh: z.string(),
+  structure: z.string(),
+  usageZh: z.string(),
+  exampleJa: z.string(),
+  exampleZh: z.string().optional(),
+  noteZh: z.string().optional()
+});
+
+const technicalTermItem = z.object({
+  term: z.string(),
+  japanese: z.string().optional(),
+  meaningZh: z.string(),
+  contextZh: z.string()
+});
+
 const japanese = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/japanese' }),
   schema: z.object({
@@ -29,9 +62,14 @@ const japanese = defineCollection({
     date: z.coerce.date(),
     description: z.string(),
     topics: z.array(z.string()).default([]),
-    levels: z.array(z.enum(['N5/N4', 'N3', 'N2', 'N1', 'IT/AI'])).default([]),
+    levels: z.array(level).default([]),
     vocabularyCount: z.number().int().nonnegative().default(0),
-    grammarCount: z.number().int().nonnegative().default(0)
+    grammarCount: z.number().int().nonnegative().default(0),
+    vocabulary: z.array(vocabularyItem).default([]),
+    grammar: z.array(grammarItem).default([]),
+    technicalTerms: z.array(technicalTermItem).default([]),
+    mustRememberWords: z.array(z.string()).default([]),
+    mustRememberGrammar: z.array(z.string()).default([])
   })
 });
 
