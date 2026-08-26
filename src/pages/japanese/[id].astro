@@ -11,6 +11,7 @@ const { lesson } = Astro.props;
 const { Content, headings } = await render(lesson);
 const base = import.meta.env.BASE_URL;
 const hasStructuredCards = lesson.data.vocabulary.length > 0 || lesson.data.grammar.length > 0;
+const legacyTocHeadings = headings.filter((heading:any) => heading.depth < 4);
 const jlptOrder = ['N5/N4', 'N3', 'N2', 'N1'];
 const vocabGroups = jlptOrder
   .map((level) => ({ level, items: lesson.data.vocabulary.filter((item) => item.level === level) }))
@@ -26,7 +27,7 @@ const vocabGroups = jlptOrder
       <p class="learning-back"><a href={`${base}japanese/`}>← 日本語学习一覧へ</a></p>
 
       {hasStructuredCards ? (
-        <>
+        <Fragment>
           <section class="study-section" id="c-1-jlpt-vocabulary">
             <div class="study-section-heading">
               <div>
@@ -159,7 +160,7 @@ const vocabGroups = jlptOrder
               )}
             </section>
           )}
-        </>
+        </Fragment>
       ) : (
         <div class="legacy-lesson"><Content /></div>
       )}
@@ -168,14 +169,14 @@ const vocabGroups = jlptOrder
     <aside class="toc" aria-label="On this page">
       <h4>目次</h4>
       {hasStructuredCards ? (
-        <>
+        <Fragment>
           <a href="#c-1-jlpt-vocabulary">C-1. JLPT 词汇</a>
           {lesson.data.technicalTerms.length > 0 && <a href="#c-2-it-ai-terms">C-2. IT / AI 专业词汇</a>}
           <a href="#c-3-jlpt-grammar">C-3. JLPT 语法</a>
           {(lesson.data.mustRememberWords.length > 0 || lesson.data.mustRememberGrammar.length > 0) && <a href="#c-4-must-remember">C-4. 今日必背</a>}
-        </>
+        </Fragment>
       ) : (
-        headings.filter((h:any)=>h.depth <= 3).map((h:any)=><a href={`#${h.slug}`}>{h.text}</a>)
+        legacyTocHeadings.map((heading:any)=><a href={`#${heading.slug}`}>{heading.text}</a>)
       )}
     </aside>
   </div>
