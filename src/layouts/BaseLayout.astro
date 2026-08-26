@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import '../styles/topics.css';
+import '../styles/responsive.css';
 const { title = 'Japan IT / AI Daily', description = '日本のIT・AI技術ニュースを、面接対策と技術日本語の視点から毎日整理。' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
@@ -26,7 +27,7 @@ const base = import.meta.env.BASE_URL;
       <div class="container nav">
         <a class="brand" href={base}><span>J</span>apan IT / AI Daily</a>
         <div class="nav-actions">
-          <nav class="nav-links" aria-label="Primary">
+          <nav class="nav-links" id="primary-nav" aria-label="Primary">
             <a href={base}>Daily</a>
             <a href={`${base}topics/`}>Topics</a>
             <a href={`${base}interview/`}>Interview</a>
@@ -42,6 +43,11 @@ const base = import.meta.env.BASE_URL;
               <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"></path>
             </svg>
           </button>
+          <button class="mobile-menu-toggle" type="button" aria-label="メニューを開く" aria-controls="primary-nav" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 7h14M5 12h14M5 17h14"></path>
+            </svg>
+          </button>
         </div>
       </div>
     </header>
@@ -49,6 +55,7 @@ const base = import.meta.env.BASE_URL;
     <footer>
       <div class="container">Japan IT / AI Daily · 日本のIT/AIニュース、面接対策、技術日本語を毎日整理。</div>
     </footer>
+
     <script is:inline>
       (() => {
         const button = document.querySelector('.theme-toggle');
@@ -66,6 +73,141 @@ const base = import.meta.env.BASE_URL;
           localStorage.setItem('theme', next);
           syncLabel();
         });
+      })();
+
+      (() => {
+        const button = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('.nav-links');
+        if (!(button instanceof HTMLButtonElement) || !(nav instanceof HTMLElement)) return;
+
+        const setOpen = (open) => {
+          nav.classList.toggle('is-open', open);
+          button.setAttribute('aria-expanded', String(open));
+          button.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+          document.documentElement.classList.toggle('nav-open', open);
+        };
+
+        button.addEventListener('click', (event) => {
+          event.stopPropagation();
+          setOpen(!nav.classList.contains('is-open'));
+        });
+
+        nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+        document.addEventListener('click', (event) => {
+          if (!nav.classList.contains('is-open')) return;
+          const target = event.target;
+          if (target instanceof Node && !nav.contains(target) && !button.contains(target)) setOpen(false);
+        });
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') setOpen(false);
+        });
+        window.matchMedia('(min-width: 801px)').addEventListener('change', (event) => {
+          if (event.matches) setOpen(false);
+        });
+      })();
+
+      (() => {
+        const desktopToc = document.querySelector('.report-layout > .toc');
+        const layout = document.querySelector('.report-layout');
+        const article = layout?.querySelector(':scope > article');
+        if (!(desktopToc instanceof HTMLElement) || !(layout instanceof HTMLElement) || !(article instanceof HTMLElement)) return;
+
+        const sourceLinks = Array.from(desktopToc.querySelectorAll('a[href^="#"]'));
+        if (!sourceLinks.length) return;
+
+        const mobileToc = document.createElement('details');
+        mobileToc.className = 'mobile-toc';
+        const summary = document.createElement('summary');
+        summary.innerHTML = '<span class="mobile-toc-label">目次</span><span class="mobile-toc-current">現在位置</span><span class="mobile-toc-chevron" aria-hidden="true"></span>';
+        const mobileNav = document.createElement('nav');
+        mobileNav.className = 'mobile-toc-links';
+        mobileNav.setAttribute('aria-label', 'Mobile table of contents');
+
+        sourceLinks.forEach((link) => {
+          const clone = link.cloneNode(true);
+          if (clone instanceof HTMLAnchorElement) mobileNav.appendChild(clone);
+        });
+        mobileToc.append(summary, mobileNav);
+        layout.insertBefore(mobileToc, article);
+
+        const allLinks = Array.from(document.querySelectorAll('.toc a[href^="#"], .mobile-toc a[href^="#"]'));
+        const seen = new Set();
+        const targets = sourceLinks
+          .map((link) => {
+            const href = link.getAttribute('href') || '';
+            const id = href.startsWith('#') ? decodeURIComponent(href.slice(1)) : '';
+            if (!id || seen.has(id)) return null;
+            const element = document.getElementById(id);
+            if (!(element instanceof HTMLElement)) return null;
+            seen.add(id);
+            return { id, element };
+          })
+          .filter(Boolean);
+
+        if (!targets.length) return;
+        const currentLabel = mobileToc.querySelector('.mobile-toc-current');
+        let activeId = '';
+
+        const setActive = (id) => {
+          if (!id || id === activeId) return;
+          activeId = id;
+          let activeText = '';
+          allLinks.forEach((link) => {
+            const href = link.getAttribute('href') || '';
+            const linkId = href.startsWith('#') ? decodeURIComponent(href.slice(1)) : '';
+            const active = linkId === id;
+            link.classList.toggle('is-active', active);
+            if (active) {
+              link.setAttribute('aria-current', 'location');
+              activeText = link.textContent?.trim() || activeText;
+            } else {
+              link.removeAttribute('aria-current');
+            }
+          });
+          if (currentLabel instanceof HTMLElement && activeText) currentLabel.textContent = activeText;
+
+          const activeDesktop = desktopToc.querySelector('a.is-active');
+          if (activeDesktop instanceof HTMLElement && desktopToc.scrollHeight > desktopToc.clientHeight) {
+            const desired = activeDesktop.offsetTop - desktopToc.clientHeight / 2 + activeDesktop.offsetHeight / 2;
+            desktopToc.scrollTo({ top: Math.max(0, desired), behavior: 'smooth' });
+          }
+        };
+
+        let ticking = false;
+        const updateActive = () => {
+          ticking = false;
+          const offset = window.innerWidth <= 800 ? 118 : 124;
+          let current = targets[0];
+          for (const target of targets) {
+            if (target.element.getBoundingClientRect().top <= offset) current = target;
+            else break;
+          }
+          if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) {
+            current = targets[targets.length - 1];
+          }
+          setActive(current.id);
+        };
+
+        const requestUpdate = () => {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(updateActive);
+        };
+
+        allLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            const href = link.getAttribute('href') || '';
+            const id = href.startsWith('#') ? decodeURIComponent(href.slice(1)) : '';
+            if (id) setActive(id);
+            if (mobileToc.open) mobileToc.open = false;
+            setTimeout(requestUpdate, 180);
+          });
+        });
+
+        window.addEventListener('scroll', requestUpdate, { passive: true });
+        window.addEventListener('resize', requestUpdate);
+        window.addEventListener('hashchange', requestUpdate);
+        requestUpdate();
       })();
     </script>
   </body>
