@@ -88,7 +88,7 @@ const base = import.meta.env.BASE_URL;
 
   <section class="section interview-section">
     <div class="container">
-      <div class="interview-toolbar">
+      <div class="interview-toolbar" id="interview-list-start">
         <div>
           <h2>历史面试素材</h2>
           <p>按主题筛选。所有内容均来自对应日期日报中的「面接で使えるポイント」与「面试复习卡」。</p>
@@ -150,38 +150,145 @@ const base = import.meta.env.BASE_URL;
       </div>
 
       <p class="interview-empty" hidden>这个主题暂时没有面试素材。</p>
+
+      <nav class="interview-pagination" aria-label="面试素材分页" hidden>
+        <button class="pagination-nav pagination-prev" type="button" aria-label="上一页">← 上一页</button>
+        <div class="pagination-pages" aria-label="页码"></div>
+        <button class="pagination-nav pagination-next" type="button" aria-label="下一页">下一页 →</button>
+        <div class="pagination-status" aria-live="polite"></div>
+      </nav>
     </div>
   </section>
 
   <script is:inline>
     (() => {
+      const PAGE_SIZE = 10;
       const buttons = Array.from(document.querySelectorAll('.interview-filter'));
-      const days = Array.from(document.querySelectorAll('.interview-day'));
+      const days = Array.from(document.querySelectorAll('.interview-day')).filter((day) => day instanceof HTMLElement);
       const empty = document.querySelector('.interview-empty');
+      const pagination = document.querySelector('.interview-pagination');
+      const pageContainer = document.querySelector('.pagination-pages');
+      const prev = document.querySelector('.pagination-prev');
+      const next = document.querySelector('.pagination-next');
+      const status = document.querySelector('.pagination-status');
+      const listStart = document.querySelector('#interview-list-start');
       if (!buttons.length || !days.length) return;
 
-      const apply = (filter) => {
-        let visibleCount = 0;
+      let currentFilter = 'all';
+      let currentPage = 1;
+
+      const getFilteredDays = () => days.filter((day) => {
+        const categories = (day.dataset.categories || '').split('|');
+        return currentFilter === 'all' || categories.includes(currentFilter);
+      });
+
+      const scrollToList = () => {
+        if (!(listStart instanceof HTMLElement)) return;
+        listStart.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+
+      const pageNumbers = (totalPages, page) => {
+        if (totalPages <= 7) return Array.from({ length: totalPages }, (_, index) => index + 1);
+        const values = new Set([1, totalPages, page - 1, page, page + 1]);
+        return Array.from(values)
+          .filter((value) => value >= 1 && value <= totalPages)
+          .sort((a, b) => a - b);
+      };
+
+      const renderPagination = (filteredDays) => {
+        const totalItems = filteredDays.length;
+        const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+        currentPage = Math.min(currentPage, totalPages);
+
+        if (pagination instanceof HTMLElement) pagination.hidden = totalItems <= PAGE_SIZE;
+        if (prev instanceof HTMLButtonElement) prev.disabled = currentPage <= 1;
+        if (next instanceof HTMLButtonElement) next.disabled = currentPage >= totalPages;
+
+        if (pageContainer instanceof HTMLElement) {
+          pageContainer.replaceChildren();
+          const pages = pageNumbers(totalPages, currentPage);
+          let previousPage = 0;
+          pages.forEach((page) => {
+            if (previousPage && page - previousPage > 1) {
+              const ellipsis = document.createElement('span');
+              ellipsis.className = 'pagination-ellipsis';
+              ellipsis.textContent = '…';
+              ellipsis.setAttribute('aria-hidden', 'true');
+              pageContainer.appendChild(ellipsis);
+            }
+            const pageButton = document.createElement('button');
+            pageButton.type = 'button';
+            pageButton.className = 'pagination-page';
+            pageButton.textContent = String(page);
+            pageButton.setAttribute('aria-label', `第 ${page} 页`);
+            if (page === currentPage) pageButton.setAttribute('aria-current', 'page');
+            pageButton.addEventListener('click', () => {
+              if (page === currentPage) return;
+              currentPage = page;
+              render(true);
+            });
+            pageContainer.appendChild(pageButton);
+            previousPage = page;
+          });
+        }
+
+        if (status instanceof HTMLElement) {
+          if (!totalItems) {
+            status.textContent = '';
+          } else {
+            const start = (currentPage - 1) * PAGE_SIZE + 1;
+            const end = Math.min(currentPage * PAGE_SIZE, totalItems);
+            status.textContent = `${start}–${end} / ${totalItems}`;
+          }
+        }
+      };
+
+      const render = (shouldScroll = false) => {
+        const filteredDays = getFilteredDays();
+        const pageStart = (currentPage - 1) * PAGE_SIZE;
+        const pageEnd = pageStart + PAGE_SIZE;
+        const visibleSet = new Set(filteredDays.slice(pageStart, pageEnd));
+
         days.forEach((day) => {
-          if (!(day instanceof HTMLElement)) return;
-          const categories = (day.dataset.categories || '').split('|');
-          const show = filter === 'all' || categories.includes(filter);
-          day.hidden = !show;
-          if (show) visibleCount += 1;
+          day.hidden = !visibleSet.has(day);
         });
-        if (empty instanceof HTMLElement) empty.hidden = visibleCount !== 0;
+
+        if (empty instanceof HTMLElement) empty.hidden = filteredDays.length !== 0;
         buttons.forEach((button) => {
           if (!(button instanceof HTMLButtonElement)) return;
-          button.setAttribute('aria-pressed', String(button.dataset.filter === filter));
+          button.setAttribute('aria-pressed', String(button.dataset.filter === currentFilter));
         });
+
+        renderPagination(filteredDays);
+        if (shouldScroll) scrollToList();
       };
 
       buttons.forEach((button) => {
         button.addEventListener('click', () => {
           if (!(button instanceof HTMLButtonElement)) return;
-          apply(button.dataset.filter || 'all');
+          currentFilter = button.dataset.filter || 'all';
+          currentPage = 1;
+          render(false);
         });
       });
+
+      if (prev instanceof HTMLButtonElement) {
+        prev.addEventListener('click', () => {
+          if (currentPage <= 1) return;
+          currentPage -= 1;
+          render(true);
+        });
+      }
+      if (next instanceof HTMLButtonElement) {
+        next.addEventListener('click', () => {
+          const totalPages = Math.ceil(getFilteredDays().length / PAGE_SIZE);
+          if (currentPage >= totalPages) return;
+          currentPage += 1;
+          render(true);
+        });
+      }
+
+      render(false);
     })();
   </script>
 
@@ -194,7 +301,7 @@ const base = import.meta.env.BASE_URL;
     .interview-stats strong{font-size:1.65rem;line-height:1;color:var(--text)}
     .interview-stats span{font-size:.78rem;color:var(--muted)}
     .interview-section{padding-top:34px}
-    .interview-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end;margin-bottom:26px}
+    .interview-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end;margin-bottom:26px;scroll-margin-top:92px}
     .interview-toolbar h2{margin:0 0 5px;font-size:1.45rem}
     .interview-toolbar p{margin:0;color:var(--muted);font-size:.9rem}
     .interview-filters{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:7px;max-width:560px}
@@ -228,6 +335,18 @@ const base = import.meta.env.BASE_URL;
     .review-q p,.review-points p{margin:0;font-size:.87rem;line-height:1.65}
     .review-points p{color:var(--muted)}
     .interview-empty{padding:40px 0;text-align:center;color:var(--muted)}
+    .interview-pagination{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"prev pages next" "status status status";align-items:center;gap:12px;margin-top:34px;padding-top:24px;border-top:1px solid var(--border)}
+    .interview-pagination[hidden]{display:none}
+    .pagination-prev{grid-area:prev}.pagination-pages{grid-area:pages}.pagination-next{grid-area:next}.pagination-status{grid-area:status}
+    .pagination-pages{display:flex;align-items:center;justify-content:center;gap:6px;min-width:0}
+    .pagination-nav,.pagination-page{border:1px solid var(--border);background:var(--surface-elevated);color:var(--subtle-text);cursor:pointer;font-weight:680;transition:.16s ease}
+    .pagination-nav{min-height:40px;border-radius:10px;padding:8px 13px;font-size:.82rem;white-space:nowrap}
+    .pagination-page{width:40px;height:40px;border-radius:10px;padding:0;font-size:.84rem}
+    .pagination-nav:hover:not(:disabled),.pagination-page:hover{border-color:var(--accent);color:var(--accent)}
+    .pagination-page[aria-current='page']{border-color:var(--accent);background:var(--accent);color:#fff}
+    .pagination-nav:disabled{opacity:.38;cursor:not-allowed}
+    .pagination-ellipsis{display:inline-grid;place-items:center;width:24px;color:var(--muted)}
+    .pagination-status{text-align:center;color:var(--muted);font-size:.78rem;font-variant-numeric:tabular-nums}
     @media(max-width:900px){
       .interview-hero-grid,.interview-toolbar{grid-template-columns:1fr}
       .interview-stats{min-width:0;max-width:430px}
@@ -245,6 +364,11 @@ const base = import.meta.env.BASE_URL;
       .interview-answer-grid{grid-template-columns:1fr}
       .review-row{grid-template-columns:1fr;gap:9px}
       .interview-filter{padding:7px 10px;font-size:.78rem}
+      .interview-pagination{grid-template-columns:1fr 1fr;grid-template-areas:"prev next" "pages pages" "status status";gap:10px}
+      .pagination-pages{overflow-x:auto;justify-content:flex-start;padding-bottom:2px;scrollbar-width:none}
+      .pagination-pages::-webkit-scrollbar{display:none}
+      .pagination-prev,.pagination-next{width:100%}
+      .pagination-page{flex:0 0 38px;width:38px;height:38px}
     }
   </style>
 </BaseLayout>
