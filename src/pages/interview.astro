@@ -1,7 +1,250 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const reports = (await getCollection('daily')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const extractSection = (body: string, title: string) => {
+  const escaped = title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const pattern = new RegExp(
+    `(?:^|\\n)#{2,3}\\s*(?:\\d+\\.\\s*)?${escaped}[^\\n]*\\n([\\s\\S]*?)(?=\\n#{2,3}\\s|$)`,
+    'i'
+  );
+  return body.match(pattern)?.[1]?.trim() ?? '';
+};
+
+const extractAnswers = (body: string) => {
+  const section = extractSection(body, '面接で使えるポイント');
+  return section
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line.startsWith('>'))
+    .map((line) => line.replace(/^>\s*/, '').trim())
+    .filter(Boolean);
+};
+
+const extractReviewCards = (body: string) => {
+  const section = extractSection(body, '面试复习卡');
+  return section
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line.startsWith('-'))
+    .map((line) => {
+      const clean = line.replace(/^-\s*/, '');
+      const parts = clean.split(/\s*→\s*/);
+      return {
+        question: (parts[0] ?? '').replace(/^`|`$/g, '').trim(),
+        points: (parts.slice(1).join(' → ') ?? '').trim(),
+      };
+    })
+    .filter((item) => item.question);
+};
+
+const categoryRules = [
+  { label: 'AI Agent', test: /Agent|Claude Code|Codex|Copilot|LLM|Model|VLM|Harness/i },
+  { label: 'MCP / RAG', test: /MCP|RAG|Context|Retrieval|GraphRAG|Knowledge/i },
+  { label: 'Security', test: /Security|IAM|Permission|Vulnerab|Guardrail|Sandbox|Identity|SBOM/i },
+  { label: 'Frontend', test: /React|Next|Frontend|Bun|TypeScript|Web/i },
+  { label: 'Cloud / SRE', test: /AWS|Cloud|SRE|AIOps|Bedrock|Aurora|Database|DevOps/i },
+  { label: '企业 AI', test: /Enterprise|Governance|ROI|Transformation|LLMOps|FinOps|人材|企業/i },
+];
+
+const interviewDays = reports
+  .map((report) => {
+    const body = ((report as any).body ?? '') as string;
+    const answers = extractAnswers(body);
+    const reviewCards = extractReviewCards(body);
+    const topicText = [report.data.description, ...report.data.topics, ...report.data.top.map((item) => `${item.title} ${item.topic}`)].join(' ');
+    const categories = categoryRules.filter((rule) => rule.test.test(topicText)).map((rule) => rule.label);
+    return { report, answers, reviewCards, categories: categories.length ? categories : ['AI Agent'] };
+  })
+  .filter((day) => day.answers.length > 0 || day.reviewCards.length > 0);
+
+const totalAnswers = interviewDays.reduce((sum, day) => sum + day.answers.length, 0);
+const totalQuestions = interviewDays.reduce((sum, day) => sum + day.reviewCards.length, 0);
+const availableCategories = categoryRules
+  .map((rule) => rule.label)
+  .filter((label) => interviewDays.some((day) => day.categories.includes(label)));
+
+const base = import.meta.env.BASE_URL;
 ---
-<BaseLayout title="Interview · Japan IT / AI Daily">
-  <section class="hero"><div class="container"><div class="eyebrow">Interview</div><h1>面接で使えるポイント</h1><p>每天把技术新闻转化成日本 AI / AI×Web 岗位可直接复习的面试知识。</p></div></section>
-  <section class="section"><div class="container"><div class="panel"><h3>每日面试素材会随日报累积</h3><p>后续可进一步按 AI Agent、RAG、Security、Frontend、Cloud 等主题建立索引。</p></div></div></section>
+<BaseLayout title="Interview · Japan IT / AI Daily" description="日本AI・AI×Webエンジニア面接で使える技術回答を、毎日のIT/AIニュースから整理。">
+  <section class="hero interview-hero">
+    <div class="container interview-hero-grid">
+      <div>
+        <div class="eyebrow">Interview Knowledge Base</div>
+        <h1>面接で使えるポイント</h1>
+        <p>每天把日本 IT / AI 日报中的技术判断，积累成可以直接复习的日语面试回答与 Quick Review。</p>
+      </div>
+      <div class="interview-stats" aria-label="Interview knowledge stats">
+        <div><strong>{interviewDays.length}</strong><span>学习日</span></div>
+        <div><strong>{totalAnswers}</strong><span>回答例</span></div>
+        <div><strong>{totalQuestions}</strong><span>复习题</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section interview-section">
+    <div class="container">
+      <div class="interview-toolbar">
+        <div>
+          <h2>历史面试素材</h2>
+          <p>按主题筛选。所有内容均来自对应日期日报中的「面接で使えるポイント」与「面试复习卡」。</p>
+        </div>
+        <div class="interview-filters" role="group" aria-label="Interview topic filters">
+          <button class="interview-filter" type="button" data-filter="all" aria-pressed="true">全部</button>
+          {availableCategories.map((category) => (
+            <button class="interview-filter" type="button" data-filter={category} aria-pressed="false">{category}</button>
+          ))}
+        </div>
+      </div>
+
+      <div class="interview-feed">
+        {interviewDays.map(({ report, answers, reviewCards, categories }) => (
+          <article class="interview-day" data-categories={categories.join('|')}>
+            <header class="interview-day-header">
+              <div>
+                <div class="interview-date">{report.data.date.toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' })}</div>
+                <h2>{report.data.description}</h2>
+                <div class="tags interview-tags">
+                  {categories.map((category) => <span class="tag">{category}</span>)}
+                </div>
+              </div>
+              <a class="daily-link" href={`${base}daily/${report.id}/`}>当天日报 →</a>
+            </header>
+
+            {answers.length > 0 && (
+              <div class="interview-answer-grid">
+                {answers.map((answer, index) => (
+                  <section class="interview-answer-card">
+                    <div class="answer-card-top">
+                      <span class="answer-index">{String(index + 1).padStart(2, '0')}</span>
+                      <span class="answer-label">面接回答例</span>
+                    </div>
+                    <p lang="ja">{answer}</p>
+                  </section>
+                ))}
+              </div>
+            )}
+
+            {reviewCards.length > 0 && (
+              <section class="quick-review">
+                <div class="quick-review-heading">
+                  <h3>Quick Review</h3>
+                  <span>{reviewCards.length} questions</span>
+                </div>
+                <div class="review-list">
+                  {reviewCards.map((item) => (
+                    <div class="review-row">
+                      <div class="review-q"><span>Q</span><p lang="ja">{item.question}</p></div>
+                      {item.points && <div class="review-points"><span>KEY</span><p>{item.points}</p></div>}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+          </article>
+        ))}
+      </div>
+
+      <p class="interview-empty" hidden>这个主题暂时没有面试素材。</p>
+    </div>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const buttons = Array.from(document.querySelectorAll('.interview-filter'));
+      const days = Array.from(document.querySelectorAll('.interview-day'));
+      const empty = document.querySelector('.interview-empty');
+      if (!buttons.length || !days.length) return;
+
+      const apply = (filter) => {
+        let visibleCount = 0;
+        days.forEach((day) => {
+          if (!(day instanceof HTMLElement)) return;
+          const categories = (day.dataset.categories || '').split('|');
+          const show = filter === 'all' || categories.includes(filter);
+          day.hidden = !show;
+          if (show) visibleCount += 1;
+        });
+        if (empty instanceof HTMLElement) empty.hidden = visibleCount !== 0;
+        buttons.forEach((button) => {
+          if (!(button instanceof HTMLButtonElement)) return;
+          button.setAttribute('aria-pressed', String(button.dataset.filter === filter));
+        });
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          if (!(button instanceof HTMLButtonElement)) return;
+          apply(button.dataset.filter || 'all');
+        });
+      });
+    })();
+  </script>
+
+  <style>
+    .interview-hero{padding:56px 0 38px}
+    .interview-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:54px;align-items:end}
+    .interview-hero h1{font-size:clamp(2.7rem,6vw,4.8rem);max-width:760px}
+    .interview-stats{display:grid;grid-template-columns:repeat(3,minmax(92px,1fr));gap:10px;min-width:330px}
+    .interview-stats div{display:grid;gap:5px;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--surface-elevated)}
+    .interview-stats strong{font-size:1.65rem;line-height:1;color:var(--text)}
+    .interview-stats span{font-size:.78rem;color:var(--muted)}
+    .interview-section{padding-top:34px}
+    .interview-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end;margin-bottom:26px}
+    .interview-toolbar h2{margin:0 0 5px;font-size:1.45rem}
+    .interview-toolbar p{margin:0;color:var(--muted);font-size:.9rem}
+    .interview-filters{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:7px;max-width:560px}
+    .interview-filter{border:1px solid var(--border);border-radius:999px;padding:7px 12px;background:var(--surface-elevated);color:var(--muted);cursor:pointer;font-size:.82rem;transition:.16s ease}
+    .interview-filter:hover{border-color:var(--accent);color:var(--accent)}
+    .interview-filter[aria-pressed='true']{border-color:var(--accent);background:var(--accent);color:#fff}
+    .interview-feed{display:grid;gap:30px}
+    .interview-day{padding:28px;border:1px solid var(--border);border-radius:18px;background:var(--surface-elevated);box-shadow:var(--shadow)}
+    .interview-day[hidden]{display:none}
+    .interview-day-header{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;padding-bottom:22px;border-bottom:1px solid var(--border)}
+    .interview-date{font-size:.78rem;color:var(--accent);font-weight:760;letter-spacing:.06em}
+    .interview-day-header h2{max-width:780px;margin:6px 0 0;font-size:1.14rem;line-height:1.55}
+    .interview-tags{margin-top:12px}
+    .interview-tags .tag{padding:4px 8px;font-size:.72rem}
+    .daily-link{flex:0 0 auto;color:var(--accent);font-size:.84rem;font-weight:700;padding-top:3px}
+    .interview-answer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}
+    .interview-answer-card{margin:0;padding:20px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
+    .answer-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+    .answer-index{font-size:.76rem;color:var(--accent);font-weight:800}
+    .answer-label{font-size:.72rem;color:var(--muted);font-weight:700;letter-spacing:.04em}
+    .interview-answer-card p{margin:0;font-size:.96rem;line-height:1.9;font-weight:560}
+    .quick-review{margin-top:22px;padding-top:20px;border-top:1px solid var(--border)}
+    .quick-review-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+    .quick-review-heading h3{margin:0;font-size:.95rem}
+    .quick-review-heading span{font-size:.75rem;color:var(--muted)}
+    .review-list{display:grid}
+    .review-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:18px;padding:13px 0;border-top:1px solid var(--border)}
+    .review-q,.review-points{display:flex;gap:10px;align-items:flex-start}
+    .review-q span,.review-points span{flex:0 0 auto;margin-top:3px;font-size:.68rem;font-weight:800;color:var(--accent)}
+    .review-points span{color:var(--muted)}
+    .review-q p,.review-points p{margin:0;font-size:.87rem;line-height:1.65}
+    .review-points p{color:var(--muted)}
+    .interview-empty{padding:40px 0;text-align:center;color:var(--muted)}
+    @media(max-width:900px){
+      .interview-hero-grid,.interview-toolbar{grid-template-columns:1fr}
+      .interview-stats{min-width:0;max-width:430px}
+      .interview-filters{justify-content:flex-start;max-width:none}
+    }
+    @media(max-width:700px){
+      .interview-hero{padding:38px 0 28px}
+      .interview-hero h1{font-size:clamp(2.2rem,12vw,3.4rem)}
+      .interview-stats{grid-template-columns:repeat(3,1fr);gap:7px}
+      .interview-stats div{padding:13px 11px}
+      .interview-stats strong{font-size:1.35rem}
+      .interview-day{padding:18px;border-radius:14px}
+      .interview-day-header{display:grid;gap:12px}
+      .daily-link{justify-self:start}
+      .interview-answer-grid{grid-template-columns:1fr}
+      .review-row{grid-template-columns:1fr;gap:9px}
+      .interview-filter{padding:7px 10px;font-size:.78rem}
+    }
+  </style>
 </BaseLayout>
