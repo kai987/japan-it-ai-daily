@@ -1,6 +1,6 @@
 {
   "date": "2026-08-27",
-  "generatedAt": "2026-08-27T08:36:45.217Z",
+  "generatedAt": "2026-08-27T09:05:01.316Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,44 @@
       "exampleJa": "共通のQA Agent Platformを整備し、組織全体でAI活用を促します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～ために",
+      "exampleJa": "実行時エラーを防ぐために、Workflowを公開する前に構造を検証します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "pattern": "～ことができる",
+      "exampleJa": "Managed Settingsを使うと、利用可能なPluginやModelを組織側で制御することができます。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 3,
+      "pattern": "～だけでなく～も",
+      "exampleJa": "Agent Platformでは、開発速度だけでなく、本番環境の安全性も考慮する必要があります。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 4,
+      "pattern": "～に応じて",
+      "exampleJa": "Agent Runtimeは、処理量に応じてReplica数を調整します。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 5,
+      "pattern": "～たうえで",
+      "exampleJa": "Schemaを人間がレビューしたうえで、Coding Agentに実装を任せます。",
+      "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～に伴って",
+      "exampleJa": "AI Agentの利用者が増えるのに伴って、権限管理とGuardrailの重要性も高まります。",
+      "example": "grammar-example-06.mp3"
     }
   ]
 }

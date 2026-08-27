@@ -1,6 +1,6 @@
 {
   "date": "2026-08-12",
-  "generatedAt": "2026-08-27T08:32:26.545Z",
+  "generatedAt": "2026-08-27T09:02:01.693Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,38 @@
       "exampleJa": "一つのCloud Modelだけに依存しない構成を検討します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～必要がある",
+      "exampleJa": "Agentの実行履歴を保存する必要があります。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "pattern": "～ために",
+      "exampleJa": "Token消費を減らすために、検索で対象ファイルを絞ります。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 3,
+      "pattern": "～だけでなく～も",
+      "exampleJa": "精度だけでなく、コストも評価します。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 4,
+      "pattern": "～に応じて",
+      "exampleJa": "機密性に応じてCloudとLocal Modelを使い分けます。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 5,
+      "pattern": "～とは限らない",
+      "exampleJa": "Context Windowが大きければ性能が高くなるとは限りません。",
+      "example": "grammar-example-05.mp3"
     }
   ]
 }

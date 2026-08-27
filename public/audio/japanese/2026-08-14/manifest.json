@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "generatedAt": "2026-08-27T08:32:26.553Z",
+  "generatedAt": "2026-08-27T09:02:24.050Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,38 @@
       "exampleJa": "Human Reviewだけに依存しない検証環境を作ります。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～ために",
+      "exampleJa": "情報漏えいを防ぐために、読み取り専用Toolを公開します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "pattern": "～だけでなく～も",
+      "exampleJa": "型チェックだけでなく、Security Auditも実行します。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 3,
+      "pattern": "～によって",
+      "exampleJa": "MCPによってKnowledgeへのアクセスを標準化できます。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 4,
+      "pattern": "～とは限らない",
+      "exampleJa": "自動生成されたIAM Roleが最小権限とは限りません。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 5,
+      "pattern": "～にとどまらず",
+      "exampleJa": "MCPはTool Callingにとどまらず、Knowledge Accessにも利用できます。",
+      "example": "grammar-example-05.mp3"
     }
   ]
 }

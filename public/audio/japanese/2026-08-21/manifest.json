@@ -1,6 +1,6 @@
 {
   "date": "2026-08-21",
-  "generatedAt": "2026-08-27T08:35:02.288Z",
+  "generatedAt": "2026-08-27T09:03:45.765Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,38 @@
       "exampleJa": "新しいPCでも同じAgent設定を再現できる状態にします。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～かどうか",
+      "exampleJa": "すべてのFileを読んだかどうかを記録します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "pattern": "～だけではなく",
+      "exampleJa": "Componentの存在だけではなく、画面遷移も確認します。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 3,
+      "pattern": "～た上で",
+      "exampleJa": "対象一覧を確定した上で、Agentに処理させます。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 4,
+      "pattern": "～ない限り",
+      "exampleJa": "Core Systemと統合しない限り、手作業は残り続けます。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 5,
+      "pattern": "～にとどまらず",
+      "exampleJa": "AIの品質問題はModelにとどまらず、Data Modelingにも関係します。",
+      "example": "grammar-example-05.mp3"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "date": "2026-08-22",
-  "generatedAt": "2026-08-27T08:35:27.692Z",
+  "generatedAt": "2026-08-27T09:03:58.967Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,38 @@
       "exampleJa": "PluginのSupply Chain Riskを管理します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～たら",
+      "exampleJa": "Advisoryが公開されたら、Affected Versionを確認します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "pattern": "～ために",
+      "exampleJa": "検索範囲を制御するためにDomain Filterを利用します。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 3,
+      "pattern": "～ても",
+      "exampleJa": "終了コードが0でも、要件を満たしたとは限りません。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 4,
+      "pattern": "～とは限らない",
+      "exampleJa": "Tool descriptionが実装内容と一致するとは限りません。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 5,
+      "pattern": "～に基づいて",
+      "exampleJa": "正式なAdvisoryに基づいてPatch対応を判断します。",
+      "example": "grammar-example-05.mp3"
     }
   ]
 }

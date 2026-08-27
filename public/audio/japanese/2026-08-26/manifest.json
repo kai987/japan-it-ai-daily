@@ -1,6 +1,6 @@
 {
   "date": "2026-08-26",
-  "generatedAt": "2026-08-27T08:36:45.216Z",
+  "generatedAt": "2026-08-27T09:04:44.969Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,38 @@
       "exampleJa": "CVSSだけでなくAsset情報も使い、実際に対応が必要な脆弱性を絞り込みます。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～必要がある",
+      "exampleJa": "Critical Patchを適用した後、Regression Testで既存機能を確認する必要があります。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "pattern": "～によって",
+      "exampleJa": "Clientの実装によって、MCP Toolの読み込み方法が異なります。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 3,
+      "pattern": "～だけでなく～も",
+      "exampleJa": "Model性能だけでなく、CostやLatencyも評価することが重要です。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 4,
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの難易度に応じて、利用するModelとEffortを切り替えます。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 5,
+      "pattern": "～とは限らない",
+      "exampleJa": "Context Windowが大きければ、回答品質が必ず高くなるとは限りません。",
+      "example": "grammar-example-05.mp3"
     }
   ]
 }

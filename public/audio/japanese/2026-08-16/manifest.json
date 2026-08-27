@@ -1,6 +1,6 @@
 {
   "date": "2026-08-16",
-  "generatedAt": "2026-08-27T08:33:07.914Z",
+  "generatedAt": "2026-08-27T09:02:49.567Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,38 @@
       "exampleJa": "並列実行には調整コストが伴います。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～ごとに",
+      "exampleJa": "DirectoryごとにAGENTS.mdを配置します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "pattern": "～ことで",
+      "exampleJa": "型チェックを行うことで、Agentへ明確なFeedbackを返せます。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 3,
+      "pattern": "～だけではなく",
+      "exampleJa": "生成速度だけではなく、検証可能性も重要です。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 4,
+      "pattern": "～場合には",
+      "exampleJa": "複数Sessionを動かす場合には、worktreeを利用します。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 5,
+      "pattern": "～に伴って",
+      "exampleJa": "Agent数の増加に伴って、Session Managementも重要になります。",
+      "example": "grammar-example-05.mp3"
     }
   ]
 }

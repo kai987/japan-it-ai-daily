@@ -1,6 +1,6 @@
 {
   "date": "2026-08-24",
-  "generatedAt": "2026-08-27T08:36:19.110Z",
+  "generatedAt": "2026-08-27T09:04:16.509Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,38 @@
       "exampleJa": "AI Toolを業務に定着させるにはTrainingが必要です。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～前に",
+      "exampleJa": "外部へ書き込む前にHuman Approvalを求めます。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "pattern": "～すぎる",
+      "exampleJa": "確認回数が多すぎるとApproval Fatigueが起きます。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 3,
+      "pattern": "～だけでなく",
+      "exampleJa": "Code生成だけでなく、Compatibility Testも重要です。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 4,
+      "pattern": "～によって",
+      "exampleJa": "Permission LevelによってToolの扱いを変えます。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 5,
+      "pattern": "～につながる",
+      "exampleJa": "Training不足はAI投資の成果不足につながります。",
+      "example": "grammar-example-05.mp3"
     }
   ]
 }

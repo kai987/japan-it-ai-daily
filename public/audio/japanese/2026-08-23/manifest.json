@@ -1,6 +1,6 @@
 {
   "date": "2026-08-23",
-  "generatedAt": "2026-08-27T08:35:54.869Z",
+  "generatedAt": "2026-08-27T09:04:07.645Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,38 @@
       "exampleJa": "曖昧なVLM結果はHuman Reviewへ回します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～ごとに",
+      "exampleJa": "Stageごとに担当Agentを切り替えます。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "pattern": "～場合",
+      "exampleJa": "判定が不安定な場合はREVIEWにします。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 3,
+      "pattern": "～のではなく",
+      "exampleJa": "すべてをLLMに任せるのではなく、StateはEngineで管理します。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 4,
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの難易度に応じてModelを選択します。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 5,
+      "pattern": "～にすぎない",
+      "exampleJa": "Benchmarkは評価指標の一つにすぎません。",
+      "example": "grammar-example-05.mp3"
     }
   ]
 }
