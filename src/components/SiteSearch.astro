@@ -62,6 +62,12 @@ const searchIndexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
     const indexEl = document.getElementById('site-search-index');
     if (!(root instanceof HTMLElement) || !(input instanceof HTMLInputElement) || !(popover instanceof HTMLElement) || !(status instanceof HTMLElement) || !(resultsEl instanceof HTMLElement) || !(indexEl instanceof HTMLScriptElement)) return;
 
+    // On mobile the search is visually placed inside the hamburger popover,
+    // but it remains a sibling of .nav-links in the DOM. Stop search
+    // interactions from bubbling to the global "click outside" menu handler.
+    root.addEventListener('pointerdown', (event) => event.stopPropagation());
+    root.addEventListener('click', (event) => event.stopPropagation());
+
     let items = [];
     try {
       items = JSON.parse(indexEl.textContent || '[]');
