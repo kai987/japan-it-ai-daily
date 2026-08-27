@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
+import { getJapaneseArticleTitle } from '../../lib/articleTitles';
 
 export async function getStaticPaths() {
   const reports = await getCollection('daily');
@@ -15,13 +16,31 @@ const hasNativeJapanese = reportBody.includes('## C.') || report.id === '2026-08
 const supplement = hasNativeJapanese ? undefined : lessons.find((lesson) => lesson.id === report.id);
 const renderedSupplement = supplement ? await render(supplement) : undefined;
 const SupplementContent = renderedSupplement?.Content;
+const topTitles = (report.data.top ?? []).slice(0, 5).map((item:any) => getJapaneseArticleTitle(item));
+let inTopFive = false;
+let topHeadingIndex = 0;
+const normalizedHeadings = headings.map((heading:any) => {
+  if (heading.depth === 2 && heading.text.includes('今日最值得看的 5 篇')) {
+    inTopFive = true;
+    topHeadingIndex = 0;
+    return heading;
+  }
+  if (inTopFive && heading.depth === 3 && topHeadingIndex < topTitles.length) {
+    const number = ['①', '②', '③', '④', '⑤'][topHeadingIndex] ?? '';
+    const normalized = { ...heading, text: `${number} ${topTitles[topHeadingIndex]}` };
+    topHeadingIndex += 1;
+    if (topHeadingIndex >= topTitles.length) inTopFive = false;
+    return normalized;
+  }
+  return heading;
+});
 const tocHeadings = [
-  ...headings,
+  ...normalizedHeadings,
   ...(renderedSupplement?.headings ?? [])
 ].filter((heading:any) => heading.depth <= 3);
 ---
 <BaseLayout title={`${report.data.title} · Japan IT / AI Daily`} description={report.data.description}>
-  <div class="container report-layout">
+  <div class="container report-layout" data-top-titles={JSON.stringify(topTitles)}>
     <article class="prose">
       <div class="eyebrow">{report.data.date.toLocaleDateString('ja-JP')}</div>
       <h1>{report.data.title}</h1>
@@ -40,4 +59,32 @@ const tocHeadings = [
       {tocHeadings.map((heading:any)=><a href={`#${heading.slug}`}>{heading.text}</a>)}
     </aside>
   </div>
+
+  <script is:inline>
+    (() => {
+      const layout = document.querySelector('.report-layout[data-top-titles]');
+      if (!(layout instanceof HTMLElement)) return;
+      let titles = [];
+      try {
+        titles = JSON.parse(layout.dataset.topTitles || '[]');
+      } catch {
+        return;
+      }
+      if (!Array.isArray(titles) || !titles.length) return;
+      const article = layout.querySelector('article.prose');
+      if (!(article instanceof HTMLElement)) return;
+      const headings = Array.from(article.querySelectorAll('h2, h3'));
+      const sectionIndex = headings.findIndex((heading) => heading.tagName === 'H2' && (heading.textContent || '').includes('今日最值得看的 5 篇'));
+      if (sectionIndex < 0) return;
+      let index = 0;
+      for (let i = sectionIndex + 1; i < headings.length && index < titles.length; i += 1) {
+        const heading = headings[i];
+        if (heading.tagName === 'H2') break;
+        if (heading.tagName !== 'H3') continue;
+        const number = ['①', '②', '③', '④', '⑤'][index] || '';
+        heading.textContent = `${number} ${titles[index]}`;
+        index += 1;
+      }
+    })();
+  </script>
 </BaseLayout>
