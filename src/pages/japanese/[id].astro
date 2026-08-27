@@ -224,20 +224,14 @@ const vocabGroups = jlptOrder
       const buttons = Array.from(document.querySelectorAll('.speech-button'));
       if (!buttons.length) return;
 
-      const supported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
-      if (!supported) {
-        buttons.forEach((button) => {
-          if (button instanceof HTMLButtonElement) button.dataset.speechUnavailable = 'true';
-        });
-        return;
-      }
-
-      const synth = window.speechSynthesis;
-      let voices = synth.getVoices();
+      const speechSupported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+      const synth = speechSupported ? window.speechSynthesis : null;
+      let voices = speechSupported ? synth.getVoices() : [];
       let activeButton = null;
+      let activeAudio = null;
 
       const refreshVoices = () => {
-        voices = synth.getVoices();
+        if (synth) voices = synth.getVoices();
       };
 
       const japaneseVoice = () => {
@@ -248,6 +242,12 @@ const vocabGroups = jlptOrder
         return voices.find((voice) => voice.lang.toLowerCase().startsWith('ja')) || null;
       };
 
+      const setActive = (button) => {
+        activeButton = button;
+        button.classList.add('is-speaking');
+        button.setAttribute('aria-pressed', 'true');
+      };
+
       const clearActive = () => {
         if (activeButton instanceof HTMLButtonElement) {
           activeButton.classList.remove('is-speaking');
@@ -256,8 +256,113 @@ const vocabGroups = jlptOrder
         activeButton = null;
       };
 
-      if (typeof synth.addEventListener === 'function') synth.addEventListener('voiceschanged', refreshVoices);
-      else synth.onvoiceschanged = refreshVoices;
+      const stopAll = () => {
+        if (activeAudio instanceof HTMLAudioElement) {
+          activeAudio.pause();
+          activeAudio.currentTime = 0;
+        }
+        activeAudio = null;
+        if (synth) synth.cancel();
+        clearActive();
+      };
+
+      const speakFallback = (button, text) => {
+        if (!speechSupported || !synth) {
+          button.dataset.speechUnavailable = 'true';
+          clearActive();
+          return;
+        }
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = button.dataset.speechKind === 'word' ? 0.82 : 0.9;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+        const voice = japaneseVoice();
+        if (voice) utterance.voice = voice;
+
+        setActive(button);
+        utterance.onend = () => {
+          if (activeButton === button) clearActive();
+        };
+        utterance.onerror = () => {
+          if (activeButton === button) clearActive();
+        };
+        synth.speak(utterance);
+      };
+
+      const playStaticAudio = (button, text, audioUrl) => {
+        const audio = new Audio(audioUrl);
+        activeAudio = audio;
+        setActive(button);
+        let fallbackStarted = false;
+
+        const fallback = () => {
+          if (fallbackStarted || activeAudio !== audio) return;
+          fallbackStarted = true;
+          activeAudio = null;
+          clearActive();
+          speakFallback(button, text);
+        };
+
+        audio.addEventListener('ended', () => {
+          if (activeAudio === audio) {
+            activeAudio = null;
+            clearActive();
+          }
+        }, { once: true });
+        audio.addEventListener('error', fallback, { once: true });
+
+        const result = audio.play();
+        if (result && typeof result.catch === 'function') result.catch(fallback);
+      };
+
+      const manifestUrl = () => {
+        const parts = window.location.pathname.split('/').filter(Boolean);
+        const japaneseIndex = parts.lastIndexOf('japanese');
+        const lessonId = japaneseIndex >= 0 ? parts[japaneseIndex + 1] : '';
+        if (!lessonId) return null;
+        const baseParts = parts.slice(0, japaneseIndex);
+        const prefix = baseParts.length ? `/${baseParts.join('/')}` : '';
+        return new URL(`${prefix}/audio/japanese/${encodeURIComponent(lessonId)}/manifest.json`, window.location.origin);
+      };
+
+      const attachAivisAudio = async () => {
+        const url = manifestUrl();
+        if (!url) return;
+        try {
+          const response = await fetch(url, { cache: 'no-cache' });
+          if (!response.ok) return;
+          const manifest = await response.json();
+          const wordMap = new Map();
+          const exampleMap = new Map();
+
+          for (const item of manifest.items || []) {
+            if (item.reading && item.word) wordMap.set(String(item.reading).trim(), new URL(item.word, url).href);
+            if (item.term && item.word) wordMap.set(String(item.term).trim(), new URL(item.word, url).href);
+            if (item.exampleJa && item.example) exampleMap.set(String(item.exampleJa).trim(), new URL(item.example, url).href);
+          }
+
+          buttons.forEach((button) => {
+            if (!(button instanceof HTMLButtonElement)) return;
+            const text = (button.dataset.speech || '').trim();
+            const audio = button.dataset.speechKind === 'word' ? wordMap.get(text) : exampleMap.get(text);
+            if (!audio) return;
+            button.dataset.audio = audio;
+            button.dataset.audioProvider = 'aivis';
+            const voiceName = manifest.voice?.name || 'AivisSpeech';
+            const styleName = manifest.voice?.style ? ` · ${manifest.voice.style}` : '';
+            button.title = `AivisSpeech · ${voiceName}${styleName}`;
+          });
+        } catch {
+          // No generated audio yet: keep browser TTS as the fallback.
+        }
+      };
+
+      if (synth) {
+        if (typeof synth.addEventListener === 'function') synth.addEventListener('voiceschanged', refreshVoices);
+        else synth.onvoiceschanged = refreshVoices;
+      }
 
       buttons.forEach((button) => {
         if (!(button instanceof HTMLButtonElement)) return;
@@ -266,41 +371,19 @@ const vocabGroups = jlptOrder
           if (!text) return;
 
           if (activeButton === button && button.getAttribute('aria-pressed') === 'true') {
-            synth.cancel();
-            clearActive();
+            stopAll();
             return;
           }
 
-          synth.cancel();
-          clearActive();
-
-          const utterance = new SpeechSynthesisUtterance(text);
-          utterance.lang = 'ja-JP';
-          utterance.rate = button.dataset.speechKind === 'word' ? 0.82 : 0.9;
-          utterance.pitch = 1;
-          utterance.volume = 1;
-          const voice = japaneseVoice();
-          if (voice) utterance.voice = voice;
-
-          activeButton = button;
-          button.classList.add('is-speaking');
-          button.setAttribute('aria-pressed', 'true');
-
-          utterance.onend = () => {
-            if (activeButton === button) clearActive();
-          };
-          utterance.onerror = () => {
-            if (activeButton === button) clearActive();
-          };
-
-          synth.speak(utterance);
+          stopAll();
+          const audioUrl = (button.dataset.audio || '').trim();
+          if (audioUrl) playStaticAudio(button, text, audioUrl);
+          else speakFallback(button, text);
         });
       });
 
-      window.addEventListener('pagehide', () => {
-        synth.cancel();
-        clearActive();
-      });
+      attachAivisAudio();
+      window.addEventListener('pagehide', stopAll);
     })();
   </script>
 </BaseLayout>
