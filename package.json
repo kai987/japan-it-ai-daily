@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "audio:generate": "node scripts/generate-japanese-audio.mjs",
+    "audio:generate:latest": "node scripts/generate-japanese-audio.mjs --latest"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.6",
