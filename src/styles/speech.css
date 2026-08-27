@@ -75,9 +75,62 @@
     height:38px;
     flex-basis:38px;
   }
+
   .speech-button svg{width:18px;height:18px}
-  .study-term-line{gap:9px}
-  .example-label-row{gap:9px}
+
+  /*
+   * The word heading and part-of-speech are two text rows on mobile.
+   * Flatten .study-term-line into the parent grid so the speech button
+   * spans both rows and is visually centered against the whole text block.
+   */
+  .vocabulary-card .study-card-header > div:first-child{
+    display:grid;
+    grid-template-columns:minmax(0,max-content) 38px;
+    grid-template-areas:
+      "term audio"
+      "pos audio";
+    align-items:center;
+    justify-content:start;
+    column-gap:10px;
+    row-gap:4px;
+    max-width:100%;
+  }
+
+  .vocabulary-card .study-term-line{
+    display:contents;
+  }
+
+  .vocabulary-card .study-term-line h3{
+    grid-area:term;
+    margin:0;
+    min-width:0;
+  }
+
+  .vocabulary-card .study-term-line .speech-button{
+    grid-area:audio;
+    align-self:center;
+    justify-self:start;
+    margin:0;
+  }
+
+  .vocabulary-card .study-pos{
+    grid-area:pos;
+    margin:0;
+    line-height:1.4;
+  }
+
+  .example-label-row{
+    min-height:38px;
+    align-items:center;
+    gap:9px;
+  }
+}
+
+@media(max-width:520px){
+  .vocabulary-card .study-card-header > div:first-child{
+    grid-template-columns:minmax(0,max-content) 38px;
+    column-gap:10px;
+  }
 }
 
 @media(prefers-reduced-motion:reduce){
