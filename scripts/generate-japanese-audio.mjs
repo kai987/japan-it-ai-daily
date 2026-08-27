@@ -45,13 +45,17 @@ const parseScalar = (raw = '') => {
   return value;
 };
 
-// Historical lesson files use two YAML indentation styles:
-//   vocabulary:\n- term: ...\n  reading: ...
-// and
-//   vocabulary:\n  - term: ...\n    reading: ...
-// Match fields by relative YAML structure instead of fixed indentation.
 const extractField = (segment, field) => {
   const match = segment.match(new RegExp(`^\\s+${field}:\\s*(.+)$`, 'm'));
+  return match ? parseScalar(match[1]) : '';
+};
+
+const extractFlowField = (segment, field) => {
+  const escaped = field.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const pattern = new RegExp(
+    `(?:^|,\\s*)${escaped}:\\s*(.*?)(?=,\\s*[A-Za-z][A-Za-z0-9]*:\\s*|$)`,
+  );
+  const match = segment.match(pattern);
   return match ? parseScalar(match[1]) : '';
 };
 
@@ -59,19 +63,37 @@ const parseVocabulary = (source) => {
   const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---/m)?.[1] ?? '';
   const vocabularyBlock = frontmatter.match(/(?:^|\n)vocabulary:\s*\n([\s\S]*?)(?=\ngrammar:\s*\n)/)?.[1] ?? '';
 
-  // Accept both top-level list items (`- term:`) and indented list items (`  - term:`).
-  const itemStarts = Array.from(vocabularyBlock.matchAll(/^\s*-\s+term:\s*(.+)$/gm));
+  // Historical files use three YAML layouts:
+  // 1) - term: ... with 2-space child indentation
+  // 2)   - term: ... with 4-space child indentation
+  // 3) - {term: ..., reading: ..., exampleJa: ...} flow mappings
+  const flowItems = Array.from(vocabularyBlock.matchAll(/^\s*-\s*\{(.+)\}\s*$/gm));
+  if (flowItems.length) {
+    return flowItems
+      .map((match) => {
+        const segment = match[1] ?? '';
+        return {
+          term: extractFlowField(segment, 'term'),
+          reading: extractFlowField(segment, 'reading'),
+          exampleJa: extractFlowField(segment, 'exampleJa'),
+        };
+      })
+      .filter((item) => item.term && item.exampleJa);
+  }
 
-  return itemStarts.map((match, index) => {
-    const start = match.index ?? 0;
-    const end = itemStarts[index + 1]?.index ?? vocabularyBlock.length;
-    const segment = vocabularyBlock.slice(start, end);
-    return {
-      term: parseScalar(match[1]),
-      reading: extractField(segment, 'reading'),
-      exampleJa: extractField(segment, 'exampleJa'),
-    };
-  }).filter((item) => item.term && item.exampleJa);
+  const itemStarts = Array.from(vocabularyBlock.matchAll(/^\s*-\s+term:\s*(.+)$/gm));
+  return itemStarts
+    .map((match, index) => {
+      const start = match.index ?? 0;
+      const end = itemStarts[index + 1]?.index ?? vocabularyBlock.length;
+      const segment = vocabularyBlock.slice(start, end);
+      return {
+        term: parseScalar(match[1]),
+        reading: extractField(segment, 'reading'),
+        exampleJa: extractField(segment, 'exampleJa'),
+      };
+    })
+    .filter((item) => item.term && item.exampleJa);
 };
 
 const allDates = () => readdirSync(contentDir)
