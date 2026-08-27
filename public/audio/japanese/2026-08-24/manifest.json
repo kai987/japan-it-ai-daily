@@ -1,0 +1,105 @@
+{
+  "date": "2026-08-24",
+  "generatedAt": "2026-08-27T08:36:19.110Z",
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "送る",
+      "reading": "おくる",
+      "exampleJa": "AgentがSlackへMessageを送る前に確認します。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    },
+    {
+      "index": 2,
+      "term": "共有",
+      "reading": "きょうゆう",
+      "exampleJa": "Team DiscussionをAgent Contextとして共有します。",
+      "word": "vocab-02.mp3",
+      "example": "example-02.mp3"
+    },
+    {
+      "index": 3,
+      "term": "許可",
+      "reading": "きょか",
+      "exampleJa": "Read-only Toolは自動で許可します。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 4,
+      "term": "禁止",
+      "reading": "きんし",
+      "exampleJa": "危険なScheduled Actionは完全に禁止します。",
+      "word": "vocab-04.mp3",
+      "example": "example-04.mp3"
+    },
+    {
+      "index": 5,
+      "term": "移植",
+      "reading": "いしょく",
+      "exampleJa": "RuntimeをZigからRustへ移植します。",
+      "word": "vocab-05.mp3",
+      "example": "example-05.mp3"
+    },
+    {
+      "index": 6,
+      "term": "計測",
+      "reading": "けいそく",
+      "exampleJa": "Provider側のUsageを継続的に計測します。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 7,
+      "term": "承認",
+      "reading": "しょうにん",
+      "exampleJa": "高Risk Actionだけ人間の承認を求めます。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 8,
+      "term": "疲労",
+      "reading": "ひろう",
+      "exampleJa": "確認が多すぎると承認疲労が起きます。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 9,
+      "term": "逸脱",
+      "reading": "いつだつ",
+      "exampleJa": "Agentが組織Policyから逸脱しないように制御します。",
+      "word": "vocab-09.mp3",
+      "example": "example-09.mp3"
+    },
+    {
+      "index": 10,
+      "term": "定着",
+      "reading": "ていちゃく",
+      "exampleJa": "AI Toolを業務に定着させるにはTrainingが必要です。",
+      "word": "vocab-10.mp3",
+      "example": "example-10.mp3"
+    }
+  ]
+}

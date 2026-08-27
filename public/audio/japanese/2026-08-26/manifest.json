@@ -1,0 +1,105 @@
+{
+  "date": "2026-08-26",
+  "generatedAt": "2026-08-27T08:36:45.216Z",
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "管理",
+      "reading": "かんり",
+      "exampleJa": "企業では、AIエージェントが利用できるModelとToolを一元的に管理する必要があります。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    },
+    {
+      "index": 2,
+      "term": "確認",
+      "reading": "かくにん",
+      "exampleJa": "Security Advisoryが公開されたら、まずProductionで利用中のVersionを確認します。",
+      "word": "vocab-02.mp3",
+      "example": "example-02.mp3"
+    },
+    {
+      "index": 3,
+      "term": "制御",
+      "reading": "せいぎょ",
+      "exampleJa": "MCP Toolへのアクセスは、Agent側ではなくRuntimeのPolicyで制御します。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 4,
+      "term": "検証",
+      "reading": "けんしょう",
+      "exampleJa": "Patch適用後は、Regression TestとE2E Testで既存機能への影響を検証します。",
+      "word": "vocab-04.mp3",
+      "example": "example-04.mp3"
+    },
+    {
+      "index": 5,
+      "term": "運用",
+      "reading": "うんよう",
+      "exampleJa": "AI Agentを本番運用する場合、監査ログとCost Monitoringが必要です。",
+      "word": "vocab-05.mp3",
+      "example": "example-05.mp3"
+    },
+    {
+      "index": 6,
+      "term": "影響",
+      "reading": "えいきょう",
+      "exampleJa": "脆弱性が自社サービスに与える影響を、Asset Inventoryと照合して判断します。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 7,
+      "term": "把握",
+      "reading": "はあく",
+      "exampleJa": "MCP Serverを追加する前に、Tool Definitionが消費するToken量を把握しておくことが重要です。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 8,
+      "term": "考慮",
+      "reading": "こうりょ",
+      "exampleJa": "Model選定では、精度だけでなく、Cost、Latency、Securityも考慮する必要があります。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 9,
+      "term": "連携",
+      "reading": "れんけい",
+      "exampleJa": "SBOMと脆弱性情報を連携することで、自社に影響するCVEを優先的に確認できます。",
+      "word": "vocab-09.mp3",
+      "example": "example-09.mp3"
+    },
+    {
+      "index": 10,
+      "term": "絞り込む",
+      "reading": "しぼりこむ",
+      "exampleJa": "CVSSだけでなくAsset情報も使い、実際に対応が必要な脆弱性を絞り込みます。",
+      "word": "vocab-10.mp3",
+      "example": "example-10.mp3"
+    }
+  ]
+}

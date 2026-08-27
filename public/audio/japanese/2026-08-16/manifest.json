@@ -1,0 +1,105 @@
+{
+  "date": "2026-08-16",
+  "generatedAt": "2026-08-27T08:33:07.914Z",
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "共通",
+      "reading": "きょうつう",
+      "exampleJa": "Repository全体の共通RuleをRootに置きます。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    },
+    {
+      "index": 2,
+      "term": "変更",
+      "reading": "へんこう",
+      "exampleJa": "Agentごとに作業Directoryを変更します。",
+      "word": "vocab-02.mp3",
+      "example": "example-02.mp3"
+    },
+    {
+      "index": 3,
+      "term": "範囲",
+      "reading": "はんい",
+      "exampleJa": "Contextの適用範囲をDirectory単位で分けます。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 4,
+      "term": "維持",
+      "reading": "いじ",
+      "exampleJa": "自動テストで品質を維持します。",
+      "word": "vocab-04.mp3",
+      "example": "example-04.mp3"
+    },
+    {
+      "index": 5,
+      "term": "防ぐ",
+      "reading": "ふせぐ",
+      "exampleJa": "worktreeで変更の競合を防ぎます。",
+      "word": "vocab-05.mp3",
+      "example": "example-05.mp3"
+    },
+    {
+      "index": 6,
+      "term": "統一",
+      "reading": "とういつ",
+      "exampleJa": "FormatterでCode Styleを統一します。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 7,
+      "term": "適用",
+      "reading": "てきよう",
+      "exampleJa": "Frontend固有のRuleだけを適用します。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 8,
+      "term": "競合",
+      "reading": "きょうごう",
+      "exampleJa": "複数SessionのFile変更が競合する可能性があります。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 9,
+      "term": "網羅",
+      "reading": "もうら",
+      "exampleJa": "Evaluationでは長時間Taskも網羅します。",
+      "word": "vocab-09.mp3",
+      "example": "example-09.mp3"
+    },
+    {
+      "index": 10,
+      "term": "伴う",
+      "reading": "ともなう",
+      "exampleJa": "並列実行には調整コストが伴います。",
+      "word": "vocab-10.mp3",
+      "example": "example-10.mp3"
+    }
+  ]
+}

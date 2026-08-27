@@ -1,0 +1,105 @@
+{
+  "date": "2026-08-23",
+  "generatedAt": "2026-08-27T08:35:54.869Z",
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "進む",
+      "reading": "すすむ",
+      "exampleJa": "WorkflowをStageごとに順番に進めます。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    },
+    {
+      "index": 2,
+      "term": "比べる",
+      "reading": "くらべる",
+      "exampleJa": "Strong ModelとWeak Modelの結果を比べます。",
+      "word": "vocab-02.mp3",
+      "example": "example-02.mp3"
+    },
+    {
+      "index": 3,
+      "term": "状態",
+      "reading": "じょうたい",
+      "exampleJa": "Workflow Engineが現在の状態を管理します。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 4,
+      "term": "遷移",
+      "reading": "せんい",
+      "exampleJa": "Approval後に次のStageへ状態遷移します。",
+      "word": "vocab-04.mp3",
+      "example": "example-04.mp3"
+    },
+    {
+      "index": 5,
+      "term": "予算",
+      "reading": "よさん",
+      "exampleJa": "Project単位でAI利用予算を設定します。",
+      "word": "vocab-05.mp3",
+      "example": "example-05.mp3"
+    },
+    {
+      "index": 6,
+      "term": "安定",
+      "reading": "あんてい",
+      "exampleJa": "判定が安定しない場合はREVIEWへ送ります。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 7,
+      "term": "決定論的",
+      "reading": "けっていろんてき",
+      "exampleJa": "重要なState Transitionは決定論的に制御します。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 8,
+      "term": "汎化",
+      "reading": "はんか",
+      "exampleJa": "未知データに対するRouterの汎化性能を評価します。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 9,
+      "term": "委譲",
+      "reading": "いじょう",
+      "exampleJa": "単純Taskを低コストModelへ委譲します。",
+      "word": "vocab-09.mp3",
+      "example": "example-09.mp3"
+    },
+    {
+      "index": 10,
+      "term": "曖昧",
+      "reading": "あいまい",
+      "exampleJa": "曖昧なVLM結果はHuman Reviewへ回します。",
+      "word": "vocab-10.mp3",
+      "example": "example-10.mp3"
+    }
+  ]
+}

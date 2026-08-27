@@ -1,0 +1,105 @@
+{
+  "date": "2026-08-22",
+  "generatedAt": "2026-08-27T08:35:27.692Z",
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "公開",
+      "reading": "こうかい",
+      "exampleJa": "Security Advisoryが公開されたら内容を確認します。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    },
+    {
+      "index": 2,
+      "term": "対応",
+      "reading": "たいおう",
+      "exampleJa": "Patch公開後に速やかに対応します。",
+      "word": "vocab-02.mp3",
+      "example": "example-02.mp3"
+    },
+    {
+      "index": 3,
+      "term": "影響",
+      "reading": "えいきょう",
+      "exampleJa": "Affected Versionの影響範囲を確認します。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 4,
+      "term": "防ぐ",
+      "reading": "ふせぐ",
+      "exampleJa": "Sandboxで危険なTool実行を防ぎます。",
+      "word": "vocab-04.mp3",
+      "example": "example-04.mp3"
+    },
+    {
+      "index": 5,
+      "term": "限定",
+      "reading": "げんてい",
+      "exampleJa": "検索対象を許可済みDomainに限定します。",
+      "word": "vocab-05.mp3",
+      "example": "example-05.mp3"
+    },
+    {
+      "index": 6,
+      "term": "保存",
+      "reading": "ほぞん",
+      "exampleJa": "ローカルへ保存しない要件を実挙動で確認します。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 7,
+      "term": "偽装",
+      "reading": "ぎそう",
+      "exampleJa": "Tool名やdescriptionが偽装される可能性があります。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 8,
+      "term": "適合",
+      "reading": "てきごう",
+      "exampleJa": "Compliance Requirementへの適合をTestします。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 9,
+      "term": "挙動",
+      "reading": "きょどう",
+      "exampleJa": "CLIの実際の挙動をVersionごとに検証します。",
+      "word": "vocab-09.mp3",
+      "example": "example-09.mp3"
+    },
+    {
+      "index": 10,
+      "term": "供給",
+      "reading": "きょうきゅう",
+      "exampleJa": "PluginのSupply Chain Riskを管理します。",
+      "word": "vocab-10.mp3",
+      "example": "example-10.mp3"
+    }
+  ]
+}

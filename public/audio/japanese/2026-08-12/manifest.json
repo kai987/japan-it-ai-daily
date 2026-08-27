@@ -1,0 +1,105 @@
+{
+  "date": "2026-08-12",
+  "generatedAt": "2026-08-27T08:32:26.545Z",
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "管理",
+      "reading": "かんり",
+      "exampleJa": "AIサービスの利用量をチーム単位で管理します。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    },
+    {
+      "index": 2,
+      "term": "確認",
+      "reading": "かくにん",
+      "exampleJa": "Agentの実行結果をログで確認します。",
+      "word": "vocab-02.mp3",
+      "example": "example-02.mp3"
+    },
+    {
+      "index": 3,
+      "term": "検証",
+      "reading": "けんしょう",
+      "exampleJa": "検索結果の品質を実データで検証します。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 4,
+      "term": "運用",
+      "reading": "うんよう",
+      "exampleJa": "本番運用では監査ログを必ず保存します。",
+      "word": "vocab-04.mp3",
+      "example": "example-04.mp3"
+    },
+    {
+      "index": 5,
+      "term": "削減",
+      "reading": "さくげん",
+      "exampleJa": "不要なContextを減らしてToken消費を削減します。",
+      "word": "vocab-05.mp3",
+      "example": "example-05.mp3"
+    },
+    {
+      "index": 6,
+      "term": "処理",
+      "reading": "しょり",
+      "exampleJa": "Local Modelで低レイテンシな処理を行います。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 7,
+      "term": "把握",
+      "reading": "はあく",
+      "exampleJa": "どのToolが実行されたかを正確に把握します。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 8,
+      "term": "考慮",
+      "reading": "こうりょ",
+      "exampleJa": "品質だけでなくコストも考慮してModelを選びます。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 9,
+      "term": "連携",
+      "reading": "れんけい",
+      "exampleJa": "MCPを通じて外部Toolと安全に連携します。",
+      "word": "vocab-09.mp3",
+      "example": "example-09.mp3"
+    },
+    {
+      "index": 10,
+      "term": "依存",
+      "reading": "いぞん",
+      "exampleJa": "一つのCloud Modelだけに依存しない構成を検討します。",
+      "word": "vocab-10.mp3",
+      "example": "example-10.mp3"
+    }
+  ]
+}

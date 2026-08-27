@@ -1,0 +1,105 @@
+{
+  "date": "2026-08-15",
+  "generatedAt": "2026-08-27T08:32:46.846Z",
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "利用",
+      "reading": "りよう",
+      "exampleJa": "外部Toolを安全に利用します。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    },
+    {
+      "index": 2,
+      "term": "必要",
+      "reading": "ひつよう",
+      "exampleJa": "本番Agentには監査機能が必要です。",
+      "word": "vocab-02.mp3",
+      "example": "example-02.mp3"
+    },
+    {
+      "index": 3,
+      "term": "実行",
+      "reading": "じっこう",
+      "exampleJa": "CommandをSandbox内で実行します。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 4,
+      "term": "防止",
+      "reading": "ぼうし",
+      "exampleJa": "権限を制限して被害の拡大を防止します。",
+      "word": "vocab-04.mp3",
+      "example": "example-04.mp3"
+    },
+    {
+      "index": 5,
+      "term": "評価",
+      "reading": "ひょうか",
+      "exampleJa": "Benchmarkだけでなく実務Taskでも評価します。",
+      "word": "vocab-05.mp3",
+      "example": "example-05.mp3"
+    },
+    {
+      "index": 6,
+      "term": "分割",
+      "reading": "ぶんかつ",
+      "exampleJa": "大きなTaskをSub-agent向けに分割します。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 7,
+      "term": "追跡",
+      "reading": "ついせき",
+      "exampleJa": "AgentのTool Callを追跡します。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 8,
+      "term": "想定",
+      "reading": "そうてい",
+      "exampleJa": "Prompt Injectionを想定して設計します。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 9,
+      "term": "監視",
+      "reading": "かんし",
+      "exampleJa": "Long-running Agentを継続的に監視します。",
+      "word": "vocab-09.mp3",
+      "example": "example-09.mp3"
+    },
+    {
+      "index": 10,
+      "term": "委ねる",
+      "reading": "ゆだねる",
+      "exampleJa": "重要な権限判断をLLMだけに委ねません。",
+      "word": "vocab-10.mp3",
+      "example": "example-10.mp3"
+    }
+  ]
+}

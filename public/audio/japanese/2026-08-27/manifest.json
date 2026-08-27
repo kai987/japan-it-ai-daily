@@ -1,0 +1,105 @@
+{
+  "date": "2026-08-27",
+  "generatedAt": "2026-08-27T08:36:45.217Z",
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "必要",
+      "reading": "ひつよう",
+      "exampleJa": "Agent Runtimeでは、必要な権限だけを実行時に付与する設計が重要です。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    },
+    {
+      "index": 2,
+      "term": "防ぐ",
+      "reading": "ふせぐ",
+      "exampleJa": "Workflowを公開する前に構造を検証し、実行時エラーを防ぎます。",
+      "word": "vocab-02.mp3",
+      "example": "example-02.mp3"
+    },
+    {
+      "index": 3,
+      "term": "任せる",
+      "reading": "まかせる",
+      "exampleJa": "実装はCoding Agentに任せても、Schemaの最終レビューは人が行います。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 4,
+      "term": "継続",
+      "reading": "けいぞく",
+      "exampleJa": "Agentの利用状況を計測し、Guardrailを継続的に改善します。",
+      "word": "vocab-04.mp3",
+      "example": "example-04.mp3"
+    },
+    {
+      "index": 5,
+      "term": "見通し",
+      "reading": "みとおし",
+      "exampleJa": "Workflowをグラフで可視化すると、処理全体の見通しが立てやすくなります。",
+      "word": "vocab-05.mp3",
+      "example": "example-05.mp3"
+    },
+    {
+      "index": 6,
+      "term": "両立",
+      "reading": "りょうりつ",
+      "exampleJa": "No-codeの使いやすさと、本番Runtimeの安全性を両立する必要があります。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 7,
+      "term": "担う",
+      "reading": "になう",
+      "exampleJa": "Agentが実装を支援し、人間が設計方針と最終確認を担います。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 8,
+      "term": "統制",
+      "reading": "とうせい",
+      "exampleJa": "GitHub Enterpriseでは、AgentやMCPの利用可否を組織単位で統制できます。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 9,
+      "term": "網羅",
+      "reading": "もうら",
+      "exampleJa": "APIが返すエラーを型として網羅的に定義すると、対応漏れを減らせます。",
+      "word": "vocab-09.mp3",
+      "example": "example-09.mp3"
+    },
+    {
+      "index": 10,
+      "term": "促す",
+      "reading": "うながす",
+      "exampleJa": "共通のQA Agent Platformを整備し、組織全体でAI活用を促します。",
+      "word": "vocab-10.mp3",
+      "example": "example-10.mp3"
+    }
+  ]
+}

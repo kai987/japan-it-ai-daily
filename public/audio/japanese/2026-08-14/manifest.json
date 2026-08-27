@@ -1,0 +1,105 @@
+{
+  "date": "2026-08-14",
+  "generatedAt": "2026-08-27T08:32:26.553Z",
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "検索",
+      "reading": "けんさく",
+      "exampleJa": "MCP経由で過去の技術ログを検索します。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    },
+    {
+      "index": 2,
+      "term": "確認",
+      "reading": "かくにん",
+      "exampleJa": "自動生成されたIAM Roleの内容を確認します。",
+      "word": "vocab-02.mp3",
+      "example": "example-02.mp3"
+    },
+    {
+      "index": 3,
+      "term": "検証",
+      "reading": "けんしょう",
+      "exampleJa": "AIが生成したコードをType Checkで検証します。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 4,
+      "term": "適切",
+      "reading": "てきせつ",
+      "exampleJa": "Taskに適切な権限だけを与えます。",
+      "word": "vocab-04.mp3",
+      "example": "example-04.mp3"
+    },
+    {
+      "index": 5,
+      "term": "導入",
+      "reading": "どうにゅう",
+      "exampleJa": "MCPを社内Knowledge Searchへ導入します。",
+      "word": "vocab-05.mp3",
+      "example": "example-05.mp3"
+    },
+    {
+      "index": 6,
+      "term": "制限",
+      "reading": "せいげん",
+      "exampleJa": "Agentが参照できるDirectoryを制限します。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 7,
+      "term": "絞り込む",
+      "reading": "しぼりこむ",
+      "exampleJa": "検索結果を関連性の高い情報に絞り込みます。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 8,
+      "term": "考慮",
+      "reading": "こうりょ",
+      "exampleJa": "便利さだけでなくSecurityも考慮します。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 9,
+      "term": "連携",
+      "reading": "れんけい",
+      "exampleJa": "MCP Serverと社内Knowledgeを連携します。",
+      "word": "vocab-09.mp3",
+      "example": "example-09.mp3"
+    },
+    {
+      "index": 10,
+      "term": "依存",
+      "reading": "いぞん",
+      "exampleJa": "Human Reviewだけに依存しない検証環境を作ります。",
+      "word": "vocab-10.mp3",
+      "example": "example-10.mp3"
+    }
+  ]
+}
