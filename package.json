@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "audio:generate": "node scripts/generate-japanese-audio.mjs",
-    "audio:generate:latest": "node scripts/generate-japanese-audio.mjs --latest"
+    "audio:generate:latest": "node scripts/generate-japanese-audio.mjs --latest",
+    "audio:generate:all": "node scripts/generate-japanese-audio.mjs --all --force"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.6",
