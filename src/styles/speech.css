@@ -79,17 +79,17 @@
   .speech-button svg{width:18px;height:18px}
 
   /*
-   * The word heading and part-of-speech are two text rows on mobile.
-   * Flatten .study-term-line into the parent grid so the speech button
-   * spans both rows and is visually centered against the whole text block.
+   * On mobile, align the vocabulary speech control with the h3 title row only.
+   * The part-of-speech stays on its own second row and does not affect the
+   * vertical position of the audio button.
    */
   .vocabulary-card .study-card-header > div:first-child{
     display:grid;
     grid-template-columns:minmax(0,max-content) 38px;
     grid-template-areas:
       "term audio"
-      "pos audio";
-    align-items:center;
+      "pos .";
+    align-items:start;
     justify-content:start;
     column-gap:10px;
     row-gap:4px;
@@ -102,6 +102,7 @@
 
   .vocabulary-card .study-term-line h3{
     grid-area:term;
+    align-self:center;
     margin:0;
     min-width:0;
   }
@@ -115,6 +116,7 @@
 
   .vocabulary-card .study-pos{
     grid-area:pos;
+    align-self:start;
     margin:0;
     line-height:1.4;
   }
