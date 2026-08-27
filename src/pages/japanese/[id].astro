@@ -174,7 +174,26 @@ const vocabGroups = jlptOrder
                     <p>{item.usageZh}</p>
                   </div>
                   <div class="example-box">
-                    <span class="study-label">IT / AI 例句</span>
+                    <div class="example-label-row">
+                      <span class="study-label">IT / AI 例句</span>
+                      <button
+                        class="speech-button"
+                        type="button"
+                        data-speech={item.exampleJa}
+                        data-speech-kind="grammar-example"
+                        aria-label="语法例文を読み上げる"
+                        aria-pressed="false"
+                        title="语法例句朗读"
+                      >
+                        <svg class="speech-icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M11 5 7 9H4v6h3l4 4V5Z"></path>
+                          <path d="M15 9.5a4 4 0 0 1 0 5M17.5 7a7.3 7.3 0 0 1 0 10"></path>
+                        </svg>
+                        <svg class="speech-icon-stop" viewBox="0 0 24 24" aria-hidden="true">
+                          <rect x="7" y="7" width="10" height="10" rx="1"></rect>
+                        </svg>
+                      </button>
+                    </div>
                     <p lang="ja">{item.exampleJa}</p>
                     {item.exampleZh && <small>{item.exampleZh}</small>}
                   </div>
@@ -336,17 +355,26 @@ const vocabGroups = jlptOrder
           const manifest = await response.json();
           const wordMap = new Map();
           const exampleMap = new Map();
+          const grammarExampleMap = new Map();
 
           for (const item of manifest.items || []) {
             if (item.reading && item.word) wordMap.set(String(item.reading).trim(), new URL(item.word, url).href);
             if (item.term && item.word) wordMap.set(String(item.term).trim(), new URL(item.word, url).href);
             if (item.exampleJa && item.example) exampleMap.set(String(item.exampleJa).trim(), new URL(item.example, url).href);
           }
+          for (const item of manifest.grammar || []) {
+            if (item.exampleJa && item.example) grammarExampleMap.set(String(item.exampleJa).trim(), new URL(item.example, url).href);
+          }
 
           buttons.forEach((button) => {
             if (!(button instanceof HTMLButtonElement)) return;
             const text = (button.dataset.speech || '').trim();
-            const audio = button.dataset.speechKind === 'word' ? wordMap.get(text) : exampleMap.get(text);
+            const kind = button.dataset.speechKind || '';
+            const audio = kind === 'word'
+              ? wordMap.get(text)
+              : kind === 'grammar-example'
+                ? grammarExampleMap.get(text)
+                : exampleMap.get(text);
             if (!audio) return;
             button.dataset.audio = audio;
             button.dataset.audioProvider = 'aivis';
