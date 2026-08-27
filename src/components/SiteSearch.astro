@@ -1,0 +1,289 @@
+---
+import { getCollection } from 'astro:content';
+import '../styles/search.css';
+
+const base = import.meta.env.BASE_URL;
+const reports = (await getCollection('daily')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const searchIndex = reports.flatMap((report) => {
+  const date = report.data.date.toISOString().slice(0, 10);
+  const reportTopics = report.data.topics ?? [];
+  return (report.data.top ?? []).map((item:any, index:number) => ({
+    id: `${report.id}-${index + 1}`,
+    title: item.title ?? '',
+    source: item.source ?? '',
+    topic: item.topic ?? '',
+    why: item.why ?? '',
+    date,
+    href: item.url || `${base}daily/${report.id}/`,
+    external: Boolean(item.url),
+    reportTitle: report.data.title ?? '',
+    reportDescription: report.data.description ?? '',
+    reportTopics,
+  }));
+});
+const searchIndexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
+---
+
+<div class="site-search" data-site-search>
+  <div class="site-search-field">
+    <svg class="site-search-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="6.5"></circle>
+      <path d="m16 16 4 4"></path>
+    </svg>
+    <input
+      class="site-search-input"
+      type="search"
+      inputmode="search"
+      placeholder="記事を検索…"
+      aria-label="記事を検索"
+      aria-autocomplete="list"
+      aria-expanded="false"
+      aria-controls="site-search-results"
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <kbd class="site-search-shortcut" aria-hidden="true">⌘K</kbd>
+  </div>
+  <div class="site-search-popover" hidden>
+    <div class="site-search-status">最近の記事</div>
+    <div class="site-search-results" id="site-search-results" role="listbox" aria-label="検索結果"></div>
+  </div>
+</div>
+
+<script id="site-search-index" type="application/json" set:html={searchIndexJson} is:inline></script>
+
+<script is:inline>
+  (() => {
+    const root = document.querySelector('[data-site-search]');
+    const input = root?.querySelector('.site-search-input');
+    const popover = root?.querySelector('.site-search-popover');
+    const status = root?.querySelector('.site-search-status');
+    const resultsEl = root?.querySelector('.site-search-results');
+    const indexEl = document.getElementById('site-search-index');
+    if (!(root instanceof HTMLElement) || !(input instanceof HTMLInputElement) || !(popover instanceof HTMLElement) || !(status instanceof HTMLElement) || !(resultsEl instanceof HTMLElement) || !(indexEl instanceof HTMLScriptElement)) return;
+
+    let items = [];
+    try {
+      items = JSON.parse(indexEl.textContent || '[]');
+    } catch {
+      items = [];
+    }
+
+    let currentResults = [];
+    let activeIndex = -1;
+
+    const normalize = (value) => String(value ?? '')
+      .normalize('NFKC')
+      .toLocaleLowerCase('ja-JP')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    const compact = (value) => normalize(value).replace(/[\s\p{P}\p{S}]+/gu, '');
+
+    const levenshtein = (a, b) => {
+      if (a === b) return 0;
+      if (!a.length) return b.length;
+      if (!b.length) return a.length;
+      let previous = Array.from({ length: b.length + 1 }, (_, i) => i);
+      for (let i = 1; i <= a.length; i += 1) {
+        const current = [i];
+        for (let j = 1; j <= b.length; j += 1) {
+          const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+          current[j] = Math.min(
+            current[j - 1] + 1,
+            previous[j] + 1,
+            previous[j - 1] + cost,
+          );
+        }
+        previous = current;
+      }
+      return previous[b.length];
+    };
+
+    const editSimilarity = (query, text) => {
+      if (query.length < 3 || text.length < 3) return 0;
+      const qLength = query.length;
+      if (text.length <= qLength + 2) {
+        return 1 - levenshtein(query, text) / Math.max(qLength, text.length);
+      }
+      let best = 0;
+      const lengths = [Math.max(2, qLength - 1), qLength, qLength + 1];
+      for (const length of lengths) {
+        for (let start = 0; start <= text.length - length; start += 1) {
+          const sample = text.slice(start, start + length);
+          const similarity = 1 - levenshtein(query, sample) / Math.max(qLength, sample.length);
+          if (similarity > best) best = similarity;
+          if (best >= .92) return best;
+        }
+      }
+      return best;
+    };
+
+    const subsequenceScore = (query, text) => {
+      let cursor = 0;
+      let first = -1;
+      let last = -1;
+      for (const char of query) {
+        const found = text.indexOf(char, cursor);
+        if (found < 0) return 0;
+        if (first < 0) first = found;
+        last = found;
+        cursor = found + 1;
+      }
+      const span = last - first + 1;
+      const extra = Math.max(0, span - query.length);
+      const startPenalty = Math.min(first, 20) * .008;
+      const gapPenalty = Math.min(extra, 20) * .018;
+      return Math.max(0, .72 - startPenalty - gapPenalty);
+    };
+
+    const fieldScore = (query, text) => {
+      const q = compact(query);
+      const t = compact(text);
+      if (!q || !t) return 0;
+      if (q === t) return 1;
+      const found = t.indexOf(q);
+      if (found >= 0) return Math.max(.78, .97 - Math.min(found, 40) * .006);
+      const subsequence = subsequenceScore(q, t);
+      const edit = editSimilarity(q, t);
+      const typoScore = edit >= .62 ? edit * .82 : 0;
+      return Math.max(subsequence, typoScore);
+    };
+
+    const itemScore = (item, query) => {
+      const fields = [
+        [item.title, 5],
+        [item.topic, 2.2],
+        [item.source, 1.5],
+        [item.why, 1.15],
+        [item.reportTitle, .65],
+        [item.reportDescription, .55],
+        [(item.reportTopics || []).join(' '), .9],
+      ];
+      return fields.reduce((total, [value, weight]) => total + fieldScore(query, value) * weight, 0);
+    };
+
+    const search = (query) => {
+      const normalized = normalize(query);
+      if (!normalized) return items.slice(0, 6);
+      return items
+        .map((item) => ({ item, score: itemScore(item, normalized) }))
+        .filter(({ score }) => score >= .72)
+        .sort((a, b) => b.score - a.score || String(b.item.date).localeCompare(String(a.item.date)))
+        .slice(0, 8)
+        .map(({ item }) => item);
+    };
+
+    const close = () => {
+      popover.hidden = true;
+      input.setAttribute('aria-expanded', 'false');
+      input.removeAttribute('aria-activedescendant');
+      activeIndex = -1;
+    };
+
+    const open = () => {
+      popover.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+    };
+
+    const syncActive = () => {
+      const links = Array.from(resultsEl.querySelectorAll('.site-search-result'));
+      links.forEach((link, index) => {
+        const active = index === activeIndex;
+        link.classList.toggle('is-active', active);
+        link.setAttribute('aria-selected', String(active));
+      });
+      const active = links[activeIndex];
+      if (active instanceof HTMLElement) {
+        input.setAttribute('aria-activedescendant', active.id);
+        active.scrollIntoView({ block: 'nearest' });
+      } else {
+        input.removeAttribute('aria-activedescendant');
+      }
+    };
+
+    const render = () => {
+      const query = input.value.trim();
+      currentResults = search(query);
+      activeIndex = -1;
+      resultsEl.replaceChildren();
+      status.textContent = query ? `${currentResults.length}件の候補` : '最近の記事';
+
+      if (!currentResults.length) {
+        const empty = document.createElement('div');
+        empty.className = 'site-search-empty';
+        empty.textContent = '一致する記事が見つかりません';
+        resultsEl.appendChild(empty);
+        open();
+        return;
+      }
+
+      currentResults.forEach((item, index) => {
+        const link = document.createElement('a');
+        link.className = 'site-search-result';
+        link.id = `site-search-option-${index}`;
+        link.setAttribute('role', 'option');
+        link.setAttribute('aria-selected', 'false');
+        link.href = item.href;
+        if (item.external) {
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+        }
+
+        const title = document.createElement('span');
+        title.className = 'site-search-result-title';
+        title.textContent = item.title;
+
+        const meta = document.createElement('span');
+        meta.className = 'site-search-result-meta';
+        const pieces = [item.date, item.source, item.topic].filter(Boolean);
+        meta.textContent = `${pieces.join(' · ')}${item.external ? ' · 原文 ↗' : ''}`;
+
+        link.append(title, meta);
+        link.addEventListener('pointerenter', () => {
+          activeIndex = index;
+          syncActive();
+        });
+        link.addEventListener('click', close);
+        resultsEl.appendChild(link);
+      });
+      open();
+    };
+
+    input.addEventListener('input', render);
+    input.addEventListener('focus', render);
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        if (popover.hidden) render();
+        activeIndex = currentResults.length ? (activeIndex + 1) % currentResults.length : -1;
+        syncActive();
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        if (popover.hidden) render();
+        activeIndex = currentResults.length ? (activeIndex <= 0 ? currentResults.length - 1 : activeIndex - 1) : -1;
+        syncActive();
+      } else if (event.key === 'Enter' && currentResults.length) {
+        event.preventDefault();
+        const target = resultsEl.querySelectorAll('.site-search-result')[activeIndex >= 0 ? activeIndex : 0];
+        if (target instanceof HTMLAnchorElement) target.click();
+      } else if (event.key === 'Escape') {
+        close();
+        input.blur();
+      }
+    });
+
+    document.addEventListener('pointerdown', (event) => {
+      const target = event.target;
+      if (target instanceof Node && !root.contains(target)) close();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        input.focus();
+        input.select();
+      }
+    });
+  })();
+</script>
