@@ -150,8 +150,81 @@
   .nav-links{gap:18px}
 }
 
+/* Keep the desktop header compact on narrow tablet widths. */
 @media(max-width:900px){
   .site-search{display:none}
+}
+
+/*
+ * Mobile: the search field becomes the first panel of the hamburger menu.
+ * It stays out of the 60px header until the menu is opened, so the logo,
+ * theme toggle and hamburger button keep their normal spacing.
+ */
+@media(max-width:800px){
+  html.nav-open .site-search{
+    display:block;
+    position:absolute;
+    top:54px;
+    left:0;
+    right:0;
+    z-index:46;
+    width:100%;
+    max-width:none;
+    min-width:0;
+    margin:0;
+    padding:8px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:var(--surface-elevated);
+    box-shadow:0 14px 36px rgba(15,20,35,.16);
+  }
+
+  html.nav-open .nav-links{
+    top:108px;
+  }
+
+  .site-search-field{
+    height:42px;
+    border-radius:10px;
+    box-shadow:none;
+  }
+
+  .site-search-shortcut{display:none}
+
+  .site-search-popover{
+    top:calc(100% + 6px);
+    left:8px;
+    right:8px;
+    border-radius:12px;
+    box-shadow:0 16px 42px rgba(15,20,35,.2);
+  }
+
+  .site-search-results{
+    max-height:min(52vh,380px);
+  }
+
+  .site-search-result{
+    padding:11px 10px;
+  }
+
+  .site-search-result-title{
+    white-space:normal;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    line-clamp:2;
+    font-size:.9rem;
+  }
+
+  .site-search-result-meta{
+    font-size:.73rem;
+  }
+}
+
+@media(max-width:520px){
+  html.nav-open .site-search{padding:7px}
+  html.nav-open .nav-links{top:106px}
+  .site-search-popover{left:6px;right:6px}
 }
 
 @media(prefers-reduced-motion:reduce){
