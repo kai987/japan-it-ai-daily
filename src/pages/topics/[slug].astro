@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { featuredTopics, topicMatches } from '../../lib/topics';
+import { getJapaneseArticleTitle } from '../../lib/articleTitles';
 
 export function getStaticPaths() {
   return featuredTopics.map((topic) => ({
@@ -35,11 +36,12 @@ const matches = reports.flatMap((report) =>
         {matches.length ? matches.map(({ item, report }) => {
           const href = item.url ?? `${base}daily/${report.id}/`;
           const external = Boolean(item.url);
+          const displayTitle = getJapaneseArticleTitle(item);
           return (
             <a class="topic-article-row" href={href} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
               <div class="topic-article-date">{report.data.date.toLocaleDateString('ja-JP')}</div>
               <div>
-                <h2>{item.title}</h2>
+                <h2>{displayTitle}</h2>
                 <div class="meta">{item.source}{item.topic ? ` · ${item.topic}` : ''}</div>
                 {item.why && <p>{item.why}</p>}
               </div>
