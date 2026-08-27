@@ -45,7 +45,26 @@ const vocabGroups = jlptOrder
                     <article class="study-card vocabulary-card">
                       <header class="study-card-header">
                         <div>
-                          <h3>{item.term}<span class="reading">（{item.reading}）</span></h3>
+                          <div class="study-term-line">
+                            <h3>{item.term}<span class="reading">（{item.reading}）</span></h3>
+                            <button
+                              class="speech-button"
+                              type="button"
+                              data-speech={item.reading || item.term}
+                              data-speech-kind="word"
+                              aria-label={`${item.term}の発音を再生`}
+                              aria-pressed="false"
+                              title="词汇读音"
+                            >
+                              <svg class="speech-icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M11 5 7 9H4v6h3l4 4V5Z"></path>
+                                <path d="M15 9.5a4 4 0 0 1 0 5M17.5 7a7.3 7.3 0 0 1 0 10"></path>
+                              </svg>
+                              <svg class="speech-icon-stop" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="7" y="7" width="10" height="10" rx="1"></rect>
+                              </svg>
+                            </button>
+                          </div>
                           <div class="study-pos">{item.partOfSpeech}</div>
                         </div>
                         <span class="level-badge">参考：{item.level}</span>
@@ -71,7 +90,26 @@ const vocabGroups = jlptOrder
                       </div>
 
                       <div class="example-box">
-                        <span class="study-label">IT / AI 例句</span>
+                        <div class="example-label-row">
+                          <span class="study-label">IT / AI 例句</span>
+                          <button
+                            class="speech-button"
+                            type="button"
+                            data-speech={item.exampleJa}
+                            data-speech-kind="example"
+                            aria-label="例文を読み上げる"
+                            aria-pressed="false"
+                            title="例句朗读"
+                          >
+                            <svg class="speech-icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M11 5 7 9H4v6h3l4 4V5Z"></path>
+                              <path d="M15 9.5a4 4 0 0 1 0 5M17.5 7a7.3 7.3 0 0 1 0 10"></path>
+                            </svg>
+                            <svg class="speech-icon-stop" viewBox="0 0 24 24" aria-hidden="true">
+                              <rect x="7" y="7" width="10" height="10" rx="1"></rect>
+                            </svg>
+                          </button>
+                        </div>
                         <p lang="ja">{item.exampleJa}</p>
                         {item.exampleZh && <small>{item.exampleZh}</small>}
                       </div>
@@ -180,4 +218,89 @@ const vocabGroups = jlptOrder
       )}
     </aside>
   </div>
+
+  <script is:inline>
+    (() => {
+      const buttons = Array.from(document.querySelectorAll('.speech-button'));
+      if (!buttons.length) return;
+
+      const supported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+      if (!supported) {
+        buttons.forEach((button) => {
+          if (button instanceof HTMLButtonElement) button.dataset.speechUnavailable = 'true';
+        });
+        return;
+      }
+
+      const synth = window.speechSynthesis;
+      let voices = synth.getVoices();
+      let activeButton = null;
+
+      const refreshVoices = () => {
+        voices = synth.getVoices();
+      };
+
+      const japaneseVoice = () => {
+        const exactLocal = voices.find((voice) => voice.lang.toLowerCase() === 'ja-jp' && voice.localService);
+        if (exactLocal) return exactLocal;
+        const exact = voices.find((voice) => voice.lang.toLowerCase() === 'ja-jp');
+        if (exact) return exact;
+        return voices.find((voice) => voice.lang.toLowerCase().startsWith('ja')) || null;
+      };
+
+      const clearActive = () => {
+        if (activeButton instanceof HTMLButtonElement) {
+          activeButton.classList.remove('is-speaking');
+          activeButton.setAttribute('aria-pressed', 'false');
+        }
+        activeButton = null;
+      };
+
+      if (typeof synth.addEventListener === 'function') synth.addEventListener('voiceschanged', refreshVoices);
+      else synth.onvoiceschanged = refreshVoices;
+
+      buttons.forEach((button) => {
+        if (!(button instanceof HTMLButtonElement)) return;
+        button.addEventListener('click', () => {
+          const text = (button.dataset.speech || '').trim();
+          if (!text) return;
+
+          if (activeButton === button && button.getAttribute('aria-pressed') === 'true') {
+            synth.cancel();
+            clearActive();
+            return;
+          }
+
+          synth.cancel();
+          clearActive();
+
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = 'ja-JP';
+          utterance.rate = button.dataset.speechKind === 'word' ? 0.82 : 0.9;
+          utterance.pitch = 1;
+          utterance.volume = 1;
+          const voice = japaneseVoice();
+          if (voice) utterance.voice = voice;
+
+          activeButton = button;
+          button.classList.add('is-speaking');
+          button.setAttribute('aria-pressed', 'true');
+
+          utterance.onend = () => {
+            if (activeButton === button) clearActive();
+          };
+          utterance.onerror = () => {
+            if (activeButton === button) clearActive();
+          };
+
+          synth.speak(utterance);
+        });
+      });
+
+      window.addEventListener('pagehide', () => {
+        synth.cancel();
+        clearActive();
+      });
+    })();
+  </script>
 </BaseLayout>
