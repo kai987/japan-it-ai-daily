@@ -59,8 +59,10 @@ const extractFlowField = (segment, field) => {
   return match ? parseScalar(match[1]) : '';
 };
 
+const frontmatterOf = (source) => source.match(/^---\r?\n([\s\S]*?)\r?\n---/m)?.[1] ?? '';
+
 const parseVocabulary = (source) => {
-  const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---/m)?.[1] ?? '';
+  const frontmatter = frontmatterOf(source);
   const vocabularyBlock = frontmatter.match(/(?:^|\n)vocabulary:\s*\n([\s\S]*?)(?=\ngrammar:\s*\n)/)?.[1] ?? '';
 
   // Historical files use three YAML layouts:
@@ -94,6 +96,39 @@ const parseVocabulary = (source) => {
       };
     })
     .filter((item) => item.term && item.exampleJa);
+};
+
+const parseGrammar = (source) => {
+  const frontmatter = frontmatterOf(source);
+  const grammarBlock = frontmatter.match(
+    /(?:^|\n)grammar:\s*\n([\s\S]*?)(?=\n(?:technicalTerms|mustRememberWords|mustRememberGrammar):|$)/,
+  )?.[1] ?? '';
+
+  const flowItems = Array.from(grammarBlock.matchAll(/^\s*-\s*\{(.+)\}\s*$/gm));
+  if (flowItems.length) {
+    return flowItems
+      .map((match) => {
+        const segment = match[1] ?? '';
+        return {
+          pattern: extractFlowField(segment, 'pattern'),
+          exampleJa: extractFlowField(segment, 'exampleJa'),
+        };
+      })
+      .filter((item) => item.pattern && item.exampleJa);
+  }
+
+  const itemStarts = Array.from(grammarBlock.matchAll(/^\s*-\s+pattern:\s*(.+)$/gm));
+  return itemStarts
+    .map((match, index) => {
+      const start = match.index ?? 0;
+      const end = itemStarts[index + 1]?.index ?? grammarBlock.length;
+      const segment = grammarBlock.slice(start, end);
+      return {
+        pattern: parseScalar(match[1]),
+        exampleJa: extractField(segment, 'exampleJa'),
+      };
+    })
+    .filter((item) => item.pattern && item.exampleJa);
 };
 
 const allDates = () => readdirSync(contentDir)
@@ -218,19 +253,21 @@ for (const date of targetDates) {
   const contentPath = join(contentDir, `${date}.md`);
   const source = readFileSync(contentPath, 'utf8');
   const vocabulary = parseVocabulary(source);
+  const grammar = parseGrammar(source);
 
-  if (!vocabulary.length) {
-    console.warn(`WARN ${date}: 没有解析到 vocabulary / exampleJa，已跳过。`);
+  if (!vocabulary.length && !grammar.length) {
+    console.warn(`WARN ${date}: 没有解析到 vocabulary / grammar 的 exampleJa，已跳过。`);
     continue;
   }
 
   const outputDir = join(root, 'public', 'audio', 'japanese', date);
   mkdirSync(outputDir, { recursive: true });
 
-  console.log(`\n=== ${date} · ${vocabulary.length} words ===`);
+  console.log(`\n=== ${date} · ${vocabulary.length} words · ${grammar.length} grammar ===`);
   console.log(`Output: ${outputDir}`);
 
   const manifestItems = [];
+  const manifestGrammar = [];
   let generated = 0;
   let skipped = 0;
 
@@ -272,6 +309,33 @@ for (const date of targetDates) {
     });
   }
 
+  for (const [zeroIndex, item] of grammar.entries()) {
+    const index = zeroIndex + 1;
+    const exampleFile = `grammar-example-${pad(index)}.mp3`;
+    const examplePath = join(outputDir, exampleFile);
+
+    if (!force && existsSync(examplePath)) {
+      skipped += 1;
+      console.log(`SKIP ${exampleFile}`);
+    } else {
+      process.stdout.write(`GEN  ${exampleFile}  ${item.exampleJa}\n`);
+      try {
+        const wav = await synthesize(item.exampleJa, 'example');
+        encodeMp3(wav, examplePath);
+        generated += 1;
+      } catch (error) {
+        fail(`${date}/${exampleFile} 生成失败：${error instanceof Error ? error.message : String(error)}`);
+      }
+    }
+
+    manifestGrammar.push({
+      index,
+      pattern: item.pattern,
+      exampleJa: item.exampleJa,
+      example: exampleFile,
+    });
+  }
+
   const manifest = {
     date,
     generatedAt: new Date().toISOString(),
@@ -286,6 +350,7 @@ for (const date of targetDates) {
     format: { container: 'mp3', sampleRate: 24000, bitrate: '96k', channels: 1 },
     settings: { wordSpeed: WORD_SPEED, exampleSpeed: EXAMPLE_SPEED, intonationScale: 1.0 },
     items: manifestItems,
+    grammar: manifestGrammar,
   };
 
   writeFileSync(join(outputDir, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
