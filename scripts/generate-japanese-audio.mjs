@@ -45,15 +45,22 @@ const parseScalar = (raw = '') => {
   return value;
 };
 
+// Historical lesson files use two YAML indentation styles:
+//   vocabulary:\n- term: ...\n  reading: ...
+// and
+//   vocabulary:\n  - term: ...\n    reading: ...
+// Match fields by relative YAML structure instead of fixed indentation.
 const extractField = (segment, field) => {
-  const match = segment.match(new RegExp(`^\\s{4}${field}:\\s*(.+)$`, 'm'));
+  const match = segment.match(new RegExp(`^\\s+${field}:\\s*(.+)$`, 'm'));
   return match ? parseScalar(match[1]) : '';
 };
 
 const parseVocabulary = (source) => {
   const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---/m)?.[1] ?? '';
   const vocabularyBlock = frontmatter.match(/(?:^|\n)vocabulary:\s*\n([\s\S]*?)(?=\ngrammar:\s*\n)/)?.[1] ?? '';
-  const itemStarts = Array.from(vocabularyBlock.matchAll(/^\s{2}- term:\s*(.+)$/gm));
+
+  // Accept both top-level list items (`- term:`) and indented list items (`  - term:`).
+  const itemStarts = Array.from(vocabularyBlock.matchAll(/^\s*-\s+term:\s*(.+)$/gm));
 
   return itemStarts.map((match, index) => {
     const start = match.index ?? 0;
