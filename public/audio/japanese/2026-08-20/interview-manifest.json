@@ -1,0 +1,46 @@
+{
+  "date": "2026-08-20",
+  "generatedAt": "2026-08-28T21:21:10.893Z",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "LLMの品質を継続的に改善するには、Prompt Version、Trace、Evaluation Result、Failure Datasetを紐付けて回帰評価できる仕組みが重要です。",
+      "audio": "interview-answer-01.mp3"
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "AgentごとにIdentity、Owner、Purpose、Permissionを明確にし、行動を継続的に監視できる設計が必要だと思います。",
+      "audio": "interview-answer-02.mp3"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "LLM品質をどう継続改善しますか。",
+      "audio": "review-question-01.mp3"
+    },
+    {
+      "index": 2,
+      "text": "Model RoutingとEffortの違いは何ですか。",
+      "audio": "review-question-02.mp3"
+    },
+    {
+      "index": 3,
+      "text": "Agent Identity管理で重要なことは何ですか。",
+      "audio": "review-question-03.mp3"
+    }
+  ]
+}

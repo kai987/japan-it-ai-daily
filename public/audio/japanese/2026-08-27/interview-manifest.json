@@ -1,0 +1,94 @@
+{
+  "date": "2026-08-27",
+  "generatedAt": "2026-08-28T21:23:06.116Z",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIエージェントの開発基盤と実行基盤を分けるメリットは何ですか。",
+      "audio": "interview-question-01.mp3"
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "開発時はWorkflowを分かりやすく定義し、構造エラーを早い段階で検出することが重要です。一方、本番実行ではSandbox、Network ACL、Credential管理、Scalingなど別の要件があります。そのためBuilderとRuntimeを分離し、作りやすさと本番運用の安全性・安定性をそれぞれ最適化する設計が有効だと考えています。",
+      "audio": "interview-answer-01.mp3"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "AI活用を一部の詳しいメンバーだけでなく、組織全体へ広げるには何が必要ですか。",
+      "audio": "interview-question-02.mp3"
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "個人のPromptや注意力に依存しない共通基盤が必要だと思います。例えば、共通のSkill、MCP設定、Security GuardrailをTemplateとして配布し、更新を中央で管理します。その上で利用状況や成果を定量的に計測し、現場のFeedbackを基盤改善へ戻す継続的なLoopを作ることが重要だと考えています。",
+      "audio": "interview-answer-02.mp3"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "GitHub CopilotやCoding Agentを企業で利用する場合、どのように統制しますか。",
+      "audio": "interview-question-03.mp3"
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "利用可否だけでなく、Agent、MCP、Plugin、Permission Bypass、利用Modelまで組織側で管理する必要があります。個人設定より優先されるManaged SettingsをVersion管理し、Policy as Codeとして配布することで、開発者ごとの設定差を減らし、SecurityとDeveloper Experienceを両立しやすくなると考えています。",
+      "audio": "interview-answer-03.mp3"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "AI Coding Agentを利用する開発で、API Schemaを先に定義するメリットは何ですか。",
+      "audio": "interview-question-04.mp3"
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "Schemaを先に合意すると、FrontendとBackendが同じContractを参照して並行開発できます。また、Agentにも自然言語だけではなく構造化された仕様を渡せるため、実装のばらつきを減らせます。さらにCIでSchemaと実装を比較すれば、AIが生成したコードも機械的に検証できる点が大きなメリットだと思います。",
+      "audio": "interview-answer-04.mp3"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "Local LLMを使ったCoding Agentには、どのようなメリットと制約がありますか。",
+      "audio": "interview-question-05.mp3"
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "Repositoryや機密情報を外部APIへ送らずに処理しやすく、Token課金やQuotaを気にせず利用できる点はメリットです。一方で、十分なRAMやGPUなどHardware Costが必要で、CloudのFrontier Modelより難しいTaskの成功率が低い可能性があります。そのためPrivacy、Latency、Cost、Task Qualityを比較して使い分ける必要があります。",
+      "audio": "interview-answer-05.mp3"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "AIエージェント基盤で、BuilderとRuntimeを分ける理由は何ですか。",
+      "audio": "review-question-01.mp3"
+    },
+    {
+      "index": 2,
+      "text": "AI Codingを組織全体へ展開するとき、個人の注意力に依存しないために何をしますか。",
+      "audio": "review-question-02.mp3"
+    },
+    {
+      "index": 3,
+      "text": "Schema-driven DevelopmentはAI Codingとどのように相性が良いですか。",
+      "audio": "review-question-03.mp3"
+    }
+  ]
+}

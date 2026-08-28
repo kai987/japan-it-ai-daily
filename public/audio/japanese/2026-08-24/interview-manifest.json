@@ -1,0 +1,46 @@
+{
+  "date": "2026-08-24",
+  "generatedAt": "2026-08-28T21:21:50.797Z",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "PromptやCLAUDE.mdは行動方針を伝えるために有効ですが、Security Boundaryとしては不十分で、Runtime PermissionでCapabilityを強制的に制限する必要があります。",
+      "audio": "interview-answer-01.mp3"
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "AI Coding AgentをTeamに導入しても、既存のCode Review、Repository Permission、Approval Ruleを迂回させないことが重要です。",
+      "audio": "interview-answer-02.mp3"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "PromptとRuntime Permissionの違いは何ですか。",
+      "audio": "review-question-01.mp3"
+    },
+    {
+      "index": 2,
+      "text": "Approval Fatigueをどう防ぎますか。",
+      "audio": "review-question-02.mp3"
+    },
+    {
+      "index": 3,
+      "text": "AI導入で成果が出ない理由は何ですか。",
+      "audio": "review-question-03.mp3"
+    }
+  ]
+}
