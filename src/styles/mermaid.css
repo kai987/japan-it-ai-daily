@@ -32,6 +32,26 @@
   background:var(--surface)!important;
 }
 
+/*
+ * Fallback for legacy ```text``` diagrams that are not convertible to Mermaid.
+ * Astro/Shiki writes an inline light-theme background and token colors, so
+ * dark mode must override both the pre background and every highlighted span.
+ */
+html[data-theme='dark'] .prose pre[data-language='text'],
+html[data-theme='dark'] .prose pre:has(> code.language-text){
+  background:#16191f!important;
+  color:#f3f5f7!important;
+  border-color:#374151!important;
+}
+
+html[data-theme='dark'] .prose pre[data-language='text'] code,
+html[data-theme='dark'] .prose pre[data-language='text'] span,
+html[data-theme='dark'] .prose pre > code.language-text,
+html[data-theme='dark'] .prose pre > code.language-text span{
+  background:transparent!important;
+  color:#f3f5f7!important;
+}
+
 @media(max-width:800px){
   .prose .mermaid-diagram{
     margin:16px 0;
