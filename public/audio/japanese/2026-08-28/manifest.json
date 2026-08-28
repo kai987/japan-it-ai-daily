@@ -1,0 +1,143 @@
+{
+  "date": "2026-08-28",
+  "generatedAt": "2026-08-28T11:19:53.407Z",
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "必要",
+      "reading": "ひつよう",
+      "exampleJa": "Agent Runtimeでは、Taskに必要な権限だけを付与する設計が重要です。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    },
+    {
+      "index": 2,
+      "term": "守る",
+      "reading": "まもる",
+      "exampleJa": "APIを守るためには、認証だけでなく継続的な監視も必要です。",
+      "word": "vocab-02.mp3",
+      "example": "example-02.mp3"
+    },
+    {
+      "index": 3,
+      "term": "任せる",
+      "reading": "まかせる",
+      "exampleJa": "障害調査はAgentに任せても、本番変更の判断は人間が行います。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 4,
+      "term": "影響",
+      "reading": "えいきょう",
+      "exampleJa": "Toolの権限を広げると、誤動作した場合の影響範囲も大きくなります。",
+      "word": "vocab-04.mp3",
+      "example": "example-04.mp3"
+    },
+    {
+      "index": 5,
+      "term": "抑える",
+      "reading": "おさえる",
+      "exampleJa": "不要なContextを減らすことで、Token Costを抑えることができます。",
+      "word": "vocab-05.mp3",
+      "example": "example-05.mp3"
+    },
+    {
+      "index": 6,
+      "term": "絞る",
+      "reading": "しぼる",
+      "exampleJa": "Agentに公開するAPIは、現在のTaskに必要なものだけに絞ります。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 7,
+      "term": "連携",
+      "reading": "れんけい",
+      "exampleJa": "MCPを使って、Agentと社内システムを安全に連携します。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 8,
+      "term": "検証",
+      "reading": "けんしょう",
+      "exampleJa": "Agentが生成したPRは、CIでテストを実行して機械的に検証します。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 9,
+      "term": "脅威",
+      "reading": "きょうい",
+      "exampleJa": "AI AgentがAPIを利用する場合、その行動も脅威モデルに含める必要があります。",
+      "word": "vocab-09.mp3",
+      "example": "example-09.mp3"
+    },
+    {
+      "index": 10,
+      "term": "整合性",
+      "reading": "せいごうせい",
+      "exampleJa": "Toolの仕様とSkillの説明の整合性を継続的に確認する必要があります。",
+      "word": "vocab-10.mp3",
+      "example": "example-10.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～ために",
+      "exampleJa": "Agentの誤操作を防ぐために、APIの権限をTaskごとに制限します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "pattern": "～ことができる",
+      "exampleJa": "Skills Over MCPを使うと、Toolと利用手順を同じServerから配布することができます。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 3,
+      "pattern": "～だけでなく～も",
+      "exampleJa": "Agent Runtimeでは、性能だけでなく、Isolationと監査性も重要です。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 4,
+      "pattern": "～に応じて",
+      "exampleJa": "APIの重要度に応じて、認証方式と監視レベルを変えます。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 5,
+      "pattern": "～うえで",
+      "exampleJa": "Agentを自動運用する上で、終了条件を明確にすることが重要です。",
+      "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～ことなく",
+      "exampleJa": "Agentは人間が毎回起動することなく、AlertをTriggerに調査を開始できます。",
+      "example": "grammar-example-06.mp3"
+    }
+  ]
+}
