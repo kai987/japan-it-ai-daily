@@ -89,7 +89,8 @@
   position:static!important;
   align-self:start;
   justify-self:start;
-  margin:3px 0 0!important;
+  /* Center the 34px control against the first 1.75rem text line, not the full paragraph. */
+  margin:-3px 0 0!important;
   z-index:1;
 }
 
@@ -115,7 +116,8 @@
   }
 
   .prose blockquote.report-speech-target > .report-speech-button{
-    margin-top:2px!important;
+    /* 38px control centered against the same first-line text box. */
+    margin-top:-5px!important;
   }
 
   /*
