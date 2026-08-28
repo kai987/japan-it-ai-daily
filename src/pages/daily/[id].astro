@@ -86,5 +86,166 @@ const tocHeadings = [
         index += 1;
       }
     })();
+
+    (() => {
+      const article = document.querySelector('.report-layout article.prose');
+      if (!(article instanceof HTMLElement)) return;
+
+      const speechSupported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+      const synth = speechSupported ? window.speechSynthesis : null;
+      let voices = speechSupported && synth ? synth.getVoices() : [];
+      let activeButton = null;
+
+      const refreshVoices = () => {
+        if (synth) voices = synth.getVoices();
+      };
+      if (synth) {
+        refreshVoices();
+        synth.addEventListener?.('voiceschanged', refreshVoices);
+      }
+
+      const japaneseVoice = () => {
+        const exactLocal = voices.find((voice) => voice.lang.toLowerCase() === 'ja-jp' && voice.localService);
+        if (exactLocal) return exactLocal;
+        const exact = voices.find((voice) => voice.lang.toLowerCase() === 'ja-jp');
+        if (exact) return exact;
+        return voices.find((voice) => voice.lang.toLowerCase().startsWith('ja')) || null;
+      };
+
+      const clearActive = () => {
+        if (activeButton instanceof HTMLButtonElement) {
+          activeButton.classList.remove('is-speaking');
+          activeButton.setAttribute('aria-pressed', 'false');
+        }
+        activeButton = null;
+      };
+
+      const stopSpeech = () => {
+        if (synth) synth.cancel();
+        clearActive();
+      };
+
+      const speak = (button, text) => {
+        if (!speechSupported || !synth) {
+          button.dataset.speechUnavailable = 'true';
+          return;
+        }
+
+        if (activeButton === button) {
+          stopSpeech();
+          return;
+        }
+
+        stopSpeech();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.9;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+        const voice = japaneseVoice();
+        if (voice) utterance.voice = voice;
+
+        activeButton = button;
+        button.classList.add('is-speaking');
+        button.setAttribute('aria-pressed', 'true');
+
+        utterance.onend = () => {
+          if (activeButton === button) clearActive();
+        };
+        utterance.onerror = () => {
+          if (activeButton === button) clearActive();
+        };
+        synth.speak(utterance);
+      };
+
+      const makeButton = (text, label) => {
+        const button = document.createElement('button');
+        button.className = 'speech-button report-speech-button';
+        button.type = 'button';
+        button.dataset.speech = text;
+        button.dataset.speechKind = 'interview';
+        button.setAttribute('aria-label', label);
+        button.setAttribute('aria-pressed', 'false');
+        button.title = '日语朗读';
+        button.innerHTML = `
+          <svg class="speech-icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M11 5 7 9H4v6h3l4 4V5Z"></path>
+            <path d="M15 9.5a4 4 0 0 1 0 5M17.5 7a7.3 7.3 0 0 1 0 10"></path>
+          </svg>
+          <svg class="speech-icon-stop" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="7" y="7" width="10" height="10" rx="1"></rect>
+          </svg>`;
+        button.addEventListener('click', () => speak(button, text));
+        return button;
+      };
+
+      const sectionNodes = (heading) => {
+        const nodes = [];
+        let node = heading.nextElementSibling;
+        while (node && node.tagName !== 'H1' && node.tagName !== 'H2') {
+          nodes.push(node);
+          node = node.nextElementSibling;
+        }
+        return nodes;
+      };
+
+      const blockquotesFrom = (nodes) => {
+        const quotes = [];
+        nodes.forEach((node) => {
+          if (node instanceof HTMLQuoteElement) quotes.push(node);
+          node.querySelectorAll?.('blockquote').forEach((quote) => {
+            if (quote instanceof HTMLQuoteElement) quotes.push(quote);
+          });
+        });
+        return Array.from(new Set(quotes));
+      };
+
+      const enhanceQuote = (quote, kind) => {
+        if (quote.dataset.speechEnhanced === 'true') return;
+        const text = (quote.textContent || '').replace(/\s+/g, ' ').trim();
+        if (!text) return;
+        quote.dataset.speechEnhanced = 'true';
+        quote.classList.add('report-speech-target');
+        const label = kind === 'review' ? '面试复习问题を読み上げる' : '面试内容を読み上げる';
+        quote.appendChild(makeButton(text, label));
+      };
+
+      const h2s = Array.from(article.querySelectorAll('h2'));
+      const interviewHeading = h2s.find((heading) => (heading.textContent || '').includes('面接で使えるポイント'));
+      if (interviewHeading instanceof HTMLHeadingElement) {
+        blockquotesFrom(sectionNodes(interviewHeading)).forEach((quote) => enhanceQuote(quote, 'interview'));
+      }
+
+      const reviewHeading = h2s.find((heading) => (heading.textContent || '').includes('面试复习卡'));
+      if (reviewHeading instanceof HTMLHeadingElement) {
+        blockquotesFrom(sectionNodes(reviewHeading)).forEach((quote) => enhanceQuote(quote, 'review'));
+      }
+
+      if (!speechSupported) {
+        article.querySelectorAll('.report-speech-button').forEach((button) => {
+          if (button instanceof HTMLButtonElement) button.dataset.speechUnavailable = 'true';
+        });
+      }
+
+      window.addEventListener('pagehide', stopSpeech, { once: true });
+    })();
   </script>
+
+  <style>
+    .report-speech-target{
+      position:relative;
+      padding-right:62px!important;
+      min-height:58px;
+    }
+    .report-speech-button{
+      position:absolute;
+      top:12px;
+      right:12px;
+      z-index:1;
+    }
+    @media(max-width:800px){
+      .report-speech-target{padding-right:64px!important}
+      .report-speech-button{top:10px;right:10px}
+    }
+  </style>
 </BaseLayout>
