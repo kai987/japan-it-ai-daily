@@ -69,6 +69,37 @@
 
 .speech-button[data-speech-unavailable='true']{display:none}
 
+/*
+ * Daily report interview speech controls are injected at runtime, so this
+ * layout must live in global CSS rather than an Astro-scoped <style> block.
+ * Keep the button in the first column and the Japanese sentence in the
+ * second column, including when the sentence wraps onto multiple lines.
+ */
+.prose blockquote.report-speech-target{
+  display:grid!important;
+  grid-template-columns:34px minmax(0,1fr)!important;
+  column-gap:10px!important;
+  align-items:start!important;
+  min-width:0;
+}
+
+.prose blockquote.report-speech-target > .report-speech-button{
+  grid-column:1;
+  grid-row:1;
+  position:static!important;
+  align-self:start;
+  justify-self:start;
+  margin:3px 0 0!important;
+  z-index:1;
+}
+
+.prose blockquote.report-speech-target > p{
+  grid-column:2;
+  grid-row:1;
+  min-width:0;
+  margin:0!important;
+}
+
 @media(max-width:800px){
   .speech-button{
     width:38px;
@@ -77,6 +108,15 @@
   }
 
   .speech-button svg{width:18px;height:18px}
+
+  .prose blockquote.report-speech-target{
+    grid-template-columns:38px minmax(0,1fr)!important;
+    column-gap:9px!important;
+  }
+
+  .prose blockquote.report-speech-target > .report-speech-button{
+    margin-top:2px!important;
+  }
 
   /*
    * On mobile, align the vocabulary speech control with the h3 title row only.
