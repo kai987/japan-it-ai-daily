@@ -1,0 +1,158 @@
+<script is:inline>
+  (() => {
+    const pad = (value) => String(value).padStart(2, '0');
+    const normalize = (value) => String(value || '').replace(/\s+/g, '').trim();
+
+    const sectionNodes = (heading) => {
+      const nodes = [];
+      const depth = Number(heading.tagName.slice(1)) || 6;
+      let node = heading.nextElementSibling;
+      while (node) {
+        const tag = node.tagName || '';
+        const headingMatch = tag.match(/^H([1-6])$/);
+        if (headingMatch && Number(headingMatch[1]) <= depth) break;
+        nodes.push(node);
+        node = node.nextElementSibling;
+      }
+      return nodes;
+    };
+
+    const blockquotesFrom = (nodes) => {
+      const quotes = [];
+      nodes.forEach((node) => {
+        if (node instanceof HTMLQuoteElement) quotes.push(node);
+        node.querySelectorAll?.('blockquote').forEach((quote) => {
+          if (quote instanceof HTMLQuoteElement) quotes.push(quote);
+        });
+      });
+      return Array.from(new Set(quotes));
+    };
+
+    const isLabelledAnswer = (quote) => {
+      let previous = quote.previousElementSibling;
+      for (let hops = 0; previous && hops < 2; hops += 1) {
+        const label = normalize(previous.textContent);
+        if (/(?:約|约)30秒.*(?:回答|答え)/i.test(label)) return true;
+        if (/^(?:H[1-6])$/.test(previous.tagName)) break;
+        previous = previous.previousElementSibling;
+      }
+      return false;
+    };
+
+    const setupDailyAnswerAnchors = () => {
+      const article = document.querySelector('.report-layout article.prose');
+      if (!(article instanceof HTMLElement)) return;
+
+      const headings = Array.from(article.querySelectorAll('h2, h3'));
+      const interviewHeading = headings.find((heading) =>
+        (heading.textContent || '').includes('面接で使えるポイント')
+      );
+      if (!(interviewHeading instanceof HTMLHeadingElement)) return;
+
+      const quotes = blockquotesFrom(sectionNodes(interviewHeading));
+      if (!quotes.length) return;
+
+      const labelledAnswers = quotes.filter(isLabelledAnswer);
+      const answers = labelledAnswers.length ? labelledAnswers : quotes;
+
+      answers.forEach((quote, index) => {
+        quote.id = `interview-answer-${pad(index + 1)}`;
+        quote.classList.add('interview-deep-target');
+      });
+
+      const revealHashTarget = () => {
+        const id = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+        if (!/^interview-answer-\d+$/.test(id)) return;
+        const target = document.getElementById(id);
+        if (!(target instanceof HTMLElement)) return;
+
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.classList.add('is-deep-link-target');
+          window.setTimeout(() => target.classList.remove('is-deep-link-target'), 2400);
+        });
+      };
+
+      revealHashTarget();
+      window.addEventListener('hashchange', revealHashTarget);
+    };
+
+    const setupInterviewCards = () => {
+      const days = Array.from(document.querySelectorAll('.interview-day'));
+      if (!days.length) return;
+
+      days.forEach((day) => {
+        if (!(day instanceof HTMLElement)) return;
+        const dailyLink = day.querySelector('.daily-link');
+        const cards = Array.from(day.querySelectorAll('.interview-answer-card'));
+        if (!(dailyLink instanceof HTMLAnchorElement) || !cards.length) return;
+
+        cards.forEach((card, index) => {
+          if (!(card instanceof HTMLElement)) return;
+          const href = `${dailyLink.href.split('#')[0]}#interview-answer-${pad(index + 1)}`;
+          card.classList.add('interview-answer-deep-link');
+          card.setAttribute('role', 'link');
+          card.setAttribute('tabindex', '0');
+          card.setAttribute('aria-label', `当天日报の面接回答 ${index + 1} へ移動`);
+          card.title = '点击查看日报中的原位置';
+
+          const navigate = () => {
+            if (window.getSelection()?.toString()) return;
+            window.location.href = href;
+          };
+
+          card.addEventListener('click', (event) => {
+            const target = event.target;
+            if (target instanceof Element && target.closest('a, button')) return;
+            navigate();
+          });
+
+          card.addEventListener('keydown', (event) => {
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            event.preventDefault();
+            navigate();
+          });
+        });
+      });
+    };
+
+    setupDailyAnswerAnchors();
+    setupInterviewCards();
+  })();
+</script>
+
+<style is:global>
+  .interview-answer-card.interview-answer-deep-link{
+    cursor:pointer;
+    transition:border-color .16s ease,background-color .16s ease,transform .16s ease,box-shadow .16s ease;
+  }
+
+  .interview-answer-card.interview-answer-deep-link:hover{
+    border-color:color-mix(in srgb,var(--accent) 48%,var(--border));
+    background:color-mix(in srgb,var(--accent-soft) 34%,var(--surface));
+    transform:translateY(-2px);
+  }
+
+  .interview-answer-card.interview-answer-deep-link:focus-visible{
+    outline:3px solid color-mix(in srgb,var(--accent) 26%,transparent);
+    outline-offset:3px;
+    border-color:var(--accent);
+  }
+
+  .prose blockquote.interview-deep-target{
+    scroll-margin-top:104px;
+    transition:outline-color .2s ease,box-shadow .2s ease,background-color .2s ease;
+  }
+
+  .prose blockquote.interview-deep-target.is-deep-link-target{
+    outline:2px solid color-mix(in srgb,var(--accent) 78%,transparent);
+    outline-offset:4px;
+    box-shadow:0 0 0 8px color-mix(in srgb,var(--accent) 12%,transparent);
+    background:color-mix(in srgb,var(--accent-soft) 44%,var(--surface));
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    .interview-answer-card.interview-answer-deep-link,
+    .prose blockquote.interview-deep-target{transition:none}
+  }
+</style>
