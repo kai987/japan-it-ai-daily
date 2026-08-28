@@ -1,0 +1,154 @@
+---
+import '../styles/mermaid.css';
+---
+
+<script type="module" is:inline>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+  const escapeLabel = (value) => String(value ?? '')
+    .replace(/\\/g, '\\\\')
+    .replace(/"/g, '\\"');
+
+  const legacyTextFlowToMermaid = (source) => {
+    const lines = String(source ?? '')
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+
+    if (lines.length < 3 || !lines.includes('↓')) return '';
+    if (lines.some((line) => line !== '↓' && line.length > 80)) return '';
+
+    const nodes = lines.filter((line) => line !== '↓');
+    if (nodes.length < 2 || nodes.length > 12) return '';
+
+    const arrows = lines.filter((line) => line === '↓').length;
+    if (arrows !== nodes.length - 1) return '';
+
+    const definitions = nodes.map((label, index) => `N${index}["${escapeLabel(label)}"]`);
+    const path = nodes.map((_, index) => `N${index}`).join(' --> ');
+    return `flowchart TD\n  ${definitions.join('\n  ')}\n  ${path}`;
+  };
+
+  const makeDiagram = (source, replacementTarget) => {
+    const root = document.createElement('div');
+    root.className = 'mermaid-diagram';
+    root.dataset.mermaidSource = source;
+    root.textContent = source;
+    replacementTarget.replaceWith(root);
+    return root;
+  };
+
+  const collectDiagrams = () => {
+    document.querySelectorAll('pre > code.language-mermaid').forEach((code) => {
+      const pre = code.parentElement;
+      if (!(pre instanceof HTMLPreElement)) return;
+      makeDiagram(code.textContent || '', pre);
+    });
+
+    document.querySelectorAll('pre > code.language-text').forEach((code) => {
+      const pre = code.parentElement;
+      if (!(pre instanceof HTMLPreElement)) return;
+      const source = legacyTextFlowToMermaid(code.textContent || '');
+      if (!source) return;
+      makeDiagram(source, pre);
+    });
+  };
+
+  const themeConfig = () => {
+    const dark = document.documentElement.dataset.theme === 'dark';
+    return {
+      startOnLoad: false,
+      securityLevel: 'strict',
+      theme: 'base',
+      fontFamily: 'Inter, Noto Sans JP, Yu Gothic, YuGothic, system-ui, sans-serif',
+      flowchart: {
+        htmlLabels: false,
+        useMaxWidth: true,
+        curve: 'basis',
+        nodeSpacing: 32,
+        rankSpacing: 34,
+      },
+      themeVariables: dark
+        ? {
+            background: '#16191f',
+            primaryColor: '#1f2937',
+            primaryTextColor: '#f3f5f7',
+            primaryBorderColor: '#526071',
+            secondaryColor: '#242946',
+            tertiaryColor: '#111827',
+            lineColor: '#a9b3c3',
+            textColor: '#f3f5f7',
+            edgeLabelBackground: '#16191f',
+            clusterBkg: '#16191f',
+            clusterBorder: '#374151',
+            mainBkg: '#1f2937',
+            nodeBorder: '#526071',
+          }
+        : {
+            background: '#f7f8fa',
+            primaryColor: '#ffffff',
+            primaryTextColor: '#15171a',
+            primaryBorderColor: '#cfd5df',
+            secondaryColor: '#eef0ff',
+            tertiaryColor: '#f7f8fa',
+            lineColor: '#667085',
+            textColor: '#15171a',
+            edgeLabelBackground: '#f7f8fa',
+            clusterBkg: '#f7f8fa',
+            clusterBorder: '#d8dde6',
+            mainBkg: '#ffffff',
+            nodeBorder: '#cfd5df',
+          },
+    };
+  };
+
+  let rendering = false;
+  let rerenderRequested = false;
+
+  const renderDiagrams = async () => {
+    const roots = Array.from(document.querySelectorAll('.mermaid-diagram'))
+      .filter((node) => node instanceof HTMLElement);
+    if (!roots.length) return;
+
+    if (rendering) {
+      rerenderRequested = true;
+      return;
+    }
+
+    rendering = true;
+    mermaid.initialize(themeConfig());
+
+    roots.forEach((root) => {
+      const source = root.dataset.mermaidSource || '';
+      root.removeAttribute('data-processed');
+      root.replaceChildren();
+      root.textContent = source;
+    });
+
+    try {
+      await mermaid.run({ nodes: roots });
+    } catch (error) {
+      console.error('Mermaid render failed:', error);
+    } finally {
+      rendering = false;
+      if (rerenderRequested) {
+        rerenderRequested = false;
+        queueMicrotask(renderDiagrams);
+      }
+    }
+  };
+
+  collectDiagrams();
+  await renderDiagrams();
+
+  const observer = new MutationObserver((mutations) => {
+    if (mutations.some((mutation) => mutation.attributeName === 'data-theme')) {
+      renderDiagrams();
+    }
+  });
+
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme'],
+  });
+</script>
