@@ -1,6 +1,6 @@
 {
   "date": "2026-08-16",
-  "generatedAt": "2026-08-28T11:19:13.253Z",
+  "generatedAt": "2026-08-28T20:22:02.187Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -31,106 +31,186 @@
     },
     {
       "index": 2,
-      "term": "変更",
-      "reading": "へんこう",
-      "exampleJa": "Agentごとに作業Directoryを変更します。",
+      "term": "優先",
+      "reading": "ゆうせん",
+      "exampleJa": "より近いDirectoryのAGENTS.mdを優先します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "範囲",
-      "reading": "はんい",
-      "exampleJa": "Contextの適用範囲をDirectory単位で分けます。",
+      "term": "適用",
+      "reading": "てきよう",
+      "exampleJa": "Fileの位置に応じて適切なInstructionを適用します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "維持",
-      "reading": "いじ",
-      "exampleJa": "自動テストで品質を維持します。",
+      "term": "範囲",
+      "reading": "はんい",
+      "exampleJa": "Agentが読むContextの範囲をTaskごとに限定します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "防ぐ",
-      "reading": "ふせぐ",
-      "exampleJa": "worktreeで変更の競合を防ぎます。",
+      "term": "検証",
+      "reading": "けんしょう",
+      "exampleJa": "生成CodeをType CheckとTestで検証します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "統一",
-      "reading": "とういつ",
-      "exampleJa": "FormatterでCode Styleを統一します。",
+      "term": "実行",
+      "reading": "じっこう",
+      "exampleJa": "複数のValidationを並行して実行します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "適用",
-      "reading": "てきよう",
-      "exampleJa": "Frontend固有のRuleだけを適用します。",
+      "term": "分離",
+      "reading": "ぶんり",
+      "exampleJa": "SessionごとにContextと作業Directoryを分離します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "競合",
-      "reading": "きょうごう",
-      "exampleJa": "複数SessionのFile変更が競合する可能性があります。",
+      "term": "並行",
+      "reading": "へいこう",
+      "exampleJa": "独立したTaskは複数Agentで並行して進めます。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "網羅",
-      "reading": "もうら",
-      "exampleJa": "Evaluationでは長時間Taskも網羅します。",
+      "term": "継承",
+      "reading": "けいしょう",
+      "exampleJa": "子DirectoryはRootの共通Instructionを継承します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "伴う",
-      "reading": "ともなう",
-      "exampleJa": "並列実行には調整コストが伴います。",
+      "term": "上書き",
+      "reading": "うわがき",
+      "exampleJa": "Local Ruleが必要な場合だけ共通設定を上書きします。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "競合",
+      "reading": "きょうごう",
+      "exampleJa": "複数Agentの変更が同じFileで競合しないようにします。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "衝突",
+      "reading": "しょうとつ",
+      "exampleJa": "Instruction同士が衝突した場合は優先順位を明確にします。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "整合",
+      "reading": "せいごう",
+      "exampleJa": "生成Codeが既存Schemaと整合しているか検証します。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "明示",
+      "reading": "めいじ",
+      "exampleJa": "禁止事項とValidation CommandをAGENTS.mdに明示します。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "限定",
+      "reading": "げんてい",
+      "exampleJa": "Agentに渡すReferenceを必要な範囲に限定します。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "参照",
+      "reading": "さんしょう",
+      "exampleJa": "Taskに関係するDesign Docだけを参照させます。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "共有",
+      "reading": "きょうゆう",
+      "exampleJa": "必要な前提だけをAgent間で共有します。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "防ぐ",
+      "reading": "ふせぐ",
+      "exampleJa": "自動Validationで不完全なCodeのMergeを防ぎます。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "追跡",
+      "reading": "ついせき",
+      "exampleJa": "AgentごとのCommitとValidation結果を追跡します。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "保証",
+      "reading": "ほしょう",
+      "exampleJa": "自動Testだけで完全な品質を保証できるとは限りません。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
     }
   ],
   "grammar": [
     {
       "index": 1,
-      "pattern": "～ごとに",
-      "exampleJa": "DirectoryごとにAGENTS.mdを配置します。",
+      "pattern": "～に応じて",
+      "exampleJa": "Directoryに応じて適用するInstructionを切り替えます。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～ことで",
-      "exampleJa": "型チェックを行うことで、Agentへ明確なFeedbackを返せます。",
+      "pattern": "～ごとに",
+      "exampleJa": "Agentごとに独立したWorking Treeを用意します。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～だけではなく",
-      "exampleJa": "生成速度だけではなく、検証可能性も重要です。",
+      "pattern": "～ようにする",
+      "exampleJa": "複数Agentが同じFileを同時に変更しないようにします。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～場合には",
-      "exampleJa": "複数Sessionを動かす場合には、worktreeを利用します。",
+      "pattern": "～ことによって",
+      "exampleJa": "Contextを限定することによって、不要なToken消費を減らせます。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～に伴って",
-      "exampleJa": "Agent数の増加に伴って、Session Managementも重要になります。",
+      "pattern": "～一方で",
+      "exampleJa": "並行化で速度は上がる一方で、変更競合の管理が必要です。",
       "example": "grammar-example-05.mp3"
     }
   ]

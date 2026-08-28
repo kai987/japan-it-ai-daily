@@ -1,6 +1,6 @@
 {
   "date": "2026-08-23",
-  "generatedAt": "2026-08-28T11:19:13.261Z",
+  "generatedAt": "2026-08-28T20:26:57.943Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -25,15 +25,15 @@
       "index": 1,
       "term": "進む",
       "reading": "すすむ",
-      "exampleJa": "WorkflowをStageごとに順番に進めます。",
+      "exampleJa": "条件を満たすとWorkflowが次のStageへ進みます。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
     {
       "index": 2,
-      "term": "比べる",
-      "reading": "くらべる",
-      "exampleJa": "Strong ModelとWeak Modelの結果を比べます。",
+      "term": "順番",
+      "reading": "じゅんばん",
+      "exampleJa": "各Stageを決められた順番に実行します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
@@ -41,7 +41,7 @@
       "index": 3,
       "term": "状態",
       "reading": "じょうたい",
-      "exampleJa": "Workflow Engineが現在の状態を管理します。",
+      "exampleJa": "Workflowの現在状態をState Storeに保存します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
@@ -49,88 +49,168 @@
       "index": 4,
       "term": "遷移",
       "reading": "せんい",
-      "exampleJa": "Approval後に次のStageへ状態遷移します。",
+      "exampleJa": "Successの場合だけ次のStateへ遷移します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "予算",
-      "reading": "よさん",
-      "exampleJa": "Project単位でAI利用予算を設定します。",
+      "term": "分岐",
+      "reading": "ぶんき",
+      "exampleJa": "Confidence Scoreに応じて処理を分岐します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "安定",
-      "reading": "あんてい",
-      "exampleJa": "判定が安定しない場合はREVIEWへ送ります。",
+      "term": "固定",
+      "reading": "こてい",
+      "exampleJa": "高Riskな処理は実行順序を固定します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "決定論的",
-      "reading": "けっていろんてき",
-      "exampleJa": "重要なState Transitionは決定論的に制御します。",
+      "term": "再現",
+      "reading": "さいげん",
+      "exampleJa": "同じInputなら同じ実行経路を再現できるようにします。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "汎化",
-      "reading": "はんか",
-      "exampleJa": "未知データに対するRouterの汎化性能を評価します。",
+      "term": "判定",
+      "reading": "はんてい",
+      "exampleJa": "Judge Modelが回答品質を判定します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "委譲",
-      "reading": "いじょう",
-      "exampleJa": "単純Taskを低コストModelへ委譲します。",
+      "term": "評価",
+      "reading": "ひょうか",
+      "exampleJa": "RouterのAccuracyとCostを同時に評価します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "曖昧",
-      "reading": "あいまい",
-      "exampleJa": "曖昧なVLM結果はHuman Reviewへ回します。",
+      "term": "費用",
+      "reading": "ひよう",
+      "exampleJa": "簡単なTaskは小さいModelへRouteして費用を抑えます。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "失敗",
+      "reading": "しっぱい",
+      "exampleJa": "Tool実行に失敗したらRetry Stateへ移動します。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "成功",
+      "reading": "せいこう",
+      "exampleJa": "Success条件を満たした場合だけWorkflowを終了します。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "閾値",
+      "reading": "しきいち",
+      "exampleJa": "Confidenceが閾値を下回るとHuman Reviewへ切り替えます。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "切り替える",
+      "reading": "きりかえる",
+      "exampleJa": "VLMのConfidenceが低い場合は人間確認へ切り替えます。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "代替",
+      "reading": "だいたい",
+      "exampleJa": "単純確認はVLMで代替し、例外だけ人が処理します。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "戻す",
+      "reading": "もどす",
+      "exampleJa": "Validationに失敗した場合はReview Stateへ戻します。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "待機",
+      "reading": "たいき",
+      "exampleJa": "人間の承認が来るまでWorkflowを待機状態にします。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "例外",
+      "reading": "れいがい",
+      "exampleJa": "自動化しにくい例外Caseだけ人間が処理します。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "担う",
+      "reading": "になう",
+      "exampleJa": "Agentが定型処理を担い、人間が最終判断を担います。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "確実",
+      "reading": "かくじつ",
+      "exampleJa": "CriticalなStepはRule-basedにして確実に実行します。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
     }
   ],
   "grammar": [
     {
       "index": 1,
       "pattern": "～ごとに",
-      "exampleJa": "Stageごとに担当Agentを切り替えます。",
+      "exampleJa": "StageごとにInputとOutputを保存します。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～場合",
-      "exampleJa": "判定が不安定な場合はREVIEWにします。",
+      "pattern": "～ようにする",
+      "exampleJa": "同じ条件なら同じStateへ遷移するようにします。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～のではなく",
-      "exampleJa": "すべてをLLMに任せるのではなく、StateはEngineで管理します。",
+      "pattern": "～場合",
+      "exampleJa": "Confidenceが低い場合、人間確認へ切り替えます。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
       "pattern": "～に応じて",
-      "exampleJa": "Taskの難易度に応じてModelを選択します。",
+      "exampleJa": "Taskの難易度に応じてModelを切り替えます。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～にすぎない",
-      "exampleJa": "Benchmarkは評価指標の一つにすぎません。",
+      "pattern": "～た上で",
+      "exampleJa": "VLMの結果を確認した上で、人間が最終判断します。",
       "example": "grammar-example-05.mp3"
     }
   ]

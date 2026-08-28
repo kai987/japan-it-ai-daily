@@ -1,6 +1,6 @@
 {
   "date": "2026-08-12",
-  "generatedAt": "2026-08-28T11:19:13.246Z",
+  "generatedAt": "2026-08-28T20:19:10.947Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,86 @@
       "exampleJa": "一つのCloud Modelだけに依存しない構成を検討します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "監視",
+      "reading": "かんし",
+      "exampleJa": "Agentの実行状態を継続的に監視します。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "計測",
+      "reading": "けいそく",
+      "exampleJa": "RequestごとのLatencyとToken数を計測します。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "分析",
+      "reading": "ぶんせき",
+      "exampleJa": "Traceを分析して失敗しやすいTool Callを特定します。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "改善",
+      "reading": "かいぜん",
+      "exampleJa": "検索精度を評価しながらPromptを継続的に改善します。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "適用",
+      "reading": "てきよう",
+      "exampleJa": "環境ごとに異なるRate Limitを適用します。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "比較",
+      "reading": "ひかく",
+      "exampleJa": "Cloud LLMとLocal LLMのCostとLatencyを比較します。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "構成",
+      "reading": "こうせい",
+      "exampleJa": "検索と生成を分離した構成にします。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "切り替える",
+      "reading": "きりかえる",
+      "exampleJa": "機密性に応じてCloudとLocal Modelを切り替えます。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "絞り込む",
+      "reading": "しぼりこむ",
+      "exampleJa": "BM25で関連度の高いFileだけに候補を絞り込みます。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "蓄積",
+      "reading": "ちくせき",
+      "exampleJa": "運用中のTraceを蓄積してEvaluation Datasetを作ります。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
     }
   ],
   "grammar": [

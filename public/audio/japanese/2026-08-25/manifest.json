@@ -1,6 +1,6 @@
 {
   "date": "2026-08-25",
-  "generatedAt": "2026-08-28T11:19:13.263Z",
+  "generatedAt": "2026-08-28T20:28:33.674Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -31,106 +31,186 @@
     },
     {
       "index": 2,
-      "term": "戻る",
-      "reading": "もどる",
-      "exampleJa": "不確実な判定は人間のReviewへ戻します。",
+      "term": "協力",
+      "reading": "きょうりょく",
+      "exampleJa": "複数Agentが協力して大きなFeatureを実装します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "共同",
-      "reading": "きょうどう",
-      "exampleJa": "Team Memberが同じAgent Sessionで共同作業します。",
+      "term": "分担",
+      "reading": "ぶんたん",
+      "exampleJa": "FrontendとTestをAgentごとに分担します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "並列",
-      "reading": "へいれつ",
-      "exampleJa": "複数Sessionを並列に実行します。",
+      "term": "割り当てる",
+      "reading": "わりあてる",
+      "exampleJa": "Plannerが専門性に応じてTaskを各Agentへ割り当てます。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "調査",
-      "reading": "ちょうさ",
-      "exampleJa": "Agentが障害原因を調査してIssueを作成します。",
+      "term": "同期",
+      "reading": "どうき",
+      "exampleJa": "Shared StateをAgent間で必要な時だけ同期します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "削減",
-      "reading": "さくげん",
-      "exampleJa": "Speculative Decodingで推論Latencyを削減します。",
+      "term": "共有",
+      "reading": "きょうゆう",
+      "exampleJa": "必要なProgressだけをAgent間で共有します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "委任",
-      "reading": "いにん",
-      "exampleJa": "低Riskな調査TaskをAgentへ委任します。",
+      "term": "継続",
+      "reading": "けいぞく",
+      "exampleJa": "Networkが一時切断してもTaskを継続できるようにします。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "復元",
-      "reading": "ふくげん",
-      "exampleJa": "Process再起動後もSessionを復元できる設計にします。",
+      "term": "高速化",
+      "reading": "こうそくか",
+      "exampleJa": "Speculative DecodingでToken生成を高速化します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "棲み分け",
-      "reading": "すみわけ",
-      "exampleJa": "Agentと人間の責任を明確に棲み分けます。",
+      "term": "予測",
+      "reading": "よそく",
+      "exampleJa": "小さいModelが次のToken候補を先に予測します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "定量化",
-      "reading": "ていりょうか",
-      "exampleJa": "AIの効果を工数削減などで定量化します。",
+      "term": "候補",
+      "reading": "こうほ",
+      "exampleJa": "Draft Modelが複数のToken候補を生成します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "検証",
+      "reading": "けんしょう",
+      "exampleJa": "Target ModelがDraft Tokenをまとめて検証します。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "権限",
+      "reading": "けんげん",
+      "exampleJa": "AIOps AgentにはRead権限と限定的なWrite権限だけを与えます。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "境界",
+      "reading": "きょうかい",
+      "exampleJa": "自動復旧が許可される権限境界を明確にします。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "復旧",
+      "reading": "ふっきゅう",
+      "exampleJa": "低Riskな障害だけAgentが自動復旧します。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "介入",
+      "reading": "かいにゅう",
+      "exampleJa": "高Riskな復旧操作では人間が介入します。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "維持",
+      "reading": "いじ",
+      "exampleJa": "数時間のTaskでもSession Stateを維持します。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "再開",
+      "reading": "さいかい",
+      "exampleJa": "失敗後はCheckpointからTaskを再開します。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "効果",
+      "reading": "こうか",
+      "exampleJa": "Agent導入による工数削減効果を測定します。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "投資",
+      "reading": "とうし",
+      "exampleJa": "AI基盤への投資が開発速度にどう効くか評価します。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "回収",
+      "reading": "かいしゅう",
+      "exampleJa": "自動化で削減した工数から投資回収期間を見積もります。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
     }
   ],
   "grammar": [
     {
       "index": 1,
-      "pattern": "～ても",
-      "exampleJa": "Meetingが終わっても、Cloud AgentはTaskを続けられます。",
+      "pattern": "～ながら",
+      "exampleJa": "品質を維持しながら推論Latencyを下げます。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～ところまで",
-      "exampleJa": "Issueを作成するところまでAgentに任せます。",
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの専門性に応じて担当Agentを割り当てます。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～一方で",
-      "exampleJa": "自動化は効率的な一方で、権限境界が重要です。",
+      "pattern": "～だけでなく～も",
+      "exampleJa": "Token Costだけでなく、削減できた工数も評価します。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～によって異なる",
-      "exampleJa": "Speculative Decodingの効果はHardwareによって異なります。",
+      "pattern": "～たまま",
+      "exampleJa": "Sessionを保持したまま翌日にTaskを再開できます。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～に応じて",
-      "exampleJa": "業務Riskに応じてAgentへ与えるCapabilityを変えます。",
+      "pattern": "～に伴って",
+      "exampleJa": "AIOpsの自動化範囲拡大に伴って、権限境界の設計も重要になります。",
       "example": "grammar-example-05.mp3"
     }
   ]

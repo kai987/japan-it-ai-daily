@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "generatedAt": "2026-08-28T11:19:13.250Z",
+  "generatedAt": "2026-08-28T20:20:36.809Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,86 @@
       "exampleJa": "Human Reviewだけに依存しない検証環境を作ります。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "権限",
+      "reading": "けんげん",
+      "exampleJa": "Agentには必要な権限だけを付与します。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "付与",
+      "reading": "ふよ",
+      "exampleJa": "実行時に一時的なRoleをAgentへ付与します。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "参照",
+      "reading": "さんしょう",
+      "exampleJa": "Agentが参照できるKnowledgeの範囲を限定します。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "防止",
+      "reading": "ぼうし",
+      "exampleJa": "誤ったTool実行を防止するためにApprovalを入れます。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "漏えい",
+      "reading": "ろうえい",
+      "exampleJa": "Secretの漏えいを防ぐために出力を検査します。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "承認",
+      "reading": "しょうにん",
+      "exampleJa": "本番DBを変更する前に人間の承認を求めます。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "検知",
+      "reading": "けんち",
+      "exampleJa": "Policy違反をRuntimeで自動的に検知します。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "担保",
+      "reading": "たんぽ",
+      "exampleJa": "SchemaとTestによってOutputの品質を担保します。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "準拠",
+      "reading": "じゅんきょ",
+      "exampleJa": "Agentが生成する設定を社内Security基準に準拠させます。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "委譲",
+      "reading": "いじょう",
+      "exampleJa": "高Riskな判断はSub-agentへ委譲せず人間が行います。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
     }
   ],
   "grammar": [

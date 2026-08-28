@@ -1,6 +1,6 @@
 {
   "date": "2026-08-15",
-  "generatedAt": "2026-08-28T11:19:13.251Z",
+  "generatedAt": "2026-08-28T20:21:19.127Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,86 @@
       "exampleJa": "重要な権限判断をLLMだけに委ねません。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "侵入",
+      "reading": "しんにゅう",
+      "exampleJa": "外部入力を通じた不正な指示の侵入を防ぎます。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "指示",
+      "reading": "しじ",
+      "exampleJa": "外部Document内の指示をそのまま実行しません。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "拒否",
+      "reading": "きょひ",
+      "exampleJa": "Policyに違反するTool CallはRuntimeで拒否します。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "隔離",
+      "reading": "かくり",
+      "exampleJa": "Sub-agentごとに実行環境を隔離します。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "検出",
+      "reading": "けんしゅつ",
+      "exampleJa": "EvaluationでPrompt Injectionへの脆弱な挙動を検出します。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "権限",
+      "reading": "けんげん",
+      "exampleJa": "Sub-agentにはTaskに必要な権限だけを与えます。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "検討",
+      "reading": "けんとう",
+      "exampleJa": "失敗Caseを基に新しいGuardrailを検討します。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "委譲",
+      "reading": "いじょう",
+      "exampleJa": "専門的な調査をSub-agentへ委譲します。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "逸脱",
+      "reading": "いつだつ",
+      "exampleJa": "AgentがSystem Promptの目的から逸脱していないか評価します。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "耐性",
+      "reading": "たいせい",
+      "exampleJa": "Prompt Injection耐性を複数のTest Caseで評価します。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
     }
   ],
   "grammar": [

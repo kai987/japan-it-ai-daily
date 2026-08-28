@@ -1,6 +1,6 @@
 {
   "date": "2026-08-13",
-  "generatedAt": "2026-08-28T11:19:13.249Z",
+  "generatedAt": "2026-08-28T20:19:55.113Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,86 @@
       "exampleJa": "過度な自動化が安全性を損なう可能性があります。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "監査",
+      "reading": "かんさ",
+      "exampleJa": "AgentのTool Callを監査できるように履歴を保存します。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "権限",
+      "reading": "けんげん",
+      "exampleJa": "Taskに必要な権限だけをRuntimeで付与します。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "限定",
+      "reading": "げんてい",
+      "exampleJa": "Self-hosted RuntimeへのAccessを社内Networkに限定します。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "統制",
+      "reading": "とうせい",
+      "exampleJa": "ModelとToolの利用を組織単位で統制します。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "遵守",
+      "reading": "じゅんしゅ",
+      "exampleJa": "Agent Runtimeが組織Policyを強制し、利用者に遵守させます。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "隔離",
+      "reading": "かくり",
+      "exampleJa": "Computer-using Agentを他のWorkloadから隔離します。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "切り替える",
+      "reading": "きりかえる",
+      "exampleJa": "RiskとCostに応じて利用するModelを切り替えます。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "妥当",
+      "reading": "だとう",
+      "exampleJa": "この権限設定が本番用途として妥当か確認します。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "漏えい",
+      "reading": "ろうえい",
+      "exampleJa": "Credentialの漏えいを防ぐため、Workflow定義には保存しません。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "認可",
+      "reading": "にんか",
+      "exampleJa": "Userを認証した後、Roleに基づいてTool Accessを認可します。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
     }
   ],
   "grammar": [

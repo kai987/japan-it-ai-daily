@@ -1,6 +1,6 @@
 {
   "date": "2026-08-27",
-  "generatedAt": "2026-08-28T11:19:13.265Z",
+  "generatedAt": "2026-08-28T20:30:30.975Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -25,7 +25,7 @@
       "index": 1,
       "term": "必要",
       "reading": "ひつよう",
-      "exampleJa": "Agent Runtimeでは、必要な権限だけを実行時に付与する設計が重要です。",
+      "exampleJa": "Agent Runtimeでは必要な権限だけを実行時に付与します。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
@@ -33,7 +33,7 @@
       "index": 2,
       "term": "防ぐ",
       "reading": "ふせぐ",
-      "exampleJa": "Workflowを公開する前に構造を検証し、実行時エラーを防ぎます。",
+      "exampleJa": "Workflowを公開する前に構造を検証して実行時Errorを防ぎます。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
@@ -41,7 +41,7 @@
       "index": 3,
       "term": "任せる",
       "reading": "まかせる",
-      "exampleJa": "実装はCoding Agentに任せても、Schemaの最終レビューは人が行います。",
+      "exampleJa": "実装はCoding Agentに任せてもSchemaの最終Reviewは人が行います。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
@@ -49,7 +49,7 @@
       "index": 4,
       "term": "継続",
       "reading": "けいぞく",
-      "exampleJa": "Agentの利用状況を計測し、Guardrailを継続的に改善します。",
+      "exampleJa": "利用状況を計測してGuardrailを継続的に改善します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
@@ -57,7 +57,7 @@
       "index": 5,
       "term": "見通し",
       "reading": "みとおし",
-      "exampleJa": "Workflowをグラフで可視化すると、処理全体の見通しが立てやすくなります。",
+      "exampleJa": "WorkflowをGraphで可視化すると処理全体の見通しが立てやすくなります。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
@@ -65,7 +65,7 @@
       "index": 6,
       "term": "両立",
       "reading": "りょうりつ",
-      "exampleJa": "No-codeの使いやすさと、本番Runtimeの安全性を両立する必要があります。",
+      "exampleJa": "No-codeの使いやすさと本番Runtimeの安全性を両立します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
@@ -81,7 +81,7 @@
       "index": 8,
       "term": "統制",
       "reading": "とうせい",
-      "exampleJa": "GitHub Enterpriseでは、AgentやMCPの利用可否を組織単位で統制できます。",
+      "exampleJa": "AgentやMCPの利用可否を組織単位で統制します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
@@ -89,7 +89,7 @@
       "index": 9,
       "term": "網羅",
       "reading": "もうら",
-      "exampleJa": "APIが返すエラーを型として網羅的に定義すると、対応漏れを減らせます。",
+      "exampleJa": "APIが返すErrorを型として網羅的に定義します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
@@ -97,46 +97,126 @@
       "index": 10,
       "term": "促す",
       "reading": "うながす",
-      "exampleJa": "共通のQA Agent Platformを整備し、組織全体でAI活用を促します。",
+      "exampleJa": "共通QA Agent Platformを整備して組織全体のAI活用を促します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "可視化",
+      "reading": "かしか",
+      "exampleJa": "NodeとEdgeでWorkflowの実行順序を可視化します。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "構造",
+      "reading": "こうぞう",
+      "exampleJa": "保存前にWorkflow構造の整合性を確認します。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "検証",
+      "reading": "けんしょう",
+      "exampleJa": "TypeSpecとBackend実装の差分をCIで検証します。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "分離",
+      "reading": "ぶんり",
+      "exampleJa": "開発体験と本番Securityを最適化するためBuilderとRuntimeを分離します。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "権限",
+      "reading": "けんげん",
+      "exampleJa": "Managed Settingsで危険なPermission Bypassを禁止します。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "運用",
+      "reading": "うんよう",
+      "exampleJa": "共通TemplateでAgentの運用方法を標準化します。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "管理",
+      "reading": "かんり",
+      "exampleJa": "Plugin SourceとDefault ModelをEnterprise側で管理します。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "共有",
+      "reading": "きょうゆう",
+      "exampleJa": "QA向けSkillとGuardrailをTemplate Repositoryで共有します。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "生成",
+      "reading": "せいせい",
+      "exampleJa": "TypeSpecからOpenAPIとFrontend Clientを生成します。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "適合",
+      "reading": "てきごう",
+      "exampleJa": "Backend実装がTypeSpec Schemaに適合しているかCIで確認します。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
     }
   ],
   "grammar": [
     {
       "index": 1,
-      "pattern": "～ために",
-      "exampleJa": "実行時エラーを防ぐために、Workflowを公開する前に構造を検証します。",
+      "pattern": "～必要がある",
+      "exampleJa": "本番RuntimeではCredentialを安全に管理する必要があります。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～ことができる",
-      "exampleJa": "Managed Settingsを使うと、利用可能なPluginやModelを組織側で制御することができます。",
+      "pattern": "～ために",
+      "exampleJa": "実行時Errorを防ぐために保存前にWorkflowを検証します。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～だけでなく～も",
-      "exampleJa": "Agent Platformでは、開発速度だけでなく、本番環境の安全性も考慮する必要があります。",
+      "pattern": "～一方で",
+      "exampleJa": "Local AgentはPrivacyに強い一方で、高性能Hardwareが必要です。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "Agent Runtimeは、処理量に応じてReplica数を調整します。",
+      "pattern": "～ことによって",
+      "exampleJa": "共通Templateを使うことによってSecurity設定のばらつきを減らせます。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～たうえで",
-      "exampleJa": "Schemaを人間がレビューしたうえで、Coding Agentに実装を任せます。",
+      "pattern": "～に応じて",
+      "exampleJa": "負荷に応じてRuntime Replicaを増減させます。",
       "example": "grammar-example-05.mp3"
     },
     {
       "index": 6,
-      "pattern": "～に伴って",
-      "exampleJa": "AI Agentの利用者が増えるのに伴って、権限管理とGuardrailの重要性も高まります。",
+      "pattern": "～だけでなく～も",
+      "exampleJa": "Toolを導入するだけでなく、利用状況も継続的に測定します。",
       "example": "grammar-example-06.mp3"
     }
   ]

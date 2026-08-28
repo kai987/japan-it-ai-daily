@@ -1,6 +1,6 @@
 {
   "date": "2026-08-20",
-  "generatedAt": "2026-08-28T11:19:13.258Z",
+  "generatedAt": "2026-08-28T20:24:45.297Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -100,6 +100,86 @@
       "exampleJa": "Trace Dataの保存先と所在を確認します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "追跡",
+      "reading": "ついせき",
+      "exampleJa": "Request IDで一連のAgent実行を追跡します。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "識別",
+      "reading": "しきべつ",
+      "exampleJa": "Agentごとに一意のIdentityを付けて識別します。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "維持",
+      "reading": "いじ",
+      "exampleJa": "長時間TaskでもSession Stateを維持します。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "引き継ぐ",
+      "reading": "ひきつぐ",
+      "exampleJa": "再開時に前回のContextとTask状態を引き継ぎます。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "復元",
+      "reading": "ふくげん",
+      "exampleJa": "CheckpointからAgent Sessionを復元します。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "関連付ける",
+      "reading": "かんれんづける",
+      "exampleJa": "User、Session、Model Callを同じTraceに関連付けます。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "切り替える",
+      "reading": "きりかえる",
+      "exampleJa": "難易度に応じてModelとEffortを切り替えます。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "最適化",
+      "reading": "さいてきか",
+      "exampleJa": "品質とCostの両方を見ながらRoutingを最適化します。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "監査",
+      "reading": "かんさ",
+      "exampleJa": "どのAgentがどのToolを使ったか監査します。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "責任",
+      "reading": "せきにん",
+      "exampleJa": "AgentごとにOwnerと責任範囲を明確にします。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
     }
   ],
   "grammar": [

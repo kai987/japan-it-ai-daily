@@ -1,6 +1,6 @@
 {
   "date": "2026-08-24",
-  "generatedAt": "2026-08-28T11:19:13.262Z",
+  "generatedAt": "2026-08-28T20:27:43.556Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -31,33 +31,33 @@
     },
     {
       "index": 2,
-      "term": "共有",
-      "reading": "きょうゆう",
-      "exampleJa": "Team DiscussionをAgent Contextとして共有します。",
+      "term": "許可",
+      "reading": "きょか",
+      "exampleJa": "安全なRead操作だけを自動で許可します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "許可",
-      "reading": "きょか",
-      "exampleJa": "Read-only Toolは自動で許可します。",
+      "term": "権限",
+      "reading": "けんげん",
+      "exampleJa": "Commandごとに必要な権限を設定します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "禁止",
-      "reading": "きんし",
-      "exampleJa": "危険なScheduled Actionは完全に禁止します。",
+      "term": "実行",
+      "reading": "じっこう",
+      "exampleJa": "外部へのWrite操作は承認後に実行します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "移植",
-      "reading": "いしょく",
-      "exampleJa": "RuntimeをZigからRustへ移植します。",
+      "term": "確認",
+      "reading": "かくにん",
+      "exampleJa": "危険な操作はUserに内容を確認してもらいます。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
@@ -65,72 +65,152 @@
       "index": 6,
       "term": "計測",
       "reading": "けいそく",
-      "exampleJa": "Provider側のUsageを継続的に計測します。",
+      "exampleJa": "UserごとのToken利用量を計測します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "承認",
-      "reading": "しょうにん",
-      "exampleJa": "高Risk Actionだけ人間の承認を求めます。",
+      "term": "課金",
+      "reading": "かきん",
+      "exampleJa": "Model Callを利用量に応じて課金します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "疲労",
-      "reading": "ひろう",
-      "exampleJa": "確認が多すぎると承認疲労が起きます。",
+      "term": "利用量",
+      "reading": "りようりょう",
+      "exampleJa": "Team別の利用量をDashboardで可視化します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "逸脱",
-      "reading": "いつだつ",
-      "exampleJa": "Agentが組織Policyから逸脱しないように制御します。",
+      "term": "移行",
+      "reading": "いこう",
+      "exampleJa": "Node.jsの一部ToolingをBunへ段階的に移行します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "定着",
-      "reading": "ていちゃく",
-      "exampleJa": "AI Toolを業務に定着させるにはTrainingが必要です。",
+      "term": "置き換える",
+      "reading": "おきかえる",
+      "exampleJa": "互換性を確認しながら既存RuntimeをBunへ置き換えます。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "導入",
+      "reading": "どうにゅう",
+      "exampleJa": "Coding Agentを一部Teamから段階的に導入します。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "変革",
+      "reading": "へんかく",
+      "exampleJa": "AI導入を単なるTool追加ではなく業務変革として進めます。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "定着",
+      "reading": "ていちゃく",
+      "exampleJa": "TrainingとTemplateでAgent利用をTeamに定着させます。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "普及",
+      "reading": "ふきゅう",
+      "exampleJa": "成功Caseを共有してAI Toolの利用を社内に普及させます。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "統制",
+      "reading": "とうせい",
+      "exampleJa": "自由度を残しつつ危険なPermissionを組織で統制します。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "承認",
+      "reading": "しょうにん",
+      "exampleJa": "外部SystemへのWriteはUser承認を必須にします。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "拒否",
+      "reading": "きょひ",
+      "exampleJa": "危険度が高いCommandは自動実行を拒否します。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "記録",
+      "reading": "きろく",
+      "exampleJa": "誰がどのModelを使ったか利用履歴を記録します。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "監査",
+      "reading": "かんさ",
+      "exampleJa": "Permission変更とAgent操作を定期的に監査します。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "生産性",
+      "reading": "せいさんせい",
+      "exampleJa": "AI Toolの利用率だけでなく開発生産性への効果も測定します。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
     }
   ],
   "grammar": [
     {
       "index": 1,
       "pattern": "～前に",
-      "exampleJa": "外部へ書き込む前にHuman Approvalを求めます。",
+      "exampleJa": "外部へMessageを送る前に内容を確認します。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～すぎる",
-      "exampleJa": "確認回数が多すぎるとApproval Fatigueが起きます。",
+      "pattern": "～に応じて",
+      "exampleJa": "利用量に応じてCostを配賦します。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～だけでなく",
-      "exampleJa": "Code生成だけでなく、Compatibility Testも重要です。",
+      "pattern": "～ことによって",
+      "exampleJa": "RuntimeをBunへ移行することによってBuild時間を短縮します。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～によって",
-      "exampleJa": "Permission LevelによってToolの扱いを変えます。",
+      "pattern": "～一方で",
+      "exampleJa": "自動許可は便利な一方で、誤操作のRiskも高まります。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～につながる",
-      "exampleJa": "Training不足はAI投資の成果不足につながります。",
+      "pattern": "～に伴って",
+      "exampleJa": "Agent利用の普及に伴って、Meteringと監査の重要性も高まります。",
       "example": "grammar-example-05.mp3"
     }
   ]

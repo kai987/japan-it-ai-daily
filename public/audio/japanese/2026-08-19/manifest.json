@@ -1,6 +1,6 @@
 {
   "date": "2026-08-19",
-  "generatedAt": "2026-08-28T11:19:13.258Z",
+  "generatedAt": "2026-08-28T20:24:05.079Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -31,106 +31,186 @@
     },
     {
       "index": 2,
-      "term": "直接",
-      "reading": "ちょくせつ",
-      "exampleJa": "Promptだけで権限を直接制御することはできません。",
+      "term": "強制",
+      "reading": "きょうせい",
+      "exampleJa": "危険な操作をPromptではなくRuntime Policyで強制的に制限します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "強制",
-      "reading": "きょうせい",
-      "exampleJa": "OS側でFile Accessを強制的に制限します。",
+      "term": "制御",
+      "reading": "せいぎょ",
+      "exampleJa": "ToolへのAccessをRuntimeで制御します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "記録",
-      "reading": "きろく",
-      "exampleJa": "Policy DecisionをAudit Logに記録します。",
+      "term": "監査",
+      "reading": "かんさ",
+      "exampleJa": "すべてのTool Callを監査できるように記録します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "選択",
-      "reading": "せんたく",
-      "exampleJa": "MCPとDirect APIを要件に応じて選択します。",
+      "term": "経由",
+      "reading": "けいゆ",
+      "exampleJa": "外部SystemにはMCP Gateway経由で接続します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "暗号化",
-      "reading": "あんごうか",
-      "exampleJa": "データを暗号化したまま処理します。",
+      "term": "比較",
+      "reading": "ひかく",
+      "exampleJa": "MCPとREST APIの責務とSecurity境界を比較します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "境界",
-      "reading": "きょうかい",
-      "exampleJa": "Security BoundaryをModelの外側に置きます。",
+      "term": "暗号",
+      "reading": "あんごう",
+      "exampleJa": "機密Dataを暗号化したまま計算できる方式を検討します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "抑制",
-      "reading": "よくせい",
-      "exampleJa": "Sandboxで誤操作の影響を抑制します。",
+      "term": "復号",
+      "reading": "ふくごう",
+      "exampleJa": "Server側でDataを復号せずに推論処理を行います。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "追跡",
-      "reading": "ついせき",
-      "exampleJa": "User操作とBackend Traceを追跡します。",
+      "term": "秘匿",
+      "reading": "ひとく",
+      "exampleJa": "個人情報を秘匿したままModel処理を行います。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "担保",
-      "reading": "たんぽ",
-      "exampleJa": "Runtime Policyで最低限の安全性を担保します。",
+      "term": "保護",
+      "reading": "ほご",
+      "exampleJa": "機密DataをEncryptionとAccess Controlで保護します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "実行",
+      "reading": "じっこう",
+      "exampleJa": "許可されたCommandだけをSandbox内で実行します。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "拒否",
+      "reading": "きょひ",
+      "exampleJa": "Policyに一致しないTool CallはRuntimeで拒否します。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "検知",
+      "reading": "けんち",
+      "exampleJa": "不審なTool Call Patternをリアルタイムで検知します。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "追跡",
+      "reading": "ついせき",
+      "exampleJa": "Trace IDでUser RequestからTool Callまで追跡します。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "可観測",
+      "reading": "かかんそく",
+      "exampleJa": "Agent内部の状態を外部から可観測にします。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "記録",
+      "reading": "きろく",
+      "exampleJa": "Model InputとOutputをTraceとして記録します。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "整合",
+      "reading": "せいごう",
+      "exampleJa": "MCP Tool SchemaがBackend APIの仕様と整合しているか確認します。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "準拠",
+      "reading": "じゅんきょ",
+      "exampleJa": "Agent Runtimeを社内Security Standardに準拠させます。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "検証",
+      "reading": "けんしょう",
+      "exampleJa": "FHE導入前にLatencyとSecurity効果を検証します。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "脅威",
+      "reading": "きょうい",
+      "exampleJa": "Agentが外部Toolを使う際の脅威を事前に分析します。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
     }
   ],
   "grammar": [
     {
       "index": 1,
-      "pattern": "～だけでは",
-      "exampleJa": "Promptだけでは十分なSecurity Boundaryになりません。",
+      "pattern": "～によって",
+      "exampleJa": "Runtime Policyによって危険なCommandを制御します。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～ようにする",
-      "exampleJa": "AgentがProject外へ書き込めないようにします。",
+      "pattern": "～上で",
+      "exampleJa": "MCPを本番利用する上で、認可と監査は重要です。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～に応じて",
-      "exampleJa": "AI Appの数に応じてMCP導入を判断します。",
+      "pattern": "～だけでなく～も",
+      "exampleJa": "Promptだけでなく、Runtimeでも権限を制御します。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～一方で",
-      "exampleJa": "MCPは再利用しやすい一方で、運用コストも増えます。",
+      "pattern": "～ことなく",
+      "exampleJa": "Dataを復号することなく計算処理を行います。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～にとどまらず",
-      "exampleJa": "ObservabilityはInfrastructureにとどまらず、LLMにも広がっています。",
+      "pattern": "～に対して",
+      "exampleJa": "高RiskなTool Callに対して追加Approvalを要求します。",
       "example": "grammar-example-05.mp3"
     }
   ]

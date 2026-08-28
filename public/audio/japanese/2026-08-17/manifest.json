@@ -1,6 +1,6 @@
 {
   "date": "2026-08-17",
-  "generatedAt": "2026-08-28T11:19:13.255Z",
+  "generatedAt": "2026-08-28T20:22:40.622Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -31,25 +31,25 @@
     },
     {
       "index": 2,
-      "term": "情報",
-      "reading": "じょうほう",
-      "exampleJa": "必要な情報だけをKnowledge Baseから検索します。",
+      "term": "認証",
+      "reading": "にんしょう",
+      "exampleJa": "Browser Agentを実行する前にUserを認証します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "制御",
-      "reading": "せいぎょ",
-      "exampleJa": "Tenantごとにアクセスを制御します。",
+      "term": "認可",
+      "reading": "にんか",
+      "exampleJa": "Documentごとに閲覧Accessを認可します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "分離",
-      "reading": "ぶんり",
-      "exampleJa": "ユーザーごとにデータを分離します。",
+      "term": "検索",
+      "reading": "けんさく",
+      "exampleJa": "Userの権限範囲内だけでKnowledgeを検索します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
@@ -57,80 +57,160 @@
       "index": 5,
       "term": "抽出",
       "reading": "ちゅうしゅつ",
-      "exampleJa": "文書からEntityとRelationshipを抽出します。",
+      "exampleJa": "DocumentからEntityとRelationを抽出します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "判断",
-      "reading": "はんだん",
-      "exampleJa": "RouterがTaskの難易度を判断します。",
+      "term": "関連",
+      "reading": "かんれん",
+      "exampleJa": "Queryとの関連性が高いNodeを優先します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "整合性",
-      "reading": "せいごうせい",
-      "exampleJa": "JWTとUser Contextの整合性を確認します。",
+      "term": "経由",
+      "reading": "けいゆ",
+      "exampleJa": "外部DataにはMCP Gateway経由でアクセスします。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "漏えい",
-      "reading": "ろうえい",
-      "exampleJa": "Tenant間の情報漏えいを防ぎます。",
+      "term": "参照",
+      "reading": "さんしょう",
+      "exampleJa": "回答には参照したSourceを必ず付けます。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "絞り込む",
-      "reading": "しぼりこむ",
-      "exampleJa": "Metadata Filterで検索範囲を絞り込みます。",
+      "term": "保護",
+      "reading": "ほご",
+      "exampleJa": "機密Dataを権限Filterで保護します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "相関",
-      "reading": "そうかん",
-      "exampleJa": "Knowledge GraphでEntity間の相関を分析します。",
+      "term": "隔離",
+      "reading": "かくり",
+      "exampleJa": "Browser SessionをUserごとに隔離します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "絞り込む",
+      "reading": "しぼりこむ",
+      "exampleJa": "Rerankerで候補Documentを上位十件に絞り込みます。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "付与",
+      "reading": "ふよ",
+      "exampleJa": "候補ごとに関連度Scoreを付与します。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "漏えい",
+      "reading": "ろうえい",
+      "exampleJa": "権限Filterの抜けによる情報漏えいを防ぎます。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "改ざん",
+      "reading": "かいざん",
+      "exampleJa": "取得したContentが改ざんされていないか検証します。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "追跡",
+      "reading": "ついせき",
+      "exampleJa": "回答から元DocumentまでSourceを追跡できるようにします。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "判定",
+      "reading": "はんてい",
+      "exampleJa": "Judge ModelがTaskの難易度を判定します。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "閾値",
+      "reading": "しきいち",
+      "exampleJa": "Confidenceが閾値を下回る場合はHuman Reviewへ回します。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "経路",
+      "reading": "けいろ",
+      "exampleJa": "Queryの種類に応じてModelへの経路を切り替えます。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "適合",
+      "reading": "てきごう",
+      "exampleJa": "検索結果がUserのAccess Policyに適合しているか確認します。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "根拠",
+      "reading": "こんきょ",
+      "exampleJa": "回答の根拠として参照Sourceを表示します。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
     }
   ],
   "grammar": [
     {
       "index": 1,
-      "pattern": "～から取得する",
-      "exampleJa": "User IDはLLMではなく認証済みTokenから取得します。",
+      "pattern": "～に基づいて",
+      "exampleJa": "UserのRoleに基づいて検索範囲を制御します。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～ようにする",
-      "exampleJa": "別Tenantの文書を検索できないようにします。",
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの難易度に応じてModelをRoutingします。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～に比べて",
-      "exampleJa": "GraphRAGは通常のRAGに比べてIndex作成コストが高くなります。",
+      "pattern": "～た上で",
+      "exampleJa": "Userを認証した上で、Document Accessを認可します。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～に基づいて",
-      "exampleJa": "Policyに基づいて検索権限を判定します。",
+      "pattern": "～ことなく",
+      "exampleJa": "機密Dataを外部へ送信することなく検索を実行します。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～に限らず",
-      "exampleJa": "Agent Browserでは性能に限らずSecurityも重要です。",
+      "pattern": "～恐れがある",
+      "exampleJa": "権限Filterが不十分だと機密情報が漏えいする恐れがあります。",
       "example": "grammar-example-05.mp3"
     }
   ]
