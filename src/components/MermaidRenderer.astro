@@ -9,11 +9,13 @@ import '../styles/mermaid.css';
     .replace(/\\/g, '\\\\')
     .replace(/"/g, '\\"');
 
+  const textLines = (source) => String(source ?? '')
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+
   const legacyTextFlowToMermaid = (source) => {
-    const lines = String(source ?? '')
-      .split(/\r?\n/)
-      .map((line) => line.trim())
-      .filter(Boolean);
+    const lines = textLines(source);
 
     if (lines.length < 3 || !lines.includes('↓')) return '';
     if (lines.some((line) => line !== '↓' && line.length > 80)) return '';
@@ -28,6 +30,32 @@ import '../styles/mermaid.css';
     const path = nodes.map((_, index) => `N${index}`).join(' --> ');
     return `flowchart TD\n  ${definitions.join('\n  ')}\n  ${path}`;
   };
+
+  const legacyLayerStackToMermaid = (source) => {
+    const lines = textLines(source);
+    if (lines.length < 4 || lines.length % 2 !== 0) return '';
+    if (lines.length > 16 || lines.some((line) => line.length > 100)) return '';
+
+    const layers = [];
+    for (let index = 0; index < lines.length; index += 2) {
+      const title = lines[index];
+      const detail = lines[index + 1];
+      const numbered = /^(?:[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]|\d+[.)]?)/.test(title);
+      if (!numbered || !/layer|レイヤー/i.test(title) || !detail || detail === '↓') return '';
+      layers.push({ title, detail });
+    }
+
+    if (layers.length < 2 || layers.length > 8) return '';
+
+    const definitions = layers.map(({ title, detail }, index) =>
+      `L${index}["${escapeLabel(title)}<br/>${escapeLabel(detail)}"]`
+    );
+    const path = layers.map((_, index) => `L${index}`).join(' --> ');
+    return `flowchart TD\n  ${definitions.join('\n  ')}\n  ${path}`;
+  };
+
+  const legacyTextToMermaid = (source) =>
+    legacyTextFlowToMermaid(source) || legacyLayerStackToMermaid(source);
 
   const makeDiagram = (source, replacementTarget) => {
     const root = document.createElement('div');
@@ -66,7 +94,7 @@ import '../styles/mermaid.css';
     });
 
     findCodeBlocks('text').forEach(({ pre, code }) => {
-      const source = legacyTextFlowToMermaid(code.textContent || '');
+      const source = legacyTextToMermaid(code.textContent || '');
       if (!source) return;
       makeDiagram(source, pre);
     });
@@ -80,7 +108,7 @@ import '../styles/mermaid.css';
       theme: 'base',
       fontFamily: 'Inter, Noto Sans JP, Yu Gothic, YuGothic, system-ui, sans-serif',
       flowchart: {
-        htmlLabels: false,
+        htmlLabels: true,
         useMaxWidth: true,
         curve: 'basis',
         nodeSpacing: 32,
