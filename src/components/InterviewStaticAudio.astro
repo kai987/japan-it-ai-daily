@@ -1,0 +1,140 @@
+<script is:inline>
+  (() => {
+    const normalize = (value) => String(value || '').replace(/\s+/g, ' ').trim();
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const dailyIndex = parts.lastIndexOf('daily');
+    const reportId = dailyIndex >= 0 ? parts[dailyIndex + 1] : '';
+    if (!reportId) return;
+
+    const baseParts = parts.slice(0, dailyIndex);
+    const prefix = baseParts.length ? `/${baseParts.join('/')}/` : '/';
+    const manifestUrl = `${prefix}audio/japanese/${reportId}/interview-manifest.json`;
+
+    const audioMapPromise = fetch(manifestUrl, { cache: 'no-cache' })
+      .then((response) => response.ok ? response.json() : null)
+      .then((manifest) => {
+        const map = new Map();
+        for (const item of manifest?.interview || []) {
+          if (item?.text && item?.audio) map.set(normalize(item.text), `${prefix}audio/japanese/${reportId}/${item.audio}`);
+        }
+        for (const item of manifest?.review || []) {
+          if (item?.text && item?.audio) map.set(normalize(item.text), `${prefix}audio/japanese/${reportId}/${item.audio}`);
+        }
+        return map;
+      })
+      .catch(() => new Map());
+
+    const speechSupported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+    const synth = speechSupported ? window.speechSynthesis : null;
+    let voices = speechSupported && synth ? synth.getVoices() : [];
+    let activeButton = null;
+    let activeAudio = null;
+
+    const refreshVoices = () => {
+      if (synth) voices = synth.getVoices();
+    };
+    if (synth) {
+      refreshVoices();
+      synth.addEventListener?.('voiceschanged', refreshVoices);
+    }
+
+    const japaneseVoice = () => {
+      const local = voices.find((voice) => voice.lang.toLowerCase() === 'ja-jp' && voice.localService);
+      if (local) return local;
+      const exact = voices.find((voice) => voice.lang.toLowerCase() === 'ja-jp');
+      if (exact) return exact;
+      return voices.find((voice) => voice.lang.toLowerCase().startsWith('ja')) || null;
+    };
+
+    const clearActive = () => {
+      if (activeButton instanceof HTMLButtonElement) {
+        activeButton.classList.remove('is-speaking');
+        activeButton.setAttribute('aria-pressed', 'false');
+      }
+      activeButton = null;
+    };
+
+    const stopAll = () => {
+      if (activeAudio instanceof HTMLAudioElement) {
+        activeAudio.pause();
+        activeAudio.currentTime = 0;
+      }
+      activeAudio = null;
+      if (synth) synth.cancel();
+      clearActive();
+    };
+
+    const setActive = (button) => {
+      activeButton = button;
+      button.classList.add('is-speaking');
+      button.setAttribute('aria-pressed', 'true');
+    };
+
+    const speakFallback = (button, text) => {
+      if (!speechSupported || !synth) {
+        button.dataset.speechUnavailable = 'true';
+        clearActive();
+        return;
+      }
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'ja-JP';
+      utterance.rate = 0.9;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      const voice = japaneseVoice();
+      if (voice) utterance.voice = voice;
+      setActive(button);
+      utterance.onend = () => { if (activeButton === button) clearActive(); };
+      utterance.onerror = () => { if (activeButton === button) clearActive(); };
+      synth.speak(utterance);
+    };
+
+    const playAudio = (button, text, url) => {
+      const audio = new Audio(url);
+      activeAudio = audio;
+      setActive(button);
+      let fallbackStarted = false;
+      const fallback = () => {
+        if (fallbackStarted || activeAudio !== audio) return;
+        fallbackStarted = true;
+        activeAudio = null;
+        clearActive();
+        speakFallback(button, text);
+      };
+      audio.addEventListener('ended', () => {
+        if (activeAudio === audio) {
+          activeAudio = null;
+          clearActive();
+        }
+      }, { once: true });
+      audio.addEventListener('error', fallback, { once: true });
+      const result = audio.play();
+      if (result && typeof result.catch === 'function') result.catch(fallback);
+    };
+
+    document.addEventListener('click', async (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const button = target.closest('.report-speech-button');
+      if (!(button instanceof HTMLButtonElement)) return;
+
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      if (activeButton === button) {
+        stopAll();
+        return;
+      }
+
+      const text = normalize(button.dataset.speech || '');
+      if (!text) return;
+      stopAll();
+      const map = await audioMapPromise;
+      const audioUrl = map.get(text);
+      if (audioUrl) playAudio(button, text, audioUrl);
+      else speakFallback(button, text);
+    }, true);
+
+    window.addEventListener('pagehide', stopAll, { once: true });
+  })();
+</script>
