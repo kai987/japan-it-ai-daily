@@ -38,16 +38,34 @@ import '../styles/mermaid.css';
     return root;
   };
 
-  const collectDiagrams = () => {
-    document.querySelectorAll('pre > code.language-mermaid').forEach((code) => {
+  const findCodeBlocks = (language) => {
+    const blocks = [];
+    const seen = new Set();
+
+    document.querySelectorAll(`pre[data-language="${language}"]`).forEach((pre) => {
+      if (!(pre instanceof HTMLPreElement) || seen.has(pre)) return;
+      const code = pre.querySelector(':scope > code');
+      if (!(code instanceof HTMLElement)) return;
+      seen.add(pre);
+      blocks.push({ pre, code });
+    });
+
+    document.querySelectorAll(`pre > code.language-${language}`).forEach((code) => {
       const pre = code.parentElement;
-      if (!(pre instanceof HTMLPreElement)) return;
+      if (!(pre instanceof HTMLPreElement) || seen.has(pre)) return;
+      seen.add(pre);
+      blocks.push({ pre, code });
+    });
+
+    return blocks;
+  };
+
+  const collectDiagrams = () => {
+    findCodeBlocks('mermaid').forEach(({ pre, code }) => {
       makeDiagram(code.textContent || '', pre);
     });
 
-    document.querySelectorAll('pre > code.language-text').forEach((code) => {
-      const pre = code.parentElement;
-      if (!(pre instanceof HTMLPreElement)) return;
+    findCodeBlocks('text').forEach(({ pre, code }) => {
       const source = legacyTextFlowToMermaid(code.textContent || '');
       if (!source) return;
       makeDiagram(source, pre);
