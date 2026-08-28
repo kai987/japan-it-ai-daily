@@ -6,6 +6,7 @@ import '../styles/pagination.css';
 import '../styles/speech.css';
 import SiteSearch from '../components/SiteSearch.astro';
 import MermaidRenderer from '../components/MermaidRenderer.astro';
+import InterviewStaticAudio from '../components/InterviewStaticAudio.astro';
 const { title = 'Japan IT / AI Daily', description = '日本のIT・AI技術ニュースを、面接対策と技術日本語の視点から毎日整理。' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
@@ -205,5 +206,6 @@ const base = import.meta.env.BASE_URL;
       })();
     </script>
     <MermaidRenderer />
+    <InterviewStaticAudio />
   </body>
 </html>
