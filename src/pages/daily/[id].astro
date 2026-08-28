@@ -207,7 +207,8 @@ const tocHeadings = [
         quote.dataset.speechEnhanced = 'true';
         quote.classList.add('report-speech-target');
         const label = kind === 'review' ? '面试复习问题を読み上げる' : '面试内容を読み上げる';
-        quote.appendChild(makeButton(text, label));
+        const button = makeButton(text, label);
+        quote.insertBefore(button, quote.firstChild);
       };
 
       const h2s = Array.from(article.querySelectorAll('h2'));
@@ -233,19 +234,29 @@ const tocHeadings = [
 
   <style>
     .report-speech-target{
-      position:relative;
-      padding-right:62px!important;
-      min-height:58px;
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      min-width:0;
+    }
+    .report-speech-target > p{
+      flex:1 1 auto;
+      min-width:0;
+      margin-top:0;
+      margin-bottom:0;
     }
     .report-speech-button{
-      position:absolute;
-      top:12px;
-      right:12px;
+      position:static;
+      flex:0 0 34px;
+      margin-top:1px;
       z-index:1;
     }
     @media(max-width:800px){
-      .report-speech-target{padding-right:64px!important}
-      .report-speech-button{top:10px;right:10px}
+      .report-speech-target{gap:9px}
+      .report-speech-button{
+        flex-basis:38px;
+        margin-top:0;
+      }
     }
   </style>
 </BaseLayout>
