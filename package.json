@@ -7,10 +7,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "audio:generate": "node scripts/generate-japanese-audio.mjs",
-    "audio:generate:latest": "node scripts/generate-japanese-audio.mjs --latest",
-    "audio:generate:all": "node scripts/generate-japanese-audio.mjs --all",
-    "audio:generate:all:force": "node scripts/generate-japanese-audio.mjs --all --force"
+    "audio:generate": "node scripts/generate-japanese-audio.mjs && node scripts/generate-interview-audio.mjs",
+    "audio:generate:latest": "node scripts/generate-japanese-audio.mjs --latest && node scripts/generate-interview-audio.mjs --latest",
+    "audio:generate:all": "node scripts/generate-japanese-audio.mjs --all && node scripts/generate-interview-audio.mjs --all",
+    "audio:generate:all:force": "node scripts/generate-japanese-audio.mjs --all --force && node scripts/generate-interview-audio.mjs --all --force",
+    "audio:generate:interview:latest": "node scripts/generate-interview-audio.mjs --latest",
+    "audio:generate:interview:all": "node scripts/generate-interview-audio.mjs --all",
+    "audio:generate:interview:all:force": "node scripts/generate-interview-audio.mjs --all --force"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.6",
