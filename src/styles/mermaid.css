@@ -1,0 +1,46 @@
+/* Theme-aware Mermaid diagrams */
+.prose .mermaid-diagram{
+  margin:20px 0;
+  padding:20px;
+  overflow-x:auto;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:var(--surface);
+  box-shadow:var(--shadow);
+  transition:background-color .18s ease,border-color .18s ease;
+}
+
+.prose .mermaid-diagram svg{
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  margin:0 auto;
+}
+
+.prose .mermaid-diagram .label,
+.prose .mermaid-diagram .nodeLabel,
+.prose .mermaid-diagram .edgeLabel{
+  font-family:Inter,"Noto Sans JP","Yu Gothic",YuGothic,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+}
+
+.prose .mermaid-diagram .edgeLabel{
+  background:var(--surface)!important;
+}
+
+.prose .mermaid-diagram .edgeLabel p{
+  background:var(--surface)!important;
+}
+
+@media(max-width:800px){
+  .prose .mermaid-diagram{
+    margin:16px 0;
+    padding:14px;
+    border-radius:12px;
+    -webkit-overflow-scrolling:touch;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .prose .mermaid-diagram{transition:none}
+}
