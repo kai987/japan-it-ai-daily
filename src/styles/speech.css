@@ -180,3 +180,9 @@
 @media(prefers-reduced-motion:reduce){
   .speech-button{transition:none}
 }
+
+/* Theme button icon reflects the currently active theme. */
+.theme-icon-sun{opacity:1;transform:rotate(0) scale(1)}
+.theme-icon-moon{opacity:0;transform:rotate(30deg) scale(.72)}
+:root[data-theme='dark'] .theme-icon-sun{opacity:0;transform:rotate(-30deg) scale(.72)}
+:root[data-theme='dark'] .theme-icon-moon{opacity:1;transform:rotate(0) scale(1)}
