@@ -3,8 +3,8 @@ import '../styles/mermaid.css';
 import InterviewDeepLinks from './InterviewDeepLinks.astro';
 ---
 
-<script type="module" is:inline>
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+<script>
+  import mermaid from 'mermaid';
 
   const escapeLabel = (value) => String(value ?? '')
     .replace(/\\/g, '\\\\')
@@ -185,18 +185,24 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
     }
   };
 
-  collectDiagrams();
-  await renderDiagrams();
+  const initializeMermaidRenderer = async () => {
+    collectDiagrams();
+    await renderDiagrams();
 
-  const observer = new MutationObserver((mutations) => {
-    if (mutations.some((mutation) => mutation.attributeName === 'data-theme')) {
-      renderDiagrams();
-    }
-  });
+    const observer = new MutationObserver((mutations) => {
+      if (mutations.some((mutation) => mutation.attributeName === 'data-theme')) {
+        renderDiagrams();
+      }
+    });
 
-  observer.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ['data-theme'],
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    });
+  };
+
+  initializeMermaidRenderer().catch((error) => {
+    console.error('Mermaid initialization failed:', error);
   });
 </script>
 
