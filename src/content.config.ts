@@ -1,16 +1,25 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+const externalUrl = z.string().url().refine((value) => {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' || url.protocol === 'http:';
+  } catch {
+    return false;
+  }
+}, 'External URLs must use http or https');
+
 const topItem = z.object({
   title: z.string(),
   source: z.string(),
   topic: z.string().optional(),
   why: z.string().optional(),
-  url: z.string().url().optional()
+  url: externalUrl.optional()
 });
 
 const daily = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/daily' }),
+  loader: glob({ pattern: '**/*.md', base: './src/content/daily' }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
@@ -56,7 +65,7 @@ const technicalTermItem = z.object({
 });
 
 const japanese = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/japanese' }),
+  loader: glob({ pattern: '**/*.md', base: './src/content/japanese' }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
