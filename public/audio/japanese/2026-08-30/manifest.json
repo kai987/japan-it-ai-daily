@@ -1,0 +1,229 @@
+{
+  "date": "2026-08-30",
+  "generatedAt": "2026-08-30T16:47:50.970Z",
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "根拠",
+      "reading": "こんきょ",
+      "exampleJa": "AIの判定を採用する前に、判断の根拠が実データと一致しているか確認します。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    },
+    {
+      "index": 2,
+      "term": "矛盾する",
+      "reading": "むじゅんする",
+      "exampleJa": "生成された説明が仕様書と矛盾していないか、別のCheckで検証します。",
+      "word": "vocab-02.mp3",
+      "example": "example-02.mp3"
+    },
+    {
+      "index": 3,
+      "term": "条項",
+      "reading": "じょうこう",
+      "exampleJa": "外部AI Providerを採用する前に、契約終了や支配権変更に関する条項も確認します。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 4,
+      "term": "責任主体",
+      "reading": "せきにんしゅたい",
+      "exampleJa": "AI Agentの利用を拡大する前に、予算と運用の責任主体を明確にします。",
+      "word": "vocab-04.mp3",
+      "example": "example-04.mp3"
+    },
+    {
+      "index": 5,
+      "term": "協業",
+      "reading": "きょうぎょう",
+      "exampleJa": "複数のProviderと協業する場合でも、特定企業だけに依存しない設計が必要です。",
+      "word": "vocab-05.mp3",
+      "example": "example-05.mp3"
+    },
+    {
+      "index": 6,
+      "term": "仕込む",
+      "reading": "しこむ",
+      "exampleJa": "評価用データに既知のバグを仕込み、Reviewerが本当に検出できるか測定します。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 7,
+      "term": "見逃す",
+      "reading": "みのがす",
+      "exampleJa": "合格率だけでなく、重大な欠陥を何件見逃したかもEvaluationに含めます。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 8,
+      "term": "突き合わせる",
+      "reading": "つきあわせる",
+      "exampleJa": "AIの指摘をテスト結果と突き合わせ、正しい箇所を特定できているか確認します。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 9,
+      "term": "絞る",
+      "reading": "しぼる",
+      "exampleJa": "破壊的な操作を担当するAgentを一つに絞り、監査範囲を小さくします。",
+      "word": "vocab-09.mp3",
+      "example": "example-09.mp3"
+    },
+    {
+      "index": 10,
+      "term": "引き起こす",
+      "reading": "ひきおこす",
+      "exampleJa": "単価の低下が利用量の急増を引き起こす可能性もあります。",
+      "word": "vocab-10.mp3",
+      "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "踏まえる",
+      "reading": "ふまえる",
+      "exampleJa": "Evaluation結果と契約上のRiskを踏まえて、Provider構成を見直します。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "担保する",
+      "reading": "たんぽする",
+      "exampleJa": "複数Providerを利用しても、同じSecurity Policyが適用されることを担保します。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "相次ぐ",
+      "reading": "あいつぐ",
+      "exampleJa": "Agentの利用拡大後、想定外のCost増加が相次いだため、Budget Controlを導入しました。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "もっともらしい",
+      "reading": "もっともらしい",
+      "exampleJa": "もっともらしい説明でも、実データで検証されていなければ採用しません。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "深刻な",
+      "reading": "しんこくな",
+      "exampleJa": "Costの責任主体が曖昧なままだと、深刻なGovernance問題につながります。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "適切な",
+      "reading": "てきせつな",
+      "exampleJa": "物理機器を操作するAgentには、状況に応じた適切な安全制約を設定します。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "あくまで",
+      "reading": "あくまで",
+      "exampleJa": "今回の測定値はあくまで一つのWorkloadでの結果として扱います。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "順次",
+      "reading": "じゅんじ",
+      "exampleJa": "安全性評価が完了したDeviceから順次対応範囲を拡大します。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "即座に",
+      "reading": "そくざに",
+      "exampleJa": "異常を検知した場合でも、Agentが即座に危険な操作を実行しないようGuardrailを入れます。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "Multi-provider構成は柔軟性を高める一方で、互換性評価の負担も増えます。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "AIレビューでは合否ラベルの確認にとどまらず、指摘内容が実際の欠陥を特定しているかまで検証します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "pattern": "～かねない",
+      "exampleJa": "複数Agentが同じ作業範囲を同時に更新すると、変更を上書きしかねません。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 3,
+      "pattern": "～に至るまで",
+      "exampleJa": "MHSは顕微鏡からロボットアームに至るまで、多様な機器を共通の方式で扱うことを目指しています。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 4,
+      "pattern": "～に伴って",
+      "exampleJa": "AI Agentの利用拡大に伴って、Token Costの責任分担も明確にする必要があります。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 5,
+      "pattern": "～に基づいて",
+      "exampleJa": "実際のUsageとBusiness Outcomeに基づいて、AgentごとのBudgetを設定します。",
+      "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～わけではない",
+      "exampleJa": "AIが差し戻したからといって、仕込んだバグを正しく検出したわけではありません。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～を踏まえて",
+      "exampleJa": "Evaluation結果と契約条件を踏まえて、複数ProviderへのFallbackを設計します。",
+      "example": "grammar-example-07.mp3"
+    }
+  ]
+}
