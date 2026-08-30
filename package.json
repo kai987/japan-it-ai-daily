@@ -16,8 +16,9 @@
     "audio:generate:interview:all:force": "node scripts/generate-interview-audio.mjs --all --force"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.6",
-    "@astrojs/rss": "^4.0.12",
-    "astro": "^5.13.5"
+    "@astrojs/mdx": "7.0.8",
+    "@astrojs/rss": "4.0.19",
+    "astro": "7.2.9",
+    "mermaid": "11.17.2"
   }
 }
