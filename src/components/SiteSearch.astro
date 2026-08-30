@@ -1,25 +1,29 @@
 ---
 import { getCollection } from 'astro:content';
 import '../styles/search.css';
+import { getSafeExternalUrl } from '../lib/urls';
 
 const base = import.meta.env.BASE_URL;
 const reports = (await getCollection('daily')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const searchIndex = reports.flatMap((report) => {
   const date = report.data.date.toISOString().slice(0, 10);
   const reportTopics = report.data.topics ?? [];
-  return (report.data.top ?? []).map((item:any, index:number) => ({
-    id: `${report.id}-${index + 1}`,
-    title: item.title ?? '',
-    source: item.source ?? '',
-    topic: item.topic ?? '',
-    why: item.why ?? '',
-    date,
-    href: item.url || `${base}daily/${report.id}/`,
-    external: Boolean(item.url),
-    reportTitle: report.data.title ?? '',
-    reportDescription: report.data.description ?? '',
-    reportTopics,
-  }));
+  return (report.data.top ?? []).map((item:any, index:number) => {
+    const safeUrl = getSafeExternalUrl(item.url);
+    return {
+      id: `${report.id}-${index + 1}`,
+      title: item.title ?? '',
+      source: item.source ?? '',
+      topic: item.topic ?? '',
+      why: item.why ?? '',
+      date,
+      href: safeUrl || `${base}daily/${report.id}/`,
+      external: Boolean(safeUrl),
+      reportTitle: report.data.title ?? '',
+      reportDescription: report.data.description ?? '',
+      reportTopics,
+    };
+  });
 });
 const searchIndexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
 ---
@@ -62,9 +66,6 @@ const searchIndexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
     const indexEl = document.getElementById('site-search-index');
     if (!(root instanceof HTMLElement) || !(input instanceof HTMLInputElement) || !(popover instanceof HTMLElement) || !(status instanceof HTMLElement) || !(resultsEl instanceof HTMLElement) || !(indexEl instanceof HTMLScriptElement)) return;
 
-    // On mobile the search is visually placed inside the hamburger popover,
-    // but it remains a sibling of .nav-links in the DOM. Stop search
-    // interactions from bubbling to the global "click outside" menu handler.
     root.addEventListener('pointerdown', (event) => event.stopPropagation());
     root.addEventListener('click', (event) => event.stopPropagation());
 
@@ -267,7 +268,7 @@ const searchIndexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
       } else if (event.key === 'ArrowUp') {
         event.preventDefault();
         if (popover.hidden) render();
-        activeIndex = currentResults.length ? (activeIndex <= 0 ? currentResults.length - 1 : activeIndex - 1) : -1;
+        activeIndex = currentResults.length ? (activeIndex <= 0 ? currentResults.length - 1 : activeIndex - 1;
         syncActive();
       } else if (event.key === 'Enter' && currentResults.length) {
         event.preventDefault();
