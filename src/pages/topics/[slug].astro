@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { featuredTopics, topicMatches } from '../../lib/topics';
 import { getJapaneseArticleTitle } from '../../lib/articleTitles';
+import { getSafeExternalUrl } from '../../lib/urls';
 
 export function getStaticPaths() {
   return featuredTopics.map((topic) => ({
@@ -34,8 +35,9 @@ const matches = reports.flatMap((report) =>
     <div class="container">
       <div class="topic-article-list">
         {matches.length ? matches.map(({ item, report }) => {
-          const href = item.url ?? `${base}daily/${report.id}/`;
-          const external = Boolean(item.url);
+          const safeUrl = getSafeExternalUrl(item.url);
+          const href = safeUrl ?? `${base}daily/${report.id}/`;
+          const external = Boolean(safeUrl);
           const displayTitle = getJapaneseArticleTitle(item);
           return (
             <a class="topic-article-row" href={href} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
