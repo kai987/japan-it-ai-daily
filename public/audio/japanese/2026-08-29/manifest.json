@@ -1,6 +1,6 @@
 {
   "date": "2026-08-29",
-  "generatedAt": "2026-08-29T04:31:16.799Z",
+  "generatedAt": "2026-08-29T19:25:29.089Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -23,161 +23,161 @@
   "items": [
     {
       "index": 1,
-      "term": "設定",
-      "reading": "せってい",
-      "exampleJa": "本番環境では、Agentが利用できるToolを明示的に設定します。",
+      "term": "具体的",
+      "reading": "ぐたいてき",
+      "exampleJa": "導入前に、具体的な運用要件と責任範囲を整理します。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
     {
       "index": 2,
-      "term": "追加",
-      "reading": "ついか",
-      "exampleJa": "新しいModelを追加する前に、Gateway側のRouting条件を確認します。",
+      "term": "課題",
+      "reading": "かだい",
+      "exampleJa": "まず課題を整理し、AI Gatewayで解決すべき範囲を明確にします。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "利用",
-      "reading": "りよう",
-      "exampleJa": "Flex processingは、遅延を許容できる処理で利用します。",
+      "term": "選択肢",
+      "reading": "せんたくし",
+      "exampleJa": "複数の選択肢を比較したうえで、本番要件に合う構成を選びます。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "変更",
-      "reading": "へんこう",
-      "exampleJa": "本番Resourceを変更する前に、Operatorの承認を求めます。",
+      "term": "影響",
+      "reading": "えいきょう",
+      "exampleJa": "Gatewayの障害がサービス全体に与える影響を事前に評価します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "結果",
-      "reading": "けっか",
-      "exampleJa": "一度の検証結果だけでProductionのSLAを判断しません。",
+      "term": "抑える",
+      "reading": "おさえる",
+      "exampleJa": "既存Applicationへの変更を最小限に抑えながらGatewayへ移行します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "導入",
-      "reading": "どうにゅう",
-      "exampleJa": "AI Gatewayを段階的に導入し、既存Applicationへの影響を確認します。",
+      "term": "切り替える",
+      "reading": "きりかえる",
+      "exampleJa": "既存の直接接続を段階的にGateway経由へ切り替えます。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "運用",
-      "reading": "うんよう",
-      "exampleJa": "Gatewayの導入前に、月々の運用コストも見積もります。",
+      "term": "整える",
+      "reading": "ととのえる",
+      "exampleJa": "新しいCodeがPolicyを迂回しないように、CIのチェック体制を整えます。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "制限",
-      "reading": "せいげん",
-      "exampleJa": "CIでは不要なToolの利用を制限し、Read-onlyに近い状態にします。",
+      "term": "取り除く",
+      "reading": "とりのぞく",
+      "exampleJa": "Read-onlyのTaskでは、実行に不要なToolを最初から取り除きます。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "承認",
-      "reading": "しょうにん",
-      "exampleJa": "Cloud Resourceの変更は、実行前に明示的な承認を必要とします。",
+      "term": "応える",
+      "reading": "こたえる",
+      "exampleJa": "SecurityとCostの要件に応えられる共通基盤を設計します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "影響",
-      "reading": "えいきょう",
-      "exampleJa": "Pluginの自動更新が開発環境へ与える影響を事前に評価します。",
+      "term": "見積もる",
+      "reading": "みつもる",
+      "exampleJa": "導入前に月間Costと運用工数を見積もります。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "検証",
-      "reading": "けんしょう",
-      "exampleJa": "設定値だけでなく、実際のAgentの挙動を検証します。",
+      "term": "一時的",
+      "reading": "いちじてき",
+      "exampleJa": "一時的なResource不足を前提にRetryを設計します。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "切り替え",
-      "reading": "きりかえ",
-      "exampleJa": "障害時はGateway側で別のProviderへ接続先を切り替えます。",
+      "term": "段階的",
+      "reading": "だんかいてき",
+      "exampleJa": "本番導入は段階的に進め、各段階でSLOを確認します。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "統制",
-      "reading": "とうせい",
-      "exampleJa": "企業ではPluginの配布元と更新Policyを組織側で統制します。",
+      "term": "あわせて",
+      "reading": "あわせて",
+      "exampleJa": "Costだけでなく、Securityと運用負荷もあわせて評価します。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "監査",
-      "reading": "かんさ",
-      "exampleJa": "誰がAgent Actionを承認したかを監査ログに残します。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "FlexはCostを抑えられる一方で、Latencyの変動を考慮する必要があります。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
     {
       "index": 15,
-      "term": "機密",
-      "reading": "きみつ",
-      "exampleJa": "機密性の高いPrompt本文は監視SaaSへ送信しません。",
+      "term": "責務",
+      "reading": "せきむ",
+      "exampleJa": "ApplicationとGatewayの責務を分離し、認証情報はGateway側で管理します。",
       "word": "vocab-15.mp3",
       "example": "example-15.mp3"
     },
     {
       "index": 16,
-      "term": "可用性",
-      "reading": "かようせい",
-      "exampleJa": "複数ProviderへのFailoverでServiceの可用性を高めます。",
+      "term": "合意",
+      "reading": "ごうい",
+      "exampleJa": "選定理由を文書化し、関係者と合意したうえで本番導入を進めます。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "迂回",
-      "reading": "うかい",
-      "exampleJa": "新しいCodeがAI Gatewayを迂回しないようにCIで確認します。",
+      "term": "担う",
+      "reading": "になう",
+      "exampleJa": "Gatewayは認証とRoutingを一元化する役割を担います。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "抑制",
-      "reading": "よくせい",
-      "exampleJa": "低RiskのTaskにFlexを使い、API Costの増加を抑制します。",
+      "term": "許容する",
+      "reading": "きょようする",
+      "exampleJa": "多少の遅延を許容できるTaskだけFlexへ切り替えます。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "一元化",
-      "reading": "いちげんか",
-      "exampleJa": "LLM Providerへの接続と認証情報をGatewayで一元化します。",
+      "term": "意図せず",
+      "reading": "いとせず",
+      "exampleJa": "新しい実装が意図せずSecurity Policyを迂回しないようにテストします。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "妥当性",
-      "reading": "だとうせい",
-      "exampleJa": "性能だけでなく、運用コストを含めてArchitectureの妥当性を評価します。",
+      "term": "ごく",
+      "reading": "ごく",
+      "exampleJa": "変更対象をごく一部に限定してから段階的にRolloutします。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,44 +185,44 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～ことができる",
-      "exampleJa": "AI Gatewayを利用すると、複数のLLM Providerを一つのEndpointから利用することができます。",
+      "pattern": "～に応じて",
+      "exampleJa": "TenantのData Residency要件に応じて、利用するVirtual Keyを切り替えます。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～ために",
-      "exampleJa": "機密情報の漏えいを防ぐために、Prompt本文を監視SaaSへ送信しません。",
+      "pattern": "～一方で",
+      "exampleJa": "Flex processingはコストを抑えられる一方で、Latencyの変動や一時的なResource不足を考慮する必要があります。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～だけでなく～も",
-      "exampleJa": "AI Gatewayでは、Model Routingだけでなく、Secret管理やObservabilityも重要です。",
+      "pattern": "～たうえで",
+      "exampleJa": "実際のUsageとRetry率を計測したうえで、Flexへ切り替えるTaskを決めます。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～ようにする",
-      "exampleJa": "新しいApplicationがGatewayを迂回しないように、CIでチェックするようにします。",
+      "pattern": "～かねない",
+      "exampleJa": "Pluginを無条件に自動更新すると、不具合のあるVersionを組織全体へ広げかねません。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～に応じて",
-      "exampleJa": "TenantのData Residency要件に応じて、利用するVirtual Keyを切り替えます。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "AI Gatewayの役割はModel Routingにとどまらず、Secret管理やObservability、Data Residencyにも及びます。",
       "example": "grammar-example-05.mp3"
     },
     {
       "index": 6,
-      "pattern": "～一方で",
-      "exampleJa": "Flex processingはコストを抑えられる一方で、応答遅延や一時的な拒否を考慮する必要があります。",
+      "pattern": "～を余儀なくされる",
+      "exampleJa": "Resource不足が長時間続けば、一部TaskをStandardへ戻す対応を余儀なくされる可能性があります。",
       "example": "grammar-example-06.mp3"
     },
     {
       "index": 7,
-      "pattern": "～たうえで",
-      "exampleJa": "実際のUsageを計測したうえで、Flexへ切り替えるTaskを決めます。",
+      "pattern": "～に至るまで",
+      "exampleJa": "AI Gatewayでは、Provider接続からSecret管理、SLO設計に至るまで一貫して運用方針を整える必要があります。",
       "example": "grammar-example-07.mp3"
     }
   ]

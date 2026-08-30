@@ -1,6 +1,6 @@
 {
   "date": "2026-08-15",
-  "generatedAt": "2026-08-29T04:30:20.446Z",
+  "generatedAt": "2026-08-29T19:14:29.795Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -23,161 +23,161 @@
   "items": [
     {
       "index": 1,
-      "term": "利用",
-      "reading": "りよう",
-      "exampleJa": "外部Toolを安全に利用します。",
+      "term": "権限",
+      "reading": "けんげん",
+      "exampleJa": "Sub-agentにはTaskに必要な権限だけを与えます。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
     {
       "index": 2,
-      "term": "必要",
-      "reading": "ひつよう",
-      "exampleJa": "本番Agentには監査機能が必要です。",
+      "term": "耐性",
+      "reading": "たいせい",
+      "exampleJa": "Prompt Injection耐性を複数のTest Caseで評価します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "実行",
-      "reading": "じっこう",
-      "exampleJa": "CommandをSandbox内で実行します。",
+      "term": "侵入",
+      "reading": "しんにゅう",
+      "exampleJa": "外部Documentを通じた不正な指示の侵入を防ぎます。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "防止",
-      "reading": "ぼうし",
-      "exampleJa": "権限を制限して被害の拡大を防止します。",
+      "term": "逸脱",
+      "reading": "いつだつ",
+      "exampleJa": "AgentがTaskの目的から逸脱していないか評価します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "評価",
-      "reading": "ひょうか",
-      "exampleJa": "Benchmarkだけでなく実務Taskでも評価します。",
+      "term": "監視",
+      "reading": "かんし",
+      "exampleJa": "Long-running Agentの状態を監視基盤で追跡します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "分割",
-      "reading": "ぶんかつ",
-      "exampleJa": "大きなTaskをSub-agent向けに分割します。",
+      "term": "実行する",
+      "reading": "じっこうする",
+      "exampleJa": "危険なCommandは隔離されたSandboxで実行します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "追跡",
-      "reading": "ついせき",
-      "exampleJa": "AgentのTool Callを追跡します。",
+      "term": "防止する",
+      "reading": "ぼうしする",
+      "exampleJa": "Toolの権限を絞って被害の拡大を防止します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "想定",
-      "reading": "そうてい",
-      "exampleJa": "Prompt Injectionを想定して設計します。",
+      "term": "評価する",
+      "reading": "ひょうかする",
+      "exampleJa": "Model性能だけでなくHarnessの安全性も評価します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "監視",
-      "reading": "かんし",
-      "exampleJa": "Long-running Agentを継続的に監視します。",
+      "term": "分割する",
+      "reading": "ぶんかつする",
+      "exampleJa": "大きなTaskを複数のSub-agent向けに分割します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "委ねる",
-      "reading": "ゆだねる",
-      "exampleJa": "重要な権限判断をLLMだけに委ねません。",
+      "term": "追跡する",
+      "reading": "ついせきする",
+      "exampleJa": "AgentがどのToolを呼んだかをSession単位で追跡します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "侵入",
-      "reading": "しんにゅう",
-      "exampleJa": "外部入力を通じた不正な指示の侵入を防ぎます。",
+      "term": "想定する",
+      "reading": "そうていする",
+      "exampleJa": "外部Documentに悪意ある指示が含まれることを想定して設計します。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "指示",
-      "reading": "しじ",
-      "exampleJa": "外部Document内の指示をそのまま実行しません。",
+      "term": "委ねる",
+      "reading": "ゆだねる",
+      "exampleJa": "重要な権限判断をLLMだけに委ねません。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "拒否",
-      "reading": "きょひ",
+      "term": "拒否する",
+      "reading": "きょひする",
       "exampleJa": "Policyに違反するTool CallはRuntimeで拒否します。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "隔離",
-      "reading": "かくり",
-      "exampleJa": "Sub-agentごとに実行環境を隔離します。",
+      "term": "必要",
+      "reading": "ひつよう",
+      "exampleJa": "Sub-agentには必要なContextだけを渡します。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
     {
       "index": 15,
-      "term": "検出",
-      "reading": "けんしゅつ",
-      "exampleJa": "EvaluationでPrompt Injectionへの脆弱な挙動を検出します。",
+      "term": "脆弱",
+      "reading": "ぜいじゃく",
+      "exampleJa": "Prompt Injectionに脆弱な挙動をEvaluationで検出します。",
       "word": "vocab-15.mp3",
       "example": "example-15.mp3"
     },
     {
       "index": 16,
-      "term": "権限",
-      "reading": "けんげん",
-      "exampleJa": "Sub-agentにはTaskに必要な権限だけを与えます。",
+      "term": "過度",
+      "reading": "かど",
+      "exampleJa": "過度な権限付与は事故時の影響範囲を広げます。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "検討",
-      "reading": "けんとう",
-      "exampleJa": "失敗Caseを基に新しいGuardrailを検討します。",
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "利用可能なToolをあらかじめAllowlistで定義します。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "委譲",
-      "reading": "いじょう",
-      "exampleJa": "専門的な調査をSub-agentへ委譲します。",
+      "term": "継続的に",
+      "reading": "けいぞくてきに",
+      "exampleJa": "本番の失敗Caseを追加しながら継続的に評価します。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "逸脱",
-      "reading": "いつだつ",
-      "exampleJa": "AgentがSystem Promptの目的から逸脱していないか評価します。",
+      "term": "安易に",
+      "reading": "あんいに",
+      "exampleJa": "外部Documentの指示を安易に信頼してはいけません。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "耐性",
-      "reading": "たいせい",
-      "exampleJa": "Prompt Injection耐性を複数のTest Caseで評価します。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "Agentは多くの作業を自動化できる一方で、攻撃時の影響も大きくなります。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,33 +185,45 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～必要がある",
-      "exampleJa": "外部情報を信頼できない入力として扱う必要があります。",
+      "pattern": "～かねない",
+      "exampleJa": "外部入力をそのまま実行すると、機密情報を送信しかねません。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～より～方が",
-      "exampleJa": "Chat AIよりToolを持つAgentの方が影響範囲は大きいです。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "Agent EvaluationはModel性能にとどまらず、HarnessやToolの安全性まで対象にします。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～だけでなく",
-      "exampleJa": "Model性能だけでなく、Harnessも評価します。",
+      "pattern": "～なくしては",
+      "exampleJa": "継続的なEvaluationなくしては、Agentの安全性を維持できません。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～場合",
-      "exampleJa": "複数Agentを使う場合、Contextを分離します。",
+      "pattern": "～に応じて",
+      "exampleJa": "TaskのRiskに応じてHuman Approvalの要否を決めます。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～に伴って",
-      "exampleJa": "Agentの自律性向上に伴って、Security Riskも増えます。",
+      "pattern": "～一方で",
+      "exampleJa": "Sub-agentは並列化に有効な一方で、Contextと権限の管理が複雑になります。",
       "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～たうえで",
+      "exampleJa": "Production-like Taskで評価したうえで、利用範囲を拡大します。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～にかかわらず",
+      "exampleJa": "利用するModelにかかわらず、外部入力は信頼できないものとして扱います。",
+      "example": "grammar-example-07.mp3"
     }
   ]
 }

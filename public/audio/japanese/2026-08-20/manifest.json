@@ -1,6 +1,6 @@
 {
   "date": "2026-08-20",
-  "generatedAt": "2026-08-29T04:30:20.452Z",
+  "generatedAt": "2026-08-29T19:18:24.886Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -23,161 +23,161 @@
   "items": [
     {
       "index": 1,
-      "term": "保存",
-      "reading": "ほぞん",
-      "exampleJa": "PromptとTraceをVersion付きで保存します。",
+      "term": "評価",
+      "reading": "ひょうか",
+      "exampleJa": "本番に近いTraceを使って品質評価を行います。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
     {
       "index": 2,
-      "term": "変更",
-      "reading": "へんこう",
-      "exampleJa": "Prompt変更前後の品質を比較します。",
+      "term": "蓄積",
+      "reading": "ちくせき",
+      "exampleJa": "Failure Caseの蓄積をEvaluation Datasetの改善に活用します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "評価",
-      "reading": "ひょうか",
-      "exampleJa": "本番に近いTraceを使って継続的に評価します。",
+      "term": "所在",
+      "reading": "しょざい",
+      "exampleJa": "AgentごとにOwnerを設定し、責任の所在を明確にします。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "改善",
-      "reading": "かいぜん",
-      "exampleJa": "失敗例をDatasetに追加して品質を改善します。",
+      "term": "監査",
+      "reading": "かんさ",
+      "exampleJa": "Agent IdentityをTraceに残し、後から監査できるようにします。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "選択",
-      "reading": "せんたく",
-      "exampleJa": "Taskに応じてModelを自動選択します。",
+      "term": "責任",
+      "reading": "せきにん",
+      "exampleJa": "AgentごとにOwnerと責任範囲を明確にします。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "調整",
-      "reading": "ちょうせい",
-      "exampleJa": "Effortを調整してCostとLatencyを制御します。",
+      "term": "保存する",
+      "reading": "ほぞんする",
+      "exampleJa": "PromptとTraceをVersion付きで保存します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "紐付ける",
-      "reading": "ひもづける",
-      "exampleJa": "Prompt VersionとTraceを紐付けます。",
+      "term": "変更する",
+      "reading": "へんこうする",
+      "exampleJa": "Promptを変更したら、同じDatasetで再評価します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "蓄積",
-      "reading": "ちくせき",
-      "exampleJa": "Failure Caseを継続的に蓄積します。",
+      "term": "改善する",
+      "reading": "かいぜんする",
+      "exampleJa": "失敗例をDatasetへ追加し、Prompt品質を改善します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "割り当てる",
-      "reading": "わりあてる",
-      "exampleJa": "難しいTaskだけ高性能Modelへ割り当てます。",
+      "term": "選択する",
+      "reading": "せんたくする",
+      "exampleJa": "Taskの難易度に応じてModelを自動選択します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "所在",
-      "reading": "しょざい",
-      "exampleJa": "Trace Dataの保存先と所在を確認します。",
+      "term": "調整する",
+      "reading": "ちょうせいする",
+      "exampleJa": "Taskの難易度に応じてEffortを調整します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "追跡",
-      "reading": "ついせき",
-      "exampleJa": "Request IDで一連のAgent実行を追跡します。",
+      "term": "紐付ける",
+      "reading": "ひもづける",
+      "exampleJa": "Prompt VersionとEvaluation Resultを紐付けます。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "識別",
-      "reading": "しきべつ",
-      "exampleJa": "Agentごとに一意のIdentityを付けて識別します。",
+      "term": "割り当てる",
+      "reading": "わりあてる",
+      "exampleJa": "難しいTaskだけ高性能Modelへ割り当てます。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "維持",
-      "reading": "いじ",
-      "exampleJa": "長時間TaskでもSession Stateを維持します。",
+      "term": "引き継ぐ",
+      "reading": "ひきつぐ",
+      "exampleJa": "Session再開時に前回のContextとTask状態を引き継ぎます。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "引き継ぐ",
-      "reading": "ひきつぐ",
-      "exampleJa": "再開時に前回のContextとTask状態を引き継ぎます。",
+      "term": "適切",
+      "reading": "てきせつ",
+      "exampleJa": "Taskごとに適切なModelとEffortを選びます。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
     {
       "index": 15,
-      "term": "復元",
-      "reading": "ふくげん",
-      "exampleJa": "CheckpointからAgent Sessionを復元します。",
+      "term": "明確",
+      "reading": "めいかく",
+      "exampleJa": "Agentごとに目的と責任範囲を明確にします。",
       "word": "vocab-15.mp3",
       "example": "example-15.mp3"
     },
     {
       "index": 16,
-      "term": "関連付ける",
-      "reading": "かんれんづける",
-      "exampleJa": "User、Session、Model Callを同じTraceに関連付けます。",
+      "term": "長期的",
+      "reading": "ちょうきてき",
+      "exampleJa": "長期的な運用を前提にTrace保存Policyを設計します。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "切り替える",
-      "reading": "きりかえる",
-      "exampleJa": "難易度に応じてModelとEffortを切り替えます。",
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "Agent Identityの必須項目をあらかじめ定義します。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "最適化",
-      "reading": "さいてきか",
-      "exampleJa": "品質とCostの両方を見ながらRoutingを最適化します。",
+      "term": "一意に",
+      "reading": "いちいに",
+      "exampleJa": "AgentとSessionをIDで一意に識別します。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "監査",
-      "reading": "かんさ",
-      "exampleJa": "どのAgentがどのToolを使ったか監査します。",
+      "term": "継続的に",
+      "reading": "けいぞくてきに",
+      "exampleJa": "本番Traceを使って継続的に品質を評価します。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "責任",
-      "reading": "せきにん",
-      "exampleJa": "AgentごとにOwnerと責任範囲を明確にします。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "高いEffortは品質を上げられる一方で、LatencyとCostも増えます。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,33 +185,45 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～前後",
-      "exampleJa": "Prompt変更前後でEvaluation Resultを比較します。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "LLMOpsはPrompt管理にとどまらず、TraceやEvaluationの運用まで含みます。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～ために",
-      "exampleJa": "品質を改善するために、Failure Caseを追加します。",
+      "pattern": "～かねない",
+      "exampleJa": "Agent Identityを記録しないと、責任の所在が不明確になりかねません。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの難易度に応じてModelをRoutingします。",
+      "pattern": "～なくしては",
+      "exampleJa": "Traceと継続的なEvaluationなくしては、LLM品質の改善は難しいです。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～だけでなく～も",
-      "exampleJa": "品質だけでなく、CostとLatencyも評価します。",
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの難易度に応じてModelとEffortを切り替えます。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～につれて",
-      "exampleJa": "Agent数が増えるにつれて、Session Managementも複雑になります。",
+      "pattern": "～たうえで",
+      "exampleJa": "複数Versionを評価したうえで、本番Promptを選択します。",
       "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～一方で",
+      "exampleJa": "高性能Modelは品質が高い一方で、CostとLatencyも大きくなります。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～につれて",
+      "exampleJa": "Agent数が増えるにつれて、IdentityとSession Managementも複雑になります。",
+      "example": "grammar-example-07.mp3"
     }
   ]
 }

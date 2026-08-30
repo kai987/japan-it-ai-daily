@@ -1,6 +1,6 @@
 {
   "date": "2026-08-19",
-  "generatedAt": "2026-08-29T04:30:20.451Z",
+  "generatedAt": "2026-08-29T19:17:38.468Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -23,113 +23,113 @@
   "items": [
     {
       "index": 1,
-      "term": "安全",
-      "reading": "あんぜん",
-      "exampleJa": "Agentを安全に利用するためのRuleを定義します。",
+      "term": "監査",
+      "reading": "かんさ",
+      "exampleJa": "すべてのTool Callを監査できるように履歴を保存します。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
     {
       "index": 2,
-      "term": "強制",
-      "reading": "きょうせい",
-      "exampleJa": "危険な操作をPromptではなくRuntime Policyで強制的に制限します。",
+      "term": "暗号",
+      "reading": "あんごう",
+      "exampleJa": "機密Dataを暗号化した状態で処理できる方式を検討します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "制御",
-      "reading": "せいぎょ",
-      "exampleJa": "ToolへのAccessをRuntimeで制御します。",
+      "term": "復号",
+      "reading": "ふくごう",
+      "exampleJa": "Server側でDataを復号せずに推論処理を行います。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "監査",
-      "reading": "かんさ",
-      "exampleJa": "すべてのTool Callを監査できるように記録します。",
+      "term": "脅威",
+      "reading": "きょうい",
+      "exampleJa": "外部Toolを利用する際の脅威を事前に分析します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "経由",
-      "reading": "けいゆ",
-      "exampleJa": "外部SystemにはMCP Gateway経由で接続します。",
+      "term": "整合",
+      "reading": "せいごう",
+      "exampleJa": "MCP Tool SchemaとBackend APIの仕様との整合を確認します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "比較",
-      "reading": "ひかく",
-      "exampleJa": "MCPとREST APIの責務とSecurity境界を比較します。",
+      "term": "強制する",
+      "reading": "きょうせいする",
+      "exampleJa": "危険な操作の禁止をRuntime Policyで強制します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "暗号",
-      "reading": "あんごう",
-      "exampleJa": "機密Dataを暗号化したまま計算できる方式を検討します。",
+      "term": "制御する",
+      "reading": "せいぎょする",
+      "exampleJa": "ToolへのAccessをRuntimeで制御します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "復号",
-      "reading": "ふくごう",
-      "exampleJa": "Server側でDataを復号せずに推論処理を行います。",
+      "term": "比較する",
+      "reading": "ひかくする",
+      "exampleJa": "MCPとREST APIの責務とSecurity境界を比較します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "秘匿",
-      "reading": "ひとく",
+      "term": "秘匿する",
+      "reading": "ひとくする",
       "exampleJa": "個人情報を秘匿したままModel処理を行います。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "保護",
-      "reading": "ほご",
+      "term": "保護する",
+      "reading": "ほごする",
       "exampleJa": "機密DataをEncryptionとAccess Controlで保護します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "実行",
-      "reading": "じっこう",
+      "term": "実行する",
+      "reading": "じっこうする",
       "exampleJa": "許可されたCommandだけをSandbox内で実行します。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "拒否",
-      "reading": "きょひ",
+      "term": "拒否する",
+      "reading": "きょひする",
       "exampleJa": "Policyに一致しないTool CallはRuntimeで拒否します。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "検知",
-      "reading": "けんち",
+      "term": "検知する",
+      "reading": "けんちする",
       "exampleJa": "不審なTool Call Patternをリアルタイムで検知します。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "追跡",
-      "reading": "ついせき",
-      "exampleJa": "Trace IDでUser RequestからTool Callまで追跡します。",
+      "term": "安全",
+      "reading": "あんぜん",
+      "exampleJa": "Agentを安全に利用できる実行境界を設計します。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
@@ -143,41 +143,41 @@
     },
     {
       "index": 16,
-      "term": "記録",
-      "reading": "きろく",
-      "exampleJa": "Model InputとOutputをTraceとして記録します。",
+      "term": "適切",
+      "reading": "てきせつ",
+      "exampleJa": "Use Caseに応じて適切なSecurity Boundaryを選びます。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "整合",
-      "reading": "せいごう",
-      "exampleJa": "MCP Tool SchemaがBackend APIの仕様と整合しているか確認します。",
+      "term": "厳格に",
+      "reading": "げんかくに",
+      "exampleJa": "ProductionではTool Accessを厳格に制御します。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "準拠",
-      "reading": "じゅんきょ",
-      "exampleJa": "Agent Runtimeを社内Security Standardに準拠させます。",
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "外部Tool利用時の脅威をあらかじめ分析します。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "検証",
-      "reading": "けんしょう",
-      "exampleJa": "FHE導入前にLatencyとSecurity効果を検証します。",
+      "term": "原則として",
+      "reading": "げんそくとして",
+      "exampleJa": "未認可のTool Accessは原則として拒否します。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "脅威",
-      "reading": "きょうい",
-      "exampleJa": "Agentが外部Toolを使う際の脅威を事前に分析します。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "FHEはPrivacyを高められる一方で、計算Costが大きくなる場合があります。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,33 +185,45 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～によって",
-      "exampleJa": "Runtime Policyによって危険なCommandを制御します。",
+      "pattern": "～ことなく",
+      "exampleJa": "Dataを復号することなく計算処理を行います。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～上で",
-      "exampleJa": "MCPを本番利用する上で、認可と監査は重要です。",
+      "pattern": "～恐れがある",
+      "exampleJa": "Promptだけに制御を任せると、危険なCommandが実行される恐れがあります。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～だけでなく～も",
-      "exampleJa": "Promptだけでなく、Runtimeでも権限を制御します。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "Agent SecurityはPrompt設計にとどまらず、RuntimeでのPolicy Enforcementまで必要です。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～ことなく",
-      "exampleJa": "Dataを復号することなく計算処理を行います。",
+      "pattern": "～上で",
+      "exampleJa": "MCPを本番利用する上で、認可と監査は重要です。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～に対して",
-      "exampleJa": "高RiskなTool Callに対して追加Approvalを要求します。",
+      "pattern": "～に基づいて",
+      "exampleJa": "User Identityに基づいてTool Accessを制御します。",
       "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～一方で",
+      "exampleJa": "FHEはPrivacyを高める一方で、処理Costが増えることがあります。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～にかかわらず",
+      "exampleJa": "接続方式にかかわらず、認証と認可を必ず適用します。",
+      "example": "grammar-example-07.mp3"
     }
   ]
 }

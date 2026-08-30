@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "generatedAt": "2026-08-29T04:30:20.445Z",
+  "generatedAt": "2026-08-29T19:13:39.126Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -23,161 +23,161 @@
   "items": [
     {
       "index": 1,
-      "term": "検索",
-      "reading": "けんさく",
-      "exampleJa": "MCP経由で過去の技術ログを検索します。",
+      "term": "権限",
+      "reading": "けんげん",
+      "exampleJa": "AgentにはTaskに必要な権限だけを付与します。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
     {
       "index": 2,
-      "term": "確認",
-      "reading": "かくにん",
-      "exampleJa": "自動生成されたIAM Roleの内容を確認します。",
+      "term": "漏えい",
+      "reading": "ろうえい",
+      "exampleJa": "Secretの漏えいRiskを下げるため、出力内容を検査します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "検証",
-      "reading": "けんしょう",
-      "exampleJa": "AIが生成したコードをType Checkで検証します。",
+      "term": "承認",
+      "reading": "しょうにん",
+      "exampleJa": "本番DBを変更する前に人間の承認を求めます。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "適切",
-      "reading": "てきせつ",
-      "exampleJa": "Taskに適切な権限だけを与えます。",
+      "term": "検知",
+      "reading": "けんち",
+      "exampleJa": "RuntimeでPolicy違反を自動的に検知します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "導入",
-      "reading": "どうにゅう",
-      "exampleJa": "MCPを社内Knowledge Searchへ導入します。",
+      "term": "準拠",
+      "reading": "じゅんきょ",
+      "exampleJa": "生成Codeが社内Security基準に準拠しているか確認します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "制限",
-      "reading": "せいげん",
-      "exampleJa": "Agentが参照できるDirectoryを制限します。",
+      "term": "検証する",
+      "reading": "けんしょうする",
+      "exampleJa": "AIが生成したCodeをTestとType Checkで検証します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "絞り込む",
-      "reading": "しぼりこむ",
-      "exampleJa": "検索結果を関連性の高い情報に絞り込みます。",
+      "term": "導入する",
+      "reading": "どうにゅうする",
+      "exampleJa": "MCPを社内Knowledge Searchへ段階的に導入します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "考慮",
-      "reading": "こうりょ",
-      "exampleJa": "便利さだけでなくSecurityも考慮します。",
+      "term": "制限する",
+      "reading": "せいげんする",
+      "exampleJa": "Agentが参照できるDirectoryを必要な範囲に制限します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "連携",
-      "reading": "れんけい",
-      "exampleJa": "MCP Serverと社内Knowledgeを連携します。",
+      "term": "絞り込む",
+      "reading": "しぼりこむ",
+      "exampleJa": "検索結果を関連性の高いDocumentに絞り込みます。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "依存",
-      "reading": "いぞん",
-      "exampleJa": "Human Reviewだけに依存しない検証環境を作ります。",
+      "term": "考慮する",
+      "reading": "こうりょする",
+      "exampleJa": "便利さだけでなくSecurityと運用負荷も考慮します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "権限",
-      "reading": "けんげん",
-      "exampleJa": "Agentには必要な権限だけを付与します。",
+      "term": "連携する",
+      "reading": "れんけいする",
+      "exampleJa": "MCP Serverと社内Knowledge Baseを安全に連携します。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "付与",
-      "reading": "ふよ",
-      "exampleJa": "実行時に一時的なRoleをAgentへ付与します。",
+      "term": "付与する",
+      "reading": "ふよする",
+      "exampleJa": "実行時に必要なRoleだけを一時的にAgentへ付与します。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "参照",
-      "reading": "さんしょう",
-      "exampleJa": "Agentが参照できるKnowledgeの範囲を限定します。",
+      "term": "委譲する",
+      "reading": "いじょうする",
+      "exampleJa": "高Riskな判断はAgentへ委譲せず、人間が承認します。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "防止",
-      "reading": "ぼうし",
-      "exampleJa": "誤ったTool実行を防止するためにApprovalを入れます。",
+      "term": "適切",
+      "reading": "てきせつ",
+      "exampleJa": "Taskに適切な権限だけを与えます。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
     {
       "index": 15,
-      "term": "漏えい",
-      "reading": "ろうえい",
-      "exampleJa": "Secretの漏えいを防ぐために出力を検査します。",
+      "term": "厳密",
+      "reading": "げんみつ",
+      "exampleJa": "生成Outputを厳密なSchemaで検証します。",
       "word": "vocab-15.mp3",
       "example": "example-15.mp3"
     },
     {
       "index": 16,
-      "term": "承認",
-      "reading": "しょうにん",
-      "exampleJa": "本番DBを変更する前に人間の承認を求めます。",
+      "term": "一時的",
+      "reading": "いちじてき",
+      "exampleJa": "Agentには一時的なCredentialだけを発行します。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "検知",
-      "reading": "けんち",
-      "exampleJa": "Policy違反をRuntimeで自動的に検知します。",
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "許可するToolと禁止する操作をあらかじめ定義します。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "担保",
-      "reading": "たんぽ",
-      "exampleJa": "SchemaとTestによってOutputの品質を担保します。",
+      "term": "自動的に",
+      "reading": "じどうてきに",
+      "exampleJa": "Policy違反をCIで自動的に検知します。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "準拠",
-      "reading": "じゅんきょ",
-      "exampleJa": "Agentが生成する設定を社内Security基準に準拠させます。",
+      "term": "むやみに",
+      "reading": "むやみに",
+      "exampleJa": "Agentの権限をむやみに広げないことが重要です。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "委譲",
-      "reading": "いじょう",
-      "exampleJa": "高Riskな判断はSub-agentへ委譲せず人間が行います。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "Agentは作業を自動化できる一方で、高Riskな操作にはHuman Approvalが必要です。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,33 +185,45 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～ために",
-      "exampleJa": "情報漏えいを防ぐために、読み取り専用Toolを公開します。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "MCPはTool Callingにとどまらず、Knowledge Accessの統制にも利用できます。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～だけでなく～も",
-      "exampleJa": "型チェックだけでなく、Security Auditも実行します。",
+      "pattern": "～かねない",
+      "exampleJa": "自動生成されたIAM Roleをそのまま使うと、過剰権限を許可しかねません。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～によって",
-      "exampleJa": "MCPによってKnowledgeへのアクセスを標準化できます。",
+      "pattern": "～なくしては",
+      "exampleJa": "自動検証とHuman Approvalなくしては、高RiskなAgent運用は難しいです。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
       "pattern": "～とは限らない",
-      "exampleJa": "自動生成されたIAM Roleが最小権限とは限りません。",
+      "exampleJa": "自動生成されたPolicyが最小権限になっているとは限りません。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～にとどまらず",
-      "exampleJa": "MCPはTool Callingにとどまらず、Knowledge Accessにも利用できます。",
+      "pattern": "～に基づいて",
+      "exampleJa": "社内Security Policyに基づいてAgentのTool Accessを制御します。",
       "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～たうえで",
+      "exampleJa": "CIで検証したうえで、本番変更を人間が承認します。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～一方で",
+      "exampleJa": "Agentは開発を高速化できる一方で、権限管理を厳密にする必要があります。",
+      "example": "grammar-example-07.mp3"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "date": "2026-08-27",
-  "generatedAt": "2026-08-29T04:30:20.463Z",
+  "generatedAt": "2026-08-29T19:23:47.155Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -23,161 +23,161 @@
   "items": [
     {
       "index": 1,
-      "term": "必要",
-      "reading": "ひつよう",
-      "exampleJa": "Agent Runtimeでは必要な権限だけを実行時に付与します。",
+      "term": "見通し",
+      "reading": "みとおし",
+      "exampleJa": "WorkflowをGraphで可視化すると処理全体の見通しが立てやすくなります。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
     {
       "index": 2,
-      "term": "防ぐ",
-      "reading": "ふせぐ",
-      "exampleJa": "Workflowを公開する前に構造を検証して実行時Errorを防ぎます。",
+      "term": "権限",
+      "reading": "けんげん",
+      "exampleJa": "Managed Settingsで危険なPermission Bypassを禁止します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "任せる",
-      "reading": "まかせる",
-      "exampleJa": "実装はCoding Agentに任せてもSchemaの最終Reviewは人が行います。",
+      "term": "運用",
+      "reading": "うんよう",
+      "exampleJa": "共通TemplateでAgentの運用方法を標準化します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "継続",
-      "reading": "けいぞく",
-      "exampleJa": "利用状況を計測してGuardrailを継続的に改善します。",
+      "term": "構造",
+      "reading": "こうぞう",
+      "exampleJa": "保存前にWorkflow構造の整合性を確認します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "見通し",
-      "reading": "みとおし",
-      "exampleJa": "WorkflowをGraphで可視化すると処理全体の見通しが立てやすくなります。",
+      "term": "統制",
+      "reading": "とうせい",
+      "exampleJa": "AgentやMCPの利用可否を組織単位で統制します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "両立",
-      "reading": "りょうりつ",
-      "exampleJa": "No-codeの使いやすさと本番Runtimeの安全性を両立します。",
+      "term": "防ぐ",
+      "reading": "ふせぐ",
+      "exampleJa": "Workflowを公開する前に構造を検証して実行時Errorを防ぎます。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "担う",
-      "reading": "になう",
-      "exampleJa": "Agentが実装を支援し、人間が設計方針と最終確認を担います。",
+      "term": "任せる",
+      "reading": "まかせる",
+      "exampleJa": "実装はCoding Agentに任せてもSchemaの最終Reviewは人が行います。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "統制",
-      "reading": "とうせい",
-      "exampleJa": "AgentやMCPの利用可否を組織単位で統制します。",
+      "term": "担う",
+      "reading": "になう",
+      "exampleJa": "Agentが実装を支援し、人間が設計方針と最終確認を担います。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "網羅",
-      "reading": "もうら",
-      "exampleJa": "APIが返すErrorを型として網羅的に定義します。",
+      "term": "促す",
+      "reading": "うながす",
+      "exampleJa": "共通QA Agent Platformを整備して組織全体のAI活用を促します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "促す",
-      "reading": "うながす",
-      "exampleJa": "共通QA Agent Platformを整備して組織全体のAI活用を促します。",
+      "term": "可視化する",
+      "reading": "かしかする",
+      "exampleJa": "NodeとEdgeでWorkflowの実行順序を可視化します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "可視化",
-      "reading": "かしか",
-      "exampleJa": "NodeとEdgeでWorkflowの実行順序を可視化します。",
+      "term": "検証する",
+      "reading": "けんしょうする",
+      "exampleJa": "TypeSpecとBackend実装の差分をCIで検証します。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "構造",
-      "reading": "こうぞう",
-      "exampleJa": "保存前にWorkflow構造の整合性を確認します。",
+      "term": "分離する",
+      "reading": "ぶんりする",
+      "exampleJa": "開発体験と本番Securityを最適化するためBuilderとRuntimeを分離します。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "検証",
-      "reading": "けんしょう",
-      "exampleJa": "TypeSpecとBackend実装の差分をCIで検証します。",
+      "term": "生成する",
+      "reading": "せいせいする",
+      "exampleJa": "TypeSpecからOpenAPIとFrontend Clientを生成します。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "分離",
-      "reading": "ぶんり",
-      "exampleJa": "開発体験と本番Securityを最適化するためBuilderとRuntimeを分離します。",
+      "term": "必要",
+      "reading": "ひつよう",
+      "exampleJa": "Agent Runtimeでは必要な権限だけを実行時に付与します。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
     {
       "index": 15,
-      "term": "権限",
-      "reading": "けんげん",
-      "exampleJa": "Managed Settingsで危険なPermission Bypassを禁止します。",
+      "term": "適切",
+      "reading": "てきせつ",
+      "exampleJa": "TaskとDataの機密性に応じて適切なRuntimeを選びます。",
       "word": "vocab-15.mp3",
       "example": "example-15.mp3"
     },
     {
       "index": 16,
-      "term": "運用",
-      "reading": "うんよう",
-      "exampleJa": "共通TemplateでAgentの運用方法を標準化します。",
+      "term": "安全",
+      "reading": "あんぜん",
+      "exampleJa": "本番では安全なRuntimeでAgentを実行します。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "管理",
-      "reading": "かんり",
-      "exampleJa": "Plugin SourceとDefault ModelをEnterprise側で管理します。",
+      "term": "継続的に",
+      "reading": "けいぞくてきに",
+      "exampleJa": "利用状況を測定してGuardrailを継続的に改善します。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "共有",
-      "reading": "きょうゆう",
-      "exampleJa": "QA向けSkillとGuardrailをTemplate Repositoryで共有します。",
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "WorkflowのSchemaとPermissionをあらかじめ検証可能な形で定義します。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "生成",
-      "reading": "せいせい",
-      "exampleJa": "TypeSpecからOpenAPIとFrontend Clientを生成します。",
+      "term": "一律に",
+      "reading": "いちりつに",
+      "exampleJa": "すべてのTaskを一律にCloud Agentへ送る必要はありません。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "適合",
-      "reading": "てきごう",
-      "exampleJa": "Backend実装がTypeSpec Schemaに適合しているかCIで確認します。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "Local AgentはPrivacyに強い一方で、高性能Hardwareが必要です。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,26 +185,26 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～必要がある",
-      "exampleJa": "本番RuntimeではCredentialを安全に管理する必要があります。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "Agent PlatformはModel提供にとどまらず、RuntimeやGuardrailの標準化まで担います。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～ために",
-      "exampleJa": "実行時Errorを防ぐために保存前にWorkflowを検証します。",
+      "pattern": "～なくしては",
+      "exampleJa": "Schemaによる自動検証なくしては、No-code Workflowを安全に本番運用するのは難しいです。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～一方で",
-      "exampleJa": "Local AgentはPrivacyに強い一方で、高性能Hardwareが必要です。",
+      "pattern": "～かねない",
+      "exampleJa": "Permission Bypassを個人設定に任せると、組織Policyを損ないかねません。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～ことによって",
-      "exampleJa": "共通Templateを使うことによってSecurity設定のばらつきを減らせます。",
+      "pattern": "～一方で",
+      "exampleJa": "Local AgentはPrivacyに強い一方で、高性能Hardwareが必要です。",
       "example": "grammar-example-04.mp3"
     },
     {
@@ -215,9 +215,15 @@
     },
     {
       "index": 6,
-      "pattern": "～だけでなく～も",
-      "exampleJa": "Toolを導入するだけでなく、利用状況も継続的に測定します。",
+      "pattern": "～た上で",
+      "exampleJa": "TypeSpecとBackendの整合性を確認した上でClientを生成します。",
       "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～に基づいて",
+      "exampleJa": "Managed Settingsに基づいて利用可能なPluginを制御します。",
+      "example": "grammar-example-07.mp3"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "date": "2026-08-28",
-  "generatedAt": "2026-08-29T04:30:20.464Z",
+  "generatedAt": "2026-08-29T19:24:34.479Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -23,161 +23,161 @@
   "items": [
     {
       "index": 1,
-      "term": "必要",
-      "reading": "ひつよう",
-      "exampleJa": "AgentにはTaskを完了するために必要な権限だけを付与します。",
+      "term": "権限",
+      "reading": "けんげん",
+      "exampleJa": "AgentにはTaskに必要な権限だけを付与します。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
     {
       "index": 2,
-      "term": "自動",
-      "reading": "じどう",
-      "exampleJa": "定型的な調査TaskはAgentが自動で実行します。",
+      "term": "認証",
+      "reading": "にんしょう",
+      "exampleJa": "API Requestを受け付ける前にClientを認証します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "操作",
-      "reading": "そうさ",
-      "exampleJa": "Browser AgentがWeb画面を操作して情報を取得します。",
+      "term": "認可",
+      "reading": "にんか",
+      "exampleJa": "認証後にRoleに基づいてTool Accessを認可します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "実行",
-      "reading": "じっこう",
-      "exampleJa": "危険なCommandは隔離された環境で実行します。",
+      "term": "侵入",
+      "reading": "しんにゅう",
+      "exampleJa": "不正なTokenを利用したSystem侵入を防ぎます。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "接続",
-      "reading": "せつぞく",
-      "exampleJa": "AgentはMCPを通じて社内APIへ接続します。",
+      "term": "影響",
+      "reading": "えいきょう",
+      "exampleJa": "Write権限を広げる前に障害時の影響範囲を確認します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "制御",
-      "reading": "せいぎょ",
-      "exampleJa": "APIへのAccessをRuntime Policyで制御します。",
+      "term": "操作する",
+      "reading": "そうさする",
+      "exampleJa": "Browser AgentがWeb画面を操作して必要な情報を取得します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "権限",
-      "reading": "けんげん",
-      "exampleJa": "DevinにはRepositoryごとに必要な権限だけを設定します。",
+      "term": "実行する",
+      "reading": "じっこうする",
+      "exampleJa": "危険なCommandは隔離された環境で実行します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "検証",
-      "reading": "けんしょう",
-      "exampleJa": "Agentが生成した変更をTestとSchemaで検証します。",
+      "term": "接続する",
+      "reading": "せつぞくする",
+      "exampleJa": "AgentはMCPを通じて社内APIへ接続します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "削減",
-      "reading": "さくげん",
-      "exampleJa": "必要なSkillだけを読み込みContext Tokenを削減します。",
+      "term": "制御する",
+      "reading": "せいぎょする",
+      "exampleJa": "APIへのAccessをRuntime Policyで制御します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "利用",
-      "reading": "りよう",
-      "exampleJa": "Taskに応じて必要なSkillだけを利用します。",
+      "term": "検証する",
+      "reading": "けんしょうする",
+      "exampleJa": "Agentが生成した変更をTestとSchemaで検証します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "保護",
-      "reading": "ほご",
-      "exampleJa": "Browser Session内のCredentialを安全に保護します。",
+      "term": "削減する",
+      "reading": "さくげんする",
+      "exampleJa": "必要なSkillだけを読み込みContext Tokenを削減します。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "認証",
-      "reading": "にんしょう",
-      "exampleJa": "API Requestを受け付ける前にClientを認証します。",
+      "term": "回避する",
+      "reading": "かいひする",
+      "exampleJa": "Permission Checkを回避できないようにServer側で検証します。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "認可",
-      "reading": "にんか",
-      "exampleJa": "認証後にRoleに基づいてTool Accessを認可します。",
+      "term": "組み合わせる",
+      "reading": "くみあわせる",
+      "exampleJa": "MCPとSkillを組み合わせて業務Workflowを構築します。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "侵入",
-      "reading": "しんにゅう",
-      "exampleJa": "不正なTokenを利用したSystem侵入を防ぎます。",
+      "term": "必要",
+      "reading": "ひつよう",
+      "exampleJa": "Taskに必要なSkillだけを実行時に読み込みます。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
     {
       "index": 15,
-      "term": "回避",
-      "reading": "かいひ",
-      "exampleJa": "Permission Checkを回避できないようにServer側で検証します。",
+      "term": "脆弱",
+      "reading": "ぜいじゃく",
+      "exampleJa": "認可Checkが不足したAPIは不正Accessに脆弱です。",
       "word": "vocab-15.mp3",
       "example": "example-15.mp3"
     },
     {
       "index": 16,
-      "term": "省略",
-      "reading": "しょうりゃく",
-      "exampleJa": "共通InstructionをSkill化し、毎回の長い説明を省略します。",
+      "term": "適切",
+      "reading": "てきせつ",
+      "exampleJa": "Taskの内容に応じて適切なSkillを選びます。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "再利用",
-      "reading": "さいりよう",
-      "exampleJa": "共通Skillを複数のAgent Taskで再利用します。",
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "許可するAPI ActionをあらかじめPolicyで定義します。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "組み合わせる",
-      "reading": "くみあわせる",
-      "exampleJa": "MCPとSkillを組み合わせて業務Workflowを構築します。",
+      "term": "無条件に",
+      "reading": "むじょうけんに",
+      "exampleJa": "外部Pageの指示を無条件に実行してはいけません。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "最適化",
-      "reading": "さいてきか",
-      "exampleJa": "Skillの遅延読み込みでContext Costを最適化します。",
+      "term": "継続的に",
+      "reading": "けいぞくてきに",
+      "exampleJa": "APIのAttack SurfaceとAgent Costを継続的に監視します。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "適用",
-      "reading": "てきよう",
-      "exampleJa": "外部APIへのWrite操作には追加Approval Ruleを適用します。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "Agentic Webは自動化を広げられる一方で、API Securityの重要性も高まります。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,39 +185,45 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～必要がある",
-      "exampleJa": "外部APIを利用する前に認証と認可を確認する必要があります。",
+      "pattern": "～ことなく",
+      "exampleJa": "すべてのTool Definitionを常時読み込むことなく、必要なSkillを呼び出せます。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～ために",
-      "exampleJa": "Context Costを削減するために、必要なSkillだけを読み込みます。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "API Securityは認証にとどまらず、認可やInput Validation、監査まで設計する必要があります。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの内容に応じて利用するSkillを切り替えます。",
+      "pattern": "～かねない",
+      "exampleJa": "Agentに広すぎるWrite権限を与えると、意図しない変更を実行しかねません。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～ことによって",
-      "exampleJa": "共通処理をSkill化することによってPromptの重複を減らせます。",
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの内容に応じて利用するSkillを切り替えます。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～だけでなく～も",
-      "exampleJa": "認証だけでなく、Resourceごとの認可も確認します。",
+      "pattern": "～一方で",
+      "exampleJa": "Agentic Webは作業を自動化できる一方で、APIのAttack Surfaceも広がります。",
       "example": "grammar-example-05.mp3"
     },
     {
       "index": 6,
-      "pattern": "～ことなく",
-      "exampleJa": "すべてのTool Definitionを常時読み込むことなく、必要なSkillを呼び出せます。",
+      "pattern": "～た上で",
+      "exampleJa": "Userを認証し、Roleを確認した上でAPI Actionを許可します。",
       "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～に基づいて",
+      "exampleJa": "RoleとSecurity Policyに基づいて利用可能なAPIを制御します。",
+      "example": "grammar-example-07.mp3"
     }
   ]
 }

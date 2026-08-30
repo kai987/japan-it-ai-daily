@@ -1,6 +1,6 @@
 {
   "date": "2026-08-21",
-  "generatedAt": "2026-08-29T04:30:20.454Z",
+  "generatedAt": "2026-08-29T19:19:08.166Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -39,145 +39,145 @@
     },
     {
       "index": 3,
-      "term": "網羅",
-      "reading": "もうら",
-      "exampleJa": "Input Universeを定義して対象Caseを網羅します。",
+      "term": "抜け",
+      "reading": "ぬけ",
+      "exampleJa": "一覧と実装を比較して対応の抜けを見つけます。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "抜け",
-      "reading": "ぬけ",
-      "exampleJa": "一覧と実装を比較して対応の抜けを見つけます。",
+      "term": "差分",
+      "reading": "さぶん",
+      "exampleJa": "期待一覧と実際のFile差分をCIで確認します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "検出",
-      "reading": "けんしゅつ",
-      "exampleJa": "CIで未対応Fileを自動的に検出します。",
+      "term": "基盤",
+      "reading": "きばん",
+      "exampleJa": "AI Integrationを支える共通Data基盤を整備します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "定義",
-      "reading": "ていぎ",
-      "exampleJa": "Dataの意味と責務をSchemaで定義します。",
+      "term": "網羅する",
+      "reading": "もうらする",
+      "exampleJa": "Input Universeを定義して対象Caseを網羅します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "整理",
-      "reading": "せいり",
-      "exampleJa": "AI導入前にData SourceとOwnerを整理します。",
+      "term": "検出する",
+      "reading": "けんしゅつする",
+      "exampleJa": "CIで未対応Fileを自動的に検出します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "一元化",
-      "reading": "いちげんか",
-      "exampleJa": "Model設定を一つのRepositoryで一元化します。",
+      "term": "定義する",
+      "reading": "ていぎする",
+      "exampleJa": "Dataの意味と責務をSchemaで定義します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "参照",
-      "reading": "さんしょう",
-      "exampleJa": "各Serviceは同じConfig SSOTを参照します。",
+      "term": "整理する",
+      "reading": "せいりする",
+      "exampleJa": "AI導入前にData SourceとOwnerを整理します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "更新",
-      "reading": "こうしん",
-      "exampleJa": "SSOTを更新すると各環境へ自動反映されます。",
+      "term": "一元化する",
+      "reading": "いちげんかする",
+      "exampleJa": "Model設定を一つのRepositoryで一元化します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "整合",
-      "reading": "せいごう",
-      "exampleJa": "FrontendとBackendのSchemaが整合しているか確認します。",
+      "term": "参照する",
+      "reading": "さんしょうする",
+      "exampleJa": "各Serviceは同じConfig SSOTを参照します。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "差分",
-      "reading": "さぶん",
-      "exampleJa": "期待する一覧と実際のFile差分をCIで確認します。",
+      "term": "移行する",
+      "reading": "いこうする",
+      "exampleJa": "旧Configを新しいSSOTへ段階的に移行します。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "依存",
-      "reading": "いぞん",
-      "exampleJa": "特定Vendorだけに依存しないIntegration Layerを設計します。",
+      "term": "連携する",
+      "reading": "れんけいする",
+      "exampleJa": "CRMとAI AgentをIntegration Layer経由で連携します。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "移行",
-      "reading": "いこう",
-      "exampleJa": "旧Configを新しいSSOTへ段階的に移行します。",
+      "term": "共通",
+      "reading": "きょうつう",
+      "exampleJa": "複数Teamで共通なData Modelを利用します。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
     {
       "index": 15,
-      "term": "変換",
-      "reading": "へんかん",
-      "exampleJa": "外部APIのResponseを共通Schemaへ変換します。",
+      "term": "明確",
+      "reading": "めいかく",
+      "exampleJa": "Data OwnerとSchemaの責務を明確にします。",
       "word": "vocab-15.mp3",
       "example": "example-15.mp3"
     },
     {
       "index": 16,
-      "term": "共有",
-      "reading": "きょうゆう",
-      "exampleJa": "共通Data Modelを複数Teamで共有します。",
+      "term": "網羅的",
+      "reading": "もうらてき",
+      "exampleJa": "対象を網羅的な一覧として管理します。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "接続",
-      "reading": "せつぞく",
-      "exampleJa": "共通Gatewayから複数の業務Systemへ接続します。",
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "Migration対象をあらかじめ一覧化します。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "連携",
-      "reading": "れんけい",
-      "exampleJa": "CRMとAI AgentをIntegration Layer経由で連携します。",
+      "term": "自動的に",
+      "reading": "じどうてきに",
+      "exampleJa": "SSOTの変更を各環境へ自動的に反映します。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "保守",
-      "reading": "ほしゅ",
-      "exampleJa": "接続方式を共通化して保守Costを下げます。",
+      "term": "一貫して",
+      "reading": "いっかんして",
+      "exampleJa": "共通SchemaをすべてのServiceで一貫して利用します。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "基盤",
-      "reading": "きばん",
-      "exampleJa": "AI Integrationを支える共通Data基盤を整備します。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "設定を一元化できる一方で、既存Systemからの移行Costも発生します。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,26 +185,26 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～に基づいて",
-      "exampleJa": "対象一覧に基づいてMigrationの進捗を確認します。",
+      "pattern": "～にわたって",
+      "exampleJa": "複数のBusiness Unitにわたって共通AI基盤を展開します。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～ことによって",
-      "exampleJa": "設定を一元化することによって、環境差分を減らせます。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "CoverageはFile数にとどまらず、Error CaseやData条件まで確認します。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～だけでなく～も",
-      "exampleJa": "File数だけでなく、Error Caseも網羅します。",
+      "pattern": "～なくしては",
+      "exampleJa": "明確なInput Universeなくしては、Coverageの抜けを正しく検出できません。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～にわたって",
-      "exampleJa": "複数のBusiness Unitにわたって共通AI基盤を展開します。",
+      "pattern": "～に基づいて",
+      "exampleJa": "対象一覧に基づいてMigrationの進捗を確認します。",
       "example": "grammar-example-04.mp3"
     },
     {
@@ -212,6 +212,18 @@
       "pattern": "～た上で",
       "exampleJa": "Data Ownerを明確にした上で、AI連携を設計します。",
       "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～一方で",
+      "exampleJa": "SSOTはConfig Driftを減らせる一方で、移行時の調整が必要です。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～にかかわらず",
+      "exampleJa": "Teamにかかわらず、同じSchema Registryを参照します。",
+      "example": "grammar-example-07.mp3"
     }
   ]
 }

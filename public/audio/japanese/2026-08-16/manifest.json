@@ -1,6 +1,6 @@
 {
   "date": "2026-08-16",
-  "generatedAt": "2026-08-29T04:30:20.447Z",
+  "generatedAt": "2026-08-29T19:15:20.169Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -23,161 +23,161 @@
   "items": [
     {
       "index": 1,
-      "term": "共通",
-      "reading": "きょうつう",
-      "exampleJa": "Repository全体の共通RuleをRootに置きます。",
+      "term": "範囲",
+      "reading": "はんい",
+      "exampleJa": "Agentが参照できるContextの範囲をTaskごとに限定します。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
     {
       "index": 2,
-      "term": "優先",
-      "reading": "ゆうせん",
-      "exampleJa": "より近いDirectoryのAGENTS.mdを優先します。",
+      "term": "競合",
+      "reading": "きょうごう",
+      "exampleJa": "複数Agentの変更競合を減らすため、Working Treeを分けます。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "適用",
-      "reading": "てきよう",
-      "exampleJa": "Fileの位置に応じて適切なInstructionを適用します。",
+      "term": "整合",
+      "reading": "せいごう",
+      "exampleJa": "生成Codeが既存Schemaと整合しているかTestで確認します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "範囲",
-      "reading": "はんい",
-      "exampleJa": "Agentが読むContextの範囲をTaskごとに限定します。",
+      "term": "保証",
+      "reading": "ほしょう",
+      "exampleJa": "自動Testだけで完全な品質を保証できるとは限りません。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "検証",
-      "reading": "けんしょう",
-      "exampleJa": "生成CodeをType CheckとTestで検証します。",
+      "term": "継承",
+      "reading": "けいしょう",
+      "exampleJa": "子DirectoryはRootの共通Instructionを継承します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "実行",
-      "reading": "じっこう",
-      "exampleJa": "複数のValidationを並行して実行します。",
+      "term": "優先する",
+      "reading": "ゆうせんする",
+      "exampleJa": "よりTaskに近いDirectoryのRuleを優先します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "分離",
-      "reading": "ぶんり",
-      "exampleJa": "SessionごとにContextと作業Directoryを分離します。",
+      "term": "適用する",
+      "reading": "てきようする",
+      "exampleJa": "Fileの位置に応じて適切なInstructionを適用します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "並行",
-      "reading": "へいこう",
-      "exampleJa": "独立したTaskは複数Agentで並行して進めます。",
+      "term": "検証する",
+      "reading": "けんしょうする",
+      "exampleJa": "Agentが生成したCodeをType CheckとTestで検証します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "継承",
-      "reading": "けいしょう",
-      "exampleJa": "子DirectoryはRootの共通Instructionを継承します。",
+      "term": "実行する",
+      "reading": "じっこうする",
+      "exampleJa": "独立したValidationを複数Sessionで並行して実行します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "上書き",
-      "reading": "うわがき",
-      "exampleJa": "Local Ruleが必要な場合だけ共通設定を上書きします。",
+      "term": "分離する",
+      "reading": "ぶんりする",
+      "exampleJa": "SessionごとにContextと作業Directoryを分離します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "競合",
-      "reading": "きょうごう",
-      "exampleJa": "複数Agentの変更が同じFileで競合しないようにします。",
+      "term": "明示する",
+      "reading": "めいじする",
+      "exampleJa": "Validation Commandと禁止事項をAGENTS.mdに明示します。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "衝突",
-      "reading": "しょうとつ",
-      "exampleJa": "Instruction同士が衝突した場合は優先順位を明確にします。",
+      "term": "追跡する",
+      "reading": "ついせきする",
+      "exampleJa": "AgentごとのCommitとValidation結果を追跡します。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "整合",
-      "reading": "せいごう",
-      "exampleJa": "生成Codeが既存Schemaと整合しているか検証します。",
+      "term": "防ぐ",
+      "reading": "ふせぐ",
+      "exampleJa": "自動Validationで不完全なCodeのMergeを防ぎます。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "明示",
-      "reading": "めいじ",
-      "exampleJa": "禁止事項とValidation CommandをAGENTS.mdに明示します。",
+      "term": "共通",
+      "reading": "きょうつう",
+      "exampleJa": "Repository全体に共通なCoding RuleをRootへ置きます。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
     {
       "index": 15,
-      "term": "限定",
-      "reading": "げんてい",
-      "exampleJa": "Agentに渡すReferenceを必要な範囲に限定します。",
+      "term": "並行",
+      "reading": "へいこう",
+      "exampleJa": "独立したTaskは複数Agentで並行して進めます。",
       "word": "vocab-15.mp3",
       "example": "example-15.mp3"
     },
     {
       "index": 16,
-      "term": "参照",
-      "reading": "さんしょう",
-      "exampleJa": "Taskに関係するDesign Docだけを参照させます。",
+      "term": "明確",
+      "reading": "めいかく",
+      "exampleJa": "Ruleの適用範囲と優先順位を明確にします。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "共有",
-      "reading": "きょうゆう",
-      "exampleJa": "必要な前提だけをAgent間で共有します。",
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "Agentごとの担当Directoryをあらかじめ決めておきます。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "防ぐ",
-      "reading": "ふせぐ",
-      "exampleJa": "自動Validationで不完全なCodeのMergeを防ぎます。",
+      "term": "個別に",
+      "reading": "こべつに",
+      "exampleJa": "PackageごとのValidation Commandを個別に設定します。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "追跡",
-      "reading": "ついせき",
-      "exampleJa": "AgentごとのCommitとValidation結果を追跡します。",
+      "term": "同時に",
+      "reading": "どうじに",
+      "exampleJa": "複数Agentが同じFileを同時に変更しないようにします。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "保証",
-      "reading": "ほしょう",
-      "exampleJa": "自動Testだけで完全な品質を保証できるとは限りません。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "並行化で速度は上がる一方で、変更競合の管理が必要です。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,33 +185,45 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～に応じて",
-      "exampleJa": "Directoryに応じて適用するInstructionを切り替えます。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "AGENTS.mdはCoding Styleにとどまらず、Validationや禁止事項まで定義できます。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～ごとに",
-      "exampleJa": "Agentごとに独立したWorking Treeを用意します。",
+      "pattern": "～かねない",
+      "exampleJa": "複数Agentが同じFileを同時に変更すると、大きな競合を招きかねません。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～ようにする",
-      "exampleJa": "複数Agentが同じFileを同時に変更しないようにします。",
+      "pattern": "～なくしては",
+      "exampleJa": "DeterministicなValidationなくしては、AI Codingの品質を安定させるのは難しいです。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～ことによって",
-      "exampleJa": "Contextを限定することによって、不要なToken消費を減らせます。",
+      "pattern": "～に応じて",
+      "exampleJa": "Directoryに応じて適用するInstructionを切り替えます。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
       "pattern": "～一方で",
-      "exampleJa": "並行化で速度は上がる一方で、変更競合の管理が必要です。",
+      "exampleJa": "並行Sessionは開発を高速化できる一方で、競合管理が複雑になります。",
       "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～たうえで",
+      "exampleJa": "自動Validationを通したうえで、Agentの変更をMergeします。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～に基づいて",
+      "exampleJa": "RepositoryのRuleに基づいてAgentのCommand実行を制御します。",
+      "example": "grammar-example-07.mp3"
     }
   ]
 }

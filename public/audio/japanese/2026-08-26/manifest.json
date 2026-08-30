@@ -1,6 +1,6 @@
 {
   "date": "2026-08-26",
-  "generatedAt": "2026-08-29T04:30:20.462Z",
+  "generatedAt": "2026-08-29T19:22:57.300Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -23,161 +23,161 @@
   "items": [
     {
       "index": 1,
-      "term": "管理",
-      "reading": "かんり",
-      "exampleJa": "企業ではAI Agentが利用できるModelとToolを一元的に管理します。",
+      "term": "影響",
+      "reading": "えいきょう",
+      "exampleJa": "脆弱性が自社Serviceに与える影響を調査します。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
     {
       "index": 2,
-      "term": "確認",
-      "reading": "かくにん",
-      "exampleJa": "Security Advisoryが公開されたら利用中のVersionを確認します。",
+      "term": "運用",
+      "reading": "うんよう",
+      "exampleJa": "AI Agentの本番運用では監査ログを保存します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "制御",
-      "reading": "せいぎょ",
-      "exampleJa": "MCP ToolへのAccessをRuntime Policyで制御します。",
+      "term": "依存",
+      "reading": "いぞん",
+      "exampleJa": "特定MCP Serverだけに依存しない構成を検討します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "検証",
-      "reading": "けんしょう",
-      "exampleJa": "Patch適用後はE2E Testで既存機能への影響を検証します。",
+      "term": "監査",
+      "reading": "かんさ",
+      "exampleJa": "Tool CallとPermission変更を後から監査できるように記録します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "運用",
-      "reading": "うんよう",
-      "exampleJa": "AI Agentを本番運用する場合は監査ログを保存します。",
+      "term": "緊急",
+      "reading": "きんきゅう",
+      "exampleJa": "RCE Riskが高い場合は緊急対応を行います。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "影響",
-      "reading": "えいきょう",
-      "exampleJa": "脆弱性が自社Serviceに与える影響を調査します。",
+      "term": "管理する",
+      "reading": "かんりする",
+      "exampleJa": "利用できるModelとToolをRuntime側で管理します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "把握",
-      "reading": "はあく",
-      "exampleJa": "MCP Server追加前にTool Definitionが消費するToken量を把握します。",
+      "term": "確認する",
+      "reading": "かくにんする",
+      "exampleJa": "Advisoryが公開されたら利用中のVersionを確認します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "考慮",
-      "reading": "こうりょ",
-      "exampleJa": "Model選定では精度だけでなくCostとSecurityも考慮します。",
+      "term": "制御する",
+      "reading": "せいぎょする",
+      "exampleJa": "MCP ToolへのAccessをRuntime Policyで制御します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "連携",
-      "reading": "れんけい",
-      "exampleJa": "SBOMと脆弱性情報を連携して影響範囲を確認します。",
+      "term": "検証する",
+      "reading": "けんしょうする",
+      "exampleJa": "Patch適用後はE2E Testで既存機能への影響を検証します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "絞り込む",
-      "reading": "しぼりこむ",
-      "exampleJa": "Asset情報も使い対応が必要なCVEを絞り込みます。",
+      "term": "把握する",
+      "reading": "はあくする",
+      "exampleJa": "MCP Server追加前にTool Definitionが消費するToken量を把握します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "優先",
-      "reading": "ゆうせん",
-      "exampleJa": "Internet公開Assetに影響するCVEを優先して対応します。",
+      "term": "考慮する",
+      "reading": "こうりょする",
+      "exampleJa": "Model選定では精度だけでなくCostとSecurityも考慮します。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "対応",
-      "reading": "たいおう",
-      "exampleJa": "Riskが高い脆弱性から順に対応します。",
+      "term": "絞り込む",
+      "reading": "しぼりこむ",
+      "exampleJa": "Asset情報を使って対応が必要なCVEを絞り込みます。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "適用",
-      "reading": "てきよう",
-      "exampleJa": "検証環境で確認した後、本番へPatchを適用します。",
+      "term": "照合する",
+      "reading": "しょうごうする",
+      "exampleJa": "CVE対象VersionをAsset Inventoryと照合します。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "監査",
-      "reading": "かんさ",
-      "exampleJa": "Tool CallとPermission変更を監査できるように記録します。",
+      "term": "重要",
+      "reading": "じゅうよう",
+      "exampleJa": "Internet公開Assetに影響する脆弱性を重要な対象として扱います。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
     {
       "index": 15,
-      "term": "消費",
-      "reading": "しょうひ",
-      "exampleJa": "不要なTool DefinitionがContext Tokenを消費します。",
+      "term": "脆弱",
+      "reading": "ぜいじゃく",
+      "exampleJa": "脆弱なVersionを本番で使い続けないようにします。",
       "word": "vocab-15.mp3",
       "example": "example-15.mp3"
     },
     {
       "index": 16,
-      "term": "削減",
-      "reading": "さくげん",
-      "exampleJa": "不要なContextを除いてToken消費を削減します。",
+      "term": "適切",
+      "reading": "てきせつ",
+      "exampleJa": "Asset Contextに応じて適切な対応優先度を決めます。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "依存",
-      "reading": "いぞん",
-      "exampleJa": "特定MCP Serverだけに依存しない構成を検討します。",
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "利用中のDependencyをあらかじめInventory化します。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "緊急",
-      "reading": "きんきゅう",
-      "exampleJa": "RCE Riskがある場合は緊急Patchを適用します。",
+      "term": "優先して",
+      "reading": "ゆうせんして",
+      "exampleJa": "Internet公開AssetのCVEを優先して対応します。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "照合",
-      "reading": "しょうごう",
-      "exampleJa": "CVE対象VersionをAsset Inventoryと照合します。",
+      "term": "継続的に",
+      "reading": "けいぞくてきに",
+      "exampleJa": "SBOMとTool Inventoryを継続的に更新します。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "判断",
-      "reading": "はんだん",
-      "exampleJa": "CVSSだけでなくAsset Contextも使って対応要否を判断します。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "MCP Toolを増やすと能力は広がる一方で、Context Costも増えます。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,33 +185,45 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～必要がある",
-      "exampleJa": "本番Agentでは監査ログを保存する必要があります。",
+      "pattern": "～恐れがある",
+      "exampleJa": "脆弱なVersionを使い続けるとRemote Code Executionにつながる恐れがあります。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～に応じて",
-      "exampleJa": "Riskの高さに応じて対応優先度を変えます。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "TriageではCVSSにとどまらず、Assetの公開範囲やExploitabilityまで確認します。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～た上で",
-      "exampleJa": "影響範囲を確認した上でPatchを適用します。",
+      "pattern": "～かねない",
+      "exampleJa": "不要なTool Definitionを大量に読み込むと、Context Costを増やしかねません。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～だけでなく～も",
-      "exampleJa": "CVSSだけでなく、Assetの公開範囲も考慮します。",
+      "pattern": "～に応じて",
+      "exampleJa": "Riskの高さに応じて対応優先度を変えます。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～恐れがある",
-      "exampleJa": "脆弱なVersionを使い続けるとRemote Code Executionにつながる恐れがあります。",
+      "pattern": "～た上で",
+      "exampleJa": "影響範囲を確認した上でPatchを適用します。",
       "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～に基づいて",
+      "exampleJa": "Asset Inventoryに基づいてCVEの対応要否を判断します。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～一方で",
+      "exampleJa": "Toolを増やすとAgentの能力は広がる一方で、ContextとSecurityのCostも増えます。",
+      "example": "grammar-example-07.mp3"
     }
   ]
 }

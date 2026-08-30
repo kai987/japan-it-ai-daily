@@ -1,6 +1,6 @@
 {
   "date": "2026-08-18",
-  "generatedAt": "2026-08-29T04:30:20.450Z",
+  "generatedAt": "2026-08-29T19:16:53.656Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -25,7 +25,7 @@
       "index": 1,
       "term": "費用",
       "reading": "ひよう",
-      "exampleJa": "AIサービスの費用をTeamごとに確認します。",
+      "exampleJa": "AI Serviceの費用をTeamごとに把握します。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
@@ -39,145 +39,145 @@
     },
     {
       "index": 3,
-      "term": "削減",
-      "reading": "さくげん",
-      "exampleJa": "Cacheを利用して不要なModel Callを削減します。",
+      "term": "予算",
+      "reading": "よさん",
+      "exampleJa": "Teamごとに月次AI予算を設定します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "予算",
-      "reading": "よさん",
-      "exampleJa": "Teamごとに月次AI予算を設定します。",
+      "term": "上限",
+      "reading": "じょうげん",
+      "exampleJa": "高価なModelには日次Cost上限を設定します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "計測",
-      "reading": "けいそく",
-      "exampleJa": "TaskごとのToken数とCostを計測します。",
+      "term": "傾向",
+      "reading": "けいこう",
+      "exampleJa": "高CostになりやすいTaskの傾向を分析します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "可視化",
-      "reading": "かしか",
-      "exampleJa": "Model別のCostと成功率をDashboardで可視化します。",
+      "term": "削減する",
+      "reading": "さくげんする",
+      "exampleJa": "CacheとModel Routingで不要なCallを削減します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "改善",
-      "reading": "かいぜん",
-      "exampleJa": "User Feedbackを基にPromptを継続的に改善します。",
+      "term": "計測する",
+      "reading": "けいそくする",
+      "exampleJa": "TaskごとのToken数とCostを計測します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "反映",
-      "reading": "はんえい",
-      "exampleJa": "失敗CaseをEvaluation Datasetへ反映します。",
+      "term": "可視化する",
+      "reading": "かしかする",
+      "exampleJa": "Model別のCostと成功率をDashboardで可視化します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "移行",
-      "reading": "いこう",
-      "exampleJa": "Legacy Applicationを段階的に新Architectureへ移行します。",
+      "term": "改善する",
+      "reading": "かいぜんする",
+      "exampleJa": "User Feedbackを基にPromptを継続的に改善します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "変換",
-      "reading": "へんかん",
-      "exampleJa": "AWS Transformで旧Codeを新しいRuntime向けに変換します。",
+      "term": "反映する",
+      "reading": "はんえいする",
+      "exampleJa": "失敗Caseを次回のEvaluation Datasetへ反映します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "見積もる",
-      "reading": "みつもる",
-      "exampleJa": "本番導入前に月間Token Costを見積もります。",
+      "term": "移行する",
+      "reading": "いこうする",
+      "exampleJa": "Legacy Applicationを段階的に新Architectureへ移行します。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "上限",
-      "reading": "じょうげん",
-      "exampleJa": "高価なModelには日次Cost上限を設定します。",
+      "term": "見積もる",
+      "reading": "みつもる",
+      "exampleJa": "本番導入前に月間Token Costを見積もります。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "超過",
-      "reading": "ちょうか",
-      "exampleJa": "予算を超過しそうな場合はAlertを送ります。",
+      "term": "介入する",
+      "reading": "かいにゅうする",
+      "exampleJa": "Riskが高い操作だけ人間が介入します。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "配分",
-      "reading": "はいぶん",
-      "exampleJa": "Business Valueに応じてAI予算をTeamへ配分します。",
+      "term": "段階的",
+      "reading": "だんかいてき",
+      "exampleJa": "Migrationは段階的に進め、各段階でRollback可能にします。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
     {
       "index": 15,
-      "term": "最適化",
-      "reading": "さいてきか",
-      "exampleJa": "品質を維持しながらModel RoutingでCostを最適化します。",
+      "term": "継続的",
+      "reading": "けいぞくてき",
+      "exampleJa": "継続的な計測によってCost改善の効果を確認します。",
       "word": "vocab-15.mp3",
       "example": "example-15.mp3"
     },
     {
       "index": 16,
-      "term": "蓄積",
-      "reading": "ちくせき",
-      "exampleJa": "User Feedbackと失敗例を継続的に蓄積します。",
+      "term": "慎重",
+      "reading": "しんちょう",
+      "exampleJa": "高Riskな自動化は効果を検証してから慎重に拡大します。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "傾向",
-      "reading": "けいこう",
-      "exampleJa": "高CostになりやすいTaskの傾向を分析します。",
+      "term": "事前に",
+      "reading": "じぜんに",
+      "exampleJa": "本番導入前にCost上限を事前に設定します。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "判断",
-      "reading": "はんだん",
-      "exampleJa": "Confidenceが低いCaseは人間が最終判断します。",
+      "term": "必ずしも",
+      "reading": "かならずしも",
+      "exampleJa": "Long Contextを使えば必ずしもCost効率が高まるとは限りません。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "任せる",
-      "reading": "まかせる",
-      "exampleJa": "定型作業はAgentに任せ、人間は例外処理に集中します。",
+      "term": "一律に",
+      "reading": "いちりつに",
+      "exampleJa": "すべてのTaskを一律に高性能Modelへ送る必要はありません。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "介入",
-      "reading": "かいにゅう",
-      "exampleJa": "Riskが高い操作だけ人間が介入します。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "Long Contextは大量情報を扱える一方で、Token Costが増える場合があります。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,33 +185,45 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～ために",
-      "exampleJa": "AI Costを抑えるために、TaskごとにModelを使い分けます。",
+      "pattern": "～つつ",
+      "exampleJa": "品質を維持しつつ、Model Costを削減します。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～に応じて",
-      "exampleJa": "Business Valueに応じて予算を配分します。",
+      "pattern": "～に伴って",
+      "exampleJa": "Agent利用の拡大に伴って、Cost Governanceの重要性も高まります。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～つつ",
-      "exampleJa": "品質を維持しつつ、Model Costを削減します。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "AI FinOpsはToken Costの削減にとどまらず、Task当たりのBusiness Valueまで評価します。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
-      "pattern": "～だけでなく～も",
-      "exampleJa": "Costだけでなく、Latencyと成功率も評価します。",
+      "pattern": "～に応じて",
+      "exampleJa": "Business Valueに応じてAI予算を配分します。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～に伴って",
-      "exampleJa": "Agent利用の拡大に伴って、Cost Governanceの重要性も高まります。",
+      "pattern": "～たうえで",
+      "exampleJa": "Costと成功率を計測したうえで、Model Routingを調整します。",
       "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～一方で",
+      "exampleJa": "Long Contextは便利な一方で、Token Costが高くなることがあります。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～とは限らない",
+      "exampleJa": "高価なModelを使えばTask当たりCost効率が高くなるとは限りません。",
+      "example": "grammar-example-07.mp3"
     }
   ]
 }

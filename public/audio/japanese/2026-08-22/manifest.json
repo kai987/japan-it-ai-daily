@@ -1,6 +1,6 @@
 {
   "date": "2026-08-22",
-  "generatedAt": "2026-08-29T04:30:20.456Z",
+  "generatedAt": "2026-08-29T19:19:54.175Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -23,161 +23,161 @@
   "items": [
     {
       "index": 1,
-      "term": "公開",
-      "reading": "こうかい",
-      "exampleJa": "Security Advisoryが公開されたら内容を確認します。",
+      "term": "影響",
+      "reading": "えいきょう",
+      "exampleJa": "自社Serviceが脆弱性の影響を受けるか確認します。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
     {
       "index": 2,
-      "term": "修正",
-      "reading": "しゅうせい",
-      "exampleJa": "脆弱性を修正したVersionへUpdateします。",
+      "term": "互換",
+      "reading": "ごかん",
+      "exampleJa": "Patch適用後も既存APIとの互換性を確認します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "更新",
-      "reading": "こうしん",
-      "exampleJa": "影響を確認した上でNext.jsを安全なVersionへ更新します。",
+      "term": "署名",
+      "reading": "しょめい",
+      "exampleJa": "Plugin Artifactの署名をInstall前に検証します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "影響",
-      "reading": "えいきょう",
-      "exampleJa": "自社Serviceが脆弱性の影響を受けるか確認します。",
+      "term": "信頼",
+      "reading": "しんらい",
+      "exampleJa": "検索結果はSourceの信頼性を確認してから利用します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "脆弱",
-      "reading": "ぜいじゃく",
-      "exampleJa": "外部入力をそのまま信頼する実装はPrompt Injectionに脆弱です。",
+      "term": "供給",
+      "reading": "きょうきゅう",
+      "exampleJa": "Software供給網全体のRiskを評価します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "対応",
-      "reading": "たいおう",
-      "exampleJa": "Criticalな脆弱性には優先して対応します。",
+      "term": "公開する",
+      "reading": "こうかいする",
+      "exampleJa": "Security Advisoryが公開されたら対象Versionを確認します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "適用",
-      "reading": "てきよう",
-      "exampleJa": "Patch適用後にRegression Testを実行します。",
+      "term": "修正する",
+      "reading": "しゅうせいする",
+      "exampleJa": "脆弱性を修正したVersionへUpdateします。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "検証",
-      "reading": "けんしょう",
-      "exampleJa": "Conformance TestでMCP Serverの挙動を検証します。",
+      "term": "更新する",
+      "reading": "こうしんする",
+      "exampleJa": "影響を確認した上でNext.jsを安全なVersionへ更新します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "互換",
-      "reading": "ごかん",
-      "exampleJa": "Security Patch適用後も既存APIとの互換性を確認します。",
+      "term": "対応する",
+      "reading": "たいおうする",
+      "exampleJa": "Criticalな脆弱性には優先して対応します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "準拠",
-      "reading": "じゅんきょ",
-      "exampleJa": "MCP Serverが最新仕様に準拠しているか確認します。",
+      "term": "適用する",
+      "reading": "てきようする",
+      "exampleJa": "Patchを適用した後にRegression Testを実行します。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "混入",
-      "reading": "こんにゅう",
-      "exampleJa": "Plugin Packageに悪意あるCodeが混入していないか検査します。",
+      "term": "検証する",
+      "reading": "けんしょうする",
+      "exampleJa": "Conformance TestでMCP Serverの挙動を検証します。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "汚染",
-      "reading": "おせん",
-      "exampleJa": "不正なTool DescriptionによるContext汚染を防ぎます。",
+      "term": "検知する",
+      "reading": "けんちする",
+      "exampleJa": "不審なPlugin BehaviorをRuntimeで検知します。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "署名",
-      "reading": "しょめい",
-      "exampleJa": "Plugin Artifactの署名をInstall前に検証します。",
+      "term": "回避する",
+      "reading": "かいひする",
+      "exampleJa": "Patchできない場合はFeatureを無効化してRiskを回避します。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "信頼",
-      "reading": "しんらい",
-      "exampleJa": "検索結果を無条件に信頼せずSourceを確認します。",
+      "term": "脆弱",
+      "reading": "ぜいじゃく",
+      "exampleJa": "外部入力を無条件に信頼する実装はPrompt Injectionに脆弱です。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
     {
       "index": 15,
-      "term": "供給",
-      "reading": "きょうきゅう",
-      "exampleJa": "Software供給網全体のRiskを評価します。",
+      "term": "安全",
+      "reading": "あんぜん",
+      "exampleJa": "Regression Testを通してから安全なVersionへ更新します。",
       "word": "vocab-15.mp3",
       "example": "example-15.mp3"
     },
     {
       "index": 16,
-      "term": "検知",
-      "reading": "けんち",
-      "exampleJa": "不審なPlugin BehaviorをRuntimeで検知します。",
+      "term": "重要",
+      "reading": "じゅうよう",
+      "exampleJa": "Critical Advisoryでは初動の速さが重要です。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "回避",
-      "reading": "かいひ",
-      "exampleJa": "Patchできない場合はFeatureを無効化してRiskを回避します。",
+      "term": "速やかに",
+      "reading": "すみやかに",
+      "exampleJa": "影響が確認された場合は速やかにPatchを適用します。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "追跡",
-      "reading": "ついせき",
-      "exampleJa": "SBOMから脆弱なPackageの利用先を追跡します。",
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "利用中のDependencyをあらかじめInventory化します。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "照合",
-      "reading": "しょうごう",
-      "exampleJa": "Advisoryの対象Versionと自社Inventoryを照合します。",
+      "term": "無条件に",
+      "reading": "むじょうけんに",
+      "exampleJa": "検索結果やPluginを無条件に信頼してはいけません。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "再現",
-      "reading": "さいげん",
-      "exampleJa": "公開された手順で脆弱な挙動を安全な環境に再現します。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "Agent Pluginは機能を増やせる一方で、Supply Chain Riskも広げます。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,20 +185,20 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～たら",
-      "exampleJa": "Security Advisoryが公開されたら、利用Versionを確認します。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "Plugin SecurityはCode Reviewにとどまらず、署名や配布元の確認まで必要です。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～による",
-      "exampleJa": "Tool Descriptionの改ざんによるPrompt Injectionを防ぎます。",
+      "pattern": "～恐れがある",
+      "exampleJa": "悪意あるTool Descriptionを読み込むと、意図しない操作を実行する恐れがあります。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～に対して",
-      "exampleJa": "Criticalな脆弱性に対して緊急Patchを適用します。",
+      "pattern": "～かねない",
+      "exampleJa": "Sourceを確認せずPluginを導入すると、Supply Chain攻撃を招きかねません。",
       "example": "grammar-example-03.mp3"
     },
     {
@@ -212,6 +212,18 @@
       "pattern": "～に備えて",
       "exampleJa": "緊急Patchに備えてDependency Inventoryを維持します。",
       "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～た上で",
+      "exampleJa": "影響範囲と互換性を確認した上でVersionを更新します。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～一方で",
+      "exampleJa": "PluginはAgentの機能を拡張できる一方で、攻撃面も広げます。",
+      "example": "grammar-example-07.mp3"
     }
   ]
 }

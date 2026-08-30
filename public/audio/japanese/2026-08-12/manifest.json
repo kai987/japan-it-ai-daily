@@ -1,6 +1,6 @@
 {
   "date": "2026-08-12",
-  "generatedAt": "2026-08-29T04:30:20.440Z",
+  "generatedAt": "2026-08-29T19:11:56.879Z",
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -23,161 +23,161 @@
   "items": [
     {
       "index": 1,
-      "term": "管理",
-      "reading": "かんり",
-      "exampleJa": "AIサービスの利用量をチーム単位で管理します。",
+      "term": "運用",
+      "reading": "うんよう",
+      "exampleJa": "本番運用ではLatencyとError Rateを継続的に確認します。",
       "word": "vocab-01.mp3",
       "example": "example-01.mp3"
     },
     {
       "index": 2,
-      "term": "確認",
-      "reading": "かくにん",
-      "exampleJa": "Agentの実行結果をログで確認します。",
+      "term": "監視",
+      "reading": "かんし",
+      "exampleJa": "Agentの実行状態を監視基盤で追跡します。",
       "word": "vocab-02.mp3",
       "example": "example-02.mp3"
     },
     {
       "index": 3,
-      "term": "検証",
-      "reading": "けんしょう",
-      "exampleJa": "検索結果の品質を実データで検証します。",
+      "term": "計測",
+      "reading": "けいそく",
+      "exampleJa": "ModelごとのToken消費とLatencyを計測します。",
       "word": "vocab-03.mp3",
       "example": "example-03.mp3"
     },
     {
       "index": 4,
-      "term": "運用",
-      "reading": "うんよう",
-      "exampleJa": "本番運用では監査ログを必ず保存します。",
+      "term": "構成",
+      "reading": "こうせい",
+      "exampleJa": "機密データだけLocal LLMで処理する構成を検討します。",
       "word": "vocab-04.mp3",
       "example": "example-04.mp3"
     },
     {
       "index": 5,
-      "term": "削減",
-      "reading": "さくげん",
-      "exampleJa": "不要なContextを減らしてToken消費を削減します。",
+      "term": "蓄積",
+      "reading": "ちくせき",
+      "exampleJa": "運用中のTraceを蓄積し、Evaluation Datasetに活用します。",
       "word": "vocab-05.mp3",
       "example": "example-05.mp3"
     },
     {
       "index": 6,
-      "term": "処理",
-      "reading": "しょり",
-      "exampleJa": "Local Modelで低レイテンシな処理を行います。",
+      "term": "管理する",
+      "reading": "かんりする",
+      "exampleJa": "TeamごとにAI Serviceの利用量とCostを管理します。",
       "word": "vocab-06.mp3",
       "example": "example-06.mp3"
     },
     {
       "index": 7,
-      "term": "把握",
-      "reading": "はあく",
-      "exampleJa": "どのToolが実行されたかを正確に把握します。",
+      "term": "検証する",
+      "reading": "けんしょうする",
+      "exampleJa": "検索結果の品質を実データで検証します。",
       "word": "vocab-07.mp3",
       "example": "example-07.mp3"
     },
     {
       "index": 8,
-      "term": "考慮",
-      "reading": "こうりょ",
-      "exampleJa": "品質だけでなくコストも考慮してModelを選びます。",
+      "term": "削減する",
+      "reading": "さくげんする",
+      "exampleJa": "検索で対象を絞り、不要なToken消費を削減します。",
       "word": "vocab-08.mp3",
       "example": "example-08.mp3"
     },
     {
       "index": 9,
-      "term": "連携",
-      "reading": "れんけい",
-      "exampleJa": "MCPを通じて外部Toolと安全に連携します。",
+      "term": "把握する",
+      "reading": "はあくする",
+      "exampleJa": "TraceからAgentの実行経路を正確に把握します。",
       "word": "vocab-09.mp3",
       "example": "example-09.mp3"
     },
     {
       "index": 10,
-      "term": "依存",
-      "reading": "いぞん",
-      "exampleJa": "一つのCloud Modelだけに依存しない構成を検討します。",
+      "term": "考慮する",
+      "reading": "こうりょする",
+      "exampleJa": "精度だけでなくPrivacyとCostも考慮してModelを選びます。",
       "word": "vocab-10.mp3",
       "example": "example-10.mp3"
     },
     {
       "index": 11,
-      "term": "監視",
-      "reading": "かんし",
-      "exampleJa": "Agentの実行状態を継続的に監視します。",
+      "term": "連携する",
+      "reading": "れんけいする",
+      "exampleJa": "MCPを通じて検索ToolとAgentを連携します。",
       "word": "vocab-11.mp3",
       "example": "example-11.mp3"
     },
     {
       "index": 12,
-      "term": "計測",
-      "reading": "けいそく",
-      "exampleJa": "RequestごとのLatencyとToken数を計測します。",
+      "term": "切り替える",
+      "reading": "きりかえる",
+      "exampleJa": "機密性に応じてCloudとLocal Modelを切り替えます。",
       "word": "vocab-12.mp3",
       "example": "example-12.mp3"
     },
     {
       "index": 13,
-      "term": "分析",
-      "reading": "ぶんせき",
-      "exampleJa": "Traceを分析して失敗しやすいTool Callを特定します。",
+      "term": "絞り込む",
+      "reading": "しぼりこむ",
+      "exampleJa": "BM25で関連度の高いFileだけに候補を絞り込みます。",
       "word": "vocab-13.mp3",
       "example": "example-13.mp3"
     },
     {
       "index": 14,
-      "term": "改善",
-      "reading": "かいぜん",
-      "exampleJa": "検索精度を評価しながらPromptを継続的に改善します。",
+      "term": "継続的",
+      "reading": "けいぞくてき",
+      "exampleJa": "Agentの品質を継続的に計測し、Promptを改善します。",
       "word": "vocab-14.mp3",
       "example": "example-14.mp3"
     },
     {
       "index": 15,
-      "term": "適用",
-      "reading": "てきよう",
-      "exampleJa": "環境ごとに異なるRate Limitを適用します。",
+      "term": "適切",
+      "reading": "てきせつ",
+      "exampleJa": "Taskの内容に応じて適切なModelを選択します。",
       "word": "vocab-15.mp3",
       "example": "example-15.mp3"
     },
     {
       "index": 16,
-      "term": "比較",
-      "reading": "ひかく",
-      "exampleJa": "Cloud LLMとLocal LLMのCostとLatencyを比較します。",
+      "term": "正確",
+      "reading": "せいかく",
+      "exampleJa": "Tool Callの順序を正確に記録します。",
       "word": "vocab-16.mp3",
       "example": "example-16.mp3"
     },
     {
       "index": 17,
-      "term": "構成",
-      "reading": "こうせい",
-      "exampleJa": "検索と生成を分離した構成にします。",
+      "term": "事前に",
+      "reading": "じぜんに",
+      "exampleJa": "本番切り替えの前に、事前にFallback動作を検証します。",
       "word": "vocab-17.mp3",
       "example": "example-17.mp3"
     },
     {
       "index": 18,
-      "term": "切り替える",
-      "reading": "きりかえる",
-      "exampleJa": "機密性に応じてCloudとLocal Modelを切り替えます。",
+      "term": "必ずしも",
+      "reading": "かならずしも",
+      "exampleJa": "大きなContext Windowが必ずしも高い精度につながるとは限りません。",
       "word": "vocab-18.mp3",
       "example": "example-18.mp3"
     },
     {
       "index": 19,
-      "term": "絞り込む",
-      "reading": "しぼりこむ",
-      "exampleJa": "BM25で関連度の高いFileだけに候補を絞り込みます。",
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "機密Fileはあらかじめ検索対象から除外します。",
       "word": "vocab-19.mp3",
       "example": "example-19.mp3"
     },
     {
       "index": 20,
-      "term": "蓄積",
-      "reading": "ちくせき",
-      "exampleJa": "運用中のTraceを蓄積してEvaluation Datasetを作ります。",
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "Local LLMはPrivacy面で有利な一方で、運用負荷が増える場合があります。",
       "word": "vocab-20.mp3",
       "example": "example-20.mp3"
     }
@@ -185,33 +185,45 @@
   "grammar": [
     {
       "index": 1,
-      "pattern": "～必要がある",
-      "exampleJa": "Agentの実行履歴を保存する必要があります。",
+      "pattern": "～にとどまらず",
+      "exampleJa": "ObservabilityはError確認にとどまらず、CostやSecurityの分析にも役立ちます。",
       "example": "grammar-example-01.mp3"
     },
     {
       "index": 2,
-      "pattern": "～ために",
-      "exampleJa": "Token消費を減らすために、検索で対象ファイルを絞ります。",
+      "pattern": "～かねない",
+      "exampleJa": "不要なContextを大量に渡すと、判断精度を下げかねません。",
       "example": "grammar-example-02.mp3"
     },
     {
       "index": 3,
-      "pattern": "～だけでなく～も",
-      "exampleJa": "精度だけでなく、コストも評価します。",
+      "pattern": "～なくしては",
+      "exampleJa": "継続的な計測なくしては、Agentの品質改善は難しいです。",
       "example": "grammar-example-03.mp3"
     },
     {
       "index": 4,
       "pattern": "～に応じて",
-      "exampleJa": "機密性に応じてCloudとLocal Modelを使い分けます。",
+      "exampleJa": "データの機密性に応じてCloudとLocal Modelを使い分けます。",
       "example": "grammar-example-04.mp3"
     },
     {
       "index": 5,
-      "pattern": "～とは限らない",
-      "exampleJa": "Context Windowが大きければ性能が高くなるとは限りません。",
+      "pattern": "～一方で",
+      "exampleJa": "Local LLMはDataを外部に出さない一方で、運用負荷が高くなることがあります。",
       "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～たうえで",
+      "exampleJa": "Latencyを計測したうえで、利用するModelを決定します。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～とは限らない",
+      "exampleJa": "Parameter数が多ければ実務性能が高いとは限りません。",
+      "example": "grammar-example-07.mp3"
     }
   ]
 }
