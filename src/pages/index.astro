@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { featuredTopics, countTopicArticles } from '../lib/topics';
 import { getJapaneseArticleTitle } from '../lib/articleTitles';
+import { getSafeExternalUrl } from '../lib/urls';
 
 const base = import.meta.env.BASE_URL;
 const reports = (await getCollection('daily')).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
@@ -57,6 +58,7 @@ const topicStats = featuredTopics.map((topic) => ({
         <div class="top-list">
           {top.slice(0,5).map((item:any, i:number) => {
             const displayTitle = getJapaneseArticleTitle(item);
+            const safeUrl = getSafeExternalUrl(item.url);
             const story = (
               <>
                 <div class="rank">{String(i+1).padStart(2,'0')}</div>
@@ -67,12 +69,12 @@ const topicStats = featuredTopics.map((topic) => ({
                 </div>
                 <div class="story-side">
                   <div class="date">{latest.data.date.toLocaleDateString('ja-JP')}</div>
-                  {item.url && <div class="external-label">原文 ↗</div>}
+                  {safeUrl && <div class="external-label">原文 ↗</div>}
                 </div>
               </>
             );
-            return item.url ? (
-              <a class="top-item top-item-link" href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`${displayTitle}（原文を新しいタブで開く）`}>
+            return safeUrl ? (
+              <a class="top-item top-item-link" href={safeUrl} target="_blank" rel="noopener noreferrer" aria-label={`${displayTitle}（原文を新しいタブで開く）`}>
                 {story}
               </a>
             ) : (
