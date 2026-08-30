@@ -268,7 +268,7 @@ const searchIndexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
       } else if (event.key === 'ArrowUp') {
         event.preventDefault();
         if (popover.hidden) render();
-        activeIndex = currentResults.length ? (activeIndex <= 0 ? currentResults.length - 1 : activeIndex - 1;
+        activeIndex = currentResults.length ? (activeIndex <= 0 ? currentResults.length - 1 : activeIndex - 1) : -1;
         syncActive();
       } else if (event.key === 'Enter' && currentResults.length) {
         event.preventDefault();
