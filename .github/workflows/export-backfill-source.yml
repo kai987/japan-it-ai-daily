@@ -1,0 +1,24 @@
+name: Export backfill source snapshot
+
+on:
+  push:
+    branches:
+      - backfill/source-export-20260901
+
+permissions:
+  contents: read
+
+jobs:
+  export-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Upload content snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: historical-content-source
+          path: |
+            src/content/daily
+            src/content/japanese
+          if-no-files-found: error
