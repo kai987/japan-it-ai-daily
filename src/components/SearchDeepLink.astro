@@ -28,21 +28,20 @@
     const article = document.querySelector('.report-layout article.prose');
     if (!(article instanceof HTMLElement)) return;
 
-    const lower = (value) => String(value ?? '')
+    const lower = (value: unknown): string => String(value ?? '')
       .normalize('NFKC')
       .toLocaleLowerCase('ja-JP');
-    const compact = (value) => lower(value).replace(/[\s\p{P}\p{S}]+/gu, '');
+    const compact = (value: unknown): string => lower(value).replace(/[\s\p{P}\p{S}]+/gu, '');
     const needle = lower(query);
     const compactNeedle = compact(query);
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const ignoredParent = (node) => {
+    const ignoredParent = (node: Text): boolean => {
       const parent = node.parentElement;
       return Boolean(parent?.closest('script, style, noscript, svg, button, input, textarea, select'));
     };
 
-    const scrollToTarget = (target) => {
-      if (!(target instanceof HTMLElement)) return;
+    const scrollToTarget = (target: HTMLElement): void => {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
@@ -51,7 +50,7 @@
     };
 
     const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
-      acceptNode(node) {
+      acceptNode(node: Node): number {
         if (!(node instanceof Text) || ignoredParent(node)) return NodeFilter.FILTER_REJECT;
         const value = node.nodeValue || '';
         return lower(value).includes(needle) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
@@ -75,9 +74,8 @@
     }
 
     if (!compactNeedle) return;
-    const blocks = article.querySelectorAll('h1, h2, h3, h4, p, li, blockquote, pre, code, td, th');
+    const blocks = article.querySelectorAll<HTMLElement>('h1, h2, h3, h4, p, li, blockquote, pre, code, td, th');
     for (const block of blocks) {
-      if (!(block instanceof HTMLElement)) continue;
       if (!compact(block.textContent || '').includes(compactNeedle)) continue;
       block.classList.add('search-deep-block');
       scrollToTarget(block);
