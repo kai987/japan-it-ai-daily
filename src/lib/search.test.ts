@@ -55,9 +55,9 @@ describe('search text preparation', () => {
       .toBe('重点 最小权限 + Sandbox 说明');
   });
 
-  it('splits a report into searchable text segments', () => {
+  it('splits a report into searchable text segments and drops one-character noise', () => {
     expect(reportSegments('## A\n\n第一段。\n\n- 第二段 Sandbox。'))
-      .toEqual(['A', '第一段。', '第二段 Sandbox。']);
+      .toEqual(['第一段。', '第二段 Sandbox。']);
   });
 });
 
