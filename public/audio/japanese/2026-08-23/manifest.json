@@ -1,6 +1,10 @@
 {
   "date": "2026-08-23",
-  "generatedAt": "2026-08-29T19:20:38.743Z",
+  "generatedAt": "2026-08-31T20:14:01.399Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "じゅんばん",
       "exampleJa": "各Stageを決められた順番に実行します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "f344698234e83cd3d5f787176d3be461a660b8bf1d75245b8cdb735cd07edbfa",
+      "example": "example-01.mp3",
+      "exampleHash": "71cacaeb82eba7be10a6612329587d9c52a20215881272d995709f44994b41f2"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "じょうたい",
       "exampleJa": "Workflowの現在状態をState Storeに保存します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "629d6e5124fb3212226ba036e6f459c1d09f3c1ac7e64969b8524a2584c62663",
+      "example": "example-02.mp3",
+      "exampleHash": "e1ce894356be9cc1b31105f28ac58a0fc2050afab4cc14b7b6b37d782bfdfd90"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "しきいち",
       "exampleJa": "Confidenceが閾値を下回るとHuman Reviewへ切り替えます。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "f8bc54fb875f89a70c9c1acf119c007f21edf8058585a38ce535f4827763fcc8",
+      "example": "example-03.mp3",
+      "exampleHash": "bd651dea92ae2309ea911a3243a791022d9aa92f3d3a257d016e89edcc0b5673"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "れいがい",
       "exampleJa": "自動化しにくい例外Caseだけ人間が処理します。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "b5a0008d357edf4ffc9de474ca3e635255599241c2a872b7c5ca36afbffcb1dd",
+      "example": "example-04.mp3",
+      "exampleHash": "f5e3585c7b3d30143051278ae2012e6074e77f284f1dc15d8a0800718f04e38f"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "ひよう",
       "exampleJa": "簡単なTaskは小さいModelへRouteして費用を抑えます。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "ff21f9eaa65efd0df7a286dee6d4a5378d04f7645cf704d4edc565d30d5fb78b",
+      "example": "example-05.mp3",
+      "exampleHash": "f585904509d76be3e1fa2c7632635714074f98d0eca5d7fd36a96ddb74496231"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "すすむ",
       "exampleJa": "条件を満たすとWorkflowが次のStageへ進みます。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "b4de7febe582a68fa7e57be2c2c1737482c2df2689a8f05bdea67776460d6ba1",
+      "example": "example-06.mp3",
+      "exampleHash": "cc662485f1dd4f842e303bd797b70705d9a693689cd8e658c266eebb6a4206d1"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "せんいする",
       "exampleJa": "Successの場合だけ次のStateへ遷移します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "25be4c08e4b9327d83e71a97c90d6e10cc407d6a1cd729e598767244fa426fbd",
+      "example": "example-07.mp3",
+      "exampleHash": "2eb24df84188e3f2b5907279862ed417c1b665a9f8b4ff0685e4407bbbf66266"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "ぶんきする",
       "exampleJa": "Confidence Scoreに応じて処理を分岐します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "0c916af1ba5d4b4addebcad65fb03d8bc631502316137594e1ed57ecb3e2bb31",
+      "example": "example-08.mp3",
+      "exampleHash": "e40b1f3453ed3e8d4aaf5d4b19d95265c7e5867ef65b4900c5a7c177858924f8"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "こていする",
       "exampleJa": "Criticalな処理は実行順序を固定します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "dc0abcc2c35735993e523e16afcc51818fa86adbb712ee70e63cb73d79d04b02",
+      "example": "example-09.mp3",
+      "exampleHash": "ecda3d194c8f10131be0f47ae866e4808f1e157121c0ea183977521c90f11cfd"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "さいげんする",
       "exampleJa": "同じInputなら同じ実行経路を再現できるようにします。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "791d38e829f7223a8c83d056a3cf5bbbc972bf024bbf3b7ae022e64ef5f3a0ea",
+      "example": "example-10.mp3",
+      "exampleHash": "ae4c3db3d0a73c0129dfbe4fd9014c490818ea52ec265cbf153b0bcdc3d05cd0"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "はんていする",
       "exampleJa": "Judge Modelが回答品質を判定します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "8e1321c1c700e96cbf7598fdc734f491f396f3396b7494191dd8665022bf9f63",
+      "example": "example-11.mp3",
+      "exampleHash": "77186bd0d1e4163203a37f7324a57b044611b8164d93bcd3001a6c8a7c2357ea"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "きりかえる",
       "exampleJa": "Confidenceが低い場合は人間確認へ切り替えます。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "4090e9c6a6bd0805e503a0221da7f96c2038cab60a5f9c8db6a5146916ed3c85",
+      "example": "example-12.mp3",
+      "exampleHash": "f996e596961ef638067280800cbd19906f246490678a3aa6e1f18b96e65c4c19"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "になう",
       "exampleJa": "Agentが定型処理を担い、人間が最終判断を担います。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "7d23077fed7f8e41a65505bbe6da2dedb53915a36b9582f641cd38b6699af21b",
+      "example": "example-13.mp3",
+      "exampleHash": "8924b8f47dade5f9b7df061c0c9771c8633f217541158f9c54242b643490cf49"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "かくじつ",
       "exampleJa": "CriticalなStepはRule-basedにして確実に実行します。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "0f4c44db9a5cc4b081c485ae6116a53a3e4e8b1a71da0ab9013fe984975ac72a",
+      "example": "example-14.mp3",
+      "exampleHash": "899c8db645c92b7ff305158f6df2a18a35f2fc06ff4767b44e2b58af25e09b81"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "めいかく",
       "exampleJa": "各StateのEntry条件とExit条件を明確にします。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "bcfba048fefd72818f8065faa67349cac692ed19584fb70981cb261979ff06c9",
+      "example": "example-15.mp3",
+      "exampleHash": "e43d36ae47344ef5b9d69b25c9dd3a433e284de4f4cee87c4d3f4902680417cc"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "じゅうなん",
       "exampleJa": "低Riskな部分ではModelを柔軟に切り替えます。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "e3efe6c6c9ce200ae56a99d5a9fc286cbb0438401d56744b2712c779273322aa",
+      "example": "example-16.mp3",
+      "exampleHash": "8be67135aea99da9d772d0d71ce82f2ca45011840dbb731275e7579ccbba64c9"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "あらかじめ",
       "exampleJa": "CriticalなState Transitionをあらかじめ定義します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-17.mp3",
+      "exampleHash": "fbea220ff7c955298c4ed4b6c58a42eb4585ccce7f8cc998780d1bcc2b05f03f"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "じどうてきに",
       "exampleJa": "低RiskなCaseは自動的に次のStateへ遷移します。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "8b952ca647a10d95aebb28d1d82a6b99bdc80440732620a12cdb6890e33d8b83",
+      "example": "example-18.mp3",
+      "exampleHash": "6d51fa4b1ddd728de1ceb858ffea23488708631815967f1238a79d543896dd05"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "げんそくとして",
       "exampleJa": "高Riskな操作は原則として人間が最終判断します。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "a5ca3b6296cce655f9156b4705fdc478b7b978f8e9ed581e9c75981ed5db2e82",
+      "example": "example-19.mp3",
+      "exampleHash": "15a751d2f162a83a02deb5ec3bc0659ae298c07756cd07650fb354ac8c868b46"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "固定Workflowは再現性が高い一方で、例外への柔軟性が下がります。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "e031a423f99b610640817d12929a55cc018dab88c94082b4e01fa05cfb5d8027"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～にとどまらず",
       "exampleJa": "Workflow設計では正常系にとどまらず、失敗時のRetryやFallbackも定義します。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "aeded7b0143a374ad3935f502ca6ac0716051aeeb0e084e427a601b0b58e5e30"
     },
     {
       "index": 2,
       "pattern": "～かねない",
       "exampleJa": "Criticalな処理を完全にAgent任せにすると、予期しないStateへ進みかねません。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "6b8fd06f1763d1c438c81c256890332ed901d258a1d70b6885007042999b486a"
     },
     {
       "index": 3,
       "pattern": "～なくしては",
       "exampleJa": "明確なState定義なくしては、Workflowの再現性を高められません。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "1af55bfa4a8cd8aa222cedef37c1de13b98159e37ef7a3add7e07d3463cb551a"
     },
     {
       "index": 4,
       "pattern": "～に応じて",
       "exampleJa": "Taskの難易度に応じてModelを切り替えます。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "0e71c9bb95d4a89c1fa3cf362e1a7cda02d9acff2d68e16c065f48e7dbf63754"
     },
     {
       "index": 5,
       "pattern": "～た上で",
       "exampleJa": "VLMの結果を確認した上で、人間が最終判断します。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "278a7116582b5ab3d18d9357da97f516759880fd3d75ba8d3af1654182ead63e"
     },
     {
       "index": 6,
       "pattern": "～一方で",
       "exampleJa": "State Machineは再現性が高い一方で、自由度が下がることがあります。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "291f7b6f41013c9fa856c976934cb744e2089c9908dc3922f395e92b06c1a06f"
     },
     {
       "index": 7,
       "pattern": "～にかかわらず",
       "exampleJa": "利用するModelにかかわらず、実行履歴を必ず保存します。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "fdd1df15258e72218c781a06390a42d53d955a4dda4e46bb3bb0c1eb40bacb22"
     }
   ]
 }

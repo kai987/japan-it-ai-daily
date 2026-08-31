@@ -1,6 +1,10 @@
 {
   "date": "2026-08-21",
-  "generatedAt": "2026-08-29T19:19:08.166Z",
+  "generatedAt": "2026-08-31T20:14:01.394Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "いちらん",
       "exampleJa": "移行対象のFile一覧を先に作成します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "f7138d1c7b8b6597b17f8803a9b0eb15f9e3ea111b11e52aa5177ba8068ea104",
+      "example": "example-01.mp3",
+      "exampleHash": "78fc17b774f4092b87e5120f6510e877c2abda821a4a15a7326880c914c97b0d"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "たいしょう",
       "exampleJa": "Agentが処理すべき対象を明確に定義します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "4c659960943d335676696d74ddaa552ab1f9dc2dcd13a94ce36f1b67386e7e68",
+      "example": "example-02.mp3",
+      "exampleHash": "9ae9d17107b22c5a5c7b2ed05c5c456680d33c7c717af95644110473d9c41092"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "ぬけ",
       "exampleJa": "一覧と実装を比較して対応の抜けを見つけます。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "3c3400f532d502964025ef05e6215e5886305733589b9f3554d919dd45e7367f",
+      "example": "example-03.mp3",
+      "exampleHash": "6720b8b6a7540f3642689dc4614d4602f63e7ca59c92f73de31d7c2324c98a0a"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "さぶん",
       "exampleJa": "期待一覧と実際のFile差分をCIで確認します。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "bac83d3bb9f07cffa7a80c85b1c5dc84bfe42202ce97f541b4a6d6cd079f6f51",
+      "example": "example-04.mp3",
+      "exampleHash": "e1082532a90e5362212eeb00cfc5c56f8a29ee53936a9f062a3762230c20fa23"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "きばん",
       "exampleJa": "AI Integrationを支える共通Data基盤を整備します。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "6541055a84ff8ce8e0845df70fc5d1c0a182d0db851ec44c4f1343c58f1436ed",
+      "example": "example-05.mp3",
+      "exampleHash": "d96fcc9578b691d0c7d7f95eba121ddbf30f129e45ab616a32fce0afee577bdb"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "もうらする",
       "exampleJa": "Input Universeを定義して対象Caseを網羅します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "21ac4d798912d8aa6c19bfccce231eb313730bf692e0ab72005ed74497695351",
+      "example": "example-06.mp3",
+      "exampleHash": "ebd8ee10e61a1ef4f154ec607b68a28e40577553a7d5a5f439b3816fd206de6b"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "けんしゅつする",
       "exampleJa": "CIで未対応Fileを自動的に検出します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "c3413c8b7510a8eb1eb002d056d227e91e25fbd749141e2eeac5ab6d1355a306",
+      "example": "example-07.mp3",
+      "exampleHash": "4c90507ad813e691d44bb358b1a6fb0e5d260d56176f56c3c66021706e69b2a2"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "ていぎする",
       "exampleJa": "Dataの意味と責務をSchemaで定義します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "c13939b6d6ef1156552e297a97cdf969ac69063e50d4f504658753cd31e24be1",
+      "example": "example-08.mp3",
+      "exampleHash": "d6fe8865d9bd2582e07fa925bfab585ca0c2c3101c8a4ce398e74b834a004a2d"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "せいりする",
       "exampleJa": "AI導入前にData SourceとOwnerを整理します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "ae13d7f3725f6561afe790f21301f43b798468b47555e186a38258d50b12d606",
+      "example": "example-09.mp3",
+      "exampleHash": "8d94a909e73a764a0d79fa2d3cf68902b1af9b5331e4b9c339cf8ea89965d2c5"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "いちげんかする",
       "exampleJa": "Model設定を一つのRepositoryで一元化します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "d11d4c9eeef2e6e2244c69936bc0e2c6e6f1c915a5174915b933b66c1c7108f5",
+      "example": "example-10.mp3",
+      "exampleHash": "d89ed6763ea2011e191efe07528f6abb2483bf765679ebcef17ca4d3ea935143"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "さんしょうする",
       "exampleJa": "各Serviceは同じConfig SSOTを参照します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "ce858d2bbe6f123d399ac230b09d3f2fefc6d60ac1b2515ee23f8dbfa6705e9f",
+      "example": "example-11.mp3",
+      "exampleHash": "b4ff6fcfca99ba607e93b8c0ad76cb84dba3d3d8101091f0961a9a1602677807"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "いこうする",
       "exampleJa": "旧Configを新しいSSOTへ段階的に移行します。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "4d1dd97abeff6d72ba977698cad111fc6e63150fe8f0a943a85bc8cc27642afe",
+      "example": "example-12.mp3",
+      "exampleHash": "1282aa84c589e5a94e0f926cabc0cec62f0f73375751144b676e7ea375eafefc"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "れんけいする",
       "exampleJa": "CRMとAI AgentをIntegration Layer経由で連携します。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "b2ae6e2577f94f0488837aa7376ce965630125632c8968ff0f96eb07ec57b49a",
+      "example": "example-13.mp3",
+      "exampleHash": "62d093aa89b76e58e0ea445495cc376c7fe7c30ec12ff397199faaa4b0e3e9cb"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "きょうつう",
       "exampleJa": "複数Teamで共通なData Modelを利用します。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "ab829a12bf9101979f45949c2faa41a4e8875e94ced2cfcdbc0d39296f27e673",
+      "example": "example-14.mp3",
+      "exampleHash": "c3373bcbc2d8de05403a15f79533712b88d84e2438f68e366abb6ffb238c8fde"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "めいかく",
       "exampleJa": "Data OwnerとSchemaの責務を明確にします。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "bcfba048fefd72818f8065faa67349cac692ed19584fb70981cb261979ff06c9",
+      "example": "example-15.mp3",
+      "exampleHash": "daec1d431a7107e931095b5a2459bb555a65c78636352fac5bbbb984036d0162"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "もうらてき",
       "exampleJa": "対象を網羅的な一覧として管理します。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "6b6ffae837e7b2dc6361190ea2045cdb67c42d987d0d917d9e8225c9f47ec8dd",
+      "example": "example-16.mp3",
+      "exampleHash": "50d9439d2f816cd28f9b90ad18bbcfff1736c01ef91f67ee1f9f09531bcf7951"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "あらかじめ",
       "exampleJa": "Migration対象をあらかじめ一覧化します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-17.mp3",
+      "exampleHash": "3277d4d5a08fbdad4582210e47d338d903e3595b6d8c0fbdd2530a00175b06b7"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "じどうてきに",
       "exampleJa": "SSOTの変更を各環境へ自動的に反映します。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "8b952ca647a10d95aebb28d1d82a6b99bdc80440732620a12cdb6890e33d8b83",
+      "example": "example-18.mp3",
+      "exampleHash": "db4458eb0e8d34aa1dd34e88263f116c6d6c36614fb87654fd84cd5cecbd2183"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "いっかんして",
       "exampleJa": "共通SchemaをすべてのServiceで一貫して利用します。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "8300e6ab97885c925ac6fbe6a323d25454eca447fb745becece2c650b7908b3e",
+      "example": "example-19.mp3",
+      "exampleHash": "3b3497568efc79b1fa900adde98cc31a01baf9bf10b36b8ad7bfa811a621166a"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "設定を一元化できる一方で、既存Systemからの移行Costも発生します。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "3c96df2d648c14ba5d65506fc99680535e101aedce7c0755522b73db134fefae"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～にわたって",
       "exampleJa": "複数のBusiness Unitにわたって共通AI基盤を展開します。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "9c0e00913c633c9ae31add3d681e3bcba63c4ba751f51917d3dd1ce2298510c1"
     },
     {
       "index": 2,
       "pattern": "～にとどまらず",
       "exampleJa": "CoverageはFile数にとどまらず、Error CaseやData条件まで確認します。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "a40472403f838df6a6431e0c4c5a484ce4e7d3fed9774913f2531dbcc708aefc"
     },
     {
       "index": 3,
       "pattern": "～なくしては",
       "exampleJa": "明確なInput Universeなくしては、Coverageの抜けを正しく検出できません。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "5d9824ee8efa97fbafe074f1ffbecf7eda9d814589664fe00c0b0511e474717a"
     },
     {
       "index": 4,
       "pattern": "～に基づいて",
       "exampleJa": "対象一覧に基づいてMigrationの進捗を確認します。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "554b3e5a36eb94120bb197ceb4909f1a5755759d2f959cbb6c3cd97e1c3bc6a0"
     },
     {
       "index": 5,
       "pattern": "～た上で",
       "exampleJa": "Data Ownerを明確にした上で、AI連携を設計します。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "4654096f440c5f3f229c1e33ebc6c62ca1ebd61696fcd4a6c035abf9525cfd0f"
     },
     {
       "index": 6,
       "pattern": "～一方で",
       "exampleJa": "SSOTはConfig Driftを減らせる一方で、移行時の調整が必要です。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "62351ec055b7c18c97c0613067ccaddbaac6a5b22b558f1cadc3bc5ebc8d052e"
     },
     {
       "index": 7,
       "pattern": "～にかかわらず",
       "exampleJa": "Teamにかかわらず、同じSchema Registryを参照します。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "efac4316f6d19e412c35a2a8ffb1c02c9fe97f730240442141d0d28d2cb63dc2"
     }
   ]
 }

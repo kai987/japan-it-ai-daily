@@ -1,6 +1,10 @@
 {
   "date": "2026-08-26",
-  "generatedAt": "2026-08-29T19:22:57.300Z",
+  "generatedAt": "2026-08-31T20:14:01.408Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "えいきょう",
       "exampleJa": "脆弱性が自社Serviceに与える影響を調査します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "9a2177e1f02187bc26bdeb81c9986c08ffcd9d3fc97743faf068fa785a6976d5",
+      "example": "example-01.mp3",
+      "exampleHash": "0afe3992d77e34007f24a1284722c9cc7f41f6dd29bd9a880cd4a6892d5d71e6"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "うんよう",
       "exampleJa": "AI Agentの本番運用では監査ログを保存します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "d9584dd132793d947df73b5fc269de4922a1b79e4fe078827a31af0272a3be23",
+      "example": "example-02.mp3",
+      "exampleHash": "6d7140d881c02861fac09b40416c73f81a5fea9d8dee25f425374d2a6c5ada52"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "いぞん",
       "exampleJa": "特定MCP Serverだけに依存しない構成を検討します。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "52213f3b66cd26f0ab5e6eb1a22ddbfa4836697587ae07e082a87f585cba025d",
+      "example": "example-03.mp3",
+      "exampleHash": "6ed18be53f06ef114bbe6e29c8bf79864d5e7e8b37a99d5cebb88e90e99dd648"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "かんさ",
       "exampleJa": "Tool CallとPermission変更を後から監査できるように記録します。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "cddda010e18d2a661bff2678526f60d1ae97ff89362afeb0e90140ad3dfd4d8d",
+      "example": "example-04.mp3",
+      "exampleHash": "4d3bf50ddcd312c194ba580db3ee1576ef096c124dd7c20e717a845a26eefc0d"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "きんきゅう",
       "exampleJa": "RCE Riskが高い場合は緊急対応を行います。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "8f9ed250d7a7600dd8e1cdb6705b1a8075c6539ac817a2bbd02b64610ccb9ae1",
+      "example": "example-05.mp3",
+      "exampleHash": "da6daf524b8d561f1ddfb095652bf9a0c7b0de40ab084638d33b42d178d516cd"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "かんりする",
       "exampleJa": "利用できるModelとToolをRuntime側で管理します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "a999cfda8ae4ca2f6f5874a74322655aab0d46f3a2db282f484959368e6a9cd2",
+      "example": "example-06.mp3",
+      "exampleHash": "9a0d38937802468c78cc1ad30dc2756e84d4dc2c22453575e1cad3257a6ccf45"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "かくにんする",
       "exampleJa": "Advisoryが公開されたら利用中のVersionを確認します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "376e97a197d3eedb1d3c23ebe9408608f0e229aee7cc742ab05c01d8ef8d83dc",
+      "example": "example-07.mp3",
+      "exampleHash": "3a560ae8d77f85bf5dffcaa207ce614a71ba631708a242bd595c648d608b4639"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "せいぎょする",
       "exampleJa": "MCP ToolへのAccessをRuntime Policyで制御します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "5346be774ad656c587bc337e880ca353cd30fdfe7dc74df5b4ff098cd0ad75fa",
+      "example": "example-08.mp3",
+      "exampleHash": "c7d3f1ee5396886acda28e79161d3f8aedfa35c64fc41345d84a6b310e1e7f02"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "けんしょうする",
       "exampleJa": "Patch適用後はE2E Testで既存機能への影響を検証します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "8c99ed11c56d739dd1bacf081bb328cd53cf8d1cf5627ba044d494d63b918af3",
+      "example": "example-09.mp3",
+      "exampleHash": "94baae8e0bb59dbc250f58e514fb2c234616538f5aacaa3e538d1f833d030fa0"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "はあくする",
       "exampleJa": "MCP Server追加前にTool Definitionが消費するToken量を把握します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "1b0272357468181e5c5ae130d8dbb29282547ea09d4b0153f06e94e96307cc54",
+      "example": "example-10.mp3",
+      "exampleHash": "ec2d83b628644e692199200c897b3288735f5084d43d6b15e40694ec8f1a4784"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "こうりょする",
       "exampleJa": "Model選定では精度だけでなくCostとSecurityも考慮します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "276e30e3cfc9cb0d50b4db9930fb90fd66603a296fa21156344adbc0fcd1fccd",
+      "example": "example-11.mp3",
+      "exampleHash": "68ed561dfd3242d53507169bbf792701023cf68ced312bfd9f8e08150886e736"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "しぼりこむ",
       "exampleJa": "Asset情報を使って対応が必要なCVEを絞り込みます。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "de95b4a91d2cdf5ba0bee966c5ea23747913808a8c4a0545d17b60229c5a4bbd",
+      "example": "example-12.mp3",
+      "exampleHash": "3023af27527e560df6be96fb3e1c9c71737bd0cd9d2601c23bcfdc341921957d"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "しょうごうする",
       "exampleJa": "CVE対象VersionをAsset Inventoryと照合します。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "d791038daec1b87ecd2a23437f55091605bc2cf3b03f37954a6819f49bdd484a",
+      "example": "example-13.mp3",
+      "exampleHash": "6751c7652d855aa116e59d58a4c79255679d7e291d9f3ff7aa829a475aecf8e3"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "じゅうよう",
       "exampleJa": "Internet公開Assetに影響する脆弱性を重要な対象として扱います。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "6d8947d2e6730fbda25bcfd4b101af8a93945b34184986fc887283f53e0ea47b",
+      "example": "example-14.mp3",
+      "exampleHash": "1805aed881b7e13192a31ad1a6c40602cd290599cd5a684c26b22dfb227f381a"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "ぜいじゃく",
       "exampleJa": "脆弱なVersionを本番で使い続けないようにします。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "9e93a6d5dcef78fe27a6d1eb0accc5fb77303198e14625a5fc6577d68fe3718c",
+      "example": "example-15.mp3",
+      "exampleHash": "c5f1081acf3381869865e389589dec38fb8bf4d45c7e178cb131ef0e6806261d"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "てきせつ",
       "exampleJa": "Asset Contextに応じて適切な対応優先度を決めます。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "60f431f1d0e13296084ba416bb63a57ee48798878a059701e125308e19f838ef",
+      "example": "example-16.mp3",
+      "exampleHash": "36e8f75098768523ebce3c021e815cca01c8e62b39bb77246242d92a5b13114c"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "あらかじめ",
       "exampleJa": "利用中のDependencyをあらかじめInventory化します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-17.mp3",
+      "exampleHash": "202d5c89b00dbe667f23e3d27d4f2c730ed7dc5cabd9f07d620b8a7d247b41c6"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "ゆうせんして",
       "exampleJa": "Internet公開AssetのCVEを優先して対応します。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "f057b91ad4d38f227a2ee0b3076d4e94a163382967f43c270582fa7abcbe1a5b",
+      "example": "example-18.mp3",
+      "exampleHash": "9af975108f7e9160541262e05d52811a0046ce3c40523d661f7a1cee0ed6a49f"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "けいぞくてきに",
       "exampleJa": "SBOMとTool Inventoryを継続的に更新します。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "3b9ed58e6b9bea666da1daf0c69b86632da97a53355505ea447867bb192e2a39",
+      "example": "example-19.mp3",
+      "exampleHash": "39d0e59d596f704a81d6d4d7b72fdfe60bea474285f09c60f579e4e05794d16f"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "MCP Toolを増やすと能力は広がる一方で、Context Costも増えます。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "1cc4fbab4fda578643962d9892eaefc216d9a5d8fe81854bf07c29cb25fa53bd"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～恐れがある",
       "exampleJa": "脆弱なVersionを使い続けるとRemote Code Executionにつながる恐れがあります。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "3a759893d91f3e213dc0a57e92c33f498f1d0b4d0450b57960676d483c3a974d"
     },
     {
       "index": 2,
       "pattern": "～にとどまらず",
       "exampleJa": "TriageではCVSSにとどまらず、Assetの公開範囲やExploitabilityまで確認します。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "146c23608b9b8d384f72212e65046c626c98604a6eb79c8b2ae1afceaef7447a"
     },
     {
       "index": 3,
       "pattern": "～かねない",
       "exampleJa": "不要なTool Definitionを大量に読み込むと、Context Costを増やしかねません。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "22fa58784b9a79529b19f47ca1f2c1d55ae0a2d1046c3994d698754c2edf7631"
     },
     {
       "index": 4,
       "pattern": "～に応じて",
       "exampleJa": "Riskの高さに応じて対応優先度を変えます。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "a3df719da388b0b9e70b69b6e551431ff409770ae36826ef6152a682613670bb"
     },
     {
       "index": 5,
       "pattern": "～た上で",
       "exampleJa": "影響範囲を確認した上でPatchを適用します。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "d560a4f30ffab4be88ff45840a018f167d1de52dd87c4c816a1399fff229ef0f"
     },
     {
       "index": 6,
       "pattern": "～に基づいて",
       "exampleJa": "Asset Inventoryに基づいてCVEの対応要否を判断します。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "d1fd29831713e13199d7eee943ebba01a98b8be394284840339772c9fea12b83"
     },
     {
       "index": 7,
       "pattern": "～一方で",
       "exampleJa": "Toolを増やすとAgentの能力は広がる一方で、ContextとSecurityのCostも増えます。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "c5e54040a5e07044ab7b23c0c277a700351d765f64a554cd4addb940a6514310"
     }
   ]
 }

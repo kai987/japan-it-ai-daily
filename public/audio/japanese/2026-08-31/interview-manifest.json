@@ -1,0 +1,118 @@
+{
+  "date": "2026-08-31",
+  "generatedAt": "2026-08-31T20:16:02.117Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIエージェントをSandboxに入れれば、安全性は十分だと思いますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "185ab9ec4f416ad3b2e749678d6aaaf29691d265427c3c2c56e7dd394a226f3e"
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "Sandboxは重要ですが、それだけでは十分ではないと思います。高性能なAgentは、想定していない通信経路やToolの組み合わせを探索する可能性があります。そのため、Network Isolationや最小権限に加えて、継続的なMonitoring、異常なTool利用の検知、必要に応じて自動停止できる仕組みまで設計することが重要だと考えています。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "3fb8a64e766a73ab0aadb7a56dae1982678ddf719ae00b1487ad6f1b6f0f1233"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "AIエージェントのPromptや設定もGitでVersion管理すべきですか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "7accab30f6aba603cd649996a8aa130b244e648264a78b4b21922b29b091b357"
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "本番利用する場合は必要だと思います。AgentのPrompt、Tool設定、Semantic Viewなどが変わると出力品質や権限範囲も変わるため、変更履歴とRollback手段が必要です。DraftとProductionを分離し、GitHub Actionsなどで検証済みのVersionだけを本番へ反映することで、再現性と監査性を高められると考えています。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "5fc1379d26fcb7af1000e99b630b5d0fc00036a51c3624df7bcf34423c1f9739"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "生成AIを導入するとき、組織の暗黙知が問題になるのはなぜですか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "fbbd4b7952b62d5d7a99d32993a67b5082ceeb96d856c763b24fd71bfdce1eff"
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "AIは与えられたContextや明示されたRuleを基に判断するため、「言わなくても分かる」という前提は通用しにくいと思います。人によって異なる判断基準や過去の背景をDocument、Decision Record、Workflowとして明文化すると、新しいメンバーにもAgentにも同じContextを渡せます。AI導入はKnowledge Managementの改善とも密接に関係していると考えています。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "178414bbb0f20010dc270424e090f7383afbb73df70e469a8cda5f8b79a1c90d"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "Amazon BedrockでAccessDeniedが出た場合、どのように切り分けますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "e8a2a034152c3a4ccf24d1913fa5aa717350b085bc730ab1b65ae99b52170261"
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "まず現在のIAM Roleだけを修正するのではなく、Error Messageの本文を確認します。SCPのexplicit denyが含まれていればOrganizations側、ModelがAccountで利用できないというMessageならProvider側のAvailabilityを疑います。IAM、SCP、Model Access、Region、Account Entitlementをレイヤーごとに確認し、担当者を正しく切り分けることが重要だと思います。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "c5ccfbc413d5f59bf42803cf987c98032972389afa4bb7a4e2adc5dcb3d53a6a"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "AIツールの導入と、AI-nativeな業務変革は何が違うと思いますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "cd7cf74a1947b920f4d5653c5573aa8b18f767ff18d3dd0c8993f60c38b93e9c"
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "AI Toolを配布するだけでは、個人作業は速くなっても、前後の承認、転記、情報探索が残るため全体のThroughputは大きく変わらない場合があります。AI-native化では、Data、Workflow、Permission、Governanceを見直し、低Riskな定型処理は自動化しつつ、重要判断は人間に残します。業務全体の摩擦を減らす視点が重要だと考えています。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "98ee040b07770dd2da370b42e6c9332247201421089e4a7511490a48502578d6"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "AI AgentのSandboxを設計するとき、Permission以外に何を考慮しますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "50d05627f5d661590233ffb6d733accad20562581451ebc654c96a7a4eaa5d05"
+    },
+    {
+      "index": 2,
+      "text": "AI Agentを本番環境へDeployするとき、Version管理が必要なのはなぜですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "a19bcfbd430e2b92121cc8c75ee6c04412cbebbdebeb70ec1ce30167a0d22795"
+    },
+    {
+      "index": 3,
+      "text": "BedrockのAccessDeniedはIAMだけ確認すればよいですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "6c21c63ef2a55e4987c47d4e1bd7691aa424f181b9a9723c693b5e16edf67900"
+    }
+  ]
+}

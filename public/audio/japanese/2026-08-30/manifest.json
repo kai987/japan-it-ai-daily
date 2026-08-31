@@ -1,6 +1,10 @@
 {
   "date": "2026-08-30",
-  "generatedAt": "2026-08-30T16:47:50.970Z",
+  "generatedAt": "2026-08-31T20:14:01.421Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "こんきょ",
       "exampleJa": "AIの判定を採用する前に、判断の根拠が実データと一致しているか確認します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "a6f653ee0feb745642c64400f7f87108014c78ad8ca97c067589d143b2b36843",
+      "example": "example-01.mp3",
+      "exampleHash": "50afb8b3099e43ff25c53b31a7c887fed4f91b8c20ebb41d5c0a9cc083244330"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "むじゅんする",
       "exampleJa": "生成された説明が仕様書と矛盾していないか、別のCheckで検証します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "9bd8c85dc341fe95c14c8edba4d8d964377a4b455f9a71d76ebfbc922b39ab39",
+      "example": "example-02.mp3",
+      "exampleHash": "ba17a5e1d9729e876fa672591955ac86682b552db077a03f59270b9ca13fd7df"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "じょうこう",
       "exampleJa": "外部AI Providerを採用する前に、契約終了や支配権変更に関する条項も確認します。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "f7ad58ccd1b335fe0983b5f0c102a0fef186ff0f6cbeb8b79c88ca5cb84e5bf0",
+      "example": "example-03.mp3",
+      "exampleHash": "0106ec3c332a5b7c3b88f91837aa02441b20bc959004362d86681035d8cd6124"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "せきにんしゅたい",
       "exampleJa": "AI Agentの利用を拡大する前に、予算と運用の責任主体を明確にします。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "07fd1666b1969bef1530a6084294b506142547a8f744778340f25b60f09adf23",
+      "example": "example-04.mp3",
+      "exampleHash": "9ee0764447f6479c8a8243f5e48513d5076a1376361e6fb8cf5ae8c7e470e2c3"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "きょうぎょう",
       "exampleJa": "複数のProviderと協業する場合でも、特定企業だけに依存しない設計が必要です。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "1579111d02585aa402e47c1f3ae08793ecc14a32f61b661486bdbc89783d033f",
+      "example": "example-05.mp3",
+      "exampleHash": "2bc0cf0d30888fa0da0b052cb42c295f6853c17cc747106ba0e8aee544debd49"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "しこむ",
       "exampleJa": "評価用データに既知のバグを仕込み、Reviewerが本当に検出できるか測定します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "07110261e1792b435907b5237892cf42bdcf3415e347fa87ae6bd2719dc7b3de",
+      "example": "example-06.mp3",
+      "exampleHash": "340e499e1b099e3716d0da0c96f0d3b43ce3d85f02a16898d1cfdf1960f17a09"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "みのがす",
       "exampleJa": "合格率だけでなく、重大な欠陥を何件見逃したかもEvaluationに含めます。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "1af5cf69ba0ae1ee8806254e3491670fdaa14fbd39fcfabed36b0cfbdd2b373c",
+      "example": "example-07.mp3",
+      "exampleHash": "a6183c7fdae8e1030b0129b78e78a3c7e6b76e210e7eb882bc25bfea455fe3ae"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "つきあわせる",
       "exampleJa": "AIの指摘をテスト結果と突き合わせ、正しい箇所を特定できているか確認します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "118a0b8bc01d1bf7c02e7d9babf1689c04eeb1b2faebffc9d48daa2845c56317",
+      "example": "example-08.mp3",
+      "exampleHash": "e1aead08199bf18ba39161874d33373e05e9aa745154d1e71a4f13a71f6aa1dc"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "しぼる",
       "exampleJa": "破壊的な操作を担当するAgentを一つに絞り、監査範囲を小さくします。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "f2984847d18d47e9fb89a430df19cf6c6654f21e993beef9190c4100a79625c1",
+      "example": "example-09.mp3",
+      "exampleHash": "4b59f0c5b60d13ccfc361a263185b537e12455438982d20b3b383c11f58c8ef5"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "ひきおこす",
       "exampleJa": "単価の低下が利用量の急増を引き起こす可能性もあります。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "ec4ee085ac95d1dcbf00022233678be59e41db8051096fd0ad76da8b20c48427",
+      "example": "example-10.mp3",
+      "exampleHash": "043e17c29d6dda0b1b1175b14e0f91dc8d8a49cbfd95b2e968aab62c9f8fcd64"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "ふまえる",
       "exampleJa": "Evaluation結果と契約上のRiskを踏まえて、Provider構成を見直します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "e90c7f1fd0d3dd4f06449c128462bef760fa307274175a55690bd45e895dbdbf",
+      "example": "example-11.mp3",
+      "exampleHash": "050e42eb1fe571ea45eb36a73a6974b80a24d391991b4822a7af432142a7ea70"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "たんぽする",
       "exampleJa": "複数Providerを利用しても、同じSecurity Policyが適用されることを担保します。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "bf2501b2b5cd459e8be677b77bcc2f834366b9d2fbab341c0e8629d97f147b37",
+      "example": "example-12.mp3",
+      "exampleHash": "516161fb54755bad7f78e545d2f144183dbf8e90c80c2bdbbd76d5f664411ce8"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "あいつぐ",
       "exampleJa": "Agentの利用拡大後、想定外のCost増加が相次いだため、Budget Controlを導入しました。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "39d6b21ffc12a6ea2e03cc0459bf8a503afd0f67c606353fd58749b4078c6ee8",
+      "example": "example-13.mp3",
+      "exampleHash": "bd788b3ad207a20e6cf17e35ccba36ad609d47c7b394c765d525f6e77dec680a"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "もっともらしい",
       "exampleJa": "もっともらしい説明でも、実データで検証されていなければ採用しません。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "ef887eb6b33241535fe715ca24958dddb35542f77d8e9f4a28495f2af3197c2f",
+      "example": "example-14.mp3",
+      "exampleHash": "91c87591da0fbe3dbd2de53ae27568d937934b10129bfc50ca88bee36634f6b4"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "しんこくな",
       "exampleJa": "Costの責任主体が曖昧なままだと、深刻なGovernance問題につながります。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "8a70742084bd5464912e05f8b502367a6858bf029288f5cd1b6b0b68101b4403",
+      "example": "example-15.mp3",
+      "exampleHash": "18a6a7ebfa1db0269342b19057dd918e7ab82282e4cdff3b874965a52090dac7"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "てきせつな",
       "exampleJa": "物理機器を操作するAgentには、状況に応じた適切な安全制約を設定します。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "517c9af99d9edf217080b608cf3d745eddeb8fbe295a5c453176b33baea38df8",
+      "example": "example-16.mp3",
+      "exampleHash": "a17113ebe2b0fd410e9df1217baa05ef361ab5671f2351ce835a66eb0a8e9c21"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "あくまで",
       "exampleJa": "今回の測定値はあくまで一つのWorkloadでの結果として扱います。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "dd2cb5ea4b0cf370b5270eab5f4d02980eca680d5dcb1c4361e883b00bc68f83",
+      "example": "example-17.mp3",
+      "exampleHash": "53e214391422432ca49bfc6876bfb5ede83b658828945d8f47d4c674194b7428"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "じゅんじ",
       "exampleJa": "安全性評価が完了したDeviceから順次対応範囲を拡大します。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "e351e23c49629b77b5fe8df95d42ceb60f2de0838e5592a54daa4a627050e811",
+      "example": "example-18.mp3",
+      "exampleHash": "8db8ff1f10011bb7910e99828c7f336dbefa8ea063a62f9c6f5d4be0fc316c21"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "そくざに",
       "exampleJa": "異常を検知した場合でも、Agentが即座に危険な操作を実行しないようGuardrailを入れます。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "f4573aefa9b70aafacb9fa8412bd7739bc04ef5f40d7a26b436ad994eeb7e02f",
+      "example": "example-19.mp3",
+      "exampleHash": "6921aa190dee221c91ae82821cc6a36b471d1deaf2e23410924f9219cc9a759a"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "Multi-provider構成は柔軟性を高める一方で、互換性評価の負担も増えます。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "215dc00a847e148adca5b9d7340bc09767727c0f0bcfa26627a980f81315b3ec"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～にとどまらず",
       "exampleJa": "AIレビューでは合否ラベルの確認にとどまらず、指摘内容が実際の欠陥を特定しているかまで検証します。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "320220aa4f2092f365e5ddfc7b69457d3e124e6e230a36b06b911013a8cfb78d"
     },
     {
       "index": 2,
       "pattern": "～かねない",
       "exampleJa": "複数Agentが同じ作業範囲を同時に更新すると、変更を上書きしかねません。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "b53de16cf644d5c5760ab840c8c0f53dcd27144fda1b5d62e6795a59ed094821"
     },
     {
       "index": 3,
       "pattern": "～に至るまで",
       "exampleJa": "MHSは顕微鏡からロボットアームに至るまで、多様な機器を共通の方式で扱うことを目指しています。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "32ddbca15529abc6135ad161334049a6a42d6ecf4d1238cd621ff2ff3e86a956"
     },
     {
       "index": 4,
       "pattern": "～に伴って",
       "exampleJa": "AI Agentの利用拡大に伴って、Token Costの責任分担も明確にする必要があります。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "638fbbd1930d4a2a084d32ea12abd5d26e9d460f80b382036bef5aa8860e03d5"
     },
     {
       "index": 5,
       "pattern": "～に基づいて",
       "exampleJa": "実際のUsageとBusiness Outcomeに基づいて、AgentごとのBudgetを設定します。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "9f047ef3c68e15046c77f1540c3c91fd1b0a551e839fa680bb7522afe8e8f46b"
     },
     {
       "index": 6,
       "pattern": "～わけではない",
       "exampleJa": "AIが差し戻したからといって、仕込んだバグを正しく検出したわけではありません。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "27a699e0f92a08547881598486afbcba58e1f4810427c8c8ac4728eaca64d84b"
     },
     {
       "index": 7,
       "pattern": "～を踏まえて",
       "exampleJa": "Evaluation結果と契約条件を踏まえて、複数ProviderへのFallbackを設計します。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "baadfb1b6fb4349a6088d3323dd7abadbef4c8ab41ae5e2d8db4cae609682821"
     }
   ]
 }

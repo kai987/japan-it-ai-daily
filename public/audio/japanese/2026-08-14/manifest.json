@@ -1,6 +1,10 @@
 {
   "date": "2026-08-14",
-  "generatedAt": "2026-08-29T19:13:39.126Z",
+  "generatedAt": "2026-08-31T20:14:01.374Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "けんげん",
       "exampleJa": "AgentにはTaskに必要な権限だけを付与します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "476cd8e57b29f548b509e610b9a741d1f5238b2333b53d9de116b405e2add18b",
+      "example": "example-01.mp3",
+      "exampleHash": "239338dfd571ddcb0e6de8c63b27ee16055145025344e2c4e7713453d92fc15d"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "ろうえい",
       "exampleJa": "Secretの漏えいRiskを下げるため、出力内容を検査します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "37f57fd6ffb398d9dc32912f224ae89fcc292d19e3e2a34b2ca9fde15ef4e63b",
+      "example": "example-02.mp3",
+      "exampleHash": "b128138f998452cb5911875ffb461180c63c87bc68fe2328255f6480c21d2bec"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "しょうにん",
       "exampleJa": "本番DBを変更する前に人間の承認を求めます。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "55cc05f888aa13afafba2da26f21cccaa31552cb5e5e08ade5c2c2d3ec58b681",
+      "example": "example-03.mp3",
+      "exampleHash": "25a6b1912be09815c2bd74c854dbcca62b966a3c9ce174d11b962f56ed8a76ba"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "けんち",
       "exampleJa": "RuntimeでPolicy違反を自動的に検知します。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "ea074b9a0ca3e0bc6439fb66faa12a248e824325466de7cc60c55a64c96a2b5c",
+      "example": "example-04.mp3",
+      "exampleHash": "b4ed96f636d21f5ff53455ca3a41da5c38f70fcf803f94072c0ce49fe2e625bb"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "じゅんきょ",
       "exampleJa": "生成Codeが社内Security基準に準拠しているか確認します。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "7ea292bdf31ce09d6c780f9925706541d8e29d747724cd56076554c9a25e104c",
+      "example": "example-05.mp3",
+      "exampleHash": "d8eae7f65610a58d353db53c442d0e85066ca4b98f360c5baa97bd1405b70d29"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "けんしょうする",
       "exampleJa": "AIが生成したCodeをTestとType Checkで検証します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "8c99ed11c56d739dd1bacf081bb328cd53cf8d1cf5627ba044d494d63b918af3",
+      "example": "example-06.mp3",
+      "exampleHash": "536495ed110038df516380e8408997df5ed7c899d13ab53736264b892dbc8503"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "どうにゅうする",
       "exampleJa": "MCPを社内Knowledge Searchへ段階的に導入します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "765e17735e56f812615107d8d0e2c39a6d1b940a0c2a4dc77ad783c44594869f",
+      "example": "example-07.mp3",
+      "exampleHash": "d831d615f8001bfd4057877ce5b91aa99b1eb76c5704f8fd27b53b55ddd10db9"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "せいげんする",
       "exampleJa": "Agentが参照できるDirectoryを必要な範囲に制限します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "c9e74f7002e313aa8ba2f464a8b9aba884020842f46ca1a92b1e7b1c95ee0cf2",
+      "example": "example-08.mp3",
+      "exampleHash": "c9e2109ab03e2be88c2beef16885d2cc58b522b1b8fccab1a710c5b720023a11"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "しぼりこむ",
       "exampleJa": "検索結果を関連性の高いDocumentに絞り込みます。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "de95b4a91d2cdf5ba0bee966c5ea23747913808a8c4a0545d17b60229c5a4bbd",
+      "example": "example-09.mp3",
+      "exampleHash": "c87f386b243bb50011d2878212922aff34ccc4846e0bcc5fba6c7550bf73d6ea"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "こうりょする",
       "exampleJa": "便利さだけでなくSecurityと運用負荷も考慮します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "276e30e3cfc9cb0d50b4db9930fb90fd66603a296fa21156344adbc0fcd1fccd",
+      "example": "example-10.mp3",
+      "exampleHash": "df3e15430c32cdd7b4d50399c1a3f10c89075571385b194b0d70a76f7406881c"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "れんけいする",
       "exampleJa": "MCP Serverと社内Knowledge Baseを安全に連携します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "b2ae6e2577f94f0488837aa7376ce965630125632c8968ff0f96eb07ec57b49a",
+      "example": "example-11.mp3",
+      "exampleHash": "5b82cb2f543dc971636390d60a0f31bcfcd02c1bebd71879352c3da91cacca7a"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "ふよする",
       "exampleJa": "実行時に必要なRoleだけを一時的にAgentへ付与します。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "ab5335833148f20544e77e60012c6713f75c3069de9a3a07306fa87f79f9828f",
+      "example": "example-12.mp3",
+      "exampleHash": "65fe43608c646c7f00dc7168412277201cbe2d1e32028debdce6619de7fac995"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "いじょうする",
       "exampleJa": "高Riskな判断はAgentへ委譲せず、人間が承認します。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "7f40ed1e527a55666c4236843de27c2c058ee951e1c49e6812f41c8b6007cf54",
+      "example": "example-13.mp3",
+      "exampleHash": "368ef60467909cffe7ab38367282d892ed710d945000adc1908fdeeb45120965"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "てきせつ",
       "exampleJa": "Taskに適切な権限だけを与えます。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "60f431f1d0e13296084ba416bb63a57ee48798878a059701e125308e19f838ef",
+      "example": "example-14.mp3",
+      "exampleHash": "8e632ed15c4ba8e406ead61cc0a61c3086fafd063073bd8e2dc605997ee11ba3"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "げんみつ",
       "exampleJa": "生成Outputを厳密なSchemaで検証します。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "070a5360e4c4bc406b5612e41597b9bb03314a3c893ce4a1287196fc59e71b67",
+      "example": "example-15.mp3",
+      "exampleHash": "a01eac4c05987b1b633ecd2003862fa38cd398e9acd903bf577213aafab24e0c"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "いちじてき",
       "exampleJa": "Agentには一時的なCredentialだけを発行します。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "4fa9af3aae269d809d102a38effe7f78f7c8db2d6791a08b75b3ddfb53c8cd5e",
+      "example": "example-16.mp3",
+      "exampleHash": "6208e828841bc568812b7aa3be694e0f446dd72adc3b6512ed29903c99978f12"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "あらかじめ",
       "exampleJa": "許可するToolと禁止する操作をあらかじめ定義します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-17.mp3",
+      "exampleHash": "310c5eacb6a90fad5738e1484d287b4cec520c92a156e5d42aae5053c31a3ba1"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "じどうてきに",
       "exampleJa": "Policy違反をCIで自動的に検知します。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "8b952ca647a10d95aebb28d1d82a6b99bdc80440732620a12cdb6890e33d8b83",
+      "example": "example-18.mp3",
+      "exampleHash": "83fff82faa6cd246ab6650fa374d5ad09d28cddbc140753f4c15df390a31d756"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "むやみに",
       "exampleJa": "Agentの権限をむやみに広げないことが重要です。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "3a2b82674ee1772a59b654412d53a4ad2bec4fe0a1bac94660d4371013141a9b",
+      "example": "example-19.mp3",
+      "exampleHash": "cb388b64ead0eb7991cf9339d9afb66672c4829161c797a1d52d9acd0e32f7e0"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "Agentは作業を自動化できる一方で、高Riskな操作にはHuman Approvalが必要です。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "7c6b9c848062950ed444eb86d8eb5217b936668299af25415085ae8d28c74b81"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～にとどまらず",
       "exampleJa": "MCPはTool Callingにとどまらず、Knowledge Accessの統制にも利用できます。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "30279d6b73e038a295d30ac3d8474493a56a1831cb8ef678642637b410ed92ec"
     },
     {
       "index": 2,
       "pattern": "～かねない",
       "exampleJa": "自動生成されたIAM Roleをそのまま使うと、過剰権限を許可しかねません。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "f22db90adbdd5fa88fd0393eddcdac49e6278b3863600ba41759a3ab9907ab22"
     },
     {
       "index": 3,
       "pattern": "～なくしては",
       "exampleJa": "自動検証とHuman Approvalなくしては、高RiskなAgent運用は難しいです。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "48da43135c2e3e6422f26cd673e9e28b1894fe8efded07c67b3ae4857158dab4"
     },
     {
       "index": 4,
       "pattern": "～とは限らない",
       "exampleJa": "自動生成されたPolicyが最小権限になっているとは限りません。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "541a6d8807de24a3ca45fbb9fccbfffe6627eee4262722dd1507f5feac256329"
     },
     {
       "index": 5,
       "pattern": "～に基づいて",
       "exampleJa": "社内Security Policyに基づいてAgentのTool Accessを制御します。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "1ac10381fd15211e20b97a9eebd435d4c6f1084570b7b65613d2449040395d9b"
     },
     {
       "index": 6,
       "pattern": "～たうえで",
       "exampleJa": "CIで検証したうえで、本番変更を人間が承認します。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "4829c2a287a3ea05f2572ab9fa992c1a73360264d5657217cff1daa6950ea78e"
     },
     {
       "index": 7,
       "pattern": "～一方で",
       "exampleJa": "Agentは開発を高速化できる一方で、権限管理を厳密にする必要があります。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "0fbbdd19766e6f60812917bf0235c2d7296c947d6f6a4f2d7459964e168eac56"
     }
   ]
 }

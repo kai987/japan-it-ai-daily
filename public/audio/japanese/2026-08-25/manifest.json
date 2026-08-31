@@ -1,6 +1,10 @@
 {
   "date": "2026-08-25",
-  "generatedAt": "2026-08-29T19:22:09.450Z",
+  "generatedAt": "2026-08-31T20:14:01.406Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "きょうかい",
       "exampleJa": "自動復旧が許可される権限境界を明確にします。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "802f7a41723ff2c16a4bd0fa063a00c74e37c02b64e4f285b0ef0a80a986f02b",
+      "example": "example-01.mp3",
+      "exampleHash": "5797fef35ba1b7f4ebca038cd697ff66740451fc84fe112dd6f06c21981ea9d9"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "こうほ",
       "exampleJa": "Draft Modelが複数のToken候補を生成します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "0521fbf54e2675380b59dd44b3f7a1e8e0425f1924afdf8ee46b242ea6e84c60",
+      "example": "example-02.mp3",
+      "exampleHash": "69fad7a1624d79c8ac26b0a55749935137912dd5a1a4ce9d929a0e334de444f3"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "こうか",
       "exampleJa": "Agent導入による工数削減効果を測定します。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "5f7d9560ff14c4f86bfbc822b7519d14c73df6c8789c630c5243a00b5d4325b3",
+      "example": "example-03.mp3",
+      "exampleHash": "173044b48fc9afe1604c92b64da924d05e3c50d3f3c7e0c4d43b1e7066ccb898"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "とうし",
       "exampleJa": "AI基盤への投資が開発速度にどう効くか評価します。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "81aff66a6ca4e6d33ca1a0cd8531615b2ee41fabaa205a940a366c064cba9139",
+      "example": "example-04.mp3",
+      "exampleHash": "c18904f6e7c480b6a317e835909c0d1f45d5464bdcac3ac391faad019dff46b6"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "かいしゅう",
       "exampleJa": "削減できた工数から投資回収期間を見積もります。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "0be8a1849491e3da5ee1d790cdd9c7a288ffda252b31d9c2c48f75ab4fb495e9",
+      "example": "example-05.mp3",
+      "exampleHash": "d62f539c36499b9b798c410bb9b0b63ebb95df677bb07b4255a12d2408426715"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "つづける",
       "exampleJa": "Meeting終了後もCloud AgentがTaskを続けます。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "840e1c8b23fcfb3f6a50d7f77edae0ca8bcbce7eb5b2fd4e8f0ecdf4f862216a",
+      "example": "example-06.mp3",
+      "exampleHash": "5b8e93d64dc18e54e4bc5b4197de373098b4bac6ee24affac2f8d2c0096e3218"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "ぶんたんする",
       "exampleJa": "FrontendとTestをAgentごとに分担します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "7e68ceab8a26a534b078fd466871e18529bde09e5e9c25282e516ffc717ea672",
+      "example": "example-07.mp3",
+      "exampleHash": "37e3342e660e456d64f5d2ea0dac0920d5a1d4f34d97873b0c4a19af689a8405"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "わりあてる",
       "exampleJa": "Plannerが専門性に応じてTaskを各Agentへ割り当てます。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "f0d904e94a82be6451a1d2c8aa8ffe8a2ef9d16b8ddde7165a1a9b7f717e5fac",
+      "example": "example-08.mp3",
+      "exampleHash": "cf9b7d9e605239b286f858bef1188bb740c776986d1e55f03e1ff12a8795b13d"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "こうそくかする",
       "exampleJa": "Speculative DecodingでToken生成を高速化します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "803639ba187326548e58e9bf1c0bdba0c7b82b476b236bf91b045582a4c645cf",
+      "example": "example-09.mp3",
+      "exampleHash": "8182f9109cba69971acb1c37598321523ff004385e43897b8e879cc8139ea78e"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "よそくする",
       "exampleJa": "小さいModelが次のToken候補を先に予測します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "d8be5ef74bf77b6a16fbb528970a60f437215eedf6a3571e3a3ee1cef0aad111",
+      "example": "example-10.mp3",
+      "exampleHash": "b691db46277393fdc753495adcc7a64a60d8d2a83c632814f630e5725982c139"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "けんしょうする",
       "exampleJa": "Target ModelがDraft Tokenをまとめて検証します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "8c99ed11c56d739dd1bacf081bb328cd53cf8d1cf5627ba044d494d63b918af3",
+      "example": "example-11.mp3",
+      "exampleHash": "6d4936bfa3215154a722c3acda6f7f67feef382da44d3dce293e1fc96e459523"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "ふっきゅうする",
       "exampleJa": "低Riskな障害だけAgentが自動復旧します。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "6717f395bde7d60f0668a45da84100ff9ce420c5934b98457108e221b54a85cc",
+      "example": "example-12.mp3",
+      "exampleHash": "a6d8be6c2b3d664ec74aa015f83b500e52acd99e227192abfffccd21cdfb5848"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "かいにゅうする",
       "exampleJa": "高Riskな復旧操作では人間が介入します。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "1e35d24ac56637cff12eb1655ecd480db42d9f7c2e7bdfe8da004a7568ea2fc3",
+      "example": "example-13.mp3",
+      "exampleHash": "c695da03e208a834f105d08f657dc76402b7614b966b7b85e5e4b9e78d844a1e"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "かくじつ",
       "exampleJa": "Checkpointから確実にTaskを再開できるようにします。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "0f4c44db9a5cc4b081c485ae6116a53a3e4e8b1a71da0ab9013fe984975ac72a",
+      "example": "example-14.mp3",
+      "exampleHash": "61ff9fa4ae100b7f07cef713d3099656663027226695f57469208863c8b5a41b"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "てきせつ",
       "exampleJa": "Taskの専門性に応じて適切なAgentを選びます。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "60f431f1d0e13296084ba416bb63a57ee48798878a059701e125308e19f838ef",
+      "example": "example-15.mp3",
+      "exampleHash": "569e6f7e732664fb41d0a3a38c1da42446b72dffe8111614fd72224ec2bf39be"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "げんていてき",
       "exampleJa": "Agentには限定的なWrite権限だけを与えます。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "89ea68eebbc7239fbe81c9330a1dbd43a3dd105efcb3916a5e81dce8af485d0f",
+      "example": "example-16.mp3",
+      "exampleHash": "9b0ee318d7d0745fa1e870e0dc49aa7fb1230b2ab295ca48ef2423833078e637"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "あらかじめ",
       "exampleJa": "Agentごとの役割と権限をあらかじめ定義します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-17.mp3",
+      "exampleHash": "f7b83726e7aabef80a4874f261c6207db1b0b56b697d8215d02d5fc789727ae4"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "けいぞくてきに",
       "exampleJa": "Long-running TaskのStateを継続的に保存します。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "3b9ed58e6b9bea666da1daf0c69b86632da97a53355505ea447867bb192e2a39",
+      "example": "example-18.mp3",
+      "exampleHash": "89bcc18ebe8c2577f27edb5cae0ecbcaf560e26f1c83b4ab555f0787e07a4e88"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "じどうてきに",
       "exampleJa": "低Riskな障害は自動的に復旧します。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "8b952ca647a10d95aebb28d1d82a6b99bdc80440732620a12cdb6890e33d8b83",
+      "example": "example-19.mp3",
+      "exampleHash": "0503d0deae620304265646d301933497521e7899ff5f46d37867040ab42f9c6d"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "AIOpsは復旧を高速化できる一方で、権限境界を厳密に設計する必要があります。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "5401028ed745b58727adce37c30b7b4ac5b7c00946bea1fd3c52b234604ea66c"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～つつ",
       "exampleJa": "品質を維持しつつ、Speculative DecodingでLatencyを下げます。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "08ea6162d73ac301bcc6e62dac101cac7e1a9a8c35a5d725ec9be9a87f1d1bb5"
     },
     {
       "index": 2,
       "pattern": "～に伴って",
       "exampleJa": "AIOpsの自動化範囲拡大に伴って、権限境界の設計も重要になります。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "b6949e505151f875d356474930de80f7dcba4531569826ee161fd428cc3937b2"
     },
     {
       "index": 3,
       "pattern": "～にとどまらず",
       "exampleJa": "AI ROIはModel Costにとどまらず、工数削減や障害復旧時間まで評価します。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "223d2ffc83b364cab8fd90b840d2d77fa7dccddfd0a13bdcef20eedd02f061df"
     },
     {
       "index": 4,
       "pattern": "～に応じて",
       "exampleJa": "Taskの専門性に応じて担当Agentを割り当てます。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "2afce28f898818599780b73ad9fe0a460325815e4ef1ca887cb212b1b7d1c38a"
     },
     {
       "index": 5,
       "pattern": "～た上で",
       "exampleJa": "Riskと権限を確認した上で、自動復旧を許可します。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "e900a73a5a6ea266e59d1face500e63f7b6e23f2d6b0b3eb5793739bffc580d2"
     },
     {
       "index": 6,
       "pattern": "～一方で",
       "exampleJa": "AIOpsは復旧を高速化できる一方で、誤操作Riskもあります。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "e38cfeb90741bfd4c5c9bf89f5bbebbe531d7776e813dcc6051fe8536793f26b"
     },
     {
       "index": 7,
       "pattern": "～にかかわらず",
       "exampleJa": "Taskの長さにかかわらず、Agentの実行履歴を保存します。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "3c5299e2fe6103144f0ef12a7bb3067e2b2ac309b5fecb4b2bf89c3609b3bde9"
     }
   ]
 }

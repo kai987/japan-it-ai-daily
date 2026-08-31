@@ -1,6 +1,10 @@
 {
   "date": "2026-08-12",
-  "generatedAt": "2026-08-29T19:11:56.879Z",
+  "generatedAt": "2026-08-31T20:14:01.363Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "うんよう",
       "exampleJa": "本番運用ではLatencyとError Rateを継続的に確認します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "d9584dd132793d947df73b5fc269de4922a1b79e4fe078827a31af0272a3be23",
+      "example": "example-01.mp3",
+      "exampleHash": "d118cdcc5f60253ea8d61152d1d66b0a5c41cf6c41b1b6b08a82c7d52c1a7fa6"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "かんし",
       "exampleJa": "Agentの実行状態を監視基盤で追跡します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "9a2a848cd7e11736d860b962b4501ec9909e8f27fcab15ea2b38816c7d89101f",
+      "example": "example-02.mp3",
+      "exampleHash": "8b83ae092a16e954e2e15ad311b1ac9b30a7a3ded50aef357a679ccfbe71710d"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "けいそく",
       "exampleJa": "ModelごとのToken消費とLatencyを計測します。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "3e715c9c60f19b7ca1f26860867db390ab34393d0bfde2a7bb792768ed1ef781",
+      "example": "example-03.mp3",
+      "exampleHash": "113b9c8b127166c04cffa3e53b9f3bcec2a45e09f49bb306c7c61118a7cb6cfd"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "こうせい",
       "exampleJa": "機密データだけLocal LLMで処理する構成を検討します。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "babd922318c0f9f9946f2ec2e1a0b70576960255e14fb0968f2b63e438524aad",
+      "example": "example-04.mp3",
+      "exampleHash": "ddb9053303cda75de077c36e79d636351d95ac22cb5ba1492dee37690714461a"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "ちくせき",
       "exampleJa": "運用中のTraceを蓄積し、Evaluation Datasetに活用します。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "67347d7b74afa90b43cdbcc54dbbfb458dc3ef8a2501fc01fdc343e7e3e674f9",
+      "example": "example-05.mp3",
+      "exampleHash": "086ddaf7c29b03e2f539f7f7b7d2fde693f6d105b8fc63de2dfcede82a84d2c5"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "かんりする",
       "exampleJa": "TeamごとにAI Serviceの利用量とCostを管理します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "a999cfda8ae4ca2f6f5874a74322655aab0d46f3a2db282f484959368e6a9cd2",
+      "example": "example-06.mp3",
+      "exampleHash": "94ecbe6ee17857de41543503b4a98fb239ac320bd71a682b70a247fbeb1e12ca"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "けんしょうする",
       "exampleJa": "検索結果の品質を実データで検証します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "8c99ed11c56d739dd1bacf081bb328cd53cf8d1cf5627ba044d494d63b918af3",
+      "example": "example-07.mp3",
+      "exampleHash": "f6ebeffaaa68240d18e7a7c1964ab12483456ce0a9ba11414ff98c146389eb93"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "さくげんする",
       "exampleJa": "検索で対象を絞り、不要なToken消費を削減します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "99c6a5ae60f1a2f81d92206f283b36cc294b56218460d2e6c80b4b1a55ec3f74",
+      "example": "example-08.mp3",
+      "exampleHash": "ba76987d5de4b7b0b2c233e9dc05d8cfe781373acad58791685afd91c7641497"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "はあくする",
       "exampleJa": "TraceからAgentの実行経路を正確に把握します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "1b0272357468181e5c5ae130d8dbb29282547ea09d4b0153f06e94e96307cc54",
+      "example": "example-09.mp3",
+      "exampleHash": "d4b4aaf248393ac739dfe66dac32b5f8b6b6258878995661cee8536d8f25f229"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "こうりょする",
       "exampleJa": "精度だけでなくPrivacyとCostも考慮してModelを選びます。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "276e30e3cfc9cb0d50b4db9930fb90fd66603a296fa21156344adbc0fcd1fccd",
+      "example": "example-10.mp3",
+      "exampleHash": "5f382154f4b24d71ac80e134a6dd9954db893e80ee5be485dff38c27600b3be3"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "れんけいする",
       "exampleJa": "MCPを通じて検索ToolとAgentを連携します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "b2ae6e2577f94f0488837aa7376ce965630125632c8968ff0f96eb07ec57b49a",
+      "example": "example-11.mp3",
+      "exampleHash": "b3f53e51c8a1cb0a343b16b8dc4f9b448b296dbcd2287eed02a2913b3c330423"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "きりかえる",
       "exampleJa": "機密性に応じてCloudとLocal Modelを切り替えます。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "4090e9c6a6bd0805e503a0221da7f96c2038cab60a5f9c8db6a5146916ed3c85",
+      "example": "example-12.mp3",
+      "exampleHash": "6a7f427068b1c78ac136a64f15be01206653e91c54f58f7594e911f2d31bae37"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "しぼりこむ",
       "exampleJa": "BM25で関連度の高いFileだけに候補を絞り込みます。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "de95b4a91d2cdf5ba0bee966c5ea23747913808a8c4a0545d17b60229c5a4bbd",
+      "example": "example-13.mp3",
+      "exampleHash": "746b4829b6d5a1c9436cb020d89a1e56a2d250a17a833e11210f17352f914550"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "けいぞくてき",
       "exampleJa": "Agentの品質を継続的に計測し、Promptを改善します。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "e6dc24948f4be4021e51475763e6ad50d78e395bfb46ac8701578fc7302840f4",
+      "example": "example-14.mp3",
+      "exampleHash": "c1701549088b66248034a8c028f365e5f707f3a1204f7f4f05c0edcec1190fff"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "てきせつ",
       "exampleJa": "Taskの内容に応じて適切なModelを選択します。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "60f431f1d0e13296084ba416bb63a57ee48798878a059701e125308e19f838ef",
+      "example": "example-15.mp3",
+      "exampleHash": "226c1d11253cdd240667af7d51cffa48b99db6c09913263ef8d86be768ad4b97"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "せいかく",
       "exampleJa": "Tool Callの順序を正確に記録します。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "2cf30f1f4659ecee4478af6b711f226a1dbc21a50d48bcc7b53b85f4a5c68543",
+      "example": "example-16.mp3",
+      "exampleHash": "4bd302ed3c95a288ea7c212caaa20557939680fe9cf905de59997078b4f31e35"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "じぜんに",
       "exampleJa": "本番切り替えの前に、事前にFallback動作を検証します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "c33e4caf9da07e328742fecf0e4c1bc18ba3be56aaf8a8416c7522e123dbb140",
+      "example": "example-17.mp3",
+      "exampleHash": "e29aab2785d852a3e7a0492a7d5aabd7188489633e8040222cb442da90573976"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "かならずしも",
       "exampleJa": "大きなContext Windowが必ずしも高い精度につながるとは限りません。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "96828db9a2ff22376e83b0261f8d1f1fb0b389fa7af6b460e84f22d46cd2f15c",
+      "example": "example-18.mp3",
+      "exampleHash": "d6fc82c09d868cbf299deb0215887dc1edfdea33101e18260e4d19af4dce3038"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "あらかじめ",
       "exampleJa": "機密Fileはあらかじめ検索対象から除外します。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-19.mp3",
+      "exampleHash": "62c92cbf3d7e24e9e2b27a12b7183eca35ed7f833578ddcc70ebb73488b546f6"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "Local LLMはPrivacy面で有利な一方で、運用負荷が増える場合があります。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "2d9dc57ad2f484f571f5d6675d0a7d081947e5ae221771ae79ab899394ec2363"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～にとどまらず",
       "exampleJa": "ObservabilityはError確認にとどまらず、CostやSecurityの分析にも役立ちます。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "2b787c5c9f6d58c7cf26e5cdccfb2ea2b601815778cc3b3bab960f3be6649985"
     },
     {
       "index": 2,
       "pattern": "～かねない",
       "exampleJa": "不要なContextを大量に渡すと、判断精度を下げかねません。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "fc974837411767f425806a76aaf116143cafa14fd79668bc24587c437d7d66a3"
     },
     {
       "index": 3,
       "pattern": "～なくしては",
       "exampleJa": "継続的な計測なくしては、Agentの品質改善は難しいです。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "80520e340a9d2aed13df84c7e1be0a20b8b4a0641592b126352809ff60adfe2c"
     },
     {
       "index": 4,
       "pattern": "～に応じて",
       "exampleJa": "データの機密性に応じてCloudとLocal Modelを使い分けます。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "cb457f7d684db5ede6e8f249b9b5c2b4fdec7fd44d37ee578eaf8d53f34ad87c"
     },
     {
       "index": 5,
       "pattern": "～一方で",
       "exampleJa": "Local LLMはDataを外部に出さない一方で、運用負荷が高くなることがあります。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "78a1e53b4958e582f878b90d7e1c34bf6d1aee5266031b54a8ac83596b9b25fb"
     },
     {
       "index": 6,
       "pattern": "～たうえで",
       "exampleJa": "Latencyを計測したうえで、利用するModelを決定します。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "90c77231858390b33a1f1b142b24dd2ebabd2e78f87c34468c141c714bad7bcb"
     },
     {
       "index": 7,
       "pattern": "～とは限らない",
       "exampleJa": "Parameter数が多ければ実務性能が高いとは限りません。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "30c323d1981bd7ee41ad401bc06fb0a6349e708445582c74b340f0c149f08996"
     }
   ]
 }

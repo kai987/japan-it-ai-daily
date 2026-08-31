@@ -1,0 +1,118 @@
+{
+  "date": "2026-08-30",
+  "generatedAt": "2026-08-31T20:15:01.209Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIによるコードレビューの品質をどのように評価しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "eb1d584f9e932b7ca46f36425aa251ee6b515b0785376fd0335f5e8b2d3c8e5e"
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "AIの「OK」や「差し戻し」の数だけでは評価しません。既知のBugを意図的に入れたEvaluation Setと、変更していないControlを用意し、Reviewerが実際にそのBugを具体的に指摘できたかを確認します。また、False Positiveと見逃しを分けて測定し、重要な変更ではTestや人間のReviewも組み合わせることが必要だと考えています。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "4f3225dff9edbac98c2364d86cfd44e11dd5b67548577a93131088151ea11337"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "複数のAIエージェントを同じRepositoryで動かす場合、何を管理する必要がありますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "e9f84593ad8b8373f5500c4037f3f5d0a7f3e0f47bad1209aed1bf8c673804c9"
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "まずAgentごとの作業範囲とOwnerを明確にし、同じFileを同時に変更しない仕組みが必要です。小規模ならLockやTask Inboxでも管理できますが、チーム開発ではBranchやGit worktree、CIを利用します。また、Sessionが途中で落ちても復旧できるようにTask状態を永続化し、PushやDeployなど高Riskな操作は担当Agentを限定することが重要だと思います。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "f14c06251896a4e6306bc1b187948dd8d8d972ddc05108b595b78b4f4196835a"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "AI Agentのコストをどのように管理しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "b4fe29415796a01e840727891456a56230dcb74d2b9547543d9972cfdf1394a3"
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "Token単価だけを見るのではなく、Workloadごとの利用量、Task成功率、出力品質を一緒に測定することが重要です。AgentはBackgroundで何度も推論するため、単価が下がっても総Costが増える場合があります。そのためTeamやProjectごとにOwnerとBudgetを設定し、EngineeringとFinanceが同じUsage Dashboardを見られる状態を作る必要があると考えています。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "b624951bcc50e2833a5feeef376d06a6b0e8d9aa3fc504c22f5fa1e457b40945"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "Coding Agentで複数のModel Providerを利用するメリットは何ですか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "1814a4106c98fdae6a7112676b4d931d2bff2f80c2bf2229367d9409c603e9c1"
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "Model性能だけでなく、Providerの障害、価格変更、契約条件やBusiness上の変更によって利用できなくなるRiskがあります。そのためProviderを抽象化し、TaskごとにCapabilityを評価したうえでFallbackできる設計が有効だと思います。ただしModelごとにTool Callingや出力特性が違うため、切り替え前のCompatibility Testも必要です。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "e9ad80404a5456a6b878b53f6c9531a025d4f5c3a60f3da208f345735a25ee2d"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "AIエージェントが物理機器を操作する場合、どのような安全設計が必要ですか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "cf7829ebbc4a5d12c714b8f712779e2c86d96d497eb5a0b2441cfc40d6f97270"
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "LLMの自然言語判断だけで機器を直接操作させるのは危険だと思います。DeviceのCapabilityと安全条件を標準化し、実際の操作は検証可能なDriverを通して実行します。また、危険なActionはPermissionやGuardrailで禁止し、緊急停止、Audit Log、人間へのEscalationも設計する必要があります。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "012db65223291f114445a08f9560cf27b299b3fa52a9200659ec34c920291806"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "AI Reviewerの「OK」をそのまま信頼してはいけないのはなぜですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "56b916503480f84386ac670fc493450df71cff8f97c7c26752aee7c53dd94f15"
+    },
+    {
+      "index": 2,
+      "text": "複数のCoding Agentを同じRepositoryで運用するとき、どのような事故が起こりますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "8372733a5fa99fe94ab66f7a68e566f1b83cdef4686674da9da1fa9b7868a4c8"
+    },
+    {
+      "index": 3,
+      "text": "Token単価が下がってもAIの総コストが増えるのはなぜですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "2e05d01853a6706f89bb69d25d06b6b6aba5146b5ce59f93028b0f6e108141da"
+    }
+  ]
+}

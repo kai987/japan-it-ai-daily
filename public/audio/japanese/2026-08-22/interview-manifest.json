@@ -1,12 +1,23 @@
 {
   "date": "2026-08-22",
-  "generatedAt": "2026-08-29T04:31:16.908Z",
+  "generatedAt": "2026-08-31T20:14:01.547Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "MCP Serverは信頼できる提供元を利用し、破壊的なToolには最小権限、Sandbox、Human Approvalを組み合わせる必要があります。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "14d2f212986e4d654cd5bee74089b4cf277f336965311a5be39ae42c7b26a15e"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "Security Requirementは設定値やExit Codeだけでなく、実際のFileやArtifactの挙動を検証することが重要です。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "b945092b86f752ab8116f361d7627de8fe0e032f96bc4120bedf7fe5bf35285b"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "MCP Tool Poisoningとは何ですか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "64e9fc97bf958c91d722af01ef46f48ebfb7e3102166c3c11b86aa9aa04d50e2"
     },
     {
       "index": 2,
       "text": "Agent Plugin標準化のリスクは何ですか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "63e4ab13b98ac80cacdde2139f83a4a9601c400e55a07a8a2e07743e773b8019"
     },
     {
       "index": 3,
       "text": "CLIのSecurity Requirementをどう検証しますか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "38f8f5d80736210b27436edbb72a8d94c16c75e16d06b4ac228d7ae268649d0f"
     }
   ]
 }

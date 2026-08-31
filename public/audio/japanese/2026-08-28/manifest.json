@@ -1,6 +1,10 @@
 {
   "date": "2026-08-28",
-  "generatedAt": "2026-08-29T19:24:34.479Z",
+  "generatedAt": "2026-08-31T20:14:01.412Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "けんげん",
       "exampleJa": "AgentにはTaskに必要な権限だけを付与します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "476cd8e57b29f548b509e610b9a741d1f5238b2333b53d9de116b405e2add18b",
+      "example": "example-01.mp3",
+      "exampleHash": "239338dfd571ddcb0e6de8c63b27ee16055145025344e2c4e7713453d92fc15d"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "にんしょう",
       "exampleJa": "API Requestを受け付ける前にClientを認証します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "4d23e5c34dc648465c5e6fc95657769b11ce596dff6ae26de183ffa0b2ea1a91",
+      "example": "example-02.mp3",
+      "exampleHash": "0afbf0047f4806a9e91e2146f760715697e6ef283ab1d87e9e1baf1de2fa86af"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "にんか",
       "exampleJa": "認証後にRoleに基づいてTool Accessを認可します。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "202281ec5e88588d6e07487e971ff07e31469ec8b9cfb105a4fb2da827aab0e8",
+      "example": "example-03.mp3",
+      "exampleHash": "1d2d3d77cfacbe6ae5b2202ab0f3d31afae96b4091e5f05990d6a00316bb6b10"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "しんにゅう",
       "exampleJa": "不正なTokenを利用したSystem侵入を防ぎます。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "a09918f3c78b082547ab81e1c7f5602a87b912493d86474aee390372c5bc3613",
+      "example": "example-04.mp3",
+      "exampleHash": "a1119b450e3d83dcab9a2325d488f44d37f5908bc89c2dd8a75412a9f665730c"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "えいきょう",
       "exampleJa": "Write権限を広げる前に障害時の影響範囲を確認します。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "9a2177e1f02187bc26bdeb81c9986c08ffcd9d3fc97743faf068fa785a6976d5",
+      "example": "example-05.mp3",
+      "exampleHash": "f1ce1658c9793206ca07eb1c82d108d0d7b223febece93ce4f5e6460897fe7ab"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "そうさする",
       "exampleJa": "Browser AgentがWeb画面を操作して必要な情報を取得します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "4b3f43c9e849138186173596b4d75c5ac233507d86489f76376602f9ed197ea4",
+      "example": "example-06.mp3",
+      "exampleHash": "3d971d0061b020ae4f761b2d13d63265e0b1395d14e9bba3ab7973e6c18bb0d4"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "じっこうする",
       "exampleJa": "危険なCommandは隔離された環境で実行します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "dfa5cb8f0e587f51d6d410f8054bd0151c49c28ef505be7e764a3f5545c5ba64",
+      "example": "example-07.mp3",
+      "exampleHash": "8c8b6e6570d3b5bf0b12b2721a2f59746d68331d967a36a6eb4123b05e6b2309"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "せつぞくする",
       "exampleJa": "AgentはMCPを通じて社内APIへ接続します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "4fb99aabc356923bc9b61ab70edbaeb37d9c14e9ec63fc584a698a6ae12aacb7",
+      "example": "example-08.mp3",
+      "exampleHash": "8d7cd24ffe19e83989b5216f563274bfba8df7cb4c60607d401dc00f10240e2d"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "せいぎょする",
       "exampleJa": "APIへのAccessをRuntime Policyで制御します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "5346be774ad656c587bc337e880ca353cd30fdfe7dc74df5b4ff098cd0ad75fa",
+      "example": "example-09.mp3",
+      "exampleHash": "d8f422281c50b027a95df691f6bd54c2bdabb1cbd287ee3c339bda5d819c01f5"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "けんしょうする",
       "exampleJa": "Agentが生成した変更をTestとSchemaで検証します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "8c99ed11c56d739dd1bacf081bb328cd53cf8d1cf5627ba044d494d63b918af3",
+      "example": "example-10.mp3",
+      "exampleHash": "7fc750fa84c3533b17406fea3b1783a03765d8e3a0e94cf28e301f2bf8edb260"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "さくげんする",
       "exampleJa": "必要なSkillだけを読み込みContext Tokenを削減します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "99c6a5ae60f1a2f81d92206f283b36cc294b56218460d2e6c80b4b1a55ec3f74",
+      "example": "example-11.mp3",
+      "exampleHash": "eb935604a03d5577be5cd1153fd65889ecd6a9d497c90be3fea53fc383f30d0c"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "かいひする",
       "exampleJa": "Permission Checkを回避できないようにServer側で検証します。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "ac83362bb736cc66957d7d29fc1af73836e1d188fd32ebc5abbe67a5fcb7f223",
+      "example": "example-12.mp3",
+      "exampleHash": "18336dacb54574daa41ab98d70fd19f9e9765321456f3987ce9ce4bf9bac626a"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "くみあわせる",
       "exampleJa": "MCPとSkillを組み合わせて業務Workflowを構築します。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "da31e91b5af75bae09a4ab6d3d6e0934e57314064c8ac536980a4a31596fad51",
+      "example": "example-13.mp3",
+      "exampleHash": "2e53cd66b213b41426bfd404e3876e412117c6ad0e6b84cbdd4c13566f69aa74"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "ひつよう",
       "exampleJa": "Taskに必要なSkillだけを実行時に読み込みます。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "7018ce06635bf6ca3b264c0626e0af4af8babcbf9a223374ea53bbaf95f3fe79",
+      "example": "example-14.mp3",
+      "exampleHash": "2586dbe7a3d1be556ce8c67c499f3cd4f071450f564367965055d5073c3c8dc9"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "ぜいじゃく",
       "exampleJa": "認可Checkが不足したAPIは不正Accessに脆弱です。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "9e93a6d5dcef78fe27a6d1eb0accc5fb77303198e14625a5fc6577d68fe3718c",
+      "example": "example-15.mp3",
+      "exampleHash": "19635e9f1f4f9f39b507bb082c7431f053db1bb8f4128589f1193f9bd9fba961"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "てきせつ",
       "exampleJa": "Taskの内容に応じて適切なSkillを選びます。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "60f431f1d0e13296084ba416bb63a57ee48798878a059701e125308e19f838ef",
+      "example": "example-16.mp3",
+      "exampleHash": "366b9b039f2318758578f4a7772e4c5fcafdfeb1691ae8df0c25a73a8a335a7e"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "あらかじめ",
       "exampleJa": "許可するAPI ActionをあらかじめPolicyで定義します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-17.mp3",
+      "exampleHash": "2ecb3c038c050b6ee6be92d264c6c4a197142e70ed68ecafcef88fceb3e5b99b"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "むじょうけんに",
       "exampleJa": "外部Pageの指示を無条件に実行してはいけません。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "c87e1ed6ba9d9f2b055eb47f1ca4a1b5073f3be5d668de3540d6cf92ed1547f9",
+      "example": "example-18.mp3",
+      "exampleHash": "e9ee735e6b3afc4e69e5b0ed72ae36cd4d8ac2e90f540fab1aeab08a5f1c1e92"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "けいぞくてきに",
       "exampleJa": "APIのAttack SurfaceとAgent Costを継続的に監視します。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "3b9ed58e6b9bea666da1daf0c69b86632da97a53355505ea447867bb192e2a39",
+      "example": "example-19.mp3",
+      "exampleHash": "1556eadc9abee7337476bdaea8f12084077c09912cadf7eb29ddbddcdd15393a"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "Agentic Webは自動化を広げられる一方で、API Securityの重要性も高まります。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "86a382e80cc0b221bee27262294186b1248ca75f82c5faae898093ef45a45ef9"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～ことなく",
       "exampleJa": "すべてのTool Definitionを常時読み込むことなく、必要なSkillを呼び出せます。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "66fedaeac1c344c1050b16845d1cb10bab0c071df8e21cbbafa5d7e1f24bdf5c"
     },
     {
       "index": 2,
       "pattern": "～にとどまらず",
       "exampleJa": "API Securityは認証にとどまらず、認可やInput Validation、監査まで設計する必要があります。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "d3d4e19693b1983bfa9de9fa9a7223a167c471bca8d01db06d91bfbaeb2346b7"
     },
     {
       "index": 3,
       "pattern": "～かねない",
       "exampleJa": "Agentに広すぎるWrite権限を与えると、意図しない変更を実行しかねません。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "6b11553cea866b047d0c5532fc88dafbd2823f64d83ebfc184cd5c579d329050"
     },
     {
       "index": 4,
       "pattern": "～に応じて",
       "exampleJa": "Taskの内容に応じて利用するSkillを切り替えます。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "24c2d36e212808905f2c2e956cc0374f17a3c0d7767df2dc307628b01677dca1"
     },
     {
       "index": 5,
       "pattern": "～一方で",
       "exampleJa": "Agentic Webは作業を自動化できる一方で、APIのAttack Surfaceも広がります。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "4696cc890eac041c1771f64fda5f2f6368763e70c0a6afee9e405f8e803b722c"
     },
     {
       "index": 6,
       "pattern": "～た上で",
       "exampleJa": "Userを認証し、Roleを確認した上でAPI Actionを許可します。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "1a753453c630c52c71280c5828c7d8b92048ea9c7c24bc3ab25169393d5b93cd"
     },
     {
       "index": 7,
       "pattern": "～に基づいて",
       "exampleJa": "RoleとSecurity Policyに基づいて利用可能なAPIを制御します。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "dc647edf6290a12471dce3305e961f4666ddb4edffd24ce90f4873f8a610165f"
     }
   ]
 }

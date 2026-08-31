@@ -1,6 +1,10 @@
 {
   "date": "2026-08-27",
-  "generatedAt": "2026-08-29T19:23:47.155Z",
+  "generatedAt": "2026-08-31T20:14:01.410Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "みとおし",
       "exampleJa": "WorkflowをGraphで可視化すると処理全体の見通しが立てやすくなります。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "3f90056f75ef4dc6220d5b3e37ad72f08b4c7c3f4d3d1fe157fffabeed1feb4d",
+      "example": "example-01.mp3",
+      "exampleHash": "a7c26d6a9edad1164efd18e73daee93c3b05b9c525168085a0383c10c887efc1"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "けんげん",
       "exampleJa": "Managed Settingsで危険なPermission Bypassを禁止します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "476cd8e57b29f548b509e610b9a741d1f5238b2333b53d9de116b405e2add18b",
+      "example": "example-02.mp3",
+      "exampleHash": "0dbac0e8c30bbc72d6e7091d6f8e9755412254486b8eb0cf17091e39d4eed553"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "うんよう",
       "exampleJa": "共通TemplateでAgentの運用方法を標準化します。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "d9584dd132793d947df73b5fc269de4922a1b79e4fe078827a31af0272a3be23",
+      "example": "example-03.mp3",
+      "exampleHash": "b5110fd3f5f4af4bf5a1102d552b999e1518ca3dec3f12750504b4eed19fc627"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "こうぞう",
       "exampleJa": "保存前にWorkflow構造の整合性を確認します。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "14e27b120e8acc9245786d790299ba4e12683243f3d96d65b1494d0732ac7323",
+      "example": "example-04.mp3",
+      "exampleHash": "a67b16731c991313d2a6e7fe85b3907f39d9903ce153fa0687ce7147bf0e4434"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "とうせい",
       "exampleJa": "AgentやMCPの利用可否を組織単位で統制します。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "f15c7d31ff372e15da668cf66f08f9711b2c4a36741ec615656601e34f091759",
+      "example": "example-05.mp3",
+      "exampleHash": "c4b635ba0892b118da653fc52c943676d745c8a098c542d765b835b04277e237"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "ふせぐ",
       "exampleJa": "Workflowを公開する前に構造を検証して実行時Errorを防ぎます。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "3997ee1f3ad1dde869580500199319e1319de5da68332721e85fbec276e590b8",
+      "example": "example-06.mp3",
+      "exampleHash": "4651350f0430b47154aaf29ff333479e22e95f2b893c7436d1bff6ec60b78062"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "まかせる",
       "exampleJa": "実装はCoding Agentに任せてもSchemaの最終Reviewは人が行います。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "4074fe5d86b6371ddfedc363263f35b8c7efd716a3c28902726952bc347d5ec8",
+      "example": "example-07.mp3",
+      "exampleHash": "878ddcf5906ae6105249cb8a71fe4055c20736d1d685bf0b6f2c52bca45dca03"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "になう",
       "exampleJa": "Agentが実装を支援し、人間が設計方針と最終確認を担います。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "7d23077fed7f8e41a65505bbe6da2dedb53915a36b9582f641cd38b6699af21b",
+      "example": "example-08.mp3",
+      "exampleHash": "fb7fd4b73f571701cc8b2c68af11f75f7ce281eebbc79df8ca8f2edce6c048b0"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "うながす",
       "exampleJa": "共通QA Agent Platformを整備して組織全体のAI活用を促します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "41b6a1e8e277af858a337a4d1165745ed250a08460bc945f3cbe93ea7575d795",
+      "example": "example-09.mp3",
+      "exampleHash": "b87f492264f7586864652644d3902cf6a2ded8a3c0a8119131fc1e43965c9cd0"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "かしかする",
       "exampleJa": "NodeとEdgeでWorkflowの実行順序を可視化します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "37e9353df37e04201993746965eceb37cfff2cd555eaee52773ca22d87c2bc8e",
+      "example": "example-10.mp3",
+      "exampleHash": "c185d278c5596ccf913d5779953212fe956e9cef6a394de922da9753a922425f"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "けんしょうする",
       "exampleJa": "TypeSpecとBackend実装の差分をCIで検証します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "8c99ed11c56d739dd1bacf081bb328cd53cf8d1cf5627ba044d494d63b918af3",
+      "example": "example-11.mp3",
+      "exampleHash": "76d451ae6fce46cca4f6e16c7a9c31da1cb6c24beca50eb8a4e9c689780b3949"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "ぶんりする",
       "exampleJa": "開発体験と本番Securityを最適化するためBuilderとRuntimeを分離します。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "b6bb897e625a548ca58ef3580aeff7f56396205c506a06793e78ec04107a39ae",
+      "example": "example-12.mp3",
+      "exampleHash": "14d17d958d1d92b05393cd147ee5fa36f4e11169f99d5929e3e63d67798c4843"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "せいせいする",
       "exampleJa": "TypeSpecからOpenAPIとFrontend Clientを生成します。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "b0f2c873333546b8c9edb5dfcab15a5fce1ab58951d241d6830a8f9b82358487",
+      "example": "example-13.mp3",
+      "exampleHash": "bff2dfc16f5d4252791ae3c28267befbd8eae995cd8e8b3d59617d3867aa486a"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "ひつよう",
       "exampleJa": "Agent Runtimeでは必要な権限だけを実行時に付与します。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "7018ce06635bf6ca3b264c0626e0af4af8babcbf9a223374ea53bbaf95f3fe79",
+      "example": "example-14.mp3",
+      "exampleHash": "b205b26efa3aef746a4cf79b468f67744ffa487b67710f1527f9e0ac66d9e162"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "てきせつ",
       "exampleJa": "TaskとDataの機密性に応じて適切なRuntimeを選びます。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "60f431f1d0e13296084ba416bb63a57ee48798878a059701e125308e19f838ef",
+      "example": "example-15.mp3",
+      "exampleHash": "41a413d7c23d697b383c5188107a99da3275baceedba31cdba05bfa69abb9255"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "あんぜん",
       "exampleJa": "本番では安全なRuntimeでAgentを実行します。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "d91f4bb6e2d409918302ae7ca964d095f2060804de0fa6785f22934b74dd7d69",
+      "example": "example-16.mp3",
+      "exampleHash": "34703b69502a6639536f957d259612570e3ac0242f56e166320c41080228d19f"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "けいぞくてきに",
       "exampleJa": "利用状況を測定してGuardrailを継続的に改善します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "3b9ed58e6b9bea666da1daf0c69b86632da97a53355505ea447867bb192e2a39",
+      "example": "example-17.mp3",
+      "exampleHash": "354f25feddf5af1b5899d670c96dac09e7502d0c2f480eddc3174d99b9fac3b7"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "あらかじめ",
       "exampleJa": "WorkflowのSchemaとPermissionをあらかじめ検証可能な形で定義します。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-18.mp3",
+      "exampleHash": "17c8eeabcb1e6c123def62a1d5597750b4a88ce2cf722d020109bf2302fec0d7"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "いちりつに",
       "exampleJa": "すべてのTaskを一律にCloud Agentへ送る必要はありません。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "f5f6e4a43ef6e093a1f1c333d2e4ce9412415ccb801ee4ce45e0f3eb65b449ff",
+      "example": "example-19.mp3",
+      "exampleHash": "337b2e7a9a797bf7ad029182f6e93a604cf21b3d8be457b19645413ddcdea823"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "Local AgentはPrivacyに強い一方で、高性能Hardwareが必要です。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "e1b46a20ad91b20baab497d21e263ce5882e36581f8837d29c6f33206679fd13"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～にとどまらず",
       "exampleJa": "Agent PlatformはModel提供にとどまらず、RuntimeやGuardrailの標準化まで担います。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "9d387cba1b7474423f62d3dab51a17989f38ec7ac32351f77791a85a02f45309"
     },
     {
       "index": 2,
       "pattern": "～なくしては",
       "exampleJa": "Schemaによる自動検証なくしては、No-code Workflowを安全に本番運用するのは難しいです。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "d23903980567380acd41e2347f8b16776f0da4df9897ee2677ede33004c7453b"
     },
     {
       "index": 3,
       "pattern": "～かねない",
       "exampleJa": "Permission Bypassを個人設定に任せると、組織Policyを損ないかねません。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "07f5a2d67ba200106ef2eba6bdb0c2e7e2f0f9327adffe95233f5d6088246706"
     },
     {
       "index": 4,
       "pattern": "～一方で",
       "exampleJa": "Local AgentはPrivacyに強い一方で、高性能Hardwareが必要です。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "7ad1014798a5d1767a0c109579d99e649da7fb71e8c34947444b7ba35992bfe2"
     },
     {
       "index": 5,
       "pattern": "～に応じて",
       "exampleJa": "負荷に応じてRuntime Replicaを増減させます。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "35c3950dca4c9bbf9ebd722e64c1f41f4a7b2014d644776a47ee988f96c52988"
     },
     {
       "index": 6,
       "pattern": "～た上で",
       "exampleJa": "TypeSpecとBackendの整合性を確認した上でClientを生成します。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "137b54bf595db421b5da75a82dc5d90fbbbb489192ed363465cc620a05cfcfe0"
     },
     {
       "index": 7,
       "pattern": "～に基づいて",
       "exampleJa": "Managed Settingsに基づいて利用可能なPluginを制御します。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "aaa470cc50d210b44cb37d2d428d6bd443cb28223bbcd853882c60da94c19879"
     }
   ]
 }

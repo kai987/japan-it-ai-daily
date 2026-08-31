@@ -1,12 +1,23 @@
 {
   "date": "2026-08-14",
-  "generatedAt": "2026-08-29T04:31:16.903Z",
+  "generatedAt": "2026-08-31T20:14:01.540Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "MCPは外部APIを呼ぶだけでなく、必要な社内情報を安全に取得するContext Gatewayとしても利用できると思います。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "91ed640b867cfcbce080646560ba196bc4a158b7056a3c6e8e6ed9e6d60efd07"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "AIが生成したコードは、人間のレビューだけでなく、型チェック、静的解析、自動テスト、Security Auditで機械的に検証することが重要です。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "72772f3d07067f8625bc4632c975c79718b025ab9f0f2b0269dd902ee5252507"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "AI生成コードの品質をどう保証しますか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "4cd2ca8f65a564c5f5c59f0f3103cde3c1ccc30e370354c07ee057c0f96bedb7"
     },
     {
       "index": 2,
       "text": "MCPをKnowledge Searchに使うメリットは何ですか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "df0c39d47d5fa63f4d19ceeaf8ffa51a73751d9eb4de2b1252e58bd91788ea5d"
     },
     {
       "index": 3,
       "text": "自動生成されたIAM Roleをそのまま本番で使えますか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "99e12d31bb723c8b81efa3d12c2195f98d877d967afe70965a6a81d352c25a01"
     }
   ]
 }

@@ -1,12 +1,23 @@
 {
   "date": "2026-08-21",
-  "generatedAt": "2026-08-29T04:31:16.907Z",
+  "generatedAt": "2026-08-31T20:14:01.547Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "AI Agentではデータの正確性だけでなく、業務上の関係性や制約がData Modelに表現されているか確認することが重要です。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "715e98ac544ec5a5aebc659f5e7865fbda38462961245b3cb044e16f91707e79"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "AIの成果物だけでなく、どのFileやDocumentを実際に確認したかというInput Coverageも検証する必要があります。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "fe21fa23c93b3a6f30a353936985a6022d8e2f07554e47a2513c0d9bd8ea37d1"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "AIが全部確認したと回答したら信頼できますか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "e5b326361be108beaabda7b81d854b743d845b81c39b8a72a14273a35f79b6a3"
     },
     {
       "index": 2,
       "text": "AI-ready Dataとは何ですか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "0bb00c872e72fff87e3629b5b2c0b37c766a024e3d02ab96fdea64f7d1b1e0ac"
     },
     {
       "index": 3,
       "text": "複数Coding Agent設定のDriftをどう防ぎますか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "bfed985f303c0dab7fee418dce2e07ef933d524d3125f45284ea7343ae5e0ec7"
     }
   ]
 }

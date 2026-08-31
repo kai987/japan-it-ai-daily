@@ -1,12 +1,23 @@
 {
   "date": "2026-08-29",
-  "generatedAt": "2026-08-29T04:32:13.118Z",
+  "generatedAt": "2026-08-31T20:14:01.555Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,78 +28,91 @@
       "index": 1,
       "type": "answer",
       "text": "複数のLLMプロバイダーを利用する場合、AI Gatewayを導入するメリットは何ですか。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "3ae4af35dc4fedd2ebd35a9427e0fea35bc036f2987d118d160e32e37a11d160"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "アプリケーションごとに各LLM Providerへ直接接続すると、認証情報、モデル切り替え、コスト、監視の実装が分散しやすいと思います。AI Gatewayに集約すると、Data ResidencyやRouting、Secret管理、Failover、Observabilityを共通化できます。一方でGateway自体が重要な依存点になるため、可用性やSLOも含めて設計する必要があります。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "7ec20f1f6899c72b0bbe5dfd4b5c5cfd7c2313c407ce045114939f8e39ef524c"
     },
     {
       "index": 1,
       "type": "question",
       "text": "AI AgentにAWSリソースの変更権限を与える場合、どのように安全性を確保しますか。",
-      "audio": "interview-question-01.mp3"
+      "audio": "interview-question-01.mp3",
+      "audioHash": "07e98efe0eee975d6ebe336f6c281bbbee8b422f6ef92e7a463b93e591ae3ebf"
     },
     {
       "index": 3,
       "type": "answer",
       "text": "IAM Roleの権限だけでなく、実行ごとのHuman ApprovalとSession Policyを組み合わせることが重要だと思います。Roleは最大権限の上限として設計し、実際のCredentialは承認されたActionとResourceだけに絞ります。また、削除やPassRoleのような高リスク操作はAgent Guardrailで禁止し、CloudTrailで承認者と実行内容を追跡できるようにします。",
-      "audio": "interview-answer-03.mp3"
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "77154e1a65efc4cb921d5a9da4ef6c0ad6c497d5777e95c8cf74bdfdac561888"
     },
     {
       "index": 2,
       "type": "question",
       "text": "Coding Agentに「コマンドを実行しないでください」と指示するだけで十分ですか。",
-      "audio": "interview-question-02.mp3"
+      "audio": "interview-question-02.mp3",
+      "audioHash": "8d3087d837b59d14a9d1a9f105960779b646d4284a53850346b25ab9de9a349d"
     },
     {
       "index": 4,
       "type": "answer",
       "text": "十分ではないと思います。Promptは行動方針を伝えるためには有効ですが、Security Boundaryとしては弱いです。CIやCode ReviewのようなRead-only用途では、BashやWeb Accessなど不要なToolそのものをRuntimeから外す方が安全です。さらにMCPなど外部接続も含めてEffective Capabilityを確認する必要があります。",
-      "audio": "interview-answer-04.mp3"
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "190eb7a420a21112484f5d4cf0cd777f809f4b47d3e930f31becf91d02976b16"
     },
     {
       "index": 3,
       "type": "question",
       "text": "LLM APIでStandard、Flex、Batchをどのように使い分けますか。",
-      "audio": "interview-question-03.mp3"
+      "audio": "interview-question-03.mp3",
+      "audioHash": "c7de59a8b1ce72e895663d51e7bb628e36c5a3698d2f0370758c27a28bb565f8"
     },
     {
       "index": 5,
       "type": "answer",
       "text": "Userが画面上で待つ処理はStandard、24時間以内で大量処理できればBatchが向いています。1件ずつ通常のAPI Flowを維持したい一方、多少のLatencyや一時的なResource不足を許容できる場合はFlexが候補になります。料金だけでなく、Latency、Retry、Availability Requirementを実際のWorkloadで評価することが重要です。",
-      "audio": "interview-answer-05.mp3"
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "82373945a85a6628a14a31836e46a6a684d98747d8d4a46a7628013a4049fa75"
     },
     {
       "index": 4,
       "type": "question",
       "text": "AI AgentのPluginを自動更新する場合、どのようなGovernanceが必要ですか。",
-      "audio": "interview-question-04.mp3"
+      "audio": "interview-question-04.mp3",
+      "audioHash": "09e7ca37ab033cadc13bf6d66dbb7a3829a4aca3222a34d03ea9c17ad57e5bc5"
     },
     {
       "index": 6,
       "type": "answer",
       "text": "自動更新はConfiguration Driftを減らせますが、信頼できないPluginや予期しないVersion変更を広げるRiskもあります。そのためApproved MarketplaceをAllowlistで限定し、更新対象、Version、Permissionを組織側で管理することが重要です。CriticalなPluginはStagingや段階的Rolloutも検討すべきだと思います。",
-      "audio": "interview-answer-06.mp3"
+      "audio": "interview-answer-06.mp3",
+      "audioHash": "5d2148f9d922d22604e8e2a9e88f3fb99f65169261e9d3507e53c6f01346bd1e"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "AI Gatewayを導入する主な目的は何ですか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "09ecf32cd59e04d5f6bdb551b8d9284f300757b86fa3675fb552375a3f5bc860"
     },
     {
       "index": 2,
       "text": "AI AgentにCloud Resourceの変更を許可する場合、IAM以外に何が必要ですか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "90487f3ba0bf5b3a2e1193a21acbf59108723343bb2b03ca63b6c6cf1d0c115b"
     },
     {
       "index": 3,
       "text": "LLMのAPIコストを下げる場合、Model変更以外にどのような方法がありますか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "22684d9aed990efc8d799b02d855d44aee2ed7abbefa20aa0a5f02ac27f1cfcc"
     }
   ]
 }

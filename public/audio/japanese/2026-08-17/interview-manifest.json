@@ -1,12 +1,23 @@
 {
   "date": "2026-08-17",
-  "generatedAt": "2026-08-29T04:31:16.905Z",
+  "generatedAt": "2026-08-31T20:14:01.544Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "マルチテナントRAGでは、User IDをLLMに生成させず、認証済みTokenから取得し、GatewayやPolicyで決定的に検証する設計が重要です。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "afc44ac4c1cb18e6c5c937f825540897722e559fdff3cedf7476521f2c9a1b20"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "通常のRAGは局所的なFact Searchに適し、GraphRAGは複数文書にまたがるRelationshipやGlobal Themeの分析に有効です。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "4ddeed19e66f37146cf9f0fbc975d9a09131df49adbf1c9507d7600981b97ca8"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "マルチテナントRAGのAccess Controlをどう設計しますか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "51a4ba15c724144a9d5a466a6e368b89618195c23671c234dd3308131620cc7b"
     },
     {
       "index": 2,
       "text": "GraphRAGと通常RAGの違いは何ですか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "85519862cd41b1250c7547450980f31b622666179f521fa7098a721f095f32a6"
     },
     {
       "index": 3,
       "text": "LLM Routerをどう評価しますか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "514eded2077e9e854e696fea89d84cbd5ecd6673efb08b75a3c4fade94255c58"
     }
   ]
 }

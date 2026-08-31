@@ -1,6 +1,10 @@
 {
   "date": "2026-08-16",
-  "generatedAt": "2026-08-29T19:15:20.169Z",
+  "generatedAt": "2026-08-31T20:14:01.380Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "はんい",
       "exampleJa": "Agentが参照できるContextの範囲をTaskごとに限定します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "1a47f079bb5bacff1ed8b65c346e611427b2b5ac8b766af68bfa9f36d6fd6184",
+      "example": "example-01.mp3",
+      "exampleHash": "777f47d3010c0636dcb60d432c4999190216d6de4307a3c98b24e726f68664f1"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "きょうごう",
       "exampleJa": "複数Agentの変更競合を減らすため、Working Treeを分けます。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "155075058ac7dbf73633a9b3a5e553d736874c46c9a786d3c0b51282639565f9",
+      "example": "example-02.mp3",
+      "exampleHash": "a30570394e1670c3bd45888a62994220449c5baedd4d042922f6675788cee5f4"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "せいごう",
       "exampleJa": "生成Codeが既存Schemaと整合しているかTestで確認します。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "4bbe172c4b86230acd6857b58675414bc865b8717aa44da1bafd6af9bdabdeb2",
+      "example": "example-03.mp3",
+      "exampleHash": "3fdc97f879d893a502bfbdfef585751965a057d32c6c3ad077bcf08285b55b70"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "ほしょう",
       "exampleJa": "自動Testだけで完全な品質を保証できるとは限りません。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "d59051e99979450ae06b0c670533e3cd07d1808000efef24656817c8ac9f2a40",
+      "example": "example-04.mp3",
+      "exampleHash": "126073a870cb034a47138bd2576d862b49e578ae76a2732028c6c434bd7b9cfd"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "けいしょう",
       "exampleJa": "子DirectoryはRootの共通Instructionを継承します。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "45154c62e0e506d86e71bd51123e2c4f120eaf39155399a150e614833f66f6b5",
+      "example": "example-05.mp3",
+      "exampleHash": "400dc72335aec3d2829015e93775f7d59b58b1d2f832102ea67f0cd76d77a9d9"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "ゆうせんする",
       "exampleJa": "よりTaskに近いDirectoryのRuleを優先します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "708beb6c261f0795b41f1a3ea6659f0027119d666df790228ca774553e814a73",
+      "example": "example-06.mp3",
+      "exampleHash": "4af6c361fc62a36bbd09365bb6be38381b1d630a00fe770a08804cdaa79e9c43"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "てきようする",
       "exampleJa": "Fileの位置に応じて適切なInstructionを適用します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "0664ee8e6ea0f181f3691d892413db226e58c22e0c05b6aa75ee79753f81350c",
+      "example": "example-07.mp3",
+      "exampleHash": "3b6b17a36f96e125431b6fddaa4dfdc1997931bad94a16cda3f78e88ea31b0bb"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "けんしょうする",
       "exampleJa": "Agentが生成したCodeをType CheckとTestで検証します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "8c99ed11c56d739dd1bacf081bb328cd53cf8d1cf5627ba044d494d63b918af3",
+      "example": "example-08.mp3",
+      "exampleHash": "6df15776e54f71e1173d1989c5961958e1f5d29275b0b3da2888cb22df108dd5"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "じっこうする",
       "exampleJa": "独立したValidationを複数Sessionで並行して実行します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "dfa5cb8f0e587f51d6d410f8054bd0151c49c28ef505be7e764a3f5545c5ba64",
+      "example": "example-09.mp3",
+      "exampleHash": "fa8972dac66a1e0e5384c35e5a215971da2192369e0bacd2ddc772520808f0e1"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "ぶんりする",
       "exampleJa": "SessionごとにContextと作業Directoryを分離します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "b6bb897e625a548ca58ef3580aeff7f56396205c506a06793e78ec04107a39ae",
+      "example": "example-10.mp3",
+      "exampleHash": "c7167d82c736188f24e5050f3ff12ce0841d4313de059f9f5f69ca580e4863bf"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "めいじする",
       "exampleJa": "Validation Commandと禁止事項をAGENTS.mdに明示します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "bce674c4ef1f7e5c40ac964b903e463062ee5bdb4ba6d26d057f831092b0b5c0",
+      "example": "example-11.mp3",
+      "exampleHash": "be8c0aaaf32487c625d70f339930b0e623f86a576d0831ca91c91f84392617e1"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "ついせきする",
       "exampleJa": "AgentごとのCommitとValidation結果を追跡します。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "a194303a6363499e5a9e3bb46b976a247643951a558407e3aff55842a978be1a",
+      "example": "example-12.mp3",
+      "exampleHash": "8d0ff913a8877be9073ebbcc693fe17d037bf9f2a9a2c573af6f69ba358c911f"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "ふせぐ",
       "exampleJa": "自動Validationで不完全なCodeのMergeを防ぎます。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "3997ee1f3ad1dde869580500199319e1319de5da68332721e85fbec276e590b8",
+      "example": "example-13.mp3",
+      "exampleHash": "d26b6e7f0699f7367ec0ab2f843995b842738fdf2aa082cb511b421eb6200e4a"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "きょうつう",
       "exampleJa": "Repository全体に共通なCoding RuleをRootへ置きます。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "ab829a12bf9101979f45949c2faa41a4e8875e94ced2cfcdbc0d39296f27e673",
+      "example": "example-14.mp3",
+      "exampleHash": "32e7697889bdfba1542e2756ba714bcb740a3613dc8bb006cd4d5f5cff482e44"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "へいこう",
       "exampleJa": "独立したTaskは複数Agentで並行して進めます。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "1ad73b310e276bd8f4fdf28345cbd88137d912d79fa543cea30f4184b4fff85e",
+      "example": "example-15.mp3",
+      "exampleHash": "958dc3821c7514d5517507898d50aa084456a55270feb6490f87893fbdb9fb6d"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "めいかく",
       "exampleJa": "Ruleの適用範囲と優先順位を明確にします。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "bcfba048fefd72818f8065faa67349cac692ed19584fb70981cb261979ff06c9",
+      "example": "example-16.mp3",
+      "exampleHash": "a69b321ebfa5eb9426413694eb85d4afaccc8a7453ca313ac58cac0fcd2cc9c4"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "あらかじめ",
       "exampleJa": "Agentごとの担当Directoryをあらかじめ決めておきます。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-17.mp3",
+      "exampleHash": "7ad5dd2a6ca8d982a0d51c408a62673dca189e19efe0ec395b366466602a3f73"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "こべつに",
       "exampleJa": "PackageごとのValidation Commandを個別に設定します。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "72870b7bfdcc8497de87d41670f8c093cd78785a4c90a12ba4fb66872de6f92c",
+      "example": "example-18.mp3",
+      "exampleHash": "7c34c6713195d731c94d2c1e66f23d59012dd328b4e0b53e239b3cc829220fab"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "どうじに",
       "exampleJa": "複数Agentが同じFileを同時に変更しないようにします。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "c0def9097e78e4a99a44c2d64222d837d8f354cb07667c0b0869dde238a74eb1",
+      "example": "example-19.mp3",
+      "exampleHash": "ff1c67020245a36964228750bbc3ad8f7f6da34258129780571d5595dd3718ff"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "並行化で速度は上がる一方で、変更競合の管理が必要です。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "74a40a865e3aeeaab06c573930e65e4c82723399b8a343158d733321aa64539b"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～にとどまらず",
       "exampleJa": "AGENTS.mdはCoding Styleにとどまらず、Validationや禁止事項まで定義できます。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "f97bedc6c27afaad4dac72c6a830cc4e157c935db7b83f74e3f4c5447bde147b"
     },
     {
       "index": 2,
       "pattern": "～かねない",
       "exampleJa": "複数Agentが同じFileを同時に変更すると、大きな競合を招きかねません。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "63add55efb98b30877426c696e708e3c227266b813cfd44957e3f37525453a3b"
     },
     {
       "index": 3,
       "pattern": "～なくしては",
       "exampleJa": "DeterministicなValidationなくしては、AI Codingの品質を安定させるのは難しいです。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "61a54451eb6642feafe7ffd1486ec1a539b8206dbd5b0007ad973f659844affe"
     },
     {
       "index": 4,
       "pattern": "～に応じて",
       "exampleJa": "Directoryに応じて適用するInstructionを切り替えます。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "e92fdb74d8d24aa81c5e4e0e09373fc8fad58bda49c2cee094b5ab25e59e3807"
     },
     {
       "index": 5,
       "pattern": "～一方で",
       "exampleJa": "並行Sessionは開発を高速化できる一方で、競合管理が複雑になります。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "daee382ed204b3a029223b0d6bea1d40aa9b82f84a408b2434158a915129a178"
     },
     {
       "index": 6,
       "pattern": "～たうえで",
       "exampleJa": "自動Validationを通したうえで、Agentの変更をMergeします。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "42dfa16ed40d1e0dc1b3f32f67d1b84dceac1d48ddb378832090dc6434a1366d"
     },
     {
       "index": 7,
       "pattern": "～に基づいて",
       "exampleJa": "RepositoryのRuleに基づいてAgentのCommand実行を制御します。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "c5166fd19e1b95a1059c5f3a7a86a188cfec26dd854f0a4d7223225ad4ef78a1"
     }
   ]
 }

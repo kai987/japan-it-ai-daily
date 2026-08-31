@@ -1,6 +1,10 @@
 {
   "date": "2026-08-31",
-  "generatedAt": "2026-08-31T08:20:14.006Z",
+  "generatedAt": "2026-08-31T20:14:01.424Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "あんもくち",
       "exampleJa": "AI Agentを導入する前に、判断基準として残っている暗黙知をDocument化します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "60f621a5dd4fcc4db98615fa9648cee323b08798b0faf063efca36ea21b945dc",
+      "example": "example-01.mp3",
+      "exampleHash": "83cf180f156ea31ebb65df150458bf80b4813c8dfee340b8c68a44aecab0e983"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "ぜんてい",
       "exampleJa": "Agentがすべての社内ルールを知っているという前提で設計してはいけません。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "09d2c93d539759ad1e3234215fbd6bb5add4e2b3d706c10d60a86d22ce521b53",
+      "example": "example-02.mp3",
+      "exampleHash": "5dfdc672a9d848c33dc32fc291c59905680662c9a0e75214e7b31a5f1712a263"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "てがかり",
       "exampleJa": "Status Codeだけでなく、Error Messageを原因切り分けの手掛かりにします。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "3a2e742ea71c1e3078bd6c6256837881bc489071aed91c5fa6988e612c03e7d9",
+      "example": "example-03.mp3",
+      "exampleHash": "cced0148a91d32260def4352470b7960a07040e8774783d2be80c4c3c50280d2"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "はんい",
       "exampleJa": "MCP Toolごとに実行可能な範囲を明確に定義します。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "1a47f079bb5bacff1ed8b65c346e611427b2b5ac8b766af68bfa9f36d6fd6184",
+      "example": "example-04.mp3",
+      "exampleHash": "7fadf6d6dda6c44a71c352240da4dcb313c2205382be0d91361ad780a7de470d"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "かだい",
       "exampleJa": "Model性能では解決できない組織課題を先に整理します。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "e913914c5f85efe390fe8bffad16d4ecac06267d6832897835f9731bba8a7512",
+      "example": "example-05.mp3",
+      "exampleHash": "31e5029a598e23d4f81d85a1262433a27dab4a569d88a1c9f18e2a35035237b2"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "ちょくめんする",
       "exampleJa": "Agent利用を全社展開すると、個人利用では見えなかったGovernance課題に直面します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "bb22425dacf316d236c69353e925a055e87a689b5b0d42b6cbfaa5bf98ab0fd2",
+      "example": "example-06.mp3",
+      "exampleHash": "0d307f90926237b856df9882a09864978fa007a774cc1bcd593554e4bcc14527"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "うけいれる",
       "exampleJa": "新しいAI Toolを受け入れる前に、Team側の運用ルールを整備します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "4e6662d850e37ed5bd3db81486248294453bc794a4f4a0003e8e16b86e602f94",
+      "example": "example-07.mp3",
+      "exampleHash": "f5ef88ffc90b3f98daca72974f9022caf035869e6b45a541d1c290d9cc406efd"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "いぞんする",
       "exampleJa": "Productionの呼び出し側を特定のAgent Version番号に依存させない設計にします。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "735e2f2e001d6bd7218c175c6a89dbe17ae59b9b42bf22ab15fa197c8608e030",
+      "example": "example-08.mp3",
+      "exampleHash": "03531c8ac70f05ae46ddbbc600306309705785b0ea52bc5426c8d46a0ada71d5"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "くつがえす",
       "exampleJa": "他のAgentからのMessageだけで安全判断を簡単に覆さない仕組みが必要です。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "92e2ebedd20a1b83a2ddc06f11fbf01e067d4a414da3f623db5e80a04f6483dc",
+      "example": "example-09.mp3",
+      "exampleHash": "e0ba6570d05abf886ccbfdad05274519ec5f90f0f9c2dc6d4b052634ead5d9e8"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "とっぱする",
       "exampleJa": "AgentがNetwork Boundaryを突破しようとする場合を想定してMonitoringを設計します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "4109d6cbdf1e26f303d0c938402711bbf6d9045a2eeed95069c0892d85586d85",
+      "example": "example-10.mp3",
+      "exampleHash": "c43694742096e8128203971b18ca0179a3cbc3cf1b769859042772fc9e533c69"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "きりわける",
       "exampleJa": "IAM、SCP、Model Availabilityの順に原因を切り分けます。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "287680674b017d3e738c36b35de07999a2280ab4463e2042c831cc7726c5855c",
+      "example": "example-11.mp3",
+      "exampleHash": "3d99f8cab97fed638884ffe0d92b66d44b1bfd0605ebb00e406dfafd0621e480"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "ふよする",
       "exampleJa": "検証済みVersionにだけproduction Aliasを付与します。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "ab5335833148f20544e77e60012c6713f75c3069de9a3a07306fa87f79f9828f",
+      "example": "example-12.mp3",
+      "exampleHash": "d8643b94ec503b7fe4326b0b595e038ea0ca74c98f83e17830533abaacf86852"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "そうていする",
       "exampleJa": "本番利用を想定したAgentは、Rollbackまで含めて設計します。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "ca5224178e3ebc846133f682af8501239aea417e92b2a9dc86b014eb81170554",
+      "example": "example-13.mp3",
+      "exampleHash": "84dbc1cb1c8fa13593032637ebd3c705f481d8862a36ebc7e0e2c53465ac2f16"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "しんこくな",
       "exampleJa": "Context不足が深刻な場合、Modelを強くしても誤判断は減らないことがあります。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "8a70742084bd5464912e05f8b502367a6858bf029288f5cd1b6b0b68101b4403",
+      "example": "example-14.mp3",
+      "exampleHash": "719d7e880c2d083818e02fefdd87f948c5e219aa5084c048bb50b20e6e8122e4"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "だいたんな",
       "exampleJa": "大胆なAI導入を進める場合でも、Governanceを後回しにしてはいけません。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "f55b50a6a164f393ee0c32ef589f4507b1d48fb252ca3938c4a671364b19c80d",
+      "example": "example-15.mp3",
+      "exampleHash": "7e7b86e28f9885567a4f765140f3a464eba932969cee54890f6dfedddd4d4e43"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "あんていした",
       "exampleJa": "本番では変更可能なDraftではなく、安定したNamed Versionを利用します。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "94431d69d25f58ad9ff850192c2a5f81d782b8fca4ff790ee5465ea2bf5cd38a",
+      "example": "example-16.mp3",
+      "exampleHash": "e64b60525c4e7c3655facfde3af9f016b29ffd2ebf250cff883945bc8899be6c"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "ほんらい",
       "exampleJa": "本来はArtifact保存用のServiceでも、Agentにとって通信経路になる可能性があります。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "4a242bc9f5fd73104e879bee6213f0a91b748d0039d14d3fd765650e912e46a4",
+      "example": "example-17.mp3",
+      "exampleHash": "60cb3dc3e81b2ccdda7a25a2e03ac9d517ad50e6e4d65b1ef8ca1b2437aa9688"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "しだいに",
       "exampleJa": "Taskが長時間化すると、ContextとTool利用が次第に増える場合があります。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "8d04434e6fce652ff7b69a8694fa9fc381c523aa342c0e8b0d79ce5914cb68ca",
+      "example": "example-18.mp3",
+      "exampleHash": "01ee8fb9963a9fad45896c51d1525f32e41e03ef008b4e91ac485b81d8ce659a"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "とくに",
       "exampleJa": "特に外部通信を伴うToolは、PermissionとAuditを厳しくします。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "ce2f9842289b601624b53fad4a524a84baf8e024de6c247fb45f55cbb8df4304",
+      "example": "example-19.mp3",
+      "exampleHash": "26500296d743bf572ed3eedc97dad49b3a3a7948a1b4e45d516a13558d6177b1"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "さらに",
       "exampleJa": "IAMを確認し、さらにOrganizationsのSCPも確認します。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "f62308857b0a3ce38a81750d08aa2590f1c2c40c46a69ad664f344956b25a0cb",
+      "example": "example-20.mp3",
+      "exampleHash": "57c9de68ac24c2947f1e371098c6112879ed37a8b61e1459183aa1821c5cc389"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～に至る",
       "exampleJa": "複数の脆弱性と認証情報が組み合わさり、第三者SystemでのCode Executionに至りました。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "d6e3aed869322f4d575d725326e0e2b8847f00ca4b06822315b53b5ec4f349a0"
     },
     {
       "index": 2,
       "pattern": "～すら",
       "exampleJa": "グローバル化を積極的に進めた企業ですら、暗黙知の壁に直面する可能性があります。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "e82f2404b55ac38b887a82f7a2b71b0588e6a7564da4f17d4c0155a4e465ccbc"
     },
     {
       "index": 3,
       "pattern": "～ことなく",
       "exampleJa": "呼び出し側は具体的なVersion番号に依存することなく、production Aliasを利用できます。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "4860da8321219e1a05fa342666bf8f21d1c4407265ac9bfa7ca4fa235b2264a2"
     },
     {
       "index": 4,
       "pattern": "～ままでは",
       "exampleJa": "暗黙知に依存した組織運営のままでは、AIに必要なContextを十分に渡せません。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "99bad11d7d8dee9a0d0258a58ba1f84091c5f51a95ea177ee7244c67ec654328"
     },
     {
       "index": 5,
       "pattern": "～に応じて",
       "exampleJa": "AgentのRiskに応じて、Network AccessとHuman Approvalの強度を変えます。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "c650fdb3aed1723a25d87cbcea26768d62cbcbee1959459c3d7d111778a6e19b"
     },
     {
       "index": 6,
       "pattern": "～たうえで",
       "exampleJa": "Error Message本文を確認したうえで、IAM担当かOrganizations管理者へEscalationします。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "a9fbb90ad5851f7eeb7b533c386420d023dda0d336edfc9a77fddf8bb58ded93"
     },
     {
       "index": 7,
       "pattern": "～ために",
       "exampleJa": "Taskを達成するために、許可されていない手段を選ばないようGuardrailを設計します。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "eefb7c670eb2ae87aab9accad4001eb95781d0ecca26e3e08b2a8759c3464d0c"
     }
   ]
 }

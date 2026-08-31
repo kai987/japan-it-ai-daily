@@ -1,12 +1,23 @@
 {
   "date": "2026-08-16",
-  "generatedAt": "2026-08-29T04:31:16.904Z",
+  "generatedAt": "2026-08-31T20:14:01.542Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "大規模なRepositoryでは、共通ルールとFrontend・Backend固有ルールを分け、現在のTaskに必要なContextだけをAgentへ与えることが重要です。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "de55f8ed8b3d28b7a510411018d31bf710457a08ad0333ec736638bc92c6829b"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "AIが生成したコードは、型チェック、Lint、自動テストなどの決定的なFeedbackを使ってSelf-correction Loopを回すことが有効だと思います。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "7a9d5ef8f5a1844e5583706d8ab3638fce411152e3c91f3e4dbac8380068e7d3"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "モノレポでAI Agentのルールをどう管理しますか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "ff84845f1ff3922ba2a7193cc92a88af03b9b99254d740b05a5a9e8675a34547"
     },
     {
       "index": 2,
       "text": "なぜType CheckがAI Codingに重要ですか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "93abee0b185721531cae789f6ff675931bef2fef6d7394e911695b21af352824"
     },
     {
       "index": 3,
       "text": "IAMとAgent Guardrailの違いは何ですか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "c02aa490646d37b3cb933be2f26d33b31d4b36a5ad2f85a68db4ef4217c90af6"
     }
   ]
 }

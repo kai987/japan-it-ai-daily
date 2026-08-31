@@ -1,6 +1,10 @@
 {
   "date": "2026-08-22",
-  "generatedAt": "2026-08-29T19:19:54.175Z",
+  "generatedAt": "2026-08-31T20:14:01.397Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "えいきょう",
       "exampleJa": "自社Serviceが脆弱性の影響を受けるか確認します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "9a2177e1f02187bc26bdeb81c9986c08ffcd9d3fc97743faf068fa785a6976d5",
+      "example": "example-01.mp3",
+      "exampleHash": "1d3610c0e6aed79cde7a5d5ce1b6febe38bc9144ccfbd51001680a141961149d"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "ごかん",
       "exampleJa": "Patch適用後も既存APIとの互換性を確認します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "2fa7d52560b5494f08ec43b0b1961573ab223eb9855901800e0595e16aa7468a",
+      "example": "example-02.mp3",
+      "exampleHash": "d8434058552a0a2e10dd57d471d199a4c0313b99d9815ace5af1d4794be3cf04"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "しょめい",
       "exampleJa": "Plugin Artifactの署名をInstall前に検証します。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "0ceb9ec252cab6dbe98e1b2bc3da0db8924b36b597089570e9563494b75aa498",
+      "example": "example-03.mp3",
+      "exampleHash": "82437328b279ff5066a24afda7349e362661ca9863207ee2296391712cc34b5a"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "しんらい",
       "exampleJa": "検索結果はSourceの信頼性を確認してから利用します。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "f08cc0093b5e975451f4cfe42c5bffd04c8e4a365901e34f9822d1f88d2d220e",
+      "example": "example-04.mp3",
+      "exampleHash": "2c59ae2ea312774566693efe8424010a42cb4d5bb57fefcff7d30ee9a070cf53"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "きょうきゅう",
       "exampleJa": "Software供給網全体のRiskを評価します。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "6dd8fd09a3e9eebc25d388d12c9310bcf1fce2270434950afb3be927a10373d6",
+      "example": "example-05.mp3",
+      "exampleHash": "e9a54d395e229c5f04bea83112a18e75390769a705bc8d17ce95fed23348f5e6"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "こうかいする",
       "exampleJa": "Security Advisoryが公開されたら対象Versionを確認します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "deea8988231865a21598b9e3edbc775f6db3d99a231c8b05454c449a541cba3e",
+      "example": "example-06.mp3",
+      "exampleHash": "7430b1f49badae7ef728a1bb1a01c21a7d76a8d256a710ffaf2988a35c640008"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "しゅうせいする",
       "exampleJa": "脆弱性を修正したVersionへUpdateします。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "08a359a98157c83ff96f33d376d6abdff7e420e5feb27190b4e90de01c7a39e6",
+      "example": "example-07.mp3",
+      "exampleHash": "2633e374776adf85db1973c6012f0e8606b987a58e2e6af210b43c8a76c85286"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "こうしんする",
       "exampleJa": "影響を確認した上でNext.jsを安全なVersionへ更新します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "13108409b2c4d97b4b80789eaa52dd83ae0030bc76765ad99d4df4a50b86b16a",
+      "example": "example-08.mp3",
+      "exampleHash": "b1fa1c2fe6c3527f2c0da90fda54181db7dcf85c9ea1de2d651d95ccaa073409"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "たいおうする",
       "exampleJa": "Criticalな脆弱性には優先して対応します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "c5ea1386909f96e68cfe889c11ad4e098d2ae05dca4e6ab430adcbe75339e541",
+      "example": "example-09.mp3",
+      "exampleHash": "354e7da67e331357420f6bd6886ee8320a87c5b6d69ac0d97e80efd980e6aa3c"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "てきようする",
       "exampleJa": "Patchを適用した後にRegression Testを実行します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "0664ee8e6ea0f181f3691d892413db226e58c22e0c05b6aa75ee79753f81350c",
+      "example": "example-10.mp3",
+      "exampleHash": "16594b6e978db289576e89fd7a3e655a013676c20c20b8d474fcf808cb3be904"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "けんしょうする",
       "exampleJa": "Conformance TestでMCP Serverの挙動を検証します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "8c99ed11c56d739dd1bacf081bb328cd53cf8d1cf5627ba044d494d63b918af3",
+      "example": "example-11.mp3",
+      "exampleHash": "1e18b572f871b784e8d2714a186d21f318f176e6e0457b8b0a3ee5d5fba969b7"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "けんちする",
       "exampleJa": "不審なPlugin BehaviorをRuntimeで検知します。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "f2a1030bab5772ed2f6d86f384c930e8a803b0aa5430e64507ea3fc6034b10ec",
+      "example": "example-12.mp3",
+      "exampleHash": "b46ec09f6147885c792ddf4c28629a672d3cf8f5f05609b4c7b9ede3c60dc9aa"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "かいひする",
       "exampleJa": "Patchできない場合はFeatureを無効化してRiskを回避します。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "ac83362bb736cc66957d7d29fc1af73836e1d188fd32ebc5abbe67a5fcb7f223",
+      "example": "example-13.mp3",
+      "exampleHash": "6dcfffdb0694640072e7c00cf25c9ce08baec7fff6ba53af4f01a5686909096b"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "ぜいじゃく",
       "exampleJa": "外部入力を無条件に信頼する実装はPrompt Injectionに脆弱です。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "9e93a6d5dcef78fe27a6d1eb0accc5fb77303198e14625a5fc6577d68fe3718c",
+      "example": "example-14.mp3",
+      "exampleHash": "d712c5c3125ccf4d1423cd1b55bb3b1eca4589ba4b931eb440e881158645319e"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "あんぜん",
       "exampleJa": "Regression Testを通してから安全なVersionへ更新します。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "d91f4bb6e2d409918302ae7ca964d095f2060804de0fa6785f22934b74dd7d69",
+      "example": "example-15.mp3",
+      "exampleHash": "08abfb2dafe0bd2318e82c8285dcde00e8070f06468dd5fed0866bfc0d003478"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "じゅうよう",
       "exampleJa": "Critical Advisoryでは初動の速さが重要です。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "6d8947d2e6730fbda25bcfd4b101af8a93945b34184986fc887283f53e0ea47b",
+      "example": "example-16.mp3",
+      "exampleHash": "2bf70637f1d7b0cde914bc64e375ad0a0227bccfd064a4d6d5d9fdc67dfc4954"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "すみやかに",
       "exampleJa": "影響が確認された場合は速やかにPatchを適用します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "2a62f862712eafc60c96a03bd5d4652e10694a80316d2b2bb672e7c294fdcaa5",
+      "example": "example-17.mp3",
+      "exampleHash": "d44359654dd9eee951cc9f62c2c5c01b6e7dc35e7db01b6f596e600e666adbb4"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "あらかじめ",
       "exampleJa": "利用中のDependencyをあらかじめInventory化します。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-18.mp3",
+      "exampleHash": "202d5c89b00dbe667f23e3d27d4f2c730ed7dc5cabd9f07d620b8a7d247b41c6"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "むじょうけんに",
       "exampleJa": "検索結果やPluginを無条件に信頼してはいけません。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "c87e1ed6ba9d9f2b055eb47f1ca4a1b5073f3be5d668de3540d6cf92ed1547f9",
+      "example": "example-19.mp3",
+      "exampleHash": "12662d4c899dffb410b3b1e850d1b6039940f887de0ac5b347ebaab2b5074149"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "Agent Pluginは機能を増やせる一方で、Supply Chain Riskも広げます。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "97fdc3d68c309dc262e4c26795e297c7dae75b3a672f022e6ccce353f8952f90"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～にとどまらず",
       "exampleJa": "Plugin SecurityはCode Reviewにとどまらず、署名や配布元の確認まで必要です。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "27694f427701ca1283b94f5a1f88e3fcfd2c1c743eb62e5fdace5fb441f214d8"
     },
     {
       "index": 2,
       "pattern": "～恐れがある",
       "exampleJa": "悪意あるTool Descriptionを読み込むと、意図しない操作を実行する恐れがあります。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "c67dd4a5fb3f9965f55a5f8eaa19abd3f971f4efe84df4fd06f04896e10bfbf0"
     },
     {
       "index": 3,
       "pattern": "～かねない",
       "exampleJa": "Sourceを確認せずPluginを導入すると、Supply Chain攻撃を招きかねません。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "1c6d05a5067886b4f933098978923172ef8c4873d6e8e5eba782320ea02a839a"
     },
     {
       "index": 4,
       "pattern": "～とは限らない",
       "exampleJa": "人気のPluginだから安全とは限りません。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "92c0120eaa8df3893a0485ff695fe507fa82ce6172c1cc9fbcd86282d00b5b2e"
     },
     {
       "index": 5,
       "pattern": "～に備えて",
       "exampleJa": "緊急Patchに備えてDependency Inventoryを維持します。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "91f125f5b771c6e0509d8d8fac044949898fa7a9dff9d62c1d6efe8fc2189205"
     },
     {
       "index": 6,
       "pattern": "～た上で",
       "exampleJa": "影響範囲と互換性を確認した上でVersionを更新します。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "2b4be8189f22c9e61fb30b5dda4b384b5362d7abf610da96d64f0ae23eaaaa9b"
     },
     {
       "index": 7,
       "pattern": "～一方で",
       "exampleJa": "PluginはAgentの機能を拡張できる一方で、攻撃面も広げます。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "be3afc2117662522c244f9347ecaca912634d21c29af4f389bbdc1cf1718c0cb"
     }
   ]
 }

@@ -1,6 +1,10 @@
 {
   "date": "2026-08-29",
-  "generatedAt": "2026-08-29T19:25:29.089Z",
+  "generatedAt": "2026-08-31T20:14:01.419Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "ぐたいてき",
       "exampleJa": "導入前に、具体的な運用要件と責任範囲を整理します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "762ef0ebffde36551c0ec996479a7dd03a5251a60e1a69d72ea5c98e6f1f63f0",
+      "example": "example-01.mp3",
+      "exampleHash": "de64f4048d4b1399796e751e6375aa3428bbf3c51cc29a82d139548971c9fee4"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "かだい",
       "exampleJa": "まず課題を整理し、AI Gatewayで解決すべき範囲を明確にします。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "e913914c5f85efe390fe8bffad16d4ecac06267d6832897835f9731bba8a7512",
+      "example": "example-02.mp3",
+      "exampleHash": "c4b33304bac8bfe2cd37269e5b5c31bbe5956654475eeab311e8125a421465ea"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "せんたくし",
       "exampleJa": "複数の選択肢を比較したうえで、本番要件に合う構成を選びます。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "31f01bedd4c1f4546da4234cf9bde454947371593c17a845ab503555068ac082",
+      "example": "example-03.mp3",
+      "exampleHash": "3fa4f6204e9a10a71aaafe58af8c99610eb6b39acdc4556d0b80c4ddbc15ce61"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "えいきょう",
       "exampleJa": "Gatewayの障害がサービス全体に与える影響を事前に評価します。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "9a2177e1f02187bc26bdeb81c9986c08ffcd9d3fc97743faf068fa785a6976d5",
+      "example": "example-04.mp3",
+      "exampleHash": "fddd50a47814ff71d3347959568a0bb465d1c6780a5e0c7515cb56b2f2718c94"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "おさえる",
       "exampleJa": "既存Applicationへの変更を最小限に抑えながらGatewayへ移行します。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "8eab76035dab35c86a9d486a200ad7b4a26e0e338df92fb98f5b1e54eab45bfb",
+      "example": "example-05.mp3",
+      "exampleHash": "a440fd43c4f4bdb77cb192d4c0b1b1c59df2b306ea5377ff69e4c09a0235a2e2"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "きりかえる",
       "exampleJa": "既存の直接接続を段階的にGateway経由へ切り替えます。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "4090e9c6a6bd0805e503a0221da7f96c2038cab60a5f9c8db6a5146916ed3c85",
+      "example": "example-06.mp3",
+      "exampleHash": "dc3ed6bcbe16d2edfd399e0707afe9b9f273034872de23cbbd997c308636df48"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "ととのえる",
       "exampleJa": "新しいCodeがPolicyを迂回しないように、CIのチェック体制を整えます。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "7239b56113cfc31c4b1575aec2c9c9f0188fc3b507b81606f0d377baaf321fa4",
+      "example": "example-07.mp3",
+      "exampleHash": "2bbf5457ead730d540cc27ba6ea140e6f1a3434a3943b3193ef8ecd35235f2d6"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "とりのぞく",
       "exampleJa": "Read-onlyのTaskでは、実行に不要なToolを最初から取り除きます。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "a26c1efeb471481afa838c3d9444f59128525ccf03d459d95170bfa31c5debab",
+      "example": "example-08.mp3",
+      "exampleHash": "a83ba156df985f1bd50a80ddcbd1a0cc799e73dd602c17b5eb8d3973ec57a75f"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "こたえる",
       "exampleJa": "SecurityとCostの要件に応えられる共通基盤を設計します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "12848e8f4fd05297c19963a5cf6512bd1aae9b4f7883ae221fc92b75c1cdfa49",
+      "example": "example-09.mp3",
+      "exampleHash": "10be43dbb2c858684cf97043bbd3c90c059b628f87b63307142fee194b8e2711"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "みつもる",
       "exampleJa": "導入前に月間Costと運用工数を見積もります。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "adca19d856d6ebf4349dba24da45f26d259d70296e53516eb0b42f2477483d98",
+      "example": "example-10.mp3",
+      "exampleHash": "7d69a5f4c5cf4371dbc674c380badff344194398067a469f1a8bb18adcd719a5"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "いちじてき",
       "exampleJa": "一時的なResource不足を前提にRetryを設計します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "4fa9af3aae269d809d102a38effe7f78f7c8db2d6791a08b75b3ddfb53c8cd5e",
+      "example": "example-11.mp3",
+      "exampleHash": "34a4ef9c5194357cd241dcc31fde44cdb4951e3c06672ae6498a1908f13d0873"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "だんかいてき",
       "exampleJa": "本番導入は段階的に進め、各段階でSLOを確認します。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "ff68c9bbd1e1340b4587751aa911a9bc1b15de0f9dd1b36926d1c3ae9aa565c8",
+      "example": "example-12.mp3",
+      "exampleHash": "06bf77def9b848391a7e2259d699f662f4c88663f96dff96a13b01af1ec854a2"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "あわせて",
       "exampleJa": "Costだけでなく、Securityと運用負荷もあわせて評価します。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "31ce03dead27e9b9862f09f35c765cee161478948e0c84ecc613f4b9e753a8ff",
+      "example": "example-13.mp3",
+      "exampleHash": "de2b942bdb84500dd3c268cf6b9d747af42a46c26fed1c032ee12c874d20e0a6"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "いっぽうで",
       "exampleJa": "FlexはCostを抑えられる一方で、Latencyの変動を考慮する必要があります。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-14.mp3",
+      "exampleHash": "f6bffb6eaac7497c68641d3887c06391df3876ebeb86ba3316b30ea4df711975"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "せきむ",
       "exampleJa": "ApplicationとGatewayの責務を分離し、認証情報はGateway側で管理します。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "19b99bbe1ab169b2161e9df4b9fdfa3dab7edf10c263312649edcf858a7940ba",
+      "example": "example-15.mp3",
+      "exampleHash": "d8700f1c26c1a6dfb6a1936268b74b7c5109399f70db51220524a61841bb7dec"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "ごうい",
       "exampleJa": "選定理由を文書化し、関係者と合意したうえで本番導入を進めます。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "489d3607a155ed89216c64a57c4e05d1b8f2c49fc6b9d34fdb8e479b04dd74f3",
+      "example": "example-16.mp3",
+      "exampleHash": "2e434e1723e41b46ab635155899249e3d044d06ce3fc49e96169e944daea23bd"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "になう",
       "exampleJa": "Gatewayは認証とRoutingを一元化する役割を担います。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "7d23077fed7f8e41a65505bbe6da2dedb53915a36b9582f641cd38b6699af21b",
+      "example": "example-17.mp3",
+      "exampleHash": "ef04f5e43aa62c1639c005fbb23577de35bd6ce08cd270d3685fe8f7a6ab508e"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "きょようする",
       "exampleJa": "多少の遅延を許容できるTaskだけFlexへ切り替えます。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "f3021d3a67ac7c745a46679f6e5ed733b24d270e62031b32e0c2ae5cc8cc03da",
+      "example": "example-18.mp3",
+      "exampleHash": "ef5b9775e6b1670d5ff8b4c8c3a56287d766d8b7d4620f5da42a58e025ac7a9e"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "いとせず",
       "exampleJa": "新しい実装が意図せずSecurity Policyを迂回しないようにテストします。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "db8c5be2609b4aeefc3ac74d6b6240cc9130af54ed4fe70203af6dfa915d7615",
+      "example": "example-19.mp3",
+      "exampleHash": "715058172f2e0791b3aadae4fcf0e8446320e75f80bf0ab475ff9930f5d549f5"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "ごく",
       "exampleJa": "変更対象をごく一部に限定してから段階的にRolloutします。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "9f5e7d73bddf6461a8500415ba36caa1a98fa254378a288aac0f1c25cefe123b",
+      "example": "example-20.mp3",
+      "exampleHash": "14b608815a6e2951a576f2c667319006bf533fafd1667dbe851b7171d9729817"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～に応じて",
       "exampleJa": "TenantのData Residency要件に応じて、利用するVirtual Keyを切り替えます。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "3d32ddfc3b1616f59f30f6408878dfc51845bd83814c5775b214a4f43acea2f1"
     },
     {
       "index": 2,
       "pattern": "～一方で",
       "exampleJa": "Flex processingはコストを抑えられる一方で、Latencyの変動や一時的なResource不足を考慮する必要があります。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "7499ccc42557b407780c86d31dfec9d7ddb0387cc527c1a7a5207ba2104998f1"
     },
     {
       "index": 3,
       "pattern": "～たうえで",
       "exampleJa": "実際のUsageとRetry率を計測したうえで、Flexへ切り替えるTaskを決めます。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "f6ed28e6b130a17b7d5454368421a29c86ce6d5d56bc78ac9ffb7c56f45e1c5e"
     },
     {
       "index": 4,
       "pattern": "～かねない",
       "exampleJa": "Pluginを無条件に自動更新すると、不具合のあるVersionを組織全体へ広げかねません。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "029e11cd5392401f391d98f8eb68e13059e17406a56e17b3434f4fbe4508cb31"
     },
     {
       "index": 5,
       "pattern": "～にとどまらず",
       "exampleJa": "AI Gatewayの役割はModel Routingにとどまらず、Secret管理やObservability、Data Residencyにも及びます。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "0ab98329c8c91b1b1c5b7ef928e77fa9073f1d0601016d5bb0bf2a41d00cc1b3"
     },
     {
       "index": 6,
       "pattern": "～を余儀なくされる",
       "exampleJa": "Resource不足が長時間続けば、一部TaskをStandardへ戻す対応を余儀なくされる可能性があります。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "67299c5e53d771b10c437f25508485945d0391d5ec45cfd9e8f7b34a19709baf"
     },
     {
       "index": 7,
       "pattern": "～に至るまで",
       "exampleJa": "AI Gatewayでは、Provider接続からSecret管理、SLO設計に至るまで一貫して運用方針を整える必要があります。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "1928038571881903dd2ea5d2694a625318cf6f7d63b850dff34e176fbda653f5"
     }
   ]
 }

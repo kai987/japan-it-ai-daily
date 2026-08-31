@@ -1,12 +1,23 @@
 {
   "date": "2026-08-28",
-  "generatedAt": "2026-08-29T04:31:16.914Z",
+  "generatedAt": "2026-08-31T20:14:01.554Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,78 +28,91 @@
       "index": 1,
       "type": "question",
       "text": "AIエージェント向けの実行環境は、人間向けの開発環境と何が違うと思いますか。",
-      "audio": "interview-question-01.mp3"
+      "audio": "interview-question-01.mp3",
+      "audioHash": "1607625e1499113cb1adc81f8bc2c89dc30676923e0db3e5697e66480f1c4cd3"
     },
     {
       "index": 1,
       "type": "answer",
       "text": "AIエージェントは短時間に多数のTaskを並列実行し、環境を頻繁に作成・破棄するため、人間向けの常駐Desktop環境をそのまま使うとコストや起動時間が問題になります。そのため、軽量なIsolation、短いCold Start、必要なToolだけを利用できるRuntime、明確な権限制御が重要だと考えています。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "6383ee1a92b8e7f77c1b34280b90cf4a047291abac885841876706bd4833696e"
     },
     {
       "index": 2,
       "type": "question",
       "text": "Coding Agentにどこまで自律的に作業を任せるべきだと思いますか。",
-      "audio": "interview-question-02.mp3"
+      "audio": "interview-question-02.mp3",
+      "audioHash": "2f00d8829de891f11e9fcfd5dcfc20cd0f943549ad893a53dc9915c805a20cbf"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "いきなり完全自動化するのではなく、まず人が起動する低リスクTaskから始め、受入基準と禁止事項を明確にします。その後、AlertやIssueをTriggerにした自動起動へ広げ、十分に検証できるTaskだけ並列化します。重要な変更ではCI GateとHuman Reviewを残すことが必要だと思います。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "3cea53e4c256b633a0d9c2bcd03627dee4f847362bf0dd64099312a9e04bfc36"
     },
     {
       "index": 3,
       "type": "question",
       "text": "AIエージェントがAPIを利用する場合、従来のAPI Securityに加えて何を考慮する必要がありますか。",
-      "audio": "interview-question-03.mp3"
+      "audio": "interview-question-03.mp3",
+      "audioHash": "638f8e127b6b9e2d225b4041de690c1a7e6797418c5e6431a944aed32eaf8889"
     },
     {
       "index": 3,
       "type": "answer",
       "text": "Agentは状況に応じて呼び出すAPIや順序を変えるため、固定Applicationより行動範囲が広くなります。まずAPIをInventory化し、機密性、外部公開範囲、Agentからの利用有無でRiskを分類します。その上でOAuth、API Gateway、IAM、Rate Limit、Audit Logを組み合わせ、Agent Identityごとに最小権限を設定することが重要です。",
-      "audio": "interview-answer-03.mp3"
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "358e886d06d3874a0e1b7c08dfe147377965bfdb51fadd2c07d66906ae32505d"
     },
     {
       "index": 4,
       "type": "question",
       "text": "LLMアプリケーションのコストをどのように最適化しますか。",
-      "audio": "interview-question-04.mp3"
+      "audio": "interview-question-04.mp3",
+      "audioHash": "e07c50a9cc5be3ab9f87f4731ed65530a574e9213a6901635defef3b6bcaee43"
     },
     {
       "index": 4,
       "type": "answer",
       "text": "Modelの単価だけでなく、Input Context、Prompt Cache、Batch、Effort、Tool Call、Request数を計測することが重要です。まず現在のUsageをProfileし、ボトルネックを確認したうえで、CacheやModel Selectionなどを一つずつ変更し、Qualityを維持できているか評価します。",
-      "audio": "interview-answer-04.mp3"
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "2f6a2ad1934a3711e370279c4b9b8a741cf89dda533676e00012e07b25e6b41a"
     },
     {
       "index": 5,
       "type": "question",
       "text": "ToolとSkillをMCP Server側で一緒に管理するメリットは何ですか。",
-      "audio": "interview-question-05.mp3"
+      "audio": "interview-question-05.mp3",
+      "audioHash": "c2dae83793513960817fb6782eac705596cd7cd76c0435e7dd9f6c8fb3f074cb"
     },
     {
       "index": 5,
       "type": "answer",
       "text": "ToolのAPI仕様だけでなく、そのToolを安全かつ正しく使う手順も同じVersionで管理できる点がメリットだと思います。Toolの引数やWorkflowが変わった時にSkillも同時に更新しやすく、Configuration Driftを減らせます。ただし、Skillの説明と実装が一致しているかは別途Testする必要があります。",
-      "audio": "interview-answer-05.mp3"
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "a560339ab340219c26863e5649ec83aad2bd7d4afef19f55d6ac85d3c325c29a"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "AI Agent向けRuntimeに必要な特徴は何ですか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "64a372a1dcc66a1c068bba7717d6d28fd612622df953191f760228ce6208832a"
     },
     {
       "index": 2,
       "text": "Coding Agentを自動起動する場合、何を事前に定義しますか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "317557ca359b5231aab21662c5d39d095a923175a8629fa7115cabebd8b9cc20"
     },
     {
       "index": 3,
       "text": "MCPのToolとSkillを同じServerで管理するメリットと注意点は何ですか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "a78de8e06b6d6a53282fc9959e8ca8e77ffacfc68fe4c22950daac036c60956c"
     }
   ]
 }

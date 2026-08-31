@@ -1,12 +1,23 @@
 {
   "date": "2026-08-13",
-  "generatedAt": "2026-08-29T04:31:16.902Z",
+  "generatedAt": "2026-08-31T20:14:01.540Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "AIコーディングエージェントを企業に導入する場合、モデル性能だけでなく、権限管理、監査ログ、外部接続、機密情報の保護を確認する必要があります。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "0674536f70d338a4218980f0f38250060db0515a87752b38858835e7f53d87c4"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "複数のLLMを使う場合、Taskの難易度に応じてModel Routingを行い、品質を維持しながらコストを最適化する方法が有効だと思います。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "2c12e06146fcbce778efb8cb101f2bbba2a93d2ffe6f8eb5884b3e82b9fd5563"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "企業でAI Agentを導入するとき何を確認しますか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "11dd5da8ae67682886b2f5540b7520cfddb5e45a9cdfc3e1d44deeb4235fc672"
     },
     {
       "index": 2,
       "text": "なぜ全部のTaskにFrontier Modelを使わないのですか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "8cbf0eb82ecd9b7f950e44470200d5d907ffedeee300bac82b161b433d6d9864"
     },
     {
       "index": 3,
       "text": "Agentの実行環境を分離するメリットは何ですか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "9e27aff77adcb320377411acedebbf90beb3f462cf7d470a6aa6326c6758550c"
     }
   ]
 }

@@ -1,12 +1,23 @@
 {
   "date": "2026-08-12",
-  "generatedAt": "2026-08-29T04:31:16.901Z",
+  "generatedAt": "2026-08-31T20:14:01.538Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "AIエージェントを本番環境で運用する場合、精度だけではなく、実行履歴や監査ログを残し、どのToolをいつ利用したか追跡できる可観測性が重要だと考えています。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "992b4f109bc4598a0b96b785457d67b89d057cf48a016ad5087ae2c902260730"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "LLMのコスト削減では、安いModelへ変更するだけでなく、検索を使って必要なContextだけを渡す設計も有効だと思います。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "3a852985daf687c8375dabfcf23f2c359cd259044ccdf295d10005fb1ce138e8"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "AIエージェントの可観測性とは何ですか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "5108aacce49d02604a31705fa5510f0e0234ec8156b50ee7b5817597fba58453"
     },
     {
       "index": 2,
       "text": "LLMの利用コストをどう削減しますか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "3bbdd45c21ce8426d6f4bf8eb05f94e7b4276f2e0b230ce562f6b92b3ca04d81"
     },
     {
       "index": 3,
       "text": "Cloud LLMとLocal LLMをどう使い分けますか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "cb03d662bec39faa67000036f400f72e40c00f468774eb4e405270e2b456951d"
     }
   ]
 }

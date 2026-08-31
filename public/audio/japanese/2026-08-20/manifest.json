@@ -1,6 +1,10 @@
 {
   "date": "2026-08-20",
-  "generatedAt": "2026-08-29T19:18:24.886Z",
+  "generatedAt": "2026-08-31T20:14:01.392Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "ひょうか",
       "exampleJa": "本番に近いTraceを使って品質評価を行います。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "a34a293435818d0485a708b5a163651433e37a4d48b82a77aaa0e992305f71ce",
+      "example": "example-01.mp3",
+      "exampleHash": "7a479129fb89177bd063f916bba2a4c2e863611490c74c8551e5e08c2095eb40"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "ちくせき",
       "exampleJa": "Failure Caseの蓄積をEvaluation Datasetの改善に活用します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "67347d7b74afa90b43cdbcc54dbbfb458dc3ef8a2501fc01fdc343e7e3e674f9",
+      "example": "example-02.mp3",
+      "exampleHash": "8f58334ef23abf442414c86e5c5a9593131ea3d3147ced054dc13a8dc4e7269c"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "しょざい",
       "exampleJa": "AgentごとにOwnerを設定し、責任の所在を明確にします。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "b94579f6eaad864f007f919ce1a9183ff930409a0539fc14b04f43f58016f6ce",
+      "example": "example-03.mp3",
+      "exampleHash": "589bea7e2b78b31df12766d4b01abfb0d30e4af6e39d5bb8165808438e3f8385"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "かんさ",
       "exampleJa": "Agent IdentityをTraceに残し、後から監査できるようにします。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "cddda010e18d2a661bff2678526f60d1ae97ff89362afeb0e90140ad3dfd4d8d",
+      "example": "example-04.mp3",
+      "exampleHash": "78b58a0b29c606e42b670492488cc8201582dbe31b257590043eb3176cc1112b"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "せきにん",
       "exampleJa": "AgentごとにOwnerと責任範囲を明確にします。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "956394b30feb08481f3c6c05421512c6a664f3991bb3f7f93c0bf4d4cc6b265e",
+      "example": "example-05.mp3",
+      "exampleHash": "4d316858809f868dd7c90d7b98f37961f4e5d7dd3ce35bbc3fe17e40889105a4"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "ほぞんする",
       "exampleJa": "PromptとTraceをVersion付きで保存します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "fe79a95b2a3e42416e8f33aea8e93aa4ea78f9e843f0109eb1b6fef9e09c2ab5",
+      "example": "example-06.mp3",
+      "exampleHash": "02736e6abadd959ab291df95d6c0d2039d0dcffb3dc25fefe50dc6e2946c79fb"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "へんこうする",
       "exampleJa": "Promptを変更したら、同じDatasetで再評価します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "2d902468a94010190fbda7acadd76facc30b948214142e702ef9034ac5c9cedd",
+      "example": "example-07.mp3",
+      "exampleHash": "ccff2bdf48a38f077d8805567202856282b91956c8ecf970160702a334c563d1"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "かいぜんする",
       "exampleJa": "失敗例をDatasetへ追加し、Prompt品質を改善します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "a8d0c18900b7c3f4125c209111fe9f2416cf3fb0dd620c84d8bb08ffd1510512",
+      "example": "example-08.mp3",
+      "exampleHash": "9e2e567c04262efb5aaa309a1dc95b2d63d7d8c32c98593ff674fc9a4721a63f"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "せんたくする",
       "exampleJa": "Taskの難易度に応じてModelを自動選択します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "227861127d38f1fdb3ae8f5e1288c4cd19a2633f160cf409a8aa673b316740aa",
+      "example": "example-09.mp3",
+      "exampleHash": "6211a96e7b65cb8a1d209a391a255c00d2f3a3a9f542c9fdfd5c4ad782cbbf99"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "ちょうせいする",
       "exampleJa": "Taskの難易度に応じてEffortを調整します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "4d8a0b496ef50cd1bc5e01e29dcbd97c596632cdfabf20574c26388b7aca1227",
+      "example": "example-10.mp3",
+      "exampleHash": "36b8f92e1bc424d1b702a87496154f4452110975286409f32f71823ed69edf2e"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "ひもづける",
       "exampleJa": "Prompt VersionとEvaluation Resultを紐付けます。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "8307a49e98f13908f21b778271eb7c9d354f9194f7a5cc0e3d80b69bbae79787",
+      "example": "example-11.mp3",
+      "exampleHash": "b27448b321e1e30e901ca63a71bcec35d0535a83ee10b9d3e90fc6b30df7d5a9"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "わりあてる",
       "exampleJa": "難しいTaskだけ高性能Modelへ割り当てます。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "f0d904e94a82be6451a1d2c8aa8ffe8a2ef9d16b8ddde7165a1a9b7f717e5fac",
+      "example": "example-12.mp3",
+      "exampleHash": "be1df2b30c0d4d0de38a26683e32611f68889ebd979f24d7582bbddd59cd12d9"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "ひきつぐ",
       "exampleJa": "Session再開時に前回のContextとTask状態を引き継ぎます。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "27f0280fefa547a7fb014c643fb49c943754c6264be55e07f21f8c8b1c248473",
+      "example": "example-13.mp3",
+      "exampleHash": "dbbbc9ec15a1a3245264200bcdc14b44a888a246037cfcbfd3455587723e4616"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "てきせつ",
       "exampleJa": "Taskごとに適切なModelとEffortを選びます。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "60f431f1d0e13296084ba416bb63a57ee48798878a059701e125308e19f838ef",
+      "example": "example-14.mp3",
+      "exampleHash": "73f0f2c229cd824037338b90f6f68d9eb95f1d0c8298d737ca0edc845987c1b3"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "めいかく",
       "exampleJa": "Agentごとに目的と責任範囲を明確にします。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "bcfba048fefd72818f8065faa67349cac692ed19584fb70981cb261979ff06c9",
+      "example": "example-15.mp3",
+      "exampleHash": "9e1e86fdc0259b63f05d02242ec9039282bcc1453c51923e3c5c5a809b93530d"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "ちょうきてき",
       "exampleJa": "長期的な運用を前提にTrace保存Policyを設計します。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "75306008bcf81d61d49d1885e8ec6368fdfc10be47fe69bdad9793c00a78a2d5",
+      "example": "example-16.mp3",
+      "exampleHash": "802d4047cf9bbbd3072c8b38a45b6cfecca4213cad05b303e75d52771f6473f5"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "あらかじめ",
       "exampleJa": "Agent Identityの必須項目をあらかじめ定義します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-17.mp3",
+      "exampleHash": "3e2a8d3014a49a858e83440b8a7a33a82dfec9849ecebdbce85003e6b4496e04"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "いちいに",
       "exampleJa": "AgentとSessionをIDで一意に識別します。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "c86dc51f50f7ff207a71c1e1ef5bca6321ed43d09cf86763fd6eef40c1316071",
+      "example": "example-18.mp3",
+      "exampleHash": "bb823c5aac22f1355e931a3d549c40ae68a3a5873c47cb2e7ff66fab69a366d3"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "けいぞくてきに",
       "exampleJa": "本番Traceを使って継続的に品質を評価します。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "3b9ed58e6b9bea666da1daf0c69b86632da97a53355505ea447867bb192e2a39",
+      "example": "example-19.mp3",
+      "exampleHash": "c2828fb5bc1a5f028bb38521f933499fe88d56d125f7e3984ac9a7f64195c423"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "高いEffortは品質を上げられる一方で、LatencyとCostも増えます。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "834c40d21f459f56d12b98932622806531c1c030d2160c8acbdca1f75f90deb0"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～にとどまらず",
       "exampleJa": "LLMOpsはPrompt管理にとどまらず、TraceやEvaluationの運用まで含みます。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "b2cbb51255389231980b884b3b8321462f150cdccf4c9799bf1128987d19c309"
     },
     {
       "index": 2,
       "pattern": "～かねない",
       "exampleJa": "Agent Identityを記録しないと、責任の所在が不明確になりかねません。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "a45c33adef9ddb0be62ab4dad66796da9ed237a3d4c6ddb2eae32213ff065b94"
     },
     {
       "index": 3,
       "pattern": "～なくしては",
       "exampleJa": "Traceと継続的なEvaluationなくしては、LLM品質の改善は難しいです。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "8952a49b3b42515f3c2ff23aa05b19a931e0650e719faa6c6b9cfe5db7153b17"
     },
     {
       "index": 4,
       "pattern": "～に応じて",
       "exampleJa": "Taskの難易度に応じてModelとEffortを切り替えます。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "969b0d53f69838ebe91516687278b92ad72a4df4fab484e18b2a0b4898269c6a"
     },
     {
       "index": 5,
       "pattern": "～たうえで",
       "exampleJa": "複数Versionを評価したうえで、本番Promptを選択します。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "3da37cad7fc78039c16d187973c4fcabc58f2e39aec4f1c0a9fa685425662985"
     },
     {
       "index": 6,
       "pattern": "～一方で",
       "exampleJa": "高性能Modelは品質が高い一方で、CostとLatencyも大きくなります。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "45ae691c332cec6509355914d3f4b7402282a0f234d629fb9af7ad73f25ad36a"
     },
     {
       "index": 7,
       "pattern": "～につれて",
       "exampleJa": "Agent数が増えるにつれて、IdentityとSession Managementも複雑になります。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "bf9113c47bd31a8939c49fb58c0f340551ffad96c1e85b35979334dea8e91664"
     }
   ]
 }

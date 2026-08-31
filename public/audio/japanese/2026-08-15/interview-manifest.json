@@ -1,12 +1,23 @@
 {
   "date": "2026-08-15",
-  "generatedAt": "2026-08-29T04:31:16.903Z",
+  "generatedAt": "2026-08-31T20:14:01.541Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "AI Agentでは、Modelだけでなく、Tool、Runtime、Sandbox、Session、Permissionまで含めてSystemとして設計する必要があると考えています。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "9fe09923518ec98ba818bc0078adad33946d5b86e37d3c7e02859d2ebfe029b1"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "Prompt Injection対策では、外部情報を信頼しないことに加えて、最小権限やSandboxで攻撃成功後の影響範囲を制限することが重要です。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "7f3ae4cfbb455f341d25f0badd539efe71066e0e8bee70099c69648c9d2789bc"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "Agent Harnessとは何ですか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "e01f6ec1b83c609ac4dad579b9437ce10efdf75a2d69ae3e26f3dec12d5cca61"
     },
     {
       "index": 2,
       "text": "Prompt Injectionにどう対策しますか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "d92a3e938c60e72a5080c3f2f9a8d075385b4085389bea9a02ef7b9406f5573b"
     },
     {
       "index": 3,
       "text": "Multi-agentで重要なことは何ですか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "6080c2356590c5b7c4663b00fe223b91c9832f1bdcb650c0474dbf63a8ed0882"
     }
   ]
 }

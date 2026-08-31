@@ -1,12 +1,23 @@
 {
   "date": "2026-08-18",
-  "generatedAt": "2026-08-29T04:31:16.905Z",
+  "generatedAt": "2026-08-31T20:14:01.545Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "企業の生成AIコスト管理では、全体のAPI料金だけでなく、UserやTeam単位のUsageを可視化し、実際のBusiness Outcomeと結び付けて評価することが重要です。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "6884868155260e41c5e1e45bd3a85065aead9958b3c1cd4d209ea3d64cec3315"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "Context Windowが大きくても、すべての情報を入れるのではなく、検索や要約で必要なContextを選択することが重要だと思います。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "80c9a64d4e26b523875b274616505a851da3393dcb710151c782284bd68f404c"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "企業で生成AIのコストをどう管理しますか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "75ea8cbc60a4e602498b5bfdd8b0051c8c5d6631564755c342451f4e63bdacd6"
     },
     {
       "index": 2,
       "text": "Long ContextでもRAGが必要なのはなぜですか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "36b7a1d6179b5a84124a70a7db742890bd6ae0820ef631b120d34194a8a20cad"
     },
     {
       "index": 3,
       "text": "Human-in-the-Loopをどう設計しますか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "1fa6346deabf6eec68acadc361b3fa2a6eec2240c69f5ff3a122edf6f2c3e781"
     }
   ]
 }

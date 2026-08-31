@@ -1,6 +1,10 @@
 {
   "date": "2026-08-18",
-  "generatedAt": "2026-08-29T19:16:53.656Z",
+  "generatedAt": "2026-08-31T20:14:01.386Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "ひよう",
       "exampleJa": "AI Serviceの費用をTeamごとに把握します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "ff21f9eaa65efd0df7a286dee6d4a5378d04f7645cf704d4edc565d30d5fb78b",
+      "example": "example-01.mp3",
+      "exampleHash": "01031e8647ae02c39956b6ffdddcbeba5ce5d394030e6b5df45d36cd32eaeee2"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "こうか",
       "exampleJa": "Agent導入前後で作業時間の削減効果を測定します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "5f7d9560ff14c4f86bfbc822b7519d14c73df6c8789c630c5243a00b5d4325b3",
+      "example": "example-02.mp3",
+      "exampleHash": "b1678887b72f3fdf860039a6f7286a15b95b0a85bf940edd2027ea7f2b0d0434"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "よさん",
       "exampleJa": "Teamごとに月次AI予算を設定します。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "e9daa99959ee3c6e84e6c7bdb3a87822e1a4f285832e4a5a413cf53b6ffe266b",
+      "example": "example-03.mp3",
+      "exampleHash": "4c7bfd2df1e6b40f4de5b129ba25ee5fd4990fbeced7f4eedd2f9c8fc3083f14"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "じょうげん",
       "exampleJa": "高価なModelには日次Cost上限を設定します。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "45395538a9c085e7e967aa7138ec063d292cfa4863c0a1f674367d473349cd85",
+      "example": "example-04.mp3",
+      "exampleHash": "6923560816f8056e998125920a4b332114fbff1321e63268ca235fe4bc942b57"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "けいこう",
       "exampleJa": "高CostになりやすいTaskの傾向を分析します。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "2dcf0257f703ebe22e31b87899c80528a228b1e586597fb47712ba4c53f3def4",
+      "example": "example-05.mp3",
+      "exampleHash": "d61835fa89bafac32cf3f609bf932364edb5488758657247ebe7d2ea49ceb31a"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "さくげんする",
       "exampleJa": "CacheとModel Routingで不要なCallを削減します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "99c6a5ae60f1a2f81d92206f283b36cc294b56218460d2e6c80b4b1a55ec3f74",
+      "example": "example-06.mp3",
+      "exampleHash": "59857c6e3d9205429afba97e5541702ccaf5ae421dda772ba44fa3a73cc0a61e"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "けいそくする",
       "exampleJa": "TaskごとのToken数とCostを計測します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "636c64a76e46940c0323a2a3333424a4de00b7a54bf787f7c55da79bedd662b9",
+      "example": "example-07.mp3",
+      "exampleHash": "ee8e218d58ff0b98db12be10346ba4fb1306e0cf9f602285cdb2aef780f28bbe"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "かしかする",
       "exampleJa": "Model別のCostと成功率をDashboardで可視化します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "37e9353df37e04201993746965eceb37cfff2cd555eaee52773ca22d87c2bc8e",
+      "example": "example-08.mp3",
+      "exampleHash": "420f23becb7daa6f0a5b65b9733fa11ea92342328c58775f6a87d8af4cf3f12c"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "かいぜんする",
       "exampleJa": "User Feedbackを基にPromptを継続的に改善します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "a8d0c18900b7c3f4125c209111fe9f2416cf3fb0dd620c84d8bb08ffd1510512",
+      "example": "example-09.mp3",
+      "exampleHash": "301067ad367cffad5267cffc28f2c25756a52a732821f16a4526676c739ecdcd"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "はんえいする",
       "exampleJa": "失敗Caseを次回のEvaluation Datasetへ反映します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "d6bb9d75823f1454a555c95f78e246e5cf0657ffc81edb2f08897174b4dd81bb",
+      "example": "example-10.mp3",
+      "exampleHash": "f3295f5f36e887cf55f8d3795f7e763a62fcf02c3d524f310ba3db8c12e30de9"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "いこうする",
       "exampleJa": "Legacy Applicationを段階的に新Architectureへ移行します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "4d1dd97abeff6d72ba977698cad111fc6e63150fe8f0a943a85bc8cc27642afe",
+      "example": "example-11.mp3",
+      "exampleHash": "1fe5d3fb4fb2dc6d04de779b0a5f0cbbf491699140302ed9d77487e71a5be6d9"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "みつもる",
       "exampleJa": "本番導入前に月間Token Costを見積もります。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "adca19d856d6ebf4349dba24da45f26d259d70296e53516eb0b42f2477483d98",
+      "example": "example-12.mp3",
+      "exampleHash": "ae0cccf3917cf9c50a61356fb080fc6f3e94cb6a2264e2cc1ffc7aea3f682269"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "かいにゅうする",
       "exampleJa": "Riskが高い操作だけ人間が介入します。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "1e35d24ac56637cff12eb1655ecd480db42d9f7c2e7bdfe8da004a7568ea2fc3",
+      "example": "example-13.mp3",
+      "exampleHash": "a8c870d7232ec8d7e11f1d92278a6ae7a81067fee95996103c71a6536720b994"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "だんかいてき",
       "exampleJa": "Migrationは段階的に進め、各段階でRollback可能にします。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "ff68c9bbd1e1340b4587751aa911a9bc1b15de0f9dd1b36926d1c3ae9aa565c8",
+      "example": "example-14.mp3",
+      "exampleHash": "d178d3d2345b44cdb7e31dcc10c4c054abe7f937c519104b52649708f0536103"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "けいぞくてき",
       "exampleJa": "継続的な計測によってCost改善の効果を確認します。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "e6dc24948f4be4021e51475763e6ad50d78e395bfb46ac8701578fc7302840f4",
+      "example": "example-15.mp3",
+      "exampleHash": "06f0f92d61aa2dda557c066e0171f0ee093b3556f037e3e5fb12644656655067"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "しんちょう",
       "exampleJa": "高Riskな自動化は効果を検証してから慎重に拡大します。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "f01c2b528ba0c18c12bd43a7bd3ee59343b9f029fded29fc95ebf952a27cfdd5",
+      "example": "example-16.mp3",
+      "exampleHash": "1f7943d30bd92832c26741083efab0e83da8fb0538fd0dadb3a11d08f1b90ede"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "じぜんに",
       "exampleJa": "本番導入前にCost上限を事前に設定します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "c33e4caf9da07e328742fecf0e4c1bc18ba3be56aaf8a8416c7522e123dbb140",
+      "example": "example-17.mp3",
+      "exampleHash": "0ad34f07b42eb958b94f6fa51193e9025da25355f5eeb328d152cb4fd1832a93"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "かならずしも",
       "exampleJa": "Long Contextを使えば必ずしもCost効率が高まるとは限りません。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "96828db9a2ff22376e83b0261f8d1f1fb0b389fa7af6b460e84f22d46cd2f15c",
+      "example": "example-18.mp3",
+      "exampleHash": "4e9aed90469eade89dd1adeadf616ed37ff025b9f31630c3b825f2882b6ce004"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "いちりつに",
       "exampleJa": "すべてのTaskを一律に高性能Modelへ送る必要はありません。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "f5f6e4a43ef6e093a1f1c333d2e4ce9412415ccb801ee4ce45e0f3eb65b449ff",
+      "example": "example-19.mp3",
+      "exampleHash": "499fe7ec915d9526c410ba1864329120258929528cbd920614ba572fe54ba5ed"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "Long Contextは大量情報を扱える一方で、Token Costが増える場合があります。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "7a27171ddcbb5bbe29d780e3204ff1f1893c0f989bcba28cc54f1c72d996c4b2"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～つつ",
       "exampleJa": "品質を維持しつつ、Model Costを削減します。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "f16136c954ecbc42d842b86e3d1516bf77719d37028e0f586164a62a278375d5"
     },
     {
       "index": 2,
       "pattern": "～に伴って",
       "exampleJa": "Agent利用の拡大に伴って、Cost Governanceの重要性も高まります。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "8d7ef7ebd8f645d71a32ccd641afc90dac6ab7a12fd67a22bb13b964ee73c1ce"
     },
     {
       "index": 3,
       "pattern": "～にとどまらず",
       "exampleJa": "AI FinOpsはToken Costの削減にとどまらず、Task当たりのBusiness Valueまで評価します。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "1a03369be9e5de64a3e213136df8c2b47a2c3b91562860bacf6af921df47c4f4"
     },
     {
       "index": 4,
       "pattern": "～に応じて",
       "exampleJa": "Business Valueに応じてAI予算を配分します。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "975ed31a11a742bb16c261e42f555ee237a7a362c0ba583398d53968ccc21941"
     },
     {
       "index": 5,
       "pattern": "～たうえで",
       "exampleJa": "Costと成功率を計測したうえで、Model Routingを調整します。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "82c2ba9677a9eece991f7b326ad2c14f4986f1ba11e8292ca70950563d7b8a50"
     },
     {
       "index": 6,
       "pattern": "～一方で",
       "exampleJa": "Long Contextは便利な一方で、Token Costが高くなることがあります。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "385cad57c5e28e1149b877330f935d2c6277defcb20eb4915cb8cc3dc28d6ac5"
     },
     {
       "index": 7,
       "pattern": "～とは限らない",
       "exampleJa": "高価なModelを使えばTask当たりCost効率が高くなるとは限りません。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "234e1f3e6d2b5705cf9cc8c969352536afd869432f59333220a812102325087d"
     }
   ]
 }

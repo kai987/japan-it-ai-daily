@@ -1,12 +1,23 @@
 {
   "date": "2026-08-26",
-  "generatedAt": "2026-08-29T04:31:16.911Z",
+  "generatedAt": "2026-08-31T20:14:01.550Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,13 +28,15 @@
       "index": 1,
       "type": "answer",
       "text": "MCPではToolを増やすことより、現在のTaskに必要なToolだけを効率的かつ安全にDiscoveryできる設計が重要になると考えています。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "e23df54b2003d05ae88de8ac044d9dc5872acc715e682b786f02ecaa3cc6c832"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "Frameworkの脆弱性対応では、Version Inventory、影響範囲、Regression Test、Staging確認まで含めて運用することが重要です。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "d69bec2d65183c0a3eaf71e461905517e83a30035863faf77f0b97fbcd82f0a4"
     }
   ],
   "review": []

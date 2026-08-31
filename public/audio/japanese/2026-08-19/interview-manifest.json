@@ -1,12 +1,23 @@
 {
   "date": "2026-08-19",
-  "generatedAt": "2026-08-29T04:31:16.906Z",
+  "generatedAt": "2026-08-31T20:14:01.545Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "AI Agentの安全性は、Promptで禁止するだけでは不十分で、SandboxやRuntime Policyで実行可能範囲を強制的に制限する必要があります。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "92abe19c6af19704c934ce14beb9ec60456013d4004acfb6bbfee8c25f8ccd88"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "MCPは標準化のメリットが運用コストを上回る場合に採用し、単一Appと少数ToolならDirect APIの方が簡単な場合もあります。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "2ae48fc6325aaa39fac82e59061aad318b671b678164cdced5f37e3cd15f8a98"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "Prompt上の禁止事項だけで安全ですか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "41811f3abe7be9138ec465272f56e4eb40067dbf2c7f71a19cc05506dd511595"
     },
     {
       "index": 2,
       "text": "MCP採用判断の基準は何ですか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "dc24245048ac64885e7c6d3a167a2317d6d080358473bfa89ecb0812976dd05e"
     },
     {
       "index": 3,
       "text": "LLM Observabilityは何を見るべきですか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "386156814f3a583974a06356f7e640b6e4b0461bd995fb8ea97fe8350b37fe62"
     }
   ]
 }

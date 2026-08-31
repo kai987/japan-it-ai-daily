@@ -1,6 +1,10 @@
 {
   "date": "2026-08-17",
-  "generatedAt": "2026-08-29T19:16:05.521Z",
+  "generatedAt": "2026-08-31T20:14:01.383Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "にんしょう",
       "exampleJa": "Browser Agentを実行する前にUser認証を行います。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "4d23e5c34dc648465c5e6fc95657769b11ce596dff6ae26de183ffa0b2ea1a91",
+      "example": "example-01.mp3",
+      "exampleHash": "734811b418288f6d1bbe870c1a063d29e2ce17abd8001844566681b939c76186"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "にんか",
       "exampleJa": "Documentごとに閲覧Accessの認可を確認します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "202281ec5e88588d6e07487e971ff07e31469ec8b9cfb105a4fb2da827aab0e8",
+      "example": "example-02.mp3",
+      "exampleHash": "e6287961b70d2b56fa1dcb304614a8c9ee01d55671a58648c51e33c6f252e133"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "しきいち",
       "exampleJa": "Confidenceが閾値を下回る場合はHuman Reviewへ回します。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "f8bc54fb875f89a70c9c1acf119c007f21edf8058585a38ce535f4827763fcc8",
+      "example": "example-03.mp3",
+      "exampleHash": "d1e2d5877a822f11f6042e1076a370c4525a8db0a18ea8bb70ac0ed36659ec21"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "こんきょ",
       "exampleJa": "回答の根拠として参照したSourceを表示します。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "a6f653ee0feb745642c64400f7f87108014c78ad8ca97c067589d143b2b36843",
+      "example": "example-04.mp3",
+      "exampleHash": "502faadee3b8ee5602bd38539c34c5f27651857bd895fcef577fbbda2ff00a3b"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "けいろ",
       "exampleJa": "Queryの種類に応じてModelへの経路を切り替えます。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "ccbcd3227e8ff8813d3cdd8a2373e913d776206f81dd4e98a613d04726c0f8e7",
+      "example": "example-05.mp3",
+      "exampleHash": "0d26ccef5aeedfef697a8654ccf68e0ccc77fb96a67dcd0885f8edb8cf2ad734"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "しゅとくする",
       "exampleJa": "認証済みTokenからUser IDを取得します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "5e4d8faed168e91710c20600a49c81ff70b77aba013110d474e4b107a27cba63",
+      "example": "example-06.mp3",
+      "exampleHash": "d7735ee25992af34529d62247983619182dd837fec44bc5c50e3e3bdff8d9a4c"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "けんさくする",
       "exampleJa": "Userの権限範囲内だけでKnowledgeを検索します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "2ab1a0da4ecbf8f41895df2b5f2303c4a220c826835a2d944a324deab2ea2ff6",
+      "example": "example-07.mp3",
+      "exampleHash": "99a10c31823205a6567f17e87f9f7321f28df432bba9cc0724d6c8d21702cd21"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "ちゅうしゅつする",
       "exampleJa": "DocumentからEntityとRelationを抽出します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "0b36024680323cbeacefbcb5caa8273efa305bfe463dd802124ca9d3c89f9f27",
+      "example": "example-08.mp3",
+      "exampleHash": "9d06b692f636d4a1595329b186116d4ba4c6b555285287bf0aa1206aea9f199d"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "さんしょうする",
       "exampleJa": "回答には参照したSourceを必ず付けます。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "ce858d2bbe6f123d399ac230b09d3f2fefc6d60ac1b2515ee23f8dbfa6705e9f",
+      "example": "example-09.mp3",
+      "exampleHash": "e68b002e780442e49ffe4d7b6641806cda85fae37d3c092bdfb480a7d6f57589"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "ほごする",
       "exampleJa": "権限Filterで機密Documentを保護します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "869c9303fb45d07736cdbe158f5b9a53b26125f1967fb77ff79dbf16e9506c78",
+      "example": "example-10.mp3",
+      "exampleHash": "6e6554cf6222a35cfced8cf0e4001e593a4200cf93b6d4f018d4e7e44098aa7a"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "かくりする",
       "exampleJa": "Browser SessionをUserごとに隔離します。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "6baaefb671b25eba4c2f1a8a4fe65ba3626a9fcb5819501e210743d25a1104f6",
+      "example": "example-11.mp3",
+      "exampleHash": "e78d9713c8e7ef5afc97ed8abfdc9b6554c8c9af621390602b715f9db7cd6475"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "しぼりこむ",
       "exampleJa": "Rerankerで候補Documentを上位十件に絞り込みます。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "de95b4a91d2cdf5ba0bee966c5ea23747913808a8c4a0545d17b60229c5a4bbd",
+      "example": "example-12.mp3",
+      "exampleHash": "6a2eb66600db4bd1d75b21292ccf624c481a7ae81be117e9d6841daf1c7c17f3"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "ついせきする",
       "exampleJa": "回答から元DocumentまでSourceを追跡できるようにします。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "a194303a6363499e5a9e3bb46b976a247643951a558407e3aff55842a978be1a",
+      "example": "example-13.mp3",
+      "exampleHash": "cf1389aa609b72c098edffd9b3023b9f04e649c6f49d44f11b1e36a1dc9d238d"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "てきせつ",
       "exampleJa": "Taskの難易度とCostに応じて適切なModelを選びます。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "60f431f1d0e13296084ba416bb63a57ee48798878a059701e125308e19f838ef",
+      "example": "example-14.mp3",
+      "exampleHash": "fe90eaa6663f2b59a8b10fc04ac78b819c72ff691a9c2c772650669826a29bad"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "あんぜん",
       "exampleJa": "外部Dataへは安全なGateway経由でAccessします。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "d91f4bb6e2d409918302ae7ca964d095f2060804de0fa6785f22934b74dd7d69",
+      "example": "example-15.mp3",
+      "exampleHash": "7d0ad1d52d5bdf8610e474cb50cda3a465357711804d3dca5c0ee91522ca1deb"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "めいかく",
       "exampleJa": "Modelを切り替えた判断根拠を明確に残します。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "bcfba048fefd72818f8065faa67349cac692ed19584fb70981cb261979ff06c9",
+      "example": "example-16.mp3",
+      "exampleHash": "6ad93ccfd4ec5d5e494ed22290a6cfbb03d9103b2dc536534344b14fd6a74f03"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "あらかじめ",
       "exampleJa": "閲覧可能なDocument範囲をあらかじめPolicyで定義します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-17.mp3",
+      "exampleHash": "948bbcc9da63eb9c50690a1cd1b87d7ec4a86c59243bbf3b3cda94a6935936b1"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "げんみつに",
       "exampleJa": "Tenant境界を厳密に分けて検索結果をFilterします。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "930cbc0bfa332c9ef78d221d14aca3a31928db7a4964c10efcf3279e46c570ee",
+      "example": "example-18.mp3",
+      "exampleHash": "b116fccbd98a581ae9873e7fc60bc5c11458c57c4dd19847f0704790aca75017"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "かならず",
       "exampleJa": "生成回答には参照Sourceを必ず付けます。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "66cc17bfda9afb86312bcdf93c3d797b9f5baf80dc86e6cfbf480481c532e3b4",
+      "example": "example-19.mp3",
+      "exampleHash": "754c74786d32825affa14779849e5aac711f37fdccd2f0b8650fb08351c01a5e"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "GraphRAGは関係情報を扱いやすい一方で、Graph構築のCostが増えます。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "d1569d88aba66bf18e3174b757453733705c3ea8447985231029e5e4f0d743fb"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～ことなく",
       "exampleJa": "機密Dataを外部へ送信することなく検索を実行します。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "5ffb36e3a817e9c7fc26b1da40b20871ae8827332c2794a2d3c4ab1a533380be"
     },
     {
       "index": 2,
       "pattern": "～恐れがある",
       "exampleJa": "権限Filterが不十分だと機密情報が漏えいする恐れがあります。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "37543c3a0b26474d802e8e6aa30589ce5767153bae2a3ac1b64d6e236e0ae827"
     },
     {
       "index": 3,
       "pattern": "～にとどまらず",
       "exampleJa": "Secure RAGは検索精度にとどまらず、認証・認可や監査まで設計する必要があります。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "205bc79d91eda3d6a3371b6fbe9c5bae54223c1ba8faaac13c65614fdb6c5596"
     },
     {
       "index": 4,
       "pattern": "～に基づいて",
       "exampleJa": "UserのRoleに基づいて検索範囲を制御します。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "4dd7141be1b7f9c7b5e916c311a509b4671d44a12b8213fda2ba05d55b00947e"
     },
     {
       "index": 5,
       "pattern": "～に応じて",
       "exampleJa": "Taskの難易度に応じてModelをRoutingします。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "9ec2fd999c588487cc8218c9413b57f075596c7a4526820e87554f994ad5416c"
     },
     {
       "index": 6,
       "pattern": "～た上で",
       "exampleJa": "Userを認証した上で、Document Accessを認可します。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "36649d64145c3e63de664c592e2d32f6a6b390da27d027845a64e94625dad4d9"
     },
     {
       "index": 7,
       "pattern": "～にかかわらず",
       "exampleJa": "利用するModelにかかわらず、TenantのAccess Policyを適用します。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "cf78fd9523bad6ce27a05a32e6b5d69f057332cb874c5e5d456bb5ed72a5309c"
     }
   ]
 }

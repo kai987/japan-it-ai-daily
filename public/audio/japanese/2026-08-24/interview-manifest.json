@@ -1,12 +1,23 @@
 {
   "date": "2026-08-24",
-  "generatedAt": "2026-08-29T04:31:16.910Z",
+  "generatedAt": "2026-08-31T20:14:01.549Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "PromptやCLAUDE.mdは行動方針を伝えるために有効ですが、Security Boundaryとしては不十分で、Runtime PermissionでCapabilityを強制的に制限する必要があります。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "5ede979c5fa96a8554401ee8e86354b5c9759126e438934c13ebaa056fa63a1b"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "AI Coding AgentをTeamに導入しても、既存のCode Review、Repository Permission、Approval Ruleを迂回させないことが重要です。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "85b60dce4bf5d0c93f2365aa3b44e4f50fa910f53e730beab42426e389520a85"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "PromptとRuntime Permissionの違いは何ですか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "aed6ef65ce59b71ba9b94de3c62c279fdca93037eb983d99d829f29170d687cf"
     },
     {
       "index": 2,
       "text": "Approval Fatigueをどう防ぎますか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "3bb1cb1ef48319f0dbf79c29063e039ee294be65e3d147a8218cc027ad1594f9"
     },
     {
       "index": 3,
       "text": "AI導入で成果が出ない理由は何ですか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "a9a02fb96574c3f607d7786c20485167ff07be3b3eaf4da0cb0588bb98bdd81e"
     }
   ]
 }

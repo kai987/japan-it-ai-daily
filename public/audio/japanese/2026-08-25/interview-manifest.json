@@ -1,12 +1,23 @@
 {
   "date": "2026-08-25",
-  "generatedAt": "2026-08-29T04:31:16.911Z",
+  "generatedAt": "2026-08-31T20:14:01.549Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "Team向けCoding AgentでもRepository PermissionやCode Reviewを維持し、AI経由だからといって既存Governanceを迂回させないことが重要です。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "e62a2dad134a96cfab4b6288a4cfdbc2a9e9bea50060d00db5e0f57428086eff"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "Long-running Agentでは、Sessionを単なるProcessではなく、状態、Workspace、Permission、Costを持つLifecycleとして管理する必要があります。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "f1a4a876baa89e5ab7fc93be1a75ed4b3bd28d8447a7cb47dc9f3d47f430f5a3"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "Team Agentを導入するとき何を維持しますか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "4c41f806ae9e0fbc311d61339c4c1ab468a030f3fc7ca02c286503a5e358ccfd"
     },
     {
       "index": 2,
       "text": "Speculative Decodingとは何ですか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "12867dc4ac03bcf8bd915a1a752cf2b144c5062b624713347fbc2bc704aa216b"
     },
     {
       "index": 3,
       "text": "Long-running Agentで何を管理しますか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "7d1169a186a93dc4b0a3c7f09d2b8e269cb864f5b7c114c39cac5ed54ac4a648"
     }
   ]
 }

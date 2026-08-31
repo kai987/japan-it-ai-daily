@@ -1,6 +1,10 @@
 {
   "date": "2026-08-24",
-  "generatedAt": "2026-08-29T19:21:23.481Z",
+  "generatedAt": "2026-08-31T20:14:01.402Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
   "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
@@ -27,7 +31,9 @@
       "reading": "けんげん",
       "exampleJa": "Commandごとに必要な権限を設定します。",
       "word": "vocab-01.mp3",
-      "example": "example-01.mp3"
+      "wordHash": "476cd8e57b29f548b509e610b9a741d1f5238b2333b53d9de116b405e2add18b",
+      "example": "example-01.mp3",
+      "exampleHash": "f820ea25cf046890c519a9fff3d21ad86d3a7ecbc780e80d09c3a55662e98b26"
     },
     {
       "index": 2,
@@ -35,7 +41,9 @@
       "reading": "りようりょう",
       "exampleJa": "Team別の利用量をDashboardで可視化します。",
       "word": "vocab-02.mp3",
-      "example": "example-02.mp3"
+      "wordHash": "bc129cff3d2e4c20bd531caba6facef22b46cc9f19d7e1cdb89b458a72fbd5b0",
+      "example": "example-02.mp3",
+      "exampleHash": "44dd97150c4b1364dd2077283bc6968466fe179912d9bc85fda97f025285e2dd"
     },
     {
       "index": 3,
@@ -43,7 +51,9 @@
       "reading": "せいさんせい",
       "exampleJa": "AI Toolの利用率だけでなく開発生産性への効果も測定します。",
       "word": "vocab-03.mp3",
-      "example": "example-03.mp3"
+      "wordHash": "23583676cced88bbf65d2f0d8f56d9c94be6c32340a4dbb41cdf1b00b536d82b",
+      "example": "example-03.mp3",
+      "exampleHash": "5ee315c378bec7dda4dea2ff23139887f74de508ba51cdf35d34f4d47a1cd600"
     },
     {
       "index": 4,
@@ -51,7 +61,9 @@
       "reading": "へんかく",
       "exampleJa": "AI導入を単なるTool追加ではなく業務変革として進めます。",
       "word": "vocab-04.mp3",
-      "example": "example-04.mp3"
+      "wordHash": "cd1f0054c7b1480f12b58b4bbe12b9c7a28614950d71c128e2e036b20d17ba30",
+      "example": "example-04.mp3",
+      "exampleHash": "047b954b85ccc10425320182f94a484eeaeec8cf2eac8e231e36eea27bc8e95f"
     },
     {
       "index": 5,
@@ -59,7 +71,9 @@
       "reading": "かんさ",
       "exampleJa": "Permission変更とAgent操作を定期的に監査します。",
       "word": "vocab-05.mp3",
-      "example": "example-05.mp3"
+      "wordHash": "cddda010e18d2a661bff2678526f60d1ae97ff89362afeb0e90140ad3dfd4d8d",
+      "example": "example-05.mp3",
+      "exampleHash": "96e9bdcdabe5433643dd938d90a78f801b208332eb99434df51a4bb2b24e2b1d"
     },
     {
       "index": 6,
@@ -67,7 +81,9 @@
       "reading": "おくる",
       "exampleJa": "AgentがSlackへMessageを送る前に内容を確認します。",
       "word": "vocab-06.mp3",
-      "example": "example-06.mp3"
+      "wordHash": "5208818a3a474ddbef1eb109c827587100dca3faf4c8dd1fa78fe5d56c05a7d1",
+      "example": "example-06.mp3",
+      "exampleHash": "630625557fa76a0694fce4ae7a536dd43cd3691d40868b4e44e2411a706b63d4"
     },
     {
       "index": 7,
@@ -75,7 +91,9 @@
       "reading": "きょかする",
       "exampleJa": "安全なRead操作だけを自動的に許可します。",
       "word": "vocab-07.mp3",
-      "example": "example-07.mp3"
+      "wordHash": "5b8a0b988cac8da8a0c76d41693bdd7aca5a46f9281ab02432254805f6e77aab",
+      "example": "example-07.mp3",
+      "exampleHash": "dc74a5018c340128d5cc205c480269b733904557b24812b55c4c3de85e51a233"
     },
     {
       "index": 8,
@@ -83,7 +101,9 @@
       "reading": "じっこうする",
       "exampleJa": "外部へのWrite操作は承認後に実行します。",
       "word": "vocab-08.mp3",
-      "example": "example-08.mp3"
+      "wordHash": "dfa5cb8f0e587f51d6d410f8054bd0151c49c28ef505be7e764a3f5545c5ba64",
+      "example": "example-08.mp3",
+      "exampleHash": "35cbbbc73d7d39c740af38c7e7cdbb2ac5b01a97f892da094c7a399ba592a2fe"
     },
     {
       "index": 9,
@@ -91,7 +111,9 @@
       "reading": "けいそくする",
       "exampleJa": "UserごとのToken利用量を計測します。",
       "word": "vocab-09.mp3",
-      "example": "example-09.mp3"
+      "wordHash": "636c64a76e46940c0323a2a3333424a4de00b7a54bf787f7c55da79bedd662b9",
+      "example": "example-09.mp3",
+      "exampleHash": "e7f74e41a2e7719956dc96dbc0efd94b5d25e6bf61a58299e7b027c91c5e2bdf"
     },
     {
       "index": 10,
@@ -99,7 +121,9 @@
       "reading": "いこうする",
       "exampleJa": "Node.jsの一部ToolingをBunへ段階的に移行します。",
       "word": "vocab-10.mp3",
-      "example": "example-10.mp3"
+      "wordHash": "4d1dd97abeff6d72ba977698cad111fc6e63150fe8f0a943a85bc8cc27642afe",
+      "example": "example-10.mp3",
+      "exampleHash": "669d3f2d70453d5ed993a045430852a772c17959cbf74902d6343c97d7de4024"
     },
     {
       "index": 11,
@@ -107,7 +131,9 @@
       "reading": "おきかえる",
       "exampleJa": "互換性を確認しながら既存RuntimeをBunへ置き換えます。",
       "word": "vocab-11.mp3",
-      "example": "example-11.mp3"
+      "wordHash": "4a6ce727375df0b882ca7cf22309669e73469f62cf6a5621bd086003849f2ac0",
+      "example": "example-11.mp3",
+      "exampleHash": "98bc8c796aad01e7ed11155404bcdb76619591ff2f6fd575fec02929454befc8"
     },
     {
       "index": 12,
@@ -115,7 +141,9 @@
       "reading": "どうにゅうする",
       "exampleJa": "Coding Agentを一部Teamから段階的に導入します。",
       "word": "vocab-12.mp3",
-      "example": "example-12.mp3"
+      "wordHash": "765e17735e56f812615107d8d0e2c39a6d1b940a0c2a4dc77ad783c44594869f",
+      "example": "example-12.mp3",
+      "exampleHash": "f4c507c74febf480fe80c4a36c9bcb2f294c8e2dc8cb4251f63cd0f1dd1891dd"
     },
     {
       "index": 13,
@@ -123,7 +151,9 @@
       "reading": "ていちゃくさせる",
       "exampleJa": "TrainingとTemplateでAgent利用をTeamに定着させます。",
       "word": "vocab-13.mp3",
-      "example": "example-13.mp3"
+      "wordHash": "c910a69d63f54767bb2887aa2c15ddc4e48a5ba8d528c38d8199a3677e1a1dba",
+      "example": "example-13.mp3",
+      "exampleHash": "c427d8469a1a0ec192485a16e88f2d064e2ebfc3cd7d1e58c731d05d10056f5d"
     },
     {
       "index": 14,
@@ -131,7 +161,9 @@
       "reading": "あんぜん",
       "exampleJa": "安全なRead操作だけを自動許可します。",
       "word": "vocab-14.mp3",
-      "example": "example-14.mp3"
+      "wordHash": "d91f4bb6e2d409918302ae7ca964d095f2060804de0fa6785f22934b74dd7d69",
+      "example": "example-14.mp3",
+      "exampleHash": "d84c617095ba48f8324a241410586e00a2fcca161c8e5bef9608c9ab73bfcb49"
     },
     {
       "index": 15,
@@ -139,7 +171,9 @@
       "reading": "じゅうよう",
       "exampleJa": "利用率だけでなく生産性を測ることが重要です。",
       "word": "vocab-15.mp3",
-      "example": "example-15.mp3"
+      "wordHash": "6d8947d2e6730fbda25bcfd4b101af8a93945b34184986fc887283f53e0ea47b",
+      "example": "example-15.mp3",
+      "exampleHash": "2ce86326e422ec2d54ddb42f0a61be99956400cbb2301c7e78cda59f52ed32c3"
     },
     {
       "index": 16,
@@ -147,7 +181,9 @@
       "reading": "だんかいてき",
       "exampleJa": "Migrationを段階的に進め、各StepでRegressionを確認します。",
       "word": "vocab-16.mp3",
-      "example": "example-16.mp3"
+      "wordHash": "ff68c9bbd1e1340b4587751aa911a9bc1b15de0f9dd1b36926d1c3ae9aa565c8",
+      "example": "example-16.mp3",
+      "exampleHash": "59ea5882ac3775bb3956a56ddbaf79cb850631ab9778726a2ea39c0dc6a5430f"
     },
     {
       "index": 17,
@@ -155,7 +191,9 @@
       "reading": "あらかじめ",
       "exampleJa": "危険なCommandのPermission Ruleをあらかじめ設定します。",
       "word": "vocab-17.mp3",
-      "example": "example-17.mp3"
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-17.mp3",
+      "exampleHash": "26dfbabd72f68623329604eb3f92602ef97c778bcecc7abc8a70fbf3593de571"
     },
     {
       "index": 18,
@@ -163,7 +201,9 @@
       "reading": "じどうてきに",
       "exampleJa": "低RiskなRead操作は自動的に許可します。",
       "word": "vocab-18.mp3",
-      "example": "example-18.mp3"
+      "wordHash": "8b952ca647a10d95aebb28d1d82a6b99bdc80440732620a12cdb6890e33d8b83",
+      "example": "example-18.mp3",
+      "exampleHash": "27f4215eed57dca3f37d36081fa974fd9a8b2c991966fd2ce839263fc1dc553e"
     },
     {
       "index": 19,
@@ -171,7 +211,9 @@
       "reading": "けいぞくてきに",
       "exampleJa": "利用状況と生産性を継続的に計測します。",
       "word": "vocab-19.mp3",
-      "example": "example-19.mp3"
+      "wordHash": "3b9ed58e6b9bea666da1daf0c69b86632da97a53355505ea447867bb192e2a39",
+      "example": "example-19.mp3",
+      "exampleHash": "8eeb10bb4d45e7893c20ef55dfbe75693513f675c6f5926a7843afbfc4d80317"
     },
     {
       "index": 20,
@@ -179,7 +221,9 @@
       "reading": "いっぽうで",
       "exampleJa": "自動許可は便利な一方で、誤操作のRiskも高まります。",
       "word": "vocab-20.mp3",
-      "example": "example-20.mp3"
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "9751580244bd0809b25481e189e189711d8332223aed70ebcc3c3aaa7607e3f3"
     }
   ],
   "grammar": [
@@ -187,43 +231,50 @@
       "index": 1,
       "pattern": "～に伴って",
       "exampleJa": "Agent利用の普及に伴って、Meteringと監査の重要性も高まります。",
-      "example": "grammar-example-01.mp3"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "fe1a40b2bd590f358f5769c6c3d3e257a18066539f8dd153a16f49e08197a3b6"
     },
     {
       "index": 2,
       "pattern": "～にとどまらず",
       "exampleJa": "AI TransformationはTool導入にとどまらず、業務Processや組織文化の変革まで含みます。",
-      "example": "grammar-example-02.mp3"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "2be622402c696e69e821d00d3abbc3f46cbc44f2538e97fe82d621a4c494854e"
     },
     {
       "index": 3,
       "pattern": "～なくしては",
       "exampleJa": "継続的なTrainingなくしては、Agent利用を組織に定着させるのは難しいです。",
-      "example": "grammar-example-03.mp3"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "dfb96dfff8b5412eeb87295bdc958de1ac660c2350c920f55e108241fa080276"
     },
     {
       "index": 4,
       "pattern": "～に応じて",
       "exampleJa": "利用量に応じてCostをTeamへ配賦します。",
-      "example": "grammar-example-04.mp3"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "10e2680a5a20c3fa60f672de45f7d5f4fe5f14694b8ae79b8eaa934c0e893df8"
     },
     {
       "index": 5,
       "pattern": "～一方で",
       "exampleJa": "自動許可は開発速度を上げる一方で、誤操作Riskも高めます。",
-      "example": "grammar-example-05.mp3"
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "e6dc51ce72338110feda5c4191e77d787d0e1d550d0af3d7def64162b296fd7f"
     },
     {
       "index": 6,
       "pattern": "～た上で",
       "exampleJa": "互換性とPerformanceを確認した上でBunへ移行します。",
-      "example": "grammar-example-06.mp3"
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "5afb2a81133410592d869be8e864a44bab62d0ed4db536cb88a8275bea45f078"
     },
     {
       "index": 7,
       "pattern": "～につれて",
       "exampleJa": "利用者が増えるにつれて、Permission管理も複雑になります。",
-      "example": "grammar-example-07.mp3"
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "2815633a9a732f9c8724c52488997e844f974ba585ff442640bd2a7449652140"
     }
   ]
 }

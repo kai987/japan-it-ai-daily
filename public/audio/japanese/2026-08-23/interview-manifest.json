@@ -1,12 +1,23 @@
 {
   "date": "2026-08-23",
-  "generatedAt": "2026-08-29T04:31:16.909Z",
+  "generatedAt": "2026-08-31T20:14:01.548Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
   "voice": {
     "name": "morioki",
     "style": "ノーマル",
     "styleId": 497929760,
     "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
     "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
   },
   "settings": {
     "speed": 1,
@@ -17,30 +28,35 @@
       "index": 1,
       "type": "answer",
       "text": "LLMに判断させる部分と、Workflow StateやApprovalのようにプログラムで決定的に制御する部分を分離することが重要だと思います。",
-      "audio": "interview-answer-01.mp3"
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "cb11b8acb07c5a9a764a78bd62ad35d1f2fd5850ffb8e15d7ec8a686a11ea46f"
     },
     {
       "index": 2,
       "type": "answer",
       "text": "AI CostはModel Priceだけでなく、Context、Request数、Processing Mode、Budgetまで含めて管理する必要があります。",
-      "audio": "interview-answer-02.mp3"
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "360b467d3a1fbec42221e3ff5d1d1c3d3fa8508718fc6700fa08ee7d3f537f6c"
     }
   ],
   "review": [
     {
       "index": 1,
       "text": "Agent Workflowを全部LLMに任せない理由は何ですか。",
-      "audio": "review-question-01.mp3"
+      "audio": "review-question-01.mp3",
+      "audioHash": "8b76fe5d582f96ac9b6ec67fda8f4ea53d9fe66e7d2370e8ecbd9b888dbe4aaa"
     },
     {
       "index": 2,
       "text": "LLM Routerは何を評価しますか。",
-      "audio": "review-question-02.mp3"
+      "audio": "review-question-02.mp3",
+      "audioHash": "2b1ef0fc9634bde1657ac46068e65a607a6264c6c8b57e1f25fdb5513270b916"
     },
     {
       "index": 3,
       "text": "VLMで曖昧な結果をどう扱いますか。",
-      "audio": "review-question-03.mp3"
+      "audio": "review-question-03.mp3",
+      "audioHash": "2a902473f0ab7742317030f030a043c63faf4af87404f308fe2787b04b20d197"
     }
   ]
 }
