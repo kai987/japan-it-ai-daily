@@ -36,5 +36,7 @@ jobs:
         run: npm test
       - name: Build
         run: npm run build
+      - name: Strip CDN-hosted MP3 from artifact
+        run: npm run audio:strip-dist
       - name: Verify CSP
         run: npm run security:check
