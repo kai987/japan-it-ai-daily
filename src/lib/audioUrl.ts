@@ -26,24 +26,36 @@ const normalizeExternalAudioBase = (value: string | undefined): URL | null => {
 };
 
 const encodeSegment = (value: unknown): string => encodeURIComponent(String(value ?? '').trim());
+const encodedPath = (segments: readonly unknown[]): string =>
+  segments.map(encodeSegment).filter(Boolean).join('/');
+
+export const resolveLocalAudioAssetUrl = (
+  segments: readonly unknown[],
+  siteBaseUrl = '/',
+): string => `${normalizeSiteBase(siteBaseUrl)}audio/${encodedPath(segments)}`;
 
 export const resolveAudioAssetUrl = (
   segments: readonly unknown[],
   options: AudioUrlOptions = {},
 ): string => {
-  const encodedPath = segments.map(encodeSegment).filter(Boolean).join('/');
+  const path = encodedPath(segments);
   const externalBase = normalizeExternalAudioBase(options.audioBaseUrl);
 
   if (externalBase) {
-    return new URL(encodedPath, externalBase).href;
+    return new URL(path, externalBase).href;
   }
 
-  const siteBase = normalizeSiteBase(options.siteBaseUrl);
-  return `${siteBase}audio/${encodedPath}`;
+  return resolveLocalAudioAssetUrl(segments, options.siteBaseUrl);
 };
+
+export const localAudioAssetUrl = (...segments: readonly unknown[]): string =>
+  resolveLocalAudioAssetUrl(segments, import.meta.env.BASE_URL);
 
 export const configuredAudioAssetUrl = (...segments: readonly unknown[]): string =>
   resolveAudioAssetUrl(segments, {
     audioBaseUrl: import.meta.env.PUBLIC_AUDIO_BASE_URL,
     siteBaseUrl: import.meta.env.BASE_URL,
   });
+
+export const hasExternalAudioBase = (): boolean =>
+  normalizeExternalAudioBase(import.meta.env.PUBLIC_AUDIO_BASE_URL) !== null;
