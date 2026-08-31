@@ -31,18 +31,20 @@ export default defineConfig({
         "connect-src 'self'",
         "worker-src 'none'",
         "manifest-src 'self'",
-        "script-src-attr 'none'",
-        "style-src-attr 'unsafe-inline'",
         'upgrade-insecure-requests'
       ],
       scriptDirective: {
         resources: [
-          "'self'",
-          ...verifiedInlineScripts
+          { resource: "'self'", kind: 'element' },
+          ...verifiedInlineScripts.map((resource) => ({ resource, kind: 'element' })),
+          { resource: "'none'", kind: 'attribute' }
         ]
       },
       styleDirective: {
-        resources: ["'self'"]
+        resources: [
+          { resource: "'self'", kind: 'element' },
+          { resource: "'unsafe-inline'", kind: 'attribute' }
+        ]
       }
     }
   },
