@@ -5,6 +5,7 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
 
 <script>
   type MermaidApi = typeof import('mermaid')['default'];
+  type MermaidConfig = Parameters<MermaidApi['initialize']>[0];
   type CodeBlock = { pre: HTMLPreElement; code: HTMLElement };
   type Layer = { title: string; detail: string };
 
@@ -114,7 +115,7 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
     });
   };
 
-  const themeConfig = () => {
+  const themeConfig = (): MermaidConfig => {
     const dark = document.documentElement.dataset.theme === 'dark';
     return {
       startOnLoad: false,
