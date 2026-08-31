@@ -33,6 +33,8 @@ jobs:
         run: npm audit --audit-level=high
       - name: Build
         run: npm run build
+      - name: Verify CSP
+        run: npm run security:check
       - name: Setup Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - name: Upload artifact
