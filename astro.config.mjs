@@ -31,24 +31,25 @@ export default defineConfig({
         "connect-src 'self'",
         "worker-src 'none'",
         "manifest-src 'self'",
+        "script-src-attr 'none'",
+        "style-src-attr 'unsafe-inline'",
         'upgrade-insecure-requests'
       ],
       scriptDirective: {
         resources: [
           "'self'",
-          ...verifiedInlineScripts,
-          { resource: "'none'", kind: 'attribute' }
+          ...verifiedInlineScripts
         ]
       },
       styleDirective: {
-        resources: [
-          "'self'",
-          { resource: "'unsafe-inline'", kind: 'attribute' }
-        ]
+        resources: ["'self'"]
       }
     }
   },
   markdown: {
-    shikiConfig: { theme: 'github-light' }
+    syntaxHighlight: {
+      type: 'prism',
+      excludeLangs: ['mermaid', 'math']
+    }
   }
 });
