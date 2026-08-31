@@ -32,6 +32,21 @@ const parseLegacyFlow = (source: unknown): FlowDiagram | null => {
   return { kind: 'flow', nodes, direction: 'vertical' };
 };
 
+const circledNumbers = [
+  '①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩',
+  '⑪', '⑫', '⑬', '⑭', '⑮', '⑯', '⑰', '⑱', '⑲', '⑳',
+];
+
+const leadingStepNumber = (title: string): number | null => {
+  const circledIndex = circledNumbers.findIndex((marker) => title.startsWith(marker));
+  if (circledIndex >= 0) return circledIndex + 1;
+
+  const numeric = title.match(/^(\d{1,2})(?:[.)、．]\s*|\s+)/);
+  if (!numeric) return null;
+  const value = Number(numeric[1]);
+  return Number.isInteger(value) && value > 0 ? value : null;
+};
+
 const parseLayerStack = (source: unknown): LayerDiagram | null => {
   const lines = textLines(source);
   if (lines.length < 4 || lines.length % 2 !== 0) return null;
@@ -41,10 +56,10 @@ const parseLayerStack = (source: unknown): LayerDiagram | null => {
   for (let index = 0; index < lines.length; index += 2) {
     const title = lines[index];
     const detail = lines[index + 1];
-    if (!title || !detail) return null;
+    if (!title || !detail || detail === '↓') return null;
 
-    const numbered = /^(?:[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]|\d+[.)]?)/.test(title);
-    if (!numbered || !/layer|レイヤー/i.test(title) || detail === '↓') return null;
+    const expectedStep = index / 2 + 1;
+    if (leadingStepNumber(title) !== expectedStep) return null;
     layers.push({ title, detail });
   }
 
