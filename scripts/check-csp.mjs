@@ -2,6 +2,16 @@ import { createHash } from 'node:crypto';
 import { readdir, readFile } from 'node:fs/promises';
 
 const root = new URL('../dist/', import.meta.url);
+const configuredAudioBase = process.env.PUBLIC_AUDIO_BASE_URL?.trim() || '';
+let expectedAudioOrigin = '';
+
+if (configuredAudioBase) {
+  const audioUrl = new URL(configuredAudioBase);
+  if (audioUrl.protocol !== 'https:') {
+    throw new Error('PUBLIC_AUDIO_BASE_URL must use HTTPS');
+  }
+  expectedAudioOrigin = audioUrl.origin;
+}
 
 const collectHtml = async (dirUrl) => {
   const entries = await readdir(dirUrl, { withFileTypes: true });
@@ -55,6 +65,14 @@ for (const fileUrl of htmlFiles) {
     failures.push(`${fileUrl.pathname}: script-src-attr must contain 'none'`);
   }
 
+  const mediaSources = directiveValue(csp, 'media-src');
+  if (!mediaSources.includes("'self'")) {
+    failures.push(`${fileUrl.pathname}: media-src must contain 'self'`);
+  }
+  if (expectedAudioOrigin && !mediaSources.split(/\s+/).includes(expectedAudioOrigin)) {
+    failures.push(`${fileUrl.pathname}: media-src must allow configured audio origin ${expectedAudioOrigin}`);
+  }
+
   const scriptPattern = /<script([^>]*)>([\s\S]*?)<\/script>/gi;
   for (const match of html.matchAll(scriptPattern)) {
     const attrs = match[1] ?? '';
@@ -75,3 +93,4 @@ if (failures.length) {
 }
 
 console.log(`CSP verification passed for ${htmlFiles.length} HTML files.`);
+if (expectedAudioOrigin) console.log(`Configured audio CDN allowed by media-src: ${expectedAudioOrigin}`);
