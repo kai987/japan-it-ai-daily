@@ -4,25 +4,29 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
 ---
 
 <script>
-  let mermaidPromise = null;
+  type MermaidApi = typeof import('mermaid')['default'];
+  type CodeBlock = { pre: HTMLPreElement; code: HTMLElement };
+  type Layer = { title: string; detail: string };
 
-  const loadMermaid = () => {
+  let mermaidPromise: Promise<MermaidApi> | null = null;
+
+  const loadMermaid = (): Promise<MermaidApi> => {
     if (!mermaidPromise) {
       mermaidPromise = import('mermaid').then((module) => module.default);
     }
     return mermaidPromise;
   };
 
-  const escapeLabel = (value) => String(value ?? '')
+  const escapeLabel = (value: unknown): string => String(value ?? '')
     .replace(/\\/g, '\\\\')
     .replace(/"/g, '\\"');
 
-  const textLines = (source) => String(source ?? '')
+  const textLines = (source: unknown): string[] => String(source ?? '')
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter(Boolean);
 
-  const legacyTextFlowToMermaid = (source) => {
+  const legacyTextFlowToMermaid = (source: unknown): string => {
     const lines = textLines(source);
 
     if (lines.length < 3 || !lines.includes('↓')) return '';
@@ -39,17 +43,19 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
     return `flowchart TD\n  ${definitions.join('\n  ')}\n  ${path}`;
   };
 
-  const legacyLayerStackToMermaid = (source) => {
+  const legacyLayerStackToMermaid = (source: unknown): string => {
     const lines = textLines(source);
     if (lines.length < 4 || lines.length % 2 !== 0) return '';
     if (lines.length > 16 || lines.some((line) => line.length > 100)) return '';
 
-    const layers = [];
+    const layers: Layer[] = [];
     for (let index = 0; index < lines.length; index += 2) {
       const title = lines[index];
       const detail = lines[index + 1];
+      if (!title || !detail) return '';
+
       const numbered = /^(?:[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]|\d+[.)]?)/.test(title);
-      if (!numbered || !/layer|レイヤー/i.test(title) || !detail || detail === '↓') return '';
+      if (!numbered || !/layer|レイヤー/i.test(title) || detail === '↓') return '';
       layers.push({ title, detail });
     }
 
@@ -62,10 +68,10 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
     return `flowchart TD\n  ${definitions.join('\n  ')}\n  ${path}`;
   };
 
-  const legacyTextToMermaid = (source) =>
+  const legacyTextToMermaid = (source: unknown): string =>
     legacyTextFlowToMermaid(source) || legacyLayerStackToMermaid(source);
 
-  const makeDiagram = (source, replacementTarget) => {
+  const makeDiagram = (source: string, replacementTarget: Element): HTMLElement => {
     const root = document.createElement('div');
     root.className = 'mermaid-diagram';
     root.dataset.mermaidSource = source;
@@ -74,19 +80,19 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
     return root;
   };
 
-  const findCodeBlocks = (language) => {
-    const blocks = [];
-    const seen = new Set();
+  const findCodeBlocks = (language: string): CodeBlock[] => {
+    const blocks: CodeBlock[] = [];
+    const seen = new Set<HTMLPreElement>();
 
-    document.querySelectorAll(`pre[data-language="${language}"]`).forEach((pre) => {
-      if (!(pre instanceof HTMLPreElement) || seen.has(pre)) return;
-      const code = pre.querySelector(':scope > code');
-      if (!(code instanceof HTMLElement)) return;
+    document.querySelectorAll<HTMLPreElement>(`pre[data-language="${language}"]`).forEach((pre) => {
+      if (seen.has(pre)) return;
+      const code = pre.querySelector<HTMLElement>(':scope > code');
+      if (!code) return;
       seen.add(pre);
       blocks.push({ pre, code });
     });
 
-    document.querySelectorAll(`pre > code.language-${language}`).forEach((code) => {
+    document.querySelectorAll<HTMLElement>(`pre > code.language-${language}`).forEach((code) => {
       const pre = code.parentElement;
       if (!(pre instanceof HTMLPreElement) || seen.has(pre)) return;
       seen.add(pre);
@@ -96,7 +102,7 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
     return blocks;
   };
 
-  const collectDiagrams = () => {
+  const collectDiagrams = (): void => {
     findCodeBlocks('mermaid').forEach(({ pre, code }) => {
       makeDiagram(code.textContent || '', pre);
     });
@@ -159,9 +165,9 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
   let rendering = false;
   let rerenderRequested = false;
 
-  const renderDiagrams = async () => {
+  const renderDiagrams = async (): Promise<void> => {
     const roots = Array.from(document.querySelectorAll('.mermaid-diagram'))
-      .filter((node) => node instanceof HTMLElement);
+      .filter((node): node is HTMLElement => node instanceof HTMLElement);
     if (!roots.length) return;
 
     if (rendering) {
@@ -189,12 +195,12 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
       rendering = false;
       if (rerenderRequested) {
         rerenderRequested = false;
-        queueMicrotask(renderDiagrams);
+        queueMicrotask(() => { void renderDiagrams(); });
       }
     }
   };
 
-  const initializeMermaidRenderer = async () => {
+  const initializeMermaidRenderer = async (): Promise<void> => {
     collectDiagrams();
     if (!document.querySelector('.mermaid-diagram')) return;
 
@@ -202,7 +208,7 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
 
     const observer = new MutationObserver((mutations) => {
       if (mutations.some((mutation) => mutation.attributeName === 'data-theme')) {
-        renderDiagrams();
+        void renderDiagrams();
       }
     });
 
@@ -212,7 +218,7 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
     });
   };
 
-  initializeMermaidRenderer().catch((error) => {
+  void initializeMermaidRenderer().catch((error: unknown) => {
     console.error('Mermaid initialization failed:', error);
   });
 </script>
