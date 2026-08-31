@@ -189,17 +189,17 @@ const searchIndexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
       return Math.max(subsequence, typoScore);
     };
 
-    // Full report bodies can be tens of thousands of characters. Only use a
-    // normalized substring lookup here; running edit-distance over full bodies
-    // on every keystroke would make the header search sluggish.
+    // Report bodies can be tens of thousands of characters. A full-text hit is
+    // an exact normalized substring match, so every body hit gets the same base
+    // relevance. Date then acts as the tie-breaker, which keeps recent reports
+    // visible instead of rewarding older reports merely because the term appears
+    // earlier in their Markdown body.
     const bodyScore = (item, query) => {
       if (item.kind !== 'report') return 0;
       const q = compact(query);
       const body = String(item.body || '');
-      if (!q || !body) return 0;
-      const found = body.indexOf(q);
-      if (found < 0) return 0;
-      return Math.max(3.05, 3.4 - Math.min(found, 14000) * .000025);
+      if (!q || !body || !body.includes(q)) return 0;
+      return 3.4;
     };
 
     const itemScore = (item, query) => {
