@@ -1,6 +1,5 @@
 import { createHash } from 'node:crypto';
 import { readdir, readFile } from 'node:fs/promises';
-import { join } from 'node:path';
 
 const root = new URL('../dist/', import.meta.url);
 
@@ -32,13 +31,13 @@ const htmlFiles = await collectHtml(root);
 
 for (const fileUrl of htmlFiles) {
   const html = await readFile(fileUrl, 'utf8');
-  const cspMatch = html.match(/<meta\s+http-equiv=["']content-security-policy["']\s+content=["']([^"']*)["'][^>]*>/i);
+  const cspMatch = html.match(/<meta\s+http-equiv=["']content-security-policy["']\s+content=(["'])([\s\S]*?)\1[^>]*>/i);
   if (!cspMatch) {
     failures.push(`${fileUrl.pathname}: missing Content-Security-Policy meta tag`);
     continue;
   }
 
-  const csp = cspMatch[1];
+  const csp = cspMatch[2];
   const scriptSrc = csp.match(/(?:^|;)\s*script-src\s+([^;]+)/i)?.[1] ?? '';
   if (!scriptSrc) {
     failures.push(`${fileUrl.pathname}: missing script-src directive`);
