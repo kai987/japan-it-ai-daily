@@ -1,5 +1,26 @@
 <script>
   (() => {
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const link = target.closest('.site-search-result');
+      if (!(link instanceof HTMLAnchorElement) || link.target === '_blank') return;
+
+      const meta = link.querySelector('.site-search-result-meta')?.textContent || '';
+      if (!meta.includes('日报')) return;
+
+      const input = document.querySelector('.site-search-input');
+      const searchTerm = input instanceof HTMLInputElement ? input.value.trim() : '';
+      if (!searchTerm) return;
+
+      const destination = new URL(link.href, window.location.href);
+      if (!/\/daily\/[^/]+\/?$/.test(destination.pathname)) return;
+
+      event.preventDefault();
+      destination.searchParams.set('search', searchTerm);
+      window.location.href = destination.href;
+    }, true);
+
     const params = new URLSearchParams(window.location.search);
     const query = (params.get('search') || '').trim();
     if (!query) return;
@@ -13,6 +34,7 @@
     const compact = (value) => lower(value).replace(/[\s\p{P}\p{S}]+/gu, '');
     const needle = lower(query);
     const compactNeedle = compact(query);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const ignoredParent = (node) => {
       const parent = node.parentElement;
@@ -23,7 +45,7 @@
       if (!(target instanceof HTMLElement)) return;
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
         });
       });
     };
@@ -80,9 +102,5 @@
     outline-offset:5px;
     background:color-mix(in srgb,var(--accent-soft) 42%,transparent);
     scroll-margin-top:118px;
-  }
-
-  @media(prefers-reduced-motion:reduce){
-    .search-deep-highlight,.search-deep-block{scroll-behavior:auto}
   }
 </style>
