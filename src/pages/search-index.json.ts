@@ -1,22 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { getSafeExternalUrl } from '../lib/urls';
-
-const cleanSearchSegment = (value: string) => value
-  .replace(/^#{1,6}\s+/gm, '')
-  .replace(/^>\s?/gm, '')
-  .replace(/^\s*(?:[-*+]|\d+[.)])\s+/gm, '')
-  .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
-  .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-  .replace(/https?:\/\/\S+/g, '')
-  .replace(/[*_`~]/g, '')
-  .replace(/\s+/g, ' ')
-  .trim();
-
-const reportSegments = (value: unknown) => String(value ?? '')
-  .split(/\n{2,}/)
-  .map(cleanSearchSegment)
-  .filter((segment) => segment.length >= 2);
+import { reportSegments, type SearchItem } from '../lib/search';
 
 export const GET: APIRoute = async () => {
   const base = import.meta.env.BASE_URL;
@@ -24,12 +9,12 @@ export const GET: APIRoute = async () => {
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
   );
 
-  const searchIndex = reports.flatMap((report) => {
+  const searchIndex: SearchItem[] = reports.flatMap((report) => {
     const date = report.data.date.toISOString().slice(0, 10);
     const reportTopics = report.data.topics ?? [];
     const reportHref = `${base}daily/${report.id}/`;
 
-    const reportItem = {
+    const reportItem: SearchItem = {
       id: `report-${report.id}`,
       kind: 'report',
       title: report.data.title ?? '',
@@ -45,7 +30,7 @@ export const GET: APIRoute = async () => {
       segments: reportSegments((report as { body?: string }).body ?? ''),
     };
 
-    const articleItems = (report.data.top ?? []).map((item, index) => {
+    const articleItems: SearchItem[] = (report.data.top ?? []).map((item, index) => {
       const safeUrl = getSafeExternalUrl(item.url);
       return {
         id: `${report.id}-${index + 1}`,
