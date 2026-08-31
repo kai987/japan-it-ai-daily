@@ -1,10 +1,25 @@
 <script>
-  import { configuredAudioAssetUrl, localAudioAssetUrl } from '../lib/audioUrl';
+  import { configuredAudioAssetUrl, hasExternalAudioBase, localAudioAssetUrl } from '../lib/audioUrl';
 
   type AudioManifestItem = { text?: unknown; audio?: unknown };
   type InterviewManifest = {
     interview?: AudioManifestItem[];
     review?: AudioManifestItem[];
+  };
+  type JapaneseManifestItem = {
+    reading?: unknown;
+    term?: unknown;
+    word?: unknown;
+    exampleJa?: unknown;
+    example?: unknown;
+  };
+  type JapaneseGrammarManifestItem = {
+    exampleJa?: unknown;
+    example?: unknown;
+  };
+  type JapaneseManifest = {
+    items?: JapaneseManifestItem[];
+    grammar?: JapaneseGrammarManifestItem[];
   };
 
   const normalize = (value: unknown): string => String(value || '').replace(/\s+/g, ' ').trim();
@@ -145,5 +160,80 @@
     }, true);
 
     window.addEventListener('pagehide', stopAll, { once: true });
+  }
+
+  const japaneseIndex = parts.lastIndexOf('japanese');
+  const lessonId = japaneseIndex >= 0 ? parts[japaneseIndex + 1] : '';
+
+  if (lessonId && hasExternalAudioBase()) {
+    const manifestUrl = localAudioAssetUrl('japanese', lessonId, 'manifest.json');
+
+    void fetch(manifestUrl, { cache: 'no-cache' })
+      .then((response) => response.ok ? response.json() as Promise<JapaneseManifest> : null)
+      .then((manifest) => {
+        if (!manifest) return;
+
+        const wordMap = new Map<string, string>();
+        const exampleMap = new Map<string, string>();
+        const grammarExampleMap = new Map<string, string>();
+
+        for (const item of manifest.items || []) {
+          if (item.word) {
+            const audioUrl = configuredAudioAssetUrl('japanese', lessonId, item.word);
+            if (item.reading) wordMap.set(normalize(item.reading), audioUrl);
+            if (item.term) wordMap.set(normalize(item.term), audioUrl);
+          }
+          if (item.exampleJa && item.example) {
+            exampleMap.set(
+              normalize(item.exampleJa),
+              configuredAudioAssetUrl('japanese', lessonId, item.example),
+            );
+          }
+        }
+
+        for (const item of manifest.grammar || []) {
+          if (item.exampleJa && item.example) {
+            grammarExampleMap.set(
+              normalize(item.exampleJa),
+              configuredAudioAssetUrl('japanese', lessonId, item.example),
+            );
+          }
+        }
+
+        const syncButton = (button: HTMLButtonElement): void => {
+          const text = normalize(button.dataset.speech || '');
+          const kind = button.dataset.speechKind || '';
+          const audioUrl = kind === 'word'
+            ? wordMap.get(text)
+            : kind === 'grammar-example'
+              ? grammarExampleMap.get(text)
+              : exampleMap.get(text);
+
+          if (!audioUrl || button.dataset.audio === audioUrl) return;
+          button.dataset.audio = audioUrl;
+          button.dataset.audioProvider = 'aivis-cdn';
+        };
+
+        document.querySelectorAll<HTMLButtonElement>('.speech-button').forEach(syncButton);
+
+        const observer = new MutationObserver((mutations) => {
+          for (const mutation of mutations) {
+            if (mutation.type !== 'attributes' || mutation.attributeName !== 'data-audio') continue;
+            if (mutation.target instanceof HTMLButtonElement) syncButton(mutation.target);
+          }
+        });
+
+        if (document.body) {
+          observer.observe(document.body, {
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['data-audio'],
+          });
+          window.addEventListener('pagehide', () => observer.disconnect(), { once: true });
+        }
+      })
+      .catch(() => {
+        // Keep the existing local AivisSpeech / browser TTS fallback.
+      });
   }
 </script>
