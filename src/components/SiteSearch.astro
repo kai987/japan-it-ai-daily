@@ -33,13 +33,21 @@ const searchIndexUrl = `${base}search-index.json`;
 </div>
 
 <script>
+  import { searchItems, type SearchItem, type SearchResult } from '../lib/search';
+
   (() => {
     const root = document.querySelector('[data-site-search]');
     const input = root?.querySelector('.site-search-input');
     const popover = root?.querySelector('.site-search-popover');
     const status = root?.querySelector('.site-search-status');
     const resultsEl = root?.querySelector('.site-search-results');
-    if (!(root instanceof HTMLElement) || !(input instanceof HTMLInputElement) || !(popover instanceof HTMLElement) || !(status instanceof HTMLElement) || !(resultsEl instanceof HTMLElement)) return;
+    if (
+      !(root instanceof HTMLElement)
+      || !(input instanceof HTMLInputElement)
+      || !(popover instanceof HTMLElement)
+      || !(status instanceof HTMLElement)
+      || !(resultsEl instanceof HTMLElement)
+    ) return;
 
     const indexUrl = root.dataset.searchIndexUrl || '';
     if (!indexUrl) return;
@@ -47,165 +55,38 @@ const searchIndexUrl = `${base}search-index.json`;
     root.addEventListener('pointerdown', (event) => event.stopPropagation());
     root.addEventListener('click', (event) => event.stopPropagation());
 
-    let items = null;
-    let loadPromise = null;
-    let currentResults = [];
+    let items: SearchItem[] | null = null;
+    let loadPromise: Promise<SearchItem[]> | null = null;
+    let currentResults: SearchResult[] = [];
     let activeIndex = -1;
     let renderVersion = 0;
 
-    const loadItems = async () => {
-      if (Array.isArray(items)) return items;
+    const loadItems = async (): Promise<SearchItem[]> => {
+      if (items) return items;
       if (!loadPromise) {
-        loadPromise = fetch(indexUrl, { cache: 'no-cache' })
-          .then((response) => {
-            if (!response.ok) throw new Error(`Search index HTTP ${response.status}`);
-            return response.json();
-          })
-          .then((data) => {
-            items = Array.isArray(data) ? data : [];
-            return items;
-          })
-          .catch((error) => {
-            loadPromise = null;
-            throw error;
-          });
+        loadPromise = (async () => {
+          const response = await fetch(indexUrl, { cache: 'no-cache' });
+          if (!response.ok) throw new Error(`Search index HTTP ${response.status}`);
+          const data: unknown = await response.json();
+          items = Array.isArray(data) ? data as SearchItem[] : [];
+          return items;
+        })().catch((error: unknown) => {
+          loadPromise = null;
+          throw error;
+        });
       }
       return loadPromise;
     };
 
-    const normalize = (value) => String(value ?? '')
-      .normalize('NFKC')
-      .toLocaleLowerCase('ja-JP')
-      .replace(/\s+/g, ' ')
-      .trim();
-
-    const compact = (value) => normalize(value).replace(/[\s\p{P}\p{S}]+/gu, '');
-
-    const levenshtein = (a, b) => {
-      if (a === b) return 0;
-      if (!a.length) return b.length;
-      if (!b.length) return a.length;
-      let previous = Array.from({ length: b.length + 1 }, (_, i) => i);
-      for (let i = 1; i <= a.length; i += 1) {
-        const current = [i];
-        for (let j = 1; j <= b.length; j += 1) {
-          const cost = a[i - 1] === b[j - 1] ? 0 : 1;
-          current[j] = Math.min(
-            current[j - 1] + 1,
-            previous[j] + 1,
-            previous[j - 1] + cost,
-          );
-        }
-        previous = current;
-      }
-      return previous[b.length];
-    };
-
-    const editSimilarity = (query, text) => {
-      if (query.length < 3 || text.length < 3) return 0;
-      const qLength = query.length;
-      if (text.length <= qLength + 2) {
-        return 1 - levenshtein(query, text) / Math.max(qLength, text.length);
-      }
-      let best = 0;
-      const lengths = [Math.max(2, qLength - 1), qLength, qLength + 1];
-      for (const length of lengths) {
-        for (let start = 0; start <= text.length - length; start += 1) {
-          const sample = text.slice(start, start + length);
-          const similarity = 1 - levenshtein(query, sample) / Math.max(qLength, sample.length);
-          if (similarity > best) best = similarity;
-          if (best >= .92) return best;
-        }
-      }
-      return best;
-    };
-
-    const subsequenceScore = (query, text) => {
-      let cursor = 0;
-      let first = -1;
-      let last = -1;
-      for (const char of query) {
-        const found = text.indexOf(char, cursor);
-        if (found < 0) return 0;
-        if (first < 0) first = found;
-        last = found;
-        cursor = found + 1;
-      }
-      const span = last - first + 1;
-      const extra = Math.max(0, span - query.length);
-      const startPenalty = Math.min(first, 20) * .008;
-      const gapPenalty = Math.min(extra, 20) * .018;
-      return Math.max(0, .72 - startPenalty - gapPenalty);
-    };
-
-    const fieldScore = (query, text) => {
-      const q = compact(query);
-      const t = compact(text);
-      if (!q || !t) return 0;
-      if (q === t) return 1;
-      const found = t.indexOf(q);
-      if (found >= 0) return Math.max(.78, .97 - Math.min(found, 40) * .006);
-      const subsequence = subsequenceScore(q, t);
-      const edit = editSimilarity(q, t);
-      const typoScore = edit >= .62 ? edit * .82 : 0;
-      return Math.max(subsequence, typoScore);
-    };
-
-    const matchingSegment = (item, query) => {
-      if (item.kind !== 'report') return '';
-      const q = compact(query);
-      if (!q) return '';
-      return (item.segments || []).find((segment) => compact(segment).includes(q)) || '';
-    };
-
-    const bodyScore = (item, query, segment) => {
-      if (item.kind !== 'report') return 0;
-      return segment ? 3.4 : 0;
-    };
-
-    const itemScore = (item, query, segment) => {
-      const fields = item.kind === 'report'
-        ? [
-            [item.title, 3.6],
-            [item.reportDescription, 1.1],
-            [(item.reportTopics || []).join(' '), 1.2],
-          ]
-        : [
-            [item.title, 5],
-            [item.topic, 2.2],
-            [item.source, 1.5],
-            [item.why, 1.15],
-            [item.reportTitle, .65],
-            [item.reportDescription, .55],
-            [(item.reportTopics || []).join(' '), .9],
-          ];
-      return fields.reduce((total, [value, weight]) => total + fieldScore(query, value) * weight, 0)
-        + bodyScore(item, query, segment);
-    };
-
-    const makeSnippet = (segment, query) => {
-      const text = String(segment || '').replace(/\s+/g, ' ').trim();
-      if (!text) return '';
+    const appendHighlighted = (container: HTMLElement, text: string, query: string): void => {
       const lowerText = text.toLocaleLowerCase('ja-JP');
-      const lowerQuery = String(query || '').toLocaleLowerCase('ja-JP');
-      const hit = lowerText.indexOf(lowerQuery);
-      if (hit < 0) return text.length > 150 ? `${text.slice(0, 147)}…` : text;
-
-      const before = 48;
-      const after = 86;
-      const start = Math.max(0, hit - before);
-      const end = Math.min(text.length, hit + lowerQuery.length + after);
-      return `${start > 0 ? '…' : ''}${text.slice(start, end)}${end < text.length ? '…' : ''}`;
-    };
-
-    const appendHighlighted = (container, text, query) => {
-      const lowerText = text.toLocaleLowerCase('ja-JP');
-      const lowerQuery = String(query || '').toLocaleLowerCase('ja-JP');
+      const lowerQuery = query.toLocaleLowerCase('ja-JP');
       const hit = lowerQuery ? lowerText.indexOf(lowerQuery) : -1;
       if (hit < 0) {
         container.textContent = text;
         return;
       }
+
       container.append(document.createTextNode(text.slice(0, hit)));
       const mark = document.createElement('mark');
       mark.className = 'site-search-result-hit';
@@ -213,49 +94,28 @@ const searchIndexUrl = `${base}search-index.json`;
       container.append(mark, document.createTextNode(text.slice(hit + lowerQuery.length)));
     };
 
-    const search = (query) => {
-      const sourceItems = Array.isArray(items) ? items : [];
-      const normalized = normalize(query);
-      if (!normalized) return sourceItems.filter((item) => item.kind === 'article').slice(0, 6);
-      return sourceItems
-        .map((item) => {
-          const segment = matchingSegment(item, normalized);
-          return { item, segment, score: itemScore(item, normalized, segment) };
-        })
-        .filter(({ score }) => score >= .72)
-        .sort((a, b) => {
-          const scoreDiff = b.score - a.score;
-          if (scoreDiff) return scoreDiff;
-          const dateDiff = String(b.item.date).localeCompare(String(a.item.date));
-          if (dateDiff) return dateDiff;
-          if (a.item.kind === b.item.kind) return 0;
-          return a.item.kind === 'article' ? -1 : 1;
-        })
-        .slice(0, 8)
-        .map(({ item, segment }) => ({ ...item, matchSnippet: makeSnippet(segment, query) }));
-    };
-
-    const close = () => {
+    const close = (): void => {
       popover.hidden = true;
       input.setAttribute('aria-expanded', 'false');
       input.removeAttribute('aria-activedescendant');
       activeIndex = -1;
     };
 
-    const open = () => {
+    const open = (): void => {
       popover.hidden = false;
       input.setAttribute('aria-expanded', 'true');
     };
 
-    const syncActive = () => {
-      const links = Array.from(resultsEl.querySelectorAll('.site-search-result'));
+    const syncActive = (): void => {
+      const links = Array.from(resultsEl.querySelectorAll<HTMLAnchorElement>('.site-search-result'));
       links.forEach((link, index) => {
         const active = index === activeIndex;
         link.classList.toggle('is-active', active);
         link.setAttribute('aria-selected', String(active));
       });
+
       const active = links[activeIndex];
-      if (active instanceof HTMLElement) {
+      if (active) {
         input.setAttribute('aria-activedescendant', active.id);
         active.scrollIntoView({ block: 'nearest' });
       } else {
@@ -263,7 +123,7 @@ const searchIndexUrl = `${base}search-index.json`;
       }
     };
 
-    const showLoadError = () => {
+    const showLoadError = (): void => {
       currentResults = [];
       activeIndex = -1;
       resultsEl.replaceChildren();
@@ -275,9 +135,9 @@ const searchIndexUrl = `${base}search-index.json`;
       open();
     };
 
-    const render = async () => {
+    const render = async (): Promise<void> => {
       const version = ++renderVersion;
-      if (!Array.isArray(items)) {
+      if (!items) {
         status.textContent = '検索データを読み込み中…';
         resultsEl.replaceChildren();
         open();
@@ -292,7 +152,7 @@ const searchIndexUrl = `${base}search-index.json`;
       }
 
       const query = input.value.trim();
-      currentResults = search(query);
+      currentResults = searchItems(items ?? [], query);
       activeIndex = -1;
       resultsEl.replaceChildren();
       status.textContent = query ? `${currentResults.length}件の候補` : '最近の記事';
@@ -361,20 +221,23 @@ const searchIndexUrl = `${base}search-index.json`;
     input.addEventListener('keydown', async (event) => {
       if (event.key === 'ArrowDown') {
         event.preventDefault();
-        if (!Array.isArray(items) || popover.hidden) await render();
+        if (!items || popover.hidden) await render();
         activeIndex = currentResults.length ? (activeIndex + 1) % currentResults.length : -1;
         syncActive();
       } else if (event.key === 'ArrowUp') {
         event.preventDefault();
-        if (!Array.isArray(items) || popover.hidden) await render();
-        activeIndex = currentResults.length ? (activeIndex <= 0 ? currentResults.length - 1 : activeIndex - 1) : -1;
+        if (!items || popover.hidden) await render();
+        activeIndex = currentResults.length
+          ? (activeIndex <= 0 ? currentResults.length - 1 : activeIndex - 1)
+          : -1;
         syncActive();
       } else if (event.key === 'Enter') {
-        if (!Array.isArray(items)) await render();
+        if (!items) await render();
         if (!currentResults.length) return;
         event.preventDefault();
-        const target = resultsEl.querySelectorAll('.site-search-result')[activeIndex >= 0 ? activeIndex : 0];
-        if (target instanceof HTMLAnchorElement) target.click();
+        const links = resultsEl.querySelectorAll<HTMLAnchorElement>('.site-search-result');
+        const target = links[activeIndex >= 0 ? activeIndex : 0];
+        target?.click();
       } else if (event.key === 'Escape') {
         close();
         input.blur();
