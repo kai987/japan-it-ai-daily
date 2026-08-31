@@ -19,6 +19,9 @@ const sha256Source = (value) => {
   return `'sha256-${digest}'`;
 };
 
+const directiveValue = (csp, name) =>
+  csp.match(new RegExp(`(?:^|;)\\s*${name}\\s+([^;]+)`, 'i'))?.[1] ?? '';
+
 const isExecutableInlineScript = (attrs) => {
   if (/\bsrc\s*=/.test(attrs)) return false;
   const typeMatch = attrs.match(/\btype\s*=\s*["']([^"']+)["']/i);
@@ -38,13 +41,18 @@ for (const fileUrl of htmlFiles) {
   }
 
   const csp = cspMatch[2];
-  const scriptSrc = csp.match(/(?:^|;)\s*script-src\s+([^;]+)/i)?.[1] ?? '';
-  if (!scriptSrc) {
-    failures.push(`${fileUrl.pathname}: missing script-src directive`);
+  const scriptElements = directiveValue(csp, 'script-src-elem') || directiveValue(csp, 'script-src');
+  if (!scriptElements) {
+    failures.push(`${fileUrl.pathname}: missing script-src-elem/script-src directive`);
     continue;
   }
-  if (scriptSrc.includes("'unsafe-inline'")) {
-    failures.push(`${fileUrl.pathname}: script-src must not contain 'unsafe-inline'`);
+  if (scriptElements.includes("'unsafe-inline'")) {
+    failures.push(`${fileUrl.pathname}: script element policy must not contain 'unsafe-inline'`);
+  }
+
+  const scriptAttributes = directiveValue(csp, 'script-src-attr');
+  if (!scriptAttributes.includes("'none'")) {
+    failures.push(`${fileUrl.pathname}: script-src-attr must contain 'none'`);
   }
 
   const scriptPattern = /<script([^>]*)>([\s\S]*?)<\/script>/gi;
@@ -53,7 +61,7 @@ for (const fileUrl of htmlFiles) {
     const source = match[2] ?? '';
     if (!isExecutableInlineScript(attrs)) continue;
     const hash = sha256Source(source);
-    if (!scriptSrc.includes(hash)) {
+    if (!scriptElements.includes(hash)) {
       failures.push(`${fileUrl.pathname}: CSP does not allow inline script ${hash}`);
     }
   }
