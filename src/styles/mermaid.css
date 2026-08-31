@@ -1,5 +1,5 @@
-/* Theme-aware Mermaid diagrams */
-.prose .mermaid-diagram{
+/* Lightweight native flow diagrams for legacy text blocks. */
+.prose .simple-flow-diagram{
   margin:20px 0;
   padding:20px;
   overflow-x:auto;
@@ -10,35 +10,75 @@
   transition:background-color .18s ease,border-color .18s ease;
 }
 
-.prose .mermaid-diagram svg{
-  display:block;
-  width:100%;
-  max-width:100%;
-  height:auto;
-  margin:0 auto;
+.prose .simple-flow-stack{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-width:0;
 }
 
-.prose .mermaid-diagram .label,
-.prose .mermaid-diagram .nodeLabel,
-.prose .mermaid-diagram .edgeLabel{
-  font-family:Inter,"Noto Sans JP","Yu Gothic",YuGothic,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+.prose .simple-flow-node{
+  width:min(100%,720px);
+  padding:13px 16px;
+  border:1px solid color-mix(in srgb,var(--accent) 28%,var(--border));
+  border-radius:11px;
+  background:var(--surface-elevated);
+  color:var(--text);
+  text-align:center;
+  font-weight:680;
+  line-height:1.55;
+  box-shadow:0 3px 10px rgba(20,24,36,.04);
 }
 
-.prose .mermaid-diagram .edgeLabel{
-  background:var(--surface)!important;
+.prose .simple-flow-arrow{
+  display:grid;
+  place-items:center;
+  min-width:28px;
+  min-height:24px;
+  color:var(--accent);
+  font-size:1.15rem;
+  font-weight:800;
+  line-height:1;
 }
 
-.prose .mermaid-diagram .edgeLabel p{
-  background:var(--surface)!important;
+.prose .simple-flow-diagram.is-horizontal .simple-flow-stack{
+  flex-direction:row;
+  align-items:stretch;
+  justify-content:flex-start;
+  min-width:max-content;
 }
 
-/*
- * Fallback for legacy ```text``` diagrams that are not convertible to Mermaid.
- * Astro/Shiki writes an inline light-theme background and token colors, so
- * dark mode must override both the pre background and every highlighted span.
- */
+.prose .simple-flow-diagram.is-horizontal .simple-flow-node{
+  display:grid;
+  place-items:center;
+  width:auto;
+  min-width:150px;
+  max-width:280px;
+}
+
+.prose .simple-layer-node{
+  display:grid;
+  gap:5px;
+  text-align:left;
+}
+
+.prose .simple-layer-title{
+  color:var(--accent-text);
+  font-size:.91rem;
+}
+
+.prose .simple-layer-detail{
+  color:var(--subtle-text);
+  font-weight:560;
+}
+
+/* Fallback for legacy text/unsupported Mermaid blocks that stay as code. */
 html[data-theme='dark'] .prose pre[data-language='text'],
-html[data-theme='dark'] .prose pre:has(> code.language-text){
+html[data-theme='dark'] .prose pre:has(> code.language-text),
+html[data-theme='dark'] .prose pre[data-language='mermaid'],
+html[data-theme='dark'] .prose pre:has(> code.language-mermaid){
   background:#16191f!important;
   color:#f3f5f7!important;
   border-color:#374151!important;
@@ -47,20 +87,25 @@ html[data-theme='dark'] .prose pre:has(> code.language-text){
 html[data-theme='dark'] .prose pre[data-language='text'] code,
 html[data-theme='dark'] .prose pre[data-language='text'] span,
 html[data-theme='dark'] .prose pre > code.language-text,
-html[data-theme='dark'] .prose pre > code.language-text span{
+html[data-theme='dark'] .prose pre > code.language-text span,
+html[data-theme='dark'] .prose pre[data-language='mermaid'] code,
+html[data-theme='dark'] .prose pre[data-language='mermaid'] span,
+html[data-theme='dark'] .prose pre > code.language-mermaid,
+html[data-theme='dark'] .prose pre > code.language-mermaid span{
   background:transparent!important;
   color:#f3f5f7!important;
 }
 
 @media(max-width:800px){
-  .prose .mermaid-diagram{
+  .prose .simple-flow-diagram{
     margin:16px 0;
     padding:14px;
     border-radius:12px;
     -webkit-overflow-scrolling:touch;
   }
+  .prose .simple-flow-node{padding:12px 13px}
 }
 
 @media(prefers-reduced-motion:reduce){
-  .prose .mermaid-diagram{transition:none}
+  .prose .simple-flow-diagram{transition:none}
 }
