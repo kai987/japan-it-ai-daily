@@ -2,10 +2,7 @@ import { defineConfig } from 'astro/config';
 
 const verifiedInlineScripts = [
   "'sha256-Fy4Jj/MNW5fKhEX/U+HrnIZZL84Ngeq+w6YdWcwYHQE='", // initial theme
-  "'sha256-pZRiNsQEGv/5thcnmdjKj0Hkwapis0B5LPIPW/S3NuM='", // site search
   "'sha256-NgF0ulOKuwYtbm1O82saYlAqPjWhJcOO3KUQh0Kav4c='", // theme/menu/TOC
-  "'sha256-772VVZKuu8keoACuPl9AQOMhOo+x/J240SH9AUpOa4k='", // interview deep links
-  "'sha256-XnA6NobytQGJAANL6PbM0Q0Govkr5y9C7Z5/+WWFlOk='", // interview static audio
   "'sha256-GCoSn7zakHhIDak12g1Y5A93bTnh9dmH11x2vUR8zio='", // daily page enhancements
   "'sha256-MqSU29qsOKEZdKC7pyqhSJ0wrLHy7FH5b+vZYowt4Es='", // Japanese detail audio
   "'sha256-w/rH1rDzqZxHU9A6x6EOnjxUuhcEKhb7Frklu/x/0Ro='", // Japanese filters/pagination
