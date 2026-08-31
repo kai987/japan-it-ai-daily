@@ -1,36 +1,45 @@
-<script is:inline>
-  (() => {
-    const normalize = (value) => String(value || '').replace(/\s+/g, ' ').trim();
-    const parts = window.location.pathname.split('/').filter(Boolean);
-    const dailyIndex = parts.lastIndexOf('daily');
-    const reportId = dailyIndex >= 0 ? parts[dailyIndex + 1] : '';
-    if (!reportId) return;
+<script>
+  import { configuredAudioAssetUrl } from '../lib/audioUrl';
 
-    const baseParts = parts.slice(0, dailyIndex);
-    const prefix = baseParts.length ? `/${baseParts.join('/')}/` : '/';
-    const manifestUrl = `${prefix}audio/japanese/${reportId}/interview-manifest.json`;
+  type AudioManifestItem = { text?: unknown; audio?: unknown };
+  type InterviewManifest = {
+    interview?: AudioManifestItem[];
+    review?: AudioManifestItem[];
+  };
 
-    const audioMapPromise = fetch(manifestUrl, { cache: 'no-cache' })
-      .then((response) => response.ok ? response.json() : null)
+  const normalize = (value: unknown): string => String(value || '').replace(/\s+/g, ' ').trim();
+  const parts = window.location.pathname.split('/').filter(Boolean);
+  const dailyIndex = parts.lastIndexOf('daily');
+  const reportId = dailyIndex >= 0 ? parts[dailyIndex + 1] : '';
+
+  if (reportId) {
+    const manifestUrl = configuredAudioAssetUrl('japanese', reportId, 'interview-manifest.json');
+
+    const audioMapPromise: Promise<Map<string, string>> = fetch(manifestUrl, { cache: 'no-cache' })
+      .then((response) => response.ok ? response.json() as Promise<InterviewManifest> : null)
       .then((manifest) => {
-        const map = new Map();
+        const map = new Map<string, string>();
         for (const item of manifest?.interview || []) {
-          if (item?.text && item?.audio) map.set(normalize(item.text), `${prefix}audio/japanese/${reportId}/${item.audio}`);
+          if (item?.text && item?.audio) {
+            map.set(normalize(item.text), configuredAudioAssetUrl('japanese', reportId, item.audio));
+          }
         }
         for (const item of manifest?.review || []) {
-          if (item?.text && item?.audio) map.set(normalize(item.text), `${prefix}audio/japanese/${reportId}/${item.audio}`);
+          if (item?.text && item?.audio) {
+            map.set(normalize(item.text), configuredAudioAssetUrl('japanese', reportId, item.audio));
+          }
         }
         return map;
       })
-      .catch(() => new Map());
+      .catch(() => new Map<string, string>());
 
     const speechSupported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
     const synth = speechSupported ? window.speechSynthesis : null;
-    let voices = speechSupported && synth ? synth.getVoices() : [];
-    let activeButton = null;
-    let activeAudio = null;
+    let voices: SpeechSynthesisVoice[] = speechSupported && synth ? synth.getVoices() : [];
+    let activeButton: HTMLButtonElement | null = null;
+    let activeAudio: HTMLAudioElement | null = null;
 
-    const refreshVoices = () => {
+    const refreshVoices = (): void => {
       if (synth) voices = synth.getVoices();
     };
     if (synth) {
@@ -38,7 +47,7 @@
       synth.addEventListener?.('voiceschanged', refreshVoices);
     }
 
-    const japaneseVoice = () => {
+    const japaneseVoice = (): SpeechSynthesisVoice | null => {
       const local = voices.find((voice) => voice.lang.toLowerCase() === 'ja-jp' && voice.localService);
       if (local) return local;
       const exact = voices.find((voice) => voice.lang.toLowerCase() === 'ja-jp');
@@ -46,16 +55,16 @@
       return voices.find((voice) => voice.lang.toLowerCase().startsWith('ja')) || null;
     };
 
-    const clearActive = () => {
-      if (activeButton instanceof HTMLButtonElement) {
+    const clearActive = (): void => {
+      if (activeButton) {
         activeButton.classList.remove('is-speaking');
         activeButton.setAttribute('aria-pressed', 'false');
       }
       activeButton = null;
     };
 
-    const stopAll = () => {
-      if (activeAudio instanceof HTMLAudioElement) {
+    const stopAll = (): void => {
+      if (activeAudio) {
         activeAudio.pause();
         activeAudio.currentTime = 0;
       }
@@ -64,13 +73,13 @@
       clearActive();
     };
 
-    const setActive = (button) => {
+    const setActive = (button: HTMLButtonElement): void => {
       activeButton = button;
       button.classList.add('is-speaking');
       button.setAttribute('aria-pressed', 'true');
     };
 
-    const speakFallback = (button, text) => {
+    const speakFallback = (button: HTMLButtonElement, text: string): void => {
       if (!speechSupported || !synth) {
         button.dataset.speechUnavailable = 'true';
         clearActive();
@@ -89,12 +98,12 @@
       synth.speak(utterance);
     };
 
-    const playAudio = (button, text, url) => {
+    const playAudio = (button: HTMLButtonElement, text: string, url: string): void => {
       const audio = new Audio(url);
       activeAudio = audio;
       setActive(button);
       let fallbackStarted = false;
-      const fallback = () => {
+      const fallback = (): void => {
         if (fallbackStarted || activeAudio !== audio) return;
         fallbackStarted = true;
         activeAudio = null;
@@ -136,5 +145,5 @@
     }, true);
 
     window.addEventListener('pagehide', stopAll, { once: true });
-  })();
+  }
 </script>
