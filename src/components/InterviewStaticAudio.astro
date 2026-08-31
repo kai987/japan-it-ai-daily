@@ -1,5 +1,5 @@
 <script>
-  import { configuredAudioAssetUrl } from '../lib/audioUrl';
+  import { configuredAudioAssetUrl, localAudioAssetUrl } from '../lib/audioUrl';
 
   type AudioManifestItem = { text?: unknown; audio?: unknown };
   type InterviewManifest = {
@@ -13,7 +13,7 @@
   const reportId = dailyIndex >= 0 ? parts[dailyIndex + 1] : '';
 
   if (reportId) {
-    const manifestUrl = configuredAudioAssetUrl('japanese', reportId, 'interview-manifest.json');
+    const manifestUrl = localAudioAssetUrl('japanese', reportId, 'interview-manifest.json');
 
     const audioMapPromise: Promise<Map<string, string>> = fetch(manifestUrl, { cache: 'no-cache' })
       .then((response) => response.ok ? response.json() as Promise<InterviewManifest> : null)
