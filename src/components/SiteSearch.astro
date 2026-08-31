@@ -1,24 +1,32 @@
 ---
 import { getCollection } from 'astro:content';
 import '../styles/search.css';
+import '../styles/search-snippet.css';
 import { getSafeExternalUrl } from '../lib/urls';
 
 const base = import.meta.env.BASE_URL;
 const reports = (await getCollection('daily')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-// Full report text is indexed separately from Top 5 article metadata. Keeping a
-// single report-level entry avoids showing all five articles when a keyword only
-// appears somewhere else in that day's body.
-const compactIndexText = (value: unknown) => String(value ?? '')
-  .normalize('NFKC')
-  .toLocaleLowerCase('ja-JP')
-  .replace(/[\s\p{P}\p{S}]+/gu, '');
+const cleanSearchSegment = (value: string) => value
+  .replace(/^#{1,6}\s+/gm, '')
+  .replace(/^>\s?/gm, '')
+  .replace(/^\s*(?:[-*+]|\d+[.)])\s+/gm, '')
+  .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
+  .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+  .replace(/https?:\/\/\S+/g, '')
+  .replace(/[*_`~]/g, '')
+  .replace(/\s+/g, ' ')
+  .trim();
+
+const reportSegments = (value: unknown) => String(value ?? '')
+  .split(/\n{2,}/)
+  .map(cleanSearchSegment)
+  .filter((segment) => segment.length >= 2);
 
 const searchIndex = reports.flatMap((report) => {
   const date = report.data.date.toISOString().slice(0, 10);
   const reportTopics = report.data.topics ?? [];
   const reportHref = `${base}daily/${report.id}/`;
-  const reportBody = compactIndexText((report as any).body ?? '');
 
   const reportItem = {
     id: `report-${report.id}`,
@@ -33,7 +41,7 @@ const searchIndex = reports.flatMap((report) => {
     reportTitle: report.data.title ?? '',
     reportDescription: report.data.description ?? '',
     reportTopics,
-    body: reportBody,
+    segments: reportSegments((report as any).body ?? ''),
   };
 
   const articleItems = (report.data.top ?? []).map((item:any, index:number) => {
@@ -51,7 +59,7 @@ const searchIndex = reports.flatMap((report) => {
       reportTitle: report.data.title ?? '',
       reportDescription: report.data.description ?? '',
       reportTopics,
-      body: '',
+      segments: [],
     };
   });
 
@@ -189,20 +197,19 @@ const searchIndexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
       return Math.max(subsequence, typoScore);
     };
 
-    // Report bodies can be tens of thousands of characters. A full-text hit is
-    // an exact normalized substring match, so every body hit gets the same base
-    // relevance. Date then acts as the tie-breaker, which keeps recent reports
-    // visible instead of rewarding older reports merely because the term appears
-    // earlier in their Markdown body.
-    const bodyScore = (item, query) => {
-      if (item.kind !== 'report') return 0;
+    const matchingSegment = (item, query) => {
+      if (item.kind !== 'report') return '';
       const q = compact(query);
-      const body = String(item.body || '');
-      if (!q || !body || !body.includes(q)) return 0;
-      return 3.4;
+      if (!q) return '';
+      return (item.segments || []).find((segment) => compact(segment).includes(q)) || '';
     };
 
-    const itemScore = (item, query) => {
+    const bodyScore = (item, query, segment) => {
+      if (item.kind !== 'report') return 0;
+      return segment ? 3.4 : 0;
+    };
+
+    const itemScore = (item, query, segment) => {
       const fields = item.kind === 'report'
         ? [
             [item.title, 3.6],
@@ -219,14 +226,47 @@ const searchIndexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
             [(item.reportTopics || []).join(' '), .9],
           ];
       return fields.reduce((total, [value, weight]) => total + fieldScore(query, value) * weight, 0)
-        + bodyScore(item, query);
+        + bodyScore(item, query, segment);
+    };
+
+    const makeSnippet = (segment, query) => {
+      const text = String(segment || '').replace(/\s+/g, ' ').trim();
+      if (!text) return '';
+      const lowerText = text.toLocaleLowerCase('ja-JP');
+      const lowerQuery = String(query || '').toLocaleLowerCase('ja-JP');
+      const hit = lowerText.indexOf(lowerQuery);
+      if (hit < 0) return text.length > 150 ? `${text.slice(0, 147)}…` : text;
+
+      const before = 48;
+      const after = 86;
+      const start = Math.max(0, hit - before);
+      const end = Math.min(text.length, hit + lowerQuery.length + after);
+      return `${start > 0 ? '…' : ''}${text.slice(start, end)}${end < text.length ? '…' : ''}`;
+    };
+
+    const appendHighlighted = (container, text, query) => {
+      const lowerText = text.toLocaleLowerCase('ja-JP');
+      const lowerQuery = String(query || '').toLocaleLowerCase('ja-JP');
+      const hit = lowerQuery ? lowerText.indexOf(lowerQuery) : -1;
+      if (hit < 0) {
+        container.textContent = text;
+        return;
+      }
+      container.append(document.createTextNode(text.slice(0, hit)));
+      const mark = document.createElement('mark');
+      mark.className = 'site-search-result-hit';
+      mark.textContent = text.slice(hit, hit + lowerQuery.length);
+      container.append(mark, document.createTextNode(text.slice(hit + lowerQuery.length)));
     };
 
     const search = (query) => {
       const normalized = normalize(query);
       if (!normalized) return items.filter((item) => item.kind === 'article').slice(0, 6);
       return items
-        .map((item) => ({ item, score: itemScore(item, normalized) }))
+        .map((item) => {
+          const segment = matchingSegment(item, normalized);
+          return { item, segment, score: itemScore(item, normalized, segment) };
+        })
         .filter(({ score }) => score >= .72)
         .sort((a, b) => {
           const scoreDiff = b.score - a.score;
@@ -237,7 +277,7 @@ const searchIndexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
           return a.item.kind === 'article' ? -1 : 1;
         })
         .slice(0, 8)
-        .map(({ item }) => item);
+        .map(({ item, segment }) => ({ ...item, matchSnippet: makeSnippet(segment, query) }));
     };
 
     const close = () => {
@@ -290,7 +330,15 @@ const searchIndexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
         link.id = `site-search-option-${index}`;
         link.setAttribute('role', 'option');
         link.setAttribute('aria-selected', 'false');
-        link.href = item.href;
+
+        if (item.kind === 'report' && query) {
+          const targetUrl = new URL(item.href, window.location.origin);
+          targetUrl.searchParams.set('search', query);
+          link.href = `${targetUrl.pathname}${targetUrl.search}`;
+        } else {
+          link.href = item.href;
+        }
+
         if (item.external) {
           link.target = '_blank';
           link.rel = 'noopener noreferrer';
@@ -299,15 +347,23 @@ const searchIndexJson = JSON.stringify(searchIndex).replace(/</g, '\\u003c');
         const title = document.createElement('span');
         title.className = 'site-search-result-title';
         title.textContent = item.title;
+        link.appendChild(title);
+
+        if (item.kind === 'report' && item.matchSnippet) {
+          const snippet = document.createElement('span');
+          snippet.className = 'site-search-result-snippet';
+          appendHighlighted(snippet, item.matchSnippet, query);
+          link.appendChild(snippet);
+        }
 
         const meta = document.createElement('span');
         meta.className = 'site-search-result-meta';
         const pieces = item.kind === 'report'
-          ? [item.date, '日报', '全文匹配']
+          ? [item.date, '日报']
           : [item.date, item.source, item.topic].filter(Boolean);
         meta.textContent = `${pieces.join(' · ')}${item.external ? ' · 原文 ↗' : ''}`;
+        link.appendChild(meta);
 
-        link.append(title, meta);
         link.addEventListener('pointerenter', () => {
           activeIndex = index;
           syncActive();
