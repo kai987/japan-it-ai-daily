@@ -10,6 +10,7 @@
     "check": "astro check",
     "test": "vitest run",
     "security:check": "node scripts/check-csp.mjs",
+    "audio:check": "node --check scripts/audio-cache.mjs && node --check scripts/generate-japanese-audio.mjs && node --check scripts/generate-interview-audio.mjs",
     "audio:generate": "node scripts/generate-japanese-audio.mjs && node scripts/generate-interview-audio.mjs",
     "audio:generate:latest": "node scripts/generate-japanese-audio.mjs --latest && node scripts/generate-interview-audio.mjs --latest",
     "audio:generate:all": "node scripts/generate-japanese-audio.mjs --all && node scripts/generate-interview-audio.mjs --all",
