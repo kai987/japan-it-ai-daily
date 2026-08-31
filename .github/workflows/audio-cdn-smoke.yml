@@ -1,0 +1,48 @@
+name: Audio CDN smoke test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/audio-cdn-smoke.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_AUDIO_BASE_URL: https://audio.example.com/
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Type check
+        run: npm run check
+      - name: Run tests
+        run: npm test
+      - name: Build with external audio base
+        run: npm run build
+      - name: Strip local MP3
+        run: npm run audio:strip-dist
+      - name: Verify CSP
+        run: npm run security:check
+      - name: Verify CDN artifact shape
+        run: |
+          if find dist/audio -type f -name '*.mp3' | grep -q .; then
+            echo 'MP3 files remain in dist/audio despite CDN mode'
+            exit 1
+          fi
+          test -f dist/audio/japanese/2026-08-31/manifest.json
+          test -f dist/audio/japanese/2026-08-31/interview-manifest.json
+          grep -q "media-src 'self' https://audio.example.com" dist/index.html
+          echo 'CDN smoke test passed: manifests retained, MP3 stripped, CSP allows CDN.'
