@@ -168,6 +168,40 @@ export const makeSearchSnippet = (segment: string, query: string): string => {
   return `${start > 0 ? '…' : ''}${text.slice(start, end)}${end < text.length ? '…' : ''}`;
 };
 
+interface ScoredSearchItem {
+  item: SearchItem;
+  segment: string;
+  score: number;
+}
+
+const compareSearchItems = (a: ScoredSearchItem, b: ScoredSearchItem): number => {
+  const bothAreFullTextReports = a.item.kind === 'report'
+    && b.item.kind === 'report'
+    && Boolean(a.segment)
+    && Boolean(b.segment);
+
+  // A full-text report hit already proves that the report contains the query.
+  // Between such reports, recency is more useful than extra score from a title,
+  // topic, or description that happens to repeat the same keyword.
+  if (bothAreFullTextReports) {
+    const dateDiff = b.item.date.localeCompare(a.item.date);
+    if (dateDiff) return dateDiff;
+
+    const scoreDiff = b.score - a.score;
+    if (scoreDiff) return scoreDiff;
+    return 0;
+  }
+
+  const scoreDiff = b.score - a.score;
+  if (scoreDiff) return scoreDiff;
+
+  const dateDiff = b.item.date.localeCompare(a.item.date);
+  if (dateDiff) return dateDiff;
+
+  if (a.item.kind === b.item.kind) return 0;
+  return a.item.kind === 'article' ? -1 : 1;
+};
+
 export const searchItems = (
   items: readonly SearchItem[],
   query: string,
@@ -187,16 +221,7 @@ export const searchItems = (
       return { item, segment, score: itemScore(item, normalized, segment) };
     })
     .filter(({ score }) => score >= 0.72)
-    .sort((a, b) => {
-      const scoreDiff = b.score - a.score;
-      if (scoreDiff) return scoreDiff;
-
-      const dateDiff = b.item.date.localeCompare(a.item.date);
-      if (dateDiff) return dateDiff;
-
-      if (a.item.kind === b.item.kind) return 0;
-      return a.item.kind === 'article' ? -1 : 1;
-    })
+    .sort(compareSearchItems)
     .slice(0, limit)
     .map(({ item, segment }) => ({
       ...item,
