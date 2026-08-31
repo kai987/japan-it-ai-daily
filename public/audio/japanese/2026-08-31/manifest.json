@@ -1,0 +1,229 @@
+{
+  "date": "2026-08-31",
+  "generatedAt": "2026-08-31T08:20:14.006Z",
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "暗黙知",
+      "reading": "あんもくち",
+      "exampleJa": "AI Agentを導入する前に、判断基準として残っている暗黙知をDocument化します。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    },
+    {
+      "index": 2,
+      "term": "前提",
+      "reading": "ぜんてい",
+      "exampleJa": "Agentがすべての社内ルールを知っているという前提で設計してはいけません。",
+      "word": "vocab-02.mp3",
+      "example": "example-02.mp3"
+    },
+    {
+      "index": 3,
+      "term": "手掛かり",
+      "reading": "てがかり",
+      "exampleJa": "Status Codeだけでなく、Error Messageを原因切り分けの手掛かりにします。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 4,
+      "term": "範囲",
+      "reading": "はんい",
+      "exampleJa": "MCP Toolごとに実行可能な範囲を明確に定義します。",
+      "word": "vocab-04.mp3",
+      "example": "example-04.mp3"
+    },
+    {
+      "index": 5,
+      "term": "課題",
+      "reading": "かだい",
+      "exampleJa": "Model性能では解決できない組織課題を先に整理します。",
+      "word": "vocab-05.mp3",
+      "example": "example-05.mp3"
+    },
+    {
+      "index": 6,
+      "term": "直面する",
+      "reading": "ちょくめんする",
+      "exampleJa": "Agent利用を全社展開すると、個人利用では見えなかったGovernance課題に直面します。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 7,
+      "term": "受け入れる",
+      "reading": "うけいれる",
+      "exampleJa": "新しいAI Toolを受け入れる前に、Team側の運用ルールを整備します。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 8,
+      "term": "依存する",
+      "reading": "いぞんする",
+      "exampleJa": "Productionの呼び出し側を特定のAgent Version番号に依存させない設計にします。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 9,
+      "term": "覆す",
+      "reading": "くつがえす",
+      "exampleJa": "他のAgentからのMessageだけで安全判断を簡単に覆さない仕組みが必要です。",
+      "word": "vocab-09.mp3",
+      "example": "example-09.mp3"
+    },
+    {
+      "index": 10,
+      "term": "突破する",
+      "reading": "とっぱする",
+      "exampleJa": "AgentがNetwork Boundaryを突破しようとする場合を想定してMonitoringを設計します。",
+      "word": "vocab-10.mp3",
+      "example": "example-10.mp3"
+    },
+    {
+      "index": 11,
+      "term": "切り分ける",
+      "reading": "きりわける",
+      "exampleJa": "IAM、SCP、Model Availabilityの順に原因を切り分けます。",
+      "word": "vocab-11.mp3",
+      "example": "example-11.mp3"
+    },
+    {
+      "index": 12,
+      "term": "付与する",
+      "reading": "ふよする",
+      "exampleJa": "検証済みVersionにだけproduction Aliasを付与します。",
+      "word": "vocab-12.mp3",
+      "example": "example-12.mp3"
+    },
+    {
+      "index": 13,
+      "term": "想定する",
+      "reading": "そうていする",
+      "exampleJa": "本番利用を想定したAgentは、Rollbackまで含めて設計します。",
+      "word": "vocab-13.mp3",
+      "example": "example-13.mp3"
+    },
+    {
+      "index": 14,
+      "term": "深刻な",
+      "reading": "しんこくな",
+      "exampleJa": "Context不足が深刻な場合、Modelを強くしても誤判断は減らないことがあります。",
+      "word": "vocab-14.mp3",
+      "example": "example-14.mp3"
+    },
+    {
+      "index": 15,
+      "term": "大胆な",
+      "reading": "だいたんな",
+      "exampleJa": "大胆なAI導入を進める場合でも、Governanceを後回しにしてはいけません。",
+      "word": "vocab-15.mp3",
+      "example": "example-15.mp3"
+    },
+    {
+      "index": 16,
+      "term": "安定した",
+      "reading": "あんていした",
+      "exampleJa": "本番では変更可能なDraftではなく、安定したNamed Versionを利用します。",
+      "word": "vocab-16.mp3",
+      "example": "example-16.mp3"
+    },
+    {
+      "index": 17,
+      "term": "本来",
+      "reading": "ほんらい",
+      "exampleJa": "本来はArtifact保存用のServiceでも、Agentにとって通信経路になる可能性があります。",
+      "word": "vocab-17.mp3",
+      "example": "example-17.mp3"
+    },
+    {
+      "index": 18,
+      "term": "次第に",
+      "reading": "しだいに",
+      "exampleJa": "Taskが長時間化すると、ContextとTool利用が次第に増える場合があります。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 19,
+      "term": "特に",
+      "reading": "とくに",
+      "exampleJa": "特に外部通信を伴うToolは、PermissionとAuditを厳しくします。",
+      "word": "vocab-19.mp3",
+      "example": "example-19.mp3"
+    },
+    {
+      "index": 20,
+      "term": "さらに",
+      "reading": "さらに",
+      "exampleJa": "IAMを確認し、さらにOrganizationsのSCPも確認します。",
+      "word": "vocab-20.mp3",
+      "example": "example-20.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～に至る",
+      "exampleJa": "複数の脆弱性と認証情報が組み合わさり、第三者SystemでのCode Executionに至りました。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "pattern": "～すら",
+      "exampleJa": "グローバル化を積極的に進めた企業ですら、暗黙知の壁に直面する可能性があります。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 3,
+      "pattern": "～ことなく",
+      "exampleJa": "呼び出し側は具体的なVersion番号に依存することなく、production Aliasを利用できます。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 4,
+      "pattern": "～ままでは",
+      "exampleJa": "暗黙知に依存した組織運営のままでは、AIに必要なContextを十分に渡せません。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 5,
+      "pattern": "～に応じて",
+      "exampleJa": "AgentのRiskに応じて、Network AccessとHuman Approvalの強度を変えます。",
+      "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 6,
+      "pattern": "～たうえで",
+      "exampleJa": "Error Message本文を確認したうえで、IAM担当かOrganizations管理者へEscalationします。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 7,
+      "pattern": "～ために",
+      "exampleJa": "Taskを達成するために、許可されていない手段を選ばないようGuardrailを設計します。",
+      "example": "grammar-example-07.mp3"
+    }
+  ]
+}
