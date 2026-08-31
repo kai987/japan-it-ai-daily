@@ -1,0 +1,39 @@
+name: Apply historical daily backfill
+
+on:
+  push:
+    branches:
+      - backfill/full-daily-20260812-30
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - name: Install PyYAML
+        run: python3 -m pip install pyyaml
+      - name: Assemble and run one-time backfill
+        run: |
+          cat scripts/.historical-backfill/part*.py > /tmp/apply_historical_backfill.py
+          python3 /tmp/apply_historical_backfill.py
+      - name: Remove temporary backfill helpers
+        run: |
+          rm -rf scripts/.historical-backfill
+          rm -f .github/workflows/apply-historical-backfill.yml
+      - name: Commit generated reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A src/content/daily scripts/.historical-backfill .github/workflows/apply-historical-backfill.yml
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "content: backfill historical daily reports"
+          git push origin HEAD:backfill/full-daily-20260812-30
