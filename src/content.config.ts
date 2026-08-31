@@ -1,14 +1,8 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
-const externalUrl = z.string().url().refine((value) => {
-  try {
-    const url = new URL(value);
-    return url.protocol === 'https:' || url.protocol === 'http:';
-  } catch {
-    return false;
-  }
-}, 'External URLs must use http or https');
+const externalUrl = z.url({ protocol: /^https?$/ });
 
 const topItem = z.object({
   title: z.string(),
