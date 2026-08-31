@@ -4,82 +4,94 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
 ---
 
 <script>
-  type MermaidApi = typeof import('mermaid')['default'];
-  type MermaidConfig = Parameters<MermaidApi['initialize']>[0];
   type CodeBlock = { pre: HTMLPreElement; code: HTMLElement };
   type Layer = { title: string; detail: string };
-
-  let mermaidPromise: Promise<MermaidApi> | null = null;
-
-  const loadMermaid = (): Promise<MermaidApi> => {
-    if (!mermaidPromise) {
-      mermaidPromise = import('mermaid').then((module) => module.default);
-    }
-    return mermaidPromise;
+  type FlowDiagram = {
+    kind: 'flow';
+    nodes: string[];
+    direction: 'vertical' | 'horizontal';
   };
-
-  const escapeLabel = (value: unknown): string => String(value ?? '')
-    .replace(/\\/g, '\\\\')
-    .replace(/"/g, '\\"');
+  type LayerDiagram = { kind: 'layers'; layers: Layer[] };
+  type ParsedDiagram = FlowDiagram | LayerDiagram;
 
   const textLines = (source: unknown): string[] => String(source ?? '')
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter(Boolean);
 
-  const legacyTextFlowToMermaid = (source: unknown): string => {
+  const legacyTextFlow = (source: unknown): FlowDiagram | null => {
     const lines = textLines(source);
-
-    if (lines.length < 3 || !lines.includes('↓')) return '';
-    if (lines.some((line) => line !== '↓' && line.length > 80)) return '';
+    if (lines.length < 3 || !lines.includes('↓')) return null;
+    if (lines.some((line) => line !== '↓' && line.length > 80)) return null;
 
     const nodes = lines.filter((line) => line !== '↓');
-    if (nodes.length < 2 || nodes.length > 12) return '';
+    if (nodes.length < 2 || nodes.length > 12) return null;
 
     const arrows = lines.filter((line) => line === '↓').length;
-    if (arrows !== nodes.length - 1) return '';
+    if (arrows !== nodes.length - 1) return null;
 
-    const definitions = nodes.map((label, index) => `N${index}["${escapeLabel(label)}"]`);
-    const path = nodes.map((_, index) => `N${index}`).join(' --> ');
-    return `flowchart TD\n  ${definitions.join('\n  ')}\n  ${path}`;
+    return { kind: 'flow', nodes, direction: 'vertical' };
   };
 
-  const legacyLayerStackToMermaid = (source: unknown): string => {
+  const legacyLayerStack = (source: unknown): LayerDiagram | null => {
     const lines = textLines(source);
-    if (lines.length < 4 || lines.length % 2 !== 0) return '';
-    if (lines.length > 16 || lines.some((line) => line.length > 100)) return '';
+    if (lines.length < 4 || lines.length % 2 !== 0) return null;
+    if (lines.length > 16 || lines.some((line) => line.length > 100)) return null;
 
     const layers: Layer[] = [];
     for (let index = 0; index < lines.length; index += 2) {
       const title = lines[index];
       const detail = lines[index + 1];
-      if (!title || !detail) return '';
+      if (!title || !detail) return null;
 
       const numbered = /^(?:[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]|\d+[.)]?)/.test(title);
-      if (!numbered || !/layer|レイヤー/i.test(title) || detail === '↓') return '';
+      if (!numbered || !/layer|レイヤー/i.test(title) || detail === '↓') return null;
       layers.push({ title, detail });
     }
 
-    if (layers.length < 2 || layers.length > 8) return '';
-
-    const definitions = layers.map(({ title, detail }, index) =>
-      `L${index}["${escapeLabel(title)}<br/>${escapeLabel(detail)}"]`
-    );
-    const path = layers.map((_, index) => `L${index}`).join(' --> ');
-    return `flowchart TD\n  ${definitions.join('\n  ')}\n  ${path}`;
+    if (layers.length < 2 || layers.length > 8) return null;
+    return { kind: 'layers', layers };
   };
 
-  const legacyTextToMermaid = (source: unknown): string =>
-    legacyTextFlowToMermaid(source) || legacyLayerStackToMermaid(source);
+  const cleanMermaidLabel = (value: string): string => value
+    .trim()
+    .replace(/^['"]|['"]$/g, '')
+    .replace(/<br\s*\/?>/gi, ' · ')
+    .trim();
 
-  const makeDiagram = (source: string, replacementTarget: Element): HTMLElement => {
-    const root = document.createElement('div');
-    root.className = 'mermaid-diagram';
-    root.dataset.mermaidSource = source;
-    root.textContent = source;
-    replacementTarget.replaceWith(root);
-    return root;
+  const simpleMermaidFlow = (source: unknown): FlowDiagram | null => {
+    const lines = textLines(source).filter((line) => !line.startsWith('%%'));
+    const declaration = lines.shift()?.match(/^(?:flowchart|graph)\s+(TD|TB|LR|RL)$/i);
+    if (!declaration) return null;
+
+    const definitions = new Map<string, string>();
+    const paths: string[][] = [];
+
+    for (const line of lines) {
+      const definition = line.match(/^([A-Za-z][\w-]*)\s*(?:\[\s*(.*?)\s*\]|\(\s*(.*?)\s*\)|\{\s*(.*?)\s*\})$/);
+      if (definition) {
+        const label = definition.slice(2).find((value) => typeof value === 'string' && value.length > 0) ?? definition[1];
+        definitions.set(definition[1], cleanMermaidLabel(label));
+        continue;
+      }
+
+      if (line.includes('-->')) {
+        const ids = line.split(/\s*-->\s*/).map((part) => part.trim()).filter(Boolean);
+        if (ids.length >= 2 && ids.every((id) => /^[A-Za-z][\w-]*$/.test(id))) paths.push(ids);
+      }
+    }
+
+    if (paths.length !== 1) return null;
+    const ids = paths[0];
+    const nodes = ids.map((id) => definitions.get(id) ?? id);
+    if (nodes.length < 2 || nodes.length > 12) return null;
+
+    const direction = /^(LR|RL)$/i.test(declaration[1]) ? 'horizontal' : 'vertical';
+    return { kind: 'flow', nodes, direction };
   };
+
+  const parseLegacyText = (source: unknown): ParsedDiagram | null =>
+    legacyTextFlow(source) ?? legacyLayerStack(source);
 
   const findCodeBlocks = (language: string): CodeBlock[] => {
     const blocks: CodeBlock[] = [];
@@ -103,125 +115,83 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
     return blocks;
   };
 
-  const collectDiagrams = (): void => {
-    findCodeBlocks('mermaid').forEach(({ pre, code }) => {
-      makeDiagram(code.textContent || '', pre);
+  const makeArrow = (direction: FlowDiagram['direction']): HTMLElement => {
+    const arrow = document.createElement('div');
+    arrow.className = 'simple-flow-arrow';
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.textContent = direction === 'horizontal' ? '→' : '↓';
+    return arrow;
+  };
+
+  const renderFlow = (diagram: FlowDiagram): HTMLElement => {
+    const root = document.createElement('div');
+    root.className = `simple-flow-diagram${diagram.direction === 'horizontal' ? ' is-horizontal' : ''}`;
+    root.setAttribute('role', 'group');
+    root.setAttribute('aria-label', `流程图：${diagram.nodes.join(' → ')}`);
+
+    const stack = document.createElement('div');
+    stack.className = 'simple-flow-stack';
+
+    diagram.nodes.forEach((label, index) => {
+      const node = document.createElement('div');
+      node.className = 'simple-flow-node';
+      node.textContent = label;
+      stack.appendChild(node);
+      if (index < diagram.nodes.length - 1) stack.appendChild(makeArrow(diagram.direction));
     });
 
+    root.appendChild(stack);
+    return root;
+  };
+
+  const renderLayers = (diagram: LayerDiagram): HTMLElement => {
+    const root = document.createElement('div');
+    root.className = 'simple-flow-diagram simple-layer-diagram';
+    root.setAttribute('role', 'group');
+    root.setAttribute('aria-label', `层级图：${diagram.layers.map((layer) => layer.title).join(' → ')}`);
+
+    const stack = document.createElement('div');
+    stack.className = 'simple-flow-stack simple-layer-stack';
+
+    diagram.layers.forEach((layer, index) => {
+      const node = document.createElement('div');
+      node.className = 'simple-flow-node simple-layer-node';
+
+      const title = document.createElement('strong');
+      title.className = 'simple-layer-title';
+      title.textContent = layer.title;
+
+      const detail = document.createElement('span');
+      detail.className = 'simple-layer-detail';
+      detail.textContent = layer.detail;
+
+      node.append(title, detail);
+      stack.appendChild(node);
+      if (index < diagram.layers.length - 1) stack.appendChild(makeArrow('vertical'));
+    });
+
+    root.appendChild(stack);
+    return root;
+  };
+
+  const replaceBlock = (pre: HTMLPreElement, diagram: ParsedDiagram): void => {
+    const rendered = diagram.kind === 'flow' ? renderFlow(diagram) : renderLayers(diagram);
+    pre.replaceWith(rendered);
+  };
+
+  const initializeFlowRenderer = (): void => {
     findCodeBlocks('text').forEach(({ pre, code }) => {
-      const source = legacyTextToMermaid(code.textContent || '');
-      if (!source) return;
-      makeDiagram(source, pre);
+      const diagram = parseLegacyText(code.textContent || '');
+      if (diagram) replaceBlock(pre, diagram);
+    });
+
+    findCodeBlocks('mermaid').forEach(({ pre, code }) => {
+      const diagram = simpleMermaidFlow(code.textContent || '');
+      if (diagram) replaceBlock(pre, diagram);
     });
   };
 
-  const themeConfig = (): MermaidConfig => {
-    const dark = document.documentElement.dataset.theme === 'dark';
-    return {
-      startOnLoad: false,
-      securityLevel: 'strict',
-      theme: 'base',
-      fontFamily: 'Inter, Noto Sans JP, Yu Gothic, YuGothic, system-ui, sans-serif',
-      flowchart: {
-        htmlLabels: true,
-        useMaxWidth: true,
-        curve: 'basis',
-        nodeSpacing: 32,
-        rankSpacing: 34,
-      },
-      themeVariables: dark
-        ? {
-            background: '#16191f',
-            primaryColor: '#1f2937',
-            primaryTextColor: '#f3f5f7',
-            primaryBorderColor: '#526071',
-            secondaryColor: '#242946',
-            tertiaryColor: '#111827',
-            lineColor: '#a9b3c3',
-            textColor: '#f3f5f7',
-            edgeLabelBackground: '#16191f',
-            clusterBkg: '#16191f',
-            clusterBorder: '#374151',
-            mainBkg: '#1f2937',
-            nodeBorder: '#526071',
-          }
-        : {
-            background: '#f7f8fa',
-            primaryColor: '#ffffff',
-            primaryTextColor: '#15171a',
-            primaryBorderColor: '#cfd5df',
-            secondaryColor: '#eef0ff',
-            tertiaryColor: '#f7f8fa',
-            lineColor: '#667085',
-            textColor: '#15171a',
-            edgeLabelBackground: '#f7f8fa',
-            clusterBkg: '#f7f8fa',
-            clusterBorder: '#d8dde6',
-            mainBkg: '#ffffff',
-            nodeBorder: '#cfd5df',
-          },
-    };
-  };
-
-  let rendering = false;
-  let rerenderRequested = false;
-
-  const renderDiagrams = async (): Promise<void> => {
-    const roots = Array.from(document.querySelectorAll('.mermaid-diagram'))
-      .filter((node): node is HTMLElement => node instanceof HTMLElement);
-    if (!roots.length) return;
-
-    if (rendering) {
-      rerenderRequested = true;
-      return;
-    }
-
-    rendering = true;
-
-    try {
-      const mermaid = await loadMermaid();
-      mermaid.initialize(themeConfig());
-
-      roots.forEach((root) => {
-        const source = root.dataset.mermaidSource || '';
-        root.removeAttribute('data-processed');
-        root.replaceChildren();
-        root.textContent = source;
-      });
-
-      await mermaid.run({ nodes: roots });
-    } catch (error) {
-      console.error('Mermaid render failed:', error);
-    } finally {
-      rendering = false;
-      if (rerenderRequested) {
-        rerenderRequested = false;
-        queueMicrotask(() => { void renderDiagrams(); });
-      }
-    }
-  };
-
-  const initializeMermaidRenderer = async (): Promise<void> => {
-    collectDiagrams();
-    if (!document.querySelector('.mermaid-diagram')) return;
-
-    await renderDiagrams();
-
-    const observer = new MutationObserver((mutations) => {
-      if (mutations.some((mutation) => mutation.attributeName === 'data-theme')) {
-        void renderDiagrams();
-      }
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['data-theme'],
-    });
-  };
-
-  void initializeMermaidRenderer().catch((error: unknown) => {
-    console.error('Mermaid initialization failed:', error);
-  });
+  initializeFlowRenderer();
 </script>
 
 <InterviewDeepLinks />
