@@ -1,0 +1,129 @@
+:root {
+  --code-comment: #6a737d;
+  --code-punctuation: #586069;
+  --code-property: #005cc5;
+  --code-string: #032f62;
+  --code-operator: #d73a49;
+  --code-keyword: #d73a49;
+  --code-function: #6f42c1;
+  --code-class: #e36209;
+  --code-variable: #e36209;
+  --code-regex: #22863a;
+  --code-important: #b31d28;
+}
+
+:root[data-theme='dark'] {
+  --code-comment: #8b949e;
+  --code-punctuation: #c9d1d9;
+  --code-property: #79c0ff;
+  --code-string: #a5d6ff;
+  --code-operator: #ff7b72;
+  --code-keyword: #ff7b72;
+  --code-function: #d2a8ff;
+  --code-class: #ffa657;
+  --code-variable: #ffa657;
+  --code-regex: #7ee787;
+  --code-important: #ffa198;
+}
+
+.prose pre code[class*='language-'],
+.prose code[class*='language-'] {
+  background: transparent;
+  color: var(--text);
+  text-shadow: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: .9rem;
+  line-height: 1.65;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  tab-size: 2;
+  hyphens: none;
+}
+
+.prose pre[class*='language-'] {
+  overflow: auto;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--code-comment);
+}
+
+.token.punctuation {
+  color: var(--code-punctuation);
+}
+
+.token.namespace {
+  opacity: .78;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--code-property);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--code-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--code-operator);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--code-keyword);
+}
+
+.token.function {
+  color: var(--code-function);
+}
+
+.token.class-name {
+  color: var(--code-class);
+}
+
+.token.regex,
+.token.important {
+  color: var(--code-regex);
+}
+
+.token.variable {
+  color: var(--code-variable);
+}
+
+.token.important,
+.token.bold {
+  font-weight: 700;
+}
+
+.token.important {
+  color: var(--code-important);
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
