@@ -4,7 +4,14 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
 ---
 
 <script>
-  import mermaid from 'mermaid';
+  let mermaidPromise = null;
+
+  const loadMermaid = () => {
+    if (!mermaidPromise) {
+      mermaidPromise = import('mermaid').then((module) => module.default);
+    }
+    return mermaidPromise;
+  };
 
   const escapeLabel = (value) => String(value ?? '')
     .replace(/\\/g, '\\\\')
@@ -163,16 +170,18 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
     }
 
     rendering = true;
-    mermaid.initialize(themeConfig());
-
-    roots.forEach((root) => {
-      const source = root.dataset.mermaidSource || '';
-      root.removeAttribute('data-processed');
-      root.replaceChildren();
-      root.textContent = source;
-    });
 
     try {
+      const mermaid = await loadMermaid();
+      mermaid.initialize(themeConfig());
+
+      roots.forEach((root) => {
+        const source = root.dataset.mermaidSource || '';
+        root.removeAttribute('data-processed');
+        root.replaceChildren();
+        root.textContent = source;
+      });
+
       await mermaid.run({ nodes: roots });
     } catch (error) {
       console.error('Mermaid render failed:', error);
@@ -187,6 +196,8 @@ import InterviewDeepLinks from './InterviewDeepLinks.astro';
 
   const initializeMermaidRenderer = async () => {
     collectDiagrams();
+    if (!document.querySelector('.mermaid-diagram')) return;
+
     await renderDiagrams();
 
     const observer = new MutationObserver((mutations) => {
