@@ -2,6 +2,14 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync
 import { tmpdir } from 'node:os';
 import { basename, join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import {
+  AUDIO_CACHE_VERSION,
+  DEFAULT_MP3_FORMAT,
+  createAudioTaskHash,
+  isReusableAudio,
+  readJsonIfExists,
+  sameNumber,
+} from './audio-cache.mjs';
 
 const DEFAULT_STYLE_ID = 497929760;
 const DEFAULT_ENGINE_URL = 'http://127.0.0.1:10101';
@@ -161,6 +169,16 @@ const findVoice = async () => {
   fail(`AivisSpeech 中找不到 Style ID ${STYLE_ID}。`);
 };
 
+const synthesisSettings = () => ({
+  speedScale: INTERVIEW_SPEED,
+  intonationScale: 1.0,
+  volumeScale: 1.0,
+  prePhonemeLength: 0.10,
+  postPhonemeLength: 0.12,
+  outputSamplingRate: 24000,
+  outputStereo: false,
+});
+
 const synthesize = async (text) => {
   const queryUrl = new URL(`${ENGINE_URL}/audio_query`);
   queryUrl.searchParams.set('text', text);
@@ -168,13 +186,14 @@ const synthesize = async (text) => {
   const queryResponse = await fetch(queryUrl, { method: 'POST' });
   if (!queryResponse.ok) throw new Error(`audio_query failed: HTTP ${queryResponse.status}`);
   const query = await queryResponse.json();
-  query.speedScale = INTERVIEW_SPEED;
-  query.intonationScale = 1.0;
-  query.volumeScale = 1.0;
-  query.prePhonemeLength = 0.10;
-  query.postPhonemeLength = 0.12;
-  if ('outputSamplingRate' in query) query.outputSamplingRate = 24000;
-  if ('outputStereo' in query) query.outputStereo = false;
+  const settings = synthesisSettings();
+  query.speedScale = settings.speedScale;
+  query.intonationScale = settings.intonationScale;
+  query.volumeScale = settings.volumeScale;
+  query.prePhonemeLength = settings.prePhonemeLength;
+  query.postPhonemeLength = settings.postPhonemeLength;
+  if ('outputSamplingRate' in query) query.outputSamplingRate = settings.outputSamplingRate;
+  if ('outputStereo' in query) query.outputStereo = settings.outputStereo;
 
   const synthesisUrl = new URL(`${ENGINE_URL}/synthesis`);
   synthesisUrl.searchParams.set('speaker', String(STYLE_ID));
@@ -200,13 +219,68 @@ const encodeMp3 = (wav, outputPath) => {
 
 const pad = (value) => String(value).padStart(2, '0');
 const { speaker, style } = await findVoice();
+const voiceFingerprint = {
+  styleId: STYLE_ID,
+  speakerUuid: speaker.speaker_uuid ?? '',
+  modelVersion: speaker.version ?? '',
+};
+const taskHash = (text, scope) => createAudioTaskHash({
+  scope,
+  text,
+  voice: voiceFingerprint,
+  synthesis: synthesisSettings(),
+  format: DEFAULT_MP3_FORMAT,
+});
+
+const legacyManifestMatchesConfig = (manifest) => Boolean(
+  manifest
+  && sameNumber(manifest.voice?.styleId, STYLE_ID)
+  && String(manifest.voice?.speakerUuid ?? '') === String(voiceFingerprint.speakerUuid)
+  && String(manifest.voice?.modelVersion ?? '') === String(voiceFingerprint.modelVersion)
+  && sameNumber(manifest.settings?.speed, INTERVIEW_SPEED)
+  && sameNumber(manifest.settings?.intonationScale, 1)
+  && (!manifest.engineUrl || manifest.engineUrl === ENGINE_URL)
+  && (
+    !manifest.format
+    || (
+      manifest.format.container === DEFAULT_MP3_FORMAT.container
+      && sameNumber(manifest.format.sampleRate, DEFAULT_MP3_FORMAT.sampleRate)
+      && manifest.format.bitrate === DEFAULT_MP3_FORMAT.bitrate
+      && sameNumber(manifest.format.channels, DEFAULT_MP3_FORMAT.channels)
+    )
+  )
+);
+
+const previousAudioRecords = (manifest) => {
+  const records = new Map();
+  for (const item of Array.isArray(manifest?.interview) ? manifest.interview : []) {
+    if (item?.audio) {
+      records.set(item.audio, {
+        hash: item.audioHash,
+        text: item.text || '',
+      });
+    }
+  }
+  for (const item of Array.isArray(manifest?.review) ? manifest.review : []) {
+    if (item?.audio) {
+      records.set(item.audio, {
+        hash: item.audioHash,
+        text: item.text || '',
+      });
+    }
+  }
+  return records;
+};
+
 console.log(`\nAivisSpeech Interview: ${speaker.name} / ${style.name} / Style ID ${STYLE_ID}`);
 console.log(`Speed: interview=${INTERVIEW_SPEED.toFixed(2)}`);
 console.log(`Target dates: ${targetDates.length}${generateAll ? ' (ALL)' : ''}`);
-console.log(`Force overwrite: ${force ? 'YES' : 'NO'}\n`);
+console.log(`Force overwrite: ${force ? 'YES' : 'NO'}`);
+console.log(`Audio cache: SHA-256 v${AUDIO_CACHE_VERSION}\n`);
 
 let totalGenerated = 0;
 let totalSkipped = 0;
+let totalMigrated = 0;
 let processedDates = 0;
 
 for (const date of targetDates) {
@@ -222,57 +296,92 @@ for (const date of targetDates) {
 
   const outputDir = join(root, 'public', 'audio', 'japanese', date);
   mkdirSync(outputDir, { recursive: true });
+  const manifestPath = join(outputDir, 'interview-manifest.json');
+  const previousManifest = readJsonIfExists(manifestPath);
+  const previousRecords = previousAudioRecords(previousManifest);
+  const legacyConfigMatches = legacyManifestMatchesConfig(previousManifest);
+
   let questionIndex = 0;
   let answerIndex = 0;
   let reviewIndex = 0;
   let generated = 0;
   let skipped = 0;
+  let migrated = 0;
   const manifestInterview = [];
   const manifestReview = [];
 
   console.log(`\n=== ${date} · ${interview.length} interview · ${review.length} review ===`);
 
+  const ensureAudio = async ({ file, path, text, scope }) => {
+    const expectedHash = taskHash(text, scope);
+    const previous = previousRecords.get(file);
+    const legacyMatches = Boolean(
+      legacyConfigMatches
+      && previous
+      && !previous.hash
+      && previous.text === text
+    );
+
+    if (isReusableAudio({
+      force,
+      filePath: path,
+      expectedHash,
+      previousHash: previous?.hash,
+      legacyMatches,
+    })) {
+      skipped += 1;
+      if (legacyMatches) migrated += 1;
+      console.log(`SKIP ${file}${legacyMatches ? '  [cache migrated]' : '  [hash match]'}`);
+      return expectedHash;
+    }
+
+    console.log(`${existsSync(path) ? 'REGEN' : 'GEN  '} ${file}  ${text}`);
+    try {
+      encodeMp3(await synthesize(text), path);
+      generated += 1;
+      return expectedHash;
+    } catch (error) {
+      fail(`${date}/${file} 生成失败：${error instanceof Error ? error.message : String(error)}`);
+    }
+  };
+
   for (const item of interview) {
     const index = item.type === 'question' ? ++questionIndex : ++answerIndex;
     const file = `interview-${item.type}-${pad(index)}.mp3`;
     const path = join(outputDir, file);
-    if (!force && existsSync(path)) {
-      skipped += 1;
-      console.log(`SKIP ${file}`);
-    } else {
-      console.log(`GEN  ${file}  ${item.text}`);
-      try {
-        encodeMp3(await synthesize(item.text), path);
-        generated += 1;
-      } catch (error) {
-        fail(`${date}/${file} 生成失败：${error instanceof Error ? error.message : String(error)}`);
-      }
-    }
-    manifestInterview.push({ index, type: item.type, text: item.text, audio: file });
+    const audioHash = await ensureAudio({
+      file,
+      path,
+      text: item.text,
+      scope: `interview-${item.type}`,
+    });
+    manifestInterview.push({ index, type: item.type, text: item.text, audio: file, audioHash });
   }
 
   for (const text of review) {
     const index = ++reviewIndex;
     const file = `review-question-${pad(index)}.mp3`;
     const path = join(outputDir, file);
-    if (!force && existsSync(path)) {
-      skipped += 1;
-      console.log(`SKIP ${file}`);
-    } else {
-      console.log(`GEN  ${file}  ${text}`);
-      try {
-        encodeMp3(await synthesize(text), path);
-        generated += 1;
-      } catch (error) {
-        fail(`${date}/${file} 生成失败：${error instanceof Error ? error.message : String(error)}`);
-      }
-    }
-    manifestReview.push({ index, text, audio: file });
+    const audioHash = await ensureAudio({
+      file,
+      path,
+      text,
+      scope: 'interview-review-question',
+    });
+    manifestReview.push({ index, text, audio: file, audioHash });
   }
 
+  const changed = generated > 0 || migrated > 0 || !previousManifest;
   const manifest = {
     date,
-    generatedAt: new Date().toISOString(),
+    generatedAt: changed
+      ? new Date().toISOString()
+      : previousManifest.generatedAt ?? new Date().toISOString(),
+    audioCache: {
+      version: AUDIO_CACHE_VERSION,
+      algorithm: 'sha256',
+    },
+    engineUrl: ENGINE_URL,
     voice: {
       name: speaker.name,
       style: style.name,
@@ -280,21 +389,24 @@ for (const date of targetDates) {
       speakerUuid: speaker.speaker_uuid,
       modelVersion: speaker.version,
     },
+    format: { ...DEFAULT_MP3_FORMAT },
     settings: { speed: INTERVIEW_SPEED, intonationScale: 1.0 },
     interview: manifestInterview,
     review: manifestReview,
   };
-  writeFileSync(join(outputDir, 'interview-manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
-  console.log(`完成 ${date}：新生成 ${generated} 个，跳过 ${skipped} 个。`);
+  writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
+  console.log(`完成 ${date}：生成/更新 ${generated} 个，跳过 ${skipped} 个，迁移 hash ${migrated} 个。`);
   totalGenerated += generated;
   totalSkipped += skipped;
+  totalMigrated += migrated;
   processedDates += 1;
 }
 
 console.log('\n========================================');
 console.log(`全部完成：${processedDates}/${targetDates.length} 天`);
-console.log(`新生成：${totalGenerated} 个 MP3`);
+console.log(`生成/更新：${totalGenerated} 个 MP3`);
 console.log(`跳过：${totalSkipped} 个 MP3`);
+console.log(`迁移 hash：${totalMigrated} 个 MP3`);
 console.log(`Voice: ${speaker.name} / ${style.name} / ${STYLE_ID}`);
 console.log(`Speed: ${INTERVIEW_SPEED.toFixed(2)}`);
 console.log('========================================\n');
