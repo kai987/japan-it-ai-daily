@@ -7,6 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "check": "astro check",
+    "test": "vitest run",
     "security:check": "node scripts/check-csp.mjs",
     "audio:generate": "node scripts/generate-japanese-audio.mjs && node scripts/generate-interview-audio.mjs",
     "audio:generate:latest": "node scripts/generate-japanese-audio.mjs --latest && node scripts/generate-interview-audio.mjs --latest",
@@ -20,5 +22,10 @@
     "@astrojs/rss": "4.0.19",
     "astro": "7.2.9",
     "mermaid": "11.17.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "typescript": "7.0.2",
+    "vitest": "4.1.11"
   }
 }
