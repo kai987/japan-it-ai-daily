@@ -41,7 +41,19 @@ jobs:
             exit 0
           fi
 
-          endpoint="https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
+          # Accept the 32-character Account ID, the S3 hostname, or the full HTTPS endpoint.
+          account_ref="${R2_ACCOUNT_ID%/}"
+          account_ref="${account_ref#https://}"
+          account_ref="${account_ref#http://}"
+          account_ref="${account_ref%%/*}"
+          account_id="${account_ref%.r2.cloudflarestorage.com}"
+
+          if [[ ! "${account_id}" =~ ^[A-Fa-f0-9]{32}$ ]]; then
+            echo "::error::R2_ACCOUNT_ID must be the 32-character Cloudflare Account ID (or its exact R2 S3 endpoint/hostname). Please update the repository secret; do not use the public r2.dev URL, token ID, Access Key ID, or bucket name."
+            exit 1
+          fi
+
+          endpoint="https://${account_id}.r2.cloudflarestorage.com"
 
           aws s3 sync public/audio/ "s3://${R2_BUCKET}/" \
             --endpoint-url "${endpoint}" \
