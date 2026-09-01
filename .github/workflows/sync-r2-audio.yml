@@ -1,0 +1,72 @@
+name: Sync audio to Cloudflare R2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/audio/**'
+      - '.github/workflows/sync-r2-audio.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: r2-audio-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      R2_BUCKET: japan-it-ai-daily-audio
+      R2_PUBLIC_BASE_URL: https://pub-7561025e67be4103ac4bafb331864381.r2.dev
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: auto
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Sync audio to R2
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ -z "${R2_ACCOUNT_ID}" || -z "${AWS_ACCESS_KEY_ID}" || -z "${AWS_SECRET_ACCESS_KEY}" ]]; then
+            echo "::notice::R2 credentials are not configured yet. Add R2_ACCOUNT_ID, R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY as repository Actions secrets; upload skipped."
+            exit 0
+          fi
+
+          endpoint="https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
+
+          aws s3 sync public/audio/ "s3://${R2_BUCKET}/" \
+            --endpoint-url "${endpoint}" \
+            --only-show-errors \
+            --cache-control "public,max-age=86400"
+
+          local_mp3_count="$(find public/audio -type f -name '*.mp3' | wc -l | tr -d ' ')"
+          remote_mp3_count="$(aws s3 ls "s3://${R2_BUCKET}/" --recursive --endpoint-url "${endpoint}" | awk '$4 ~ /\.mp3$/ { count++ } END { print count + 0 }')"
+
+          echo "Local MP3 count:  ${local_mp3_count}"
+          echo "Remote MP3 count: ${remote_mp3_count}"
+
+          if (( remote_mp3_count < local_mp3_count )); then
+            echo "::error::R2 has fewer MP3 files than the repository after sync."
+            exit 1
+          fi
+
+          probe_path="$(find public/audio -type f -name '*.mp3' -print -quit | sed 's#^public/audio/##')"
+          if [[ -z "${probe_path}" ]]; then
+            echo "::error::No MP3 file found under public/audio/."
+            exit 1
+          fi
+
+          echo "Checking public R2 URL: ${R2_PUBLIC_BASE_URL}/${probe_path}"
+          headers="$(curl -fsS --range 0-0 -o /dev/null -D - "${R2_PUBLIC_BASE_URL}/${probe_path}")"
+          printf '%s\n' "${headers}" | grep -Ei '^(HTTP/|content-type:|content-length:|content-range:|cache-control:)' || true
+
+          echo "R2 audio sync and public-read smoke test succeeded."
