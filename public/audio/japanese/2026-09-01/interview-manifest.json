@@ -1,0 +1,118 @@
+{
+  "date": "2026-09-01",
+  "generatedAt": "2026-09-01T04:13:05.665Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "LLMのコストは、Token単価だけで比較してよいですか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "0393c617e206475962a7894122850b6f0a49f5cc144814f12e9d6a0550c6539f"
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "Token単価だけでは不十分だと思います。安いModelでも再実行や人間の修正が多いと、成功Task一件当たりの総Costは高くなる可能性があります。そのため、あらかじめTaskの完了条件を定義し、Model Costだけでなく、手戻り、Human Review、Task Success Rateまで含めて評価することが重要だと考えています。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "95271511feea04004a6a2067c20bf814053b37e037ea5cdee83482ecd13a2060"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "AIが実装する時代に、人間のCode Reviewでは何を見るべきだと思いますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "166087f7a0a8c9f96a7300a9d736c2bc81b8637946f3b809aeae3c7df64a65d7"
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "すべてのDiffを同じ深さで読むより、AIがどの根拠で問題なしと判断したのかを確認することが重要になると思います。Test結果、全件確認、Document、構造上の保証などEvidenceを明示させ、根拠が弱いものは未確認として人に回します。また、調査の終了条件を定義し、無限にContextを探し続けない仕組みも必要だと考えています。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "178ae9edaf2146c5a0ce206b3c82c0a8bcce2e77f6037c70cbbc7bbbb20ee0b7"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "複数の業務システムをAI Agentへ接続する場合、なぜMCP Gatewayが必要ですか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "a0284ef3fb206fa4799eec4a25ea3802b00596b9a73506804faf7725496edade"
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "SystemごとにAgentを直接接続すると、認証方式、Credential、監査ログ、Rate Limit、Access Controlが分散し、運用が煩雑になります。MCP Gatewayを共通入口にすると、Authentication、Authorization、Audit、Quota、Cacheを一元化できます。特にTool数や利用者が増えるEnterprise環境では、横断的なGovernanceを実装しやすい点が大きなメリットだと思います。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "bce78ce99dd39e61fc5d2b19ed567cabbcc0238d3acc2cfeba4915eda8fbe9e9"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "ClaudeをAmazon Bedrock、Claude Platform on AWS、Anthropic Directのどれで利用するか、どのように判断しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "8184a3137b942cb35c250d3155c2fb71fc9346c7108e9a31fc06c0486cb1f439"
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "まずDataを誰が処理するかとCompliance要件を確認します。次に必要なTool、Structured Output、Bedrock固有機能などがそのEndpointで使えるかを確認し、その条件を満たした候補の中で実効Costと調達条件を比較します。Billing先とData Processorは同じとは限らないため、この順番で判断することが重要だと思います。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "4941099282448389bf82e74946df2bf727f08a5f5e9b84d63e27b2da0a8f5d56"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "AI AgentがOSの設定変更やApplicationのInstallまで行う場合、何に注意すべきですか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "25228cecc8c65d0b3009f92f70d2a381c4eac86f676581a47c1148ec94439653"
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "Repository内の変更よりCapabilityが広いため、OS全体への影響を考える必要があります。Install、Shell、Network、Configuration変更をRisk別に分け、重要操作にはApprovalやRollbackを用意します。また、Agentが参照するSkillのVersionと、実際に変更した設定をAuditできるようにすることも重要だと思います。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "272656093c5f257351dc8638ba8ebb8cddeaed8d3df45c106a1d5bdc22bd5228"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "AIのROIを評価するとき、利用者数やToken量以外に何を測りますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "659fa523ed31c91b0c330a49f24d492e2f1fcd17c8d50cc05b7cc73bf4ec83ff"
+    },
+    {
+      "index": 2,
+      "text": "MCP Gatewayを導入する主な理由は何ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "922d8f177a5b4ccad74d7938a2642a2202475fcd909ad50723249402a18c9d51"
+    },
+    {
+      "index": 3,
+      "text": "Claudeの利用経路を決めるとき、なぜCostを最初に比較しないのですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "ebd51ecd6d5ddffcb6f8dc3187a1f54e31f010b52a1d09f7ea461c863656b562"
+    }
+  ]
+}

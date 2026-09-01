@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-01",
+  "generatedAt": "2026-09-01T04:12:09.789Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "成果",
+      "reading": "せいか",
+      "exampleJa": "AIの利用回数ではなく、業務で得られた成果をKPIとして測定します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "46342f28624cb4cd8d1edd6d2b6439111aebb4ded1f8c528ae78fdaec4d1ac76",
+      "example": "example-01.mp3",
+      "exampleHash": "468c3928714cf1884db5db10860c3b6bb9be04c760adb035e44af8c651735c33"
+    },
+    {
+      "index": 2,
+      "term": "手戻り",
+      "reading": "てもどり",
+      "exampleJa": "安いModelでも手戻りが多ければ、Task全体のCostは高くなります。",
+      "word": "vocab-02.mp3",
+      "wordHash": "d869fdf038acb1b948f0ba8fe7c3fbaa58039d9b3279bf7c2184f37d9f4979dc",
+      "example": "example-02.mp3",
+      "exampleHash": "fb9003abe097899df7268e16735f09228a33c11015bd29df988a4eb382ef123c"
+    },
+    {
+      "index": 3,
+      "term": "経緯",
+      "reading": "けいい",
+      "exampleJa": "変更の経緯が分からない場合は、PRとDecision Recordを確認します。",
+      "word": "vocab-03.mp3",
+      "wordHash": "0617f19be889b166bda4df5155add73a44a687cbe803f8cf5e9fc626cff64391",
+      "example": "example-03.mp3",
+      "exampleHash": "9fa2cd145739b11d215ae47e66252a63defacade660a1a10f4f5a7b8b91647ee"
+    },
+    {
+      "index": 4,
+      "term": "根拠",
+      "reading": "こんきょ",
+      "exampleJa": "AIの指摘を採用する前に、判断の根拠を明示させます。",
+      "word": "vocab-04.mp3",
+      "wordHash": "a6f653ee0feb745642c64400f7f87108014c78ad8ca97c067589d143b2b36843",
+      "example": "example-04.mp3",
+      "exampleHash": "366ad66b7d3c62acd943da024f1cc5bbddade425335e25978b4aea09c64b8a88"
+    },
+    {
+      "index": 5,
+      "term": "実態",
+      "reading": "じったい",
+      "exampleJa": "請求先だけで判断せず、Data Processingの実態まで確認します。",
+      "word": "vocab-05.mp3",
+      "wordHash": "8c94708e98a972895a09fe2f4e9f067ce1d407c1ed19caf2a46485b554df08a4",
+      "example": "example-05.mp3",
+      "exampleHash": "e038b38072780d0cc962734af7c2eeae504cf6440dd196dce60b830238957ceb"
+    },
+    {
+      "index": 6,
+      "term": "性質",
+      "reading": "せいしつ",
+      "exampleJa": "同じAWS請求でも、ServiceごとにData Processingの性質は異なります。",
+      "word": "vocab-06.mp3",
+      "wordHash": "a47dea52ca4b56d31c3f84f293d2eddd4046fdaaa940dc6a13a06ea0232f8f36",
+      "example": "example-06.mp3",
+      "exampleHash": "51808bf53816d54f67e4ee2145f6a9694533344b27a7ca77b63e36ceccca8c8a"
+    },
+    {
+      "index": 7,
+      "term": "避ける",
+      "reading": "さける",
+      "exampleJa": "すべてのAI Costを避けるのではなく、価値の低い再試行を減らします。",
+      "word": "vocab-07.mp3",
+      "wordHash": "5127a9014334ca12096f99752c63ac1f06b8d1d009ce53af70211b4d306ace6f",
+      "example": "example-07.mp3",
+      "exampleHash": "6124014905391c78b36cffcc85df2da4da2d28cbe10745d3acd37c55baa7e552"
+    },
+    {
+      "index": 8,
+      "term": "担う",
+      "reading": "になう",
+      "exampleJa": "定型処理はAgentが担い、最終的なRisk判断は人間が担います。",
+      "word": "vocab-08.mp3",
+      "wordHash": "7d23077fed7f8e41a65505bbe6da2dedb53915a36b9582f641cd38b6699af21b",
+      "example": "example-08.mp3",
+      "exampleHash": "d35482e92b18b37aaa8d8f318b55450e072e34c4397caba81c83c47940db9500"
+    },
+    {
+      "index": 9,
+      "term": "打ち切る",
+      "reading": "うちきる",
+      "exampleJa": "必要な一次情報がそろった時点で探索を打ち切ります。",
+      "word": "vocab-09.mp3",
+      "wordHash": "42b70c41372ff1943d6453c92280374cea5978e3ccd5696be6e5a6941e71ed5a",
+      "example": "example-09.mp3",
+      "exampleHash": "26393e698ef7fcc63e9249b25d650ab1b38b875a27a535edc614eeead277f472"
+    },
+    {
+      "index": 10,
+      "term": "絞る",
+      "reading": "しぼる",
+      "exampleJa": "Model Providerの候補をCompliance要件で先に絞ります。",
+      "word": "vocab-10.mp3",
+      "wordHash": "f2984847d18d47e9fb89a430df19cf6c6654f21e993beef9190c4100a79625c1",
+      "example": "example-10.mp3",
+      "exampleHash": "f7f25c1c81efd5c211471b6eee73e01948723e446379bda49b261aa7449da187"
+    },
+    {
+      "index": 11,
+      "term": "引き受ける",
+      "reading": "ひきうける",
+      "exampleJa": "Gatewayが認証とRate Limitを一元的に引き受けます。",
+      "word": "vocab-11.mp3",
+      "wordHash": "67c43a53dd9402e89567f248954624c7f9f99e5102771a830b586cf35faa5c6d",
+      "example": "example-11.mp3",
+      "exampleHash": "867bab402f25e780f9fe8e7c7c57948a3e5be5c8a1a0df199cd818451c6a4913"
+    },
+    {
+      "index": 12,
+      "term": "背負う",
+      "reading": "せおう",
+      "exampleJa": "Gatewayをフルスクラッチで作ると、可用性とVersion追従の負担も自社で背負います。",
+      "word": "vocab-12.mp3",
+      "wordHash": "0e62effbf85045cdc3a1f91fc8e2b1eb3ed15ed359ddecf63c94efee8358acbf",
+      "example": "example-12.mp3",
+      "exampleHash": "a631f603c711672016bdb85577a341f06167b8dca4eb50c75bf47fb31b9e16fb"
+    },
+    {
+      "index": 13,
+      "term": "つきまとう",
+      "reading": "つきまとう",
+      "exampleJa": "Local AgentにはPrivacyの利点がある一方で、Hardware運用の負担がつきまといます。",
+      "word": "vocab-13.mp3",
+      "wordHash": "fd021ce238d16edd0d19153456c38c72e7a8bba1e243d55a169a97057d9ea7a8",
+      "example": "example-13.mp3",
+      "exampleHash": "825f4c0fcdf7d3aa2b8ae63cdf8b00a407ea3490c0e88452a3c79114ed5af1db"
+    },
+    {
+      "index": 14,
+      "term": "煩雑な",
+      "reading": "はんざつな",
+      "exampleJa": "MCP Serverが増えると、Clientごとの接続設定が煩雑になりやすいです。",
+      "word": "vocab-14.mp3",
+      "wordHash": "7f48edb86b6f440af09f0b1ea825ab266d34df1e25789b183acfed6dcd9ab592",
+      "example": "example-14.mp3",
+      "exampleHash": "ee3d50eba3091433036a7b4cd4a08ac65c47804f49e2b8cc3506859381c4507e"
+    },
+    {
+      "index": 15,
+      "term": "粗い",
+      "reading": "あらい",
+      "exampleJa": "Role単位だけのAccess Controlでは、Toolごとの制御が粗くなる場合があります。",
+      "word": "vocab-15.mp3",
+      "wordHash": "a4386085fc56f0f8e4225db3c1ae34039be92b99df3248d6e7fef416aceddaa0",
+      "example": "example-15.mp3",
+      "exampleHash": "766f3ebf2de4b091211e030a16337708dfb50b76dd7d7b0146f401e888139acd"
+    },
+    {
+      "index": 16,
+      "term": "妥当な",
+      "reading": "だとうな",
+      "exampleJa": "特殊要件がなければ、Managed Gatewayを選ぶ方が妥当です。",
+      "word": "vocab-16.mp3",
+      "wordHash": "94b6c5f3d7c4d2d1a6b6b1f23b462f2a8df9f3d79c9de57d935600156bbbb560",
+      "example": "example-16.mp3",
+      "exampleHash": "2d3819a218b20fcc776aa62397c0f6b0ddd748da4d379a442aa1a53616732aa3"
+    },
+    {
+      "index": 17,
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "AI導入前に、Taskの完了条件をあらかじめ定義します。",
+      "word": "vocab-17.mp3",
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-17.mp3",
+      "exampleHash": "9310280fe6bcb92611ce947fffc4e14c4106254cf92b1573adbf746386f1646d"
+    },
+    {
+      "index": 18,
+      "term": "あくまで",
+      "reading": "あくまで",
+      "exampleJa": "今回の比較はあくまで公開情報に基づく整理として扱います。",
+      "word": "vocab-18.mp3",
+      "wordHash": "dd2cb5ea4b0cf370b5270eab5f4d02980eca680d5dcb1c4361e883b00bc68f83",
+      "example": "example-18.mp3",
+      "exampleHash": "7d60ceadf7f1dbc73ab5add0eb6e0dffa2f47e66fea1a72e34b9d4252699f0d2"
+    },
+    {
+      "index": 19,
+      "term": "一見",
+      "reading": "いっけん",
+      "exampleJa": "一見シンプルな直結構成でも、System数が増えると運用が複雑になります。",
+      "word": "vocab-19.mp3",
+      "wordHash": "3c3f94e762e72c3ce296aa421849b932626edebee3b43bae1fa1dc6a60b72a24",
+      "example": "example-19.mp3",
+      "exampleHash": "8a9291b7367e56816a5aa6f8d53b3c93a95f32703ad24b42604f33ed8ca57af2"
+    },
+    {
+      "index": 20,
+      "term": "なお",
+      "reading": "なお",
+      "exampleJa": "なお、料金と機能は変更される可能性があるため、公式Documentも確認してください。",
+      "word": "vocab-20.mp3",
+      "wordHash": "cfb507522b72d6b1077c046ab6110ed4b48999f1e4312ce2c0a5e7541aa261f3",
+      "example": "example-20.mp3",
+      "exampleHash": "8e49795e67662e583b0d8bee395a31e6af0c8c37c91bb279e0ed22d277a709d4"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとらわれず",
+      "exampleJa": "Token単価だけにとらわれず、成功Task一件当たりの総CostでModelを比較します。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "a91e178516d80f212a1f1ba93d223d3879f1aa0ed4b9fa09cf95d034543c0824"
+    },
+    {
+      "index": 2,
+      "pattern": "～かねない",
+      "exampleJa": "Rate Limitがなければ、AgentのAPI呼び出しCostが青天井になりかねません。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "fc3712830c1d9bf4615051d1483fb52ed6f34d839fb74907811abd8b3485d459"
+    },
+    {
+      "index": 3,
+      "pattern": "～にとどまらず",
+      "exampleJa": "MCP Gatewayの価値はAPI変換にとどまらず、認証・監査・Cost Controlにもあります。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "3472efab7ba8d125d318b6298c732c712f5ce2e9f9f34d6ac5211422a20c4fdd"
+    },
+    {
+      "index": 4,
+      "pattern": "～に伴って",
+      "exampleJa": "接続する業務Systemが増えるのに伴って、認証と監査の管理も複雑になります。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "b90ab7269f27020bcffaf21d40493efbef96486233caf11c3c34ca0bedfb74b1"
+    },
+    {
+      "index": 5,
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの複雑さに応じて、軽量ModelとFrontier Modelを使い分けます。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "cb02c3453d52c01cd3427d4851727f62c0795700f623ae9b21a8c3cb28680ec3"
+    },
+    {
+      "index": 6,
+      "pattern": "～たうえで",
+      "exampleJa": "Compliance要件を確認したうえで、Claudeの利用経路を選定します。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "8a664b37666c3a24d8a967b94b1f4afca97e5d37630897fc42b2718c6594e08a"
+    },
+    {
+      "index": 7,
+      "pattern": "～一方で",
+      "exampleJa": "OmarchyはAgentによるOS操作を簡単にする一方で、Capabilityの範囲をどう制御するかが重要になります。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "4593c454b66a7c70978bf86bc8d3dd0f3af29cbf622df9f71c4159d8f9b59423"
+    }
+  ]
+}
