@@ -13,7 +13,7 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     env:
-      PUBLIC_AUDIO_BASE_URL: ${{ vars.PUBLIC_AUDIO_BASE_URL }}
+      PUBLIC_AUDIO_BASE_URL: ${{ vars.PUBLIC_AUDIO_BASE_URL || 'https://pub-7561025e67be4103ac4bafb331864381.r2.dev' }}
     steps:
       - name: Checkout
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
