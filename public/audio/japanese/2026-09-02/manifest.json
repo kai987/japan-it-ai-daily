@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-02",
+  "generatedAt": "2026-09-02T04:28:55.982Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "見逃す",
+      "reading": "みのがす",
+      "exampleJa": "同じModelだけでReviewすると、設計上の前提ミスを見逃す可能性があります。",
+      "word": "vocab-01.mp3",
+      "wordHash": "1af5cf69ba0ae1ee8806254e3491670fdaa14fbd39fcfabed36b0cfbdd2b373c",
+      "example": "example-01.mp3",
+      "exampleHash": "e3a26c75213e3ca17ad9985f4e4b769e4ac5719a527789ced7b6e40bcffc899d"
+    },
+    {
+      "index": 2,
+      "term": "高める",
+      "reading": "たかめる",
+      "exampleJa": "別ModelのSecond Opinionを追加して、Architecture Reviewの精度を高めます。",
+      "word": "vocab-02.mp3",
+      "wordHash": "741747531011eccec875f716f2a9857cfdb363a901904e4218c1adc80161e10e",
+      "example": "example-02.mp3",
+      "exampleHash": "dd3dc423ebfb148ae703783aaf8229c3fbddbc5926e2f366531e0cf376d7eab0"
+    },
+    {
+      "index": 3,
+      "term": "発覚する",
+      "reading": "はっかくする",
+      "exampleJa": "設計ミスがProduction直前に発覚すると、手戻りが大きくなります。",
+      "word": "vocab-03.mp3",
+      "wordHash": "b93e2c1169893e1504d99066fae673d0b72751efcffa9419915dfe9dfc669173",
+      "example": "example-03.mp3",
+      "exampleHash": "96277136022f209e249e9dac99470b6c58fbd4216d5301dab95d5b31ef2e0e3b"
+    },
+    {
+      "index": 4,
+      "term": "やり直す",
+      "reading": "やりなおす",
+      "exampleJa": "Plan段階で問題を見つければ、実装全体をやり直すRiskを減らせます。",
+      "word": "vocab-04.mp3",
+      "wordHash": "5d569b0fda1d5e402ffcc855f1d62ce1fdd95f3da9d707c9274c918e7393e740",
+      "example": "example-04.mp3",
+      "exampleHash": "fd91a3b9bc392add73ea398c0eef12d9de7dc9c44d18eebe7173f957a9397a3a"
+    },
+    {
+      "index": 5,
+      "term": "抑える",
+      "reading": "おさえる",
+      "exampleJa": "必要なSkillだけを読み込み、Context消費を抑えます。",
+      "word": "vocab-05.mp3",
+      "wordHash": "8eab76035dab35c86a9d486a200ad7b4a26e0e338df92fb98f5b1e54eab45bfb",
+      "example": "example-05.mp3",
+      "exampleHash": "8da43dd9f31251403ef47280faf58f9c9c00f1e4a57d563bbbd642e5967b2dcc"
+    },
+    {
+      "index": 6,
+      "term": "切り替える",
+      "reading": "きりかえる",
+      "exampleJa": "Data Retention Modeを切り替える前に、社内Policyを確認します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "4090e9c6a6bd0805e503a0221da7f96c2038cab60a5f9c8db6a5146916ed3c85",
+      "example": "example-06.mp3",
+      "exampleHash": "3ca19406fc314d119a24ecee9afc1af364db598aed3609449dfea57098699d71"
+    },
+    {
+      "index": 7,
+      "term": "求める",
+      "reading": "もとめる",
+      "exampleJa": "Model Cardが追加設定を求める場合、Application側だけで判断しません。",
+      "word": "vocab-07.mp3",
+      "wordHash": "62e99685ce01081098420b0e433de989d11d6c656741f2db23567a1590943eab",
+      "example": "example-07.mp3",
+      "exampleHash": "f267720eb22bb1047378d218c42b00d9e79083e94e10eff15fe163766e9bb97e"
+    },
+    {
+      "index": 8,
+      "term": "委譲する",
+      "reading": "いじょうする",
+      "exampleJa": "Sub-agentへTaskを委譲するときは、必要な権限だけを渡します。",
+      "word": "vocab-08.mp3",
+      "wordHash": "7f40ed1e527a55666c4236843de27c2c058ee951e1c49e6812f41c8b6007cf54",
+      "example": "example-08.mp3",
+      "exampleHash": "1a140c7c0d9630c6929750b73d2a1a6e7d1af4997ff4cbf195297277b07a09d6"
+    },
+    {
+      "index": 9,
+      "term": "支える",
+      "reading": "ささえる",
+      "exampleJa": "Open Standardが異なるAgent間のInteroperabilityを支えます。",
+      "word": "vocab-09.mp3",
+      "wordHash": "0916d9551586b09a1eb6d76f8d72ad84b84bc20a558fbfe496cf08bef4815087",
+      "example": "example-09.mp3",
+      "exampleHash": "ac8da75943c094a16d07c15e96a739ec2fb4f0d008eb0bcb79f9c830c07c2810"
+    },
+    {
+      "index": 10,
+      "term": "後押しする",
+      "reading": "あとおしする",
+      "exampleJa": "共通の認証ProgramがMCPのEnterprise採用を後押しします。",
+      "word": "vocab-10.mp3",
+      "wordHash": "f4eac1f09c3ae50507099a3fad63c339c76a2596006ff513d7bc961010a8cf90",
+      "example": "example-10.mp3",
+      "exampleHash": "4df4263393cf3784fb79330b834c218c9bc8dca083ddfed4f186580248b3ab56"
+    },
+    {
+      "index": 11,
+      "term": "広がる",
+      "reading": "ひろがる",
+      "exampleJa": "Agent利用が重要業務へ広がるほど、IdentityとAuditが重要になります。",
+      "word": "vocab-11.mp3",
+      "wordHash": "f5062467d174be928179fe4384edaa3fa172a8a3d0f996f4dc3b4723adeab7e8",
+      "example": "example-11.mp3",
+      "exampleHash": "2293a6b17aa97ce13783ba01606a6f4a71ca4432b0fd9b5a64f37fb2dd6d6818"
+    },
+    {
+      "index": 12,
+      "term": "深刻な",
+      "reading": "しんこくな",
+      "exampleJa": "Permission Ruleを迂回できるBugは、深刻なSecurity Incidentにつながり得ます。",
+      "word": "vocab-12.mp3",
+      "wordHash": "8a70742084bd5464912e05f8b502367a6858bf029288f5cd1b6b0b68101b4403",
+      "example": "example-12.mp3",
+      "exampleHash": "dc2f893a73a92ba9976ae6f43098cc0e8af96d2b89b777f4b570acbfd81ccd37"
+    },
+    {
+      "index": 13,
+      "term": "微妙な",
+      "reading": "びみょうな",
+      "exampleJa": "PostgreSQLとRedshiftの微妙な違いをSkillで補完します。",
+      "word": "vocab-13.mp3",
+      "wordHash": "b3b487062a75a6bb657a3170fd33b550818bff8d9968da13a5e94db3776e54ae",
+      "example": "example-13.mp3",
+      "exampleHash": "10bc82289f690b7e80e751b48bf04d284849b66b6b32fdc43f6b26a444993097"
+    },
+    {
+      "index": 14,
+      "term": "中立的な",
+      "reading": "ちゅうりつてきな",
+      "exampleJa": "重要なProtocolほど、中立的なGovernanceの下で標準化する価値があります。",
+      "word": "vocab-14.mp3",
+      "wordHash": "bc3b4df47087e5fc9bea3502ed314f2a3b940b2562f615f5fa3a2600ba8cd557",
+      "example": "example-14.mp3",
+      "exampleHash": "52e4517ca370fc02e95b0627385633783a27d2bc5fbc6659b80fa2633d9b7c2f"
+    },
+    {
+      "index": 15,
+      "term": "明示的に",
+      "reading": "めいじてきに",
+      "exampleJa": "Productionで利用するModelとPermissionを明示的に指定します。",
+      "word": "vocab-15.mp3",
+      "wordHash": "afb7ecc16586a071b0019d6cda4536576b57e8cd727d0e14b313fa326959f881",
+      "example": "example-15.mp3",
+      "exampleHash": "6912bf86c1de57f422afaf3152d7e3e85b25386d2a25229b75726005f64e06a9"
+    },
+    {
+      "index": 16,
+      "term": "かえって",
+      "reading": "かえって",
+      "exampleJa": "単価だけを下げると、利用量が増えてかえって総Costが上がる場合があります。",
+      "word": "vocab-16.mp3",
+      "wordHash": "91f5461253b1023efce7b97c0badd97d4b85512605c59f8344377d22b7cd42eb",
+      "example": "example-16.mp3",
+      "exampleHash": "139b417732984a7f0b7959a9617ee9709467059d3e351588f933e62ec866f2fb"
+    },
+    {
+      "index": 17,
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "高RiskなActionだけは、あらかじめApproval条件を定めます。",
+      "word": "vocab-17.mp3",
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-17.mp3",
+      "exampleHash": "95603e6c3cab539a106d7cad0582517a36c2e9edcc11029e9a7b6bc14612e0da"
+    },
+    {
+      "index": 18,
+      "term": "当面",
+      "reading": "とうめん",
+      "exampleJa": "Gateway側の対応が完了するまで、当面はModel IDを明示指定します。",
+      "word": "vocab-18.mp3",
+      "wordHash": "4836a14607d1de7b5a66122eea5295ebc63145a65efdf380ef5113b9fd90dca0",
+      "example": "example-18.mp3",
+      "exampleHash": "692534fd1c944fccd88b40334ff9d649ea45d086274edae55a6f42c2772e4145"
+    },
+    {
+      "index": 19,
+      "term": "誤り",
+      "reading": "あやまり",
+      "exampleJa": "長時間Taskでは、小さな判断の誤りが後工程へ伝播する可能性があります。",
+      "word": "vocab-19.mp3",
+      "wordHash": "6f9f6edc27a9cd9cec29748edcf28bf2dcfb3e169054e3b23b758630073bd032",
+      "example": "example-19.mp3",
+      "exampleHash": "652054115173264aa1046427d4c7b5cc8e5a30b3c70a1554416a97c169ad92a9"
+    },
+    {
+      "index": 20,
+      "term": "役割",
+      "reading": "やくわり",
+      "exampleJa": "SkillとMCPとIAMの役割を分けて設計します。",
+      "word": "vocab-20.mp3",
+      "wordHash": "29c9897b8fdd636533b0f8fa7ecccd8b23f09b108fe5c7486b81216f2e95d2ef",
+      "example": "example-20.mp3",
+      "exampleHash": "849ce7a995332cef735949badd22d6a7bff05c629fffb345c2ac29e70ea4f758"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "MCPの価値はTool接続にとどまらず、IdentityやGovernanceの共通化にも広がっています。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "6470e50569c4f1ca608e41e58115c7dac5e259aaa1517c4af66394b312cf4db6"
+    },
+    {
+      "index": 2,
+      "pattern": "～を余儀なくされる",
+      "exampleJa": "Project設定のbypassPermissionsに依存していたTeamは、設定方法の変更を余儀なくされます。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "8eeb6fd390b65563eb4dc064a7c59c54b5f5651439e795f8daffcaabcee9e243"
+    },
+    {
+      "index": 3,
+      "pattern": "～に至るまで",
+      "exampleJa": "AI AgentはWeb検索からCode実行、送金に至るまで現実の操作を行う可能性があります。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "dc1a89a7497084151d83a61ffa32b8a4d79482cf4aca0227d98f3d9ebc2cd084"
+    },
+    {
+      "index": 4,
+      "pattern": "～たうえで",
+      "exampleJa": "実装計画を立てたうえで、別ModelにSecond Opinionを依頼します。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "6276cb516416b27ec71ab3227e16204a1276d013bcb5281032bb894a4da53f45"
+    },
+    {
+      "index": 5,
+      "pattern": "～にあたって",
+      "exampleJa": "Fable 5.1を利用するにあたって、AccountのData Retention設定を確認します。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "e7d5fd642f14188790a1898271c48f6cf09ba1accabf9637310188e38cd1f003"
+    },
+    {
+      "index": 6,
+      "pattern": "～に伴って",
+      "exampleJa": "AI Agentの利用拡大に伴って、IdentityとAuditの重要性も高まります。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "9c8dba45660cd4b2219241c3d3ff2cb9f6a4bc63c66c5f7b5bdf90922abdde0b"
+    },
+    {
+      "index": 7,
+      "pattern": "～一方で",
+      "exampleJa": "Modelの単価が下がる一方で、Agentの利用量はかえって増える可能性があります。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "3dce819551fc71d38da4074f52a18cf6bf59a034d4b0533049d1b22531c0f298"
+    }
+  ]
+}

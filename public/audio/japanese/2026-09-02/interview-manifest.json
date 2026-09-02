@@ -1,0 +1,118 @@
+{
+  "date": "2026-09-02",
+  "generatedAt": "2026-09-02T04:29:54.554Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIコーディングエージェントの権限設定を、Repository内の設定ファイルだけで管理してよいですか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "f3f712fdb9f3139578401b069a77b2eae44acedf2f4eca8d1dfd9c8c9b2ec9c2"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "Repository内の設定は開発ルールを共有するには便利ですが、Security Boundaryとしては信頼レベルが低いと思います。Repository自身が`bypassPermissions`を強制できると、Cloneしただけで危険な権限状態になる可能性があります。そのため、高RiskなPermissionはUser SettingsやManaged Settingsなど、Repositoryより上位の信頼レイヤーで管理し、Runtime側で強制することが重要だと考えています。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "e45e5151fc9095957077560224baff749128627c7ec81c7f81ec6f9b9480ac13"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "AI Agentに自己レビューさせれば十分ですか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "6b0b2b96884c9890a5fc354a42537970b817ab4c0c7a6fc91ad923a1c3abe382"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "自己レビューは有効ですが、同じModelでは最初の判断と同じBiasを共有する可能性があります。重要な設計やSecurity変更では、別ModelによるSecond Opinion、TestやStatic Analysisのような決定的な検証を組み合わせます。Reviewの目的はCommentを増やすことではなく、独立したEvidenceを増やすことだと考えています。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "2c2adeab8516988cbaa10e6ae82b64f6c570bc761a128bcdebee3509d610208c"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "Amazon Bedrockで新しいModelを採用するとき、性能以外に何を確認しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "9f20871067509bff6b4e4faa8fb45d09d0b4435f935cbf4ea8025355eef684bd"
+    },
+    {
+      "index": 6,
+      "type": "question",
+      "text": "まずData Retention、Data Processor、利用Region、社内Complianceを確認します。その条件を満たした上で、Quality、Reasoning Effort、Prompt Cache、Latency、Costを実Workloadで評価します。Account単位の設定が他のApplicationにも影響する場合があるため、Model単体ではなくAccount全体のGovernanceも確認することが重要です。",
+      "audio": "interview-question-06.mp3",
+      "audioHash": "572be986f5adf08f8b41907e995fec2e969f5a58a487aaf034635c5b23f22442"
+    },
+    {
+      "index": 7,
+      "type": "question",
+      "text": "AI AgentにDomain Knowledgeを与える場合、巨大なSystem PromptとSkillをどう使い分けますか。",
+      "audio": "interview-question-07.mp3",
+      "audioHash": "e6a5dfcbf284796b70b767037c4140d650117965d904b3b5ea3196d4fa979021"
+    },
+    {
+      "index": 8,
+      "type": "question",
+      "text": "全Taskに必要な共通RuleだけをSystem Promptに置き、Redshift固有SQLや運用手順のようなDomain KnowledgeはSkillとして分離する方法が良いと思います。必要な時だけSkillを読み込めばContext消費を抑えられ、内容もVersion管理しやすくなります。実行権限はSkillではなくMCPやIAM側で別に制御します。",
+      "audio": "interview-question-08.mp3",
+      "audioHash": "053274d47218c5ed4b501e93d2788925b8cdcd6fe7987207549a1875df515925"
+    },
+    {
+      "index": 9,
+      "type": "question",
+      "text": "AI Agent間の連携で、Open Standardが重要なのはなぜですか。",
+      "audio": "interview-question-09.mp3",
+      "audioHash": "bfc81048bafbfa971c87567a00849a69484b6349992ee419802a36afc4d099bb"
+    },
+    {
+      "index": 10,
+      "type": "question",
+      "text": "企業やVendorごとに独自Protocolを作ると、AgentとToolの組み合わせごとに接続コードを保守する必要があります。MCPやA2AのようなOpen StandardがあればInteroperabilityを高められます。一方で金融や医療など重要業務へ広がるほど、一社が仕様と実装を独占しない中立的なGovernanceや、Identity・Security・Observabilityの共通要件も重要だと考えています。",
+      "audio": "interview-question-10.mp3",
+      "audioHash": "4884e386d24d72efa012d2520d373e68135c6bf2d08e308497da6b78822d6ae5"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "AI AgentのPermissionをRepository設定だけに任せてはいけないのはなぜですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "87c08c4343c4f939f9e66de0c240c3cf692397cf4e79ef7543c1e2112f7a0b87"
+    },
+    {
+      "index": 2,
+      "text": "AI Code Reviewで別Modelを使うメリットは何ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "48a01823d965a6626ab2138b6dc052f95db6d2232974305a2f273ad393291aab"
+    },
+    {
+      "index": 3,
+      "text": "Agent SkillとMCPの役割の違いは何ですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "986d0e956391c1e0a5f44fa7c25271109bd96358159798e86f46f0211ac57d11"
+    }
+  ]
+}
