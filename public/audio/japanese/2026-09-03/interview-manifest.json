@@ -1,0 +1,118 @@
+{
+  "date": "2026-09-03",
+  "generatedAt": "2026-09-03T13:10:27.307Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "ローカルで動くCoding Agentを安全に利用するために、どのような設計が必要ですか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "2bc1b134e90709ccf1d5017b4d30f74c00e4e4258f8eea412d565718410d574b"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "Coding Agentは開発者と同じFileやCredentialへアクセスできる場合があるため、通常のChat Toolではなく特権的なAutomation Toolとして扱う必要があると思います。Home Directory全体ではなく専用Workspaceだけを渡し、Secretは動的注入にします。またHost環境ではPermission確認をSkipせず、Dependency追加後のNetworkやFile Access Logも確認することが重要です。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "2846c9fd82cf7bca653f44f2e60715b42e360a35a7447ed6ec012c8d4f9f8d7e"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "AI Agentにインフラの自動修復を任せる場合、何を準備しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "82b8938d63ba7cc61996f376bac185fcff07b7c31552a251423979c47d7da37f"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "Root Causeを推測できるだけでは不十分で、ActionのScopeとGuardrailを明確にする必要があります。まずTelemetryとService Ownershipを十分に与え、変更可能なResourceと操作を限定します。修復後はMetricやTestで結果を検証し、影響が大きい変更にはApprovalとRollbackを残します。自動化率より、SafetyとRecoverabilityを優先したいです。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "07d67770522e75686867050d4ed38943a7acb98a39e2c253aabd84a351821ad7"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "新しい高性能Modelが出た場合、すべてのRequestをすぐに切り替えますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "7eff6868aa7d8bd6475077583a21e4b82954f6d47928af04a58dd8bbe3bad89e"
+    },
+    {
+      "index": 6,
+      "type": "question",
+      "text": "すぐには切り替えません。高いEffortではReasoning StepやTool Callが増え、Token消費やLatencyも増える可能性があります。TaskごとにQuality、Cost、Latency、Safety Requirementを測り、簡単な処理は低Effortや既存Model、複雑なTaskだけ新Modelを使うようにします。Cyber Capabilityのように利用者を限定すべき機能もあるため、Access Policyも確認します。",
+      "audio": "interview-question-06.mp3",
+      "audioHash": "a99a472395c74eb08d48ce92de5832e2bd3cbf47b6ef1129efab9637a9217b1e"
+    },
+    {
+      "index": 7,
+      "type": "question",
+      "text": "LLMに業務判断を任せる場合、既存のBusiness Ruleは不要になりますか。",
+      "audio": "interview-question-07.mp3",
+      "audioHash": "570228701484e75e09df1572b938d3b8ed74d25a6b5719e4dc1b082b85f9d1f5"
+    },
+    {
+      "index": 8,
+      "type": "question",
+      "text": "不要にはならないと思います。LLMは曖昧な情報を理解して提案することには強いですが、割引上限や承認条件、権限のようなRuleは決定的に適用する必要があります。そのためLLMをReasoning Interfaceとして使い、実際のActionはSalesforceのようなSystem of Recordを経由させます。確率的推論と決定的制御を分離する設計が重要です。",
+      "audio": "interview-question-08.mp3",
+      "audioHash": "adbc110a9ab2fe713db375390f687602590acb6194553abd49021d030e937967"
+    },
+    {
+      "index": 9,
+      "type": "question",
+      "text": "AWSとAzureをPrivate Networkで接続する場合、帯域以外に何を評価しますか。",
+      "audio": "interview-question-09.mp3",
+      "audioHash": "4bf119e5ea84de71f065de79b3ee21f8cbdccf984a4be7084225939d8f256d60"
+    },
+    {
+      "index": 10,
+      "type": "question",
+      "text": "Bandwidthだけでなく、Latency、Route Design、Failure Domain、Data Transfer Cost、Security Policy、Monitoringを評価します。Managed Interconnectを使えば物理接続や一部のRouting運用は減らせますが、Cloud間の依存関係がなくなるわけではありません。障害時の切り替えと責任範囲まで含めて設計することが重要です。",
+      "audio": "interview-question-10.mp3",
+      "audioHash": "478116e5a036842ea62e8bdd1d3a89600db7292325e25fac58662c3af3acaf54"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "ローカルCoding AgentにDeveloperと同じ権限を与えるRiskは何ですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "3a9e5268bf6c0cd01ed882e89d2653a1ca2941f5f9ddfdde54a7a3ae8eb1e214"
+    },
+    {
+      "index": 2,
+      "text": "AIOpsでDetectからRemediateまで自動化するとき、何が必要ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "bdb9bff3d74ccb5f6a1b4b48ef6b4b0d862e9693b8cf6e9bfe589f13acea4a60"
+    },
+    {
+      "index": 3,
+      "text": "LLMと既存業務Systemの役割をどう分けますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "2dd5debec3f6868654a717c697dfed8dcbc1367869e16bfb0d14fccdc44d73ad"
+    }
+  ]
+}

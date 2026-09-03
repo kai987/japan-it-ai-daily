@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-03",
+  "generatedAt": "2026-09-03T13:09:29.884Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "手口",
+      "reading": "てぐち",
+      "exampleJa": "新しい攻撃の手口を確認したら、AgentのPermission Policyも見直します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "19277de779ddd0cc31ebcef69586acc8b5e8a8ca390d0de7f06e234fc6a50409",
+      "example": "example-01.mp3",
+      "exampleHash": "5ce2b35ed4aed039cf925752028aaf065d4928607a039f13ccd85814b70fa9a1"
+    },
+    {
+      "index": 2,
+      "term": "機密",
+      "reading": "きみつ",
+      "exampleJa": "機密性の高いCredentialはAgentのWorkspaceへ直接保存しません。",
+      "word": "vocab-02.mp3",
+      "wordHash": "ffe530f175ee8aaa164b3760158f4e2fd752ebb04d57ce3d8993bdb6ac39a47d",
+      "example": "example-02.mp3",
+      "exampleHash": "0aa68787936986d76da150cda992d29c2259193da68e3b775e056d9b493c339a"
+    },
+    {
+      "index": 3,
+      "term": "優先順位",
+      "reading": "ゆうせんじゅんい",
+      "exampleJa": "すべてのAlertを同じように扱わず、Business Impactで優先順位を付けます。",
+      "word": "vocab-03.mp3",
+      "wordHash": "13ad3f4f21d8034f2dc4b46982caa599624b59aee198a67282f26a859f85acd6",
+      "example": "example-03.mp3",
+      "exampleHash": "2c1e5e0d5dbe0ec5e9ac286bed02eafb4b10dbc2fd196361239650f58ff91fa2"
+    },
+    {
+      "index": 4,
+      "term": "手間",
+      "reading": "てま",
+      "exampleJa": "Managed Serviceを使ってNetwork運用の手間を減らします。",
+      "word": "vocab-04.mp3",
+      "wordHash": "198a48bf58beeae0d543cd4b2110280c11fd772dc6b238e07640f35a533d1cde",
+      "example": "example-04.mp3",
+      "exampleHash": "96eba0e434d03cd421aba322ec08730e1f9c5a4aaf56be2fe697539bf3c7f434"
+    },
+    {
+      "index": 5,
+      "term": "仕組み",
+      "reading": "しくみ",
+      "exampleJa": "Agentが危険なActionを実行できない仕組みをRuntime側に作ります。",
+      "word": "vocab-05.mp3",
+      "wordHash": "a78fded9a39d3a7b5729ff6aea17e6fbe086dcb554f5b25c3161f487c03a919d",
+      "example": "example-05.mp3",
+      "exampleHash": "d1b5e1232882b525e76b82b2cbc8e8411027663c6a481b50709d9ddc21f83ad1"
+    },
+    {
+      "index": 6,
+      "term": "乗っ取る",
+      "reading": "のっとる",
+      "exampleJa": "Dependency経由でAgentを乗っ取られても被害が広がらないよう、Workspaceを分離します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "8bd10b05eebc5cf5bffbac6e7e17f95cf7b3b4ba869c3fca64976bbf6c652788",
+      "example": "example-06.mp3",
+      "exampleHash": "f87f2cdf74b740f4eb993fe36f55bdbda8572d0a7c657f15cf4b2c53bd83acac"
+    },
+    {
+      "index": 7,
+      "term": "迂回する",
+      "reading": "うかいする",
+      "exampleJa": "Prompt上の禁止だけでは、Runtimeの権限制御を迂回される可能性があります。",
+      "word": "vocab-07.mp3",
+      "wordHash": "aab0ba9acb0fb3cbe760a6fdd91d1ccc95fbf012474232dfcb1c19344723bff4",
+      "example": "example-07.mp3",
+      "exampleHash": "ac73715ea4b7cf288e441a05ef7f18d5f0a4afacea0174161242d37456a34109"
+    },
+    {
+      "index": 8,
+      "term": "強いる",
+      "reading": "しいる",
+      "exampleJa": "Credential漏えいは、複数ServiceのKey再発行をTeamに強いる可能性があります。",
+      "word": "vocab-08.mp3",
+      "wordHash": "7254b21be52688badc407fd0730ae795a487ba0bcd3e38b849f1e51c4cfdc541",
+      "example": "example-08.mp3",
+      "exampleHash": "f9d2598cae3fb513a03f2d35c16161600e1ea98b561d6b8dbfeddc89770249c0"
+    },
+    {
+      "index": 9,
+      "term": "据え置く",
+      "reading": "すえおく",
+      "exampleJa": "単価を据え置いても、Token消費が増えれば総Costは上がる可能性があります。",
+      "word": "vocab-09.mp3",
+      "wordHash": "1d83ad26af50a7e6bbb6d7da4330d655fbf6b8ed8fdaf014c2b89ee4abc19173",
+      "example": "example-09.mp3",
+      "exampleHash": "ebc9d7ccec43be81f87fe7fc42cf68257ef6b4f633b440db45bca89198af6e25"
+    },
+    {
+      "index": 10,
+      "term": "上回る",
+      "reading": "うわまわる",
+      "exampleJa": "Benchmarkで他Modelを上回っても、自社Taskで同じ結果になるとは限りません。",
+      "word": "vocab-10.mp3",
+      "wordHash": "cf9f835ad7755241a94d13f8b920241505e5460c0b957ce429496adbef7fe56d",
+      "example": "example-10.mp3",
+      "exampleHash": "0870328388806e708c8c75c8a7117d08ccb943cfbe4c6b7816d478c2cae5adb6"
+    },
+    {
+      "index": 11,
+      "term": "組み合わせる",
+      "reading": "くみあわせる",
+      "exampleJa": "LLMのReasoningと決定的なBusiness Ruleを組み合わせます。",
+      "word": "vocab-11.mp3",
+      "wordHash": "da31e91b5af75bae09a4ab6d3d6e0934e57314064c8ac536980a4a31596fad51",
+      "example": "example-11.mp3",
+      "exampleHash": "ed14bb30fa31d745b010183ba111386c5933c966b0f9c16e52da4ce1db2e6d79"
+    },
+    {
+      "index": 12,
+      "term": "もたらす",
+      "reading": "もたらす",
+      "exampleJa": "Agent Automationが必ずしもBusiness Valueをもたらすとは限りません。",
+      "word": "vocab-12.mp3",
+      "wordHash": "cd3dee61fa5faa1b396bf6ecc98e76959be0dbd47a9931bc57bf0973e082ab5d",
+      "example": "example-12.mp3",
+      "exampleHash": "b1dededaa07c604d9627b6d5ef8f44b6e455c0ea9bd72ed6b69946c521582ed6"
+    },
+    {
+      "index": 13,
+      "term": "削減する",
+      "reading": "さくげんする",
+      "exampleJa": "Managed InterconnectでNetwork設定の運用工数を削減します。",
+      "word": "vocab-13.mp3",
+      "wordHash": "99c6a5ae60f1a2f81d92206f283b36cc294b56218460d2e6c80b4b1a55ec3f74",
+      "example": "example-13.mp3",
+      "exampleHash": "3ac8523c7553389a19f89556a5013c429bd4a4f66bd9848e1f6fbc4c16c70b8a"
+    },
+    {
+      "index": 14,
+      "term": "幅広い",
+      "reading": "はばひろい",
+      "exampleJa": "幅広いTelemetryを集めても、Agentに必要なDataだけを渡す設計が必要です。",
+      "word": "vocab-14.mp3",
+      "wordHash": "7972b060cc5e5c85ab74aa426384c1e91eacfdb50730cb853419e69214209821",
+      "example": "example-14.mp3",
+      "exampleHash": "21fbb45e0a6aad133bec9ad334270aa9b8d27c6b89843bf5345f361b35f096a4"
+    },
+    {
+      "index": 15,
+      "term": "厳格な",
+      "reading": "げんかくな",
+      "exampleJa": "高いCyber Capabilityには、通常Modelより厳格なAccess Policyを適用します。",
+      "word": "vocab-15.mp3",
+      "wordHash": "d5163a4ff1ddcff6ac7b30e8d3c151385662ee8b1913ff2b6f3f55ad0d6d6ce2",
+      "example": "example-15.mp3",
+      "exampleHash": "0742bcf09427eebe091e33bd21fc7a4f0b88fece26df712bf0965b052aab15bf"
+    },
+    {
+      "index": 16,
+      "term": "大幅な",
+      "reading": "おおはばな",
+      "exampleJa": "Model性能が大幅に向上しても、LatencyとCostを別に評価します。",
+      "word": "vocab-16.mp3",
+      "wordHash": "ba40cc979dfb8403584cd2a75e4189f7f2602e23ec74e06218bffa3ca869c914",
+      "example": "example-16.mp3",
+      "exampleHash": "be7b9ce3ccb6d97d628591d80ff6c3cbaecc2bb7bfd39870e34645e733d298b2"
+    },
+    {
+      "index": 17,
+      "term": "すでに",
+      "reading": "すでに",
+      "exampleJa": "すでに認証済みのAgentは、攻撃者にとって価値の高いTargetになります。",
+      "word": "vocab-17.mp3",
+      "wordHash": "dadb2a5d086f7d69dfd55a2dda31bd236962e62627e322c71daa551ae3765e50",
+      "example": "example-17.mp3",
+      "exampleHash": "549c0093bf62ae03d46b115d2476bb0d7b96b60863ffadbf266b6f6fabdbc885"
+    },
+    {
+      "index": 18,
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "自動修復を許可するResourceとActionをあらかじめ定義します。",
+      "word": "vocab-18.mp3",
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-18.mp3",
+      "exampleHash": "f9ef792f2f3e4fd9290cde0d36e1c0ed34dfe735d311c70a22f4452c68a72e98"
+    },
+    {
+      "index": 19,
+      "term": "さらに",
+      "reading": "さらに",
+      "exampleJa": "Tool Accessだけでなく、さらにAuditとRollbackも設計します。",
+      "word": "vocab-19.mp3",
+      "wordHash": "f62308857b0a3ce38a81750d08aa2590f1c2c40c46a69ad664f344956b25a0cb",
+      "example": "example-19.mp3",
+      "exampleHash": "b1be3b846693770890bca337b7b84a03664764c457bcd81cdc3ecdeaea14736f"
+    },
+    {
+      "index": 20,
+      "term": "その結果",
+      "reading": "そのけっか",
+      "exampleJa": "Agentが過剰な権限を持っていました。その結果、Supply Chain Attackの影響範囲が広がりました。",
+      "word": "vocab-20.mp3",
+      "wordHash": "f7e67a0c257bc142899c7d7d5b99afc90057841bf1eea90ed97eb9ba6af74c99",
+      "example": "example-20.mp3",
+      "exampleHash": "1174ee12e3c482763b7e5f69b6a57a4c0b14b7c763ed6a0e5b515610fa87f49f"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "Bits AIはAlertの調査にとどまらず、Infrastructureの修復やRelease検証まで対象を広げています。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "656c7d0b0a083957f89b943419e2f74ce2cf75d1e87512dba7bf151bbd1b2eb1"
+    },
+    {
+      "index": 2,
+      "pattern": "～を余儀なくされる",
+      "exampleJa": "Credentialが漏えいすると、関連ServiceのKey再発行を余儀なくされる場合があります。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "2c7cbb31a8d349ddf30d124180a7da6067fb3bb46efffa8e626987442de08222"
+    },
+    {
+      "index": 3,
+      "pattern": "～かねない",
+      "exampleJa": "AgentにHome Directory全体を許可すると、Dependencyの侵害が大規模な情報漏えいにつながりかねません。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "59ce08b019cfe6ab48eeec047bce1365d12fb9ce14ffe510f9b403a293214faf"
+    },
+    {
+      "index": 4,
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの複雑さに応じてGeminiのEffort Levelを調整します。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "92640a99f0c98443f6c0370a4a2cc97e6611d8023ebdd443288f7ff043f3ff86"
+    },
+    {
+      "index": 5,
+      "pattern": "～一方で",
+      "exampleJa": "Managed Interconnectは運用の手間を減らせる一方で、Cloud間のFailure Domain設計は引き続き必要です。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "db64947930ed28a52f22d0e01834951a981b4231a1bbf6619393b0acc17b4a33"
+    },
+    {
+      "index": 6,
+      "pattern": "～たうえで",
+      "exampleJa": "Security Benchmarkを確認したうえで、自社RepositoryでCyber Modelを再評価します。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "6d7a672d541438f45439b319abf952bd02f0d8c2b10d63b48a791928c45a9def"
+    },
+    {
+      "index": 7,
+      "pattern": "～に伴って",
+      "exampleJa": "AgentのCapability拡大に伴って、PermissionとAuditの重要性も高まります。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "f562dcceb54e8ca30ff354ec61709e671bce7d411f3b8f729c5e58fae5a21566"
+    }
+  ]
+}
