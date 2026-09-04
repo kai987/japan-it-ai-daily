@@ -1,0 +1,300 @@
+{
+  "date": "2026-09-04",
+  "generatedAt": "2026-09-04T09:57:23.013Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "危機感",
+      "reading": "ききかん",
+      "exampleJa": "AI Agentの権限が見えない状態に、Security Teamは強い危機感を持っています。",
+      "word": "vocab-01.mp3",
+      "wordHash": "a8d4c0b7d6651cc507db6c6af20f541dbf38ef1c6de991bd2ccd95edfb409258",
+      "example": "example-01.mp3",
+      "exampleHash": "6b13419e0afc4679b79e95871f10067f06b5ddf6fe71da0da44a7d43cd1311a8"
+    },
+    {
+      "index": 2,
+      "term": "所在",
+      "reading": "しょざい",
+      "exampleJa": "本番Agentの所在とOwnerをRegistryで管理します。",
+      "word": "vocab-02.mp3",
+      "wordHash": "b94579f6eaad864f007f919ce1a9183ff930409a0539fc14b04f43f58016f6ce",
+      "example": "example-02.mp3",
+      "exampleHash": "c500204fff4c547bb1f3e74822cc85db609c4e391957712298d2213938780385"
+    },
+    {
+      "index": 3,
+      "term": "懸念",
+      "reading": "けねん",
+      "exampleJa": "共有CredentialをAgentに使わせることには大きな懸念があります。",
+      "word": "vocab-03.mp3",
+      "wordHash": "2f5eae3c52a4a1713a1a6a602f7a9209481297760ca81e5efaa8805e0af14003",
+      "example": "example-03.mp3",
+      "exampleHash": "94c311bdfe4170b1c2292454f9069afbf3d01046672371d3c3c1e427977544e0"
+    },
+    {
+      "index": 4,
+      "term": "前提",
+      "reading": "ぜんてい",
+      "exampleJa": "Query Frequencyを事前に予測できるという前提で設計してはいけません。",
+      "word": "vocab-04.mp3",
+      "wordHash": "09d2c93d539759ad1e3234215fbd6bb5add4e2b3d706c10d60a86d22ce521b53",
+      "example": "example-04.mp3",
+      "exampleHash": "28bf51aaec3abca3a83f7812f5e6475913e3e6851652ff4f25cea6d5dad296d6"
+    },
+    {
+      "index": 5,
+      "term": "要求",
+      "reading": "ようきゅう",
+      "exampleJa": "Agent WorkloadではLatencyとConcurrencyの要求を同時に満たす必要があります。",
+      "word": "vocab-05.mp3",
+      "wordHash": "d0938e4e49651e77980081aea82ec42625e9badedab90b2a9e42b58f3e7d6d00",
+      "example": "example-05.mp3",
+      "exampleHash": "57fda97480a3451484b50943f9971cf8359a350777fe0e86985ac10d5d7962bd"
+    },
+    {
+      "index": 6,
+      "term": "把握する",
+      "reading": "はあくする",
+      "exampleJa": "まず組織内のAgentとTool権限を把握します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "1b0272357468181e5c5ae130d8dbb29282547ea09d4b0153f06e94e96307cc54",
+      "example": "example-06.mp3",
+      "exampleHash": "3b839d1246ae6cd29b01dbd25816fe459bd8d40c3b74ff2fc9d87a2ee5a52c71"
+    },
+    {
+      "index": 7,
+      "term": "絞り込む",
+      "reading": "しぼりこむ",
+      "exampleJa": "JWT Claimを使って、参照できるMemoryをTenant単位に絞り込みます。",
+      "word": "vocab-07.mp3",
+      "wordHash": "de95b4a91d2cdf5ba0bee966c5ea23747913808a8c4a0545d17b60229c5a4bbd",
+      "example": "example-07.mp3",
+      "exampleHash": "1d11a10152a176422f754ba4d9914b4dc83326e2f1fee9ccd6e35e6c0c2b234f"
+    },
+    {
+      "index": 8,
+      "term": "割り当てる",
+      "reading": "わりあてる",
+      "exampleJa": "AgentのPurposeに応じて必要なPolicyだけを割り当てます。",
+      "word": "vocab-08.mp3",
+      "wordHash": "f0d904e94a82be6451a1d2c8aa8ffe8a2ef9d16b8ddde7165a1a9b7f717e5fac",
+      "example": "example-08.mp3",
+      "exampleHash": "85c407099f334b24089e38452076b7e436441e6c260411f999d6e7eb076dd348"
+    },
+    {
+      "index": 9,
+      "term": "派生する",
+      "reading": "はせいする",
+      "exampleJa": "Tenant IDからMemory Namespaceを派生させます。",
+      "word": "vocab-09.mp3",
+      "wordHash": "9ee6b29da4603617e496ef17fe28f6b7419a13018c06673a76c017541feb5397",
+      "example": "example-09.mp3",
+      "exampleHash": "c29ba752bee35d5d70db92722143f44abd6b277b9ef18c8163d5aeadb2d2c9c2"
+    },
+    {
+      "index": 10,
+      "term": "移管する",
+      "reading": "いかんする",
+      "exampleJa": "Authorization LogicをApplicationからGatewayへ移管します。",
+      "word": "vocab-10.mp3",
+      "wordHash": "c3e6733fa8f1527a497065d54696c4c4dddacf9d3fce9e6dfbd4c3b7fbb392ba",
+      "example": "example-10.mp3",
+      "exampleHash": "f12ffdbaf09b1885e011c7923fda4a319bb74fd8a60b52d3a4186dc795091b27"
+    },
+    {
+      "index": 11,
+      "term": "指定する",
+      "reading": "していする",
+      "exampleJa": "Enterprise PolicyでDefault Modelを指定します。",
+      "word": "vocab-11.mp3",
+      "wordHash": "63ecff0dfbfba10664feb24752b47eeca1d6bd74e31df6889f4455d6e22e5b35",
+      "example": "example-11.mp3",
+      "exampleHash": "4ecaca2488917b8ea6ad49b0843279d758f8f6b744474f6009f4d4f56b434508"
+    },
+    {
+      "index": 12,
+      "term": "継承する",
+      "reading": "けいしょうする",
+      "exampleJa": "Team設定がない利用者は全社Defaultを継承します。",
+      "word": "vocab-12.mp3",
+      "wordHash": "e9f0a753cd6737e13719e8f3d4eed1aec00a614c5b81cbc30e77f0d286c0d1ce",
+      "example": "example-12.mp3",
+      "exampleHash": "8f9e02f67b04ed620ba051388322f4f271ca1c643e046c7383000f3cf6473ac5"
+    },
+    {
+      "index": 13,
+      "term": "満たす",
+      "reading": "みたす",
+      "exampleJa": "低LatencyとCostの両方を満たすArchitectureを選びます。",
+      "word": "vocab-13.mp3",
+      "wordHash": "e3815d93d5121947c83517b674e9eb66e42281ff7cc4ec3fd3cf1809eff23bea",
+      "example": "example-13.mp3",
+      "exampleHash": "e5b43e89ae73374628ce4688996fdfec81911a23a92a3c29a23abbf5544177f8"
+    },
+    {
+      "index": 14,
+      "term": "崩れる",
+      "reading": "くずれる",
+      "exampleJa": "Agentが自由にQueryを生成すると、従来のCapacity Planningの前提が崩れます。",
+      "word": "vocab-14.mp3",
+      "wordHash": "413de59bcae2dedc8930467bb6efd1d3f49652d6b30005d01de51fe713a0bfed",
+      "example": "example-14.mp3",
+      "exampleHash": "9e020d08fae5b38b90f9adb6bc161d97baeffb970658c8cb59d8175976483db2"
+    },
+    {
+      "index": 15,
+      "term": "跳ね上がる",
+      "reading": "はねあがる",
+      "exampleJa": "Agentが大量Queryを繰り返すと、Data WarehouseのCostが跳ね上がる可能性があります。",
+      "word": "vocab-15.mp3",
+      "wordHash": "bb67e668d1a18e41b1363988e333e718a06b64606b9694b9a1e8d454e094c3fe",
+      "example": "example-15.mp3",
+      "exampleHash": "90096618317aa8399c5634d92f4cd8e88243dd6a11c5a4d5cc258e370dc56b1c"
+    },
+    {
+      "index": 16,
+      "term": "引き継ぐ",
+      "reading": "ひきつぐ",
+      "exampleJa": "Agentが調査結果をまとめ、人間のOn-call担当へ引き継ぎます。",
+      "word": "vocab-16.mp3",
+      "wordHash": "27f0280fefa547a7fb014c643fb49c943754c6264be55e07f21f8c8b1c248473",
+      "example": "example-16.mp3",
+      "exampleHash": "8f37ffd1c441c845a60c8a661358adccc51d6cccf1d95787c538fd3d9dff543a"
+    },
+    {
+      "index": 17,
+      "term": "最適な",
+      "reading": "さいてきな",
+      "exampleJa": "TeamのTaskとCost条件に最適なModelをDefaultにします。",
+      "word": "vocab-17.mp3",
+      "wordHash": "d9d34e84082f74f1918817678e47df52ea243449cf8fa97deb1e6521652fc1d8",
+      "example": "example-17.mp3",
+      "exampleHash": "87ecd982288a09ebce4f35c512abca484ba976fa47e69bb353379e6ed0827031"
+    },
+    {
+      "index": 18,
+      "term": "厳しい",
+      "reading": "きびしい",
+      "exampleJa": "大量の並列Queryでは従来のBatch前提の設計は厳しくなります。",
+      "word": "vocab-18.mp3",
+      "wordHash": "2415ec87531279e7ee00c51b43fef6e802cf79a5249aa026ca0ddc18ce45aa1c",
+      "example": "example-18.mp3",
+      "exampleHash": "3b0f40088cf0ab1b808f12b3cb1e6c0c588feeaeecba343472b70b28f906c6b6"
+    },
+    {
+      "index": 19,
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "高RiskなToolだけは、あらかじめApproval条件を定義します。",
+      "word": "vocab-19.mp3",
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-19.mp3",
+      "exampleHash": "a633d9d81909459b97382a7f0365322caf95926b0106defba5e6bebc67ae01f6"
+    },
+    {
+      "index": 20,
+      "term": "おおよそ",
+      "reading": "おおよそ",
+      "exampleJa": "Human-drivenなReportでは、Query Frequencyをおおよそ予測できます。",
+      "word": "vocab-20.mp3",
+      "wordHash": "a93a39e08ff64ea7bf0ee3a82b10fae5d06c886479c2a53f94c89a771619a598",
+      "example": "example-20.mp3",
+      "exampleHash": "3d1fe71da4bd3d087450bb5f1d4b9c6069c047852bbbb218a19ccf1798dd8cf3"
+    },
+    {
+      "index": 21,
+      "term": "個別に",
+      "reading": "こべつに",
+      "exampleJa": "Security TeamだけModel設定を個別に変更します。",
+      "word": "vocab-21.mp3",
+      "wordHash": "72870b7bfdcc8497de87d41670f8c093cd78785a4c90a12ba4fb66872de6f92c",
+      "example": "example-21.mp3",
+      "exampleHash": "0b600b32458d5634425229ce072ad1034ebf72e447f5ddb0b69a1b6d5aca355f"
+    },
+    {
+      "index": 22,
+      "term": "これにより",
+      "reading": "これにより",
+      "exampleJa": "IdentityとPolicyを分離します。これによりTenant越境Accessを防ぎやすくなります。",
+      "word": "vocab-22.mp3",
+      "wordHash": "0f5814b765010e0cfa83082df9c7c470bdcad912c0526653b2ad6aca5083ef16",
+      "example": "example-22.mp3",
+      "exampleHash": "41202e8c651632d3161925f6186adf7bd83032a3fdbb9b5539c61e89390ea0d4"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "Agent Governanceは所在の可視化にとどまらず、Tool権限とAccess Revokeまで含めて設計する必要があります。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "951525c68ab52f32f3d893d010d1ff721fd8ad476f601b47b1ba45db47c02f43"
+    },
+    {
+      "index": 2,
+      "pattern": "～かねない",
+      "exampleJa": "Tenant ScopeをLLMに決めさせると、別UserのMemoryへAccessしかねません。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "003645cdc2e4ba9ab39ba3d1a356f603708b6c64aa6ce464d8d46f4451b34c1f"
+    },
+    {
+      "index": 3,
+      "pattern": "～に至るまで",
+      "exampleJa": "同じAgentをWebからMCP、A2Aに至るまで複数のChannelへ公開できます。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "e897586ebb736177503f2d942803c2882b61a2fe970663b053a2f85f1156f6f6"
+    },
+    {
+      "index": 4,
+      "pattern": "～に応じて",
+      "exampleJa": "Teamの用途に応じてDefault Modelを切り替えます。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "83a15aafb8129aaa1694cb21daa8b5ccaa66f3bc7da298b337ea1eddb7b62a14"
+    },
+    {
+      "index": 5,
+      "pattern": "～たうえで",
+      "exampleJa": "CallerをJWTで認証したうえで、Cedar Policyを適用します。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "f5007393f95ba55f9685c24a73846b58bd890d3a29653d34cd5b697e5f38a640"
+    },
+    {
+      "index": 6,
+      "pattern": "～一方で",
+      "exampleJa": "DWHは大規模分析に強い一方で、大量の並列QueryではCostが高くなる場合があります。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "b20b44b302519ef158659cfc4755d5860e3c09a0fb45e20e069c6e28d7798d00"
+    },
+    {
+      "index": 7,
+      "pattern": "～に伴って",
+      "exampleJa": "AI Agentの利用拡大に伴って、QueryのConcurrencyとIdentity管理の重要性も高まります。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "be71e2c1d908b90763b6e02c07cb1b8d5c66bc8d1c5cccbde9e961f50638a2b0"
+    }
+  ]
+}

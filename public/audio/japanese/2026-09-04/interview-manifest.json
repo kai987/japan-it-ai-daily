@@ -1,0 +1,118 @@
+{
+  "date": "2026-09-04",
+  "generatedAt": "2026-09-04T09:58:15.758Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIエージェントのIdentityを、人間のAccountや共有Service Accountと同じように管理してよいですか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "1e54018cdb8f594044a555065dad2308439292f8e975551e0e5e19b20ec7f5e3"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "同じように扱うのは危険だと思います。AI Agentは長時間動作し、ToolやDataへのAccess範囲も動的に変わるため、AgentごとにOwner、Purpose、Permissionを持つ独立したIdentityとして登録する必要があります。また、異常を検知した場合に数分以内でAccessをRevokeできる仕組みと、Tool CallをAuditできる状態が重要だと考えています。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "844e14a744ad45177adb7fc030415a51e0f67be1c5e2817696af6d35cdc52d9a"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "マルチテナントのAI Agentで、Memoryの情報漏えいをどう防ぎますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "f03680b72c1da3222139795ecfac71df18ded032f81aec888b962859496d2e1c"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "User IDやTenant IDをLLMに生成させず、認証済みJWTのClaimから取得することが重要です。そのIdentityをPolicy Engineへ渡し、Memory Namespaceと操作権限を決定的に制御します。Application CodeだけにFilter Logicを持たせず、Infrastructure Layerでも強制することで、Prompt Injectionや実装ミスによる越境Accessを防ぎやすくなります。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "457b0a09155893a6b58e249e60faa9f731c3cef8ca3be8d074a3139550ff79f8"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "Coding AgentのModel選択をDeveloper個人に任せず、組織で管理するメリットは何ですか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "1fd6519acecb2b8ecfdfaee92641f67c90ad80e9c6272bd0ba8d43c3be26a2ab"
+    },
+    {
+      "index": 6,
+      "type": "question",
+      "text": "ModelによってQuality、Cost、Data Policy、利用可能なCapabilityが異なるため、組織としてApproved Modelを定義する価値があると思います。全社Defaultを設定しつつ、必要なTeamだけ別ModelへOverrideできるようにすると、Governanceと柔軟性を両立できます。変更後はTask Success RateやCostを継続的に評価する必要があります。",
+      "audio": "interview-question-06.mp3",
+      "audioHash": "16347813e2ff2aa9fd7ce3d3d4b5d7f29260defcbbf3f5fcbd468f5dea1e138f"
+    },
+    {
+      "index": 7,
+      "type": "question",
+      "text": "AI AgentがData Platformを利用すると、従来のApplicationと何が違いますか。",
+      "audio": "interview-question-07.mp3",
+      "audioHash": "3267583b0251240d63fa96c1dbbfd751160dfa734286b760910d0a0f4a3b0170"
+    },
+    {
+      "index": 8,
+      "type": "question",
+      "text": "Agentは自然言語からQueryを動的に生成し、一つのTaskで数十から数百のQueryを並列実行する可能性があります。そのため事前にAccess PatternやFrequencyを予測しにくくなります。Latency、Concurrency、Costを同時に監視し、必要なDataだけを高速に読める設計と、AgentごとのQuery Observabilityが重要だと考えています。",
+      "audio": "interview-question-08.mp3",
+      "audioHash": "2b372c9f0f502025c78bfc4f287cad955f7f50dc73ed82371f684b6d82bd725e"
+    },
+    {
+      "index": 9,
+      "type": "question",
+      "text": "同じAI AgentをWeb、Slack、MCP、A2Aから利用する場合、どのように設計しますか。",
+      "audio": "interview-question-09.mp3",
+      "audioHash": "25fc9b0f7d8fdfb4bbea2d97304c5dc0c860dbe0699d7052a2bb13c046a08fc1"
+    },
+    {
+      "index": 10,
+      "type": "question",
+      "text": "AgentのBusiness LogicとChannel固有のProtocol変換を分離します。Core側でSessionとWorkflowを管理し、TelegramやMCP、A2AなどはAdapterとして入出力を変換します。これにより同じAgent Logicを再利用でき、Channel追加時にBusiness Logicを複製せずに済むため、Testと保守もしやすくなると思います。",
+      "audio": "interview-question-10.mp3",
+      "audioHash": "a6bd7a7a6c1e84f10d4011310a13d782bd2b24c9542e14db7de819cd7abbe3b9"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "AI Agentを独立したIdentityとして管理するメリットは何ですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "e6a034664a03b2add2d64efdd9e9adb4d0c62a556c773459ad88c04de5078580"
+    },
+    {
+      "index": 2,
+      "text": "Multi-tenant Agent Memoryで情報漏えいを防ぐには何が必要ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "1529a13d7583ad097f0315aa60cd99c0b09c49c0133165d7428049325cf0d7f4"
+    },
+    {
+      "index": 3,
+      "text": "AI Agent時代のData Platformで、従来より重要になる指標は何ですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "7a6db32fd3e0051ca90f2c8fb939e4a58281627493526849143e5c8f783e1706"
+    }
+  ]
+}
