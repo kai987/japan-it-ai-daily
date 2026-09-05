@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-05",
+  "generatedAt": "2026-09-05T07:43:04.702Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "脱却する",
+      "reading": "だっきゃくする",
+      "exampleJa": "Model中心の発想から脱却し、業務Process全体を見直します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "4a2a34d6c90823818fe4a2fbbf122715882c43d71014431074304ac4a4c97d2f",
+      "example": "example-01.mp3",
+      "exampleHash": "acbdb69305b6fc61b7483bbdfd32470f2d5c62d2566888122e9b2ae1b882c44b"
+    },
+    {
+      "index": 2,
+      "term": "成果",
+      "reading": "せいか",
+      "exampleJa": "AIの利用率ではなく、業務上の成果をKPIとして測定します。",
+      "word": "vocab-02.mp3",
+      "wordHash": "46342f28624cb4cd8d1edd6d2b6439111aebb4ded1f8c528ae78fdaec4d1ac76",
+      "example": "example-02.mp3",
+      "exampleHash": "c53aea6ccfd81d238ba332de82b9bfea2eaa71a7ab3120a7780e5ec9122251d9"
+    },
+    {
+      "index": 3,
+      "term": "足掛かり",
+      "reading": "あしがかり",
+      "exampleJa": "古いCredentialが攻撃の足掛かりにならないよう定期的に棚卸しします。",
+      "word": "vocab-03.mp3",
+      "wordHash": "62b00e8689ac8d27bb4ddc4643c53c9c463156f6a0683671a479f8bba4ff8b98",
+      "example": "example-03.mp3",
+      "exampleHash": "46e5707f4f5c69e3b837c98f0e3feaab5859a6b2c425711ccc3ad309acada432"
+    },
+    {
+      "index": 4,
+      "term": "上限",
+      "reading": "じょうげん",
+      "exampleJa": "Agentの権限はHuman RBACを上限として、さらにScopeを狭めます。",
+      "word": "vocab-04.mp3",
+      "wordHash": "45395538a9c085e7e967aa7138ec063d292cfa4863c0a1f674367d473349cd85",
+      "example": "example-04.mp3",
+      "exampleHash": "600f71b1601569e6d3b163877ab5bd7e26f7ffe1f124f0cf8e8e4b597fab97de"
+    },
+    {
+      "index": 5,
+      "term": "巻き戻し",
+      "reading": "まきもどし",
+      "exampleJa": "並列Sessionによる設定の巻き戻しを防ぐため、更新処理を安全にします。",
+      "word": "vocab-05.mp3",
+      "wordHash": "e4db0930de249bd72a1f032f4c99a1f82a9896f7037c23cb9eaf6896f17ced7f",
+      "example": "example-05.mp3",
+      "exampleHash": "3120ea99582a542fe5ec77f133809ea583dcd1f58f15dc98dc8cd8f12d95c7b5"
+    },
+    {
+      "index": 6,
+      "term": "頼る",
+      "reading": "たよる",
+      "exampleJa": "LLMだけに頼らず、RuleとTestを組み合わせます。",
+      "word": "vocab-06.mp3",
+      "wordHash": "d2149f205757d2d83777c74b175950505edf4cb7e12d675ed8b864fdac32c199",
+      "example": "example-06.mp3",
+      "exampleHash": "8d98c4c7d23b97ebe207609afe649cecf360ca6ed60988636d8d89a2667d1d37"
+    },
+    {
+      "index": 7,
+      "term": "組み合わせる",
+      "reading": "くみあわせる",
+      "exampleJa": "自然言語処理と決定論的な計算を組み合わせます。",
+      "word": "vocab-07.mp3",
+      "wordHash": "da31e91b5af75bae09a4ab6d3d6e0934e57314064c8ac536980a4a31596fad51",
+      "example": "example-07.mp3",
+      "exampleHash": "a90b6cf5d046c851137cc89fc85e1468b5b03e180cd2df40e8fdcc02d51a2859"
+    },
+    {
+      "index": 8,
+      "term": "絞る",
+      "reading": "しぼる",
+      "exampleJa": "AIに任せる範囲を曖昧にせず、Task単位で絞ります。",
+      "word": "vocab-08.mp3",
+      "wordHash": "f2984847d18d47e9fb89a430df19cf6c6654f21e993beef9190c4100a79625c1",
+      "example": "example-08.mp3",
+      "exampleHash": "96e4d58f597a6f656226238a4c95b3f8e21303ca599a6f5fcaedf81e292e58d0"
+    },
+    {
+      "index": 9,
+      "term": "照会する",
+      "reading": "しょうかいする",
+      "exampleJa": "Incident後にProviderへData Retentionの実態を照会します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "69f4ea0000e745e9affddfc34f22fe99c76d7a23be1520ac948acfc55dce2774",
+      "example": "example-09.mp3",
+      "exampleHash": "f9270387f62179a3429eddf904b7f1a174bb9a00fc3e9ddee03b3b267dcaea08"
+    },
+    {
+      "index": 10,
+      "term": "怠る",
+      "reading": "おこたる",
+      "exampleJa": "修正後のRegression Testを怠ると、別の障害を見逃しかねません。",
+      "word": "vocab-10.mp3",
+      "wordHash": "856f6101c5bab4eb1315e0f351d0fafd1bbe6f5517177a99abad43cb629bcc74",
+      "example": "example-10.mp3",
+      "exampleHash": "c7c9b825a304cfc834d68ac33d6ad262b6de8f316e26d11a975defdf6347c4df"
+    },
+    {
+      "index": 11,
+      "term": "促す",
+      "reading": "うながす",
+      "exampleJa": "Security Alertは、単なる通知ではなく早期対応を促す設計にします。",
+      "word": "vocab-11.mp3",
+      "wordHash": "41b6a1e8e277af858a337a4d1165745ed250a08460bc945f3cbe93ea7575d795",
+      "example": "example-11.mp3",
+      "exampleHash": "dc7fabd4bf40c63e9895d4425a747c849207d07cf880c6e4c814c70f12babcad"
+    },
+    {
+      "index": 12,
+      "term": "見直す",
+      "reading": "みなおす",
+      "exampleJa": "PoCの結果を踏まえて、AIに任せる範囲を見直します。",
+      "word": "vocab-12.mp3",
+      "wordHash": "71cad3bac6e97f8175618e025511d2c55b04f3755662cb357e7041dc39fe612d",
+      "example": "example-12.mp3",
+      "exampleHash": "f6ce2de6fc7bf5b5bbdf7b087e59e128823c6db0fce9f1aaf6de21a88db39572"
+    },
+    {
+      "index": 13,
+      "term": "反映する",
+      "reading": "はんえいする",
+      "exampleJa": "現場Feedbackを次のSprintのRuleに反映します。",
+      "word": "vocab-13.mp3",
+      "wordHash": "d6bb9d75823f1454a555c95f78e246e5cf0657ffc81edb2f08897174b4dd81bb",
+      "example": "example-13.mp3",
+      "exampleHash": "85faec7bd112b5a22c1975901340fc6279174658de0274a0faa56575ab2766da"
+    },
+    {
+      "index": 14,
+      "term": "広範な",
+      "reading": "こうはんな",
+      "exampleJa": "Agentの権限が広すぎると、Incidentの影響も広範になります。",
+      "word": "vocab-14.mp3",
+      "wordHash": "b215ea8b6cf34cc07125dd37e360d1e03a1b664c70a6402624ca052d29a6a0e3",
+      "example": "example-14.mp3",
+      "exampleHash": "6196d718b520ac649fdd16c462b71763bf0ca066bc13f01d69cfe0c0987624d2"
+    },
+    {
+      "index": 15,
+      "term": "厳格な",
+      "reading": "げんかくな",
+      "exampleJa": "Production Agentには開発環境より厳格なPermission Policyを適用します。",
+      "word": "vocab-15.mp3",
+      "wordHash": "d5163a4ff1ddcff6ac7b30e8d3c151385662ee8b1913ff2b6f3f55ad0d6d6ce2",
+      "example": "example-15.mp3",
+      "exampleHash": "45e3ba12a04c9483ff10f3d52abea26057e3f409e2808d12a5ad39f7b0246c78"
+    },
+    {
+      "index": 16,
+      "term": "過剰な",
+      "reading": "かじょうな",
+      "exampleJa": "Agentに過剰な権限を与えると、誤判断時のBlast Radiusが大きくなります。",
+      "word": "vocab-16.mp3",
+      "wordHash": "01ab7a09fc41fee6c8edf8c4ae24c0ff169168b46347137bd97cb67c017402a8",
+      "example": "example-16.mp3",
+      "exampleHash": "cca0e68fae885ba1c272e35045f3fa4bd8f8a68634609922e802921541a6757c"
+    },
+    {
+      "index": 17,
+      "term": "大幅な",
+      "reading": "おおはばな",
+      "exampleJa": "AIを適切な部分だけに使い、作業時間を大幅に短縮しました。",
+      "word": "vocab-17.mp3",
+      "wordHash": "ba40cc979dfb8403584cd2a75e4189f7f2602e23ec74e06218bffa3ca869c914",
+      "example": "example-17.mp3",
+      "exampleHash": "164c2ce09b2e49c61ac7fab45f1d59a0e21f2f8fccc53c688cc5bbfe6e4a84a8"
+    },
+    {
+      "index": 18,
+      "term": "誤って",
+      "reading": "あやまって",
+      "exampleJa": "機密Dataを誤って外部AIへ送らないようDLPを設定します。",
+      "word": "vocab-18.mp3",
+      "wordHash": "9c41f876ab9c0c96ece641ae6b0d5a3e63343a0b425dab8fd866d4a2db11c67e",
+      "example": "example-18.mp3",
+      "exampleHash": "7a2d85310384c8e97222aa8f81bb57c306a23563ec63d71ff97ae56d50279645"
+    },
+    {
+      "index": 19,
+      "term": "順次",
+      "reading": "じゅんじ",
+      "exampleJa": "影響範囲を確認した後、対象Userへ順次通知します。",
+      "word": "vocab-19.mp3",
+      "wordHash": "e351e23c49629b77b5fe8df95d42ceb60f2de0838e5592a54daa4a627050e811",
+      "example": "example-19.mp3",
+      "exampleHash": "d7fe67cac6f7e466e8f6403e9d2c8fa5c8dbe8dce742574089995b7e74a912bc"
+    },
+    {
+      "index": 20,
+      "term": "必ず",
+      "reading": "かならず",
+      "exampleJa": "Permission Policyを変更した後は、必ず新しいSessionで実効権限を検証します。",
+      "word": "vocab-20.mp3",
+      "wordHash": "66cc17bfda9afb86312bcdf93c3d797b9f5baf80dc86e6cfbf480481c532e3b4",
+      "example": "example-20.mp3",
+      "exampleHash": "15d581225fe2206f9fee1cf8dbf3151ca688fd8827eeb07a3471e6fb618f7aa0"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "AI時代のSecurityは脆弱性を修正することにとどまらず、修正後の検証とAgentの行動監視まで必要です。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "7443c137daa30e463ec300057840ad8a473acb0b68c0d1a6c108c03acacfe9bc"
+    },
+    {
+      "index": 2,
+      "pattern": "～かねない",
+      "exampleJa": "Private AIへ機密情報を入力すると、Data Governance上の重大Incidentにつながりかねません。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "f9cf2285579219b858bfe7bbdec084c868936c9d0ca4f415e06f1f9edd7b19a6"
+    },
+    {
+      "index": 3,
+      "pattern": "～に至るまで",
+      "exampleJa": "AI Agentの運用では、PromptからNetwork Access、Database権限に至るまでControl Pointを整理します。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "ca4357fb9c1804079b18f523d9d135a6283e22c7bcc8542ac5dae2d0bcc6e87c"
+    },
+    {
+      "index": 4,
+      "pattern": "～に応じて",
+      "exampleJa": "処理の性質に応じて、LLMとRule-based Logicを使い分けます。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "c3f90388befc290c83f6a5941d6bd05213bf0fc607a63e5070b52ada1b840927"
+    },
+    {
+      "index": 5,
+      "pattern": "～たうえで",
+      "exampleJa": "既存Dataを分析したうえで、AIに任せる範囲を決めます。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "4279a1b738e6afd47a74d6042f46b4cdea475ba1ca982ae08d9a67cc156e2609"
+    },
+    {
+      "index": 6,
+      "pattern": "～一方で",
+      "exampleJa": "LLMは自然言語処理に強い一方で、金額計算の再現性はRule-based Logicの方が確保しやすい場合があります。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "fa5e803ad2b599373580dd5869e2871cedb884e0b14cdc7727a4bd61b90803e7"
+    },
+    {
+      "index": 7,
+      "pattern": "～にかかわらず",
+      "exampleJa": "Human側のRoleが高権限であるかどうかにかかわらず、Agent SessionではRSSの上限を適用します。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "ff21f7a9c3f3ae1bbf18ef491bb08ea86dcb97d223f17d1f08a2fc93c93b8a31"
+    }
+  ]
+}

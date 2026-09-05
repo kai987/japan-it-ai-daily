@@ -1,0 +1,118 @@
+{
+  "date": "2026-09-05",
+  "generatedAt": "2026-09-05T07:44:01.092Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "業務システムでは、すべての処理を生成AIに置き換えた方がよいと思いますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "14a0c3ece084fb3a4667c62ba066b5da5d15895cd753d4dbc1ac28c91a01011f"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "すべてをAIにする必要はないと思います。自然言語の解釈や非構造Dataの抽出はLLMが得意ですが、金額計算や承認条件のようにRuleが明確な処理は、決定論的なLogicの方が再現性と監査性を確保しやすいです。業務を分解し、AIが価値を出せる部分だけに用途を絞り、Business KPIで成果を評価することが重要だと考えています。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "67dca0d301d978b18542bd64d545105456e4542c90b921c62c2e3a156acca137"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "社員が個人利用の生成AIへ機密情報を入力するRiskを、どのように減らしますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "325c275cb13622b51ca8d8d51e3bc206b7a29c87de7ca5055c72c82647cf37f1"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "教育だけに依存しないことが重要だと思います。会社が承認したAI Serviceを明確にし、Data Classification、DLP、EndpointやBrowser Controlで高Risk Dataの外部送信を制御します。また、利用LogをAuditできる状態にし、Personal AIとEnterprise AIの使い分けをPolicyで定義します。Incident発生時の削除、報告、CredentialやAccessの見直しもRunbook化します。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "e50ffa735b2ce69049cc6f95b466b6356b0a112d2852722032ef34aa755a5de4"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "AIによって脆弱性対応が高速化した場合、Security Teamには何が必要になりますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "ca2f713f6c691b4279f305531185dd1eb4bd772b1a0cf20c31bf0f2a484baab5"
+    },
+    {
+      "index": 6,
+      "type": "question",
+      "text": "Patchを作る速度だけでなく、そのPatchが本当にRiskを下げたかを確認する検証速度も必要になります。AIが大量の修正案を作れるほど、Regression Test、Security Test、Asset情報、Monitoringを組み合わせてFixを独立検証する必要があります。またAgent自身の権限と行動も追跡し、問題があれば止められる設計が重要だと思います。",
+      "audio": "interview-question-06.mp3",
+      "audioHash": "26995119912c0015151458ea174d4b4721b5696fa0a9db5dad3c069f1e3d9c33"
+    },
+    {
+      "index": 7,
+      "type": "question",
+      "text": "CIでCoding Agentを無人実行する場合、Permission Promptをどう扱いますか。",
+      "audio": "interview-question-07.mp3",
+      "audioHash": "a63ca387412ae40c8b7df23aff02a145029c4079ab4910890b8875f933d0951d"
+    },
+    {
+      "index": 8,
+      "type": "question",
+      "text": "人がいないから自動承認するのではなく、確認が必要なActionはFail Closedで拒否する設計が安全だと思います。Read-only分析などTaskに必要なCapabilityだけを事前に許可し、Write、Network、Deployなどは個別Policyで制御します。また、設定Ruleが実際に効いているかをConformance Testで検証することも重要です。",
+      "audio": "interview-question-08.mp3",
+      "audioHash": "a161b990757ff882ac93466a9592420f4667a0bf0d7b2901b363c28b31edd8dc"
+    },
+    {
+      "index": 9,
+      "type": "question",
+      "text": "AI Agentがユーザーの権限を完全に継承してもよいですか。",
+      "audio": "interview-question-09.mp3",
+      "audioHash": "304af68cb36d2b3eb0e2dfb64254913bbed929f9680adebe1231b220a5699249"
+    },
+    {
+      "index": 10,
+      "type": "question",
+      "text": "完全継承は避けた方がよいと思います。人間はProductionへ書き込めても、AgentにはProductionはRead-only、SandboxだけWrite可能という追加Scopeを適用できます。既存RBACを上限として、その上にAgent Session専用のRestrictionを重ねることで、誤判断時のBlast Radiusを小さくできます。権限を増やすのではなく、Agent経由だけさらに狭める設計が重要です。",
+      "audio": "interview-question-10.mp3",
+      "audioHash": "50f243f78609f4d1f8ea6a4e34bf58f5f2946133eda39543fcdc68749d1ff43f"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "生成AIとRule-based Logicはどのように使い分けますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "4538814be2267516ecc528b21511919d082c3f2dadcae719c2dbd65b70e153b3"
+    },
+    {
+      "index": 2,
+      "text": "Coding AgentをCIで無人実行するとき、最も重要なPermission原則は何ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "87320e91375ae8cacd9fc262e898b44cbf877076a1101459fae27abb654aa2ec"
+    },
+    {
+      "index": 3,
+      "text": "AI Agentの実効権限をどう考えますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "b9fc81e48be7821fabe43e181a313db031f790d77ca8453d8435b815688f67b0"
+    }
+  ]
+}
