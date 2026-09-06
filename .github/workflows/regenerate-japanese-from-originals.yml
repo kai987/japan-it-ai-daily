@@ -1,0 +1,316 @@
+name: Regenerate Japanese history from original sources
+
+on:
+  push:
+    branches: [repair/japanese-history-from-originals]
+    paths:
+      - '.github/workflows/regenerate-japanese-from-originals.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  copilot-requests: write
+
+jobs:
+  regenerate:
+    name: regenerate-${{ matrix.date }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        date:
+          - '2026-09-06'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+
+      - name: Install tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install -g @github/copilot
+          python3 -m pip install --disable-pip-version-check --no-cache-dir pyyaml==6.0.2 requests==2.32.5 beautifulsoup4==4.13.5 lxml==6.0.1
+
+      - name: Prepare source-only context and fetch original articles
+        env:
+          TARGET_DATE: ${{ matrix.date }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/original-articles
+          python3 - <<'PY'
+          import json, os, re
+          from pathlib import Path
+          import requests, yaml
+          from bs4 import BeautifulSoup
+
+          date = os.environ['TARGET_DATE']
+          daily_path = Path(f'src/content/daily/{date}.md')
+          lesson_path = Path(f'src/content/japanese/{date}.md')
+
+          def frontmatter(path: Path):
+              text = path.read_text(encoding='utf-8')
+              if not text.startswith('---\n'):
+                  raise RuntimeError(f'{path} has no frontmatter')
+              end = text.find('\n---\n', 4)
+              if end < 0:
+                  raise RuntimeError(f'{path} has unterminated frontmatter')
+              return yaml.safe_load(text[4:end]) or {}
+
+          daily = frontmatter(daily_path)
+          lesson = frontmatter(lesson_path)
+          top = daily.get('top') or []
+          if len(top) != 5:
+              raise RuntimeError(f'Expected exactly 5 Top items, got {len(top)}')
+
+          # Only expose factual metadata and the Japanese learning skeleton to the generator.
+          # Chinese summaries/explanations are deliberately excluded.
+          context = {
+              'date': date,
+              'topics': daily.get('topics') or [],
+              'sources': daily.get('sources') or [],
+              'top': [
+                  {
+                      'index': i + 1,
+                      'title': item.get('title', ''),
+                      'source': item.get('source', ''),
+                      'topic': item.get('topic', ''),
+                      'url': item.get('url', ''),
+                  }
+                  for i, item in enumerate(top)
+              ],
+              'learning': {
+                  'topics': lesson.get('topics') or [],
+                  'levels': lesson.get('levels') or [],
+                  'vocabularyCount': lesson.get('vocabularyCount', 0),
+                  'grammarCount': lesson.get('grammarCount', 0),
+                  'vocabulary': [
+                      {
+                          'term': x.get('term', ''),
+                          'reading': x.get('reading', ''),
+                          'partOfSpeech': x.get('partOfSpeech', ''),
+                          'level': x.get('level', ''),
+                          'collocations': x.get('collocations') or [],
+                          'exampleJa': x.get('exampleJa', ''),
+                      }
+                      for x in (lesson.get('vocabulary') or [])
+                  ],
+                  'grammar': [
+                      {
+                          'pattern': x.get('pattern', ''),
+                          'level': x.get('level', ''),
+                          'structure': x.get('structure', ''),
+                          'exampleJa': x.get('exampleJa', ''),
+                      }
+                      for x in (lesson.get('grammar') or [])
+                  ],
+                  'technicalTerms': [
+                      {
+                          'term': x.get('term', ''),
+                          **({'japanese': x.get('japanese')} if x.get('japanese') else {}),
+                      }
+                      for x in (lesson.get('technicalTerms') or [])
+                  ],
+                  'mustRememberWords': lesson.get('mustRememberWords') or [],
+                  'mustRememberGrammar': lesson.get('mustRememberGrammar') or [],
+              },
+          }
+          Path('/tmp/source-context.json').write_text(json.dumps(context, ensure_ascii=False, indent=2), encoding='utf-8')
+
+          headers = {
+              'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/152 Safari/537.36',
+              'Accept-Language': 'ja,en;q=0.8',
+          }
+          for idx, item in enumerate(top, 1):
+              url = item.get('url') or ''
+              out = Path(f'/tmp/original-articles/{idx:02d}.txt')
+              if not url:
+                  out.write_text('FETCH_STATUS: missing URL\n', encoding='utf-8')
+                  continue
+              try:
+                  resp = requests.get(url, headers=headers, timeout=30, allow_redirects=True)
+                  resp.raise_for_status()
+                  soup = BeautifulSoup(resp.text, 'lxml')
+                  for tag in soup(['script','style','noscript','svg','form','nav','footer','header','aside']):
+                      tag.decompose()
+                  root = soup.find('article') or soup.find('main') or soup.body or soup
+                  text = root.get_text('\n', strip=True)
+                  text = re.sub(r'\n{3,}', '\n\n', text)
+                  # Keep enough original context for a full technical rewrite while avoiding huge prompts.
+                  if len(text) > 70000:
+                      text = text[:70000]
+                  out.write_text(
+                      f'URL: {resp.url}\nHTTP_STATUS: {resp.status_code}\nSOURCE_TITLE: {item.get("title", "")}\n\n{text}\n',
+                      encoding='utf-8'
+                  )
+                  print(f'{idx}: fetched {len(text)} chars from {resp.url}')
+              except Exception as exc:
+                  out.write_text(f'URL: {url}\nFETCH_STATUS: failed\nERROR: {exc}\n', encoding='utf-8')
+                  print(f'::warning::Could not fetch {url}: {exc}')
+          PY
+
+      - name: Regenerate Japanese files directly from original sources
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          TARGET_DATE: ${{ matrix.date }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p src/content/daily-ja src/content/japanese-ja
+          cat > /tmp/copilot-prompt.txt <<'EOF'
+          You are a senior Japanese technical editor working inside an Astro content repository.
+
+          GOAL
+          Rebuild exactly two Japanese-mode files for the date in $TARGET_DATE:
+          - src/content/daily-ja/$TARGET_DATE.md
+          - src/content/japanese-ja/$TARGET_DATE.md
+
+          CRITICAL SOURCE RULE
+          Do NOT translate the Chinese daily body or Chinese learning explanations. They are not a source for Japanese prose.
+          The single source of truth is:
+          1. /tmp/source-context.json — factual Top-5 metadata and a Japanese-learning item skeleton only.
+          2. /tmp/original-articles/01.txt through 05.txt — text fetched directly from the five original article URLs.
+          If any fetched file is obviously incomplete or blocked, use its URL from /tmp/source-context.json and retrieve that original page yourself with shell tools (curl/python). Do not fall back to translating Chinese prose.
+
+          FACTUAL CONSISTENCY
+          - Keep exactly the same five articles, same order, title, source, topic and URL as /tmp/source-context.json.
+          - Never alter dates, numbers, product/model names, source names, URLs, or technical facts.
+          - Do not invent facts not supported by the original articles.
+          - Japanese article titles in context are authoritative and must be reused exactly.
+
+          DAILY-JA REQUIREMENTS
+          - Produce publication-quality natural Japanese written directly from the original articles.
+          - Frontmatter must use exactly the daily schema: title, date, description, topics, sources, top, featured.
+          - top must contain exactly five objects with title/source/topic/url identical to context and a natural Japanese why.
+          - Body must be a complete Japanese A+B+C report, not a short summary.
+          - Use this structure where applicable:
+            # A. 詳細版
+            ## 1. 今日読むべき5本
+            ### ① ... through ⑤ ...
+            each with 出典, 原文 URL, a faithful 2–3+ paragraph Japanese technical summary, and 注目ポイント
+            ## 2. カテゴリ別サマリー
+            ## 3. 面接で使えるポイント
+            ## 4. 今日の技術テーマ
+            ## 5. 面接復習カード
+            # B. 重要ポイントと面接で使える知識
+            # C. 日本語学習｜JLPT + IT日本語
+          - A/B/C explanatory prose must be idiomatic Japanese, not Chinese-shaped Japanese.
+          - Preserve technical English names when that is standard in Japanese engineering writing.
+          - Markdown must be written cleanly once. Never output duplicated markers such as ****, ：：, ## ##, repeated bullets, broken blockquotes, or placeholder artifacts.
+
+          JAPANESE-JA REQUIREMENTS
+          - Keep exactly the same learning-item identity and order as the skeleton in /tmp/source-context.json.
+          - vocabulary fields: term, reading, partOfSpeech, meaning, level, collocations, note, exampleJa, optional exampleMeaning, optional nuance.
+          - grammar fields: pattern, level, meaning, structure, usage, exampleJa, optional exampleMeaning, optional note.
+          - technicalTerms fields: term, optional japanese, meaning, context.
+          - Keep term/reading/partOfSpeech/level/collocations/exampleJa, grammar pattern/level/structure/exampleJa, technical term identity, and mustRemember lists exactly aligned with the skeleton.
+          - Write meaning/note/exampleMeaning/nuance/usage/context freshly in natural Japanese, using Japanese dictionary-style definitions and the original article context. Do not translate Chinese explanation fields.
+          - Frontmatter title and description must be natural Japanese. Body should contain only a short Japanese learning introduction because cards render from frontmatter.
+
+          PROHIBITIONS
+          - Do not modify src/content/daily/ or src/content/japanese/.
+          - Do not modify framework code, workflows, package files, audio files, or other dates.
+          - Do not read Chinese report bodies as prose input. Reading source frontmatter is unnecessary because the prepared context already contains the allowed metadata.
+          - No machine-translation pipeline, placeholder-token translation, or Chinese-to-Japanese whole-document translation.
+
+          BEFORE FINISHING
+          Read both generated files back and correct unnatural Japanese, repeated punctuation, malformed Markdown, untranslated simplified-Chinese prose, and obvious hallucinations.
+          EOF
+          # Expand only the date placeholder; keep the rest of the prompt literal.
+          sed -i "s/\$TARGET_DATE/${TARGET_DATE}/g" /tmp/copilot-prompt.txt
+          copilot --yolo -s --model auto -p "$(cat /tmp/copilot-prompt.txt)"
+
+      - name: Validate regenerated content and prove Chinese sources unchanged
+        env:
+          TARGET_DATE: ${{ matrix.date }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --exit-code -- src/content/daily src/content/japanese
+          python3 - <<'PY'
+          import os, re
+          from pathlib import Path
+          import yaml
+
+          date = os.environ['TARGET_DATE']
+          zh_daily = Path(f'src/content/daily/{date}.md')
+          ja_daily = Path(f'src/content/daily-ja/{date}.md')
+          zh_lesson = Path(f'src/content/japanese/{date}.md')
+          ja_lesson = Path(f'src/content/japanese-ja/{date}.md')
+
+          for p in (ja_daily, ja_lesson):
+              if not p.is_file() or p.stat().st_size < (10000 if p == ja_daily else 5000):
+                  raise RuntimeError(f'{p}: missing or unexpectedly short')
+
+          def fm(path):
+              text = path.read_text(encoding='utf-8')
+              if not text.startswith('---\n'):
+                  raise RuntimeError(f'{path}: missing frontmatter')
+              end = text.find('\n---\n', 4)
+              if end < 0:
+                  raise RuntimeError(f'{path}: unterminated frontmatter')
+              return yaml.safe_load(text[4:end]) or {}, text
+
+          zd, _ = fm(zh_daily); jd, jt = fm(ja_daily)
+          zl, _ = fm(zh_lesson); jl, jlt = fm(ja_lesson)
+
+          ztop, jtop = zd.get('top') or [], jd.get('top') or []
+          if len(ztop) != 5 or len(jtop) != 5:
+              raise RuntimeError('Top 5 count mismatch')
+          for i, (a, b) in enumerate(zip(ztop, jtop), 1):
+              for key in ('title','source','topic','url'):
+                  if (a.get(key) or '') != (b.get(key) or ''):
+                      raise RuntimeError(f'Top {i} {key} mismatch')
+
+          zv, jv = zl.get('vocabulary') or [], jl.get('vocabulary') or []
+          zg, jg = zl.get('grammar') or [], jl.get('grammar') or []
+          zt, jt_terms = zl.get('technicalTerms') or [], jl.get('technicalTerms') or []
+          if not (len(zv) == len(jv) and len(zg) == len(jg) and len(zt) == len(jt_terms)):
+              raise RuntimeError('Learning item counts mismatch')
+          for i, (a,b) in enumerate(zip(zv,jv),1):
+              for key in ('term','reading','partOfSpeech','level','collocations','exampleJa'):
+                  if a.get(key) != b.get(key): raise RuntimeError(f'Vocabulary {i} {key} mismatch')
+          for i, (a,b) in enumerate(zip(zg,jg),1):
+              for key in ('pattern','level','structure','exampleJa'):
+                  if a.get(key) != b.get(key): raise RuntimeError(f'Grammar {i} {key} mismatch')
+          for i, (a,b) in enumerate(zip(zt,jt_terms),1):
+              for key in ('term','japanese'):
+                  if a.get(key) != b.get(key): raise RuntimeError(f'Technical term {i} {key} mismatch')
+          for key in ('mustRememberWords','mustRememberGrammar'):
+              if (zl.get(key) or []) != (jl.get(key) or []): raise RuntimeError(f'{key} mismatch')
+
+          combined = jlt + jt
+          banned_fields = ['meaningZh','noteZh','exampleZh','nuanceZh','usageZh','contextZh']
+          banned_labels = ['详细文字版','今日最值得看的','分类速览','面试复习卡','重点总结','日本語学习','JLPT词汇','专业词汇','JLPT语法','今日必背','为什么值得看','面试问题','约30秒回答','可关联项目','回答要点']
+          hits = [x for x in banned_fields + banned_labels if x in combined]
+          if hits: raise RuntimeError(f'Chinese labels/schema remain: {hits}')
+
+          simplified = set('这为个们对让从该还进过里并将较仅时种后发开关问题报见务动说读写认语词汇习间图门长达连选适远类级员资质责财费预领顾额风飞马验驱编线组终给结统经续绿网联职药获营蓝观览视计论设访证评识诉诊译诚询详误请调谈谱负账货购贵贷赔赖赚赠赞轮软轻载辑输边迁运迟递遗邻释鉴闻闭闹阅险随隐难雾静页顺饮饭馆鲜鸟鸣齐齿龙')
+          bad_chars = sorted(set(ch for ch in combined if ch in simplified))
+          if bad_chars: raise RuntimeError(f'Simplified-Chinese characters remain: {bad_chars[:20]}')
+
+          patterns = [r'\*\*\*\*', r'：：', r'。。', r'、、', r'(?m)^#{1,6}\s+#{1,6}\s+', r'(?:\(\)){3,}', r'ZXQPH']
+          for pattern in patterns:
+              if re.search(pattern, combined): raise RuntimeError(f'Suspicious repeated/broken markup: {pattern}')
+          print('Japanese source-direct validation passed.')
+          PY
+
+      - name: Upload regenerated sample
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: source-direct-ja-${{ matrix.date }}
+          path: |
+            src/content/daily-ja/${{ matrix.date }}.md
+            src/content/japanese-ja/${{ matrix.date }}.md
+          retention-days: 1
+          if-no-files-found: error
