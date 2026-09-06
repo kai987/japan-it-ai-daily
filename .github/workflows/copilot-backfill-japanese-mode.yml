@@ -87,6 +87,64 @@ jobs:
           - japanese-ja must use the japaneseJa schema defined in src/content.config.ts. Convert the Chinese-mode explanation fields to Japanese-mode names exactly: vocabulary meaningZh->meaning, noteZh->note, exampleZh->exampleMeaning, nuanceZh->nuance; grammar meaningZh->meaning, usageZh->usage, exampleZh->exampleMeaning, noteZh->note; technicalTerms meaningZh->meaning and contextZh->context. Remove the old *Zh field names from the target. Preserve term, reading, partOfSpeech, level, collocations, exampleJa, pattern, structure, japanese, mustRememberWords, and mustRememberGrammar unless a user-visible Chinese explanation itself needs Japanese translation.
           - Do not modify any source file, framework file, workflow, package file, or any other date. Only create the two target files for ${DATE}.
           - Before finishing, mechanically compare all URLs and line counts against the source files and correct any mismatch."
+      - name: Normalize fixed Japanese labels
+        env:
+          DATE: ${{ matrix.date }}
+        shell: python
+        run: |
+          import os
+          from pathlib import Path
+
+          date = os.environ['DATE']
+          paths = [
+              Path(f'src/content/daily-ja/{date}.md'),
+              Path(f'src/content/japanese-ja/{date}.md'),
+          ]
+          replacements = {
+              '详细文字版': '詳細版',
+              '詳細文字版': '詳細版',
+              '今日最值得看的 5 篇': '今日読むべき5本',
+              '今日最值得看的5篇': '今日読むべき5本',
+              '分类速览': 'カテゴリ別サマリー',
+              '分類速覽': 'カテゴリ別サマリー',
+              '面试复习卡': '面接復習カード',
+              '面試復習卡': '面接復習カード',
+              '重点总结': '重要ポイントまとめ',
+              '重點總結': '重要ポイントまとめ',
+              '日本語学习': '日本語学習',
+              'JLPT词汇': 'JLPT語彙',
+              'JLPT詞彙': 'JLPT語彙',
+              'IT/AI专业词汇': 'IT/AI専門用語',
+              'IT/AI專業詞彙': 'IT/AI専門用語',
+              '专业词汇': '専門用語',
+              '專業詞彙': '専門用語',
+              'JLPT语法': 'JLPT文法',
+              'JLPT語法': 'JLPT文法',
+              '今日必背': '今日の必修',
+              '为什么值得看': '注目ポイント',
+              '為什麼值得看': '注目ポイント',
+              '面试问题': '面接質問',
+              '面試問題': '面接質問',
+              '约30秒回答': '約30秒の回答',
+              '約30秒回答': '約30秒の回答',
+              '可关联项目': '関連プロジェクト',
+              '可關聯項目': '関連プロジェクト',
+              '回答要点': '回答ポイント',
+              '回答要點': '回答ポイント',
+              'meaningZh:': 'meaning:',
+              'noteZh:': 'note:',
+              'exampleZh:': 'exampleMeaning:',
+              'nuanceZh:': 'nuance:',
+              'usageZh:': 'usage:',
+              'contextZh:': 'context:',
+          }
+          for path in paths:
+              if not path.exists():
+                  raise SystemExit(f'Missing translated file: {path}')
+              text = path.read_text(encoding='utf-8')
+              for old, new in replacements.items():
+                  text = text.replace(old, new)
+              path.write_text(text, encoding='utf-8')
       - name: Validate translated date
         env:
           DATE: ${{ matrix.date }}
