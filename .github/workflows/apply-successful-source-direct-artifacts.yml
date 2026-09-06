@@ -20,60 +20,41 @@ jobs:
           persist-credentials: true
           fetch-depth: 0
 
-      - name: Download validated artifacts from run 34058237483
+      - name: Download validated September 6 artifact
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p /tmp/artifacts
-          declare -A ids=(
-            [2026-08-12]=9996680187
-            [2026-08-13]=9996675920
-            [2026-08-14]=9996679850
-            [2026-08-15]=9996676722
-            [2026-08-18]=9996727936
-            [2026-08-19]=9996723702
-          )
-          for date in "${!ids[@]}"; do
-            id="${ids[$date]}"
-            mkdir -p "/tmp/artifacts/$date"
-            curl --fail --silent --show-error --location \
-              -H "Authorization: Bearer ${GH_TOKEN}" \
-              -H 'Accept: application/vnd.github+json' \
-              "https://api.github.com/repos/kai987/japan-it-ai-daily/actions/artifacts/${id}/zip" \
-              -o "/tmp/artifacts/$date/artifact.zip"
-            unzip -q "/tmp/artifacts/$date/artifact.zip" -d "/tmp/artifacts/$date/unzip"
-            tar -xzf "/tmp/artifacts/$date/unzip/$date.tgz" -C .
-          done
+          mkdir -p /tmp/artifact
+          curl --fail --silent --show-error --location \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H 'Accept: application/vnd.github+json' \
+            'https://api.github.com/repos/kai987/japan-it-ai-daily/actions/artifacts/9996478673/zip' \
+            -o /tmp/artifact/artifact.zip
+          unzip -q /tmp/artifact/artifact.zip -d /tmp/artifact/unzip
+          cp /tmp/artifact/unzip/src/content/daily-ja/2026-09-06.md src/content/daily-ja/2026-09-06.md
+          cp /tmp/artifact/unzip/src/content/japanese-ja/2026-09-06.md src/content/japanese-ja/2026-09-06.md
 
-      - name: Verify only Japanese content differs from main
+      - name: Prove Chinese content remains unchanged
         shell: bash
         run: |
           set -euo pipefail
           git fetch origin main
           git diff --exit-code origin/main -- src/content/daily src/content/japanese
-          for date in 2026-08-12 2026-08-13 2026-08-14 2026-08-15 2026-08-18 2026-08-19; do
-            test -s "src/content/daily-ja/$date.md"
-            test -s "src/content/japanese-ja/$date.md"
-          done
+          test -s src/content/daily-ja/2026-09-06.md
+          test -s src/content/japanese-ja/2026-09-06.md
 
-      - name: Commit validated Japanese content
+      - name: Commit validated September 6 content
         shell: bash
         run: |
           set -euo pipefail
-          git add \
-            src/content/daily-ja/2026-08-12.md src/content/japanese-ja/2026-08-12.md \
-            src/content/daily-ja/2026-08-13.md src/content/japanese-ja/2026-08-13.md \
-            src/content/daily-ja/2026-08-14.md src/content/japanese-ja/2026-08-14.md \
-            src/content/daily-ja/2026-08-15.md src/content/japanese-ja/2026-08-15.md \
-            src/content/daily-ja/2026-08-18.md src/content/japanese-ja/2026-08-18.md \
-            src/content/daily-ja/2026-08-19.md src/content/japanese-ja/2026-08-19.md
+          git add src/content/daily-ja/2026-09-06.md src/content/japanese-ja/2026-09-06.md
           if git diff --cached --quiet; then
-            echo 'No validated Japanese content changes to commit.'
+            echo 'No September 6 changes to commit.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'content: preserve validated source-direct Japanese history'
+          git commit -m 'content: preserve validated September 6 Japanese source rewrite'
           git push origin HEAD:repair/japanese-history-from-originals
