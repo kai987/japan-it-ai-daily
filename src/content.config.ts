@@ -39,58 +39,99 @@ const vocabularyItem = z.object({
   reading: z.string(),
   partOfSpeech: z.string(),
   meaningZh: z.string(),
-  meaningJa: z.string().optional(),
   level,
   collocations: z.array(z.string()).default([]),
   noteZh: z.string(),
-  noteJa: z.string().optional(),
   exampleJa: z.string(),
   exampleZh: z.string().optional(),
-  nuanceZh: z.string().optional(),
-  nuanceJa: z.string().optional()
+  nuanceZh: z.string().optional()
 });
 
 const grammarItem = z.object({
   pattern: z.string(),
   level,
   meaningZh: z.string(),
-  meaningJa: z.string().optional(),
   structure: z.string(),
   usageZh: z.string(),
-  usageJa: z.string().optional(),
   exampleJa: z.string(),
   exampleZh: z.string().optional(),
-  noteZh: z.string().optional(),
-  noteJa: z.string().optional()
+  noteZh: z.string().optional()
 });
 
 const technicalTermItem = z.object({
   term: z.string(),
   japanese: z.string().optional(),
   meaningZh: z.string(),
-  meaningJa: z.string().optional(),
-  contextZh: z.string(),
-  contextJa: z.string().optional()
+  contextZh: z.string()
+});
+
+const japaneseSchema = z.object({
+  title: z.string(),
+  date: z.coerce.date(),
+  description: z.string(),
+  topics: z.array(z.string()).default([]),
+  levels: z.array(level).default([]),
+  vocabularyCount: z.number().int().nonnegative().default(0),
+  grammarCount: z.number().int().nonnegative().default(0),
+  vocabulary: z.array(vocabularyItem).default([]),
+  grammar: z.array(grammarItem).default([]),
+  technicalTerms: z.array(technicalTermItem).default([]),
+  mustRememberWords: z.array(z.string()).default([]),
+  mustRememberGrammar: z.array(z.string()).default([])
 });
 
 const japanese = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/japanese' }),
+  schema: japaneseSchema
+});
+
+const vocabularyItemJa = z.object({
+  term: z.string(),
+  reading: z.string(),
+  partOfSpeech: z.string(),
+  meaning: z.string(),
+  level,
+  collocations: z.array(z.string()).default([]),
+  note: z.string(),
+  exampleJa: z.string(),
+  exampleMeaning: z.string().optional(),
+  nuance: z.string().optional()
+});
+
+const grammarItemJa = z.object({
+  pattern: z.string(),
+  level,
+  meaning: z.string(),
+  structure: z.string(),
+  usage: z.string(),
+  exampleJa: z.string(),
+  exampleMeaning: z.string().optional(),
+  note: z.string().optional()
+});
+
+const technicalTermItemJa = z.object({
+  term: z.string(),
+  japanese: z.string().optional(),
+  meaning: z.string(),
+  context: z.string()
+});
+
+const japaneseJa = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/japanese-ja' }),
   schema: z.object({
     title: z.string(),
-    titleJa: z.string().optional(),
     date: z.coerce.date(),
     description: z.string(),
-    descriptionJa: z.string().optional(),
     topics: z.array(z.string()).default([]),
     levels: z.array(level).default([]),
     vocabularyCount: z.number().int().nonnegative().default(0),
     grammarCount: z.number().int().nonnegative().default(0),
-    vocabulary: z.array(vocabularyItem).default([]),
-    grammar: z.array(grammarItem).default([]),
-    technicalTerms: z.array(technicalTermItem).default([]),
+    vocabulary: z.array(vocabularyItemJa).default([]),
+    grammar: z.array(grammarItemJa).default([]),
+    technicalTerms: z.array(technicalTermItemJa).default([]),
     mustRememberWords: z.array(z.string()).default([]),
     mustRememberGrammar: z.array(z.string()).default([])
   })
 });
 
-export const collections = { daily, dailyJa, japanese };
+export const collections = { daily, dailyJa, japanese, japaneseJa };
