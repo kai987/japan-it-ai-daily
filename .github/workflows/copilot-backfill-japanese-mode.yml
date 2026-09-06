@@ -70,7 +70,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p src/content/daily-ja src/content/japanese-ja
-          copilot --yolo -s --model auto --max-ai-credits=25 -p "You are a professional Japanese technical editor working inside this repository. Create a publication-quality FULL Japanese-language version of exactly these two source files for ${DATE}:
+          copilot --yolo -s --model auto --max-ai-credits=30 -p "You are a professional Japanese technical editor working inside this repository. Create a publication-quality FULL Japanese-language version of exactly these two source files for ${DATE}:
 
           1. src/content/daily/${DATE}.md -> src/content/daily-ja/${DATE}.md
           2. src/content/japanese/${DATE}.md -> src/content/japanese-ja/${DATE}.md
