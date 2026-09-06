@@ -33,32 +33,39 @@ jobs:
       - name: Prepare original sources
         run: python3 scripts/prepare-source-direct-context.py --date "$TARGET_DATE" --workdir "$WORKDIR" --article-chars 4500
 
-      - name: Build llama.cpp
+      - name: Install pinned llama.cpp binary
         shell: bash
         run: |
           set -euo pipefail
-          git clone --depth 1 --branch b10826 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
-          cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DGGML_NATIVE=ON
-          cmake --build /tmp/llama.cpp/build --config Release -j 2 --target llama-server
+          archive=/tmp/llama-ubuntu-x64.tar.gz
+          curl -fL --retry 3 -o "$archive" \
+            https://github.com/ggml-org/llama.cpp/releases/download/b10826/llama-b10826-bin-ubuntu-x64.tar.gz
+          echo 'c708a8d84853c86ad3400428b5d6ef2b504e297d98ccdcf8362195c6638b7fd9  /tmp/llama-ubuntu-x64.tar.gz' | sha256sum -c -
+          mkdir -p /tmp/llama-bin
+          tar -xzf "$archive" -C /tmp/llama-bin
+          server="$(find /tmp/llama-bin -type f -name llama-server -print -quit)"
+          test -n "$server"
+          chmod +x "$server"
+          echo "LLAMA_SERVER=$server" >> "$GITHUB_ENV"
 
       - name: Start Qwen3 1.7B
         shell: bash
         run: |
           set -euo pipefail
-          /tmp/llama.cpp/build/bin/llama-server \
-            -hf Qwen/Qwen3-1.7B-GGUF:Q4_K_M \
+          "$LLAMA_SERVER" \
+            -hf ggml-org/Qwen3-1.7B-GGUF:Q4_K_M \
             --alias qwen3-1.7b \
             --host 127.0.0.1 --port 8080 \
             --jinja -c 24576 -t 4 > /tmp/qwen17b-server.log 2>&1 &
           echo $! > /tmp/qwen17b-server.pid
-          for i in $(seq 1 120); do
+          for i in $(seq 1 180); do
             if curl -fsS http://127.0.0.1:8080/health >/dev/null 2>&1; then
               echo 'Qwen3-1.7B server ready.'
               exit 0
             fi
-            sleep 3
+            sleep 2
           done
-          tail -n 120 /tmp/qwen17b-server.log || true
+          tail -n 160 /tmp/qwen17b-server.log || true
           exit 1
 
       - name: Generate Japanese directly from originals
