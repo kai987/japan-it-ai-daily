@@ -1,0 +1,122 @@
+name: Finalize Japanese backfill
+
+on:
+  push:
+    branches: [feature/zh-ja-language-mode]
+    paths:
+      - '.github/workflows/finalize-japanese-backfill.yml'
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: finalize-japanese-backfill
+  cancel-in-progress: true
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      SOURCE_RUN_ID: '34050103693'
+      GH_TOKEN: ${{ github.token }}
+      PUBLIC_AUDIO_BASE_URL: https://pub-7561025e67be4103ac4bafb331864381.r2.dev
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - name: Wait for translation run to finish
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 180); do
+            status="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}" --jq '.status')"
+            conclusion="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}" --jq '.conclusion // ""')"
+            echo "Translation run: status=${status} conclusion=${conclusion:-pending}"
+            if [[ "${status}" == 'completed' ]]; then
+              break
+            fi
+            sleep 30
+          done
+          status="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}" --jq '.status')"
+          [[ "${status}" == 'completed' ]]
+          count="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}/artifacts?per_page=100" --jq '[.artifacts[] | select(.name | startswith("japanese-"))] | length')"
+          echo "Generated Japanese artifacts: ${count}"
+          [[ "${count}" -eq 6 ]]
+      - name: Reset to latest feature branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin feature/zh-ja-language-mode
+          git reset --hard origin/feature/zh-ja-language-mode
+      - name: Download and merge generated batches
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p generated-zips generated-unpacked
+          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}/artifacts?per_page=100" \
+            --jq '.artifacts[] | select(.name | startswith("japanese-")) | [.id,.name] | @tsv' > /tmp/artifacts.tsv
+          while IFS=$'\t' read -r id name; do
+            echo "Downloading ${name} (${id})"
+            gh api -H 'Accept: application/vnd.github+json' \
+              "repos/${GITHUB_REPOSITORY}/actions/artifacts/${id}/zip" > "generated-zips/${name}.zip"
+            mkdir -p "generated-unpacked/${name}"
+            unzip -q "generated-zips/${name}.zip" -d "generated-unpacked/${name}"
+            archive="$(find "generated-unpacked/${name}" -type f -name '*.tgz' -print -quit)"
+            [[ -n "${archive}" ]]
+            tar -xzf "${archive}"
+          done < /tmp/artifacts.tsv
+      - name: Validate full Japanese content
+        shell: bash
+        run: |
+          set -euo pipefail
+          source_daily="$(find src/content/daily -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          ja_daily="$(find src/content/daily-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          source_lessons="$(find src/content/japanese -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          ja_lessons="$(find src/content/japanese-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          echo "Daily: ${ja_daily}/${source_daily}; Japanese lessons: ${ja_lessons}/${source_lessons}"
+          [[ "${ja_daily}" -eq "${source_daily}" ]]
+          [[ "${ja_lessons}" -eq "${source_lessons}" ]]
+          if grep -R -n -E '详细文字版|今日最值得看的|分类速览|面试复习卡|重点总结|日本語学习|JLPT词汇|专业词汇|JLPT语法|今日必背|为什么值得看|面试问题|约30秒回答|可关联项目|回答要点' src/content/daily-ja src/content/japanese-ja; then
+            echo '::error::Chinese structural labels remain in Japanese-mode content.'
+            exit 1
+          fi
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Full site verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run check
+          npm test
+          npm run build
+          npm run audio:strip-dist
+          npm run security:check
+          test -f dist/ja/index.html
+          test -f dist/ja/archive/index.html
+          test -f dist/ja/interview/index.html
+          test -f dist/ja/japanese/index.html
+          test -f dist/ja/topics/index.html
+          test -f dist/ja/search-index.json
+          test "$(find dist/ja/daily -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" -eq "$(find src/content/daily -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+      - name: Commit Japanese content
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add src/content/daily-ja src/content/japanese-ja
+          if git diff --cached --quiet; then
+            echo 'No Japanese content changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'content: backfill full Japanese mode'
+          git push origin HEAD:feature/zh-ja-language-mode
