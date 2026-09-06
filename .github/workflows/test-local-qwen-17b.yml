@@ -68,14 +68,12 @@ jobs:
           tail -n 160 /tmp/qwen17b-server.log || true
           exit 1
 
-      - name: Generate Japanese directly from originals
+      - name: Generate structured Japanese directly from originals
         run: >-
-          python3 scripts/generate-source-direct-local-fast.py
+          python3 scripts/generate-source-direct-structured.py
           --date "$TARGET_DATE"
           --workdir "$WORKDIR"
           --model qwen3-1.7b
-          --daily-max-tokens 3000
-          --lesson-max-tokens 3600
 
       - name: Validate source-direct result
         run: |
@@ -93,6 +91,6 @@ jobs:
       - name: Upload sample artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: qwen17b-source-direct-${{ env.TARGET_DATE }}
+          name: qwen17b-structured-source-direct-${{ env.TARGET_DATE }}
           path: /tmp/qwen17b-artifact
           retention-days: 1
