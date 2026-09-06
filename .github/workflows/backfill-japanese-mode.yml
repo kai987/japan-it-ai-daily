@@ -17,26 +17,40 @@ concurrency:
 
 jobs:
   translate:
-    name: translate-${{ matrix.batch }}
+    name: translate-${{ matrix.date }}
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 35
     strategy:
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 20
       matrix:
-        include:
-          - batch: aug12-16
-            dates: '2026-08-12 2026-08-13 2026-08-14 2026-08-15 2026-08-16'
-          - batch: aug17-21
-            dates: '2026-08-17 2026-08-18 2026-08-19 2026-08-20 2026-08-21'
-          - batch: aug22-26
-            dates: '2026-08-22 2026-08-23 2026-08-24 2026-08-25 2026-08-26'
-          - batch: aug27-31
-            dates: '2026-08-27 2026-08-28 2026-08-29 2026-08-30 2026-08-31'
-          - batch: sep01-03
-            dates: '2026-09-01 2026-09-02 2026-09-03'
-          - batch: sep04-06
-            dates: '2026-09-04 2026-09-05 2026-09-06'
+        date:
+          - '2026-08-12'
+          - '2026-08-13'
+          - '2026-08-14'
+          - '2026-08-15'
+          - '2026-08-16'
+          - '2026-08-17'
+          - '2026-08-18'
+          - '2026-08-19'
+          - '2026-08-20'
+          - '2026-08-21'
+          - '2026-08-22'
+          - '2026-08-23'
+          - '2026-08-24'
+          - '2026-08-25'
+          - '2026-08-26'
+          - '2026-08-27'
+          - '2026-08-28'
+          - '2026-08-29'
+          - '2026-08-30'
+          - '2026-08-31'
+          - '2026-09-01'
+          - '2026-09-02'
+          - '2026-09-03'
+          - '2026-09-04'
+          - '2026-09-05'
+          - '2026-09-06'
     env:
       HF_HUB_DISABLE_TELEMETRY: '1'
       TOKENIZERS_PARALLELISM: 'false'
@@ -57,23 +71,21 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python3 scripts/backfill-japanese-mode.py --dates ${{ matrix.dates }}
-          daily_count="$(find src/content/daily-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
-          lesson_count="$(find src/content/japanese-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
-          echo "Generated daily files: ${daily_count}"
-          echo "Generated lesson files: ${lesson_count}"
-          test "${daily_count}" -gt 0
-          test "${lesson_count}" -gt 0
+          python3 scripts/backfill-japanese-mode.py --dates '${{ matrix.date }}'
+          test -f 'src/content/daily-ja/${{ matrix.date }}.md'
+          test -f 'src/content/japanese-ja/${{ matrix.date }}.md'
       - name: Package generated content
         shell: bash
         run: |
           set -euo pipefail
-          tar -czf "${{ matrix.batch }}.tgz" src/content/daily-ja src/content/japanese-ja
+          tar -czf '${{ matrix.date }}.tgz' \
+            'src/content/daily-ja/${{ matrix.date }}.md' \
+            'src/content/japanese-ja/${{ matrix.date }}.md'
       - name: Upload generated content
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: japanese-${{ matrix.batch }}
-          path: ${{ matrix.batch }}.tgz
+          name: japanese-${{ matrix.date }}
+          path: ${{ matrix.date }}.tgz
           retention-days: 1
           if-no-files-found: error
 
@@ -103,10 +115,12 @@ jobs:
           done
           daily_count="$(find src/content/daily-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
           lesson_count="$(find src/content/japanese-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
-          echo "Japanese daily files: ${daily_count}"
-          echo "Japanese lesson files: ${lesson_count}"
-          test "${daily_count}" -eq "$(find src/content/daily -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
-          test "${lesson_count}" -eq "$(find src/content/japanese -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          source_daily_count="$(find src/content/daily -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          source_lesson_count="$(find src/content/japanese -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          echo "Japanese daily files: ${daily_count}/${source_daily_count}"
+          echo "Japanese lesson files: ${lesson_count}/${source_lesson_count}"
+          test "${daily_count}" -eq "${source_daily_count}"
+          test "${lesson_count}" -eq "${source_lesson_count}"
           if grep -R -n -E '详细文字版|今日最值得看的|分类速览|面试复习卡|重点总结|日本語学习|JLPT词汇|专业词汇|JLPT语法|今日必背|为什么值得看|面试问题|约30秒回答|可关联项目|回答要点' src/content/daily-ja src/content/japanese-ja; then
             echo '::error::Chinese structural labels remain in Japanese-mode content.'
             exit 1
@@ -124,5 +138,3 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'content: backfill full Japanese mode'
           git push origin HEAD:feature/zh-ja-language-mode
-
-# Batched translation keeps each runner comfortably below the timeout.
