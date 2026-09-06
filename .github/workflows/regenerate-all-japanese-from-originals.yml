@@ -1,0 +1,459 @@
+name: Rebuild all historical Japanese content from originals
+
+on:
+  push:
+    branches: [repair/japanese-history-from-originals]
+    paths:
+      - '.github/workflows/regenerate-all-japanese-from-originals.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  copilot-requests: write
+
+concurrency:
+  group: source-direct-japanese-history
+  cancel-in-progress: true
+
+jobs:
+  regenerate:
+    name: regenerate-${{ matrix.date }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        date:
+          - '2026-08-12'
+          - '2026-08-13'
+          - '2026-08-14'
+          - '2026-08-15'
+          - '2026-08-16'
+          - '2026-08-17'
+          - '2026-08-18'
+          - '2026-08-19'
+          - '2026-08-20'
+          - '2026-08-21'
+          - '2026-08-22'
+          - '2026-08-23'
+          - '2026-08-24'
+          - '2026-08-25'
+          - '2026-08-26'
+          - '2026-08-27'
+          - '2026-08-28'
+          - '2026-08-29'
+          - '2026-08-30'
+          - '2026-08-31'
+          - '2026-09-01'
+          - '2026-09-02'
+          - '2026-09-03'
+          - '2026-09-04'
+          - '2026-09-05'
+          - '2026-09-06'
+    env:
+      TARGET_DATE: ${{ matrix.date }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+
+      - name: Install source and editor tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install -g @github/copilot
+          python3 -m pip install --disable-pip-version-check --no-cache-dir \
+            pyyaml==6.0.2 requests==2.32.5 beautifulsoup4==4.13.5 lxml==6.0.1
+
+      - name: Prepare source-only context and fetch original articles
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/original-articles
+          python3 - <<'PY'
+          import json, os, re
+          from pathlib import Path
+          import requests, yaml
+          from bs4 import BeautifulSoup
+
+          date=os.environ['TARGET_DATE']
+
+          def fm(path):
+              t=Path(path).read_text(encoding='utf-8'); e=t.find('\n---\n',4)
+              if not t.startswith('---\n') or e<0:
+                  raise RuntimeError(f'Bad frontmatter: {path}')
+              return yaml.safe_load(t[4:e]) or {}
+
+          daily=fm(f'src/content/daily/{date}.md')
+          lesson=fm(f'src/content/japanese/{date}.md')
+          top=daily.get('top') or []
+          if len(top)!=5:
+              raise RuntimeError(f'{date}: expected five Top items, got {len(top)}')
+
+          context={
+            'date':date,
+            'topics':daily.get('topics') or [],
+            'sources':daily.get('sources') or [],
+            'top':[{
+              'index':i+1,
+              'title':x.get('title',''),
+              'source':x.get('source',''),
+              'topic':x.get('topic',''),
+              'url':x.get('url',''),
+            } for i,x in enumerate(top)],
+            'learning':{
+              'topics':lesson.get('topics') or [],
+              'levels':lesson.get('levels') or [],
+              'vocabularyCount':lesson.get('vocabularyCount',0),
+              'grammarCount':lesson.get('grammarCount',0),
+              'vocabulary':[{
+                'term':x.get('term',''),
+                'reading':x.get('reading',''),
+                'partOfSpeech':x.get('partOfSpeech',''),
+                'level':x.get('level',''),
+                'collocations':x.get('collocations') or [],
+                'exampleJa':x.get('exampleJa',''),
+              } for x in (lesson.get('vocabulary') or [])],
+              'grammar':[{
+                'pattern':x.get('pattern',''),
+                'level':x.get('level',''),
+                'structure':x.get('structure',''),
+                'exampleJa':x.get('exampleJa',''),
+              } for x in (lesson.get('grammar') or [])],
+              'technicalTerms':[{
+                'term':x.get('term',''),
+                **({'japanese':x.get('japanese')} if x.get('japanese') else {}),
+              } for x in (lesson.get('technicalTerms') or [])],
+              'mustRememberWords':lesson.get('mustRememberWords') or [],
+              'mustRememberGrammar':lesson.get('mustRememberGrammar') or [],
+            }
+          }
+          Path('/tmp/source-context.json').write_text(
+              json.dumps(context,ensure_ascii=False,indent=2),encoding='utf-8')
+
+          headers={
+            'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/152 Safari/537.36',
+            'Accept-Language':'ja,en;q=0.8'
+          }
+
+          def direct_text(url):
+              r=requests.get(url,headers=headers,timeout=30,allow_redirects=True)
+              r.raise_for_status()
+              soup=BeautifulSoup(r.text,'lxml')
+              for tag in soup(['script','style','noscript','svg','form','nav','footer','header','aside']):
+                  tag.decompose()
+              root=soup.find('article') or soup.find('main') or soup.body or soup
+              text=re.sub(r'\n{3,}','\n\n',root.get_text('\n',strip=True))[:70000]
+              return r.url,r.status_code,text
+
+          def reader_text(url):
+              reader='https://r.jina.ai/'+url
+              r=requests.get(reader,headers={'User-Agent':'Mozilla/5.0'},timeout=45)
+              r.raise_for_status()
+              return reader,r.status_code,r.text[:70000]
+
+          for idx,item in enumerate(top,1):
+              url=item.get('url') or ''
+              p=Path(f'/tmp/original-articles/{idx:02d}.txt')
+              if not url:
+                  p.write_text('FETCH_STATUS: missing URL\n',encoding='utf-8')
+                  print(f'::warning::{date} Top {idx}: URL missing')
+                  continue
+              try:
+                  final,status,text=direct_text(url)
+                  if len(text)<900:
+                      raise RuntimeError(f'direct extraction too short ({len(text)})')
+                  method='direct'
+              except Exception as first:
+                  try:
+                      final,status,text=reader_text(url)
+                      if len(text)<900:
+                          raise RuntimeError(f'reader extraction too short ({len(text)})')
+                      method='reader-fallback'
+                  except Exception as second:
+                      p.write_text(
+                        f'URL: {url}\nFETCH_STATUS: failed\nDIRECT_ERROR: {first}\nFALLBACK_ERROR: {second}\n',
+                        encoding='utf-8')
+                      print(f'::warning::{date} Top {idx} unavailable: {first}; fallback: {second}')
+                      continue
+              p.write_text(
+                f'URL: {url}\nFETCH_METHOD: {method}\nFETCH_LOCATION: {final}\nHTTP_STATUS: {status}\nSOURCE_TITLE: {item.get("title","")}\n\n{text}\n',
+                encoding='utf-8')
+              print(f'{date} Top {idx}: {method}, {len(text)} chars')
+          PY
+
+      - name: Generate complete Japanese content directly from originals
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat >/tmp/prompt.txt <<'EOF'
+          You are a senior native-level Japanese technical editor rebuilding the historical Japanese mode of an Astro IT/AI news site.
+
+          TARGET DATE is supplied by environment variable TARGET_DATE.
+          Rebuild ONLY these two target files for that date:
+          - src/content/daily-ja/TARGET_DATE.md
+          - src/content/japanese-ja/TARGET_DATE.md
+
+          SOURCE POLICY — NON-NEGOTIABLE
+          Use only:
+          1. /tmp/source-context.json — immutable Top-5 metadata and a Japanese-learning identity skeleton.
+          2. /tmp/original-articles/01.txt through 05.txt — text retrieved from the original article URLs.
+          Never translate or use the Chinese daily prose or Chinese learning explanations. Do not read them as language input. The prepared context already contains the only metadata you are allowed to inherit from the Chinese mode.
+          If an original source remains inaccessible, do not invent article details; keep that item conservative and use only available source metadata.
+
+          FACTUAL CONSISTENCY
+          - Exactly five Top articles, in the exact order in source-context.
+          - title/source/topic/url must be byte-for-byte identical to source-context.
+          - Preserve all dates, numbers, product/model names, organizations, APIs and technical facts from the originals.
+          - Do not add unsupported facts or examples.
+
+          STEP 1 — JAPANESE LEARNING FILE
+          Create src/content/japanese-ja/TARGET_DATE.md first.
+          Preserve the exact item identity/order in source-context.
+          Frontmatter keys: title,date,description,topics,levels,vocabularyCount,grammarCount,vocabulary,grammar,technicalTerms,mustRememberWords,mustRememberGrammar.
+          vocabulary fields: term,reading,partOfSpeech,meaning,level,collocations,note,exampleJa,optional exampleMeaning,optional nuance.
+          grammar fields: pattern,level,meaning,structure,usage,exampleJa,optional exampleMeaning,optional note.
+          technicalTerms fields: term,optional japanese,meaning,context.
+          Keep these skeleton values exactly unchanged: vocabulary term/reading/partOfSpeech/level/collocations/exampleJa; grammar pattern/level/structure/exampleJa; technical-term term/japanese; mustRememberWords; mustRememberGrammar.
+          Write meaning/note/exampleMeaning/nuance/usage/context freshly in idiomatic Japanese, grounded in the original articles and Japanese dictionary-style definitions. Do not mechanically translate Chinese explanation fields.
+          title and description must be natural Japanese. The Markdown body may contain only a short Japanese introduction because the Japanese learning page renders the structured frontmatter.
+
+          STEP 2 — COMPLETE JAPANESE DAILY FILE
+          Create src/content/daily-ja/TARGET_DATE.md directly from the original sources.
+          Frontmatter keys exactly: title,date,description,topics,sources,top,featured.
+          top has exactly five items. title/source/topic/url exactly match source-context; write why in natural Japanese from the original source.
+
+          The daily Markdown body MUST contain a detailed, complete A+B+C report:
+
+          # A. 詳細版
+          ## 1. 今日読むべき5本
+          Five article sections, ### ① through ### ⑤. Each must include 出典, 原文 URL, at least 2 substantive Japanese summary paragraphs grounded in the original, and 注目ポイント.
+          ## 2. カテゴリ別サマリー
+          Cover relevant signals under AI / Agent, Frontend / Web, Cloud / Backend, and 日本企業 Tech Blog / enterprise engineering. If there is no meaningful item for a category, say so naturally rather than inventing one.
+          ## 3. 面接で使えるポイント
+          Provide 3–5 topics. Each includes a Japanese interview question, a natural roughly-30-second Japanese answer, 関連プロジェクト, and 3つのキーワード.
+          ## 4. 今日の技術テーマ
+          Explain one central theme in Japanese and include メリット, 制約・リスク, and 日本企業で導入する際の注意点.
+          ## 5. 面接復習カード
+          Three Japanese questions, each with 回答ポイント.
+
+          # B. 重要ポイントと面接で使える知識
+          Include five article-specific subsections corresponding to Top 1–5 in the same order. For EACH article provide 2–4 concrete Japanese knowledge points grounded in that original article. Do not translate a Chinese B section.
+
+          # C. 日本語学習｜JLPT + IT日本語
+          This section MUST be complete, not just an introduction. Render the same structured learning content you wrote in japanese-ja into readable Markdown with the same Japanese explanations:
+          ## C-1. JLPT語彙
+          Include EVERY vocabulary item, preferably grouped by level. Each shows term/reading, partOfSpeech, meaning, collocations, article context/note, exampleJa, and optional exampleMeaning/nuance.
+          ## C-2. IT/AI専門用語
+          Include EVERY technical term with Japanese meaning and article context.
+          ## C-3. JLPT文法
+          Include EVERY grammar item with level, meaning, structure, usage, exampleJa, and optional exampleMeaning/note.
+          ## C-4. 今日の必修
+          Include exactly the mustRememberWords and mustRememberGrammar lists from source-context.
+          The C section of daily-ja and japanese-ja must agree semantically and item-for-item.
+
+          QUALITY REQUIREMENTS
+          - Publication-quality idiomatic Japanese, never Chinese-shaped Japanese.
+          - Prefer terminology and phrasing from the original Japanese article when available.
+          - Standard English technical terms may remain English when natural in Japanese engineering writing.
+          - Markdown markers are written exactly once. Never emit ****, ：：, duplicated list prefixes/headings, broken blockquotes, placeholder tokens, or malformed YAML.
+          - Reread both output files before finishing and self-edit unnatural Japanese, factual drift, repeated punctuation, malformed Markdown and missing C items.
+
+          SAFETY OF EXISTING CONTENT
+          Do not modify src/content/daily/, src/content/japanese/, framework code, workflow files, package files, audio files, or any other date. No zh->ja translation pipeline is permitted.
+          EOF
+          sed -i "s/TARGET_DATE/${TARGET_DATE}/g" /tmp/prompt.txt
+          copilot --yolo -s --model auto -p "$(cat /tmp/prompt.txt)"
+
+      - name: Validate source-direct Japanese pair
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --exit-code -- src/content/daily src/content/japanese
+          python3 - <<'PY'
+          import os,re
+          from pathlib import Path
+          import yaml
+
+          date=os.environ['TARGET_DATE']
+          def fm(path):
+              p=Path(path); t=p.read_text(encoding='utf-8'); e=t.find('\n---\n',4)
+              if not t.startswith('---\n') or e<0:
+                  raise RuntimeError(f'{path}: bad frontmatter')
+              return yaml.safe_load(t[4:e]) or {},t,p.stat().st_size
+
+          zd,_,_=fm(f'src/content/daily/{date}.md')
+          jd,jdt,jdb=fm(f'src/content/daily-ja/{date}.md')
+          zl,_,_=fm(f'src/content/japanese/{date}.md')
+          jl,jlt,jlb=fm(f'src/content/japanese-ja/{date}.md')
+          print(f'{date}: daily-ja={jdb} bytes, japanese-ja={jlb} bytes')
+          if jdb<14000: raise RuntimeError('daily-ja unexpectedly short')
+          if jlb<5000: raise RuntimeError('japanese-ja unexpectedly short')
+
+          required=[
+            '# A. 詳細版','## 1. 今日読むべき5本','## 2. カテゴリ別サマリー',
+            '## 3. 面接で使えるポイント','## 4. 今日の技術テーマ','## 5. 面接復習カード',
+            '# B. 重要ポイントと面接で使える知識','# C. 日本語学習｜JLPT + IT日本語',
+            '## C-1. JLPT語彙','## C-2. IT/AI専門用語','## C-3. JLPT文法','## C-4. 今日の必修'
+          ]
+          missing=[x for x in required if x not in jdt]
+          if missing: raise RuntimeError(f'Missing sections: {missing}')
+
+          if len(zd.get('top') or [])!=5 or len(jd.get('top') or [])!=5:
+              raise RuntimeError('Top 5 count mismatch')
+          for i,(a,b) in enumerate(zip(zd['top'],jd['top']),1):
+              for k in ('title','source','topic','url'):
+                  if (a.get(k) or '')!=(b.get(k) or ''):
+                      raise RuntimeError(f'Top {i} {k} mismatch')
+
+          zv,zg,zt=zl.get('vocabulary') or [],zl.get('grammar') or [],zl.get('technicalTerms') or []
+          jv,jg,jt=jl.get('vocabulary') or [],jl.get('grammar') or [],jl.get('technicalTerms') or []
+          if (len(zv),len(zg),len(zt))!=(len(jv),len(jg),len(jt)):
+              raise RuntimeError('Learning counts mismatch')
+          for i,(a,b) in enumerate(zip(zv,jv),1):
+              for k in ('term','reading','partOfSpeech','level','collocations','exampleJa'):
+                  if a.get(k)!=b.get(k): raise RuntimeError(f'Vocabulary {i} {k} mismatch')
+          for i,(a,b) in enumerate(zip(zg,jg),1):
+              for k in ('pattern','level','structure','exampleJa'):
+                  if a.get(k)!=b.get(k): raise RuntimeError(f'Grammar {i} {k} mismatch')
+          for i,(a,b) in enumerate(zip(zt,jt),1):
+              for k in ('term','japanese'):
+                  if a.get(k)!=b.get(k): raise RuntimeError(f'Technical term {i} {k} mismatch')
+          for k in ('mustRememberWords','mustRememberGrammar'):
+              if (zl.get(k) or [])!=(jl.get(k) or []): raise RuntimeError(f'{k} mismatch')
+
+          c=jdt.split('# C. 日本語学習｜JLPT + IT日本語',1)[1]
+          missing_terms=[x.get('term') for x in jv if x.get('term') and x.get('term') not in c]
+          missing_patterns=[x.get('pattern') for x in jg if x.get('pattern') and x.get('pattern') not in c]
+          missing_tech=[x.get('term') for x in jt if x.get('term') and x.get('term') not in c]
+          if missing_terms or missing_patterns or missing_tech:
+              raise RuntimeError(f'C missing items: vocab={missing_terms}; grammar={missing_patterns}; tech={missing_tech}')
+
+          b=jdt.split('# B. 重要ポイントと面接で使える知識',1)[1].split('# C. 日本語学習｜JLPT + IT日本語',1)[0]
+          if len(re.findall(r'(?m)^###\s+',b))<5:
+              raise RuntimeError('B section must contain at least five article-specific subsections')
+
+          combined=jdt+jlt
+          banned=[
+            'meaningZh','noteZh','exampleZh','nuanceZh','usageZh','contextZh',
+            '详细文字版','今日最值得看的','分类速览','面试复习卡','重点总结','日本語学习',
+            'JLPT词汇','专业词汇','JLPT语法','今日必背','为什么值得看','面试问题',
+            '约30秒回答','可关联项目','回答要点'
+          ]
+          hits=[x for x in banned if x in combined]
+          if hits: raise RuntimeError(f'Chinese labels/schema remain: {hits}')
+
+          simplified=set('这为们对让从该还进过并较仅时种发开关问题报见务动说读认语词汇习间图门长达连选适远类级员资质责财费预领顾额风飞马验驱编线组终给结统经续绿网联职药获营蓝观览视计论设访证评识诉诊译诚询详误请调谈谱负账货购贵贷赔赖赚赠赞轮软轻载辑输边迁运迟递遗邻释鉴闻闭闹阅险隐难雾页顺饮饭馆鲜鸟鸣齐齿龙')
+          bad=sorted({x for x in combined if x in simplified})
+          if bad: raise RuntimeError(f'Simplified-Chinese-only chars remain: {bad[:20]}')
+
+          for p in [r'\*\*\*\*',r'：：',r'。。',r'、、',r'(?m)^#{1,6}\s+#{1,6}\s+',r'(?:\(\)){3,}',r'ZXQPH']:
+              if re.search(p,combined): raise RuntimeError(f'Broken/repeated markup: {p}')
+          print(f'{date}: source-direct validation passed')
+          PY
+
+      - name: Package regenerated pair
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -czf "${TARGET_DATE}.tgz" \
+            "src/content/daily-ja/${TARGET_DATE}.md" \
+            "src/content/japanese-ja/${TARGET_DATE}.md"
+
+      - name: Upload regenerated pair
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: source-direct-ja-${{ matrix.date }}
+          path: ${{ matrix.date }}.tgz
+          retention-days: 1
+          if-no-files-found: error
+
+  combine:
+    name: combine-validate-and-commit
+    needs: regenerate
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PUBLIC_AUDIO_BASE_URL: https://pub-7561025e67be4103ac4bafb331864381.r2.dev
+    steps:
+      - name: Checkout repair branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Download all regenerated pairs
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          pattern: source-direct-ja-*
+          path: generated-pairs
+          merge-multiple: true
+
+      - name: Merge pairs and prove Chinese content unchanged
+        shell: bash
+        run: |
+          set -euo pipefail
+          for archive in generated-pairs/*.tgz; do tar -xzf "$archive"; done
+          git fetch origin main
+          if ! git diff --quiet origin/main -- src/content/daily src/content/japanese; then
+            echo '::error::Chinese content directories changed; refusing to continue.'
+            git diff --stat origin/main -- src/content/daily src/content/japanese
+            exit 1
+          fi
+          source_daily="$(find src/content/daily -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          source_lesson="$(find src/content/japanese -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          ja_daily="$(find src/content/daily-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          ja_lesson="$(find src/content/japanese-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          echo "daily-ja: ${ja_daily}/${source_daily}"
+          echo "japanese-ja: ${ja_lesson}/${source_lesson}"
+          test "$ja_daily" -eq "$source_daily"
+          test "$ja_lesson" -eq "$source_lesson"
+
+      - name: Setup Node for full-site validation
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run check
+
+      - name: Tests
+        run: npm test
+
+      - name: Production build
+        run: npm run build
+
+      - name: CSP check
+        run: npm run security:check
+
+      - name: Commit only regenerated Japanese content
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add src/content/daily-ja src/content/japanese-ja
+          if git diff --cached --quiet; then
+            echo '::error::No regenerated Japanese content changes to commit.'
+            exit 1
+          fi
+          if git diff --cached --name-only | grep -Ev '^src/content/(daily-ja|japanese-ja)/[^/]+\.md$'; then
+            echo '::error::Unexpected path staged.'
+            exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'content: rebuild historical Japanese mode from original sources'
+          git push origin HEAD:repair/japanese-history-from-originals
