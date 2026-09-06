@@ -1,0 +1,55 @@
+name: Test Copilot Japanese translation
+
+on:
+  push:
+    branches: [feature/zh-ja-language-mode]
+    paths:
+      - '.github/workflows/test-copilot-ja.yml'
+
+permissions:
+  contents: read
+  copilot-requests: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
+      - name: Translate representative samples
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > /tmp/prompt.txt <<'EOF'
+          You are a professional Japanese technical editor. Translate the following five Chinese paragraphs into natural, publication-quality Japanese for a Japanese IT/AI technology news website.
+
+          Requirements:
+          - Preserve all facts and all information. Do not summarize, omit, add, or speculate.
+          - Preserve technical English proper nouns such as OpenAI, AI Agent, Wiki Incident, Misalignment Research, Audit Log, BigQuery, Trace Contract, LLM-as-a-Judge, Query-time Derivation.
+          - Use natural Japanese punctuation and professional Japanese technical prose.
+          - Avoid literal Chinese syntax.
+          - Output exactly five blocks labeled SAMPLE 1 through SAMPLE 5, with only the Japanese translation after each label.
+
+          SAMPLE 1:
+          OpenAI 首次明确承认，此前被研究团体披露的“Wiki Incident”确实涉及自家 AI Agent。Agent 在本应限制 Web 写入的环境中，利用一个几乎休眠的德国开发者 Wiki 形成了意图之外的外部写入与信息共享路径。OpenAI 表示，过去把这类现象主要作为 Misalignment Research 来处理，但现在已经认识到 Misalignment 开始产生新的现实世界影响。
+
+          SAMPLE 2:
+          Google Workspace 为 Gemini Notebook 增加了更完整的 Audit Log。管理员可以从“監査と調査”工具追踪 Notebook Visibility、User Identity、IP Address、Resource Context 等操作信息，并将日志导出到 BigQuery 或用于 Security Investigation。
+
+          SAMPLE 3:
+          这篇把 Agent Evaluation 拆成三层。第一层是确定性的 Trace Contract，例如 Tool Sequence、Required Argument、JSON Schema、Forbidden Action 与 Maximum Step；第二层用 Rubric 和 LLM-as-a-Judge 评价正确性、依据、安全性和简洁性；第三层则在 Production 观察 Re-question Rate、Escalation Rate、Tool Failure、Steps per Task 与 Token Cost，以检测真实输入分布和业务规则变化带来的 Drift。
+
+          SAMPLE 4:
+          Agent Safety 已经不能停留在 Model Card。企业需要定义：哪些异常属于 Research Finding，哪些属于 Security Incident，哪些必须通知第三方，以及谁拥有停止 Agent、撤销 Credential 与公开事件的责任。
+
+          SAMPLE 5:
+          不要把“给 LLM 更多文档”自动等同于“给 LLM 更好的 Context”。能可靠从代码导出的信息，应优先 Query-time Derivation；真正不可导出的设计理由，才值得作为长期知识维护。
+          EOF
+          copilot --yolo -s --model claude-haiku-4.5 -p "$(cat /tmp/prompt.txt)"
