@@ -1,0 +1,97 @@
+name: Test Copilot legacy Japanese learning translation
+
+on:
+  push:
+    branches: [feature/zh-ja-language-mode]
+    paths:
+      - '.github/workflows/test-copilot-legacy-learning.yml'
+
+permissions:
+  contents: read
+  copilot-requests: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
+      - name: Translate legacy structured learning file
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p src/content/japanese-ja
+          copilot --yolo -s --model auto --max-ai-credits=30 -p 'You are a professional Japanese technical editor. Work on exactly one file.
+
+          Source: src/content/japanese/2026-08-14.md
+          Target: src/content/japanese-ja/2026-08-14.md
+
+          Read the COMPLETE source. Create the target as a FULL Japanese-language structured learning file for the japaneseJa collection defined in src/content.config.ts.
+
+          HARD REQUIREMENTS:
+          - Preserve every learning item and all information: metadata, 20 vocabulary items, 7 grammar items, all technicalTerms, mustRememberWords, mustRememberGrammar, readings, part of speech, levels, collocations, Japanese example sentences, topics and date. Do not summarize or omit anything.
+          - Translate EVERY Chinese explanatory value into natural Japanese. The finished target must not contain Chinese explanatory prose.
+          - Convert vocabulary fields exactly: meaningZh -> meaning; noteZh -> note; exampleZh -> exampleMeaning; nuanceZh -> nuance.
+          - Convert grammar fields exactly: meaningZh -> meaning; usageZh -> usage; exampleZh -> exampleMeaning; noteZh -> note.
+          - Convert technicalTerms fields exactly: meaningZh -> meaning; contextZh -> context.
+          - Do not leave meaningZh, noteZh, exampleZh, nuanceZh, usageZh or contextZh keys.
+          - Preserve term, reading, partOfSpeech, level, collocations, exampleJa, pattern, structure, japanese, mustRememberWords and mustRememberGrammar unless a Chinese explanatory fragment inside a value itself needs Japanese translation.
+          - The source uses compact one-line YAML objects. You MAY expand them to normal multi-line YAML; line count does NOT need to match. Correctness and complete Japanese translation are more important.
+          - title and description must be natural Japanese. Translate the Markdown body to Japanese too.
+          - Do not modify any other file.'
+      - name: Validate schema-equivalent item counts and Japanese-only prose
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, yaml
+
+          def load(path):
+              text = Path(path).read_text(encoding='utf-8')
+              assert text.startswith('---\n')
+              end = text.find('\n---\n', 4)
+              assert end >= 0
+              return yaml.safe_load(text[4:end]), text
+
+          src, _ = load('src/content/japanese/2026-08-14.md')
+          dst, text = load('src/content/japanese-ja/2026-08-14.md')
+          for key in ['date','topics','levels','vocabularyCount','grammarCount','mustRememberWords','mustRememberGrammar']:
+              if dst.get(key) != src.get(key):
+                  raise SystemExit(f'Metadata mismatch: {key}')
+          if len(dst.get('vocabulary', [])) != len(src.get('vocabulary', [])):
+              raise SystemExit('Vocabulary count mismatch')
+          if len(dst.get('grammar', [])) != len(src.get('grammar', [])):
+              raise SystemExit('Grammar count mismatch')
+          if len(dst.get('technicalTerms', [])) != len(src.get('technicalTerms', [])):
+              raise SystemExit('Technical term count mismatch')
+          if [x.get('term') for x in dst['vocabulary']] != [x.get('term') for x in src['vocabulary']]:
+              raise SystemExit('Vocabulary terms/order changed')
+          if [x.get('pattern') for x in dst['grammar']] != [x.get('pattern') for x in src['grammar']]:
+              raise SystemExit('Grammar patterns/order changed')
+          forbidden_keys = ['meaningZh:', 'noteZh:', 'exampleZh:', 'nuanceZh:', 'usageZh:', 'contextZh:']
+          for key in forbidden_keys:
+              if key in text:
+                  raise SystemExit(f'Old Chinese-mode field remains: {key}')
+          # Characters that do not occur in standard modern Japanese orthography and strongly signal Simplified Chinese leakage.
+          simplified_only = re.compile(r'[这们让还进过里并将该较仅种后发开关报见务动说读写认语词汇习间图门长达连选适远类级员资质责财费预领顾题额风飞马验驱编约线组终给结统经续绿网联职药获营蓝观览视觉计论设访证评识诉诊译诚询详误请调谈谱负账货购贵贷赔赖赚赠赞转轮软轻载辑输边迁运迟递遗邻释鉴闻闭闹阅险随隐难雾静页顺饮饭馆鲜鸟鸣齐齿龙]')
+          hits = sorted(set(simplified_only.findall(text)))
+          if hits:
+              raise SystemExit(f'Simplified Chinese leakage: {hits}')
+          print('Legacy learning translation validation passed.')
+      - name: Upload sample
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: copilot-legacy-learning-2026-08-14
+          path: src/content/japanese-ja/2026-08-14.md
+          retention-days: 1
+          if-no-files-found: error
