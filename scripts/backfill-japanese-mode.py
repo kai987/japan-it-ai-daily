@@ -4,7 +4,7 @@ import argparse
 import os
 import re
 from pathlib import Path
-from typing import Any
+from typing import Any, Iterable
 
 import langid
 import torch
@@ -47,6 +47,8 @@ LABEL_PREFIXES = [
     ("**3個のキーワード：**", "**3つのキーワード：**"),
     ("**回答要点：**", "**回答ポイント：**"),
     ("**回答要點：**", "**回答ポイント：**"),
+    ("回答要点：", "回答ポイント："),
+    ("回答要點：", "回答ポイント："),
     ("**partOfSpeech：**", "**品詞：**"),
     ("**meaningZh：**", "**意味：**"),
     ("**level：**", "**レベル：**"),
@@ -65,6 +67,25 @@ LABEL_PREFIXES = [
     ("**5語法：**", "**5文法：**"),
 ]
 
+FINAL_REPLACEMENTS = {
+    "回答要点：": "回答ポイント：",
+    "回答要點：": "回答ポイント：",
+    "为什么值得看": "注目ポイント",
+    "為什麼值得看": "注目ポイント",
+    "面试问题": "面接質問",
+    "面試問題": "面接質問",
+    "面试复习卡": "面接復習カード",
+    "面試復習卡": "面接復習カード",
+    "日本語学习": "日本語学習",
+    "JLPT词汇": "JLPT語彙",
+    "JLPT詞彙": "JLPT語彙",
+    "专业词汇": "専門用語",
+    "專業詞彙": "専門用語",
+    "JLPT语法": "JLPT文法",
+    "JLPT語法": "JLPT文法",
+    "今日必背": "今日の必修",
+}
+
 ZH_SIGNALS = set(
     "这为与从个们对让把还现应进过里并将该较仅时种后会发开关问题报见务动说读写认语词汇习间图门长达连选适远类级员资质责财费预领顾题额风飞马验驱编约线组终给结统经续绿网联职药获营蓝观览视觉计论设访证评识诉诊译诚询详误请调谈谱负账货购贵贷赔赖赚赠赞转轮软轻载辑输边迁运迟递遗邻释鉴问闻闭闹阅险随隐难雾静页顺饮饭馆鲜鸟鸣齐齿龙"
 )
@@ -74,6 +95,7 @@ KANA_RE = re.compile(r"[ぁ-んァ-ヴー々〆ヶ]")
 HAN_RE = re.compile(r"[\u3400-\u9fff]")
 CODE_FENCE_RE = re.compile(r"^\s*```")
 SENTENCE_SPLIT_RE = re.compile(r"(?<=[。！？!?；;])")
+MARKDOWN_PREFIX_RE = re.compile(r"^(\s*(?:#{1,6}\s+|>\s*|[-*+]\s+|\d+[.)]\s+)?)(.*)$")
 
 
 def parse_frontmatter(text: str) -> tuple[dict[str, Any], str]:
@@ -121,7 +143,7 @@ def needs_translation(text: str) -> bool:
 def split_long_text(text: str, max_chars: int = 260) -> list[str]:
     if len(text) <= max_chars:
         return [text]
-    pieces = [p for p in SENTENCE_SPLIT_RE.split(text) if p]
+    pieces = [piece for piece in SENTENCE_SPLIT_RE.split(text) if piece]
     chunks: list[str] = []
     current = ""
     for piece in pieces:
@@ -137,6 +159,15 @@ def split_long_text(text: str, max_chars: int = 260) -> list[str]:
     return chunks or [text]
 
 
+def translation_chunks(texts: Iterable[str]) -> list[str]:
+    chunks: list[str] = []
+    for text in texts:
+        if not text or not needs_translation(text):
+            continue
+        chunks.extend(chunk for chunk in split_long_text(text) if needs_translation(chunk))
+    return list(dict.fromkeys(chunks))
+
+
 class Translator:
     def __init__(self) -> None:
         print(f"Loading translation model: {MODEL_NAME}", flush=True)
@@ -145,7 +176,7 @@ class Translator:
             MODEL_NAME,
             trust_remote_code=False,
             use_safetensors=True,
-            torch_dtype=torch.float32,
+            dtype=torch.float32,
         )
         self.model.eval()
         torch.set_num_threads(max(1, min(4, os.cpu_count() or 2)))
@@ -175,8 +206,11 @@ class Translator:
                 restored = f"{restored.rstrip()} {value}"
         return restored
 
-    def translate_batch(self, texts: list[str], batch_size: int = 24) -> list[str]:
-        missing = list(dict.fromkeys(text for text in texts if text not in self.cache))
+    def translate_batch(self, texts: list[str], batch_size: int = 32) -> list[str]:
+        missing = list(dict.fromkeys(text for text in texts if text and text not in self.cache))
+        if not missing:
+            return [self.cache.get(text, text) for text in texts]
+
         for start in range(0, len(missing), batch_size):
             raw_batch = missing[start : start + batch_size]
             protected_batch: list[str] = []
@@ -197,23 +231,45 @@ class Translator:
                 generated = self.model.generate(
                     **encoded,
                     max_new_tokens=384,
-                    num_beams=2,
-                    early_stopping=True,
+                    num_beams=1,
                 )
             decoded = self.tokenizer.batch_decode(generated, skip_special_tokens=True)
             for raw, translated, mapping in zip(raw_batch, decoded, mappings, strict=True):
                 self.cache[raw] = self._restore(translated.strip(), mapping)
-            print(f"Translated {min(start + batch_size, len(missing))}/{len(missing)} new segments", flush=True)
-        return [self.cache[text] for text in texts]
+            print(f"Translated {min(start + batch_size, len(missing))}/{len(missing)} batched segments", flush=True)
+        return [self.cache.get(text, text) for text in texts]
+
+    def prefill(self, texts: Iterable[str]) -> None:
+        self.translate_batch(translation_chunks(texts))
 
     def translate_text(self, text: str) -> str:
         if not text or not needs_translation(text):
             return text
         chunks = split_long_text(text)
-        todo = [chunk for chunk in chunks if needs_translation(chunk)]
+        todo = [chunk for chunk in chunks if needs_translation(chunk) and chunk not in self.cache]
         if todo:
             self.translate_batch(todo)
         return "".join(self.cache.get(chunk, chunk) for chunk in chunks)
+
+
+def line_translation_target(line: str) -> str | None:
+    stripped = line.strip()
+    if not stripped or stripped in KNOWN_LINES:
+        return None
+
+    if stripped.startswith("### 话题") or stripped.startswith("### 話題"):
+        match = re.match(r"^(\s*###\s+)(?:话题|話題)(\s*\d+\s*[：:]?\s*)(.*)$", line)
+        return match.group(3) if match else None
+
+    for old, _new in LABEL_PREFIXES:
+        index = line.find(old)
+        if index >= 0:
+            return line[index + len(old) :]
+
+    if not needs_translation(line):
+        return None
+    match = MARKDOWN_PREFIX_RE.match(line)
+    return match.group(2) if match else line
 
 
 def translate_markdown_line(line: str, translator: Translator) -> str:
@@ -238,7 +294,7 @@ def translate_markdown_line(line: str, translator: Translator) -> str:
     if not needs_translation(line):
         return line
 
-    match = re.match(r"^(\s*(?:#{1,6}\s+|>\s*|[-*+]\s+|\d+[.)]\s+)?)(.*)$", line)
+    match = MARKDOWN_PREFIX_RE.match(line)
     if not match:
         return translator.translate_text(line)
     prefix, content = match.groups()
@@ -247,6 +303,19 @@ def translate_markdown_line(line: str, translator: Translator) -> str:
 
 def translate_body(body: str, translator: Translator) -> str:
     lines = body.splitlines()
+    targets: list[str] = []
+    in_code = False
+    for line in lines:
+        if CODE_FENCE_RE.match(line):
+            in_code = not in_code
+            continue
+        if in_code:
+            continue
+        target = line_translation_target(line)
+        if target:
+            targets.append(target)
+    translator.prefill(targets)
+
     output: list[str] = []
     in_code = False
     for line in lines:
@@ -258,13 +327,24 @@ def translate_body(body: str, translator: Translator) -> str:
             output.append(line)
             continue
         output.append(translate_markdown_line(line, translator))
-    return "\n".join(output).rstrip() + "\n"
+
+    result = "\n".join(output).rstrip() + "\n"
+    for old, new in FINAL_REPLACEMENTS.items():
+        result = result.replace(old, new)
+    return result
 
 
 def translate_daily_file(src: Path, dst: Path, translator: Translator) -> None:
     data, body = parse_frontmatter(src.read_text(encoding="utf-8"))
+    candidates = [str(data.get("title", "")), str(data.get("description", ""))]
+    for item in data.get("top", []) or []:
+        candidates.append(str(item.get("title", "")))
+        if item.get("why") is not None:
+            candidates.append(str(item.get("why", "")))
+    translator.prefill(candidates)
+
     out = dict(data)
-    out["title"] = translator.translate_text(str(data.get("title", ""))).replace("日报", "日報")
+    out["title"] = translator.translate_text(str(data.get("title", ""))).replace("日报", "日報").replace("日報｜", "日報｜")
     out["description"] = translator.translate_text(str(data.get("description", "")))
     top = []
     for item in data.get("top", []) or []:
@@ -274,13 +354,33 @@ def translate_daily_file(src: Path, dst: Path, translator: Translator) -> None:
             translated["why"] = translator.translate_text(str(item.get("why", "")))
         top.append(translated)
     out["top"] = top
+
     ja_body = translate_body(body, translator)
     dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_text(dump_frontmatter(out, ja_body), encoding="utf-8")
 
 
+def lesson_translation_candidates(data: dict[str, Any]) -> list[str]:
+    candidates = [str(data.get("title", "")), str(data.get("description", ""))]
+    for item in data.get("vocabulary", []) or []:
+        for key in ("meaningZh", "noteZh", "exampleZh", "nuanceZh"):
+            if item.get(key):
+                candidates.append(str(item[key]))
+    for item in data.get("grammar", []) or []:
+        for key in ("meaningZh", "usageZh", "exampleZh", "noteZh"):
+            if item.get(key):
+                candidates.append(str(item[key]))
+    for item in data.get("technicalTerms", []) or []:
+        for key in ("meaningZh", "contextZh"):
+            if item.get(key):
+                candidates.append(str(item[key]))
+    return candidates
+
+
 def translate_lesson_file(src: Path, dst: Path, translator: Translator) -> None:
     data, _body = parse_frontmatter(src.read_text(encoding="utf-8"))
+    translator.prefill(lesson_translation_candidates(data))
+
     out: dict[str, Any] = {
         "title": translator.translate_text(str(data.get("title", ""))).replace("日本語学习", "日本語学習"),
         "date": data.get("date"),
@@ -358,8 +458,8 @@ def main() -> int:
     daily_files = sorted(DAILY_SRC.glob("*.md"))
     lesson_files = sorted(LESSON_SRC.glob("*.md"))
     if selected:
-        daily_files = [p for p in daily_files if p.stem in selected]
-        lesson_files = [p for p in lesson_files if p.stem in selected]
+        daily_files = [path for path in daily_files if path.stem in selected]
+        lesson_files = [path for path in lesson_files if path.stem in selected]
 
     for index, src in enumerate(daily_files, 1):
         print(f"[{index}/{len(daily_files)}] Daily: {src.name}", flush=True)
