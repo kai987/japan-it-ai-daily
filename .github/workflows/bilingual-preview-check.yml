@@ -1,0 +1,54 @@
+name: Validate bilingual mode
+
+on:
+  push:
+    branches: [feature/zh-ja-language-mode]
+    paths-ignore:
+      - 'src/content/daily-ja/**'
+      - 'src/content/japanese-ja/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bilingual-preview-check
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_AUDIO_BASE_URL: https://pub-7561025e67be4103ac4bafb331864381.r2.dev
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Type check
+        run: npm run check
+      - name: Run tests
+        run: npm test
+      - name: Build
+        run: npm run build
+      - name: Strip CDN-hosted MP3 from artifact
+        run: npm run audio:strip-dist
+      - name: Verify CSP
+        run: npm run security:check
+      - name: Verify Japanese route skeleton
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f dist/ja/index.html
+          test -f dist/ja/archive/index.html
+          test -f dist/ja/interview/index.html
+          test -f dist/ja/japanese/index.html
+          test -f dist/ja/topics/index.html
+          test -f dist/ja/search-index.json
