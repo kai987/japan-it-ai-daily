@@ -52,4 +52,4 @@ jobs:
           SAMPLE 5:
           不要把“给 LLM 更多文档”自动等同于“给 LLM 更好的 Context”。能可靠从代码导出的信息，应优先 Query-time Derivation；真正不可导出的设计理由，才值得作为长期知识维护。
           EOF
-          copilot --yolo -s --model claude-haiku-4.5 -p "$(cat /tmp/prompt.txt)"
+          copilot --yolo -s --model auto -p "$(cat /tmp/prompt.txt)"
