@@ -84,6 +84,10 @@ jobs:
             echo '::error::Chinese structural labels remain in Japanese-mode content.'
             exit 1
           fi
+          if grep -R -n -E '[这们对让还进过里并将该较仅种后发开关报见务动说读写认语词汇习间图门长达连选适远类级员资质责财费预领顾题额风飞马验驱编约线组终给结统经续绿网联职药获营蓝观览视觉计论设访证评识诉诊译诚询详误请调谈谱负账货购贵贷赔赖赚赠赞转轮软轻载辑输边迁运迟递遗邻释鉴闻闭闹阅险随隐难雾静页顺饮饭馆鲜鸟鸣齐齿龙]' src/content/daily-ja src/content/japanese-ja; then
+            echo '::error::Simplified-Chinese-only glyphs remain in Japanese-mode content.'
+            exit 1
+          fi
       - name: Setup Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
