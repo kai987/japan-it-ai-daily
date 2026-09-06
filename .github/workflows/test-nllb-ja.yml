@@ -16,6 +16,7 @@ jobs:
     env:
       HF_HUB_DISABLE_TELEMETRY: '1'
       TOKENIZERS_PARALLELISM: 'false'
+      TRANSFORMERS_NO_ADVISORY_WARNINGS: '1'
     steps:
       - name: Setup Python translation runtime
         shell: bash
@@ -32,7 +33,14 @@ jobs:
 
           model_name = 'facebook/nllb-200-distilled-600M'
           tokenizer = AutoTokenizer.from_pretrained(model_name, src_lang='zho_Hans')
-          model = AutoModelForSeq2SeqLM.from_pretrained(model_name, use_safetensors=True, dtype=torch.float32)
+          model = AutoModelForSeq2SeqLM.from_pretrained(
+              model_name,
+              use_safetensors=False,
+              low_cpu_mem_usage=False,
+              dtype=torch.float32,
+              device_map=None,
+          )
+          model = model.cpu()
           model.eval()
           torch.set_num_threads(max(1, min(4, os.cpu_count() or 2)))
           target_id = tokenizer.convert_tokens_to_ids('jpn_Jpan')
