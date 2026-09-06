@@ -117,7 +117,7 @@ const levels = ['すべて', 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
         return currentLevel === 'すべて' || rowLevels.includes(currentLevel);
       });
 
-      const pageNumbers = (totalPages, page) => {
+      const pageNumbers = (totalPages: number, page: number) => {
         if (totalPages <= 7) return Array.from({ length: totalPages }, (_, index) => index + 1);
         const values = new Set([1, totalPages, page - 1, page, page + 1]);
         return Array.from(values).filter((value) => value >= 1 && value <= totalPages).sort((a, b) => a - b);
@@ -137,7 +137,7 @@ const levels = ['すべて', 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
         if (lessonsSection instanceof HTMLElement) lessonsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       };
 
-      const renderPagination = (filteredRows) => {
+      const renderPagination = (filteredRows: HTMLElement[]) => {
         const totalItems = filteredRows.length;
         const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
         currentPage = Math.min(Math.max(1, currentPage), totalPages);

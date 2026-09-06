@@ -269,12 +269,12 @@ const root = `${base}ja/`;
       const scrollToList = () => {
         if (listStart instanceof HTMLElement) listStart.scrollIntoView({ behavior: 'smooth', block: 'start' });
       };
-      const pageNumbers = (totalPages, page) => {
+      const pageNumbers = (totalPages: number, page: number) => {
         if (totalPages <= 7) return Array.from({ length: totalPages }, (_, index) => index + 1);
         const values = new Set([1, totalPages, page - 1, page, page + 1]);
         return Array.from(values).filter((value) => value >= 1 && value <= totalPages).sort((a, b) => a - b);
       };
-      const renderPagination = (filteredDays) => {
+      const renderPagination = (filteredDays: HTMLElement[]) => {
         const totalItems = filteredDays.length;
         const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
         currentPage = Math.min(currentPage, totalPages);
