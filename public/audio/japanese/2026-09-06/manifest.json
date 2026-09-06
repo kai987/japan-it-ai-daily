@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-06",
+  "generatedAt": "2026-09-06T05:52:54.109Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "認める",
+      "reading": "みとめる",
+      "exampleJa": "想定外の挙動を認めた時点で、Incident Responseを開始します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "e19144c1ba97a4c6e72dd9eb8440e028e4b2a27a2accee3e7928717603d2ed6a",
+      "example": "example-01.mp3",
+      "exampleHash": "d9f5533dd765bba9555c2bedb56c9d3418812e9ce90f8649ea17b36f378c2c74"
+    },
+    {
+      "index": 2,
+      "term": "公表する",
+      "reading": "こうひょうする",
+      "exampleJa": "第三者に影響するIncidentは、調査結果と対応方針を適切に公表します。",
+      "word": "vocab-02.mp3",
+      "wordHash": "559be0366de31829e77eb080de018aaa9adb4716dcd7c538061f3340cb890cdc",
+      "example": "example-02.mp3",
+      "exampleHash": "f96dc6f8b52bee959bb69db80210c5e1f52946da55ac486855d055a6cccf8da6"
+    },
+    {
+      "index": 3,
+      "term": "意図",
+      "reading": "いと",
+      "exampleJa": "AgentのActionがUserの意図と一致しているかをTraceで確認します。",
+      "word": "vocab-03.mp3",
+      "wordHash": "ebbf0597679b320bb60545578818e30e501baef178f4901f00917a68773f3620",
+      "example": "example-03.mp3",
+      "exampleHash": "a93cee0b7dfca3f470b1b8d6c492ef1af00ed2cd82c5e18cc25f5f0b399ba120"
+    },
+    {
+      "index": 4,
+      "term": "範疇",
+      "reading": "はんちゅう",
+      "exampleJa": "外部Dataへの影響が出た時点で、研究の範疇だけでは扱えません。",
+      "word": "vocab-04.mp3",
+      "wordHash": "05aa65e61ea36807ea83a9abeb3c93893c18b533868c30fc802d21531ce8ea5e",
+      "example": "example-04.mp3",
+      "exampleHash": "f2e620a09629b383219d98ba8228cbf57ee2062fc8dfc480e81bfb1004e14a1f"
+    },
+    {
+      "index": 5,
+      "term": "兆候",
+      "reading": "ちょうこう",
+      "exampleJa": "権限迂回の兆候を検知したら、Sessionを自動停止します。",
+      "word": "vocab-05.mp3",
+      "wordHash": "7ff5c16f433bc70ed75e639ac0da008eb68c7b311239f94fb0ea364e05bee8e2",
+      "example": "example-05.mp3",
+      "exampleHash": "079a80262da898b824cb6281b58ac46f70e094ff8ae1a1deb49788dcb2cf4d3a"
+    },
+    {
+      "index": 6,
+      "term": "追跡する",
+      "reading": "ついせきする",
+      "exampleJa": "AI機能の利用ActionをUser単位で追跡します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "a194303a6363499e5a9e3bb46b976a247643951a558407e3aff55842a978be1a",
+      "example": "example-06.mp3",
+      "exampleHash": "710b4a08174cac4f9f489fc5864616a888856cfb537ff4531fb1ed3245a07603"
+    },
+    {
+      "index": 7,
+      "term": "包括的な",
+      "reading": "ほうかつてきな",
+      "exampleJa": "IdentityだけでなくResource Contextまで含む包括的なAuditを行います。",
+      "word": "vocab-07.mp3",
+      "wordHash": "c9fa0ba24a2f98070bc38842736f8f122762fdc9e17fd01e2905d1080ea6cf2c",
+      "example": "example-07.mp3",
+      "exampleHash": "5ba51711fce87dd220f364d98d125673f0f4f24b7157186530e1418691a305dc"
+    },
+    {
+      "index": 8,
+      "term": "幅広い",
+      "reading": "はばひろい",
+      "exampleJa": "幅広いLogを集めても、Retention Policyは明確にします。",
+      "word": "vocab-08.mp3",
+      "wordHash": "7972b060cc5e5c85ab74aa426384c1e91eacfdb50730cb853419e69214209821",
+      "example": "example-08.mp3",
+      "exampleHash": "008a53a4a4da6bde7d8aa649410af779f5bd1dbef080fb434a941b680b8d9d08"
+    },
+    {
+      "index": 9,
+      "term": "順次",
+      "reading": "じゅんじ",
+      "exampleJa": "新しいAudit機能を部門ごとに順次展開します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "e351e23c49629b77b5fe8df95d42ceb60f2de0838e5592a54daa4a627050e811",
+      "example": "example-09.mp3",
+      "exampleHash": "80f88611876cf72c78a6d203e7ef18a62ce80e7d04f28056a883441b88327abf"
+    },
+    {
+      "index": 10,
+      "term": "分解する",
+      "reading": "ぶんかいする",
+      "exampleJa": "品質低下をModel、Tool、Contextの問題に分解して調査します。",
+      "word": "vocab-10.mp3",
+      "wordHash": "deaf1692967b051518e2b891d3c55345f229f11ad9b36a70448131f563b143ba",
+      "example": "example-10.mp3",
+      "exampleHash": "62f318d24d24dff4fb2f763b3eb43bb8b1aa7b9cafba466822958a61847488cb"
+    },
+    {
+      "index": 11,
+      "term": "切り分ける",
+      "reading": "きりわける",
+      "exampleJa": "Tool ErrorなのかPrompt Errorなのかを先に切り分けます。",
+      "word": "vocab-11.mp3",
+      "wordHash": "287680674b017d3e738c36b35de07999a2280ab4463e2042c831cc7726c5855c",
+      "example": "example-11.mp3",
+      "exampleHash": "4a2b5f312fcb4213c16c2806e414394de6bfb100fe1b2a0707e3d2c31e220d19"
+    },
+    {
+      "index": 12,
+      "term": "揺らぎ",
+      "reading": "ゆらぎ",
+      "exampleJa": "自然な出力の揺らぎとSecurity Contractの違反を分けて評価します。",
+      "word": "vocab-12.mp3",
+      "wordHash": "9f819ca60838857731bc70328308d8b920e73ecd37a90a97027e1795978343e5",
+      "example": "example-12.mp3",
+      "exampleHash": "ec75298709246083bb832d70a4b4ef143292f24f85563493b4859d3379bc0ad9"
+    },
+    {
+      "index": 13,
+      "term": "過剰な",
+      "reading": "かじょうな",
+      "exampleJa": "過剰なSnapshot条件でImplementationの改善を妨げないようにします。",
+      "word": "vocab-13.mp3",
+      "wordHash": "01ab7a09fc41fee6c8edf8c4ae24c0ff169168b46347137bd97cb67c017402a8",
+      "example": "example-13.mp3",
+      "exampleHash": "963d8355725cf44e777520aeea74e2a5273bae1e8d71ebc82dd2e7f58244f407"
+    },
+    {
+      "index": 14,
+      "term": "偏る",
+      "reading": "かたよる",
+      "exampleJa": "Evaluation Dataが特定Tenantに偏らないよう定期的に見直します。",
+      "word": "vocab-14.mp3",
+      "wordHash": "079f8ecc85d1a042e1ecc0e886e16300afc6d25b0f3b9923e70bbaa6ddd86680",
+      "example": "example-14.mp3",
+      "exampleHash": "27525ecd425e880428fea9c0a982ade0c610713dac07d8919266577cdf98308e"
+    },
+    {
+      "index": 15,
+      "term": "定期的に",
+      "reading": "ていきてきに",
+      "exampleJa": "JudgeとHuman Labelの一致率を定期的に確認します。",
+      "word": "vocab-15.mp3",
+      "wordHash": "f3672cb121023431aad97b57a7e381c05e87e6b3575bab80d34392599bea6a03",
+      "example": "example-15.mp3",
+      "exampleHash": "ad90ab0c5b209cbee4da63929f48ee6990cf02c4956bb4cbf258d878cd541515"
+    },
+    {
+      "index": 16,
+      "term": "見直す",
+      "reading": "みなおす",
+      "exampleJa": "Production Inputが変化したらEvaluation Setを見直します。",
+      "word": "vocab-16.mp3",
+      "wordHash": "71cad3bac6e97f8175618e025511d2c55b04f3755662cb357e7041dc39fe612d",
+      "example": "example-16.mp3",
+      "exampleHash": "bd9061dbbb3609eefc50eb3bc4e839c10fa23ad9a9eaeafb137429ff655517a8"
+    },
+    {
+      "index": 17,
+      "term": "判定する",
+      "reading": "はんていする",
+      "exampleJa": "Tokenが有効でもModel Routeで利用できるかを別に判定します。",
+      "word": "vocab-17.mp3",
+      "wordHash": "8e1321c1c700e96cbf7598fdc734f491f396f3396b7494191dd8665022bf9f63",
+      "example": "example-17.mp3",
+      "exampleHash": "c1c53f2f57e56acd6ec9dce50a17b8be6de7607f125446561bd15f746031f5c4"
+    },
+    {
+      "index": 18,
+      "term": "生じる",
+      "reading": "しょうじる",
+      "exampleJa": "ProviderのReleaseとRuntime対応の間に時間差が生じる場合があります。",
+      "word": "vocab-18.mp3",
+      "wordHash": "6ffac147cdc23ab80ed826406fa49202a4d74173948cbc23def818101e8b3bf6",
+      "example": "example-18.mp3",
+      "exampleHash": "8921ca20e9da37792d2b4271d38851ddbc813fa12bbf0b84dcec2ac3a76689c7"
+    },
+    {
+      "index": 19,
+      "term": "導出する",
+      "reading": "どうしゅつする",
+      "exampleJa": "Call GraphはDocumentへ写さず、LSPから都度導出します。",
+      "word": "vocab-19.mp3",
+      "wordHash": "8047c4419559b0a9566d77d044d869c755c2346368a2ecb2b0e404bcbb65bf4b",
+      "example": "example-19.mp3",
+      "exampleHash": "f7fa07e7827f9a9e0b6d426ceed9bb17ce601a9f479e1fd3cb4cf497dcaf3f20"
+    },
+    {
+      "index": 20,
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "LLMにはLSPが便利な一方で、人間にはArchitecture Diagramが必要です。",
+      "word": "vocab-20.mp3",
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "6fca9d80cbbfe506929c5fa2ee29ef707cd720affd25ad56383e0b26181fb4cc"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "AgentのMisalignmentは研究上の問題にとどまらず、外部SystemへのSide Effectにつながる可能性があります。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "8effa4e2a61d110f5a7b6cbb31a4d5781898e29fc475831f21c475c01bb6153a"
+    },
+    {
+      "index": 2,
+      "pattern": "～を余儀なくされる",
+      "exampleJa": "新ModelのContractに対応していないRuntimeは、UpdateやRoute変更を余儀なくされます。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "99b2f2eaa34911e29178bc9a6481418d15093308da35a21a76086a35e6dcf0a0"
+    },
+    {
+      "index": 3,
+      "pattern": "～に至るまで",
+      "exampleJa": "Tool選択から最終回答に至るまで、Agentの実行Traceを段階別に評価します。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "e7be5c6d2ce1a39fc8585a52e96c5ea2e9746d6d144d2ec64caa779832c57a33"
+    },
+    {
+      "index": 4,
+      "pattern": "～わけではない",
+      "exampleJa": "Model Catalogに表示されているからといって、そのRuntimeで実行できるわけではありません。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "f876a6a65fc3d11c19639ad33f72c3b2589c04aa7383b651852f7a6a9acf5c8f"
+    },
+    {
+      "index": 5,
+      "pattern": "～一方で",
+      "exampleJa": "LLMはCodeから構造を導出できる一方で、人間には概要図が必要です。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "5613ee9dff3517646c152d70389ae3186e4041669b1cdd88d57e09b17412f0db"
+    },
+    {
+      "index": 6,
+      "pattern": "～たうえで",
+      "exampleJa": "同一条件で候補Modelを評価したうえで、Canaryへ展開します。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "5a4125a6ba058d5765fe74ceb05b15bf8d5c58d6e04c8c7fac4146f0e08da73c"
+    },
+    {
+      "index": 7,
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの種類に応じて、Hard GateとQuality Rubricを使い分けます。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "9191edf37b2b099458cd45cba1ad0074fcbd72bd0b087827c64b5f55d7426962"
+    }
+  ]
+}

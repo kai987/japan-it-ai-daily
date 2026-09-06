@@ -1,0 +1,118 @@
+{
+  "date": "2026-09-06",
+  "generatedAt": "2026-09-06T05:53:57.851Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIエージェントの想定外動作を、いつSecurity Incidentとして扱うべきだと思いますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "fe748c3c0024d37cd4eea3ded0ba81034d96260ce0f5f589fe407413898e792d"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "研究上のMisalignmentだけで終わるケースと、第三者Dataや外部Systemへ実際のSide Effectが出るケースを分ける必要があると思います。外部書き込み、Credential利用、情報漏えい、権限制御の迂回が発生した場合は、通常のSecurity Incidentと同じようにContainment、通知、原因分析を行います。また、公開基準とOwnerを事前に決めておくことも重要です。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "091ab9cd1cf666bebf67c75d56c07d65cf5e525920ac72c16051a4ba6b27722d"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "企業で生成AIを利用する場合、Audit Logには何を記録すべきですか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "bc6055f4b4f434d8e387c56735993b7c46143caa2f9b9d269bac86cc88053b75"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "少なくともUser Identity、時刻、IP、対象Resource、実行Actionを追跡できることが重要です。AIの利用履歴だけでなく、Dataの可視性や共有状態も確認できるとIncident Investigationに役立ちます。一方でAudit LogがあることとData Residencyを満たすことは別なので、保存RegionやRetentionも別途確認します。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "d7325b185da48e70f69c2072dbbeea28b7c047bad239060fe9747635f89d8baa"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "AIエージェントの品質をProductionでどのように継続評価しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "5f060d2ade76966289a35a27ed70d18d1bef5a8c62c8da5b6f64fdffcab73b95"
+    },
+    {
+      "index": 6,
+      "type": "question",
+      "text": "まずTool Schemaや禁止操作など決定的なContractをTestし、その上でLLM-as-a-Judgeを使って回答品質を評価します。Productionでは再質問率、Escalation率、Tool失敗率、Step数、Token CostをModelやTask種別ごとに観測します。Model更新時はShadow、Canary、Full Rolloutの順に展開し、本番失敗例をEvaluation Setへ戻します。",
+      "audio": "interview-question-06.mp3",
+      "audioHash": "e334fbc21dd1bb4c208c1ab1fa7c71c001a2a027b6365229e8263b77cc42f300"
+    },
+    {
+      "index": 7,
+      "type": "question",
+      "text": "Model Catalogに表示されているModelが、Agent Runtimeでは使えない場合があるのはなぜですか。",
+      "audio": "interview-question-07.mp3",
+      "audioHash": "fd12842dce4288a42bbdb2b361034d947cdc5b55c4da597f1724dac6d53c1a89"
+    },
+    {
+      "index": 8,
+      "type": "question",
+      "text": "Model Discoveryと実行Contractは別だからです。Model IDが見えても、Authentication、Route、Request Serialization、Reasoning Parameter、Context Window、Capability PolicyがRuntime側で対応していない場合があります。新Model導入ではCatalogだけでなく、実Requestを使ったContract TestとFail Closedの挙動を確認する必要があります。",
+      "audio": "interview-question-08.mp3",
+      "audioHash": "a333d027fe8c17c6189572c5ba85fa532b954ec192e8650e0ea44ed989e21373"
+    },
+    {
+      "index": 9,
+      "type": "question",
+      "text": "Coding Agent向けのArchitecture Documentは、詳しいほど良いですか。",
+      "audio": "interview-question-09.mp3",
+      "audioHash": "78c88a82c3c2cf9f4b63f7deee0c1e73017b21520696a8ebce498ff3d4ba2779"
+    },
+    {
+      "index": 10,
+      "type": "question",
+      "text": "必ずしもそうではありません。Call GraphやDependencyのようにSource CodeからLSPで導出できる情報を手書きで保存すると、古くなったDocumentが誤ったContextになります。構造はToolから最新状態を取得し、設計理由はADRやTestに残し、人間向けの図にはCommit SHAなどProvenanceを付ける方法が良いと思います。",
+      "audio": "interview-question-10.mp3",
+      "audioHash": "788039f2f0249c6210630b2e929ba81cdff64599a4da5b50472a9827bce02161"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "LLM-as-a-JudgeをProduction Evaluationで使う場合、何に注意しますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "264b09772867e0a62d132dd463e643d3a9493c093ba1e4f99b750188155be3e7"
+    },
+    {
+      "index": 2,
+      "text": "Model DiscoveryとModel Contractの違いは何ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "762a00c7c67dd2587ce830c1327e622d2825b3d22472c9e2175234d61cd59c25"
+    },
+    {
+      "index": 3,
+      "text": "LLM向けArchitecture DocumentがStaleになる問題をどう防ぎますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "9077b103931e764d806cc433fbf7ae3e93382cdf21132d3d9bb0d9aebd605e68"
+    }
+  ]
+}
