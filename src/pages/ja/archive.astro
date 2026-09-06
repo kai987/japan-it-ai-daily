@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const base = import.meta.env.BASE_URL;
+const root = `${base}ja/`;
+const reports = (await getCollection('dailyJa')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+---
+<BaseLayout locale="ja" title="アーカイブ · Japan IT / AI Daily">
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Archive</div>
+      <h1>日報アーカイブ</h1>
+      <p>日本 IT / AI 日報を日付順に閲覧できます。各号には詳細ニュース、面接で使える知識、日本語学習コンテンツを収録しています。</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container archive-list">
+      {reports.map((report)=>(
+        <a class="archive-row" href={`${root}daily/${report.id}/`}>
+          <div class="meta">{report.data.date.toLocaleDateString('ja-JP')}</div>
+          <div><strong>{report.data.title}</strong><div class="meta">{report.data.description}</div></div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
