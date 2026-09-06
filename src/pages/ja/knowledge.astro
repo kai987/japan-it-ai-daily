@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+const root = `${base}ja/`;
+const reports = (await getCollection('dailyJa')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+const latest = reports[0];
+const top = latest?.data.top ?? [];
+---
+<BaseLayout locale="ja" title="重要ポイント · Japan IT / AI Daily">
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Important Points</div>
+      <h1>B. 重要ポイント</h1>
+      <p>毎日のTop 5から、日本のAI / AI×Webエンジニア面接と技術復習に使いやすい重要ポイントを整理します。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {latest ? (
+        <>
+          <div class="section-title">
+            <div>
+              <div class="meta">{latest.data.date.toLocaleDateString('ja-JP')}</div>
+              <h2>最新号の重要ポイント</h2>
+            </div>
+            <a href={`${root}daily/${latest.id}/`}>日報全文を見る →</a>
+          </div>
+          <div class="top-list">
+            {top.slice(0,5).map((item:any, i:number) => (
+              <article class="top-item">
+                <div class="rank">{String(i+1).padStart(2,'0')}</div>
+                <div>
+                  <h3>{item.title}</h3>
+                  <div class="meta">{item.source}{item.topic ? ` · ${item.topic}` : ''}</div>
+                  {item.why && <div class="why">{item.why}</div>}
+                </div>
+              </article>
+            ))}
+          </div>
+        </>
+      ) : (
+        <div class="panel">最初の日報が公開されると、ここに重要ポイントが表示されます。</div>
+      )}
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface)">
+    <div class="container">
+      <div class="section-title"><h2>過去の重要ポイント</h2><a href={`${root}archive/`}>すべての日報を見る →</a></div>
+      <div class="archive-list">
+        {reports.slice(0,12).map((report)=>(
+          <a class="archive-row" href={`${root}daily/${report.id}/`}>
+            <div class="meta">{report.data.date.toLocaleDateString('ja-JP')}</div>
+            <div><strong>{report.data.title}</strong><div class="meta">{report.data.description}</div></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

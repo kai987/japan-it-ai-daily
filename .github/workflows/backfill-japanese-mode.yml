@@ -1,0 +1,140 @@
+name: Backfill Japanese-mode content
+
+on:
+  push:
+    branches: [feature/zh-ja-language-mode]
+    paths:
+      - '.github/workflows/backfill-japanese-mode.yml'
+      - 'scripts/backfill-japanese-mode.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bilingual-content-backfill
+  cancel-in-progress: true
+
+jobs:
+  translate:
+    name: translate-${{ matrix.date }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        date:
+          - '2026-08-12'
+          - '2026-08-13'
+          - '2026-08-14'
+          - '2026-08-15'
+          - '2026-08-16'
+          - '2026-08-17'
+          - '2026-08-18'
+          - '2026-08-19'
+          - '2026-08-20'
+          - '2026-08-21'
+          - '2026-08-22'
+          - '2026-08-23'
+          - '2026-08-24'
+          - '2026-08-25'
+          - '2026-08-26'
+          - '2026-08-27'
+          - '2026-08-28'
+          - '2026-08-29'
+          - '2026-08-30'
+          - '2026-08-31'
+          - '2026-09-01'
+          - '2026-09-02'
+          - '2026-09-03'
+          - '2026-09-04'
+          - '2026-09-05'
+          - '2026-09-06'
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Install CPU translation runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check --no-cache-dir torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+          python3 -m pip install --disable-pip-version-check --no-cache-dir \
+            transformers==4.56.2 sentencepiece==0.2.1 sacremoses==0.1.1 langid==1.1.6 pyyaml==6.0.2
+      - name: Generate Japanese content
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/backfill-japanese-mode.py --dates '${{ matrix.date }}'
+          test -f 'src/content/daily-ja/${{ matrix.date }}.md'
+          test -f 'src/content/japanese-ja/${{ matrix.date }}.md'
+      - name: Package generated content
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -czf '${{ matrix.date }}.tgz' \
+            'src/content/daily-ja/${{ matrix.date }}.md' \
+            'src/content/japanese-ja/${{ matrix.date }}.md'
+      - name: Upload generated content
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: japanese-${{ matrix.date }}
+          path: ${{ matrix.date }}.tgz
+          retention-days: 1
+          if-no-files-found: error
+
+  combine:
+    name: combine-and-commit
+    needs: translate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - name: Download generated batches
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          pattern: japanese-*
+          path: generated-batches
+          merge-multiple: true
+      - name: Merge and validate generated content
+        shell: bash
+        run: |
+          set -euo pipefail
+          for archive in generated-batches/*.tgz; do
+            tar -xzf "${archive}"
+          done
+          daily_count="$(find src/content/daily-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          lesson_count="$(find src/content/japanese-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          source_daily_count="$(find src/content/daily -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          source_lesson_count="$(find src/content/japanese -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          echo "Japanese daily files: ${daily_count}/${source_daily_count}"
+          echo "Japanese lesson files: ${lesson_count}/${source_lesson_count}"
+          test "${daily_count}" -eq "${source_daily_count}"
+          test "${lesson_count}" -eq "${source_lesson_count}"
+          if grep -R -n -E '详细文字版|今日最值得看的|分类速览|面试复习卡|重点总结|日本語学习|JLPT词汇|专业词汇|JLPT语法|今日必背|为什么值得看|面试问题|约30秒回答|可关联项目|回答要点' src/content/daily-ja src/content/japanese-ja; then
+            echo '::error::Chinese structural labels remain in Japanese-mode content.'
+            exit 1
+          fi
+      - name: Commit generated content
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add src/content/daily-ja src/content/japanese-ja
+          if git diff --cached --quiet; then
+            echo 'No generated content changes.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'content: backfill full Japanese mode'
+          git push origin HEAD:feature/zh-ja-language-mode

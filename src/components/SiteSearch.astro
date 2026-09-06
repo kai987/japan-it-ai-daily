@@ -1,12 +1,14 @@
 ---
 import '../styles/search.css';
 import '../styles/search-snippet.css';
+import type { SiteLocale } from '../lib/locale';
 
+const { locale = 'zh' } = Astro.props as { locale?: SiteLocale };
 const base = import.meta.env.BASE_URL;
-const searchIndexUrl = `${base}search-index.json`;
+const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base}search-index.json`;
 ---
 
-<div class="site-search" data-site-search data-search-index-url={searchIndexUrl}>
+<div class="site-search" data-site-search data-search-index-url={searchIndexUrl} data-search-locale={locale}>
   <div class="site-search-field">
     <svg class="site-search-icon" viewBox="0 0 24 24" aria-hidden="true">
       <circle cx="11" cy="11" r="6.5"></circle>
@@ -50,6 +52,8 @@ const searchIndexUrl = `${base}search-index.json`;
     ) return;
 
     const indexUrl = root.dataset.searchIndexUrl || '';
+    const locale = root.dataset.searchLocale === 'ja' ? 'ja' : 'zh';
+    const reportLabel = locale === 'ja' ? '日報' : '日报';
     if (!indexUrl) return;
 
     root.addEventListener('pointerdown', (event) => event.stopPropagation());
@@ -201,7 +205,7 @@ const searchIndexUrl = `${base}search-index.json`;
         const meta = document.createElement('span');
         meta.className = 'site-search-result-meta';
         const pieces = item.kind === 'report'
-          ? [item.date, '日报']
+          ? [item.date, reportLabel]
           : [item.date, item.source, item.topic].filter(Boolean);
         meta.textContent = `${pieces.join(' · ')}${item.external ? ' · 原文 ↗' : ''}`;
         link.appendChild(meta);

@@ -9,11 +9,21 @@ import SiteSearch from '../components/SiteSearch.astro';
 import MermaidRenderer from '../components/MermaidRenderer.astro';
 import InterviewStaticAudio from '../components/InterviewStaticAudio.astro';
 import SearchDeepLink from '../components/SearchDeepLink.astro';
-const { title = 'Japan IT / AI Daily', description = '日本のIT・AI技術ニュースを、面接対策と技術日本語の視点から毎日整理。' } = Astro.props;
+import { localeRoot, type SiteLocale } from '../lib/locale';
+
+const {
+  title = 'Japan IT / AI Daily',
+  description = '日本のIT・AI技術ニュースを、面接対策と技術日本語の視点から毎日整理。',
+  locale = 'zh',
+} = Astro.props as { title?: string; description?: string; locale?: SiteLocale };
 const base = import.meta.env.BASE_URL;
+const localizedBase = localeRoot(base, locale);
+const navLabels = locale === 'ja'
+  ? { daily: '日報', topics: 'トピック', interview: '面接', japanese: '日本語', archive: 'アーカイブ' }
+  : { daily: 'Daily', topics: 'Topics', interview: 'Interview', japanese: '日本語', archive: 'Archive' };
 ---
 <!doctype html>
-<html lang="ja">
+<html lang={locale === 'ja' ? 'ja' : 'zh-CN'} data-locale={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -32,16 +42,28 @@ const base = import.meta.env.BASE_URL;
   <body>
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href={base}><span>J</span>apan IT / AI Daily</a>
-        <SiteSearch />
+        <a class="brand" href={localizedBase}><span>J</span>apan IT / AI Daily</a>
+        <SiteSearch locale={locale} />
         <div class="nav-actions">
           <nav class="nav-links" id="primary-nav" aria-label="Primary">
-            <a href={base}>Daily</a>
-            <a href={`${base}topics/`}>Topics</a>
-            <a href={`${base}interview/`}>Interview</a>
-            <a href={`${base}japanese/`}>日本語</a>
-            <a href={`${base}archive/`}>Archive</a>
+            <a href={localizedBase}>{navLabels.daily}</a>
+            <a href={`${localizedBase}topics/`}>{navLabels.topics}</a>
+            <a href={`${localizedBase}interview/`}>{navLabels.interview}</a>
+            <a href={`${localizedBase}japanese/`}>{navLabels.japanese}</a>
+            <a href={`${localizedBase}archive/`}>{navLabels.archive}</a>
           </nav>
+          <label class="language-switcher" title={locale === 'ja' ? '表示言語を切り替える' : '切换显示语言'}>
+            <span class="sr-only">{locale === 'ja' ? '表示言語' : '显示语言'}</span>
+            <select
+              class="language-select"
+              aria-label={locale === 'ja' ? '表示言語' : '显示语言'}
+              data-base={base}
+              data-current-locale={locale}
+            >
+              <option value="zh" selected={locale === 'zh'}>中文</option>
+              <option value="ja" selected={locale === 'ja'}>日本語</option>
+            </select>
+          </label>
           <button class="theme-toggle" type="button" aria-label="ダークモードに切り替える" title="テーマを切り替える">
             <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="4"></circle>
@@ -63,6 +85,28 @@ const base = import.meta.env.BASE_URL;
     <footer>
       <div class="container">Japan IT / AI Daily · 日本のIT/AIニュース、面接対策、技術日本語を毎日整理。</div>
     </footer>
+
+    <script>
+      (() => {
+        const select = document.querySelector('.language-select');
+        if (!(select instanceof HTMLSelectElement)) return;
+        select.addEventListener('change', () => {
+          const next = select.value === 'ja' ? 'ja' : 'zh';
+          const base = select.dataset.base || '/';
+          const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+          const pathname = window.location.pathname;
+          const relative = pathname.startsWith(normalizedBase)
+            ? pathname.slice(normalizedBase.length)
+            : pathname.replace(/^\/+/, '');
+          const withoutJa = relative.replace(/^ja\//, '');
+          const nextPath = next === 'ja'
+            ? `${normalizedBase}ja/${withoutJa}`
+            : `${normalizedBase}${withoutJa}`;
+          localStorage.setItem('site-language', next);
+          window.location.assign(`${nextPath}${window.location.search}${window.location.hash}`);
+        });
+      })();
+    </script>
 
     <script is:inline>
       (() => {

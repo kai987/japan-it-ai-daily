@@ -1,0 +1,20 @@
+name: Copilot backfill Japanese mode
+
+on:
+  push:
+    branches: [feature/zh-ja-language-mode]
+    paths:
+      - '.github/workflows/copilot-backfill-japanese-mode.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: copilot-japanese-mode-backfill
+  cancel-in-progress: true
+
+jobs:
+  paused:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Backfill paused while legacy structured learning content is validated separately.'

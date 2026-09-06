@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { featuredTopics, countTopicArticles } from '../../lib/topics';
+
+const base = import.meta.env.BASE_URL;
+const root = `${base}ja/`;
+const reports = await getCollection('dailyJa');
+const topicStats = featuredTopics.map((topic) => ({
+  ...topic,
+  count: countTopicArticles(reports, topic),
+}));
+---
+<BaseLayout locale="ja" title="トピック · Japan IT / AI Daily">
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">EXPLORE TOPICS</div>
+      <h1>技術トピック</h1>
+      <p>毎日のTop 5を長期的なテーマ別に整理しています。テーマを選ぶと、過去の日報から関連する推薦記事をまとめて確認できます。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container topic-page-grid">
+      {topicStats.map((topic) => (
+        <a class="topic-card" href={`${root}topics/${topic.key}/`}>
+          <div>
+            <div class="eyebrow">{topic.count} 記事</div>
+            <h2>{topic.label}</h2>
+            <p>{topic.descriptionJa}</p>
+          </div>
+          <span>見る →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

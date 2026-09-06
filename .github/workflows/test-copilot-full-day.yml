@@ -1,0 +1,70 @@
+name: Test Copilot full-day Japanese backfill
+
+on:
+  push:
+    branches: [feature/zh-ja-language-mode]
+    paths:
+      - '.github/workflows/test-copilot-full-day.yml'
+
+permissions:
+  contents: read
+  copilot-requests: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
+      - name: Create full Japanese 2026-09-06 content
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p src/content/daily-ja src/content/japanese-ja
+          copilot --yolo -s --model auto -p 'You are a professional Japanese technical editor working inside this repository. Create a publication-quality FULL Japanese-language version of exactly these two source files:
+
+          1. src/content/daily/2026-09-06.md -> src/content/daily-ja/2026-09-06.md
+          2. src/content/japanese/2026-09-06.md -> src/content/japanese-ja/2026-09-06.md
+
+          HARD REQUIREMENTS:
+          - Read the source files completely before editing.
+          - Preserve every fact, every article, every Top 5 item, every URL, source name, date, topic, technical detail, interview question/answer, knowledge point, vocabulary item, technical term, grammar item, and review item. Do NOT summarize, omit, add, or speculate.
+          - Preserve the existing Markdown hierarchy, separators, code blocks, links, URLs, and the A+B+C organization.
+          - Translate ALL user-visible Chinese prose and Chinese UI/section labels into natural, publication-quality Japanese. Existing Japanese text should remain natural Japanese; English technical names may remain English.
+          - For the daily frontmatter, preserve keys and data shape expected by the dailyJa collection: title/date/description/topics/sources/featured/top. Top 5 article titles must remain Japanese, sources/URLs unchanged, and why must be natural Japanese.
+          - For japanese-ja frontmatter, convert the existing structured learning data to the japaneseJa schema in src/content.config.ts. Use these Japanese-mode field names exactly: vocabulary items use meaning, note, optional exampleMeaning, optional nuance; grammar items use meaning, usage, optional exampleMeaning, optional note; technicalTerms use meaning and context. Keep term, reading, partOfSpeech, level, collocations, exampleJa, pattern, structure, japanese, mustRememberWords, mustRememberGrammar unchanged unless only a user-visible Chinese explanation needs Japanese conversion.
+          - Japanese-mode learning explanations must be entirely Japanese. Do not leave meaningZh/noteZh/exampleZh/nuanceZh/usageZh/contextZh fields in the output.
+          - Use natural Japanese technical prose, not literal Chinese syntax.
+          - Do not modify any source file, framework file, workflow, package file, or other date. Only create the two target files above.
+          - When finished, verify both target files exist and do not contain obvious simplified-Chinese UI labels such as 详细文字版, 今日最值得看的, 分类速览, 面试复习卡, 重点总结, 日本語学习, JLPT词汇, 专业词汇, JLPT语法, 今日必背, 为什么值得看, 面试问题, 约30秒回答, 可关联项目, 回答要点.'
+      - name: Basic validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s src/content/daily-ja/2026-09-06.md
+          test -s src/content/japanese-ja/2026-09-06.md
+          if grep -n -E '详细文字版|今日最值得看的|分类速览|面试复习卡|重点总结|日本語学习|JLPT词汇|专业词汇|JLPT语法|今日必背|为什么值得看|面试问题|约30秒回答|可关联项目|回答要点|meaningZh|noteZh|exampleZh|nuanceZh|usageZh|contextZh' src/content/daily-ja/2026-09-06.md src/content/japanese-ja/2026-09-06.md; then
+            echo '::error::Chinese structural labels/schema fields remain.'
+            exit 1
+          fi
+          echo "Daily bytes: $(wc -c < src/content/daily-ja/2026-09-06.md)"
+          echo "Lesson bytes: $(wc -c < src/content/japanese-ja/2026-09-06.md)"
+      - name: Upload sample
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: copilot-ja-2026-09-06
+          path: |
+            src/content/daily-ja/2026-09-06.md
+            src/content/japanese-ja/2026-09-06.md
+          retention-days: 1
