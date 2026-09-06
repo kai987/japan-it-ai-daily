@@ -1,0 +1,169 @@
+name: Export original source contexts
+
+on:
+  push:
+    branches: [repair/japanese-history-from-originals]
+    paths:
+      - '.github/workflows/export-original-source-contexts.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    name: fetch-${{ matrix.date }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        date:
+          - '2026-08-16'
+          - '2026-08-17'
+          - '2026-08-20'
+          - '2026-08-21'
+          - '2026-08-22'
+          - '2026-08-23'
+          - '2026-08-24'
+          - '2026-08-25'
+          - '2026-08-26'
+          - '2026-08-27'
+          - '2026-08-28'
+          - '2026-08-29'
+          - '2026-08-30'
+          - '2026-08-31'
+          - '2026-09-01'
+          - '2026-09-02'
+          - '2026-09-03'
+          - '2026-09-04'
+          - '2026-09-05'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Install parser dependencies
+        run: python3 -m pip install --disable-pip-version-check --no-cache-dir pyyaml==6.0.2 requests==2.32.5 beautifulsoup4==4.13.5 lxml==6.0.1
+
+      - name: Build source-only context and fetch originals
+        env:
+          TARGET_DATE: ${{ matrix.date }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "source-contexts/${TARGET_DATE}/articles"
+          python3 - <<'PY'
+          import json, os, re
+          from pathlib import Path
+          import requests, yaml
+          from bs4 import BeautifulSoup
+
+          date=os.environ['TARGET_DATE']
+          out=Path('source-contexts')/date
+
+          def fm(path):
+              t=Path(path).read_text(encoding='utf-8'); e=t.find('\n---\n',4)
+              if not t.startswith('---\n') or e<0: raise RuntimeError(f'Bad frontmatter: {path}')
+              return yaml.safe_load(t[4:e]) or {}
+
+          daily=fm(f'src/content/daily/{date}.md')
+          lesson=fm(f'src/content/japanese/{date}.md')
+          top=daily.get('top') or []
+          if len(top)!=5: raise RuntimeError(f'{date}: Top5 count {len(top)}')
+
+          context={
+            'date':date,
+            'topics':daily.get('topics') or [],
+            'sources':daily.get('sources') or [],
+            'featured':bool(daily.get('featured',False)),
+            'top':[{'index':i+1,'title':x.get('title',''),'source':x.get('source',''),'topic':x.get('topic',''),'url':x.get('url','')} for i,x in enumerate(top)],
+            'learning':{
+              'topics':lesson.get('topics') or [],
+              'levels':lesson.get('levels') or [],
+              'vocabularyCount':lesson.get('vocabularyCount',0),
+              'grammarCount':lesson.get('grammarCount',0),
+              'vocabulary':[{'term':x.get('term',''),'reading':x.get('reading',''),'partOfSpeech':x.get('partOfSpeech',''),'level':x.get('level',''),'collocations':x.get('collocations') or [],'exampleJa':x.get('exampleJa','')} for x in (lesson.get('vocabulary') or [])],
+              'grammar':[{'pattern':x.get('pattern',''),'level':x.get('level',''),'structure':x.get('structure',''),'exampleJa':x.get('exampleJa','')} for x in (lesson.get('grammar') or [])],
+              'technicalTerms':[{'term':x.get('term',''),**({'japanese':x.get('japanese')} if x.get('japanese') else {})} for x in (lesson.get('technicalTerms') or [])],
+              'mustRememberWords':lesson.get('mustRememberWords') or [],
+              'mustRememberGrammar':lesson.get('mustRememberGrammar') or [],
+            }
+          }
+          (out/'context.json').write_text(json.dumps(context,ensure_ascii=False,indent=2),encoding='utf-8')
+
+          headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/152 Safari/537.36','Accept-Language':'ja,en;q=0.8'}
+          def direct(url):
+              r=requests.get(url,headers=headers,timeout=30,allow_redirects=True); r.raise_for_status()
+              soup=BeautifulSoup(r.text,'lxml')
+              for tag in soup(['script','style','noscript','svg','form','nav','footer','header','aside']): tag.decompose()
+              root=soup.find('article') or soup.find('main') or soup.body or soup
+              text=re.sub(r'\n{3,}','\n\n',root.get_text('\n',strip=True))[:90000]
+              return r.url,r.status_code,text
+          def reader(url):
+              reader_url='https://r.jina.ai/'+url
+              r=requests.get(reader_url,headers={'User-Agent':'Mozilla/5.0'},timeout=45); r.raise_for_status()
+              return reader_url,r.status_code,r.text[:90000]
+
+          for idx,item in enumerate(top,1):
+              url=item.get('url') or ''; p=out/'articles'/f'{idx:02d}.txt'
+              if not url:
+                  p.write_text('FETCH_STATUS: missing URL\n',encoding='utf-8'); continue
+              try:
+                  final,status,text=direct(url)
+                  if len(text)<900: raise RuntimeError(f'direct too short: {len(text)}')
+                  method='direct'
+              except Exception as first:
+                  try:
+                      final,status,text=reader(url)
+                      if len(text)<900: raise RuntimeError(f'reader too short: {len(text)}')
+                      method='reader-fallback'
+                  except Exception as second:
+                      p.write_text(f'URL: {url}\nFETCH_STATUS: failed\nDIRECT_ERROR: {first}\nFALLBACK_ERROR: {second}\n',encoding='utf-8')
+                      print(f'::warning::{date} Top {idx}: unavailable')
+                      continue
+              p.write_text(f'URL: {url}\nFETCH_METHOD: {method}\nFETCH_LOCATION: {final}\nHTTP_STATUS: {status}\nSOURCE_TITLE: {item.get("title","")}\n\n{text}\n',encoding='utf-8')
+              print(f'{date} Top {idx}: {method}, {len(text)} chars')
+          PY
+
+      - name: Upload date source context
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: source-context-${{ matrix.date }}
+          path: source-contexts/${{ matrix.date }}
+          retention-days: 1
+          if-no-files-found: error
+
+  combine:
+    needs: fetch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all source contexts
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          pattern: source-context-*
+          path: all-source-contexts
+          merge-multiple: false
+
+      - name: Normalize directory layout
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p normalized
+          for d in all-source-contexts/source-context-*; do
+            date="${d##*source-context-}"
+            mkdir -p "normalized/$date"
+            cp -R "$d"/. "normalized/$date/"
+          done
+          find normalized -maxdepth 3 -type f | sort
+
+      - name: Upload combined original-source package
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: all-remaining-original-source-contexts
+          path: normalized
+          retention-days: 1
+          if-no-files-found: error
