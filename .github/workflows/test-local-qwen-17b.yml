@@ -1,0 +1,91 @@
+name: Test Qwen3 1.7B source-direct Japanese generation
+
+on:
+  push:
+    branches: [repair/japanese-history-from-originals]
+    paths:
+      - '.github/workflows/test-local-qwen-17b.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: qwen17b-source-direct-sample
+  cancel-in-progress: true
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      TARGET_DATE: '2026-09-06'
+      WORKDIR: /tmp/source-direct-ja
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Install Python dependencies
+        run: python3 -m pip install --disable-pip-version-check --no-cache-dir pyyaml==6.0.2 requests==2.32.5 beautifulsoup4==4.13.5 lxml==6.0.1
+
+      - name: Prepare original sources
+        run: python3 scripts/prepare-source-direct-context.py --date "$TARGET_DATE" --workdir "$WORKDIR" --article-chars 4500
+
+      - name: Build llama.cpp
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --branch b10826 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
+          cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DGGML_NATIVE=ON
+          cmake --build /tmp/llama.cpp/build --config Release -j 2 --target llama-server
+
+      - name: Start Qwen3 1.7B
+        shell: bash
+        run: |
+          set -euo pipefail
+          /tmp/llama.cpp/build/bin/llama-server \
+            -hf Qwen/Qwen3-1.7B-GGUF:Q4_K_M \
+            --alias qwen3-1.7b \
+            --host 127.0.0.1 --port 8080 \
+            --jinja -c 24576 -t 4 > /tmp/qwen17b-server.log 2>&1 &
+          echo $! > /tmp/qwen17b-server.pid
+          for i in $(seq 1 120); do
+            if curl -fsS http://127.0.0.1:8080/health >/dev/null 2>&1; then
+              echo 'Qwen3-1.7B server ready.'
+              exit 0
+            fi
+            sleep 3
+          done
+          tail -n 120 /tmp/qwen17b-server.log || true
+          exit 1
+
+      - name: Generate Japanese directly from originals
+        run: >-
+          python3 scripts/generate-source-direct-local-fast.py
+          --date "$TARGET_DATE"
+          --workdir "$WORKDIR"
+          --model qwen3-1.7b
+          --daily-max-tokens 3000
+          --lesson-max-tokens 3600
+
+      - name: Validate source-direct result
+        run: |
+          python3 scripts/validate-source-direct-output.py --date "$TARGET_DATE" --workdir "$WORKDIR"
+          git diff --exit-code -- src/content/daily src/content/japanese
+
+      - name: Stage sample artifact
+        shell: bash
+        run: |
+          mkdir -p /tmp/qwen17b-artifact/daily-ja /tmp/qwen17b-artifact/japanese-ja
+          cp "$WORKDIR/daily-ja.md" "/tmp/qwen17b-artifact/daily-ja/$TARGET_DATE.md"
+          cp "$WORKDIR/japanese-ja.md" "/tmp/qwen17b-artifact/japanese-ja/$TARGET_DATE.md"
+          cp /tmp/qwen17b-server.log /tmp/qwen17b-artifact/server.log
+
+      - name: Upload sample artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: qwen17b-source-direct-${{ env.TARGET_DATE }}
+          path: /tmp/qwen17b-artifact
+          retention-days: 1
