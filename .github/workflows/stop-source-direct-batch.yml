@@ -1,0 +1,17 @@
+name: Stop source-direct Japanese batch
+
+on:
+  push:
+    branches: [repair/japanese-history-from-originals]
+    paths:
+      - '.github/workflows/stop-source-direct-batch.yml'
+
+concurrency:
+  group: source-direct-japanese-history
+  cancel-in-progress: true
+
+jobs:
+  stop:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Superseding the quota-blocked source-direct batch.'
