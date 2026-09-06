@@ -1,0 +1,177 @@
+name: Rebuild Japanese history from originals v2
+
+on:
+  push:
+    branches: [repair/japanese-history-from-originals]
+    paths:
+      - '.github/workflows/regenerate-all-japanese-from-originals-v2.yml'
+      - 'scripts/rebuild_japanese_from_originals.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  copilot-requests: write
+
+concurrency:
+  group: source-direct-japanese-history
+  cancel-in-progress: true
+
+jobs:
+  regenerate:
+    name: regenerate-${{ matrix.date }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        date:
+          - '2026-08-12'
+          - '2026-08-13'
+          - '2026-08-14'
+          - '2026-08-15'
+          - '2026-08-16'
+          - '2026-08-17'
+          - '2026-08-18'
+          - '2026-08-19'
+          - '2026-08-20'
+          - '2026-08-21'
+          - '2026-08-22'
+          - '2026-08-23'
+          - '2026-08-24'
+          - '2026-08-25'
+          - '2026-08-26'
+          - '2026-08-27'
+          - '2026-08-28'
+          - '2026-08-29'
+          - '2026-08-30'
+          - '2026-08-31'
+          - '2026-09-01'
+          - '2026-09-02'
+          - '2026-09-03'
+          - '2026-09-04'
+          - '2026-09-05'
+          - '2026-09-06'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+
+      - name: Install tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install -g @github/copilot
+          python3 -m pip install --disable-pip-version-check --no-cache-dir \
+            pyyaml==6.0.2 requests==2.32.5 beautifulsoup4==4.13.5 lxml==6.0.1
+
+      - name: Regenerate and validate from original articles
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/rebuild_japanese_from_originals.py '${{ matrix.date }}'
+
+      - name: Prove Chinese source files were not modified
+        run: git diff --exit-code -- src/content/daily src/content/japanese
+
+      - name: Package pair
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -czf '${{ matrix.date }}.tgz' \
+            'src/content/daily-ja/${{ matrix.date }}.md' \
+            'src/content/japanese-ja/${{ matrix.date }}.md'
+
+      - name: Upload pair
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: source-direct-v2-${{ matrix.date }}
+          path: ${{ matrix.date }}.tgz
+          retention-days: 1
+          if-no-files-found: error
+
+  combine:
+    name: combine-validate-and-commit
+    needs: regenerate
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PUBLIC_AUDIO_BASE_URL: https://pub-7561025e67be4103ac4bafb331864381.r2.dev
+    steps:
+      - name: Checkout repair branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Download all pairs
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          pattern: source-direct-v2-*
+          path: generated-pairs
+          merge-multiple: true
+
+      - name: Merge pairs and prove Chinese mode unchanged
+        shell: bash
+        run: |
+          set -euo pipefail
+          for archive in generated-pairs/*.tgz; do tar -xzf "$archive"; done
+          git fetch origin main
+          if ! git diff --quiet origin/main -- src/content/daily src/content/japanese; then
+            echo '::error::Chinese content changed; aborting.'
+            git diff --stat origin/main -- src/content/daily src/content/japanese
+            exit 1
+          fi
+          source_daily="$(find src/content/daily -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          source_lesson="$(find src/content/japanese -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          ja_daily="$(find src/content/daily-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          ja_lesson="$(find src/content/japanese-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          echo "daily-ja ${ja_daily}/${source_daily}; japanese-ja ${ja_lesson}/${source_lesson}"
+          test "$ja_daily" -eq "$source_daily"
+          test "$ja_lesson" -eq "$source_lesson"
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run check
+
+      - name: Tests
+        run: npm test
+
+      - name: Production build
+        run: npm run build
+
+      - name: CSP check
+        run: npm run security:check
+
+      - name: Commit only Japanese history
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add src/content/daily-ja src/content/japanese-ja
+          if git diff --cached --quiet; then
+            echo '::error::No Japanese history changes found.'
+            exit 1
+          fi
+          unexpected="$(git diff --cached --name-only | grep -Ev '^src/content/(daily-ja|japanese-ja)/[^/]+\.md$' || true)"
+          if [[ -n "$unexpected" ]]; then
+            echo "::error::Unexpected staged paths: $unexpected"
+            exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'content: rebuild historical Japanese mode from original sources'
+          git push origin HEAD:repair/japanese-history-from-originals
