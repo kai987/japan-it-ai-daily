@@ -46,6 +46,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # Core /ja routes must exist even before historical Japanese content is backfilled.
           test -f dist/ja/index.html
           test -f dist/ja/archive/index.html
           test -f dist/ja/interview/index.html
