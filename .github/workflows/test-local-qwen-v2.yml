@@ -1,0 +1,72 @@
+name: Test local Qwen Japanese pipeline v2
+
+on:
+  push:
+    branches:
+      - repair/japanese-history-from-originals
+    paths:
+      - .github/workflows/test-local-qwen-v2.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+
+      - name: Install Python dependencies
+        run: python3 -m pip install --disable-pip-version-check --no-cache-dir pyyaml==6.0.2 requests==2.32.5 beautifulsoup4==4.13.5 lxml==6.0.1
+
+      - name: Prepare original sources
+        run: python3 scripts/prepare-source-direct-context.py --date 2026-09-06 --workdir /tmp/source-direct-ja --article-chars 6500
+
+      - name: Build llama.cpp
+        run: |
+          git clone --depth 1 --branch b10826 https://github.com/ggml-org/llama.cpp.git /tmp/llama.cpp
+          cmake -S /tmp/llama.cpp -B /tmp/llama.cpp/build -DCMAKE_BUILD_TYPE=Release -DGGML_NATIVE=ON
+          cmake --build /tmp/llama.cpp/build --config Release -j 2 --target llama-server
+
+      - name: Start Qwen3 4B
+        run: |
+          /tmp/llama.cpp/build/bin/llama-server -hf Qwen/Qwen3-4B-GGUF:Q4_K_M --alias qwen3-4b --host 127.0.0.1 --port 8080 --jinja -c 32768 -t 4 > /tmp/qwen-server.log 2>&1 &
+          echo $! > /tmp/qwen-server.pid
+          for i in $(seq 1 120); do
+            if curl -fsS http://127.0.0.1:8080/health >/dev/null 2>&1; then
+              exit 0
+            fi
+            sleep 5
+          done
+          tail -n 100 /tmp/qwen-server.log
+          exit 1
+
+      - name: Generate Japanese directly from originals
+        run: python3 scripts/generate-source-direct-local.py --date 2026-09-06 --workdir /tmp/source-direct-ja --model qwen3-4b
+
+      - name: Validate source-direct result
+        run: |
+          python3 scripts/validate-source-direct-output.py --date 2026-09-06 --workdir /tmp/source-direct-ja
+          git diff --exit-code -- src/content/daily src/content/japanese
+
+      - name: Stage sample artifact
+        if: always()
+        run: |
+          mkdir -p .tmp/qwen-sample
+          cp /tmp/source-direct-ja/daily-ja.md .tmp/qwen-sample/ 2>/dev/null || true
+          cp /tmp/source-direct-ja/japanese-ja.md .tmp/qwen-sample/ 2>/dev/null || true
+          cp /tmp/qwen-server.log .tmp/qwen-sample/ 2>/dev/null || true
+
+      - name: Upload sample artifact
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: local-qwen-source-direct-v2
+          path: .tmp/qwen-sample
+          retention-days: 1
+          if-no-files-found: warn
