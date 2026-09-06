@@ -1,0 +1,231 @@
+name: Copilot backfill Japanese mode
+
+on:
+  push:
+    branches: [feature/zh-ja-language-mode]
+    paths:
+      - '.github/workflows/copilot-backfill-japanese-mode.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  copilot-requests: write
+
+concurrency:
+  group: copilot-japanese-mode-backfill
+  cancel-in-progress: true
+
+jobs:
+  translate:
+    name: ja-${{ matrix.date }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        date:
+          - '2026-08-12'
+          - '2026-08-13'
+          - '2026-08-14'
+          - '2026-08-15'
+          - '2026-08-16'
+          - '2026-08-17'
+          - '2026-08-18'
+          - '2026-08-19'
+          - '2026-08-20'
+          - '2026-08-21'
+          - '2026-08-22'
+          - '2026-08-23'
+          - '2026-08-24'
+          - '2026-08-25'
+          - '2026-08-26'
+          - '2026-08-27'
+          - '2026-08-28'
+          - '2026-08-29'
+          - '2026-08-30'
+          - '2026-08-31'
+          - '2026-09-01'
+          - '2026-09-02'
+          - '2026-09-03'
+          - '2026-09-04'
+          - '2026-09-05'
+          - '2026-09-06'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
+      - name: Create Japanese content
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          DATE: ${{ matrix.date }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p src/content/daily-ja src/content/japanese-ja
+          copilot --yolo -s --model auto --max-ai-credits=25 -p "You are a professional Japanese technical editor working inside this repository. Create a publication-quality FULL Japanese-language version of exactly these two source files for ${DATE}:
+
+          1. src/content/daily/${DATE}.md -> src/content/daily-ja/${DATE}.md
+          2. src/content/japanese/${DATE}.md -> src/content/japanese-ja/${DATE}.md
+
+          HARD REQUIREMENTS:
+          - Read both source files completely before editing.
+          - Preserve EVERY fact and EVERY item. Do not summarize, omit, add, infer, or speculate.
+          - Preserve the exact line-oriented structure as much as possible: the target daily file must have the same number of lines as its daily source, and the target japanese-ja file must have the same number of lines as its japanese source. Do not merge or delete content lines.
+          - Preserve all Markdown hierarchy, headings, separators, lists, blockquotes, code blocks, inline code, links, and URLs. Preserve the A+B+C organization.
+          - Preserve every Top 5 item, article order, URL, source name, date, topic, technical detail, interview question/answer, knowledge point, vocabulary item, technical term, grammar item, and review item.
+          - Translate ALL user-visible Chinese prose and Chinese labels into natural, publication-quality Japanese. Existing natural Japanese text should stay Japanese. English technical names may remain English.
+          - Use professional Japanese technical prose and natural Japanese punctuation. Avoid literal Chinese syntax.
+          - Daily frontmatter must keep the exact dailyJa data shape: title/date/description/topics/sources/featured/top. Top 5 titles remain Japanese; URLs and source names are unchanged; why is natural Japanese.
+          - japanese-ja must use the japaneseJa schema defined in src/content.config.ts. Convert the Chinese-mode explanation fields to Japanese-mode names exactly: vocabulary meaningZh->meaning, noteZh->note, exampleZh->exampleMeaning, nuanceZh->nuance; grammar meaningZh->meaning, usageZh->usage, exampleZh->exampleMeaning, noteZh->note; technicalTerms meaningZh->meaning and contextZh->context. Remove the old *Zh field names from the target. Preserve term, reading, partOfSpeech, level, collocations, exampleJa, pattern, structure, japanese, mustRememberWords, and mustRememberGrammar unless a user-visible Chinese explanation itself needs Japanese translation.
+          - Do not modify any source file, framework file, workflow, package file, or any other date. Only create the two target files for ${DATE}.
+          - Before finishing, mechanically compare all URLs and line counts against the source files and correct any mismatch."
+      - name: Validate translated date
+        env:
+          DATE: ${{ matrix.date }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          src_daily="src/content/daily/${DATE}.md"
+          ja_daily="src/content/daily-ja/${DATE}.md"
+          src_lesson="src/content/japanese/${DATE}.md"
+          ja_lesson="src/content/japanese-ja/${DATE}.md"
+          test -s "${ja_daily}"
+          test -s "${ja_lesson}"
+          test "$(wc -l < "${src_daily}" | tr -d ' ')" -eq "$(wc -l < "${ja_daily}" | tr -d ' ')"
+          test "$(wc -l < "${src_lesson}" | tr -d ' ')" -eq "$(wc -l < "${ja_lesson}" | tr -d ' ')"
+          python3 - "${src_daily}" "${ja_daily}" <<'PY'
+          import re, sys
+          from collections import Counter
+          from pathlib import Path
+          src = Path(sys.argv[1]).read_text(encoding='utf-8')
+          dst = Path(sys.argv[2]).read_text(encoding='utf-8')
+          url_re = re.compile(r'https?://[^\s)>"\']+')
+          if Counter(url_re.findall(src)) != Counter(url_re.findall(dst)):
+              raise SystemExit('URL set/count changed during translation')
+          src_headings = re.findall(r'^#{1,6}\s+', src, re.M)
+          dst_headings = re.findall(r'^#{1,6}\s+', dst, re.M)
+          if len(src_headings) != len(dst_headings):
+              raise SystemExit(f'Heading count changed: {len(src_headings)} -> {len(dst_headings)}')
+          PY
+          if grep -n -E '详细文字版|今日最值得看的|分类速览|面试复习卡|重点总结|日本語学习|JLPT词汇|专业词汇|JLPT语法|今日必背|为什么值得看|面试问题|约30秒回答|可关联项目|回答要点|meaningZh|noteZh|exampleZh|nuanceZh|usageZh|contextZh' "${ja_daily}" "${ja_lesson}"; then
+            echo '::error::Chinese structural labels or Chinese-mode schema fields remain.'
+            exit 1
+          fi
+      - name: Package date
+        env:
+          DATE: ${{ matrix.date }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "artifact/daily-ja" "artifact/japanese-ja"
+          cp "src/content/daily-ja/${DATE}.md" "artifact/daily-ja/${DATE}.md"
+          cp "src/content/japanese-ja/${DATE}.md" "artifact/japanese-ja/${DATE}.md"
+      - name: Upload date
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: copilot-ja-${{ matrix.date }}
+          path: artifact
+          retention-days: 1
+          if-no-files-found: error
+
+  combine:
+    name: combine-validate
+    needs: translate
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    env:
+      PUBLIC_AUDIO_BASE_URL: https://pub-7561025e67be4103ac4bafb331864381.r2.dev
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Download all translated dates
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          pattern: copilot-ja-*
+          path: generated
+      - name: Merge generated content
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p src/content/daily-ja src/content/japanese-ja
+          find generated -path '*/daily-ja/*.md' -exec cp {} src/content/daily-ja/ \;
+          find generated -path '*/japanese-ja/*.md' -exec cp {} src/content/japanese-ja/ \;
+          test "$(find src/content/daily-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')" -eq "$(find src/content/daily -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          test "$(find src/content/japanese-ja -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')" -eq "$(find src/content/japanese -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          if grep -R -n -E '详细文字版|今日最值得看的|分类速览|面试复习卡|重点总结|日本語学习|JLPT词汇|专业词汇|JLPT语法|今日必背|为什么值得看|面试问题|约30秒回答|可关联项目|回答要点|meaningZh|noteZh|exampleZh|nuanceZh|usageZh|contextZh' src/content/daily-ja src/content/japanese-ja; then
+            echo '::error::Chinese structural labels or Chinese schema fields remain.'
+            exit 1
+          fi
+      - name: Validate all source/target invariants
+        shell: python
+        run: |
+          import re
+          from collections import Counter
+          from pathlib import Path
+
+          url_re = re.compile(r'https?://[^\s)>"\']+')
+          for source_dir, target_dir in [
+              (Path('src/content/daily'), Path('src/content/daily-ja')),
+              (Path('src/content/japanese'), Path('src/content/japanese-ja')),
+          ]:
+              for source in sorted(source_dir.glob('*.md')):
+                  target = target_dir / source.name
+                  if not target.exists():
+                      raise SystemExit(f'Missing {target}')
+                  src = source.read_text(encoding='utf-8')
+                  dst = target.read_text(encoding='utf-8')
+                  if src.count('\n') != dst.count('\n'):
+                      raise SystemExit(f'Line count mismatch: {source.name}')
+                  if Counter(url_re.findall(src)) != Counter(url_re.findall(dst)):
+                      raise SystemExit(f'URL mismatch: {source.name}')
+                  if source_dir.name == 'daily':
+                      if len(re.findall(r'^#{1,6}\s+', src, re.M)) != len(re.findall(r'^#{1,6}\s+', dst, re.M)):
+                          raise SystemExit(f'Heading count mismatch: {source.name}')
+          print('All bilingual source/target structural invariants passed.')
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Full bilingual site validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run check
+          npm test
+          npm run build
+          npm run audio:strip-dist
+          npm run security:check
+          test -f dist/ja/index.html
+          test -f dist/ja/archive/index.html
+          test -f dist/ja/interview/index.html
+          test -f dist/ja/japanese/index.html
+          test -f dist/ja/topics/index.html
+          test -f dist/ja/search-index.json
+          test "$(find dist/ja/daily -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" -eq "$(find src/content/daily -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+          test "$(find dist/ja/japanese -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" -eq "$(find src/content/japanese -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
+      - name: Package validated content
+        shell: bash
+        run: |
+          tar -czf bilingual-japanese-content.tgz src/content/daily-ja src/content/japanese-ja
+      - name: Upload validated content
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: validated-japanese-content
+          path: bilingual-japanese-content.tgz
+          retention-days: 1
+          if-no-files-found: error
