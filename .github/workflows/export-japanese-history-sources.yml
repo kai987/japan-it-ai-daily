@@ -1,0 +1,175 @@
+name: Export Japanese history source material
+
+on:
+  push:
+    branches: [repair/japanese-history-from-originals]
+    paths:
+      - '.github/workflows/export-japanese-history-sources.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Install parser dependencies
+        run: python3 -m pip install --disable-pip-version-check --no-cache-dir pyyaml==6.0.2 requests==2.32.5 beautifulsoup4==4.13.5 lxml==6.0.1
+
+      - name: Export metadata, learning skeletons and original article text
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, re, shutil
+          from pathlib import Path
+          import requests, yaml
+          from bs4 import BeautifulSoup
+
+          dates = [
+              '2026-08-13','2026-08-14','2026-08-15','2026-08-16','2026-08-17',
+              '2026-08-18','2026-08-19','2026-08-20','2026-08-21','2026-08-22',
+              '2026-08-23','2026-08-24','2026-08-25','2026-08-26','2026-08-27',
+              '2026-08-28','2026-08-29','2026-08-30','2026-08-31','2026-09-01',
+              '2026-09-02','2026-09-03','2026-09-04','2026-09-05','2026-09-06'
+          ]
+          out_root = Path('/tmp/japanese-history-sources')
+          shutil.rmtree(out_root, ignore_errors=True)
+          out_root.mkdir(parents=True)
+
+          def read_frontmatter(path: Path):
+              text = path.read_text(encoding='utf-8')
+              if not text.startswith('---\n'):
+                  raise RuntimeError(f'{path}: missing frontmatter')
+              end = text.find('\n---\n', 4)
+              if end < 0:
+                  raise RuntimeError(f'{path}: malformed frontmatter')
+              return yaml.safe_load(text[4:end]) or {}
+
+          headers = {
+              'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/152 Safari/537.36',
+              'Accept-Language': 'ja,en;q=0.8',
+          }
+          session = requests.Session()
+          session.headers.update(headers)
+          manifest = []
+
+          for date in dates:
+              daily = read_frontmatter(Path(f'src/content/daily/{date}.md'))
+              lesson = read_frontmatter(Path(f'src/content/japanese/{date}.md'))
+              top = daily.get('top') or []
+              if len(top) != 5:
+                  raise RuntimeError(f'{date}: expected exactly 5 Top items, got {len(top)}')
+
+              day_dir = out_root / date
+              originals_dir = day_dir / 'originals'
+              originals_dir.mkdir(parents=True)
+
+              context = {
+                  'date': date,
+                  'topics': daily.get('topics') or [],
+                  'sources': daily.get('sources') or [],
+                  'featured': bool(daily.get('featured', False)),
+                  'top': [
+                      {
+                          'index': i + 1,
+                          'title': item.get('title', ''),
+                          'source': item.get('source', ''),
+                          'topic': item.get('topic', ''),
+                          'url': item.get('url', ''),
+                      }
+                      for i, item in enumerate(top)
+                  ],
+                  'learning': {
+                      'topics': lesson.get('topics') or [],
+                      'levels': lesson.get('levels') or [],
+                      'vocabularyCount': lesson.get('vocabularyCount', 0),
+                      'grammarCount': lesson.get('grammarCount', 0),
+                      'vocabulary': [
+                          {
+                              'term': x.get('term', ''),
+                              'reading': x.get('reading', ''),
+                              'partOfSpeech': x.get('partOfSpeech', ''),
+                              'level': x.get('level', ''),
+                              'collocations': x.get('collocations') or [],
+                              'exampleJa': x.get('exampleJa', ''),
+                          }
+                          for x in (lesson.get('vocabulary') or [])
+                      ],
+                      'grammar': [
+                          {
+                              'pattern': x.get('pattern', ''),
+                              'level': x.get('level', ''),
+                              'structure': x.get('structure', ''),
+                              'exampleJa': x.get('exampleJa', ''),
+                          }
+                          for x in (lesson.get('grammar') or [])
+                      ],
+                      'technicalTerms': [
+                          {
+                              'term': x.get('term', ''),
+                              **({'japanese': x.get('japanese')} if x.get('japanese') else {}),
+                          }
+                          for x in (lesson.get('technicalTerms') or [])
+                      ],
+                      'mustRememberWords': lesson.get('mustRememberWords') or [],
+                      'mustRememberGrammar': lesson.get('mustRememberGrammar') or [],
+                  },
+              }
+              (day_dir / 'context.json').write_text(json.dumps(context, ensure_ascii=False, indent=2), encoding='utf-8')
+
+              fetch_status = []
+              for idx, item in enumerate(top, 1):
+                  url = item.get('url') or ''
+                  target = originals_dir / f'{idx:02d}.txt'
+                  try:
+                      r = session.get(url, timeout=35, allow_redirects=True)
+                      r.raise_for_status()
+                      if not r.encoding or r.encoding.lower() == 'iso-8859-1':
+                          r.encoding = r.apparent_encoding or 'utf-8'
+                      soup = BeautifulSoup(r.text, 'lxml')
+                      for tag in soup(['script','style','noscript','svg','form','nav','footer','header','aside']):
+                          tag.decompose()
+                      root = soup.find('article') or soup.find('main') or soup.body or soup
+                      text = root.get_text('\n', strip=True)
+                      text = re.sub(r'\n{3,}', '\n\n', text)
+                      if len(text) > 50000:
+                          text = text[:50000]
+                      target.write_text(
+                          f'URL: {r.url}\nHTTP_STATUS: {r.status_code}\nSOURCE_TITLE: {item.get("title", "")}\n\n{text}\n',
+                          encoding='utf-8'
+                      )
+                      fetch_status.append({'index': idx, 'ok': True, 'status': r.status_code, 'chars': len(text), 'url': r.url})
+                  except Exception as exc:
+                      target.write_text(
+                          f'URL: {url}\nSOURCE_TITLE: {item.get("title", "")}\nFETCH_STATUS: failed\nERROR: {exc}\n',
+                          encoding='utf-8'
+                      )
+                      fetch_status.append({'index': idx, 'ok': False, 'error': str(exc), 'url': url})
+                      print(f'::warning::{date} article {idx} failed: {exc}')
+              (day_dir / 'fetch-status.json').write_text(json.dumps(fetch_status, ensure_ascii=False, indent=2), encoding='utf-8')
+              manifest.append({'date': date, 'fetched': sum(1 for x in fetch_status if x.get('ok')), 'total': 5})
+              print(date, manifest[-1])
+
+          (out_root / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding='utf-8')
+          PY
+
+      - name: Stage source package
+        run: |
+          rm -rf source-export
+          cp -R /tmp/japanese-history-sources source-export
+
+      - name: Upload source package
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: japanese-history-original-sources
+          path: source-export
+          retention-days: 1
+          if-no-files-found: error
