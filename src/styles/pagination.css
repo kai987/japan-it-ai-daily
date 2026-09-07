@@ -160,3 +160,6 @@
     transition: none;
   }
 }
+
+/* Author display rules must not override pagination visibility. */
+.archive-row[hidden] { display: none; }

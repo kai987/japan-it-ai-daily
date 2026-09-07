@@ -66,22 +66,24 @@ const levenshtein = (a: string, b: string): number => {
   return previous[b.length]!;
 };
 
-const editSimilarity = (query: string, text: string): number => {
-  if (query.length < 3 || text.length < 3) return 0;
-  const queryLength = query.length;
-  if (text.length <= queryLength + 2) {
-    return 1 - levenshtein(query, text) / Math.max(queryLength, text.length);
-  }
+// Fuzzy matching is limited to similarly sized words, instead of every
+// sliding substring of every field. Exact full-text matching stays unchanged.
+const wordSegmenter = new Intl.Segmenter('ja', { granularity: 'word' });
+type PreparedField = { compact: string; words: string[] };
+const prepareField = (text: string): PreparedField => ({
+  compact: compactSearchText(text),
+  words: [...wordSegmenter.segment(text)]
+    .filter((part) => part.isWordLike)
+    .map((part) => compactSearchText(part.segment)),
+});
 
+const editSimilarity = (query: string, words: string[]): number => {
+  if (query.length < 3 || query.length > 32) return 0;
   let best = 0;
-  const lengths = [Math.max(2, queryLength - 1), queryLength, queryLength + 1];
-  for (const length of lengths) {
-    for (let start = 0; start <= text.length - length; start += 1) {
-      const sample = text.slice(start, start + length);
-      const similarity = 1 - levenshtein(query, sample) / Math.max(queryLength, sample.length);
-      if (similarity > best) best = similarity;
-      if (best >= 0.92) return best;
-    }
+  for (const word of words) {
+    if (word.length < 3 || Math.abs(query.length - word.length) > 2) continue;
+    best = Math.max(best, 1 - levenshtein(query, word) / Math.max(query.length, word.length));
+    if (best >= 0.92) break;
   }
   return best;
 };
@@ -106,48 +108,56 @@ const subsequenceScore = (query: string, text: string): number => {
   return Math.max(0, 0.72 - startPenalty - gapPenalty);
 };
 
-export const fieldScore = (query: string, text: unknown): number => {
-  const normalizedQuery = compactSearchText(query);
-  const normalizedText = compactSearchText(text);
+const preparedFieldScore = (normalizedQuery: string, field: PreparedField): number => {
+  const normalizedText = field.compact;
   if (!normalizedQuery || !normalizedText) return 0;
   if (normalizedQuery === normalizedText) return 1;
-
   const found = normalizedText.indexOf(normalizedQuery);
   if (found >= 0) return Math.max(0.78, 0.97 - Math.min(found, 40) * 0.006);
-
   const subsequence = subsequenceScore(normalizedQuery, normalizedText);
-  const edit = editSimilarity(normalizedQuery, normalizedText);
-  const typoScore = edit >= 0.62 ? edit * 0.82 : 0;
-  return Math.max(subsequence, typoScore);
+  const edit = editSimilarity(normalizedQuery, field.words);
+  return Math.max(subsequence, edit >= 0.62 ? edit * 0.82 : 0);
+};
+
+export const fieldScore = (query: string, text: unknown): number =>
+  preparedFieldScore(compactSearchText(query), prepareField(String(text ?? '')));
+
+const preparedItems = new WeakMap<SearchItem, {
+  fields: Array<[PreparedField, number]>;
+  segments: string[];
+}>();
+
+const prepareItem = (item: SearchItem) => {
+  const cached = preparedItems.get(item);
+  if (cached) return cached;
+  const fields: Array<[string, number]> = item.kind === 'report'
+    ? [[item.title, 3.6], [item.reportDescription, 1.1], [item.reportTopics.join(' '), 1.2]]
+    : [[item.title, 5], [item.topic, 2.2], [item.source, 1.5], [item.why, 1.15],
+       [item.reportTitle, 0.65], [item.reportDescription, 0.55], [item.reportTopics.join(' '), 0.9]];
+  const prepared = {
+    fields: fields.map(([text, weight]): [PreparedField, number] => [prepareField(text), weight]),
+    segments: item.segments.map(compactSearchText),
+  };
+  preparedItems.set(item, prepared);
+  return prepared;
+};
+
+export const prepareSearchItems = (items: readonly SearchItem[]): void => {
+  items.forEach(prepareItem);
 };
 
 export const matchingSegment = (item: SearchItem, query: string): string => {
   if (item.kind !== 'report') return '';
   const normalizedQuery = compactSearchText(query);
   if (!normalizedQuery) return '';
-  return item.segments.find((segment) => compactSearchText(segment).includes(normalizedQuery)) ?? '';
+  const index = prepareItem(item).segments.findIndex((segment) => segment.includes(normalizedQuery));
+  return item.segments[index] ?? '';
 };
 
 const itemScore = (item: SearchItem, query: string, segment: string): number => {
-  const fields: Array<[string, number]> = item.kind === 'report'
-    ? [
-        [item.title, 3.6],
-        [item.reportDescription, 1.1],
-        [item.reportTopics.join(' '), 1.2],
-      ]
-    : [
-        [item.title, 5],
-        [item.topic, 2.2],
-        [item.source, 1.5],
-        [item.why, 1.15],
-        [item.reportTitle, 0.65],
-        [item.reportDescription, 0.55],
-        [item.reportTopics.join(' '), 0.9],
-      ];
-
-  const metadataScore = fields.reduce(
-    (total, [value, weight]) => total + fieldScore(query, value) * weight,
-    0,
+  const compactQuery = compactSearchText(query);
+  const metadataScore = prepareItem(item).fields.reduce(
+    (total, [field, weight]) => total + preparedFieldScore(compactQuery, field) * weight, 0,
   );
   return metadataScore + (item.kind === 'report' && segment ? 3.4 : 0);
 };

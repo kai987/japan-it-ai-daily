@@ -1,13 +1,7 @@
 name: Sync audio to Cloudflare R2
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'public/audio/**'
-      - 'scripts/validate-interview-audio-duration.mjs'
-      - 'package.json'
-      - '.github/workflows/sync-r2-audio.yml'
+  workflow_call:
   workflow_dispatch:
 
 permissions:
@@ -22,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       R2_BUCKET: japan-it-ai-daily-audio
-      R2_PUBLIC_BASE_URL: https://pub-7561025e67be4103ac4bafb331864381.r2.dev
+      R2_PUBLIC_BASE_URL: ${{ vars.PUBLIC_AUDIO_BASE_URL || 'https://pub-7561025e67be4103ac4bafb331864381.r2.dev' }}
       R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
       AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
@@ -37,6 +31,12 @@ jobs:
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify audio text and files
+        run: npm run audio:integrity:check
 
       - name: Ensure ffprobe
         shell: bash
@@ -57,8 +57,8 @@ jobs:
           set -euo pipefail
 
           if [[ -z "${R2_ACCOUNT_ID}" || -z "${AWS_ACCESS_KEY_ID}" || -z "${AWS_SECRET_ACCESS_KEY}" ]]; then
-            echo "::notice::R2 credentials are not configured yet. Add R2_ACCOUNT_ID, R2_ACCESS_KEY_ID and R2_SECRET_ACCESS_KEY as repository Actions secrets; upload skipped."
-            exit 0
+            echo "::error::R2 credentials are required before the website can be published."
+            exit 1
           fi
 
           # Accept the 32-character Account ID, the S3 hostname, or the full HTTPS endpoint.
@@ -80,25 +80,5 @@ jobs:
             --only-show-errors \
             --cache-control "public,max-age=86400"
 
-          local_mp3_count="$(find public/audio -type f -name '*.mp3' | wc -l | tr -d ' ')"
-          remote_mp3_count="$(aws s3 ls "s3://${R2_BUCKET}/" --recursive --endpoint-url "${endpoint}" | awk '$4 ~ /\.mp3$/ { count++ } END { print count + 0 }')"
-
-          echo "Local MP3 count:  ${local_mp3_count}"
-          echo "Remote MP3 count: ${remote_mp3_count}"
-
-          if (( remote_mp3_count < local_mp3_count )); then
-            echo "::error::R2 has fewer MP3 files than the repository after sync."
-            exit 1
-          fi
-
-          probe_path="$(find public/audio -type f -name '*.mp3' -print -quit | sed 's#^public/audio/##')"
-          if [[ -z "${probe_path}" ]]; then
-            echo "::error::No MP3 file found under public/audio/."
-            exit 1
-          fi
-
-          echo "Checking public R2 URL: ${R2_PUBLIC_BASE_URL}/${probe_path}"
-          headers="$(curl -fsS --range 0-0 -o /dev/null -D - "${R2_PUBLIC_BASE_URL}/${probe_path}")"
-          printf '%s\n' "${headers}" | grep -Ei '^(HTTP/|content-type:|content-length:|content-range:|cache-control:)' || true
-
-          echo "R2 audio sync and public-read smoke test succeeded."
+      - name: Verify all public recordings against this commit
+        run: node scripts/verify-audio-integrity.mjs --remote

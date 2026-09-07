@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { basename, join, resolve } from 'node:path';
+import { policy, referenceMatches } from './daily-quality-policy.mjs';
 
 const root = resolve(process.cwd());
 const zhDir = join(root, 'src', 'content', 'daily');
@@ -8,7 +9,7 @@ const args = new Set(process.argv.slice(2));
 
 const fromArg = [...args].find((arg) => arg.startsWith('--from='));
 const dateArg = [...args].find((arg) => arg.startsWith('--date='));
-const minDate = dateArg?.slice(7) || fromArg?.slice(7) || process.env.DAILY_QUALITY_FROM || '2026-09-08';
+const minDate = dateArg?.slice(7) || fromArg?.slice(7) || process.env.DAILY_QUALITY_FROM || policy.from;
 const onlyDate = dateArg?.slice(7) || null;
 
 const positiveNumber = (value, fallback) => {
@@ -76,7 +77,7 @@ const subRanges = (lines, start, end, depth = 3) => {
 const extractArticleSections = (source) => {
   const range = headingRange(source, '1. ');
   if (!range) return [];
-  return subRanges(range.lines, range.start, range.end, 3).slice(0, 5);
+  return subRanges(range.lines, range.start, range.end, 3);
 };
 
 const labelType = (line) => {
@@ -326,7 +327,7 @@ const validateReport = (date, zhSource, jaSource) => {
   return { date, errors, warnings };
 };
 
-const dates = readdirSync(zhDir)
+const dates = [...new Set([...readdirSync(zhDir), ...readdirSync(jaDir)])]
   .filter((name) => /^\d{4}-\d{2}-\d{2}\.md$/.test(name))
   .map((name) => basename(name, '.md'))
   .filter((date) => date >= minDate)
@@ -335,19 +336,24 @@ const dates = readdirSync(zhDir)
 
 if (!dates.length) {
   console.log(`Daily quality gate: no report dates to validate (from ${minDate}).`);
-  process.exit(0);
+  process.exit(1);
 }
 
 let failed = false;
 for (const date of dates) {
   const zhPath = join(zhDir, `${date}.md`);
   const jaPath = join(jaDir, `${date}.md`);
-  if (!existsSync(jaPath)) {
-    console.error(`\n${date}\n  ERROR: missing Japanese report ${jaPath}`);
+  if (!existsSync(zhPath) || !existsSync(jaPath)) {
+    console.error(`\n${date}\n  ERROR: missing bilingual report pair for ${date}`);
     failed = true;
     continue;
   }
   const result = validateReport(date, readFileSync(zhPath, 'utf8'), readFileSync(jaPath, 'utf8'));
+  if (date === policy.referenceDate && referenceMatches(root, ['src/content/daily', 'src/content/daily-ja'])) {
+    const exempt = result.errors.filter((error) => policy.qualityErrors.includes(error));
+    result.errors = result.errors.filter((error) => !policy.qualityErrors.includes(error));
+    exempt.forEach((error) => console.log(`  REFERENCE EXCEPTION (${date}): ${error}`));
+  }
   console.log(`\n${date}: ${result.errors.length ? 'FAIL' : 'PASS'}`);
   result.warnings.forEach((warning) => console.warn(`  WARN: ${warning}`));
   result.errors.forEach((error) => console.error(`  ERROR: ${error}`));

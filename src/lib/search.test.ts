@@ -102,3 +102,16 @@ describe('search ranking regressions', () => {
     expect(results[0]?.id).toBe('report-2026-08-31');
   });
 });
+
+describe('bounded fuzzy search', () => {
+  it('retains typo tolerance for an article-specific product name', () => {
+    const result = searchItems([makeArticle('claude', '2026-09-07', 'Claude Code hooks')], 'Cluade');
+    expect(result[0]?.id).toBe('claude');
+  });
+
+  it('retains exact full-text results for long Japanese queries', () => {
+    const phrase = '非同期処理のエラーハンドリングとアクセス権限を分離して検証する';
+    const result = searchItems([makeReport('2026-09-07', [`背景として${phrase}必要があります。`])], phrase);
+    expect(result[0]?.id).toBe('report-2026-09-07');
+  });
+});

@@ -35,7 +35,7 @@ const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base
 </div>
 
 <script>
-  import { searchItems, type SearchItem, type SearchResult } from '../lib/search';
+  import { prepareSearchItems, searchItems, type SearchItem, type SearchResult } from '../lib/search';
 
   (() => {
     const root = document.querySelector('[data-site-search]');
@@ -64,6 +64,8 @@ const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base
     let currentResults: SearchResult[] = [];
     let activeIndex = -1;
     let renderVersion = 0;
+    let renderedQuery = '';
+    let inputTimer: ReturnType<typeof setTimeout> | undefined;
 
     const loadItems = async (): Promise<SearchItem[]> => {
       if (items) return items;
@@ -73,6 +75,7 @@ const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base
           if (!response.ok) throw new Error(`Search index HTTP ${response.status}`);
           const data: unknown = await response.json();
           items = Array.isArray(data) ? data as SearchItem[] : [];
+          prepareSearchItems(items);
           return items;
         })().catch((error: unknown) => {
           loadPromise = null;
@@ -99,6 +102,8 @@ const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base
     };
 
     const close = (): void => {
+      renderVersion += 1;
+      clearTimeout(inputTimer);
       popover.hidden = true;
       input.setAttribute('aria-expanded', 'false');
       input.removeAttribute('aria-activedescendant');
@@ -157,6 +162,7 @@ const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base
 
       const query = input.value.trim();
       currentResults = searchItems(items ?? [], query);
+      renderedQuery = query;
       activeIndex = -1;
       resultsEl.replaceChildren();
       status.textContent = query ? `${currentResults.length}件の候補` : '最近の記事';
@@ -220,23 +226,38 @@ const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base
       open();
     };
 
-    input.addEventListener('input', () => { void render(); });
+    input.addEventListener('input', (event) => {
+      renderVersion += 1;
+      clearTimeout(inputTimer);
+      if (event instanceof InputEvent && event.isComposing) return;
+      inputTimer = setTimeout(() => { void render(); }, 120);
+    });
+    input.addEventListener('compositionend', () => {
+      clearTimeout(inputTimer);
+      inputTimer = setTimeout(() => { void render(); }, 120);
+    });
     input.addEventListener('focus', () => { void render(); });
     input.addEventListener('keydown', async (event) => {
+      if (event.isComposing) return;
+      if (['ArrowDown', 'ArrowUp', 'Enter'].includes(event.key)) {
+        event.preventDefault();
+        clearTimeout(inputTimer);
+        if (!items || popover.hidden || renderedQuery !== input.value.trim()) {
+          await render();
+          if (document.activeElement !== input || popover.hidden) return;
+        }
+      }
       if (event.key === 'ArrowDown') {
         event.preventDefault();
-        if (!items || popover.hidden) await render();
         activeIndex = currentResults.length ? (activeIndex + 1) % currentResults.length : -1;
         syncActive();
       } else if (event.key === 'ArrowUp') {
         event.preventDefault();
-        if (!items || popover.hidden) await render();
         activeIndex = currentResults.length
           ? (activeIndex <= 0 ? currentResults.length - 1 : activeIndex - 1)
           : -1;
         syncActive();
       } else if (event.key === 'Enter') {
-        if (!items) await render();
         if (!currentResults.length) return;
         event.preventDefault();
         const links = resultsEl.querySelectorAll<HTMLAnchorElement>('.site-search-result');

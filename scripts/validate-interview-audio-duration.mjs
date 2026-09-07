@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { policy, referenceMatches } from './daily-quality-policy.mjs';
 
 const root = resolve(process.cwd());
 const audioRoot = join(root, 'public', 'audio', 'japanese');
@@ -16,7 +17,7 @@ const useLatest = args.includes('--latest');
 const requestedDate = argValue('--date');
 const fromArg = argValue('--from');
 
-const POLICY_FROM = process.env.INTERVIEW_ACTUAL_DURATION_FROM || fromArg || '2026-09-08';
+const POLICY_FROM = process.env.INTERVIEW_ACTUAL_DURATION_FROM || fromArg || policy.from;
 const IDEAL_MIN = Number(process.env.INTERVIEW_DURATION_IDEAL_MIN || '26');
 const IDEAL_MAX = Number(process.env.INTERVIEW_DURATION_IDEAL_MAX || '34');
 const HARD_MIN = Number(process.env.INTERVIEW_DURATION_HARD_MIN || '22');
@@ -68,7 +69,9 @@ const answerAudioFiles = (dir) => readdirSync(dir)
   .filter((name) => /^interview-answer-\d+\.mp3$/.test(name))
   .sort();
 
-let dates = dateDirectories();
+const reportDir = join(root, 'src/content/daily');
+const reportDates = existsSync(reportDir) ? readdirSync(reportDir).filter((name) => /^\d{4}-\d{2}-\d{2}\.md$/.test(name)).map((name) => name.slice(0, 10)) : [];
+let dates = [...new Set([...dateDirectories(), ...reportDates])].sort();
 if (requestedDate) dates = dates.filter((date) => date === requestedDate);
 else if (generateAll) {
   // Keep all dates so legacy manifests can be backfilled without enforcing old content.
@@ -79,7 +82,7 @@ if (fromArg) dates = dates.filter((date) => date >= fromArg);
 
 if (!dates.length) {
   console.log(`Interview audio duration: no audio date directories to check${fromArg ? ` (from ${fromArg})` : ''}.`);
-  process.exit(0);
+  process.exit(1);
 }
 if (spawnSync('ffprobe', ['-version'], { stdio: 'ignore' }).status !== 0) {
   fail('找不到 ffprobe。安装 ffmpeg 后会同时提供 ffprobe。');
@@ -93,10 +96,10 @@ for (const date of dates) {
   const dir = join(audioRoot, date);
   const enforce = date >= POLICY_FROM;
   const manifestPath = join(dir, 'interview-manifest.json');
-  const diskAnswers = answerAudioFiles(dir);
+  const diskAnswers = existsSync(dir) ? answerAudioFiles(dir) : [];
 
   if (!existsSync(manifestPath)) {
-    if (enforce && diskAnswers.length) {
+    if (enforce) {
       console.error(`\n${date}: FAIL`);
       console.error(`  ERROR: found ${diskAnswers.length} interview answer MP3 file(s) but interview-manifest.json is missing`);
       failed = true;
@@ -108,6 +111,7 @@ for (const date of dates) {
 
   const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
   const next = structuredClone(manifest);
+  const reference = date === policy.referenceDate && referenceMatches(root, ['public/audio/japanese']);
   const problems = [];
   const warnings = [];
 
@@ -117,6 +121,7 @@ for (const date of dates) {
     .sort();
 
   if (enforce) {
+    if (manifestAnswers.length !== 5) problems.push(`expected five answer recordings, found ${manifestAnswers.length}`);
     for (const file of diskAnswers) {
       if (!manifestAnswers.includes(file)) problems.push(`orphan answer audio not listed in manifest: ${file}`);
     }
@@ -146,7 +151,7 @@ for (const date of dates) {
     const nextItem = { ...item, durationSeconds: duration };
     if (kind === 'answer') {
       const status = durationStatus(duration);
-      const expectedStatus = enforce ? status : 'legacy';
+      const expectedStatus = enforce && !reference ? status : 'legacy';
       nextItem.durationStatus = expectedStatus;
       if (enforce && status === 'fail') {
         problems.push(`answer ${item.index}: actual ${duration.toFixed(2)}s is outside hard range ${HARD_MIN}–${HARD_MAX}s`);

@@ -24,6 +24,7 @@ const labels = locale === 'ja'
   aria-label={labels.nav}
   data-archive-pagination
   data-page-size={pageSize}
+  data-locale={locale}
   hidden
 >
   <button class="pagination-nav archive-pagination-prev" type="button">{labels.prev}</button>
@@ -75,7 +76,7 @@ const labels = locale === 'ja'
     };
 
     const scrollToList = () => {
-      list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      list.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
     };
 
     const render = (options: { scroll?: boolean; historyMode?: 'replace' | 'push' | 'none' } = {}) => {
@@ -92,6 +93,7 @@ const labels = locale === 'ja'
       if (next instanceof HTMLButtonElement) next.disabled = currentPage >= totalPages;
 
       if (pageContainer instanceof HTMLElement) {
+        const restoreFocus = pageContainer.contains(document.activeElement);
         pageContainer.replaceChildren();
         let previousPage = 0;
         pageNumbers(currentPage).forEach((page) => {
@@ -107,7 +109,7 @@ const labels = locale === 'ja'
           button.type = 'button';
           button.className = 'pagination-page';
           button.textContent = String(page);
-          button.setAttribute('aria-label', `Page ${page}`);
+          button.setAttribute('aria-label', pagination.dataset.locale === 'ja' ? `${page}ページ` : `第 ${page} 页`);
           if (page === currentPage) button.setAttribute('aria-current', 'page');
           button.addEventListener('click', () => {
             if (page === currentPage) return;
@@ -117,6 +119,7 @@ const labels = locale === 'ja'
           pageContainer.appendChild(button);
           previousPage = page;
         });
+        if (restoreFocus) pageContainer.querySelector<HTMLButtonElement>('[aria-current="page"]')?.focus({ preventScroll: true });
       }
 
       if (status instanceof HTMLElement) {

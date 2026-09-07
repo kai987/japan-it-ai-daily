@@ -16,7 +16,7 @@
     "quality:check:latest": "node scripts/validate-daily-quality.mjs --date=$(date +%F)",
     "audio:check": "node --check scripts/audio-cache.mjs && node --check scripts/generate-japanese-audio.mjs && node --check scripts/generate-interview-audio.mjs && node --check scripts/validate-interview-audio-duration.mjs && node --check scripts/strip-dist-audio.mjs && node --check scripts/validate-daily-quality.mjs",
     "audio:strip-dist": "node scripts/strip-dist-audio.mjs",
-    "audio:duration:check": "node scripts/validate-interview-audio-duration.mjs --from 2026-09-08",
+    "audio:duration:check": "node scripts/validate-interview-audio-duration.mjs --from 2026-08-12",
     "audio:duration:write:latest": "node scripts/validate-interview-audio-duration.mjs --latest --write",
     "audio:duration:backfill": "node scripts/validate-interview-audio-duration.mjs --all --write",
     "audio:generate": "node scripts/generate-japanese-audio.mjs && node scripts/generate-interview-audio.mjs && node scripts/validate-interview-audio-duration.mjs --latest --write",
@@ -25,7 +25,9 @@
     "audio:generate:all:force": "node scripts/generate-japanese-audio.mjs --all --force && node scripts/generate-interview-audio.mjs --all --force && node scripts/validate-interview-audio-duration.mjs --all --write",
     "audio:generate:interview:latest": "node scripts/generate-interview-audio.mjs --latest && node scripts/validate-interview-audio-duration.mjs --latest --write",
     "audio:generate:interview:all": "node scripts/generate-interview-audio.mjs --all && node scripts/validate-interview-audio-duration.mjs --all --write",
-    "audio:generate:interview:all:force": "node scripts/generate-interview-audio.mjs --all --force && node scripts/validate-interview-audio-duration.mjs --all --write"
+    "audio:generate:interview:all:force": "node scripts/generate-interview-audio.mjs --all --force && node scripts/validate-interview-audio-duration.mjs --all --write",
+    "audio:integrity:check": "node scripts/verify-audio-integrity.mjs",
+    "test:browser": "playwright test"
   },
   "dependencies": {
     "@astrojs/rss": "4.0.19",
@@ -33,7 +35,9 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
+    "@playwright/test": "1.63.0",
     "typescript": "5.9.3",
-    "vitest": "4.1.11"
+    "vitest": "4.1.11",
+    "yaml": "2.9.0"
   }
 }
