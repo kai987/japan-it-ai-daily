@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-07",
+  "generatedAt": "2026-09-07T14:08:28.603Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "実態",
+      "reading": "じったい",
+      "exampleJa": "表面的なDashboardだけでなく、Assetの利用実態を把握します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "8c94708e98a972895a09fe2f4e9f067ce1d407c1ed19caf2a46485b554df08a4",
+      "example": "example-01.mp3",
+      "exampleHash": "391340a3ac7dea7702ff285807780fd91fd34b6fdb764f2a11ce087fc34b353c"
+    },
+    {
+      "index": 2,
+      "term": "死角",
+      "reading": "しかく",
+      "exampleJa": "古いIDがSecurityの死角にならないよう定期的に棚卸しします。",
+      "word": "vocab-02.mp3",
+      "wordHash": "b48249249912c0ce8e74aff82b5b554bb9e40f48f573e79381cc0c4aeea9a285",
+      "example": "example-02.mp3",
+      "exampleHash": "6228e930e95c5b47d57ad5b9e59235d40f426055d5b3d5e055459a8ef38381c5"
+    },
+    {
+      "index": 3,
+      "term": "足掛かり",
+      "reading": "あしがかり",
+      "exampleJa": "未管理のCredentialが侵入の足掛かりになる可能性があります。",
+      "word": "vocab-03.mp3",
+      "wordHash": "62b00e8689ac8d27bb4ddc4643c53c9c463156f6a0683671a479f8bba4ff8b98",
+      "example": "example-03.mp3",
+      "exampleHash": "2a1ac43d0bf2b0ed84376b2a3c64c86c4ffc260ecfeba617b08b800974766bae"
+    },
+    {
+      "index": 4,
+      "term": "要件",
+      "reading": "ようけん",
+      "exampleJa": "Modelを選ぶ前にData Retentionの要件を明確にします。",
+      "word": "vocab-04.mp3",
+      "wordHash": "4cbc0da9a13045ec1fa6c70110e4e85f79b6889cb159d5e599463497aeea6573",
+      "example": "example-04.mp3",
+      "exampleHash": "85b3eac97f5ac5ace34c9e982e485ba8356ded4dbdadafa8277fc2eec9bfc547"
+    },
+    {
+      "index": 5,
+      "term": "判断材料",
+      "reading": "はんだんざいりょう",
+      "exampleJa": "一回のBenchmarkは最終結論ではなく判断材料の一つです。",
+      "word": "vocab-05.mp3",
+      "wordHash": "98cdb6f5862859acf491b2bbd44995f754139e691fb9cb79cc76c8b9ff33c6b2",
+      "example": "example-05.mp3",
+      "exampleHash": "364c740419f248913d5c37fd013eff10898a88e9cb422221bdb5990ec69fabcd"
+    },
+    {
+      "index": 6,
+      "term": "互換性",
+      "reading": "ごかんせい",
+      "exampleJa": "既存のNode.js APIとの互換性を事前に確認します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "8492a94bd50c4a1803daedf845850c21ed5fc00a011cb6510ebf39290313ff58",
+      "example": "example-06.mp3",
+      "exampleHash": "c66ed536dd25c8507054be0460b76d1ac4bd9362d06b4ec46b1f81faf0a6a4d8"
+    },
+    {
+      "index": 7,
+      "term": "放置する",
+      "reading": "ほうちする",
+      "exampleJa": "使っていないAssetでも脆弱性を放置しないことが重要です。",
+      "word": "vocab-07.mp3",
+      "wordHash": "84ad4d43754a15734abcb8c04cd1220e5ba99df4b300d77caff77435547f0997",
+      "example": "example-07.mp3",
+      "exampleHash": "b774a777707029360bb40466f57f443962eba56a69d8114dbb36024c1370e265"
+    },
+    {
+      "index": 8,
+      "term": "陥る",
+      "reading": "おちいる",
+      "exampleJa": "Visibilityが不足すると管理不能な状態に陥りかねません。",
+      "word": "vocab-08.mp3",
+      "wordHash": "f06731713b3d1153f5a4885dae5bd57f76ae6827af9b2075f89e875cab0ba9f4",
+      "example": "example-08.mp3",
+      "exampleHash": "e439622f77de7bfd910ad6c0afaec183f02979de92675e9a726e7dd934f6810d"
+    },
+    {
+      "index": 9,
+      "term": "突く",
+      "reading": "つく",
+      "exampleJa": "攻撃者は設定ミスの隙を突いて侵入を試みます。",
+      "word": "vocab-09.mp3",
+      "wordHash": "509343c003d04216d73cc97500057c77c276ed3de218527032238dc07899068a",
+      "example": "example-09.mp3",
+      "exampleHash": "85483e744e6136227b3a83f37d365848710fee0a2f9240c3ea6d6c1284abb533"
+    },
+    {
+      "index": 10,
+      "term": "見込む",
+      "reading": "みこむ",
+      "exampleJa": "Cost削減を見込めても、自社Workloadで再計測します。",
+      "word": "vocab-10.mp3",
+      "wordHash": "cda93963d0c5d4e2e5ffedafe08f9c2dd3eeafd5efce2241ed9f53a23bb05a06",
+      "example": "example-10.mp3",
+      "exampleHash": "ddd6c33699e3d56b150a5717e42393367bfa43b8a11419b0c47544061aae7304"
+    },
+    {
+      "index": 11,
+      "term": "両立する",
+      "reading": "りょうりつする",
+      "exampleJa": "高い推論性能とData Governanceを両立できる構成を検討します。",
+      "word": "vocab-11.mp3",
+      "wordHash": "7f594a3745afb636614edf7b1d853a1e64ae89408ee7b7b99bbcec7f7e2f7ed7",
+      "example": "example-11.mp3",
+      "exampleHash": "f445958aa35853a83e097d38dd24b20eaf6f67923f4a3a6c5169d9206c9c08bb"
+    },
+    {
+      "index": 12,
+      "term": "抑制する",
+      "reading": "よくせいする",
+      "exampleJa": "Idle Resourceを減らし固定Costの増加を抑制します。",
+      "word": "vocab-12.mp3",
+      "wordHash": "0aa9eddf8d6abbfb91529e697d8e33ce2fb307f7523e81d15480322642a6b85c",
+      "example": "example-12.mp3",
+      "exampleHash": "0c472af929b64a42c4a497b14c1d9440022ba6f2fd2716226f4f17b84ce62c77"
+    },
+    {
+      "index": 13,
+      "term": "拡張する",
+      "reading": "かくちょうする",
+      "exampleJa": "Data量が増えても再設計せずに拡張できるか確認します。",
+      "word": "vocab-13.mp3",
+      "wordHash": "ad5d58c6bb0d5db3adc0ef0e1aae5b5fc2ce15ee9e1bcc507b3258371b6afe58",
+      "example": "example-13.mp3",
+      "exampleHash": "110d5f42e0816c9f6e0855aeed7730aec4f49c56d23687ba3c8828be6b3d547a"
+    },
+    {
+      "index": 14,
+      "term": "適合する",
+      "reading": "てきごうする",
+      "exampleJa": "候補Serviceが自社のTransaction Patternに適合するか検証します。",
+      "word": "vocab-14.mp3",
+      "wordHash": "74c1e354ad15d437cb8ea07cffc9acd519ba220e1ea157e957df43b8350ee7a2",
+      "example": "example-14.mp3",
+      "exampleHash": "88d8a94cd78c263494016c0b368d09e744eff0019d42c20171a76fb55ee4ca67"
+    },
+    {
+      "index": 15,
+      "term": "包括的な",
+      "reading": "ほうかつてきな",
+      "exampleJa": "Third-partyまで含む包括的なAsset Inventoryが必要です。",
+      "word": "vocab-15.mp3",
+      "wordHash": "c9fa0ba24a2f98070bc38842736f8f122762fdc9e17fd01e2905d1080ea6cf2c",
+      "example": "example-15.mp3",
+      "exampleHash": "0aab866fa9946bae710a7fe4420e378e47c9e18f1865395c2c59711d5e6d0aa6"
+    },
+    {
+      "index": 16,
+      "term": "間欠的な",
+      "reading": "かんけつてきな",
+      "exampleJa": "間欠的なBatch処理ではIdle Costも重要な比較軸です。",
+      "word": "vocab-16.mp3",
+      "wordHash": "2b7c40f13b2cb6d5c31b7890ca79e740a8b4133b35a15ff97f2cdff3f145a1c4",
+      "example": "example-16.mp3",
+      "exampleHash": "4c8f2d299cdfeec6cf4faee8445e6db64a8af404e30af1643f38b1a5ac52f48a"
+    },
+    {
+      "index": 17,
+      "term": "不十分な",
+      "reading": "ふじゅうぶんな",
+      "exampleJa": "Assetの可視性が不十分なままではControlも不完全になります。",
+      "word": "vocab-17.mp3",
+      "wordHash": "c88092972e1541d138aa2ac0050b696f7d17521fe2f84933ff970398dea58d43",
+      "example": "example-17.mp3",
+      "exampleHash": "7ef769e9dd67d840e929b53c11e0da715a8d4809eedd080503327bf09cc1afd1"
+    },
+    {
+      "index": 18,
+      "term": "ただし",
+      "reading": "ただし",
+      "exampleJa": "Latencyは改善しました。ただし、一回の測定なので一般化できません。",
+      "word": "vocab-18.mp3",
+      "wordHash": "59966a98146429a6a802b8f79904bb67077ff9ef8bc2eb902af03d214811a33c",
+      "example": "example-18.mp3",
+      "exampleHash": "23397dd53a505743ac5c6839ce8f87ab0fbbe671dee2370d8c6bd640ae2cf6b3"
+    },
+    {
+      "index": 19,
+      "term": "あくまで",
+      "reading": "あくまで",
+      "exampleJa": "87％という数字はあくまで特定条件での比較結果です。",
+      "word": "vocab-19.mp3",
+      "wordHash": "dd2cb5ea4b0cf370b5270eab5f4d02980eca680d5dcb1c4361e883b00bc68f83",
+      "example": "example-19.mp3",
+      "exampleHash": "15e371636cf486f33b54f0c50c0e67274953cf06b20e01cd4a876d9f74f799dc"
+    },
+    {
+      "index": 20,
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "AOTはCold Startを改善できる一方で、Compatibilityが課題になります。",
+      "word": "vocab-20.mp3",
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "310bf665ead8df05baedb70583548bec8a3c73287fc4bb7d510c0f7cb3e4e344"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "AI攻撃の影響は新しいThreatにとどまらず、既存Assetの探索速度にも及びます。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "33989f5d7083c17d8d4c9a8372bce3c8aa8f12d2668585847584f1a1074727ed"
+    },
+    {
+      "index": 2,
+      "pattern": "～に際して",
+      "exampleJa": "Frontier Modelの導入に際して、Data Retentionを先に確認します。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "0613b660cdcceefdd9a109b9367f248d039235f73cb6ccdd760a6ead2efa0845"
+    },
+    {
+      "index": 3,
+      "pattern": "～に即して",
+      "exampleJa": "料金表ではなく、実際のWorkloadに即してDatabaseを選定します。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "1e1f9ef7d2b448ce08ff5b2a764bc167f772126be6148100a50c1aa5afbb87d8"
+    },
+    {
+      "index": 4,
+      "pattern": "～とは限らない",
+      "exampleJa": "一回Latencyが低かったからといって、常に高速だとは限りません。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "4890632a1ff8590890451279a0df86ed546bf8be03ccf5bf2b544dfd50ba92ae"
+    },
+    {
+      "index": 5,
+      "pattern": "～を踏まえて",
+      "exampleJa": "Compatibilityの制約を踏まえて、AOT採用範囲を決めます。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "8caca24762037ab00cfa2a5ddf021b0f3b25a5bc402d514e35272b0b5b838e87"
+    },
+    {
+      "index": 6,
+      "pattern": "～に伴い",
+      "exampleJa": "Agentの利用拡大に伴い、Telemetryの統一が重要になります。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "7d2dcf1b9ba65c4b7127b39bee90ef34a8ae9e637fe702f8500ce9163e66e2ed"
+    },
+    {
+      "index": 7,
+      "pattern": "～かねない",
+      "exampleJa": "古いIDを放置すると、攻撃の足掛かりになりかねません。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "321d97f97154ab5e69025088406c082129e9c0752544bd7fa30c38bce33ca812"
+    }
+  ]
+}

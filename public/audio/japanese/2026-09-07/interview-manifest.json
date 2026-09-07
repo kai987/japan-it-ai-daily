@@ -1,0 +1,150 @@
+{
+  "date": "2026-09-07",
+  "generatedAt": "2026-09-07T14:09:23.903Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AI攻撃時代に、Asset Managementをどのように見直しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "60104e0f4109e8ebc0b6149ebf507568e5a9eb258db7cf5143e22c8d246c6194",
+      "durationSeconds": 5.13
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "重要Assetだけを守るのではなく、Asset Inventoryを継続更新し、古いIDやThird-partyまでDependencyを可視化します。EY調査では36％がVulnerability Zoneにあり、AIは見落とされた入口を高速探索できます。ただし36％は調査値なので自社にそのまま当てはめず、OwnerとSecurity Coverageを棚卸しして死角を減らします。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "1ebbb667f745f0dbbaa12602e583d01efcb24a1945b32f94c89c2a1633c913c9",
+      "durationSeconds": 27.314,
+      "durationStatus": "legacy"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "新しいFrontier Modelを企業導入するとき、性能より先に何を確認しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "7925d6fff6faeafa66b7916fadb7c916368b89f7c31cd1bef6c418cfe6166df7",
+      "durationSeconds": 6.408
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "まずData Retentionと利用条件です。Fable 5.1の記事では、Retention設定前はBedrockでModelを利用できず、EFSはCustomer-managed Encryptionなどを組み合わせています。単発実測ではLatencyが約22.6％低下しましたが一般化せず、Complianceを通した後に複数回の中央値でQualityとCostを比較します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "994cd49f5c20a2836da70c27fb4d93c9cc5c701c50228f1365e7da4a9c179def",
+      "durationSeconds": 25.682,
+      "durationStatus": "legacy"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "Serverless Databaseの選定で、料金表以外に何を見ますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "af82ec1a7706261af604a359d6f175300a8ed947f743d396ee6b8f4532f3b997",
+      "durationSeconds": 4.922
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "料金表より先に負荷の形を見ます。JDDでは夜間に約1800 ECS Taskが並列で、日中はRead中心でした。Aurora Serverlessを最小0.5 ACUで維持するより、Idle時にほぼゼロまで縮むAurora DSQLが適合し、特定条件でCostを約87％削減しています。同一Recordの高頻度更新が少ない点も採用条件です。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "a5551a2892ebf3932bc9ec98d70a7df7b24e0c979fb475221fef358b404d7b0e",
+      "durationSeconds": 26.771,
+      "durationStatus": "legacy"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "OpenTelemetryを採用するArchitecture上の価値は何ですか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "6d278562758158e9daa07d0a50e8976448327d66be0686506e709d7b007f198d",
+      "durationSeconds": 4.799
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "InstrumentationとBackendを分離できる点です。Grafana LabsはMetricsのMimir、LogsのLoki、TraceのTempoを持ちながら、Prometheus互換性とOpenTelemetryを重視しています。ApplicationをVendor固有SDKに固定せず、Metrics・Logs・Tracesを共通方式で収集すれば、Backendの併用や移行Costを抑えられます。ただし運用設計は別途必要です。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "d737e4d076f3444ed9804faa87556e40312d4086c1fd8a4af5bfeaab5605a7c5",
+      "durationSeconds": 27.979,
+      "durationStatus": "legacy"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "JavaScriptをAOTでNativeやWASM化する技術を本番採用するとき、何を確認しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "1c5f74930331afc30a46fa62bb55c869c16e7818ba2e1d78b9b9ee0c194e5040",
+      "durationSeconds": 7.694
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "Binary SizeやCold Startだけで決めません。PorfforはJavaScript / TypeScriptをAOTしてC経由でNativeやWASMを生成し、Project側は最大約1/50のBinary SizeやSub-1msのCold Startを示しています。ただしAlpha段階でNode Compatibilityが課題なので、実ApplicationのDependency、Debugging、Build Pipelineまで検証します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "a95ea10a2927fdab64ac454a2b465a6b6d9326699349594f8e44617d170a42fd",
+      "durationSeconds": 27.804,
+      "durationStatus": "legacy"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "AI攻撃時代にAsset Inventoryが重要になる理由は何ですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "d86dfc7c95ffcde52e4192876978b78d80d60437e3bed1ff08e0ffaf9931e9fb",
+      "durationSeconds": 5.27
+    },
+    {
+      "index": 2,
+      "text": "Enterprise LLMの採用で、Benchmarkより前に確認すべきことは何ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "6d6744be4f16424cf6a102f7fc4def2973bdfce153ee8dd19fb2a5debca5d7fd",
+      "durationSeconds": 6.219
+    },
+    {
+      "index": 3,
+      "text": "「Serverless」という名前だけでDatabase Costを判断できないのはなぜですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "9ab5454fcbb57711a74d031e8120deb86b309c636b8b80b21a20601d05c32de7",
+      "durationSeconds": 5.508
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-09-08",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-07T14:09:24.414Z"
+}
