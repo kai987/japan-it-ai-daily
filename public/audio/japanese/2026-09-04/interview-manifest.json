@@ -1,6 +1,6 @@
 {
   "date": "2026-09-04",
-  "generatedAt": "2026-09-04T09:58:15.758Z",
+  "generatedAt": "2026-09-07T13:27:49.197Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -27,92 +27,124 @@
     {
       "index": 1,
       "type": "question",
-      "text": "AIエージェントのIdentityを、人間のAccountや共有Service Accountと同じように管理してよいですか。",
+      "text": "AIエージェントの所在を把握した後、何を管理しますか。",
       "audio": "interview-question-01.mp3",
-      "audioHash": "1e54018cdb8f594044a555065dad2308439292f8e975551e0e5e19b20ec7f5e3"
+      "audioHash": "50486a7e406292574b940eedac33d8366e77141a8a9881015ae1e1cf8a300f7a",
+      "durationSeconds": 4.422
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "接続先と、実行できる操作を管理します。Oktaの調査では、所在が見えても約八割が過剰権限を心配しています。SSOやMFAは入口の保護で、下流のツール操作まで認めるものではありません。Agentごとに責任者と利用範囲を決め、不要な権限を外します。ただし棚卸しだけで終えず、不正な操作を見つけたときに、誰がいつアクセスを止められるか確認します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "d5c1f60358acd8c093cc899c2ba65413439960bf16bc779654bcad77577ca3a2",
+      "durationSeconds": 29.012,
+      "durationStatus": "ideal"
     },
     {
       "index": 2,
       "type": "question",
-      "text": "同じように扱うのは危険だと思います。AI Agentは長時間動作し、ToolやDataへのAccess範囲も動的に変わるため、AgentごとにOwner、Purpose、Permissionを持つ独立したIdentityとして登録する必要があります。また、異常を検知した場合に数分以内でAccessをRevokeできる仕組みと、Tool CallをAuditできる状態が重要だと考えています。",
+      "text": "複数利用者のAIメモリを、どう分離しますか。",
       "audio": "interview-question-02.mp3",
-      "audioHash": "844e14a744ad45177adb7fc030415a51e0f67be1c5e2817696af6d35cdc52d9a"
+      "audioHash": "50690e5a98b38d1ac3538fcb497224990fb8bcd7bd54704c0859b14efafc4031",
+      "durationSeconds": 3.691
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "認証した利用者と、読める記憶を結び付けます。AgentCore Memoryでは、JWTの情報からnamespaceを決め、Cedarで操作を制限できます。アプリが毎回検索条件を付ける方法より、共通の境界で確認しやすくなります。ただしGatewayを通らない経路も確認が必要です。別の利用者の記憶や、許可していない操作を要求して、正しく拒否されることを確かめます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "96d94f3e9758ff919ddea8db879753c0aa9dca0ff82a9342c77a54babb5a7a4c",
+      "durationSeconds": 27.773,
+      "durationStatus": "ideal"
     },
     {
       "index": 3,
       "type": "question",
-      "text": "マルチテナントのAI Agentで、Memoryの情報漏えいをどう防ぎますか。",
+      "text": "開発チームごとに、AIの既定モデルを変えるならどう管理しますか。",
       "audio": "interview-question-03.mp3",
-      "audioHash": "f03680b72c1da3222139795ecfac71df18ded032f81aec888b962859496d2e1c"
+      "audioHash": "70f8c6e4f1c7c0f9cf1af01d959d808cb996238601bde5ade9fb2bf300776553",
+      "durationSeconds": 5.189
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "全社の標準と、チームの例外を分けます。Copilotではmodelを上書き可能にし、team-mappings.jsonで所属に応じた設定を渡せます。対象外の利用者は全社の既定値を継承します。ただしこれは新しい会話の初期値で、他モデルの禁止とは別です。チームを移った場合も含め、アプリ、CLI、VS Codeで期待したモデルが選ばれるかを確かめます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "c69aa5bd1644b676cdd3ff5b4c7723c1b1d9c3bff6f3be57d0a5b7e0c5bbd415",
+      "durationSeconds": 27.256,
+      "durationStatus": "ideal"
     },
     {
       "index": 4,
       "type": "question",
-      "text": "User IDやTenant IDをLLMに生成させず、認証済みJWTのClaimから取得することが重要です。そのIdentityをPolicy Engineへ渡し、Memory Namespaceと操作権限を決定的に制御します。Application CodeだけにFilter Logicを持たせず、Infrastructure Layerでも強制することで、Prompt Injectionや実装ミスによる越境Accessを防ぎやすくなります。",
+      "text": "AIが分析するデータ基盤で、DBの速度以外に何を整えますか。",
       "audio": "interview-question-04.mp3",
-      "audioHash": "457b0a09155893a6b58e249e60faa9f731c3cef8ca3be8d074a3139550ff79f8"
+      "audioHash": "e0c504d5dfeb70d8ed13133f766d26f92ccee9f886cd3e1fe2a64e3eb02e5205",
+      "durationSeconds": 5.62
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "データの意味と、利用範囲を整えます。ClickHouseの事例では、dbtの表や列の説明を辞書にし、結合関係をSkillへまとめています。Langfuseで実行を観測し、不足情報を基盤へ戻す流れです。ただし高速なSQLでも、集計の粒度が違えば答えは誤ります。生成したSQLを既知の値と比べ、MCP経由でも利用者の権限内で読んでいるかを確かめます。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "ecac49a0164948534583100190f1fd60605c59467479941ac11cae510e4395e7",
+      "durationSeconds": 28.649,
+      "durationStatus": "ideal"
     },
     {
       "index": 5,
       "type": "question",
-      "text": "Coding AgentのModel選択をDeveloper個人に任せず、組織で管理するメリットは何ですか。",
+      "text": "同じAIを複数の窓口へ公開するとき、何を共通化しますか。",
       "audio": "interview-question-05.mp3",
-      "audioHash": "1fd6519acecb2b8ecfdfaee92641f67c90ad80e9c6272bd0ba8d43c3be26a2ab"
+      "audioHash": "1cc7889f5916455b5cb00211dcc6455f1412ff5c783d9256a5572050999f1a19",
+      "durationSeconds": 5.488
     },
     {
-      "index": 6,
-      "type": "question",
-      "text": "ModelによってQuality、Cost、Data Policy、利用可能なCapabilityが異なるため、組織としてApproved Modelを定義する価値があると思います。全社Defaultを設定しつつ、必要なTeamだけ別ModelへOverrideできるようにすると、Governanceと柔軟性を両立できます。変更後はTask Success RateやCostを継続的に評価する必要があります。",
-      "audio": "interview-question-06.mp3",
-      "audioHash": "16347813e2ff2aa9fd7ce3d3d4b5d7f29260defcbbf3f5fcbd468f5dea1e138f"
-    },
-    {
-      "index": 7,
-      "type": "question",
-      "text": "AI AgentがData Platformを利用すると、従来のApplicationと何が違いますか。",
-      "audio": "interview-question-07.mp3",
-      "audioHash": "3267583b0251240d63fa96c1dbbfd751160dfa734286b760910d0a0f4a3b0170"
-    },
-    {
-      "index": 8,
-      "type": "question",
-      "text": "Agentは自然言語からQueryを動的に生成し、一つのTaskで数十から数百のQueryを並列実行する可能性があります。そのため事前にAccess PatternやFrequencyを予測しにくくなります。Latency、Concurrency、Costを同時に監視し、必要なDataだけを高速に読める設計と、AgentごとのQuery Observabilityが重要だと考えています。",
-      "audio": "interview-question-08.mp3",
-      "audioHash": "2b372c9f0f502025c78bfc4f287cad955f7f50dc73ed82371f684b6d82bd725e"
-    },
-    {
-      "index": 9,
-      "type": "question",
-      "text": "同じAI AgentをWeb、Slack、MCP、A2Aから利用する場合、どのように設計しますか。",
-      "audio": "interview-question-09.mp3",
-      "audioHash": "25fc9b0f7d8fdfb4bbea2d97304c5dc0c860dbe0699d7052a2bb13c046a08fc1"
-    },
-    {
-      "index": 10,
-      "type": "question",
-      "text": "AgentのBusiness LogicとChannel固有のProtocol変換を分離します。Core側でSessionとWorkflowを管理し、TelegramやMCP、A2AなどはAdapterとして入出力を変換します。これにより同じAgent Logicを再利用でき、Channel追加時にBusiness Logicを複製せずに済むため、Testと保守もしやすくなると思います。",
-      "audio": "interview-question-10.mp3",
-      "audioHash": "a6bd7a7a6c1e84f10d4011310a13d782bd2b24c9542e14db7de819cd7abbe3b9"
+      "index": 5,
+      "type": "answer",
+      "text": "Agent本体を共通にし、入口の変換を分けます。Agent Frameworkのchannelsは、ResponsesやTelegram、MCPへの入出力を変換します。ただし認証とsessionの対応付けはアプリ側です。同じ利用者なら会話を続けられますが、別の人の履歴を結び付けてはいけません。利用者の確認、同時更新、保存先を決め、窓口を変えても正しい履歴が見えるか試します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "f87f0ad99f6eb83ba634dff5a35a5bdc1d94824c3c28b14305d2393db42364ce",
+      "durationSeconds": 29.261,
+      "durationStatus": "ideal"
     }
   ],
   "review": [
     {
       "index": 1,
-      "text": "AI Agentを独立したIdentityとして管理するメリットは何ですか。",
+      "text": "可視性と、認証と、認可はどう違いますか。",
       "audio": "review-question-01.mp3",
-      "audioHash": "e6a034664a03b2add2d64efdd9e9adb4d0c62a556c773459ad88c04de5078580"
+      "audioHash": "000a3de5eb08dff1af2c8594bb51adc1ec98451035d8b9e0abe5fcb5a1566406",
+      "durationSeconds": 4.109
     },
     {
       "index": 2,
-      "text": "Multi-tenant Agent Memoryで情報漏えいを防ぐには何が必要ですか。",
+      "text": "既定モデルの設定で、何が自動的には決まりませんか。",
       "audio": "review-question-02.mp3",
-      "audioHash": "1529a13d7583ad097f0315aa60cd99c0b09c49c0133165d7428049325cf0d7f4"
+      "audioHash": "82334b8d484b63a8f22b083d7a0e3f9d8f65629746c3759c64f3d0b6a6e837be",
+      "durationSeconds": 4.608
     },
     {
       "index": 3,
-      "text": "AI Agent時代のData Platformで、従来より重要になる指標は何ですか。",
+      "text": "データ基盤やchannelを共有するとき、何を分離しますか。",
       "audio": "review-question-03.mp3",
-      "audioHash": "7a6db32fd3e0051ca90f2c8fb939e4a58281627493526849143e5c8f783e1706"
+      "audioHash": "6f5da1ea863ca0060a854d97c9c6d41b403f3b9e7c5792a477d621aaec5e036b",
+      "durationSeconds": 4.852
     }
-  ]
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-13",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-07T13:28:01.668Z"
 }

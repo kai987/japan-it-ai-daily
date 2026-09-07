@@ -1,6 +1,6 @@
 {
   "date": "2026-09-03",
-  "generatedAt": "2026-09-03T13:10:27.307Z",
+  "generatedAt": "2026-09-07T13:21:08.351Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -27,92 +27,124 @@
     {
       "index": 1,
       "type": "question",
-      "text": "ローカルで動くCoding Agentを安全に利用するために、どのような設計が必要ですか。",
+      "text": "秘密情報をGitへ入れなければ、AI開発環境は安全ですか。",
       "audio": "interview-question-01.mp3",
-      "audioHash": "2bc1b134e90709ccf1d5017b4d30f74c00e4e4258f8eea412d565718410d574b"
+      "audioHash": "ed72a7ad2fc32a2820cc2820797a38ec3a135c121718c363231d6f77151a154d",
+      "durationSeconds": 5.339
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "読み取り経路を確認します。Nxの事件では、汚染されたパッケージが認証済みのAI CLIを使い、端末内の情報探索をさせました。gitignoreではこのアクセスを止められません。Agentへ渡す範囲をworkspaceに絞り、認証情報は別に管理します。ただし環境変数へ移すだけでは同じ処理から読める場合があります。更新後は、許可と拒否の記録も見ます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "8c09f89a7c251401429b6972ce6a331da7dfe7e33f5b0a7a8484b449bd53f633",
+      "durationSeconds": 28.167,
+      "durationStatus": "ideal"
     },
     {
       "index": 2,
       "type": "question",
-      "text": "Coding Agentは開発者と同じFileやCredentialへアクセスできる場合があるため、通常のChat Toolではなく特権的なAutomation Toolとして扱う必要があると思います。Home Directory全体ではなく専用Workspaceだけを渡し、Secretは動的注入にします。またHost環境ではPermission確認をSkipせず、Dependency追加後のNetworkやFile Access Logも確認することが重要です。",
+      "text": "運用AIの調査結果を、自動修復へつなぐには何が必要ですか。",
       "audio": "interview-question-02.mp3",
-      "audioHash": "2846c9fd82cf7bca653f44f2e60715b42e360a35a7447ed6ec012c8d4f9f8d7e"
+      "audioHash": "e760e256bda443f7a28a346e9855bdfeea13a6e1c47573e283bd905822e8f713",
+      "durationSeconds": 5.41
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "原因の根拠と、変更できる範囲を結び付けます。Bits Infrastructure Operationsは、監視データや構成、コードから、Kubernetesの再起動の繰り返しを許可範囲で扱うプレビューです。ただし検知できたことと、直ったことは別です。変更後のエラー率と処理状態を読み直し、悪化した場合の停止と戻し方を用意します。記録から効果を確かめて範囲を広げます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "5c1eb3757c4f86d33e687dff80012eb499daeda1dd5f448bac069e0b2f1d58f1",
+      "durationSeconds": 27.377,
+      "durationStatus": "ideal"
     },
     {
       "index": 3,
       "type": "question",
-      "text": "AI Agentにインフラの自動修復を任せる場合、何を準備しますか。",
+      "text": "新モデルの単価が同じなら、そのまま置き換えてよいですか。",
       "audio": "interview-question-03.mp3",
-      "audioHash": "82b8938d63ba7cc61996f376bac185fcff07b7c31552a251423979c47d7da37f"
+      "audioHash": "1fe8ad0233bbbcb0048544b2cfbddbfd11a5653f650d445a4dc981e2a4455a84",
+      "durationSeconds": 4.562
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "同じ仕事で使うtokenと、完了までの時間を確かめます。Gemini 3.8 Flashは単価を据え置く一方、複雑な課題では推論やツールの反復が増えると説明しています。ただし高いeffortがすべての仕事に必要とは限りません。3.7も比較に残し、effortを変えて品質と総費用を見ます。基準を満たした処理だけを移し、追加の計算が成果につながっているか確認します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "286848cb0041222cd9b5e72f5b025c44631f690509ff099c2d4df18af5a7d89f",
+      "durationSeconds": 28.931,
+      "durationStatus": "ideal"
     },
     {
       "index": 4,
       "type": "question",
-      "text": "Root Causeを推測できるだけでは不十分で、ActionのScopeとGuardrailを明確にする必要があります。まずTelemetryとService Ownershipを十分に与え、変更可能なResourceと操作を限定します。修復後はMetricやTestで結果を検証し、影響が大きい変更にはApprovalとRollbackを残します。自動化率より、SafetyとRecoverabilityを優先したいです。",
+      "text": "AIの営業提案を、業務ルールに沿って実行するにはどうしますか。",
       "audio": "interview-question-04.mp3",
-      "audioHash": "07d67770522e75686867050d4ed38943a7acb98a39e2c253aabd84a351821ad7"
+      "audioHash": "ecbb90ad8642649c69569cb9c9ce385fb711a73a7cc27ed19afd9d02b29f55c5",
+      "durationSeconds": 4.98
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "提案を作る部分と、実行を認める規則を分けます。Claudeforceは三十七の営業スキルを備え、Salesforce経由で既存の業務フローを使います。値引き案でも、説明と承認条件は別に確認します。ただし接続しただけで提案内容が正しくなるわけではありません。参照した商談情報を確かめ、下書きと送信を区別し、実行結果をCRM側で確認します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "58f4009a8389e36733cb0eaefcfbd72d7a0f4efc27050dc2da4a0a05441cdfe7",
+      "durationSeconds": 27.828,
+      "durationStatus": "ideal"
     },
     {
       "index": 5,
       "type": "question",
-      "text": "新しい高性能Modelが出た場合、すべてのRequestをすぐに切り替えますか。",
+      "text": "クラウド間の専用接続を選ぶとき、帯域以外に何を見ますか。",
       "audio": "interview-question-05.mp3",
-      "audioHash": "7eff6868aa7d8bd6475077583a21e4b82954f6d47928af04a58dd8bbe3bad89e"
+      "audioHash": "c7c502d29615dcaf28540759d80abade34e7bf7943f3609362619413f046eb2c",
+      "durationSeconds": 5.223
     },
     {
-      "index": 6,
-      "type": "question",
-      "text": "すぐには切り替えません。高いEffortではReasoning StepやTool Callが増え、Token消費やLatencyも増える可能性があります。TaskごとにQuality、Cost、Latency、Safety Requirementを測り、簡単な処理は低Effortや既存Model、複雑なTaskだけ新Modelを使うようにします。Cyber Capabilityのように利用者を限定すべき機能もあるため、Access Policyも確認します。",
-      "audio": "interview-question-06.mp3",
-      "audioHash": "a99a472395c74eb08d48ce92de5832e2bd3cbf47b6ef1129efab9637a9217b1e"
-    },
-    {
-      "index": 7,
-      "type": "question",
-      "text": "LLMに業務判断を任せる場合、既存のBusiness Ruleは不要になりますか。",
-      "audio": "interview-question-07.mp3",
-      "audioHash": "570228701484e75e09df1572b938d3b8ed74d25a6b5719e4dc1b082b85f9d1f5"
-    },
-    {
-      "index": 8,
-      "type": "question",
-      "text": "不要にはならないと思います。LLMは曖昧な情報を理解して提案することには強いですが、割引上限や承認条件、権限のようなRuleは決定的に適用する必要があります。そのためLLMをReasoning Interfaceとして使い、実際のActionはSalesforceのようなSystem of Recordを経由させます。確率的推論と決定的制御を分離する設計が重要です。",
-      "audio": "interview-question-08.mp3",
-      "audioHash": "adbc110a9ab2fe713db375390f687602590acb6194553abd49021d030e937967"
-    },
-    {
-      "index": 9,
-      "type": "question",
-      "text": "AWSとAzureをPrivate Networkで接続する場合、帯域以外に何を評価しますか。",
-      "audio": "interview-question-09.mp3",
-      "audioHash": "4bf119e5ea84de71f065de79b3ee21f8cbdccf984a4be7084225939d8f256d60"
-    },
-    {
-      "index": 10,
-      "type": "question",
-      "text": "Bandwidthだけでなく、Latency、Route Design、Failure Domain、Data Transfer Cost、Security Policy、Monitoringを評価します。Managed Interconnectを使えば物理接続や一部のRouting運用は減らせますが、Cloud間の依存関係がなくなるわけではありません。障害時の切り替えと責任範囲まで含めて設計することが重要です。",
-      "audio": "interview-question-10.mp3",
-      "audioHash": "478116e5a036842ea62e8bdd1d3a89600db7292325e25fac58662c3af3acaf54"
+      "index": 5,
+      "type": "answer",
+      "text": "遅延、転送費、障害時の責任を見ます。AWSとAzureのInterconnectは、共通APIで接続の構築や運用を簡素化する仕組みです。ただし最大百Gbpsは、アプリが常に出せる速度ではありません。利用地域と提供段階を確認し、実際のデータ量で往復時間を測ります。閉域でもアクセス権は別に必要なので、どの処理が何を読めるかも整理します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "d477608bd2f12497c51f3b7a07001af7529c34028007fa6bf8babc04380d2b1a",
+      "durationSeconds": 28.666,
+      "durationStatus": "ideal"
     }
   ],
   "review": [
     {
       "index": 1,
-      "text": "ローカルCoding AgentにDeveloperと同じ権限を与えるRiskは何ですか。",
+      "text": "認証済みのCLIを、なぜ実行境界で管理しますか。",
       "audio": "review-question-01.mp3",
-      "audioHash": "3a9e5268bf6c0cd01ed882e89d2653a1ca2941f5f9ddfdde54a7a3ae8eb1e214"
+      "audioHash": "775b8794e057cb43e3800fafa0ecad35cb283892d9d64b4d5ee4c28c6a4e159e",
+      "durationSeconds": 4.539
     },
     {
       "index": 2,
-      "text": "AIOpsでDetectからRemediateまで自動化するとき、何が必要ですか。",
+      "text": "最大値や単価据え置きを、どう解釈しますか。",
       "audio": "review-question-02.mp3",
-      "audioHash": "bdb9bff3d74ccb5f6a1b4b48ef6b4b0d862e9693b8cf6e9bfe589f13acea4a60"
+      "audioHash": "69589c9d15dc06998b284f91b1d3dac56b18fd93e763fb311ebc0470b651a22b",
+      "durationSeconds": 3.819
     },
     {
       "index": 3,
-      "text": "LLMと既存業務Systemの役割をどう分けますか。",
+      "text": "AIの提案を実行へつなぐ前に何を決めますか。",
       "audio": "review-question-03.mp3",
-      "audioHash": "2dd5debec3f6868654a717c697dfed8dcbc1367869e16bfb0d14fccdc44d73ad"
+      "audioHash": "6bd516ba75d29470baa34421eef24bd27929a4f21908c7a40f415a5b2d8d5424",
+      "durationSeconds": 4.062
     }
-  ]
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-13",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-07T13:22:38.091Z"
 }

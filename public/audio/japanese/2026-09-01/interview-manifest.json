@@ -1,6 +1,6 @@
 {
   "date": "2026-09-01",
-  "generatedAt": "2026-09-01T04:13:05.665Z",
+  "generatedAt": "2026-09-07T13:06:54.785Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -27,92 +27,124 @@
     {
       "index": 1,
       "type": "question",
-      "text": "LLMのコストは、Token単価だけで比較してよいですか。",
+      "text": "安いモデルと高いモデルの費用を、どう比べますか。",
       "audio": "interview-question-01.mp3",
-      "audioHash": "0393c617e206475962a7894122850b6f0a49f5cc144814f12e9d6a0550c6539f"
+      "audioHash": "c257ce47198da80cf91a845f35ffbc351641ba479a084e155ac5c962f4ee882c",
+      "durationSeconds": 4.202
     },
     {
       "index": 1,
       "type": "answer",
-      "text": "Token単価だけでは不十分だと思います。安いModelでも再実行や人間の修正が多いと、成功Task一件当たりの総Costは高くなる可能性があります。そのため、あらかじめTaskの完了条件を定義し、Model Costだけでなく、手戻り、Human Review、Task Success Rateまで含めて評価することが重要だと考えています。",
+      "text": "品質を満たした仕事一件の総費用で比べます。記事は、推論料金に確認や修正、再実行の人件費を加え、成功件数で割る考え方です。出力も、そのまま使えるもの、修正が要るもの、人へ引き継ぐものに分けます。ただし高いモデルなら必ず一度で終わるわけではありません。同じ仕事と完了条件を決め、失敗した試行の費用も含めて、継続して比較します。",
       "audio": "interview-answer-01.mp3",
-      "audioHash": "95271511feea04004a6a2067c20bf814053b37e037ea5cdee83482ecd13a2060"
+      "audioHash": "72a0aafed77da25dc3e7a77435cb9ca71e76fc290719337bd3cd760c1ebb704c",
+      "durationSeconds": 28.606,
+      "durationStatus": "ideal"
     },
     {
       "index": 2,
       "type": "question",
-      "text": "AIが実装する時代に、人間のCode Reviewでは何を見るべきだと思いますか。",
+      "text": "AIレビューで指摘が増え、人の確認が減らない場合はどうしますか。",
       "audio": "interview-question-02.mp3",
-      "audioHash": "166087f7a0a8c9f96a7300a9d736c2bc81b8637946f3b809aeae3c7df64a65d7"
+      "audioHash": "e73e0130753371e68c39b248155cc10092e87055b898cc2d0bfe5b644733f851",
+      "durationSeconds": 5.096
     },
     {
       "index": 2,
       "type": "answer",
-      "text": "すべてのDiffを同じ深さで読むより、AIがどの根拠で問題なしと判断したのかを確認することが重要になると思います。Test結果、全件確認、Document、構造上の保証などEvidenceを明示させ、根拠が弱いものは未確認として人に回します。また、調査の終了条件を定義し、無限にContextを探し続けない仕組みも必要だと考えています。",
+      "text": "指摘を、判断が必要なもの、根拠付きで解決済みのもの、未確認に分けます。記事のスキルはpathと行番号、実行ログ、全件検索の数を添え、印象だけの結論を未確認へ残します。ただし、テストがないと確認できても、それを許容する判断は人の仕事です。経緯と実環境も照合し、先に読むべき項目を絞ります。件数はAIの自己申告をそのまま信じません。",
       "audio": "interview-answer-02.mp3",
-      "audioHash": "178ae9edaf2146c5a0ce206b3c82c0a8bcce2e77f6037c70cbbc7bbbb20ee0b7"
+      "audioHash": "598a9d1c3c941b1a0d71f8d360e5dc3bf6ca97091879fe022bdac1e8dff4b312",
+      "durationSeconds": 29.456,
+      "durationStatus": "ideal"
     },
     {
       "index": 3,
       "type": "question",
-      "text": "複数の業務システムをAI Agentへ接続する場合、なぜMCP Gatewayが必要ですか。",
+      "text": "MCP Gatewayを置けば、認証や監査はすべて整いますか。",
       "audio": "interview-question-03.mp3",
-      "audioHash": "a0284ef3fb206fa4799eec4a25ea3802b00596b9a73506804faf7725496edade"
+      "audioHash": "65b2b8bebccba680e6381dbfdd06a1bc7fa6e45fe0bc6fd1964b801c6dcd42c3",
+      "durationSeconds": 5.084
     },
     {
       "index": 3,
       "type": "answer",
-      "text": "SystemごとにAgentを直接接続すると、認証方式、Credential、監査ログ、Rate Limit、Access Controlが分散し、運用が煩雑になります。MCP Gatewayを共通入口にすると、Authentication、Authorization、Audit、Quota、Cacheを一元化できます。特にTool数や利用者が増えるEnterprise環境では、横断的なGovernanceを実装しやすい点が大きなメリットだと思います。",
+      "text": "機能があることと、有効にしたことを分けます。ContextForgeの例は、クライアントのJWT認証と、業務API側の認証を二層で扱っています。実行回数は見えても、監査ログは無効だったためゼロでした。ただし検証は一コンテナとSQLiteの最小構成です。本番では接続元と権限を確認し、必要なログを有効にして、拒否した呼び出しも追えるか確かめます。",
       "audio": "interview-answer-03.mp3",
-      "audioHash": "bce78ce99dd39e61fc5d2b19ed567cabbcc0238d3acc2cfeba4915eda8fbe9e9"
+      "audioHash": "4315c5d6e15e5b2ebeab501e783a2555695551d1a96a1827c7c8c386e488012b",
+      "durationSeconds": 28.745,
+      "durationStatus": "ideal"
     },
     {
       "index": 4,
       "type": "question",
-      "text": "ClaudeをAmazon Bedrock、Claude Platform on AWS、Anthropic Directのどれで利用するか、どのように判断しますか。",
+      "text": "ClaudeをAWS経由で使う場合、何から利用経路を選びますか。",
       "audio": "interview-question-04.mp3",
-      "audioHash": "8184a3137b942cb35c250d3155c2fb71fc9346c7108e9a31fc06c0486cb1f439"
+      "audioHash": "0880036303e79149e32de970d820e7365fb957da85328f72f2c500dfb6c72fe6",
+      "durationSeconds": 5.536
     },
     {
       "index": 4,
       "type": "answer",
-      "text": "まずDataを誰が処理するかとCompliance要件を確認します。次に必要なTool、Structured Output、Bedrock固有機能などがそのEndpointで使えるかを確認し、その条件を満たした候補の中で実効Costと調達条件を比較します。Billing先とData Processorは同じとは限らないため、この順番で判断することが重要だと思います。",
+      "text": "誰がデータを処理するかを見ます。BedrockはAWS、Claude Platform on AWSはAnthropicが推論を運用し、請求先が同じでも境界は異なります。モデルとAPIの組で機能も確かめます。ただし単価だけでは比較できません。キャッシュやbatchの対応、CCUへの換算、利用上限も確認します。既存の割引が移るとは考えず、適用開始を調整します。",
       "audio": "interview-answer-04.mp3",
-      "audioHash": "4941099282448389bf82e74946df2bf727f08a5f5e9b84d63e27b2da0a8f5d56"
+      "audioHash": "7e8172ddf4cda3b916ac53ef064a3ae02ab3d6fb625afeffadc165ce9d865fb4",
+      "durationSeconds": 28.91,
+      "durationStatus": "ideal"
     },
     {
       "index": 5,
       "type": "question",
-      "text": "AI AgentがOSの設定変更やApplicationのInstallまで行う場合、何に注意すべきですか。",
+      "text": "AIにOSの設定変更を任せるとき、どのように確認しますか。",
       "audio": "interview-question-05.mp3",
-      "audioHash": "25228cecc8c65d0b3009f92f70d2a381c4eac86f676581a47c1148ec94439653"
+      "audioHash": "35f0b982c780683a18104cec4677786cb85b9eb08d279a12d6e44b57df72a642",
+      "durationSeconds": 5.212
     },
     {
       "index": 5,
       "type": "answer",
-      "text": "Repository内の変更よりCapabilityが広いため、OS全体への影響を考える必要があります。Install、Shell、Network、Configuration変更をRisk別に分け、重要操作にはApprovalやRollbackを用意します。また、Agentが参照するSkillのVersionと、実際に変更した設定をAuditできるようにすることも重要だと思います。",
+      "text": "元の設定と変更差分を残し、戻せる状態で試します。Omarchyはスキルを通じて設定や操作を伝え、Quickshellのプラグイン作成まで支援する例があります。ただしログを読めることと、全障害を直せることは別です。テーマ変更なら表示だけでなく、キー操作や再起動後の動作も確認します。意図しない変更があれば元へ戻し、必要な範囲だけを改めて依頼します。",
       "audio": "interview-answer-05.mp3",
-      "audioHash": "272656093c5f257351dc8638ba8ebb8cddeaed8d3df45c106a1d5bdc22bd5228"
+      "audioHash": "931b7304a3f92f435b241252b12717fff7d05efffc6b0312d34d59902f69a65d",
+      "durationSeconds": 27.714,
+      "durationStatus": "ideal"
     }
   ],
   "review": [
     {
       "index": 1,
-      "text": "AIのROIを評価するとき、利用者数やToken量以外に何を測りますか。",
+      "text": "成功一件の費用には何を含めますか。",
       "audio": "review-question-01.mp3",
-      "audioHash": "659fa523ed31c91b0c330a49f24d492e2f1fcd17c8d50cc05b7cc73bf4ec83ff"
+      "audioHash": "0d69a8f9ee606c4ebf78cef9cd03f8e249301f598d887a37d61af925aa34d9cf",
+      "durationSeconds": 3.354
     },
     {
       "index": 2,
-      "text": "MCP Gatewayを導入する主な理由は何ですか。",
+      "text": "見なくてよいという結論を支える根拠は何ですか。",
       "audio": "review-question-02.mp3",
-      "audioHash": "922d8f177a5b4ccad74d7938a2642a2202475fcd909ad50723249402a18c9d51"
+      "audioHash": "e83ac23fc59488b20707243b2822a459cbc716303be1eebca10d3bd963fbe41d",
+      "durationSeconds": 3.83
     },
     {
       "index": 3,
-      "text": "Claudeの利用経路を決めるとき、なぜCostを最初に比較しないのですか。",
+      "text": "接続が成功しても追加で確認するものは何ですか。",
       "audio": "review-question-03.mp3",
-      "audioHash": "ebd51ecd6d5ddffcb6f8dc3187a1f54e31f010b52a1d09f7ea461c863656b562"
+      "audioHash": "5380d570e8ecd2d353856f46eb4835a1493e4a04c57999ae525951f40c2a7a2d",
+      "durationSeconds": 4.458
     }
-  ]
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-13",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-07T13:10:41.060Z"
 }

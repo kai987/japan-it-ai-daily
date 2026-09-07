@@ -1,6 +1,6 @@
 {
   "date": "2026-09-05",
-  "generatedAt": "2026-09-05T07:44:01.092Z",
+  "generatedAt": "2026-09-07T13:33:34.615Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -27,92 +27,124 @@
     {
       "index": 1,
       "type": "question",
-      "text": "業務システムでは、すべての処理を生成AIに置き換えた方がよいと思いますか。",
+      "text": "AIの概念実証で成果が出ないとき、何を見直しますか。",
       "audio": "interview-question-01.mp3",
-      "audioHash": "14a0c3ece084fb3a4667c62ba066b5da5d15895cd753d4dbc1ac28c91a01011f"
+      "audioHash": "e52f314e732743cb8b650a36ddc5dd9b3dcc5d0861cc9f4f98b92e0e14d6db74",
+      "durationSeconds": 4.91
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "AIに向く部分を選び直します。関電工の積算では、用語や書式の違いはAIで扱い、類似案件の呼び出しと金額計算はロジックにしました。算出手法の八～九割が従来のルールで、概算を数十分へ短縮した事例です。ただし、この割合は精度ではありません。既存案件と比べ、抽出ミスと計算ミスを分けて確認し、現場の例外も改善へ戻します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "a04bac29dafaf5e8f11c09e2c5ccd270299befb5ec9a125b8044e931eb74207c",
+      "durationSeconds": 28.131,
+      "durationStatus": "ideal"
     },
     {
       "index": 2,
       "type": "question",
-      "text": "すべてをAIにする必要はないと思います。自然言語の解釈や非構造Dataの抽出はLLMが得意ですが、金額計算や承認条件のようにRuleが明確な処理は、決定論的なLogicの方が再現性と監査性を確保しやすいです。業務を分解し、AIが価値を出せる部分だけに用途を絞り、Business KPIで成果を評価することが重要だと考えています。",
+      "text": "AIサービスが学習に使わないなら、顧客データを送ってよいですか。",
       "audio": "interview-question-02.mp3",
-      "audioHash": "67dca0d301d978b18542bd64d545105456e4542c90b921c62c2e3a156acca137"
+      "audioHash": "c75f6e538f88f0e634546f353188bdd5f65f7260dc9e800c28acdb324be34201",
+      "durationSeconds": 5.2
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "学習利用だけでは判断できません。RIZAPの事例では、削除したファイルは学習されないとしても、事業者の社員が閲覧できたかは確認中でした。保管、閲覧、学習は別の条件です。認めた送信先と項目を決め、私用AIへ送らない運用にします。誤送信時は、削除の表示だけで終えず、送信範囲と事業者側の扱いを確認します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "91d3f866d244a4b6b53d27e37282d2ebb1d3d90b9aefa48c7b7fcf17b1091cd9",
+      "durationSeconds": 26.049,
+      "durationStatus": "ideal"
     },
     {
       "index": 3,
       "type": "question",
-      "text": "社員が個人利用の生成AIへ機密情報を入力するRiskを、どのように減らしますか。",
+      "text": "セキュリティ修正の完了を、どう判断しますか。",
       "audio": "interview-question-03.mp3",
-      "audioHash": "325c275cb13622b51ca8d8d51e3bc206b7a29c87de7ca5055c72c82647cf37f1"
+      "audioHash": "2809812f6b294d66cc29eddbe1c41ffe2c29b9f68ebc2ac06ddc685cfed5cdda",
+      "durationSeconds": 3.561
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "配備したことに加え、問題が再現しなくなったかを確認します。共同書簡は、修正できない重要システムにも代替防御を適用し、その効果を検証するよう求めています。ただし本来の業務を止めない条件も必要です。対象の弱点を再試験し、正常な処理も通るかを確かめます。AIの生成した修正でも同じ基準を使い、結果を共有し、次の対応を速くします。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "143d355b2d6fe7748ec31ac135acf885e1a970f8ca7bc120187d42c248a54c0b",
+      "durationSeconds": 28.213,
+      "durationStatus": "ideal"
     },
     {
       "index": 4,
       "type": "question",
-      "text": "教育だけに依存しないことが重要だと思います。会社が承認したAI Serviceを明確にし、Data Classification、DLP、EndpointやBrowser Controlで高Risk Dataの外部送信を制御します。また、利用LogをAuditできる状態にし、Personal AIとEnterprise AIの使い分けをPolicyで定義します。Incident発生時の削除、報告、CredentialやAccessの見直しもRunbook化します。",
+      "text": "AIツールを無人実行へ組み込むとき、確認待ちをどう扱いますか。",
       "audio": "interview-question-04.mp3",
-      "audioHash": "e50ffa735b2ce69049cc6f95b466b6356b0a112d2852722032ef34aa755a5de4"
+      "audioHash": "b2c5078d68e39dead0c17ceab1e3cceaa681760c4c561b10e329ad217718bdd0",
+      "durationSeconds": 5.363
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "確認が必要なら、勝手に進めず止めます。Claude Codeのpermission-prompts noneは、確認が必要な操作を拒否し、元の権限モードの判断は残します。管理設定を読めない場合も起動を拒否する修正が入りました。ただし更新では機能の取り消しもあります。正常な処理と拒否すべき操作を両方試し、設定が効かないまま続行しないことを確認します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "5d8b9e356f591b74ad98fdb4a7c65dd52b99f2058b115925098be01e899dee22",
+      "durationSeconds": 26.27,
+      "durationStatus": "ideal"
     },
     {
       "index": 5,
       "type": "question",
-      "text": "AIによって脆弱性対応が高速化した場合、Security Teamには何が必要になりますか。",
+      "text": "人と同じDBロールを使うAIだけ、操作を制限できますか。",
       "audio": "interview-question-05.mp3",
-      "audioHash": "ca2f713f6c691b4279f305531185dd1eb4bd772b1a0cf20c31bf0f2a484baab5"
+      "audioHash": "dc05b819a0148a577c443e978e0c51d746e536085f03284673db2ecff4c82070",
+      "durationSeconds": 5.003
     },
     {
-      "index": 6,
-      "type": "question",
-      "text": "Patchを作る速度だけでなく、そのPatchが本当にRiskを下げたかを確認する検証速度も必要になります。AIが大量の修正案を作れるほど、Regression Test、Security Test、Asset情報、Monitoringを組み合わせてFixを独立検証する必要があります。またAgent自身の権限と行動も追跡し、問題があれば止められる設計が重要だと思います。",
-      "audio": "interview-question-06.mp3",
-      "audioHash": "26995119912c0015151458ea174d4b4721b5696fa0a9db5dad3c069f1e3d9c33"
-    },
-    {
-      "index": 7,
-      "type": "question",
-      "text": "CIでCoding Agentを無人実行する場合、Permission Promptをどう扱いますか。",
-      "audio": "interview-question-07.mp3",
-      "audioHash": "a63ca387412ae40c8b7df23aff02a145029c4079ab4910890b8875f933d0951d"
-    },
-    {
-      "index": 8,
-      "type": "question",
-      "text": "人がいないから自動承認するのではなく、確認が必要なActionはFail Closedで拒否する設計が安全だと思います。Read-only分析などTaskに必要なCapabilityだけを事前に許可し、Write、Network、Deployなどは個別Policyで制御します。また、設定Ruleが実際に効いているかをConformance Testで検証することも重要です。",
-      "audio": "interview-question-08.mp3",
-      "audioHash": "a161b990757ff882ac93466a9592420f4667a0bf0d7b2901b363c28b31edd8dc"
-    },
-    {
-      "index": 9,
-      "type": "question",
-      "text": "AI Agentがユーザーの権限を完全に継承してもよいですか。",
-      "audio": "interview-question-09.mp3",
-      "audioHash": "304af68cb36d2b3eb0e2dfb64254913bbed929f9680adebe1231b220a5699249"
-    },
-    {
-      "index": 10,
-      "type": "question",
-      "text": "完全継承は避けた方がよいと思います。人間はProductionへ書き込めても、AgentにはProductionはRead-only、SandboxだけWrite可能という追加Scopeを適用できます。既存RBACを上限として、その上にAgent Session専用のRestrictionを重ねることで、誤判断時のBlast Radiusを小さくできます。権限を増やすのではなく、Agent経由だけさらに狭める設計が重要です。",
-      "audio": "interview-question-10.mp3",
-      "audioHash": "50f243f78609f4d1f8ea6a4e34bf58f5f2946133eda39543fcdc68749d1ff43f"
+      "index": 5,
+      "type": "answer",
+      "text": "SnowflakeのRSSなら、Agentの会話だけ権限の上限を追加できます。実験では同じ利用者とロールで、本番へのINSERTはCoCoで拒否され、ワークシートでは成功しました。RBACの権限が増えることはありません。ただしdata writeは建表を含まず、変更後は新しい会話が必要です。直接のSQLだけでなく、許可したプログラム内部の権限も見ます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "dbf88afbcca2498c2c6a37f37e6dc3a39e1f6fa6b5c73128741f98b62964c0a9",
+      "durationSeconds": 28.446,
+      "durationStatus": "ideal"
     }
   ],
   "review": [
     {
       "index": 1,
-      "text": "生成AIとRule-based Logicはどのように使い分けますか。",
+      "text": "AIとロジックをどう分担させますか。",
       "audio": "review-question-01.mp3",
-      "audioHash": "4538814be2267516ecc528b21511919d082c3f2dadcae719c2dbd65b70e153b3"
+      "audioHash": "897ebc3bcdbce6951a9ef57d3923891e817e13dd7e4e316a446e278a65fc3df3",
+      "durationSeconds": 3.111
     },
     {
       "index": 2,
-      "text": "Coding AgentをCIで無人実行するとき、最も重要なPermission原則は何ですか。",
+      "text": "学習利用なしという回答で、何がまだ分かりませんか。",
       "audio": "review-question-02.mp3",
-      "audioHash": "87320e91375ae8cacd9fc262e898b44cbf877076a1101459fae27abb654aa2ec"
+      "audioHash": "ace1955cf46740ccd5aee474a16567e87b7bf68caec5b59d080c3a47a1f5d27b",
+      "durationSeconds": 4.446
     },
     {
       "index": 3,
-      "text": "AI Agentの実効権限をどう考えますか。",
+      "text": "権限制限のテストは何を比較しますか。",
       "audio": "review-question-03.mp3",
-      "audioHash": "b9fc81e48be7821fabe43e181a313db031f790d77ca8453d8435b815688f67b0"
+      "audioHash": "05069a2eef2d4dff370787e4f66b55297d5ce4d4b8c11af6dc7e7c923147c4bd",
+      "durationSeconds": 3.575
     }
-  ]
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-13",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-07T13:37:46.354Z"
 }
