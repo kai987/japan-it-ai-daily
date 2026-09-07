@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { getDailyListDisplayTitle } from '../../lib/listDisplayTitles';
 const base = import.meta.env.BASE_URL;
 const root = `${base}ja/`;
 const reports = (await getCollection('dailyJa')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
@@ -18,7 +19,7 @@ const reports = (await getCollection('dailyJa')).sort((a,b)=>b.data.date.valueOf
       {reports.map((report)=>(
         <a class="archive-row" href={`${root}daily/${report.id}/`}>
           <div class="meta">{report.data.date.toLocaleDateString('ja-JP')}</div>
-          <div><strong>{report.data.title}</strong><div class="meta">{report.data.description}</div></div>
+          <div><strong>{getDailyListDisplayTitle(report.data.date)}</strong><div class="meta">{report.data.description}</div></div>
         </a>
       ))}
     </div>
