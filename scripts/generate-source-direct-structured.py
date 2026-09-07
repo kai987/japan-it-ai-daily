@@ -100,7 +100,10 @@ JSONだけを返してください。形式:
 
 要件:
 - categorySummaryはAI、Frontend、Cloud-Backend、日本企業 Tech Blogの4件。対象記事にない分野はその旨を簡潔に示し、未実施の網羅調査を主張しない。
-- interviewは5件。questionとanswerは日本企業のAI/Webエンジニア面接で自然な表現にする。answerは約3〜5文。keywordsは各3個。
+- interviewは5件、元記事と同じ順序。質問は企業面接の形に広げても、各回答には当日のその記事に固有の技術点を1〜2個以上残す。
+- 回答は「結論 → 記事の具体的な仕組み・条件 → その話題に合う実務判断」を自然な話し言葉でつなぐ。口頭約30秒を目安にし、製品/API名以外は分かりやすい日本語を優先する。
+- 5問は異なる質問にする。「PoCだけで判断せず、実際のWorkloadで段階的に検証…」などの同じ結びを使い回さない。原文にない企業構成を実証済みの事実として追加しない。
+- Frontend記事を汎用AI Coding論へ、学習基盤の記事を一般的なモデル選定論へ置き換えない。keywordsは各3個。
 - techThemeは当日の5記事を横断する1テーマ。overviewは3〜6文、merits/limits/japanNotesは各2〜4点、closingは面接で使える1〜2文。
 - reviewCardsは3問。
 - knowledgeは必ず5件、SOURCE-DIRECT SUMMARIESと同じ順序・同じtitle。各pointsは2〜4点。
@@ -223,6 +226,7 @@ def render_daily(base, context: dict[str, Any], cards: list[dict[str, str]], syn
         "sources": context.get("sources") or [],
         "top": top,
         "featured": bool(context.get("featured", False)),
+        "interviewSource": "originals",
     }
     return base.dump_markdown(fm, body)
 

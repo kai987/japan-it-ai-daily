@@ -29,7 +29,7 @@ const daily = defineCollection({
 
 const dailyJa = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/daily-ja' }),
-  schema: dailySchema
+  schema: dailySchema.extend({ interviewSource: z.enum(['originals']).optional() })
 });
 
 const level = z.enum(['N5/N4', 'N3', 'N2', 'N1', 'IT/AI']);

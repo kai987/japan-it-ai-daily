@@ -75,9 +75,36 @@
     "september7Diff": "unchanged"
   },
   "outputs": {
-    "src/content/daily-ja/2026-08-12.md": "7d505b8303f8c0fd944e2fd3e66745eb28ac12616a76336698e434b9902de659",
+    "src/content/daily-ja/2026-08-12.md": "f7ca365e839758f2271838bb5abe3a01f123cfb9a823f69beccd6a5f743f956b",
     "src/content/japanese-ja/2026-08-12.md": "082b4acf0178143eb4c2cd9f9dfc95f0add1fdf06ed426162d31ebdd698141d0"
   },
   "editorialReview": "2026-08-12-editorial-review.md",
-  "detailStandard": "September 7 depth: background, mechanism, conditions, results, limits; source-supported details are not removed to meet a summary length cap"
+  "detailStandard": "September 7 depth: background, mechanism, conditions, results, limits; source-supported details are not removed to meet a summary length cap",
+  "interviewReview": {
+    "basis": "1b4b0b0 article specificity plus enterprise questions",
+    "source": "originals",
+    "anchors": [
+      [
+        "Claude Code hooks",
+        "read back the artifact"
+      ],
+      [
+        "BM25 paths and line ranges",
+        "conditional 30 percent result and index effort"
+      ],
+      [
+        "SageMaker provisioning and training",
+        "user-owned data goals and evaluation"
+      ],
+      [
+        "Suspense and prefetch",
+        "Instant Insights, Navigation Inspector, instant()"
+      ],
+      [
+        "Muse Glimmer quantization",
+        "KV cache and auxiliary model memory"
+      ]
+    ],
+    "timing": "30 seconds is a practice target, not measured audio duration"
+  }
 }
