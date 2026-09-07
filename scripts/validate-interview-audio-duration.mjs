@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
-import { basename, join, resolve } from 'node:path';
+import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 
 const root = resolve(process.cwd());
@@ -35,9 +35,6 @@ if (!(HARD_MIN <= IDEAL_MIN && IDEAL_MIN <= IDEAL_MAX && IDEAL_MAX <= HARD_MAX))
   fail('时长阈值必须满足 HARD_MIN <= IDEAL_MIN <= IDEAL_MAX <= HARD_MAX。');
 }
 if (requestedDate && !/^\d{4}-\d{2}-\d{2}$/.test(requestedDate)) fail('日期格式必须是 YYYY-MM-DD。');
-if (spawnSync('ffprobe', ['-version'], { stdio: 'ignore' }).status !== 0) {
-  fail('找不到 ffprobe。安装 ffmpeg 后会同时提供 ffprobe。');
-}
 
 const round3 = (value) => Math.round(value * 1000) / 1000;
 const durationStatus = (duration) => {
@@ -73,7 +70,7 @@ const availableDates = () => {
 let dates = availableDates();
 if (requestedDate) dates = dates.filter((date) => date === requestedDate);
 else if (generateAll) {
-  // keep all dates so legacy manifests can be backfilled without enforcing old content
+  // Keep all dates so legacy manifests can be backfilled without enforcing old content.
 } else if (useLatest || !fromArg) {
   dates = dates.length ? [dates.at(-1)] : [];
 }
@@ -82,6 +79,9 @@ if (fromArg) dates = dates.filter((date) => date >= fromArg);
 if (!dates.length) {
   console.log(`Interview audio duration: no manifests to check${fromArg ? ` (from ${fromArg})` : ''}.`);
   process.exit(0);
+}
+if (spawnSync('ffprobe', ['-version'], { stdio: 'ignore' }).status !== 0) {
+  fail('找不到 ffprobe。安装 ffmpeg 后会同时提供 ffprobe。');
 }
 
 let failed = false;
@@ -117,11 +117,15 @@ for (const date of dates) {
     const nextItem = { ...item, durationSeconds: duration };
     if (kind === 'answer') {
       const status = durationStatus(duration);
-      nextItem.durationStatus = enforce ? status : 'legacy';
+      const expectedStatus = enforce ? status : 'legacy';
+      nextItem.durationStatus = expectedStatus;
       if (enforce && status === 'fail') {
         problems.push(`answer ${item.index}: actual ${duration.toFixed(2)}s is outside hard range ${HARD_MIN}–${HARD_MAX}s`);
       } else if (enforce && status === 'warn') {
         warnings.push(`answer ${item.index}: actual ${duration.toFixed(2)}s is outside ideal range ${IDEAL_MIN}–${IDEAL_MAX}s`);
+      }
+      if (!writeMode && enforce && item.durationStatus !== expectedStatus) {
+        problems.push(`answer ${item.index}: stored durationStatus=${item.durationStatus ?? 'missing'} but actual status=${expectedStatus}`);
       }
     }
 
@@ -149,11 +153,15 @@ for (const date of dates) {
     hardSeconds: [HARD_MIN, HARD_MAX],
     maxStoredDriftSeconds: MAX_STORED_DRIFT,
   };
+
   if (writeMode) {
-    next.durationMeasuredAt = new Date().toISOString();
-    const before = JSON.stringify(manifest);
-    const after = JSON.stringify(next);
-    if (before !== after) {
+    const previousComparable = structuredClone(manifest);
+    const nextComparable = structuredClone(next);
+    delete previousComparable.durationMeasuredAt;
+    delete nextComparable.durationMeasuredAt;
+    const contentChanged = JSON.stringify(previousComparable) !== JSON.stringify(nextComparable);
+    if (contentChanged) {
+      next.durationMeasuredAt = new Date().toISOString();
       writeFileSync(manifestPath, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
       updated += 1;
     }
