@@ -258,6 +258,8 @@ const previousAudioRecords = (manifest) => {
       records.set(item.audio, {
         hash: item.audioHash,
         text: item.text || '',
+        durationSeconds: item.durationSeconds,
+        durationStatus: item.durationStatus,
       });
     }
   }
@@ -266,10 +268,20 @@ const previousAudioRecords = (manifest) => {
       records.set(item.audio, {
         hash: item.audioHash,
         text: item.text || '',
+        durationSeconds: item.durationSeconds,
       });
     }
   }
   return records;
+};
+
+const preservedDurationFields = (file, reused, type) => {
+  if (!reused) return {};
+  const previous = previousAudioRecordsCache.get(file);
+  if (!Number.isFinite(Number(previous?.durationSeconds))) return {};
+  const fields = { durationSeconds: Number(previous.durationSeconds) };
+  if (type === 'answer' && previous.durationStatus) fields.durationStatus = previous.durationStatus;
+  return fields;
 };
 
 console.log(`\nAivisSpeech Interview: ${speaker.name} / ${style.name} / Style ID ${STYLE_ID}`);
@@ -282,6 +294,7 @@ let totalGenerated = 0;
 let totalSkipped = 0;
 let totalMigrated = 0;
 let processedDates = 0;
+let previousAudioRecordsCache = new Map();
 
 for (const date of targetDates) {
   const contentPath = join(contentDir, `${date}.md`);
@@ -299,6 +312,7 @@ for (const date of targetDates) {
   const manifestPath = join(outputDir, 'interview-manifest.json');
   const previousManifest = readJsonIfExists(manifestPath);
   const previousRecords = previousAudioRecords(previousManifest);
+  previousAudioRecordsCache = previousRecords;
   const legacyConfigMatches = legacyManifestMatchesConfig(previousManifest);
 
   let questionIndex = 0;
@@ -332,14 +346,14 @@ for (const date of targetDates) {
       skipped += 1;
       if (legacyMatches) migrated += 1;
       console.log(`SKIP ${file}${legacyMatches ? '  [cache migrated]' : '  [hash match]'}`);
-      return expectedHash;
+      return { audioHash: expectedHash, reused: true };
     }
 
     console.log(`${existsSync(path) ? 'REGEN' : 'GEN  '} ${file}  ${text}`);
     try {
       encodeMp3(await synthesize(text), path);
       generated += 1;
-      return expectedHash;
+      return { audioHash: expectedHash, reused: false };
     } catch (error) {
       fail(`${date}/${file} 生成失败：${error instanceof Error ? error.message : String(error)}`);
     }
@@ -349,26 +363,39 @@ for (const date of targetDates) {
     const index = item.type === 'question' ? ++questionIndex : ++answerIndex;
     const file = `interview-${item.type}-${pad(index)}.mp3`;
     const path = join(outputDir, file);
-    const audioHash = await ensureAudio({
+    const { audioHash, reused } = await ensureAudio({
       file,
       path,
       text: item.text,
       scope: `interview-${item.type}`,
     });
-    manifestInterview.push({ index, type: item.type, text: item.text, audio: file, audioHash });
+    manifestInterview.push({
+      index,
+      type: item.type,
+      text: item.text,
+      audio: file,
+      audioHash,
+      ...preservedDurationFields(file, reused, item.type),
+    });
   }
 
   for (const text of review) {
     const index = ++reviewIndex;
     const file = `review-question-${pad(index)}.mp3`;
     const path = join(outputDir, file);
-    const audioHash = await ensureAudio({
+    const { audioHash, reused } = await ensureAudio({
       file,
       path,
       text,
       scope: 'interview-review-question',
     });
-    manifestReview.push({ index, text, audio: file, audioHash });
+    manifestReview.push({
+      index,
+      text,
+      audio: file,
+      audioHash,
+      ...preservedDurationFields(file, reused, 'review'),
+    });
   }
 
   const changed = generated > 0 || migrated > 0 || !previousManifest;
@@ -391,6 +418,8 @@ for (const date of targetDates) {
     },
     format: { ...DEFAULT_MP3_FORMAT },
     settings: { speed: INTERVIEW_SPEED, intonationScale: 1.0 },
+    ...(previousManifest?.durationPolicy ? { durationPolicy: previousManifest.durationPolicy } : {}),
+    ...(previousManifest?.durationMeasuredAt ? { durationMeasuredAt: previousManifest.durationMeasuredAt } : {}),
     interview: manifestInterview,
     review: manifestReview,
   };
