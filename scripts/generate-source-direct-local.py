@@ -70,7 +70,12 @@ def load_originals(workdir: Path) -> str:
     parts: list[str] = []
     for index in range(1, 6):
         path = workdir / "originals" / f"{index:02d}.txt"
-        parts.append(f"\n\n===== ORIGINAL ARTICLE {index} =====\n{path.read_text(encoding='utf-8')}")
+        original = path.read_text(encoding="utf-8")
+        if "FETCH_STATUS:" in original or "HTTP_STATUS: 200" not in original:
+            raise RuntimeError(f"Article {index}: original unavailable; generation blocked")
+        if len(original.partition("\n\n")[2].strip()) < 300:
+            raise RuntimeError(f"Article {index}: original body missing or too short")
+        parts.append(f"\n\n===== ORIGINAL ARTICLE {index} =====\n{original}")
     return "".join(parts)
 
 
@@ -142,7 +147,7 @@ ORIGINAL ARTICLES:
 - 5記事は SOURCE CONTEXT と同じ順序。各記事に必ず「**出典：**」「**原文 URL：**」「**注目ポイント：**」を1回ずつ含める。
 - 原文 URL は SOURCE CONTEXT の値をそのまま使う。
 - 各記事の要約は原文から直接、自然な日本語の技術文としてまとめる。日本語原文の用語・語感を優先する。
-- 取得に失敗した記事はタイトル・出典・topicから確認できる範囲を超えて断定しない。「取得できなかった」という内部事情を読者向け本文に書く必要はない。
+- 原文が取得できていない記事は生成禁止。タイトルから本文を推測しない。
 - ## 3 は3〜5テーマ。各テーマに面接質問、約30秒の自然な日本語回答、関連プロジェクト、3つの日本語技術キーワードを含める。
 - ## 4 は当日のTop 5を横断する技術テーマを、概要・メリット・制約・日本企業での導入時の注意点まで日本語で説明する。
 - ## 5 は3問の面接復習カード。

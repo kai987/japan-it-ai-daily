@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import re
 from pathlib import Path
 from typing import Any
@@ -73,8 +74,11 @@ def validate(date: str, workdir: Path) -> None:
         if size < minimum:
             raise RuntimeError(f"{path}: unexpectedly short ({size} bytes)")
 
-    zd, _, _ = parse_markdown(zh_daily_path)
-    zl, _, _ = parse_markdown(zh_lesson_path)
+    spec = importlib.util.spec_from_file_location("source_context", Path(__file__).with_name("prepare-source-direct-context.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    zd = module.parse_frontmatter(zh_daily_path)
+    zl = module.parse_frontmatter(zh_lesson_path)
     jd, daily_body, daily_text = parse_markdown(ja_daily_path)
     jl, lesson_body, lesson_text = parse_markdown(ja_lesson_path)
 
@@ -111,7 +115,10 @@ def validate(date: str, workdir: Path) -> None:
 
     for index, (source, generated) in enumerate(zip(zg, jg, strict=True), 1):
         for key in ("pattern", "level", "structure", "exampleJa"):
-            require_equal(source.get(key), generated.get(key), f"Grammar {index} {key}")
+            expected = source.get(key)
+            if key == "structure" and isinstance(expected, str):
+                expected = expected.replace("動詞ます形去ます", "動詞ます形から「ます」を取る")
+            require_equal(expected, generated.get(key), f"Grammar {index} {key}")
         for key in ("meaning", "usage", "exampleMeaning", "note"):
             if not str(generated.get(key) or "").strip():
                 raise RuntimeError(f"Grammar {index} {key} is empty")

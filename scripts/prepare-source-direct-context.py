@@ -13,13 +13,16 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def parse_frontmatter(path: Path) -> dict:
-    text = path.read_text(encoding="utf-8")
-    if not text.startswith("---\n"):
-        raise RuntimeError(f"{path}: missing frontmatter")
-    end = text.find("\n---\n", 4)
-    if end < 0:
-        raise RuntimeError(f"{path}: unterminated frontmatter")
-    return yaml.safe_load(text[4:end]) or {}
+    # Stop at the closing delimiter; never load the Chinese Markdown body.
+    with path.open(encoding="utf-8") as stream:
+        if stream.readline().strip() != "---":
+            raise RuntimeError(f"{path}: missing frontmatter")
+        lines = []
+        for line in stream:
+            if line.strip() == "---":
+                return yaml.safe_load("".join(lines)) or {}
+            lines.append(line)
+    raise RuntimeError(f"{path}: unterminated frontmatter")
 
 
 def make_context(date: str) -> dict:
@@ -103,12 +106,15 @@ def fetch_originals(context: dict, workdir: Path, max_chars: int) -> None:
             response.raise_for_status()
             if not response.encoding or response.encoding.lower() == "iso-8859-1":
                 response.encoding = response.apparent_encoding or "utf-8"
-            soup = BeautifulSoup(response.text, "lxml")
+            soup = BeautifulSoup(response.text, "html.parser")
             for tag in soup(["script", "style", "noscript", "svg", "form", "nav", "footer", "header", "aside"]):
                 tag.decompose()
             root = soup.find("article") or soup.find("main") or soup.body or soup
             text = re.sub(r"\n{3,}", "\n\n", root.get_text("\n", strip=True))
-            text = text[:max_chars]
+            if len(text) < 300:
+                raise RuntimeError("original article text is too short")
+            if len(text) > max_chars:
+                raise RuntimeError(f"article exceeds {max_chars} chars; increase --article-chars")
             output.write_text(
                 f"URL: {response.url}\nHTTP_STATUS: {response.status_code}\n"
                 f"SOURCE_TITLE: {item.get('title', '')}\n\n{text}\n",
@@ -128,7 +134,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", required=True)
     parser.add_argument("--workdir", default="/tmp/source-direct-ja")
-    parser.add_argument("--article-chars", type=int, default=6500)
+    parser.add_argument("--article-chars", type=int, default=90000)
     args = parser.parse_args()
 
     workdir = Path(args.workdir)

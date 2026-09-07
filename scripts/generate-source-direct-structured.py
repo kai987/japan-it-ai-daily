@@ -37,12 +37,12 @@ def single_original(workdir: Path, index: int) -> str:
 
 
 def article_cards(base, chat, context: dict[str, Any], workdir: Path) -> list[dict[str, str]]:
+    base.load_originals(workdir)  # Fail closed before the first model request.
     cards: list[dict[str, str]] = []
     for index, item in enumerate(context["top"], 1):
         original = single_original(workdir, index)
-        failed = "FETCH_STATUS: failed" in original or "FETCH_STATUS: missing" in original
         prompt = f"""
-日本のIT/AI技術メディア向けに、次の1記事だけを日本語で要約してください。中国語を経由せず、提供された原文だけを根拠にしてください。
+日本のIT/AI技術メディア向けに、次の1記事だけを、9月7日の日報と同等の詳しさで日本語で解説してください。中国語を経由せず、提供された原文だけを根拠にしてください。
 
 記事メタデータ:
 {json.dumps(item, ensure_ascii=False, indent=2)}
@@ -54,22 +54,20 @@ JSONだけを返してください:
 {{"summary":"...","why":"..."}}
 
 要件:
-- summary: 自然な日本語で2〜4文。技術的に重要な事実・仕組み・実務上の意味を簡潔にまとめる。
+- summary: 短い要約に圧縮せず、背景、技術機構、実験条件、結果、制約を複数の段落で十分に展開する。
+- 原文で確認できる設定名、比較条件、データ規模、測定値、例外、提供範囲を字数都合で落とさない。原文にない実験結果は作らず、「機能告知であり比較実験は未掲載」など不足の理由を明記する。
+- 実測、提供者の主張、著者の推測、学習用の提案を区別する。一般化できない結論は適用条件付きで書き直す。
 - why: 1文の「注目ポイント」。日本のIT/AIエンジニアや面接準備に何が役立つかを書く。
 - 数字、製品名、モデル名、固有名詞は原文から確認できるものだけを使う。
-- 原文取得に失敗している場合はタイトル・source・topicから確実に言える範囲だけに限定し、具体的な未確認事実を作らない。
+- 原文が取得できていない場合は生成禁止。タイトルから本文を推測しない。
 - 「中国語版」「翻訳」「機械翻訳」などの内部事情は書かない。
 /no_think
 """.strip()
-        data = parse_json(base, chat, prompt, 520 if not failed else 320)
+        data = parse_json(base, chat, prompt, 3000)
         summary = str(data.get("summary") or "").strip()
         why = str(data.get("why") or "").strip()
-        if not summary:
-            topic = item.get("topic") or "IT・AI"
-            summary = f"「{item.get('title','')}」は、{topic}に関する最新動向を扱った記事です。詳細な技術条件や適用範囲は原文で確認する必要があります。"
-        if not why:
-            topic = item.get("topic") or "IT・AI"
-            why = f"{topic}の最新動向と実務上の論点を原文から確認できるためです。"
+        if not summary or not why:
+            raise RuntimeError(f"Article {index}: empty source-based summary or why")
         cards.append({"summary": summary, "why": why})
     return cards
 
@@ -101,8 +99,8 @@ JSONだけを返してください。形式:
 }}
 
 要件:
-- categorySummaryは2〜4件。内容のないカテゴリを無理に作らない。
-- interviewは3〜5件。questionとanswerは日本企業のAI/Webエンジニア面接で自然な表現にする。answerは約3〜5文。keywordsは各3個。
+- categorySummaryはAI、Frontend、Cloud-Backend、日本企業 Tech Blogの4件。対象記事にない分野はその旨を簡潔に示し、未実施の網羅調査を主張しない。
+- interviewは5件。questionとanswerは日本企業のAI/Webエンジニア面接で自然な表現にする。answerは約3〜5文。keywordsは各3個。
 - techThemeは当日の5記事を横断する1テーマ。overviewは3〜6文、merits/limits/japanNotesは各2〜4点、closingは面接で使える1〜2文。
 - reviewCardsは3問。
 - knowledgeは必ず5件、SOURCE-DIRECT SUMMARIESと同じ順序・同じtitle。各pointsは2〜4点。
@@ -120,13 +118,13 @@ def render_daily(base, context: dict[str, Any], cards: list[dict[str, str]], syn
         lines.extend([
             f"### {symbol} {item.get('title','')}",
             "",
-            f"**出典：** {item.get('source','')}",
+            f"**出典：{item.get('source','')}**",
             "",
-            f"**原文 URL：** {item.get('url','')}",
+            f"**原文：** {item.get('url','')}",
             "",
             card["summary"],
             "",
-            f"**注目ポイント：** {card['why']}",
+            "**注目ポイント：★★★★★**", "", card["why"],
             "",
             "---",
             "",
@@ -143,19 +141,19 @@ def render_daily(base, context: dict[str, Any], cards: list[dict[str, str]], syn
     for i, item in enumerate((syn.get("interview") or [])[:5], 1):
         kws = [str(x).strip() for x in (item.get("keywords") or []) if str(x).strip()][:3]
         lines.extend([
-            f"### テーマ {i}：{str(item.get('topic') or '').strip()}",
+            f"### 話題{i}：{str(item.get('topic') or '').strip()}",
             "",
-            "**面接質問：**",
+            "**質問：**",
             "",
             f"> {str(item.get('question') or '').strip()}",
             "",
-            "**約30秒の回答：**",
+            "**30秒回答：**",
             "",
             f"> {str(item.get('answer') or '').strip()}",
             "",
-            f"**関連プロジェクト：** {str(item.get('project') or '').strip()}",
+            f"**関連Project：** {str(item.get('project') or '').strip()}",
             "",
-            f"**3つのキーワード：** {' / '.join(f'`{x}`' for x in kws)}",
+            f"**キーワード：** {' / '.join(f'`{x}`' for x in kws)}",
             "",
         ])
 
@@ -167,15 +165,15 @@ def render_daily(base, context: dict[str, Any], cards: list[dict[str, str]], syn
         "",
         str(theme.get("overview") or "").strip(),
         "",
-        "### メリット",
+        "**メリット：**",
         "",
     ])
     for x in theme.get("merits") or []:
         lines.append(f"- {str(x).strip()}")
-    lines.extend(["", "### 制約・注意点", ""])
+    lines.extend(["", "**制約・注意点：**", ""])
     for x in theme.get("limits") or []:
         lines.append(f"- {str(x).strip()}")
-    lines.extend(["", "### 日本企業での導入時の注意点", ""])
+    lines.extend(["", "**日本企業での導入時の注意点：**", ""])
     for x in theme.get("japanNotes") or []:
         lines.append(f"- {str(x).strip()}")
     closing = str(theme.get("closing") or "").strip()
@@ -195,14 +193,14 @@ def render_daily(base, context: dict[str, Any], cards: list[dict[str, str]], syn
         points = item.get("points") or []
         if not points:
             points = [cards[i]["summary"]]
-        for point in points[:4]:
-            lines.append(f"- {str(point).strip()}")
+        for number, point in enumerate(points[:4], 1):
+            lines.append(f"{number}. {str(point).strip()}")
         lines.append("")
 
     lines.extend([
         "# C. 日本語学習｜JLPT + IT日本語",
         "",
-        "当日のTop 5で実際に使われた表現と技術文脈をもとに、JLPT語彙・文法・IT/AI専門用語を構造化した学習カードで復習します。",
+        "当日の記事の技術文脈に関連する語彙・文法・専門用語を復習します。例文は学習用であり、原文からの引用ではありません。面接回答と関連Projectは学習用の提案です。",
     ])
 
     body = "\n".join(lines).strip()
@@ -217,9 +215,8 @@ def render_daily(base, context: dict[str, Any], cards: list[dict[str, str]], syn
         }
         top.append(entry)
     topics = context.get("topics") or []
-    label = "・".join(str(x) for x in topics[:2]) if topics else "IT・AI"
     fm = {
-        "title": f"日本IT・AI日報｜{label}",
+        "title": f"日本 IT/AI 日報｜{int(context['date'][:4])}年{int(context['date'][5:7])}月{int(context['date'][8:])}日",
         "date": context["date"],
         "description": f"{context['date']}の日本IT・AI主要トピックを、原文に基づいて技術・面接・学習の観点から整理します。",
         "topics": topics,
@@ -316,7 +313,7 @@ def render_lesson(base, context: dict[str, Any], vexp: list[dict[str, Any]], gex
             "pattern": src.get("pattern", ""),
             "level": src.get("level", ""),
             "meaning": str(exp.get("meaning") or "").strip(),
-            "structure": src.get("structure", ""),
+            "structure": src.get("structure", "").replace("動詞ます形去ます", "動詞ます形から「ます」を取る"),
             "usage": str(exp.get("usage") or "").strip(),
             "exampleJa": src.get("exampleJa", ""),
             "exampleMeaning": str(exp.get("exampleMeaning") or "").strip(),
@@ -333,9 +330,9 @@ def render_lesson(base, context: dict[str, Any], vexp: list[dict[str, Any]], gex
             item["japanese"] = src.get("japanese")
         terms.append(item)
     fm = {
-        "title": f"日本語学習｜{context['date']}",
+        "title": f"日本語学習｜{int(context['date'][:4])}年{int(context['date'][5:7])}月{int(context['date'][8:])}日",
         "date": context["date"],
-        "description": "当日のTop 5から抽出したJLPT語彙・文法とIT/AI日本語を、原文の技術文脈に沿って日本語で復習します。",
+        "description": "当日の原文の技術文脈に関連する語彙・文法・IT/AI用語を日本語で復習します。",
         "topics": learning.get("topics") or [],
         "levels": learning.get("levels") or [],
         "vocabularyCount": len(vocabulary),
@@ -346,8 +343,39 @@ def render_lesson(base, context: dict[str, Any], vexp: list[dict[str, Any]], gex
         "mustRememberWords": learning.get("mustRememberWords") or [],
         "mustRememberGrammar": learning.get("mustRememberGrammar") or [],
     }
-    body = "# C. 日本語学習｜JLPT + IT日本語\n\n当日のTop 5の原文を手掛かりに、語彙・文法・IT/AI専門用語を日本語だけで整理した学習カードです。"
+    body = "# C. 日本語学習｜JLPT + IT日本語\n\n当日の原文を手掛かりに、日本語で説明を整理した学習カードです。例文は学習用であり、原文の引用ではありません。関連語には原文で直接扱われていない一般概念も含みます。JLPT 等級は学習上の目安です。"
     return base.dump_markdown(fm, body)
+
+
+def render_learning_body(lesson: str) -> str:
+    """Render the full C section using the September 7 Japanese daily layout."""
+    data = yaml.safe_load(lesson.split("\n---\n", 1)[0][4:])
+    lines = ["## C-1. JLPT語彙", ""]
+    for i, item in enumerate(data["vocabulary"], 1):
+        lines.extend([
+            f"### {i}. {item['term']}（{item['reading']}）",
+            f"**品詞：** {item['partOfSpeech']}｜**意味：** {item['meaning']}｜**目安：{item['level']}**  ",
+            f"**コロケーション：** {' / '.join(item['collocations'])}  ",
+            f"**文脈：** {item['note']}  ",
+            f"**例：** `{item['exampleJa']}`  ",
+            f"**ニュアンス：** {item['nuance']}", "",
+        ])
+    lines.extend(["## C-2. IT/AI専門語彙", ""])
+    for i, item in enumerate(data["technicalTerms"], 1):
+        label = item['term'] + ("｜" + item['japanese'] if item.get('japanese') else "")
+        lines.extend([f"### {i}. {label}", f"**意味：** {item['meaning']}  ", f"**文脈：** {item['context']}", ""])
+    lines.extend(["## C-3. JLPT文法", ""])
+    for i, item in enumerate(data["grammar"], 1):
+        lines.extend([
+            f"### {i}. {item['pattern']}",
+            f"**Level：{item['level']}｜意味：** {item['meaning']}  ",
+            f"**形：** `{item['structure']}`  ",
+            f"**使い方：** {item['usage']}  ",
+            f"**例：** `{item['exampleJa']}`  ",
+            f"**補足：** {item['note']}", "",
+        ])
+    lines.extend(["## C-4. 今日の必修", "", f"**10語：** {'・'.join(data['mustRememberWords'])}", "", f"**5文法：** {'・'.join(data['mustRememberGrammar'])}", ""])
+    return "\n".join(lines)
 
 
 def main() -> int:
@@ -372,6 +400,7 @@ def main() -> int:
     vexp = explain_vocabulary(base, chat, context["learning"], cards)
     gexp, texp = explain_grammar_and_terms(base, chat, context["learning"], cards)
     lesson = render_lesson(base, context, vexp, gexp, texp)
+    daily = daily.rstrip() + "\n\n" + render_learning_body(lesson)
 
     (workdir / "daily-ja.md").write_text(daily, encoding="utf-8")
     (workdir / "japanese-ja.md").write_text(lesson, encoding="utf-8")
