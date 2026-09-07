@@ -37,6 +37,8 @@ jobs:
         run: npm run check
       - name: Verify bilingual interview Q&A
         run: npm run bilingual:check-interview
+      - name: Verify daily content quality
+        run: npm run quality:check
       - name: Check audio scripts
         run: npm run audio:check
       - name: Run tests
