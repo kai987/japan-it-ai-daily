@@ -1,0 +1,83 @@
+{
+  "branch": "repair/japanese-history-from-originals",
+  "batch": [
+    "2026-08-12"
+  ],
+  "nextDate": "2026-08-13",
+  "remainingThrough": "2026-09-06",
+  "template": {
+    "ref": "437f9820ace97a86eade6dff650cb859e4f82a5c",
+    "daily": "src/content/daily-ja/2026-09-07.md",
+    "learning": "src/content/japanese-ja/2026-09-07.md",
+    "readOnly": true
+  },
+  "sourcePolicy": {
+    "chineseDirectories": [
+      "src/content/daily",
+      "src/content/japanese"
+    ],
+    "chineseBodyUsed": false,
+    "context": "Top 5 identity metadata and learning skeleton only",
+    "articleFailure": "Block generation before any model call",
+    "lessonExamples": "Retained learning skeleton; explicitly labeled as teaching examples, not source quotations"
+  },
+  "articles": [
+    {
+      "index": 1,
+      "url": "https://zenn.dev/alzcb4/articles/8a5ce86949b7ff",
+      "retrievedAt": "2026-09-07",
+      "resolvedUrl": "https://zenn.dev/alzcb4/articles/8a5ce86949b7ff",
+      "snapshotSha256": "69839469020e5378631c90f647ae22f723c8dbcdc1d12594e885f9c8fefd78bd",
+      "status": 200
+    },
+    {
+      "index": 2,
+      "url": "https://zenn.dev/knowledgesense/articles/9e55a3bb67729c",
+      "retrievedAt": "2026-09-07",
+      "resolvedUrl": "https://zenn.dev/knowledgesense/articles/9e55a3bb67729c",
+      "snapshotSha256": "3af71e4f5384de1c95eceb6655deaabe15092ddb994dcef1d5faeead6180a169",
+      "status": 200
+    },
+    {
+      "index": 3,
+      "url": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-sagemaker-fft/",
+      "retrievedAt": "2026-09-07",
+      "resolvedUrl": "https://aws.amazon.com/jp/about-aws/whats-new/2026/08/amazon-sagemaker-fft/",
+      "snapshotSha256": "6421ebab67150a25bc26032c89a4f0daeadc69e9a85cc4c75c1589620ff77de1",
+      "status": 200
+    },
+    {
+      "index": 4,
+      "url": "https://nextjs.org/blog/next-16-3",
+      "retrievedAt": "2026-09-07",
+      "resolvedUrl": "https://nextjs.org/blog/next-16-3",
+      "snapshotSha256": "a4464876dc62d25cc6c60638da18e55f98047a444bfd17a5c203517fb557b02e",
+      "status": 200
+    },
+    {
+      "index": 5,
+      "url": "https://gihyo.jp/article/2026/08/muse-glimmer",
+      "retrievedAt": "2026-09-07",
+      "resolvedUrl": "https://gihyo.jp/article/2026/08/muse-glimmer",
+      "snapshotSha256": "0b54630ff466aa8106bfbf5317a507cd4cb5dcc53face7e5bae60e27bad504ab",
+      "status": 200
+    }
+  ],
+  "validation": {
+    "content": "Top 5 identity and learning skeleton validated",
+    "vocabulary": 20,
+    "grammar": 7,
+    "technicalTerms": 8,
+    "build": "128 pages succeeded",
+    "vitest": 22,
+    "sourceBoundaryTests": 3,
+    "chineseDiff": "unchanged from branch HEAD",
+    "september7Diff": "unchanged"
+  },
+  "outputs": {
+    "src/content/daily-ja/2026-08-12.md": "7d505b8303f8c0fd944e2fd3e66745eb28ac12616a76336698e434b9902de659",
+    "src/content/japanese-ja/2026-08-12.md": "082b4acf0178143eb4c2cd9f9dfc95f0add1fdf06ed426162d31ebdd698141d0"
+  },
+  "editorialReview": "2026-08-12-editorial-review.md",
+  "detailStandard": "September 7 depth: background, mechanism, conditions, results, limits; source-supported details are not removed to meet a summary length cap"
+}
