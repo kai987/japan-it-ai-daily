@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import { featuredTopics, countTopicArticles } from '../../lib/topics';
 import { getJapaneseArticleTitle } from '../../lib/articleTitles';
 import { getSafeExternalUrl } from '../../lib/urls';
+import { getDailyListDisplayTitle } from '../../lib/listDisplayTitles';
 
 const base = import.meta.env.BASE_URL;
 const root = `${base}ja/`;
@@ -109,7 +110,7 @@ const topicStats = featuredTopics.map((topic) => ({
         {recent.map((report) => (
           <a class="archive-row" href={`${root}daily/${report.id}/`}>
             <div class="meta">{report.data.date.toLocaleDateString('ja-JP')}</div>
-            <div><strong>{report.data.title}</strong><div class="meta">{report.data.description}</div></div>
+            <div><strong>{getDailyListDisplayTitle(report.data.date)}</strong><div class="meta">{report.data.description}</div></div>
           </a>
         ))}
       </div>
