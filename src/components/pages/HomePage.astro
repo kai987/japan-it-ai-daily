@@ -1,0 +1,123 @@
+---
+import { localeRoot, type SiteLocale } from "../../lib/locale";
+import { pageCopy } from "../../lib/pageCopy";
+const { locale } = Astro.props as { locale: SiteLocale };
+const copy = pageCopy.Home[locale];
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { featuredTopics, countTopicArticles } from '../../lib/topics';
+import { getJapaneseArticleTitle } from '../../lib/articleTitles';
+import { getSafeExternalUrl } from '../../lib/urls';
+import { getDailyListDisplayTitle } from '../../lib/listDisplayTitles';
+
+const base = import.meta.env.BASE_URL;
+const root = localeRoot(base, locale);
+const reports = (await getCollection(locale === 'ja' ? 'dailyJa' : 'daily')).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
+const latest = reports[0];
+const recent = reports.slice(0, 6);
+const top = latest?.data.top ?? [];
+const topicStats = featuredTopics.map((topic) => ({
+  ...topic,
+  count: countTopicArticles(reports, topic),
+}));
+---
+<BaseLayout locale={locale} title="Japan IT / AI Daily">
+  <section class="hero home-hero">
+    <div class="container home-hero-grid">
+      <div class="home-hero-copy">
+        <div class="eyebrow">Daily report · 日本時間</div>
+        <h1>{copy.heading}</h1>
+        <p>{copy.intro}</p>
+        <div class="tags">
+          <span class="tag">AI Agent</span><span class="tag">MCP</span><span class="tag">RAG</span><span class="tag">Security</span><span class="tag">React / Next.js</span><span class="tag">Cloud</span>
+        </div>
+      </div>
+
+      <aside class="topic-explorer" aria-label={copy.topicAria}>
+        <div class="topic-explorer-heading">
+          <div>
+            <div class="eyebrow">EXPLORE TOPICS</div>
+            <h2>{copy.topics}</h2>
+          </div>
+          <a href={`${root}topics/`}>{copy.allTopics}</a>
+        </div>
+        <div class="topic-mini-grid">
+          {topicStats.map((topic) => (
+            <a class="topic-mini-card" href={`${root}topics/${topic.key}/`}>
+              <strong>{topic.label}</strong>
+              <span>{topic.count} {locale === 'ja' ? '記事' : topic.count === 1 ? 'article' : 'articles'}</span>
+              <small>{copy.explore}</small>
+            </a>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>{copy.top}</h2>
+        {latest && <a href={`${root}daily/${latest.id}/`}>{copy.read}</a>}
+      </div>
+      {top.length ? (
+        <div class="top-list">
+          {top.slice(0,5).map((item:any, i:number) => {
+            const displayTitle = getJapaneseArticleTitle(item);
+            const safeUrl = getSafeExternalUrl(item.url);
+            const story = (
+              <>
+                <div class="rank">{String(i+1).padStart(2,'0')}</div>
+                <div>
+                  <h3>{displayTitle}</h3>
+                  <div class="meta">{item.source}{item.topic ? ` · ${item.topic}` : ''}</div>
+                  {item.why && <div class="why">{item.why}</div>}
+                </div>
+                <div class="story-side">
+                  <div class="date">{latest.data.date.toLocaleDateString('ja-JP')}</div>
+                  {safeUrl && <div class="external-label">原文 ↗</div>}
+                </div>
+              </>
+            );
+            return safeUrl ? (
+              <a class="top-item top-item-link" href={safeUrl} target="_blank" rel="noopener noreferrer" aria-label={`${displayTitle}（原文を新しいタブで開く）`}>
+                {story}
+              </a>
+            ) : (
+              <article class="top-item">{story}</article>
+            );
+          })}
+        </div>
+      ) : (
+        <div class="panel">{copy.empty}</div>
+      )}
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface)">
+    <div class="container grid-two">
+      <a class="panel" href={`${root}knowledge/`}>
+        <h3>{copy.knowledge}</h3>
+        <p>{copy.knowledgeIntro}</p>
+      </a>
+      <a class="panel" href={`${root}japanese/`}>
+        <h3>{copy.learning}</h3>
+        <p>{copy.learningIntro}</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title"><h2>{copy.recent}</h2><a href={`${root}archive/`}>{copy.archive}</a></div>
+      <div class="archive-list">
+        {recent.map((report) => (
+          <a class="archive-row" href={`${root}daily/${report.id}/`}>
+            <div class="meta">{report.data.date.toLocaleDateString('ja-JP')}</div>
+            <div><strong>{getDailyListDisplayTitle(report.data.date)}</strong><div class="meta">{report.data.description}</div></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

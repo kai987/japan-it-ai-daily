@@ -1,0 +1,35 @@
+---
+import { localeRoot, type SiteLocale } from "../../lib/locale";
+import { pageCopy } from "../../lib/pageCopy";
+const { locale } = Astro.props as { locale: SiteLocale };
+const copy = pageCopy.Archive[locale];
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArchivePagination from '../ArchivePagination.astro';
+import { getCollection } from 'astro:content';
+import { getDailyListDisplayTitle } from '../../lib/listDisplayTitles';
+const base = import.meta.env.BASE_URL;
+const root = localeRoot(base, locale);
+const reports = (await getCollection(locale === 'ja' ? 'dailyJa' : 'daily')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+---
+<BaseLayout locale={locale} title={copy.title}>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Archive</div>
+      <h1>{copy.heading}</h1>
+      <p>{copy.intro}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="archive-list" data-archive-list>
+        {reports.map((report)=>(
+          <a class="archive-row" href={`${root}daily/${report.id}/`} data-archive-row>
+            <div class="meta">{report.data.date.toLocaleDateString('ja-JP')}</div>
+            <div><strong>{getDailyListDisplayTitle(report.data.date)}</strong><div class="meta">{report.data.description}</div></div>
+          </a>
+        ))}
+      </div>
+      <ArchivePagination locale={locale} pageSize={10} />
+    </div>
+  </section>
+</BaseLayout>

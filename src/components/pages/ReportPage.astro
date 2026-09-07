@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { getJapaneseArticleTitle } from '../../lib/articleTitles';
+
+
+import type { CollectionEntry } from 'astro:content';
+import type { SiteLocale } from '../../lib/locale';
+import LegacyReportEnhancements from '../LegacyReportEnhancements.astro';
+import ReportSpeechEnhancer from '../ReportSpeechEnhancer.astro';
+const { report, locale } = Astro.props as { report: CollectionEntry<'daily'> | CollectionEntry<'dailyJa'>; locale: SiteLocale };
+const { Content, headings } = await render(report);
+const lessons = locale === 'zh' ? await getCollection('japanese') : [];
+const hasNativeJapanese = headings.some((heading:any) => {
+  if (heading.depth > 2) return false;
+  return /^C[.．]\s*/.test((heading.text ?? '').trim());
+});
+const supplement = hasNativeJapanese ? undefined : lessons.find((lesson) => lesson.id === report.id);
+const renderedSupplement = supplement ? await render(supplement) : undefined;
+const SupplementContent = renderedSupplement?.Content;
+const topTitles = (report.data.top ?? []).slice(0, 5).map((item:any) => getJapaneseArticleTitle(item));
+let inTopFive = false;
+let topHeadingIndex = 0;
+const normalizedHeadings = locale === 'ja' ? headings : headings.map((heading:any) => {
+  if (heading.depth === 2 && heading.text.includes('今日最值得看的 5 篇')) {
+    inTopFive = true;
+    topHeadingIndex = 0;
+    return heading;
+  }
+  if (inTopFive && heading.depth === 3 && topHeadingIndex < topTitles.length) {
+    const number = ['①', '②', '③', '④', '⑤'][topHeadingIndex] ?? '';
+    const normalized = { ...heading, text: `${number} ${topTitles[topHeadingIndex]}` };
+    topHeadingIndex += 1;
+    if (topHeadingIndex >= topTitles.length) inTopFive = false;
+    return normalized;
+  }
+  return heading;
+});
+const tocHeadings = [
+  ...normalizedHeadings,
+  ...(renderedSupplement?.headings ?? [])
+].filter((heading:any) => heading.depth <= 3);
+---
+<BaseLayout locale={locale} title={`${report.data.title} · Japan IT / AI Daily`} description={report.data.description}>
+  <div class="container report-layout" data-top-titles={locale === 'zh' ? JSON.stringify(topTitles) : undefined}>
+    <article class="prose">
+      <div class="eyebrow">{report.data.date.toLocaleDateString('ja-JP')}</div>
+      <h1>{report.data.title}</h1>
+      <p class="meta">{report.data.description}</p>
+      <div class="tags">{report.data.topics.map((topic:string) => <span class="tag">{topic}</span>)}</div>
+      <Content />
+      {SupplementContent && (
+        <section class="learning-supplement">
+          <div class="supplement-note">历史日报补生成 · JLPT 等级为学习参考</div>
+          <SupplementContent />
+        </section>
+      )}
+    </article>
+    <aside class="toc" aria-label={locale === 'ja' ? 'このページの目次' : 'On this page'}>
+      <h4>目次</h4>
+      {tocHeadings.map((heading:any)=><a href={`#${heading.slug}`}>{heading.text}</a>)}
+    </aside>
+  </div>
+
+  {locale === "zh" ? <LegacyReportEnhancements /> : <ReportSpeechEnhancer />}
+  <style>
+    .report-speech-target{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      min-width:0;
+    }
+    .report-speech-target > p{
+      flex:1 1 auto;
+      min-width:0;
+      margin-top:0;
+      margin-bottom:0;
+    }
+    .report-speech-button{
+      position:static;
+      flex:0 0 34px;
+      margin-top:1px;
+      z-index:1;
+    }
+    @media(max-width:800px){
+      .report-speech-target{gap:9px}
+      .report-speech-button{
+        flex-basis:38px;
+        margin-top:0;
+      }
+    }
+  </style>
+</BaseLayout>

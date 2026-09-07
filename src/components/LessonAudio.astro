@@ -1,0 +1,106 @@
+<script>
+  import { configuredAudioAssetUrl, localAudioAssetUrl } from '../lib/audioUrl';
+
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.speech-button'));
+  const parts = location.pathname.split('/').filter(Boolean);
+  const lessonId = parts[parts.lastIndexOf('japanese') + 1];
+  const synth = 'speechSynthesis' in window ? window.speechSynthesis : null;
+  let activeButton: HTMLButtonElement | null = null;
+  let activeAudio: HTMLAudioElement | null = null;
+  const normalize = (text: string) => text.replace(/\s+/g, ' ').trim();
+
+  function clearActive() {
+    activeButton?.classList.remove('is-speaking');
+    activeButton?.setAttribute('aria-pressed', 'false');
+    activeButton = null;
+  }
+  function activate(button: HTMLButtonElement) {
+    activeButton = button;
+    button.classList.add('is-speaking');
+    button.setAttribute('aria-pressed', 'true');
+  }
+  function stopAll() {
+    const audio = activeAudio;
+    activeAudio = null;
+    if (audio) { audio.pause(); audio.currentTime = 0; }
+    synth?.cancel();
+    clearActive();
+  }
+  function speakFallback(button: HTMLButtonElement, text: string) {
+    if (!synth || !('SpeechSynthesisUtterance' in window)) {
+      button.dataset.speechUnavailable = 'true';
+      clearActive();
+      return;
+    }
+    const utterance = new SpeechSynthesisUtterance(text);
+    const voices = synth.getVoices();
+    const voice = voices.find((v) => v.lang.toLowerCase() === 'ja-jp' && v.localService)
+      || voices.find((v) => v.lang.toLowerCase() === 'ja-jp')
+      || voices.find((v) => v.lang.toLowerCase().startsWith('ja'));
+    if (voice) utterance.voice = voice;
+    utterance.lang = 'ja-JP';
+    utterance.rate = button.dataset.speechKind === 'word' ? 0.82 : 0.9;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+    activate(button);
+    utterance.onend = utterance.onerror = () => { if (activeButton === button) clearActive(); };
+    synth.speak(utterance);
+  }
+  function play(button: HTMLButtonElement, text: string, url: string) {
+    const audio = new Audio(url);
+    activeAudio = audio;
+    activate(button);
+    const fallback = () => {
+      if (activeAudio !== audio) return;
+      activeAudio = null;
+      clearActive();
+      speakFallback(button, text);
+    };
+    audio.addEventListener('ended', () => {
+      if (activeAudio === audio) { activeAudio = null; clearActive(); }
+    }, { once: true });
+    audio.addEventListener('error', fallback, { once: true });
+    void audio.play().catch(fallback);
+  }
+
+  type Manifest = {
+    voice?: { name?: string; style?: string };
+    items?: { reading: string; term: string; word: string; exampleJa: string; example: string }[];
+    grammar?: { exampleJa: string; example: string }[];
+  };
+  async function attachAudio() {
+    if (!lessonId || !buttons.length) return;
+    try {
+      // Manifests live at the site root in both language modes; MP3s may live on R2.
+      const response = await fetch(localAudioAssetUrl('japanese', lessonId, 'manifest.json'), { cache: 'no-cache' });
+      if (!response.ok) return;
+      const manifest: Manifest = await response.json();
+      const words = new Map<string, string>(), examples = new Map<string, string>(), grammar = new Map<string, string>();
+      for (const item of manifest.items || []) {
+        words.set(normalize(item.reading), item.word);
+        words.set(normalize(item.term), item.word);
+        examples.set(normalize(item.exampleJa), item.example);
+      }
+      for (const item of manifest.grammar || []) grammar.set(normalize(item.exampleJa), item.example);
+      for (const button of buttons) {
+        const text = normalize(button.dataset.speech || '');
+        const map = button.dataset.speechKind === 'word' ? words : button.dataset.speechKind === 'grammar-example' ? grammar : examples;
+        const filename = map.get(text);
+        if (!filename) continue;
+        button.dataset.audio = configuredAudioAssetUrl('japanese', lessonId, filename);
+        button.dataset.audioProvider = 'aivis';
+        button.title = `AivisSpeech · ${manifest.voice?.name || 'AivisSpeech'}${manifest.voice?.style ? ` · ${manifest.voice.style}` : ''}`;
+      }
+    } catch { /* Keep the pre-rendered URL and browser speech fallback. */ }
+  }
+  for (const button of buttons) button.addEventListener('click', () => {
+    const text = (button.dataset.speech || '').trim();
+    if (!text) return;
+    if (activeButton === button) { stopAll(); return; }
+    stopAll();
+    if (button.dataset.audio) play(button, text, button.dataset.audio);
+    else speakFallback(button, text);
+  });
+  void attachAudio();
+  window.addEventListener('pagehide', stopAll);
+</script>

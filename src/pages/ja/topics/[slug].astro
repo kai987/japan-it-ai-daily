@@ -1,60 +1,9 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import { featuredTopics, topicMatches } from '../../../lib/topics';
-import { getJapaneseArticleTitle } from '../../../lib/articleTitles';
-import { getSafeExternalUrl } from '../../../lib/urls';
-
+import Page from "../../../components/pages/TopicPage.astro";
+import { featuredTopics } from "../../../lib/topics";
 export function getStaticPaths() {
-  return featuredTopics.map((topic) => ({
-    params: { slug: topic.key },
-    props: { topic },
-  }));
+  return featuredTopics.map((topic) => ({ params: { slug: topic.key }, props: { topic } }));
 }
-
 const { topic } = Astro.props;
-const base = import.meta.env.BASE_URL;
-const root = `${base}ja/`;
-const reports = (await getCollection('dailyJa')).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
-const matches = reports.flatMap((report) =>
-  (report.data.top ?? [])
-    .filter((item:any) => topicMatches(item, topic))
-    .map((item:any) => ({ item, report })),
-);
 ---
-<BaseLayout locale="ja" title={`${topic.label} · トピック · Japan IT / AI Daily`} description={topic.descriptionJa}>
-  <section class="hero topic-detail-hero">
-    <div class="container">
-      <a class="eyebrow topic-back" href={`${root}topics/`}>← トピック一覧</a>
-      <h1>{topic.label}</h1>
-      <p>{topic.descriptionJa}</p>
-      <div class="tags"><span class="tag">{matches.length} 記事</span></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="topic-article-list">
-        {matches.length ? matches.map(({ item, report }) => {
-          const safeUrl = getSafeExternalUrl(item.url);
-          const href = safeUrl ?? `${root}daily/${report.id}/`;
-          const external = Boolean(safeUrl);
-          const displayTitle = getJapaneseArticleTitle(item);
-          return (
-            <a class="topic-article-row" href={href} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
-              <div class="topic-article-date">{report.data.date.toLocaleDateString('ja-JP')}</div>
-              <div>
-                <h2>{displayTitle}</h2>
-                <div class="meta">{item.source}{item.topic ? ` · ${item.topic}` : ''}</div>
-                {item.why && <p>{item.why}</p>}
-              </div>
-              <span class="topic-article-action">{external ? '原文 ↗' : '日報 →'}</span>
-            </a>
-          );
-        }) : (
-          <div class="panel"><h3>該当する記事はまだありません</h3><p>日報が増えると、このトピックにも関連する記事が自動的に追加されます。</p></div>
-        )}
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+<Page locale="ja" topic={topic} />

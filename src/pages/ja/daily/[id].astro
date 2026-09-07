@@ -1,30 +1,9 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import ReportSpeechEnhancer from '../../../components/ReportSpeechEnhancer.astro';
-import { getCollection, render } from 'astro:content';
-
+import Page from "../../../components/pages/ReportPage.astro";
+import { getCollection } from "astro:content";
 export async function getStaticPaths() {
-  const reports = await getCollection('dailyJa');
-  return reports.map((report) => ({ params: { id: report.id }, props: { report } }));
+  return (await getCollection("dailyJa")).map((report) => ({ params: { id: report.id }, props: { report } }));
 }
-
 const { report } = Astro.props;
-const { Content, headings } = await render(report);
-const tocHeadings = headings.filter((heading:any) => heading.depth <= 3);
 ---
-<BaseLayout locale="ja" title={`${report.data.title} · Japan IT / AI Daily`} description={report.data.description}>
-  <div class="container report-layout">
-    <article class="prose">
-      <div class="eyebrow">{report.data.date.toLocaleDateString('ja-JP')}</div>
-      <h1>{report.data.title}</h1>
-      <p class="meta">{report.data.description}</p>
-      <div class="tags">{report.data.topics.map((topic:string) => <span class="tag">{topic}</span>)}</div>
-      <Content />
-    </article>
-    <aside class="toc" aria-label="このページの目次">
-      <h4>目次</h4>
-      {tocHeadings.map((heading:any)=><a href={`#${heading.slug}`}>{heading.text}</a>)}
-    </aside>
-  </div>
-  <ReportSpeechEnhancer />
-</BaseLayout>
+<Page locale="ja" report={report} />

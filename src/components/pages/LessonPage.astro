@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { render } from 'astro:content';
+import { configuredAudioAssetUrl } from '../../lib/audioUrl';
+
+
+import type { CollectionEntry } from 'astro:content';
+import { localeRoot, type SiteLocale } from '../../lib/locale';
+import { pageCopy } from '../../lib/pageCopy';
+import { learningView } from '../../lib/learningView';
+import LessonAudio from '../LessonAudio.astro';
+const { lesson, locale } = Astro.props as { lesson: CollectionEntry<'japanese'> | CollectionEntry<'japaneseJa'>; locale: SiteLocale };
+const data = learningView(lesson);
+const copy = pageCopy.Lesson[locale];
+const { Content, headings } = await render(lesson);
+const base = import.meta.env.BASE_URL;
+const root = localeRoot(base, locale);
+const hasStructuredCards = data.vocabulary.length > 0 || data.grammar.length > 0;
+const legacyTocHeadings = headings.filter((heading:any) => heading.depth < 4);
+const jlptOrder = ['N5/N4', 'N3', 'N2', 'N1'];
+const vocabGroups = jlptOrder
+  .map((level) => ({ level, items: data.vocabulary.map((item, index) => ({ item, index })).filter(({ item }) => item.level === level) }))
+  .filter((group) => group.items.length > 0);
+const audioFile = (kind: 'vocab' | 'example' | 'grammar-example', index: number) =>
+  configuredAudioAssetUrl('japanese', lesson.id, `${kind}-${String(index + 1).padStart(2, '0')}.mp3`);
+---
+<BaseLayout locale={locale} title={`${data.title} · Japan IT / AI Daily`} description={data.description}>
+  <div class="container report-layout lesson-detail">
+    <article class="prose lesson-prose">
+      <div class="eyebrow">{data.date.toLocaleDateString('ja-JP')} · JLPT + IT日本語</div>
+      <h1>{data.title}</h1>
+      <p class="meta">{data.description}</p>
+      <div class="tags">{data.levels.map((level:string) => <span class="tag">{level}</span>)}</div>
+      <p class="learning-back"><a href={`${root}japanese/`}>{copy.back}</a></p>
+
+      {hasStructuredCards ? (
+        <Fragment>
+          <section class="study-section" id="c-1-jlpt-vocabulary">
+            <div class="study-section-heading">
+              <div>
+                <div class="entry-kicker">C-1 · Vocabulary</div>
+                <h2>{copy.vocab}</h2>
+              </div>
+              <p>{copy.dictionary}</p>
+            </div>
+
+            {vocabGroups.map((group) => (
+              <section class="study-level-group" id={`vocab-${group.level.toLowerCase().replace('/','-')}`}>
+                <div class="study-level-title"><span>{group.level}</span><small>{group.items.length} {locale === 'ja' ? '語' : 'words'}</small></div>
+                <div class="study-card-grid">
+                  {group.items.map(({ item, index }) => (
+                    <article class="study-card vocabulary-card">
+                      <header class="study-card-header">
+                        <div>
+                          <div class="study-term-line">
+                            <h3>{item.term}<span class="reading">（{item.reading}）</span></h3>
+                            <button
+                              class="speech-button"
+                              type="button"
+                              data-speech={item.reading || item.term}
+                              data-speech-kind="word"
+                              data-audio={audioFile('vocab', index)}
+                              aria-label={`${item.term}の発音を再生`}
+                              aria-pressed="false"
+                              title={copy.wordTitle}
+                            >
+                              <svg class="speech-icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M11 5 7 9H4v6h3l4 4V5Z"></path>
+                                <path d="M15 9.5a4 4 0 0 1 0 5M17.5 7a7.3 7.3 0 0 1 0 10"></path>
+                              </svg>
+                              <svg class="speech-icon-stop" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="7" y="7" width="10" height="10" rx="1"></rect>
+                              </svg>
+                            </button>
+                          </div>
+                          <div class="study-pos">{item.partOfSpeech}</div>
+                        </div>
+                        <span class="level-badge">参考：{item.level}</span>
+                      </header>
+
+                      <div class="study-field">
+                        <span class="study-label">{copy.meaning}</span>
+                        <p class="study-meaning">{item.meaning}</p>
+                      </div>
+
+                      {item.collocations.length > 0 && (
+                        <div class="study-field">
+                          <span class="study-label">{copy.collocations}</span>
+                          <div class="phrase-list">
+                            {item.collocations.map((phrase) => <span>{phrase}</span>)}
+                          </div>
+                        </div>
+                      )}
+
+                      <div class="study-field">
+                        <span class="study-label">{copy.context}</span>
+                        <p>{item.note}</p>
+                      </div>
+
+                      <div class="example-box">
+                        <div class="example-label-row">
+                          <span class="study-label">{copy.example}</span>
+                          <button
+                            class="speech-button"
+                            type="button"
+                            data-speech={item.exampleJa}
+                            data-speech-kind="example"
+                            data-audio={audioFile('example', index)}
+                            aria-label="例文を読み上げる"
+                            aria-pressed="false"
+                            title={copy.exampleTitle}
+                          >
+                            <svg class="speech-icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M11 5 7 9H4v6h3l4 4V5Z"></path>
+                              <path d="M15 9.5a4 4 0 0 1 0 5M17.5 7a7.3 7.3 0 0 1 0 10"></path>
+                            </svg>
+                            <svg class="speech-icon-stop" viewBox="0 0 24 24" aria-hidden="true">
+                              <rect x="7" y="7" width="10" height="10" rx="1"></rect>
+                            </svg>
+                          </button>
+                        </div>
+                        <p lang="ja">{item.exampleJa}</p>
+                        {item.exampleMeaning && <small>{item.exampleMeaning}</small>}
+                      </div>
+
+                      {item.nuance && (
+                        <div class="nuance-note">
+                          <span class="study-label">{copy.nuance}</span>
+                          <p>{item.nuance}</p>
+                        </div>
+                      )}
+                    </article>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </section>
+
+          {data.technicalTerms.length > 0 && (
+            <section class="study-section" id="c-2-it-ai-terms">
+              <div class="study-section-heading">
+                <div>
+                  <div class="entry-kicker">C-2 · Technical Terms</div>
+                  <h2>{copy.tech}</h2>
+                </div>
+                <p>{copy.techIntro}</p>
+              </div>
+              <div class="technical-term-grid">
+                {data.technicalTerms.map((item) => (
+                  <article class="technical-term-card">
+                    <h3>{item.term}</h3>
+                    {item.japanese && <div class="meta">{item.japanese}</div>}
+                    <p><strong>{item.meaning}</strong></p>
+                    <p>{item.context}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <section class="study-section" id="c-3-jlpt-grammar">
+            <div class="study-section-heading">
+              <div>
+                <div class="entry-kicker">C-3 · Grammar</div>
+                <h2>{copy.grammar}</h2>
+              </div>
+              <p>{copy.grammarIntro}</p>
+            </div>
+            <div class="grammar-card-grid">
+              {data.grammar.map((item, index) => (
+                <article class="study-card grammar-card">
+                  <header class="study-card-header">
+                    <h3>{item.pattern}</h3>
+                    <span class="level-badge">参考：{item.level}</span>
+                  </header>
+                  <div class="study-field">
+                    <span class="study-label">{copy.meaning}</span>
+                    <p class="study-meaning">{item.meaning}</p>
+                  </div>
+                  <div class="grammar-structure"><span>{copy.structure}</span><code>{item.structure}</code></div>
+                  <div class="study-field">
+                    <span class="study-label">{copy.usage}</span>
+                    <p>{item.usage}</p>
+                  </div>
+                  <div class="example-box">
+                    <div class="example-label-row">
+                      <span class="study-label">{copy.example}</span>
+                      <button
+                        class="speech-button"
+                        type="button"
+                        data-speech={item.exampleJa}
+                        data-speech-kind="grammar-example"
+                        data-audio={audioFile('grammar-example', index)}
+                        aria-label={copy.grammarAria}
+                        aria-pressed="false"
+                        title={locale === 'ja' ? copy.grammarAria : '语法例句朗读'}
+                      >
+                        <svg class="speech-icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M11 5 7 9H4v6h3l4 4V5Z"></path>
+                          <path d="M15 9.5a4 4 0 0 1 0 5M17.5 7a7.3 7.3 0 0 1 0 10"></path>
+                        </svg>
+                        <svg class="speech-icon-stop" viewBox="0 0 24 24" aria-hidden="true">
+                          <rect x="7" y="7" width="10" height="10" rx="1"></rect>
+                        </svg>
+                      </button>
+                    </div>
+                    <p lang="ja">{item.exampleJa}</p>
+                    {item.exampleMeaning && <small>{item.exampleMeaning}</small>}
+                  </div>
+                  {item.note && (
+                    <div class="nuance-note"><span class="study-label">注意</span><p>{item.note}</p></div>
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
+
+          {(data.mustRememberWords.length > 0 || data.mustRememberGrammar.length > 0) && (
+            <section class="study-section remember-section" id="c-4-must-remember">
+              <div class="entry-kicker">C-4 · Review</div>
+              <h2>{copy.remember}</h2>
+              {data.mustRememberWords.length > 0 && (
+                <div class="remember-row"><strong>{copy.words}</strong><div class="remember-chips">{data.mustRememberWords.map((item) => <span>{item}</span>)}</div></div>
+              )}
+              {data.mustRememberGrammar.length > 0 && (
+                <div class="remember-row"><strong>{copy.patterns}</strong><div class="remember-chips">{data.mustRememberGrammar.map((item) => <span>{item}</span>)}</div></div>
+              )}
+            </section>
+          )}
+        </Fragment>
+      ) : (
+        <div class="legacy-lesson"><Content /></div>
+      )}
+    </article>
+
+    <aside class="toc" aria-label={copy.tocAria}>
+      <h4>目次</h4>
+      {hasStructuredCards ? (
+        <Fragment>
+          <a href="#c-1-jlpt-vocabulary">{copy.tocVocab}</a>
+          {data.technicalTerms.length > 0 && <a href="#c-2-it-ai-terms">{copy.tocTech}</a>}
+          <a href="#c-3-jlpt-grammar">{copy.tocGrammar}</a>
+          {(data.mustRememberWords.length > 0 || data.mustRememberGrammar.length > 0) && <a href="#c-4-must-remember">{copy.tocRemember}</a>}
+        </Fragment>
+      ) : (
+        legacyTocHeadings.map((heading:any)=><a href={`#${heading.slug}`}>{heading.text}</a>)
+      )}
+    </aside>
+  </div>
+
+  <LessonAudio />
+</BaseLayout>

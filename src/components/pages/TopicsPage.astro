@@ -1,0 +1,41 @@
+---
+import { localeRoot, type SiteLocale } from "../../lib/locale";
+import { pageCopy } from "../../lib/pageCopy";
+const { locale } = Astro.props as { locale: SiteLocale };
+const copy = pageCopy.Topics[locale];
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { featuredTopics, countTopicArticles } from '../../lib/topics';
+
+const base = import.meta.env.BASE_URL;
+const root = localeRoot(base, locale);
+const reports = await getCollection(locale === 'ja' ? 'dailyJa' : 'daily');
+const topicStats = featuredTopics.map((topic) => ({
+  ...topic,
+  count: countTopicArticles(reports, topic),
+}));
+---
+<BaseLayout locale={locale} title={copy.title}>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">EXPLORE TOPICS</div>
+      <h1>{copy.heading}</h1>
+      <p>{copy.intro}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container topic-page-grid">
+      {topicStats.map((topic) => (
+        <a class="topic-card" href={`${root}topics/${topic.key}/`}>
+          <div>
+            <div class="eyebrow">{topic.count} {locale === 'ja' ? '記事' : topic.count === 1 ? 'article' : 'articles'}</div>
+            <h2>{topic.label}</h2>
+            <p>{locale === 'ja' ? topic.descriptionJa : topic.description}</p>
+          </div>
+          <span>{copy.explore}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

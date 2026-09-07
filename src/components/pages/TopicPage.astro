@@ -1,0 +1,58 @@
+---
+import { localeRoot, type SiteLocale } from "../../lib/locale";
+import { pageCopy } from "../../lib/pageCopy";
+const { locale } = Astro.props as { locale: SiteLocale };
+const copy = pageCopy.Topic[locale];
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { featuredTopics, topicMatches } from '../../lib/topics';
+import { getJapaneseArticleTitle } from '../../lib/articleTitles';
+import { getSafeExternalUrl } from '../../lib/urls';
+
+
+const { topic } = Astro.props as { topic: (typeof featuredTopics)[number] };
+const base = import.meta.env.BASE_URL;
+const root = localeRoot(base, locale);
+const reports = (await getCollection(locale === 'ja' ? 'dailyJa' : 'daily')).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
+const matches = reports.flatMap((report) =>
+  (report.data.top ?? [])
+    .filter((item:any) => topicMatches(item, topic))
+    .map((item:any) => ({ item, report })),
+);
+---
+<BaseLayout locale={locale} title={`${topic.label} · ${locale === 'ja' ? 'トピック' : 'Topics'} · Japan IT / AI Daily`} description={locale === 'ja' ? topic.descriptionJa : topic.description}>
+  <section class="hero topic-detail-hero">
+    <div class="container">
+      <a class="eyebrow topic-back" href={`${root}topics/`}>{copy.back}</a>
+      <h1>{topic.label}</h1>
+      <p>{locale === 'ja' ? topic.descriptionJa : topic.description}</p>
+      <div class="tags"><span class="tag">{matches.length} {locale === 'ja' ? '記事' : matches.length === 1 ? 'article' : 'articles'}</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="topic-article-list">
+        {matches.length ? matches.map(({ item, report }) => {
+          const safeUrl = getSafeExternalUrl(item.url);
+          const href = safeUrl ?? `${root}daily/${report.id}/`;
+          const external = Boolean(safeUrl);
+          const displayTitle = getJapaneseArticleTitle(item);
+          return (
+            <a class="topic-article-row" href={href} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
+              <div class="topic-article-date">{report.data.date.toLocaleDateString('ja-JP')}</div>
+              <div>
+                <h2>{displayTitle}</h2>
+                <div class="meta">{item.source}{item.topic ? ` · ${item.topic}` : ''}</div>
+                {item.why && <p>{item.why}</p>}
+              </div>
+              <span class="topic-article-action">{external ? '原文 ↗' : (locale === 'ja' ? '日報 →' : '日报 →')}</span>
+            </a>
+          );
+        }) : (
+          <div class="panel"><h3>{copy.empty}</h3><p>{copy.emptyIntro}</p></div>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

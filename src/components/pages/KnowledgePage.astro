@@ -1,0 +1,67 @@
+---
+import { localeRoot, type SiteLocale } from "../../lib/locale";
+import { pageCopy } from "../../lib/pageCopy";
+const { locale } = Astro.props as { locale: SiteLocale };
+const copy = pageCopy.Knowledge[locale];
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+const root = localeRoot(base, locale);
+const reports = (await getCollection(locale === 'ja' ? 'dailyJa' : 'daily')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+const latest = reports[0];
+const top = latest?.data.top ?? [];
+---
+<BaseLayout locale={locale} title={copy.title}>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Important Points</div>
+      <h1>{copy.heading}</h1>
+      <p>{copy.intro}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {latest ? (
+        <>
+          <div class="section-title">
+            <div>
+              <div class="meta">{latest.data.date.toLocaleDateString('ja-JP')}</div>
+              <h2>{copy.latest}</h2>
+            </div>
+            <a href={`${root}daily/${latest.id}/`}>{copy.read}</a>
+          </div>
+          <div class="top-list">
+            {top.slice(0,5).map((item:any, i:number) => (
+              <article class="top-item">
+                <div class="rank">{String(i+1).padStart(2,'0')}</div>
+                <div>
+                  <h3>{item.title}</h3>
+                  <div class="meta">{item.source}{item.topic ? ` · ${item.topic}` : ''}</div>
+                  {item.why && <div class="why">{item.why}</div>}
+                </div>
+              </article>
+            ))}
+          </div>
+        </>
+      ) : (
+        <div class="panel">{copy.empty}</div>
+      )}
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface)">
+    <div class="container">
+      <div class="section-title"><h2>{copy.history}</h2><a href={`${root}archive/`}>{copy.archive}</a></div>
+      <div class="archive-list">
+        {reports.slice(0,12).map((report)=>(
+          <a class="archive-row" href={`${root}daily/${report.id}/`}>
+            <div class="meta">{report.data.date.toLocaleDateString('ja-JP')}</div>
+            <div><strong>{report.data.title}</strong><div class="meta">{report.data.description}</div></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
