@@ -1,0 +1,47 @@
+name: Sync bilingual interview Q&A
+
+on:
+  push:
+    branches:
+      - feature/fix-ja-interview-audio
+    paths:
+      - 'scripts/sync-bilingual-interview.mjs'
+      - '.github/workflows/sync-bilingual-interview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repair branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: feature/fix-ja-interview-audio
+          fetch-depth: 1
+
+      - name: Sync Japanese interview Q&A from shared Japanese text in Chinese mode
+        run: node scripts/sync-bilingual-interview.mjs
+
+      - name: Verify Chinese content stayed untouched
+        run: |
+          git diff --exit-code -- src/content/daily src/content/japanese
+
+      - name: Verify exact bilingual Q&A equality
+        run: node scripts/sync-bilingual-interview.mjs --check
+
+      - name: Commit synchronized Japanese reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- src/content/daily-ja; then
+            echo 'No Japanese report changes were required.'
+            exit 0
+          fi
+          git add src/content/daily-ja
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'fix: share interview Q&A across language modes'
+          git push origin HEAD:feature/fix-ja-interview-audio
