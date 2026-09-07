@@ -9,7 +9,7 @@ import SiteSearch from '../components/SiteSearch.astro';
 import MermaidRenderer from '../components/MermaidRenderer.astro';
 import InterviewStaticAudio from '../components/InterviewStaticAudio.astro';
 import SearchDeepLink from '../components/SearchDeepLink.astro';
-import { localeRoot, type SiteLocale } from '../lib/locale';
+import { DEFAULT_LOCALE, localeRoot, type SiteLocale } from '../lib/locale';
 
 const {
   title = 'Japan IT / AI Daily',
@@ -30,6 +30,25 @@ const navLabels = locale === 'ja'
     <meta name="description" content={description} />
     <meta name="color-scheme" content="light dark" />
     <title>{title}</title>
+    <script is:inline define:vars={{ base, locale, defaultLocale: DEFAULT_LOCALE }}>
+      (() => {
+        const storedLanguage = localStorage.getItem('site-language');
+        const shouldDefaultToJapanese = locale === 'zh' && (
+          storedLanguage === 'ja' ||
+          (storedLanguage !== 'zh' && defaultLocale === 'ja')
+        );
+        if (!shouldDefaultToJapanese) return;
+
+        const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+        const pathname = window.location.pathname;
+        const relative = pathname.startsWith(normalizedBase)
+          ? pathname.slice(normalizedBase.length)
+          : pathname.replace(/^\/+/, '');
+        const withoutJa = relative.replace(/^ja\//, '');
+        const nextPath = `${normalizedBase}ja/${withoutJa}`;
+        window.location.replace(`${nextPath}${window.location.search}${window.location.hash}`);
+      })();
+    </script>
     <script is:inline>
       (() => {
         const stored = localStorage.getItem('theme');
@@ -59,9 +78,10 @@ const navLabels = locale === 'ja'
               aria-label={locale === 'ja' ? '表示言語' : '显示语言'}
               data-base={base}
               data-current-locale={locale}
+              data-default-locale={DEFAULT_LOCALE}
             >
-              <option value="zh" selected={locale === 'zh'}>中文</option>
               <option value="ja" selected={locale === 'ja'}>日本語</option>
+              <option value="zh" selected={locale === 'zh'}>中文</option>
             </select>
           </label>
           <button class="theme-toggle" type="button" aria-label="ダークモードに切り替える" title="テーマを切り替える">
