@@ -10,6 +10,8 @@
     "check": "astro check",
     "test": "vitest run",
     "security:check": "node scripts/check-csp.mjs",
+    "bilingual:sync-interview": "node scripts/sync-bilingual-interview.mjs",
+    "bilingual:check-interview": "node scripts/sync-bilingual-interview.mjs --check",
     "audio:check": "node --check scripts/audio-cache.mjs && node --check scripts/generate-japanese-audio.mjs && node --check scripts/generate-interview-audio.mjs && node --check scripts/strip-dist-audio.mjs",
     "audio:strip-dist": "node scripts/strip-dist-audio.mjs",
     "audio:generate": "node scripts/generate-japanese-audio.mjs && node scripts/generate-interview-audio.mjs",
