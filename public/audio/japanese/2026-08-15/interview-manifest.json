@@ -1,6 +1,6 @@
 {
   "date": "2026-08-15",
-  "generatedAt": "2026-08-31T20:14:01.541Z",
+  "generatedAt": "2026-09-07T11:02:54.180Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -23,40 +23,128 @@
     "speed": 1,
     "intonationScale": 1
   },
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-13",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-07T11:04:18.245Z",
   "interview": [
     {
       "index": 1,
+      "type": "question",
+      "text": "エージェント基盤を拡張しやすくするには、何を分離しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "a11c81388918b36db6640132b2f5703b274844208295bd168bf1762ceb23eff2",
+      "durationSeconds": 4.666
+    },
+    {
+      "index": 1,
       "type": "answer",
-      "text": "AI Agentでは、Modelだけでなく、Tool、Runtime、Sandbox、Session、Permissionまで含めてSystemとして設計する必要があると考えています。",
+      "text": "モデル、ツール、セッション管理などを独立した部品にします。DeepSeek HarnessはCordisで依存関係を管理し、設定からプラグインを差し替えます。Webとheadlessの起動方式も選べます。外部CLIは明示的な有効化も必要です。ただし開発者プレビューで、交換すれば安全になるわけではありません。権限と入出力の契約、再開時の動作を構成ごとに確認します。",
       "audio": "interview-answer-01.mp3",
-      "audioHash": "9fe09923518ec98ba818bc0078adad33946d5b86e37d3c7e02859d2ebfe029b1"
+      "audioHash": "1cadbeb0bced3b13d3c5bf5a1c33f15a5e75a95a0b5b8d97bc9a6dbeaa6b7b16",
+      "durationSeconds": 28.712,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "Web取得専用の処理を分ければ、プロンプトインジェクションを防げますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "99371bdd12aee00307cf3e2b72c54724dacf6cd414f1dd70c7c4e1ea377444b1",
+      "durationSeconds": 5.082
     },
     {
       "index": 2,
       "type": "answer",
-      "text": "Prompt Injection対策では、外部情報を信頼しないことに加えて、最小権限やSandboxで攻撃成功後の影響範囲を制限することが重要です。",
+      "text": "被害を抑える層にはなりますが、完全防御ではありません。guardedスキルは取得側の権限を絞り、不可視Unicodeなどを除いてJSONを返します。ただし自然文の悪意は残ります。直接の取得経路も残ります。Geminiではrunscがないと隔離なしで進む条件もあります。取得経路と隔離状態を確認し、返った文章を操作の指示として扱わないことが大切です。",
       "audio": "interview-answer-02.mp3",
-      "audioHash": "7f3ae4cfbb455f341d25f0badd539efe71066e0e8bee70099c69648c9d2789bc"
+      "audioHash": "63611094438beafe775c8aab35c68ba7e5274e90a3a9139abff0b966208bf34d",
+      "durationSeconds": 27.412,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "会話を引き継ぐサブエージェントを使うとき、何を確認しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "e12a9ba47545b3cebc5f91ff12dd8c2022960581c760a353b7d370087771b87a",
+      "durationSeconds": 4.782
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "引き継ぐ範囲と実行モードを確認します。Claude Codeのforkは会話とキャッシュを継承しますが、種類を省略した起動は別です。forkは親と同じモデルで動きます。記事は親だけが知る合言葉を子が答える実験で継承を確かめました。ただし、費用削減の測定ではありません。printモードとの差や、SendMessageの受信設定も確認して使い分けます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "151a99db7103249415669b35c624a4b2ae4745a07ded54003995f376ee3193b3",
+      "durationSeconds": 26.795,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "新しいモデルの性能と料金を、どう比較しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "ed42d421feae2c4c4d1f8f8493ef8bb36575e9f94bc6b95d55d30fdd0ec7de2b",
+      "durationSeconds": 4.12
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "同じ評価課題と設定で比べ、料金の適用期間も確認します。Gemini 3.7 FlashのTerminal-benchは、2.1と3.0で対象が違います。点数を混ぜて順位は決めません。入出力の上限も別々に見ます。APIの半額価格も2026年末までです。必要な推論レベルを揃え、再試行やタイムアウトを含む時間と費用を、自分の仕事で測ります。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "4b2e6966ff2b24e692c00517e6909377b2ebddb5de4eb608f956c91a878b20ca",
+      "durationSeconds": 28.423,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "接続したツールをエージェントが使わないとき、どう調べますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "06f1acb209beea88a638d3adacb2f30082bc9cc42b5d8e47a8d32a498d8ea85e",
+      "durationSeconds": 4.838
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "権限を広げる前に、実際の呼び出し経路を確認します。AgentCoreの記事では、GatewayにLambdaを接続しても選ばれず、使う条件をシステムプロンプトに明示すると動きました。TreatMissingDataで異常状態も用意して検証しています。例は読み取り専用です。ただし小規模な確認なので、権限不足、対象なし、多数の結果も分けて試します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "bfaa72088cece168f77e2cbb9621fde496090299f31ec7e4af4624a805733980",
+      "durationSeconds": 26.407,
+      "durationStatus": "ideal"
     }
   ],
   "review": [
     {
       "index": 1,
-      "text": "Agent Harnessとは何ですか。",
+      "text": "サニタイズされたWeb文書なら、操作指示として信頼できますか。",
       "audio": "review-question-01.mp3",
-      "audioHash": "e01f6ec1b83c609ac4dad579b9437ce10efdf75a2d69ae3e26f3dec12d5cca61"
+      "audioHash": "2f95aaea940fbb96c441ad97d58054a482e2a7fa66fc89a60471cbd21ef7678b",
+      "durationSeconds": 5.038
     },
     {
       "index": 2,
-      "text": "Prompt Injectionにどう対策しますか。",
+      "text": "forkの合言葉テストでは、何が確認できましたか。",
       "audio": "review-question-02.mp3",
-      "audioHash": "d92a3e938c60e72a5080c3f2f9a8d075385b4085389bea9a02ef7b9406f5573b"
+      "audioHash": "78b51f51a4b79b908e1092cc35bf5c08bb7c504880d049fd09a42244989564b9",
+      "durationSeconds": 4.318
     },
     {
       "index": 3,
-      "text": "Multi-agentで重要なことは何ですか。",
+      "text": "AgentCoreで権限不足と返ったら、最初に何を見ますか。",
       "audio": "review-question-03.mp3",
-      "audioHash": "6080c2356590c5b7c4663b00fe223b91c9832f1bdcb650c0474dbf63a8ed0882"
+      "audioHash": "dbc836cec2d4cfe3dc621cd9c856b71dc36dd4e207f31333ed29ad7f32600dc9",
+      "durationSeconds": 4.804
     }
   ]
 }

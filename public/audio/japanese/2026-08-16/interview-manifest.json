@@ -1,6 +1,6 @@
 {
   "date": "2026-08-16",
-  "generatedAt": "2026-08-31T20:14:01.542Z",
+  "generatedAt": "2026-09-07T11:13:13.103Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -23,40 +23,128 @@
     "speed": 1,
     "intonationScale": 1
   },
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-13",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-07T11:17:21.104Z",
   "interview": [
     {
       "index": 1,
+      "type": "question",
+      "text": "モノレポで、サービスごとに異なる開発規約をどう伝えますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "54be36f6a4a4b06d0fad0ad1fc911d98604d4d448fdab2c2e76833b9c3a61154",
+      "durationSeconds": 5.151
+    },
+    {
+      "index": 1,
       "type": "answer",
-      "text": "大規模なRepositoryでは、共通ルールとFrontend・Backend固有ルールを分け、現在のTaskに必要なContextだけをAgentへ与えることが重要です。",
+      "text": "共通の規約はルートに、固有の規約は各ディレクトリに置きます。Kiro IDEではAGENTS.mdを使い、対象ファイルにアクセスすると下位のルールが追加されます。読み取りだけでも適用される点が特徴です。ただし、読み込まれたことと規約を守れたことは別なので、Included Steeringの表示と生成コードの両方を確認します。APIと画面では指示も分けます。",
       "audio": "interview-answer-01.mp3",
-      "audioHash": "de55f8ed8b3d28b7a510411018d31bf710457a08ad0333ec736638bc92c6829b"
+      "audioHash": "4af661332811d123510835c5e36673723e4165ffb91eb6b91fddd6e55aeab0b9",
+      "durationSeconds": 27.644,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "AIがコードを書くなら、言語の選び方は変わりますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "ca161b9a93e980cf2cf04837c4eeebcb8509e19e2a06906b71cee10847929640",
+      "durationSeconds": 4.457
     },
     {
       "index": 2,
       "type": "answer",
-      "text": "AIが生成したコードは、型チェック、Lint、自動テストなどの決定的なFeedbackを使ってSelf-correction Loopを回すことが有効だと思います。",
+      "text": "書く速さに加え、生成されたコードを確かめやすいかを重視します。Goは静的型で不一致を見つけ、gofmtで書式を揃え、govulncheckで既知の脆弱性を調べられます。ただし、コンパイルや整形だけで業務ロジックは保証できません。既存資産とチームの経験を踏まえ、テストと保守まで含めて選びます。記事は比較実験ではなく、Googleの見解です。",
       "audio": "interview-answer-02.mp3",
-      "audioHash": "7a9d5ef8f5a1844e5583706d8ab3638fce411152e3c91f3e4dbac8380068e7d3"
+      "audioHash": "787e57d24ac7c4326e63e0c5ff576e5828a3068e62cb39947b587b351c3b5cae",
+      "durationSeconds": 26.375,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "ガードレールが読み取り権限に対応すれば、すぐ全データを調査できますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "3a30894bc292edfef47e6d03a2472a2157c65a0cdf1f46632360d46182a58152",
+      "durationSeconds": 5.486
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "許容範囲と、ロールに付与した権限を分けて確認します。DevOps AgentはReadOnlyAccessに対応しても、既定で全部使えるわけではありません。記事のAthena検証は結果をAWS側に保存する設定で成功しました。ただし、追加権限は利用者が評価する必要があります。対象データを絞り、実行と結果取得の両方を試します。既定の付与は一部だけです。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "53519944c93607eb6d207dbd16f0b0fd089c20c8ed5b6614d85d4f0c5020b13e",
+      "durationSeconds": 27.8,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "複数の遠隔セッションで、作業の衝突をどう避けますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "fc0c419c35f201aaf514c38acf016c2580915850d29283aef064809b6119845e",
+      "durationSeconds": 4.503
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "セッションが使うディレクトリを確認します。Remote ControlのServer modeでは、same-dirは共有、worktreeは同じGitリポジトリ内で作業場所を分けます。ただし、別プロジェクトには別のサーバーが必要です。また再起動は新規作成でなく復元の場合があります。名前だけで判断せず、対象の場所と未反映の変更を確かめて作業します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "a2b03616f4ecb3c51ee833859d8b8fc3e9ec2e74ac0f00ca4d74d4a521b59b63",
+      "durationSeconds": 26.287,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "同じ規模のモデルでも、性能が変わる理由をどう説明しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "c8e13bf2e1daf4ddb4a714d4f20e4219e889abe2200e1981443bffb6a8e0bcec",
+      "durationSeconds": 4.98
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "パラメータ数だけでなく、事後学習の課題と評価条件を見ます。GLM-5.3は743Bの基盤を変えず、長時間の開発課題を増やしています。slimeの2.3倍という値は学習の効率で、推論速度ではありません。ベンダーの成績を一般化せず、必要な作業と推論設定を揃え、正確さと実際の費用を確認します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "f7c92d2b4fbe55e47150d395dc9be6f0ead92d19a0cb1b91cc86b8b7f824ac41",
+      "durationSeconds": 26.783,
+      "durationStatus": "ideal"
     }
   ],
   "review": [
     {
       "index": 1,
-      "text": "モノレポでAI Agentのルールをどう管理しますか。",
+      "text": "指示の読み込みと、指示への適合は同じですか。",
       "audio": "review-question-01.mp3",
-      "audioHash": "ff84845f1ff3922ba2a7193cc92a88af03b9b99254d740b05a5a9e8675a34547"
+      "audioHash": "f841a3f90c1b7f6910ec94b4fe6c339ec98f983e3c690147ae0fb63263f57c64",
+      "durationSeconds": 4.098
     },
     {
       "index": 2,
-      "text": "なぜType CheckがAI Codingに重要ですか。",
+      "text": "権限ガードレールの拡張だけでAthenaを実行できますか。",
       "audio": "review-question-02.mp3",
-      "audioHash": "93abee0b185721531cae789f6ff675931bef2fef6d7394e911695b21af352824"
+      "audioHash": "60a537d567341606427ea5d6d033bca34b61b4d5a811112619804e70fc6dd42d",
+      "durationSeconds": 4.434
     },
     {
       "index": 3,
-      "text": "IAMとAgent Guardrailの違いは何ですか。",
+      "text": "遠隔セッションの命名を調べるとき、何を分けますか。",
       "audio": "review-question-03.mp3",
-      "audioHash": "c02aa490646d37b3cb933be2f26d33b31d4b36a5ad2f85a68db4ef4217c90af6"
+      "audioHash": "65f887033876db4cee58b90401f58a772c5fd8d80fcdcd8b7de309dfe8e9b4e0",
+      "durationSeconds": 4.348
     }
   ]
 }

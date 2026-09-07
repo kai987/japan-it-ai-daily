@@ -1,6 +1,6 @@
 {
   "date": "2026-08-18",
-  "generatedAt": "2026-08-31T20:14:01.545Z",
+  "generatedAt": "2026-09-07T11:25:40.518Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -23,40 +23,128 @@
     "speed": 1,
     "intonationScale": 1
   },
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-13",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-07T11:26:17.646Z",
   "interview": [
     {
       "index": 1,
+      "type": "question",
+      "text": "AIサービスの費用を可視化した後、何を確認しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "afd76dccb0392951d38099d3517f5fe0d263162461e41d69edc096308cbfeaba",
+      "durationSeconds": 4.487
+    },
+    {
+      "index": 1,
       "type": "answer",
-      "text": "企業の生成AIコスト管理では、全体のAPI料金だけでなく、UserやTeam単位のUsageを可視化し、実際のBusiness Outcomeと結び付けて評価することが重要です。",
+      "text": "集計が請求と合うかを先に確認します。クラウドAIトークン管理はAPIやCSVでChatGPTなどの利用量を集めますが、ただし、記事は提供開始の発表で、削減効果の実測ではありません。取り込み漏れや集計期間を点検し、部署ごとの使い道と成果を合わせて見ます。利用量が多いことだけで、効果が高いとは判断しません。請求元も揃えます。",
       "audio": "interview-answer-01.mp3",
-      "audioHash": "6884868155260e41c5e1e45bd3a85065aead9958b3c1cd4d209ea3d64cec3315"
+      "audioHash": "34bf5a974ad9d15f8c047639d6b950697069ab672f642fdfb5cf67bf8f783f5b",
+      "durationSeconds": 28.151,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "画面を変更した直後、効率よく確認するにはどうしますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "8776758b116cedf658f6fd4c7bf25393cefab4c20d833c10c65961649fab8179",
+      "durationSeconds": 4.922
     },
     {
       "index": 2,
       "type": "answer",
-      "text": "Context Windowが大きくても、すべての情報を入れるのではなく、検索や要約で必要なContextを選択することが重要だと思います。",
+      "text": "保存した変更をすぐ表示し、必要な操作を自分でも試します。VS Codeの内蔵ブラウザーはRefresh AutomaticallyでローカルHTMLを再読み込みできます。ただし、見た目が更新されても動作の保証ではありません。フォームや画面遷移も確かめます。長い会話では固定スクロールを使い、どの指示への変更かも確認します。本番環境でも必要な確認は残します。",
       "audio": "interview-answer-02.mp3",
-      "audioHash": "80c9a64d4e26b523875b274616505a851da3393dcb710151c782284bd68f404c"
+      "audioHash": "dd1e7e94f0d2f38090ba1d502f18feb7a19ccc78e3e69236c11cc10bead7a12e",
+      "durationSeconds": 27.598,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "依存関係の自動移行が成功したら、そのまま取り込めますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "7596a98be5e1a69b960556febb703d0c6062d6a1f33d5358dfa03f3ce2d8bc39",
+      "durationSeconds": 4.864
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "変更範囲と業務の動作をレビューしてから取り込みます。AWS Transformの例ではSDKをv3へ移し、DynamoDBの実装も変え、Jest五件が通りました。ただし小さな検証アプリの結果で、Node.jsやCDKの更新は対象外です。残った依存を確認し、必要な回帰テストと反映後の再分析で移行を確かめます。選択した修正は一つだけです。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "0d8f265b2edddd396fb4e49863f3610a88628f0e98c3465be952e80f4c29af1a",
+      "durationSeconds": 28.488,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "コンテキストの設定値を増やせば、長い入力を確実に扱えますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "2bef02008287829201c73e7e66e1e492cfa5b7a4a4f724aca11f6fb51f48b7d1",
+      "durationSeconds": 5.398
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "設定値と実際に使える枠を分けて確認します。Codexの記事では一百万を指定しても表示は828Kで、model_context_windowの値と一致しませんでした。ただし、これは表示の観測で、内部の上限計算は推測です。自動圧縮のタイミングも合わせて調べ、長い入力で必要な情報を保って答えられるかを検証します。表示と品質は別の観測です。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "73bf852e4ceb8706cff8917517bdee55ab3f85a75ca907e8a3a58378b331fdee",
+      "durationSeconds": 28.435,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "AIの分析を人が承認する運用なら、安全と言えますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "cd1478ada45337a96b10b793f3cc7a6f2668aee1ec2c9f36f95cc2a1be8ef98c",
+      "durationSeconds": 4.747
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "承認の手順だけでは十分ではありません。記事のS2では、推奨に慣れて自分で分析しなくなる危険を挙げています。AIの提案を見ずに判断する訓練と、反証を探すレビューを残します。S5の教育も受講数だけで評価せず、報告率や初動時間を見ます。ただし、これは業務設計の論考で、効果を測った比較実験ではありません。判断力も点検します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "6a033c0f53a1091a57d4fc9cb78984eddd6dadc0ff9726070b192bea78738ef5",
+      "durationSeconds": 27.794,
+      "durationStatus": "ideal"
     }
   ],
   "review": [
     {
       "index": 1,
-      "text": "企業で生成AIのコストをどう管理しますか。",
+      "text": "Agent minutesと、実際に待った時間は同じですか。",
       "audio": "review-question-01.mp3",
-      "audioHash": "75ea8cbc60a4e602498b5bfdd8b0051c8c5d6631564755c342451f4e63bdacd6"
+      "audioHash": "596d3261a490967e7d4a5117969d64c6776b3d27c4541199f0d369755c4ff564",
+      "durationSeconds": 4.318
     },
     {
       "index": 2,
-      "text": "Long ContextでもRAGが必要なのはなぜですか。",
+      "text": "Codexで828Kと表示されたら、何が分かりますか。",
       "audio": "review-question-02.mp3",
-      "audioHash": "36b7a1d6179b5a84124a70a7db742890bd6ae0820ef631b120d34194a8a20cad"
+      "audioHash": "1bc590d228d6b1cf44ca36974f1a9df819314417ea22938fdd454f194e8dd467",
+      "durationSeconds": 5.212
     },
     {
       "index": 3,
-      "text": "Human-in-the-Loopをどう設計しますか。",
+      "text": "教育にAIを使う場合、何を成果として評価しますか。",
       "audio": "review-question-03.mp3",
-      "audioHash": "1fa6346deabf6eec68acadc361b3fa2a6eec2240c69f5ff3a122edf6f2c3e781"
+      "audioHash": "d4960e1796f12606435d73610446b32768c371643cf24ecac9a9b01cdd4840e8",
+      "durationSeconds": 4.632
     }
   ]
 }
