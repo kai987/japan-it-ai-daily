@@ -1,0 +1,98 @@
+name: Apply Japanese as default site language
+
+on:
+  push:
+    branches: [repair/japanese-history-from-originals]
+    paths:
+      - '.github/workflows/apply-default-japanese-locale.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: repair/japanese-history-from-originals
+          fetch-depth: 1
+
+      - name: Apply locale changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          locale_file = Path('src/lib/locale.ts')
+          locale_text = locale_file.read_text(encoding='utf-8')
+          old_default = "export const DEFAULT_LOCALE: SiteLocale = 'zh';"
+          new_default = "export const DEFAULT_LOCALE: SiteLocale = 'ja';"
+          if old_default not in locale_text and new_default not in locale_text:
+              raise RuntimeError('DEFAULT_LOCALE declaration not found')
+          locale_text = locale_text.replace(old_default, new_default)
+          locale_file.write_text(locale_text, encoding='utf-8')
+
+          layout_file = Path('src/layouts/BaseLayout.astro')
+          text = layout_file.read_text(encoding='utf-8')
+
+          old_import = "import { localeRoot, type SiteLocale } from '../lib/locale';"
+          new_import = "import { DEFAULT_LOCALE, localeRoot, type SiteLocale } from '../lib/locale';"
+          if old_import in text:
+              text = text.replace(old_import, new_import)
+          elif new_import not in text:
+              raise RuntimeError('locale import not found')
+
+          old_select_attrs = """              data-base={base}\n              data-current-locale={locale}\n            >"""
+          new_select_attrs = """              data-base={base}\n              data-current-locale={locale}\n              data-default-locale={DEFAULT_LOCALE}\n            >"""
+          if old_select_attrs in text:
+              text = text.replace(old_select_attrs, new_select_attrs)
+          elif new_select_attrs not in text:
+              raise RuntimeError('language select attributes not found')
+
+          old_options = """              <option value=\"zh\" selected={locale === 'zh'}>中文</option>\n              <option value=\"ja\" selected={locale === 'ja'}>日本語</option>"""
+          new_options = """              <option value=\"ja\" selected={locale === 'ja'}>日本語</option>\n              <option value=\"zh\" selected={locale === 'zh'}>中文</option>"""
+          if old_options in text:
+              text = text.replace(old_options, new_options)
+          elif new_options not in text:
+              raise RuntimeError('language options not found')
+
+          marker = """    <title>{title}</title>\n    <script is:inline>\n      (() => {\n        const stored = localStorage.getItem('theme');"""
+          replacement = """    <title>{title}</title>\n    <script is:inline define:vars={{ base, locale, defaultLocale: DEFAULT_LOCALE }}>\n      (() => {\n        const storedLanguage = localStorage.getItem('site-language');\n        const shouldDefaultToJapanese = locale === 'zh' && (\n          storedLanguage === 'ja' ||\n          (storedLanguage !== 'zh' && defaultLocale === 'ja')\n        );\n        if (!shouldDefaultToJapanese) return;\n\n        const normalizedBase = base.endsWith('/') ? base : `${base}/`;\n        const pathname = window.location.pathname;\n        const relative = pathname.startsWith(normalizedBase)\n          ? pathname.slice(normalizedBase.length)\n          : pathname.replace(/^\\/+/, '');\n        const withoutJa = relative.replace(/^ja\\//, '');\n        const nextPath = `${normalizedBase}ja/${withoutJa}`;\n        window.location.replace(`${nextPath}${window.location.search}${window.location.hash}`);\n      })();\n    </script>\n    <script is:inline>\n      (() => {\n        const stored = localStorage.getItem('theme');"""
+          if marker in text:
+              text = text.replace(marker, replacement)
+          elif 'shouldDefaultToJapanese' not in text:
+              raise RuntimeError('head insertion point not found')
+
+          layout_file.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run check
+
+      - name: Tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --exit-code -- src/content/daily src/content/japanese
+          git add src/lib/locale.ts src/layouts/BaseLayout.astro
+          if git diff --cached --quiet; then
+            echo 'No locale changes to commit.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'feat: default site language to Japanese'
+          git push origin HEAD:repair/japanese-history-from-originals
