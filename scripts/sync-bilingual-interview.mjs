@@ -36,7 +36,7 @@ const sectionRange = (source, title) => {
 
 const classifyLabel = (line) => {
   const compact = line.replace(/\s+/g, '');
-  if (/^\*\*.*(?:面试问题|面接質問|質問).*：?\*\*$/.test(compact)) return 'question';
+  if (/^\*\*.*(?:面试问题|面试官可能会问|面试官可能问|面试可能会问|面接質問|面接で聞かれそうな質問|質問).*：?\*\*$/.test(compact)) return 'question';
   if (/^\*\*.*(?:30秒|３０秒).*回答.*：?\*\*$/.test(compact)) return 'answer';
   return null;
 };
