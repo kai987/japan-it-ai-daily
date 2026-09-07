@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArchivePagination from '../../components/ArchivePagination.astro';
 import { getCollection } from 'astro:content';
 import { getDailyListDisplayTitle } from '../../lib/listDisplayTitles';
 const base = import.meta.env.BASE_URL;
@@ -15,13 +16,16 @@ const reports = (await getCollection('dailyJa')).sort((a,b)=>b.data.date.valueOf
     </div>
   </section>
   <section class="section">
-    <div class="container archive-list">
-      {reports.map((report)=>(
-        <a class="archive-row" href={`${root}daily/${report.id}/`}>
-          <div class="meta">{report.data.date.toLocaleDateString('ja-JP')}</div>
-          <div><strong>{getDailyListDisplayTitle(report.data.date)}</strong><div class="meta">{report.data.description}</div></div>
-        </a>
-      ))}
+    <div class="container">
+      <div class="archive-list" data-archive-list>
+        {reports.map((report)=>(
+          <a class="archive-row" href={`${root}daily/${report.id}/`} data-archive-row>
+            <div class="meta">{report.data.date.toLocaleDateString('ja-JP')}</div>
+            <div><strong>{getDailyListDisplayTitle(report.data.date)}</strong><div class="meta">{report.data.description}</div></div>
+          </a>
+        ))}
+      </div>
+      <ArchivePagination locale="ja" pageSize={10} />
     </div>
   </section>
 </BaseLayout>
