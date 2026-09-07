@@ -1,49 +1,112 @@
 # Japan IT / AI Daily
 
-A daily static knowledge site for Japanese IT/AI news, AI engineer interview preparation, and technical Japanese study.
+A bilingual static site for Japanese IT/AI news, engineering interview preparation, and technical Japanese study.
+
+[Read the site](https://kai987.github.io/japan-it-ai-daily/) · [Content quality rules](docs/DAILY_CONTENT_QUALITY_RULES.md) · [Evidence workflow](docs/evidence/README.md)
 
 ## Stack
 
-- Astro 5
-- Markdown / MDX content collection
-- GitHub Pages
-- GitHub Actions
+- Astro **7.2.9**, TypeScript, Markdown content collections
+- Node.js **24**, npm lockfile-based installs
+- GitHub Pages and GitHub Actions
+- AivisSpeech-generated MP3; Cloudflare R2 serves production audio
+- Vitest, Playwright Chromium, ffprobe, content/evidence/audio validators
 
 ## Local development
 
-```bash
-npm install
+```sh
+npm ci
 npm run dev
 ```
 
+The site base path is `/japan-it-ai-daily/`. The default display language is Japanese; the language selector preserves the corresponding route. Chinese and Japanese article prose are separate content, not runtime translations.
+
+For a production preview and browser regression tests:
+
+```sh
+npm run build
+npx playwright install chromium
+npm run test:browser
+```
+
+`npm run preview` also serves `dist/`. The browser-test server is managed by Playwright and stopped afterward. `dist/`, `.astro/` and test artifacts are ignored by Git.
+
 ## Content model
 
-Daily reports live in:
+Each date has four files:
 
-```text
-src/content/daily/YYYY-MM-DD.md
+| Directory | Purpose |
+| --- | --- |
+| `src/content/daily/` | Chinese report: A detailed articles, B knowledge, C Japanese study |
+| `src/content/daily-ja/` | Japanese report, independently written from the originals |
+| `src/content/japanese/` | Study identities/examples with Chinese explanations |
+| `src/content/japanese-ja/` | Corresponding study data with Japanese explanations |
+| `src/content/evidence/` | Reviewed provenance records for new reports from 2026-09-08 |
+
+Top article URL, publisher, topic and order must correspond between languages; display titles and explanations may be localized. The five Japanese interview questions/answers are shared verbatim, with `daily` as their canonical copy. Study terms, readings, levels, grammar identities and must-remember selections correspond across modes.
+
+Original articles are the source of facts. A source evidence draft stores article metadata, then reviewers add short original quotes, locations, conditions and links to the actual article/QA excerpts. Never generate Japanese prose by translating the Chinese report. See the [lightweight pilot](docs/evidence/README.md) and [completed history repair records](docs/japanese-history-repair/README.md).
+
+## Shared pages
+
+`src/pages/` and `src/pages/ja/` are thin route adapters. `src/components/pages/` owns shared home, archive, interview, learning list/detail, knowledge, topic list/detail and report rendering. `src/lib/pageCopy.ts` contains interface labels only; `src/lib/learningView.ts` normalizes field names without translating or falling back to the other language's prose.
+
+Interview Markdown extraction lives in `src/lib/interview.ts`. Both modes use the same filters and pagination, while keeping localized labels and existing links. `LessonAudio.astro` handles study playback, root-relative manifests, R2 URLs, stop/switch behavior and browser speech fallback. `InterviewStaticAudio.astro` handles report recordings. The Chinese report's legacy supplement/title enhancements remain isolated in `LegacyReportEnhancements.astro` so older report behavior is preserved.
+
+## Validation
+
+```sh
+npm run check
+npm run content:integrity:check
+npm run evidence:check
+npm run evidence:pilot
+npm run bilingual:check-interview
+npm run quality:check
+npm run audio:integrity:check
+npm run audio:duration:check
+npm test
+npm run build
+npm run test:browser
+npm run security:check
 ```
 
-Each report contains:
+Install ffmpeg/ffprobe for measured audio checks (`brew install ffmpeg` on macOS). Content integrity checks four-file date coverage, Top 5 identity/order, study counts, unique entries and must-remember membership. Audio integrity checks the exact study/interview text-to-manifest mappings and required MP3s. Content quality includes article detail, evidence boundaries, technical anchors, repetition and estimated answer duration.
 
-- A. 详细文字版
-- B. 重点总结和面试可用的知识点
-- C. 日本語学习｜JLPT + IT日本語
+Historical content/audio checks cover **2026-08-12 onward**. The unchanged 9/7 reference has narrowly documented, file-hash-pinned exceptions in [daily-quality-policy.json](docs/daily-quality-policy.json); its recordings still undergo duration and integrity checks. Empty requested date selections fail. The new-source evidence policy starts on 9/8 and reports explicitly when no eligible new report exists yet.
 
-The homepage and archive are generated automatically from the content collection.
+These checks do not replace original-source review or judgment of natural spoken Japanese.
 
-## GitHub Pages
+## Audio generation
 
-The repository includes `.github/workflows/deploy.yml`. In GitHub, set **Settings → Pages → Source** to **GitHub Actions** once. After that, every push to `main` rebuilds and publishes the site.
+MP3s and manifests are currently versioned under `public/audio/japanese/YYYY-MM-DD/`. R2 is the production delivery copy; manifests are also served with the site. Existing local MP3s allow development without R2.
 
-Expected public URL:
+To regenerate audio, start AivisSpeech (default `http://127.0.0.1:10101`) and install ffmpeg:
 
-`https://kai987.github.io/japan-it-ai-daily/`
+```sh
+npm run audio:generate:latest
+# Or a specific date:
+node scripts/generate-japanese-audio.mjs --date YYYY-MM-DD
+node scripts/generate-interview-audio.mjs --date YYYY-MM-DD
+node scripts/validate-interview-audio-duration.mjs --date YYYY-MM-DD --write
+```
 
-## Daily update convention
+Default voice style ID is `497929760`; interview speed is `1.00`. Generation reuses audio when its text/settings match. Do not edit a manifest to make stale audio appear current. Standard answers target 26–34 seconds, with a hard acceptable range of 22–40 seconds.
 
-Recommended commit message:
+## Deployment
+
+GitHub Pages uses **GitHub Actions** as its source. A push to `main` runs:
 
 ```text
-content: add daily report for YYYY-MM-DD
+Build job: dependency audit, content/evidence/audio checks, unit tests,
+           Astro build, browser regressions, CSP, Pages artifact
+    ↓
+R2 job: validate local audio, upload changed files, verify every public MP3 SHA-256
+    ↓
+Pages deployment
 ```
+
+The reusable R2 workflow also supports manual execution. Pushes with an available comparison commit upload only changed audio; no-audio changes skip upload but still verify all public recordings. Manual runs or unavailable comparison commits use full sync. Missing credentials or a public audio mismatch block publication.
+
+Configure repository secrets `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`; the bucket is `japan-it-ai-daily-audio`. `PUBLIC_AUDIO_BASE_URL` is an optional repository variable overriding the configured R2 public endpoint. It must use HTTPS. Production builds omit CDN-hosted MP3s from the Pages artifact while retaining local manifests. No audio credentials are included in the client.
+
+Pull requests run the security/build workflow. Source-generation scripts under `scripts/*source-direct*.py` are optional authoring tools requiring Python, requests, BeautifulSoup and PyYAML; their output still needs the current checks and evidence review before publication.

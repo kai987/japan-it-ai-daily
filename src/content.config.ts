@@ -9,7 +9,9 @@ const topItem = z.object({
   source: z.string(),
   topic: z.string().optional(),
   why: z.string().optional(),
-  url: externalUrl.optional()
+  url: externalUrl,
+  articleId: z.string().min(1).optional(),
+  originalTitle: z.string().min(1).optional()
 });
 
 const dailySchema = z.object({
@@ -18,7 +20,7 @@ const dailySchema = z.object({
   description: z.string(),
   topics: z.array(z.string()).default([]),
   sources: z.array(z.string()).default([]),
-  top: z.array(topItem).default([]),
+  top: z.array(topItem).length(5),
   featured: z.boolean().default(false)
 });
 

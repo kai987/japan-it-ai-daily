@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-07",
+  "status": "reviewed",
+  "reviewedBy": "Codex: original-source inspection",
+  "reviewedAt": "2026-09-07T15:45:46.329Z",
+  "scope": "Non-publishing pilot on the unchanged 2026-09-07 reference. Only the five listed core claims were rechecked; this does not re-approve all historic prose or benchmarks.",
+  "articles": [
+    {
+      "articleId": "2026-09-07-top-1",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/07/news017.html",
+      "originalTitle": "企業資産の「36％」が“脆弱性ゾーン”で放置　AI攻撃時代に旧来の防御モデルは限界か： 「重要資産を重点的に守る」は通用しない？　最新調査が明かす限界",
+      "source": "＠IT",
+      "topic": "Security / AI Agent / Asset Visibility",
+      "access": "public-portion",
+      "accessNote": "Only the publicly retrieved text used here; no assertion that member-only or subsequent pages were reviewed.",
+      "capturedAt": "2026-09-07T15:43:00.129Z",
+      "snapshotSha256": "d0cb9a0889394324f4a6e661250637fcd0ca8539a1dbad69e91f338ef0c99822",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "EYの調査で企業資産の平均36％が脆弱性ゾーンとされる。",
+          "quote": "企業が保有する資産の平均36％",
+          "locator": "冒頭の調査結果段落",
+          "conditions": "EY survey result, not an estimate of this site reader’s own assets.",
+          "usedIn": {
+            "zh": "36%",
+            "ja": "36%",
+            "interview": "36%"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-07-top-2",
+      "url": "https://zenn.dev/kashiwabaray/articles/25d934bfd1a5c9",
+      "originalTitle": "Claude Fable 5.1 + EFS で企業 AI を安全に実装 — ZDR ロードマップ",
+      "source": "Zenn",
+      "topic": "Enterprise AI / Bedrock / Data Retention",
+      "access": "full",
+      "accessNote": "Public original page was retrieved; review is limited to the declared claim.",
+      "capturedAt": "2026-09-07T15:43:00.278Z",
+      "snapshotSha256": "4fe156f6aab9e855a74bec6f44bea51c715b313beef3837f996c34bc4f03c52e",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "Bedrockの保持モードが必要条件を下回ると当該モデルは利用不可になる。",
+          "quote": "status: \"unavailable\"\nになりリクエストがブロックされます。",
+          "locator": "保持モードの順序と allowed_modes",
+          "conditions": "Article describes the named Bedrock model’s eligibility; EFS exceptions and account/project behavior require separate review.",
+          "usedIn": {
+            "zh": "Data Retention",
+            "ja": "Data Retention",
+            "interview": "Data Retention"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-07-top-3",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/07/news026.html",
+      "originalTitle": "三菱UFJグループ会社、DBコストを87％削減――なぜ「Aurora Serverless」ではなく「Aurora DSQL」を選んだ？：同じサーバレスでも何が違った？",
+      "source": "＠IT",
+      "topic": "AWS / Aurora DSQL / Cost Optimization",
+      "access": "public-portion",
+      "accessNote": "Only the publicly retrieved text used here; no assertion that member-only or subsequent pages were reviewed.",
+      "capturedAt": "2026-09-07T15:43:00.461Z",
+      "snapshotSha256": "c9bbc80213d4b253a032d27e5ca80f1f324d9f917c0cb7488b0ef27343c1382d",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "JDD事例ではAurora Serverlessの比較設定に対して約87％のコスト削減を報告している。",
+          "quote": "最小ACUを0.5に設定した場合と比較して",
+          "locator": "なぜ Aurora DSQL で87％もの大幅コスト削減 / 費用比較段落",
+          "conditions": "Specific multi-environment, burst-at-night system compared with a 0.5 ACU minimum; not a universal database saving.",
+          "usedIn": {
+            "zh": "87%",
+            "ja": "87%",
+            "interview": "87%"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-07-top-4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/07/news010.html",
+      "originalTitle": "Prometheusとの関係から整理、なぜGrafanaは「OpenTelemetry」を推進する？：オープンへ向かうオブザーバビリティー（1/2 ページ）",
+      "source": "＠IT",
+      "topic": "SRE / OpenTelemetry / Observability",
+      "access": "public-portion",
+      "accessNote": "Only the publicly retrieved text used here; no assertion that member-only or subsequent pages were reviewed.",
+      "capturedAt": "2026-09-07T15:43:00.577Z",
+      "snapshotSha256": "08d9b7b72789c68e0275f4664a38e07761770c81905ebdae2cf75094004bcea3",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "Grafana LabsはMimirをメトリクス用バックエンドとして提供している。",
+          "quote": "メトリクスを扱う「Mimir」",
+          "locator": "そもそも Grafana とは / バックエンドへの拡張段落",
+          "conditions": "Product-role description on public page 1; no assertion of universal portability or operational performance.",
+          "usedIn": {
+            "zh": "Mimir",
+            "ja": "Mimir",
+            "interview": "Mimir"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-07-top-5",
+      "url": "https://www.publickey1.jp/blog/26/javascriptcporfforwasm.html",
+      "originalTitle": "JavaScriptをC言語にコンパイルする「porffor」がアルファ版に到達。ネイティブやWASMを生成可能",
+      "source": "Publickey",
+      "topic": "JavaScript / WebAssembly / Runtime",
+      "access": "full",
+      "accessNote": "Public original page was retrieved; review is limited to the declared claim.",
+      "capturedAt": "2026-09-07T15:43:00.837Z",
+      "snapshotSha256": "db99a7b93ed79453578f10119eebf172e94bcf0d325f82bb8c1e41e2d10943cd",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "Porfforは記事公開時点でアルファ段階である。",
+          "quote": "アルファ版に到達したことが発表されました",
+          "locator": "冒頭のリリース紹介",
+          "conditions": "Alpha announcement; binary-size and cold-start benchmarks are outside this pilot claim.",
+          "usedIn": {
+            "zh": "Alpha",
+            "ja": "Alpha",
+            "interview": "Alpha"
+          }
+        }
+      ]
+    }
+  ]
+}

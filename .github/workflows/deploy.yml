@@ -35,6 +35,10 @@ jobs:
         run: npm audit --audit-level=high
       - name: Type check
         run: npm run check
+      - name: Verify content integrity
+        run: npm run content:integrity:check
+      - name: Verify original-source evidence
+        run: npm run evidence:check && npm run evidence:pilot
       - name: Verify bilingual interview Q&A
         run: npm run bilingual:check-interview
       - name: Ensure audio duration tools

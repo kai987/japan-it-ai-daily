@@ -27,7 +27,11 @@
     "audio:generate:interview:all": "node scripts/generate-interview-audio.mjs --all && node scripts/validate-interview-audio-duration.mjs --all --write",
     "audio:generate:interview:all:force": "node scripts/generate-interview-audio.mjs --all --force && node scripts/validate-interview-audio-duration.mjs --all --write",
     "audio:integrity:check": "node scripts/verify-audio-integrity.mjs",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "content:integrity:check": "node scripts/validate-content-integrity.mjs",
+    "evidence:init": "node scripts/init-source-evidence.mjs",
+    "evidence:check": "node scripts/validate-source-evidence.mjs",
+    "evidence:pilot": "node scripts/validate-source-evidence.mjs --pilot docs/evidence/pilot-2026-09-07.json"
   },
   "dependencies": {
     "@astrojs/rss": "4.0.19",
