@@ -1,0 +1,153 @@
+---
+import type { SiteLocale } from '../lib/locale';
+
+const { locale = 'ja', pageSize = 10 } = Astro.props as {
+  locale?: SiteLocale;
+  pageSize?: number;
+};
+
+const labels = locale === 'ja'
+  ? {
+      nav: '日報アーカイブのページ送り',
+      prev: '← 前へ',
+      next: '次へ →',
+    }
+  : {
+      nav: '日报归档分页',
+      prev: '← 上一页',
+      next: '下一页 →',
+    };
+---
+
+<nav
+  class="archive-pagination"
+  aria-label={labels.nav}
+  data-archive-pagination
+  data-page-size={pageSize}
+  hidden
+>
+  <button class="pagination-nav archive-pagination-prev" type="button">{labels.prev}</button>
+  <div class="archive-pagination-pages" aria-label={locale === 'ja' ? 'ページ番号' : '页码'}></div>
+  <button class="pagination-nav archive-pagination-next" type="button">{labels.next}</button>
+  <div class="archive-pagination-status" aria-live="polite"></div>
+</nav>
+
+<script>
+  (() => {
+    const pagination = document.querySelector('[data-archive-pagination]');
+    const list = document.querySelector('[data-archive-list]');
+    if (!(pagination instanceof HTMLElement) || !(list instanceof HTMLElement)) return;
+
+    const rows = Array.from(list.querySelectorAll('[data-archive-row]'))
+      .filter((row): row is HTMLElement => row instanceof HTMLElement);
+    if (!rows.length) return;
+
+    const pageSize = Math.max(1, Number.parseInt(pagination.dataset.pageSize || '10', 10) || 10);
+    const prev = pagination.querySelector('.archive-pagination-prev');
+    const next = pagination.querySelector('.archive-pagination-next');
+    const pageContainer = pagination.querySelector('.archive-pagination-pages');
+    const status = pagination.querySelector('.archive-pagination-status');
+
+    const totalPages = Math.max(1, Math.ceil(rows.length / pageSize));
+
+    const pageFromUrl = () => {
+      const raw = Number.parseInt(new URL(window.location.href).searchParams.get('page') || '1', 10);
+      return Number.isFinite(raw) && raw > 0 ? raw : 1;
+    };
+
+    let currentPage = Math.min(pageFromUrl(), totalPages);
+
+    const pageNumbers = (page: number) => {
+      if (totalPages <= 7) return Array.from({ length: totalPages }, (_, index) => index + 1);
+      return Array.from(new Set([1, totalPages, page - 1, page, page + 1]))
+        .filter((value) => value >= 1 && value <= totalPages)
+        .sort((a, b) => a - b);
+    };
+
+    const syncUrl = (mode: 'replace' | 'push' | 'none') => {
+      if (mode === 'none') return;
+      const url = new URL(window.location.href);
+      if (currentPage <= 1) url.searchParams.delete('page');
+      else url.searchParams.set('page', String(currentPage));
+      const nextUrl = `${url.pathname}${url.search}${url.hash}`;
+      if (mode === 'push') history.pushState(null, '', nextUrl);
+      else history.replaceState(null, '', nextUrl);
+    };
+
+    const scrollToList = () => {
+      list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    const render = (options: { scroll?: boolean; historyMode?: 'replace' | 'push' | 'none' } = {}) => {
+      currentPage = Math.min(Math.max(1, currentPage), totalPages);
+      const startIndex = (currentPage - 1) * pageSize;
+      const endIndex = Math.min(startIndex + pageSize, rows.length);
+
+      rows.forEach((row, index) => {
+        row.hidden = index < startIndex || index >= endIndex;
+      });
+
+      pagination.hidden = totalPages <= 1;
+      if (prev instanceof HTMLButtonElement) prev.disabled = currentPage <= 1;
+      if (next instanceof HTMLButtonElement) next.disabled = currentPage >= totalPages;
+
+      if (pageContainer instanceof HTMLElement) {
+        pageContainer.replaceChildren();
+        let previousPage = 0;
+        pageNumbers(currentPage).forEach((page) => {
+          if (previousPage && page - previousPage > 1) {
+            const ellipsis = document.createElement('span');
+            ellipsis.className = 'pagination-ellipsis';
+            ellipsis.textContent = '…';
+            ellipsis.setAttribute('aria-hidden', 'true');
+            pageContainer.appendChild(ellipsis);
+          }
+
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'pagination-page';
+          button.textContent = String(page);
+          button.setAttribute('aria-label', `Page ${page}`);
+          if (page === currentPage) button.setAttribute('aria-current', 'page');
+          button.addEventListener('click', () => {
+            if (page === currentPage) return;
+            currentPage = page;
+            render({ scroll: true, historyMode: 'push' });
+          });
+          pageContainer.appendChild(button);
+          previousPage = page;
+        });
+      }
+
+      if (status instanceof HTMLElement) {
+        status.textContent = `${startIndex + 1}–${endIndex} / ${rows.length}`;
+      }
+
+      syncUrl(options.historyMode || 'replace');
+      if (options.scroll) scrollToList();
+    };
+
+    if (prev instanceof HTMLButtonElement) {
+      prev.addEventListener('click', () => {
+        if (currentPage <= 1) return;
+        currentPage -= 1;
+        render({ scroll: true, historyMode: 'push' });
+      });
+    }
+
+    if (next instanceof HTMLButtonElement) {
+      next.addEventListener('click', () => {
+        if (currentPage >= totalPages) return;
+        currentPage += 1;
+        render({ scroll: true, historyMode: 'push' });
+      });
+    }
+
+    window.addEventListener('popstate', () => {
+      currentPage = Math.min(pageFromUrl(), totalPages);
+      render({ historyMode: 'none' });
+    });
+
+    render({ historyMode: 'replace' });
+  })();
+</script>
