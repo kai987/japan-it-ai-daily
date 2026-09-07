@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { getJapaneseLessonListDisplayTitle } from '../../lib/listDisplayTitles';
 
 const base = import.meta.env.BASE_URL;
 const root = `${base}ja/`;
@@ -61,7 +62,7 @@ const levels = ['すべて', 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
             <a class="lesson-row" href={`${root}japanese/${lesson.id}/`} data-levels={lessonLevels.join('|')}>
               <div class="lesson-date">{lesson.data.date.toLocaleDateString('ja-JP')}</div>
               <div class="lesson-main">
-                <h3>{lesson.data.title}</h3>
+                <h3>{getJapaneseLessonListDisplayTitle(lesson.data.date)}</h3>
                 <p>{lesson.data.description}</p>
                 <div class="tags compact-tags">
                   {lessonLevels.map((level:string) => <span class="tag">{level}</span>)}
