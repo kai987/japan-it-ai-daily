@@ -126,6 +126,17 @@ Manifest 全体にも使用したポリシーを保存します。
 
 これにより、標準生成コマンドを使わずに MP3 が追加された場合でも、R2 公開前に最終確認できます。
 
+### Manifest を経由しない音声を禁止する
+
+`2026-09-08` 以降は、日付ディレクトリ内に `interview-answer-*.mp3` が存在する場合、対応する `interview-manifest.json` が必須です。
+
+さらに、Validator は次を双方向に確認します。
+
+- Disk 上のすべての `interview-answer-*.mp3` が manifest に `type: answer` として登録されていること
+- manifest に登録されたすべての answer MP3 が Disk 上に存在すること
+
+未登録の orphan MP3、manifest だけに残った欠損 MP3、answer MP3 があるのに answer entry がない状態は **FAIL** します。これにより、manifest に duration を記録しない音声だけを R2 へ直接公開して Gate を迂回することを防ぎます。
+
 ## 7. Stored duration drift
 
 `audio:duration:check` は、manifest に保存された `durationSeconds` と現在の `ffprobe` 実測値を比較します。
@@ -144,7 +155,20 @@ Manifest 全体にも使用したポリシーを保存します。
 INTERVIEW_DURATION_MAX_STORED_DRIFT
 ```
 
-## 8. Threshold environment variables
+## 8. Cache / 再生成時の扱い
+
+`generate-interview-audio.mjs` は、音声キャッシュが完全一致して MP3 を再生成しない場合、既存の次のフィールドを保持します。
+
+- `durationSeconds`
+- `durationStatus`
+- `durationPolicy`
+- `durationMeasuredAt`
+
+MP3 を実際に再生成した場合は、古い duration 値を引き継がず、後続の `ffprobe` 校正で新しい値を書き込みます。
+
+また、`--write` の duration 校正は、実測値・status・policy に変化がない限り `durationMeasuredAt` だけを更新しません。これにより、同じ音声に対する無意味な manifest diff を避けます。
+
+## 9. Threshold environment variables
 
 推定時間と実測時間は同じ基本閾値を使います。
 
@@ -162,7 +186,7 @@ AIVIS_INTERVIEW_SPEED=1.00
 INTERVIEW_ACTUAL_DURATION_FROM=2026-09-08
 ```
 
-## 9. 関連ファイル
+## 10. 関連ファイル
 
 ```text
 scripts/validate-daily-quality.mjs
@@ -173,7 +197,7 @@ public/audio/japanese/YYYY-MM-DD/interview-manifest.json
 package.json
 ```
 
-## 10. 判定の優先順位
+## 11. 判定の優先順位
 
 30 秒回答は以下の順で判断します。
 
