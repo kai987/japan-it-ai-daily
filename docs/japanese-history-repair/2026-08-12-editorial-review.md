@@ -60,3 +60,7 @@ Section 3 now uses one original-grounded Japanese Q&A set stored in Chinese mode
 Unverified claims omitted from the earlier Chinese prose include an assumed Cloud/Local hybrid deployment trend demonstrated by these articles, automatic reliable AI coding repair, and complete audit/privacy guarantees. The originals establish narrower mechanisms and observations; application judgments are marked as such.
 
 Acceptance result: targeted content gate and exact-match checks passed without warnings. At speed 1.00, static estimates are 33.01 / 30.89 / 32.31 / 31.99 / 30.87 seconds; actual MP3 durations are 26.679 / 27.724 / 27.474 / 26.288 / 26.409 seconds. All five are within the ideal 26–34 second band. Thirteen interview/review audio items were measured, and the manifest was checked against disk.
+
+## Chinese A-section layout alignment
+
+After pulling 70b2f8f, aligned the Chinese August 12 A section with its Japanese counterpart: plain introductory paragraphs, five source rows, five focus ratings and article dividers, selective emphasis, the BM25 comparison table, and benefits/limitations/application lists. The Chinese prose remains independently authored. Shared Q&A, review questions, B/C, structured lessons and all audio files remain unchanged. Table values were retained from the existing verified prose.

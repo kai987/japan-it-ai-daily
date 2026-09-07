@@ -77,7 +77,7 @@
   "outputs": {
     "src/content/daily-ja/2026-08-12.md": "d6367ab92b063de93d07b1ede6e180b74ce5e1bf4708cdb56655568d72cc4a01",
     "src/content/japanese-ja/2026-08-12.md": "082b4acf0178143eb4c2cd9f9dfc95f0add1fdf06ed426162d31ebdd698141d0",
-    "src/content/daily/2026-08-12.md": "60348d7be2b76063a25d084b4da7dd28a945314b71770601a9a2d31dd0fadb82",
+    "src/content/daily/2026-08-12.md": "0112d573e1ad6cc2516e6c5809ca855222604509ca471d9d3793e15b8c3b0c7d",
     "src/content/japanese/2026-08-12.md": "09eca0b81e148268b36bf6c0e059f0b8df59a922a93636624ad3e974bf63fea0",
     "public/audio/japanese/2026-08-12/interview-manifest.json": "33eb11e1cddb3b16e88c8e9c7c75409ff48c3d9c3c5a2bb857f9f01642067090"
   },
@@ -129,5 +129,10 @@
       "measurement": "ffprobe via validate-interview-audio-duration.mjs; INTERVIEW_ACTUAL_DURATION_FROM=2026-08-12"
     },
     "canonical": "src/content/daily/2026-08-12.md; identical in daily-ja, no originals synchronization exemption"
+  },
+  "layoutReview": {
+    "baseRef": "70b2f8f",
+    "scope": "Chinese August 12 A section matches Japanese presentation: source rows, dividers, emphasis, focus ratings, BM25 table, themed lists",
+    "interviewAndAudio": "unchanged"
   }
 }
