@@ -1,0 +1,76 @@
+<script>
+  const article = document.querySelector('.report-layout article.prose');
+
+  if (article instanceof HTMLElement) {
+    const makeButton = (text: string, label: string): HTMLButtonElement => {
+      const button = document.createElement('button');
+      button.className = 'speech-button report-speech-button';
+      button.type = 'button';
+      button.dataset.speech = text;
+      button.dataset.speechKind = 'interview';
+      button.setAttribute('aria-label', label);
+      button.setAttribute('aria-pressed', 'false');
+      button.title = '日本語で読み上げる';
+      button.innerHTML = `
+        <svg class="speech-icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M11 5 7 9H4v6h3l4 4V5Z"></path>
+          <path d="M15 9.5a4 4 0 0 1 0 5M17.5 7a7.3 7.3 0 0 1 0 10"></path>
+        </svg>
+        <svg class="speech-icon-stop" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="7" y="7" width="10" height="10" rx="1"></rect>
+        </svg>`;
+      return button;
+    };
+
+    const sectionNodes = (heading: HTMLHeadingElement): Element[] => {
+      const nodes: Element[] = [];
+      let node = heading.nextElementSibling;
+      while (node && node.tagName !== 'H1' && node.tagName !== 'H2') {
+        nodes.push(node);
+        node = node.nextElementSibling;
+      }
+      return nodes;
+    };
+
+    const blockquotesFrom = (nodes: Element[]): HTMLQuoteElement[] => {
+      const quotes: HTMLQuoteElement[] = [];
+      for (const node of nodes) {
+        if (node instanceof HTMLQuoteElement) quotes.push(node);
+        node.querySelectorAll('blockquote').forEach((quote) => {
+          if (quote instanceof HTMLQuoteElement) quotes.push(quote);
+        });
+      }
+      return Array.from(new Set(quotes));
+    };
+
+    const enhanceQuote = (quote: HTMLQuoteElement, kind: 'interview' | 'review'): void => {
+      if (quote.dataset.speechEnhanced === 'true') return;
+      const text = (quote.textContent || '').replace(/\s+/g, ' ').trim();
+      if (!text) return;
+
+      quote.dataset.speechEnhanced = 'true';
+      quote.classList.add('report-speech-target');
+      const label = kind === 'review'
+        ? '面接復習の質問を読み上げる'
+        : '面接内容を読み上げる';
+      quote.insertBefore(makeButton(text, label), quote.firstChild);
+    };
+
+    const headings = Array.from(article.querySelectorAll('h2'));
+    const interviewHeading = headings.find((heading) =>
+      (heading.textContent || '').includes('面接で使えるポイント'));
+
+    if (interviewHeading instanceof HTMLHeadingElement) {
+      blockquotesFrom(sectionNodes(interviewHeading)).forEach((quote) => enhanceQuote(quote, 'interview'));
+    }
+
+    const reviewHeading = headings.find((heading) => {
+      const text = heading.textContent || '';
+      return text.includes('面接復習カード') || text.includes('面试复习卡');
+    });
+
+    if (reviewHeading instanceof HTMLHeadingElement) {
+      blockquotesFrom(sectionNodes(reviewHeading)).forEach((quote) => enhanceQuote(quote, 'review'));
+    }
+  }
+</script>
