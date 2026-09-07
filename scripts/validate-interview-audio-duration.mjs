@@ -56,18 +56,19 @@ const probeDuration = (path) => {
   return round3(value);
 };
 
-const availableDates = () => {
+const dateDirectories = () => {
   if (!existsSync(audioRoot)) return [];
   return readdirSync(audioRoot)
     .filter((name) => /^\d{4}-\d{2}-\d{2}$/.test(name))
-    .filter((name) => {
-      const path = join(audioRoot, name);
-      return statSync(path).isDirectory() && existsSync(join(path, 'interview-manifest.json'));
-    })
+    .filter((name) => statSync(join(audioRoot, name)).isDirectory())
     .sort();
 };
 
-let dates = availableDates();
+const answerAudioFiles = (dir) => readdirSync(dir)
+  .filter((name) => /^interview-answer-\d+\.mp3$/.test(name))
+  .sort();
+
+let dates = dateDirectories();
 if (requestedDate) dates = dates.filter((date) => date === requestedDate);
 else if (generateAll) {
   // Keep all dates so legacy manifests can be backfilled without enforcing old content.
@@ -77,7 +78,7 @@ else if (generateAll) {
 if (fromArg) dates = dates.filter((date) => date >= fromArg);
 
 if (!dates.length) {
-  console.log(`Interview audio duration: no manifests to check${fromArg ? ` (from ${fromArg})` : ''}.`);
+  console.log(`Interview audio duration: no audio date directories to check${fromArg ? ` (from ${fromArg})` : ''}.`);
   process.exit(0);
 }
 if (spawnSync('ffprobe', ['-version'], { stdio: 'ignore' }).status !== 0) {
@@ -90,12 +91,40 @@ let updated = 0;
 
 for (const date of dates) {
   const dir = join(audioRoot, date);
-  const manifestPath = join(dir, 'interview-manifest.json');
-  const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
   const enforce = date >= POLICY_FROM;
+  const manifestPath = join(dir, 'interview-manifest.json');
+  const diskAnswers = answerAudioFiles(dir);
+
+  if (!existsSync(manifestPath)) {
+    if (enforce && diskAnswers.length) {
+      console.error(`\n${date}: FAIL`);
+      console.error(`  ERROR: found ${diskAnswers.length} interview answer MP3 file(s) but interview-manifest.json is missing`);
+      failed = true;
+    } else {
+      console.log(`\n${date}: SKIP${enforce ? ' (no interview answer audio)' : ' (legacy without interview manifest)'}`);
+    }
+    continue;
+  }
+
+  const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
   const next = structuredClone(manifest);
   const problems = [];
   const warnings = [];
+
+  const manifestAnswers = (Array.isArray(manifest.interview) ? manifest.interview : [])
+    .filter((item) => item?.type === 'answer' && item?.audio)
+    .map((item) => item.audio)
+    .sort();
+
+  if (enforce) {
+    for (const file of diskAnswers) {
+      if (!manifestAnswers.includes(file)) problems.push(`orphan answer audio not listed in manifest: ${file}`);
+    }
+    for (const file of manifestAnswers) {
+      if (!diskAnswers.includes(file)) problems.push(`manifest answer audio missing from disk: ${file}`);
+    }
+    if (diskAnswers.length && !manifestAnswers.length) problems.push('answer MP3 files exist but manifest has no type=answer entries');
+  }
 
   const measureItems = (items, kind) => (Array.isArray(items) ? items : []).map((item) => {
     if (!item?.audio) return item;
