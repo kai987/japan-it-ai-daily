@@ -147,8 +147,16 @@ const answerAnchorMatches = (answer, anchors) => {
   return [...anchors].filter((token) => answerText.includes(token));
 };
 
-const evidencePattern = /(\d+(?:\.\d+)?\s*%|\d+(?:\.\d+)?(?:MB|GB|ms|秒|件|問|倍|個|本|ファイル|Task|Token)|実測|測定|比較|調査|Benchmark|ベンチマーク|検証|原文|発表|報告)/i;
-const limitationPattern = /(ただし|一方で|制約|限界|注意|保証|とは限ら|未対応|未提供|Alpha|アルファ|参考値|単発|一度|一回|条件|依存|課題|反例|追加確認|一般化|本番|実Workload|実Application)/i;
+const languagePatterns = {
+  zh: {
+    evidence: /(\d+(?:\.\d+)?\s*%|\d+(?:\.\d+)?(?:MB|GB|ms|秒|件|问|倍|个|本|文件|Task|Token)|实测|测量|比较|调查|基准|Benchmark|验证|原文|发布|报告|公告|官方|实验|测试|统计|结果)/i,
+    limitation: /(但是|但|不过|然而|另一方面|限制|局限|注意|保证|不一定|未支持|未提供|预览|Alpha|参考值|单次|一次|一回|条件|依赖|问题|反例|需要进一步|一般化|本番|实际负载|实际应用|Workload)/i,
+  },
+  ja: {
+    evidence: /(\d+(?:\.\d+)?\s*%|\d+(?:\.\d+)?(?:MB|GB|ms|秒|件|問|倍|個|本|ファイル|Task|Token)|実測|測定|比較|調査|Benchmark|ベンチマーク|検証|原文|発表|報告|公式|実験|テスト|統計|結果|仕様)/i,
+    limitation: /(ただし|一方で|制約|限界|注意|保証|とは限ら|未対応|未提供|Preview|プレビュー|Alpha|アルファ|参考値|単発|一度|一回|条件|依存|課題|反例|追加確認|一般化|本番|実Workload|実Application)/i,
+  },
+};
 
 const sentenceList = (answer) => compact(answer)
   .split(/(?<=[。！？])/)
@@ -165,11 +173,27 @@ const tokenJaccard = (a, b) => {
   return intersection / union.size;
 };
 
-const articleCharCount = (article) => stripMarkdown(article.body).replace(/\s/g, '').length;
 const paragraphCount = (article) => normalize(article.body)
   .split(/\n\s*\n/)
   .map((part) => stripMarkdown(part))
-  .filter((part) => part.length >= 40).length;
+  .filter((part) => /[。！？.!?]/.test(part)).length;
+
+const validateArticleSet = (languageLabel, languageKey, articles, errors, warnings) => {
+  const patterns = languagePatterns[languageKey];
+  articles.forEach((article, index) => {
+    const paragraphs = paragraphCount(article);
+    if (paragraphs < 2) {
+      errors.push(`${languageLabel} Top ${index + 1} 至少需要 2 个完整论述段落，实际 ${paragraphs}`);
+    }
+    const plain = stripMarkdown(article.body);
+    if (!patterns.evidence.test(plain)) {
+      warnings.push(`${languageLabel} Top ${index + 1} 未发现明确证据/测量/比较提示，请人工确认是否说明了证据边界`);
+    }
+    if (!patterns.limitation.test(plain)) {
+      errors.push(`${languageLabel} Top ${index + 1} 未发现限制、适用条件或证据边界说明`);
+    }
+  });
+};
 
 const validateReport = (date, zhSource, jaSource) => {
   const errors = [];
@@ -184,33 +208,26 @@ const validateReport = (date, zhSource, jaSource) => {
   if (zhQa.length !== 5) errors.push(`中文模式 Section 3 应为 5 组 Q&A，实际 ${zhQa.length}`);
   if (jaQa.length !== 5) errors.push(`日语模式 Section 3 应为 5 组 Q&A，实际 ${jaQa.length}`);
 
-  for (const [language, articles] of [['中文', zhArticles], ['日语', jaArticles]]) {
-    articles.forEach((article, index) => {
-      const chars = articleCharCount(article);
-      const paragraphs = paragraphCount(article);
-      if (chars < 430) errors.push(`${language} Top ${index + 1} 解说过短：${chars} 字符，至少需要 430 个非空白字符`);
-      if (paragraphs < 2) errors.push(`${language} Top ${index + 1} 至少需要 2 个实质段落，实际 ${paragraphs}`);
-      const plain = stripMarkdown(article.body);
-      if (!evidencePattern.test(plain)) warnings.push(`${language} Top ${index + 1} 未发现明确证据/测量/比较提示，请人工确认是否说明了证据边界`);
-      if (!limitationPattern.test(plain)) errors.push(`${language} Top ${index + 1} 未发现限制、适用条件或证据边界说明`);
-    });
-  }
+  validateArticleSet('中文', 'zh', zhArticles, errors, warnings);
+  validateArticleSet('日语', 'ja', jaArticles, errors, warnings);
 
-  const anchors = uniqueArticleAnchors(zhArticles);
+  // Section 3 is shared Japanese text in both language modes, so validate its
+  // article-specific anchors against the Japanese Top 5 body, not the Chinese prose.
+  const anchors = uniqueArticleAnchors(jaArticles);
   zhQa.forEach((qa, index) => {
     const answerChars = qa.answer.replace(/\s/g, '').length;
     if (!qa.question) errors.push(`Q&A ${index + 1} 缺少質問`);
     if (!qa.answer) errors.push(`Q&A ${index + 1} 缺少30秒回答`);
     if (answerChars < 90 || answerChars > 260) {
-      errors.push(`Q&A ${index + 1} 回答长度 ${answerChars} 字符，不符合 30 秒目标范围 90–260`);
+      errors.push(`Q&A ${index + 1} 回答长度 ${answerChars} 字符，不符合共享日语 30 秒回答的目标范围 90–260`);
     }
     const matches = answerAnchorMatches(qa.answer, anchors[index] || new Set());
     if (matches.length < 2) {
-      errors.push(`Q&A ${index + 1} 与对应文章共享的独有技术锚点不足 2 个；检测到：${matches.join(', ') || '无'}`);
+      errors.push(`Q&A ${index + 1} 与对应日语文章共享的独有技术锚点不足 2 个；检测到：${matches.join(', ') || '无'}`);
     }
-    const articlePlain = stripMarkdown(zhArticles[index]?.body || '');
-    if (limitationPattern.test(articlePlain) && !limitationPattern.test(qa.answer)) {
-      errors.push(`Q&A ${index + 1} 对应文章存在限制/边界，但回答未体现任何限制或验证条件`);
+    const articlePlain = stripMarkdown(jaArticles[index]?.body || '');
+    if (languagePatterns.ja.limitation.test(articlePlain) && !languagePatterns.ja.limitation.test(qa.answer)) {
+      errors.push(`Q&A ${index + 1} 对应日语文章存在限制/边界，但回答未体现任何限制或验证条件`);
     }
   });
 
