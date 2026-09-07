@@ -21,11 +21,13 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
       AWS_DEFAULT_REGION: auto
+      SYNC_BEFORE: ${{ github.event.before }}
     steps:
       - name: Checkout
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
+          fetch-depth: 2
 
       - name: Setup Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
@@ -75,8 +77,27 @@ jobs:
 
           endpoint="https://${account_id}.r2.cloudflarestorage.com"
 
+          sync_filters=()
+          # The reusable workflow retains the caller's push event. If its base
+          # is available, only upload changed paths; always verify ALL public MP3s.
+          # Manual runs or multi-commit pushes without that base use a full sync.
+          if [[ -n "${SYNC_BEFORE}" ]] && git cat-file -e "${SYNC_BEFORE}^{commit}" 2>/dev/null; then
+            git diff --name-only -z --diff-filter=ACMR --relative=public/audio \
+              "${SYNC_BEFORE}" HEAD -- public/audio/ > "${RUNNER_TEMP}/audio-changes"
+            mapfile -d '' -t changed_audio < "${RUNNER_TEMP}/audio-changes"
+            if (( ${#changed_audio[@]} == 0 )); then
+              echo "No audio files changed; skipping upload, then verifying all public recordings."
+              exit 0
+            fi
+            sync_filters=(--exclude '*')
+            for path in "${changed_audio[@]}"; do
+              sync_filters+=(--include "${path}")
+            done
+          fi
+
           aws s3 sync public/audio/ "s3://${R2_BUCKET}/" \
             --endpoint-url "${endpoint}" \
+            "${sync_filters[@]}" \
             --only-show-errors \
             --cache-control "public,max-age=86400"
 
