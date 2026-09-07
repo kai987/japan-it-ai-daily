@@ -1,6 +1,6 @@
 {
   "date": "2026-08-23",
-  "generatedAt": "2026-08-31T20:14:01.548Z",
+  "generatedAt": "2026-09-07T12:08:42.553Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -23,40 +23,128 @@
     "speed": 1,
     "intonationScale": 1
   },
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-19",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-07T12:09:58.818Z",
   "interview": [
     {
       "index": 1,
+      "type": "question",
+      "text": "AI主導の開発フローを導入するとき、何を設計しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "39b7343b9d1a71dde573983a37a600dc1091ef6e9361c4d9e81433a1cf2241ba",
+      "durationSeconds": 4.898
+    },
+    {
+      "index": 1,
       "type": "answer",
-      "text": "LLMに判断させる部分と、Workflow StateやApprovalのようにプログラムで決定的に制御する部分を分離することが重要だと思います。",
+      "text": "進行条件と、人が承認する対象を明確にします。AI-DLC v2はTypeScriptのエンジンでステージを管理し、team.mdとproject.mdに学びを残します。ただし重複防止があっても、サイズの自動整理は記事では確認されていません。役割を分けるだけでなく、蓄積したルールを誰が見直すかまで決めて運用したいです。有効な規則と履歴も分けます。",
       "audio": "interview-answer-01.mp3",
-      "audioHash": "cb11b8acb07c5a9a764a78bd62ad35d1f2fd5850ffb8e15d7ec8a686a11ea46f"
+      "audioHash": "6b6d01c70c928ec4b48e3f0ac2ae4ceb0123bf7b906bd6c39ec489a3265f0275",
+      "durationSeconds": 27.896,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "AI開発ツールを遠隔から使う際、どの不具合を優先して確認しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "f8df7160502367c1ae5f20bb06b2d3cbb309093571897027422c93701531506a",
+      "durationSeconds": 5.897
     },
     {
       "index": 2,
       "type": "answer",
-      "text": "AI CostはModel Priceだけでなく、Context、Request数、Processing Mode、Budgetまで含めて管理する必要があります。",
+      "text": "接続できるだけでなく、停止やモデル変更が実行側へ届くかを確認します。Claude CodeのRemote Controlでは、Stopの不反映や一時的な403への対応が修正されています。ただし実行はローカルプロセスなので、端末を閉じればオフラインです。自社の接続条件で再接続と操作反映を試し、表示上の成功だけで判断しないようにします。",
       "audio": "interview-answer-02.mp3",
-      "audioHash": "360b467d3a1fbec42221e3ff5d1d1c3d3fa8508718fc6700fa08ee7d3f537f6c"
+      "audioHash": "e521bd46e3281e114bd18f72b7e9d095486478121fd897eec0fddf35e6c61b10",
+      "durationSeconds": 26.411,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "学習型のモデルルーターを、生成型の判定役とどう比較しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "49a0bb4c042712abcae9735c837934459d8c026791bc40d96a7dc29383eb6872",
+      "durationSeconds": 5.467
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "速度だけでなく、入力情報と確率の較正を比べます。prefill routerはhidden statesをPCAとMLPへ通し、判定文の生成を省きます。ただし記事の単発47問では確率が縮み、0.80のしきい値でstrongへ偏りました。会話途中の結果も読めません。実測の正誤ラベルを集め、分布内外と途中経過を別々に評価して役割を決めます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "3bae46fcb145a65ef5c4080fd6f48dd43302a62f03cf2a9e41cf7036d616ddb5",
+      "durationSeconds": 28.78,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "APIの値下げを、自社の費用見積もりへどう反映しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "6e8928246527f8a20f3b0b60fc546b5d0b343ffac319bf218682d712ec2e8ab6",
+      "durationSeconds": 4.687
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "値下げ率を月額へそのまま掛けず、処理条件ごとに計算します。GPT-5.6 Solは入力四ドル、出力二十ドルですが、272,000トークンを超える入力では料金条件が変わります。キャッシュとBatchも分けて集計します。少なくとも11月21日までの期間付き価格なので、期限後の見積もりは固定せず、APIキー別の実績で更新します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "5eb5bd3ffec107bc0a855c7d9f9aee7818301108cf01cd8812c062032378fe7e",
+      "durationSeconds": 27.864,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "VLMに検査プロンプトを作らせる場合、どこを検証しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "f5c4f6161a5983918b9dbac67cd2f28c6408b8af01b6ac0c98d71142f7ba280c",
+      "durationSeconds": 5.107
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "生成した仕様書自体を、正解付き画像で評価します。Bedrockの例ではセル名で位置を返し、OK、REVIEW、NGで人へ回す判断も残します。ただし4×4の同じ設定でも、仕様書によってrecallが44%から100%へ変わりました。グリッドの効果と文面の差を混同せず、同じ製品の正常品と低コントラストの欠陥を含めて確かめます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "c2c31cb2678c1e901091850ea92cc9cf740a427e8f95af2a405907bd4a25d143",
+      "durationSeconds": 27.682,
+      "durationStatus": "ideal"
     }
   ],
   "review": [
     {
       "index": 1,
-      "text": "Agent Workflowを全部LLMに任せない理由は何ですか。",
+      "text": "重複しない学習ファイルなら、長期運用でも整理は不要ですか。",
       "audio": "review-question-01.mp3",
-      "audioHash": "8b76fe5d582f96ac9b6ec67fda8f4ea53d9fe66e7d2370e8ecbd9b888dbe4aaa"
+      "audioHash": "0bb529d18d63864fc5c2a30b05eb8a191e7eda2042127b5fd7f8c3398eb95505",
+      "durationSeconds": 4.98
     },
     {
       "index": 2,
-      "text": "LLM Routerは何を評価しますか。",
+      "text": "AUCが高いルーターなら、固定しきい値でも正しく振り分けられますか。",
       "audio": "review-question-02.mp3",
-      "audioHash": "2b1ef0fc9634bde1657ac46068e65a607a6264c6c8b57e1f25fdb5513270b916"
+      "audioHash": "1415c850cc62f0699a127a290ffb8b7b9d822b4c3518ac85446987c93a639b80",
+      "durationSeconds": 5.549
     },
     {
       "index": 3,
-      "text": "VLMで曖昧な結果をどう扱いますか。",
+      "text": "最初の検査仕様で見逃しゼロなら、4×4が最善と結論できますか。",
       "audio": "review-question-03.mp3",
-      "audioHash": "2a902473f0ab7742317030f030a043c63faf4af87404f308fe2787b04b20d197"
+      "audioHash": "d36da4a101bfe24e55f5c1705574f6b51caa1e52be4c145e1837d5a2742cba83",
+      "durationSeconds": 5.966
     }
   ]
 }

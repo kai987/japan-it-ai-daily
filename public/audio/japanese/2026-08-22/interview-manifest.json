@@ -1,6 +1,6 @@
 {
   "date": "2026-08-22",
-  "generatedAt": "2026-08-31T20:14:01.547Z",
+  "generatedAt": "2026-09-07T12:03:00.792Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -23,40 +23,128 @@
     "speed": 1,
     "intonationScale": 1
   },
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-19",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-07T12:08:12.110Z",
   "interview": [
     {
       "index": 1,
+      "type": "question",
+      "text": "フレームワークの重要なセキュリティ更新が予告されたら、どう対応しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "b83661730e6709ab308d8c1f698f85bcef3269d4b3b7114ad2e7df62244b9bae",
+      "durationSeconds": 5.468
+    },
+    {
+      "index": 1,
       "type": "answer",
-      "text": "MCP Serverは信頼できる提供元を利用し、破壊的なToolには最小権限、Sandbox、Human Approvalを組み合わせる必要があります。",
+      "text": "予告と正式な修正情報を分けて扱います。Next.jsの8月26日予定の告知では、影響範囲と更新手順は後から出す形でした。ただしCodeZineの16.3.2という表記も、再確認した公式ページとは異なります。先に自社の利用版と配置先を洗い出し、公開されたアドバイザリで対象と修正版を確定してから、更新と回帰確認を進めます。",
       "audio": "interview-answer-01.mp3",
-      "audioHash": "14d2f212986e4d654cd5bee74089b4cf277f336965311a5be39ae42c7b26a15e"
+      "audioHash": "df8c6c92ef133373ab181f5116c6edfd6697aca53f358655dbfa81ed5b7744d6",
+      "durationSeconds": 29.326,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "複数のAIクライアントに同じ拡張を配るとき、互換性をどう設計しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "2d41d1e65d2863da90598707396b2395580d97073dc065987f04e4b5a5f95850",
+      "durationSeconds": 6.162
     },
     {
       "index": 2,
       "type": "answer",
-      "text": "Security Requirementは設定値やExit Codeだけでなく、実際のFileやArtifactの挙動を検証することが重要です。",
+      "text": "共通仕様に入る部分と、製品専用の機能を分けます。Agent Pluginsではplugin.jsonにschemaを示し、skillsとmcp.jsonを共通で配ります。Copilot専用のフックなどは名前空間のディレクトリに置きます。ただし別クライアントはそこを無視します。同じパッケージだから同じ機能が動くとは考えず、対応要素ごとに確認します。旧形式も引き続き使えます。",
       "audio": "interview-answer-02.mp3",
-      "audioHash": "b945092b86f752ab8116f361d7627de8fe0e032f96bc4120bedf7fe5bf35285b"
+      "audioHash": "7b6ceba873920fdd099c9a7b673a92102f4b6d5107410822a5c868ed6f274e3e",
+      "durationSeconds": 28.306,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "MCPツールの説明に「読み取り専用」とあれば、そのまま信用できますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "00303cbc4001db26bab4a5d8b24af915fdb470474ca5eec32f59ad7ed394a5eb",
+      "durationSeconds": 6.026
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "説明だけでは読み取り専用を保証できません。記事ではdelete_memoという名前なら矛盾を検出しましたが、view_memo_detailへ改名すると削除が実行されました。zodの引数検証も処理の意味までは確かめません。ただし二つの観察で、一般的な失敗率ではありません。サーバーの実装と権限を確認し、保存状態も検証する必要があります。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "bdae524b799596b2ba78c289bfcb4ce5d1317100f7f406d8ff822b5a5d21ba4e",
+      "durationSeconds": 26.272,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "日本語のWeb検索をエージェントへ組み込む前に、何を評価しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "6d9401fc447d17a42776a832f8efaeba46e659c7dde2e235d5c158f1d27ce69e",
+      "durationSeconds": 5.374
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "検索の網羅性と新しさを分けて測ります。AgentCoreの検証は、人気記事99件を上位五件で探し、英語版も含めて84件がヒットした条件です。新規記事は39件と少なく、即時反映の保証ではありません。Connector 1.2.0のdomainFilterや日付条件も使い、対象の記事と必要な更新速度に合うかを確かめます。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "c73eecfade994af82016066877988f5878e52ce653d8f1504f182911b7dbae9d",
+      "durationSeconds": 26.669,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "CLIの非永続化オプションが要件どおり動いたことを、どう検証しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "807327a571e0bee8a25bc8bfd0cd305550d238889520d49dc9f0105dcc517c6b",
+      "durationSeconds": 5.421
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "終了コードとは別に、対象ファイルの前後を測ります。Codex 0.147.0のresumeでは、ephemeralを付けてもrolloutに4,402バイトが追記された一例があります。同じsession IDとパスを特定し、SHA-256、サイズ、無害なマーカーを比較します。ただし一版一回の結果です。版を変えたら再確認し、判定材料が不足する場合は止めます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "92d3c818a0d05215a9c17b8c3fb2c14fe491a7425ccc3b31be5eca73884d48a3",
+      "durationSeconds": 27.491,
+      "durationStatus": "ideal"
     }
   ],
   "review": [
     {
       "index": 1,
-      "text": "MCP Tool Poisoningとは何ですか。",
+      "text": "スキーマが正しければ、ツールの動作も説明どおりですか。",
       "audio": "review-question-01.mp3",
-      "audioHash": "64e9fc97bf958c91d722af01ef46f48ebfb7e3102166c3c11b86aa9aa04d50e2"
+      "audioHash": "6d161ce0a86239047f7888ef664e41c323dac6fed58209054bab291786c1a74b",
+      "durationSeconds": 4.515
     },
     {
       "index": 2,
-      "text": "Agent Plugin標準化のリスクは何ですか。",
+      "text": "検索の85%という結果を、日本語サイト全体へ適用できますか。",
       "audio": "review-question-02.mp3",
-      "audioHash": "63e4ab13b98ac80cacdde2139f83a4a9601c400e55a07a8a2e07743e773b8019"
+      "audioHash": "9c2aeac85a094651d4bf38be318d6b03e392b0183bcd39e67098a6d324918d2b",
+      "durationSeconds": 5.978
     },
     {
       "index": 3,
-      "text": "CLIのSecurity Requirementをどう検証しますか。",
+      "text": "ファイルが大きくなっただけで、特定の再開ターンが原因だと言えますか。",
       "audio": "review-question-03.mp3",
-      "audioHash": "38f8f5d80736210b27436edbb72a8d94c16c75e16d06b4ac228d7ae268649d0f"
+      "audioHash": "d7ec8ef4ff182efcbeb5aeba2673d27d72d8fe78f4c74eb1e89c9c90848a9deb",
+      "durationSeconds": 5.165
     }
   ]
 }
