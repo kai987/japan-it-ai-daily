@@ -179,6 +179,31 @@ const replaceSectionQa = (source, expected, date) => {
   return next;
 };
 
+// Source-reviewed Japanese answers have their own editorial policy. They must
+// never be replaced with legacy Chinese-mode prose, including in write mode.
+const usesOriginalArticles = (source, date) => {
+  const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1] || '';
+  const marker = frontmatter.match(/^interviewSource:\s*(.*?)\s*$/m)?.[1];
+  if (marker === undefined) return false;
+  if (!/^(?:originals|'originals'|"originals")$/.test(marker)) {
+    throw new Error(`${date}: unsupported interviewSource: ${marker}`);
+  }
+  return true;
+};
+
+const validateOriginalPairs = (pairs, date) => {
+  if (pairs.length !== 5 || pairs.some(({ question, answer }) => !question || !answer)) {
+    throw new Error(`${date}: original-article interviews require five complete Q&A pairs`);
+  }
+  if (new Set(pairs.map(({ question }) => question)).size !== pairs.length) {
+    throw new Error(`${date}: duplicate interview question`);
+  }
+  const endings = pairs.map(({ answer }) => answer.split(/[。！？]/u).map((part) => part.trim()).filter(Boolean).at(-1));
+  if (new Set(endings).size !== endings.length) {
+    throw new Error(`${date}: repeated interview closing sentence`);
+  }
+};
+
 const dates = readdirSync(zhDir)
   .filter((name) => /^\d{4}-\d{2}-\d{2}\.md$/.test(name))
   .map((name) => basename(name, '.md'))
@@ -186,6 +211,7 @@ const dates = readdirSync(zhDir)
 
 let changed = 0;
 let checked = 0;
+let originalReviewed = 0;
 const mismatches = [];
 
 for (const date of dates) {
@@ -193,8 +219,13 @@ for (const date of dates) {
   const jaPath = join(jaDir, `${date}.md`);
   if (!existsSync(jaPath)) continue;
 
-  const zhSource = readFileSync(zhPath, 'utf8');
   const jaSource = readFileSync(jaPath, 'utf8');
+  if (usesOriginalArticles(jaSource, date)) {
+    validateOriginalPairs(extractPairs(jaSource), date);
+    originalReviewed += 1;
+    continue;
+  }
+  const zhSource = readFileSync(zhPath, 'utf8');
   const expected = extractPairs(zhSource);
   if (!expected.length) continue;
   if (expected.some((item) => !item.question || !item.answer)) {
@@ -219,5 +250,6 @@ if (checkOnly && mismatches.length) {
 }
 
 console.log(`Checked ${checked} bilingual report pair(s).`);
-if (checkOnly) console.log('All interview questions and 30-second answers are identical.');
+console.log(`Validated ${originalReviewed} original-article report(s) independently; left unchanged by synchronization.`);
+if (checkOnly) console.log('All legacy shared interview questions and 30-second answers are identical.');
 else console.log(`Updated ${changed} Japanese report(s): ${mismatches.join(', ') || 'none'}`);
