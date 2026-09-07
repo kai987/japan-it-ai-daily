@@ -7,7 +7,7 @@
   },
   "rulesCommit": "123367c",
   "baselineCommit": "a62284024550276d934c6211477f5b11e6810609",
-  "status": "content-complete-publication-in-progress",
+  "status": "complete",
   "dates": {
     "2026-08-13": {
       "content": "rewritten",
@@ -26,7 +26,13 @@
       "publishedCommit": "153996a4f5bc91af8ed8b818907a75c9d27f9344",
       "pagesRun": 34116769938,
       "audioRun": 34116769830,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches; playback UI checked on 2026-08-18"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "22b3909979c69adc39d132a8d141cf714700d1f66881ed5399198b027cc91c3d",
+        "daily-ja": "7378c4db7401d6bd40f2acdcab2af3fc07ee66930c8e7f0b22dd0b56c3be719e",
+        "japanese": "f377cc8765453b5b4b21f6dd403d964cf15609421757aa232d52a1f3d4c2da20",
+        "japanese-ja": "acad713193d6e47efe7a0cd198e7efc8d62b06c8179808749e4ce2a600c4106b"
+      }
     },
     "2026-08-14": {
       "content": "rewritten",
@@ -45,7 +51,13 @@
       "publishedCommit": "153996a4f5bc91af8ed8b818907a75c9d27f9344",
       "pagesRun": 34116769938,
       "audioRun": 34116769830,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches; playback UI checked on 2026-08-18"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "987bd4a0abc33b9c48e2e2b4724cc8db9d0714d7c833fea0040afb73c4f8e60d",
+        "daily-ja": "e5f1cdff85903224aa96fd595a853830887177c559b6738f35b4219cbb6b9600",
+        "japanese": "d7066b75abdea2c145b23c18cbfd2ef98831c63222fe22a87183ca16eb611836",
+        "japanese-ja": "19b5166bbaef1f31464450da99c88e7e329784148709d17554534956662c9b53"
+      }
     },
     "2026-08-15": {
       "content": "rewritten",
@@ -64,7 +76,13 @@
       "publishedCommit": "153996a4f5bc91af8ed8b818907a75c9d27f9344",
       "pagesRun": 34116769938,
       "audioRun": 34116769830,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches; playback UI checked on 2026-08-18"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "7e52b6243758c4075ca3ece9d3e53b69697ab58ddccc1fc43e880e3b3f7afa70",
+        "daily-ja": "b2527303ab61359c394548c7bfafbd1031e6a9d36e303a3bc78aca2b94201415",
+        "japanese": "700a3d4fde733947d2ffe2e3479694877a04892852addf8012918af21d1a1815",
+        "japanese-ja": "ce86da80826a87f66e1deb566a1b5e63e7f9ed7c771e472739ce26dbbff7fd30"
+      }
     },
     "2026-08-16": {
       "content": "rewritten",
@@ -83,7 +101,13 @@
       "publishedCommit": "153996a4f5bc91af8ed8b818907a75c9d27f9344",
       "pagesRun": 34116769938,
       "audioRun": 34116769830,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches; playback UI checked on 2026-08-18"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "dfda716549fa68636ab05b39dd2b649527f241398404cd3127dc6f6dba9a5a5d",
+        "daily-ja": "585a081db62d1bc93140872ae49671853506ec2e808030e44ece2679ca2c1747",
+        "japanese": "b262efaeea3235374dfc2205699fcdc9d43b305f9576180bf24ee954e2f52451",
+        "japanese-ja": "fd19cedbc56e0f95febef01055bbbd19e2cd1e03f11681da2e17f1015503c491"
+      }
     },
     "2026-08-17": {
       "content": "rewritten",
@@ -102,7 +126,13 @@
       "publishedCommit": "153996a4f5bc91af8ed8b818907a75c9d27f9344",
       "pagesRun": 34116769938,
       "audioRun": 34116769830,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches; playback UI checked on 2026-08-18"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "34ea0df858fba222ffdf958a471cbd6c92009f83097ecc20a922c7ce96b3e771",
+        "daily-ja": "38d3ba1b89ca310ed617882e471c6123b2b6cf2560e328c72d41479e1ac6a97f",
+        "japanese": "e1687b3f6a76f49a5f3e0668da7a41d14819b37e371c6e6579ff0ceab30caa8c",
+        "japanese-ja": "749028194f6512d492de03c95183e728689e936d62fa5b9c931d0ebdde2b520d"
+      }
     },
     "2026-08-18": {
       "content": "rewritten",
@@ -121,7 +151,13 @@
       "publishedCommit": "153996a4f5bc91af8ed8b818907a75c9d27f9344",
       "pagesRun": 34116769938,
       "audioRun": 34116769830,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches; playback UI checked on 2026-08-18"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "7cb107a32e3e7380dac6a40183cf9853ab636d30f9a3a030c10fc7298ff8f270",
+        "daily-ja": "4963bb36d1de4659f5ece8bb170b3db20c2f202799fc1a64fc82d16581d31635",
+        "japanese": "2e8ab42abe1937c4cc55db8271e71d91488d8c1b8329e17c6fde3d4899c1fdf9",
+        "japanese-ja": "b903e4f84afd9725359b514e4b8cba86b0c949a6f17be6fddddfedc9f2b811ad"
+      }
     },
     "2026-08-19": {
       "content": "rewritten",
@@ -140,7 +176,13 @@
       "publishedCommit": "fd45d94bc5605c05f60bd855de8a0f90db1d4611",
       "pagesRun": 34120568764,
       "audioRun": 34120568799,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "59064dcbddf369058dd8cdca98827eef1885b2759f5e713e3f22f2d0d122802c",
+        "daily-ja": "f5b04002f3787459e4a0a924837876c08015def36e79a781f0713ed96213f5f0",
+        "japanese": "ad39f7bb4fe53146df29829b58d5658a45f6ff4073828037ada290dd2035fa09",
+        "japanese-ja": "6bea206e5b03d0db130f3a1271439bebb9f95c294f2e049da03150628a26e1b9"
+      }
     },
     "2026-08-20": {
       "content": "rewritten",
@@ -159,7 +201,13 @@
       "publishedCommit": "fd45d94bc5605c05f60bd855de8a0f90db1d4611",
       "pagesRun": 34120568764,
       "audioRun": 34120568799,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "ab0a59e1142d348d31bf122546b204059507d9fc934d6870c9401d041cc9d7b6",
+        "daily-ja": "bfa1fd009303a0e4f3585c5422aa68a73c95ae848e01a599d68e919cd1bb467d",
+        "japanese": "37bcc6d62da93c8bf372559327eb63c08373354846428567e5db618c9f2ff5fb",
+        "japanese-ja": "391549831a61931dfcfb033e11e0690f6056c5af627e469af77250a4490ef362"
+      }
     },
     "2026-08-21": {
       "content": "rewritten",
@@ -178,7 +226,13 @@
       "publishedCommit": "fd45d94bc5605c05f60bd855de8a0f90db1d4611",
       "pagesRun": 34120568764,
       "audioRun": 34120568799,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "e7c8a5cc6ff25d0de7c41046e51e764d987347902aaae282cf5adb0932985de5",
+        "daily-ja": "9d265292d6512c49e8de3a9ce5b80e80561c0ac0d07f68c0850df63d9630be95",
+        "japanese": "fb7c8022a76b349423776131848f6d2e13b3539130882b86cf6485932dd33e9e",
+        "japanese-ja": "553760eb67e2c028cd43b59f75adb59197d298ea077927b22dd99a3dc04e8570"
+      }
     },
     "2026-08-22": {
       "content": "rewritten",
@@ -197,7 +251,13 @@
       "publishedCommit": "fd45d94bc5605c05f60bd855de8a0f90db1d4611",
       "pagesRun": 34120568764,
       "audioRun": 34120568799,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "2f4a2ab46a495954c5e5917e3d4c15f1f9a4b0b33dcfc7fa8ac8e4f58b56aa40",
+        "daily-ja": "d624a875c0a733b0be2beaeaa700df9c8d2ca7dba2f8d5a652c875b65260f2bf",
+        "japanese": "65133b1642ad6d7278fa0498e086c8a4d8cff6d6aa513ac414872e0966338c09",
+        "japanese-ja": "2d1a94318c48f6a239898a99304de10e8e17a4f26b3121b2bbb2ba6c47323da7"
+      }
     },
     "2026-08-23": {
       "content": "rewritten",
@@ -216,7 +276,13 @@
       "publishedCommit": "fd45d94bc5605c05f60bd855de8a0f90db1d4611",
       "pagesRun": 34120568764,
       "audioRun": 34120568799,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "178ab37e8abf6cb2b0662da21b333d1e12bdad97ef1e9e3b2685a1492f5c24f7",
+        "daily-ja": "0454dce2c1abfa6569f26671e30ba02cb27ebc6e4facd0467e80cc856fbcd2a0",
+        "japanese": "acf5ac7d2129017bab8d4d2b9d8f4232b8347d357124c40afb014284b815ff82",
+        "japanese-ja": "1a118dfe24a30e72b4fbdb35950ae06156faeee0aedab3f659274820fcfc1883"
+      }
     },
     "2026-08-24": {
       "content": "rewritten",
@@ -235,7 +301,13 @@
       "publishedCommit": "fd45d94bc5605c05f60bd855de8a0f90db1d4611",
       "pagesRun": 34120568764,
       "audioRun": 34120568799,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "f19b33403b55ceaa686749574f6c533ed640a429866b2218aa8d4b58b80b9cd0",
+        "daily-ja": "737482106d0ea64c5c80b7df715772f3f42d03cc88c613e55354f888284927ca",
+        "japanese": "25c85797167b4f497b90e29ef2a02aadd941b702e0b95c95d0699ea873218ae5",
+        "japanese-ja": "7398d34dac2eb2982c76acee91576c546715e3bb8bde21a32cc4b19941331496"
+      }
     },
     "2026-08-25": {
       "content": "rewritten",
@@ -254,7 +326,13 @@
       "publishedCommit": "4a5639fd8659b24e21de2b19d5c96a4c5d5652e5",
       "pagesRun": 34125026384,
       "audioRun": 34125026359,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "588b28f3d6e688e625bcb154846a4fea4f886ed096877bf7119f8ab02e5a080e",
+        "daily-ja": "7999b777738bb1efad2b83db0cdbda87e673ae89ec85f01a5acf880bfb0b0f12",
+        "japanese": "4d754ebc7b7b3e52a6c71afb4892d36bed5f31b7bea98133d0729d3741c8479c",
+        "japanese-ja": "e39a2cd8f8c0f386006d317d48e7971fed10f2611859c17cc3ca2d4e0aeb5e83"
+      }
     },
     "2026-08-26": {
       "content": "rewritten",
@@ -273,7 +351,13 @@
       "publishedCommit": "4a5639fd8659b24e21de2b19d5c96a4c5d5652e5",
       "pagesRun": 34125026384,
       "audioRun": 34125026359,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "9580c4d67fa7821eb7d9dd53981be7b51607a54c87bddf59c9477def27de4de7",
+        "daily-ja": "c6f197c71cb646803d0f134ff104e7105210ee6ff5f3a56d11ebcd96a549f5bd",
+        "japanese": "1fdab9872658301df7cd5391cbed44ac9a68a2b6927b9f2bb2633f94764aba14",
+        "japanese-ja": "447956a1a87e0cf41a80875313264926e592ba646056fb9d934d8cfe647747ef"
+      }
     },
     "2026-08-27": {
       "content": "rewritten",
@@ -292,7 +376,13 @@
       "publishedCommit": "4a5639fd8659b24e21de2b19d5c96a4c5d5652e5",
       "pagesRun": 34125026384,
       "audioRun": 34125026359,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "5f3de4c305d9c10cbb7281114fe8ee1f658de4dcaaeea44e980bbd99ee2ab4d5",
+        "daily-ja": "6cd4bd3d1ee551798c670fc70a0f343edd61c0bf71eba92569904eba225e70f8",
+        "japanese": "dd91102d10de230f5164fa83d911d548ea0d066c862f994757dabf3ac2e337ce",
+        "japanese-ja": "0b1035b186788bdd11ffea879b6375e24dbc20b9dd50a2b041dbaf24d7481d07"
+      }
     },
     "2026-08-28": {
       "content": "rewritten",
@@ -311,7 +401,13 @@
       "publishedCommit": "4a5639fd8659b24e21de2b19d5c96a4c5d5652e5",
       "pagesRun": 34125026384,
       "audioRun": 34125026359,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "276624783b510d161aeb4b3814d746336f3adc9ef6c182c75c88778da0d8b703",
+        "daily-ja": "04e145e1e906de2369bded32974c9c59daffb7f7606f03bf5b75208a7b47d9bb",
+        "japanese": "e90fa3c0de91464fe9a1a9e2bcc06e3abf03b4d9587cc10edb44f28737864c65",
+        "japanese-ja": "2abd370bef401c8bbf1845ea2c47594587ea40e708ee6f4cfe429b425f50ca1a"
+      }
     },
     "2026-08-29": {
       "content": "rewritten",
@@ -330,7 +426,13 @@
       "publishedCommit": "4a5639fd8659b24e21de2b19d5c96a4c5d5652e5",
       "pagesRun": 34125026384,
       "audioRun": 34125026359,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "9442fa09e49839c771e9dda0744ed0a7631d55d62d485c1eb219e3114c53aa05",
+        "daily-ja": "90b9226cd48fabc8a5e6ea6726ff927a96f0c2759c45729d60255be28983c5f6",
+        "japanese": "7ce338d2c85e6c62d8d357cf69aadedb9592a7e9f5b63bea1aad06a990ef1ce0",
+        "japanese-ja": "0320cd5e3703e49505c40bda5c1671de96fea14d874b31a2d68c78541a17ea3e"
+      }
     },
     "2026-08-30": {
       "content": "rewritten",
@@ -349,7 +451,13 @@
       "publishedCommit": "4a5639fd8659b24e21de2b19d5c96a4c5d5652e5",
       "pagesRun": 34125026384,
       "audioRun": 34125026359,
-      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "cda21ba6b727674e71e62ea412d134e0845e25bc376813879db2fdd0d36aa205",
+        "daily-ja": "e95de648008b4f0b2e6d6e12f6fead31bce2b6753d94de780d0d6854142e8663",
+        "japanese": "1170d03d6e95b6307dba5bd8f022ffb0274f42b26f4f840ede298503e7591b64",
+        "japanese-ja": "f3f524b4d7868a9108e7f2e77f4027c2b0aa802966cb30c291468a709e25a688"
+      }
     },
     "2026-08-31": {
       "content": "rewritten",
@@ -364,7 +472,17 @@
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
-      "published": false
+      "published": true,
+      "publishedCommit": "fb4545ef8ab6b111abeb096990d470aedcbe6146",
+      "pagesRun": 34128970690,
+      "audioRun": 34128970678,
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "dcf0ce5a91cdde3b1d3c078a1324f3617957a2fbafef2cffed403a1379c3742d",
+        "daily-ja": "be1edb78659fb082931dca819a58dd6e420273b64f25ff7d1fbef2249dd566ae",
+        "japanese": "715ca5e1c89c8b357eb95529fb68e1bccdf0d9767c6f94b7d15a4e1e13e69419",
+        "japanese-ja": "740ba7242fdf8a339fc4424b37e26f37638ce63b51c73c1d07c3c298a4890afd"
+      }
     },
     "2026-09-01": {
       "content": "rewritten",
@@ -379,7 +497,17 @@
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
-      "published": false
+      "published": true,
+      "publishedCommit": "fb4545ef8ab6b111abeb096990d470aedcbe6146",
+      "pagesRun": 34128970690,
+      "audioRun": 34128970678,
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "cc61176f9af1d84417c8db7d379c0c33f56ff26a4874a4a249deeb19bba6d3d0",
+        "daily-ja": "1607372ac70d7c4ce7bc9f4e56748573da1a5e4df90ece07361031061bafed0e",
+        "japanese": "9784c20740cb758c6f3af66285bb396439c444635e2e1263a1def329a304f4a8",
+        "japanese-ja": "cf5063503a79af67dd874b8aed835e82d84bc7290fbe420bfc5a8aa0d171b65c"
+      }
     },
     "2026-09-02": {
       "content": "rewritten",
@@ -394,7 +522,17 @@
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
-      "published": false
+      "published": true,
+      "publishedCommit": "fb4545ef8ab6b111abeb096990d470aedcbe6146",
+      "pagesRun": 34128970690,
+      "audioRun": 34128970678,
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "c771db8687076cbb8a6c673b91e90f31125de8582b51e981b9e10da97d75335f",
+        "daily-ja": "422d1426312a23175a1d55500e5764f71affce356ec5b23b00f0af7f5c79f752",
+        "japanese": "ed1e81f155d1a3a5329469faa6f28d12dacb0dde448a8f952867effbb6036163",
+        "japanese-ja": "41aa634968e0fd20522eebcf6af3f34d5a037497008a374302ab2def697adde3"
+      }
     },
     "2026-09-03": {
       "content": "rewritten",
@@ -409,7 +547,17 @@
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
-      "published": false
+      "published": true,
+      "publishedCommit": "fb4545ef8ab6b111abeb096990d470aedcbe6146",
+      "pagesRun": 34128970690,
+      "audioRun": 34128970678,
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "5b1b775fd3aac9fdbafba4f67c9395b84dd3420d1a5af08adaf0b0ff0e84c4ad",
+        "daily-ja": "e1dd4e5abccf3630cb66cfdae9e8896a930865857d3da70ca538d96c732de7b5",
+        "japanese": "f9995a5f483a62477821e0e4cc68c68d31e2c818e9c23f854f4d5ab1f33e862c",
+        "japanese-ja": "d6fdb822b34af4de1b1c957f061552103dd5bf352ac7cb8bdce94703192fecb8"
+      }
     },
     "2026-09-04": {
       "content": "rewritten",
@@ -424,7 +572,17 @@
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
-      "published": false
+      "published": true,
+      "publishedCommit": "fb4545ef8ab6b111abeb096990d470aedcbe6146",
+      "pagesRun": 34128970690,
+      "audioRun": 34128970678,
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "9683ab82e14fd58ae2ec079aace76ed34bb9a75f011f8362e0982650ae029bab",
+        "daily-ja": "cf6c00351fea229fbe94fe25f7341180a698264033567f6dad351a4ae370fb1e",
+        "japanese": "34ab8862f1685eeb159dbd2c5d06098934cf04b8d499368c5ca655ca348411b4",
+        "japanese-ja": "e5ed73bdc59fce1b7929768aab92d922dd0a135ec25fd36a5e6a26948dcfc0f5"
+      }
     },
     "2026-09-05": {
       "content": "rewritten",
@@ -439,7 +597,17 @@
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
-      "published": false
+      "published": true,
+      "publishedCommit": "fb4545ef8ab6b111abeb096990d470aedcbe6146",
+      "pagesRun": 34128970690,
+      "audioRun": 34128970678,
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "3dfe31b3d59e37fea3f5b8fc6154dc67c76cc49123fb9f2def80436819156e48",
+        "daily-ja": "d6a5cfd8861bc00bfd7b5d874a0e22e937218190af343eb049bd14c1f212453d",
+        "japanese": "980e9d25350873cf1032ef9d1dfc1a46a2c916301555dab635aa7d2830713184",
+        "japanese-ja": "ac4917cbfe0098f11e857288b65fcd0134e14e39675ff4b54af6ab4465f53d0f"
+      }
     },
     "2026-09-06": {
       "content": "rewritten",
@@ -454,7 +622,17 @@
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
-      "published": false
+      "published": true,
+      "publishedCommit": "fb4545ef8ab6b111abeb096990d470aedcbe6146",
+      "pagesRun": 34128970690,
+      "audioRun": 34128970678,
+      "liveVerification": "CN and JA ABC and all 13 shared texts; all 13 deployed MP3 SHA-256 hashes match",
+      "contentSha256": {
+        "daily": "3c24be530a1a9328d63fe0fa36e8d518b77f6e1fbb9085abbd063cd1298538d0",
+        "daily-ja": "120194caa54b4cc5c311f12ff509189507c0e3a25539f96ecf10d4c811986802",
+        "japanese": "cf0a654f44ada2fbe93adecf81a2d08ab2415e3319f930b9eb13e921436fe03c",
+        "japanese-ja": "9c403928d6f6d89abd8d24a662551596a6d839669f628489f49b7637e4cc03a1"
+      }
     }
   },
   "sources": [
@@ -2181,5 +2359,37 @@
       "2026-09-07"
     ],
     "reviewNotes": "2026-08-13_2026-09-06-editorial-review.md"
+  },
+  "publication": {
+    "contentCommit": "fb4545ef8ab6b111abeb096990d470aedcbe6146",
+    "pagesRun": 34128970690,
+    "audioRun": 34128970678,
+    "pagesStatus": "success",
+    "audioStatus": "success",
+    "liveReportPages": 50,
+    "liveAudioFilesVerified": 325,
+    "liveAudioVerification": "Every question, answer, and review MP3 matched local SHA-256 after R2 sync completed",
+    "browserCheck": {
+      "date": "2026-09-06",
+      "japaneseAnswerPlayStop": "pass",
+      "chineseAnswerPlayStop": "pass",
+      "languageSwitch": "pass",
+      "abcSections": "pass"
+    },
+    "protectedDatesUnchangedFrom": "a62284024550276d934c6211477f5b11e6810609"
+  },
+  "validation": {
+    "explicitHistoricalDates": 25,
+    "staticQuality": "pass-no-warnings",
+    "measuredDuration": "pass-no-warnings",
+    "bilingualPairs": 27,
+    "originalSourceBypassCount": 0,
+    "testsPassed": 27,
+    "typeCheckErrors": 0,
+    "typeCheckWarnings": 0,
+    "builtPages": 132,
+    "csp": "pass",
+    "actualAnswerSecondsMin": 26.018,
+    "actualAnswerSecondsMax": 30.275
   }
 }
