@@ -50,3 +50,13 @@
 五个结尾分别围绕改善优先级、搜索收益、学前评价、显示回归、业务任务完成作出判断，不复用 PoC/Workload 套话。约 30 秒是口头练习目标，未声称做过定时录音。详细版原文解说、B/C、中文文件和 9/7 均未因此改写。
 
 `5aa3100` 引入的中文来源同步会覆盖这些问答，因此该日期显式标记为 originals：独立校验，不从中文正文回填。后续日期完成原文审阅后采用同一标记与标准。
+
+## Latest acceptance revision (rules at 123367c)
+
+The user explicitly requested August 12 conform to the new rules. This supersedes the earlier Chinese-read-only and independent-Q&A boundary for this date. Chinese Top 5 explanations were rewritten from the saved original articles; category summaries, thematic synthesis and B now distinguish source findings from practical suggestions. Japanese detailed explanations remain intact.
+
+Section 3 now uses one original-grounded Japanese Q&A set stored in Chinese mode and copied exactly into Japanese mode. Removed August 12's `interviewSource: originals` marker. Answers retain article-specific mechanisms and limits, with no fixed character minimum or padded article length. Static duration uses the unchanged latest validator; actual audio is generated with AivisSpeech speed 1.00 and measured by ffprobe under the new policy explicitly applied to August 12. Learning identities remain aligned. No September 7 content is changed.
+
+Unverified claims omitted from the earlier Chinese prose include an assumed Cloud/Local hybrid deployment trend demonstrated by these articles, automatic reliable AI coding repair, and complete audit/privacy guarantees. The originals establish narrower mechanisms and observations; application judgments are marked as such.
+
+Acceptance result: targeted content gate and exact-match checks passed without warnings. At speed 1.00, static estimates are 33.01 / 30.89 / 32.31 / 31.99 / 30.87 seconds; actual MP3 durations are 26.679 / 27.724 / 27.474 / 26.288 / 26.409 seconds. All five are within the ideal 26–34 second band. Thirteen interview/review audio items were measured, and the manifest was checked against disk.

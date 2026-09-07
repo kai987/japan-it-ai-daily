@@ -16,10 +16,11 @@
       "src/content/daily",
       "src/content/japanese"
     ],
-    "chineseBodyUsed": false,
-    "context": "Top 5 identity metadata and learning skeleton only",
+    "chineseBodyUsed": "Only for review and shared Q&A synchronization; not used to generate Japanese article prose",
+    "context": "Original articles for both prose versions; one original-grounded Japanese Q&A set stored in Chinese mode and exact-copied into Japanese mode",
     "articleFailure": "Block generation before any model call",
-    "lessonExamples": "Retained learning skeleton; explicitly labeled as teaching examples, not source quotations"
+    "lessonExamples": "Retained learning skeleton; explicitly labeled as teaching examples, not source quotations",
+    "august12Authorization": "Latest user request supersedes Chinese read-only boundary for this date; Chinese learning file unchanged"
   },
   "articles": [
     {
@@ -64,19 +65,21 @@
     }
   ],
   "validation": {
-    "content": "Top 5 identity and learning skeleton validated",
+    "content": "Latest content gate --date=2026-08-12 PASS without warnings; shared Q&A exact match",
     "vocabulary": 20,
     "grammar": 7,
     "technicalTerms": 8,
-    "build": "128 pages succeeded",
-    "vitest": 22,
-    "sourceBoundaryTests": 3,
-    "chineseDiff": "unchanged from branch HEAD",
+    "build": "132 pages succeeded",
+    "vitest": 27,
+    "chineseDiff": "August 12 daily A/B revised from originals; structured lesson unchanged",
     "september7Diff": "unchanged"
   },
   "outputs": {
-    "src/content/daily-ja/2026-08-12.md": "f7ca365e839758f2271838bb5abe3a01f123cfb9a823f69beccd6a5f743f956b",
-    "src/content/japanese-ja/2026-08-12.md": "082b4acf0178143eb4c2cd9f9dfc95f0add1fdf06ed426162d31ebdd698141d0"
+    "src/content/daily-ja/2026-08-12.md": "d6367ab92b063de93d07b1ede6e180b74ce5e1bf4708cdb56655568d72cc4a01",
+    "src/content/japanese-ja/2026-08-12.md": "082b4acf0178143eb4c2cd9f9dfc95f0add1fdf06ed426162d31ebdd698141d0",
+    "src/content/daily/2026-08-12.md": "60348d7be2b76063a25d084b4da7dd28a945314b71770601a9a2d31dd0fadb82",
+    "src/content/japanese/2026-08-12.md": "09eca0b81e148268b36bf6c0e059f0b8df59a922a93636624ad3e974bf63fea0",
+    "public/audio/japanese/2026-08-12/interview-manifest.json": "33eb11e1cddb3b16e88c8e9c7c75409ff48c3d9c3c5a2bb857f9f01642067090"
   },
   "editorialReview": "2026-08-12-editorial-review.md",
   "detailStandard": "September 7 depth: background, mechanism, conditions, results, limits; source-supported details are not removed to meet a summary length cap",
@@ -105,6 +108,26 @@
         "KV cache and auxiliary model memory"
       ]
     ],
-    "timing": "30 seconds is a practice target, not measured audio duration"
+    "timing": {
+      "rulesRef": "123367c",
+      "speed": 1.0,
+      "estimatedSeconds": [
+        33.01,
+        30.89,
+        32.31,
+        31.99,
+        30.87
+      ],
+      "actualSeconds": [
+        26.679,
+        27.724,
+        27.474,
+        26.288,
+        26.409
+      ],
+      "status": "All five estimated and actual answer durations ideal (26-34s)",
+      "measurement": "ffprobe via validate-interview-audio-duration.mjs; INTERVIEW_ACTUAL_DURATION_FROM=2026-08-12"
+    },
+    "canonical": "src/content/daily/2026-08-12.md; identical in daily-ja, no originals synchronization exemption"
   }
 }

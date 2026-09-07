@@ -1,5 +1,7 @@
 # Japanese history repair
 
+> Current August 12 acceptance: the user requested the latest `docs/DAILY_CONTENT_QUALITY_RULES.md` and audio calibration rules. For this date, Chinese content may be corrected from originals and shared Q&A is canonical in `daily`, exact-copied into `daily-ja`; the previous read-only/interviewSource exception below describes the earlier repair stage and no longer applies to August 12. September 7 remains unchanged. Run the quality gate with `--date=2026-08-12` and the audio gate with `INTERVIEW_ACTUAL_DURATION_FROM=2026-08-12`.
+
 Use the Japanese September 7 daily and structured lesson as layout references only. Do not modify September 7. Work on `repair/japanese-history-from-originals` in ascending date order.
 
 ## Content boundary
