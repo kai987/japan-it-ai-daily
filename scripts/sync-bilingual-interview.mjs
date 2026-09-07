@@ -41,80 +41,142 @@ const classifyLabel = (line) => {
   return null;
 };
 
-const extractQa = (source) => {
-  const range = sectionRange(source, '面接で使えるポイント');
-  if (!range) return [];
-  const { lines, start, end } = range;
-  const out = [];
-  let pending = null;
-  for (let i = start + 1; i < end; i += 1) {
-    const type = classifyLabel(lines[i].trim());
-    if (type) {
-      pending = type;
-      continue;
+const readValueAfterLabel = (lines, labelIndex, end) => {
+  let i = labelIndex + 1;
+  while (i < end && !lines[i].trim()) i += 1;
+  if (i >= end) return { text: '', end: i };
+
+  if (lines[i].trim().startsWith('>')) {
+    const value = [];
+    while (i < end && lines[i].trim().startsWith('>')) {
+      value.push(lines[i].replace(/^\s*>\s?/, ''));
+      i += 1;
     }
-    if (!pending) continue;
-    const trimmed = lines[i].trim();
-    if (!trimmed) continue;
-    if (!trimmed.startsWith('>')) {
-      if (/^#{1,6}\s+/.test(trimmed) || /^\*\*/.test(trimmed)) pending = null;
-      continue;
-    }
-    const block = [];
-    let j = i;
-    while (j < end && lines[j].trim().startsWith('>')) {
-      block.push(lines[j].replace(/^\s*>\s?/, ''));
-      j += 1;
-    }
-    out.push({ type: pending, text: normalize(block.join('\n')) });
-    pending = null;
-    i = j - 1;
+    return { text: normalize(value.join('\n')), end: i };
   }
-  return out;
+
+  const value = [];
+  while (i < end) {
+    const trimmed = lines[i].trim();
+    if (!trimmed) break;
+    if (/^#{1,6}\s+/.test(trimmed) || /^\*\*/.test(trimmed)) break;
+    value.push(lines[i]);
+    i += 1;
+  }
+  return { text: normalize(value.join('\n')), end: i };
 };
 
-const replaceQa = (source, expected) => {
-  const range = sectionRange(source, '面接で使えるポイント');
-  if (!range) throw new Error('日语版缺少「面接で使えるポイント」');
-  const { lines, start, end } = range;
-  const slots = [];
-  let pending = null;
+const topicRanges = (lines, start, end) => {
+  const starts = [];
+  for (let i = start + 1; i < end; i += 1) {
+    if (/^###\s+/.test(lines[i])) starts.push(i);
+  }
+  return starts.map((topicStart, index) => ({
+    start: topicStart,
+    end: starts[index + 1] ?? end,
+  }));
+};
+
+const extractTopicQa = (lines, start, end) => {
+  let question = '';
+  let answer = '';
   for (let i = start + 1; i < end; i += 1) {
     const type = classifyLabel(lines[i].trim());
-    if (type) {
-      pending = type;
-      continue;
+    if (!type) continue;
+    const value = readValueAfterLabel(lines, i, end);
+    if (type === 'question') question = value.text;
+    if (type === 'answer') answer = value.text;
+  }
+  return { question, answer };
+};
+
+const extractPairs = (source) => {
+  const range = sectionRange(source, '面接で使えるポイント');
+  if (!range) return [];
+  const topics = topicRanges(range.lines, range.start, range.end);
+  return topics.map((topic) => extractTopicQa(range.lines, topic.start, topic.end));
+};
+
+const samePairs = (expected, actual) => expected.length === actual.length
+  && expected.every((item, index) => (
+    item.question === actual[index]?.question
+    && item.answer === actual[index]?.answer
+  ));
+
+const suffixAfterAnswer = (lines, start, end) => {
+  let answerLabel = -1;
+  for (let i = start + 1; i < end; i += 1) {
+    if (classifyLabel(lines[i].trim()) === 'answer') {
+      answerLabel = i;
+      break;
     }
-    if (!pending) continue;
-    const trimmed = lines[i].trim();
-    if (!trimmed) continue;
-    if (!trimmed.startsWith('>')) {
-      if (/^#{1,6}\s+/.test(trimmed) || /^\*\*/.test(trimmed)) pending = null;
-      continue;
-    }
-    let j = i;
-    while (j < end && lines[j].trim().startsWith('>')) j += 1;
-    slots.push({ type: pending, from: i, to: j });
-    pending = null;
-    i = j - 1;
   }
 
-  if (slots.length !== expected.length) {
-    throw new Error(`Q&A 数量不一致：中文 ${expected.length} / 日语 ${slots.length}`);
-  }
-  for (let i = 0; i < slots.length; i += 1) {
-    if (slots[i].type !== expected[i].type) {
-      throw new Error(`Q&A 类型顺序不一致：第 ${i + 1} 项中文=${expected[i].type} 日语=${slots[i].type}`);
-    }
+  if (answerLabel >= 0) {
+    const value = readValueAfterLabel(lines, answerLabel, end);
+    let suffixStart = value.end;
+    while (suffixStart < end && !lines[suffixStart].trim()) suffixStart += 1;
+    return lines.slice(suffixStart, end);
   }
 
-  const next = [...lines];
-  for (let i = slots.length - 1; i >= 0; i -= 1) {
-    const slot = slots[i];
-    const replacement = expected[i].text.split('\n').map((line) => `> ${line}`);
-    next.splice(slot.from, slot.to - slot.from, ...replacement);
+  const fallback = lines.findIndex((line, index) => (
+    index > start
+    && /^\*\*.*(?:可关联|可關聯|関連|关键词|關鍵詞|キーワード)/.test(line.trim())
+  ));
+  return fallback >= 0 ? lines.slice(fallback, end) : [];
+};
+
+const quoteLines = (text) => text.split('\n').map((line) => `> ${line}`);
+
+const replaceSectionQa = (source, expected, date) => {
+  const range = sectionRange(source, '面接で使えるポイント');
+  if (!range) throw new Error(`${date}: 日语版缺少「面接で使えるポイント」`);
+  const { lines, start, end } = range;
+  const topics = topicRanges(lines, start, end);
+
+  if (topics.length !== expected.length) {
+    throw new Error(`${date}: 話題数量不一致：中文 ${expected.length} / 日语 ${topics.length}`);
   }
-  return next.join('\n');
+
+  const preambleEnd = topics[0]?.start ?? end;
+  const rebuilt = [lines[start], ...lines.slice(start + 1, preambleEnd)];
+
+  topics.forEach((topic, index) => {
+    const pair = expected[index];
+    if (!pair?.question || !pair?.answer) {
+      throw new Error(`${date}: 中文模式第 ${index + 1} 个話題缺少質問或30秒回答`);
+    }
+    const heading = lines[topic.start];
+    const suffix = suffixAfterAnswer(lines, topic.start, topic.end);
+
+    while (rebuilt.length && !rebuilt.at(-1).trim()) rebuilt.pop();
+    rebuilt.push(
+      '',
+      heading,
+      '',
+      '**質問：**',
+      '',
+      ...quoteLines(pair.question),
+      '',
+      '**30秒回答：**',
+      '',
+      ...quoteLines(pair.answer),
+    );
+
+    if (suffix.length) {
+      rebuilt.push('');
+      while (suffix.length && !suffix[0].trim()) suffix.shift();
+      rebuilt.push(...suffix);
+    }
+  });
+
+  while (rebuilt.length && !rebuilt.at(-1).trim()) rebuilt.pop();
+  const next = [...lines.slice(0, start), ...rebuilt, '', ...lines.slice(end)].join('\n');
+  const actual = extractPairs(next);
+  if (!samePairs(expected, actual)) {
+    throw new Error(`${date}: 同步后 Q&A 校验失败`);
+  }
+  return next;
 };
 
 const dates = readdirSync(zhDir)
@@ -133,18 +195,19 @@ for (const date of dates) {
 
   const zhSource = readFileSync(zhPath, 'utf8');
   const jaSource = readFileSync(jaPath, 'utf8');
-  const expected = extractQa(zhSource);
-  const actual = extractQa(jaSource);
+  const expected = extractPairs(zhSource);
   if (!expected.length) continue;
+  if (expected.some((item) => !item.question || !item.answer)) {
+    throw new Error(`${date}: 中文模式存在缺少質問或30秒回答的話題`);
+  }
   checked += 1;
 
-  const same = expected.length === actual.length
-    && expected.every((item, index) => item.type === actual[index]?.type && item.text === actual[index]?.text);
-  if (same) continue;
+  const actual = extractPairs(jaSource);
+  if (samePairs(expected, actual)) continue;
 
   mismatches.push(date);
   if (!checkOnly) {
-    const next = replaceQa(jaSource, expected);
+    const next = replaceSectionQa(jaSource, expected, date);
     writeFileSync(jaPath, next, 'utf8');
     changed += 1;
   }
