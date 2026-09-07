@@ -165,16 +165,51 @@ PoC だけで判断せず、実 Workload で評価することが重要です。
 
 ---
 
-### 4.4 30 秒回答の長さ
+### 4.4 30 秒回答は文字数ではなく推定朗読時間で判定する
 
-Section 3 の Q&A は中国語モードでも日本語モードでも **同一の日本語テキスト**を使います。そのため、ここだけは本文とは別に、音声時間を大きく外れないための長さチェックを行います。
+Section 3 の Q&A は中国語モードでも日本語モードでも **同一の日本語テキスト**を使います。
 
-自動検証では、共有日本語回答を空白除外で次の範囲に設定します。
+以前は共有日本語回答を文字数で制限していましたが、`OpenTelemetry`、`BM25`、`Next.js`、`MCP`、数値などを含む技術日本語では、同じ文字数でも朗読時間が大きく変わります。そのため、固定の文字数制限は使用しません。
 
-- 最低: **90 文字**
-- 最大: **260 文字**
+Validator は CI 上で AivisSpeech を起動できないため、静的な **推定朗読時間**を計算します。
 
-これは中国語本文と日本語本文の長さを揃えるためのルールではありません。あくまで **「約30秒で話せる日本語回答」**のためのガードです。
+推定では主に次を別々に扱います。
+
+- ひらがな / カタカナ
+- 漢字（読みが複数モーラになることを考慮した重み）
+- 英語の技術用語
+- 全大文字の略語（AI / MCP / BM25 など）
+- 数字・百分率
+- 句読点による pause
+- AivisSpeech の `speedScale`
+- Interview 音声で使う pre / post phoneme length
+
+`generate-interview-audio.mjs` の既定値と合わせ、標準では次を使います。
+
+```text
+AIVIS_INTERVIEW_SPEED = 1.00
+```
+
+現在の判定帯:
+
+- **理想: 26〜34 秒**
+- **許容: 22〜40 秒**
+- 22 秒未満または 40 秒超 → **FAIL**
+- 22〜40 秒内だが 26〜34 秒外 → **WARN**
+
+この二段階にする理由は、静的推定には漢字の実際の読み方や AivisSpeech の発音辞書による誤差があるためです。
+
+環境変数で調整可能です。
+
+```text
+AIVIS_INTERVIEW_SPEED
+INTERVIEW_DURATION_IDEAL_MIN
+INTERVIEW_DURATION_IDEAL_MAX
+INTERVIEW_DURATION_HARD_MIN
+INTERVIEW_DURATION_HARD_MAX
+```
+
+これは **本文の長さ制限ではありません**。Section 3 の共有日本語回答が「約30秒」の口頭回答として極端に短い / 長い状態を防ぐためだけの音声品質ゲートです。
 
 ---
 
@@ -285,11 +320,16 @@ npm run quality:check:latest
 - 完整した論述段落が 2 個未満
 - 制約 / 条件 / Evidence Boundary がない
 - Section 3 が 5 組ではない
-- 共有日本語 30 秒回答が 90〜260 文字の範囲外
+- 共有日本語 30 秒回答の推定朗読時間が **22〜40 秒**の許容範囲外
 - 対応記事との独有技術アンカーが 2 個未満
 - 記事に制約があるのに Q&A に制約 / 検証条件がない
 - 複数回答で同一テンプレート文を再利用
 - 回答同士の類似度が 0.68 以上
+
+### WARN 条件の例
+
+- 共有日本語回答の推定朗読時間が 22〜40 秒には入るが、理想の **26〜34 秒**から外れる
+- Evidence / Measurement / Comparison の明示が弱く、人工確認が必要
 
 ### 言語別チェック
 
@@ -468,6 +508,7 @@ Top 5 からのみ抽出します。
 ```text
 scripts/validate-daily-quality.mjs
 scripts/sync-bilingual-interview.mjs
+scripts/generate-interview-audio.mjs
 package.json
 .github/workflows/deploy.yml
 .github/workflows/security-check.yml
