@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ReportSpeechEnhancer from '../../../components/ReportSpeechEnhancer.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -25,4 +26,5 @@ const tocHeadings = headings.filter((heading:any) => heading.depth <= 3);
       {tocHeadings.map((heading:any)=><a href={`#${heading.slug}`}>{heading.text}</a>)}
     </aside>
   </div>
+  <ReportSpeechEnhancer />
 </BaseLayout>
