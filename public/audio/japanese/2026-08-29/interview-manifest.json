@@ -1,6 +1,6 @@
 {
   "date": "2026-08-29",
-  "generatedAt": "2026-08-31T20:14:01.555Z",
+  "generatedAt": "2026-09-07T12:45:06.273Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -26,93 +26,125 @@
   "interview": [
     {
       "index": 1,
+      "type": "question",
+      "text": "AI Gatewayで障害時に接続先を変える場合、何を守りますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "506cd8f121454dc9ec73ba33e18901dd1ce24625597d4c37fe3ddf23e15d403e",
+      "durationSeconds": 5.348
+    },
+    {
+      "index": 1,
       "type": "answer",
-      "text": "複数のLLMプロバイダーを利用する場合、AI Gatewayを導入するメリットは何ですか。",
+      "text": "切り替え先でも、テナントの処理地域を守ります。LayerXのBifrost構成はVirtual Keyごとに使えるprovider keyを絞り、US用がglobalへ流れないようにしています。ただし接続できるだけでは十分でなく、モデルの品質やツール互換性も確認が必要です。Gateway自体の障害も監視し、本番と同じネットワーク条件で、許可した経路だけが使われるかを検証します。",
       "audio": "interview-answer-01.mp3",
-      "audioHash": "3ae4af35dc4fedd2ebd35a9427e0fea35bc036f2987d118d160e32e37a11d160"
+      "audioHash": "f4d935086753474b3dadd3403d774ba7aa150723ac7723d78241fc62ba2fab9b",
+      "durationSeconds": 27.982,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "運用エージェントへリソース変更を任せるとき、どう確認しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "25149da4da3a211bfa3f71031963f0f7bb59f4f76d52664a220967440f4dabd1",
+      "durationSeconds": 4.933
     },
     {
       "index": 2,
       "type": "answer",
-      "text": "アプリケーションごとに各LLM Providerへ直接接続すると、認証情報、モデル切り替え、コスト、監視の実装が分散しやすいと思います。AI Gatewayに集約すると、Data ResidencyやRouting、Secret管理、Failover、Observabilityを共通化できます。一方でGateway自体が重要な依存点になるため、可用性やSLOも含めて設計する必要があります。",
+      "text": "ロールの上限と、一回の承認を分けます。DevOps AgentのDirected actionsは、Spaceの有効化とアカウント別ロールが必要で、実行時は承認した操作と資源に権限が絞られます。ただし削除などは承認しても実行できません。Lambdaのタグ更新例のように、APIパラメータを確認し、成功の返答だけで終えず、変更後の資源とCloudTrailまで照合します。",
       "audio": "interview-answer-02.mp3",
-      "audioHash": "7ec20f1f6899c72b0bbe5dfd4b5c5cfd7c2313c407ce045114939f8e39ef524c"
+      "audioHash": "153c32ee22cdfe1457b7c049d08cf6ed4bf6904d14018e1d50fa01da2d2463a1",
+      "durationSeconds": 28.13,
+      "durationStatus": "ideal"
     },
     {
-      "index": 1,
+      "index": 3,
       "type": "question",
-      "text": "AI AgentにAWSリソースの変更権限を与える場合、どのように安全性を確保しますか。",
-      "audio": "interview-question-01.mp3",
-      "audioHash": "07e98efe0eee975d6ebe336f6c281bbbee8b422f6ef92e7a463b93e591ae3ebf"
+      "text": "restrictedモードなら、安全な読み取り専用だと言えますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "dd6e09acacbd87c63e2bc43c6319fb08eab918550c2095256666323163671704",
+      "durationSeconds": 4.655
     },
     {
       "index": 3,
       "type": "answer",
-      "text": "IAM Roleの権限だけでなく、実行ごとのHuman ApprovalとSession Policyを組み合わせることが重要だと思います。Roleは最大権限の上限として設計し、実際のCredentialは承認されたActionとResourceだけに絞ります。また、削除やPassRoleのような高リスク操作はAgent Guardrailで禁止し、CloudTrailで承認者と実行内容を追跡できるようにします。",
+      "text": "名前だけでは判断せず、残るツールを確認します。Claude Codeの記事では、restrictedでBashやWebFetchが外れても、MCPコネクタは残りました。外部接続も絞るにはstrict-mcp-configを合わせています。ただしファイル操作の範囲制限は、すべての書き込み禁止とは別です。起動イベントの一覧と適用設定を比べ、目的の操作だけが可能かを実際に確かめます。",
       "audio": "interview-answer-03.mp3",
-      "audioHash": "77154e1a65efc4cb921d5a9da4ef6c0ad6c497d5777e95c8cf74bdfdac561888"
+      "audioHash": "ba2dc05935e284a1b81d854ab11df6e5e64fee8e5edbb04d5e6c7c4abb2eba9e",
+      "durationSeconds": 28.421,
+      "durationStatus": "ideal"
     },
     {
-      "index": 2,
+      "index": 4,
       "type": "question",
-      "text": "Coding Agentに「コマンドを実行しないでください」と指示するだけで十分ですか。",
-      "audio": "interview-question-02.mp3",
-      "audioHash": "8d3087d837b59d14a9d1a9f105960779b646d4284a53850346b25ab9de9a349d"
+      "text": "Flex処理が安くて速い測定結果なら、そのまま本番へ使いますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "046352b66a196028cf7fe253c4a2d45b636399eebfe6b2828f36fa7eaa3854ce",
+      "durationSeconds": 5.549
     },
     {
       "index": 4,
       "type": "answer",
-      "text": "十分ではないと思います。Promptは行動方針を伝えるためには有効ですが、Security Boundaryとしては弱いです。CIやCode ReviewのようなRead-only用途では、BashやWeb Accessなど不要なToolそのものをRuntimeから外す方が安全です。さらにMCPなど外部接続も含めてEffective Capabilityを確認する必要があります。",
+      "text": "測定条件と、遅れてもよい処理かを確認します。記事はterraで各百回、最大二十並列、短文、推論なし、再試行なしの比較です。Flexが全件成功しても、混雑時の429が起きない保証はありません。同じリクエストで結果を受け取れる利点はありますが、期限と再実行の扱いを決め、待つかStandardへ戻すかを、追加料金も含めて判断します。",
       "audio": "interview-answer-04.mp3",
-      "audioHash": "190eb7a420a21112484f5d4cf0cd777f809f4b47d3e930f31becf91d02976b16"
+      "audioHash": "b8e3e2101468d2fdf7d2315925158dbf47d798ef175215e3192f65af11050467",
+      "durationSeconds": 28.132,
+      "durationStatus": "ideal"
     },
     {
-      "index": 3,
+      "index": 5,
       "type": "question",
-      "text": "LLM APIでStandard、Flex、Batchをどのように使い分けますか。",
-      "audio": "interview-question-03.mp3",
-      "audioHash": "c7de59a8b1ce72e895663d51e7bb628e36c5a3698d2f0370758c27a28bb565f8"
+      "text": "社内プラグインの自動更新を有効にするとき、何を確認しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "50cc751daacc18f9af8e28219daf27a61385b7b1ee6d0e31e32213434a8cfff7",
+      "durationSeconds": 5.512
     },
     {
       "index": 5,
       "type": "answer",
-      "text": "Userが画面上で待つ処理はStandard、24時間以内で大量処理できればBatchが向いています。1件ずつ通常のAPI Flowを維持したい一方、多少のLatencyや一時的なResource不足を許容できる場合はFlexが候補になります。料金だけでなく、Latency、Retry、Availability Requirementを実際のWorkloadで評価することが重要です。",
+      "text": "更新する配布元と、導入を許可する配布元を照合します。CopilotはextraKnownMarketplacesでautoUpdateを指定します。ただしstrictKnownMarketplacesの許可が必要です。対応するApp、CLI、VS Codeで実際の版を確認し、共通スキルの動作を試します。自動で配る仕組みと、更新内容が業務で使えるかの確認は分けて運用します。",
       "audio": "interview-answer-05.mp3",
-      "audioHash": "82373945a85a6628a14a31836e46a6a684d98747d8d4a46a7628013a4049fa75"
-    },
-    {
-      "index": 4,
-      "type": "question",
-      "text": "AI AgentのPluginを自動更新する場合、どのようなGovernanceが必要ですか。",
-      "audio": "interview-question-04.mp3",
-      "audioHash": "09e7ca37ab033cadc13bf6d66dbb7a3829a4aca3222a34d03ea9c17ad57e5bc5"
-    },
-    {
-      "index": 6,
-      "type": "answer",
-      "text": "自動更新はConfiguration Driftを減らせますが、信頼できないPluginや予期しないVersion変更を広げるRiskもあります。そのためApproved MarketplaceをAllowlistで限定し、更新対象、Version、Permissionを組織側で管理することが重要です。CriticalなPluginはStagingや段階的Rolloutも検討すべきだと思います。",
-      "audio": "interview-answer-06.mp3",
-      "audioHash": "5d2148f9d922d22604e8e2a9e88f3fb99f65169261e9d3507e53c6f01346bd1e"
+      "audioHash": "db132380f10c4cdbbc4e5fe1bfd13b6dcc9ea5de99f136f81c1e259b7f18d089",
+      "durationSeconds": 27.876,
+      "durationStatus": "ideal"
     }
   ],
   "review": [
     {
       "index": 1,
-      "text": "AI Gatewayを導入する主な目的は何ですか。",
+      "text": "Gatewayを経由すれば、どの地域へ切り替えてもよいですか。",
       "audio": "review-question-01.mp3",
-      "audioHash": "09ecf32cd59e04d5f6bdb551b8d9284f300757b86fa3675fb552375a3f5bc860"
+      "audioHash": "324898834f1d7c61db772fcd3d98dc20682a20886096fe9bea3ad7d798255b52",
+      "durationSeconds": 4.444
     },
     {
       "index": 2,
-      "text": "AI AgentにCloud Resourceの変更を許可する場合、IAM以外に何が必要ですか。",
+      "text": "action roleで削除が許可されていれば、Agentも削除しますか。",
       "audio": "review-question-02.mp3",
-      "audioHash": "90487f3ba0bf5b3a2e1193a21acbf59108723343bb2b03ca63b6c6cf1d0c115b"
+      "audioHash": "394261cb3dff8565a9ca7db8600d678ba525f3eff73bca310c24988904a4c601",
+      "durationSeconds": 5.119
     },
     {
       "index": 3,
-      "text": "LLMのAPIコストを下げる場合、Model変更以外にどのような方法がありますか。",
+      "text": "Flexの百回成功は、混雑時の成功保証ですか。",
       "audio": "review-question-03.mp3",
-      "audioHash": "22684d9aed990efc8d799b02d855d44aee2ed7abbefa20aa0a5f02ac27f1cfcc"
+      "audioHash": "2c9c9233fbd55c42e9dfcf247e0786780dc74b109a0d29da80bc26e2feb57ddb",
+      "durationSeconds": 4.579
     }
-  ]
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-25",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-07T12:58:20.623Z"
 }

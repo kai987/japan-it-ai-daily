@@ -136,7 +136,11 @@
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
-      "published": false
+      "published": true,
+      "publishedCommit": "fd45d94bc5605c05f60bd855de8a0f90db1d4611",
+      "pagesRun": 34120568764,
+      "audioRun": 34120568799,
+      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
     },
     "2026-08-20": {
       "content": "rewritten",
@@ -151,7 +155,11 @@
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
-      "published": false
+      "published": true,
+      "publishedCommit": "fd45d94bc5605c05f60bd855de8a0f90db1d4611",
+      "pagesRun": 34120568764,
+      "audioRun": 34120568799,
+      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
     },
     "2026-08-21": {
       "content": "rewritten",
@@ -166,7 +174,11 @@
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
-      "published": false
+      "published": true,
+      "publishedCommit": "fd45d94bc5605c05f60bd855de8a0f90db1d4611",
+      "pagesRun": 34120568764,
+      "audioRun": 34120568799,
+      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
     },
     "2026-08-22": {
       "content": "rewritten",
@@ -181,7 +193,11 @@
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
-      "published": false
+      "published": true,
+      "publishedCommit": "fd45d94bc5605c05f60bd855de8a0f90db1d4611",
+      "pagesRun": 34120568764,
+      "audioRun": 34120568799,
+      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
     },
     "2026-08-23": {
       "content": "rewritten",
@@ -196,7 +212,11 @@
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
-      "published": false
+      "published": true,
+      "publishedCommit": "fd45d94bc5605c05f60bd855de8a0f90db1d4611",
+      "pagesRun": 34120568764,
+      "audioRun": 34120568799,
+      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
     },
     "2026-08-24": {
       "content": "rewritten",
@@ -208,6 +228,100 @@
         26.635,
         27.491,
         27.641
+      ],
+      "interviewAudio": "pass",
+      "learningAudio": "exact-text-verified",
+      "published": true,
+      "publishedCommit": "fd45d94bc5605c05f60bd855de8a0f90db1d4611",
+      "pagesRun": 34120568764,
+      "audioRun": 34120568799,
+      "liveVerification": "CN and JA exact answers; R2 answer MP3 hash matches"
+    },
+    "2026-08-25": {
+      "content": "rewritten",
+      "staticQuality": "pass",
+      "bilingualQa": "pass",
+      "answerDurationSeconds": [
+        26.307,
+        27.188,
+        27.512,
+        26.69,
+        29.987
+      ],
+      "interviewAudio": "pass",
+      "learningAudio": "exact-text-verified",
+      "published": false
+    },
+    "2026-08-26": {
+      "content": "rewritten",
+      "staticQuality": "pass",
+      "bilingualQa": "pass",
+      "answerDurationSeconds": [
+        29.383,
+        29.385,
+        26.098,
+        28.386,
+        26.889
+      ],
+      "interviewAudio": "pass",
+      "learningAudio": "exact-text-verified",
+      "published": false
+    },
+    "2026-08-27": {
+      "content": "rewritten",
+      "staticQuality": "pass",
+      "bilingualQa": "pass",
+      "answerDurationSeconds": [
+        29.56,
+        28.712,
+        26.39,
+        30.275,
+        28.016
+      ],
+      "interviewAudio": "pass",
+      "learningAudio": "exact-text-verified",
+      "published": false
+    },
+    "2026-08-28": {
+      "content": "rewritten",
+      "staticQuality": "pass",
+      "bilingualQa": "pass",
+      "answerDurationSeconds": [
+        26.948,
+        27.419,
+        26.096,
+        27.669,
+        26.76
+      ],
+      "interviewAudio": "pass",
+      "learningAudio": "exact-text-verified",
+      "published": false
+    },
+    "2026-08-29": {
+      "content": "rewritten",
+      "staticQuality": "pass",
+      "bilingualQa": "pass",
+      "answerDurationSeconds": [
+        27.982,
+        28.13,
+        28.421,
+        28.132,
+        27.876
+      ],
+      "interviewAudio": "pass",
+      "learningAudio": "exact-text-verified",
+      "published": false
+    },
+    "2026-08-30": {
+      "content": "rewritten",
+      "staticQuality": "pass",
+      "bilingualQa": "pass",
+      "answerDurationSeconds": [
+        26.945,
+        27.654,
+        27.32,
+        28.443,
+        28.642
       ],
       "interviewAudio": "pass",
       "learningAudio": "exact-text-verified",
@@ -930,18 +1044,18 @@
       "index": 1,
       "title": "GitHub Copilot Cloud Agent × Microsoft Teams",
       "url": "https://codezine.jp/news/detail/29421",
-      "status": "failed",
-      "error": "Command '['curl', '-fLsS', '--max-time', '50', '--retry', '1', '-A', 'Mozilla/5.0', 'https://codezine.jp/news/detail/29421']' returned non-zero exit status 22.",
-      "reviewStatus": "pending"
+      "status": "read-in-browser",
+      "reviewStatus": "reviewed",
+      "evidenceMethod": "Rendered public article in browser"
     },
     {
       "date": "2026-08-25",
       "index": 2,
       "title": "Liquid AI DSpark：Speculative Decoding",
       "url": "https://codezine.jp/news/detail/29423",
-      "status": "failed",
-      "error": "Command '['curl', '-fLsS', '--max-time', '50', '--retry', '1', '-A', 'Mozilla/5.0', 'https://codezine.jp/news/detail/29423']' returned non-zero exit status 22.",
-      "reviewStatus": "pending"
+      "status": "read-in-browser",
+      "reviewStatus": "reviewed",
+      "evidenceMethod": "Rendered public article in browser"
     },
     {
       "date": "2026-08-25",
@@ -952,7 +1066,7 @@
       "chars": 18920,
       "pageTitle": "AWS DevOps Agent に障害の調査結果から GitHub Issue を起票させてみた | DevelopersIO",
       "sha256": "cf69096d1112caebdcd20a36949dca6568a2746255cc18177c862929684bc54c",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "f07424506d16c5d4a7c88ebd02de1c01322dbf683d29b82512f9647a54ef33a2"
     },
     {
@@ -964,7 +1078,7 @@
       "chars": 18027,
       "pageTitle": "ターミナルを閉じてもClaude Codeが動き続ける理由、supervisorデーモンとAgent viewについて",
       "sha256": "946655d60d19eb754710cab03f5aa0a5b74e643b47a82516367899f6bf0e953e",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "c4b9761b1e957b99783189eadf2a42e02407716d7703dded020db4f6a2a9a4f0"
     },
     {
@@ -976,7 +1090,7 @@
       "chars": 5073,
       "pageTitle": "建築業でも「Claudeの有料導入」が急増　AI導入レベルが上がった企業を悩ます「新たな壁」とは：特定部署以上でのAI活用が半年で7割に急拡大 - ＠IT",
       "sha256": "43a5f8657a648ca3586d00269dc0f47b5e7a9bfb2b1486acb2722d442d22d62c",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "8e58cf16bd54f008c746fe4fab09805fca043a47bcbf2dd654c4975e26f2b2a4"
     },
     {
@@ -988,7 +1102,7 @@
       "chars": 3218,
       "pageTitle": "MCPが最新ロードマップを発表　エージェンティックAI、非同期通信、セキュリティなど5つの重点分野を定義 - ＠IT",
       "sha256": "721dca71f5789c31c09825dba0350a611f22bf64122d9490b344ab922939d5c2",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "1885e263448080dfeef6d4cfe329d1396b3f3dda81e72b2be2bfcdf741d96fb2"
     },
     {
@@ -1000,7 +1114,7 @@
       "chars": 2594,
       "pageTitle": "Unauthenticated Remote Code Execution on windows-hosted servers · Advisory · vercel/next.js · GitHub",
       "sha256": "8733bd7e67ed32c18371e829c9b1f062a41b665b3b9956ec2d7ed7b8523d6595",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "1877615e365538e64c0a8ead90864ef751b1f5e46d334856398277c21d4fadd7"
     },
     {
@@ -1012,7 +1126,7 @@
       "chars": 7780,
       "pageTitle": "Claude Code v2.1.240〜v2.1.245 の主要アップデート - modelPicker と promptCacheTtl の追加 | DevelopersIO",
       "sha256": "b3070039f659dd4bba503d50e566ea710c116d7041fc3e5575fce98854d9ff9b",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "c8c0899988132ca24546f3c33cc29ef3dce5afdcb50ec0fa54e34126a8c28ba6"
     },
     {
@@ -1024,7 +1138,7 @@
       "chars": 6594,
       "pageTitle": "MCPサーバーを7個つないだら、話す前にコンテキストの12%が埋まっていた",
       "sha256": "dddbea305aa58190e759e23da1c68e9121a93c527089f3bf2c7707ac108e597e",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "3284c90db2d112f22a11dacb6c048c62377c08613844c93bb626e1632f181fd4"
     },
     {
@@ -1036,7 +1150,7 @@
       "chars": 4531,
       "pageTitle": "Claude Mythos発表後、CVEが異常増加　7月は発表前の5倍に：調査で見えた変化 - ＠IT",
       "sha256": "fd469284be8e275d9c9e35099a5e24c7f6f1751d987dd0fa2130d82a2ed6d946",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "b8ba719ebb1883df9b975d134a96f83497c7115b101dc9dc4c506ccad56ddc5b"
     },
     {
@@ -1048,7 +1162,7 @@
       "chars": 5652,
       "pageTitle": "LINEヤフーのAgent iを支えるAIエージェント基盤：「誰でも作れる」と「安全に動かせる」をどう両立したか",
       "sha256": "7527112598ffc54b1db033cc3eaa3d7a26c2a1dbd3787965e825b891f37f8260",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "037abb1f474cf553a7b91dbcc4a8c7d4c3ff743d4f8d5fc3a24263189dab998d"
     },
     {
@@ -1060,7 +1174,7 @@
       "chars": 9942,
       "pageTitle": "AI活用率100％のQA組織をつくるまで",
       "sha256": "eee945f31b478627598a0ea2aae898ef4aebbfaa3afa58bbefff871c273cadba",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "acae504f45cffbc9e2e68b2e941ed59027a7c6699233cfb91b35343051b94b64"
     },
     {
@@ -1072,7 +1186,7 @@
       "chars": 8991,
       "pageTitle": "GitHub EnterpriseにおけるCopilotの統制：AI ControlsとManaged Settings",
       "sha256": "7eb8c439098c1d51975a22fd9f8be9062c3b3eae4d343d836942b01bc59a4396",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "f68328426f9ff4e5cd1aab1c35e2e8e7387d9f7d6d300d1803d093686a491b2e"
     },
     {
@@ -1084,7 +1198,7 @@
       "chars": 6725,
       "pageTitle": "REST APIにTypeSpecを導入してスキーマ駆動開発 - LayerX エンジニアブログ",
       "sha256": "ed38e9a04d75ecea532fcc17323d4eafdced84e084e0fa222153cfd3be5f56cc",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "34047b9b0e437869198f9316232ddab2cf5eb7569e0d1b4f5ff0a4f59c609788"
     },
     {
@@ -1092,27 +1206,29 @@
       "index": 5,
       "title": "JetBrains Junie Local：Local Coding Agentをより簡単に導入",
       "url": "https://codezine.jp/news/detail/29461",
-      "status": "failed",
-      "error": "Command '['curl', '-fLsS', '--max-time', '50', '--retry', '1', '-A', 'Mozilla/5.0', 'https://codezine.jp/news/detail/29461']' returned non-zero exit status 22.",
-      "reviewStatus": "pending"
+      "status": "read-in-browser",
+      "reviewStatus": "reviewed",
+      "evidenceMethod": "Rendered public article in browser"
     },
     {
       "date": "2026-08-28",
       "index": 1,
       "title": "AIエージェント向けのWebと実行環境は、人間向けと何が違うのか──Cloudflareが示す設計の前提",
       "url": "https://codezine.jp/article/detail/29480",
-      "status": "failed",
-      "error": "Command '['curl', '-fLsS', '--max-time', '50', '--retry', '1', '-A', 'Mozilla/5.0', 'https://codezine.jp/article/detail/29480']' returned non-zero exit status 22.",
-      "reviewStatus": "pending"
+      "status": "partial-public-page",
+      "reviewStatus": "reviewed-public-portion",
+      "evidenceMethod": "Rendered public article in browser",
+      "limitation": "Only public first page was accessible; member-only remainder was not read. Detailed unverified portions are explicitly omitted in both reports."
     },
     {
       "date": "2026-08-28",
       "index": 2,
       "title": "Devinにどこまで任せられる？ 使いどころを一段ずつ広げる「任せ方の3タイプ」",
       "url": "https://codezine.jp/article/detail/29221",
-      "status": "failed",
-      "error": "Command '['curl', '-fLsS', '--max-time', '50', '--retry', '1', '-A', 'Mozilla/5.0', 'https://codezine.jp/article/detail/29221']' returned non-zero exit status 22.",
-      "reviewStatus": "pending"
+      "status": "partial-public-page",
+      "reviewStatus": "reviewed-public-portion",
+      "evidenceMethod": "Rendered public article in browser",
+      "limitation": "Only public first page was accessible; member-only remainder was not read. Detailed unverified portions are explicitly omitted in both reports."
     },
     {
       "date": "2026-08-28",
@@ -1123,7 +1239,7 @@
       "chars": 3900,
       "pageTitle": "AI時代に拡大するAPIアタックサーフェス　いかに保護するか：Gartner Insights Pickup（461） - ＠IT",
       "sha256": "0bedca970ab61d769b486cf6937cd2473576e10f868f0a6c9288fdf0babd4cec",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "12656f06239753eb6b09b0a3d12e6e1db73b431a804607c2cfa414d4ffddbed4"
     },
     {
@@ -1135,7 +1251,7 @@
       "chars": 5277,
       "pageTitle": "Claude Code v2.1.247 の主要アップデート - /claude-api cost-optimize ツール追加と Sonnet 5 の auto-compact 1M 化 | DevelopersIO",
       "sha256": "382fefbcbb28a77924b88bdc75b988ffc7b0c29cc664d67629ed636dc19edad3",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "d12e28c1573dbc6ab6212366da6f34308fe869d2c1f2b2026f8f2af410eb6ff7"
     },
     {
@@ -1147,7 +1263,7 @@
       "chars": 2324,
       "pageTitle": "OpenAI、公開プラグインでSkills Over MCPを早期サポート ——提出時にMCPサーバーからスキルを取り込み | gihyo.jp",
       "sha256": "bda4af301e7398fc383e47ea3276edb3279168942846910f56cb1654fe9fd2f4",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "71a30d255d59fc4929a64a4f59801dd1aa754b5c537f8257edec0293f35c0837"
     },
     {
@@ -1159,7 +1275,7 @@
       "chars": 10108,
       "pageTitle": "AI Gateway「Bifrost」の本番導入で、Technical Project Manager が担ったこと - LayerX エンジニアブログ",
       "sha256": "843c0ada3d90f14cfb74bcfd6421dbc9bc2b157f5cafb8bc23cc92702f590db6",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "8edc6ba00fa784413a1ea2dc2b9708ef7182ae3ee40a0442f45e88b68069ae7b"
     },
     {
@@ -1171,7 +1287,7 @@
       "chars": 10019,
       "pageTitle": "AWS DevOps Agentがリソースを更新できるようになったので試してみた | DevelopersIO",
       "sha256": "98659a045f725df74aab5e9346825e1dcc159c722117e4168b2b75b1bcf8a0bd",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "96e67c384401098e12a8b78cab68442ee8fe6428a0f1ad8ce2323728e2e1f87b"
     },
     {
@@ -1183,7 +1299,7 @@
       "chars": 7427,
       "pageTitle": "Claude Code v2.1.248 の主要アップデート - ツールを制限する --restricted の追加 | DevelopersIO",
       "sha256": "b48b2ce57024aca880a822c059db75a22f73b4217eb2de40024806c56ee5cc23",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "73bb5fedc254dfbf1e75c0e2e5e4ea65cc24749225a778bf6818189fe467759c"
     },
     {
@@ -1195,7 +1311,7 @@
       "chars": 3783,
       "pageTitle": "Batch APIと同じ料金で使えるOpenAI APIのFlex processingを試してみる | DevelopersIO",
       "sha256": "7b2d2e74f172e169b4ef861a20cc0d1fb7093cc495c661db6786ddf3b4ebcf2b",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "676db94c5da9d8cba30a29e04326d9d9e0c6a9b22b401266a431d91fe82d357e"
     },
     {
@@ -1203,9 +1319,9 @@
       "index": 5,
       "title": "GitHub Copilot、エンタープライズ向けにプラグイン自動更新機能を追加",
       "url": "https://codezine.jp/news/detail/29479",
-      "status": "failed",
-      "error": "Command '['curl', '-fLsS', '--max-time', '50', '--retry', '1', '-A', 'Mozilla/5.0', 'https://codezine.jp/news/detail/29479']' returned non-zero exit status 22.",
-      "reviewStatus": "pending"
+      "status": "read-in-browser",
+      "reviewStatus": "reviewed",
+      "evidenceMethod": "Rendered public article in browser"
     },
     {
       "date": "2026-08-30",
@@ -1216,7 +1332,7 @@
       "chars": 5029,
       "pageTitle": "AIレビューの「OK」はどこまで信じていいか、わざとバグを5個仕込んで測ってみた",
       "sha256": "71553cdc6ad21c6f4a82fcdde569a144e25d00784c2f1f3bd947cf0c7b0f541e",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "bacdf0ad20953487850fff87546e57860ee404fef4f66520ae28bfc9f0709d25"
     },
     {
@@ -1228,7 +1344,7 @@
       "chars": 4054,
       "pageTitle": "CodexとClaudeを同じリポジトリで働かせたら、色々壊れた——1人+2AIの事故対策の全部",
       "sha256": "31d57291674eed933fb6c8db88e2f76187087e40a435c0f32c1a1103f4ff707c",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "5d0dd3a4ef67f9a9a3414eb3e4a858cb26a13de6491efb14d5c9183af05ee602"
     },
     {
@@ -1240,7 +1356,7 @@
       "chars": 4256,
       "pageTitle": "「トークン単価50％減でもAI請求額が跳ね上がる」なぜ？　Uberは4月で年間予算が枯渇：AI使用量を競う「トークンマクシング」は死んだ（1/2 ページ） - ＠IT",
       "sha256": "48f41afa8c249e15f2011a0e2fe8228fc6f88c8cd4372a1253393117d975fb28",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "4f1b5a796757f9d4cd94c4fbef0e235ce272e83e7cd3a9b3e31db9bb471dc040"
     },
     {
@@ -1248,9 +1364,9 @@
       "index": 4,
       "title": "Anthropic、AIと物理機器連携の新標準「Model Hardware Standard」を公開",
       "url": "https://codezine.jp/news/detail/29495",
-      "status": "failed",
-      "error": "Command '['curl', '-fLsS', '--max-time', '50', '--retry', '1', '-A', 'Mozilla/5.0', 'https://codezine.jp/news/detail/29495']' returned non-zero exit status 22.",
-      "reviewStatus": "pending"
+      "status": "read-in-browser",
+      "reviewStatus": "reviewed",
+      "evidenceMethod": "Rendered public article in browser"
     },
     {
       "date": "2026-08-30",
@@ -1261,7 +1377,7 @@
       "chars": 3301,
       "pageTitle": "OpenAI、Cursorへのモデル提供を11月12日に終了　SpaceXによる買収が理由 - ITmedia NEWS",
       "sha256": "7f00ed24a8f35be3dd25959466d4f81d6247bb1395d562db7dc55323a41780c9",
-      "reviewStatus": "pending",
+      "reviewStatus": "reviewed",
       "textSha256": "b0d9f9849eca76f49aefb2771934bbaae2ca92582debadd3b8201cc58093b646"
     },
     {
@@ -1722,6 +1838,61 @@
       "date": "2026-08-24",
       "url": "https://slack.com/intl/ja-jp/features/code-channels",
       "purpose": "Confirm Code Channel collaboration and review flow"
+    },
+    {
+      "date": "2026-08-25",
+      "url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/",
+      "purpose": "Verify optional approval settings and shared sessions"
+    },
+    {
+      "date": "2026-08-25",
+      "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
+      "purpose": "Verify hardware benchmark conditions and exact greedy decoding"
+    },
+    {
+      "date": "2026-08-26",
+      "url": "https://blog.modelcontextprotocol.io/posts/mcp-roadmap/",
+      "purpose": "Separate published protocol from roadmap proposals"
+    },
+    {
+      "date": "2026-08-27",
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/copilot/reference/enterprise-administrators/enterprise-managed-settings",
+      "purpose": "Verify allow deny settings and default model behavior"
+    },
+    {
+      "date": "2026-08-27",
+      "url": "https://blog.jetbrains.com/junie/2026/08/junie-local-launch/",
+      "purpose": "Verify local hardware and reasoning benchmark conditions"
+    },
+    {
+      "date": "2026-08-28",
+      "url": "https://blog.cloudflare.com/agents-week-welcome/",
+      "purpose": "Public primary context for bots and agents statistics"
+    },
+    {
+      "date": "2026-08-28",
+      "url": "https://blog.cloudflare.com/introducing-precursor/",
+      "purpose": "Supplement public first page with session signal mechanism"
+    },
+    {
+      "date": "2026-08-28",
+      "url": "https://developers.openai.com/plugins/build/mcp-server#import-skills-from-the-mcp-server",
+      "purpose": "Confirm submitted static skills snapshot and rescan conditions"
+    },
+    {
+      "date": "2026-08-29",
+      "url": "https://docs.aws.amazon.com/devopsagent/latest/userguide/working-with-devops-agent-working-with-directed-actions.html",
+      "purpose": "Verify session restriction and forbidden operations"
+    },
+    {
+      "date": "2026-08-29",
+      "url": "https://developers.openai.com/api/docs/guides/flex-processing",
+      "purpose": "Verify Flex resource unavailable and fallback behavior"
+    },
+    {
+      "date": "2026-08-29",
+      "url": "https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces/",
+      "purpose": "Verify marketplace autoUpdate and allowlist requirements"
     }
   ],
   "additionalPages": [
@@ -1742,6 +1913,13 @@
       "index": 4,
       "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/19/news016_2.html",
       "sha256": "bd0feaa85c77825e61fd2550460708c1e6446b35b75c3d9dfb78ea13897f6d57"
+    },
+    {
+      "date": "2026-08-30",
+      "index": 3,
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/29/news009_2.html",
+      "sha256": "b70909f1a3993cfb35fa06e11369df6a092741e957da1a722ffd61c2885c3bac",
+      "reviewStatus": "reviewed"
     }
   ]
 }
