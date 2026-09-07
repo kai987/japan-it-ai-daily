@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 
 const verifiedInlineScripts = [
   "'sha256-Fy4Jj/MNW5fKhEX/U+HrnIZZL84Ngeq+w6YdWcwYHQE='", // initial theme
+  "'sha256-kr+CsDwD9BRdN2U0/hd4egGkPWdwpMfpsuniI6IEuRs='", // default locale redirect
   "'sha256-NgF0ulOKuwYtbm1O82saYlAqPjWhJcOO3KUQh0Kav4c='", // theme/menu/TOC
   "'sha256-772VVZKuu8keoACuPl9AQOMhOo+x/J240SH9AUpOa4k='", // interview deep links
   "'sha256-GCoSn7zakHhIDak12g1Y5A93bTnh9dmH11x2vUR8zio='", // daily page enhancements
