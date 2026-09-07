@@ -11,6 +11,19 @@ const dateArg = [...args].find((arg) => arg.startsWith('--date='));
 const minDate = dateArg?.slice(7) || fromArg?.slice(7) || process.env.DAILY_QUALITY_FROM || '2026-09-08';
 const onlyDate = dateArg?.slice(7) || null;
 
+const positiveNumber = (value, fallback) => {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+};
+
+const interviewTiming = {
+  speed: positiveNumber(process.env.AIVIS_INTERVIEW_SPEED, 1.0),
+  idealMin: positiveNumber(process.env.INTERVIEW_DURATION_IDEAL_MIN, 26),
+  idealMax: positiveNumber(process.env.INTERVIEW_DURATION_IDEAL_MAX, 34),
+  hardMin: positiveNumber(process.env.INTERVIEW_DURATION_HARD_MIN, 22),
+  hardMax: positiveNumber(process.env.INTERVIEW_DURATION_HARD_MAX, 40),
+};
+
 const normalize = (value = '') => value.replace(/\r\n/g, '\n');
 const compact = (value = '') => value.replace(/\s+/g, ' ').trim();
 const stripMarkdown = (value = '') => value
@@ -173,6 +186,53 @@ const tokenJaccard = (a, b) => {
   return intersection / union.size;
 };
 
+const estimateJapaneseSpeechSeconds = (text) => {
+  const cleaned = stripMarkdown(text);
+  const occupied = new Uint8Array(cleaned.length);
+  let pronunciationUnits = 0;
+
+  // Latin technical terms and numbers are weighted separately because e.g.
+  // "BM25", "OpenTelemetry" and "30%" take very different time from the
+  // same number of Japanese characters when read by AivisSpeech.
+  for (const match of cleaned.matchAll(/[A-Za-z][A-Za-z0-9_.+()/:-]*|\d+(?:\.\d+)?%?/g)) {
+    const token = match[0];
+    const start = match.index ?? 0;
+    for (let i = start; i < start + token.length && i < occupied.length; i += 1) occupied[i] = 1;
+
+    const letters = (token.match(/[A-Za-z]/g) || []).length;
+    const digits = (token.match(/\d/g) || []).length;
+    if (letters) {
+      const acronymLike = /^[A-Z0-9_.+()/:-]+$/.test(token);
+      pronunciationUnits += acronymLike
+        ? (letters * 2.0) + (digits * 1.5)
+        : Math.max(2.0, letters * 0.72) + (digits * 1.5);
+    } else {
+      pronunciationUnits += (digits * 1.7) + (token.includes('%') ? 4.0 : 0);
+    }
+  }
+
+  for (let i = 0; i < cleaned.length; i += 1) {
+    if (occupied[i]) continue;
+    const ch = cleaned[i];
+    if ((ch >= 'ぁ' && ch <= 'ヿ') || (ch >= 'ｦ' && ch <= 'ﾟ')) pronunciationUnits += 1.0;
+    else if ((ch >= '㐀' && ch <= '䶿') || (ch >= '一' && ch <= '鿿')) pronunciationUnits += 1.9;
+    else if ('々〆ヶ'.includes(ch)) pronunciationUnits += 1.2;
+  }
+
+  let pauseSeconds = 0;
+  for (const ch of cleaned) {
+    if ('、,'.includes(ch)) pauseSeconds += 0.12;
+    else if ('。！？!?'.includes(ch)) pauseSeconds += 0.28;
+    else if ('；;'.includes(ch)) pauseSeconds += 0.15;
+    else if ('：:'.includes(ch)) pauseSeconds += 0.12;
+  }
+
+  const speed = interviewTiming.speed;
+  const spokenSeconds = pronunciationUnits / (6.8 * speed);
+  // generate-interview-audio.mjs uses 0.10s pre + 0.12s post phoneme length.
+  return spokenSeconds + (pauseSeconds / speed) + 0.22;
+};
+
 const paragraphCount = (article) => normalize(article.body)
   .split(/\n\s*\n/)
   .map((part) => stripMarkdown(part))
@@ -215,12 +275,22 @@ const validateReport = (date, zhSource, jaSource) => {
   // article-specific anchors against the Japanese Top 5 body, not the Chinese prose.
   const anchors = uniqueArticleAnchors(jaArticles);
   zhQa.forEach((qa, index) => {
-    const answerChars = qa.answer.replace(/\s/g, '').length;
     if (!qa.question) errors.push(`Q&A ${index + 1} 缺少質問`);
     if (!qa.answer) errors.push(`Q&A ${index + 1} 缺少30秒回答`);
-    if (answerChars < 90 || answerChars > 260) {
-      errors.push(`Q&A ${index + 1} 回答长度 ${answerChars} 字符，不符合共享日语 30 秒回答的目标范围 90–260`);
+
+    const estimatedSeconds = estimateJapaneseSpeechSeconds(qa.answer);
+    if (estimatedSeconds < interviewTiming.hardMin || estimatedSeconds > interviewTiming.hardMax) {
+      errors.push(
+        `Q&A ${index + 1} 预计朗读 ${estimatedSeconds.toFixed(1)} 秒，超出约30秒回答的可接受范围 `
+        + `${interviewTiming.hardMin}–${interviewTiming.hardMax} 秒（AivisSpeech speed=${interviewTiming.speed.toFixed(2)}）`,
+      );
+    } else if (estimatedSeconds < interviewTiming.idealMin || estimatedSeconds > interviewTiming.idealMax) {
+      warnings.push(
+        `Q&A ${index + 1} 预计朗读 ${estimatedSeconds.toFixed(1)} 秒；理想目标为 `
+        + `${interviewTiming.idealMin}–${interviewTiming.idealMax} 秒（AivisSpeech speed=${interviewTiming.speed.toFixed(2)}）`,
+      );
     }
+
     const matches = answerAnchorMatches(qa.answer, anchors[index] || new Set());
     if (matches.length < 2) {
       errors.push(`Q&A ${index + 1} 与对应日语文章共享的独有技术锚点不足 2 个；检测到：${matches.join(', ') || '无'}`);
