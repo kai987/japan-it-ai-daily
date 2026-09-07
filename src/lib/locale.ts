@@ -1,6 +1,6 @@
 export type SiteLocale = 'zh' | 'ja';
 
-export const DEFAULT_LOCALE: SiteLocale = 'zh';
+export const DEFAULT_LOCALE: SiteLocale = 'ja';
 
 export const localeRoot = (base: string, locale: SiteLocale): string =>
   locale === 'ja' ? `${base}ja/` : base;
