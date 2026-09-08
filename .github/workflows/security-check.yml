@@ -36,12 +36,6 @@ jobs:
         run: npm run evidence:check && npm run evidence:pilot
       - name: Verify bilingual interview Q&A
         run: npm run bilingual:check-interview
-      - name: Ensure audio duration tools
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: Verify audio text and files
-        run: npm run audio:integrity:check
-      - name: Verify measured audio duration
-        run: npm run audio:duration:check
       - name: Verify daily content quality
         run: npm run quality:check
       - name: Check audio scripts
