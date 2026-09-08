@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-08",
+  "generatedAt": "2026-09-08T06:15:10.438Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "限界",
+      "reading": "げんかい",
+      "exampleJa": "共有APIキー運用の限界を見極め、Identity単位の管理へ移行します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "6c1f61be1dd5707a954bf28a500f1bc7757ae0b2ae68c9bbedf40be3b70ef0a6",
+      "example": "example-01.mp3",
+      "exampleHash": "eee2b96495f5bc4d26caf86dc2bde428f8b16322149573ac8d8a2cf9f937de6b"
+    },
+    {
+      "index": 2,
+      "term": "負債",
+      "reading": "ふさい",
+      "exampleJa": "AIが再生産するレガシーな負債をSecurity Reviewで検出します。",
+      "word": "vocab-02.mp3",
+      "wordHash": "c464e375bd06c4ab57b8f437d973023d70d530ad197427f334da1bcda6911851",
+      "example": "example-02.mp3",
+      "exampleHash": "6d574cb0bf39d642961de13629f62a75d4dcf5c5f1cc114eb071e58e5cfd7e12"
+    },
+    {
+      "index": 3,
+      "term": "出典",
+      "reading": "しゅってん",
+      "exampleJa": "Memoryの結論だけでなく、出典情報まで追跡できるようにします。",
+      "word": "vocab-03.mp3",
+      "wordHash": "b26de4b69ddf6cd6dbc5e2c5cb2f17150b012dfca1c5d7d9fe28cda7a93cdb06",
+      "example": "example-03.mp3",
+      "exampleHash": "078896432decf1ac99ba524429a9929abb63f81b68ffc00f6e168dc4b231a875"
+    },
+    {
+      "index": 4,
+      "term": "粒度",
+      "reading": "りゅうど",
+      "exampleJa": "営業Dataの粒度をそろえてからAI Agentに利用させます。",
+      "word": "vocab-04.mp3",
+      "wordHash": "0f6c0a247cf300764cf79f5937fc95d07f41c9cbd1e6718769fe4443b70ff67f",
+      "example": "example-04.mp3",
+      "exampleHash": "27334812fc6f4a278164f75866fdd6f5ec4715df8c7e6719a62612017a8567b3"
+    },
+    {
+      "index": 5,
+      "term": "前提",
+      "reading": "ぜんてい",
+      "exampleJa": "AI導入の前提として、Data定義と業務Ruleを明確にします。",
+      "word": "vocab-05.mp3",
+      "wordHash": "09d2c93d539759ad1e3234215fbd6bb5add4e2b3d706c10d60a86d22ce521b53",
+      "example": "example-05.mp3",
+      "exampleHash": "00be094be136b86678ae975a92ecf571066dd72223c1ba3ae3348dd5c12b9ccd"
+    },
+    {
+      "index": 6,
+      "term": "懸念",
+      "reading": "けねん",
+      "exampleJa": "予想外のAI利用料金と情報漏えいには運用上の懸念があります。",
+      "word": "vocab-06.mp3",
+      "wordHash": "2f5eae3c52a4a1713a1a6a602f7a9209481297760ca81e5efaa8805e0af14003",
+      "example": "example-06.mp3",
+      "exampleHash": "af47d79f1e48379dc1d72777a2379c51a3f4c94cf6bfcb3128456de4f92883c2"
+    },
+    {
+      "index": 7,
+      "term": "ひも付ける",
+      "reading": "ひもづける",
+      "exampleJa": "各AI Requestに確認済みのUser IDをひも付けます。",
+      "word": "vocab-07.mp3",
+      "wordHash": "8307a49e98f13908f21b778271eb7c9d354f9194f7a5cc0e3d80b69bbae79787",
+      "example": "example-07.mp3",
+      "exampleHash": "37c3615ffe17308f260aeb69c3d4be8cabaa3fa16fbfd03535b4846eb9a0b4e5"
+    },
+    {
+      "index": 8,
+      "term": "妨げる",
+      "reading": "さまたげる",
+      "exampleJa": "Security Ruleが開発速度を不必要に妨げないように設計します。",
+      "word": "vocab-08.mp3",
+      "wordHash": "8444192eeefdda15467503a04cb771717edf2ec64d381ad2e88fe4e1f753c87c",
+      "example": "example-08.mp3",
+      "exampleHash": "4c1ce0310e775e75f2d971b401d6c52ce8af1fb8ac0420a5b54c049188ff95ae"
+    },
+    {
+      "index": 9,
+      "term": "再生産する",
+      "reading": "さいせいさんする",
+      "exampleJa": "古いSecurity PatternをAIが再生産しないか確認します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "8c31a776fd94e9cfaaae2a9983b69a037a1642aacc60e7a8b1a4fbf331ef6ada",
+      "example": "example-09.mp3",
+      "exampleHash": "25168138f087e5bd1701506e551fcca49c06815d1e8dd7af13d696a3e5cd90e0"
+    },
+    {
+      "index": 10,
+      "term": "切り分ける",
+      "reading": "きりわける",
+      "exampleJa": "Package由来なのかPrompt Injectionなのかを先に切り分けます。",
+      "word": "vocab-10.mp3",
+      "wordHash": "287680674b017d3e738c36b35de07999a2280ab4463e2042c831cc7726c5855c",
+      "example": "example-10.mp3",
+      "exampleHash": "d2891cbcb5f761bed232ed96ddae94e9b455ebc07fb3859b954967940c6d72e2"
+    },
+    {
+      "index": 11,
+      "term": "訂正する",
+      "reading": "ていせいする",
+      "exampleJa": "事情が変わったら、古いMemoryを人間の経路から訂正します。",
+      "word": "vocab-11.mp3",
+      "wordHash": "5c214a662eb218ce177f36d6aab55c37b4f9f319ad5c550000db4f14cd51bbf3",
+      "example": "example-11.mp3",
+      "exampleHash": "9326d5555391c9b2a9698b81dc255589cdc19c5b361a36fdb2e8f155253957cc"
+    },
+    {
+      "index": 12,
+      "term": "検出する",
+      "reading": "けんしゅつする",
+      "exampleJa": "構造Checkで検出できない誤情報はSource照合で補います。",
+      "word": "vocab-12.mp3",
+      "wordHash": "c3413c8b7510a8eb1eb002d056d227e91e25fbd749141e2eeac5ab6d1355a306",
+      "example": "example-12.mp3",
+      "exampleHash": "4740095fcb466192f410dfe8cc72083d74d2183548ebfc523014e8588b66e0c4"
+    },
+    {
+      "index": 13,
+      "term": "蓄積する",
+      "reading": "ちくせきする",
+      "exampleJa": "会話Logを蓄積し、個人の経験を組織知へ変えます。",
+      "word": "vocab-13.mp3",
+      "wordHash": "d53df2f29a459b97d0fe3bce1aa6d5461ea9dbbfd25faa09ec3e6ac57b9a19b0",
+      "example": "example-13.mp3",
+      "exampleHash": "84574107b85a4aed785662072d21b2dfe41826a2fed4e6d3621845617b699bd8"
+    },
+    {
+      "index": 14,
+      "term": "浸透する",
+      "reading": "しんとうする",
+      "exampleJa": "「依頼はSystemに入れる」というRuleを組織全体に浸透させます。",
+      "word": "vocab-14.mp3",
+      "wordHash": "d5795f91e8905fd953c4c78adc3253888623288db11d3a03038e653ccaf48669",
+      "example": "example-14.mp3",
+      "exampleHash": "e2120d50fb23b78854484f2105fe8aaf9606e7c5809b932e62e0ac29e266db3d"
+    },
+    {
+      "index": 15,
+      "term": "煩雑な",
+      "reading": "はんざつな",
+      "exampleJa": "認証をClientごとに作ると管理が煩雑になります。",
+      "word": "vocab-15.mp3",
+      "wordHash": "7f48edb86b6f440af09f0b1ea825ab266d34df1e25789b183acfed6dcd9ab592",
+      "example": "example-15.mp3",
+      "exampleHash": "ede6acc2c343a45edf253d0a5f082fe290498ab9fd5e197fd687c5d72683439e"
+    },
+    {
+      "index": 16,
+      "term": "明確な",
+      "reading": "めいかくな",
+      "exampleJa": "AI Agentを作る前に、期待する成果を明確にします。",
+      "word": "vocab-16.mp3",
+      "wordHash": "9d1f3b30432d14bef97bbd9e9e2b9d9657a7daf0ca71ddfdef68fbae40d7885a",
+      "example": "example-16.mp3",
+      "exampleHash": "1f2394dcef66cc2b33ca8b9c9284178522ad2c70aace8563ec09344b656f2c3e"
+    },
+    {
+      "index": 17,
+      "term": "古い",
+      "reading": "ふるい",
+      "exampleJa": "古い実装が現在のSecurity基準を満たすとは限りません。",
+      "word": "vocab-17.mp3",
+      "wordHash": "f17295e6c0330f97e5c5e7d4dc275a0175016ccb8da901aa4cc4b290b13f3ec4",
+      "example": "example-17.mp3",
+      "exampleHash": "63bff00536b9533cbf048f047db8631babcceba5a0b3f523bcdeccbdef25c413"
+    },
+    {
+      "index": 18,
+      "term": "そのまま",
+      "reading": "そのまま",
+      "exampleJa": "AI生成物をそのまま本番へ入れず、構造と未決事項を確認します。",
+      "word": "vocab-18.mp3",
+      "wordHash": "b4e5fe81f15236232ba47d3fae98568d5b3e885c95f684fd92e6d1cb4103d3e0",
+      "example": "example-18.mp3",
+      "exampleHash": "94f2c2899d1866bd57ebd4bf894a7c4289415f7d4e18345b5d46df84e86909e2"
+    },
+    {
+      "index": 19,
+      "term": "一元的に",
+      "reading": "いちげんてきに",
+      "exampleJa": "複数部署からの依頼をAsanaで一元的に管理します。",
+      "word": "vocab-19.mp3",
+      "wordHash": "92d7125fb185a357e27965b86c693df92d6e32a300221eae5d6cdfc2d2caf51a",
+      "example": "example-19.mp3",
+      "exampleHash": "fee01bf1c454a821902d728377d234dffb30ef2ed6ec69c103d21f8e434fffae"
+    },
+    {
+      "index": 20,
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "AIは開発速度を上げる一方で、新しいSupply Chain Riskも生みます。",
+      "word": "vocab-20.mp3",
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-20.mp3",
+      "exampleHash": "b074ebfb611014bb449a7ef0b8fff8660075b4ad51cdf3fdf425533a4729bd1a"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "AI GatewayはTrafficの集約にとどまらず、Identityと予算管理にも使えます。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "e3402f7523848f191de668c20862413948448836b59698dbf0ae42eb3f9ee923"
+    },
+    {
+      "index": 2,
+      "pattern": "～かねない",
+      "exampleJa": "存在しないPackage名をそのまま採用すると、slopsquattingの被害につながりかねません。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "432508004378d940da7fadeda960356509beeda09f4498052c83d345228cfe3a"
+    },
+    {
+      "index": 3,
+      "pattern": "～に至るまで",
+      "exampleJa": "Figma MakeのUI設計から認証・永続化に至るまで、未決事項を明示して引き継ぎます。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "c4d8a109b0858377c69bfe99b271be529dd19d3317e9a08202bb06fae37e0df9"
+    },
+    {
+      "index": 4,
+      "pattern": "～一方で",
+      "exampleJa": "Long-term Memoryは説明の手間を減らせる一方で、古い情報を残すRiskがあります。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "18e3ee9fb5bc2b1d9ffabb85539a6850f1166fe878ba04e18ca89608e774e822"
+    },
+    {
+      "index": 5,
+      "pattern": "～たうえで",
+      "exampleJa": "Dataの粒度とMasterをそろえたうえで、営業AI Agentへ利用させます。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "2f6cfb13e462da9f3fb11081b08b804a52dd40b056ba1235ec14ff3db1e9adda"
+    },
+    {
+      "index": 6,
+      "pattern": "～に応じて",
+      "exampleJa": "Memoryの種類に応じて、保持期間と訂正経路を分けます。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "14d140f6247d6cd7ef8adb908b795117dfeaf45ead9da0e96c254bccad35efa4"
+    },
+    {
+      "index": 7,
+      "pattern": "～とは限らない",
+      "exampleJa": "構造Checkに通ったMemoryが、Sourceと意味的に一致しているとは限りません。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "b10d47266703fe823c32f65decd03f6cfec8078202903f832ec5306535b548c4"
+    }
+  ]
+}
