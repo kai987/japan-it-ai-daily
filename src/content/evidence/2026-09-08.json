@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-08",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-08T01:18:00.000Z",
+  "scope": "Declared core source claims reviewed against public original text or the publicly retrievable portion. This does not claim exhaustive verification of every sentence or member-only page.",
+  "articles": [
+    {
+      "articleId": "2026-09-08-top-1",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/08/news034.html",
+      "originalTitle": "「AIの制限」でも「野放し」でも失敗する？　AI時代に“共有APIキー”は限界：「誰が使ったか分からない請求」におびえる現場からの脱却",
+      "source": "＠IT",
+      "topic": "AI Gateway / FinOps / Zero Trust",
+      "access": "public-portion",
+      "accessNote": "＠ITの公開取得部分とCloudflare公式の公開記事を照合。会員限定部分の全内容をレビューしたとは主張しない。",
+      "capturedAt": "2026-09-08T01:12:00.000Z",
+      "snapshotSha256": "e3bade95fa6b6a936536c53e9875acbd23e3aadc9be35c08a15173237b20cfcc",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "Cloudflare AccessとIdentity-Aware AI Gatewayを連携すると、AI Requestへ確認済みIdentityをひも付けられる。",
+          "quote": "全てのAIリクエストに従業員または自動化システムの確認済みIDをひも付けられる。",
+          "locator": "「誰が何を送信しているのか把握」節",
+          "conditions": "Identity-Aware AI GatewayはOpen Beta、User InsightsはGA。自社のData PolicyやRate Limitは別途必要。",
+          "usedIn": {
+            "zh": "Identity-Aware AI Gateway",
+            "ja": "Identity-Aware AI Gateway",
+            "interview": "Identity-Aware AI Gateway"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-08-top-2",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/08/news006.html",
+      "originalTitle": "AIが「クズコード」まで学習　“脆弱性の生まれ方”が変わったAIコーディング時代の「守り」の作法と始め方：レビュー時、どこを重点的に見るべきか（1/2 ページ）",
+      "source": "＠IT",
+      "topic": "AI Coding / Security / Supply Chain",
+      "access": "public-portion",
+      "accessNote": "＠ITの公開1/2・2/2ページをレビュー。記事が引用する過去研究は現行ModelのBenchmarkとして扱わない。",
+      "capturedAt": "2026-09-08T01:12:00.000Z",
+      "snapshotSha256": "dd87768e2e3936f52745376661e40fd788596069fb4107d72d60752086befe12",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "検証用huggingface-cli Packageは公開後3か月で1.5万件以上Downloadされたと記事が報告している。",
+          "quote": "3カ月で1.5万件以上のダウンロードを記録しました。",
+          "locator": "「AIハルシネーションによる存在しないライブラリ」節",
+          "conditions": "Researcherが公開した無害な検証Packageの事例であり、被害件数や現行Modelの発生率ではない。",
+          "usedIn": {
+            "zh": "CVE-2025-53773",
+            "ja": "CVE-2025-53773",
+            "interview": "CVE-2025-53773"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-08-top-3",
+      "url": "https://dev.classmethod.jp/articles/nemohermes-memory-lifecycle/",
+      "originalTitle": "AI エージェントの Memory を、訂正・検査・削除から考えてみた",
+      "source": "DevelopersIO",
+      "topic": "AI Agent / Memory / Evaluation",
+      "access": "full",
+      "accessNote": "DevelopersIOの公開原文をレビュー。NVIDIA報告値と著者のSynthetic Testを区別して扱った。",
+      "capturedAt": "2026-09-08T01:12:00.000Z",
+      "snapshotSha256": "c57d9a97fde75174957e5ffd2827c4a6793e0641b644a55e6e2d17c24261e2f4",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "公開Recipeのmemory_check.pyはSynthetic Memoryに対して6種類の構造異常を検出した。",
+          "quote": "検査は 6 種類の構造上の異常を検出し",
+          "locator": "「検査に通った Memory は正しいのか」節",
+          "conditions": "著者の隔離Synthetic Dataによる保存処理Test。Semantic CorrectnessやLLM判断品質の評価ではない。",
+          "usedIn": {
+            "zh": "memory_check.py",
+            "ja": "memory_check.py",
+            "interview": "memory_check.py"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-08-top-4",
+      "url": "https://zenn.dev/chooser/articles/series-007-product-story",
+      "originalTitle": "Figma Make で作ったデザインを引き継いで Claude Code で開発する方法",
+      "source": "Zenn",
+      "topic": "Frontend / Claude Code / Next.js",
+      "access": "full",
+      "accessNote": "Zennの公開原文をレビュー。著者自身の複数Project Case Studyであり一般Benchmarkではない。",
+      "capturedAt": "2026-09-08T01:12:00.000Z",
+      "snapshotSha256": "86a003808d6de27eff2d82a45fec1ee077582df1b63b2dd155d17c3ffe7d7978",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "著者はFigma MakeからClaude CodeへのHandoff直後にFeature追加よりDRY化を優先する。",
+          "quote": "引き継いだ直後の最初の仕事は、機能追加ではなく DRY 化",
+          "locator": "記事冒頭「先に要点」",
+          "conditions": "著者自身のProject群の運用知見。atomic design Folderがあるだけで内部Wiringが正しいことは保証しない。",
+          "usedIn": {
+            "zh": "Ask Human",
+            "ja": "Ask Human",
+            "interview": "Ask Human"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-08-top-5",
+      "url": "https://www.itmedia.co.jp/business/articles/2609/08/news027.html",
+      "originalTitle": "富士通の営業、個人の「勘や経験」を組織で再利用　データ、KPI、仕事を「AI前提」に変えた方法（1/2 ページ）",
+      "source": "ITmedia ビジネスオンライン",
+      "topic": "Enterprise AI / Data Governance / Work Transformation",
+      "access": "public-portion",
+      "accessNote": "ITmedia Business Onlineの公開1/2ページをレビュー。Conference講演を基にした企業Practiceであり因果実験ではない。",
+      "capturedAt": "2026-09-08T01:12:00.000Z",
+      "snapshotSha256": "e512b6e0b5877018968a57ca5bd62c1f65a2d3d635b6d192657620152a778f19",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "富士通の対象営業部門は約5000人、関係部署を含め約7300人で、Asanaに依頼を集約した。",
+          "quote": "営業部門は約5000人。関係部署も含めると約7300人",
+          "locator": "「AI活用の前に『まず仕事とデータを整える』」節",
+          "conditions": "8月26日のConference講演を基にした事例。Sales KPI改善の因果効果を証明する研究ではない。",
+          "usedIn": {
+            "zh": "Asana",
+            "ja": "Asana",
+            "interview": "Asana"
+          }
+        }
+      ]
+    }
+  ]
+}
