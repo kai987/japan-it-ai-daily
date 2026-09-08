@@ -1,7 +1,10 @@
 name: Sync audio to Cloudflare R2
 
 on:
-  workflow_call:
+  push:
+    branches: [main]
+    paths:
+      - 'public/audio/**'
   workflow_dispatch:
 
 permissions:
@@ -59,7 +62,7 @@ jobs:
           set -euo pipefail
 
           if [[ -z "${R2_ACCOUNT_ID}" || -z "${AWS_ACCESS_KEY_ID}" || -z "${AWS_SECRET_ACCESS_KEY}" ]]; then
-            echo "::error::R2 credentials are required before the website can be published."
+            echo "::error::R2 credentials are required before audio can be published."
             exit 1
           fi
 
@@ -78,15 +81,14 @@ jobs:
           endpoint="https://${account_id}.r2.cloudflarestorage.com"
 
           sync_filters=()
-          # The reusable workflow retains the caller's push event. If its base
-          # is available, only upload changed paths; always verify ALL public MP3s.
-          # Manual runs or multi-commit pushes without that base use a full sync.
+          # If the push comparison base is available, upload only changed audio.
+          # Manual runs or an unavailable comparison base fall back to a full sync.
           if [[ -n "${SYNC_BEFORE}" ]] && git cat-file -e "${SYNC_BEFORE}^{commit}" 2>/dev/null; then
             git diff --name-only -z --diff-filter=ACMR --relative=public/audio \
               "${SYNC_BEFORE}" HEAD -- public/audio/ > "${RUNNER_TEMP}/audio-changes"
             mapfile -d '' -t changed_audio < "${RUNNER_TEMP}/audio-changes"
             if (( ${#changed_audio[@]} == 0 )); then
-              echo "No audio files changed; skipping upload, then verifying all public recordings."
+              echo "No audio files changed; nothing to upload."
               exit 0
             fi
             sync_filters=(--exclude '*')
