@@ -56,14 +56,17 @@ test('audio integrity validates both languages and catches edited answers withou
   });
 });
 
-test('a dated report without an audio directory cannot silently pass', () => {
-  const root = mkdtempSync(join(tmpdir(), 'missing-audio-'));
-  mkdirSync(join(root, 'src/content/daily'), { recursive: true });
-  writeFileSync(join(root, 'src/content/daily/2026-09-08.md'), 'report');
+test('a dated report may publish without audio while explicit audio validation stays strict', () => {
+  const root = mkdtempSync(join(tmpdir(), 'optional-audio-'));
+  for (const dir of ['daily', 'daily-ja', 'japanese', 'japanese-ja']) {
+    mkdirSync(join(root, 'src/content', dir), { recursive: true });
+    copyFileSync(`src/content/${dir}/2026-09-08.md`, join(root, 'src/content', dir, '2026-09-08.md'));
+  }
   try {
-    const result = spawnSync(process.execPath, [resolve('scripts/validate-interview-audio-duration.mjs'), '--from', '2026-08-12'], { cwd: root, encoding: 'utf8' });
-    expect(result.status).toBe(1);
-    expect(result.stderr).toContain('interview-manifest.json is missing');
+    const result = quality(root, '--date=2026-09-08');
+    expect(result.status, result.stderr).toBe(0);
+    expect(result.stdout).toContain('2026-09-08: PASS');
+    expect(() => collectAudioAssets(root)).toThrow('interview-manifest.json');
   } finally { rmSync(root, { recursive: true, force: true }); }
 });
 
