@@ -1,0 +1,290 @@
+{
+  "date": "2026-09-09",
+  "generatedAt": "2026-09-09T21:18:05.234Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "乗っ取る",
+      "reading": "のっとる",
+      "exampleJa": "AIアカウントを乗っ取られても被害が拡大しないよう、QuotaとCredentialを分離します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "8bd10b05eebc5cf5bffbac6e7e17f95cf7b3b4ba869c3fca64976bbf6c652788",
+      "example": "example-01.mp3",
+      "exampleHash": "11f75b4caf505a8b2da478cdca6ae09a57e7cd16246a025806215773e6a474fc"
+    },
+    {
+      "index": 2,
+      "term": "窃取する",
+      "reading": "せっしゅする",
+      "exampleJa": "ローカル設定からAPIキーを窃取されないよう、平文保存を避けます。",
+      "word": "vocab-02.mp3",
+      "wordHash": "421320b184e45b6043a6ba614c05e32e8f0898017871ef950d711ad1cd9e5e38",
+      "example": "example-02.mp3",
+      "exampleHash": "23a6e6efaa99ee61fa3f6e2f8464f2cc064b8494613154275c0d076cf7d33bba"
+    },
+    {
+      "index": 3,
+      "term": "侵入する",
+      "reading": "しんにゅうする",
+      "exampleJa": "GitHub PATからCloud環境へ侵入される経路を想定して監視します。",
+      "word": "vocab-03.mp3",
+      "wordHash": "4ebbc72c3b599976f6905b31345a9fd1489d728f04ae7ff7a7fd37a9f99ed341",
+      "example": "example-03.mp3",
+      "exampleHash": "14fe776f5db40a06d0258324cf59ad2d869a83544af148ce1f5c0dcf1f20c653"
+    },
+    {
+      "index": 4,
+      "term": "絞る",
+      "reading": "しぼる",
+      "exampleJa": "最初のSecurity対策では、守るRiskと攻撃経路を一つに絞ります。",
+      "word": "vocab-04.mp3",
+      "wordHash": "f2984847d18d47e9fb89a430df19cf6c6654f21e993beef9190c4100a79625c1",
+      "example": "example-04.mp3",
+      "exampleHash": "f4c48f98ac49093627467aaeadde892d1814144a1af81f044e94786e1a4ba484"
+    },
+    {
+      "index": 5,
+      "term": "閉じ込める",
+      "reading": "とじこめる",
+      "exampleJa": "不要なCredentialを持ち込まず、MalwareをContainer内に閉じ込めます。",
+      "word": "vocab-05.mp3",
+      "wordHash": "da5a6d4d493029207d931b7af9d89b7ea8c61cc4ee0ed0a874c531131d24b109",
+      "example": "example-05.mp3",
+      "exampleHash": "780ba4afc3079fb09a13ce46915fec597610038ee2af48a127939acb305c2e11"
+    },
+    {
+      "index": 6,
+      "term": "迂回する",
+      "reading": "うかいする",
+      "exampleJa": "Sandbox失敗時の迂回実行をPolicyで無効化します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "aab0ba9acb0fb3cbe760a6fdd91d1ccc95fbf012474232dfcb1c19344723bff4",
+      "example": "example-06.mp3",
+      "exampleHash": "19797e8b9bfbc6f73afcca7738579c488b9fb4eb628eadf7d56a06932c79b830"
+    },
+    {
+      "index": 7,
+      "term": "差し替える",
+      "reading": "さしかえる",
+      "exampleJa": "実CredentialはAgentに見せず、Network出口で代理Tokenを差し替えます。",
+      "word": "vocab-07.mp3",
+      "wordHash": "7b9a9f645be5a6a639a4b551db9938d41c91bca074c93cd841781c98d9223431",
+      "example": "example-07.mp3",
+      "exampleHash": "8ad76147b20c9b7abd3597c923112dc9fae517ff6d4aca57249da3fce42fc4b1"
+    },
+    {
+      "index": 8,
+      "term": "拒否する",
+      "reading": "きょひする",
+      "exampleJa": "Root権限でもPolicyに反するAccessは拒否されます。",
+      "word": "vocab-08.mp3",
+      "wordHash": "1f275c49aecb58ad9deea2033999bce1d500316f7914d7fe87d1c923eb42eeaa",
+      "example": "example-08.mp3",
+      "exampleHash": "7a76c77bc2a713a5b223187afb043ba749375deafb271bc94b7017e3f32f771c"
+    },
+    {
+      "index": 9,
+      "term": "移行する",
+      "reading": "いこうする",
+      "exampleJa": "SELinux Policyを検証してからAmazon Linux 2027へ移行します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "4d1dd97abeff6d72ba977698cad111fc6e63150fe8f0a943a85bc8cc27642afe",
+      "example": "example-09.mp3",
+      "exampleHash": "9bdb22262fa2f83848a372cd4458f9c9211e0f78376fdb1186299ddc20810eff"
+    },
+    {
+      "index": 10,
+      "term": "足掛かり",
+      "reading": "あしがかり",
+      "exampleJa": "露出したTokenがCloud侵入の足掛かりにならないよう失効させます。",
+      "word": "vocab-10.mp3",
+      "wordHash": "62b00e8689ac8d27bb4ddc4643c53c9c463156f6a0683671a479f8bba4ff8b98",
+      "example": "example-10.mp3",
+      "exampleHash": "630534b9d28377cc65cfb0fbac712bb802b879cf47bfdc7c515a3fe67d05b205"
+    },
+    {
+      "index": 11,
+      "term": "脅威",
+      "reading": "きょうい",
+      "exampleJa": "AI Accountの不正利用を単なるCost問題ではなく脅威として扱います。",
+      "word": "vocab-11.mp3",
+      "wordHash": "8dbb96f671c3cb365de83fec5a9a9bcbc511b8695d5eb8122b438dd664a4e276",
+      "example": "example-11.mp3",
+      "exampleHash": "9043782e29f75350d5d8ee976d56695fc1d0e02eb8f2960221e5c2a25e62d803"
+    },
+    {
+      "index": 12,
+      "term": "割り当て",
+      "reading": "わりあて",
+      "exampleJa": "GPUの割り当てが急増したらIdentityと申請経路を確認します。",
+      "word": "vocab-12.mp3",
+      "wordHash": "876f69d4590680db2bd98cb407a6297b36db3c2ce39eef7d515a6788790a84ac",
+      "example": "example-12.mp3",
+      "exampleHash": "a0fa6958a74adbac63f60ecb9823a264bbd17e39a01c99c5680b7101f08c48d7"
+    },
+    {
+      "index": 13,
+      "term": "境界",
+      "reading": "きょうかい",
+      "exampleJa": "Agentの実行環境とCredential保管の境界を分離します。",
+      "word": "vocab-13.mp3",
+      "wordHash": "802f7a41723ff2c16a4bd0fa063a00c74e37c02b64e4f285b0ef0a80a986f02b",
+      "example": "example-13.mp3",
+      "exampleHash": "8320ecc5b31c401b85820ea7f8296d5d9aa28136354011a99f6b89b75ccc33d0"
+    },
+    {
+      "index": 14,
+      "term": "互換性",
+      "reading": "ごかんせい",
+      "exampleJa": "既存ApplicationとSELinux Policyの互換性を先に確認します。",
+      "word": "vocab-14.mp3",
+      "wordHash": "8492a94bd50c4a1803daedf845850c21ed5fc00a011cb6510ebf39290313ff58",
+      "example": "example-14.mp3",
+      "exampleHash": "783d6b9931c884076247c7f332a29b81cba4cb90b4ab82d0956ee46548f35b0c"
+    },
+    {
+      "index": 15,
+      "term": "脆弱な",
+      "reading": "ぜいじゃくな",
+      "exampleJa": "DooD構成ではHostへの境界が脆弱になる場合があります。",
+      "word": "vocab-15.mp3",
+      "wordHash": "ef29785af81f95d81aedc4fa7ee3d180951d19558ded6b4e8c12e3620c7aa969",
+      "example": "example-15.mp3",
+      "exampleHash": "3f74472c11ae4ba41ad11e66d86ba1555563bc76161eb8577e2b9a73cb4bcbad"
+    },
+    {
+      "index": 16,
+      "term": "高額な",
+      "reading": "こうがくな",
+      "exampleJa": "不正利用による高額な請求をQuota Monitoringで早期検知します。",
+      "word": "vocab-16.mp3",
+      "wordHash": "f7aa2fad9e3a17e8b6c55082e607ebbab85b44f0bf7148570b6057a487b8230a",
+      "example": "example-16.mp3",
+      "exampleHash": "5dd0bc1ed4af1de5f2b1b1600c7b4f9fc6cbdb046cdfcff230e47a76d0a8fcf7"
+    },
+    {
+      "index": 17,
+      "term": "決定論的な",
+      "reading": "けっていろんてきな",
+      "exampleJa": "Migrationの重要な判定は決定論的な処理として残します。",
+      "word": "vocab-17.mp3",
+      "wordHash": "8f4473788973e5231d3ab6a9e5ab55000ea5aff442800777e21656a36c922b3a",
+      "example": "example-17.mp3",
+      "exampleHash": "d6d27e1aafeb7c57ac74afe65e031746d88348d018ecf0c4ec4c3a682aa42d99"
+    },
+    {
+      "index": 18,
+      "term": "一貫して",
+      "reading": "いっかんして",
+      "exampleJa": "担当者が変わっても一貫して変更履歴を追跡します。",
+      "word": "vocab-18.mp3",
+      "wordHash": "8300e6ab97885c925ac6fbe6a323d25454eca447fb745becece2c650b7908b3e",
+      "example": "example-18.mp3",
+      "exampleHash": "ab36271e899f3ec43e836b38b7bd31c5cf21ee4467647e9f7475b45d5b59eb05"
+    },
+    {
+      "index": 19,
+      "term": "大幅に",
+      "reading": "おおはばに",
+      "exampleJa": "AIで移行計画の作成時間を大幅に短縮しても、Reviewを省略しません。",
+      "word": "vocab-19.mp3",
+      "wordHash": "10deedf1f7bbba71f9e417e14a0a17c5cc945482a3511c3cc157d4c33b883ffe",
+      "example": "example-19.mp3",
+      "exampleHash": "200a9a9c6faaa112e4c21c076689215b67582868027fcf636bade2aec23129d8"
+    },
+    {
+      "index": 20,
+      "term": "直接",
+      "reading": "ちょくせつ",
+      "exampleJa": "Agentが実Credentialへ直接Accessできない構成にします。",
+      "word": "vocab-20.mp3",
+      "wordHash": "898a0d18f5ed4875d7d057eadd8ea05618a0dfbdb243d4c514766ea305819b04",
+      "example": "example-20.mp3",
+      "exampleHash": "e17fb14697d8805df26a289ab95fd6b180ee3a284a988dd520bcf570b6de3080"
+    },
+    {
+      "index": 21,
+      "term": "ただし",
+      "reading": "ただし",
+      "exampleJa": "新機能は有力です。ただし、Preview段階では本番前の検証が必要です。",
+      "word": "vocab-21.mp3",
+      "wordHash": "59966a98146429a6a802b8f79904bb67077ff9ef8bc2eb902af03d214811a33c",
+      "example": "example-21.mp3",
+      "exampleHash": "c9010c1d769073f1511b2e5a8eee044838b07f820e8395b9d696ed2ce9b9d249"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "LLMジャッキングは利用料の不正消費にとどまらず、ModelやRAG資産の流出につながる可能性があります。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "8aeb5e27e35df175253739c701b1a065c2e8102d9e1a2717d789801378986db4"
+    },
+    {
+      "index": 2,
+      "pattern": "～かねない",
+      "exampleJa": "AI ToolのLocal Configを平文で残すと、Cloud全体の乗っ取りにつながりかねません。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "34ba05390ad8954bd991962108b3f7df7f0c7f110d59c2265e1ef018e6fe00a1"
+    },
+    {
+      "index": 3,
+      "pattern": "～に至るまで",
+      "exampleJa": "MuseはWeb操作からメール送信、購入に至るまで複数のActionを実行します。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "2e7682460609a4392597a191e5f7b52e8695ac9331d75cd136d42abec30f03d0"
+    },
+    {
+      "index": 4,
+      "pattern": "～たうえで",
+      "exampleJa": "SELinux Policyを確認したうえで、Amazon Linux 2027への移行範囲を決めます。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "348d4e91dda8741ecac4458fa3370ffe04c6ef89260e8f4354a751305cad514f"
+    },
+    {
+      "index": 5,
+      "pattern": "～に応じて",
+      "exampleJa": "開発TaskのRiskに応じてBash sandbox、Dev Container、Web実行を使い分けます。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "06ec19eb395650df833f5abd6dcfb49cf23082aa0e6ae74d36371bd96b0c8c73"
+    },
+    {
+      "index": 6,
+      "pattern": "～一方で",
+      "exampleJa": "Museは長時間Taskを自律実行できる一方で、Prompt Injectionは未解決の課題です。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "1d505f42c0afa8d91bc74981c75b8662186ae2d93a4546ac3b6451183418b19d"
+    },
+    {
+      "index": 7,
+      "pattern": "～とは限らない",
+      "exampleJa": "AWSの顧客事例で期間が短縮されても、自社Systemで同じ結果になるとは限りません。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "d8e7b5a4830f8304b5c1cfa8909709830386a2ee8122047f1b5408d689e2710a"
+    }
+  ]
+}

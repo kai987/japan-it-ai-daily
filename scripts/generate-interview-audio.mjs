@@ -1,3 +1,4 @@
+import { parseInterview, parseReview } from './interview-audio-content.mjs';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { basename, join, resolve } from 'node:path';
@@ -30,100 +31,9 @@ const argValue = (name) => {
 
 const requestedDate = argValue('--date');
 const useLatest = args.includes('--latest') || (!requestedDate && !generateAll);
-const normalizeText = (value = '') => value.replace(/^>\s?/gm, '').replace(/\s+/g, ' ').trim();
 const fail = (message) => {
   console.error(`\n[AivisSpeech Interview] ${message}\n`);
   process.exit(1);
-};
-
-const extractSection = (source, title) => {
-  const lines = source.split(/\r?\n/);
-  let start = -1;
-  let depth = 0;
-  for (let i = 0; i < lines.length; i += 1) {
-    const match = lines[i].match(/^(#{1,6})\s+(.+)$/);
-    if (!match) continue;
-    if ((match[2] || '').includes(title)) {
-      start = i + 1;
-      depth = match[1].length;
-      break;
-    }
-  }
-  if (start < 0) return '';
-  const out = [];
-  for (let i = start; i < lines.length; i += 1) {
-    const heading = lines[i].match(/^(#{1,6})\s+(.+)$/);
-    if (heading && heading[1].length <= depth) break;
-    out.push(lines[i]);
-  }
-  return out.join('\n');
-};
-
-const quoteBlocks = (section) => {
-  const lines = section.split(/\r?\n/);
-  const blocks = [];
-  let current = [];
-  const flush = () => {
-    if (!current.length) return;
-    const text = normalizeText(current.join(' '));
-    if (text) blocks.push(text);
-    current = [];
-  };
-  for (const line of lines) {
-    if (/^>\s?/.test(line.trim())) current.push(line.trim());
-    else flush();
-  }
-  flush();
-  return blocks;
-};
-
-const parseInterview = (source) => {
-  const section = extractSection(source, '面接で使えるポイント');
-  if (!section) return [];
-  const lines = section.split(/\r?\n/);
-  const items = [];
-  let role = '';
-  let quote = [];
-  const flush = () => {
-    if (!quote.length) return;
-    const text = normalizeText(quote.join(' '));
-    if (text) items.push({ type: role || 'answer', text });
-    quote = [];
-  };
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (/^\*\*.*面试问题.*\*\*/.test(trimmed)) {
-      flush();
-      role = 'question';
-      continue;
-    }
-    if (/^\*\*.*(?:约|約)\s*30\s*秒.*(?:日语|日本語).*回答.*\*\*/.test(trimmed)) {
-      flush();
-      role = 'answer';
-      continue;
-    }
-    if (/^>\s?/.test(trimmed)) quote.push(trimmed);
-    else flush();
-  }
-  flush();
-
-  if (items.length) return items;
-  return quoteBlocks(section).map((text) => ({ type: 'answer', text }));
-};
-
-const parseReview = (source) => {
-  const section = extractSection(source, '面试复习卡');
-  if (!section) return [];
-  const quoted = quoteBlocks(section);
-  if (quoted.length) return quoted;
-
-  return section
-    .split(/\r?\n/)
-    .map((line) => line.trim())
-    .filter((line) => /^-\s+/.test(line))
-    .map((line) => line.replace(/^-\s+/, '').split(/\s*→\s*/)[0] || '')
-    .map((line) => line.replace(/^`|`$/g, '').trim())
-    .filter((line) => /[ぁ-んァ-ヶ一-龠]/.test(line));
 };
 
 const allDates = () => readdirSync(contentDir)

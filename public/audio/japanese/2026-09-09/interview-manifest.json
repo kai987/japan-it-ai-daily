@@ -1,0 +1,150 @@
+{
+  "date": "2026-09-09",
+  "generatedAt": "2026-09-09T21:20:09.922Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AWS TransformのようなAIレガシー刷新を本番で進めるとき、何を重視しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "29f13ded2450229e2841f165c5b6b7482277e2504edc4a3b0dbef1f734d213ea",
+      "durationSeconds": 7.209
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "変換速度だけでなく、再現性と人の介入点を設計します。AWS Transformは1年間で45億行超を処理し、25万行のMainframe変換とTestを6週間で完了した事例があります。ただしAWSは複雑な移行ではAI任せにせず、精度が必要な処理は決定論的にする知見も挙げているため、変更追跡とHuman Reviewを残します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "652570adfd7d3d3ede715a4033693fcac264336d38418b679b4f4957a414f37b",
+      "durationSeconds": 27.723,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "LLMジャッキングを防ぐには、どこを優先して監視しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "97b26bb8636878ea1d826bc9603ea9158d5dff69917207beb32906ee805bd0d4",
+      "durationSeconds": 4.782
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "AI Accountだけでなく、開発端末のAPI KeyとCloud権限を一体で監視します。報告事例では露出したGitHub PATからGoogle Cloudへ侵入し、Cloud Run、BigQuery、Cloud Quotas APIまで悪用してGPU割当を増やしました。ただし特定Incidentなので、同じ手順を前提にせず、Quota変更とService Account作成を異常Signalとして見ます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "5dc85993e6dceeee5c8820f4b950193390686f6906a428cb9ad18ebeb7b01ddb",
+      "durationSeconds": 28.015,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "Claude CodeのSupply Chain Riskに対して、実行環境をどう隔離しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "ef993649935e7eeacb8a862cdf5ef6787c14c62daf3dc5cb4ad2d2f8e22fe4b4",
+      "durationSeconds": 5.815
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "目的を機密情報漏えいの被害範囲縮小に絞り、作業特性で壁を選びます。Claude CodeのBash sandboxなら/sandboxを使い、sandbox.allowUnsandboxedCommands: falseで迂回実行を止めます。Dev Containerは人間がnpm run devする段階も囲えます。ただしMountやGit Credential、Networkは隔離されないため、別途Scopeを絞ります。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "9b272f8690cc4f482fc916e5bd2caa10488f9010d509f7bdc5264c3e9de350c4",
+      "durationSeconds": 26.33,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "MuseのようなPersonal Agentで、Side Effectをどう制御しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "51ff2268a0964a97f1a73c84f20ad372bdcc74f4487232d373a41a7255515bf3",
+      "durationSeconds": 4.979
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "Model自身にPermission判断を任せず、実行環境と権限判断を分離します。Museでは専用のMuse Secure VM内に別AgentのSentinelを置き、外部操作とNetwork通信を必ず許可経由にし、Credentialは代理Tokenとして出口で差し替えます。ただしPrompt Injectionは未解決なので、購入やメール送信にはUser確認を残します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "3fce28be720a282378afdeb33e388d28d0f7fc0a7fe938b13dd2ca0661ee4bb2",
+      "durationSeconds": 26.145,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "Amazon Linux 2027を本番採用する前に、何を確認しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "b11ca31d8db4d50d266ed27136bde8d6100cda890286bb51b67d77ca5b6428c1",
+      "durationSeconds": 5.827
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "まずPublic Previewである点を踏まえ、既存WorkloadのSELinux Policy互換性を確認します。2027ではSELinuxがDefault Enforcingになり、管理者でもPolicy違反Accessは拒否されます。Kernel 7.1以上やNeuron Driverも含め、x86-64とARMの両方でApplication、Container、監視Agentを検証してから移行計画を作ります。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "ae9db73c627cd4b54c3a937d12c0fad4c0c0173915892667e3ff83167eebed3e",
+      "durationSeconds": 27.876,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "AIを使ったLegacy Modernizationで、速度以外に何を確認しますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "e30b63656913a4f80ef944ca835ac7ccf4e6bee233d4a5bda8ae56af0fc0266b",
+      "durationSeconds": 5.595
+    },
+    {
+      "index": 2,
+      "text": "LLM Jackingが通常のAPI Key漏えいより深刻になり得るのはなぜですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "98aa07022f3b332564d94eeb970f40d66a6fac6b52bdb0a7694dba4be13d7c3a",
+      "durationSeconds": 5.908
+    },
+    {
+      "index": 3,
+      "text": "Agent Sandboxを導入しただけでは十分でない理由は何ですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "dc04bc17fa4106bd3fe0cd19180f2a058200548fd296c4e3a09b114b3fd47ce4",
+      "durationSeconds": 4.899
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-09T21:20:10.375Z"
+}
