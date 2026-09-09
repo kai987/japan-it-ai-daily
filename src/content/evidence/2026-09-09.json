@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-09",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-09T01:36:00.000Z",
+  "scope": "Declared core claims were reviewed against the publicly retrievable original text. Snapshot hashes correspond to normalized public excerpts captured outside the repository during this run; they are not claims of full-page archival coverage.",
+  "articles": [
+    {
+      "articleId": "2026-09-09-top-1",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/09/news027.html",
+      "originalTitle": "COBOL、VMware、.NETまで――AWS「45億行に及ぶコード処理」で見えたAIレガシー刷新の現状：「数年→6週間」「8カ月→数日」の事例に学ぶ「4つの知見」",
+      "source": "＠IT",
+      "topic": "Enterprise AI / AWS / Legacy Modernization",
+      "access": "public-portion",
+      "accessNote": "＠ITの公開取得部分をレビュー。snapshotSha256は、この実行でRepository外に保存した正規化公開ExcerptのHash。AWS / 顧客事例をIndependent Benchmarkとして扱わない。",
+      "capturedAt": "2026-09-09T01:34:00.000Z",
+      "snapshotSha256": "e82213fca6caf9a6d1f96ed970128ad1a08ea1b9965b5b9f5b6bf6b3e0f0c560",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "AWSはAWS Transformの一般提供開始から1年間で45億行を超えるSource Codeを処理し、数十万台のVMを移行したと報告している。",
+          "quote": "サービス開始からの1年間でAWS Transformを通じて45億行を超えるソースコードを処理し、数十万台の仮想マシン（VM）を移行したという。",
+          "locator": "「COBOLからVMware、.NETまで　AIでレガシー刷新はどこまで速くなった？」節",
+          "conditions": "AWSおよび顧客の公開事例。対象SystemやTest条件が異なるため、自社環境で同一の期間短縮やCost削減を保証するBenchmarkではない。",
+          "usedIn": {
+            "zh": "AWS Transform",
+            "ja": "AWS Transform",
+            "interview": "AWS Transform"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-09-top-2",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/08/news083.html",
+      "originalTitle": "LLM乗っ取りでサイバー攻撃者がコスト節約　知財流出の危険性も高まる「LLMジャッキング」の深刻度",
+      "source": "＠IT",
+      "topic": "Security / LLM / Cloud",
+      "access": "public-portion",
+      "accessNote": "＠ITの公開取得部分をレビュー。snapshotSha256は、この実行でRepository外に保存した正規化公開ExcerptのHash。GTIG / Mandiantの特定Incidentであり、一般的な発生率を示すものではない。",
+      "capturedAt": "2026-09-09T01:34:00.000Z",
+      "snapshotSha256": "1bf609fa933231a2d119444f36773b8278e1a5fbbd47c4e77dd45971bea52f95",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "2026年4月のIncidentでは攻撃者がCloud Quotas APIを不正利用し、NVIDIA RTX 6000 GPUの割り当て増加を申請した。",
+          "quote": "「Cloud Quotas API」を不正利用し、「NVIDIA RTX 6000 GPU」の割り当て増加を申請。",
+          "locator": "「2026年4月に発生したLLMジャッキングの事例」節",
+          "conditions": "Mandiantが調査した一つの具体的Incident。すべてのLLM Jackingが同じAttack Chainを取るとは限らない。",
+          "usedIn": {
+            "zh": "Cloud Quotas API",
+            "ja": "Cloud Quotas API",
+            "interview": "Cloud Quotas API"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-09-top-3",
+      "url": "https://dev.classmethod.jp/articles/claude-code-isolation-20260901/",
+      "originalTitle": "Claude Codeを安全に使い倒すための、実行環境の隔離 はじめの一歩",
+      "source": "DevelopersIO",
+      "topic": "Claude Code / Security / Supply Chain",
+      "access": "full",
+      "accessNote": "DevelopersIOの公開原文をレビュー。snapshotSha256は、この実行でRepository外に保存した正規化公開ExcerptのHash。記事はSupply Chain Attackによる情報漏えいBlast Radius縮小にScopeを限定している。",
+      "capturedAt": "2026-09-09T01:34:00.000Z",
+      "snapshotSha256": "ea275a377ea0c408b4a123af4a5e8291cd07d85c9d691653d396d1bb06366000",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "Claude CodeのBash sandboxではsandbox.allowUnsandboxedCommandsをfalseに設定するとSandbox外Retryを無効化できる。",
+          "quote": "`sandbox.allowUnsandboxedCommands: false`にすれば無効化できます。",
+          "locator": "「壁①: Bash sandbox — AIのコマンド実行を守る」節",
+          "conditions": "Bash sandboxが保護するのは主にAI Command Execution。Human-run command、IDE load、Mount、Credential、Networkなどは別Boundaryとして評価が必要。",
+          "usedIn": {
+            "zh": "sandbox.allowUnsandboxedCommands: false",
+            "ja": "sandbox.allowUnsandboxedCommands: false",
+            "interview": "sandbox.allowUnsandboxedCommands: false"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-09-top-4",
+      "url": "https://www.itmedia.co.jp/news/article/2609/09/2000001294/",
+      "originalTitle": "Meta、パーソナルAIエージェント「Muse」発表　メール送信や買い物も代行（まずは米国で無料提供開始）",
+      "source": "ITmedia NEWS",
+      "topic": "AI Agent / Security / Personal AI",
+      "access": "full",
+      "accessNote": "ITmedia NEWSの公開原文をレビュー。snapshotSha256は、この実行でRepository外に保存した正規化公開ExcerptのHash。Meta自身がPrompt Injectionを未解決問題として明示している。",
+      "capturedAt": "2026-09-09T01:34:00.000Z",
+      "snapshotSha256": "7f43b0750aded56331fbf9d0863d91cd6acfdd9ce366706794f1fe7811793fb4",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "Muse Secure VMではMuseとSystem-levelで分離されたSentinelが外部Service操作とNetwork通信を許可する。",
+          "quote": "外部サービスへの操作とネットワークへの通信はすべてSentinelの許可を経る。",
+          "locator": "安全性説明、Muse Secure VM / Sentinel段落",
+          "conditions": "SentinelとProxy CredentialはBlast Radiusを縮小するControlであり、Prompt Injectionそのものを解決するものではない。",
+          "usedIn": {
+            "zh": "Muse Secure VM",
+            "ja": "Muse Secure VM",
+            "interview": "Muse Secure VM"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-09-top-5",
+      "url": "https://www.publickey1.jp/blog/26/amazon_linux4amazon_linux_2027selinux.html",
+      "originalTitle": "Amazon Linuxが4年ぶりにメジャーバージョンアップ、「Amazon Linux 2027」パブリックプレビュー。SELinuxがデフォルトで強制モードに",
+      "source": "Publickey",
+      "topic": "AWS / Cloud / Security",
+      "access": "full",
+      "accessNote": "Publickeyの公開原文をレビュー。snapshotSha256は、この実行でRepository外に保存した正規化公開ExcerptのHash。Amazon Linux 2027はPublic Previewであり、Production GAを示すものではない。",
+      "capturedAt": "2026-09-09T01:34:00.000Z",
+      "snapshotSha256": "db8f41c5b34ab831620913a63b51b8218d9bd8e030459241899c6db573bd1b01",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "Amazon Linux 2027ではSELinuxがDefault Enforcing Modeに変更された。",
+          "quote": "そしてSELinuxはデフォルトでエンフォーシングモード（強制モード）が設定されました。",
+          "locator": "「Amazon Linux 2027はSELinuxが強制モードに」節",
+          "conditions": "Public Previewの仕様。既存Application、Container、Monitoring AgentのCompatibilityは各環境で検証が必要。",
+          "usedIn": {
+            "zh": "SELinux",
+            "ja": "SELinux",
+            "interview": "SELinux"
+          }
+        }
+      ]
+    }
+  ]
+}
