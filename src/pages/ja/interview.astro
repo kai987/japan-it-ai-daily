@@ -2,3 +2,21 @@
 import Page from "../../components/pages/InterviewPage.astro";
 ---
 <Page locale="ja" />
+
+<style is:global>
+  .interview-day,
+  .interview-day-header > div,
+  .interview-answer-card,
+  .review-q,
+  .review-points {
+    min-width: 0;
+  }
+
+  .interview-answer-card p,
+  .review-q p,
+  .review-points p,
+  .interview-day-header h2 {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+</style>
