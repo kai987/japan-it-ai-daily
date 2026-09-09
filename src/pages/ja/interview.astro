@@ -4,19 +4,56 @@ import Page from "../../components/pages/InterviewPage.astro";
 <Page locale="ja" />
 
 <style is:global>
+  .interview-hero,
+  .interview-section {
+    overflow-x: clip;
+  }
+
+  .interview-hero-grid,
+  .interview-toolbar,
+  .interview-stats,
+  .interview-filters,
+  .interview-feed,
   .interview-day,
+  .interview-day-header,
   .interview-day-header > div,
+  .interview-answer-grid,
   .interview-answer-card,
+  .quick-review,
+  .review-list,
+  .review-row,
   .review-q,
-  .review-points {
+  .review-points,
+  .interview-pagination,
+  .pagination-pages {
     min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .interview-answer-card p,
   .review-q p,
   .review-points p,
-  .interview-day-header h2 {
+  .interview-day-header h2,
+  .interview-filter,
+  .daily-link,
+  .answer-label,
+  .quick-review-heading span,
+  .interview-stats span {
     overflow-wrap: anywhere;
     word-break: break-word;
+  }
+
+  @media (max-width: 700px) {
+    .interview-stats {
+      width: 100%;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .interview-stats > div,
+    .answer-card-top,
+    .quick-review-heading {
+      min-width: 0;
+    }
   }
 </style>
