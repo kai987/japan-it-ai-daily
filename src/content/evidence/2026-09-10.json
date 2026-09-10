@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-10",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-10T01:20:00.000Z",
+  "scope": "Top 5 major source facts, figures, implementation details and evidence boundaries were checked against publicly retrievable original articles and, for the Dentsu item, the primary joint-research release. snapshotSha256 values hash the normalized excerpts reviewed in this run and do not claim full-page archival coverage.",
+  "articles": [
+    {
+      "articleId": "2026-09-10-top-1",
+      "url": "https://engineering.dena.com/blog/2026/09/spec-and-verify-loop-proxysql-eks/",
+      "originalTitle": "AI に実装を任せるための仕様と検証ループ 〜ProxySQL に足りない機能を実装で埋めた〜 [DeNA インフラ SRE]",
+      "source": "DeNA Engineering",
+      "topic": "AI Engineering / SRE / AWS / EKS",
+      "access": "full",
+      "accessNote": "DeNA Engineeringの公開原文を確認。具体的なError Threshold、Route53段階移行、Cost削減は同社のProxySQL / EKS / Aurora Caseの実測であり一般解ではない。",
+      "capturedAt": "2026-09-10T01:12:00.000Z",
+      "snapshotSha256": "4962daff6733f974e35470d8aaa8c01406f4bd3f6b41b98e1534620beb89b004",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "DeNAはAIへ実装を任せられるかは、仕様に確かめ方まで書き、検証の仕組みを先に作れるかで決まると報告した。",
+          "quote": "実装を任せられるかどうかは、仕様に確かめ方まで書けるか、そして検証の仕組みを先に作れるかで決まります。",
+          "locator": "「はじめに」節",
+          "conditions": "DeNA固有のProxySQL / EKS / Aurora環境。必要なSpecification GranularityはModelやEnvironmentで変わる。",
+          "usedIn": {"zh": "ProxySQL", "ja": "ProxySQL", "interview": "ProxySQL"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-10-top-2",
+      "url": "https://www.publickey1.jp/blog/26/awsaiawsnx_plugin_for_aws_10.html",
+      "originalTitle": "AWS、AIがフルスタックAWSアプリの基本コードを、セキュリティ、可観測性、インフラまで一気通貫で生成する「Nx Plugin for AWS 1.0」、オープンソースで公開",
+      "source": "Publickey",
+      "topic": "AWS / AI Agent / Frontend / Infrastructure as Code",
+      "access": "full",
+      "accessNote": "Publickeyの公開記事を確認。AWS公式Announcement / Demoを伝える記事で、Scaffold生成速度はProduction QualityやTCOのBenchmarkではない。",
+      "capturedAt": "2026-09-10T01:12:00.000Z",
+      "snapshotSha256": "8cd62ee62c12dacb58470cc396cf4bb0384f9119a5f0716def3e811c6d8f7db3",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "Nx Plugin for AWS 1.0はRequirementからAWS CDKまたはTerraformとApplication Scaffoldを生成する。",
+          "quote": "AWS CDKもしくはTerraformのコード、およびアプリケーションのコードのスキャフォルド",
+          "locator": "「AIが要件に合わせてアプリからインフラまでのスキャフォルドを生成」節",
+          "conditions": "Official Demo / Announcement。数分という説明はScaffold生成であり、IAMやProduction Qualityを保証しない。",
+          "usedIn": {"zh": "Nx Plugin for AWS 1.0", "ja": "Nx Plugin for AWS 1.0", "interview": "Nx Plugin for AWS 1.0"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-10-top-3",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/10/2000001333/",
+      "originalTitle": "NEC、社内の“AIトークン節約”に注力　「同じ使われ方なら10分の1に」と小玉CAXO",
+      "source": "ITmedia AI＋",
+      "topic": "Enterprise AI / Cost Optimization / Model Routing",
+      "access": "full",
+      "accessNote": "ITmedia AI＋の公開原文を確認。5分の1・10分の1は4月時点と同じ使い方を仮定したNECのTargetであり、達成済み実績ではない。",
+      "capturedAt": "2026-09-10T01:12:00.000Z",
+      "snapshotSha256": "451fb3a094fe7359be99a24a4f3a902e43a279a95f5f06e4b117878a25c3293c",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "NECは4月と同じ使われ方なら実質Token Costを上期中に5分の1、下期中に10分の1へ下げる目標を示した。",
+          "quote": "上期中に5分の1、下期中に10分の1に下げる",
+          "locator": "本文冒頭・削減目標説明",
+          "conditions": "同じ利用Patternを仮定したTarget。AI Usage自体は増える見通し。",
+          "usedIn": {"zh": "1/10", "ja": "10分の1", "interview": "10分の1"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-10-top-4",
+      "url": "https://ledge.ai/articles/dentsu_ai_ad_copy_evaluation",
+      "originalTitle": "電通など3社、広告コピーをAIが自動評価　コピーライター64人・11万件超の評価データを構築",
+      "source": "Ledge.ai",
+      "topic": "LLM-as-a-Judge / Evaluation / Japanese Enterprise AI",
+      "access": "public-portion",
+      "accessNote": "Ledge.aiの記事Title/Dateを確認し、電通・SB Intuitionsの一次発表で64名、116,532件、Judge Criteria、未学習Domainの相関低下を照合した。",
+      "capturedAt": "2026-09-10T01:12:00.000Z",
+      "snapshotSha256": "7a3f567e0381f37196900f7657a682f68c10bb9db44d7b820c0a0d25730c76a8",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "電通など3社はCopywriter 64名による計116,532件の広告Copy評価Dataを構築した。",
+          "quote": "計116,532件の評価データを構築しました。",
+          "locator": "共同研究成果1・広告コピー評価データセット",
+          "conditions": "研究Data。未学習業種・商材ではHuman Evaluationとの相関が低下した。",
+          "usedIn": {"zh": "116,532", "ja": "116,532", "interview": "116,532"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-10-top-5",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/09/news043.html",
+      "originalTitle": "「四半期ごとのパッチ適用」はもう許されない　AWSが「フロンティアAI対策9項目」のポイントを解説：「能動的なサービス停止」の基準を明確化する",
+      "source": "＠IT",
+      "topic": "Security / AWS / Frontier AI",
+      "access": "public-portion",
+      "accessNote": "＠ITの公開取得部分を確認。金融庁・日銀の要請に対するAWSのService Mappingであり、AWS Service導入だけで対応完了とはならない。",
+      "capturedAt": "2026-09-10T01:12:00.000Z",
+      "snapshotSha256": "3c28184907b91bc696fa3a22bed5cc12b03c290f25ab6c92a737a669b072bb66",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "AWSの整理ではKEVとEPSSなどThreat Intelligenceを使うRisk-based Vulnerability Prioritizationが示されている。",
+          "quote": "KEVカタログやEPSSスコアなどの脅威インテリジェンスと連携したリスクベースの優先度付け",
+          "locator": "「パッチ適用の自動化と運用負荷の削減」節",
+          "conditions": "AWSのService MappingはCompliance完了を意味せず、最終判断は金融機関側が行う。",
+          "usedIn": {"zh": "KEV", "ja": "KEV", "interview": "KEV"}
+        }
+      ]
+    }
+  ]
+}
