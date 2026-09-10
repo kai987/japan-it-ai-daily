@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-10",
+  "generatedAt": "2026-09-10T16:19:55.689Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "任せる",
+      "reading": "まかせる",
+      "exampleJa": "実装をAIに任せても、合否基準は人が定義します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "4074fe5d86b6371ddfedc363263f35b8c7efd716a3c28902726952bc347d5ec8",
+      "example": "example-01.mp3",
+      "exampleHash": "9a601e633dc03bfc198917e7d41ea10c4214d63d3d2dedb44c72381a834be0b4"
+    },
+    {
+      "index": 2,
+      "term": "確かめる",
+      "reading": "たしかめる",
+      "exampleJa": "負荷をかけた状態でFailover後の挙動を確かめます。",
+      "word": "vocab-02.mp3",
+      "wordHash": "f26ab333e1ca2ce7e2adf2bc3d3e9d8d6e15168b185f73f88ddd3390b2750df5",
+      "example": "example-02.mp3",
+      "exampleHash": "959d708f6df071d6673ad4bcfd207e65e6b24383c400f509fd931b393034a011"
+    },
+    {
+      "index": 3,
+      "term": "載せ替える",
+      "reading": "のせかえる",
+      "exampleJa": "ProxySQLをEC2からEKSへ載せ替えました。",
+      "word": "vocab-03.mp3",
+      "wordHash": "1cdbe1083cf029db8131ddc8c700918e65f73f60ed5893b077c381d015026c85",
+      "example": "example-03.mp3",
+      "exampleHash": "6686e6348d901e8880255a7c1a765340d4c5290f43b774dde454659f6c492114"
+    },
+    {
+      "index": 4,
+      "term": "追従する",
+      "reading": "ついじゅうする",
+      "exampleJa": "Writerの切り替わりに短い周期で追従します。",
+      "word": "vocab-04.mp3",
+      "wordHash": "7936f0bfe4e6466f2fd9ccd429e7285459b7606cabdce8e6bdfa224f2cca608e",
+      "example": "example-04.mp3",
+      "exampleHash": "5a8ae2b71b470ceddfb98f2de4961b9507bd969ded081db664fee10368473987"
+    },
+    {
+      "index": 5,
+      "term": "妥協する",
+      "reading": "だきょうする",
+      "exampleJa": "運用負荷を残す妥協案ではなく、Controllerを実装しました。",
+      "word": "vocab-05.mp3",
+      "wordHash": "d1f785a86d10005735a3ab6ca9ed063e78c238037f151bafe79d4a1ca6f2896d",
+      "example": "example-05.mp3",
+      "exampleHash": "386b69eb9b09ea379c4df285951df91012efcdff58c7ff25070d8858e2bf56b7"
+    },
+    {
+      "index": 6,
+      "term": "振り分ける",
+      "reading": "ふりわける",
+      "exampleJa": "Taskの難易度に応じてModelを振り分けます。",
+      "word": "vocab-06.mp3",
+      "wordHash": "d404dbc39eee3f0a2463f2dfd0853efa923b0c51e8c179e4f53df1e670cc18f1",
+      "example": "example-06.mp3",
+      "exampleHash": "bbe8574f3a5ad7155f687354596f954041ab9a39fe6b0224834c0f0edd7ae829"
+    },
+    {
+      "index": 7,
+      "term": "踏まえる",
+      "reading": "ふまえる",
+      "exampleJa": "実測結果を踏まえて次の仕様を決めます。",
+      "word": "vocab-07.mp3",
+      "wordHash": "e90c7f1fd0d3dd4f06449c128462bef760fa307274175a55690bd45e895dbdbf",
+      "example": "example-07.mp3",
+      "exampleHash": "f4539506968d5d7d1042de766261bc1f4ac9ec29a87a81b6172a9a61eb96e293"
+    },
+    {
+      "index": 8,
+      "term": "脱却する",
+      "reading": "だっきゃくする",
+      "exampleJa": "四半期ごとのPatch運用から脱却します。",
+      "word": "vocab-08.mp3",
+      "wordHash": "4a2a34d6c90823818fe4a2fbbf122715882c43d71014431074304ac4a4c97d2f",
+      "example": "example-08.mp3",
+      "exampleHash": "d86218719165794d8dc755381b01b4b5793532d7a1691de3b5c416804bd41fa1"
+    },
+    {
+      "index": 9,
+      "term": "前提",
+      "reading": "ぜんてい",
+      "exampleJa": "利用量が増える前提でCostを評価します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "09d2c93d539759ad1e3234215fbd6bb5add4e2b3d706c10d60a86d22ce521b53",
+      "example": "example-09.mp3",
+      "exampleHash": "42e0a5a09ec22db8271d1086d6d668552f7d84e4ca2f3c1010048a0f60f5f120"
+    },
+    {
+      "index": 10,
+      "term": "見通し",
+      "reading": "みとおし",
+      "exampleJa": "AI利用量は今後も増える見通しです。",
+      "word": "vocab-10.mp3",
+      "wordHash": "3f90056f75ef4dc6220d5b3e37ad72f08b4c7c3f4d3d1fe157fffabeed1feb4d",
+      "example": "example-10.mp3",
+      "exampleHash": "c6708ce98bd745fab54440a0c6f59fea8bab503ec2d005557676099da93a7604"
+    },
+    {
+      "index": 11,
+      "term": "妥当性",
+      "reading": "だとうせい",
+      "exampleJa": "Judgeの評価基準自体の妥当性も人が確認します。",
+      "word": "vocab-11.mp3",
+      "wordHash": "180e85e465a955a2ac3c7df7e836c115e6ce9706445426ef12ec7812a038876d",
+      "example": "example-11.mp3",
+      "exampleHash": "5b7a47b5f3a0b0a264efe22b855ba0dfef904f7793f6ccc623146e6208594675"
+    },
+    {
+      "index": 12,
+      "term": "急務",
+      "reading": "きゅうむ",
+      "exampleJa": "脆弱性対応の高速化が急務になっています。",
+      "word": "vocab-12.mp3",
+      "wordHash": "f81163a57c91a0ddd03bd6c52faef3a7a90a6c30db883f4ddca490886a69a1fd",
+      "example": "example-12.mp3",
+      "exampleHash": "57ede8e8af322b44d7004d187af0de1d8c7690f94feddee99d4c730928ef58c6"
+    },
+    {
+      "index": 13,
+      "term": "適切な",
+      "reading": "てきせつな",
+      "exampleJa": "要件に適切なServiceを選び、生成後にReviewします。",
+      "word": "vocab-13.mp3",
+      "wordHash": "517c9af99d9edf217080b608cf3d745eddeb8fbe295a5c453176b33baea38df8",
+      "example": "example-13.mp3",
+      "exampleHash": "84112497f9fe9a81ae9eee2e5244b07b14a190adb879b4b5d9445c77d230d412"
+    },
+    {
+      "index": 14,
+      "term": "正確な",
+      "reading": "せいかくな",
+      "exampleJa": "Assetを正確に把握してから優先度を付けます。",
+      "word": "vocab-14.mp3",
+      "wordHash": "0c814ae2bb1fe47538c5198b6c5cc2fe82995d6c7d82b04d86137e1f08cd03ca",
+      "example": "example-14.mp3",
+      "exampleHash": "110bd021b1729de623ce8ba416411c6767786fd76f6498dfbf6448d9409a47b8"
+    },
+    {
+      "index": 15,
+      "term": "暫定的な",
+      "reading": "ざんていてきな",
+      "exampleJa": "Virtual Patchは暫定的な対策として使います。",
+      "word": "vocab-15.mp3",
+      "wordHash": "3790cb903622bbfd74131c9911a937c56271a83988583ec6859aa9257f9b078c",
+      "example": "example-15.mp3",
+      "exampleHash": "15de186c26235fc82ea36530f851896bc1aa68eb2fe29866534d829c3a487d84"
+    },
+    {
+      "index": 16,
+      "term": "徐々に",
+      "reading": "じょじょに",
+      "exampleJa": "新しいReaderへのTrafficを徐々に増やします。",
+      "word": "vocab-16.mp3",
+      "wordHash": "f4dc426718e59e1165e3b8c466c1fa7f9eb1e86f2fa1e591f2ff2354015fca8d",
+      "example": "example-16.mp3",
+      "exampleHash": "12eed82b6380e0ac5a90707012606676f845868ac89294301769922d042bb31b"
+    },
+    {
+      "index": 17,
+      "term": "一気通貫で",
+      "reading": "いっきつうかんで",
+      "exampleJa": "ApplicationからIaCまで一気通貫でScaffoldを作ります。",
+      "word": "vocab-17.mp3",
+      "wordHash": "93ec77ac98f691f24bf56084c47621f639fa30534d3da1243786e76ec58321fc",
+      "example": "example-17.mp3",
+      "exampleHash": "215b73b92503d1515b148cb93a9f233424fde40c460fdb3fe4217a5a1ca952cb"
+    },
+    {
+      "index": 18,
+      "term": "一定程度",
+      "reading": "いっていていど",
+      "exampleJa": "学習済みDomainでは一定程度の正の相関を確認しました。",
+      "word": "vocab-18.mp3",
+      "wordHash": "024684ee2e48647b4fcd1d95c5ef70e8139a2793922a75e1426ceb8007b275f8",
+      "example": "example-18.mp3",
+      "exampleHash": "0f8473d67512ad55214abfc60519ca92c93c69dbb03cd328b8faf990eb460b29"
+    },
+    {
+      "index": 19,
+      "term": "直ちに",
+      "reading": "ただちに",
+      "exampleJa": "悪用が確認された脆弱性は直ちに優先度を上げます。",
+      "word": "vocab-19.mp3",
+      "wordHash": "687e5fd248c8dc7fa59b039ca261dbe94acb322cb985143e54a0f4a385aee5bc",
+      "example": "example-19.mp3",
+      "exampleHash": "ecfad60c5c15d91d9f23a5ce5171340d116ee1029a8c144003c0f98ed05c38ef"
+    },
+    {
+      "index": 20,
+      "term": "万が一",
+      "reading": "まんがいち",
+      "exampleJa": "万が一Serviceを停止する場合に備えてBCPを整備します。",
+      "word": "vocab-20.mp3",
+      "wordHash": "36608c8d1f02898a633e255eb7688280a05dd92ae7db7e23c3f0334c884f4b97",
+      "example": "example-20.mp3",
+      "exampleHash": "91d3510e51f9efc1ab35a4c12f39b3ce0faa1ddea5ca110193ff71fddba7fcac"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "Nx Plugin for AWSはApplication Codeにとどまらず、IaCやObservabilityのScaffoldも生成します。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "eaa1b8da6273d5f2984fa2d13d816859612087687c287f72f5f289dad1023718"
+    },
+    {
+      "index": 2,
+      "pattern": "～を余儀なくされる",
+      "exampleJa": "Exploitまでの時間が短くなれば、企業はPatch運用の見直しを余儀なくされます。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "8b14c043e5f143ec90ee622d54c225a0f058c73ed34299079fe20c2cace09cca"
+    },
+    {
+      "index": 3,
+      "pattern": "～に至るまで",
+      "exampleJa": "Reader追加からFailover、Pod停止に至るまで同じScenarioで検証します。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "7b3e72428cea97eec52f81eecb959fc19c04875cd5f6565c224a91b5e82e183b"
+    },
+    {
+      "index": 4,
+      "pattern": "～たうえで",
+      "exampleJa": "Human Evaluationとの相関を確認したうえで、LLM-as-a-Judgeを運用Gateに使います。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "f8509da6d13e6562334fe76b3ed33019bbc1c1424088b08cc2ce5409bdf6aba9"
+    },
+    {
+      "index": 5,
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの難易度に応じてFrontier ModelとOpen-weight Modelを使い分けます。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "4058bd89e95bf075ebfdf4e22d6390c2a164af6a59dc5fe474821c686b963825"
+    },
+    {
+      "index": 6,
+      "pattern": "～一方で",
+      "exampleJa": "AI利用量は増える一方で、同じ使い方なら実質Token Costを下げる目標です。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "a7cd4ad9e8de38e7aee4ed63d4c323c9df8f026a73907e8c9e82f907fb50561d"
+    },
+    {
+      "index": 7,
+      "pattern": "～とは限らない",
+      "exampleJa": "学習済み業種で相関が高くても、未学習業種で同じ結果になるとは限りません。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "8febd9bf5b7d175f019a2cf0a6f787ea2871b99e5ef3b2b78484f30ed5f60745"
+    }
+  ]
+}
