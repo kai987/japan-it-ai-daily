@@ -7,6 +7,7 @@ const verifiedInlineScripts = [
   "'sha256-NgF0ulOKuwYtbm1O82saYlAqPjWhJcOO3KUQh0Kav4c='", // theme/menu/TOC
   "'sha256-772VVZKuu8keoACuPl9AQOMhOo+x/J240SH9AUpOa4k='", // interview deep links
   "'sha256-GCoSn7zakHhIDak12g1Y5A93bTnh9dmH11x2vUR8zio='", // daily page enhancements
+  "'sha256-M2oXzY3K5K6e1m0LZ/aroCRepBuhQErQEftBCCWleno='", // report speech enhancer
 ];
 
 const configuredAudioBase = process.env.PUBLIC_AUDIO_BASE_URL?.trim() || '';
