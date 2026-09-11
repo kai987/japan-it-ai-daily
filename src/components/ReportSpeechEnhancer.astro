@@ -43,17 +43,33 @@
       return Array.from(new Set(quotes));
     };
 
-    const enhanceQuote = (quote: HTMLQuoteElement, kind: 'interview' | 'review'): void => {
-      if (quote.dataset.speechEnhanced === 'true') return;
-      const text = (quote.textContent || '').replace(/\s+/g, ' ').trim();
+    const enhanceElement = (target: HTMLElement, kind: 'interview' | 'review'): void => {
+      if (target.dataset.speechEnhanced === 'true') return;
+      const text = (target.textContent || '').replace(/\s+/g, ' ').trim();
       if (!text) return;
 
-      quote.dataset.speechEnhanced = 'true';
-      quote.classList.add('report-speech-target');
+      target.dataset.speechEnhanced = 'true';
+      target.classList.add('report-speech-target');
       const label = kind === 'review'
         ? '面接復習の質問を読み上げる'
         : '面接内容を読み上げる';
-      quote.insertBefore(makeButton(text, label), quote.firstChild);
+      target.insertBefore(makeButton(text, label), target.firstChild);
+    };
+
+    const enhanceLegacyQuotes = (nodes: Element[], kind: 'interview' | 'review'): number => {
+      const quotes = blockquotesFrom(nodes);
+      quotes.forEach((quote) => enhanceElement(quote, kind));
+      return quotes.length;
+    };
+
+    const nextPlainParagraph = (label: Element): HTMLParagraphElement | null => {
+      let node = label.nextElementSibling;
+      while (node) {
+        if (node.tagName === 'P') return node as HTMLParagraphElement;
+        if (/^H[1-6]$/.test(node.tagName)) return null;
+        node = node.nextElementSibling;
+      }
+      return null;
     };
 
     const headings = Array.from(article.querySelectorAll('h2'));
@@ -61,7 +77,22 @@
       (heading.textContent || '').includes('面接で使えるポイント'));
 
     if (interviewHeading instanceof HTMLHeadingElement) {
-      blockquotesFrom(sectionNodes(interviewHeading)).forEach((quote) => enhanceQuote(quote, 'interview'));
+      const nodes = sectionNodes(interviewHeading);
+      const quoteCount = enhanceLegacyQuotes(nodes, 'interview');
+
+      // Current source-of-truth reports keep canonical questions/answers as plain
+      // paragraphs so the Japanese strings can be copied byte-for-byte between
+      // language modes. Legacy reports use blockquotes. Only use this path when
+      // the section contains no quotes to avoid duplicate speech controls.
+      if (quoteCount === 0) {
+        for (const node of nodes) {
+          if (!(node instanceof HTMLParagraphElement)) continue;
+          const label = (node.textContent || '').replace(/\s+/g, ' ').trim();
+          if (!/(?:面试问题|面接質問|約30秒回答|约30秒回答)/.test(label)) continue;
+          const target = nextPlainParagraph(node);
+          if (target) enhanceElement(target, 'interview');
+        }
+      }
     }
 
     const reviewHeading = headings.find((heading) => {
@@ -70,7 +101,17 @@
     });
 
     if (reviewHeading instanceof HTMLHeadingElement) {
-      blockquotesFrom(sectionNodes(reviewHeading)).forEach((quote) => enhanceQuote(quote, 'review'));
+      const nodes = sectionNodes(reviewHeading);
+      const quoteCount = enhanceLegacyQuotes(nodes, 'review');
+
+      if (quoteCount === 0) {
+        for (const node of nodes) {
+          if (!(node instanceof HTMLHeadingElement) || !/^H[3-6]$/.test(node.tagName)) continue;
+          if (!/^Q\s*\d+/i.test((node.textContent || '').trim())) continue;
+          const target = nextPlainParagraph(node);
+          if (target) enhanceElement(target, 'review');
+        }
+      }
     }
   }
 </script>
