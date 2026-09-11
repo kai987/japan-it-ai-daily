@@ -44,23 +44,40 @@ const extractSection = (body: string, title: string) => {
   return lines.slice(start, end).join('\n').trim();
 };
 
-const collectQuoteAfter = (lines: string[], labelIndex: number) => {
-  const quoteLines: string[] = [];
+/**
+ * Read the answer/question paragraph following a labelled line.
+ *
+ * Historical content uses Markdown blockquotes. New source-of-truth reports may
+ * keep the canonical interview string as a plain paragraph so it can be copied
+ * byte-for-byte between language modes. Support both without changing the
+ * extracted string.
+ */
+const collectTextAfter = (lines: string[], labelIndex: number) => {
+  const values: string[] = [];
   let started = false;
+  let quoted = false;
 
   for (let index = labelIndex + 1; index < lines.length; index += 1) {
     const line = lines[index].trim();
     if (!line && !started) continue;
+    if (!line && started) break;
+    if (/^(#{1,6})\s+/.test(line) || /^\*\*.+\*\*/.test(line)) break;
+
     if (line.startsWith('>')) {
+      if (started && !quoted) break;
       started = true;
+      quoted = true;
       const text = line.replace(/^>\s?/, '').trim();
-      if (text) quoteLines.push(text);
+      if (text) values.push(text);
       continue;
     }
-    if (started || /^(#{1,6})\s+/.test(line) || /^\*\*.+\*\*/.test(line)) break;
+
+    if (quoted) break;
+    started = true;
+    values.push(line);
   }
 
-  return quoteLines.join(' ').trim();
+  return values.join(' ').trim();
 };
 
 export const extractAnswers = (body: string) => {
@@ -73,7 +90,7 @@ export const extractAnswers = (body: string) => {
   lines.forEach((line, index) => {
     const label = stripInlineMarkdown(line).replace(/[：:]$/, '');
     if (!/^(?:約|约)?\s*30\s*秒.*(?:回答|答え)/i.test(label.normalize('NFKC'))) return;
-    const answer = collectQuoteAfter(lines, index);
+    const answer = collectTextAfter(lines, index);
     if (answer) answers.push(answer);
   });
 
@@ -99,7 +116,7 @@ export const extractReviewCards = (body: string) => {
   const lines = section.split(/\r?\n/);
   const cards: Array<{ question: string; points: string }> = [];
 
-  // New format: ### Q1 -> quoted question -> 回答要点：...
+  // New format: ### Q1 -> quoted or plain question -> 回答要点：...
   for (let index = 0; index < lines.length; index += 1) {
     if (!/^#{3,6}\s*Q\s*\d+/i.test(lines[index].trim())) continue;
     let end = lines.length;
@@ -111,11 +128,15 @@ export const extractReviewCards = (body: string) => {
     }
 
     const block = lines.slice(index + 1, end);
-    const question = block
+    const quotedQuestion = block
       .map((line) => line.trim())
       .find((line) => line.startsWith('>'))
       ?.replace(/^>\s*/, '')
       .trim() ?? '';
+    const plainQuestion = block
+      .map((line) => line.trim())
+      .find((line) => line && !/^\*\*/.test(line) && !/^(?:回答要点|回答ポイント|要点)\s*[：:]/.test(stripInlineMarkdown(line))) ?? '';
+    const question = quotedQuestion || stripInlineMarkdown(plainQuestion);
     const pointsLine = block
       .map((line) => line.trim())
       .find((line) => /^(?:回答要点|回答ポイント|要点)\s*[：:]/.test(stripInlineMarkdown(line)));
