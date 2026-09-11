@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-11",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-11T01:02:00.000Z",
+  "scope": "Top 5 original-source facts, implementation details, measurements and evidence boundaries were reviewed against publicly retrievable source articles. snapshotSha256 values identify the normalized excerpts used for this review and do not claim a complete archival snapshot of each webpage.",
+  "articles": [
+    {
+      "articleId": "2026-09-11-top-1",
+      "url": "https://gihyo.jp/article/2026/09/agent-router",
+      "originalTitle": "AAIF、Agent Routerの参加を発表 ——AIモデルとMCPツールへの接続を仲介するOSS",
+      "source": "gihyo.jp",
+      "topic": "AI Agent / MCP / AI Gateway",
+      "access": "full",
+      "accessNote": "gihyo.jpの公開原文を確認。Agent RouterのOpenAI互換API、MCP Tool Catalog、Access Control、Quota、Failover、AdoptionはProject/AAIF発表に基づく説明であり、独立Performance Benchmarkではない。",
+      "capturedAt": "2026-09-11T00:50:00.000Z",
+      "snapshotSha256": "80e4321525a7d9b6adf07585102ce4e42bd52559c8699bbf964213917aa7672c",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "Agent RouterはModel呼び出し向けのOpenAI互換APIとMCP接続口を提供し、Agent側からProvider差分や接続処理を切り離す。",
+          "quote": "モデル呼び出し用のOpenAI互換APIと、外部ツールへのアクセスに使うMCPの接続口",
+          "locator": "gihyo.jp記事・Agent Routerに任せられる接続処理の説明",
+          "conditions": "Feature/Architectureの公開説明。Gateway導入だけでHA、Policy Correctness、Provider間Semantic Parityが保証されるものではない。",
+          "usedIn": {"zh": "OpenAI互換API", "ja": "OpenAI互換API", "interview": "OpenAI互換API"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-11-top-2",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/10/news035.html",
+      "originalTitle": "クラウドAIを信頼できないのは“中身が分からない”から？　ならば「AIインフラ」を自作して検証しよう：「中で何が起きているか分からない」からこそ検証を――IPAが報告書",
+      "source": "＠IT",
+      "topic": "AI Infrastructure / Security / Governance",
+      "access": "full",
+      "accessNote": "＠ITの公開記事を確認。IPA/ICSCoEのClosed AI Infrastructure実証であり、限定Hardware/OSS/ScenarioでControl可能性とContext耐性を検証したもの。Closed AIがCloud AIより常に安全という結論ではない。",
+      "capturedAt": "2026-09-11T00:50:00.000Z",
+      "snapshotSha256": "4b00cba89f3bda908935d3ad2cef8b9372e41cddd5eac2cfd5fa119cbc6a037e",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "IPA/ICSCoEはICS-XAFを採用した閉域AI基盤を構築し、21件のTest ScenarioでControl可能性とContext耐性を検証した。",
+          "quote": "ICS-XAF」（ICSCoE AI eXtendable Architecture Framework）を採用し、21件のテストシナリオ",
+          "locator": "＠IT記事・AIインフラ構築と検証Scenarioの説明",
+          "conditions": "ICSCoE卒業Projectの実証。特定Hardware/OSS/Closed Network条件での結果で、一般的なCloud-vs-On-prem安全性Benchmarkではない。",
+          "usedIn": {"zh": "ICS-XAF", "ja": "ICS-XAF", "interview": "ICS-XAF"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-11-top-3",
+      "url": "https://dev.classmethod.jp/articles/20260910-cc-updates-v2-1-267/",
+      "originalTitle": "Claude Code v2.1.267 の主要アップデート - maxEffortLevel の追加とプロンプトキャッシュ周りの一斉修正",
+      "source": "DevelopersIO",
+      "topic": "Claude Code / Agent Runtime / Security",
+      "access": "full",
+      "accessNote": "DevelopersIOの公開原文と著者実測を確認。maxEffortLevelの挙動、Prompt Cache/Thinking修正、5MB超Session Resume、Managed Settings fail-closedを扱う。修正済み経路が全将来経路の解消を保証するものではない。",
+      "capturedAt": "2026-09-11T00:50:00.000Z",
+      "snapshotSha256": "7d217fd5ad7b2cd827a4900584d6389e7f1d0858dbf0060e9a069cfaee9f47f8",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "Claude Code v2.1.267にはmaxEffortLevelが追加され、組織のManaged Settingsとして利用可能なEffortの上限を設定できる。",
+          "quote": "`maxEffortLevel` 設定が追加されました。",
+          "locator": "DevelopersIO記事・maxEffortLevelの追加節",
+          "conditions": "著者は--settingsと/effort、--debugで挙動を確認。複数Settings SourceやmodelSettingsのResolutionは実Configで確認が必要。",
+          "usedIn": {"zh": "maxEffortLevel", "ja": "maxEffortLevel", "interview": "maxEffortLevel"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-11-top-4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/10/news022.html",
+      "originalTitle": "NECが新設した「AIオンリー組織」、仕事はどう回る？　部門長もマネジャーも社員もAI：人間の組織はどう関わるのか",
+      "source": "＠IT",
+      "topic": "Enterprise AI / Multi-Agent Organization / Governance",
+      "access": "public-portion",
+      "accessNote": "＠ITの公開取得部分を確認。NECの社内Multi-Agent Organization事例として4階層、AI統合マネジメントコックピット、人による最終Governance、所要時間約7分の1を確認した。Company Caseであり一般Performance Benchmarkではない。",
+      "capturedAt": "2026-09-11T00:50:00.000Z",
+      "snapshotSha256": "81e25bcdee228685d486c77bfb643bb10be9ac46a012cb1ffbdc7abe89bf25c0",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "NECはAI組織の活動をAI統合マネジメントコックピットでReal-time可視化し、最終的なQuality/GovernanceはHuman側で統制する。",
+          "quote": "「AI統合マネジメントコックピット」でリアルタイムに可視化される",
+          "locator": "＠IT記事・AI組織の可視化/運用説明",
+          "conditions": "NECの特定社内組織・業務での事例。約7分の1の所要時間も同社内部検証であり、他社への一般化はできない。",
+          "usedIn": {"zh": "AI統合マネジメントコックピット", "ja": "AI統合マネジメントコックピット", "interview": "AI統合マネジメントコックピット"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-11-top-5",
+      "url": "https://tech.layerx.co.jp/entry/fde-is-fun",
+      "originalTitle": "AI時代、エンジニアの職域はどこまで広がるか？お客さまの業務プロセス自体を変革するFDEの面白さ",
+      "source": "LayerX Engineering",
+      "topic": "FDE / Enterprise AI / Workflow Design",
+      "access": "full",
+      "accessNote": "LayerX Engineeringの公開原文を確認。FDEの役割、Deployment Strategist/Account Executiveとの協働、お試し→導入運用→拡大、1週間相当→約30分のWorkflow化例、当日/翌朝Feedback LoopはLayerXのPlatform/Project文脈のPracticeであり一般Benchmarkではない。",
+      "capturedAt": "2026-09-11T00:50:00.000Z",
+      "snapshotSha256": "61036a3b1a33c8e0ea0a10bac1c3c4270f9f9c19fdd1a8044bb9adfd1e4b4783",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "LayerXのFDE Projectはお試し→導入運用→拡大の段階で、動くWorkflowを顧客固有の業務LogicとHuman/AI判断境界へ適合させる。",
+          "quote": "「お試し -> 導入運用 -> 拡大」",
+          "locator": "LayerX Engineering記事・プロジェクトフェーズの説明",
+          "conditions": "LayerX Ai WorkforceのCustomer Project Practice。短いWorkflow生成時間やFeedback CycleはPlatform/案件Context依存で、一般的なProductivity Benchmarkではない。",
+          "usedIn": {"zh": "お試し→導入運用→拡大", "ja": "お試し→導入運用→拡大", "interview": "お試し→導入運用→拡大"}
+        }
+      ]
+    }
+  ]
+}
