@@ -62,7 +62,8 @@ const tocHeadings = [
     </aside>
   </div>
 
-  {locale === "zh" ? <LegacyReportEnhancements /> : <ReportSpeechEnhancer />}
+  {locale === "zh" && <LegacyReportEnhancements />}
+  <ReportSpeechEnhancer />
   <style>
     .report-speech-target{
       display:flex;
