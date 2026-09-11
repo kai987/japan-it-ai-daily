@@ -48,26 +48,39 @@ export const parseInterview = (source) => {
   const items = [];
   let role = '';
   let quote = [];
+  let acceptPlain = false;
   const flush = () => {
     if (!quote.length) return;
     const text = normalizeText(quote.join('\n'));
     if (text) items.push({ type: role || 'answer', text });
     quote = [];
+    acceptPlain = false;
   };
   for (const line of lines) {
     const trimmed = line.trim();
     if (/^\*\*.*面试问题.*\*\*/.test(trimmed)) {
       flush();
       role = 'question';
+      acceptPlain = true;
       continue;
     }
     if (/^\*\*.*(?:约|約)?\s*30\s*秒.*(?:回答|答え).*\*\*/.test(trimmed)) {
       flush();
       role = 'answer';
+      acceptPlain = true;
       continue;
     }
-    if (/^>\s?/.test(trimmed)) quote.push(trimmed);
-    else flush();
+    if (/^>\s?/.test(trimmed)) {
+      quote.push(trimmed);
+      acceptPlain = false;
+      continue;
+    }
+    if (acceptPlain && trimmed && !/^#{1,6}\s+/.test(trimmed) && !/^\*\*/.test(trimmed)) {
+      quote.push(`> ${trimmed}`);
+      acceptPlain = false;
+      continue;
+    }
+    flush();
   }
   flush();
 
@@ -81,12 +94,26 @@ export const parseReview = (source) => {
   const quoted = quoteBlocks(section);
   if (quoted.length) return quoted;
 
-  return section
-    .split(/\r?\n/)
+  const lines = section.split(/\r?\n/);
+  const headingQuestions = [];
+  for (let index = 0; index < lines.length; index += 1) {
+    if (!/^#{3,6}\s*Q\s*\d+/i.test(lines[index].trim())) continue;
+    for (let cursor = index + 1; cursor < lines.length; cursor += 1) {
+      const value = lines[cursor].trim();
+      if (!value) continue;
+      if (/^#{1,6}\s+/.test(value)) break;
+      if (/^(?:回答要点|回答ポイント|要点)\s*[：:]/.test(value.replace(/\*\*/g, ''))) break;
+      if (/^\*\*/.test(value)) continue;
+      if (/[ぁ-んァ-ヶ一-龠]/.test(value)) headingQuestions.push(normalizeText(value));
+      break;
+    }
+  }
+  if (headingQuestions.length) return headingQuestions;
+
+  return lines
     .map((line) => line.trim())
     .filter((line) => /^-\s+/.test(line))
     .map((line) => line.replace(/^-\s+/, '').split(/\s*→\s*/)[0] || '')
     .map((line) => line.replace(/^`|`$/g, '').trim())
     .filter((line) => /[ぁ-んァ-ヶ一-龠]/.test(line));
 };
-
