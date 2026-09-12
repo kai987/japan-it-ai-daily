@@ -20,11 +20,11 @@
         {
           "id": "fact-1",
           "kind": "source-fact",
-          "statement": "SnowflakeはCortex AI GatewayでTaskに適した低Cost ModelへのRouting、User Quota、Agent TrackingをControl Plane側で扱い、三井住友トラスト・アセットマネジメントは約650業務のSkill化と利用LogをKPI運用へ結び付けている。",
+          "statement": "SnowflakeはCortex AI GatewayでTaskに適したModel RoutingとCost Controlを扱い、企業事例では業務Skill、Object、利用LogをKPI運用へ結び付けている。",
           "quote": "Cortex AI Gatewayがタスクに適した最も低コストのモデルへ自動ルーティングする",
-          "locator": "DevelopersIO Day2 KEYNOTE report: ROI/Tokenomics and SM Trust Asset Management sections",
-          "conditions": "Conference presentation and customer case. Approximately 5 million USD savings, 650 business tasks, 120 initiatives and other numbers are reported case values, not controlled cross-company benchmarks.",
-          "usedIn": {"zh": "Cortex AI Gateway / 650業務", "ja": "Cortex AI Gateway / 650業務", "interview": "650業務 / 120案件 / Cortex AI Gateway"}
+          "locator": "DevelopersIO Day2 KEYNOTE report: ROI/Tokenomics and enterprise-use sections",
+          "conditions": "Conference presentation and customer cases; savings, adoption and workflow counts are reported case values rather than controlled cross-company benchmarks.",
+          "usedIn": {"zh": "Cortex AI Gateway", "ja": "Cortex AI Gateway", "interview": "Cortex AI Gateway"}
         }
       ]
     },
@@ -41,12 +41,12 @@
       "claims": [
         {
           "id": "fact-2",
-          "kind": "author-measurement",
-          "statement": "同一Data/Prompt/Schema/Batch条件の高難度100-file・866-SQL比較では、Haiku Recall 99.9%、Sonnet 99.8%、Opus 100%で、Opusのみ見逃し・想定外抽出・未照合が全て0だった。",
-          "quote": "LLMにファイル探索はさせず(--tools \"\")、外部スクリプトから claude -p をヘッドレス呼び出し",
-          "locator": "DevelopersIO article: Test 1 batch execution and Test 2 model comparison",
-          "conditions": "Author experiment with generated ground-truth samples. Initial 500-file Recall 98.9% was later corrected to 100% after an evaluator-code bug was found; real legacy generalization remains unverified.",
-          "usedIn": {"zh": "claude -p / --tools \"\" / 866 SQL", "ja": "claude -p / --tools \"\" / 866 SQL", "interview": "claude -p / --tools \"\" / 866 SQL / Opus 5.0"}
+          "kind": "source-fact",
+          "statement": "外部Scriptからclaude -pをHeadless実行し、--tools \"\"でLLMによるFile探索を無効化してBatch条件を固定した。",
+          "quote": "外部スクリプトから claude -p をヘッドレス呼び出し",
+          "locator": "DevelopersIO article: Headless batch execution design",
+          "conditions": "Author experiment with generated ground-truth samples; real legacy-code generalization remains unverified, and an evaluator-code bug was found in the first scoring pass.",
+          "usedIn": {"zh": "claude -p", "ja": "claude -p", "interview": "claude -p"}
         }
       ]
     },
@@ -63,12 +63,12 @@
       "claims": [
         {
           "id": "fact-3",
-          "kind": "reported-controlled-experiment",
-          "statement": "1053人のBlind Controlled Experimentでは人間が危険Commandを止めた割合13.6%に対してAuto Modeは89%。Auto Modeは3回連続または1 Session 20回BlockでManual ApprovalへFallbackする。",
+          "kind": "source-fact",
+          "statement": "1053人のBlind Controlled Experimentでは、人が危険Commandを止めた割合13.6%に対してauto modeは89%だった。",
           "quote": "テスターが危険なコマンドを止められたのは13.6％、自動モードは89％",
-          "locator": "＠IT article: controlled experiment and auto-mode fallback behavior",
-          "conditions": "Dangerous execution was simulated by substituted display text and did not actually run. Apollo Research's 7% miss rate comes from an adversarial synthetic set and is not a production-traffic miss rate.",
-          "usedIn": {"zh": "1053人 / 13.6% / 89%", "ja": "1053人 / 13.6% / 89%", "interview": "1053人 / 13.6% / 89% / 20回Block"}
+          "locator": "＠IT article: blinded controlled experiment",
+          "conditions": "Dangerous execution was simulated by substituted display text and did not actually run; Apollo Research's separate 7% miss rate comes from an adversarial synthetic set, not production traffic.",
+          "usedIn": {"zh": "13.6%", "ja": "13.6%", "interview": "13.6％"}
         }
       ]
     },
@@ -85,12 +85,12 @@
       "claims": [
         {
           "id": "fact-4",
-          "kind": "product-announcement",
-          "statement": "DeltaDBはAIとのConversationとGit WorktreeをThread参加者へRealtime Replicateし、CommentをCode Changeへ追従させることで生成Reasoning ContextをTeam Artifactとして共有する。",
+          "kind": "source-fact",
+          "statement": "DeltaDBはAIとのConversationとGit WorktreeをThread参加者へRealtime Replicateし、生成に至ったContextをTeamで共有できるようにする。",
           "quote": "DeltaDBは、会話とワークツリーをまとめて、スレッドに参加する全員へリアルタイムに複製する",
-          "locator": "＠IT article: DeltaDB realtime synchronization and code-context sections",
-          "conditions": "Delta is Private Beta. Realtime sync, browser WASM/WebGL and cloud-runner capabilities are product-design claims; production access control, scale and reliability need independent validation.",
-          "usedIn": {"zh": "DeltaDB / Worktree", "ja": "DeltaDB / Worktree", "interview": "DeltaDB / Worktree / Cloud Runner / Private Beta"}
+          "locator": "＠IT article: DeltaDB realtime synchronization section",
+          "conditions": "Delta is Private Beta; realtime sync and cloud-runner capabilities are product-design claims, so production access control, scale, retention and reliability remain to be validated.",
+          "usedIn": {"zh": "DeltaDB", "ja": "DeltaDB", "interview": "DeltaDB"}
         }
       ]
     },
@@ -107,12 +107,12 @@
       "claims": [
         {
           "id": "fact-5",
-          "kind": "customer-case",
-          "statement": "ANAはEquinix FabricでAWS/Azure/Google Cloudへの接続を一元化し、Network構築期間を約80%短縮して数カ月から数週間へ短縮、5年間TCO 30%削減を目標としている。",
+          "kind": "source-fact",
+          "statement": "ANAはEquinix FabricでAWS、Azure、Google Cloudへの接続を共通Hubへ集約し、Network構築期間を約80%短縮したと報告している。",
           "quote": "ネットワーク構築期間を約80％短縮",
           "locator": "＠IT article: cloud network hub and outcomes section",
-          "conditions": "Customer/vendor case; 80% is the reported build-time reduction, whereas 30% is a future five-year TCO target. Redundancy, latency and actual private-connect pricing are deployment-specific.",
-          "usedIn": {"zh": "Equinix Fabric / 約80% / TCO 30%", "ja": "Equinix Fabric / 約80% / TCO 30%", "interview": "Equinix Fabric / AWS・Azure・Google Cloud / 約80% / TCO 30%"}
+          "conditions": "Customer/vendor case; approximately 80% is a reported build-time reduction, whereas the five-year TCO 30% reduction is a target, not an achieved result.",
+          "usedIn": {"zh": "Equinix Fabric", "ja": "Equinix Fabric", "interview": "Equinix Fabric"}
         }
       ]
     }
