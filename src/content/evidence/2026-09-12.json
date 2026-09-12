@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-12",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-12T01:07:33.000Z",
+  "scope": "Top 5 original-source facts, implementation details, measurements and evidence boundaries were reviewed against publicly retrievable source articles. snapshotSha256 values identify the normalized excerpts used for this review and do not claim a complete archival snapshot of each webpage.",
+  "articles": [
+    {
+      "articleId": "2026-09-12-top-1",
+      "url": "https://dev.classmethod.jp/articles/snowflake-world-tour-2026-tokyo-day2-keynote-swttokyo26/",
+      "originalTitle": "[レポート]SNOWFLAKE WORLD TOUR 2026 - TOKYO：Day2 KEYNOTE #SWTTokyo26",
+      "source": "DevelopersIO",
+      "topic": "Enterprise AI / Snowflake / AI Governance",
+      "access": "full",
+      "accessNote": "DevelopersIOの公開レポートを確認。Snowflake CEO、三井住友トラスト・アセットマネジメント、CyberAgentの登壇内容を筆者メモで整理したConference Reportであり、製品機能の一部はPreview/近日提供予定、各社の効果値はCustomer/Vendor Caseで独立Benchmarkではない。",
+      "capturedAt": "2026-09-12T01:00:00.000Z",
+      "snapshotSha256": "38738016a79648934eb3fc752c0e9b72b44104d75808ae4acd017aebcbb65f11",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "SnowflakeはCortex AI GatewayでTaskに適した低Cost ModelへのRouting、User Quota、Agent TrackingをControl Plane側で扱い、三井住友トラスト・アセットマネジメントは約650業務のSkill化と利用LogをKPI運用へ結び付けている。",
+          "quote": "Cortex AI Gatewayがタスクに適した最も低コストのモデルへ自動ルーティングする",
+          "locator": "DevelopersIO Day2 KEYNOTE report: ROI/Tokenomics and SM Trust Asset Management sections",
+          "conditions": "Conference presentation and customer case. Approximately 5 million USD savings, 650 business tasks, 120 initiatives and other numbers are reported case values, not controlled cross-company benchmarks.",
+          "usedIn": {"zh": "Cortex AI Gateway / 650業務", "ja": "Cortex AI Gateway / 650業務", "interview": "650業務 / 120案件 / Cortex AI Gateway"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-12-top-2",
+      "url": "https://dev.classmethod.jp/articles/claude-code-headless-legacy-code-sql-extraction/",
+      "originalTitle": "レガシーコード500本からSQLを自動抽出できるのか試してみた 〜Claude Codeのヘッドレス実行とHaiku/Sonnet/Opusの比較〜",
+      "source": "DevelopersIO",
+      "topic": "Claude Code / Legacy Modernization / Evaluation",
+      "access": "full",
+      "accessNote": "DevelopersIOの著者実験を確認。claude -pと--tools \"\"によるHeadless Batch、500-file Test、100-file High-difficulty Test、Haiku/Sonnet/OpusのRecall/Cost/Time比較を確認。評価Dataは正解付き生成Sampleで、実Legacy Codeより単純な可能性がある。",
+      "capturedAt": "2026-09-12T01:00:00.000Z",
+      "snapshotSha256": "3c1357e5abf0605780697504c5eb74328f7cd63aae59c367dfd9124e3173f726",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "author-measurement",
+          "statement": "同一Data/Prompt/Schema/Batch条件の高難度100-file・866-SQL比較では、Haiku Recall 99.9%、Sonnet 99.8%、Opus 100%で、Opusのみ見逃し・想定外抽出・未照合が全て0だった。",
+          "quote": "LLMにファイル探索はさせず(--tools \"\")、外部スクリプトから claude -p をヘッドレス呼び出し",
+          "locator": "DevelopersIO article: Test 1 batch execution and Test 2 model comparison",
+          "conditions": "Author experiment with generated ground-truth samples. Initial 500-file Recall 98.9% was later corrected to 100% after an evaluator-code bug was found; real legacy generalization remains unverified.",
+          "usedIn": {"zh": "claude -p / --tools \"\" / 866 SQL", "ja": "claude -p / --tools \"\" / 866 SQL", "interview": "claude -p / --tools \"\" / 866 SQL / Opus 5.0"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-12-top-3",
+      "url": "https://atmarkit.itmedia.co.jp/ait/spv/2609/11/news018.html",
+      "originalTitle": "「危険コマンド停止率、AIは89％、人間だと14％」　Claude Codeが「自動モード」をデフォルトにした理由：「有害な操作」の承認は、手動の方が2倍多い",
+      "source": "＠IT",
+      "topic": "Claude Code / Security / Human Factors",
+      "access": "public-portion",
+      "accessNote": "＠ITの公開取得部分を確認。AnthropicのAuto Mode設計、1053-person Blinded Controlled Experiment、May-June flagged-session reevaluation、Apollo Research synthetic red-team結果を確認。各Evidence Setの母集団と条件が異なり、7% miss rateはReal Traffic Rateではない。",
+      "capturedAt": "2026-09-12T01:00:00.000Z",
+      "snapshotSha256": "47adf97ee217ec349cea0a6316a00ef787db6cf2aeeddfd5f554d4963fcb53a3",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "reported-controlled-experiment",
+          "statement": "1053人のBlind Controlled Experimentでは人間が危険Commandを止めた割合13.6%に対してAuto Modeは89%。Auto Modeは3回連続または1 Session 20回BlockでManual ApprovalへFallbackする。",
+          "quote": "テスターが危険なコマンドを止められたのは13.6％、自動モードは89％",
+          "locator": "＠IT article: controlled experiment and auto-mode fallback behavior",
+          "conditions": "Dangerous execution was simulated by substituted display text and did not actually run. Apollo Research's 7% miss rate comes from an adversarial synthetic set and is not a production-traffic miss rate.",
+          "usedIn": {"zh": "1053人 / 13.6% / 89%", "ja": "1053人 / 13.6% / 89%", "interview": "1053人 / 13.6% / 89% / 20回Block"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-12-top-4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/11/news033.html",
+      "originalTitle": "AI開発を「マルチプレイ」に　対話とコードを複数人でリアルタイム共有する「Delta」：「なぜこんなコードに？」の疑問を解消",
+      "source": "＠IT",
+      "topic": "AI Coding / Collaboration / Developer Experience",
+      "access": "public-portion",
+      "accessNote": "＠ITの公開取得部分を確認。Zed Industries DeltaのPrivate Beta、DeltaDBによるConversation/Worktree Realtime Replication、code-line comment追従、Cloud Runner、Delta.devのWebAssembly/WebGL、Claude Code terminal session同期を確認。Product announcementでありTeam productivityの独立Benchmarkではない。",
+      "capturedAt": "2026-09-12T01:00:00.000Z",
+      "snapshotSha256": "4f5d17883fdb47af81104ccb414c819987ac67e6e97769d556003dae5a50d395",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "product-announcement",
+          "statement": "DeltaDBはAIとのConversationとGit WorktreeをThread参加者へRealtime Replicateし、CommentをCode Changeへ追従させることで生成Reasoning ContextをTeam Artifactとして共有する。",
+          "quote": "DeltaDBは、会話とワークツリーをまとめて、スレッドに参加する全員へリアルタイムに複製する",
+          "locator": "＠IT article: DeltaDB realtime synchronization and code-context sections",
+          "conditions": "Delta is Private Beta. Realtime sync, browser WASM/WebGL and cloud-runner capabilities are product-design claims; production access control, scale and reliability need independent validation.",
+          "usedIn": {"zh": "DeltaDB / Worktree", "ja": "DeltaDB / Worktree", "interview": "DeltaDB / Worktree / Cloud Runner / Private Beta"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-12-top-5",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/11/news036.html",
+      "originalTitle": "ANAがネットワーク構築を「数カ月→数週間」に短縮　“システムごとに回線追加”からどう脱却した？：事業拡大に伴うネットワーク複雑化をどう抑えるか",
+      "source": "＠IT",
+      "topic": "Cloud / Network / SRE",
+      "access": "public-portion",
+      "accessNote": "＠ITの公開取得部分を確認。ANAがEquinix FabricをNetwork-as-a-Serviceとして使い、AWS/Azure/Google Cloud接続をCloud Network Hubへ集約した事例。構築期間約80%短縮と5-year TCO 30%削減目標はEquinix/ANA Caseの報告値・目標値。",
+      "capturedAt": "2026-09-12T01:00:00.000Z",
+      "snapshotSha256": "758cb55157229b6dca0eb6a7941c79be750c1e0bc9e7576f4acb69c7131f67e2",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "customer-case",
+          "statement": "ANAはEquinix FabricでAWS/Azure/Google Cloudへの接続を一元化し、Network構築期間を約80%短縮して数カ月から数週間へ短縮、5年間TCO 30%削減を目標としている。",
+          "quote": "ネットワーク構築期間を約80％短縮",
+          "locator": "＠IT article: cloud network hub and outcomes section",
+          "conditions": "Customer/vendor case; 80% is the reported build-time reduction, whereas 30% is a future five-year TCO target. Redundancy, latency and actual private-connect pricing are deployment-specific.",
+          "usedIn": {"zh": "Equinix Fabric / 約80% / TCO 30%", "ja": "Equinix Fabric / 約80% / TCO 30%", "interview": "Equinix Fabric / AWS・Azure・Google Cloud / 約80% / TCO 30%"}
+        }
+      ]
+    }
+  ]
+}
