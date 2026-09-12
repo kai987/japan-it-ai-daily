@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-11",
+  "generatedAt": "2026-09-12T19:25:53.981Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "仲介する",
+      "reading": "ちゅうかいする",
+      "exampleJa": "GatewayがAgentと複数のModel Providerの通信を仲介します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "a46850a053e1bf144ad4aeb9f7df0197b0fd02dbbf95a91e61fb15551cdc2516",
+      "example": "example-01.mp3",
+      "exampleHash": "0317a77f346d5c7e65d9a924f54eac83c675c8a536ad813c7774c780b765a7bc"
+    },
+    {
+      "index": 2,
+      "term": "絞り込む",
+      "reading": "しぼりこむ",
+      "exampleJa": "利用者のRoleに応じて表示するToolを絞り込みます。",
+      "word": "vocab-02.mp3",
+      "wordHash": "de95b4a91d2cdf5ba0bee966c5ea23747913808a8c4a0545d17b60229c5a4bbd",
+      "example": "example-02.mp3",
+      "exampleHash": "4064d0aae38758b47418935fe8280652e09c727a1fa4a9c0cb41b3648d101ef0"
+    },
+    {
+      "index": 3,
+      "term": "振り分ける",
+      "reading": "ふりわける",
+      "exampleJa": "障害時は別ProviderへRequestを振り分けます。",
+      "word": "vocab-03.mp3",
+      "wordHash": "d404dbc39eee3f0a2463f2dfd0853efa923b0c51e8c179e4f53df1e670cc18f1",
+      "example": "example-03.mp3",
+      "exampleHash": "f50f41c373b9f569da52aca15d906c2077e1fab443e8e89c17e39f5b3751424d"
+    },
+    {
+      "index": 4,
+      "term": "耐える",
+      "reading": "たえる",
+      "exampleJa": "外部接続がなくても業務を継続できるか、閉域環境で確かめます。",
+      "word": "vocab-04.mp3",
+      "wordHash": "d7b9300f08a852e4ce63d16f8668982c8ff2def050a3a74dbe1fcb60be0a849d",
+      "example": "example-04.mp3",
+      "exampleHash": "389b2117c2f1ec8301529752868ec72bd8085cd11d1fa8b36eeb58b8063c8607"
+    },
+    {
+      "index": 5,
+      "term": "把握する",
+      "reading": "はあくする",
+      "exampleJa": "Agentの稼働状況と利用しているData Sourceを把握します。",
+      "word": "vocab-05.mp3",
+      "wordHash": "1b0272357468181e5c5ae130d8dbb29282547ea09d4b0153f06e94e96307cc54",
+      "example": "example-05.mp3",
+      "exampleHash": "438ad0a02344c4eb3be2abbe7aa63aab5815ffcc9774c01d8529cfce62b036bd"
+    },
+    {
+      "index": 6,
+      "term": "組み合わせる",
+      "reading": "くみあわせる",
+      "exampleJa": "構造CheckとHuman Reviewを組み合わせてRiskを下げます。",
+      "word": "vocab-06.mp3",
+      "wordHash": "da31e91b5af75bae09a4ab6d3d6e0934e57314064c8ac536980a4a31596fad51",
+      "example": "example-06.mp3",
+      "exampleHash": "6ff0bde6f3246663ba2ad6ce63eff06f0525281b24483a0886290bc001d604b0"
+    },
+    {
+      "index": 7,
+      "term": "担う",
+      "reading": "になう",
+      "exampleJa": "高Riskな最終判断はHuman Ownerが担います。",
+      "word": "vocab-07.mp3",
+      "wordHash": "7d23077fed7f8e41a65505bbe6da2dedb53915a36b9582f641cd38b6699af21b",
+      "example": "example-07.mp3",
+      "exampleHash": "63ae1267ed944d0a8b5425e11a05f2450a5db8373bb8b6e129379a995c9ac07a"
+    },
+    {
+      "index": 8,
+      "term": "任命する",
+      "reading": "にんめいする",
+      "exampleJa": "Taskごとに適切な権限を持つAgentを任命します。",
+      "word": "vocab-08.mp3",
+      "wordHash": "1ae50992d8a8c7e56c40ff1a8735a0338adbf2dc8910cff7cb75acb47dd286fa",
+      "example": "example-08.mp3",
+      "exampleHash": "a174bf75aa600fd82da8fabd2468149b6cf6d75d3a3e34d2b4bca8c97d0379a6"
+    },
+    {
+      "index": 9,
+      "term": "改善する",
+      "reading": "かいぜんする",
+      "exampleJa": "本番Feedbackを翌日のWorkflow改善へ反映します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "a8d0c18900b7c3f4125c209111fe9f2416cf3fb0dd620c84d8bb08ffd1510512",
+      "example": "example-09.mp3",
+      "exampleHash": "3fad2dafc193b86312831e7ef6f14fcac5efcf460ad7b5ec2fd28cb2025c011f"
+    },
+    {
+      "index": 10,
+      "term": "統制",
+      "reading": "とうせい",
+      "exampleJa": "Agentの自律性を高めても、権限の統制はSystem側に残します。",
+      "word": "vocab-10.mp3",
+      "wordHash": "f15c7d31ff372e15da668cf66f08f9711b2c4a36741ec615656601e34f091759",
+      "example": "example-10.mp3",
+      "exampleHash": "41b9b79e191ca7ffd1fdbdbdce1827627203da930751f77d13d89571e329380e"
+    },
+    {
+      "index": 11,
+      "term": "上限",
+      "reading": "じょうげん",
+      "exampleJa": "TeamのCost Policyに合わせてEffortの上限を設けます。",
+      "word": "vocab-11.mp3",
+      "wordHash": "45395538a9c085e7e967aa7138ec063d292cfa4863c0a1f674367d473349cd85",
+      "example": "example-11.mp3",
+      "exampleHash": "919d6a59b3cf5941b554f25fbc476b66a197381eca94120dfe3d8d388372891b"
+    },
+    {
+      "index": 12,
+      "term": "透明性",
+      "reading": "とうめいせい",
+      "exampleJa": "Tool CallをTraceへ残し、Agentの判断過程の透明性を高めます。",
+      "word": "vocab-12.mp3",
+      "wordHash": "d57f7ab4acbeed6cdbb7cbfc966cede30325564e5cb9d8c45e81f2f189c20710",
+      "example": "example-12.mp3",
+      "exampleHash": "901d0e91852abc9c67f39f32eb472b1be77a945f42112bcefdd2c7b2ddb5269c"
+    },
+    {
+      "index": 13,
+      "term": "耐性",
+      "reading": "たいせい",
+      "exampleJa": "悪意ある入力に対する耐性をScenario別に確認します。",
+      "word": "vocab-13.mp3",
+      "wordHash": "ed8e1d99b4ca7644fbffa52bc18659e9cac9df81a631c5b34f619f44c6a172a5",
+      "example": "example-13.mp3",
+      "exampleHash": "a77b047285bf9f55a08b426ea098a3cb9b3fcbd188672929a81114e768980466"
+    },
+    {
+      "index": 14,
+      "term": "過度な",
+      "reading": "かどな",
+      "exampleJa": "過度な禁止Ruleだけでは、現場のShadow AIを増やす可能性があります。",
+      "word": "vocab-14.mp3",
+      "wordHash": "71530fde90e149ded534a5297fc27b991acbc84cb9ca13547d6e4365bb983bff",
+      "example": "example-14.mp3",
+      "exampleHash": "98ad6ff0a40de7c0265ea200279a2e761ec9153456dd7ae31e0875fbe65b45e3"
+    },
+    {
+      "index": 15,
+      "term": "固定的な",
+      "reading": "こていてきな",
+      "exampleJa": "Agentを固定的に配置せず、Taskに応じて生成します。",
+      "word": "vocab-15.mp3",
+      "wordHash": "1e04394c91d639dfb074e54b538f3dc61ac6dcdabd08f111efecd0fa28ee200a",
+      "example": "example-15.mp3",
+      "exampleHash": "d019ce9348eb8a78b09663ee11b852aa96e48992bbd3ff29df38b04d31b11182"
+    },
+    {
+      "index": 16,
+      "term": "細かな",
+      "reading": "こまかな",
+      "exampleJa": "業界固有の細かな判断RuleをInterviewで明らかにします。",
+      "word": "vocab-16.mp3",
+      "wordHash": "0d9557a9c7b7c3c794c5f4278731a164b9ee9319af51299149f638bc0f50e506",
+      "example": "example-16.mp3",
+      "exampleHash": "b029ca5226d4f51fc26c6a9e9cae3381d36e05acc648e82acdfa290267758350"
+    },
+    {
+      "index": 17,
+      "term": "一元的に",
+      "reading": "いちげんてきに",
+      "exampleJa": "Agentの登録と権限をPlatform側で一元的に管理します。",
+      "word": "vocab-17.mp3",
+      "wordHash": "92d7125fb185a357e27965b86c693df92d6e32a300221eae5d6cdfc2d2caf51a",
+      "example": "example-17.mp3",
+      "exampleHash": "e49aeded227e0b961f7c307aa4d10935fc15d34fd79af0ac999cbc4ec9311e1a"
+    },
+    {
+      "index": 18,
+      "term": "都度",
+      "reading": "つど",
+      "exampleJa": "高Risk Actionはその都度Human Approvalを要求します。",
+      "word": "vocab-18.mp3",
+      "wordHash": "d08e541836341e58f57cdf21c539bfa74210031662c78ca848465896f9666fb9",
+      "example": "example-18.mp3",
+      "exampleHash": "34dcdaf7e491ce15e8266ceeb74aaadaf76b9c742948dcbda4b507d12e4664f3"
+    },
+    {
+      "index": 19,
+      "term": "継続的に",
+      "reading": "けいぞくてきに",
+      "exampleJa": "本番Traceを見ながらPolicyを継続的に改善します。",
+      "word": "vocab-19.mp3",
+      "wordHash": "3b9ed58e6b9bea666da1daf0c69b86632da97a53355505ea447867bb192e2a39",
+      "example": "example-19.mp3",
+      "exampleHash": "9cccedd35ed5038c5e934562127e5eb337c97987c03795de0ec002ed644f4f21"
+    },
+    {
+      "index": 20,
+      "term": "ただし",
+      "reading": "ただし",
+      "exampleJa": "Gatewayで接続は共通化できます。ただし、権限Policyは別途設計が必要です。",
+      "word": "vocab-20.mp3",
+      "wordHash": "59966a98146429a6a802b8f79904bb67077ff9ef8bc2eb902af03d214811a33c",
+      "example": "example-20.mp3",
+      "exampleHash": "dfafacea5afa0cdd53228ee5b7b90a4d34a52b148d26e0b1eb1a832ab0118e21"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "Agent RouterはModel接続にとどまらず、MCP Toolの認可や使用量制御も扱います。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "6faa9f9915b2686597787aebca922b4313b350af589ce686f4bb2c4516930984"
+    },
+    {
+      "index": 2,
+      "pattern": "～を余儀なくされる",
+      "exampleJa": "AI基盤を自社運用する場合、PatchやCapacityの継続管理を余儀なくされます。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "30e031e8f148b219a1359949db51ff18908a5f3a9d5cd700eed79a611fc28468"
+    },
+    {
+      "index": 3,
+      "pattern": "～に至るまで",
+      "exampleJa": "Effortの上限からSession再開、Managed Permissionに至るまでRuntimeを検証します。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "1cb1392a3afc8f75f61b19921a82b694eeb154c371a32c01a7f66828a217debf"
+    },
+    {
+      "index": 4,
+      "pattern": "～に応じて",
+      "exampleJa": "業務ニーズに応じて必要なAI社員を生成します。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "cc3dcedc81131318b1cb5483a2931d982326cce9f10ce3e0233170f61697e531"
+    },
+    {
+      "index": 5,
+      "pattern": "～一方で",
+      "exampleJa": "PlatformはWorkflow作成を速くする一方で、業務固有の判断は別途詰める必要があります。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "2e2511f202e89c7c4ca4baaa52c78c1d5685d283ed8ee734c7c97890e7399405"
+    },
+    {
+      "index": 6,
+      "pattern": "～たうえで",
+      "exampleJa": "Managed Settingsの実効値を確認したうえで、Claude CodeをTeamへ展開します。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "d4ec1607939e156761a4349e433985b05381a691b01a825ee1c83e7925ccde7d"
+    },
+    {
+      "index": 7,
+      "pattern": "～とは限らない",
+      "exampleJa": "30分でWorkflowを作れても、業務固有Logicまで十分だとは限りません。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "467fd65cd2d35ed86e7ce97a31ef499f36376654c469174e67bd514089c722cd"
+    }
+  ]
+}

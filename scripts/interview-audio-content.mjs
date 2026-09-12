@@ -58,7 +58,7 @@ export const parseInterview = (source) => {
   };
   for (const line of lines) {
     const trimmed = line.trim();
-    if (/^\*\*.*面试问题.*\*\*/.test(trimmed)) {
+    if (/^\*\*.*(?:面试问题|面接質問).*\*\*/.test(trimmed)) {
       flush();
       role = 'question';
       acceptPlain = true;
@@ -89,7 +89,7 @@ export const parseInterview = (source) => {
 };
 
 export const parseReview = (source) => {
-  const section = extractSection(source, '面试复习卡');
+  const section = extractSection(source, '面试复习卡') || extractSection(source, '面接復習カード');
   if (!section) return [];
   const quoted = quoteBlocks(section);
   if (quoted.length) return quoted;

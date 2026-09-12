@@ -18,3 +18,10 @@ test.each(['约30秒回答', '约30秒日语回答', '約30秒日本語回答', 
     expect(parseInterview(source)).toEqual([{ type: 'question', text: '質問ですか。' }, { type: 'answer', text: '第一文。 第二文。' }]);
   },
 );
+
+test('plain and quoted bilingual question labels preserve question and answer boundaries', () => {
+  for (const question of ['面试问题', '面接質問']) {
+    const plain = `## 3. 面接で使えるポイント\n**${question}：**\n\n質問ですか。\n\n**約30秒回答：**\n\n回答です。\n\n**キーワード：**\n除外\n`;
+    expect(parseInterview(plain)).toEqual([{ type: 'question', text: '質問ですか。' }, { type: 'answer', text: '回答です。' }]);
+  }
+});

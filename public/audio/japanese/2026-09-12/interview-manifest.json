@@ -1,0 +1,150 @@
+{
+  "date": "2026-09-12",
+  "generatedAt": "2026-09-12T19:29:04.958Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "SnowflakeのようなEnterprise AI基盤で、ROIとGovernanceをどう両立しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "07da9bb9da798c3d9b425b59d24cc1dece44222d5438c6f003d982f6f3b2f966",
+      "durationSeconds": 6.58
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "本番では、AI利用量より業務KPIと統制を先に置きます。三井住友トラスト・アセットマネジメントは約650業務をSkill化し、120案件に着手、Snowflake上のObjectと利用Logを結び付けています。Cortex AI Gatewayは低Cost ModelへRoutingできます。ただしKeynoteの事例値なので、自社ではCost-per-OutcomeとRBACを実測します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "703ad4d3a52f37f9ee7564c9f2194f8dedc4cf3178ec38d393d4812dddebc13d",
+      "durationSeconds": 28.188,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "Claude Codeを大量のLegacy Code調査に使う場合、評価指標をどう設計しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "b8c1fbe4b84fe6ab5eb52e2fe44482307fc4c619e94c7a64cc78cdac254d1a09",
+      "durationSeconds": 6.478
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "移行影響調査なら、見逃しを減らすRecallを第一指標にします。記事ではclaude -pを--tools \"\"でHeadless実行し、高難度100ファイル・866 SQLでOpus 5.0がRecall 100％、未照合0でした。ただし、評価Dataは生成Sampleで実Legacyより単純なので、実案件ではHuman SamplingとEvaluator自体のTestも残します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "98720a7ad85c5a329b1ca0948993bf64efdebc409e98134e145f10e9cf40e774",
+      "durationSeconds": 26.899,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "Claude Codeのauto modeで、人手承認よりClassifierを使う設計をどう評価しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "bbb3d0f40b60e33c55e27b1eef426b058202e5ba5083ce582c2ecfa944b7ec60",
+      "durationSeconds": 6.707
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "承認回数を増やすより、危険操作を分類器で止める設計を評価します。1053人の対照実験では、人が危険Commandを止めたのは13.6％、auto modeは89％でした。また3回連続、または1 Sessionで20回Blockすると手動承認へ戻ります。ただしApolloの見逃し率7％は合成攻撃Setなので、実Trafficの率とは扱いません。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "25a2506696abf6b37503bf58a01b5c8b1fa0c519c85256bbe9e0a60e112efbe6",
+      "durationSeconds": 28.78,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "AI Codingを複数人で進めるとき、会話Contextをどう共有しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "8ffd824b869ed537670f66e62b94212a5d89690eeb03793c1f5e6492971c044a",
+      "durationSeconds": 5.897
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "AI CodingをTeam開発にするなら、Diffだけでなく生成理由のContextも共有します。DeltaはDeltaDBで会話とWorktreeをThread参加者へReal-time複製し、Code行へのCommentも変更に追従します。Cloud RunnerならPCを閉じてもAgentを継続できます。ただしPrivate Betaなので、Git運用、Access Control、同期性能を本番前に確認します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "1ebf3d4050b071487f37e0ce4887b429f7c8c737482e21f9f8c52d099b35deb4",
+      "durationSeconds": 28.34,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "Multi-cloud Networkを拡張するとき、接続Architectureをどう設計しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "1894e26e8557498fdd56912342145511c7b7bb61821dae0b71ea228fe5b44ccb",
+      "durationSeconds": 6.199
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "Multi-cloud接続は専用回線の追加ではなく、共通Hubへ集約します。ANAはEquinix FabricでAWS、Azure、Google Cloudへの接続を一元化し、構築期間を約80％短縮して数カ月から数週間にしました。5年間TCOは30％削減が目標です。ただしVendor事例なので、冗長性、Latency、Private接続Costを自社構成で検証します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "0c054b0070f33e59501447ecd5badd98f1ed7dfa7eccd5c26e7f3b53eaa9aaf2",
+      "durationSeconds": 30.338,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "SnowflakeのようなAgentic Enterpriseで、利用量とBusiness Valueをどう結び付けますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "73877ba95ef915d4c7baef912b848f31981ebb4f280abfcc248cbf6dfd1d62a7",
+      "durationSeconds": 7.139
+    },
+    {
+      "index": 2,
+      "text": "LLM Batch EvaluationでEvaluator自体を疑う必要があるのはなぜですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "8a6df625bb46beb8b4a0e5f6fa2c97fb2bff97a0a436f6b635e16c55211ce3fd",
+      "durationSeconds": 6.002
+    },
+    {
+      "index": 3,
+      "text": "Human Approvalを増やせばAgent Securityが上がるとは限らないのはなぜですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "415f0d259fc9105492e8c0914d92713935f6b45fc839a1dbd1fc6e71b27934d0",
+      "durationSeconds": 5.642
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-12T19:29:05.410Z"
+}

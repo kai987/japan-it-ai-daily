@@ -4,15 +4,10 @@ import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { parse } from 'yaml';
 import { policy } from './daily-quality-policy.mjs';
+import { parseInterview, parseReview } from './interview-audio-content.mjs';
 
 const normalize = (text) => String(text ?? '').replace(/\s+/g, ' ').trim();
 const digest = (bytes) => createHash('sha256').update(bytes).digest('hex');
-const sectionQuotes = (source, number) => {
-  const section = source.match(new RegExp(`^## ${number}\\.[^\\n]*\\n([\\s\\S]*?)(?=^#{1,2} |(?![\\s\\S]))`, 'm'))?.[1] ?? '';
-  return [...section.matchAll(/(?:^>[^\n]*(?:\n|$))+/gm)]
-    .map(([block]) => normalize(block.replace(/^>\s?/gm, '')));
-};
-
 export const assertSame = (actual, expected, label) => {
   if (JSON.stringify(actual) !== JSON.stringify(expected)) throw new Error(`${label}: content/audio mapping mismatch`);
 };
@@ -38,8 +33,8 @@ export const collectAudioAssets = (root) => {
     if (expectedReview.length !== 3) throw new Error(`${date}: expected three review recordings`);
     for (const dir of ['daily', 'daily-ja']) {
       const source = read(`src/content/${dir}/${name}`);
-      assertSame(sectionQuotes(source, 3), expectedInterview, `${dir}/${date} interview`);
-      assertSame(sectionQuotes(source, 5), expectedReview, `${dir}/${date} review`);
+      assertSame(parseInterview(source).map((item) => normalize(item.text)), expectedInterview, `${dir}/${date} interview`);
+      assertSame(parseReview(source).map(normalize), expectedReview, `${dir}/${date} review`);
     }
     for (const dir of ['japanese', 'japanese-ja']) {
       const source = read(`src/content/${dir}/${name}`);

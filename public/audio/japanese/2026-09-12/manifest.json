@@ -1,0 +1,290 @@
+{
+  "date": "2026-09-12",
+  "generatedAt": "2026-09-12T19:28:00.740Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "実績",
+      "reading": "じっせき",
+      "exampleJa": "導入実績と将来目標を分けてArchitecture Reviewに記録します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "534ac933f77a273db35b41c9abb38483a622c75705edc810d107de7278405da6",
+      "example": "example-01.mp3",
+      "exampleHash": "ba5cdecfa609e8789b0e8ff2dfc35d247733006a146bc046bccda9dcda5616e1"
+    },
+    {
+      "index": 2,
+      "term": "見逃し",
+      "reading": "みのがし",
+      "exampleJa": "MigrationではSQLの見逃しが本番障害につながるためRecallを重視します。",
+      "word": "vocab-02.mp3",
+      "wordHash": "fc19a94efb9b296531c724ac8c7d50ea7fb798f1efae8fefa1f656139b3d0134",
+      "example": "example-02.mp3",
+      "exampleHash": "6afb006e8eb8da2f722da5471cbc5aae905b6e1df43c90e977d0e481704d8cfd"
+    },
+    {
+      "index": 3,
+      "term": "文脈",
+      "reading": "ぶんみゃく",
+      "exampleJa": "Diffだけでなく、設計判断に至った文脈もReviewerへ共有します。",
+      "word": "vocab-03.mp3",
+      "wordHash": "6890e77e22e9f9c97bc9893d35fbb2100eedcbbbd32a14268bd19e4cd4e0416b",
+      "example": "example-03.mp3",
+      "exampleHash": "ad242c2e94e3a80bd198201c3c9cb7402bc6aae2f1a28273a867b0c8888423ed"
+    },
+    {
+      "index": 4,
+      "term": "俊敏性",
+      "reading": "しゅんびんせい",
+      "exampleJa": "共通Network Hubによって新Service立ち上げの俊敏性を高めます。",
+      "word": "vocab-04.mp3",
+      "wordHash": "92225c3a85204cdc1912830643ea4b74cc52442895dbadd3d5efbd7a883d26f1",
+      "example": "example-04.mp3",
+      "exampleHash": "cc4e2857e366890a4735353844a5049946daaa045a0803238b0688d6f4556480"
+    },
+    {
+      "index": 5,
+      "term": "統制",
+      "reading": "とうせい",
+      "exampleJa": "AI利用を禁止するのではなく、RBACとLogで統制を効かせます。",
+      "word": "vocab-05.mp3",
+      "wordHash": "f15c7d31ff372e15da668cf66f08f9711b2c4a36741ec615656601e34f091759",
+      "example": "example-05.mp3",
+      "exampleHash": "ba5f480aebca394ee6225d902509e6a894265e9db53c9d4cd9d6545f0dcdf6d8"
+    },
+    {
+      "index": 6,
+      "term": "洗い出す",
+      "reading": "あらいだす",
+      "exampleJa": "Upgrade前にDeprecated APIの利用箇所を洗い出します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "70a8c691994a4f5a2e2a01b2c40178102c468ea596ad806aa24296098150db0c",
+      "example": "example-06.mp3",
+      "exampleHash": "31e3c39a028d6782d646a9ab4bc68c62b506598e37040313cdb344026efb2b1d"
+    },
+    {
+      "index": 7,
+      "term": "取りこぼす",
+      "reading": "とりこぼす",
+      "exampleJa": "大量Fileを処理しても重要SQLを取りこぼさない仕組みが必要です。",
+      "word": "vocab-07.mp3",
+      "wordHash": "a95b2784dafac0c816972dc86f27cfa38aef2a35f74122060904eeb3c5cc5cf9",
+      "example": "example-07.mp3",
+      "exampleHash": "0ed326d0d77c188985ace42b201020e4cf6aa5e49a7ba1593ad66dcc8f0428ef"
+    },
+    {
+      "index": 8,
+      "term": "組み立てる",
+      "reading": "くみたてる",
+      "exampleJa": "複数の条件から動的にSQLを組み立てるCodeも抽出対象にします。",
+      "word": "vocab-08.mp3",
+      "wordHash": "048ad0fb2653b2a8d39ff315add5c48d6620b3a0753254a060f08a7e0a47c157",
+      "example": "example-08.mp3",
+      "exampleHash": "26beae514ae7fe37ac3e571e697c5670bcf315b99da92c18df1477df2d1cddc0"
+    },
+    {
+      "index": 9,
+      "term": "結び付ける",
+      "reading": "むすびつける",
+      "exampleJa": "Agentの利用量をBusiness KPIと結び付けて評価します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "c03b5986cb3c19da933ed1381a9b4c99dd25b16f8eb44d876df18add52fb91ff",
+      "example": "example-09.mp3",
+      "exampleHash": "0ee6e9bf76306ec823170ac4f378880a2575ce047ddd9c0380a58c2f2a360434"
+    },
+    {
+      "index": 10,
+      "term": "抑える",
+      "reading": "おさえる",
+      "exampleJa": "共通基盤に集約してSystem追加時の複雑さを抑えます。",
+      "word": "vocab-10.mp3",
+      "wordHash": "8eab76035dab35c86a9d486a200ad7b4a26e0e338df92fb98f5b1e54eab45bfb",
+      "example": "example-10.mp3",
+      "exampleHash": "afe93f8b8f707e0a51d577913cab28815f0acaa60502177e44267ab8c0438759"
+    },
+    {
+      "index": 11,
+      "term": "引き継ぐ",
+      "reading": "ひきつぐ",
+      "exampleJa": "会話履歴を残し、別のEngineerが翌日すぐ作業を引き継げるようにします。",
+      "word": "vocab-11.mp3",
+      "wordHash": "27f0280fefa547a7fb014c643fb49c943754c6264be55e07f21f8c8b1c248473",
+      "example": "example-11.mp3",
+      "exampleHash": "4569456d87311806054f9a054a487ed9397279459d79a17048992e70eb8afafe"
+    },
+    {
+      "index": 12,
+      "term": "追随する",
+      "reading": "ついずいする",
+      "exampleJa": "CommentがCode変更に追随すればReview Contextが古くなりにくくなります。",
+      "word": "vocab-12.mp3",
+      "wordHash": "0ad25b17d80fbec4e9acb07fc4b9374d24cfe9bc300a805eb9ddf2fe55b400d5",
+      "example": "example-12.mp3",
+      "exampleHash": "438ecd08dd83255d3bf3cf81b13c9511a23549131224fbb4e768c45df5095c03"
+    },
+    {
+      "index": 13,
+      "term": "切り替える",
+      "reading": "きりかえる",
+      "exampleJa": "Classifierが判断できない場合は手動承認へ切り替えます。",
+      "word": "vocab-13.mp3",
+      "wordHash": "4090e9c6a6bd0805e503a0221da7f96c2038cab60a5f9c8db6a5146916ed3c85",
+      "example": "example-13.mp3",
+      "exampleHash": "45c3ef652684689c33caa02bec5b06c9ec9ad88f33169d748aa0d53e9a3631d1"
+    },
+    {
+      "index": 14,
+      "term": "複雑な",
+      "reading": "ふくざつな",
+      "exampleJa": "複雑な依存関係ほどGround Truthを用意して評価します。",
+      "word": "vocab-14.mp3",
+      "wordHash": "3640c184ca6f3f6d2556a3374750ded5e10e975c0426dc309e4238e3c005ef69",
+      "example": "example-14.mp3",
+      "exampleHash": "0a912dc92cde4cd47500e718752158f63affd311f1bcded3307eba33bf993128"
+    },
+    {
+      "index": 15,
+      "term": "慎重な",
+      "reading": "しんちょうな",
+      "exampleJa": "Production変更では自動化しても慎重なEscalation Ruleを残します。",
+      "word": "vocab-15.mp3",
+      "wordHash": "7672d1c5fa8551cc35d69d69a01ff6bcecd2918cd2bbb5ca98d7d70a93557540",
+      "example": "example-15.mp3",
+      "exampleHash": "1f15866896ea0761dbf6740e0661415dcf8db661e758ffecbfe548e3e8367b3b"
+    },
+    {
+      "index": 16,
+      "term": "取り返しのつかない",
+      "reading": "とりかえしのつかない",
+      "exampleJa": "取り返しのつかないActionはClassifierだけでなく強いGateを設けます。",
+      "word": "vocab-16.mp3",
+      "wordHash": "cf280a343f058b8d92c7c5ff9f08a03bdb8c31084c34911d8a42044ec88037d7",
+      "example": "example-16.mp3",
+      "exampleHash": "bc7b765f664f2f599e9ec0cb3d4bb30deaf3f6fbb3a02ebbafb392132eecd2f4"
+    },
+    {
+      "index": 17,
+      "term": "一元的に",
+      "reading": "いちげんてきに",
+      "exampleJa": "Cloud接続とPolicyを共通Hubで一元的に管理します。",
+      "word": "vocab-17.mp3",
+      "wordHash": "92d7125fb185a357e27965b86c693df92d6e32a300221eae5d6cdfc2d2caf51a",
+      "example": "example-17.mp3",
+      "exampleHash": "32d9d8cbb39a6a44c93c880151ddd5975822311f71aed38b83f2cb27da657873"
+    },
+    {
+      "index": 18,
+      "term": "反射的に",
+      "reading": "はんしゃてきに",
+      "exampleJa": "確認Dialogが多すぎると利用者は反射的に承認しやすくなります。",
+      "word": "vocab-18.mp3",
+      "wordHash": "a9cc1422b913540d3fc83a55ed943d2a0687fe1ee29c8753e2aaff47b2b5f233",
+      "example": "example-18.mp3",
+      "exampleHash": "260918aa314c7f7420d4f14e59b05a4d9ab0e9c4a2e546546c1c090bcc813ba5"
+    },
+    {
+      "index": 19,
+      "term": "大幅に",
+      "reading": "おおはばに",
+      "exampleJa": "構築時間が大幅に短縮してもReliabilityの確認は省きません。",
+      "word": "vocab-19.mp3",
+      "wordHash": "10deedf1f7bbba71f9e417e14a0a17c5cc945482a3511c3cc157d4c33b883ffe",
+      "example": "example-19.mp3",
+      "exampleHash": "1c86a2435d4070b1ca4f0a1db5475bca2f6bb02b67b1a9cfbf101de4cdb2643f"
+    },
+    {
+      "index": 20,
+      "term": "ただし",
+      "reading": "ただし",
+      "exampleJa": "Auto modeは有力です。ただし、Synthetic Testの7％を実Trafficの率とは扱いません。",
+      "word": "vocab-20.mp3",
+      "wordHash": "59966a98146429a6a802b8f79904bb67077ff9ef8bc2eb902af03d214811a33c",
+      "example": "example-20.mp3",
+      "exampleHash": "d3ac2950680e655b60204ff556c1870dd23aa5bec171d1e14c68e8b45df0d534"
+    },
+    {
+      "index": 21,
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "OpusはCostが高い一方で、このTestでは未照合が0でした。",
+      "word": "vocab-21.mp3",
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-21.mp3",
+      "exampleHash": "9c3167cc262255350fcaa3d81e8a2cbcf43cae98ff06ab4a15b1412d6597cbe0"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "Agentic EnterpriseではModel利用にとどまらず、RBACやCost、業務KPIまで管理します。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "64c27d082cc2f6f6c4c0f27c5357330b2ee851e0a73495a7540b999ff3d200e9"
+    },
+    {
+      "index": 2,
+      "pattern": "～を余儀なくされる",
+      "exampleJa": "Systemごとに回線を追加し続ければ、Network Architectureの見直しを余儀なくされます。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "71754920a9189cfa73a9068c6265f27c9d7c37f402164653d698b76fff3970cd"
+    },
+    {
+      "index": 3,
+      "pattern": "～に至るまで",
+      "exampleJa": "単純なLiteralから複数Methodに分散したSQLに至るまで抽出精度を検証します。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "29d1bf32e579671bc8b9e06c6d458add15e07d75ae6fa9974f94b060158901c0"
+    },
+    {
+      "index": 4,
+      "pattern": "～たうえで",
+      "exampleJa": "Private接続のLatencyと冗長性を確認したうえで、Network Hubへ移行します。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "b405343daf9698e174fccde17c23e6034ea11c540b687cdbde902abad1a26ce7"
+    },
+    {
+      "index": 5,
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの難易度とCostに応じて利用するModelを切り替えます。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "3b320062a1411cf651bb5c9c36a580abbc07797f4feb34d5f9ce4d1b6598450b"
+    },
+    {
+      "index": 6,
+      "pattern": "～一方で",
+      "exampleJa": "HaikuはCostが低い一方で、この検証では3Modelの中で最も時間がかかりました。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "abdec6b5fb3adff169e06fe409ca23a7db0dea7f7100db0ac08d6432d1e7b5eb"
+    },
+    {
+      "index": 7,
+      "pattern": "～とは限らない",
+      "exampleJa": "Synthetic DataでRecallが100％でも、実Legacy Codeで同じ結果になるとは限りません。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "5736baa2aefb33e1febdaf3e9f85dd90c3a68ae4bd37b90955f72c7a0c3780dc"
+    }
+  ]
+}
