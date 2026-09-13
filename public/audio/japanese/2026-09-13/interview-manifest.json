@@ -1,0 +1,150 @@
+{
+  "date": "2026-09-13",
+  "generatedAt": "2026-09-13T06:38:49.508Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "Sakana Fuguのような複数モデル統合基盤を企業で採用する場合、何を評価しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "f4e44cebc58027a80655dd7d2840f9ffe3f87ca0e5818cbf4cbc0d5e0eba76e2",
+      "durationSeconds": 6.558
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "単一Benchmarkだけでなく、Routing後の品質とTask単位の総Costを見ます。Fugu Ultra v2はDeepSWEなど一部指標でGPT-6 AstraやFable 5.1超えをうたいながら、その3モデルを連携先に含まず、Fugu Maxは出力6ドル/100万Tokenです。ただしVendor評価なので、自社TaskでRouting先、Latency、再現性を測ります。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "7bf655ce4096e2ed3223dc749e3bc1bae036ddf85eb40e2034fdafd11142fb9b",
+      "durationSeconds": 27.146,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "社内RAGの精度が上がらない場合、Model変更の前に何を見直しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "c5e5c5943b46edbcdb41bc1c93c9cbf4f930633353b348c368ffe00e78e54f80",
+      "durationSeconds": 5.595
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "まず検索対象のDocument Qualityを直します。NTTドコモソリューションズでは、主語や述語を省く「パワポ文書」と0.6版・0.7版のFile乱立がRAGの判断を難しくしたため、日報・週報をText中心へ変えました。現在はIT運用の約30％をAgentへ任せていますが、ただし70％は目標値なので、WhyとOutcomeを先に定義して効果を測ります。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "9cf77459a4fa1b5703d1e78130b132429dee80334f8650e8dc7d947c1992bab1",
+      "durationSeconds": 29.594,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "フィジカルAI用の学習Dataを本番品質へ近づけるには、何を設計しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "c996d965cfeb1500aed1510bdd456b43b4e326518279fed9637dc45bf4fe4da8",
+      "durationSeconds": 6.164
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "成功例だけでなく、復旧可能な失敗もDatasetへ残します。J-HRTI関東データファクトリーでは35台のHumanoidをVR操作し、頭部と両手首の3 Camera映像へAction Labelを付け、落下しても掴み直せる失敗は教材化します。ただし50台計画は建物制約で35台運用になっており、全国10拠点や産業特化Modelは今後の計画です。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "7d1ecc20613c61fa5e760fee550374cec6126a888fa53634271371f4cb123cfc",
+      "durationSeconds": 28.209,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "AWS Transform for .NETをCIやAgentから自動実行するとき、どこをGateにしますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "e8c5e736f4fda2eb35bd7da17eada453241af17c6480278a52d7d6564a4c2791",
+      "durationSeconds": 7.719
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "CLI化してもTrustとValidationを分けます。記事ではatx custom def execに-xと-tを付け、AWS/dotnet-modernizationでnet48の小規模Appをnet10.0へ変換し、dotnet buildとGit Commitまで自動化しました。ただし-tは全Toolを信頼し、著者も変換Codeの妥当性は未評価なので、大規模SolutionではTestとReviewを別Gateにします。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "dc6f43750784e1e93297c6fbe650d09109cf43f794541fe2a2951769c2a569a8",
+      "durationSeconds": 29.003,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "AI生成レシートのように見た目だけでは偽造を判別しにくい場合、経費精算をどう設計しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "a473311ad0cbdefd917fe6116d9d94c6476d825808071e66af4006e649fe79a8",
+      "durationSeconds": 7.267
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "画像判定を唯一のEvidenceにせず、支払いDataとの照合を主軸にします。マネーフォワード クラウド経費はコーポレートカードや外部Serviceの決済Dataを併用し、領収書だけで精算しない仕組みを取っています。ChatGPT Images 2.5の生成物は見た目で判別しにくいため、ただしAI検知機能は検討段階で、原本の抜き打ち確認も残します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "b0ac4d1a4b9992c86b25ad1e86eaa0d04d9b0574b1139262afc21623ef787363",
+      "durationSeconds": 25.879,
+      "durationStatus": "warn"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "Multi-model Routerを導入するとき、Model単価以外に何を測りますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "442108a1f22acf2714f0c8ef2a3ab09cb325af15d83e3213242102560898c805",
+      "durationSeconds": 5.583
+    },
+    {
+      "index": 2,
+      "text": "RAGの回答精度が低いとき、Model変更より先に確認すべきことは何ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "09d5d4ee6e5351fdb3b5056f52ed667e2f4f4bd74f10984f96c595130a65b145",
+      "durationSeconds": 6.315
+    },
+    {
+      "index": 3,
+      "text": "AI生成Artifactの見た目が本物と区別しにくい場合、どう検証しますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "d87d67902e643cd65898f44efe17f6f86934c0bcfe0cfc1c76cd22dff6ec262d",
+      "durationSeconds": 6.048
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-13T06:38:49.956Z"
+}

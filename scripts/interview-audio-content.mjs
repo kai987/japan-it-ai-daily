@@ -58,7 +58,7 @@ export const parseInterview = (source) => {
   };
   for (const line of lines) {
     const trimmed = line.trim();
-    if (/^\*\*.*(?:面试问题|面接質問).*\*\*/.test(trimmed)) {
+    if (/^\*\*.*(?:面试问题|面接質問|質問).*\*\*/.test(trimmed)) {
       flush();
       role = 'question';
       acceptPlain = true;

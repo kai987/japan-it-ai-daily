@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-13",
+  "generatedAt": "2026-09-13T06:37:49.586Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "根拠",
+      "reading": "こんきょ",
+      "exampleJa": "採用判断の根拠をBenchmarkだけに限定しません。",
+      "word": "vocab-01.mp3",
+      "wordHash": "a6f653ee0feb745642c64400f7f87108014c78ad8ca97c067589d143b2b36843",
+      "example": "example-01.mp3",
+      "exampleHash": "55360d67dca78c615d3dba212e7e5935401a3f846cdde019ce7af26c13a30a55"
+    },
+    {
+      "index": 2,
+      "term": "真偽",
+      "reading": "しんぎ",
+      "exampleJa": "画像の見た目だけで領収書の真偽を判断しません。",
+      "word": "vocab-02.mp3",
+      "wordHash": "62f65b7631f47189c77033175eeec06b3c86f30e8f7f0d4bbc5b130e5c0fe71f",
+      "example": "example-02.mp3",
+      "exampleHash": "ed2297a956476b2288b08718dc6a52c2cbac2e11361fecfe99df97fd9f41de63"
+    },
+    {
+      "index": 3,
+      "term": "前提",
+      "reading": "ぜんてい",
+      "exampleJa": "AI Agent導入の前提として、参照Dataの品質を整えます。",
+      "word": "vocab-03.mp3",
+      "wordHash": "09d2c93d539759ad1e3234215fbd6bb5add4e2b3d706c10d60a86d22ce521b53",
+      "example": "example-03.mp3",
+      "exampleHash": "fc10e395ddbd5f45ccbd73d00b85b18a2a8d9d3515b4f5d1396c00fce7815e8d"
+    },
+    {
+      "index": 4,
+      "term": "余地",
+      "reading": "よち",
+      "exampleJa": "失敗Dataの残し方には、まだ改善の余地があります。",
+      "word": "vocab-04.mp3",
+      "wordHash": "5eeaf51dba6f3d93f80c5c00255d967f8c22d5df1ff8999284bef9b8aa074957",
+      "example": "example-04.mp3",
+      "exampleHash": "5347c25b8009643f15a89e37301de6666d78a1b6c60b0cee523534473c97deaf"
+    },
+    {
+      "index": 5,
+      "term": "粒度",
+      "reading": "りゅうど",
+      "exampleJa": "Action Labelの粒度をそろえてDatasetを作ります。",
+      "word": "vocab-05.mp3",
+      "wordHash": "0f6c0a247cf300764cf79f5937fc95d07f41c9cbd1e6718769fe4443b70ff67f",
+      "example": "example-05.mp3",
+      "exampleHash": "00916639e088f767860da03f6fb76c35cdd7371c960c6b6f756808f64315b4a7"
+    },
+    {
+      "index": 6,
+      "term": "再現性",
+      "reading": "さいげんせい",
+      "exampleJa": "自社Taskで同じ傾向が出るか再現性を確認します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "7e2d6f4e94362625b1fa4d6d17a167a19c2c5693620d74a11c479db5d7ca1b62",
+      "example": "example-06.mp3",
+      "exampleHash": "362aa2e4da434b1b11cd8e72207581918260e5900d85d7139ef8434f88177f6a"
+    },
+    {
+      "index": 7,
+      "term": "見極める",
+      "reading": "みきわめる",
+      "exampleJa": "Modelの価格表だけでなく、Taskへの適否を見極めます。",
+      "word": "vocab-07.mp3",
+      "wordHash": "0279957524a34c9df540952e581ca078e4baedc6a9c6d610b5bff65540955aa2",
+      "example": "example-07.mp3",
+      "exampleHash": "c5f0133bdf9ac83d43beca44360fb4109312fc02131525a575ccd95b0ad02d88"
+    },
+    {
+      "index": 8,
+      "term": "使い分ける",
+      "reading": "つかいわける",
+      "exampleJa": "難易度に応じて複数Modelを使い分けます。",
+      "word": "vocab-08.mp3",
+      "wordHash": "20a2643aa53e0d09386e54dcd12b2586d30e596c21632bbda5b9c57dea0202e5",
+      "example": "example-08.mp3",
+      "exampleHash": "2372e2adc444d1a3f9fd8ab5b8ea147ba824cbb251688b4add754eda15bf23ce"
+    },
+    {
+      "index": 9,
+      "term": "補う",
+      "reading": "おぎなう",
+      "exampleJa": "Ontologyで表記揺れを補っても、元文書の品質は整えます。",
+      "word": "vocab-09.mp3",
+      "wordHash": "ec7507b74bbdabc94e83d2f69dbcfa591b2b38dad143736063b5603371ab5aaf",
+      "example": "example-09.mp3",
+      "exampleHash": "111dfeacb956107329d56679541eee838f0c9f45f041c0cc610e8e227091bca7"
+    },
+    {
+      "index": 10,
+      "term": "整える",
+      "reading": "ととのえる",
+      "exampleJa": "AIが参照しやすい形に社内文書を整えます。",
+      "word": "vocab-10.mp3",
+      "wordHash": "7239b56113cfc31c4b1575aec2c9c9f0188fc3b507b81606f0d377baaf321fa4",
+      "example": "example-10.mp3",
+      "exampleHash": "edb1ef0dddad10e288a4acbea86102dc5e8fa33ece3bfe99cf930dff66a0b09e"
+    },
+    {
+      "index": 11,
+      "term": "取り除く",
+      "reading": "とりのぞく",
+      "exampleJa": "設備不具合によるDataは学習対象から取り除きます。",
+      "word": "vocab-11.mp3",
+      "wordHash": "a26c1efeb471481afa838c3d9444f59128525ccf03d459d95170bfa31c5debab",
+      "example": "example-11.mp3",
+      "exampleHash": "640d4a850c8bc6facb8c49046f5875180b9be9aec266bb5101f2c133fac203ef"
+    },
+    {
+      "index": 12,
+      "term": "引き上げる",
+      "reading": "ひきあげる",
+      "exampleJa": "AI Agentへ任せる業務比率を段階的に引き上げます。",
+      "word": "vocab-12.mp3",
+      "wordHash": "a397674d19dfcd326ce84c7ab862d21423b57960c735cac62aaab97b9e6c88b1",
+      "example": "example-12.mp3",
+      "exampleHash": "46f972c67222f4935a304e779bf98606e2083a39b22841f75cde2417549b9498"
+    },
+    {
+      "index": 13,
+      "term": "置き換える",
+      "reading": "おきかえる",
+      "exampleJa": "ConfigurationManagerを新しい設定方式へ置き換えます。",
+      "word": "vocab-13.mp3",
+      "wordHash": "4a6ce727375df0b882ca7cf22309669e73469f62cf6a5621bd086003849f2ac0",
+      "example": "example-13.mp3",
+      "exampleHash": "e8c02f9d97dcbf7400f3c55357b5edd53812625c640a71b6838e8ff588856c14"
+    },
+    {
+      "index": 14,
+      "term": "照合する",
+      "reading": "しょうごうする",
+      "exampleJa": "領収書と決済明細を照合して取引の実在性を確認します。",
+      "word": "vocab-14.mp3",
+      "wordHash": "d791038daec1b87ecd2a23437f55091605bc2cf3b03f37954a6819f49bdd484a",
+      "example": "example-14.mp3",
+      "exampleHash": "62a34949e4176b4ad89ebb5f2f2b661b2eb2a2faf84ff74c524f529dd50941ec"
+    },
+    {
+      "index": 15,
+      "term": "精巧な",
+      "reading": "せいこうな",
+      "exampleJa": "精巧な画像でも、決済Dataがなければ証拠として十分ではありません。",
+      "word": "vocab-15.mp3",
+      "wordHash": "54c3855b1a19c5e29afca21db4b804621f133ebc7dddd249dbefd04a4bdeff22",
+      "example": "example-15.mp3",
+      "exampleHash": "78496382ec5b60e0a7a6bcda09674286ead1781521e1ca3e3417aa02b20783c0"
+    },
+    {
+      "index": 16,
+      "term": "妥当な",
+      "reading": "だとうな",
+      "exampleJa": "Build成功だけで変換結果が妥当だとは判断しません。",
+      "word": "vocab-16.mp3",
+      "wordHash": "94b6c5f3d7c4d2d1a6b6b1f23b462f2a8df9f3d79c9de57d935600156bbbb560",
+      "example": "example-16.mp3",
+      "exampleHash": "60be71159b4eaf600bc783614e89642351ba4baf182cab54bbd1bb7372b9f8bc"
+    },
+    {
+      "index": 17,
+      "term": "複雑な",
+      "reading": "ふくざつな",
+      "exampleJa": "複雑なSolutionほどTestの範囲を広げます。",
+      "word": "vocab-17.mp3",
+      "wordHash": "3640c184ca6f3f6d2556a3374750ded5e10e975c0426dc309e4238e3c005ef69",
+      "example": "example-17.mp3",
+      "exampleHash": "5c55f42f8b7bb7105870fcaaeacd536dd6409f450e555610643e137b75f39d42"
+    },
+    {
+      "index": 18,
+      "term": "あらかじめ",
+      "reading": "あらかじめ",
+      "exampleJa": "自動実行の前に、あらかじめ停止条件を決めます。",
+      "word": "vocab-18.mp3",
+      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
+      "example": "example-18.mp3",
+      "exampleHash": "4030b538a72ac045817385ee91fdbcd5604a3d064aace37f0b44b36ebe10808a"
+    },
+    {
+      "index": 19,
+      "term": "一方で",
+      "reading": "いっぽうで",
+      "exampleJa": "AIは作業を速める一方で、別の検証責任を増やします。",
+      "word": "vocab-19.mp3",
+      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
+      "example": "example-19.mp3",
+      "exampleHash": "090229bf576d65b86911d35d2a772db84c1d7a31f3a34b299147add271d72a96"
+    },
+    {
+      "index": 20,
+      "term": "ただし",
+      "reading": "ただし",
+      "exampleJa": "自動化できます。ただし、変換Codeの妥当性は別にReviewします。",
+      "word": "vocab-20.mp3",
+      "wordHash": "59966a98146429a6a802b8f79904bb67077ff9ef8bc2eb902af03d214811a33c",
+      "example": "example-20.mp3",
+      "exampleHash": "7a39fc57f8edb77352d7b42956ddade7a9704e589df5b060e849107313a65aa5"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "Fuguの評価はBenchmarkにとどまらず、Routing後のCostやLatencyまで見る必要があります。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "95995aa7e5544fe93ea22c5f2cbe838232cdf2c81bb768faa2f6fa2194a4c0d9"
+    },
+    {
+      "index": 2,
+      "pattern": "～を余儀なくされる",
+      "exampleJa": "建物の制約により、当初の50台計画は35台での運用開始を余儀なくされました。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "7fbd1a65febe42e02e3cf34b0944e841589f7b885d562cf6b1cc3d190521d7b4"
+    },
+    {
+      "index": 3,
+      "pattern": "～に即して",
+      "exampleJa": "業務の実態に即して、AIに任せる範囲とHuman Reviewを決めます。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "f67f62f25d776499d21d43e65923e4eccdcaa9dbbd392fb5f905917a4b735bdb"
+    },
+    {
+      "index": 4,
+      "pattern": "～たうえで",
+      "exampleJa": "支払いDataと照合したうえで、経費精算を承認します。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "b3ee04c982a79f8426c4bd87b26d26529bb1f4243cd73c6fa7b5488aaece4ea6"
+    },
+    {
+      "index": 5,
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの難易度に応じて利用するModelを切り替えます。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "cda0af426fa90147acdd216c0df219d0e7c7290415231b52bb8cbd335ea073e2"
+    },
+    {
+      "index": 6,
+      "pattern": "～一方で",
+      "exampleJa": "CLIで自動化しやすくなる一方で、trust-all-toolsのRiskは増えます。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "6c32bc4d494c392e75ba9d6cef7a21683434b5f5f9984f86c0ed467e69b2714c"
+    },
+    {
+      "index": 7,
+      "pattern": "～とは限らない",
+      "exampleJa": "Buildが成功しても、変換Codeの業務Logicまで正しいとは限りません。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "9bcca869b2ec2bdd623ce7a4a9fa13599caf648efbaf9ef1115f588bbe400be7"
+    }
+  ]
+}
