@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-13",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-13T01:15:00.000Z",
+  "scope": "Top 5 original-source facts, implementation details, measurements and evidence boundaries were reviewed against publicly retrievable source articles. Strict weekend 24-hour scanning found fewer than five qualifying new technical articles, so the set uses the latest unreported high-value articles without repeating the previous day Top 5. snapshotSha256 identifies the normalized review excerpt, not a full archival copy.",
+  "articles": [
+    {
+      "articleId": "2026-09-13-top-1",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/11/2000001405/",
+      "originalTitle": "Sakana AI、一部「GPT-6 Astra」「Fable 5.1」超えうたうFugu最新版　連携先に「両モデルは含まず」",
+      "source": "ITmedia AI＋",
+      "topic": "AI / Multi-model Orchestration / Cost",
+      "access": "full",
+      "accessNote": "ITmedia AI＋の公開記事を確認。Fugu Ultra v2 / Fugu MaxのBenchmark、連携Model、OpenAI互換API、PricingはSakana AI発表を基にしたVendor Reportであり、独立したCross-provider Benchmarkではない。",
+      "capturedAt": "2026-09-13T01:10:00.000Z",
+      "snapshotSha256": "46db70f9a5fe42b185f82bb5c66644db4f698f62dea145c293d885394d9fe062",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "Sakana AIはFugu Ultra v2とFugu MaxをOpenAI互換APIで提供し、Fugu Maxの価格を100万TokenあたりInput 2ドル、Cached Input 0.25ドル、Output 6ドルとしている。",
+          "quote": "Fugu Maxが入力2ドル（キャッシュ入力0.25ドル）、出力6ドル",
+          "locator": "ITmedia AI＋ article: pricing and API section",
+          "conditions": "Pricing and benchmark figures are vendor-provided; actual routing, token usage, latency and task success require workload-specific validation.",
+          "usedIn": {"zh": "Fugu Max", "ja": "Fugu Max", "interview": "Fugu Max"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-13-top-2",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/20/news009.html",
+      "originalTitle": "業務の30％をAIエージェントがこなすIT運用部門、なぜ「パワポ文書」を禁止したのか？：NTTドコモソリューションズに聞く「AIエージェント実装」のリアル（前編）",
+      "source": "ITmedia エンタープライズ",
+      "topic": "Enterprise AI / RAG / Data Quality",
+      "access": "full",
+      "accessNote": "ITmedia エンタープライズの公開取得本文を確認。約30%の現状、70%目標、パワポ文書、0.6/0.7版乱立、Text中心運用、Ontology、Why/Outcomeを確認した。Interview Caseであり独立Benchmarkではない。",
+      "capturedAt": "2026-09-13T01:10:00.000Z",
+      "snapshotSha256": "a9e6a56192f94b5f0425e5bd3b81d23979375bd2a5b7b0aef9a1cf38d1e1dcbf",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "NTTドコモソリューションズの部門はIT運用の約30%をAI Agentに任せ、RAG整備ではパワポ文書とVersion乱立を課題としてText中心の報告へ切り替えた。",
+          "quote": "IT運用の約30％をAIエージェントに任せている",
+          "locator": "ITmedia Enterprise article: opening and RAG/data-quality sections",
+          "conditions": "30% is a department-reported current share; 70% is a future target. The article is an enterprise interview/case, not a controlled RAG benchmark.",
+          "usedIn": {"zh": "パワポ文書", "ja": "パワポ文書", "interview": "パワポ文書"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-13-top-3",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/11/2000001402/",
+      "originalTitle": "フィジカルAI向け「データ収集工場」に\"潜入\"　実機写真で学習データ生成の流れを解説",
+      "source": "ITmedia AI＋",
+      "topic": "Physical AI / Robotics / Data Engineering",
+      "access": "full",
+      "accessNote": "ITmedia AI＋の現地取材記事を確認。35台Humanoid、VR操作、頭部+両手首3 Camera、Failure Annotation、Field Feedback Loop、50台計画からの変更、全国10拠点/産業特化Modelの将来計画を確認。",
+      "capturedAt": "2026-09-13T01:10:00.000Z",
+      "snapshotSha256": "a9965c3b673eed316fec9256579401c0010003711e7ca10ecc2049b44fc95102",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "J-HRTI 関東データファクトリーは稼働開始時35台のHumanoidを運用し、頭部と両手首の3 CameraでAction Dataを収集してFailureも分類する。",
+          "quote": "ロボットの頭部と両手首に付いた3台のカメラ",
+          "locator": "ITmedia AI＋ field report: data-factory operation and annotation sections",
+          "conditions": "35 robots is the observed start configuration; the earlier 50-robot plan changed due to building constraints. Ten sites and industry-specific models are future plans.",
+          "usedIn": {"zh": "J-HRTI", "ja": "J-HRTI", "interview": "J-HRTI"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-13-top-4",
+      "url": "https://dev.classmethod.jp/articles/aws-transform-dotnet-cli/",
+      "originalTitle": "[アップデート] AWS Transform for .NET のモダナイゼーションが GA となり CLI でも実行できるようになりました",
+      "source": "DevelopersIO",
+      "topic": "AWS / .NET Modernization / Agentic Coding",
+      "access": "full",
+      "accessNote": "DevelopersIOのAuthor Experimentを確認。macOS M1 Max、Node.js 22+、Git、AWS/dotnet-modernization、atx custom def exec -x -t --limit 30、30.41/30.00 Agent Minutes、net48→net10.0、dotnet buildを確認。Code妥当性は未評価。",
+      "capturedAt": "2026-09-13T01:10:00.000Z",
+      "snapshotSha256": "fc4329acbb7dea4f0cddd59ea50ad25450d42ea82195e68d7348c131795d37c8",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "AWS Transform for .NETのGA後、Authorはatx custom def execを使って小規模net48 Appをnet10.0へ変換し、Buildまで自動実行した。",
+          "quote": "変換の実行は `atx custom def exec` です",
+          "locator": "DevelopersIO article: command execution and result sections",
+          "conditions": "Author tested a small console app and explicitly did not evaluate converted-code correctness; large-solution accuracy and time remain unverified.",
+          "usedIn": {"zh": "atx custom def exec", "ja": "atx custom def exec", "interview": "atx custom def exec"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-13-top-5",
+      "url": "https://www.itmedia.co.jp/news/article/2609/11/2000001409/",
+      "originalTitle": "本物そっくり“AI生成レシート“が経費精算の脅威に　マネフォ「自力で見破るのは難しい」　企業はどう備える？",
+      "source": "ITmedia NEWS",
+      "topic": "Security / Expense / Data Provenance",
+      "access": "full",
+      "accessNote": "ITmedia NEWSの公開記事を確認。ChatGPT Images 2.5での編集部生成Test、Money ForwardのCorporate Card/外部Service決済Data照合、AI生成Receipt検知が検討段階である点、Original保管とRandom Checkを確認。",
+      "capturedAt": "2026-09-13T01:10:00.000Z",
+      "snapshotSha256": "4a7778ce7b6fcbf46a5dd8caab0c521936870ffda70c525d88466a2b0a3f159b",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "マネーフォワード クラウド経費はReceiptだけで精算せず、Corporate Cardや外部Serviceの実決済Dataを併用して不正を抑える。",
+          "quote": "領収書だけでは精算できない仕組み",
+          "locator": "ITmedia NEWS article: Money Forward countermeasure section",
+          "conditions": "AI-generated receipt detection is only under consideration; no detector accuracy benchmark is published. The stronger current control is independent payment evidence plus audit.",
+          "usedIn": {"zh": "マネーフォワード クラウド経費", "ja": "マネーフォワード クラウド経費", "interview": "マネーフォワード クラウド経費"}
+        }
+      ]
+    }
+  ]
+}
