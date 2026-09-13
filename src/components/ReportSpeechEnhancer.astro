@@ -88,7 +88,9 @@
         for (const node of nodes) {
           if (!(node instanceof HTMLParagraphElement)) continue;
           const label = (node.textContent || '').replace(/\s+/g, ' ').trim();
-          if (!/(?:面试问题|面接質問|約30秒回答|约30秒回答)/.test(label)) continue;
+          const isInterviewLabel = /(?:面试问题|面接質問|約30秒回答|约30秒回答)/.test(label)
+            || /^質問\s*[:：]?$/.test(label);
+          if (!isInterviewLabel) continue;
           const target = nextPlainParagraph(node);
           if (target) enhanceElement(target, 'interview');
         }
