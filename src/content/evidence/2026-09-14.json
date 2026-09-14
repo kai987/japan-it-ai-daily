@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-14",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-14T01:30:00.000Z",
+  "scope": "Strict Sunday 24-hour scanning produced fewer than five qualifying new technical articles, so the set uses recent unreported high-value articles from September 10-11 without repeating the September 13 Top 5. Top 5 original-source facts, implementation details, measurements and evidence boundaries were reviewed against publicly retrievable source articles. snapshotSha256 identifies the normalized review excerpt, not a full archival copy.",
+  "articles": [
+    {
+      "articleId": "2026-09-14-top-1",
+      "url": "https://developers.cyberagent.co.jp/blog/archives/65832/",
+      "originalTitle": "DevinCon2026登壇報告 WINTICKETにおけるアラート対応自動化",
+      "source": "CyberAgent Developers Blog",
+      "topic": "AI Agent / SRE / Devin / Automation",
+      "access": "full",
+      "accessNote": "CyberAgent Developers Blogの公開本文を確認。17,000+ Session、1,800 PR、1,100+ Merge、P1-P4、3分のP3+PR事例、GitHub/Datadog権限制約、Self Merge禁止、Level 1 Assistedを確認した。Conference発表のProduction Caseであり一般Benchmarkではない。",
+      "capturedAt": "2026-09-14T01:20:00.000Z",
+      "snapshotSha256": "69be45407950b22dbc0497610e582f4f4e68584ddae59dc4d1af2e660e97b679",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "WINTICKETではDevin Auto-TriageがSlack AlertをP1-P4でTriageし、Kubernetes Podのmemory limit漏れ事例では発生約3分後にP3判定・Mention・修正PRまで行った。",
+          "quote": "発生からわずか 3 分後に Devin が P3 と判定",
+          "locator": "CyberAgent article: SRE Agent introduction and production example sections",
+          "conditions": "This is one WINTICKET production case. Devin currently cannot use production DB or kubectl for investigation, false-positive urgent classifications remain, and self-merge is disabled for accountability.",
+          "usedIn": {"zh": "Devin Auto-Triage", "ja": "Devin Auto-Triage", "interview": "Devin Auto-Triage"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-14-top-2",
+      "url": "https://developers.cyberagent.co.jp/blog/archives/65204/",
+      "originalTitle": "GPT‑LiveをCodexで最速検証。iOSデモを数時間で作ってみた。",
+      "source": "CyberAgent Developers Blog",
+      "topic": "Voice AI / Codex / Realtime API / iOS",
+      "access": "full",
+      "accessNote": "CyberAgent Developers Blogの公開Author Experimentを確認。GPT-Live full-duplex、WebRTC Realtime Session、Function Calling、Backend-held API Key、短命Client Credential、Confirmation Queue、50.7秒Demoを確認。数時間のPrototypeでありProduction Reliability Benchmarkではない。",
+      "capturedAt": "2026-09-14T01:20:00.000Z",
+      "snapshotSha256": "a70dac0910d1e28032bab6997872fb22dcc940f2f13face10ec1b11cdc21bdc3",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "CyberAgentのiOS PrototypeはGPT-LiveをWebRTC Realtime Sessionで利用し、Function CallingのTask候補をApp側で検証・重複排除してConfirmation Queueへ入れ、User承認後だけ保存する。",
+          "quote": "ユーザーが承認した候補だけをローカルへ保存する",
+          "locator": "CyberAgent article: architecture, six implementation elements, and 50.7-second demo sections",
+          "conditions": "The prototype was built in a few hours. Public deployment still requires reconnection, timeout, interruption, error recovery and credential lifecycle design.",
+          "usedIn": {"zh": "GPT-Live", "ja": "GPT-Live", "interview": "GPT-Live"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-14-top-3",
+      "url": "https://engineering.dena.com/blog/2026/09/mysql84-migrate-research/",
+      "originalTitle": "DeNA の大規模環境を MySQL 8.4 に移行する時に考えたこと[DeNA インフラ SRE]",
+      "source": "DeNA Engineering",
+      "topic": "SRE / MySQL / AWS / Google Cloud",
+      "access": "full",
+      "accessNote": "DeNA Engineeringの公開記事を確認。MHA 8.4非対応を起点にMHA Maintenance、Orchestrator、Vitess、TiDB、Group Replication、Aurora/Cloud SQLを比較しManaged Serviceを選択したDecision Record。調査は2025年前半で多くの候補は本格導入検証まで行っていない。",
+      "capturedAt": "2026-09-14T01:20:00.000Z",
+      "snapshotSha256": "34df0af39ab4697f20709aa25b65931282bce61bbc513f622ed0f35668272ec2",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "DeNAはMySQL 8.4でMHAが利用できないため複数HA/DB選択肢を比較し、既存Production実績、構築・運用Cost、変更量を理由にAuroraやCloud SQLなどManaged Serviceへの移行を選んだ。",
+          "quote": "しかし今回選んだのは Aurora や Cloud SQL のようなマネージドサービスでした",
+          "locator": "DeNA article: options comparison and why managed services were selected",
+          "conditions": "Research was performed in the first half of 2025 and may not reflect all later ecosystem changes. It is a specific DeNA infrastructure-group decision, not an exhaustive controlled benchmark of every option.",
+          "usedIn": {"zh": "MySQL 8.4", "ja": "MySQL 8.4", "interview": "MySQL 8.4"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-14-top-4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/11/news006.html",
+      "originalTitle": "従来の「AI－Readyデータ」だけでなく新たなアプローチを理解せよ：Gartner Insights Pickup（463）",
+      "source": "＠IT",
+      "topic": "Enterprise AI / Data Governance / AI-Ready Data",
+      "access": "full",
+      "accessNote": "＠ITの公開取得本文を確認。GartnerはProject-led AI向けAI-Ready Dataと、Data Tool/Workflowへ直接AIを組み込むAI for Dataを異なるAdoption Patternとして整理している。2026年6月執筆のAnalytical Frameworkであり定量Benchmarkではない。",
+      "capturedAt": "2026-09-14T01:20:00.000Z",
+      "snapshotSha256": "7cbbbd6655cb6d34dc834bf6d269d69450e8848492e1233508b84d4f20a4434d",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "Gartnerは、定義されたAI Use Case向けにDataを事前準備するProject-led Patternと、Data Management Tool/WorkflowへAIを直接組み込むAI for Dataを別の導入形態としている。",
+          "quote": "「データのためのAI導入」と「データ準備を伴うプロジェクト主導型のAI導入」",
+          "locator": "＠IT / Gartner article: two AI adoption patterns section",
+          "conditions": "This is an analyst framework, not a controlled measurement of productivity or ROI. Governance, ownership and risk for embedded AI must be validated against each organization's actual tool usage.",
+          "usedIn": {"zh": "AI for Data", "ja": "AI for Data", "interview": "AI for Data"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-14-top-5",
+      "url": "https://dev.classmethod.jp/articles/amazon-quick-apps-ai-inference-dashboard/",
+      "originalTitle": "〖小ネタ〗Amazon QuickのAI推論はApp Storageのデータ分析は可能でダッシュボード分析は出来ませんでした",
+      "source": "DevelopersIO",
+      "topic": "AWS / Amazon Quick / AI Inference / Data Path",
+      "access": "full",
+      "accessNote": "DevelopersIOのAuthor Hands-onを確認。AI InferenceはManual入力値とApp Storage Textを受け取れた一方、Sandbox iframeで表示するEmbedded Dashboard内部の数値は直接取得できなかった。現行App構成の実測でありAmazon Quick全般の永続仕様を断定するものではない。",
+      "capturedAt": "2026-09-14T01:20:00.000Z",
+      "snapshotSha256": "5f3781c1660d9ea277e579e1a8a6f896a9bdc76b7a7a892a6cdac20c16d52232",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "Amazon Quick AppのAuthor Hands-onではEmbedded Dashboardの数値をAI Inferenceから直接読めず、User手入力の値とApp StorageのTextはAIへ渡して分析できた。",
+          "quote": "埋め込みダッシュボードは表示しているだけで、中の数値をアプリやAIから読み取れない",
+          "locator": "DevelopersIO article: dashboard test, sandbox explanation, and data passed to AI sections",
+          "conditions": "This is a hands-on test of the current app architecture. AWS documentation supports the sandbox/communication boundary but does not establish a permanent universal prohibition for all future embedded-dashboard integrations.",
+          "usedIn": {"zh": "App Storage", "ja": "App Storage", "interview": "App Storage"}
+        }
+      ]
+    }
+  ]
+}
