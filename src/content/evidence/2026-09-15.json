@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-15",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-15T01:18:00.000Z",
+  "scope": "Reviewed the September 14 10:00 to September 15 10:00 JST window and excluded the September 14 Top 5. The selected set prioritizes DeNA Engineering, gihyo.jp and atmarkit articles covering AI-assisted observability IaC, Claude Code evaluation, AWS FinOps, agent harness terminology and shadow-AI governance. Facts, measurements, commands and evidence boundaries were checked against the selected article text; the S3 article reports the WeatherBug/AWS customer case and is treated as a case study rather than a universal benchmark. snapshotSha256 identifies the normalized review excerpt, not a full archival copy.",
+  "articles": [
+    {
+      "articleId": "2026-09-15-top-1",
+      "url": "https://engineering.dena.com/blog/2026/09/grafana-dashboard-iac-with-ai-typescript/",
+      "originalTitle": "AIとGrafana Foundation SDKで進めるGrafanaダッシュボードのIaC化",
+      "source": "DeNA Engineering",
+      "topic": "AI / MCP / Grafana / TypeScript / SRE / IaC",
+      "access": "full",
+      "accessNote": "DeNA Engineeringの公開技術記事を確認。Grafana Foundation SDK TypeScript版、mcp-grafana、mcp-auth-proxy、read-only調査、npm run build / validate、PR Review、Git Sync、型Checkの限界とGit SyncのVersion前提を確認した。定量的な生産性Benchmarkは提示されていない。",
+      "capturedAt": "2026-09-15T01:10:00.000Z",
+      "snapshotSha256": "63f739a9a475bf9e6506012521cc79cb6bc0d7815173c3b295c097acaedface9",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "DeNAはAIにmcp-grafana経由で実Dataと既存Dashboardをread-only調査させ、Grafana Foundation SDKのTypeScript案を作らせる一方、本番反映はbuild、validate、PR Review、Git Syncへ分離している。",
+          "quote": "AI が本番環境を直接変更しない構成",
+          "locator": "DeNA article: MCP production connection, AI creation flows, CI and Git Sync sections",
+          "conditions": "Type checking detects structural/type errors but does not validate metric existence, PromQL intent or panel readability. Grafana Git Sync is officially supported from v13; v12 is experimental, and complex gridPos can still need manual adjustment.",
+          "usedIn": {"zh": "Grafana Foundation SDK", "ja": "Grafana Foundation SDK", "interview": "mcp-grafana"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-15-top-2",
+      "url": "https://gihyo.jp/article/2026/09/claude-plugin-eval",
+      "originalTitle": "Anthropic、Claude Codeのプラグイン評価コマンド「claude plugin eval」を紹介",
+      "source": "gihyo.jp",
+      "topic": "Claude Code / Evaluation / Plugin / MCP / AI Engineering",
+      "access": "full",
+      "accessNote": "gihyo.jpの公開記事を確認。Claude Code 2.1.269以降、claude plugin eval init、Pluginあり/なし比較、Default各3回、--runs 1、--no-publish、--allow-real-servers、--allow-tools、Token CostとPermission注意点を確認した。",
+      "capturedAt": "2026-09-15T01:10:00.000Z",
+      "snapshotSha256": "8842b7cc1bfc0826c5725ed635f1089e50c33261767daaf9c920629f4c32b0fd",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "claude plugin evalは同一Test CaseをPluginあり・なしで比較し、Defaultでは各Caseをそれぞれ3回実行して平均Scoreを比較する。",
+          "quote": "各ケースをプラグインあり・なしで3回ずつ実行",
+          "locator": "gihyo article: test creation/comparison report and token/permission sections",
+          "conditions": "Evaluation consumes model usage/cost and has run-to-run variance. MCP servers require explicit --allow-real-servers and --allow-tools and run with user permissions, so only trusted plugins should be evaluated.",
+          "usedIn": {"zh": "claude plugin eval", "ja": "claude plugin eval", "interview": "claude plugin eval"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-15-top-3",
+      "url": "https://atmarkit.itmedia.co.jp/ait/spv/2609/14/news027.html",
+      "originalTitle": "Amazon S3で「ストレージコスト80％削減」――たった6カ月で成功した“再現性のある方法”とは？",
+      "source": "＠IT",
+      "topic": "AWS / S3 / Kiro CLI / FinOps / Cloud",
+      "access": "full",
+      "accessNote": "＠ITの公開記事を確認。WeatherBugの数百S3 Bucket、多Account環境、S3 Storage Lens、Kiro CLI、Lifecycle Policy、3段階Optimizationと6カ月以内80% Cost Reductionを確認した。AWS/WeatherBug Customer Caseであり一般環境の削減率を保証しない。",
+      "capturedAt": "2026-09-15T01:10:00.000Z",
+      "snapshotSha256": "3755927a7f32f7e61877002604029bf2612127a26f0fb13008ad4396750f9bb8",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "WeatherBugはS3 Storage Lensで数百Bucketの利用を可視化し、Kiro CLIでAccess Pattern分析とLifecycle Policy生成を支援させる3段階の改善で、6カ月以内にStorage Costを80%削減したと報告している。",
+          "quote": "6カ月以内にストレージコストを80％削減",
+          "locator": "＠IT article: WeatherBug challenge, three-phase optimization and conclusion",
+          "conditions": "The 80% figure is a WeatherBug/AWS customer outcome, not a universal benchmark. Savings depend on each organization's existing lifecycle gaps, access patterns, retention requirements and replication needs.",
+          "usedIn": {"zh": "S3 Storage Lens", "ja": "S3 Storage Lens", "interview": "Kiro CLI"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-15-top-4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/spv/2609/14/news037.html",
+      "originalTitle": "「FDE」「ハーネス」「オープンウェイト」って何？　AI時代に現場で飛び交う10用語をGitHubが整理",
+      "source": "＠IT",
+      "topic": "AI Agent / Harness Engineering / Loop Engineering / FDE",
+      "access": "full",
+      "accessNote": "＠ITの記事と参照元GitHub Blogの定義を確認。FDE、Harness Engineering、Loop Engineering、Hill Climbing、Open Weights等を開発現場の設計語彙として整理している。定義整理であり性能や生産性のBenchmarkではない。",
+      "capturedAt": "2026-09-15T01:10:00.000Z",
+      "snapshotSha256": "21d820af62b86263d513408084a74b938fe75d6df778ee82442178b059b1f68a",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "GitHubの整理ではHarnessはModel出力の外側にあるTool、Permission、Memory、Context、Orchestrationを含み、Loop EngineeringはAgentを一回限りのPromptではなく取得・実行・検証・Escalationを含む反復可能なSystemとして設計する考え方である。",
+          "quote": "再現可能な開発体制の構築",
+          "locator": "＠IT / GitHub guide: harness, loop engineering, hill climbing and FDE definitions",
+          "conditions": "These are evolving engineering terms and conceptual patterns, not a controlled benchmark. Organizations still need their own eval metrics, failure criteria, permission model and human escalation design.",
+          "usedIn": {"zh": "Harness Engineering", "ja": "Harness Engineering", "interview": "Loop Engineering"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-15-top-5",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/15/news010.html",
+      "originalTitle": "「禁止したらシャドーITがなくなる」は幻想？　まん延するシンプルな理由",
+      "source": "＠IT",
+      "topic": "Security / Shadow IT / Shadow AI / AI Governance",
+      "access": "full",
+      "accessNote": "＠IT公開本文を確認。生成AI業務利用者360人の調査で禁止時19.2%が個人的利用継続、18.6%が会社へ継続利用を訴える。記事は禁止通知に代替先と相談先を追加し、相談件数ではなく公認Serviceへの移行件数と回答日数を測る実務策を提案している。",
+      "capturedAt": "2026-09-15T01:10:00.000Z",
+      "snapshotSha256": "652eb762705b39fa8262aa72c9b4a76c9fac2814f6830aa565ef20db0fd15687",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "生成AIを業務利用する会社員360人の調査では、勤務先で禁止された場合19.2%が個人的利用継続、18.6%が継続利用を会社へ訴えると回答し、記事は代替Service・相談先・回答速度をGovernance設計に含めるよう提案する。",
+          "quote": "禁止の通達によって減るのはシャドーITではなく相談の件数",
+          "locator": "＠IT article: survey section and two-line alternative/consultation guidance",
+          "conditions": "The survey is limited to 360 employees already using generative AI for work, so the percentages cannot be generalized to all employees or organizations. The operational recommendations are practitioner guidance rather than controlled-effect measurements.",
+          "usedIn": {"zh": "シャドーIT", "ja": "シャドーIT", "interview": "19.2％"}
+        }
+      ]
+    }
+  ]
+}
