@@ -103,6 +103,11 @@ export const parseReview = (source) => {
       if (!value) continue;
       if (/^#{1,6}\s+/.test(value)) break;
       if (/^(?:回答要点|回答ポイント|要点)\s*[：:]/.test(value.replace(/\*\*/g, ''))) break;
+      const inlineQuestion = value.replace(/\*\*/g, '').match(/^(?:質問|问题|問題)\s*[：:]\s*(\S.*)$/);
+      if (inlineQuestion) {
+        headingQuestions.push(normalizeText(inlineQuestion[1]));
+        break;
+      }
       if (/^\*\*/.test(value)) continue;
       if (/[ぁ-んァ-ヶ一-龠]/.test(value)) headingQuestions.push(normalizeText(value));
       break;

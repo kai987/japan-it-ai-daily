@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-15",
+  "generatedAt": "2026-09-15T15:28:07.556Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "蓄積する",
+      "reading": "ちくせきする",
+      "exampleJa": "AIの出力をCodeとして蓄積し、次の改善に再利用します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "d53df2f29a459b97d0fe3bce1aa6d5461ea9dbbfd25faa09ec3e6ac57b9a19b0",
+      "example": "example-01.mp3",
+      "exampleHash": "b4467eaf02df7e2145655e48c838ed63271acbdfa627f37ebd1907ccc5ada0d9"
+    },
+    {
+      "index": 2,
+      "term": "検証する",
+      "reading": "けんしょうする",
+      "exampleJa": "生成したDashboardをCIと実画面の両方で検証します。",
+      "word": "vocab-02.mp3",
+      "wordHash": "8c99ed11c56d739dd1bacf081bb328cd53cf8d1cf5627ba044d494d63b918af3",
+      "example": "example-02.mp3",
+      "exampleHash": "5e237abb52dac3b58ebba3f1ef35fb9471581e8257782b7922299a15cbea22bb"
+    },
+    {
+      "index": 3,
+      "term": "絞り込む",
+      "reading": "しぼりこむ",
+      "exampleJa": "本番MCPの権限を読み取り用途に絞り込みます。",
+      "word": "vocab-03.mp3",
+      "wordHash": "de95b4a91d2cdf5ba0bee966c5ea23747913808a8c4a0545d17b60229c5a4bbd",
+      "example": "example-03.mp3",
+      "exampleHash": "17e3fc46af0c52e4c82b45cefe18d22d32f132811bf4f3aef2f66938ce0daaf5"
+    },
+    {
+      "index": 4,
+      "term": "見積もる",
+      "reading": "みつもる",
+      "exampleJa": "本格評価の前にToken Costを見積もります。",
+      "word": "vocab-04.mp3",
+      "wordHash": "adca19d856d6ebf4349dba24da45f26d259d70296e53516eb0b42f2477483d98",
+      "example": "example-04.mp3",
+      "exampleHash": "845d6313c46c9d150d10cd405a23e637250f703668da7cdad216a8418d54693b"
+    },
+    {
+      "index": 5,
+      "term": "切り替える",
+      "reading": "きりかえる",
+      "exampleJa": "確認後にDashboardの管理経路をGit Syncへ切り替えます。",
+      "word": "vocab-05.mp3",
+      "wordHash": "4090e9c6a6bd0805e503a0221da7f96c2038cab60a5f9c8db6a5146916ed3c85",
+      "example": "example-05.mp3",
+      "exampleHash": "050155e041ae41516a82fe2b0d90240afc6020aa394a4951f672e020c6ccf655"
+    },
+    {
+      "index": 6,
+      "term": "引き継ぐ",
+      "reading": "ひきつぐ",
+      "exampleJa": "新UIDへ移すとき、必要なAnnotationを別途引き継ぎます。",
+      "word": "vocab-06.mp3",
+      "wordHash": "27f0280fefa547a7fb014c643fb49c943754c6264be55e07f21f8c8b1c248473",
+      "example": "example-06.mp3",
+      "exampleHash": "eb54223e82b97c970edd1521c6fdae84ff23e2911aece76719252ccc011c0633"
+    },
+    {
+      "index": 7,
+      "term": "促す",
+      "reading": "うながす",
+      "exampleJa": "代替Serviceと相談先を示して、正規経路への移行を促します。",
+      "word": "vocab-07.mp3",
+      "wordHash": "41b6a1e8e277af858a337a4d1165745ed250a08460bc945f3cbe93ea7575d795",
+      "example": "example-07.mp3",
+      "exampleHash": "78dd41b2bcdd12f7ea59e7de754f47cfab304e8034184502de6efed7243b3bca"
+    },
+    {
+      "index": 8,
+      "term": "見直す",
+      "reading": "みなおす",
+      "exampleJa": "利用実態を見てLifecycle Policyを定期的に見直します。",
+      "word": "vocab-08.mp3",
+      "wordHash": "71cad3bac6e97f8175618e025511d2c55b04f3755662cb357e7041dc39fe612d",
+      "example": "example-08.mp3",
+      "exampleHash": "10a22e6cbaba9db55a1bbb6f0cd0c9aad83f75ef18783b0c0ba0662902580839"
+    },
+    {
+      "index": 9,
+      "term": "再現性",
+      "reading": "さいげんせい",
+      "exampleJa": "手作業ではなくCode化して再現性を確保します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "7e2d6f4e94362625b1fa4d6d17a167a19c2c5693620d74a11c479db5d7ca1b62",
+      "example": "example-09.mp3",
+      "exampleHash": "de5e63599a6b033068d21489aa8a8c5a6fe70e9c7d3cdc8f6cbcc4e3498c7251"
+    },
+    {
+      "index": 10,
+      "term": "根拠",
+      "reading": "こんきょ",
+      "exampleJa": "採用判断にはScore差だけでなく実行Logも根拠として残します。",
+      "word": "vocab-10.mp3",
+      "wordHash": "a6f653ee0feb745642c64400f7f87108014c78ad8ca97c067589d143b2b36843",
+      "example": "example-10.mp3",
+      "exampleHash": "c92dcb1ff9382f1700d6900418a1db073958e35bd2eca93a58baee927bdb8bc1"
+    },
+    {
+      "index": 11,
+      "term": "余地",
+      "reading": "よち",
+      "exampleJa": "型Checkを通っても、表示品質には改善の余地があります。",
+      "word": "vocab-11.mp3",
+      "wordHash": "5eeaf51dba6f3d93f80c5c00255d967f8c22d5df1ff8999284bef9b8aa074957",
+      "example": "example-11.mp3",
+      "exampleHash": "8e1362928159e66c0d513096d37ca3176ff24839c1a8ec22a82fef0cb1de9d3c"
+    },
+    {
+      "index": 12,
+      "term": "経路",
+      "reading": "けいろ",
+      "exampleJa": "調査経路と本番反映経路を分離します。",
+      "word": "vocab-12.mp3",
+      "wordHash": "ccbcd3227e8ff8813d3cdd8a2373e913d776206f81dd4e98a613d04726c0f8e7",
+      "example": "example-12.mp3",
+      "exampleHash": "a49dccb8db573d6321552beac0b996c3b9ad6ad0d3cbc480f56f1bfd0eb54c40"
+    },
+    {
+      "index": 13,
+      "term": "権限",
+      "reading": "けんげん",
+      "exampleJa": "外部Toolを使うEvalでは利用者権限を確認します。",
+      "word": "vocab-13.mp3",
+      "wordHash": "476cd8e57b29f548b509e610b9a741d1f5238b2333b53d9de116b405e2add18b",
+      "example": "example-13.mp3",
+      "exampleHash": "e082fc971d6a4ac9cb3c6871f854e9bce4ec19d1df2830eb34599d80276ee394"
+    },
+    {
+      "index": 14,
+      "term": "代替",
+      "reading": "だいたい",
+      "exampleJa": "禁止するなら、業務を継続できる代替手段も示します。",
+      "word": "vocab-14.mp3",
+      "wordHash": "e94312ae8be3e4abc6af16f0325741498ca8f4fe0b3d46b65c50bc0b2598a9ac",
+      "example": "example-14.mp3",
+      "exampleHash": "50f8d3733dd4b86e5ab7c7d9917631c634566658343ee9080b48a152f7828d01"
+    },
+    {
+      "index": 15,
+      "term": "妥当な",
+      "reading": "だとうな",
+      "exampleJa": "Test Caseが実運用を表す妥当な内容か確認します。",
+      "word": "vocab-15.mp3",
+      "wordHash": "94b6c5f3d7c4d2d1a6b6b1f23b462f2a8df9f3d79c9de57d935600156bbbb560",
+      "example": "example-15.mp3",
+      "exampleHash": "14fb8416cbc8f7127286f892e46ad0f582d8d5bdc1a767ab7bc00a78552fb062"
+    },
+    {
+      "index": 16,
+      "term": "明確な",
+      "reading": "めいかくな",
+      "exampleJa": "Agentが止まった場合のEscalation先を明確にします。",
+      "word": "vocab-16.mp3",
+      "wordHash": "9d1f3b30432d14bef97bbd9e9e2b9d9657a7daf0ca71ddfdef68fbae40d7885a",
+      "example": "example-16.mp3",
+      "exampleHash": "f5137458fd997a7ad0dc5333d8d1e1079ed031247593628d255a511d94a3af0f"
+    },
+    {
+      "index": 17,
+      "term": "過剰な",
+      "reading": "かじょうな",
+      "exampleJa": "過剰な保存やReplicationをCostの観点から見直します。",
+      "word": "vocab-17.mp3",
+      "wordHash": "01ab7a09fc41fee6c8edf8c4ae24c0ff169168b46347137bd97cb67c017402a8",
+      "example": "example-17.mp3",
+      "exampleHash": "d580d207f8a11f7348e332a2180951a6e62141635934ff2fc68e498a674d189a"
+    },
+    {
+      "index": 18,
+      "term": "段階的に",
+      "reading": "だんかいてきに",
+      "exampleJa": "旧Dashboardを残しながら段階的にGit Syncへ移行します。",
+      "word": "vocab-18.mp3",
+      "wordHash": "5de1c1701c67f1c3cad667367791e1afe44a3560640016b9efb3126e8dcc09e4",
+      "example": "example-18.mp3",
+      "exampleHash": "e3ea34da88048fc1d7ded7dc90ce8b9b05211ef5b25c57de59efa4c918702978"
+    },
+    {
+      "index": 19,
+      "term": "一律に",
+      "reading": "いちりつに",
+      "exampleJa": "新しいToolを一律に禁止するだけでは利用実態を把握できません。",
+      "word": "vocab-19.mp3",
+      "wordHash": "f5f6e4a43ef6e093a1f1c333d2e4ce9412415ccb801ee4ce45e0f3eb65b449ff",
+      "example": "example-19.mp3",
+      "exampleHash": "db43ae9989ce1946e27c7ab42c333de63d9d84130ba6fb97c58ffc629ee49cff"
+    },
+    {
+      "index": 20,
+      "term": "ただし",
+      "reading": "ただし",
+      "exampleJa": "80％削減は参考になります。ただし、自社でも同じ結果になるとは限りません。",
+      "word": "vocab-20.mp3",
+      "wordHash": "59966a98146429a6a802b8f79904bb67077ff9ef8bc2eb902af03d214811a33c",
+      "example": "example-20.mp3",
+      "exampleHash": "3c0d39147f096c59e7bd5d4880435ab5bd949415151f7ff17b66758ca8eff5c7"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "AIはCode生成にとどまらず、実Dataの調査にも使われています。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "84b0b698b03b373f47f6218fc37ad48bdf3f47dbfa823085643889de74235d79"
+    },
+    {
+      "index": 2,
+      "pattern": "～たうえで",
+      "exampleJa": "生成物を検証したうえで、Git Syncから本番へ反映します。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "5d7585b4ff5cd3ddd559a363af0dae1c5e3811812f9dd74ee59e386d9c8123bc"
+    },
+    {
+      "index": 3,
+      "pattern": "～に応じて",
+      "exampleJa": "Access Patternに応じてStorage ClassとLifecycleを選びます。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "79fe09a4d154891efc2cb7b97e99e9787724a0412bd1479717ef34406628a08c"
+    },
+    {
+      "index": 4,
+      "pattern": "～とは限らない",
+      "exampleJa": "ある企業で80％削減できても、自社で同じ効果が出るとは限りません。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "0f5f80bf97c04fea07be41392649d45cc4b68dc91a17882969c4ba7735f6140f"
+    },
+    {
+      "index": 5,
+      "pattern": "～を踏まえて",
+      "exampleJa": "Pluginあり・なしのScore差を踏まえて、改善点を決めます。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "3d332fecffb351f3461ff506e1388d547e75e3f5a2ed4a7e91928f7a2ffae837"
+    },
+    {
+      "index": 6,
+      "pattern": "～かねない",
+      "exampleJa": "代替手段を示さず禁止すると、利用が見えない場所へ移りかねません。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "c79196cc4caac7ba3cb2899d20850097fead9614f45aab808f802a167e79e678"
+    },
+    {
+      "index": 7,
+      "pattern": "～一方で",
+      "exampleJa": "Agentは反復作業を減らせる一方で、Permission設計が不十分だとRiskが増えます。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "75f7d42d0bfc5b3e3ef4372b8ad2a4d47b3f59e51f1a6254cfd09d9836b902b9"
+    }
+  ]
+}

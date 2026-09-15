@@ -1,0 +1,150 @@
+{
+  "date": "2026-09-15",
+  "generatedAt": "2026-09-15T15:29:05.199Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIでGrafanaダッシュボードをIaC化するとき、本番変更の安全性をどう担保しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "8f879d3e91d8ac7164d9a041252d42a33b6d7d29f1a4d1cc3867c002e65fe7c8",
+      "durationSeconds": 6.71
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "AIにはmcp-grafanaで実データや既存Dashboardを読み取り専用で調べさせ、Grafana Foundation SDKのTypeScript案を作らせます。反映はnpm run build、npm run validate、PR Review、Git Syncを必ず通します。ただし型CheckではPromQLの意図やPanelの見やすさまでは保証できないため、Grafana上の表示確認も残します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "592290fbbf6ff6d92c53cf9bbfcd626e6e88ebd28d825f2136d3f4b71e0e1fb8",
+      "durationSeconds": 27.279,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "Claude CodeのPluginやSkillが本当に効果を出しているか、どう評価しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "dc301468f602f6ebd449e6576149dbd0f2cdd1c302b0b5ef8bd21ad217de9be7",
+      "durationSeconds": 6.045
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "claude plugin evalで同じTest CaseをPluginあり・なしの両方で実行し、Defaultでは各Caseを3回ずつ回して平均Scoreを比較します。MCP Serverを実際に使う場合は--allow-real-serversと--allow-toolsを明示します。ただし評価結果は用意したTest Setに依存し、Token Costと試行ごとのばらつきもあるため、Baselineと複数回実行を残します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "110170aac27439ab76dbc3fd5a33fc422b3317f9b5f1712b4b8b86d6865bd083",
+      "durationSeconds": 27.018,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "S3のCost最適化をAIに支援させる場合、どんな順序で進めますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "8293c88edc9d9bc0c4967882b57cefa06babb2bf1b9c24edd84245705f249fd1",
+      "durationSeconds": 6.05
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "WeatherBugの事例では、S3 Storage Lensで数百Bucketの利用を可視化し、Kiro CLIでAccess PatternとLifecycle候補を分析しました。その後CleanupとLifecycle管理を進め、6カ月でStorage Costを80％削減しました。ただしこれはWeatherBugの環境での結果なので、削減率ではなく可視化→優先順位→検証というLoopを自社Dataで再現します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "e08279fec976c52e25764e6454e884729f53b1ba610e1a7455c332f22d7a9869",
+      "durationSeconds": 27.283,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "AI AgentのHarness Engineeringは、単にPromptを書くことと何が違いますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "8c7fd6f75cd85eb6864ff1a49d881ad64bdea3e66766b538ef7f771da51215a7",
+      "durationSeconds": 6.199
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "GitHubの整理ではHarnessはModelの外側にあるTool接続、権限、Memory、Context、Orchestrationまで含みます。さらにLoop Engineeringでは、Issue取得からAgent実行、出力検証、人へのEscalationまでを反復可能にします。ただしこれはGitHubが整理した設計用語で性能Benchmarkではないため、実運用ではEval指標とFailure条件を別に定義します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "88233a6afc50ff44e1dd67d872da870a0346dec88a746c82b2df268476301aa0",
+      "durationSeconds": 29.316,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "生成AIを禁止するだけではシャドーAIを防げない場合、何を変えますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "6dd4655dbf84cf64e3682a4a540014a3f5cbfc78f9969c28cbc87af169051ee0",
+      "durationSeconds": 5.734
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "＠ITの記事では、生成AI利用者360人の調査で、会社が禁止しても19.2％は個人的に使い続けると回答しました。通達には代替Serviceと相談先も明記し、公認Serviceへ移行した件数と回答日数を測ります。ただし対象は既に生成AIを業務利用する人なので、比率は自社へそのまま一般化しません。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "ad6fade4f98d4dbb40829d63509a14fbebc75836539f22fbd31829449378ff19",
+      "durationSeconds": 25.922,
+      "durationStatus": "warn"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "AgentにProduction Dataを読ませる場合、Write権限も同じ経路で与えるべきですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "42b46ff2726aa1808ba1a4b6bdf2bbad170a9488a29f167bf683ffdab51b7f89",
+      "durationSeconds": 6.373
+    },
+    {
+      "index": 2,
+      "text": "AI Skillの評価でBaselineが必要なのはなぜですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "4d9bce08f93fd502f255d9afb4ad3ca52d63b874b33ac47003b19eb78e9571d6",
+      "durationSeconds": 4.422
+    },
+    {
+      "index": 3,
+      "text": "AI Governanceで「禁止」以外に何をKPIとして持ちますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "d774de42b73251fdfeec63ad30fb3b2e7b80e249833fa48cb30c7bb953307d64",
+      "durationSeconds": 4.61
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-15T15:29:05.652Z"
+}
