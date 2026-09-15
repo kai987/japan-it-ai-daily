@@ -116,7 +116,7 @@ export const extractReviewCards = (body: string) => {
   const lines = section.split(/\r?\n/);
   const cards: Array<{ question: string; points: string }> = [];
 
-  // New format: ### Q1 -> quoted or plain question -> 回答要点：...
+  // New format: ### Q1 -> quoted/plain/inline-labelled question -> 回答要点：...
   for (let index = 0; index < lines.length; index += 1) {
     if (!/^#{3,6}\s*Q\s*\d+/i.test(lines[index].trim())) continue;
     let end = lines.length;
@@ -133,10 +133,15 @@ export const extractReviewCards = (body: string) => {
       .find((line) => line.startsWith('>'))
       ?.replace(/^>\s*/, '')
       .trim() ?? '';
+    const inlineQuestion = block
+      .map((line) => stripInlineMarkdown(line.trim()))
+      .find((line) => /^(?:質問|问题|問題)\s*[：:]\s*\S/.test(line)) ?? '';
     const plainQuestion = block
       .map((line) => line.trim())
       .find((line) => line && !/^\*\*/.test(line) && !/^(?:回答要点|回答ポイント|要点)\s*[：:]/.test(stripInlineMarkdown(line))) ?? '';
-    const question = quotedQuestion || stripInlineMarkdown(plainQuestion);
+    const question = quotedQuestion
+      || inlineQuestion.replace(/^(?:質問|问题|問題)\s*[：:]\s*/, '').trim()
+      || stripInlineMarkdown(plainQuestion);
     const pointsLine = block
       .map((line) => line.trim())
       .find((line) => /^(?:回答要点|回答ポイント|要点)\s*[：:]/.test(stripInlineMarkdown(line)));
