@@ -5,5 +5,116 @@
   "reviewedBy": "ChatGPT: original-source inspection",
   "reviewedAt": "2026-09-16T01:25:00.000Z",
   "scope": "Reviewed the September 15 10:00 to September 16 10:00 JST window and excluded the September 15 Top 5. Selected original Japanese articles from atmarkit, gihyo.jp and Publickey covering AI coding verification, Copilot model routing, MCP long-running tasks/identity, AI infrastructure placement and enterprise master-data quality. Facts, measurements and limitations were checked against each selected article. Vendor/speaker metrics and surveys are explicitly treated as bounded evidence rather than universal benchmarks.",
-  "articles": []
+  "articles": [
+    {
+      "articleId": "2026-09-16-top-1",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/15/news047.html",
+      "originalTitle": "AIが書くコード「エラー率はJavaがPythonの6.7倍」　150万「会話」データで分かったAIコーディングの盲点",
+      "source": "＠IT",
+      "topic": "AI Coding / Kiro / Static Analysis / LSP / TypeScript / Java",
+      "access": "full",
+      "accessNote": "＠IT公開本文を確認。2026年1～6月Kiro IDE約150万会話、40万6000 diagnostics Tool Call、LSP構成、2.74％～22.26％の自発呼び出し率、Opus 4.6の言語別File Error率、Static Analysisの限界を確認した。",
+      "capturedAt": "2026-09-16T01:20:00.000Z",
+      "snapshotSha256": "9bc2581c9f57cd5515657cbde71a9ef0e33ad603dddc2529928777c77de89b79",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "AWSのKiro分析では約150万会話のうちModelがdiagnosticsを自発的に使う割合は2.74％～22.26％で、Opus 4.6の静的File Error率はJava 26.7％、Python 4.0％、TypeScript 8.6％、TSX 11.2％だった。",
+          "quote": "Javaのファイルエラー率はPythonの6.7倍",
+          "locator": "＠IT: diagnostics呼び出し頻度、言語別の状況、分析の限界",
+          "conditions": "Static diagnostics only captures detectable static issues. Lower JavaScript/Python rates partly reflect weaker static analysis, and clean diagnostics does not prove runtime, logic, or performance correctness.",
+          "usedIn": {"zh": "Kiro IDE", "ja": "Kiro IDE", "interview": "Kiro IDE"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-16-top-2",
+      "url": "https://gihyo.jp/article/2026/09/github-copilot-auto-model-selection",
+      "originalTitle": "GitHub Copilot、モデル自動選択「Auto」に3つのティアを追加 ——コストと品質の重視度を調整可能に",
+      "source": "gihyo.jp",
+      "topic": "GitHub Copilot / Model Routing / Cost / AI Coding",
+      "access": "full",
+      "accessNote": "gihyo.jp公開記事を確認。GitHub Copilot AutoのEfficiency / Balance / Intelligence、Prompt単位のModel選択、有料Plan10％割引、Product別候補Model、Plan/Admin Policy制約、Cloud Agentの3 Tier対象外を確認した。",
+      "capturedAt": "2026-09-16T01:20:00.000Z",
+      "snapshotSha256": "cf045b830e20566c50b55223ee1e9f1b9cd40f143621bb0e97deee82430fc2d0",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "GitHub Copilot AutoにはEfficiency、Balance、Intelligenceの3 Tierが追加され、AutoはPrompt単位でModelを選び、有料Planでは選択Model料金から10％引きとなる。",
+          "quote": "Efficiency、Balance、Intelligence",
+          "locator": "gihyo.jp: Autoの3 Tier、料金、対応Productと候補Model",
+          "conditions": "This is product specification, not a benchmark proving tier-specific success or savings. Candidate models differ by product and are constrained by plan/admin policy and may change.",
+          "usedIn": {"zh": "Efficiency", "ja": "Efficiency", "interview": "Efficiency"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-16-top-3",
+      "url": "https://www.publickey1.jp/blog/26/anthropicmcpmcpagntconmcpcon_japan_2026.html",
+      "originalTitle": "AnthropicのMCP共同作者が来日、基調講演で語るこれからのMCP注力領域。AGNTCon＋MCPCon Japan 2026",
+      "source": "Publickey",
+      "topic": "MCP / AI Agent / Identity / Authorization / Skills",
+      "access": "full",
+      "accessNote": "PublickeyのKeynote記事を確認。Claude上累計約10億MCP Tool Call、SDK月間5億Download超、Stateless Connection、今後12カ月のMCP Tasks、Skills over MCP、Authorization/Identityを確認した。",
+      "capturedAt": "2026-09-16T01:20:00.000Z",
+      "snapshotSha256": "670c39298809826767280872bcb36fa71bff9f8fd94f5b8d15749801aa191eac",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "MCP共同作者はKeynoteでClaude上のMCP Tool Call累計約10億件、SDK Download月間5億件超を示し、今後の重点としてMCP Tasks、Skills over MCP、認可とIdentityを説明した。",
+          "quote": "MCP SDKのダウンロード数は月間5億件を超えており",
+          "locator": "Publickey: MCPの成長速度、今後のMCPの進化3節",
+          "conditions": "Usage figures are speaker/ecosystem metrics rather than independent market measurement. MCP Tasks and Skills over MCP include roadmap directions for the coming 12 months, not a claim that all are current GA features.",
+          "usedIn": {"zh": "MCP Tasks", "ja": "MCP Tasks", "interview": "MCP Tasks"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-16-top-4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/spv/2609/15/news031.html",
+      "originalTitle": "AIの「脱クラウド・オンプレミス回帰」が66％、「AI案件の中止」も多数――その原因は？",
+      "source": "＠IT",
+      "topic": "AI Infrastructure / Hybrid Cloud / Governance / Cost",
+      "access": "full",
+      "accessNote": "＠IT公開記事を確認。2026年6月5～22日、9市場1500人（日本100人）のCloudera Survey、AI積極利用77％、Governance/Compliance理由の延期・中止95％、Public CloudからPrivate/On-prem移行66％、日本Infra Cost増86％を確認した。",
+      "capturedAt": "2026-09-16T01:20:00.000Z",
+      "snapshotSha256": "5e14a144a9fd152ac07158b549045bda15914a161d0254cf9ec70fef1864b340",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "Clouderaの1500人調査では66％が過去1年にAI WorkloadをPublic CloudからPrivate CloudまたはOn-premへ移し、日本では86％がInfrastructure Cost増を回答した。",
+          "quote": "66％がプライベートクラウドやオンプレミスへ移行",
+          "locator": "＠IT: 66％移行、Cost、Governance、調査方法",
+          "conditions": "This is a vendor-sponsored online survey with self-reported responses, not an audited TCO study. It does not imply all AI workloads should move on-premises.",
+          "usedIn": {"zh": "66％", "ja": "66％", "interview": "66％"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-16-top-5",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/15/news040.html",
+      "originalTitle": "アイカ工業が「AI活用を阻む“表記揺れ”問題」解消へ　データ品質を高める具体策とは？",
+      "source": "＠IT",
+      "topic": "Enterprise AI / Data Quality / Master Data / BI",
+      "access": "full",
+      "accessNote": "＠IT公開記事を確認。アイカ工業の分散Master、表記揺れ/重複/更新漏れ、Sansan Data IntelligenceとSansan導入、Sansan Organization Code（SOC）によるSystem横断Entity関連付け、Data Cleansingを確認した。定量的AI精度改善値は未提示。",
+      "capturedAt": "2026-09-16T01:20:00.000Z",
+      "snapshotSha256": "0ca86ec5be39c5ee8299546715c56236ac44175ae89aaf107e71e6cb14ec0b75",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "アイカ工業はSansan Data IntelligenceのSansan Organization Code（SOC）で異なるSystemの得意先・仕入先Masterを同一企業・事業所として関連付け、自動Data Cleansingで表記揺れと重複を解消する構成を採用した。",
+          "quote": "Sansan Organization Code",
+          "locator": "＠IT: データが使えない状態からの改善策、SOC、Data Cleansing",
+          "conditions": "The article describes product capabilities and intended AI/BI use but does not report a quantified improvement in AI answer accuracy or business ROI.",
+          "usedIn": {"zh": "Sansan Organization Code", "ja": "Sansan Organization Code", "interview": "Sansan Organization Code"}
+        }
+      ]
+    }
+  ]
 }
