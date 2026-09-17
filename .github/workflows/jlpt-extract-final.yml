@@ -1,0 +1,34 @@
+name: Decode JLPT original evidence correctly
+on:
+  push:
+    branches: [fix/jlpt-history-dedup-2026-09-18]
+    paths: ['.github/workflows/jlpt-extract-final.yml']
+permissions:
+  contents: read
+jobs:
+  originals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - run: python3 -m pip install requests==2.32.3 beautifulsoup4==4.13.4 PyYAML==6.0.2 Janome==0.5.0
+      - name: Respect HTML encoding and article containers
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('scripts/jlpt-history-collect.py');s=p.read_text()
+          s=s.replace("soup=BeautifulSoup(response.text,'html.parser')", "soup=BeautifulSoup(response.content,'html.parser');result['encoding']=soup.original_encoding")
+          s=s.replace("root=(soup.select_one('.entry-content')", "root=(soup.select_one('#cmsBody') or soup.select_one('.entrybody') or soup.select_one('.entry-body') or soup.select_one('.itmdBody') or soup.select_one('.article-body') or soup.select_one('.entry-content')")
+          s=s.replace("if len(text)<300:", "if '\\ufffd' in text:raise ValueError('Replacement character in article text; manual encoding review required')\n        if len(text)<300:")
+          p.write_text(s)
+      - name: Collect readable original article evidence
+        run: python3 scripts/jlpt-history-collect.py /tmp/jlpt-final-sources
+      - name: Upload evidence, never publish full article copies
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: jlpt-final-sources
+          path: /tmp/jlpt-final-sources
+          retention-days: 3
