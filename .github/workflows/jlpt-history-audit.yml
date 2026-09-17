@@ -5,30 +5,35 @@ on:
     branches: [fix/jlpt-history-dedup-2026-09-18]
     paths:
       - '.github/workflows/jlpt-history-audit.yml'
+      - 'scripts/jlpt-history-collect.py'
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  snapshot:
+  sources:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
-      - name: Export versioned source without audio binaries
+      - name: Install source-inspection tools
+        run: python3 -m pip install requests==2.32.3 beautifulsoup4==4.13.4 PyYAML==6.0.2 Janome==0.5.0
+      - name: Collect original articles and candidate lemmas
+        run: python3 scripts/jlpt-history-collect.py /tmp/jlpt-originals
+      - name: Export learning audio manifests only
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p /tmp/jlpt-source
-          git rev-parse HEAD > /tmp/jlpt-source/SNAPSHOT_COMMIT.txt
-          git ls-files -z | python3 -c 'import sys,pathlib,shutil; root=pathlib.Path("/tmp/jlpt-source/repository"); allowed={".md",".json",".ts",".tsx",".js",".mjs",".cjs",".astro",".yml",".yaml",".css",".html",".toml",".txt",".py"}; paths=[p for p in sys.stdin.buffer.read().decode().split("\0") if p]; [( (root/p).parent.mkdir(parents=True,exist_ok=True),shutil.copy2(p,root/p)) for p in paths if pathlib.Path(p).is_file() and (pathlib.Path(p).suffix in allowed or pathlib.Path(p).name in {".gitignore",".npmrc",".nvmrc"}) and not p.startswith("public/audio/")]'
-      - name: Upload audit source snapshot
+          mkdir -p /tmp/jlpt-originals/audio-manifests
+          python3 -c 'from pathlib import Path; import shutil; root=Path("/tmp/jlpt-originals/audio-manifests"); [( (root/p.relative_to("public/audio")).parent.mkdir(parents=True,exist_ok=True),shutil.copy2(p,root/p.relative_to("public/audio"))) for p in Path("public/audio").rglob("*.json")]'
+      - name: Upload source evidence for editorial review
+        if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: jlpt-history-source
-          path: /tmp/jlpt-source
-          include-hidden-files: true
+          name: jlpt-originals-and-candidates
+          path: /tmp/jlpt-originals
           retention-days: 3
