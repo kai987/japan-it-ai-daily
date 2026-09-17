@@ -6,40 +6,96 @@ on:
     paths:
       - '.github/workflows/jlpt-history-maintenance.yml'
       - 'scripts/jlpt-history/**'
+      - 'src/lib/lessonAudioManifest*'
   workflow_dispatch:
 
-permissions:
-  contents: read
+permissions: {}
+concurrency:
+  group: jlpt-history-maintenance
+  cancel-in-progress: false
 
 jobs:
-  audit:
+  repair:
+    if: github.ref == 'refs/heads/fix/jlpt-history-dedup-20260918'
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      PUBLIC_AUDIO_BASE_URL: ${{ vars.PUBLIC_AUDIO_BASE_URL || 'https://pub-7561025e67be4103ac4bafb331864381.r2.dev' }}
     steps:
       - name: Checkout isolated maintenance branch
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          persist-credentials: false
-      - name: Record source revision
-        run: git rev-parse HEAD > source-revision.txt
-      - name: Export source for vocabulary audit
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install migration parser
+        run: |
+          python3 -m venv /tmp/jlpt-maintenance-venv
+          /tmp/jlpt-maintenance-venv/bin/pip install PyYAML==6.0.2
+      - name: Apply scoped audio and validation support patch
+        run: |
+          if git apply --check scripts/jlpt-history/support.patch; then
+            git apply scripts/jlpt-history/support.patch
+          else
+            git apply --reverse --check scripts/jlpt-history/support.patch
+            echo 'Support patch is already applied.'
+          fi
+      - name: Apply reviewed historical vocabulary migration
+        run: /tmp/jlpt-maintenance-venv/bin/python scripts/jlpt-history/migrate.py --apply
+      - name: Verify idempotence and content hashes
+        run: /tmp/jlpt-maintenance-venv/bin/python scripts/jlpt-history/migrate.py --apply
+      - name: Install dependencies
+        run: npm ci
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
+      - name: Type check
+        run: npm run check
+      - name: Verify complete historical vocabulary and four-file consistency
+        run: npm run content:integrity:check
+      - name: Verify original-source evidence
+        run: npm run evidence:check && npm run evidence:pilot
+      - name: Verify preserved interview Q&A and news quality
+        run: npm run bilingual:check-interview && npm run quality:check
+      - name: Check audio scripts
+        run: npm run audio:check
+      - name: Run unit tests
+        run: npm test
+      - name: Build site
+        run: npm run build
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+      - name: Verify browser interactions
+        run: npm run test:browser
+      - name: Verify production CSP
+        run: npm run audio:strip-dist && npm run security:check
+      - name: Commit only the verified repair to the isolated branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/content/daily src/content/daily-ja src/content/japanese src/content/japanese-ja docs/jlpt-history
+          git add scripts/validate-content-integrity.mjs src/content.config.ts src/components/pages/LessonPage.astro src/components/LessonAudio.astro tests/browser/shared-pages.spec.ts
+          if ! git diff --cached --quiet; then
+            git commit -m 'content: deduplicate 37 historical JLPT lessons with reviewed replacements'
+            git push origin HEAD:refs/heads/fix/jlpt-history-dedup-20260918
+          fi
+          git rev-parse HEAD > source-revision.txt
+      - name: Export audit and generated content
+        if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: jlpt-history-source
+          name: jlpt-history-result
           path: |
-            src
-            scripts
-            tests
-            e2e
-            docs
-            .github/workflows
-            package.json
-            package-lock.json
-            astro.config.mjs
-            tsconfig.json
-            vitest.config.*
-            playwright.config.*
-            README.md
+            docs/jlpt-history
+            src/content
+            src/lib/lessonAudioManifest*
+            scripts/jlpt-history
             source-revision.txt
-            public/**/*.json
-          include-hidden-files: true
-          retention-days: 1
+            playwright-report
+            test-results
+          retention-days: 7

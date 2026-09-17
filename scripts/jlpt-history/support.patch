@@ -1,0 +1,197 @@
+diff --git a/scripts/validate-content-integrity.mjs b/scripts/validate-content-integrity.mjs
+index 2dbe137..1ae4750 100644
+--- a/scripts/validate-content-integrity.mjs
++++ b/scripts/validate-content-integrity.mjs
+@@ -1,6 +1,7 @@
+ import { resolve } from 'node:path';
+ import { pathToFileURL } from 'node:url';
+ import { contentDirs, contentDates, readContent } from './content-files.mjs';
++import { validateVocabularyHistory } from './jlpt-history/validate.mjs';
+ 
+ export const validateContentDay = (date, documents) => {
+   const errors = [];
+@@ -29,10 +30,10 @@ export const validateContentDay = (date, documents) => {
+       const vocabulary = array(data.vocabulary), grammar = array(data.grammar), technical = array(data.technicalTerms);
+       require(data.vocabularyCount === vocabulary.length, `${dir} vocabularyCount differs from vocabulary.length`);
+       require(data.grammarCount === grammar.length, `${dir} grammarCount differs from grammar.length`);
+-      require(vocabulary.length >= 18 && vocabulary.length <= 22, `${dir} vocabulary must contain 18–22 items`);
++      require(vocabulary.length <= 22 && (vocabulary.length >= 18 || nonempty(data.vocabularyShortfallReason)), `${dir} vocabulary must contain 18–22 items or document a source-verified shortfall`);
+       require(grammar.length >= 5 && grammar.length <= 8, `${dir} grammar must contain 5–8 items`);
+       require(technical.length >= 5 && technical.length <= 10, `${dir} technicalTerms must contain 5–10 items`);
+-      for (const [key, items, field, count] of [['mustRememberWords', vocabulary, 'term', 10], ['mustRememberGrammar', grammar, 'pattern', 5]]) {
++      for (const [key, items, field, count] of [['mustRememberWords', vocabulary, 'term', Math.min(10, vocabulary.length)], ['mustRememberGrammar', grammar, 'pattern', 5]]) {
+         const selected = array(data[key]);
+         require(selected.length === count && unique(selected), `${dir} ${key} must contain ${count} unique items`);
+         require(selected.every((value) => items.some((item) => item[field] === value)), `${dir} ${key} contains an unknown item`);
+@@ -70,6 +71,8 @@ export const validateContent = (root) => {
+     }
+     return [...failures, ...validateContentDay(date, documents)];
+   });
++  try { errors.push(...validateVocabularyHistory(root).errors); }
++  catch (error) { errors.push(`JLPT history incomplete: ${error.message}`); }
+   return { dates: dates.length, errors };
+ };
+ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+diff --git a/src/components/LessonAudio.astro b/src/components/LessonAudio.astro
+index 896f646..c23bfca 100644
+--- a/src/components/LessonAudio.astro
++++ b/src/components/LessonAudio.astro
+@@ -1,5 +1,6 @@
+ <script>
+   import { configuredAudioAssetUrl, localAudioAssetUrl } from '../lib/audioUrl';
++  import { matchingLessonClip, type LessonManifest } from '../lib/lessonAudioManifest';
+ 
+   const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.speech-button'));
+   const parts = location.pathname.split('/').filter(Boolean);
+@@ -7,7 +8,6 @@
+   const synth = 'speechSynthesis' in window ? window.speechSynthesis : null;
+   let activeButton: HTMLButtonElement | null = null;
+   let activeAudio: HTMLAudioElement | null = null;
+-  const normalize = (text: string) => text.replace(/\s+/g, ' ').trim();
+ 
+   function clearActive() {
+     activeButton?.classList.remove('is-speaking');
+@@ -63,35 +63,25 @@
+     void audio.play().catch(fallback);
+   }
+ 
+-  type Manifest = {
+-    voice?: { name?: string; style?: string };
+-    items?: { reading: string; term: string; word: string; exampleJa: string; example: string }[];
+-    grammar?: { exampleJa: string; example: string }[];
+-  };
+   async function attachAudio() {
++    for (const button of buttons) {
++      delete button.dataset.audio;
++      delete button.dataset.audioProvider;
++    }
+     if (!lessonId || !buttons.length) return;
+     try {
+       // Manifests live at the site root in both language modes; MP3s may live on R2.
+       const response = await fetch(localAudioAssetUrl('japanese', lessonId, 'manifest.json'), { cache: 'no-cache' });
+       if (!response.ok) return;
+-      const manifest: Manifest = await response.json();
+-      const words = new Map<string, string>(), examples = new Map<string, string>(), grammar = new Map<string, string>();
+-      for (const item of manifest.items || []) {
+-        words.set(normalize(item.reading), item.word);
+-        words.set(normalize(item.term), item.word);
+-        examples.set(normalize(item.exampleJa), item.example);
+-      }
+-      for (const item of manifest.grammar || []) grammar.set(normalize(item.exampleJa), item.example);
++      const manifest: LessonManifest = await response.json();
+       for (const button of buttons) {
+-        const text = normalize(button.dataset.speech || '');
+-        const map = button.dataset.speechKind === 'word' ? words : button.dataset.speechKind === 'grammar-example' ? grammar : examples;
+-        const filename = map.get(text);
++        const filename = matchingLessonClip(manifest, button.dataset.speechKind || '', button.dataset.speech || '', button.dataset.term || '');
+         if (!filename) continue;
+         button.dataset.audio = configuredAudioAssetUrl('japanese', lessonId, filename);
+         button.dataset.audioProvider = 'aivis';
+         button.title = `AivisSpeech · ${manifest.voice?.name || 'AivisSpeech'}${manifest.voice?.style ? ` · ${manifest.voice.style}` : ''}`;
+       }
+-    } catch { /* Keep the pre-rendered URL and browser speech fallback. */ }
++    } catch { /* Fail closed to browser speech of the CURRENT text, never an old indexed MP3. */ }
+   }
+   for (const button of buttons) button.addEventListener('click', () => {
+     const text = (button.dataset.speech || '').trim();
+diff --git a/src/components/pages/LessonPage.astro b/src/components/pages/LessonPage.astro
+index 6d6e168..759dce9 100644
+--- a/src/components/pages/LessonPage.astro
++++ b/src/components/pages/LessonPage.astro
+@@ -1,9 +1,6 @@
+ ---
+ import BaseLayout from '../../layouts/BaseLayout.astro';
+ import { render } from 'astro:content';
+-import { configuredAudioAssetUrl } from '../../lib/audioUrl';
+-
+-
+ import type { CollectionEntry } from 'astro:content';
+ import { localeRoot, type SiteLocale } from '../../lib/locale';
+ import { pageCopy } from '../../lib/pageCopy';
+@@ -21,8 +18,7 @@ const jlptOrder = ['N5/N4', 'N3', 'N2', 'N1'];
+ const vocabGroups = jlptOrder
+   .map((level) => ({ level, items: data.vocabulary.map((item, index) => ({ item, index })).filter(({ item }) => item.level === level) }))
+   .filter((group) => group.items.length > 0);
+-const audioFile = (kind: 'vocab' | 'example' | 'grammar-example', index: number) =>
+-  configuredAudioAssetUrl('japanese', lesson.id, `${kind}-${String(index + 1).padStart(2, '0')}.mp3`);
++
+ ---
+ <BaseLayout locale={locale} title={`${data.title} · Japan IT / AI Daily`} description={data.description}>
+   <div class="container report-layout lesson-detail">
+@@ -30,6 +26,7 @@ const audioFile = (kind: 'vocab' | 'example' | 'grammar-example', index: number)
+       <div class="eyebrow">{data.date.toLocaleDateString('ja-JP')} · JLPT + IT日本語</div>
+       <h1>{data.title}</h1>
+       <p class="meta">{data.description}</p>
++      {data.vocabularyShortfallReason && <p class="meta" role="note">{data.vocabularyShortfallReason}</p>}
+       <div class="tags">{data.levels.map((level:string) => <span class="tag">{level}</span>)}</div>
+       <p class="learning-back"><a href={`${root}japanese/`}>{copy.back}</a></p>
+ 
+@@ -59,7 +56,7 @@ const audioFile = (kind: 'vocab' | 'example' | 'grammar-example', index: number)
+                               type="button"
+                               data-speech={item.reading || item.term}
+                               data-speech-kind="word"
+-                              data-audio={audioFile('vocab', index)}
++                              data-term={item.term}
+                               aria-label={`${item.term}の発音を再生`}
+                               aria-pressed="false"
+                               title={copy.wordTitle}
+@@ -105,7 +102,7 @@ const audioFile = (kind: 'vocab' | 'example' | 'grammar-example', index: number)
+                             type="button"
+                             data-speech={item.exampleJa}
+                             data-speech-kind="example"
+-                            data-audio={audioFile('example', index)}
++
+                             aria-label="例文を読み上げる"
+                             aria-pressed="false"
+                             title={copy.exampleTitle}
+@@ -190,7 +187,7 @@ const audioFile = (kind: 'vocab' | 'example' | 'grammar-example', index: number)
+                         type="button"
+                         data-speech={item.exampleJa}
+                         data-speech-kind="grammar-example"
+-                        data-audio={audioFile('grammar-example', index)}
++
+                         aria-label={copy.grammarAria}
+                         aria-pressed="false"
+                         title={locale === 'ja' ? copy.grammarAria : '语法例句朗读'}
+diff --git a/src/content.config.ts b/src/content.config.ts
+index 0edad7b..369791f 100644
+--- a/src/content.config.ts
++++ b/src/content.config.ts
+@@ -74,6 +74,7 @@ const japaneseSchema = z.object({
+   topics: z.array(z.string()).default([]),
+   levels: z.array(level).default([]),
+   vocabularyCount: z.number().int().nonnegative().default(0),
++  vocabularyShortfallReason: z.string().min(1).optional(),
+   grammarCount: z.number().int().nonnegative().default(0),
+   vocabulary: z.array(vocabularyItem).default([]),
+   grammar: z.array(grammarItem).default([]),
+@@ -127,6 +128,7 @@ const japaneseJa = defineCollection({
+     topics: z.array(z.string()).default([]),
+     levels: z.array(level).default([]),
+     vocabularyCount: z.number().int().nonnegative().default(0),
++  vocabularyShortfallReason: z.string().min(1).optional(),
+     grammarCount: z.number().int().nonnegative().default(0),
+     vocabulary: z.array(vocabularyItemJa).default([]),
+     grammar: z.array(grammarItemJa).default([]),
+diff --git a/tests/browser/shared-pages.spec.ts b/tests/browser/shared-pages.spec.ts
+index 4241dac..e155331 100644
+--- a/tests/browser/shared-pages.spec.ts
++++ b/tests/browser/shared-pages.spec.ts
+@@ -67,7 +67,7 @@ for (const locale of ['zh', 'ja']) {
+     const manifest = page.waitForResponse((response) => response.url().endsWith('/audio/japanese/2026-09-07/manifest.json'));
+     await page.goto(`${root}japanese/2026-09-07/`);
+     expect((await manifest).ok()).toBe(true);
+-    const first = page.locator('[data-speech-kind="example"]').first();
++    const first = page.locator('[data-speech-kind="example"][data-audio-provider="aivis"]').first();
+     const second = page.locator('[data-speech-kind="grammar-example"]').first();
+     await expect(first).toHaveAttribute('data-audio-provider', 'aivis');
+     await first.click();
+@@ -91,7 +91,7 @@ for (const locale of ['zh', 'ja']) {
+     });
+     await page.route('**/*.mp3', (route) => route.abort());
+     await page.goto(`${root}japanese/2026-09-07/`);
+-    const button = page.locator('[data-speech-kind="example"]').first();
++    const button = page.locator('[data-speech-kind="example"][data-audio-provider="aivis"]').first();
+     await button.click();
+     await expect.poll(() => page.evaluate(() => (window as any).__fallback?.lang)).toBe('ja-JP');
+     expect(await page.evaluate(() => (window as any).__fallback.text)).toBe(await button.getAttribute('data-speech'));
