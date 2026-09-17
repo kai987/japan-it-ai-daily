@@ -1,0 +1,64 @@
+name: JLPT history repair validation
+
+on:
+  push:
+    branches: [fix/jlpt-vocabulary-history-20260918]
+    paths:
+      - '.github/workflows/jlpt-history-repair.yml'
+      - 'scripts/jlpt-history*'
+      - 'docs/jlpt-history-repair/**'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repair branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install parser
+        run: python -m pip install PyYAML==6.0.2
+      - name: Inspect complete historical corpus
+        shell: python
+        run: |
+          from pathlib import Path
+          from collections import Counter
+          import yaml, re, json, unicodedata
+          def read(path):
+              text = path.read_text(encoding='utf-8')
+              parts = text.split('---', 2)
+              assert len(parts) == 3, str(path)
+              return yaml.safe_load(parts[1]), parts[2]
+          def norm(item):
+              term = unicodedata.normalize('NFKC', item['term']).strip()
+              pos = item.get('partOfSpeech', '')
+              if term.endswith('する') and ('サ変' in pos or '名詞' in pos): term = term[:-2]
+              if term.endswith(('な', 'に')) and ('な形容' in pos or '形容動詞' in pos or term.endswith('的に')): term = term[:-1]
+              return term
+          seen, total, repeats = {}, 0, 0
+          days = sorted(Path('src/content/japanese').glob('*.md'))
+          for path in days:
+              data, body = read(path)
+              ja, _ = read(Path('src/content/japanese-ja') / path.name)
+              daily, dailybody = read(Path('src/content/daily') / path.name)
+              duplicates, unique = [], []
+              for word in data.get('vocabulary', []):
+                  key = norm(word)
+                  total += 1
+                  if key in seen:
+                      repeats += 1
+                      duplicates.append([word['term'], seen[key]])
+                  else:
+                      seen[key] = path.stem
+                      unique.append(word['term'])
+              print('DAY ' + json.dumps({'date':path.stem,'count':len(data.get('vocabulary',[])),'kept':unique,'duplicates':duplicates,'must':data.get('mustRememberWords',[]),'jaMatches':[x['term'] for x in data['vocabulary']] == [x['term'] for x in ja['vocabulary']]},ensure_ascii=False))
+              print('SOURCES ' + json.dumps({'date':path.stem,'urls':[x['url'] for x in daily['top']]},ensure_ascii=False))
+              if path == days[-1] or path == days[0]:
+                  print('HEADINGS ' + path.stem + ' ' + json.dumps(re.findall(r'^#{1,6} .*',dailybody,re.M),ensure_ascii=False))
+                  print('LEARNING_BODY ' + path.stem + ' ' + body[:4000])
+          print('SUMMARY ' + json.dumps({'days':len(days),'entries':total,'uniqueNormalized':len(seen),'repeatEntries':repeats},ensure_ascii=False))
+          print('WORDS ' + json.dumps(list(seen.keys()),ensure_ascii=False))
