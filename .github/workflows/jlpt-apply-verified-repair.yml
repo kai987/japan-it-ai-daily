@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
+          fetch-depth: 0
       - name: Verify transport digest and extract only approved source paths
         shell: python
         run: |
@@ -26,8 +27,6 @@ jobs:
           from pathlib import Path
           allowed={'docs/jlpt-history/identity-rules.json','docs/jlpt-history/replacement-cards.tsv','docs/jlpt-history/source-attestations.json','scripts/repair-jlpt-history.py','scripts/check-jlpt-history.mjs','scripts/verify-audio-integrity.mjs','src/lib/learningAudio.ts','src/lib/learningAudio.test.ts','src/lib/jlptHistory.test.mjs','src/components/pages/LessonPage.astro','src/components/LessonAudio.astro','package.json'}
           chunks=[Path(f'docs/jlpt-history/transport-{i:02d}.b64') for i in range(10)]
-          for p in chunks:
-              print(p.name,len(p.read_text()),hashlib.sha256(p.read_bytes()).hexdigest())
           raw=base64.b64decode(''.join(p.read_text().strip() for p in chunks),validate=True)
           actual=hashlib.sha256(raw).hexdigest()
           print('Compressed repair SHA256:',actual)
@@ -44,6 +43,8 @@ jobs:
         run: python3 -m pip install PyYAML==6.0.2
       - name: Apply validated bilingual vocabulary migration
         run: python3 scripts/repair-jlpt-history.py
+      - name: Update reviewed fixtures without weakening content checks
+        run: python3 scripts/jlpt-review-fixes.py
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 24
@@ -83,7 +84,7 @@ jobs:
           report=json.loads(Path('docs/jlpt-history/repair-report.json').read_text())
           assert report['afterCards']==740 and report['historicalDuplicatesAfter']==0
           for p in Path('docs/jlpt-history').glob('transport-*.b64'):p.unlink()
-          for p in ['.github/workflows/jlpt-history-audit.yml','.github/workflows/jlpt-repair-prepare.yml','.github/workflows/jlpt-repair-draft.yml','.github/workflows/jlpt-extract-final.yml','.github/workflows/jlpt-apply-verified-repair.yml','scripts/jlpt-history-collect.py','scripts/draft-jlpt-repair.py','docs/jlpt-history/selections.txt']:
+          for p in ['.github/workflows/jlpt-history-audit.yml','.github/workflows/jlpt-repair-prepare.yml','.github/workflows/jlpt-repair-draft.yml','.github/workflows/jlpt-extract-final.yml','.github/workflows/jlpt-apply-verified-repair.yml','scripts/jlpt-history-collect.py','scripts/draft-jlpt-repair.py','scripts/jlpt-review-fixes.py','docs/jlpt-history/selections.txt']:
               Path(p).unlink(missing_ok=True)
           PY
           git config user.name 'github-actions[bot]'
