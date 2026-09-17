@@ -1,0 +1,45 @@
+name: JLPT history maintenance
+
+on:
+  push:
+    branches: [fix/jlpt-history-dedup-20260918]
+    paths:
+      - '.github/workflows/jlpt-history-maintenance.yml'
+      - 'scripts/jlpt-history/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout isolated maintenance branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Record source revision
+        run: git rev-parse HEAD > source-revision.txt
+      - name: Export source for vocabulary audit
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: jlpt-history-source
+          path: |
+            src
+            scripts
+            tests
+            e2e
+            docs
+            .github/workflows
+            package.json
+            package-lock.json
+            astro.config.mjs
+            tsconfig.json
+            vitest.config.*
+            playwright.config.*
+            README.md
+            source-revision.txt
+            public/**/*.json
+          include-hidden-files: true
+          retention-days: 1
