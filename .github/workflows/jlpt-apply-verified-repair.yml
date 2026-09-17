@@ -89,7 +89,7 @@ jobs:
           PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/jlpt-history scripts src/content src/components/LessonAudio.astro src/components/pages/LessonPage.astro src/lib/learningAudio.ts src/lib/learningAudio.test.ts src/lib/jlptHistory.test.mjs package.json public/audio/japanese .github/workflows
+          git add docs/jlpt-history docs/daily-quality-policy.json scripts src/content src/components/LessonAudio.astro src/components/pages/LessonPage.astro src/lib/learningAudio.ts src/lib/learningAudio.test.ts src/lib/jlptHistory.test.mjs package.json public/audio/japanese .github/workflows
           git diff --cached --stat
           git commit -m 'fix: deduplicate 37 historical JLPT lessons with source-attested bilingual cards'
           AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
