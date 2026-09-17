@@ -228,53 +228,18 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "ログの検索にとどまらず、開発の相談にも情報を使います。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "f611dca97d6f1247fd33560f79aa2a58c4860dd171fac11c88d85246ecb1cb26"
+      "pattern": "～に限らず",
+      "exampleJa": "権限の確認は同じアカウントに限らず、接続先にも必要です。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     },
     {
-      "index": 2,
-      "pattern": "～かねない",
-      "exampleJa": "共有ロールを変更すると、別の関数にも影響しかねません。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "c60e7835240fa8b50ebf519afb7a92390dd65f59c17430f858a9197b27d538a3"
-    },
-    {
-      "index": 3,
-      "pattern": "～なくしては",
-      "exampleJa": "独立した観点なくしては、テストの偏りに気づくことは難しいです。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "60b4e2cd05eff7cbc1ae89bea526f328c9d75f3d61a4d780ae11aed7003c17f8"
-    },
-    {
-      "index": 4,
-      "pattern": "～とは限らない",
-      "exampleJa": "検出がゼロでも、欠陥がないとは限りません。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "a8e6a51068b921619ec522923dfa326be8acef42c4aa4df31ec0dd4e8afeda4a"
-    },
-    {
-      "index": 5,
-      "pattern": "～に基づいて",
-      "exampleJa": "本番の観測に基づいて、QA活動の配分を見直します。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "a9db1ac57938d8a36a335b248678e73098111ffb0bba154c689cc8853ab3017d"
-    },
-    {
-      "index": 6,
-      "pattern": "～たうえで",
-      "exampleJa": "生成した基準を確認したうえで、課題に追加します。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "db413244f29db2e6579a519dbbbc22332dfdf3cab95999884ecead290539e6c6"
-    },
-    {
-      "index": 7,
-      "pattern": "～一方で",
-      "exampleJa": "開発の着手は早まる一方で、実行権限の確認は残ります。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "9d50cbafae3f2b1c8c881d92c1b91cec0c8982ba282f9ac066949772231d8284"
+      "pattern": "～つつある",
+      "exampleJa": "この構成は開発チームの共通基盤になりつつあります。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

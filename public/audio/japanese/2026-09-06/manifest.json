@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "AgentのMisalignmentは研究上の問題にとどまらず、外部SystemへのSide Effectにつながる可能性があります。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "8effa4e2a61d110f5a7b6cbb31a4d5781898e29fc475831f21c475c01bb6153a"
-    },
-    {
-      "index": 2,
-      "pattern": "～を余儀なくされる",
-      "exampleJa": "新ModelのContractに対応していないRuntimeは、UpdateやRoute変更を余儀なくされます。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "99b2f2eaa34911e29178bc9a6481418d15093308da35a21a76086a35e6dcf0a0"
-    },
-    {
-      "index": 3,
-      "pattern": "～に至るまで",
-      "exampleJa": "Tool選択から最終回答に至るまで、Agentの実行Traceを段階別に評価します。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "e7be5c6d2ce1a39fc8585a52e96c5ea2e9746d6d144d2ec64caa779832c57a33"
-    },
-    {
-      "index": 4,
-      "pattern": "～わけではない",
-      "exampleJa": "Model Catalogに表示されているからといって、そのRuntimeで実行できるわけではありません。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "f876a6a65fc3d11c19639ad33f72c3b2589c04aa7383b651852f7a6a9acf5c8f"
-    },
-    {
-      "index": 5,
-      "pattern": "～一方で",
-      "exampleJa": "LLMはCodeから構造を導出できる一方で、人間には概要図が必要です。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "5613ee9dff3517646c152d70389ae3186e4041669b1cdd88d57e09b17412f0db"
-    },
-    {
-      "index": 6,
-      "pattern": "～たうえで",
-      "exampleJa": "同一条件で候補Modelを評価したうえで、Canaryへ展開します。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "5a4125a6ba058d5765fe74ceb05b15bf8d5c58d6e04c8c7fac4146f0e08da73c"
-    },
-    {
-      "index": 7,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの種類に応じて、Hard GateとQuality Rubricを使い分けます。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "9191edf37b2b099458cd45cba1ad0074fcbd72bd0b087827c64b5f55d7426962"
+      "pattern": "～ないわけではない",
+      "exampleJa": "動的に取得する方式でも、事前の契約を持たないわけではありません。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

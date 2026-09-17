@@ -25,6 +25,16 @@ export const learningRecordingFiles = (items, date) => items.flatMap((item) => {
   return [item.word, item.example];
 });
 
+
+export const grammarRecordingFiles = (items, date) => items.flatMap((item) => {
+  if (item.playback === 'browser-tts') {
+    if (item.reason !== 'historical-grammar-repair' || item.example !== null || item.exampleHash) throw new Error(`${date}: invalid explicit grammar browser-speech fallback`);
+    return [];
+  }
+  if (item.playback || typeof item.example !== 'string' || !/^[\w-]+\.mp3$/.test(item.example)) throw new Error(`${date}: missing grammar recording without explicit fallback`);
+  return [item.example];
+});
+
 export const collectAudioAssets = (root) => {
   const contentRoot = join(root, 'src/content');
   const directories = ['daily', 'daily-ja', 'japanese', 'japanese-ja'];
@@ -62,7 +72,7 @@ export const collectAudioAssets = (root) => {
     browserTtsCards += learning.items.filter((item) => item.playback === 'browser-tts').length;
     const filenames = [
       ...interview.interview.map((item) => item.audio), ...interview.review.map((item) => item.audio),
-      ...learningFiles, ...learning.grammar.map((item) => item.example),
+      ...learningFiles, ...grammarRecordingFiles(learning.grammar, date),
     ];
     for (const filename of filenames) {
       if (typeof filename !== 'string' || !/^[\w-]+\.mp3$/.test(filename)) throw new Error(`${date}: invalid MP3 filename`);

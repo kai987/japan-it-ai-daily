@@ -228,41 +228,6 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "MCPはTool接続にとどまらず、長期TaskやIdentityの設計へ広がっています。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "c6d66cc1cb60c3a373be7b854f9a4957da307594e69f171a31462fd3176ae7f5"
-    },
-    {
-      "index": 2,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの複雑さに応じてCopilotのAuto Tierを選びます。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "d61844f5308b1915791c24a185033db47e904b72f0e1bcbd12bbbd1e3e62334a"
-    },
-    {
-      "index": 3,
-      "pattern": "～たうえで",
-      "exampleJa": "Dataの所在と規制要件を確認したうえで、AI Workloadの配置を決めます。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "365081daab58d5e812b7d54dcf4769749c550d60266d545d48e99877741f7caa"
-    },
-    {
-      "index": 4,
-      "pattern": "～とは限らない",
-      "exampleJa": "静的Error率が低くても、Code全体が正しいとは限りません。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "c298d67cd8c4b03a8adaa656a6580ac9b5a9a25881a618f71fd7cd4f2a25f75e"
-    },
-    {
-      "index": 5,
-      "pattern": "～一方で",
-      "exampleJa": "Hybrid構成は柔軟な一方で、Governanceを複雑にする可能性があります。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "266b5bc043113214dbe1ef4d4e58a1c0f7c8eefcf5a4c3ecef27af0bcafdd9ce"
-    },
-    {
       "index": 6,
       "pattern": "～ざるを得ない",
       "exampleJa": "規制上Public Cloudへ置けないDataは、別環境を選ばざるを得ません。",
@@ -270,11 +235,11 @@
       "exampleHash": "4314987dc09c9b0c03d457ab35647cbb98e1494b2b4d8d064463fa3b63989473"
     },
     {
-      "index": 7,
-      "pattern": "～に伴って",
-      "exampleJa": "AI利用の拡大に伴って、Master Dataの品質管理も重要になります。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "40d1da1275a625f75a59a6364005c0e0ac86272ac15f9dcfd0aef9ae4ec1fc75"
+      "pattern": "～をもとに",
+      "exampleJa": "利用データをもとに、改善の傾向を調べます。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

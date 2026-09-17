@@ -228,53 +228,18 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Agent PlatformはModel提供にとどまらず、RuntimeやGuardrailの標準化まで担います。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "9d387cba1b7474423f62d3dab51a17989f38ec7ac32351f77791a85a02f45309"
+      "pattern": "～に反して",
+      "exampleJa": "同じ項目を何度も定義する実装は、共通化の方針に反します。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     },
     {
-      "index": 2,
-      "pattern": "～なくしては",
-      "exampleJa": "Schemaによる自動検証なくしては、No-code Workflowを安全に本番運用するのは難しいです。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "d23903980567380acd41e2347f8b16776f0da4df9897ee2677ede33004c7453b"
-    },
-    {
-      "index": 3,
-      "pattern": "～かねない",
-      "exampleJa": "Permission Bypassを個人設定に任せると、組織Policyを損ないかねません。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "07f5a2d67ba200106ef2eba6bdb0c2e7e2f0f9327adffe95233f5d6088246706"
-    },
-    {
-      "index": 4,
-      "pattern": "～一方で",
-      "exampleJa": "Local AgentはPrivacyに強い一方で、高性能Hardwareが必要です。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "7ad1014798a5d1767a0c109579d99e649da7fb71e8c34947444b7ba35992bfe2"
-    },
-    {
-      "index": 5,
-      "pattern": "～に応じて",
-      "exampleJa": "負荷に応じてRuntime Replicaを増減させます。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "35c3950dca4c9bbf9ebd722e64c1f41f4a7b2014d644776a47ee988f96c52988"
-    },
-    {
-      "index": 6,
-      "pattern": "～た上で",
-      "exampleJa": "TypeSpecとBackendの整合性を確認した上でClientを生成します。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "137b54bf595db421b5da75a82dc5d90fbbbb489192ed363465cc620a05cfcfe0"
-    },
-    {
-      "index": 7,
-      "pattern": "～に基づいて",
-      "exampleJa": "Managed Settingsに基づいて利用可能なPluginを制御します。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "aaa470cc50d210b44cb37d2d428d6bd443cb28223bbcd853882c60da94c19879"
+      "pattern": "～にすぎない",
+      "exampleJa": "研修の終了は、実務で使うための出発点にすぎません。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

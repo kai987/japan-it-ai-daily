@@ -228,34 +228,6 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Plugin SecurityはCode Reviewにとどまらず、署名や配布元の確認まで必要です。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "27694f427701ca1283b94f5a1f88e3fcfd2c1c743eb62e5fdace5fb441f214d8"
-    },
-    {
-      "index": 2,
-      "pattern": "～恐れがある",
-      "exampleJa": "悪意あるTool Descriptionを読み込むと、意図しない操作を実行する恐れがあります。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "c67dd4a5fb3f9965f55a5f8eaa19abd3f971f4efe84df4fd06f04896e10bfbf0"
-    },
-    {
-      "index": 3,
-      "pattern": "～かねない",
-      "exampleJa": "Sourceを確認せずPluginを導入すると、Supply Chain攻撃を招きかねません。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "1c6d05a5067886b4f933098978923172ef8c4873d6e8e5eba782320ea02a839a"
-    },
-    {
-      "index": 4,
-      "pattern": "～とは限らない",
-      "exampleJa": "人気のPluginだから安全とは限りません。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "92c0120eaa8df3893a0485ff695fe507fa82ce6172c1cc9fbcd86282d00b5b2e"
-    },
-    {
       "index": 5,
       "pattern": "～に備えて",
       "exampleJa": "緊急Patchに備えてDependency Inventoryを維持します。",
@@ -263,18 +235,11 @@
       "exampleHash": "91f125f5b771c6e0509d8d8fac044949898fa7a9dff9d62c1d6efe8fc2189205"
     },
     {
-      "index": 6,
-      "pattern": "～た上で",
-      "exampleJa": "影響範囲と互換性を確認した上でVersionを更新します。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "2b4be8189f22c9e61fb30b5dda4b384b5362d7abf610da96d64f0ae23eaaaa9b"
-    },
-    {
-      "index": 7,
-      "pattern": "～一方で",
-      "exampleJa": "PluginはAgentの機能を拡張できる一方で、攻撃面も広げます。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "be3afc2117662522c244f9347ecaca912634d21c29af4f389bbdc1cf1718c0cb"
+      "pattern": "～に限って",
+      "exampleJa": "この結果は、確認した版と実行条件に限って有効です。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

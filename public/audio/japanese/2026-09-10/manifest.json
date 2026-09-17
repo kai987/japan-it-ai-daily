@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Nx Plugin for AWSはApplication Codeにとどまらず、IaCやObservabilityのScaffoldも生成します。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "eaa1b8da6273d5f2984fa2d13d816859612087687c287f72f5f289dad1023718"
-    },
-    {
-      "index": 2,
-      "pattern": "～を余儀なくされる",
-      "exampleJa": "Exploitまでの時間が短くなれば、企業はPatch運用の見直しを余儀なくされます。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "8b14c043e5f143ec90ee622d54c225a0f058c73ed34299079fe20c2cace09cca"
-    },
-    {
-      "index": 3,
-      "pattern": "～に至るまで",
-      "exampleJa": "Reader追加からFailover、Pod停止に至るまで同じScenarioで検証します。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "7b3e72428cea97eec52f81eecb959fc19c04875cd5f6565c224a91b5e82e183b"
-    },
-    {
-      "index": 4,
-      "pattern": "～たうえで",
-      "exampleJa": "Human Evaluationとの相関を確認したうえで、LLM-as-a-Judgeを運用Gateに使います。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "f8509da6d13e6562334fe76b3ed33019bbc1c1424088b08cc2ce5409bdf6aba9"
-    },
-    {
-      "index": 5,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの難易度に応じてFrontier ModelとOpen-weight Modelを使い分けます。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "4058bd89e95bf075ebfdf4e22d6390c2a164af6a59dc5fe474821c686b963825"
-    },
-    {
-      "index": 6,
-      "pattern": "～一方で",
-      "exampleJa": "AI利用量は増える一方で、同じ使い方なら実質Token Costを下げる目標です。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "a7cd4ad9e8de38e7aee4ed63d4c323c9df8f026a73907e8c9e82f907fb50561d"
-    },
-    {
-      "index": 7,
-      "pattern": "～とは限らない",
-      "exampleJa": "学習済み業種で相関が高くても、未学習業種で同じ結果になるとは限りません。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "8febd9bf5b7d175f019a2cf0a6f787ea2871b99e5ef3b2b78484f30ed5f60745"
+      "pattern": "～べきだ",
+      "exampleJa": "最終的なリスク評価は、利用する組織自身が行うべきです。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

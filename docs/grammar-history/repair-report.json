@@ -1,0 +1,2424 @@
+{
+  "schemaVersion": 1,
+  "baseline": "d470185d853dca3c8a0378601da44449772cf1a5",
+  "from": "2026-08-12",
+  "through": "2026-09-17",
+  "days": 37,
+  "before": 259,
+  "retainedFirstIntroductions": 30,
+  "duplicateEntries": 229,
+  "sourceVerifiedReplacements": 43,
+  "removedWithoutReplacement": 186,
+  "after": 73,
+  "historicalDuplicatesAfter": 0,
+  "minimumPerDay": 1,
+  "maximumPerDay": 7,
+  "protected": [
+    "news A/B body",
+    "vocabulary and technical terms",
+    "C1/C2 body",
+    "C4 vocabulary",
+    "interview text and audio",
+    "existing MP3 bytes"
+  ],
+  "replacementAudio": "explicit browser Japanese speech; no new AivisSpeech recordings claimed",
+  "byDate": [
+    {
+      "date": "2026-08-12",
+      "before": 7,
+      "retained": 7,
+      "replaced": 0,
+      "removedWithoutReplacement": 0,
+      "after": 7,
+      "mustRememberGrammar": [
+        "～にとどまらず",
+        "～かねない",
+        "～なくしては",
+        "～に応じて",
+        "～一方で"
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "before": 7,
+      "retained": 2,
+      "replaced": 0,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～に基づいて",
+        "～にかかわらず"
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "before": 7,
+      "retained": 0,
+      "replaced": 2,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～に限らず",
+        "～つつある"
+      ]
+    },
+    {
+      "date": "2026-08-15",
+      "before": 7,
+      "retained": 0,
+      "replaced": 2,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～を通じて",
+        "～に従って"
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～っぽい"
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "before": 7,
+      "retained": 2,
+      "replaced": 1,
+      "removedWithoutReplacement": 4,
+      "after": 3,
+      "mustRememberGrammar": [
+        "～ことなく",
+        "～恐れがある",
+        "～ようがない"
+      ]
+    },
+    {
+      "date": "2026-08-18",
+      "before": 7,
+      "retained": 2,
+      "replaced": 2,
+      "removedWithoutReplacement": 3,
+      "after": 4,
+      "mustRememberGrammar": [
+        "～つつ",
+        "～に伴って",
+        "～からといって",
+        "～にせよ"
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "before": 7,
+      "retained": 1,
+      "replaced": 1,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～上で",
+        "～というより"
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "before": 7,
+      "retained": 1,
+      "replaced": 1,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～につれて",
+        "～がてら"
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "before": 7,
+      "retained": 1,
+      "replaced": 2,
+      "removedWithoutReplacement": 4,
+      "after": 3,
+      "mustRememberGrammar": [
+        "～にわたって",
+        "～にもかかわらず",
+        "～を問わず"
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "before": 7,
+      "retained": 1,
+      "replaced": 1,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～に備えて",
+        "～に限って"
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "before": 7,
+      "retained": 0,
+      "replaced": 2,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～を機に",
+        "～としたら"
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "before": 7,
+      "retained": 0,
+      "replaced": 2,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～がち",
+        "～とはいえ"
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "before": 7,
+      "retained": 0,
+      "replaced": 2,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～に足る",
+        "～によれば"
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "before": 7,
+      "retained": 0,
+      "replaced": 2,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～どころか",
+        "～に応えて"
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "before": 7,
+      "retained": 0,
+      "replaced": 2,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～に反して",
+        "～にすぎない"
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～といった"
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "before": 7,
+      "retained": 2,
+      "replaced": 2,
+      "removedWithoutReplacement": 3,
+      "after": 4,
+      "mustRememberGrammar": [
+        "～を余儀なくされる",
+        "～に至るまで",
+        "～に比べて",
+        "～て初めて"
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "before": 7,
+      "retained": 2,
+      "replaced": 1,
+      "removedWithoutReplacement": 4,
+      "after": 3,
+      "mustRememberGrammar": [
+        "～わけではない",
+        "～を踏まえて",
+        "～から～にかけて"
+      ]
+    },
+    {
+      "date": "2026-08-31",
+      "before": 7,
+      "retained": 4,
+      "replaced": 0,
+      "removedWithoutReplacement": 3,
+      "after": 4,
+      "mustRememberGrammar": [
+        "～に至る",
+        "～すら",
+        "～ままでは",
+        "～ために"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "before": 7,
+      "retained": 1,
+      "replaced": 1,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～にとらわれず",
+        "～しかない"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "before": 7,
+      "retained": 1,
+      "replaced": 0,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～にあたって"
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "before": 7,
+      "retained": 0,
+      "replaced": 2,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～にほかならない",
+        "～を皮切りに"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～において"
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～としても"
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～ないわけではない"
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "before": 7,
+      "retained": 2,
+      "replaced": 0,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～に際して",
+        "～に即して"
+      ]
+    },
+    {
+      "date": "2026-09-08",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～ものの"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～に対して"
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～べきだ"
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～つつも"
+      ]
+    },
+    {
+      "date": "2026-09-12",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～に加えて"
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～に沿って"
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～に先立って"
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～たところ"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "before": 7,
+      "retained": 1,
+      "replaced": 1,
+      "removedWithoutReplacement": 5,
+      "after": 2,
+      "mustRememberGrammar": [
+        "～ざるを得ない",
+        "～をもとに"
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "before": 7,
+      "retained": 0,
+      "replaced": 1,
+      "removedWithoutReplacement": 6,
+      "after": 1,
+      "mustRememberGrammar": [
+        "～ない限り"
+      ]
+    }
+  ],
+  "removedDuplicateRecords": [
+    {
+      "date": "2026-08-13",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-13",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-08-13",
+      "pattern": "～なくしては",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～なくしては"
+      }
+    },
+    {
+      "date": "2026-08-13",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-13",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-14",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-14",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-08-14",
+      "pattern": "～なくしては",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～なくしては"
+      }
+    },
+    {
+      "date": "2026-08-14",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-08-14",
+      "pattern": "～に基づいて",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～に基づいて"
+      }
+    },
+    {
+      "date": "2026-08-14",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-14",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-15",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-08-15",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-15",
+      "pattern": "～なくしては",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～なくしては"
+      }
+    },
+    {
+      "date": "2026-08-15",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-15",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-15",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-15",
+      "pattern": "～にかかわらず",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～にかかわらず"
+      }
+    },
+    {
+      "date": "2026-08-16",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-16",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-08-16",
+      "pattern": "～なくしては",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～なくしては"
+      }
+    },
+    {
+      "date": "2026-08-16",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-16",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-16",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-16",
+      "pattern": "～に基づいて",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～に基づいて"
+      }
+    },
+    {
+      "date": "2026-08-17",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-17",
+      "pattern": "～に基づいて",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～に基づいて"
+      }
+    },
+    {
+      "date": "2026-08-17",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-17",
+      "pattern": "～た上で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-17",
+      "pattern": "～にかかわらず",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～にかかわらず"
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "pattern": "～ことなく",
+      "first": {
+        "date": "2026-08-17",
+        "pattern": "～ことなく"
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "pattern": "～恐れがある",
+      "first": {
+        "date": "2026-08-17",
+        "pattern": "～恐れがある"
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "pattern": "～に基づいて",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～に基づいて"
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "pattern": "～にかかわらず",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～にかかわらず"
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "pattern": "～なくしては",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～なくしては"
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-21",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-21",
+      "pattern": "～なくしては",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～なくしては"
+      }
+    },
+    {
+      "date": "2026-08-21",
+      "pattern": "～に基づいて",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～に基づいて"
+      }
+    },
+    {
+      "date": "2026-08-21",
+      "pattern": "～た上で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-21",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-21",
+      "pattern": "～にかかわらず",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～にかかわらず"
+      }
+    },
+    {
+      "date": "2026-08-22",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-22",
+      "pattern": "～恐れがある",
+      "first": {
+        "date": "2026-08-17",
+        "pattern": "～恐れがある"
+      }
+    },
+    {
+      "date": "2026-08-22",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-08-22",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-08-22",
+      "pattern": "～た上で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-22",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-23",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-23",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-08-23",
+      "pattern": "～なくしては",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～なくしては"
+      }
+    },
+    {
+      "date": "2026-08-23",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-23",
+      "pattern": "～た上で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-23",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-23",
+      "pattern": "～にかかわらず",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～にかかわらず"
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "pattern": "～に伴って",
+      "first": {
+        "date": "2026-08-18",
+        "pattern": "～に伴って"
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "pattern": "～なくしては",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～なくしては"
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "pattern": "～た上で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "pattern": "～につれて",
+      "first": {
+        "date": "2026-08-20",
+        "pattern": "～につれて"
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "pattern": "～つつ",
+      "first": {
+        "date": "2026-08-18",
+        "pattern": "～つつ"
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "pattern": "～に伴って",
+      "first": {
+        "date": "2026-08-18",
+        "pattern": "～に伴って"
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "pattern": "～た上で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "pattern": "～にかかわらず",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～にかかわらず"
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "pattern": "～恐れがある",
+      "first": {
+        "date": "2026-08-17",
+        "pattern": "～恐れがある"
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "pattern": "～た上で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "pattern": "～に基づいて",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～に基づいて"
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "pattern": "～なくしては",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～なくしては"
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "pattern": "～た上で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "pattern": "～に基づいて",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～に基づいて"
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "pattern": "～ことなく",
+      "first": {
+        "date": "2026-08-17",
+        "pattern": "～ことなく"
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "pattern": "～た上で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "pattern": "～に基づいて",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～に基づいて"
+      }
+    },
+    {
+      "date": "2026-08-29",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-29",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-08-29",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-08-29",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-08-29",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-30",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-08-30",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-08-30",
+      "pattern": "～に至るまで",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～に至るまで"
+      }
+    },
+    {
+      "date": "2026-08-30",
+      "pattern": "～に伴って",
+      "first": {
+        "date": "2026-08-18",
+        "pattern": "～に伴って"
+      }
+    },
+    {
+      "date": "2026-08-30",
+      "pattern": "～に基づいて",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～に基づいて"
+      }
+    },
+    {
+      "date": "2026-08-31",
+      "pattern": "～ことなく",
+      "first": {
+        "date": "2026-08-17",
+        "pattern": "～ことなく"
+      }
+    },
+    {
+      "date": "2026-08-31",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-08-31",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "pattern": "～に伴って",
+      "first": {
+        "date": "2026-08-18",
+        "pattern": "～に伴って"
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-02",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-02",
+      "pattern": "～を余儀なくされる",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～を余儀なくされる"
+      }
+    },
+    {
+      "date": "2026-09-02",
+      "pattern": "～に至るまで",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～に至るまで"
+      }
+    },
+    {
+      "date": "2026-09-02",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-02",
+      "pattern": "～に伴って",
+      "first": {
+        "date": "2026-08-18",
+        "pattern": "～に伴って"
+      }
+    },
+    {
+      "date": "2026-09-02",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "pattern": "～を余儀なくされる",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～を余儀なくされる"
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "pattern": "～に伴って",
+      "first": {
+        "date": "2026-08-18",
+        "pattern": "～に伴って"
+      }
+    },
+    {
+      "date": "2026-09-04",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-04",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-09-04",
+      "pattern": "～に至るまで",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～に至るまで"
+      }
+    },
+    {
+      "date": "2026-09-04",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-04",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-04",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-04",
+      "pattern": "～に伴って",
+      "first": {
+        "date": "2026-08-18",
+        "pattern": "～に伴って"
+      }
+    },
+    {
+      "date": "2026-09-05",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-05",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-09-05",
+      "pattern": "～に至るまで",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～に至るまで"
+      }
+    },
+    {
+      "date": "2026-09-05",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-05",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-05",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-05",
+      "pattern": "～にかかわらず",
+      "first": {
+        "date": "2026-08-13",
+        "pattern": "～にかかわらず"
+      }
+    },
+    {
+      "date": "2026-09-06",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-06",
+      "pattern": "～を余儀なくされる",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～を余儀なくされる"
+      }
+    },
+    {
+      "date": "2026-09-06",
+      "pattern": "～に至るまで",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～に至るまで"
+      }
+    },
+    {
+      "date": "2026-09-06",
+      "pattern": "～わけではない",
+      "first": {
+        "date": "2026-08-30",
+        "pattern": "～わけではない"
+      }
+    },
+    {
+      "date": "2026-09-06",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-06",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-06",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "pattern": "～を踏まえて",
+      "first": {
+        "date": "2026-08-30",
+        "pattern": "～を踏まえて"
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "pattern": "～に伴い",
+      "first": {
+        "date": "2026-08-18",
+        "pattern": "～に伴って"
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "pattern": "～に至るまで",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～に至るまで"
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "pattern": "～に至るまで",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～に至るまで"
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "pattern": "～を余儀なくされる",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～を余儀なくされる"
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "pattern": "～に至るまで",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～に至るまで"
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-09-11",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-11",
+      "pattern": "～を余儀なくされる",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～を余儀なくされる"
+      }
+    },
+    {
+      "date": "2026-09-11",
+      "pattern": "～に至るまで",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～に至るまで"
+      }
+    },
+    {
+      "date": "2026-09-11",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-11",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-11",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-11",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "pattern": "～を余儀なくされる",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～を余儀なくされる"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "pattern": "～に至るまで",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～に至るまで"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-09-13",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-13",
+      "pattern": "～を余儀なくされる",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～を余儀なくされる"
+      }
+    },
+    {
+      "date": "2026-09-13",
+      "pattern": "～に即して",
+      "first": {
+        "date": "2026-09-07",
+        "pattern": "～に即して"
+      }
+    },
+    {
+      "date": "2026-09-13",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-13",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-13",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-13",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-09-14",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-14",
+      "pattern": "～を余儀なくされる",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～を余儀なくされる"
+      }
+    },
+    {
+      "date": "2026-09-14",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-14",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-14",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-14",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-09-14",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "pattern": "～を踏まえて",
+      "first": {
+        "date": "2026-08-30",
+        "pattern": "～を踏まえて"
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "pattern": "～一方で",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～一方で"
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "pattern": "～に伴って",
+      "first": {
+        "date": "2026-08-18",
+        "pattern": "～に伴って"
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "pattern": "～にとどまらず",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～にとどまらず"
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "pattern": "～たうえで",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～たうえで"
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "pattern": "～に応じて",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～に応じて"
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "pattern": "～とは限らない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～とは限らない"
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "pattern": "～かねない",
+      "first": {
+        "date": "2026-08-12",
+        "pattern": "～かねない"
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "pattern": "～を余儀なくされる",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～を余儀なくされる"
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "pattern": "～に至るまで",
+      "first": {
+        "date": "2026-08-29",
+        "pattern": "～に至るまで"
+      }
+    }
+  ],
+  "firstIntroductions": {
+    "にとどまらず": {
+      "date": "2026-08-12",
+      "pattern": "～にとどまらず"
+    },
+    "かねない": {
+      "date": "2026-08-12",
+      "pattern": "～かねない"
+    },
+    "なくしては": {
+      "date": "2026-08-12",
+      "pattern": "～なくしては"
+    },
+    "に応じて": {
+      "date": "2026-08-12",
+      "pattern": "～に応じて"
+    },
+    "一方で": {
+      "date": "2026-08-12",
+      "pattern": "～一方で"
+    },
+    "たうえで": {
+      "date": "2026-08-12",
+      "pattern": "～たうえで"
+    },
+    "とは限らない": {
+      "date": "2026-08-12",
+      "pattern": "～とは限らない"
+    },
+    "に基づいて": {
+      "date": "2026-08-13",
+      "pattern": "～に基づいて"
+    },
+    "にかかわらず": {
+      "date": "2026-08-13",
+      "pattern": "～にかかわらず"
+    },
+    "ことなく": {
+      "date": "2026-08-17",
+      "pattern": "～ことなく"
+    },
+    "恐れがある": {
+      "date": "2026-08-17",
+      "pattern": "～恐れがある"
+    },
+    "つつ": {
+      "date": "2026-08-18",
+      "pattern": "～つつ"
+    },
+    "に伴って": {
+      "date": "2026-08-18",
+      "pattern": "～に伴って"
+    },
+    "上で": {
+      "date": "2026-08-19",
+      "pattern": "～上で"
+    },
+    "につれて": {
+      "date": "2026-08-20",
+      "pattern": "～につれて"
+    },
+    "にわたって": {
+      "date": "2026-08-21",
+      "pattern": "～にわたって"
+    },
+    "に備えて": {
+      "date": "2026-08-22",
+      "pattern": "～に備えて"
+    },
+    "を余儀なくされる": {
+      "date": "2026-08-29",
+      "pattern": "～を余儀なくされる"
+    },
+    "に至るまで": {
+      "date": "2026-08-29",
+      "pattern": "～に至るまで"
+    },
+    "わけではない": {
+      "date": "2026-08-30",
+      "pattern": "～わけではない"
+    },
+    "を踏まえて": {
+      "date": "2026-08-30",
+      "pattern": "～を踏まえて"
+    },
+    "に至る": {
+      "date": "2026-08-31",
+      "pattern": "～に至る"
+    },
+    "すら": {
+      "date": "2026-08-31",
+      "pattern": "～すら"
+    },
+    "ままでは": {
+      "date": "2026-08-31",
+      "pattern": "～ままでは"
+    },
+    "ために": {
+      "date": "2026-08-31",
+      "pattern": "～ために"
+    },
+    "にとらわれず": {
+      "date": "2026-09-01",
+      "pattern": "～にとらわれず"
+    },
+    "にあたって": {
+      "date": "2026-09-02",
+      "pattern": "～にあたって"
+    },
+    "に際して": {
+      "date": "2026-09-07",
+      "pattern": "～に際して"
+    },
+    "に即して": {
+      "date": "2026-09-07",
+      "pattern": "～に即して"
+    },
+    "ざるを得ない": {
+      "date": "2026-09-16",
+      "pattern": "～ざるを得ない"
+    }
+  }
+}

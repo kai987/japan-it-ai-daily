@@ -228,27 +228,6 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～ことなく",
-      "exampleJa": "Dataを復号することなく計算処理を行います。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "6e0e23472e7ae1ce3550427dce8225222b6b01e11b3822e9d175f2c0464143aa"
-    },
-    {
-      "index": 2,
-      "pattern": "～恐れがある",
-      "exampleJa": "Promptだけに制御を任せると、危険なCommandが実行される恐れがあります。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "83af508117174f3ddef7e09901a2f8fd7d64179b3ae1e01488d4d38f0c7aa665"
-    },
-    {
-      "index": 3,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Agent SecurityはPrompt設計にとどまらず、RuntimeでのPolicy Enforcementまで必要です。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "8ba0ebce5632fa28698c655dd466e81f9ace0e07b0aac12f6f9ce14410247a03"
-    },
-    {
       "index": 4,
       "pattern": "～上で",
       "exampleJa": "MCPを本番利用する上で、認可と監査は重要です。",
@@ -256,25 +235,11 @@
       "exampleHash": "dd331438d23934d7061c992076193265d84c25cdb6d98ea59834a3ace2f99902"
     },
     {
-      "index": 5,
-      "pattern": "～に基づいて",
-      "exampleJa": "User Identityに基づいてTool Accessを制御します。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "98d1259dda82a7d42fd5f7888ff7ecfeeaebc95ac000587e87e6a1a5b54c3fbb"
-    },
-    {
-      "index": 6,
-      "pattern": "～一方で",
-      "exampleJa": "FHEはPrivacyを高める一方で、処理Costが増えることがあります。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "2fdc2f216aa6e37dc48791260fc3632d1949e4420e82b75381b79f1bfb1882f0"
-    },
-    {
-      "index": 7,
-      "pattern": "～にかかわらず",
-      "exampleJa": "接続方式にかかわらず、認証と認可を必ず適用します。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "becd80668dde39bf4be188c66e7ac7eadd47a2a4dfdcc86b06ea19a3d76deb9d"
+      "pattern": "～というより",
+      "exampleJa": "これは単独のツールというより、接続を共通化する仕組みです。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

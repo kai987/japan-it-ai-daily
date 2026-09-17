@@ -50,6 +50,9 @@ const vocabularyItem = z.object({
 });
 
 const grammarItem = z.object({
+  sourceUrl: externalUrl.optional(),
+  sourceForm: z.string().optional(),
+  sourceAnchor: z.string().optional(),
   pattern: z.string(),
   level,
   meaningZh: z.string(),
@@ -75,6 +78,7 @@ const japaneseSchema = z.object({
   levels: z.array(level).default([]),
   vocabularyCount: z.number().int().nonnegative().default(0),
   grammarCount: z.number().int().nonnegative().default(0),
+  grammarSelectionNote: z.string().optional(),
   vocabulary: z.array(vocabularyItem).default([]),
   grammar: z.array(grammarItem).default([]),
   technicalTerms: z.array(technicalTermItem).default([]),
@@ -101,6 +105,9 @@ const vocabularyItemJa = z.object({
 });
 
 const grammarItemJa = z.object({
+  sourceUrl: externalUrl.optional(),
+  sourceForm: z.string().optional(),
+  sourceAnchor: z.string().optional(),
   pattern: z.string(),
   level,
   meaning: z.string(),
@@ -128,6 +135,7 @@ const japaneseJa = defineCollection({
     levels: z.array(level).default([]),
     vocabularyCount: z.number().int().nonnegative().default(0),
     grammarCount: z.number().int().nonnegative().default(0),
+  grammarSelectionNote: z.string().optional(),
     vocabulary: z.array(vocabularyItemJa).default([]),
     grammar: z.array(grammarItemJa).default([]),
     technicalTerms: z.array(technicalTermItemJa).default([]),

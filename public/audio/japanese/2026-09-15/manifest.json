@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "AIはCode生成にとどまらず、実Dataの調査にも使われています。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "84b0b698b03b373f47f6218fc37ad48bdf3f47dbfa823085643889de74235d79"
-    },
-    {
-      "index": 2,
-      "pattern": "～たうえで",
-      "exampleJa": "生成物を検証したうえで、Git Syncから本番へ反映します。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "5d7585b4ff5cd3ddd559a363af0dae1c5e3811812f9dd74ee59e386d9c8123bc"
-    },
-    {
-      "index": 3,
-      "pattern": "～に応じて",
-      "exampleJa": "Access Patternに応じてStorage ClassとLifecycleを選びます。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "79fe09a4d154891efc2cb7b97e99e9787724a0412bd1479717ef34406628a08c"
-    },
-    {
-      "index": 4,
-      "pattern": "～とは限らない",
-      "exampleJa": "ある企業で80％削減できても、自社で同じ効果が出るとは限りません。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "0f5f80bf97c04fea07be41392649d45cc4b68dc91a17882969c4ba7735f6140f"
-    },
-    {
-      "index": 5,
-      "pattern": "～を踏まえて",
-      "exampleJa": "Pluginあり・なしのScore差を踏まえて、改善点を決めます。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "3d332fecffb351f3461ff506e1388d547e75e3f5a2ed4a7e91928f7a2ffae837"
-    },
-    {
-      "index": 6,
-      "pattern": "～かねない",
-      "exampleJa": "代替手段を示さず禁止すると、利用が見えない場所へ移りかねません。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "c79196cc4caac7ba3cb2899d20850097fead9614f45aab808f802a167e79e678"
-    },
-    {
-      "index": 7,
-      "pattern": "～一方で",
-      "exampleJa": "Agentは反復作業を減らせる一方で、Permission設計が不十分だとRiskが増えます。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "75f7d42d0bfc5b3e3ef4372b8ad2a4d47b3f59e51f1a6254cfd09d9836b902b9"
+      "pattern": "～たところ",
+      "exampleJa": "保存状況を調べたところ、不要なデータが残っていました。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

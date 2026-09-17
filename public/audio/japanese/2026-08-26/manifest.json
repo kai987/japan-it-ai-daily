@@ -228,53 +228,18 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～恐れがある",
-      "exampleJa": "脆弱なVersionを使い続けるとRemote Code Executionにつながる恐れがあります。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "3a759893d91f3e213dc0a57e92c33f498f1d0b4d0450b57960676d483c3a974d"
+      "pattern": "～どころか",
+      "exampleJa": "負荷が減るどころか、設定後はかえって増えていました。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     },
     {
-      "index": 2,
-      "pattern": "～にとどまらず",
-      "exampleJa": "TriageではCVSSにとどまらず、Assetの公開範囲やExploitabilityまで確認します。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "146c23608b9b8d384f72212e65046c626c98604a6eb79c8b2ae1afceaef7447a"
-    },
-    {
-      "index": 3,
-      "pattern": "～かねない",
-      "exampleJa": "不要なTool Definitionを大量に読み込むと、Context Costを増やしかねません。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "22fa58784b9a79529b19f47ca1f2c1d55ae0a2d1046c3994d698754c2edf7631"
-    },
-    {
-      "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "Riskの高さに応じて対応優先度を変えます。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "a3df719da388b0b9e70b69b6e551431ff409770ae36826ef6152a682613670bb"
-    },
-    {
-      "index": 5,
-      "pattern": "～た上で",
-      "exampleJa": "影響範囲を確認した上でPatchを適用します。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "d560a4f30ffab4be88ff45840a018f167d1de52dd87c4c816a1399fff229ef0f"
-    },
-    {
-      "index": 6,
-      "pattern": "～に基づいて",
-      "exampleJa": "Asset Inventoryに基づいてCVEの対応要否を判断します。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "d1fd29831713e13199d7eee943ebba01a98b8be394284840339772c9fea12b83"
-    },
-    {
-      "index": 7,
-      "pattern": "～一方で",
-      "exampleJa": "Toolを増やすとAgentの能力は広がる一方で、ContextとSecurityのCostも増えます。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "c5e54040a5e07044ab7b23c0c277a700351d765f64a554cd4addb940a6514310"
+      "pattern": "～に応えて",
+      "exampleJa": "利用者の要望に応えて、処理結果を確認する機能を追加します。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

@@ -242,39 +242,11 @@
       "exampleHash": "37543c3a0b26474d802e8e6aa30589ce5767153bae2a3ac1b64d6e236e0ae827"
     },
     {
-      "index": 3,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Secure RAGは検索精度にとどまらず、認証・認可や監査まで設計する必要があります。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "205bc79d91eda3d6a3371b6fbe9c5bae54223c1ba8faaac13c65614fdb6c5596"
-    },
-    {
-      "index": 4,
-      "pattern": "～に基づいて",
-      "exampleJa": "UserのRoleに基づいて検索範囲を制御します。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "4dd7141be1b7f9c7b5e916c311a509b4671d44a12b8213fda2ba05d55b00947e"
-    },
-    {
-      "index": 5,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの難易度に応じてModelをRoutingします。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "9ec2fd999c588487cc8218c9413b57f075596c7a4526820e87554f994ad5416c"
-    },
-    {
-      "index": 6,
-      "pattern": "～た上で",
-      "exampleJa": "Userを認証した上で、Document Accessを認可します。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "36649d64145c3e63de664c592e2d32f6a6b390da27d027845a64e94625dad4d9"
-    },
-    {
-      "index": 7,
-      "pattern": "～にかかわらず",
-      "exampleJa": "利用するModelにかかわらず、TenantのAccess Policyを適用します。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "cf78fd9523bad6ce27a05a32e6b5d69f057332cb874c5e5d456bb5ed72a5309c"
+      "pattern": "～ようがない",
+      "exampleJa": "必要な情報が記録されていなければ、後から確かめようがありません。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

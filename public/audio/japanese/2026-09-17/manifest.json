@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Tail SamplingはError Traceの保存にとどまらず、性能調査にも利用されています。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "b3deb77667dcd6a8b761ada957227f18714ff3ca981828f8f3c84e2c60bb2b2f"
-    },
-    {
-      "index": 2,
-      "pattern": "～たうえで",
-      "exampleJa": "Benchmark条件を確認したうえで、OJとViteの性能を比較します。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "fe04fb6ea64c719b9455356597a805177fef6d2102b84006bbcc18b9a6797d57"
-    },
-    {
-      "index": 3,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの設計自由度に応じてOpusとSonnetを使い分けます。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "b642b2b726941acfba945e8b39343592d0f9ce547c8696bb680bbb6b8021141e"
-    },
-    {
-      "index": 4,
-      "pattern": "～とは限らない",
-      "exampleJa": "一つのFeatureで開発期間が短縮しても、別Projectで同じ効果が出るとは限りません。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "f9b54419a6af980c35b9b7986de62000e976b2b81133fb717ced6d6f82ff8534"
-    },
-    {
-      "index": 5,
-      "pattern": "～かねない",
-      "exampleJa": "SSH Agent Socketを無制限にForwardすると、Sandbox内から資格情報を悪用されかねません。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "d8efd63a3e1e9c419a671b4c06c374e18c84eea50d5ede928717c478f02fb1c6"
-    },
-    {
-      "index": 6,
-      "pattern": "～を余儀なくされる",
-      "exampleJa": "大量のPreview Environmentでは、Memory Costを抑えるため基盤の見直しを余儀なくされます。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "d0d578d2452f2852c6c62ed17f971247511c6b363abf8fecbd67d0e6e47072ea"
-    },
-    {
-      "index": 7,
-      "pattern": "～に至るまで",
-      "exampleJa": "ConversationからBackground TaskのCommitに至るまで、状態遷移をAuditできるようにします。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "f4fdf58ceb2d75da6b473bc2cda713b3a7c98f739b20eed70f6b73bf0fa24982"
+      "pattern": "～ない限り",
+      "exampleJa": "共有設定を無効にしない限り、同じ保存先が使われます。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

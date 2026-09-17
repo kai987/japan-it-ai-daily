@@ -235,46 +235,18 @@
       "exampleHash": "9c0e00913c633c9ae31add3d681e3bcba63c4ba751f51917d3dd1ce2298510c1"
     },
     {
-      "index": 2,
-      "pattern": "～にとどまらず",
-      "exampleJa": "CoverageはFile数にとどまらず、Error CaseやData条件まで確認します。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "a40472403f838df6a6431e0c4c5a484ce4e7d3fed9774913f2531dbcc708aefc"
+      "pattern": "～にもかかわらず",
+      "exampleJa": "分散型の設計にもかかわらず、中央のサービスへの依存は残ります。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     },
     {
-      "index": 3,
-      "pattern": "～なくしては",
-      "exampleJa": "明確なInput Universeなくしては、Coverageの抜けを正しく検出できません。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "5d9824ee8efa97fbafe074f1ffbecf7eda9d814589664fe00c0b0511e474717a"
-    },
-    {
-      "index": 4,
-      "pattern": "～に基づいて",
-      "exampleJa": "対象一覧に基づいてMigrationの進捗を確認します。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "554b3e5a36eb94120bb197ceb4909f1a5755759d2f959cbb6c3cd97e1c3bc6a0"
-    },
-    {
-      "index": 5,
-      "pattern": "～た上で",
-      "exampleJa": "Data Ownerを明確にした上で、AI連携を設計します。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "4654096f440c5f3f229c1e33ebc6c62ca1ebd61696fcd4a6c035abf9525cfd0f"
-    },
-    {
-      "index": 6,
-      "pattern": "～一方で",
-      "exampleJa": "SSOTはConfig Driftを減らせる一方で、移行時の調整が必要です。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "62351ec055b7c18c97c0613067ccaddbaac6a5b22b558f1cadc3bc5ebc8d052e"
-    },
-    {
-      "index": 7,
-      "pattern": "～にかかわらず",
-      "exampleJa": "Teamにかかわらず、同じSchema Registryを参照します。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "efac4316f6d19e412c35a2a8ffb1c02c9fe97f730240442141d0d28d2cb63dc2"
+      "pattern": "～を問わず",
+      "exampleJa": "ファイル形式を問わず、取り込む前に出所を確認します。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

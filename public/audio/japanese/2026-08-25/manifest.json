@@ -228,53 +228,18 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～つつ",
-      "exampleJa": "品質を維持しつつ、Speculative DecodingでLatencyを下げます。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "08ea6162d73ac301bcc6e62dac101cac7e1a9a8c35a5d725ec9be9a87f1d1bb5"
+      "pattern": "～に足る",
+      "exampleJa": "実用に足る提案かどうか、コードと照らして確かめます。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     },
     {
-      "index": 2,
-      "pattern": "～に伴って",
-      "exampleJa": "AIOpsの自動化範囲拡大に伴って、権限境界の設計も重要になります。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "b6949e505151f875d356474930de80f7dcba4531569826ee161fd428cc3937b2"
-    },
-    {
-      "index": 3,
-      "pattern": "～にとどまらず",
-      "exampleJa": "AI ROIはModel Costにとどまらず、工数削減や障害復旧時間まで評価します。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "223d2ffc83b364cab8fd90b840d2d77fa7dccddfd0a13bdcef20eedd02f061df"
-    },
-    {
-      "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの専門性に応じて担当Agentを割り当てます。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "2afce28f898818599780b73ad9fe0a460325815e4ef1ca887cb212b1b7d1c38a"
-    },
-    {
-      "index": 5,
-      "pattern": "～た上で",
-      "exampleJa": "Riskと権限を確認した上で、自動復旧を許可します。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "e900a73a5a6ea266e59d1face500e63f7b6e23f2d6b0b3eb5793739bffc580d2"
-    },
-    {
-      "index": 6,
-      "pattern": "～一方で",
-      "exampleJa": "AIOpsは復旧を高速化できる一方で、誤操作Riskもあります。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "e38cfeb90741bfd4c5c9bf89f5bbebbe531d7776e813dcc6051fe8536793f26b"
-    },
-    {
-      "index": 7,
-      "pattern": "～にかかわらず",
-      "exampleJa": "Taskの長さにかかわらず、Agentの実行履歴を保存します。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "3c5299e2fe6103144f0ef12a7bb3067e2b2ac309b5fecb4b2bf89c3609b3bde9"
+      "pattern": "～によれば",
+      "exampleJa": "公式資料によれば、常駐プロセスは利用者ごとに起動します。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

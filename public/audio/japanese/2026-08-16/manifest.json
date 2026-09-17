@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "AGENTS.mdはCoding Styleにとどまらず、Validationや禁止事項まで定義できます。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "f97bedc6c27afaad4dac72c6a830cc4e157c935db7b83f74e3f4c5447bde147b"
-    },
-    {
-      "index": 2,
-      "pattern": "～かねない",
-      "exampleJa": "複数Agentが同じFileを同時に変更すると、大きな競合を招きかねません。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "63add55efb98b30877426c696e708e3c227266b813cfd44957e3f37525453a3b"
-    },
-    {
-      "index": 3,
-      "pattern": "～なくしては",
-      "exampleJa": "DeterministicなValidationなくしては、AI Codingの品質を安定させるのは難しいです。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "61a54451eb6642feafe7ffd1486ec1a539b8206dbd5b0007ad973f659844affe"
-    },
-    {
-      "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "Directoryに応じて適用するInstructionを切り替えます。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "e92fdb74d8d24aa81c5e4e0e09373fc8fad58bda49c2cee094b5ab25e59e3807"
-    },
-    {
-      "index": 5,
-      "pattern": "～一方で",
-      "exampleJa": "並行Sessionは開発を高速化できる一方で、競合管理が複雑になります。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "daee382ed204b3a029223b0d6bea1d40aa9b82f84a408b2434158a915129a178"
-    },
-    {
-      "index": 6,
-      "pattern": "～たうえで",
-      "exampleJa": "自動Validationを通したうえで、Agentの変更をMergeします。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "42dfa16ed40d1e0dc1b3f32f67d1b84dceac1d48ddb378832090dc6434a1366d"
-    },
-    {
-      "index": 7,
-      "pattern": "～に基づいて",
-      "exampleJa": "RepositoryのRuleに基づいてAgentのCommand実行を制御します。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "c5166fd19e1b95a1059c5f3a7a86a188cfec26dd854f0a4d7223225ad4ef78a1"
+      "pattern": "～っぽい",
+      "exampleJa": "検証用にモノレポっぽい構成を用意しました。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",
