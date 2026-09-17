@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "AI時代のSecurityは脆弱性を修正することにとどまらず、修正後の検証とAgentの行動監視まで必要です。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "7443c137daa30e463ec300057840ad8a473acb0b68c0d1a6c108c03acacfe9bc"
-    },
-    {
-      "index": 2,
-      "pattern": "～かねない",
-      "exampleJa": "Private AIへ機密情報を入力すると、Data Governance上の重大Incidentにつながりかねません。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "f9cf2285579219b858bfe7bbdec084c868936c9d0ca4f415e06f1f9edd7b19a6"
-    },
-    {
-      "index": 3,
-      "pattern": "～に至るまで",
-      "exampleJa": "AI Agentの運用では、PromptからNetwork Access、Database権限に至るまでControl Pointを整理します。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "ca4357fb9c1804079b18f523d9d135a6283e22c7bcc8542ac5dae2d0bcc6e87c"
-    },
-    {
-      "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "処理の性質に応じて、LLMとRule-based Logicを使い分けます。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "c3f90388befc290c83f6a5941d6bd05213bf0fc607a63e5070b52ada1b840927"
-    },
-    {
-      "index": 5,
-      "pattern": "～たうえで",
-      "exampleJa": "既存Dataを分析したうえで、AIに任せる範囲を決めます。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "4279a1b738e6afd47a74d6042f46b4cdea475ba1ca982ae08d9a67cc156e2609"
-    },
-    {
-      "index": 6,
-      "pattern": "～一方で",
-      "exampleJa": "LLMは自然言語処理に強い一方で、金額計算の再現性はRule-based Logicの方が確保しやすい場合があります。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "fa5e803ad2b599373580dd5869e2871cedb884e0b14cdc7727a4bd61b90803e7"
-    },
-    {
-      "index": 7,
-      "pattern": "～にかかわらず",
-      "exampleJa": "Human側のRoleが高権限であるかどうかにかかわらず、Agent SessionではRSSの上限を適用します。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "ff21f7a9c3f3ae1bbf18ef491bb08ea86dcb97d223f17d1f08a2fc93c93b8a31"
+      "pattern": "～としても",
+      "exampleJa": "学習利用を許可していたとしても、個人情報の取り扱いは別に確認します。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

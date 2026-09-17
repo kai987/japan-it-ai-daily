@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "LLMジャッキングは利用料の不正消費にとどまらず、ModelやRAG資産の流出につながる可能性があります。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "8aeb5e27e35df175253739c701b1a065c2e8102d9e1a2717d789801378986db4"
-    },
-    {
-      "index": 2,
-      "pattern": "～かねない",
-      "exampleJa": "AI ToolのLocal Configを平文で残すと、Cloud全体の乗っ取りにつながりかねません。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "34ba05390ad8954bd991962108b3f7df7f0c7f110d59c2265e1ef018e6fe00a1"
-    },
-    {
-      "index": 3,
-      "pattern": "～に至るまで",
-      "exampleJa": "MuseはWeb操作からメール送信、購入に至るまで複数のActionを実行します。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "2e7682460609a4392597a191e5f7b52e8695ac9331d75cd136d42abec30f03d0"
-    },
-    {
-      "index": 4,
-      "pattern": "～たうえで",
-      "exampleJa": "SELinux Policyを確認したうえで、Amazon Linux 2027への移行範囲を決めます。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "348d4e91dda8741ecac4458fa3370ffe04c6ef89260e8f4354a751305cad514f"
-    },
-    {
-      "index": 5,
-      "pattern": "～に応じて",
-      "exampleJa": "開発TaskのRiskに応じてBash sandbox、Dev Container、Web実行を使い分けます。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "06ec19eb395650df833f5abd6dcfb49cf23082aa0e6ae74d36371bd96b0c8c73"
-    },
-    {
-      "index": 6,
-      "pattern": "～一方で",
-      "exampleJa": "Museは長時間Taskを自律実行できる一方で、Prompt Injectionは未解決の課題です。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "1d505f42c0afa8d91bc74981c75b8662186ae2d93a4546ac3b6451183418b19d"
-    },
-    {
-      "index": 7,
-      "pattern": "～とは限らない",
-      "exampleJa": "AWSの顧客事例で期間が短縮されても、自社Systemで同じ結果になるとは限りません。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "d8e7b5a4830f8304b5c1cfa8909709830386a2ee8122047f1b5408d689e2710a"
+      "pattern": "～に対して",
+      "exampleJa": "管理者に対しても、同じアクセス制御を適用します。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

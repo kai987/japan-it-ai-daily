@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Agent Governanceは所在の可視化にとどまらず、Tool権限とAccess Revokeまで含めて設計する必要があります。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "951525c68ab52f32f3d893d010d1ff721fd8ad476f601b47b1ba45db47c02f43"
-    },
-    {
-      "index": 2,
-      "pattern": "～かねない",
-      "exampleJa": "Tenant ScopeをLLMに決めさせると、別UserのMemoryへAccessしかねません。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "003645cdc2e4ba9ab39ba3d1a356f603708b6c64aa6ce464d8d46f4451b34c1f"
-    },
-    {
-      "index": 3,
-      "pattern": "～に至るまで",
-      "exampleJa": "同じAgentをWebからMCP、A2Aに至るまで複数のChannelへ公開できます。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "e897586ebb736177503f2d942803c2882b61a2fe970663b053a2f85f1156f6f6"
-    },
-    {
-      "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "Teamの用途に応じてDefault Modelを切り替えます。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "83a15aafb8129aaa1694cb21daa8b5ccaa66f3bc7da298b337ea1eddb7b62a14"
-    },
-    {
-      "index": 5,
-      "pattern": "～たうえで",
-      "exampleJa": "CallerをJWTで認証したうえで、Cedar Policyを適用します。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "f5007393f95ba55f9685c24a73846b58bd890d3a29653d34cd5b697e5f38a640"
-    },
-    {
-      "index": 6,
-      "pattern": "～一方で",
-      "exampleJa": "DWHは大規模分析に強い一方で、大量の並列QueryではCostが高くなる場合があります。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "b20b44b302519ef158659cfc4755d5860e3c09a0fb45e20e069c6e28d7798d00"
-    },
-    {
-      "index": 7,
-      "pattern": "～に伴って",
-      "exampleJa": "AI Agentの利用拡大に伴って、QueryのConcurrencyとIdentity管理の重要性も高まります。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "be71e2c1d908b90763b6e02c07cb1b8d5c66bc8d1c5cccbde9e961f50638a2b0"
+      "pattern": "～において",
+      "exampleJa": "エージェントを運用する組織において、アクセス管理は重要です。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

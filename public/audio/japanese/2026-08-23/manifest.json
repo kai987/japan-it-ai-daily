@@ -228,53 +228,18 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Workflow設計では正常系にとどまらず、失敗時のRetryやFallbackも定義します。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "aeded7b0143a374ad3935f502ca6ac0716051aeeb0e084e427a601b0b58e5e30"
+      "pattern": "～を機に",
+      "exampleJa": "今回の発表を機に、導入手順を整理しました。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     },
     {
-      "index": 2,
-      "pattern": "～かねない",
-      "exampleJa": "Criticalな処理を完全にAgent任せにすると、予期しないStateへ進みかねません。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "6b8fd06f1763d1c438c81c256890332ed901d258a1d70b6885007042999b486a"
-    },
-    {
-      "index": 3,
-      "pattern": "～なくしては",
-      "exampleJa": "明確なState定義なくしては、Workflowの再現性を高められません。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "1af55bfa4a8cd8aa222cedef37c1de13b98159e37ef7a3add7e07d3463cb551a"
-    },
-    {
-      "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの難易度に応じてModelを切り替えます。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "0e71c9bb95d4a89c1fa3cf362e1a7cda02d9acff2d68e16c065f48e7dbf63754"
-    },
-    {
-      "index": 5,
-      "pattern": "～た上で",
-      "exampleJa": "VLMの結果を確認した上で、人間が最終判断します。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "278a7116582b5ab3d18d9357da97f516759880fd3d75ba8d3af1654182ead63e"
-    },
-    {
-      "index": 6,
-      "pattern": "～一方で",
-      "exampleJa": "State Machineは再現性が高い一方で、自由度が下がることがあります。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "291f7b6f41013c9fa856c976934cb744e2089c9908dc3922f395e92b06c1a06f"
-    },
-    {
-      "index": 7,
-      "pattern": "～にかかわらず",
-      "exampleJa": "利用するModelにかかわらず、実行履歴を必ず保存します。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "fdd1df15258e72218c781a06390a42d53d955a4dda4e46bb3bb0c1eb40bacb22"
+      "pattern": "～としたら",
+      "exampleJa": "接続でつまずくとしたら、まず利用条件を確認します。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

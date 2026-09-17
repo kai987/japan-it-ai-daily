@@ -228,41 +228,6 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～に応じて",
-      "exampleJa": "TenantのData Residency要件に応じて、利用するVirtual Keyを切り替えます。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "3d32ddfc3b1616f59f30f6408878dfc51845bd83814c5775b214a4f43acea2f1"
-    },
-    {
-      "index": 2,
-      "pattern": "～一方で",
-      "exampleJa": "Flex processingはコストを抑えられる一方で、Latencyの変動や一時的なResource不足を考慮する必要があります。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "7499ccc42557b407780c86d31dfec9d7ddb0387cc527c1a7a5207ba2104998f1"
-    },
-    {
-      "index": 3,
-      "pattern": "～たうえで",
-      "exampleJa": "実際のUsageとRetry率を計測したうえで、Flexへ切り替えるTaskを決めます。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "f6ed28e6b130a17b7d5454368421a29c86ce6d5d56bc78ac9ffb7c56f45e1c5e"
-    },
-    {
-      "index": 4,
-      "pattern": "～かねない",
-      "exampleJa": "Pluginを無条件に自動更新すると、不具合のあるVersionを組織全体へ広げかねません。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "029e11cd5392401f391d98f8eb68e13059e17406a56e17b3434f4fbe4508cb31"
-    },
-    {
-      "index": 5,
-      "pattern": "～にとどまらず",
-      "exampleJa": "AI Gatewayの役割はModel Routingにとどまらず、Secret管理やObservability、Data Residencyにも及びます。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "0ab98329c8c91b1b1c5b7ef928e77fa9073f1d0601016d5bb0bf2a41d00cc1b3"
-    },
-    {
       "index": 6,
       "pattern": "～を余儀なくされる",
       "exampleJa": "Resource不足が長時間続けば、一部TaskをStandardへ戻す対応を余儀なくされる可能性があります。",
@@ -275,6 +240,20 @@
       "exampleJa": "AI Gatewayでは、Provider接続からSecret管理、SLO設計に至るまで一貫して運用方針を整える必要があります。",
       "example": "grammar-example-07.mp3",
       "exampleHash": "1928038571881903dd2ea5d2694a625318cf6f7d63b850dff34e176fbda653f5"
+    },
+    {
+      "pattern": "～に比べて",
+      "exampleJa": "従来の構成に比べて運用は簡単ですが、事例はまだ少ないです。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
+    },
+    {
+      "pattern": "～て初めて",
+      "exampleJa": "本番に近い環境で動かして初めて、通信の制約に気づきました。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

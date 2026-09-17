@@ -2,7 +2,7 @@
 export type LearningManifest = {
   voice?: { name?: string; style?: string };
   items?: { term: string; reading: string; exampleJa: string; word?: string | null; example?: string | null; playback?: string }[];
-  grammar?: { exampleJa: string; example?: string | null }[];
+  grammar?: { exampleJa: string; example?: string | null; playback?: string }[];
 };
 export type SpeechTarget = { kind: string; term?: string; reading?: string; text: string };
 const normalize = (text: unknown) => typeof text === 'string' ? text.replace(/\s+/g, ' ').trim() : '';
@@ -10,7 +10,7 @@ const safeFile = (value: unknown): string | null => typeof value === 'string' &&
 export function resolveLearningRecording(manifest: LearningManifest, target: SpeechTarget): string | null {
   if (target.kind === 'grammar-example') {
     const matches = (manifest.grammar || []).filter((item) => normalize(item.exampleJa) === normalize(target.text));
-    return matches.length === 1 ? safeFile(matches[0].example) : null;
+    return matches.length === 1 && matches[0].playback !== "browser-tts" ? safeFile(matches[0].example) : null;
   }
   if (!target.term || !target.reading || !['word', 'example'].includes(target.kind)) return null;
   const matches = (manifest.items || []).filter((item) =>

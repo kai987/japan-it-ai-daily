@@ -228,53 +228,18 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～に伴って",
-      "exampleJa": "Agent利用の普及に伴って、Meteringと監査の重要性も高まります。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "fe1a40b2bd590f358f5769c6c3d3e257a18066539f8dd153a16f49e08197a3b6"
+      "pattern": "～がち",
+      "exampleJa": "個人で使うと、権限の確認を後回しにしがちです。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     },
     {
-      "index": 2,
-      "pattern": "～にとどまらず",
-      "exampleJa": "AI TransformationはTool導入にとどまらず、業務Processや組織文化の変革まで含みます。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "2be622402c696e69e821d00d3abbc3f46cbc44f2538e97fe82d621a4c494854e"
-    },
-    {
-      "index": 3,
-      "pattern": "～なくしては",
-      "exampleJa": "継続的なTrainingなくしては、Agent利用を組織に定着させるのは難しいです。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "dfb96dfff8b5412eeb87295bdc958de1ac660c2350c920f55e108241fa080276"
-    },
-    {
-      "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "利用量に応じてCostをTeamへ配賦します。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "10e2680a5a20c3fa60f672de45f7d5f4fe5f14694b8ae79b8eaa934c0e893df8"
-    },
-    {
-      "index": 5,
-      "pattern": "～一方で",
-      "exampleJa": "自動許可は開発速度を上げる一方で、誤操作Riskも高めます。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "e6dc51ce72338110feda5c4191e77d787d0e1d550d0af3d7def64162b296fd7f"
-    },
-    {
-      "index": 6,
-      "pattern": "～た上で",
-      "exampleJa": "互換性とPerformanceを確認した上でBunへ移行します。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "5afb2a81133410592d869be8e864a44bab62d0ed4db536cb88a8275bea45f078"
-    },
-    {
-      "index": 7,
-      "pattern": "～につれて",
-      "exampleJa": "利用者が増えるにつれて、Permission管理も複雑になります。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "2815633a9a732f9c8724c52488997e844f974ba585ff442640bd2a7449652140"
+      "pattern": "～とはいえ",
+      "exampleJa": "個人利用とはいえ、認証情報の保護は必要です。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

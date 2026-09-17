@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～ことなく",
-      "exampleJa": "すべてのTool Definitionを常時読み込むことなく、必要なSkillを呼び出せます。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "66fedaeac1c344c1050b16845d1cb10bab0c071df8e21cbbafa5d7e1f24bdf5c"
-    },
-    {
-      "index": 2,
-      "pattern": "～にとどまらず",
-      "exampleJa": "API Securityは認証にとどまらず、認可やInput Validation、監査まで設計する必要があります。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "d3d4e19693b1983bfa9de9fa9a7223a167c471bca8d01db06d91bfbaeb2346b7"
-    },
-    {
-      "index": 3,
-      "pattern": "～かねない",
-      "exampleJa": "Agentに広すぎるWrite権限を与えると、意図しない変更を実行しかねません。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "6b11553cea866b047d0c5532fc88dafbd2823f64d83ebfc184cd5c579d329050"
-    },
-    {
-      "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの内容に応じて利用するSkillを切り替えます。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "24c2d36e212808905f2c2e956cc0374f17a3c0d7767df2dc307628b01677dca1"
-    },
-    {
-      "index": 5,
-      "pattern": "～一方で",
-      "exampleJa": "Agentic Webは作業を自動化できる一方で、APIのAttack Surfaceも広がります。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "4696cc890eac041c1771f64fda5f2f6368763e70c0a6afee9e405f8e803b722c"
-    },
-    {
-      "index": 6,
-      "pattern": "～た上で",
-      "exampleJa": "Userを認証し、Roleを確認した上でAPI Actionを許可します。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "1a753453c630c52c71280c5828c7d8b92048ea9c7c24bc3ab25169393d5b93cd"
-    },
-    {
-      "index": 7,
-      "pattern": "～に基づいて",
-      "exampleJa": "RoleとSecurity Policyに基づいて利用可能なAPIを制御します。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "dc647edf6290a12471dce3305e961f4666ddb4edffd24ce90f4873f8a610165f"
+      "pattern": "～といった",
+      "exampleJa": "設定が失われるといった問題を、更新前に確認します。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

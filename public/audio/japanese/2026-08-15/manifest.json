@@ -228,53 +228,18 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～かねない",
-      "exampleJa": "外部入力をそのまま実行すると、機密情報を送信しかねません。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "2006fe7cbd8b6d358600684989f2fdb319eec8314383ca03e8ba18cdb7fefff0"
+      "pattern": "～を通じて",
+      "exampleJa": "各プラグインは共通のイベントを通じて連携します。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     },
     {
-      "index": 2,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Agent EvaluationはModel性能にとどまらず、HarnessやToolの安全性まで対象にします。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "6f6b8aa9e5af2920738cbd0f9fdb67ea9108213c6c9c3e4c20a2835749489788"
-    },
-    {
-      "index": 3,
-      "pattern": "～なくしては",
-      "exampleJa": "継続的なEvaluationなくしては、Agentの安全性を維持できません。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "7974f27e23393c63350cf24393d64469cc1cef19d0a737fc694aed570ee322f1"
-    },
-    {
-      "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "TaskのRiskに応じてHuman Approvalの要否を決めます。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "3c40c9659f08836d1ddbe1f19cd8088f71c54e4d93e2acf0f2efffc2fdd2ea2d"
-    },
-    {
-      "index": 5,
-      "pattern": "～一方で",
-      "exampleJa": "Sub-agentは並列化に有効な一方で、Contextと権限の管理が複雑になります。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "51239886598b7fea1ad6482916d657470aacf4df9634c221f36a2dd8edfb1907"
-    },
-    {
-      "index": 6,
-      "pattern": "～たうえで",
-      "exampleJa": "Production-like Taskで評価したうえで、利用範囲を拡大します。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "8da4104573d5dd870f609aa8efa789c551ed912814618fca96fe140b6cc9ee74"
-    },
-    {
-      "index": 7,
-      "pattern": "～にかかわらず",
-      "exampleJa": "利用するModelにかかわらず、外部入力は信頼できないものとして扱います。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "fc7fdc7099bc5d9e5b56b905ebf7d341298dbbf905bdf659ca045ffae3982b86"
+      "pattern": "～に従って",
+      "exampleJa": "権限ポリシーに従って、実行前に利用者の承認を得ます。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

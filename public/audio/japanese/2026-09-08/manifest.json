@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "AI GatewayはTrafficの集約にとどまらず、Identityと予算管理にも使えます。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "e3402f7523848f191de668c20862413948448836b59698dbf0ae42eb3f9ee923"
-    },
-    {
-      "index": 2,
-      "pattern": "～かねない",
-      "exampleJa": "存在しないPackage名をそのまま採用すると、slopsquattingの被害につながりかねません。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "432508004378d940da7fadeda960356509beeda09f4498052c83d345228cfe3a"
-    },
-    {
-      "index": 3,
-      "pattern": "～に至るまで",
-      "exampleJa": "Figma MakeのUI設計から認証・永続化に至るまで、未決事項を明示して引き継ぎます。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "c4d8a109b0858377c69bfe99b271be529dd19d3317e9a08202bb06fae37e0df9"
-    },
-    {
-      "index": 4,
-      "pattern": "～一方で",
-      "exampleJa": "Long-term Memoryは説明の手間を減らせる一方で、古い情報を残すRiskがあります。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "18e3ee9fb5bc2b1d9ffabb85539a6850f1166fe878ba04e18ca89608e774e822"
-    },
-    {
-      "index": 5,
-      "pattern": "～たうえで",
-      "exampleJa": "Dataの粒度とMasterをそろえたうえで、営業AI Agentへ利用させます。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "2f6cfb13e462da9f3fb11081b08b804a52dd40b056ba1235ec14ff3db1e9adda"
-    },
-    {
-      "index": 6,
-      "pattern": "～に応じて",
-      "exampleJa": "Memoryの種類に応じて、保持期間と訂正経路を分けます。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "14d140f6247d6cd7ef8adb908b795117dfeaf45ead9da0e96c254bccad35efa4"
-    },
-    {
-      "index": 7,
-      "pattern": "～とは限らない",
-      "exampleJa": "構造Checkに通ったMemoryが、Sourceと意味的に一致しているとは限りません。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "b10d47266703fe823c32f65decd03f6cfec8078202903f832ec5306535b548c4"
+      "pattern": "～ものの",
+      "exampleJa": "以前は一般的だったものの、現在は推奨されない実装もあります。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Fuguの評価はBenchmarkにとどまらず、Routing後のCostやLatencyまで見る必要があります。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "95995aa7e5544fe93ea22c5f2cbe838232cdf2c81bb768faa2f6fa2194a4c0d9"
-    },
-    {
-      "index": 2,
-      "pattern": "～を余儀なくされる",
-      "exampleJa": "建物の制約により、当初の50台計画は35台での運用開始を余儀なくされました。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "7fbd1a65febe42e02e3cf34b0944e841589f7b885d562cf6b1cc3d190521d7b4"
-    },
-    {
-      "index": 3,
-      "pattern": "～に即して",
-      "exampleJa": "業務の実態に即して、AIに任せる範囲とHuman Reviewを決めます。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "f67f62f25d776499d21d43e65923e4eccdcaa9dbbd392fb5f905917a4b735bdb"
-    },
-    {
-      "index": 4,
-      "pattern": "～たうえで",
-      "exampleJa": "支払いDataと照合したうえで、経費精算を承認します。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "b3ee04c982a79f8426c4bd87b26d26529bb1f4243cd73c6fa7b5488aaece4ea6"
-    },
-    {
-      "index": 5,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの難易度に応じて利用するModelを切り替えます。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "cda0af426fa90147acdd216c0df219d0e7c7290415231b52bb8cbd335ea073e2"
-    },
-    {
-      "index": 6,
-      "pattern": "～一方で",
-      "exampleJa": "CLIで自動化しやすくなる一方で、trust-all-toolsのRiskは増えます。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "6c32bc4d494c392e75ba9d6cef7a21683434b5f5f9984f86c0ed467e69b2714c"
-    },
-    {
-      "index": 7,
-      "pattern": "～とは限らない",
-      "exampleJa": "Buildが成功しても、変換Codeの業務Logicまで正しいとは限りません。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "9bcca869b2ec2bdd623ce7a4a9fa13599caf648efbaf9ef1115f588bbe400be7"
+      "pattern": "～に沿って",
+      "exampleJa": "目的に沿って、評価する成果を先に決めます。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

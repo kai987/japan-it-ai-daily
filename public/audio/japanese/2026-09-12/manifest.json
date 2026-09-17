@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Agentic EnterpriseではModel利用にとどまらず、RBACやCost、業務KPIまで管理します。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "64c27d082cc2f6f6c4c0f27c5357330b2ee851e0a73495a7540b999ff3d200e9"
-    },
-    {
-      "index": 2,
-      "pattern": "～を余儀なくされる",
-      "exampleJa": "Systemごとに回線を追加し続ければ、Network Architectureの見直しを余儀なくされます。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "71754920a9189cfa73a9068c6265f27c9d7c37f402164653d698b76fff3970cd"
-    },
-    {
-      "index": 3,
-      "pattern": "～に至るまで",
-      "exampleJa": "単純なLiteralから複数Methodに分散したSQLに至るまで抽出精度を検証します。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "29d1bf32e579671bc8b9e06c6d458add15e07d75ae6fa9974f94b060158901c0"
-    },
-    {
-      "index": 4,
-      "pattern": "～たうえで",
-      "exampleJa": "Private接続のLatencyと冗長性を確認したうえで、Network Hubへ移行します。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "b405343daf9698e174fccde17c23e6034ea11c540b687cdbde902abad1a26ce7"
-    },
-    {
-      "index": 5,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの難易度とCostに応じて利用するModelを切り替えます。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "3b320062a1411cf651bb5c9c36a580abbc07797f4feb34d5f9ce4d1b6598450b"
-    },
-    {
-      "index": 6,
-      "pattern": "～一方で",
-      "exampleJa": "HaikuはCostが低い一方で、この検証では3Modelの中で最も時間がかかりました。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "abdec6b5fb3adff169e06fe409ca23a7db0dea7f7100db0ac08d6432d1e7b5eb"
-    },
-    {
-      "index": 7,
-      "pattern": "～とは限らない",
-      "exampleJa": "Synthetic DataでRecallが100％でも、実Legacy Codeで同じ結果になるとは限りません。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "5736baa2aefb33e1febdaf3e9f85dd90c3a68ae4bd37b90955f72c7a0c3780dc"
+      "pattern": "～に加えて",
+      "exampleJa": "対談に加えて、企業の導入事例も紹介します。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

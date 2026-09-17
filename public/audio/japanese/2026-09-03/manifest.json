@@ -228,53 +228,18 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Bits AIはAlertの調査にとどまらず、Infrastructureの修復やRelease検証まで対象を広げています。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "656c7d0b0a083957f89b943419e2f74ce2cf75d1e87512dba7bf151bbd1b2eb1"
+      "pattern": "～にほかならない",
+      "exampleJa": "被害が広がったのは、探索範囲を制限していなかったからにほかなりません。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     },
     {
-      "index": 2,
-      "pattern": "～を余儀なくされる",
-      "exampleJa": "Credentialが漏えいすると、関連ServiceのKey再発行を余儀なくされる場合があります。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "2c7cbb31a8d349ddf30d124180a7da6067fb3bb46efffa8e626987442de08222"
-    },
-    {
-      "index": 3,
-      "pattern": "～かねない",
-      "exampleJa": "AgentにHome Directory全体を許可すると、Dependencyの侵害が大規模な情報漏えいにつながりかねません。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "59ce08b019cfe6ab48eeec047bce1365d12fb9ce14ffe510f9b403a293214faf"
-    },
-    {
-      "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの複雑さに応じてGeminiのEffort Levelを調整します。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "92640a99f0c98443f6c0370a4a2cc97e6611d8023ebdd443288f7ff043f3ff86"
-    },
-    {
-      "index": 5,
-      "pattern": "～一方で",
-      "exampleJa": "Managed Interconnectは運用の手間を減らせる一方で、Cloud間のFailure Domain設計は引き続き必要です。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "db64947930ed28a52f22d0e01834951a981b4231a1bbf6619393b0acc17b4a33"
-    },
-    {
-      "index": 6,
-      "pattern": "～たうえで",
-      "exampleJa": "Security Benchmarkを確認したうえで、自社RepositoryでCyber Modelを再評価します。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "6d7a672d541438f45439b319abf952bd02f0d8c2b10d63b48a791928c45a9def"
-    },
-    {
-      "index": 7,
-      "pattern": "～に伴って",
-      "exampleJa": "AgentのCapability拡大に伴って、PermissionとAuditの重要性も高まります。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "f562dcceb54e8ca30ff354ec61709e671bce7d411f3b8f729c5e58fae5a21566"
+      "pattern": "～を皮切りに",
+      "exampleJa": "一つのクラウドとの接続を皮切りに、対応先を広げます。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

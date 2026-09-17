@@ -228,41 +228,6 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "AIレビューでは合否ラベルの確認にとどまらず、指摘内容が実際の欠陥を特定しているかまで検証します。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "320220aa4f2092f365e5ddfc7b69457d3e124e6e230a36b06b911013a8cfb78d"
-    },
-    {
-      "index": 2,
-      "pattern": "～かねない",
-      "exampleJa": "複数Agentが同じ作業範囲を同時に更新すると、変更を上書きしかねません。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "b53de16cf644d5c5760ab840c8c0f53dcd27144fda1b5d62e6795a59ed094821"
-    },
-    {
-      "index": 3,
-      "pattern": "～に至るまで",
-      "exampleJa": "MHSは顕微鏡からロボットアームに至るまで、多様な機器を共通の方式で扱うことを目指しています。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "32ddbca15529abc6135ad161334049a6a42d6ecf4d1238cd621ff2ff3e86a956"
-    },
-    {
-      "index": 4,
-      "pattern": "～に伴って",
-      "exampleJa": "AI Agentの利用拡大に伴って、Token Costの責任分担も明確にする必要があります。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "638fbbd1930d4a2a084d32ea12abd5d26e9d460f80b382036bef5aa8860e03d5"
-    },
-    {
-      "index": 5,
-      "pattern": "～に基づいて",
-      "exampleJa": "実際のUsageとBusiness Outcomeに基づいて、AgentごとのBudgetを設定します。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "9f047ef3c68e15046c77f1540c3c91fd1b0a551e839fa680bb7522afe8e8f46b"
-    },
-    {
       "index": 6,
       "pattern": "～わけではない",
       "exampleJa": "AIが差し戻したからといって、仕込んだバグを正しく検出したわけではありません。",
@@ -275,6 +240,13 @@
       "exampleJa": "Evaluation結果と契約条件を踏まえて、複数ProviderへのFallbackを設計します。",
       "example": "grammar-example-07.mp3",
       "exampleHash": "baadfb1b6fb4349a6088d3323dd7abadbef4c8ab41ae5e2d8db4cae609682821"
+    },
+    {
+      "pattern": "～から～にかけて",
+      "exampleJa": "春から夏にかけて、チームの利用状況を調べました。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

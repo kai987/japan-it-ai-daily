@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "DevinはAlert分類にとどまらず、条件次第で修正PRまで作成します。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "615320b4ec4613bfe3fc82b6f1d871dc73f8de5e5b6a14ee6125f30502e4e067"
-    },
-    {
-      "index": 2,
-      "pattern": "～を余儀なくされる",
-      "exampleJa": "MHAが8.4に対応しないため、HA方式の再検討を余儀なくされました。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "6384c4437b1e486a5d39b4db62c127e7cf6c189623f0c85ca72d112db9640ee2"
-    },
-    {
-      "index": 3,
-      "pattern": "～に応じて",
-      "exampleJa": "AlertのPriorityに応じてEscalationを変えます。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "101d2dc613916351475bc63ab00f359042817f80c9a51484031040a34e267cc3"
-    },
-    {
-      "index": 4,
-      "pattern": "～たうえで",
-      "exampleJa": "互換性を確認したうえで、移行先を決めます。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "a6e337adaa011f06a504d9d7586d2cd4d99d74637a6e2ba08091779faeea1967"
-    },
-    {
-      "index": 5,
-      "pattern": "～一方で",
-      "exampleJa": "Agentは24時間調査できる一方で、誤判定も残ります。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "e8d0cbbc36e250af5799e1c2b58bf7c7d8988c9154bc21f030081b3254fcfce5"
-    },
-    {
-      "index": 6,
-      "pattern": "～とは限らない",
-      "exampleJa": "Dashboardが表示されても、AIが数値を読めるとは限りません。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "440997106d4425bae19f631b605c4fabe335d5beff2d5c2d3a21e4578d586da2"
-    },
-    {
-      "index": 7,
-      "pattern": "～かねない",
-      "exampleJa": "Governanceを後回しにすると、利用実態を把握できなくなりかねません。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "2f5bf80472f21e6bfc566516af17591ba63cd383651800da61e3ad276cdf61e7"
+      "pattern": "～に先立って",
+      "exampleJa": "正式な導入に先立って、データの管理方法を決めます。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

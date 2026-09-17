@@ -228,53 +228,11 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "Agent RouterはModel接続にとどまらず、MCP Toolの認可や使用量制御も扱います。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "6faa9f9915b2686597787aebca922b4313b350af589ce686f4bb2c4516930984"
-    },
-    {
-      "index": 2,
-      "pattern": "～を余儀なくされる",
-      "exampleJa": "AI基盤を自社運用する場合、PatchやCapacityの継続管理を余儀なくされます。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "30e031e8f148b219a1359949db51ff18908a5f3a9d5cd700eed79a611fc28468"
-    },
-    {
-      "index": 3,
-      "pattern": "～に至るまで",
-      "exampleJa": "Effortの上限からSession再開、Managed Permissionに至るまでRuntimeを検証します。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "1cb1392a3afc8f75f61b19921a82b694eeb154c371a32c01a7f66828a217debf"
-    },
-    {
-      "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "業務ニーズに応じて必要なAI社員を生成します。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "cc3dcedc81131318b1cb5483a2931d982326cce9f10ce3e0233170f61697e531"
-    },
-    {
-      "index": 5,
-      "pattern": "～一方で",
-      "exampleJa": "PlatformはWorkflow作成を速くする一方で、業務固有の判断は別途詰める必要があります。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "2e2511f202e89c7c4ca4baaa52c78c1d5685d283ed8ee734c7c97890e7399405"
-    },
-    {
-      "index": 6,
-      "pattern": "～たうえで",
-      "exampleJa": "Managed Settingsの実効値を確認したうえで、Claude CodeをTeamへ展開します。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "d4ec1607939e156761a4349e433985b05381a691b01a825ee1c83e7925ccde7d"
-    },
-    {
-      "index": 7,
-      "pattern": "～とは限らない",
-      "exampleJa": "30分でWorkflowを作れても、業務固有Logicまで十分だとは限りません。",
-      "example": "grammar-example-07.mp3",
-      "exampleHash": "467fd65cd2d35ed86e7ce97a31ef499f36376654c469174e67bd514089c722cd"
+      "pattern": "～つつも",
+      "exampleJa": "価値を感じつつも、役割の狭さに迷いがありました。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

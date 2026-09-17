@@ -30,11 +30,13 @@ export const validateContentDay = (date, documents) => {
       require(data.vocabularyCount === vocabulary.length, `${dir} vocabularyCount differs from vocabulary.length`);
       require(data.grammarCount === grammar.length, `${dir} grammarCount differs from grammar.length`);
       require(vocabulary.length >= 18 && vocabulary.length <= 22, `${dir} vocabulary must contain 18–22 items`);
-      require(grammar.length >= 5 && grammar.length <= 8, `${dir} grammar must contain 5–8 items`);
+      require(Array.isArray(data.grammar) && grammar.length <= 8, `${dir} grammar must be an array of at most 8 items`);
+      require(grammar.length >= 5 || (nonempty(data.grammarSelectionNote) && data.grammarSelectionNote.trim().length >= 20), `${dir} grammar shortage needs an explicit selection note`);
       require(technical.length >= 5 && technical.length <= 10, `${dir} technicalTerms must contain 5–10 items`);
       for (const [key, items, field, count] of [['mustRememberWords', vocabulary, 'term', 10], ['mustRememberGrammar', grammar, 'pattern', 5]]) {
         const selected = array(data[key]);
-        require(selected.length === count && unique(selected), `${dir} ${key} must contain ${count} unique items`);
+        const expected = key === 'mustRememberGrammar' ? Math.min(count, items.length) : count;
+        require(selected.length === expected && unique(selected), `${dir} ${key} must contain ${expected} unique items`);
         require(selected.every((value) => items.some((item) => item[field] === value)), `${dir} ${key} contains an unknown item`);
       }
       for (const [items, key] of [[vocabulary, 'term'], [grammar, 'pattern'], [technical, 'term']]) {

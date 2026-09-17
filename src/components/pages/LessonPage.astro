@@ -166,6 +166,7 @@ const vocabGroups = jlptOrder
               </div>
               <p>{copy.grammarIntro}</p>
             </div>
+            {data.grammarSelectionNote && <p class="meta" data-grammar-selection-note>{data.grammarSelectionNote}</p>}
             <div class="grammar-card-grid">
               {data.grammar.map((item, index) => (
                 <article class="study-card grammar-card">

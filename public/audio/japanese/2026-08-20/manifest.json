@@ -228,53 +228,18 @@
   ],
   "grammar": [
     {
-      "index": 1,
-      "pattern": "～にとどまらず",
-      "exampleJa": "LLMOpsはPrompt管理にとどまらず、TraceやEvaluationの運用まで含みます。",
-      "example": "grammar-example-01.mp3",
-      "exampleHash": "b2cbb51255389231980b884b3b8321462f150cdccf4c9799bf1128987d19c309"
-    },
-    {
-      "index": 2,
-      "pattern": "～かねない",
-      "exampleJa": "Agent Identityを記録しないと、責任の所在が不明確になりかねません。",
-      "example": "grammar-example-02.mp3",
-      "exampleHash": "a45c33adef9ddb0be62ab4dad66796da9ed237a3d4c6ddb2eae32213ff065b94"
-    },
-    {
-      "index": 3,
-      "pattern": "～なくしては",
-      "exampleJa": "Traceと継続的なEvaluationなくしては、LLM品質の改善は難しいです。",
-      "example": "grammar-example-03.mp3",
-      "exampleHash": "8952a49b3b42515f3c2ff23aa05b19a931e0650e719faa6c6b9cfe5db7153b17"
-    },
-    {
-      "index": 4,
-      "pattern": "～に応じて",
-      "exampleJa": "Taskの難易度に応じてModelとEffortを切り替えます。",
-      "example": "grammar-example-04.mp3",
-      "exampleHash": "969b0d53f69838ebe91516687278b92ad72a4df4fab484e18b2a0b4898269c6a"
-    },
-    {
-      "index": 5,
-      "pattern": "～たうえで",
-      "exampleJa": "複数Versionを評価したうえで、本番Promptを選択します。",
-      "example": "grammar-example-05.mp3",
-      "exampleHash": "3da37cad7fc78039c16d187973c4fcabc58f2e39aec4f1c0a9fa685425662985"
-    },
-    {
-      "index": 6,
-      "pattern": "～一方で",
-      "exampleJa": "高性能Modelは品質が高い一方で、CostとLatencyも大きくなります。",
-      "example": "grammar-example-06.mp3",
-      "exampleHash": "45ae691c332cec6509355914d3f4b7402282a0f234d629fb9af7ad73f25ad36a"
-    },
-    {
       "index": 7,
       "pattern": "～につれて",
       "exampleJa": "Agent数が増えるにつれて、IdentityとSession Managementも複雑になります。",
       "example": "grammar-example-07.mp3",
       "exampleHash": "bf9113c47bd31a8939c49fb58c0f340551ffad96c1e85b35979334dea8e91664"
+    },
+    {
+      "pattern": "～がてら",
+      "exampleJa": "動作の確認がてら、設定の注意点もメモしました。",
+      "example": null,
+      "playback": "browser-tts",
+      "reason": "historical-grammar-repair"
     }
   ],
   "contentRevision": "jlpt-history-dedup-2026-09-18",

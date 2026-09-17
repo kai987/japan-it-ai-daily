@@ -19,7 +19,7 @@ test('plain-format daily audio passes and stale Japanese text is rejected', () =
     const interview = JSON.parse(readFileSync(`${audio}/interview-manifest.json`, 'utf8'));
     const expectedAssets = (interview.interview?.length ?? 0) + (interview.review?.length ?? 0)
       + learning.items.filter((item) => item.playback !== 'browser-tts').length * 2
-      + learning.grammar.length;
+      + learning.grammar.filter((item) => item.playback !== 'browser-tts').length;
     expect(collectAudioAssets(root).assets.size).toBe(expectedAssets);
     const path = join(root, 'src/content/daily-ja', `${date}.md`);
     const manifest = JSON.parse(readFileSync(`${audio}/interview-manifest.json`, 'utf8'));
