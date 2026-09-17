@@ -147,13 +147,13 @@
     },
     {
       "index": 13,
-      "term": "切り替える",
-      "reading": "きりかえる",
-      "exampleJa": "難しい相談では、人が上位モデルへ切り替えます。",
-      "word": "vocab-13.mp3",
-      "wordHash": "4090e9c6a6bd0805e503a0221da7f96c2038cab60a5f9c8db6a5146916ed3c85",
-      "example": "example-13.mp3",
-      "exampleHash": "a89edf7ad2a3a1f006d0ee209ff7316c09e4f8c6d969ab27876c062c70a45eb7"
+      "term": "見抜く",
+      "reading": "みぬく",
+      "exampleJa": "数値の変化だけでなく、その背後にある問題を見抜くことが重要です。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 14,
@@ -187,13 +187,13 @@
     },
     {
       "index": 17,
-      "term": "あらかじめ",
-      "reading": "あらかじめ",
-      "exampleJa": "ランナーのイメージに必要なSDKをあらかじめ入れます。",
-      "word": "vocab-17.mp3",
-      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
-      "example": "example-17.mp3",
-      "exampleHash": "71fb538c9370766e37ca1d4f2322027d65f48eabc39d6ef3d4d0e7a4f54fd96e"
+      "term": "単なる",
+      "reading": "たんなる",
+      "exampleJa": "今回の修正は単なる表示の変更ではなく、操作手順の見直しです。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 18,
@@ -217,13 +217,13 @@
     },
     {
       "index": 20,
-      "term": "一方で",
-      "reading": "いっぽうで",
-      "exampleJa": "社内で実行できる一方で、会話は推論先へ送信されます。",
-      "word": "vocab-20.mp3",
-      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
-      "example": "example-20.mp3",
-      "exampleHash": "9006d36041397204a9d174c6c55b457be95aa5d06de5926cd3cdfa4fb5679223"
+      "term": "寄与",
+      "reading": "きよ",
+      "exampleJa": "記録の共有は、同じ不具合の再発防止に寄与します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     }
   ],
   "grammar": [
@@ -276,5 +276,7 @@
       "example": "grammar-example-07.mp3",
       "exampleHash": "f292907f562d905cb5791179a0847bcb23d36b17c3352c01758628385eafee9c"
     }
-  ]
+  ],
+  "contentRevision": "jlpt-history-dedup-2026-09-18",
+  "browserTtsCount": 3
 }

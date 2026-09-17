@@ -97,23 +97,23 @@
     },
     {
       "index": 8,
-      "term": "検証する",
-      "reading": "けんしょうする",
-      "exampleJa": "Agentが生成したCodeをType CheckとTestで検証します。",
-      "word": "vocab-08.mp3",
-      "wordHash": "8c99ed11c56d739dd1bacf081bb328cd53cf8d1cf5627ba044d494d63b918af3",
-      "example": "example-08.mp3",
-      "exampleHash": "6df15776e54f71e1173d1989c5961958e1f5d29275b0b3da2888cb22df108dd5"
+      "term": "遡る",
+      "reading": "さかのぼる",
+      "exampleJa": "変更履歴を遡り、問題が入り込んだ時点を特定します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 9,
-      "term": "実行する",
-      "reading": "じっこうする",
-      "exampleJa": "独立したValidationを複数Sessionで並行して実行します。",
-      "word": "vocab-09.mp3",
-      "wordHash": "dfa5cb8f0e587f51d6d410f8054bd0151c49c28ef505be7e764a3f5545c5ba64",
-      "example": "example-09.mp3",
-      "exampleHash": "fa8972dac66a1e0e5384c35e5a215971da2192369e0bacd2ddc772520808f0e1"
+      "term": "伏せる",
+      "reading": "ふせる",
+      "exampleJa": "公開する資料では個人名を伏せ、検証に必要な情報だけを残します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 10,
@@ -137,13 +137,13 @@
     },
     {
       "index": 12,
-      "term": "追跡する",
-      "reading": "ついせきする",
-      "exampleJa": "AgentごとのCommitとValidation結果を追跡します。",
-      "word": "vocab-12.mp3",
-      "wordHash": "a194303a6363499e5a9e3bb46b976a247643951a558407e3aff55842a978be1a",
-      "example": "example-12.mp3",
-      "exampleHash": "8d0ff913a8877be9073ebbcc693fe17d037bf9f2a9a2c573af6f69ba358c911f"
+      "term": "専有",
+      "reading": "せんゆう",
+      "exampleJa": "一つの処理が端末を専有しないよう、実行方法を分けました。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 13,
@@ -187,13 +187,13 @@
     },
     {
       "index": 17,
-      "term": "あらかじめ",
-      "reading": "あらかじめ",
-      "exampleJa": "Agentごとの担当Directoryをあらかじめ決めておきます。",
-      "word": "vocab-17.mp3",
-      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
-      "example": "example-17.mp3",
-      "exampleHash": "7ad5dd2a6ca8d982a0d51c408a62673dca189e19efe0ec395b366466602a3f73"
+      "term": "豊富",
+      "reading": "ほうふ",
+      "exampleJa": "経験が豊富な人にも判断の根拠を説明してもらい、知識を共有します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 18,
@@ -217,13 +217,13 @@
     },
     {
       "index": 20,
-      "term": "一方で",
-      "reading": "いっぽうで",
-      "exampleJa": "並行化で速度は上がる一方で、変更競合の管理が必要です。",
-      "word": "vocab-20.mp3",
-      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
-      "example": "example-20.mp3",
-      "exampleHash": "74a40a865e3aeeaab06c573930e65e4c82723399b8a343158d733321aa64539b"
+      "term": "一応",
+      "reading": "いちおう",
+      "exampleJa": "一応動作は確認できましたが、長時間の試験はまだ終わっていません。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     }
   ],
   "grammar": [
@@ -276,5 +276,7 @@
       "example": "grammar-example-07.mp3",
       "exampleHash": "c5166fd19e1b95a1059c5f3a7a86a188cfec26dd854f0a4d7223225ad4ef78a1"
     }
-  ]
+  ],
+  "contentRevision": "jlpt-history-dedup-2026-09-18",
+  "browserTtsCount": 5
 }

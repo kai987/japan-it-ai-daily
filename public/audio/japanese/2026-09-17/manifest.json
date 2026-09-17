@@ -27,23 +27,23 @@
   "items": [
     {
       "index": 1,
-      "term": "絞り込む",
-      "reading": "しぼりこむ",
-      "exampleJa": "Agentに渡すContextをTask単位で絞り込みます。",
-      "word": "vocab-01.mp3",
-      "wordHash": "de95b4a91d2cdf5ba0bee966c5ea23747913808a8c4a0545d17b60229c5a4bbd",
-      "example": "example-01.mp3",
-      "exampleHash": "78b7f1ef5c250acda1e95a90e05bca3ce2d8e97fb7ae6b8bbfc5c2fec899a62c"
+      "term": "長引く",
+      "reading": "ながびく",
+      "exampleJa": "調整が長引く場合は、未決事項と判断期限を整理します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 2,
-      "term": "切り分ける",
-      "reading": "きりわける",
-      "exampleJa": "会話の状態とTool実行の状態を切り分けて管理します。",
-      "word": "vocab-02.mp3",
-      "wordHash": "287680674b017d3e738c36b35de07999a2280ab4463e2042c831cc7726c5855c",
-      "example": "example-02.mp3",
-      "exampleHash": "b575b019a14adea8fbbb7d864e71fa3a5095eb615be1f81c5b5d854a4225034c"
+      "term": "立て直す",
+      "reading": "たてなおす",
+      "exampleJa": "前提が変わったため、作業計画を立て直しました。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 3,
@@ -67,23 +67,23 @@
     },
     {
       "index": 5,
-      "term": "引き継ぐ",
-      "reading": "ひきつぐ",
-      "exampleJa": "次Sessionには進捗だけをJSONから引き継がせます。",
-      "word": "vocab-05.mp3",
-      "wordHash": "27f0280fefa547a7fb014c643fb49c943754c6264be55e07f21f8c8b1c248473",
-      "example": "example-05.mp3",
-      "exampleHash": "0ad4fb394bf9866575fd928dfe998519946cbd806cb953f95edb261b17fe545b"
+      "term": "兼ねる",
+      "reading": "かねる",
+      "exampleJa": "この一覧は、作業の記録と引き継ぎ資料を兼ねています。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 6,
-      "term": "抑える",
-      "reading": "おさえる",
-      "exampleJa": "必要なTraceを残しながら保存Costを抑えます。",
-      "word": "vocab-06.mp3",
-      "wordHash": "8eab76035dab35c86a9d486a200ad7b4a26e0e338df92fb98f5b1e54eab45bfb",
-      "example": "example-06.mp3",
-      "exampleHash": "5d6a9eb77686a5a72f9171398630ba3d88b5d6c0997a1f653c475e189c51eb1a"
+      "term": "やり遂げる",
+      "reading": "やりとげる",
+      "exampleJa": "作業をやり遂げるには、実装だけでなく確認と記録も必要です。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 7,
@@ -97,33 +97,33 @@
     },
     {
       "index": 8,
-      "term": "振り分ける",
-      "reading": "ふりわける",
-      "exampleJa": "DDOTはtraceIDを使ってSpanを同じCollectorへ振り分けます。",
-      "word": "vocab-08.mp3",
-      "wordHash": "d404dbc39eee3f0a2463f2dfd0853efa923b0c51e8c179e4f53df1e670cc18f1",
-      "example": "example-08.mp3",
-      "exampleHash": "fe3615f8fe68e8182bca4b33c016d3fc53315484b29b78ecec964f2a8580c764"
+      "term": "充てる",
+      "reading": "あてる",
+      "exampleJa": "作業時間の一部を検証に充て、変更の影響を確かめます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 9,
-      "term": "追跡する",
-      "reading": "ついせきする",
-      "exampleJa": "障害時は一つのTraceからService間の経路を追跡します。",
-      "word": "vocab-09.mp3",
-      "wordHash": "a194303a6363499e5a9e3bb46b976a247643951a558407e3aff55842a978be1a",
-      "example": "example-09.mp3",
-      "exampleHash": "c5ddcf48f2a29102326641f075a24415c97fb3e5017dba9e5419929b5045fd7b"
+      "term": "潰す",
+      "reading": "つぶす",
+      "exampleJa": "原因の候補を一つずつ潰し、確認できた事実を残します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 10,
-      "term": "境界",
-      "reading": "きょうかい",
-      "exampleJa": "許可リストとSandboxを同じSecurity Boundaryとして扱いません。",
-      "word": "vocab-10.mp3",
-      "wordHash": "802f7a41723ff2c16a4bd0fa063a00c74e37c02b64e4f285b0ef0a80a986f02b",
-      "example": "example-10.mp3",
-      "exampleHash": "cf80284d4c624c107a1536a8eaaf92b9a45c4eb56982644eb865d48d7ab218cc"
+      "term": "出そろう",
+      "reading": "でそろう",
+      "exampleJa": "各部分の結果が出そろってから、全体の整合性を確認します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 11,
@@ -137,43 +137,43 @@
     },
     {
       "index": 12,
-      "term": "根拠",
-      "reading": "こんきょ",
-      "exampleJa": "Reviewの判断にはCode行かTest出力の根拠を残します。",
-      "word": "vocab-12.mp3",
-      "wordHash": "a6f653ee0feb745642c64400f7f87108014c78ad8ca97c067589d143b2b36843",
-      "example": "example-12.mp3",
-      "exampleHash": "dfacae8173326989e496e54f5d92e7e41d4c4c0b0d5fa1a2eeb1ebeb0d824490"
+      "term": "漠然と",
+      "reading": "ばくぜんと",
+      "exampleJa": "漠然と改善を頼まず、困っている操作と期待する結果を伝えます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 13,
-      "term": "負荷",
-      "reading": "ふか",
-      "exampleJa": "Policyを集約してCollectorのCPU負荷を下げます。",
-      "word": "vocab-13.mp3",
-      "wordHash": "43d737a2dc98f2419d4c1c2a40ab8d23b8a18a2241e0e13c3154a519f30f291a",
-      "example": "example-13.mp3",
-      "exampleHash": "0f1a2dd79a556c24ee9fb9babab71a8fe8e6a4c2de5633e4bbce509a3ad41cc9"
+      "term": "滑らか",
+      "reading": "なめらか",
+      "exampleJa": "画面の切り替えが滑らかでも、内容が正しいかは別に確認します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 14,
-      "term": "妥当な",
-      "reading": "だとうな",
-      "exampleJa": "同じ条件で測れているか確認してから妥当な比較を行います。",
-      "word": "vocab-14.mp3",
-      "wordHash": "94b6c5f3d7c4d2d1a6b6b1f23b462f2a8df9f3d79c9de57d935600156bbbb560",
-      "example": "example-14.mp3",
-      "exampleHash": "a1dd8f390e3c26b03ae235bd4bc0e445e85db027f1e79d2cb4643eed7a69cf7e"
+      "term": "規律",
+      "reading": "きりつ",
+      "exampleJa": "小さな変更でも確認を省かないという規律を保ちます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 15,
-      "term": "明確な",
-      "reading": "めいかくな",
-      "exampleJa": "Taskを完了とみなす条件を明確に定義します。",
-      "word": "vocab-15.mp3",
-      "wordHash": "9d1f3b30432d14bef97bbd9e9e2b9d9657a7daf0ca71ddfdef68fbae40d7885a",
-      "example": "example-15.mp3",
-      "exampleHash": "c3bf6f8c82fd0c4f3bd4b6b48affca4c47d0f9a31ab8ee617c0cedcaa19a7c78"
+      "term": "迷走",
+      "reading": "めいそう",
+      "exampleJa": "議論が迷走したときは、最初に合意した目的に戻ります。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 16,
@@ -197,33 +197,33 @@
     },
     {
       "index": 18,
-      "term": "段階的に",
-      "reading": "だんかいてきに",
-      "exampleJa": "Preview基盤をViteからOJへ段階的に切り替えます。",
-      "word": "vocab-18.mp3",
-      "wordHash": "5de1c1701c67f1c3cad667367791e1afe44a3560640016b9efb3126e8dcc09e4",
-      "example": "example-18.mp3",
-      "exampleHash": "2f9b00c7e29a3417bce2e2b0a6bfbbecc9b19a09a17ef836548352658bdb4397"
+      "term": "痕跡",
+      "reading": "こんせき",
+      "exampleJa": "変更の痕跡だけで判断せず、実際の差分も確認します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 19,
-      "term": "確実に",
-      "reading": "かくじつに",
-      "exampleJa": "Errorを含むTraceは調査できるよう確実に残します。",
-      "word": "vocab-19.mp3",
-      "wordHash": "1d10072feed2691f3211c724103c01cc97d18b5236b4d9025815360ee271cece",
-      "example": "example-19.mp3",
-      "exampleHash": "89336fb9f86623b4e477f4a4e921bceba2093b32959d9d3a632f79d0add104d8"
+      "term": "反証",
+      "reading": "はんしょう",
+      "exampleJa": "反証を探す際も、都合のよい結果だけを選ばないようにします。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 20,
-      "term": "ただし",
-      "reading": "ただし",
-      "exampleJa": "速度は改善しました。ただし、比較条件は完全には同じではありません。",
-      "word": "vocab-20.mp3",
-      "wordHash": "59966a98146429a6a802b8f79904bb67077ff9ef8bc2eb902af03d214811a33c",
-      "example": "example-20.mp3",
-      "exampleHash": "22d02fef11ff09fed34b1f06d89ac5c4ced7f3961389ea3d731181b02b409ea8"
+      "term": "適材適所",
+      "reading": "てきざいてきしょ",
+      "exampleJa": "適材適所を考え、得意分野と学習機会の両方を見て担当を決めます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     }
   ],
   "grammar": [
@@ -276,5 +276,7 @@
       "example": "grammar-example-07.mp3",
       "exampleHash": "f4fdf58ceb2d75da6b473bc2cda713b3a7c98f739b20eed70f6b73bf0fa24982"
     }
-  ]
+  ],
+  "contentRevision": "jlpt-history-dedup-2026-09-18",
+  "browserTtsCount": 14
 }

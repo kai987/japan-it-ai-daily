@@ -27,23 +27,23 @@
   "items": [
     {
       "index": 1,
-      "term": "評価",
-      "reading": "ひょうか",
-      "exampleJa": "本番に近いTraceを使って品質評価を行います。",
-      "word": "vocab-01.mp3",
-      "wordHash": "a34a293435818d0485a708b5a163651433e37a4d48b82a77aaa0e992305f71ce",
-      "example": "example-01.mp3",
-      "exampleHash": "7a479129fb89177bd063f916bba2a4c2e863611490c74c8551e5e08c2095eb40"
+      "term": "論じる",
+      "reading": "ろんじる",
+      "exampleJa": "導入の是非を論じる前に、解決したい課題を共有しましょう。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 2,
-      "term": "蓄積",
-      "reading": "ちくせき",
-      "exampleJa": "Failure Caseの蓄積をEvaluation Datasetの改善に活用します。",
-      "word": "vocab-02.mp3",
-      "wordHash": "67347d7b74afa90b43cdbcc54dbbfb458dc3ef8a2501fc01fdc343e7e3e674f9",
-      "example": "example-02.mp3",
-      "exampleHash": "8f58334ef23abf442414c86e5c5a9593131ea3d3147ced054dc13a8dc4e7269c"
+      "term": "説く",
+      "reading": "とく",
+      "exampleJa": "勉強会では、結果だけでなく測定条件を記録する重要性を説きました。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 3,
@@ -57,13 +57,13 @@
     },
     {
       "index": 4,
-      "term": "監査",
-      "reading": "かんさ",
-      "exampleJa": "Agent IdentityをTraceに残し、後から監査できるようにします。",
-      "word": "vocab-04.mp3",
-      "wordHash": "cddda010e18d2a661bff2678526f60d1ae97ff89362afeb0e90140ad3dfd4d8d",
-      "example": "example-04.mp3",
-      "exampleHash": "78b58a0b29c606e42b670492488cc8201582dbe31b257590043eb3176cc1112b"
+      "term": "埋もれる",
+      "reading": "うもれる",
+      "exampleJa": "重要な決定が会話の履歴に埋もれないよう、別の文書に残します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 5,
@@ -97,13 +97,13 @@
     },
     {
       "index": 8,
-      "term": "改善する",
-      "reading": "かいぜんする",
-      "exampleJa": "失敗例をDatasetへ追加し、Prompt品質を改善します。",
-      "word": "vocab-08.mp3",
-      "wordHash": "a8d0c18900b7c3f4125c209111fe9f2416cf3fb0dd620c84d8bb08ffd1510512",
-      "example": "example-08.mp3",
-      "exampleHash": "9e2e567c04262efb5aaa309a1dc95b2d63d7d8c32c98593ff674fc9a4721a63f"
+      "term": "捌く",
+      "reading": "さばく",
+      "exampleJa": "大量の問い合わせを一人で捌かず、内容に応じて担当を分けます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 9,
@@ -157,23 +157,23 @@
     },
     {
       "index": 14,
-      "term": "適切",
-      "reading": "てきせつ",
-      "exampleJa": "Taskごとに適切なModelとEffortを選びます。",
-      "word": "vocab-14.mp3",
-      "wordHash": "60f431f1d0e13296084ba416bb63a57ee48798878a059701e125308e19f838ef",
-      "example": "example-14.mp3",
-      "exampleHash": "73f0f2c229cd824037338b90f6f68d9eb95f1d0c8298d737ca0edc845987c1b3"
+      "term": "滞留",
+      "reading": "たいりゅう",
+      "exampleJa": "承認待ちの依頼が滞留しているため、担当者への通知を見直します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 15,
-      "term": "明確",
-      "reading": "めいかく",
-      "exampleJa": "Agentごとに目的と責任範囲を明確にします。",
-      "word": "vocab-15.mp3",
-      "wordHash": "bcfba048fefd72818f8065faa67349cac692ed19584fb70981cb261979ff06c9",
-      "example": "example-15.mp3",
-      "exampleHash": "9e1e86fdc0259b63f05d02242ec9039282bcc1453c51923e3c5c5a809b93530d"
+      "term": "閑散",
+      "reading": "かんさん",
+      "exampleJa": "画面の閲覧が少ない閑散時間帯に、更新作業を行います。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 16,
@@ -187,13 +187,13 @@
     },
     {
       "index": 17,
-      "term": "あらかじめ",
-      "reading": "あらかじめ",
-      "exampleJa": "Agent Identityの必須項目をあらかじめ定義します。",
-      "word": "vocab-17.mp3",
-      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
-      "example": "example-17.mp3",
-      "exampleHash": "3e2a8d3014a49a858e83440b8a7a33a82dfec9849ecebdbce85003e6b4496e04"
+      "term": "双方",
+      "reading": "そうほう",
+      "exampleJa": "開発側と利用側の双方が納得できる手順を考えます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 18,
@@ -207,23 +207,23 @@
     },
     {
       "index": 19,
-      "term": "継続的に",
-      "reading": "けいぞくてきに",
-      "exampleJa": "本番Traceを使って継続的に品質を評価します。",
-      "word": "vocab-19.mp3",
-      "wordHash": "3b9ed58e6b9bea666da1daf0c69b86632da97a53355505ea447867bb192e2a39",
-      "example": "example-19.mp3",
-      "exampleHash": "c2828fb5bc1a5f028bb38521f933499fe88d56d125f7e3984ac9a7f64195c423"
+      "term": "適度",
+      "reading": "てきど",
+      "exampleJa": "通知は適度な間隔でまとめ、作業の妨げにならないようにします。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 20,
-      "term": "一方で",
-      "reading": "いっぽうで",
-      "exampleJa": "高いEffortは品質を上げられる一方で、LatencyとCostも増えます。",
-      "word": "vocab-20.mp3",
-      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
-      "example": "example-20.mp3",
-      "exampleHash": "834c40d21f459f56d12b98932622806531c1c030d2160c8acbdca1f75f90deb0"
+      "term": "別途",
+      "reading": "べっと",
+      "exampleJa": "詳細な移行手順は、検証が終わり次第、別途共有します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     }
   ],
   "grammar": [
@@ -276,5 +276,7 @@
       "example": "grammar-example-07.mp3",
       "exampleHash": "bf9113c47bd31a8939c49fb58c0f340551ffad96c1e85b35979334dea8e91664"
     }
-  ]
+  ],
+  "contentRevision": "jlpt-history-dedup-2026-09-18",
+  "browserTtsCount": 9
 }

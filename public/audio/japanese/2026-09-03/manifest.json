@@ -127,13 +127,13 @@
     },
     {
       "index": 11,
-      "term": "組み合わせる",
-      "reading": "くみあわせる",
-      "exampleJa": "LLMのReasoningと決定的なBusiness Ruleを組み合わせます。",
-      "word": "vocab-11.mp3",
-      "wordHash": "da31e91b5af75bae09a4ab6d3d6e0934e57314064c8ac536980a4a31596fad51",
-      "example": "example-11.mp3",
-      "exampleHash": "ed14bb30fa31d745b010183ba111386c5933c966b0f9c16e52da4ce1db2e6d79"
+      "term": "紛れ込む",
+      "reading": "まぎれこむ",
+      "exampleJa": "公開用の資料に内部情報が紛れ込んでいないか確認します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 12,
@@ -147,13 +147,13 @@
     },
     {
       "index": 13,
-      "term": "削減する",
-      "reading": "さくげんする",
-      "exampleJa": "Managed InterconnectでNetwork設定の運用工数を削減します。",
-      "word": "vocab-13.mp3",
-      "wordHash": "99c6a5ae60f1a2f81d92206f283b36cc294b56218460d2e6c80b4b1a55ec3f74",
-      "example": "example-13.mp3",
-      "exampleHash": "3ac8523c7553389a19f89556a5013c429bd4a4f66bd9848e1f6fbc4c16c70b8a"
+      "term": "盗み出す",
+      "reading": "ぬすみだす",
+      "exampleJa": "情報を盗み出されないよう、不要なアクセス権を残さない運用にします。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 14,
@@ -167,13 +167,13 @@
     },
     {
       "index": 15,
-      "term": "厳格な",
-      "reading": "げんかくな",
-      "exampleJa": "高いCyber Capabilityには、通常Modelより厳格なAccess Policyを適用します。",
-      "word": "vocab-15.mp3",
-      "wordHash": "d5163a4ff1ddcff6ac7b30e8d3c151385662ee8b1913ff2b6f3f55ad0d6d6ce2",
-      "example": "example-15.mp3",
-      "exampleHash": "0742bcf09427eebe091e33bd21fc7a4f0b88fece26df712bf0965b052aab15bf"
+      "term": "強力",
+      "reading": "きょうりょく",
+      "exampleJa": "強力な機能ほど、誰が使えるかを明確にします。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 16,
@@ -197,23 +197,23 @@
     },
     {
       "index": 18,
-      "term": "あらかじめ",
-      "reading": "あらかじめ",
-      "exampleJa": "自動修復を許可するResourceとActionをあらかじめ定義します。",
-      "word": "vocab-18.mp3",
-      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
-      "example": "example-18.mp3",
-      "exampleHash": "f9ef792f2f3e4fd9290cde0d36e1c0ed34dfe735d311c70a22f4452c68a72e98"
+      "term": "連鎖",
+      "reading": "れんさ",
+      "exampleJa": "一つの失敗が連鎖しないよう、処理の依存関係を見直します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 19,
-      "term": "さらに",
-      "reading": "さらに",
-      "exampleJa": "Tool Accessだけでなく、さらにAuditとRollbackも設計します。",
-      "word": "vocab-19.mp3",
-      "wordHash": "f62308857b0a3ce38a81750d08aa2590f1c2c40c46a69ad664f344956b25a0cb",
-      "example": "example-19.mp3",
-      "exampleHash": "b1be3b846693770890bca337b7b84a03664764c457bcd81cdc3ecdeaea14736f"
+      "term": "いちいち",
+      "reading": "いちいち",
+      "exampleJa": "同じ内容をいちいち入力しなくてもよいよう、共通項目を保存します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 20,
@@ -276,5 +276,7 @@
       "example": "grammar-example-07.mp3",
       "exampleHash": "f562dcceb54e8ca30ff354ec61709e671bce7d411f3b8f729c5e58fae5a21566"
     }
-  ]
+  ],
+  "contentRevision": "jlpt-history-dedup-2026-09-18",
+  "browserTtsCount": 5
 }
