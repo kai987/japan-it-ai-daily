@@ -1,0 +1,110 @@
+name: Validate and apply historical JLPT repair
+on:
+  push:
+    branches: [fix/jlpt-history-dedup-2026-09-18]
+    paths: ['.github/workflows/jlpt-apply-verified-repair.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: jlpt-history-repair
+  cancel-in-progress: false
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PUBLIC_AUDIO_BASE_URL: ${{ vars.PUBLIC_AUDIO_BASE_URL || 'https://pub-7561025e67be4103ac4bafb331864381.r2.dev' }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify transport digest and extract only approved source paths
+        shell: python
+        run: |
+          import base64,hashlib,io,json,tarfile
+          from pathlib import Path
+          allowed={'docs/jlpt-history/identity-rules.json','docs/jlpt-history/replacement-cards.tsv','docs/jlpt-history/source-attestations.json','scripts/repair-jlpt-history.py','scripts/check-jlpt-history.mjs','scripts/verify-audio-integrity.mjs','src/lib/learningAudio.ts','src/lib/learningAudio.test.ts','src/lib/jlptHistory.test.mjs','src/components/pages/LessonPage.astro','src/components/LessonAudio.astro','package.json'}
+          chunks=[Path(f'docs/jlpt-history/transport-{i:02d}.b64') for i in range(10)]
+          for p in chunks:
+              print(p.name,len(p.read_text()),hashlib.sha256(p.read_bytes()).hexdigest())
+          raw=base64.b64decode(''.join(p.read_text().strip() for p in chunks),validate=True)
+          actual=hashlib.sha256(raw).hexdigest()
+          print('Compressed repair SHA256:',actual)
+          assert len(raw)==115240 and actual=='6640084823544e1856ca108321114566ca8f68dffccb1c09d5219d9c9fe4e387','Repair transport checksum mismatch; no files applied'
+          with tarfile.open(fileobj=io.BytesIO(raw),mode='r:xz') as archive:
+              members=archive.getmembers()
+              assert {m.name for m in members}==allowed and len(members)==len(allowed)
+              assert all(m.isfile() and m.size<2000000 for m in members)
+              for m in members:
+                  p=Path(m.name);p.parent.mkdir(parents=True,exist_ok=True)
+                  p.write_bytes(archive.extractfile(m).read())
+          print('Verified 12 approved source files; no historical article copies included.')
+      - name: Install migration parser
+        run: python3 -m pip install PyYAML==6.0.2
+      - name: Apply validated bilingual vocabulary migration
+        run: python3 scripts/repair-jlpt-history.py
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install repository dependencies
+        run: npm ci
+      - name: Check content, types, tests and recordings
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p /tmp/jlpt-checks
+          failed=0
+          for task in 'check' 'content:integrity:check' 'evidence:check' 'evidence:pilot' 'bilingual:check-interview' 'quality:check' 'audio:check' 'test' 'audio:integrity:check' 'build'; do
+            echo "::group::$task"
+            if npm run "$task" 2>&1 | tee "/tmp/jlpt-checks/${task//:/-}.log"; then echo "PASS $task"; else failed=1; echo "FAIL $task"; fi
+            echo '::endgroup::'
+          done
+          exit "$failed"
+      - name: Browser regression and security checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx playwright install --with-deps chromium
+          npm run test:browser 2>&1 | tee /tmp/jlpt-checks/browser.log
+          npm run security:check 2>&1 | tee /tmp/jlpt-checks/security.log
+          npm audit --audit-level=high 2>&1 | tee /tmp/jlpt-checks/audit.log
+      - name: Commit verified repair, remove temporary transport and authoring jobs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: fix/jlpt-history-dedup-2026-09-18
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('docs/jlpt-history/repair-report.json').read_text())
+          assert report['afterCards']==740 and report['historicalDuplicatesAfter']==0
+          for p in Path('docs/jlpt-history').glob('transport-*.b64'):p.unlink()
+          for p in ['.github/workflows/jlpt-history-audit.yml','.github/workflows/jlpt-repair-prepare.yml','.github/workflows/jlpt-repair-draft.yml','.github/workflows/jlpt-extract-final.yml','.github/workflows/jlpt-apply-verified-repair.yml','scripts/jlpt-history-collect.py','scripts/draft-jlpt-repair.py','docs/jlpt-history/selections.txt']:
+              Path(p).unlink(missing_ok=True)
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/jlpt-history scripts src/content src/components/LessonAudio.astro src/components/pages/LessonPage.astro src/lib/learningAudio.ts src/lib/learningAudio.test.ts src/lib/jlptHistory.test.mjs package.json public/audio/japanese .github/workflows
+          git diff --cached --stat
+          git commit -m 'fix: deduplicate 37 historical JLPT lessons with source-attested bilingual cards'
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $AUTH" push origin "HEAD:$BRANCH"
+          git rev-parse HEAD > /tmp/jlpt-checks/VERIFIED_COMMIT.txt
+      - name: Export inspectable audit and verification logs
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p /tmp/jlpt-checks
+          cp docs/jlpt-history/repair-report.* /tmp/jlpt-checks/ 2>/dev/null || true
+          git diff --stat > /tmp/jlpt-checks/working-diff.txt
+      - name: Upload verification results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: jlpt-repair-verification
+          path: /tmp/jlpt-checks
+          retention-days: 7
