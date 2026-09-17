@@ -1,5 +1,4 @@
 name: JLPT history repair validation
-
 on:
   push:
     branches: [fix/jlpt-vocabulary-history-20260918]
@@ -7,82 +6,35 @@ on:
       - '.github/workflows/jlpt-history-repair.yml'
       - 'scripts/jlpt-history*'
       - 'docs/jlpt-history-repair/**'
-
 permissions:
   contents: read
-
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
-      - name: Checkout repair branch
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
-      - name: Install source readers
-        run: python -m pip install PyYAML==6.0.2 requests==2.32.5 beautifulsoup4==4.13.4
-      - name: Collect original article availability
+      - name: Package authored replacement bank
         shell: python
         run: |
           from pathlib import Path
-          from concurrent.futures import ThreadPoolExecutor
-          from urllib.parse import urlparse
-          import yaml, json, requests, hashlib, re
-          from bs4 import BeautifulSoup
-          out = Path('_jlpt_sources'); out.mkdir(exist_ok=True)
-          sources = {}
-          for path in sorted(Path('src/content/daily').glob('*.md')):
-              data = yaml.safe_load(path.read_text(encoding='utf-8').split('---', 2)[1])
-              for i, article in enumerate(data['top']):
-                  sources.setdefault(article['url'], []).append({'date':path.stem,'top':i+1,'title':article['title']})
-          def fetch(item):
-              url, uses = item
-              result = {'url':url,'uses':uses,'status':'unavailable'}
-              try:
-                  parsed = urlparse(url)
-                  assert parsed.scheme == 'https' and parsed.hostname and not parsed.username
-                  response = requests.get(url, timeout=(8,20), headers={'User-Agent':'Mozilla/5.0 (historical vocabulary source verification)'})
-                  result.update({'httpStatus':response.status_code,'finalUrl':response.url})
-                  response.raise_for_status()
-                  response.encoding = response.apparent_encoding or 'utf-8'
-                  soup = BeautifulSoup(response.text, 'html.parser')
-                  for el in soup.select('script, style, nav, header, footer, aside, noscript'): el.decompose()
-                  body = soup.select_one('#cmsBody, .article-body, .entry-content, article, main') or soup.body
-                  if body is None: raise ValueError('No readable body')
-                  text = re.sub(r'\n{3,}', '\n\n', body.get_text('\n', strip=True))
-                  if len(text) < 150: raise ValueError('Insufficient article text')
-                  key = hashlib.sha256(url.encode()).hexdigest()[:20]
-                  (out / (key+'.txt')).write_text(text, encoding='utf-8')
-                  result.update({'status':'fetched','textPath':key+'.txt','characters':len(text),'textSha256':hashlib.sha256(text.encode()).hexdigest()})
-              except Exception as error:
-                  result['error'] = type(error).__name__ + ': ' + str(error)[:240]
-              return result
-          with ThreadPoolExecutor(max_workers=6) as pool:
-              results = list(pool.map(fetch, sources.items()))
-          (out / 'sources.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf-8')
-          print(json.dumps({'originalUrls':len(results),'fetched':sum(x['status']=='fetched' for x in results),'unavailable':sum(x['status']!='fetched' for x in results)},ensure_ascii=False))
-          for x in results:
-              if x['status'] != 'fetched': print('UNAVAILABLE', x['url'], x.get('httpStatus'), x.get('error'))
-      - name: Package source snapshot without recordings or credentials
-        shell: python
-        run: |
-          from pathlib import Path
-          import zipfile, subprocess
-          allowed = ('src/', 'scripts/', 'tests/', 'docs/', '.github/')
-          roots = {'package.json','package-lock.json','astro.config.mjs','playwright.config.mjs','tsconfig.json','vitest.config.ts','README.md','.gitignore'}
-          files = subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
-          with zipfile.ZipFile('jlpt-source-snapshot.zip','w',zipfile.ZIP_DEFLATED) as archive:
-              for name in files:
-                  if name and (name.startswith(allowed) or name in roots or (name.startswith('public/') and not name.endswith(('.mp3','.woff','.woff2','.ttf','.otf')))):
-                      archive.write(name,name)
-              for path in Path('_jlpt_sources').rglob('*'):
-                  if path.is_file(): archive.write(path,str(path))
-              archive.writestr('BASE_COMMIT',subprocess.check_output(['git','rev-parse','HEAD']).decode())
-      - name: Upload private review snapshot
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+          import zipfile,json,collections
+          counts=collections.Counter()
+          with zipfile.ZipFile('jlpt-bank.zip','w',zipfile.ZIP_DEFLATED) as out:
+              for path in sorted(Path('docs/jlpt-vocabulary-backfill').glob('*.psv')):
+                  out.write(path,str(path))
+                  for i,line in enumerate(path.read_text(encoding='utf-8').splitlines(),1):
+                      if not line.strip() or line.startswith('#'): continue
+                      fields=line.split('|')
+                      assert len(fields)==14, (str(path),i,len(fields))
+                      assert len(fields[9].split(';'))>=2, (str(path),i)
+                      counts[fields[0]]+=1
+          print(json.dumps({'replacementCards':sum(counts.values()),'days':len(counts),'perDay':counts},ensure_ascii=False))
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: jlpt-source-snapshot
-          path: jlpt-source-snapshot.zip
+          name: jlpt-authored-bank
+          path: jlpt-bank.zip
           retention-days: 1
           if-no-files-found: error
