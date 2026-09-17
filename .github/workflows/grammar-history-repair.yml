@@ -35,8 +35,14 @@ jobs:
                   assert m.isfile() and m.size<2000000
                   path=Path(m.name);path.parent.mkdir(parents=True,exist_ok=True)
                   path.write_bytes(archive.extractfile(m).read())
+          p=Path('scripts/repair-grammar-history.py')
+          text=p.read_text()
+          assert text.count("soup=BeautifulSoup(html,'html.parser')")==1
+          p.write_text(text.replace("soup=BeautifulSoup(html,'html.parser')", "soup=BeautifulSoup(raw,'html.parser')"))
       - name: Install source-verification parsers
         run: python3 -m pip install PyYAML==6.0.2 beautifulsoup4==4.13.4
+      - name: Diagnose source anchors
+        run: python3 scripts/inspect-grammar-source-anchors.py
       - name: Verify original articles and apply grammar-only repair
         run: python3 scripts/repair-grammar-history.py
       - name: Install history gates and safe grammar audio mapping
@@ -81,6 +87,7 @@ jobs:
           for p in Path('docs/grammar-history').glob('transport-*.b64'):p.unlink()
           Path('.github/workflows/grammar-history-repair.yml').unlink()
           Path('scripts/apply-grammar-guards.py').unlink()
+          Path('scripts/inspect-grammar-source-anchors.py').unlink()
           PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
