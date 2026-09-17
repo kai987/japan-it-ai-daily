@@ -37,13 +37,13 @@
     },
     {
       "index": 2,
-      "term": "見逃し",
-      "reading": "みのがし",
-      "exampleJa": "MigrationではSQLの見逃しが本番障害につながるためRecallを重視します。",
-      "word": "vocab-02.mp3",
-      "wordHash": "fc19a94efb9b296531c724ac8c7d50ea7fb798f1efae8fefa1f656139b3d0134",
-      "example": "example-02.mp3",
-      "exampleHash": "6afb006e8eb8da2f722da5471cbc5aae905b6e1df43c90e977d0e481704d8cfd"
+      "term": "投げかける",
+      "reading": "なげかける",
+      "exampleJa": "結論を急ぐ前に、前提を確かめる質問を投げかけます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 3,
@@ -67,13 +67,13 @@
     },
     {
       "index": 5,
-      "term": "統制",
-      "reading": "とうせい",
-      "exampleJa": "AI利用を禁止するのではなく、RBACとLogで統制を効かせます。",
-      "word": "vocab-05.mp3",
-      "wordHash": "f15c7d31ff372e15da668cf66f08f9711b2c4a36741ec615656601e34f091759",
-      "example": "example-05.mp3",
-      "exampleHash": "ba5f480aebca394ee6225d902509e6a894265e9db53c9d4cd9d6545f0dcdf6d8"
+      "term": "持ち寄る",
+      "reading": "もちよる",
+      "exampleJa": "各担当が失敗例を持ち寄り、共通する原因を話し合います。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 6,
@@ -117,23 +117,23 @@
     },
     {
       "index": 10,
-      "term": "抑える",
-      "reading": "おさえる",
-      "exampleJa": "共通基盤に集約してSystem追加時の複雑さを抑えます。",
-      "word": "vocab-10.mp3",
-      "wordHash": "8eab76035dab35c86a9d486a200ad7b4a26e0e338df92fb98f5b1e54eab45bfb",
-      "example": "example-10.mp3",
-      "exampleHash": "afe93f8b8f707e0a51d577913cab28815f0acaa60502177e44267ab8c0438759"
+      "term": "切り詰める",
+      "reading": "きりつめる",
+      "exampleJa": "文章を切り詰める際も、判断に必要な条件は残します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 11,
-      "term": "引き継ぐ",
-      "reading": "ひきつぐ",
-      "exampleJa": "会話履歴を残し、別のEngineerが翌日すぐ作業を引き継げるようにします。",
-      "word": "vocab-11.mp3",
-      "wordHash": "27f0280fefa547a7fb014c643fb49c943754c6264be55e07f21f8c8b1c248473",
-      "example": "example-11.mp3",
-      "exampleHash": "4569456d87311806054f9a054a487ed9397279459d79a17048992e70eb8afafe"
+      "term": "取りやめる",
+      "reading": "とりやめる",
+      "exampleJa": "検証結果に問題があれば、予定していた公開を取りやめます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 12,
@@ -147,13 +147,13 @@
     },
     {
       "index": 13,
-      "term": "切り替える",
-      "reading": "きりかえる",
-      "exampleJa": "Classifierが判断できない場合は手動承認へ切り替えます。",
-      "word": "vocab-13.mp3",
-      "wordHash": "4090e9c6a6bd0805e503a0221da7f96c2038cab60a5f9c8db6a5146916ed3c85",
-      "example": "example-13.mp3",
-      "exampleHash": "45c3ef652684689c33caa02bec5b06c9ec9ad88f33169d748aa0d53e9a3631d1"
+      "term": "心強い",
+      "reading": "こころづよい",
+      "exampleJa": "困ったときに相談できる仲間がいると、心強く感じます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 14,
@@ -167,13 +167,13 @@
     },
     {
       "index": 15,
-      "term": "慎重な",
-      "reading": "しんちょうな",
-      "exampleJa": "Production変更では自動化しても慎重なEscalation Ruleを残します。",
-      "word": "vocab-15.mp3",
-      "wordHash": "7672d1c5fa8551cc35d69d69a01ff6bcecd2918cd2bbb5ca98d7d70a93557540",
-      "example": "example-15.mp3",
-      "exampleHash": "1f15866896ea0761dbf6740e0661415dcf8db661e758ffecbfe548e3e8367b3b"
+      "term": "有機的",
+      "reading": "ゆうきてき",
+      "exampleJa": "個別の機能を有機的に結び付け、利用者の作業を一続きにします。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 16,
@@ -187,13 +187,13 @@
     },
     {
       "index": 17,
-      "term": "一元的に",
-      "reading": "いちげんてきに",
-      "exampleJa": "Cloud接続とPolicyを共通Hubで一元的に管理します。",
-      "word": "vocab-17.mp3",
-      "wordHash": "92d7125fb185a357e27965b86c693df92d6e32a300221eae5d6cdfc2d2caf51a",
-      "example": "example-17.mp3",
-      "exampleHash": "32d9d8cbb39a6a44c93c880151ddd5975822311f71aed38b83f2cb27da657873"
+      "term": "充足",
+      "reading": "じゅうそく",
+      "exampleJa": "要件の充足を確認してから、次の工程へ進みます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 18,
@@ -207,33 +207,23 @@
     },
     {
       "index": 19,
-      "term": "大幅に",
-      "reading": "おおはばに",
-      "exampleJa": "構築時間が大幅に短縮してもReliabilityの確認は省きません。",
-      "word": "vocab-19.mp3",
-      "wordHash": "10deedf1f7bbba71f9e417e14a0a17c5cc945482a3511c3cc157d4c33b883ffe",
-      "example": "example-19.mp3",
-      "exampleHash": "1c86a2435d4070b1ca4f0a1db5475bca2f6bb02b67b1a9cfbf101de4cdb2643f"
+      "term": "兼務",
+      "reading": "けんむ",
+      "exampleJa": "設計と検証を兼務する場合も、確認する観点は分けます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 20,
-      "term": "ただし",
-      "reading": "ただし",
-      "exampleJa": "Auto modeは有力です。ただし、Synthetic Testの7％を実Trafficの率とは扱いません。",
-      "word": "vocab-20.mp3",
-      "wordHash": "59966a98146429a6a802b8f79904bb67077ff9ef8bc2eb902af03d214811a33c",
-      "example": "example-20.mp3",
-      "exampleHash": "d3ac2950680e655b60204ff556c1870dd23aa5bec171d1e14c68e8b45df0d534"
-    },
-    {
-      "index": 21,
-      "term": "一方で",
-      "reading": "いっぽうで",
-      "exampleJa": "OpusはCostが高い一方で、このTestでは未照合が0でした。",
-      "word": "vocab-21.mp3",
-      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
-      "example": "example-21.mp3",
-      "exampleHash": "9c3167cc262255350fcaa3d81e8a2cbcf43cae98ff06ab4a15b1412d6597cbe0"
+      "term": "吟味",
+      "reading": "ぎんみ",
+      "exampleJa": "提案された変更を吟味し、必要なものだけを採用します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     }
   ],
   "grammar": [
@@ -286,5 +276,7 @@
       "example": "grammar-example-07.mp3",
       "exampleHash": "5736baa2aefb33e1febdaf3e9f85dd90c3a68ae4bd37b90955f72c7a0c3780dc"
     }
-  ]
+  ],
+  "contentRevision": "jlpt-history-dedup-2026-09-18",
+  "browserTtsCount": 9
 }

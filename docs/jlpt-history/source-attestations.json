@@ -1,0 +1,2744 @@
+{
+  "schemaVersion": 1,
+  "baseline": "28d10dd08b3c70cb6c4773f6b290c344114e6113",
+  "sources": {
+    "2026-08-13/2": {
+      "url": "https://dev.classmethod.jp/articles/nvidia-nemo-switchyard-v020-rust-first-touch/",
+      "title": "NVIDIA NeMo Switchyard：Taskに応じてLLMを動的Routing",
+      "textSha256": "39eb4d9e49c931e91d7f6df6b0ba2a7cf79e52464981f7f80da915f2004c2c05",
+      "capturedAt": "2026-09-17T18:20:46.250090+00:00"
+    },
+    "2026-08-13/1": {
+      "url": "https://dev.classmethod.jp/articles/summer-project-2026-ai-plans-admin-governance-comparison/",
+      "title": "Claude Team / ChatGPT Business / Gemini Enterpriseを企業統制の観点で比較",
+      "textSha256": "194ed996439b5f06da1239d29f2b971adf88f761a15d7dad5753656b68cdb711",
+      "capturedAt": "2026-09-17T18:20:45.587929+00:00"
+    },
+    "2026-08-14/3": {
+      "url": "https://dev.classmethod.jp/articles/iam-role-manager-lambda-execution-role/",
+      "title": "AWS IAM Role Manager：自動設定は最小権限を意味しない",
+      "textSha256": "418338fbbf441f60f40adb2f48a2cdd69a9e18cf92a21fd9e65883aaf04b24d0",
+      "capturedAt": "2026-09-17T18:20:47.443256+00:00"
+    },
+    "2026-08-14/5": {
+      "url": "https://tech.layerx.co.jp/entry/quit-qa-start-qa",
+      "title": "QAをやめて、QAをはじめる──欠陥検出0件が続いた組織で、品質保証の重心を3回動かした話",
+      "textSha256": "d43c5a6cdd8a92b6d169e687217bba501ffa858b3721617ff2c50c6c5b7ff90c",
+      "capturedAt": "2026-09-17T18:20:47.870147+00:00"
+    },
+    "2026-08-14/2": {
+      "url": "https://zenn.dev/7nohe/articles/guren-ai-agent-framework",
+      "title": "Guren：AI Agent時代のFull-stack TypeScript Framework",
+      "textSha256": "fee24ceeff44247981eae95db37d6af1c12dc4f385af4bd11353bfb68d60d201",
+      "capturedAt": "2026-09-17T18:20:47.312979+00:00"
+    },
+    "2026-08-15/1": {
+      "url": "https://gihyo.jp/article/2026/08/deepseek-harness-developer-preview",
+      "title": "DeepSeek Harness 0.1：「Everything is a Plugin」",
+      "textSha256": "cea6f8d9f4ca0c5a90e6a1ea4fdff226770ec28c0a8d02ef94364fc122086800",
+      "capturedAt": "2026-09-17T18:20:47.895892+00:00"
+    },
+    "2026-08-15/2": {
+      "url": "https://zenn.dev/oubakiou/articles/ed98acbf4630b3",
+      "title": "Prompt Injection：AgentがWebを読むこと自体がAttack Surfaceになる",
+      "textSha256": "a2e710cae90ad764a30319ee80dbf263c0cae3f76834e7e125c746933f84253a",
+      "capturedAt": "2026-09-17T18:20:48.184752+00:00"
+    },
+    "2026-08-15/4": {
+      "url": "https://gihyo.jp/article/2026/08/googlegemini-3.7-flash",
+      "title": "Gemini 3.7 Flash：Coding / Web / Agent Workflowを強化",
+      "textSha256": "266dca215cf6f31e6653c5edc8e171d6e73f8c0dfad7d4ab0cb5a9af017bea83",
+      "capturedAt": "2026-09-17T18:20:48.528302+00:00"
+    },
+    "2026-08-15/5": {
+      "url": "https://dev.classmethod.jp/articles/agentcore-hands-on-study-agent-harness/",
+      "title": "Amazon Bedrock AgentCore 入門 - AI エージェントを自作しながら「ハーネス」の仕組みを学んでみた",
+      "textSha256": "d3cc4909c16d55606ee7b61ac438eabcab9badd14cfb5cad8136917f4cd2c552",
+      "capturedAt": "2026-09-17T18:20:48.712833+00:00"
+    },
+    "2026-08-16/4": {
+      "url": "https://zenn.dev/0msys/articles/486b44b3af083d",
+      "title": "Claude Code Remote ControlのServer mode",
+      "textSha256": "7bde2e674ba7897749cd63d0d1aa15d9270e10921f016dcd120178b2c22b2fad",
+      "capturedAt": "2026-09-17T18:20:49.422451+00:00"
+    },
+    "2026-08-16/2": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/15/news013.html",
+      "title": "AI時代は「Go言語」が理想の言語に？ Googleが解説する「Goの価値」",
+      "textSha256": "5b912a81b3712d672d4da1b63f074c7839050a5a16c5b9f379be79af12bec60b",
+      "capturedAt": "2026-09-17T18:20:49.059263+00:00"
+    },
+    "2026-08-17/1": {
+      "url": "https://aws.amazon.com/jp/blogs/news/building-multi-tenant-agents-with-amazon-bedrock-agentcore/",
+      "title": "Amazon Bedrock AgentCoreでマルチテナントエージェントを構築する",
+      "textSha256": "a550869a5bec9a8180891ec059a454c8f8d95cfc70bf6c7506ea622005b9d8e5",
+      "capturedAt": "2026-09-17T18:20:49.852785+00:00"
+    },
+    "2026-08-17/4": {
+      "url": "https://dev.classmethod.jp/articles/graphrag-gemini-gephi-lite/",
+      "title": "GraphRAG：Local FactからGlobal Structureへ",
+      "textSha256": "d4325a899b69392daa395460ebc66a444d06182a382b17d8c8e35ca55823a80a",
+      "capturedAt": "2026-09-17T18:20:50.364749+00:00"
+    },
+    "2026-08-17/5": {
+      "url": "https://dev.classmethod.jp/articles/dgx-spark-nemotron-lightning-switchyard-classifier-finetune/",
+      "title": "Nemotron 3.5 Lightning：専用LLM Routing Judgeを学習",
+      "textSha256": "5f46760fff20e0136658f1d0cf48567e3da819be712d6ad397b08893ee523929",
+      "capturedAt": "2026-09-17T18:20:50.398781+00:00"
+    },
+    "2026-08-18/3": {
+      "url": "https://dev.classmethod.jp/articles/aws-transform-continuous-modernization-hands-on/",
+      "title": "AWS Transform：Continuous ModernizationでLegacy改善を継続化",
+      "textSha256": "39d39d0adfc05c3c10d887da39052a05e91ebde21c5b8a025fd9e64639f5d832",
+      "capturedAt": "2026-09-17T18:20:51.622692+00:00"
+    },
+    "2026-08-18/4": {
+      "url": "https://dev.classmethod.jp/articles/codex-context-window-1m-chatgpt-plan/",
+      "title": "Codex Long Context：Context Windowが大きくても全部使うべきとは限らない",
+      "textSha256": "46b66f2e5f9e24b249acf6ba237e9db07c5b99542b28039179a8c8aa9a0a6ddc",
+      "capturedAt": "2026-09-17T18:20:51.852466+00:00"
+    },
+    "2026-08-19/4": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/19/news016.html",
+      "title": "Wantedly：ObservabilityをInfraからLLMへ拡張",
+      "textSha256": "6c7d0632b1c4b00353c9196faadce7b228ef7ee85d75c09a63b05129b42ceb2f",
+      "capturedAt": "2026-09-17T18:20:52.599969+00:00"
+    },
+    "2026-08-19/3": {
+      "url": "https://zenn.dev/taru_neko/articles/mcp-or-direct-api",
+      "title": "MCPは本当に常にDirect APIより優れているのか？",
+      "textSha256": "828e6f0d8323f0db713323c4bb607af0c7a5207e240df094cd014693f7aa5c99",
+      "capturedAt": "2026-09-17T18:20:52.384778+00:00"
+    },
+    "2026-08-20/2": {
+      "url": "https://dev.classmethod.jp/articles/modern-data-stack-info-summary-20260819/",
+      "title": "Snowflake Cortex AI Gateway：Dynamic Model Routing",
+      "textSha256": "ea46c507365751e0a1bab5fd826a943f612d7ea28c0c474e6b634ed610bc2626",
+      "capturedAt": "2026-09-17T18:20:53.204100+00:00"
+    },
+    "2026-08-20/4": {
+      "url": "https://dev.classmethod.jp/articles/kiro-agentfocus-pinning-cloudsession/",
+      "title": "Kiro IDEのAgent Focusモードでセッションのピン留めとCloud Sessionsが使えるようになったので確認してみた",
+      "textSha256": "742b232f7c317e6daf9a96321f9e40c9272ff26859e4ec0041ef214d16ec654d",
+      "capturedAt": "2026-09-17T18:20:53.515112+00:00"
+    },
+    "2026-08-20/1": {
+      "url": "https://tech.layerx.co.jp/entry/langfuse-clickhouse-read-skip",
+      "title": "Langfuse トレース取り込み処理の改善による ClickHouse の負荷低減",
+      "textSha256": "5b700b27ec13779c267934d5f70ab5c627ec882d9c44b9975a2d766af28586f2",
+      "capturedAt": "2026-09-17T18:20:53.101706+00:00"
+    },
+    "2026-08-20/3": {
+      "url": "https://dev.classmethod.jp/articles/claude-code-effort-202608/",
+      "title": "Claude Code effort：1 Requestあたりの推論量を制御",
+      "textSha256": "68c03b85245a0c753b9ebf32d30b9427c7b270b06e67e1e3be7f8ec953614057",
+      "capturedAt": "2026-09-17T18:20:53.503732+00:00"
+    },
+    "2026-08-21/2": {
+      "url": "https://dev.classmethod.jp/articles/legacy-modernization-ai-spec-gap/",
+      "title": "Legacy Modernization：AIが「読んでいないもの」が最も危険",
+      "textSha256": "65b2bd60da14d2bc96e068ef2d411c0de0a13caf0e942efced3119c1a130b522",
+      "capturedAt": "2026-09-17T18:20:54.204397+00:00"
+    },
+    "2026-08-21/4": {
+      "url": "https://www.merinc.co.jp/news/japan-ai-operations-report-2026-summer",
+      "title": "生成AI活用企業の67.1％が、いまだ「人が起動」──「Japan AI Operations Report 2026 Summer」を公開",
+      "textSha256": "c6b7692c893c1a31b13396370b67bfabbddf071a3f7f64755e2699bf9bcf9135",
+      "capturedAt": "2026-09-17T18:20:54.490416+00:00"
+    },
+    "2026-08-21/5": {
+      "url": "https://prod.cursor.com/blog/git-at-any-scale",
+      "title": "Cursor：大規模Gitホスティング向けStorage Architecture「Continuity」",
+      "textSha256": "ebeb655d45a03f8391dbefe4788521c282f179bba9fc04bcae074589feff5be7",
+      "capturedAt": "2026-09-17T18:20:54.498671+00:00"
+    },
+    "2026-08-22/3": {
+      "url": "https://zenn.dev/shinji_bk/articles/7a24decb4ce42e",
+      "title": "MCP Tool Poisoningを実測",
+      "textSha256": "39667fd8aff885ef16fe164b06627b5c117c232abcb5474161ae515c38a9d1fd",
+      "capturedAt": "2026-09-17T18:20:55.272184+00:00"
+    },
+    "2026-08-22/5": {
+      "url": "https://zenn.dev/clopy/articles/codex-resume-ephemeral-rollout-gate",
+      "title": "Codex resume --ephemeral：Exit Code 0でもDisk Writeがないとは限らない",
+      "textSha256": "6f3c613dc86228dc87441996a78dec823d56e7e22dcf8e9679581c949676ad58",
+      "capturedAt": "2026-09-17T18:20:55.668326+00:00"
+    },
+    "2026-08-23/2": {
+      "url": "https://dev.classmethod.jp/articles/20260822-cc-updates-v2-1-239/",
+      "title": "Claude Code v2.1.238～2.1.239：Reliability / Security / Hidden Billing",
+      "textSha256": "b2eb1e6faee32831351250fca8de368dbb2a4988cb661fa995965e9a70bf7eaf",
+      "capturedAt": "2026-09-17T18:20:56.129197+00:00"
+    },
+    "2026-08-23/3": {
+      "url": "https://dev.classmethod.jp/articles/dgx-spark-switchyard-prefill-router-vs-judge/",
+      "title": "NeMo Switchyard Prefill Router",
+      "textSha256": "fefbe7794e642bf276c746b893c1485d4d09c0a154faa65c63601ee0228c8e95",
+      "capturedAt": "2026-09-17T18:20:56.831342+00:00"
+    },
+    "2026-08-23/5": {
+      "url": "https://dev.classmethod.jp/articles/bedrock-vlm-visual-inspection-generated-prompt/",
+      "title": "Bedrock × VLM外観検査：Strong Model + Cheap Model + REVIEW",
+      "textSha256": "48459897e7aee8b0c1c6330b348154adaade67238d5b33b3ada0edc8e1de18e1",
+      "capturedAt": "2026-09-17T18:20:57.016543+00:00"
+    },
+    "2026-08-24/1": {
+      "url": "https://dev.classmethod.jp/articles/obsidian-claude-code-slack-permission-guardrails/",
+      "title": "Claude Code × Slack：allow / ask / denyによるPermission Design",
+      "textSha256": "e30b9964a539370d7cbe8878f366f24508e9b89b647340a88f0f6efaa51db308",
+      "capturedAt": "2026-09-17T18:20:57.856306+00:00"
+    },
+    "2026-08-25/3": {
+      "url": "https://dev.classmethod.jp/articles/aws-devops-agent-github-issue/",
+      "title": "AWS DevOps Agent × GitHub MCP：障害調査後はIssue作成だけを許可",
+      "textSha256": "551062fef8845a1e4da5ab6d07150431b9d82efc4cfe2bf0a91649a3119db8bf",
+      "capturedAt": "2026-09-17T18:20:59.513279+00:00"
+    },
+    "2026-08-25/4": {
+      "url": "https://zenn.dev/uehaj/articles/claude-code-supervisor-agent-view",
+      "title": "Claude Code Supervisor：SessionとCLI Processを分離",
+      "textSha256": "a26990c317e946c06634ce28ce62173734c5492562a73d86732aefc0a5ef5993",
+      "capturedAt": "2026-09-17T18:20:59.750775+00:00"
+    },
+    "2026-08-26/1": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/25/news095.html",
+      "title": "MCP最新Roadmap：Agent Identity、非同期Task、Progressive Tool Discovery",
+      "textSha256": "6c4cdd3be47d93ce93a5ab2373e7e5f160d4532fbf57fc3141ff59dc7d0270c2",
+      "capturedAt": "2026-09-17T18:21:00.021717+00:00"
+    },
+    "2026-08-26/3": {
+      "url": "https://dev.classmethod.jp/articles/20260825-cc-updates-v2-1-245/",
+      "title": "Claude Code Runtime Governance",
+      "textSha256": "eb2c2c95542817b59b2d0c00f65fa6305277c8ea8eb053720968bcd05ce9be3c",
+      "capturedAt": "2026-09-17T18:21:00.360737+00:00"
+    },
+    "2026-08-26/4": {
+      "url": "https://zenn.dev/kazu_aiengineer/articles/mcp-server-tool-definition-token-cost",
+      "title": "MCP Tool DefinitionのContext Cost",
+      "textSha256": "eef1eb2887d43afde3b50dd44077b1874fc2d8798ceea3b115fa715adcd7e2b8",
+      "capturedAt": "2026-09-17T18:21:01.027322+00:00"
+    },
+    "2026-08-26/5": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/25/news036.html",
+      "title": "AI Vulnerability DiscoveryとTriage",
+      "textSha256": "c9ce93023895e799da466826885c0d7450d2bd20cca1ca6731fce60e57040aba",
+      "capturedAt": "2026-09-17T18:21:01.067145+00:00"
+    },
+    "2026-08-27/1": {
+      "url": "https://techblog.lycorp.co.jp/ja/20260826a",
+      "title": "LINEヤフー Agent i：Agent BuilderとAgent Runtimeで「作りやすさ」と本番安全性を両立",
+      "textSha256": "9443829f525c0dd52d0bccac18fb477a1bf53c0d629d7492c9e9c757306ce089",
+      "capturedAt": "2026-09-17T18:21:01.234466+00:00"
+    },
+    "2026-08-27/2": {
+      "url": "https://techblog.lycorp.co.jp/ja/20260826b",
+      "title": "LINEヤフー：AI活用率100％のQA組織をつくるまで",
+      "textSha256": "cb550a5c5c852af91d4b1e06412ae7fd65592cbdab11834eea4054edca470cdb",
+      "capturedAt": "2026-09-17T18:21:01.438077+00:00"
+    },
+    "2026-08-27/4": {
+      "url": "https://tech.layerx.co.jp/entry/typespec-in-aiworkforce",
+      "title": "LayerX：TypeSpec × Schema-driven Development × Coding Agent",
+      "textSha256": "2fba6e686497c465de09bf4e8c55c8dc70aef59a0a497e1147bdca73e1e321c4",
+      "capturedAt": "2026-09-17T18:21:02.505312+00:00"
+    },
+    "2026-08-28/4": {
+      "url": "https://dev.classmethod.jp/articles/20260827-cc-updates-v2-1-247/",
+      "title": "Claude Code v2.1.247 の主要アップデート - /claude-api cost-optimize ツール追加と Sonnet 5 の auto-compact 1M 化",
+      "textSha256": "6792fee6704aafb8378073dd4d0a797ee429b3104e9bc3f22dede54275a9622f",
+      "capturedAt": "2026-09-17T18:21:04.051926+00:00"
+    },
+    "2026-08-28/5": {
+      "url": "https://gihyo.jp/article/2026/08/openai-plugin-support-skill-over-mcp",
+      "title": "OpenAI、公開プラグインでSkills Over MCPを早期サポート ——提出時にMCPサーバーからスキルを取り込み",
+      "textSha256": "de8067690c8ef4a284ff9b0d882df378eb2cca150badd44f23f1cf089328b845",
+      "capturedAt": "2026-09-17T18:21:04.074030+00:00"
+    },
+    "2026-08-28/3": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/28/news009.html",
+      "title": "AI時代に拡大するAPIアタックサーフェス　いかに保護するか",
+      "textSha256": "78acb204c935583251ca69106e5cc4c2cf0552c3b4d467fcc4042ad18b02885f",
+      "capturedAt": "2026-09-17T18:21:03.562986+00:00"
+    },
+    "2026-08-29/1": {
+      "url": "https://tech.layerx.co.jp/entry/2026/08/28/180027",
+      "title": "AI Gateway「Bifrost」の本番導入で、Technical Project Manager が担ったこと",
+      "textSha256": "8df80a74955009230c6e2f2fe86e40edee23282d8423eba382611cb9a546bb2f",
+      "capturedAt": "2026-09-17T18:21:04.146311+00:00"
+    },
+    "2026-08-29/3": {
+      "url": "https://dev.classmethod.jp/articles/20260828-cc-updates-v2-1-248/",
+      "title": "Claude Code v2.1.248 の主要アップデート - ツールを制限する --restricted の追加",
+      "textSha256": "837c61c82406b11d0a18501d1b55482c65d6b4c93f52f1d226acd6dea0813472",
+      "capturedAt": "2026-09-17T18:21:04.644151+00:00"
+    },
+    "2026-08-29/4": {
+      "url": "https://dev.classmethod.jp/articles/openai-flex-processing/",
+      "title": "Batch APIと同じ料金で使えるOpenAI APIのFlex processingを試してみる",
+      "textSha256": "2f4ca4d5dbf7943f6ed282210e44e18db14958b4d370d2bb2326c348d8d6e971",
+      "capturedAt": "2026-09-17T18:21:04.780983+00:00"
+    },
+    "2026-08-30/1": {
+      "url": "https://zenn.dev/nomurasan/articles/planted-bugs-llm-judge-calibration",
+      "title": "AIレビューの「OK」はどこまで信じていいか、わざとバグを5個仕込んで測ってみた",
+      "textSha256": "20d3ed8a41f05a1e744fbebb77c2ae9d440f3221c898e474c5a120dda001628a",
+      "capturedAt": "2026-09-17T18:21:05.285877+00:00"
+    },
+    "2026-08-30/2": {
+      "url": "https://zenn.dev/hilopon/articles/two-ai-git-ops-accident-prevention",
+      "title": "CodexとClaudeを同じリポジトリで働かせたら、色々壊れた——1人+2AIの事故対策の全部",
+      "textSha256": "d455f71292fb3690b00b52cbe6af6d8168e2481ef5c61b5d37608f301d6452a5",
+      "capturedAt": "2026-09-17T18:21:06.250090+00:00"
+    },
+    "2026-08-31/2": {
+      "url": "https://dev.classmethod.jp/articles/snowflake-cortex-agents-versioning/",
+      "title": "Snowflake Cortex Agents のバージョン管理および GitHub Actions での CI/CD を考えみた",
+      "textSha256": "c6d9dac1cce27874707a1d18690e309ddb7427f4db8135c0c707ff7459367a51",
+      "capturedAt": "2026-09-17T18:21:07.391717+00:00"
+    },
+    "2026-08-31/1": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/31/news036.html",
+      "title": "AIエージェントが「トクリュウ」化？　目的達成のために手段を選ばず：OpenAIが“暴走”の調査結果を公表",
+      "textSha256": "7283560c599e371fa7a8972c9601dfb299c0b18b6f4faed91ecc66add7a8c17e",
+      "capturedAt": "2026-09-17T18:21:06.865736+00:00"
+    },
+    "2026-08-31/3": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/31/news005.html",
+      "title": "生成AIと海外人材が日本の組織に突き付ける「共通課題」――メルカリが直面した「組織の暗黙知」の壁",
+      "textSha256": "903ed5970712200597ff7c26659216fe738daf785cf20b8b22b8f5b236f8e5b6",
+      "capturedAt": "2026-09-17T18:21:07.420064+00:00"
+    },
+    "2026-09-01/1": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/01/news018.html",
+      "title": "「安いモデルで3回やり直し」と「高いモデルで一発完了」　コストが低いのはどっち？：従来の評価基準は通用しない　OpenAIが提唱するAI時代のROI算定法",
+      "textSha256": "f15c1c677a9e518965cf0f89a45618cf8c9c94dbcbc8f1e5ba70559a4e5b89a6",
+      "capturedAt": "2026-09-17T18:21:07.705410+00:00"
+    },
+    "2026-09-01/4": {
+      "url": "https://dev.classmethod.jp/articles/slug-claude-aws-bedrock-marketplace/",
+      "title": "Claudeの利用経路について整理してみた",
+      "textSha256": "22f232823964795768f72b6b9f351810d47abc1f52d05ff78e225f4eddb940a8",
+      "capturedAt": "2026-09-17T18:21:08.421934+00:00"
+    },
+    "2026-09-02/2": {
+      "url": "https://www.publickey1.jp/blog/26/vs_codeairubber_duck.html",
+      "title": "VS Code上で開発のセカンドオピニオンを別のAIエージェントから得られる「Rubber Duck」機能が実験的実装",
+      "textSha256": "33e01e0a5f02827b9b0539e44ba89d00e6fe398ea35a0da03e8d7cea3aa8c2b6",
+      "capturedAt": "2026-09-17T18:21:09.670493+00:00"
+    },
+    "2026-09-02/1": {
+      "url": "https://qiita.com/picnic/items/ba95f05d2b78799f238b",
+      "title": "Claude Code v2.1.257: Fable 5.1追加と権限すり抜け修正まとめ",
+      "textSha256": "f2446292dd65d85472075e2227d5da1bd04784334aa50921a307304404a229c3",
+      "capturedAt": "2026-09-17T18:21:09.122941+00:00"
+    },
+    "2026-09-02/5": {
+      "url": "https://gihyo.jp/article/2026/09/aaif-mcp-a2a-briefing",
+      "title": "AAIF、MCPのガバナンスとA2Aの現状、AIエージェントにオープン標準が必要な理由を説明 ——9月10・11日に「AGNTCon + MCPCon Japan 2026」を渋谷で開催",
+      "textSha256": "66233b0491c5d708fc7bc2d9be9cf9facf98574087b766ee988ea28cd9a3603d",
+      "capturedAt": "2026-09-17T18:21:11.015794+00:00"
+    },
+    "2026-09-03/1": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/03/news030.html",
+      "title": "手元のAIエージェントを乗っ取る「AI遠隔操作」の手口　開発環境を守る5つの対策：AI経由の情報漏えいを招く「2つの根本原因」",
+      "textSha256": "9ab503d1c777fccdab435d832243b5d889e8d82956af2c31365e7294bff1fff3",
+      "capturedAt": "2026-09-17T18:21:11.057173+00:00"
+    },
+    "2026-09-03/3": {
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/03/2000001096/",
+      "title": "Google、「Gemini 3.8 Flash」公開　3.7から3週間、価格据え置きで防御特化の「Cyber」も",
+      "textSha256": "96aa91c189eaf8079d286fac746b89b3cb8be96b5d896dd9dc43359b0d7f796f",
+      "capturedAt": "2026-09-17T18:21:11.601306+00:00"
+    },
+    "2026-09-03/4": {
+      "url": "https://www.publickey1.jp/blog/26/claudesalesforceclaudeforceanthropicsalesforceclaude.html",
+      "title": "ClaudeにSalesforceを統合した「Claudeforce」、AnthropicとSalesforceが発表。Claudeから営業データ分析や顧客対応を実現",
+      "textSha256": "59edc6b9c977aaff2d4fa633d7dea18cbd2712d45c1ddd274adf9e96092d5e9b",
+      "capturedAt": "2026-09-17T18:21:11.620458+00:00"
+    },
+    "2026-09-04/1": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/04/news042.html",
+      "title": "なぜ経営陣に危機感が伝わらない？　CISOの半数以上が苦悩する「AIエージェント制御」のリアル：人間のアカウント管理の流用にシャドーAIの横行　従来の対策は限界",
+      "textSha256": "b391750215373b5af78e6ecd70a145e427e3af4d17a9229acbde27ff1ab2c789",
+      "capturedAt": "2026-09-17T18:21:12.049650+00:00"
+    },
+    "2026-09-05/1": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/04/news038.html",
+      "title": "関電工が“AIありき”から脱却し、「1～2週間→数十分」に工事費計算を高速化　その方法は？：PoCを2回実施しても成果を得られず、発想を転換",
+      "textSha256": "49973a6926f15cd661abc2385924e9541a8f6a8775825530a404937bfa470b46",
+      "capturedAt": "2026-09-17T18:21:12.860022+00:00"
+    },
+    "2026-09-05/4": {
+      "url": "https://dev.classmethod.jp/articles/20260904-cc-updates-v2-1-260/",
+      "title": "Claude Code v2.1.259〜v2.1.260 の主要アップデート - 差分パネルの追加と権限ルールのセキュリティ修正",
+      "textSha256": "4375d58ff94bbcd0b0a64a5461f0123e85391af56bf9a4aada9715416fa0285c",
+      "capturedAt": "2026-09-17T18:21:13.444257+00:00"
+    },
+    "2026-09-05/5": {
+      "url": "https://dev.classmethod.jp/articles/snowflake-restricted-session-scope-coco-permission-limit/",
+      "title": "[新機能]Snowflake の Restricted Session Scope が一般提供になったので CoCo 利用時だけ実効権限を狭めてみた",
+      "textSha256": "b354bed1c9b35f19767ce59dab367805a4b10bc7304a346d082bcfc35d42d187",
+      "capturedAt": "2026-09-17T18:21:13.772735+00:00"
+    },
+    "2026-09-05/3": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/04/news027.html",
+      "title": "AI攻撃の脅威は「これから数カ月」で変わる　OpenAIらが共同声明：残された時間はわずか？",
+      "textSha256": "1c8c2dbf2e8e7b6e2c3b8a6c1f940563053ba05699a484612e810ffbf90505f5",
+      "capturedAt": "2026-09-17T18:21:13.442480+00:00"
+    },
+    "2026-09-05/2": {
+      "url": "https://www.itmedia.co.jp/news/article/2609/04/2000001161/",
+      "title": "RIZAP社員、私用AIに顧客の個人情報入力　氏名や疾患、保険証番号など……同社が謝罪",
+      "textSha256": "8c35d3bc439bdfb23170140a9326eae5f43bf2c06293d2fa5490c4550786e7d6",
+      "capturedAt": "2026-09-17T18:21:13.423408+00:00"
+    },
+    "2026-09-06/4": {
+      "url": "https://zenn.dev/wyi_or_wye/articles/model-discovery-and-contract",
+      "title": "新モデルは「見える」だけでは使えない――Codex CLIとOpenClawに見るModel DiscoveryとContract",
+      "textSha256": "150187d13e6deff3c4fedad628260cf4204edc6534473dca21b1ee7f2a20d064",
+      "capturedAt": "2026-09-17T18:21:14.971417+00:00"
+    },
+    "2026-09-06/5": {
+      "url": "https://zenn.dev/shimo4228/articles/codemap-retirement",
+      "title": "3か月で159回commitしたLLM向けアーキテクチャ文書を消した。構造はLSP、理由はADR、図は人間に",
+      "textSha256": "9e20cf6347748e218c21bd416750e47c2d64a399ebe7704ac1d2b3019b6427bc",
+      "capturedAt": "2026-09-17T18:21:15.180451+00:00"
+    },
+    "2026-09-06/1": {
+      "url": "https://www.itmedia.co.jp/news/article/2609/06/2000001202/",
+      "title": "OpenAI、休眠サイトへの自社AIエージェント書き込みを認め、非公表の理由を説明",
+      "textSha256": "8aec20cab85416050534fcee927c5fd06c188c430379e7f947cfd1ff7ceeb623",
+      "capturedAt": "2026-09-17T18:21:14.222344+00:00"
+    },
+    "2026-09-06/3": {
+      "url": "https://zenn.dev/xim2jp_tokyo/articles/3be3803c55f31a",
+      "title": "AIエージェントの評価を実装する：本番ドリフトを検出するEvals設計",
+      "textSha256": "67c3336f0b5c6afa11f0dfa9985b8300d8e440c61a2d1371039a96493d20c5e1",
+      "capturedAt": "2026-09-17T18:21:14.447826+00:00"
+    },
+    "2026-09-07/1": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/07/news017.html",
+      "title": "企業資産の「36％」が“脆弱性ゾーン”で放置　AI攻撃時代に旧来の防御モデルは限界か： 「重要資産を重点的に守る」は通用しない？　最新調査が明かす限界",
+      "textSha256": "88ba29558b062a074bdcb825ca41c5052c1b453fa5ab5d2ebf921a44ad0365f9",
+      "capturedAt": "2026-09-17T18:21:15.508882+00:00"
+    },
+    "2026-09-07/3": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/07/news026.html",
+      "title": "三菱UFJグループ会社、DBコストを87％削減――なぜ「Aurora Serverless」ではなく「Aurora DSQL」を選んだ？：同じサーバレスでも何が違った？",
+      "textSha256": "47db3d470567fe05babfd1d850985551f742f635349dcc3ac70db154224a2a31",
+      "capturedAt": "2026-09-17T18:21:15.752149+00:00"
+    },
+    "2026-09-07/2": {
+      "url": "https://zenn.dev/kashiwabaray/articles/25d934bfd1a5c9",
+      "title": "Claude Fable 5.1 + EFS で企業 AI を安全に実装 — ZDR ロードマップ",
+      "textSha256": "2b343d7e0ee5ae5b4ac0035ca31d1d607f8f097f5b53952c28d1594d5b638822",
+      "capturedAt": "2026-09-17T18:21:15.631172+00:00"
+    },
+    "2026-09-08/3": {
+      "url": "https://dev.classmethod.jp/articles/nemohermes-memory-lifecycle/",
+      "title": "AI エージェントの Memory を、訂正・検査・削除から考えてみた",
+      "textSha256": "0453099d96e5cf3efc17c531517eaf4d29895d66eb9598a6cdf30ca98ccadf48",
+      "capturedAt": "2026-09-17T18:21:17.233639+00:00"
+    },
+    "2026-09-08/4": {
+      "url": "https://zenn.dev/chooser/articles/series-007-product-story",
+      "title": "Figma Make で作ったデザインを引き継いで Claude Code で開発する方法",
+      "textSha256": "b8fa58fe7eb69a8ca84d4eabe25a58704bd4e2df04aee8b1b6c7f35f413b6720",
+      "capturedAt": "2026-09-17T18:21:17.315894+00:00"
+    },
+    "2026-09-08/2": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/08/news006.html",
+      "title": "AIが「クズコード」まで学習　“脆弱性の生まれ方”が変わったAIコーディング時代の「守り」の作法と始め方：レビュー時、どこを重点的に見るべきか（1/2 ページ）",
+      "textSha256": "3ca9c2fab81470967dbec08becfb9a56eaae6e37a6b23a3033a33fe8d946213e",
+      "capturedAt": "2026-09-17T18:21:17.046660+00:00"
+    },
+    "2026-09-08/5": {
+      "url": "https://www.itmedia.co.jp/business/articles/2609/08/news027.html",
+      "title": "富士通の営業、個人の「勘や経験」を組織で再利用　データ、KPI、仕事を「AI前提」に変えた方法（1/2 ページ）",
+      "textSha256": "c16eb676f7f791c11e64523784d0bc7017e747142118a7365ac25f06cfc85b02",
+      "capturedAt": "2026-09-17T18:21:18.009123+00:00"
+    },
+    "2026-09-09/2": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/08/news083.html",
+      "title": "LLM乗っ取りでサイバー攻撃者がコスト節約　知財流出の危険性も高まる「LLMジャッキング」の深刻度",
+      "textSha256": "dc59514bace046a8cad641b62d9a06b6b95b82baf7768adcb86d1ac8833e630a",
+      "capturedAt": "2026-09-17T18:21:18.489324+00:00"
+    },
+    "2026-09-09/3": {
+      "url": "https://dev.classmethod.jp/articles/claude-code-isolation-20260901/",
+      "title": "Claude Codeを安全に使い倒すための、実行環境の隔離 はじめの一歩",
+      "textSha256": "82f91129a7249be6d6291d5d7ac031b273c963845704bd85f881fa5f2325f417",
+      "capturedAt": "2026-09-17T18:21:18.833636+00:00"
+    },
+    "2026-09-09/4": {
+      "url": "https://www.itmedia.co.jp/news/article/2609/09/2000001294/",
+      "title": "Meta、パーソナルAIエージェント「Muse」発表　メール送信や買い物も代行（まずは米国で無料提供開始）",
+      "textSha256": "2dd20a2d81ac0267099a74c0ed3b61ff9588e846b1e55ba0dbb0ad8a091e3717",
+      "capturedAt": "2026-09-17T18:21:19.060955+00:00"
+    },
+    "2026-09-10/1": {
+      "url": "https://engineering.dena.com/blog/2026/09/spec-and-verify-loop-proxysql-eks/",
+      "title": "AI に実装を任せるための仕様と検証ループ 〜ProxySQL に足りない機能を実装で埋めた〜 [DeNA インフラ SRE]",
+      "textSha256": "7a06f2657da3177246cde89df885ad939d6b85a9af3e6d9522bac162dc6a0347",
+      "capturedAt": "2026-09-17T18:21:20.259552+00:00"
+    },
+    "2026-09-10/3": {
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/10/2000001333/",
+      "title": "NEC、社内の“AIトークン節約”に注力　「同じ使われ方なら10分の1に」と小玉CAXO",
+      "textSha256": "376da24b2be090d0435bd8ebabf93115357545fea81641bdbe19a007b3648f92",
+      "capturedAt": "2026-09-17T18:21:20.339386+00:00"
+    },
+    "2026-09-10/5": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/09/news043.html",
+      "title": "「四半期ごとのパッチ適用」はもう許されない　AWSが「フロンティアAI対策9項目」のポイントを解説：「能動的なサービス停止」の基準を明確化する",
+      "textSha256": "f36e9ca2f9ad3bfe6548c6e005c9785170533f85d155544443cca0333eb62b47",
+      "capturedAt": "2026-09-17T18:21:20.483543+00:00"
+    },
+    "2026-09-11/4": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/10/news022.html",
+      "title": "NECが新設した「AIオンリー組織」、仕事はどう回る？　部門長もマネジャーも社員もAI：人間の組織はどう関わるのか",
+      "textSha256": "cb00898f8ccd7637deea1044b1d17ea6b86d921f1dd627d84ddae1ee88f4ad1b",
+      "capturedAt": "2026-09-17T18:21:21.234955+00:00"
+    },
+    "2026-09-11/5": {
+      "url": "https://tech.layerx.co.jp/entry/fde-is-fun",
+      "title": "AI時代、エンジニアの職域はどこまで広がるか？お客さまの業務プロセス自体を変革するFDEの面白さ",
+      "textSha256": "3c23a0163016209d66be9c6db09d251e9664672ef7030cd2ccaf4ac50557d53b",
+      "capturedAt": "2026-09-17T18:21:21.289450+00:00"
+    },
+    "2026-09-11/2": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/10/news035.html",
+      "title": "クラウドAIを信頼できないのは“中身が分からない”から？　ならば「AIインフラ」を自作して検証しよう：「中で何が起きているか分からない」からこそ検証を――IPAが報告書",
+      "textSha256": "0d1fa0a849be8ef3ad5aa90fb719564908a6988ed36f563dae5de8a95e64df8b",
+      "capturedAt": "2026-09-17T18:21:21.054830+00:00"
+    },
+    "2026-09-11/3": {
+      "url": "https://dev.classmethod.jp/articles/20260910-cc-updates-v2-1-267/",
+      "title": "Claude Code v2.1.267 の主要アップデート - maxEffortLevel の追加とプロンプトキャッシュ周りの一斉修正",
+      "textSha256": "bbe9898576300aa20fe6b4ebcc4c36fa8d565d4a5e0e0d34b3e2b1040cb7fa1b",
+      "capturedAt": "2026-09-17T18:21:21.198514+00:00"
+    },
+    "2026-09-11/1": {
+      "url": "https://gihyo.jp/article/2026/09/agent-router",
+      "title": "AAIF、Agent Routerの参加を発表 ——AIモデルとMCPツールへの接続を仲介するOSS",
+      "textSha256": "d07fc292c84f85c011d291ca1e4870fccbed4a42945bd303ff23ca5b5ed19c3f",
+      "capturedAt": "2026-09-17T18:21:20.739468+00:00"
+    },
+    "2026-09-12/1": {
+      "url": "https://dev.classmethod.jp/articles/snowflake-world-tour-2026-tokyo-day2-keynote-swttokyo26/",
+      "title": "[レポート]SNOWFLAKE WORLD TOUR 2026 - TOKYO：Day2 KEYNOTE #SWTTokyo26",
+      "textSha256": "ea457c2b8bb192d50360ac3f8ceadb91eb155db9dc73d572708f63014b58c92c",
+      "capturedAt": "2026-09-17T18:21:21.894001+00:00"
+    },
+    "2026-09-12/2": {
+      "url": "https://dev.classmethod.jp/articles/claude-code-headless-legacy-code-sql-extraction/",
+      "title": "レガシーコード500本からSQLを自動抽出できるのか試してみた 〜Claude Codeのヘッドレス実行とHaiku/Sonnet/Opusの比較〜",
+      "textSha256": "be186425b755a6eb8b417e0efa53bf6e51ce8a51aabff489cbafbe2b17b1201c",
+      "capturedAt": "2026-09-17T18:21:22.213265+00:00"
+    },
+    "2026-09-12/3": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/spv/2609/11/news018.html",
+      "title": "「危険コマンド停止率、AIは89％、人間だと14％」　Claude Codeが「自動モード」をデフォルトにした理由：「有害な操作」の承認は、手動の方が2倍多い",
+      "textSha256": "d38f2418483320cd5afb07767fc79908416b67c32c4e7cadd048db80fb9597a8",
+      "capturedAt": "2026-09-17T18:21:22.492610+00:00"
+    },
+    "2026-09-13/2": {
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2608/20/news009.html",
+      "title": "業務の30％をAIエージェントがこなすIT運用部門、なぜ「パワポ文書」を禁止したのか？：NTTドコモソリューションズに聞く「AIエージェント実装」のリアル（前編）",
+      "textSha256": "5b4b808adbcaa8c0b145555c6fb0e3ea8f32d556cc903a4693b04d3efec40d64",
+      "capturedAt": "2026-09-17T18:21:23.530112+00:00"
+    },
+    "2026-09-13/3": {
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/11/2000001402/",
+      "title": "フィジカルAI向け「データ収集工場」に\"潜入\"　実機写真で学習データ生成の流れを解説",
+      "textSha256": "6b4cc5b955be7236f6338d6cd671b0c8bf878f47e3aedd568700e7dacba5d35e",
+      "capturedAt": "2026-09-17T18:21:23.886821+00:00"
+    },
+    "2026-09-14/1": {
+      "url": "https://developers.cyberagent.co.jp/blog/archives/65832/",
+      "title": "DevinCon2026登壇報告 WINTICKETにおけるアラート対応自動化",
+      "textSha256": "65da9c43b8692e101448b8f8afdb8df58627ccf7251c47dfcd8ccfb2a1a80592",
+      "capturedAt": "2026-09-17T18:21:24.509370+00:00"
+    },
+    "2026-09-14/2": {
+      "url": "https://developers.cyberagent.co.jp/blog/archives/65204/",
+      "title": "GPT‑LiveをCodexで最速検証。iOSデモを数時間で作ってみた。",
+      "textSha256": "552cbd0786827a9d8bc5e58c0db3ee74056580eb3f9357f7d5e3e2473aff20d5",
+      "capturedAt": "2026-09-17T18:21:24.758264+00:00"
+    },
+    "2026-09-14/3": {
+      "url": "https://engineering.dena.com/blog/2026/09/mysql84-migrate-research/",
+      "title": "DeNA の大規模環境を MySQL 8.4 に移行する時に考えたこと[DeNA インフラ SRE]",
+      "textSha256": "430b9f19e8ffd61e49008b164e1271c708b4bc690e7ebc05551f5fbf07c3837d",
+      "capturedAt": "2026-09-17T18:21:25.016954+00:00"
+    },
+    "2026-09-14/4": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/11/news006.html",
+      "title": "従来の「AI－Readyデータ」だけでなく新たなアプローチを理解せよ：Gartner Insights Pickup（463）",
+      "textSha256": "e3dd5ec8a55a02f48f6565e84444b674d13538eb58604543afc50a6ce4f63d7e",
+      "capturedAt": "2026-09-17T18:21:25.126756+00:00"
+    },
+    "2026-09-15/3": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/spv/2609/14/news027.html",
+      "title": "Amazon S3で「ストレージコスト80％削減」――たった6カ月で成功した“再現性のある方法”とは？",
+      "textSha256": "fe2897eac6ff35a4c30c7ca6ebbb5651841cc2d5b6fcec98606f18f2b0de63c3",
+      "capturedAt": "2026-09-17T18:21:26.490720+00:00"
+    },
+    "2026-09-15/4": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/spv/2609/14/news037.html",
+      "title": "「FDE」「ハーネス」「オープンウェイト」って何？　AI時代に現場で飛び交う10用語をGitHubが整理",
+      "textSha256": "74678e3fbf439006d50250466fb71d43a0e71827793252d61000f5dd855ce18f",
+      "capturedAt": "2026-09-17T18:21:26.854023+00:00"
+    },
+    "2026-09-15/5": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/15/news010.html",
+      "title": "「禁止したらシャドーITがなくなる」は幻想？　まん延するシンプルな理由",
+      "textSha256": "1f1eccac27adfb0f4c74d0e0b55f8b178b64a37554851f7385e612dadeae0516",
+      "capturedAt": "2026-09-17T18:21:27.202326+00:00"
+    },
+    "2026-09-15/1": {
+      "url": "https://engineering.dena.com/blog/2026/09/grafana-dashboard-iac-with-ai-typescript/",
+      "title": "AIとGrafana Foundation SDKで進めるGrafanaダッシュボードのIaC化",
+      "textSha256": "ab6b8686f8d6726d95701d38718b7630aa22d115003e07a6b3e500268d0556f4",
+      "capturedAt": "2026-09-17T18:21:25.673596+00:00"
+    },
+    "2026-09-15/2": {
+      "url": "https://gihyo.jp/article/2026/09/claude-plugin-eval",
+      "title": "Anthropic、Claude Codeのプラグイン評価コマンド「claude plugin eval」を紹介",
+      "textSha256": "d0e94c9964dbd0ad47448d21124b54ed690ae3f60e0f75e497b8665a7938f229",
+      "capturedAt": "2026-09-17T18:21:26.174074+00:00"
+    },
+    "2026-09-16/1": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/15/news047.html",
+      "title": "AIが書くコード「エラー率はJavaがPythonの6.7倍」　150万「会話」データで分かったAIコーディングの盲点",
+      "textSha256": "f1cd29eb79f3a96eba6a40bac724c5a64511e171e8f6570e2312ceab02901cea",
+      "capturedAt": "2026-09-17T18:21:27.465126+00:00"
+    },
+    "2026-09-16/3": {
+      "url": "https://www.publickey1.jp/blog/26/anthropicmcpmcpagntconmcpcon_japan_2026.html",
+      "title": "AnthropicのMCP共同作者が来日、基調講演で語るこれからのMCP注力領域。AGNTCon＋MCPCon Japan 2026",
+      "textSha256": "885686c6ac27d48983f638329f0713ec004eca2585746f7c25410fd82e83ec1e",
+      "capturedAt": "2026-09-17T18:21:27.780748+00:00"
+    },
+    "2026-09-16/4": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/spv/2609/15/news031.html",
+      "title": "AIの「脱クラウド・オンプレミス回帰」が66％、「AI案件の中止」も多数――その原因は？",
+      "textSha256": "ae2af1f1c4b626aa6669368f62eb0021f15d702acc21d6077ed2aebf0f40d0df",
+      "capturedAt": "2026-09-17T18:21:27.809105+00:00"
+    },
+    "2026-09-16/5": {
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/15/news040.html",
+      "title": "アイカ工業が「AI活用を阻む“表記揺れ”問題」解消へ　データ品質を高める具体策とは？",
+      "textSha256": "1d72c9f3161821a06d1dfa835a76e1f79c262608ef09190269c94d52aad6f03b",
+      "capturedAt": "2026-09-17T18:21:27.903214+00:00"
+    },
+    "2026-09-17/1": {
+      "url": "https://tech.smarthr.jp/entry/2026/09/16/110205",
+      "title": "Claude Codeで開発期間を2.5か月から1か月に縮めた「ハーネス」の設計手法",
+      "textSha256": "98752136d03ccc8b8f8b264683ba21541840896411c68c0e286046f8c49cda7b",
+      "capturedAt": "2026-09-17T18:21:28.166410+00:00"
+    },
+    "2026-09-17/5": {
+      "url": "https://www.itmedia.co.jp/news/article/2609/16/2000001524/",
+      "title": "Google、会話を止めずに裏でタスクを実行する音声モデル「Gemini 3.8 Live」公開　推論強化の上位版も",
+      "textSha256": "65b7c0a0dea5bbda96b9e140920679a37de5314ded2acb006e5ee2cb3a7cc533",
+      "capturedAt": "2026-09-17T18:21:29.810212+00:00"
+    }
+  },
+  "cards": {
+    "2026-08-13/見抜く": {
+      "article": "2026-08-13/2",
+      "surface": "見抜い",
+      "offset": 644,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-13/単なる": {
+      "article": "2026-08-13/2",
+      "surface": "単なる",
+      "offset": 320,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-13/寄与": {
+      "article": "2026-08-13/1",
+      "surface": "寄与",
+      "offset": 193,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-14/省く": {
+      "article": "2026-08-14/3",
+      "surface": "省い",
+      "offset": 1750,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-14/潜む": {
+      "article": "2026-08-14/5",
+      "surface": "潜む",
+      "offset": 1117,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-14/振り返る": {
+      "article": "2026-08-14/5",
+      "surface": "振り返り",
+      "offset": 495,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-14/切り離す": {
+      "article": "2026-08-14/3",
+      "surface": "切り離し",
+      "offset": 3299,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-14/浮かれる": {
+      "article": "2026-08-14/5",
+      "surface": "浮かれ",
+      "offset": 1992,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-14/拡充": {
+      "article": "2026-08-14/5",
+      "surface": "拡充",
+      "offset": 3741,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-14/仮説": {
+      "article": "2026-08-14/5",
+      "surface": "仮説",
+      "offset": 2334,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-14/趣旨": {
+      "article": "2026-08-14/5",
+      "surface": "趣旨",
+      "offset": 1519,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-14/局所": {
+      "article": "2026-08-14/5",
+      "surface": "局所",
+      "offset": 4216,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-14/延々と": {
+      "article": "2026-08-14/2",
+      "surface": "延々と",
+      "offset": 2642,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-15/掲げる": {
+      "article": "2026-08-15/1",
+      "surface": "掲げ",
+      "offset": 202,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-15/至る": {
+      "article": "2026-08-15/1",
+      "surface": "至る",
+      "offset": 264,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-15/紛れる": {
+      "article": "2026-08-15/2",
+      "surface": "紛れ",
+      "offset": 177,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-15/行き詰まる": {
+      "article": "2026-08-15/4",
+      "surface": "行き詰まっ",
+      "offset": 1277,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-15/入念": {
+      "article": "2026-08-15/4",
+      "surface": "入念",
+      "offset": 1336,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-15/あえて": {
+      "article": "2026-08-15/5",
+      "surface": "あえて",
+      "offset": 2378,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-15/多岐": {
+      "article": "2026-08-15/2",
+      "surface": "多岐",
+      "offset": 167,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-16/遡る": {
+      "article": "2026-08-16/4",
+      "surface": "遡っ",
+      "offset": 1215,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-16/伏せる": {
+      "article": "2026-08-16/4",
+      "surface": "伏せ",
+      "offset": 2817,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-16/専有": {
+      "article": "2026-08-16/4",
+      "surface": "専有",
+      "offset": 1051,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-16/豊富": {
+      "article": "2026-08-16/2",
+      "surface": "豊富",
+      "offset": 68,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-16/一応": {
+      "article": "2026-08-16/4",
+      "surface": "一応",
+      "offset": 3094,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-17/封じ込める": {
+      "article": "2026-08-17/1",
+      "surface": "封じ込め",
+      "offset": 12042,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-17/浮かび上がる": {
+      "article": "2026-08-17/1",
+      "surface": "浮かび上がり",
+      "offset": 7934,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-17/見合う": {
+      "article": "2026-08-17/1",
+      "surface": "見合っ",
+      "offset": 8823,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-17/戸惑う": {
+      "article": "2026-08-17/4",
+      "surface": "戸惑い",
+      "offset": 2124,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-17/不可解": {
+      "article": "2026-08-17/5",
+      "surface": "不可解",
+      "offset": 974,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-17/膨大": {
+      "article": "2026-08-17/4",
+      "surface": "膨大",
+      "offset": 4767,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-17/あらゆる": {
+      "article": "2026-08-17/1",
+      "surface": "あらゆる",
+      "offset": 14732,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-17/俯瞰": {
+      "article": "2026-08-17/4",
+      "surface": "俯瞰",
+      "offset": 2872,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-18/読み流す": {
+      "article": "2026-08-18/3",
+      "surface": "読み流し",
+      "offset": 188,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-18/添える": {
+      "article": "2026-08-18/4",
+      "surface": "添え",
+      "offset": 732,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-18/使い込む": {
+      "article": "2026-08-18/4",
+      "surface": "使い込ん",
+      "offset": 3667,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-18/超過": {
+      "article": "2026-08-18/4",
+      "surface": "超過",
+      "offset": 2847,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-18/逆算": {
+      "article": "2026-08-18/4",
+      "surface": "逆算",
+      "offset": 2563,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-18/体系": {
+      "article": "2026-08-18/4",
+      "surface": "体系",
+      "offset": 2839,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-18/辻褄": {
+      "article": "2026-08-18/4",
+      "surface": "辻褄",
+      "offset": 2516,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-18/改めて": {
+      "article": "2026-08-18/4",
+      "surface": "改めて",
+      "offset": 3674,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/見据える": {
+      "article": "2026-08-19/4",
+      "surface": "見据え",
+      "offset": 256,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/向き合う": {
+      "article": "2026-08-19/4",
+      "surface": "向き合っ",
+      "offset": 233,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/及ぶ": {
+      "article": "2026-08-19/4",
+      "surface": "及ぶ",
+      "offset": 1973,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/務める": {
+      "article": "2026-08-19/4",
+      "surface": "務める",
+      "offset": 879,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/生かす": {
+      "article": "2026-08-19/4",
+      "surface": "生かし",
+      "offset": 2499,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/容易": {
+      "article": "2026-08-19/4",
+      "surface": "容易",
+      "offset": 130,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/自前": {
+      "article": "2026-08-19/3",
+      "surface": "自前",
+      "offset": 989,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/試行錯誤": {
+      "article": "2026-08-19/4",
+      "surface": "試行錯誤",
+      "offset": 2136,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/中核": {
+      "article": "2026-08-19/4",
+      "surface": "中核",
+      "offset": 49,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/模索": {
+      "article": "2026-08-19/4",
+      "surface": "模索",
+      "offset": 1843,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/歩調": {
+      "article": "2026-08-19/4",
+      "surface": "歩調",
+      "offset": 1666,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/一段と": {
+      "article": "2026-08-19/4",
+      "surface": "一段と",
+      "offset": 127,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-19/むしろ": {
+      "article": "2026-08-19/3",
+      "surface": "むしろ",
+      "offset": 260,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-20/論じる": {
+      "article": "2026-08-20/2",
+      "surface": "論じる",
+      "offset": 438,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-20/説く": {
+      "article": "2026-08-20/2",
+      "surface": "説く",
+      "offset": 1386,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-20/埋もれる": {
+      "article": "2026-08-20/4",
+      "surface": "埋もれ",
+      "offset": 820,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-20/捌く": {
+      "article": "2026-08-20/1",
+      "surface": "捌い",
+      "offset": 2624,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-20/滞留": {
+      "article": "2026-08-20/1",
+      "surface": "滞留",
+      "offset": 569,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-20/閑散": {
+      "article": "2026-08-20/1",
+      "surface": "閑散",
+      "offset": 2838,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-20/双方": {
+      "article": "2026-08-20/2",
+      "surface": "双方",
+      "offset": 3515,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-20/適度": {
+      "article": "2026-08-20/3",
+      "surface": "適度",
+      "offset": 1058,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-20/別途": {
+      "article": "2026-08-20/2",
+      "surface": "別途",
+      "offset": 1211,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-21/裏付ける": {
+      "article": "2026-08-21/2",
+      "surface": "裏付け",
+      "offset": 1823,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-21/伸び悩む": {
+      "article": "2026-08-21/4",
+      "surface": "伸び悩ん",
+      "offset": 1410,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-21/携わる": {
+      "article": "2026-08-21/4",
+      "surface": "携わる",
+      "offset": 2090,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-21/長ける": {
+      "article": "2026-08-21/5",
+      "surface": "長け",
+      "offset": 12805,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-21/煩わせる": {
+      "article": "2026-08-21/5",
+      "surface": "煩わせ",
+      "offset": 1188,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-21/依然として": {
+      "article": "2026-08-21/4",
+      "surface": "依然として",
+      "offset": 331,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-21/率直": {
+      "article": "2026-08-21/5",
+      "surface": "率直",
+      "offset": 4015,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-21/教訓": {
+      "article": "2026-08-21/5",
+      "surface": "教訓",
+      "offset": 7231,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-22/食い違う": {
+      "article": "2026-08-22/3",
+      "surface": "食い違っ",
+      "offset": 74,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-22/匂わせる": {
+      "article": "2026-08-22/3",
+      "surface": "匂わせる",
+      "offset": 2393,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-22/照らし合わせる": {
+      "article": "2026-08-22/3",
+      "surface": "照らし合わせ",
+      "offset": 1269,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-22/欠如": {
+      "article": "2026-08-22/5",
+      "surface": "欠如",
+      "offset": 3721,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-22/帰属": {
+      "article": "2026-08-22/5",
+      "surface": "帰属",
+      "offset": 982,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-22/無害": {
+      "article": "2026-08-22/3",
+      "surface": "無害",
+      "offset": 2310,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-22/おおむね": {
+      "article": "2026-08-22/3",
+      "surface": "おおむね",
+      "offset": 264,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-23/慣らす": {
+      "article": "2026-08-23/2",
+      "surface": "慣らし",
+      "offset": 845,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-23/奪い合う": {
+      "article": "2026-08-23/2",
+      "surface": "奪い合う",
+      "offset": 7454,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-23/出回る": {
+      "article": "2026-08-23/3",
+      "surface": "出回っ",
+      "offset": 1179,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-23/尽きる": {
+      "article": "2026-08-23/3",
+      "surface": "尽きる",
+      "offset": 7012,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-23/悩ましい": {
+      "article": "2026-08-23/5",
+      "surface": "悩ましい",
+      "offset": 318,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-23/的確": {
+      "article": "2026-08-23/5",
+      "surface": "的確",
+      "offset": 299,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-23/かろうじて": {
+      "article": "2026-08-23/3",
+      "surface": "かろうじて",
+      "offset": 10806,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-23/際限": {
+      "article": "2026-08-23/2",
+      "surface": "際限",
+      "offset": 8714,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/則る": {
+      "article": "2026-08-24/1",
+      "surface": "則っ",
+      "offset": 712,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/緩める": {
+      "article": "2026-08-24/1",
+      "surface": "緩め",
+      "offset": 4058,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/済ませる": {
+      "article": "2026-08-24/1",
+      "surface": "済ませ",
+      "offset": 4220,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/仕分ける": {
+      "article": "2026-08-24/1",
+      "surface": "仕分ける",
+      "offset": 5769,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/当てはまる": {
+      "article": "2026-08-24/1",
+      "surface": "当てはまる",
+      "offset": 3824,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/成り立つ": {
+      "article": "2026-08-24/1",
+      "surface": "成り立ち",
+      "offset": 6610,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/冗長": {
+      "article": "2026-08-24/1",
+      "surface": "冗長",
+      "offset": 4976,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/窮屈": {
+      "article": "2026-08-24/1",
+      "surface": "窮屈",
+      "offset": 196,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/不可抗力": {
+      "article": "2026-08-24/1",
+      "surface": "不可抗力",
+      "offset": 1139,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/線引き": {
+      "article": "2026-08-24/1",
+      "surface": "線引き",
+      "offset": 5829,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/なおさら": {
+      "article": "2026-08-24/1",
+      "surface": "なおさら",
+      "offset": 1173,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/まだしも": {
+      "article": "2026-08-24/1",
+      "surface": "まだしも",
+      "offset": 1230,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-24/うっかり": {
+      "article": "2026-08-24/1",
+      "surface": "うっかり",
+      "offset": 2807,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-25/踏み込む": {
+      "article": "2026-08-25/3",
+      "surface": "踏み込ま",
+      "offset": 116,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-25/見送る": {
+      "article": "2026-08-25/3",
+      "surface": "見送り",
+      "offset": 639,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-25/つまずく": {
+      "article": "2026-08-25/3",
+      "surface": "つまずい",
+      "offset": 207,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-25/抱え込む": {
+      "article": "2026-08-25/4",
+      "surface": "抱え込み",
+      "offset": 5836,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-25/手放す": {
+      "article": "2026-08-25/4",
+      "surface": "手放し",
+      "offset": 13276,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-25/紛らわしい": {
+      "article": "2026-08-25/4",
+      "surface": "紛らわしい",
+      "offset": 1514,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-25/肝心": {
+      "article": "2026-08-25/3",
+      "surface": "肝心",
+      "offset": 5258,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-25/表裏一体": {
+      "article": "2026-08-25/4",
+      "surface": "表裏一体",
+      "offset": 3121,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-25/いわば": {
+      "article": "2026-08-25/4",
+      "surface": "いわば",
+      "offset": 257,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-25/ますます": {
+      "article": "2026-08-25/4",
+      "surface": "ますます",
+      "offset": 621,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/推し進める": {
+      "article": "2026-08-26/1",
+      "surface": "推し進め",
+      "offset": 925,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/切り上げる": {
+      "article": "2026-08-26/3",
+      "surface": "切り上げ",
+      "offset": 1557,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/決めつける": {
+      "article": "2026-08-26/3",
+      "surface": "決めつけ",
+      "offset": 3944,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/試みる": {
+      "article": "2026-08-26/3",
+      "surface": "試み",
+      "offset": 3956,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/取り残す": {
+      "article": "2026-08-26/3",
+      "surface": "取り残さ",
+      "offset": 5254,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/期す": {
+      "article": "2026-08-26/4",
+      "surface": "期す",
+      "offset": 3616,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/取り巻く": {
+      "article": "2026-08-26/5",
+      "surface": "取り巻く",
+      "offset": 99,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/疑わしい": {
+      "article": "2026-08-26/4",
+      "surface": "疑わしい",
+      "offset": 3529,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/頑健": {
+      "article": "2026-08-26/4",
+      "surface": "頑健",
+      "offset": 3736,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/紆余曲折": {
+      "article": "2026-08-26/3",
+      "surface": "紆余曲折",
+      "offset": 179,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/起因": {
+      "article": "2026-08-26/1",
+      "surface": "起因",
+      "offset": 770,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/審査": {
+      "article": "2026-08-26/1",
+      "surface": "審査",
+      "offset": 1817,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/介在": {
+      "article": "2026-08-26/1",
+      "surface": "介在",
+      "offset": 1103,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/巻き添え": {
+      "article": "2026-08-26/3",
+      "surface": "巻き添え",
+      "offset": 1772,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/なかでも": {
+      "article": "2026-08-26/3",
+      "surface": "なかでも",
+      "offset": 6158,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-26/比較的": {
+      "article": "2026-08-26/4",
+      "surface": "比較的",
+      "offset": 3733,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/据える": {
+      "article": "2026-08-27/1",
+      "surface": "据え",
+      "offset": 689,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/備える": {
+      "article": "2026-08-27/2",
+      "surface": "備え",
+      "offset": 3614,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/阻む": {
+      "article": "2026-08-27/2",
+      "surface": "阻む",
+      "offset": 1923,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/すり抜ける": {
+      "article": "2026-08-27/2",
+      "surface": "すり抜け",
+      "offset": 3066,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/立ち返る": {
+      "article": "2026-08-27/2",
+      "surface": "立ち返り",
+      "offset": 7139,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/塗り替える": {
+      "article": "2026-08-27/2",
+      "surface": "塗り替え",
+      "offset": 9184,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/生き抜く": {
+      "article": "2026-08-27/2",
+      "surface": "生き抜き",
+      "offset": 9747,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/反する": {
+      "article": "2026-08-27/4",
+      "surface": "反する",
+      "offset": 3154,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/愚直": {
+      "article": "2026-08-27/2",
+      "surface": "愚直",
+      "offset": 9555,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/健全": {
+      "article": "2026-08-27/2",
+      "surface": "健全",
+      "offset": 6721,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/ことごとく": {
+      "article": "2026-08-27/2",
+      "surface": "ことごとく",
+      "offset": 4492,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/とことん": {
+      "article": "2026-08-27/2",
+      "surface": "とことん",
+      "offset": 9383,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/担い手": {
+      "article": "2026-08-27/1",
+      "surface": "担い手",
+      "offset": 851,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/割愛": {
+      "article": "2026-08-27/2",
+      "surface": "割愛",
+      "offset": 2535,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-27/両輪": {
+      "article": "2026-08-27/2",
+      "surface": "両輪",
+      "offset": 2425,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/使い切る": {
+      "article": "2026-08-28/4",
+      "surface": "使い切る",
+      "offset": 4404,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/記す": {
+      "article": "2026-08-28/5",
+      "surface": "記し",
+      "offset": 714,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/またぐ": {
+      "article": "2026-08-28/4",
+      "surface": "またぐ",
+      "offset": 2346,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/あふれる": {
+      "article": "2026-08-28/4",
+      "surface": "あふれ",
+      "offset": 1130,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/問う": {
+      "article": "2026-08-28/4",
+      "surface": "問わ",
+      "offset": 4312,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/留まる": {
+      "article": "2026-08-28/4",
+      "surface": "留まっ",
+      "offset": 79,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/拍車": {
+      "article": "2026-08-28/3",
+      "surface": "拍車",
+      "offset": 494,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/断片": {
+      "article": "2026-08-28/3",
+      "surface": "断片",
+      "offset": 1183,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/露出": {
+      "article": "2026-08-28/3",
+      "surface": "露出",
+      "offset": 1507,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/策定": {
+      "article": "2026-08-28/3",
+      "surface": "策定",
+      "offset": 1610,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/態勢": {
+      "article": "2026-08-28/3",
+      "surface": "態勢",
+      "offset": 1843,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/妨害": {
+      "article": "2026-08-28/3",
+      "surface": "妨害",
+      "offset": 2041,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/不可欠": {
+      "article": "2026-08-28/3",
+      "surface": "不可欠",
+      "offset": 2164,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/軽微": {
+      "article": "2026-08-28/4",
+      "surface": "軽微",
+      "offset": 522,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/堅牢": {
+      "article": "2026-08-28/4",
+      "surface": "堅牢",
+      "offset": 1426,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/再度": {
+      "article": "2026-08-28/5",
+      "surface": "再度",
+      "offset": 1587,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-28/もともと": {
+      "article": "2026-08-28/3",
+      "surface": "もともと",
+      "offset": 831,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-29/積み上げる": {
+      "article": "2026-08-29/1",
+      "surface": "積み上げ",
+      "offset": 3471,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-29/落とし込む": {
+      "article": "2026-08-29/1",
+      "surface": "落とし込む",
+      "offset": 1433,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-29/握りつぶす": {
+      "article": "2026-08-29/3",
+      "surface": "握りつぶし",
+      "offset": 3310,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-29/倣う": {
+      "article": "2026-08-29/4",
+      "surface": "倣い",
+      "offset": 2420,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-29/充実": {
+      "article": "2026-08-29/1",
+      "surface": "充実",
+      "offset": 5106,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-29/多少": {
+      "article": "2026-08-29/4",
+      "surface": "多少",
+      "offset": 563,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-29/たまたま": {
+      "article": "2026-08-29/4",
+      "surface": "たまたま",
+      "offset": 2081,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-30/鵜呑み": {
+      "article": "2026-08-30/1",
+      "surface": "鵜呑み",
+      "offset": 4604,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-30/素朴": {
+      "article": "2026-08-30/2",
+      "surface": "素朴",
+      "offset": 990,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-30/じっくり": {
+      "article": "2026-08-30/1",
+      "surface": "じっくり",
+      "offset": 1844,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-31/鑑みる": {
+      "article": "2026-08-31/2",
+      "surface": "鑑み",
+      "offset": 2243,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-31/受け止める": {
+      "article": "2026-08-31/1",
+      "surface": "受け止める",
+      "offset": 961,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-31/突き付ける": {
+      "article": "2026-08-31/1",
+      "surface": "突き付ける",
+      "offset": 2231,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-31/錯綜": {
+      "article": "2026-08-31/3",
+      "surface": "錯綜",
+      "offset": 1631,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-31/荒削り": {
+      "article": "2026-08-31/2",
+      "surface": "荒削り",
+      "offset": 3191,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-08-31/かつて": {
+      "article": "2026-08-31/3",
+      "surface": "かつて",
+      "offset": 914,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-01/費やす": {
+      "article": "2026-09-01/1",
+      "surface": "費やす",
+      "offset": 1573,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-01/投じる": {
+      "article": "2026-09-01/1",
+      "surface": "投じ",
+      "offset": 1990,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-01/育む": {
+      "article": "2026-09-01/1",
+      "surface": "育み",
+      "offset": 2064,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-01/とらわれる": {
+      "article": "2026-09-01/1",
+      "surface": "とらわれ",
+      "offset": 1342,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-01/手厚い": {
+      "article": "2026-09-01/4",
+      "surface": "手厚い",
+      "offset": 2353,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-01/やがて": {
+      "article": "2026-09-01/1",
+      "surface": "やがて",
+      "offset": 1474,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-02/見失う": {
+      "article": "2026-09-02/2",
+      "surface": "見失わ",
+      "offset": 1307,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-02/残存": {
+      "article": "2026-09-02/1",
+      "surface": "残存",
+      "offset": 2464,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-02/混在": {
+      "article": "2026-09-02/2",
+      "surface": "混在",
+      "offset": 1355,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-02/隔たり": {
+      "article": "2026-09-02/5",
+      "surface": "隔たり",
+      "offset": 4104,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-02/源泉": {
+      "article": "2026-09-02/5",
+      "surface": "源泉",
+      "offset": 3686,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-02/有力": {
+      "article": "2026-09-02/5",
+      "surface": "有力",
+      "offset": 3820,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-03/紛れ込む": {
+      "article": "2026-09-03/1",
+      "surface": "紛れ込み",
+      "offset": 1992,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-03/盗み出す": {
+      "article": "2026-09-03/1",
+      "surface": "盗み出す",
+      "offset": 326,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-03/強力": {
+      "article": "2026-09-03/3",
+      "surface": "強力",
+      "offset": 2941,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-03/連鎖": {
+      "article": "2026-09-03/1",
+      "surface": "連鎖",
+      "offset": 1441,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-03/いちいち": {
+      "article": "2026-09-03/4",
+      "surface": "いちいち",
+      "offset": 1318,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-04/欺く": {
+      "article": "2026-09-04/1",
+      "surface": "欺く",
+      "offset": 2551,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-04/逃れる": {
+      "article": "2026-09-04/1",
+      "surface": "逃れ",
+      "offset": 3018,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-04/下回る": {
+      "article": "2026-09-04/1",
+      "surface": "下回る",
+      "offset": 692,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-04/前向き": {
+      "article": "2026-09-04/1",
+      "surface": "前向き",
+      "offset": 3982,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-04/格差": {
+      "article": "2026-09-04/1",
+      "surface": "格差",
+      "offset": 1498,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-04/極めて": {
+      "article": "2026-09-04/1",
+      "surface": "極めて",
+      "offset": 1544,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-04/瞬時": {
+      "article": "2026-09-04/1",
+      "surface": "瞬時",
+      "offset": 1905,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-05/手掛ける": {
+      "article": "2026-09-05/1",
+      "surface": "手掛ける",
+      "offset": 57,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-05/打ち消す": {
+      "article": "2026-09-05/4",
+      "surface": "打ち消し",
+      "offset": 1621,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-05/剥がす": {
+      "article": "2026-09-05/5",
+      "surface": "剥がし",
+      "offset": 3270,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-05/辿る": {
+      "article": "2026-09-05/5",
+      "surface": "辿っ",
+      "offset": 3231,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-05/踏襲": {
+      "article": "2026-09-05/1",
+      "surface": "踏襲",
+      "offset": 1012,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-05/結集": {
+      "article": "2026-09-05/1",
+      "surface": "結集",
+      "offset": 1150,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-05/提言": {
+      "article": "2026-09-05/3",
+      "surface": "提言",
+      "offset": 831,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-05/許諾": {
+      "article": "2026-09-05/2",
+      "surface": "許諾",
+      "offset": 1119,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-05/類似": {
+      "article": "2026-09-05/1",
+      "surface": "類似",
+      "offset": 670,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-05/互いに": {
+      "article": "2026-09-05/4",
+      "surface": "互いに",
+      "offset": 1618,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-06/拒む": {
+      "article": "2026-09-06/4",
+      "surface": "拒む",
+      "offset": 3354,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-06/ほどく": {
+      "article": "2026-09-06/4",
+      "surface": "ほどく",
+      "offset": 1304,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-06/言い換える": {
+      "article": "2026-09-06/4",
+      "surface": "言い換える",
+      "offset": 6546,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-06/居座る": {
+      "article": "2026-09-06/5",
+      "surface": "居座り",
+      "offset": 4486,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-06/休眠": {
+      "article": "2026-09-06/1",
+      "surface": "休眠",
+      "offset": 18,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-06/主眼": {
+      "article": "2026-09-06/1",
+      "surface": "主眼",
+      "offset": 338,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-06/冷静": {
+      "article": "2026-09-06/5",
+      "surface": "冷静",
+      "offset": 1216,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-06/そもそも": {
+      "article": "2026-09-06/5",
+      "surface": "そもそも",
+      "offset": 517,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-06/場当たり": {
+      "article": "2026-09-06/3",
+      "surface": "場当たり",
+      "offset": 1886,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-07/行き届く": {
+      "article": "2026-09-07/1",
+      "surface": "行き届い",
+      "offset": 204,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-07/忘れ去る": {
+      "article": "2026-09-07/1",
+      "surface": "忘れ去っ",
+      "offset": 330,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-07/培う": {
+      "article": "2026-09-07/3",
+      "surface": "培っ",
+      "offset": 1927,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-07/著しい": {
+      "article": "2026-09-07/2",
+      "surface": "著しく",
+      "offset": 8420,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-07/相反": {
+      "article": "2026-09-07/2",
+      "surface": "相反",
+      "offset": 290,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-07/潜在": {
+      "article": "2026-09-07/1",
+      "surface": "潜在",
+      "offset": 1674,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-08/掘り下げる": {
+      "article": "2026-09-08/3",
+      "surface": "掘り下げ",
+      "offset": 1664,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-08/取り違える": {
+      "article": "2026-09-08/3",
+      "surface": "取り違え",
+      "offset": 2736,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-08/組み替える": {
+      "article": "2026-09-08/4",
+      "surface": "組み替え",
+      "offset": 7209,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-08/架空": {
+      "article": "2026-09-08/2",
+      "surface": "架空",
+      "offset": 1663,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-08/暗黙": {
+      "article": "2026-09-08/5",
+      "surface": "暗黙",
+      "offset": 1046,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-08/混沌": {
+      "article": "2026-09-08/5",
+      "surface": "混沌",
+      "offset": 593,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-08/熟練工": {
+      "article": "2026-09-08/5",
+      "surface": "熟練工",
+      "offset": 1617,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-08/あたかも": {
+      "article": "2026-09-08/2",
+      "surface": "あたかも",
+      "offset": 1237,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-08/もはや": {
+      "article": "2026-09-08/2",
+      "surface": "もはや",
+      "offset": 560,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/仕掛ける": {
+      "article": "2026-09-09/2",
+      "surface": "仕掛ける",
+      "offset": 727,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/備わる": {
+      "article": "2026-09-09/3",
+      "surface": "備わっ",
+      "offset": 5876,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/行き渡る": {
+      "article": "2026-09-09/4",
+      "surface": "行き渡ら",
+      "offset": 2043,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/持ち込む": {
+      "article": "2026-09-09/3",
+      "surface": "持ち込ん",
+      "offset": 3944,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/ややこしい": {
+      "article": "2026-09-09/3",
+      "surface": "ややこしく",
+      "offset": 7711,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/物足りない": {
+      "article": "2026-09-09/3",
+      "surface": "物足りない",
+      "offset": 4474,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/根こそぎ": {
+      "article": "2026-09-09/3",
+      "surface": "根こそぎ",
+      "offset": 3275,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/ゆくゆく": {
+      "article": "2026-09-09/3",
+      "surface": "ゆくゆく",
+      "offset": 567,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/無防備": {
+      "article": "2026-09-09/3",
+      "surface": "無防備",
+      "offset": 4581,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/盗用": {
+      "article": "2026-09-09/2",
+      "surface": "盗用",
+      "offset": 179,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/頻発": {
+      "article": "2026-09-09/3",
+      "surface": "頻発",
+      "offset": 1400,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/高騰": {
+      "article": "2026-09-09/2",
+      "surface": "高騰",
+      "offset": 697,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/交渉": {
+      "article": "2026-09-09/4",
+      "surface": "交渉",
+      "offset": 566,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-09/脱出": {
+      "article": "2026-09-09/3",
+      "surface": "脱出",
+      "offset": 5225,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-10/引きずる": {
+      "article": "2026-09-10/1",
+      "surface": "引きずら",
+      "offset": 4662,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-10/流れ込む": {
+      "article": "2026-09-10/1",
+      "surface": "流れ込み",
+      "offset": 5105,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-10/明かす": {
+      "article": "2026-09-10/3",
+      "surface": "明かし",
+      "offset": 287,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-10/加味": {
+      "article": "2026-09-10/5",
+      "surface": "加味",
+      "offset": 1481,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-10/恒久": {
+      "article": "2026-09-10/5",
+      "surface": "恒久",
+      "offset": 2136,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-10/措置": {
+      "article": "2026-09-10/5",
+      "surface": "措置",
+      "offset": 2145,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-10/わずか": {
+      "article": "2026-09-10/5",
+      "surface": "わずか",
+      "offset": 590,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-10/常駐": {
+      "article": "2026-09-10/1",
+      "surface": "常駐",
+      "offset": 7738,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/割り振る": {
+      "article": "2026-09-11/4",
+      "surface": "割り振る",
+      "offset": 364,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/こなす": {
+      "article": "2026-09-11/4",
+      "surface": "こなす",
+      "offset": 378,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/切り捨てる": {
+      "article": "2026-09-11/5",
+      "surface": "切り捨て",
+      "offset": 738,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/磨き込む": {
+      "article": "2026-09-11/5",
+      "surface": "磨き込ま",
+      "offset": 1395,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/預ける": {
+      "article": "2026-09-11/2",
+      "surface": "預ける",
+      "offset": 623,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/平易": {
+      "article": "2026-09-11/3",
+      "surface": "平易",
+      "offset": 2532,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/地味": {
+      "article": "2026-09-11/3",
+      "surface": "地味",
+      "offset": 4293,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/温床": {
+      "article": "2026-09-11/2",
+      "surface": "温床",
+      "offset": 360,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/傘下": {
+      "article": "2026-09-11/1",
+      "surface": "傘下",
+      "offset": 1330,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/規範": {
+      "article": "2026-09-11/4",
+      "surface": "規範",
+      "offset": 872,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/審議": {
+      "article": "2026-09-11/4",
+      "surface": "審議",
+      "offset": 1558,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/予兆": {
+      "article": "2026-09-11/4",
+      "surface": "予兆",
+      "offset": 1281,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-11/引き続き": {
+      "article": "2026-09-11/3",
+      "surface": "引き続き",
+      "offset": 5390,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-12/投げかける": {
+      "article": "2026-09-12/1",
+      "surface": "投げかける",
+      "offset": 2853,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-12/持ち寄る": {
+      "article": "2026-09-12/1",
+      "surface": "持ち寄っ",
+      "offset": 7616,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-12/切り詰める": {
+      "article": "2026-09-12/2",
+      "surface": "切り詰め",
+      "offset": 1686,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-12/取りやめる": {
+      "article": "2026-09-12/3",
+      "surface": "取りやめ",
+      "offset": 640,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-12/心強い": {
+      "article": "2026-09-12/1",
+      "surface": "心強い",
+      "offset": 2193,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-12/有機的": {
+      "article": "2026-09-12/1",
+      "surface": "有機的",
+      "offset": 1697,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-12/充足": {
+      "article": "2026-09-12/1",
+      "surface": "充足",
+      "offset": 6445,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-12/兼務": {
+      "article": "2026-09-12/1",
+      "surface": "兼務",
+      "offset": 7789,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-12/吟味": {
+      "article": "2026-09-12/3",
+      "surface": "吟味",
+      "offset": 792,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-13/率いる": {
+      "article": "2026-09-13/2",
+      "surface": "率いる",
+      "offset": 438,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-13/打ち出す": {
+      "article": "2026-09-13/2",
+      "surface": "打ち出し",
+      "offset": 494,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-13/くみ取る": {
+      "article": "2026-09-13/2",
+      "surface": "くみ取っ",
+      "offset": 2184,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-13/歩み寄る": {
+      "article": "2026-09-13/2",
+      "surface": "歩み寄り",
+      "offset": 2246,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-13/かみ合う": {
+      "article": "2026-09-13/2",
+      "surface": "かみ合い",
+      "offset": 2251,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-13/立ちはだかる": {
+      "article": "2026-09-13/2",
+      "surface": "立ちはだかっ",
+      "offset": 2876,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-13/繊細": {
+      "article": "2026-09-13/3",
+      "surface": "繊細",
+      "offset": 1253,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-13/不完全": {
+      "article": "2026-09-13/2",
+      "surface": "不完全",
+      "offset": 2168,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-13/乱立": {
+      "article": "2026-09-13/2",
+      "surface": "乱立",
+      "offset": 1385,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-13/余力": {
+      "article": "2026-09-13/3",
+      "surface": "余力",
+      "offset": 3810,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-13/いかに": {
+      "article": "2026-09-13/2",
+      "surface": "いかに",
+      "offset": 2793,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-13/ようやく": {
+      "article": "2026-09-13/3",
+      "surface": "ようやく",
+      "offset": 4233,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/仕上げる": {
+      "article": "2026-09-14/1",
+      "surface": "仕上げ",
+      "offset": 1432,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/滞る": {
+      "article": "2026-09-14/1",
+      "surface": "滞る",
+      "offset": 8288,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/割り込む": {
+      "article": "2026-09-14/2",
+      "surface": "割り込む",
+      "offset": 675,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/詰め込む": {
+      "article": "2026-09-14/2",
+      "surface": "詰め込ま",
+      "offset": 939,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/銘打つ": {
+      "article": "2026-09-14/3",
+      "surface": "銘打っ",
+      "offset": 9136,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/先立つ": {
+      "article": "2026-09-14/4",
+      "surface": "先立っ",
+      "offset": 2398,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/乏しい": {
+      "article": "2026-09-14/3",
+      "surface": "乏しい",
+      "offset": 4811,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/大まか": {
+      "article": "2026-09-14/1",
+      "surface": "大まか",
+      "offset": 3832,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/明白": {
+      "article": "2026-09-14/3",
+      "surface": "明白",
+      "offset": 2061,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/簡素": {
+      "article": "2026-09-14/3",
+      "surface": "簡素",
+      "offset": 4742,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/垣根": {
+      "article": "2026-09-14/1",
+      "surface": "垣根",
+      "offset": 614,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/重心": {
+      "article": "2026-09-14/1",
+      "surface": "重心",
+      "offset": 3332,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/錯覚": {
+      "article": "2026-09-14/1",
+      "surface": "錯覚",
+      "offset": 6975,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/萎縮": {
+      "article": "2026-09-14/1",
+      "surface": "萎縮",
+      "offset": 7004,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/乖離": {
+      "article": "2026-09-14/1",
+      "surface": "乖離",
+      "offset": 8298,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/長らく": {
+      "article": "2026-09-14/3",
+      "surface": "長らく",
+      "offset": 866,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-14/しばしば": {
+      "article": "2026-09-14/4",
+      "surface": "しばしば",
+      "offset": 2374,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/押し上げる": {
+      "article": "2026-09-15/3",
+      "surface": "押し上げ",
+      "offset": 267,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/散らばる": {
+      "article": "2026-09-15/3",
+      "surface": "散らばる",
+      "offset": 455,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/取り囲む": {
+      "article": "2026-09-15/4",
+      "surface": "取り囲む",
+      "offset": 783,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/削ぐ": {
+      "article": "2026-09-15/5",
+      "surface": "削ぐ",
+      "offset": 1472,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/果たす": {
+      "article": "2026-09-15/5",
+      "surface": "果たし",
+      "offset": 1993,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/乗り換える": {
+      "article": "2026-09-15/5",
+      "surface": "乗り換え",
+      "offset": 2612,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/見当たる": {
+      "article": "2026-09-15/5",
+      "surface": "見当たら",
+      "offset": 2174,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/素早い": {
+      "article": "2026-09-15/1",
+      "surface": "素早く",
+      "offset": 2295,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/手軽": {
+      "article": "2026-09-15/1",
+      "surface": "手軽",
+      "offset": 4804,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/望ましい": {
+      "article": "2026-09-15/2",
+      "surface": "望ましい",
+      "offset": 156,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/厄介": {
+      "article": "2026-09-15/5",
+      "surface": "厄介",
+      "offset": 1441,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/丁寧": {
+      "article": "2026-09-15/5",
+      "surface": "丁寧",
+      "offset": 1403,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/皮肉": {
+      "article": "2026-09-15/5",
+      "surface": "皮肉",
+      "offset": 1542,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/悲観": {
+      "article": "2026-09-15/5",
+      "surface": "悲観",
+      "offset": 2258,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/当座": {
+      "article": "2026-09-15/5",
+      "surface": "当座",
+      "offset": 2729,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/断念": {
+      "article": "2026-09-15/1",
+      "surface": "断念",
+      "offset": 727,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/即断": {
+      "article": "2026-09-15/5",
+      "surface": "即断",
+      "offset": 2756,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/ずいぶん": {
+      "article": "2026-09-15/5",
+      "surface": "ずいぶん",
+      "offset": 206,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-15/いつのまにか": {
+      "article": "2026-09-15/5",
+      "surface": "いつのまにか",
+      "offset": 1011,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-16/交わす": {
+      "article": "2026-09-16/1",
+      "surface": "交わさ",
+      "offset": 187,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-16/作り上げる": {
+      "article": "2026-09-16/3",
+      "surface": "作り上げ",
+      "offset": 3322,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-16/揺さぶる": {
+      "article": "2026-09-16/4",
+      "surface": "揺さぶる",
+      "offset": 61,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-16/抜け出す": {
+      "article": "2026-09-16/5",
+      "surface": "抜け出す",
+      "offset": 303,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-16/顕著": {
+      "article": "2026-09-16/4",
+      "surface": "顕著",
+      "offset": 820,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-16/豊か": {
+      "article": "2026-09-16/3",
+      "surface": "豊か",
+      "offset": 2676,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-16/単調": {
+      "article": "2026-09-16/1",
+      "surface": "単調",
+      "offset": 2105,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-16/足元": {
+      "article": "2026-09-16/4",
+      "surface": "足元",
+      "offset": 46,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-16/散在": {
+      "article": "2026-09-16/5",
+      "surface": "散在",
+      "offset": 114,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-16/創出": {
+      "article": "2026-09-16/5",
+      "surface": "創出",
+      "offset": 1070,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-16/めったに": {
+      "article": "2026-09-16/1",
+      "surface": "めったに",
+      "offset": 1786,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-16/どれほど": {
+      "article": "2026-09-16/3",
+      "surface": "どれほど",
+      "offset": 506,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/長引く": {
+      "article": "2026-09-17/1",
+      "surface": "長引く",
+      "offset": 695,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/立て直す": {
+      "article": "2026-09-17/1",
+      "surface": "立て直す",
+      "offset": 1144,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/兼ねる": {
+      "article": "2026-09-17/1",
+      "surface": "兼ねる",
+      "offset": 1942,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/やり遂げる": {
+      "article": "2026-09-17/1",
+      "surface": "やり遂げよ",
+      "offset": 7029,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/充てる": {
+      "article": "2026-09-17/1",
+      "surface": "充て",
+      "offset": 7613,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/潰す": {
+      "article": "2026-09-17/1",
+      "surface": "潰す",
+      "offset": 6951,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/出そろう": {
+      "article": "2026-09-17/1",
+      "surface": "出そろっ",
+      "offset": 6563,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/漠然と": {
+      "article": "2026-09-17/1",
+      "surface": "漠然と",
+      "offset": 2777,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/滑らか": {
+      "article": "2026-09-17/5",
+      "surface": "滑らか",
+      "offset": 285,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/規律": {
+      "article": "2026-09-17/1",
+      "surface": "規律",
+      "offset": 1760,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/迷走": {
+      "article": "2026-09-17/1",
+      "surface": "迷走",
+      "offset": 2783,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/痕跡": {
+      "article": "2026-09-17/1",
+      "surface": "痕跡",
+      "offset": 5585,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/反証": {
+      "article": "2026-09-17/1",
+      "surface": "反証",
+      "offset": 6960,
+      "offsetUnit": "unicode-codepoints"
+    },
+    "2026-09-17/適材適所": {
+      "article": "2026-09-17/1",
+      "surface": "適材適所",
+      "offset": 8143,
+      "offsetUnit": "unicode-codepoints"
+    }
+  }
+}

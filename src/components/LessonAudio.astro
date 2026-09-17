@@ -1,5 +1,6 @@
 <script>
   import { configuredAudioAssetUrl, localAudioAssetUrl } from '../lib/audioUrl';
+  import { resolveLearningRecording, type LearningManifest } from '../lib/learningAudio';
 
   const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.speech-button'));
   const parts = location.pathname.split('/').filter(Boolean);
@@ -54,6 +55,7 @@
       if (activeAudio !== audio) return;
       activeAudio = null;
       clearActive();
+      markBrowserSpeech(button);
       speakFallback(button, text);
     };
     audio.addEventListener('ended', () => {
@@ -63,35 +65,30 @@
     void audio.play().catch(fallback);
   }
 
-  type Manifest = {
-    voice?: { name?: string; style?: string };
-    items?: { reading: string; term: string; word: string; exampleJa: string; example: string }[];
-    grammar?: { exampleJa: string; example: string }[];
-  };
+  function markBrowserSpeech(button: HTMLButtonElement) {
+    delete button.dataset.audio;
+    button.dataset.audioProvider = 'browser-tts';
+    button.title = document.documentElement.lang.startsWith('ja') ? 'ブラウザーの日本語音声で朗読' : '浏览器日语朗读';
+  }
+  // Fail closed even when the manifest is unavailable, stale, or malformed.
+  buttons.forEach(markBrowserSpeech);
   async function attachAudio() {
     if (!lessonId || !buttons.length) return;
     try {
-      // Manifests live at the site root in both language modes; MP3s may live on R2.
       const response = await fetch(localAudioAssetUrl('japanese', lessonId, 'manifest.json'), { cache: 'no-cache' });
       if (!response.ok) return;
-      const manifest: Manifest = await response.json();
-      const words = new Map<string, string>(), examples = new Map<string, string>(), grammar = new Map<string, string>();
-      for (const item of manifest.items || []) {
-        words.set(normalize(item.reading), item.word);
-        words.set(normalize(item.term), item.word);
-        examples.set(normalize(item.exampleJa), item.example);
-      }
-      for (const item of manifest.grammar || []) grammar.set(normalize(item.exampleJa), item.example);
+      const manifest: LearningManifest = await response.json();
       for (const button of buttons) {
-        const text = normalize(button.dataset.speech || '');
-        const map = button.dataset.speechKind === 'word' ? words : button.dataset.speechKind === 'grammar-example' ? grammar : examples;
-        const filename = map.get(text);
+        const filename = resolveLearningRecording(manifest, {
+          kind: button.dataset.speechKind || '', term: button.dataset.vocabularyTerm,
+          reading: button.dataset.vocabularyReading, text: button.dataset.speech || '',
+        });
         if (!filename) continue;
         button.dataset.audio = configuredAudioAssetUrl('japanese', lessonId, filename);
         button.dataset.audioProvider = 'aivis';
         button.title = `AivisSpeech · ${manifest.voice?.name || 'AivisSpeech'}${manifest.voice?.style ? ` · ${manifest.voice.style}` : ''}`;
       }
-    } catch { /* Keep the pre-rendered URL and browser speech fallback. */ }
+    } catch { buttons.forEach(markBrowserSpeech); }
   }
   for (const button of buttons) button.addEventListener('click', () => {
     const text = (button.dataset.speech || '').trim();

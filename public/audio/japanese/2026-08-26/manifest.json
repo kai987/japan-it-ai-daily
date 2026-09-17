@@ -27,23 +27,23 @@
   "items": [
     {
       "index": 1,
-      "term": "影響",
-      "reading": "えいきょう",
-      "exampleJa": "脆弱性が自社Serviceに与える影響を調査します。",
-      "word": "vocab-01.mp3",
-      "wordHash": "9a2177e1f02187bc26bdeb81c9986c08ffcd9d3fc97743faf068fa785a6976d5",
-      "example": "example-01.mp3",
-      "exampleHash": "0afe3992d77e34007f24a1284722c9cc7f41f6dd29bd9a880cd4a6892d5d71e6"
+      "term": "推し進める",
+      "reading": "おしすすめる",
+      "exampleJa": "現場の意見を確かめながら、画面の共通化を推し進めます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 2,
-      "term": "運用",
-      "reading": "うんよう",
-      "exampleJa": "AI Agentの本番運用では監査ログを保存します。",
-      "word": "vocab-02.mp3",
-      "wordHash": "d9584dd132793d947df73b5fc269de4922a1b79e4fe078827a31af0272a3be23",
-      "example": "example-02.mp3",
-      "exampleHash": "6d7140d881c02861fac09b40416c73f81a5fea9d8dee25f425374d2a6c5ada52"
+      "term": "切り上げる",
+      "reading": "きりあげる",
+      "exampleJa": "一定時間で調査を切り上げ、分かった点と未確認点を共有します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 3,
@@ -57,13 +57,13 @@
     },
     {
       "index": 4,
-      "term": "監査",
-      "reading": "かんさ",
-      "exampleJa": "Tool CallとPermission変更を後から監査できるように記録します。",
-      "word": "vocab-04.mp3",
-      "wordHash": "cddda010e18d2a661bff2678526f60d1ae97ff89362afeb0e90140ad3dfd4d8d",
-      "example": "example-04.mp3",
-      "exampleHash": "4d3bf50ddcd312c194ba580db3ee1576ef096c124dd7c20e717a845a26eefc0d"
+      "term": "決めつける",
+      "reading": "きめつける",
+      "exampleJa": "通信の失敗だけで相手側の問題だと決めつけず、設定も調べます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 5,
@@ -77,13 +77,13 @@
     },
     {
       "index": 6,
-      "term": "管理する",
-      "reading": "かんりする",
-      "exampleJa": "利用できるModelとToolをRuntime側で管理します。",
-      "word": "vocab-06.mp3",
-      "wordHash": "a999cfda8ae4ca2f6f5874a74322655aab0d46f3a2db282f484959368e6a9cd2",
-      "example": "example-06.mp3",
-      "exampleHash": "9a0d38937802468c78cc1ad30dc2756e84d4dc2c22453575e1cad3257a6ccf45"
+      "term": "試みる",
+      "reading": "こころみる",
+      "exampleJa": "原因を絞るため、条件を一つずつ変えて再現を試みます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 7,
@@ -97,53 +97,53 @@
     },
     {
       "index": 8,
-      "term": "制御する",
-      "reading": "せいぎょする",
-      "exampleJa": "MCP ToolへのAccessをRuntime Policyで制御します。",
-      "word": "vocab-08.mp3",
-      "wordHash": "5346be774ad656c587bc337e880ca353cd30fdfe7dc74df5b4ff098cd0ad75fa",
-      "example": "example-08.mp3",
-      "exampleHash": "c7d3f1ee5396886acda28e79161d3f8aedfa35c64fc41345d84a6b310e1e7f02"
+      "term": "取り残す",
+      "reading": "とりのこす",
+      "exampleJa": "接続が切れても処理を取り残さないよう、終了時の手順を決めます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 9,
-      "term": "検証する",
-      "reading": "けんしょうする",
-      "exampleJa": "Patch適用後はE2E Testで既存機能への影響を検証します。",
-      "word": "vocab-09.mp3",
-      "wordHash": "8c99ed11c56d739dd1bacf081bb328cd53cf8d1cf5627ba044d494d63b918af3",
-      "example": "example-09.mp3",
-      "exampleHash": "94baae8e0bb59dbc250f58e514fb2c234616538f5aacaa3e538d1f833d030fa0"
+      "term": "期す",
+      "reading": "きす",
+      "exampleJa": "正確を期すため、集計方法を別の担当者にも確認してもらいます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 10,
-      "term": "把握する",
-      "reading": "はあくする",
-      "exampleJa": "MCP Server追加前にTool Definitionが消費するToken量を把握します。",
-      "word": "vocab-10.mp3",
-      "wordHash": "1b0272357468181e5c5ae130d8dbb29282547ea09d4b0153f06e94e96307cc54",
-      "example": "example-10.mp3",
-      "exampleHash": "ec2d83b628644e692199200c897b3288735f5084d43d6b15e40694ec8f1a4784"
+      "term": "取り巻く",
+      "reading": "とりまく",
+      "exampleJa": "開発を取り巻く環境が変わっても、確認の基本は大切にします。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 11,
-      "term": "考慮する",
-      "reading": "こうりょする",
-      "exampleJa": "Model選定では精度だけでなくCostとSecurityも考慮します。",
-      "word": "vocab-11.mp3",
-      "wordHash": "276e30e3cfc9cb0d50b4db9930fb90fd66603a296fa21156344adbc0fcd1fccd",
-      "example": "example-11.mp3",
-      "exampleHash": "68ed561dfd3242d53507169bbf792701023cf68ced312bfd9f8e08150886e736"
+      "term": "疑わしい",
+      "reading": "うたがわしい",
+      "exampleJa": "測定値が疑わしい場合は、条件と計算方法を確認します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 12,
-      "term": "絞り込む",
-      "reading": "しぼりこむ",
-      "exampleJa": "Asset情報を使って対応が必要なCVEを絞り込みます。",
-      "word": "vocab-12.mp3",
-      "wordHash": "de95b4a91d2cdf5ba0bee966c5ea23747913808a8c4a0545d17b60229c5a4bbd",
-      "example": "example-12.mp3",
-      "exampleHash": "3023af27527e560df6be96fb3e1c9c71737bd0cd9d2601c23bcfdc341921957d"
+      "term": "頑健",
+      "reading": "がんけん",
+      "exampleJa": "入力の表記が少し変わっても、頑健に処理できるかを確かめます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 13,
@@ -157,73 +157,73 @@
     },
     {
       "index": 14,
-      "term": "重要",
-      "reading": "じゅうよう",
-      "exampleJa": "Internet公開Assetに影響する脆弱性を重要な対象として扱います。",
-      "word": "vocab-14.mp3",
-      "wordHash": "6d8947d2e6730fbda25bcfd4b101af8a93945b34184986fc887283f53e0ea47b",
-      "example": "example-14.mp3",
-      "exampleHash": "1805aed881b7e13192a31ad1a6c40602cd290599cd5a684c26b22dfb227f381a"
+      "term": "紆余曲折",
+      "reading": "うよきょくせつ",
+      "exampleJa": "紆余曲折を経ましたが、最終的には運用しやすい構成にまとまりました。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 15,
-      "term": "脆弱",
-      "reading": "ぜいじゃく",
-      "exampleJa": "脆弱なVersionを本番で使い続けないようにします。",
-      "word": "vocab-15.mp3",
-      "wordHash": "9e93a6d5dcef78fe27a6d1eb0accc5fb77303198e14625a5fc6577d68fe3718c",
-      "example": "example-15.mp3",
-      "exampleHash": "c5f1081acf3381869865e389589dec38fb8bf4d45c7e178cb131ef0e6806261d"
+      "term": "起因",
+      "reading": "きいん",
+      "exampleJa": "設定に起因する問題かどうか、変更前の状態と比較します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 16,
-      "term": "適切",
-      "reading": "てきせつ",
-      "exampleJa": "Asset Contextに応じて適切な対応優先度を決めます。",
-      "word": "vocab-16.mp3",
-      "wordHash": "60f431f1d0e13296084ba416bb63a57ee48798878a059701e125308e19f838ef",
-      "example": "example-16.mp3",
-      "exampleHash": "36e8f75098768523ebce3c021e815cca01c8e62b39bb77246242d92a5b13114c"
+      "term": "審査",
+      "reading": "しんさ",
+      "exampleJa": "提案を公平に審査できるよう、判断基準を先に示します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 17,
-      "term": "あらかじめ",
-      "reading": "あらかじめ",
-      "exampleJa": "利用中のDependencyをあらかじめInventory化します。",
-      "word": "vocab-17.mp3",
-      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
-      "example": "example-17.mp3",
-      "exampleHash": "202d5c89b00dbe667f23e3d27d4f2c730ed7dc5cabd9f07d620b8a7d247b41c6"
+      "term": "介在",
+      "reading": "かいざい",
+      "exampleJa": "どの段階で人の判断が介在するか、処理の流れに明記します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 18,
-      "term": "優先して",
-      "reading": "ゆうせんして",
-      "exampleJa": "Internet公開AssetのCVEを優先して対応します。",
-      "word": "vocab-18.mp3",
-      "wordHash": "f057b91ad4d38f227a2ee0b3076d4e94a163382967f43c270582fa7abcbe1a5b",
-      "example": "example-18.mp3",
-      "exampleHash": "9af975108f7e9160541262e05d52811a0046ce3c40523d661f7a1cee0ed6a49f"
+      "term": "巻き添え",
+      "reading": "まきぞえ",
+      "exampleJa": "一つの失敗で他の処理まで巻き添えにならないようにします。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 19,
-      "term": "継続的に",
-      "reading": "けいぞくてきに",
-      "exampleJa": "SBOMとTool Inventoryを継続的に更新します。",
-      "word": "vocab-19.mp3",
-      "wordHash": "3b9ed58e6b9bea666da1daf0c69b86632da97a53355505ea447867bb192e2a39",
-      "example": "example-19.mp3",
-      "exampleHash": "39d0e59d596f704a81d6d4d7b72fdfe60bea474285f09c60f579e4e05794d16f"
+      "term": "なかでも",
+      "reading": "なかでも",
+      "exampleJa": "いくつか課題がありますが、なかでも入力ミスの防止を優先します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 20,
-      "term": "一方で",
-      "reading": "いっぽうで",
-      "exampleJa": "MCP Toolを増やすと能力は広がる一方で、Context Costも増えます。",
-      "word": "vocab-20.mp3",
-      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
-      "example": "example-20.mp3",
-      "exampleHash": "1cc4fbab4fda578643962d9892eaefc216d9a5d8fe81854bf07c29cb25fa53bd"
+      "term": "比較的",
+      "reading": "ひかくてき",
+      "exampleJa": "従来の方法より比較的少ない変更で、目的を達成できました。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     }
   ],
   "grammar": [
@@ -276,5 +276,7 @@
       "example": "grammar-example-07.mp3",
       "exampleHash": "c5e54040a5e07044ab7b23c0c277a700351d765f64a554cd4addb940a6514310"
     }
-  ]
+  ],
+  "contentRevision": "jlpt-history-dedup-2026-09-18",
+  "browserTtsCount": 16
 }

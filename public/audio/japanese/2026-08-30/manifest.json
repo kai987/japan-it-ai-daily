@@ -27,13 +27,13 @@
   "items": [
     {
       "index": 1,
-      "term": "根拠",
-      "reading": "こんきょ",
-      "exampleJa": "AIの判定を採用する前に、判断の根拠が実データと一致しているか確認します。",
-      "word": "vocab-01.mp3",
-      "wordHash": "a6f653ee0feb745642c64400f7f87108014c78ad8ca97c067589d143b2b36843",
-      "example": "example-01.mp3",
-      "exampleHash": "50afb8b3099e43ff25c53b31a7c887fed4f91b8c20ebb41d5c0a9cc083244330"
+      "term": "鵜呑み",
+      "reading": "うのみ",
+      "exampleJa": "自動判定の結果を鵜呑みにせず、判断の根拠を確かめます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 2,
@@ -177,13 +177,13 @@
     },
     {
       "index": 16,
-      "term": "適切な",
-      "reading": "てきせつな",
-      "exampleJa": "物理機器を操作するAgentには、状況に応じた適切な安全制約を設定します。",
-      "word": "vocab-16.mp3",
-      "wordHash": "517c9af99d9edf217080b608cf3d745eddeb8fbe295a5c453176b33baea38df8",
-      "example": "example-16.mp3",
-      "exampleHash": "a17113ebe2b0fd410e9df1217baa05ef361ab5671f2351ce835a66eb0a8e9c21"
+      "term": "素朴",
+      "reading": "そぼく",
+      "exampleJa": "まず素朴な方法で動きを確かめ、その後で必要な条件を加えます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 17,
@@ -217,13 +217,13 @@
     },
     {
       "index": 20,
-      "term": "一方で",
-      "reading": "いっぽうで",
-      "exampleJa": "Multi-provider構成は柔軟性を高める一方で、互換性評価の負担も増えます。",
-      "word": "vocab-20.mp3",
-      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
-      "example": "example-20.mp3",
-      "exampleHash": "215dc00a847e148adca5b9d7340bc09767727c0f0bcfa26627a980f81315b3ec"
+      "term": "じっくり",
+      "reading": "じっくり",
+      "exampleJa": "結論を急がず、元の記録をじっくり読み直します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     }
   ],
   "grammar": [
@@ -276,5 +276,7 @@
       "example": "grammar-example-07.mp3",
       "exampleHash": "baadfb1b6fb4349a6088d3323dd7abadbef4c8ab41ae5e2d8db4cae609682821"
     }
-  ]
+  ],
+  "contentRevision": "jlpt-history-dedup-2026-09-18",
+  "browserTtsCount": 3
 }

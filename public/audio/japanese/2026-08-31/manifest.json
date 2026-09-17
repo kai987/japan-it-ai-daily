@@ -57,23 +57,23 @@
     },
     {
       "index": 4,
-      "term": "範囲",
-      "reading": "はんい",
-      "exampleJa": "MCP Toolごとに実行可能な範囲を明確に定義します。",
-      "word": "vocab-04.mp3",
-      "wordHash": "1a47f079bb5bacff1ed8b65c346e611427b2b5ac8b766af68bfa9f36d6fd6184",
-      "example": "example-04.mp3",
-      "exampleHash": "7fadf6d6dda6c44a71c352240da4dcb313c2205382be0d91361ad780a7de470d"
+      "term": "鑑みる",
+      "reading": "かんがみる",
+      "exampleJa": "これまでの運用状況に鑑みて、保存期間を見直します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 5,
-      "term": "課題",
-      "reading": "かだい",
-      "exampleJa": "Model性能では解決できない組織課題を先に整理します。",
-      "word": "vocab-05.mp3",
-      "wordHash": "e913914c5f85efe390fe8bffad16d4ecac06267d6832897835f9731bba8a7512",
-      "example": "example-05.mp3",
-      "exampleHash": "31e5029a598e23d4f81d85a1262433a27dab4a569d88a1c9f18e2a35035237b2"
+      "term": "受け止める",
+      "reading": "うけとめる",
+      "exampleJa": "使いにくいという意見を受け止め、操作手順を見直しました。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 6,
@@ -97,13 +97,13 @@
     },
     {
       "index": 8,
-      "term": "依存する",
-      "reading": "いぞんする",
-      "exampleJa": "Productionの呼び出し側を特定のAgent Version番号に依存させない設計にします。",
-      "word": "vocab-08.mp3",
-      "wordHash": "735e2f2e001d6bd7218c175c6a89dbe17ae59b9b42bf22ab15fa197c8608e030",
-      "example": "example-08.mp3",
-      "exampleHash": "03531c8ac70f05ae46ddbbc600306309705785b0ea52bc5426c8d46a0ada71d5"
+      "term": "突き付ける",
+      "reading": "つきつける",
+      "exampleJa": "今回の障害は、確認手順の不足という課題を私たちに突き付けました。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 9,
@@ -137,33 +137,33 @@
     },
     {
       "index": 12,
-      "term": "付与する",
-      "reading": "ふよする",
-      "exampleJa": "検証済みVersionにだけproduction Aliasを付与します。",
-      "word": "vocab-12.mp3",
-      "wordHash": "ab5335833148f20544e77e60012c6713f75c3069de9a3a07306fa87f79f9828f",
-      "example": "example-12.mp3",
-      "exampleHash": "d8643b94ec503b7fe4326b0b595e038ea0ca74c98f83e17830533abaacf86852"
+      "term": "錯綜",
+      "reading": "さくそう",
+      "exampleJa": "情報が錯綜しているため、確認済みの事実だけを先に整理します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 13,
-      "term": "想定する",
-      "reading": "そうていする",
-      "exampleJa": "本番利用を想定したAgentは、Rollbackまで含めて設計します。",
-      "word": "vocab-13.mp3",
-      "wordHash": "ca5224178e3ebc846133f682af8501239aea417e92b2a9dc86b014eb81170554",
-      "example": "example-13.mp3",
-      "exampleHash": "84dbc1cb1c8fa13593032637ebd3c705f481d8862a36ebc7e0e2c53465ac2f16"
+      "term": "荒削り",
+      "reading": "あらけずり",
+      "exampleJa": "まだ荒削りな試作品ですが、操作の流れは確認できます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 14,
-      "term": "深刻な",
-      "reading": "しんこくな",
-      "exampleJa": "Context不足が深刻な場合、Modelを強くしても誤判断は減らないことがあります。",
-      "word": "vocab-14.mp3",
-      "wordHash": "8a70742084bd5464912e05f8b502367a6858bf029288f5cd1b6b0b68101b4403",
-      "example": "example-14.mp3",
-      "exampleHash": "719d7e880c2d083818e02fefdd87f948c5e219aa5084c048bb50b20e6e8122e4"
+      "term": "かつて",
+      "reading": "かつて",
+      "exampleJa": "かつては手作業で確認していた部分を、今は自動で検査しています。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 15,
@@ -276,5 +276,7 @@
       "example": "grammar-example-07.mp3",
       "exampleHash": "eefb7c670eb2ae87aab9accad4001eb95781d0ecca26e3e08b2a8759c3464d0c"
     }
-  ]
+  ],
+  "contentRevision": "jlpt-history-dedup-2026-09-18",
+  "browserTtsCount": 6
 }

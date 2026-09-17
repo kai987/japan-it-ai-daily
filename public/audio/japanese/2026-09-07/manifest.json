@@ -27,13 +27,13 @@
   "items": [
     {
       "index": 1,
-      "term": "実態",
-      "reading": "じったい",
-      "exampleJa": "表面的なDashboardだけでなく、Assetの利用実態を把握します。",
-      "word": "vocab-01.mp3",
-      "wordHash": "8c94708e98a972895a09fe2f4e9f067ce1d407c1ed19caf2a46485b554df08a4",
-      "example": "example-01.mp3",
-      "exampleHash": "391340a3ac7dea7702ff285807780fd91fd34b6fdb764f2a11ce087fc34b353c"
+      "term": "行き届く",
+      "reading": "いきとどく",
+      "exampleJa": "細かな案内まで行き届いた画面なら、初めてでも操作しやすくなります。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 2,
@@ -47,13 +47,13 @@
     },
     {
       "index": 3,
-      "term": "足掛かり",
-      "reading": "あしがかり",
-      "exampleJa": "未管理のCredentialが侵入の足掛かりになる可能性があります。",
-      "word": "vocab-03.mp3",
-      "wordHash": "62b00e8689ac8d27bb4ddc4643c53c9c463156f6a0683671a479f8bba4ff8b98",
-      "example": "example-03.mp3",
-      "exampleHash": "2a1ac43d0bf2b0ed84376b2a3c64c86c4ffc260ecfeba617b08b800974766bae"
+      "term": "忘れ去る",
+      "reading": "わすれさる",
+      "exampleJa": "導入時の理由が忘れ去られないよう、判断の経緯を残します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 4,
@@ -77,13 +77,13 @@
     },
     {
       "index": 6,
-      "term": "互換性",
-      "reading": "ごかんせい",
-      "exampleJa": "既存のNode.js APIとの互換性を事前に確認します。",
-      "word": "vocab-06.mp3",
-      "wordHash": "8492a94bd50c4a1803daedf845850c21ed5fc00a011cb6510ebf39290313ff58",
-      "example": "example-06.mp3",
-      "exampleHash": "c66ed536dd25c8507054be0460b76d1ac4bd9362d06b4ec46b1f81faf0a6a4d8"
+      "term": "培う",
+      "reading": "つちかう",
+      "exampleJa": "前職で培った画面設計の経験を、新しい開発でも生かします。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 7,
@@ -167,13 +167,13 @@
     },
     {
       "index": 15,
-      "term": "包括的な",
-      "reading": "ほうかつてきな",
-      "exampleJa": "Third-partyまで含む包括的なAsset Inventoryが必要です。",
-      "word": "vocab-15.mp3",
-      "wordHash": "c9fa0ba24a2f98070bc38842736f8f122762fdc9e17fd01e2905d1080ea6cf2c",
-      "example": "example-15.mp3",
-      "exampleHash": "0aab866fa9946bae710a7fe4420e378e47c9e18f1865395c2c59711d5e6d0aa6"
+      "term": "著しい",
+      "reading": "いちじるしい",
+      "exampleJa": "条件をそろえても差が著しい場合は、計測方法を見直します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 16,
@@ -207,23 +207,23 @@
     },
     {
       "index": 19,
-      "term": "あくまで",
-      "reading": "あくまで",
-      "exampleJa": "87％という数字はあくまで特定条件での比較結果です。",
-      "word": "vocab-19.mp3",
-      "wordHash": "dd2cb5ea4b0cf370b5270eab5f4d02980eca680d5dcb1c4361e883b00bc68f83",
-      "example": "example-19.mp3",
-      "exampleHash": "15e371636cf486f33b54f0c50c0e67274953cf06b20e01cd4a876d9f74f799dc"
+      "term": "相反",
+      "reading": "そうはん",
+      "exampleJa": "相反する要求を整理し、優先する条件を合意します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 20,
-      "term": "一方で",
-      "reading": "いっぽうで",
-      "exampleJa": "AOTはCold Startを改善できる一方で、Compatibilityが課題になります。",
-      "word": "vocab-20.mp3",
-      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
-      "example": "example-20.mp3",
-      "exampleHash": "310bf665ead8df05baedb70583548bec8a3c73287fc4bb7d510c0f7cb3e4e344"
+      "term": "潜在",
+      "reading": "せんざい",
+      "exampleJa": "潜在する問題を見つけるため、普段使わない操作も確認します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     }
   ],
   "grammar": [
@@ -276,5 +276,7 @@
       "example": "grammar-example-07.mp3",
       "exampleHash": "321d97f97154ab5e69025088406c082129e9c0752544bd7fa30c38bce33ca812"
     }
-  ]
+  ],
+  "contentRevision": "jlpt-history-dedup-2026-09-18",
+  "browserTtsCount": 6
 }

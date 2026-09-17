@@ -27,13 +27,13 @@
   "items": [
     {
       "index": 1,
-      "term": "見逃す",
-      "reading": "みのがす",
-      "exampleJa": "同じModelだけでReviewすると、設計上の前提ミスを見逃す可能性があります。",
-      "word": "vocab-01.mp3",
-      "wordHash": "1af5cf69ba0ae1ee8806254e3491670fdaa14fbd39fcfabed36b0cfbdd2b373c",
-      "example": "example-01.mp3",
-      "exampleHash": "e3a26c75213e3ca17ad9985f4e4b769e4ac5719a527789ced7b6e40bcffc899d"
+      "term": "見失う",
+      "reading": "みうしなう",
+      "exampleJa": "細部の修正に集中して、利用者の目的を見失わないようにします。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 2,
@@ -67,23 +67,23 @@
     },
     {
       "index": 5,
-      "term": "抑える",
-      "reading": "おさえる",
-      "exampleJa": "必要なSkillだけを読み込み、Context消費を抑えます。",
-      "word": "vocab-05.mp3",
-      "wordHash": "8eab76035dab35c86a9d486a200ad7b4a26e0e338df92fb98f5b1e54eab45bfb",
-      "example": "example-05.mp3",
-      "exampleHash": "8da43dd9f31251403ef47280faf58f9c9c00f1e4a57d563bbbd642e5967b2dcc"
+      "term": "残存",
+      "reading": "ざんそん",
+      "exampleJa": "古い設定が残存していないか、更新後に確認します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 6,
-      "term": "切り替える",
-      "reading": "きりかえる",
-      "exampleJa": "Data Retention Modeを切り替える前に、社内Policyを確認します。",
-      "word": "vocab-06.mp3",
-      "wordHash": "4090e9c6a6bd0805e503a0221da7f96c2038cab60a5f9c8db6a5146916ed3c85",
-      "example": "example-06.mp3",
-      "exampleHash": "3ca19406fc314d119a24ecee9afc1af364db598aed3609449dfea57098699d71"
+      "term": "混在",
+      "reading": "こんざい",
+      "exampleJa": "異なる日付形式が混在していたため、比較前に統一しました。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 7,
@@ -97,13 +97,13 @@
     },
     {
       "index": 8,
-      "term": "委譲する",
-      "reading": "いじょうする",
-      "exampleJa": "Sub-agentへTaskを委譲するときは、必要な権限だけを渡します。",
-      "word": "vocab-08.mp3",
-      "wordHash": "7f40ed1e527a55666c4236843de27c2c058ee951e1c49e6812f41c8b6007cf54",
-      "example": "example-08.mp3",
-      "exampleHash": "1a140c7c0d9630c6929750b73d2a1a6e7d1af4997ff4cbf195297277b07a09d6"
+      "term": "隔たり",
+      "reading": "へだたり",
+      "exampleJa": "説明する側と使う側の認識の隔たりを、実演で埋めます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 9,
@@ -137,13 +137,13 @@
     },
     {
       "index": 12,
-      "term": "深刻な",
-      "reading": "しんこくな",
-      "exampleJa": "Permission Ruleを迂回できるBugは、深刻なSecurity Incidentにつながり得ます。",
-      "word": "vocab-12.mp3",
-      "wordHash": "8a70742084bd5464912e05f8b502367a6858bf029288f5cd1b6b0b68101b4403",
-      "example": "example-12.mp3",
-      "exampleHash": "dc2f893a73a92ba9976ae6f43098cc0e8af96d2b89b777f4b570acbfd81ccd37"
+      "term": "源泉",
+      "reading": "げんせん",
+      "exampleJa": "利用者への理解を、改善のアイデアの源泉にします。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 13,
@@ -187,13 +187,13 @@
     },
     {
       "index": 17,
-      "term": "あらかじめ",
-      "reading": "あらかじめ",
-      "exampleJa": "高RiskなActionだけは、あらかじめApproval条件を定めます。",
-      "word": "vocab-17.mp3",
-      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
-      "example": "example-17.mp3",
-      "exampleHash": "95603e6c3cab539a106d7cad0582517a36c2e9edcc11029e9a7b6bc14612e0da"
+      "term": "有力",
+      "reading": "ゆうりょく",
+      "exampleJa": "既存の仕組みを使う方法も、有力な選択肢として検討します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 18,
@@ -276,5 +276,7 @@
       "example": "grammar-example-07.mp3",
       "exampleHash": "3dce819551fc71d38da4074f52a18cf6bf59a034d4b0533049d1b22531c0f298"
     }
-  ]
+  ],
+  "contentRevision": "jlpt-history-dedup-2026-09-18",
+  "browserTtsCount": 6
 }

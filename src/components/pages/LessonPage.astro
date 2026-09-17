@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { render } from 'astro:content';
-import { configuredAudioAssetUrl } from '../../lib/audioUrl';
 
 
 import type { CollectionEntry } from 'astro:content';
@@ -21,8 +20,6 @@ const jlptOrder = ['N5/N4', 'N3', 'N2', 'N1'];
 const vocabGroups = jlptOrder
   .map((level) => ({ level, items: data.vocabulary.map((item, index) => ({ item, index })).filter(({ item }) => item.level === level) }))
   .filter((group) => group.items.length > 0);
-const audioFile = (kind: 'vocab' | 'example' | 'grammar-example', index: number) =>
-  configuredAudioAssetUrl('japanese', lesson.id, `${kind}-${String(index + 1).padStart(2, '0')}.mp3`);
 ---
 <BaseLayout locale={locale} title={`${data.title} · Japan IT / AI Daily`} description={data.description}>
   <div class="container report-layout lesson-detail">
@@ -31,6 +28,7 @@ const audioFile = (kind: 'vocab' | 'example' | 'grammar-example', index: number)
       <h1>{data.title}</h1>
       <p class="meta">{data.description}</p>
       <div class="tags">{data.levels.map((level:string) => <span class="tag">{level}</span>)}</div>
+      <p class="meta">{locale === 'ja' ? '音声は収録内容と一致する場合のみ再生します。未収録の語彙・例文はブラウザーの日本語音声で読み上げます。' : '只播放与当前词条相符的录音；尚无录音的新词和例句使用浏览器日语朗读。'}</p>
       <p class="learning-back"><a href={`${root}japanese/`}>{copy.back}</a></p>
 
       {hasStructuredCards ? (
@@ -59,7 +57,8 @@ const audioFile = (kind: 'vocab' | 'example' | 'grammar-example', index: number)
                               type="button"
                               data-speech={item.reading || item.term}
                               data-speech-kind="word"
-                              data-audio={audioFile('vocab', index)}
+                              data-vocabulary-term={item.term}
+                              data-vocabulary-reading={item.reading}
                               aria-label={`${item.term}の発音を再生`}
                               aria-pressed="false"
                               title={copy.wordTitle}
@@ -105,7 +104,8 @@ const audioFile = (kind: 'vocab' | 'example' | 'grammar-example', index: number)
                             type="button"
                             data-speech={item.exampleJa}
                             data-speech-kind="example"
-                            data-audio={audioFile('example', index)}
+                            data-vocabulary-term={item.term}
+                            data-vocabulary-reading={item.reading}
                             aria-label="例文を読み上げる"
                             aria-pressed="false"
                             title={copy.exampleTitle}
@@ -190,7 +190,7 @@ const audioFile = (kind: 'vocab' | 'example' | 'grammar-example', index: number)
                         type="button"
                         data-speech={item.exampleJa}
                         data-speech-kind="grammar-example"
-                        data-audio={audioFile('grammar-example', index)}
+                        
                         aria-label={copy.grammarAria}
                         aria-pressed="false"
                         title={locale === 'ja' ? copy.grammarAria : '语法例句朗读'}

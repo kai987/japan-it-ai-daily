@@ -12,6 +12,19 @@ export const assertSame = (actual, expected, label) => {
   if (JSON.stringify(actual) !== JSON.stringify(expected)) throw new Error(`${label}: content/audio mapping mismatch`);
 };
 
+export const learningRecordingFiles = (items, date) => items.flatMap((item) => {
+  if (item.playback === 'browser-tts') {
+    if (item.reason !== 'historical-jlpt-repair' || item.word !== null || item.example !== null || item.wordHash || item.exampleHash) {
+      throw new Error(`${date}: invalid explicit browser-speech fallback`);
+    }
+    return [];
+  }
+  if (item.playback || typeof item.word !== 'string' || typeof item.example !== 'string') {
+    throw new Error(`${date}: missing vocabulary recording without explicit fallback`);
+  }
+  return [item.word, item.example];
+});
+
 export const collectAudioAssets = (root) => {
   const contentRoot = join(root, 'src/content');
   const directories = ['daily', 'daily-ja', 'japanese', 'japanese-ja'];
@@ -19,6 +32,7 @@ export const collectAudioAssets = (root) => {
     .filter((name) => /^\d{4}-\d{2}-\d{2}\.md$/.test(name) && name.slice(0, 10) >= policy.from).sort();
   if (!dates.length) throw new Error('No report dates to verify');
   const assets = new Map();
+  let browserTtsCards = 0;
   const read = (path) => readFileSync(join(root, path), 'utf8');
   for (const name of dates) {
     const date = name.slice(0, 10);
@@ -44,9 +58,11 @@ export const collectAudioAssets = (root) => {
       assertSame(data.grammar?.map((item) => [item.pattern, item.exampleJa]),
         learning.grammar?.map((item) => [item.pattern, item.exampleJa]), `${dir}/${date} grammar`);
     }
+    const learningFiles = learningRecordingFiles(learning.items, date);
+    browserTtsCards += learning.items.filter((item) => item.playback === 'browser-tts').length;
     const filenames = [
       ...interview.interview.map((item) => item.audio), ...interview.review.map((item) => item.audio),
-      ...learning.items.flatMap((item) => [item.word, item.example]), ...learning.grammar.map((item) => item.example),
+      ...learningFiles, ...learning.grammar.map((item) => item.example),
     ];
     for (const filename of filenames) {
       if (typeof filename !== 'string' || !/^[\w-]+\.mp3$/.test(filename)) throw new Error(`${date}: invalid MP3 filename`);
@@ -56,7 +72,7 @@ export const collectAudioAssets = (root) => {
       assets.set(path, { sha256: digest(bytes), size: bytes.length });
     }
   }
-  return { dates: dates.length, assets };
+  return { dates: dates.length, assets, browserTtsCards };
 };
 
 export const verifyRemoteAssets = async (assets, base, fetcher = fetch) => {
@@ -80,8 +96,8 @@ export const verifyRemoteAssets = async (assets, base, fetcher = fetch) => {
 };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  const { dates, assets } = collectAudioAssets(process.cwd());
-  console.log(`Audio integrity: ${dates} dates, bilingual text mappings and ${assets.size} local recordings verified.`);
+  const { dates, assets, browserTtsCards } = collectAudioAssets(process.cwd());
+  console.log(`Audio integrity: ${dates} dates, bilingual text mappings and ${assets.size} local recordings verified; ${browserTtsCards} vocabulary cards explicitly use browser Japanese speech (not recordings).`);
   if (process.argv.includes('--remote')) {
     const base = process.env.PUBLIC_AUDIO_BASE_URL || process.env.R2_PUBLIC_BASE_URL;
     if (!base) throw new Error('Configure PUBLIC_AUDIO_BASE_URL or R2_PUBLIC_BASE_URL');

@@ -47,13 +47,13 @@
     },
     {
       "index": 3,
-      "term": "閾値",
-      "reading": "しきいち",
-      "exampleJa": "Confidenceが閾値を下回るとHuman Reviewへ切り替えます。",
-      "word": "vocab-03.mp3",
-      "wordHash": "f8bc54fb875f89a70c9c1acf119c007f21edf8058585a38ce535f4827763fcc8",
-      "example": "example-03.mp3",
-      "exampleHash": "bd651dea92ae2309ea911a3243a791022d9aa92f3d3a257d016e89edcc0b5673"
+      "term": "慣らす",
+      "reading": "ならす",
+      "exampleJa": "本番環境を触る前に、練習用の環境で操作に手を慣らします。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 4,
@@ -67,13 +67,13 @@
     },
     {
       "index": 5,
-      "term": "費用",
-      "reading": "ひよう",
-      "exampleJa": "簡単なTaskは小さいModelへRouteして費用を抑えます。",
-      "word": "vocab-05.mp3",
-      "wordHash": "ff21f9eaa65efd0df7a286dee6d4a5378d04f7645cf704d4edc565d30d5fb78b",
-      "example": "example-05.mp3",
-      "exampleHash": "f585904509d76be3e1fa2c7632635714074f98d0eca5d7fd36a96ddb74496231"
+      "term": "奪い合う",
+      "reading": "うばいあう",
+      "exampleJa": "複数の処理が同じ資源を奪い合わないよう、実行時刻を分けます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 6,
@@ -137,13 +137,13 @@
     },
     {
       "index": 12,
-      "term": "切り替える",
-      "reading": "きりかえる",
-      "exampleJa": "Confidenceが低い場合は人間確認へ切り替えます。",
-      "word": "vocab-12.mp3",
-      "wordHash": "4090e9c6a6bd0805e503a0221da7f96c2038cab60a5f9c8db6a5146916ed3c85",
-      "example": "example-12.mp3",
-      "exampleHash": "f996e596961ef638067280800cbd19906f246490678a3aa6e1f18b96e65c4c19"
+      "term": "出回る",
+      "reading": "でまわる",
+      "exampleJa": "出回っている設定例をそのまま使わず、適用条件を確認します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 13,
@@ -167,13 +167,13 @@
     },
     {
       "index": 15,
-      "term": "明確",
-      "reading": "めいかく",
-      "exampleJa": "各StateのEntry条件とExit条件を明確にします。",
-      "word": "vocab-15.mp3",
-      "wordHash": "bcfba048fefd72818f8065faa67349cac692ed19584fb70981cb261979ff06c9",
-      "example": "example-15.mp3",
-      "exampleHash": "e43d36ae47344ef5b9d69b25c9dd3a433e284de4f4cee87c4d3f4902680417cc"
+      "term": "尽きる",
+      "reading": "つきる",
+      "exampleJa": "今回の反省点は、前提条件の確認を省いたことに尽きます。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 16,
@@ -187,43 +187,43 @@
     },
     {
       "index": 17,
-      "term": "あらかじめ",
-      "reading": "あらかじめ",
-      "exampleJa": "CriticalなState Transitionをあらかじめ定義します。",
-      "word": "vocab-17.mp3",
-      "wordHash": "d911c4c661a04c51defeaf29b4be84404ccbd48b2ca588b984266c3be64f83c4",
-      "example": "example-17.mp3",
-      "exampleHash": "fbea220ff7c955298c4ed4b6c58a42eb4585ccce7f8cc998780d1bcc2b05f03f"
+      "term": "悩ましい",
+      "reading": "なやましい",
+      "exampleJa": "速度と説明の分かりやすさを両立させる方法が悩ましいところです。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 18,
-      "term": "自動的に",
-      "reading": "じどうてきに",
-      "exampleJa": "低RiskなCaseは自動的に次のStateへ遷移します。",
-      "word": "vocab-18.mp3",
-      "wordHash": "8b952ca647a10d95aebb28d1d82a6b99bdc80440732620a12cdb6890e33d8b83",
-      "example": "example-18.mp3",
-      "exampleHash": "6d51fa4b1ddd728de1ceb858ffea23488708631815967f1238a79d543896dd05"
+      "term": "的確",
+      "reading": "てきかく",
+      "exampleJa": "現象を的確に説明できるよう、発生条件を整理します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 19,
-      "term": "原則として",
-      "reading": "げんそくとして",
-      "exampleJa": "高Riskな操作は原則として人間が最終判断します。",
-      "word": "vocab-19.mp3",
-      "wordHash": "a5ca3b6296cce655f9156b4705fdc478b7b978f8e9ed581e9c75981ed5db2e82",
-      "example": "example-19.mp3",
-      "exampleHash": "15a751d2f162a83a02deb5ec3bc0659ae298c07756cd07650fb354ac8c868b46"
+      "term": "かろうじて",
+      "reading": "かろうじて",
+      "exampleJa": "目標値をかろうじて上回っただけなので、条件を変えて再確認します。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     },
     {
       "index": 20,
-      "term": "一方で",
-      "reading": "いっぽうで",
-      "exampleJa": "固定Workflowは再現性が高い一方で、例外への柔軟性が下がります。",
-      "word": "vocab-20.mp3",
-      "wordHash": "84a90332bba386f1c0a0620ba3825af612e122c46383f79ac8c43499482358ce",
-      "example": "example-20.mp3",
-      "exampleHash": "e031a423f99b610640817d12929a55cc018dab88c94082b4e01fa05cfb5d8027"
+      "term": "際限",
+      "reading": "さいげん",
+      "exampleJa": "履歴が際限なく増えないよう、保存期間を明確にします。",
+      "playback": "browser-tts",
+      "reason": "historical-jlpt-repair",
+      "word": null,
+      "example": null
     }
   ],
   "grammar": [
@@ -276,5 +276,7 @@
       "example": "grammar-example-07.mp3",
       "exampleHash": "fdd1df15258e72218c781a06390a42d53d955a4dda4e46bb3bb0c1eb40bacb22"
     }
-  ]
+  ],
+  "contentRevision": "jlpt-history-dedup-2026-09-18",
+  "browserTtsCount": 8
 }
