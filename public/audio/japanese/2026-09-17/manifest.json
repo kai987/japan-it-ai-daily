@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-17",
+  "generatedAt": "2026-09-17T06:09:38.679Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "絞り込む",
+      "reading": "しぼりこむ",
+      "exampleJa": "Agentに渡すContextをTask単位で絞り込みます。",
+      "word": "vocab-01.mp3",
+      "wordHash": "de95b4a91d2cdf5ba0bee966c5ea23747913808a8c4a0545d17b60229c5a4bbd",
+      "example": "example-01.mp3",
+      "exampleHash": "78b7f1ef5c250acda1e95a90e05bca3ce2d8e97fb7ae6b8bbfc5c2fec899a62c"
+    },
+    {
+      "index": 2,
+      "term": "切り分ける",
+      "reading": "きりわける",
+      "exampleJa": "会話の状態とTool実行の状態を切り分けて管理します。",
+      "word": "vocab-02.mp3",
+      "wordHash": "287680674b017d3e738c36b35de07999a2280ab4463e2042c831cc7726c5855c",
+      "example": "example-02.mp3",
+      "exampleHash": "b575b019a14adea8fbbb7d864e71fa3a5095eb615be1f81c5b5d854a4225034c"
+    },
+    {
+      "index": 3,
+      "term": "書き戻す",
+      "reading": "かきもどす",
+      "exampleJa": "合意した判断はSession Memoryではなく仕様書へ書き戻します。",
+      "word": "vocab-03.mp3",
+      "wordHash": "bd8024cfc5df66a872032b8b667abf3a4133d3a4afcc4764ffb411787ecc7d33",
+      "example": "example-03.mp3",
+      "exampleHash": "2d463e133887012dd874846925f2d5732ef7e13dbaf8edc50f4eb5d78db461ea"
+    },
+    {
+      "index": 4,
+      "term": "持ち越す",
+      "reading": "もちこす",
+      "exampleJa": "前Taskの会話履歴を次のAgentへ持ち越しません。",
+      "word": "vocab-04.mp3",
+      "wordHash": "efb18091e81668e9c89338a3c252e1539b9c997e2e4c60158d1e8bbd7a9b294a",
+      "example": "example-04.mp3",
+      "exampleHash": "a3a0c6418b34f205b82cea8397483845ac857b8dbc819e75c910a8b3541e1344"
+    },
+    {
+      "index": 5,
+      "term": "引き継ぐ",
+      "reading": "ひきつぐ",
+      "exampleJa": "次Sessionには進捗だけをJSONから引き継がせます。",
+      "word": "vocab-05.mp3",
+      "wordHash": "27f0280fefa547a7fb014c643fb49c943754c6264be55e07f21f8c8b1c248473",
+      "example": "example-05.mp3",
+      "exampleHash": "0ad4fb394bf9866575fd928dfe998519946cbd806cb953f95edb261b17fe545b"
+    },
+    {
+      "index": 6,
+      "term": "抑える",
+      "reading": "おさえる",
+      "exampleJa": "必要なTraceを残しながら保存Costを抑えます。",
+      "word": "vocab-06.mp3",
+      "wordHash": "8eab76035dab35c86a9d486a200ad7b4a26e0e338df92fb98f5b1e54eab45bfb",
+      "example": "example-06.mp3",
+      "exampleHash": "5d6a9eb77686a5a72f9171398630ba3d88b5d6c0997a1f653c475e189c51eb1a"
+    },
+    {
+      "index": 7,
+      "term": "見落とす",
+      "reading": "みおとす",
+      "exampleJa": "平均値だけを見るとBenchmark条件の差を見落とします。",
+      "word": "vocab-07.mp3",
+      "wordHash": "172061bace092671c943f6d722486ca79950eb7277a01409e867466ed7f6985f",
+      "example": "example-07.mp3",
+      "exampleHash": "a24421d3db044592f0a0b974290100a289003ff9db030f3131ff116d7f985342"
+    },
+    {
+      "index": 8,
+      "term": "振り分ける",
+      "reading": "ふりわける",
+      "exampleJa": "DDOTはtraceIDを使ってSpanを同じCollectorへ振り分けます。",
+      "word": "vocab-08.mp3",
+      "wordHash": "d404dbc39eee3f0a2463f2dfd0853efa923b0c51e8c179e4f53df1e670cc18f1",
+      "example": "example-08.mp3",
+      "exampleHash": "fe3615f8fe68e8182bca4b33c016d3fc53315484b29b78ecec964f2a8580c764"
+    },
+    {
+      "index": 9,
+      "term": "追跡する",
+      "reading": "ついせきする",
+      "exampleJa": "障害時は一つのTraceからService間の経路を追跡します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "a194303a6363499e5a9e3bb46b976a247643951a558407e3aff55842a978be1a",
+      "example": "example-09.mp3",
+      "exampleHash": "c5ddcf48f2a29102326641f075a24415c97fb3e5017dba9e5419929b5045fd7b"
+    },
+    {
+      "index": 10,
+      "term": "境界",
+      "reading": "きょうかい",
+      "exampleJa": "許可リストとSandboxを同じSecurity Boundaryとして扱いません。",
+      "word": "vocab-10.mp3",
+      "wordHash": "802f7a41723ff2c16a4bd0fa063a00c74e37c02b64e4f285b0ef0a80a986f02b",
+      "example": "example-10.mp3",
+      "exampleHash": "cf80284d4c624c107a1536a8eaaf92b9a45c4eb56982644eb865d48d7ab218cc"
+    },
+    {
+      "index": 11,
+      "term": "欠損",
+      "reading": "けっそん",
+      "exampleJa": "Pod終了時のTrace欠損をpreStopで抑えます。",
+      "word": "vocab-11.mp3",
+      "wordHash": "c053d3ef72c94c78e7e5364964dbcf8db051006c7ae18cbb1aa92d4919707a50",
+      "example": "example-11.mp3",
+      "exampleHash": "fc850e830414e4a2ff6cc887a40c6585dcef05388303c103f088d723169ced0e"
+    },
+    {
+      "index": 12,
+      "term": "根拠",
+      "reading": "こんきょ",
+      "exampleJa": "Reviewの判断にはCode行かTest出力の根拠を残します。",
+      "word": "vocab-12.mp3",
+      "wordHash": "a6f653ee0feb745642c64400f7f87108014c78ad8ca97c067589d143b2b36843",
+      "example": "example-12.mp3",
+      "exampleHash": "dfacae8173326989e496e54f5d92e7e41d4c4c0b0d5fa1a2eeb1ebeb0d824490"
+    },
+    {
+      "index": 13,
+      "term": "負荷",
+      "reading": "ふか",
+      "exampleJa": "Policyを集約してCollectorのCPU負荷を下げます。",
+      "word": "vocab-13.mp3",
+      "wordHash": "43d737a2dc98f2419d4c1c2a40ab8d23b8a18a2241e0e13c3154a519f30f291a",
+      "example": "example-13.mp3",
+      "exampleHash": "0f1a2dd79a556c24ee9fb9babab71a8fe8e6a4c2de5633e4bbce509a3ad41cc9"
+    },
+    {
+      "index": 14,
+      "term": "妥当な",
+      "reading": "だとうな",
+      "exampleJa": "同じ条件で測れているか確認してから妥当な比較を行います。",
+      "word": "vocab-14.mp3",
+      "wordHash": "94b6c5f3d7c4d2d1a6b6b1f23b462f2a8df9f3d79c9de57d935600156bbbb560",
+      "example": "example-14.mp3",
+      "exampleHash": "a1dd8f390e3c26b03ae235bd4bc0e445e85db027f1e79d2cb4643eed7a69cf7e"
+    },
+    {
+      "index": 15,
+      "term": "明確な",
+      "reading": "めいかくな",
+      "exampleJa": "Taskを完了とみなす条件を明確に定義します。",
+      "word": "vocab-15.mp3",
+      "wordHash": "9d1f3b30432d14bef97bbd9e9e2b9d9657a7daf0ca71ddfdef68fbae40d7885a",
+      "example": "example-15.mp3",
+      "exampleHash": "c3bf6f8c82fd0c4f3bd4b6b48affca4c47d0f9a31ab8ee617c0cedcaa19a7c78"
+    },
+    {
+      "index": 16,
+      "term": "狭い",
+      "reading": "せまい",
+      "exampleJa": "OJはViteより狭い対象に最適化されています。",
+      "word": "vocab-16.mp3",
+      "wordHash": "6e4cb737e3cedf77a9d4048ef247da5042ae5e6cf65a6816c267f39aac146236",
+      "example": "example-16.mp3",
+      "exampleHash": "3b092f88978684e3f6e5478e3ce4b25a198534cb748a32d58ba89d74ce465059"
+    },
+    {
+      "index": 17,
+      "term": "機械的に",
+      "reading": "きかいてきに",
+      "exampleJa": "Test 0件も機械的にFailとして判定します。",
+      "word": "vocab-17.mp3",
+      "wordHash": "dbad366349d6b5cc50a6c90d22f00aae96a8dcebfb395f1fa007996647f84e81",
+      "example": "example-17.mp3",
+      "exampleHash": "05b923120ca95cc22053624863727f414106da43df7ef01aa6a5f60b21f19379"
+    },
+    {
+      "index": 18,
+      "term": "段階的に",
+      "reading": "だんかいてきに",
+      "exampleJa": "Preview基盤をViteからOJへ段階的に切り替えます。",
+      "word": "vocab-18.mp3",
+      "wordHash": "5de1c1701c67f1c3cad667367791e1afe44a3560640016b9efb3126e8dcc09e4",
+      "example": "example-18.mp3",
+      "exampleHash": "2f9b00c7e29a3417bce2e2b0a6bfbbecc9b19a09a17ef836548352658bdb4397"
+    },
+    {
+      "index": 19,
+      "term": "確実に",
+      "reading": "かくじつに",
+      "exampleJa": "Errorを含むTraceは調査できるよう確実に残します。",
+      "word": "vocab-19.mp3",
+      "wordHash": "1d10072feed2691f3211c724103c01cc97d18b5236b4d9025815360ee271cece",
+      "example": "example-19.mp3",
+      "exampleHash": "89336fb9f86623b4e477f4a4e921bceba2093b32959d9d3a632f79d0add104d8"
+    },
+    {
+      "index": 20,
+      "term": "ただし",
+      "reading": "ただし",
+      "exampleJa": "速度は改善しました。ただし、比較条件は完全には同じではありません。",
+      "word": "vocab-20.mp3",
+      "wordHash": "59966a98146429a6a802b8f79904bb67077ff9ef8bc2eb902af03d214811a33c",
+      "example": "example-20.mp3",
+      "exampleHash": "22d02fef11ff09fed34b1f06d89ac5c4ced7f3961389ea3d731181b02b409ea8"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまらず",
+      "exampleJa": "Tail SamplingはError Traceの保存にとどまらず、性能調査にも利用されています。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "b3deb77667dcd6a8b761ada957227f18714ff3ca981828f8f3c84e2c60bb2b2f"
+    },
+    {
+      "index": 2,
+      "pattern": "～たうえで",
+      "exampleJa": "Benchmark条件を確認したうえで、OJとViteの性能を比較します。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "fe04fb6ea64c719b9455356597a805177fef6d2102b84006bbcc18b9a6797d57"
+    },
+    {
+      "index": 3,
+      "pattern": "～に応じて",
+      "exampleJa": "Taskの設計自由度に応じてOpusとSonnetを使い分けます。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "b642b2b726941acfba945e8b39343592d0f9ce547c8696bb680bbb6b8021141e"
+    },
+    {
+      "index": 4,
+      "pattern": "～とは限らない",
+      "exampleJa": "一つのFeatureで開発期間が短縮しても、別Projectで同じ効果が出るとは限りません。",
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "f9b54419a6af980c35b9b7986de62000e976b2b81133fb717ced6d6f82ff8534"
+    },
+    {
+      "index": 5,
+      "pattern": "～かねない",
+      "exampleJa": "SSH Agent Socketを無制限にForwardすると、Sandbox内から資格情報を悪用されかねません。",
+      "example": "grammar-example-05.mp3",
+      "exampleHash": "d8efd63a3e1e9c419a671b4c06c374e18c84eea50d5ede928717c478f02fb1c6"
+    },
+    {
+      "index": 6,
+      "pattern": "～を余儀なくされる",
+      "exampleJa": "大量のPreview Environmentでは、Memory Costを抑えるため基盤の見直しを余儀なくされます。",
+      "example": "grammar-example-06.mp3",
+      "exampleHash": "d0d578d2452f2852c6c62ed17f971247511c6b363abf8fecbd67d0e6e47072ea"
+    },
+    {
+      "index": 7,
+      "pattern": "～に至るまで",
+      "exampleJa": "ConversationからBackground TaskのCommitに至るまで、状態遷移をAuditできるようにします。",
+      "example": "grammar-example-07.mp3",
+      "exampleHash": "f4fdf58ceb2d75da6b473bc2cda713b3a7c98f739b20eed70f6b73bf0fa24982"
+    }
+  ]
+}

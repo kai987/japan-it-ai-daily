@@ -1,0 +1,150 @@
+{
+  "date": "2026-09-17",
+  "generatedAt": "2026-09-17T06:10:39.792Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "Claude Codeで大きな機能を実装させる場合、どのようにHarnessを設計しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "4993b2f773f98c2c7cbfa2baa16c5c91820a4e54c02a469e4db1970f5ef041a1",
+      "durationSeconds": 5.908
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "自己申告ではなく、Taskごとに完了条件を固定します。SmartHRではSkill、進行状態JSON、12項目のShell検査でHarnessを作り、実装Agentを1 Taskごとに立て直してTDDで進めました。Test 0件もFailにし、Feature Flag OFF時の既存挙動も機械判定します。ただし2.5か月から1か月は1機能の事例なので一般化しません。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "ac3c9edebd6e6072f396679b58b27bd603f417bfabe7683d3ec42c1e50e56740",
+      "durationSeconds": 27.605,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "高トラフィック環境でTail-based Samplingを運用するなら、何を設計しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "e9ce2e36c5e8be49de2996c4f9f82a84600185f765d1d945faacd463365893e2",
+      "durationSeconds": 5.978
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "異常Traceを落とさずCollector Costも制御します。AJA DSPではDDOTをDaemonSetで置き、traceIDで専用Collectorへ振り分け、decision_wait 10秒でTail Samplingしました。20 Policyの重複走査がCPUを使ったため7つへ集約し、Scale-down時はpreStop 30秒でTraceを流します。ただし保存率は同社Traffic固有です。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "4a0eb15d176f13ee2abbce50cd4b4c6c587480fd7370ab84469d3f2a00eb002c",
+      "durationSeconds": 26.147,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "Coding AgentのCommand許可リストをSecurity Boundaryとして使えますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "918c2fce6b82e8994a54ebe68b7f499526974c07c896eb55468bbcb22babd99e",
+      "durationSeconds": 5.514
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "許可リストだけには依存しません。CVE-2026-22708ではexportでPAGERを書き換え、利用者がgit branchを承認するとPayloadが動き、Cursor v2.3で修正されました。Docker SandboxのmicroVMとdefault-deny NetworkでHostを隔離し、未検証Codeは--cloneを使います。ただしSSH Agent Socketは生きた資格情報なので接続先も制限します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "f6809cb3910e8e0a7a761f9d9b7633773cf44fe31993264427c25d1969dd1ea7",
+      "durationSeconds": 30.362,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "AI開発PlatformのFrontend Preview基盤を高速化するとき、Benchmarkをどう読みますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "03d18fbc23a2f899f9ae50a3baec09d9d9d9923586140cd0f022b52af32f056a",
+      "durationSeconds": 7.186
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "比較条件とMemoryを分けて見ます。LovableのOJ移行ではPreview中央値が17.4秒から8.0秒、環境確保が14.5秒から3.0秒になりました。ただし1万React Componentの比較はVite側だけvite-plugin-checkerが動きます。Bundled Modeは1.315対1.528秒なので、Plugin互換性と115MB対1751MBのMemory差を別に評価します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "208021e83997b479f3673397ec82c2b1c34a7a44bd0c0cb54c431bdeceb36062",
+      "durationSeconds": 31.564,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "Realtime Voice AgentでToolを非同期実行する場合、何を設計しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "3625ef0653e5c470a6f40e070136163152463d6c0530b317061d9d6c423d551e",
+      "durationSeconds": 5.943
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "会話継続とTask完了を別Stateにします。Gemini 3.8 Liveは会話中も裏でToolを実行でき、Extended Thinkingは複雑な多段階処理向けです。ただし82.6という音声評価はGoogle公表Benchmarkで、EnterpriseはPrivate Previewです。本番ではToolの副作用、Timeout、割り込み、最終Commitを別Gateで確認します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "5286683eef0089b8fa11f89f53d84376380183c7fd7786382caa38629a2e9233",
+      "durationSeconds": 26.966,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "AI Coding Agentの「完了」をModelの自己申告に任せないため、どのようなGateを置きますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "0f3df5e6d8b03b7b191aceab7f76be9be63e5a39a847458d1f783a8f898f1487",
+      "durationSeconds": 6.93
+    },
+    {
+      "index": 2,
+      "text": "Tail-based Samplingを大規模環境へ入れるとき、保存率以外に何を見ますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "bae8183e4e78bc1038cb5c3ff69e862fd0445bbfbeb5f262499d8de42c26cb75",
+      "durationSeconds": 6.373
+    },
+    {
+      "index": 3,
+      "text": "Coding AgentのHuman ApprovalがあってもSandboxが必要な理由は何ですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "e1ff0daa889b5e0f9350a98ea5cdec4428963decdb9b02877808e05cb7e1a646",
+      "durationSeconds": 5.722
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-17T06:10:40.268Z"
+}
