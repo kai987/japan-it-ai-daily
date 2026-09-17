@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-17",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-17T00:55:00.000Z",
+  "scope": "Reviewed the September 16–17 Japanese IT/AI news cycle and excluded the September 16 Top 5. Selected original Japanese articles and engineering posts covering Claude Code harness design, production OpenTelemetry tail sampling, Cursor agent security boundaries, Rust-based frontend preview infrastructure, and asynchronous realtime voice agents. Facts, measurements, implementation details and limitations were checked against the selected originals; case-study and vendor benchmark results are explicitly bounded rather than generalized.",
+  "articles": [
+    {
+      "articleId": "2026-09-17-top-1",
+      "url": "https://tech.smarthr.jp/entry/2026/09/16/110205",
+      "originalTitle": "Claude Codeで開発期間を2.5か月から1か月に縮めた「ハーネス」の設計手法",
+      "source": "SmartHR Tech Blog",
+      "topic": "Claude Code / AI Coding / Harness Engineering / TDD / Development Productivity",
+      "access": "full",
+      "accessNote": "SmartHR Tech Blog公開本文を確認。Skill、進行状態JSON、12項目のShell検査、Task単位のImplementation Agent、TDD、Feature Flag OFF時の回帰確認、2.5か月から約1か月という単一機能の事例、およびHarnessは銀の弾丸ではないという制約を確認した。",
+      "capturedAt": "2026-09-17T00:50:00.000Z",
+      "snapshotSha256": "74af23712780f7ca1ef1eab695d1c61a5f792aabaa40d9ec4fa77302b08ebaf5",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "SmartHRはClaude Code向けHarnessをSkill、進行状態JSON、12項目のShell検査、Task単位で起動するImplementation AgentとTDDで構成し、対象の単一機能では当初約2.5か月の実質工数見積もりに対し約1か月で一通り実装したと報告した。",
+          "quote": "12項目を機械的に判定する",
+          "locator": "SmartHR Tech Blog: ハーネス全体設計、機械的チェック、効果と今後の改善",
+          "conditions": "The 2.5-month to 1-month result is one unreleased feature in one team, not a general Claude Code productivity benchmark. The author explicitly says the harness is not a silver bullet and may not fit every project or infrastructure-design task.",
+          "usedIn": {"zh": "Claude Code", "ja": "Claude Code", "interview": "Claude Code"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-17-top-2",
+      "url": "https://developers.cyberagent.co.jp/blog/archives/65910/",
+      "originalTitle": "毎秒数十万スパンを扱う、高トラフィック環境での分散トレーシング基盤の構築",
+      "source": "CyberAgent Developers Blog",
+      "topic": "SRE / OpenTelemetry / Distributed Tracing / Tail Sampling / Datadog / Kubernetes",
+      "access": "full",
+      "accessNote": "CyberAgent Developers Blog公開本文を確認。DDOT DaemonSet、traceIDによるLoad Balancing、専用Sampling Collector、Tail-based Sampling、20 Policyから7 Policyへの集約、sample_on_first_match、Queue/Retry、terminationGracePeriodSeconds 60秒とpreStop 30秒、Productionでの観測結果を確認した。",
+      "capturedAt": "2026-09-17T00:50:00.000Z",
+      "snapshotSha256": "28c3fb54afe009da065e2eacddc658b22f5eebf4fc5884cc6cd493d1b8560eb7",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "AJA DSPはDDOTをNodeごとのDaemonSetとして配置し、traceIDで専用CollectorへSpanを振り分けてTail Samplingを行い、重複評価によるCPU負荷を抑えるためPolicyを20個から7個へ集約し、Scale-down時にはpreStop 30秒などでTrace欠損を抑えた。",
+          "quote": "20 個のポリシーを 7 個まで削減",
+          "locator": "CyberAgent Developers Blog: Tail-based Sampling構成、CPU負荷改善、Scale-down対策",
+          "conditions": "Sampling percentages, policy taxonomy and resource budgets are specific to AJA DSP's traffic profile of hundreds of thousands of spans per second. Other systems must re-measure span volume, trace duration, collector memory and cost.",
+          "usedIn": {"zh": "DDOT", "ja": "DDOT", "interview": "DDOT"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-17-top-3",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/16/news033.html",
+      "originalTitle": "人が「承認」した無害なコマンドでAIが乗っ取られる　コードエディタCursorを襲った“2行の攻撃”",
+      "source": "＠IT",
+      "topic": "AI Coding / Cursor / Security / Sandbox / Prompt Injection / CVE",
+      "access": "full",
+      "accessNote": "＠IT公開本文を確認。CursorのCVE-2026-22708、export等によるEnvironment Variable改変、PAGERとgit branchを使う2段階Trigger、v2.3での修正、Docker SandboxesのmicroVM/default-deny Network、--clone、SSH Agent ForwardingとNetwork Egressの残存Riskを確認した。",
+      "capturedAt": "2026-09-17T00:50:00.000Z",
+      "snapshotSha256": "814dd856973dd9986af138ece046188b70f3c7c3e322e43f7d46721f4da9686d",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "CVE-2026-22708ではShell Built-inによるEnvironment Variable改変を利用し、PAGERを書き換えた後に利用者がgit branchを承認するとPayloadが起動する経路が示され、Cursor v2.3で既知経路が修正された。記事はAllow-list/Human ApprovalとSandbox Isolationを別のSecurity Boundaryとして扱う必要性を説明した。",
+          "quote": "CVE-2026-22708",
+          "locator": "＠IT: 2行の攻撃、Cursor v2.3での修正、Docker Sandboxesの防御と限界",
+          "conditions": "The demonstrated exploit path is historical and was fixed in Cursor v2.3. Sandboxing reduces blast radius but does not remove risks from SSH-agent forwarding, network egress, workspace synchronization or shared state.",
+          "usedIn": {"zh": "CVE-2026-22708", "ja": "CVE-2026-22708", "interview": "CVE-2026-22708"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-17-top-4",
+      "url": "https://gihyo.jp/article/2026/09/oj",
+      "originalTitle": "Lovable、ViteからRust製開発ツール「OJ」への切り替えを紹介",
+      "source": "gihyo.jp",
+      "topic": "Frontend / React / Vite / Rust / OJ / AI App Platform",
+      "access": "full",
+      "accessNote": "gihyo.jp公開本文を確認。Lovableの1日約100万隔離環境、Rust製OJ、Rolldown/Oxc、Preview中央値17.4秒から8.0秒、環境確保14.5秒から3.0秒、Bundled Development Modeの1.315秒対1.528秒とMemory 115MB対1751MB、vite-plugin-checker非対称条件を確認した。",
+      "capturedAt": "2026-09-17T00:50:00.000Z",
+      "snapshotSha256": "d15a7ab47728d6bce1ddc2cc70c9b018b0acc821e23d7b8fa0c61a4ae7a16dc2",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "LovableはPreview基盤をViteからRust製OJへ段階移行し、実ServiceでPreview中央値17.4秒から8.0秒、環境確保14.5秒から3.0秒を報告した。一方、1万React Componentの比較はVite側だけvite-plugin-checkerが動く非対称条件で、より公平なBundled Modeでは時間差は小さくMemory差が大きかった。",
+          "quote": "17.4秒から8.0秒へ",
+          "locator": "gihyo.jp: Production Preview改善、1万Component Benchmark、Bundled Development Mode、Evan You氏の指摘",
+          "conditions": "OJ does not cover all Vite use cases or plugins. Some modes are experimental, and benchmark multipliers must not be generalized across unequal plugin/configuration conditions.",
+          "usedIn": {"zh": "OJ", "ja": "OJ", "interview": "OJ"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-17-top-5",
+      "url": "https://www.itmedia.co.jp/news/article/2609/16/2000001524/",
+      "originalTitle": "Google、会話を止めずに裏でタスクを実行する音声モデル「Gemini 3.8 Live」公開　推論強化の上位版も",
+      "source": "ITmedia NEWS",
+      "topic": "Gemini / Voice Agent / Async Tool Execution / Multimodal / React",
+      "access": "full",
+      "accessNote": "ITmedia NEWS公開本文を確認。Gemini 3.8 Live / Extended Thinking、Conversationを止めないBackground Tool実行、Video Input、97言語、Gemini API/AI Studio、82.6のGoogle公表Speech-to-Speech指標、EnterpriseのLimited/Private Previewおよび料金未明の境界を確認した。",
+      "capturedAt": "2026-09-17T00:50:00.000Z",
+      "snapshotSha256": "c2e3a8e969b8abdc8c1ff735d43085d4b1f640dcdea5d2e77a4e92204f6f34e6",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "GoogleのGemini 3.8 LiveはConversation中にTool/API処理をBackgroundで継続でき、Extended Thinkingは複雑なMulti-step Reasoning向けとされた。Google公表Speech-to-Speech Quality IndexはExtended Thinking（High）82.6だった。",
+          "quote": "処理の完了を待たずに会話を続けられる",
+          "locator": "ITmedia NEWS: Gemini 3.8 Liveの非同期Tool実行、Extended Thinking、Benchmark、提供形態",
+          "conditions": "The 82.6 score is a Google-published vendor benchmark rather than a production success rate for Japanese service workloads. Gemini Enterprise was still limited/private preview and article-time API metered pricing was not clearly stated.",
+          "usedIn": {"zh": "Gemini 3.8 Live", "ja": "Gemini 3.8 Live", "interview": "Gemini 3.8 Live"}
+        }
+      ]
+    }
+  ]
+}
