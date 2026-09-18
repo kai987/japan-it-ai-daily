@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { readFileSync } from 'node:fs';
+import { readStructuredInterview } from '../../scripts/structured-interview.mjs';
 
-const pilot = JSON.parse(readFileSync('src/data/interviews/2026-09-18.json', 'utf8'));
+const pilot = readStructuredInterview('2026-09-18')!;
 for (const locale of ['zh', 'ja'] as const) {
   for (const width of [1440, 390]) {
     test(`${locale} structured interview renders unchanged content at ${width}px`, async ({ page }, info) => {
