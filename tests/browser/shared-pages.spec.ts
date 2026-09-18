@@ -35,6 +35,28 @@ for (const locale of ['zh', 'ja']) {
     expect(errors).toEqual([]);
   });
 
+  test(`${locale}: report title is rendered once and duplicate Markdown title stays out of the TOC`, async ({ page }, testInfo) => {
+    await page.goto(`${root}daily/2026-09-17/`);
+    const pageTitle = page.locator('article.prose > h1').first();
+    const duplicateLeadTitle = page.locator('article.prose > .tags + h1');
+
+    await expect(pageTitle).toBeVisible();
+    await expect(duplicateLeadTitle).toHaveCount(1);
+    await expect(duplicateLeadTitle).toBeHidden();
+
+    const duplicateId = await duplicateLeadTitle.getAttribute('id');
+    expect(duplicateId).toBeTruthy();
+    const tocHrefs = await page.locator('aside.toc a').evaluateAll((links) =>
+      links.map((link) => link.getAttribute('href')),
+    );
+    expect(tocHrefs).not.toContain(`#${duplicateId}`);
+
+    await page.screenshot({
+      path: testInfo.outputPath(`report-title-${locale}.png`),
+      fullPage: false,
+    });
+  });
+
   test(`${locale}: learning filters retain URL state, pagination and locale route`, async ({ page }) => {
     await page.goto(`${root}japanese/?level=IT%2FAI&page=2#lessons`);
     await expect(page.locator('.lesson-row:visible')).toHaveCount(10);
