@@ -71,20 +71,33 @@ export const collectAudioAssets = (root) => {
         newGrammar.map((item) => [item.pattern, item.exampleJa]), `${dir}/${date} grammar`);
     }
     for (const item of (learning.items || []).filter((item) => item.studyKind === 'review')) {
-      if (!item.identity || !item.firstIntroducedDate || item.firstIntroducedDate >= date) throw new Error(`${date}: invalid review vocabulary audio metadata`);
+      if (!item.identity || !item.firstIntroducedDate || item.firstIntroducedDate >= date || item.audioDate !== item.firstIntroducedDate) {
+        throw new Error(`${date}: invalid review vocabulary audio metadata`);
+      }
+      if (String(item.word || '').startsWith('review-') || String(item.example || '').startsWith('review-')) {
+        throw new Error(`${date}: duplicated review vocabulary recording`);
+      }
     }
     for (const item of (learning.grammar || []).filter((item) => item.studyKind === 'review')) {
-      if (!item.identity || !item.firstIntroducedDate || item.firstIntroducedDate >= date) throw new Error(`${date}: invalid review grammar audio metadata`);
+      if (!item.identity || !item.firstIntroducedDate || item.firstIntroducedDate >= date || item.audioDate !== item.firstIntroducedDate) {
+        throw new Error(`${date}: invalid review grammar audio metadata`);
+      }
+      if (String(item.example || '').startsWith('review-')) throw new Error(`${date}: duplicated review grammar recording`);
     }
-    const learningFiles = learningRecordingFiles(learning.items, date);
+
     browserTtsCards += learning.items.filter((item) => item.playback === 'browser-tts').length;
-    const filenames = [
-      ...interview.interview.map((item) => item.audio), ...interview.review.map((item) => item.audio),
-      ...learningFiles, ...grammarRecordingFiles(learning.grammar, date),
+    const recordingAssets = [
+      ...interview.interview.map((item) => ({ audioDate: date, filename: item.audio })),
+      ...interview.review.map((item) => ({ audioDate: date, filename: item.audio })),
+      ...(learning.items || []).flatMap((item) =>
+        learningRecordingFiles([item], date).map((filename) => ({ audioDate: item.studyKind === 'review' ? item.audioDate : date, filename }))),
+      ...(learning.grammar || []).flatMap((item) =>
+        grammarRecordingFiles([item], date).map((filename) => ({ audioDate: item.studyKind === 'review' ? item.audioDate : date, filename }))),
     ];
-    for (const filename of filenames) {
+    for (const { audioDate, filename } of recordingAssets) {
       if (typeof filename !== 'string' || !/^[\w-]+\.mp3$/.test(filename)) throw new Error(`${date}: invalid MP3 filename`);
-      const path = `japanese/${date}/${filename}`;
+      if (typeof audioDate !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(audioDate)) throw new Error(`${date}: invalid audio source date`);
+      const path = `japanese/${audioDate}/${filename}`;
       const bytes = readFileSync(join(root, 'public/audio', path));
       if (!bytes.length) throw new Error(`${path}: empty recording`);
       assets.set(path, { sha256: digest(bytes), size: bytes.length });

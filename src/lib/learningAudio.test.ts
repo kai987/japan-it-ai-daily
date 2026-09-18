@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { resolveLearningRecording as resolve } from './learningAudio';
+import { resolveLearningRecording as resolve, resolveLearningRecordingAsset as resolveAsset } from './learningAudio';
 import { learningRecordingFiles } from '../../scripts/verify-audio-integrity.mjs';
 const item = { term: '耐性', reading: 'たいせい', exampleJa: '耐性を確認します。', word: 'vocab-07.mp3', example: 'example-07.mp3' };
 const target = { kind: 'word', term: '耐性', reading: 'たいせい', text: 'たいせい' };
@@ -33,8 +33,9 @@ describe('content-addressed learning audio mapping', () => {
         term: '検証する',
         reading: 'けんしょうする',
         exampleJa: '実データで検証します。',
-        word: 'review-vocab-01.mp3',
-        example: 'review-example-01.mp3',
+        audioDate: '2026-08-12',
+        word: 'vocab-07.mp3',
+        example: 'example-07.mp3',
       }],
       grammar: [{
         studyKind: 'review' as const,
@@ -42,12 +43,14 @@ describe('content-addressed learning audio mapping', () => {
         firstIntroducedDate: '2026-08-12',
         pattern: '～わけではない',
         exampleJa: 'すべてのケースに当てはまるわけではない。',
-        example: 'review-grammar-example-01.mp3',
+        audioDate: '2026-08-12',
+        example: 'grammar-example-02.mp3',
       }],
     };
-    expect(resolve(manifest, { kind: 'word', term: '検証する', reading: 'けんしょうする', text: 'けんしょうする' })).toBe('review-vocab-01.mp3');
-    expect(resolve(manifest, { kind: 'example', term: '検証する', reading: 'けんしょうする', text: '実データで検証します。' })).toBe('review-example-01.mp3');
-    expect(resolve(manifest, { kind: 'grammar-example', text: 'すべてのケースに当てはまるわけではない。' })).toBe('review-grammar-example-01.mp3');
+    expect(resolve(manifest, { kind: 'word', term: '検証する', reading: 'けんしょうする', text: 'けんしょうする' })).toBe('vocab-07.mp3');
+    expect(resolveAsset(manifest, { kind: 'word', term: '検証する', reading: 'けんしょうする', text: 'けんしょうする' })).toEqual({ file: 'vocab-07.mp3', audioDate: '2026-08-12' });
+    expect(resolveAsset(manifest, { kind: 'example', term: '検証する', reading: 'けんしょうする', text: '実データで検証します。' })).toEqual({ file: 'example-07.mp3', audioDate: '2026-08-12' });
+    expect(resolveAsset(manifest, { kind: 'grammar-example', text: 'すべてのケースに当てはまるわけではない。' })).toEqual({ file: 'grammar-example-02.mp3', audioDate: '2026-08-12' });
   });
   it('validates rather than silently ignoring missing recordings', () => {
     const fallback = { ...item, playback: 'browser-tts', reason: 'historical-jlpt-repair', word: null, example: null };

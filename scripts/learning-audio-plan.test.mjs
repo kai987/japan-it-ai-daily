@@ -21,12 +21,20 @@ test('review audio plan mirrors derived review cards without future backfill', (
       expect(item.term).toBeTruthy();
       expect(item.reading).toBeTruthy();
       expect(item.exampleJa).toBeTruthy();
+      expect(item.audioDate).toBe(item.firstIntroducedDate);
+      expect(item.word).toMatch(/^vocab-\d{2}\.mp3$/);
+      expect(item.example).toMatch(/^example-\d{2}\.mp3$/);
+      expect(item.word.startsWith('review-')).toBe(false);
+      expect(item.example.startsWith('review-')).toBe(false);
     }
     for (const item of plan.grammar) {
       expect(item.studyKind).toBe('review');
       expect(item.firstIntroducedDate < date).toBe(true);
       expect(item.pattern).toBeTruthy();
       expect(item.exampleJa).toBeTruthy();
+      expect(item.audioDate).toBe(item.firstIntroducedDate);
+      expect(item.example).toMatch(/^grammar-example-\d{2}\.mp3$/);
+      expect(item.example.startsWith('review-')).toBe(false);
     }
 
     if (date < archive.lastDate && plan.grammar.length) historicalGrammarDays += 1;

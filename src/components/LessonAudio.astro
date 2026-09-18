@@ -1,6 +1,6 @@
 <script>
   import { configuredAudioAssetUrl, localAudioAssetUrl } from '../lib/audioUrl';
-  import { resolveLearningRecording, type LearningManifest } from '../lib/learningAudio';
+  import { resolveLearningRecordingAsset, type LearningManifest } from '../lib/learningAudio';
 
   const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.speech-button'));
   const parts = location.pathname.split('/').filter(Boolean);
@@ -79,12 +79,12 @@
       if (!response.ok) return;
       const manifest: LearningManifest = await response.json();
       for (const button of buttons) {
-        const filename = resolveLearningRecording(manifest, {
+        const asset = resolveLearningRecordingAsset(manifest, {
           kind: button.dataset.speechKind || '', term: button.dataset.vocabularyTerm,
           reading: button.dataset.vocabularyReading, text: button.dataset.speech || '',
         });
-        if (!filename) continue;
-        button.dataset.audio = configuredAudioAssetUrl('japanese', lessonId, filename);
+        if (!asset) continue;
+        button.dataset.audio = configuredAudioAssetUrl('japanese', asset.audioDate || lessonId, asset.file);
         button.dataset.audioProvider = 'aivis';
         button.title = `AivisSpeech · ${manifest.voice?.name || 'AivisSpeech'}${manifest.voice?.style ? ` · ${manifest.voice.style}` : ''}`;
       }
