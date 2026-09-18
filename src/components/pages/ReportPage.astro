@@ -10,6 +10,7 @@ import LegacyReportEnhancements from '../LegacyReportEnhancements.astro';
 import { titleWithIssue, getStudyDay } from '../../../scripts/learning-review.mjs';
 import ReportStudySupplement from '../ReportStudySupplement.astro';
 import ReportSpeechEnhancer from '../ReportSpeechEnhancer.astro';
+import StudyFocusTarget from '../StudyFocusTarget.astro';
 const { report, locale } = Astro.props as { report: CollectionEntry<'daily'> | CollectionEntry<'dailyJa'>; locale: SiteLocale };
 const numberedTitle = titleWithIssue(report.data.title, report.id);
 const study = getStudyDay(report.id, locale);
@@ -70,6 +71,7 @@ const tocHeadings = [
 
   {locale === "zh" && <LegacyReportEnhancements />}
   <ReportSpeechEnhancer />
+  <StudyFocusTarget />
   <style>
     .report-speech-target{
       display:flex;
