@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-18",
+  "interview": [
+    {
+      "id": "qa-01",
+      "articleIds": [
+        "2026-09-18-top-1"
+      ],
+      "question": "Claude CodeをCIからHeadless実行するとき、MCPの起動待ちをどう設計しますか。",
+      "answer": "非対話のClaude Codeでは、MCP接続待ちを固定の前提にしません。v2.1.274ではCLAUDE_CODE_MCP_STARTUP_WAIT_MSが追加され、記事の4回平均では接続しないMCPありで33.4秒、0指定で3.5秒でした。ただし0では最初のTurnにToolが揃わないため、CIでは実測して必要な上限値を置きます。"
+    },
+    {
+      "id": "qa-02",
+      "articleIds": [
+        "2026-09-18-top-2"
+      ],
+      "question": "RSS型RAGをMCP化するとき、Embeddingの更新をどう設計しますか。",
+      "answer": "RAGの更新単位を記事ごとにします。記事ではURLをIDにし、ChromaDBのPersistentClientで既存IDをgetし、新規記事だけBedrockでembedしてaddしました。これで起動ごとの全件再embedを避けられます。ただしURLが変わらない本文更新や削除はこの方式だけでは拾えないので、更新検知を別に設計します。"
+    },
+    {
+      "id": "qa-03",
+      "articleIds": [
+        "2026-09-18-top-3"
+      ],
+      "question": "AIエージェントをSOCへ組み込む場合、どこまで自動化しますか。",
+      "answer": "AIエージェントをSOCへ入れるなら、判断だけでなく行動のTraceを残します。.conf26のDemoではCisco Data Fabricから複数Data Lakeを照合し、侵害Sessionの切断とToken RotationまでAgentが一次対応しました。ただしConference Demoなので効果を一般化せず、Policy適用はApprovalとAudit LogをGateにします。"
+    },
+    {
+      "id": "qa-04",
+      "articleIds": [
+        "2026-09-18-top-4"
+      ],
+      "question": "検索Crawlerを残しながらAI学習を拒否したい場合、何を確認しますか。",
+      "answer": "Webの検索流入とAI学習の許可を同じ設定にしません。CloudflareのDisallow AI Trainingはrobots.txtへ学習拒否Ruleを書き、対応するmixed-use crawlerでは検索を継続できます。GoogleとAppleは対応済みですが、Microsoftは2027年初頭予定なので、Crawlerごとの対応状況とNOARCHIVEなどの補助手段を確認します。"
+    },
+    {
+      "id": "qa-05",
+      "articleIds": [
+        "2026-09-18-top-5"
+      ],
+      "question": "PostgreSQLのSharding基盤を採用するとき、Benchmarkをどう評価しますか。",
+      "answer": "PostgreSQLをShardingするなら、互換性と運用面を分けて評価します。Nekiは標準Postgres ProtocolのままNeki RouterがQueryを各Shardへ分配し、512 Shard・約1.4PBで最大1億1875万QPSを公表しました。ただしPreviewのVendor Benchmarkなので、実WorkloadではCross-shard Query、Failover、Costを別に測ります。"
+    }
+  ],
+  "review": [
+    {
+      "id": "review-01",
+      "articleIds": [
+        "2026-09-18-top-1"
+      ],
+      "question": "Claude CodeのMCP起動待ちを0にすれば常に速くなりますか。",
+      "points": {
+        "zh": "Headless限定 / `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` / 33.4秒→3.5秒是最坏Case实测 / Tool可能首轮未就绪 / 应按自家CI测分布。",
+        "ja": "Headless限定 / `CLAUDE_CODE_MCP_STARTUP_WAIT_MS` / 33.4秒→3.5秒は最悪Case / Tool ReadyとのTrade-off / 自社CIで実測。"
+      }
+    },
+    {
+      "id": "review-02",
+      "articleIds": [
+        "2026-09-18-top-2"
+      ],
+      "question": "RAGの差分更新でURLをIDにする場合、どんな更新を取りこぼしますか。",
+      "points": {
+        "zh": "同URL正文变更 / 删除 / Canonical变化 / Embedding Model版本 / 需要Hash或Updated-at与Delete/Re-index策略。",
+        "ja": "同URL本文更新 / Delete / Canonical変更 / Embedding Model更新 / Hash・Updated-at・Re-indexが必要。"
+      }
+    },
+    {
+      "id": "review-03",
+      "articleIds": [
+        "2026-09-18-top-3"
+      ],
+      "question": "Agentic SOCでHuman Approvalを残すべき箇所はどこですか。",
+      "points": {
+        "zh": "调查与Evidence收集可自动化 / Credential或Session处置需Policy / 新Control Policy应用要Approval、Audit、Rollback。",
+        "ja": "調査とEvidence収集 / Session・Credential処置のPolicy / 新Control Policy適用 / Audit / Rollback。"
+      }
+    }
+  ]
+}

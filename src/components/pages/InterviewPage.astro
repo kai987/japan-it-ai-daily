@@ -10,7 +10,8 @@ const reports = (await getCollection(locale === 'ja' ? 'dailyJa' : 'daily')).sor
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
-import { extractAnswers, extractReviewCards } from '../../lib/interview';
+import { resolveInterviewView } from '../../lib/interviewView';
+import { readStructuredInterview } from '../../../scripts/structured-interview.mjs';
 
 const categoryRules = [
   { label: 'AI Agent', test: /Agent|Claude Code|Codex|Copilot|LLM|Model|VLM|Harness/i },
@@ -24,8 +25,7 @@ const categoryRules = [
 const interviewDays = reports
   .map((report) => {
     const body = ((report as any).body ?? '') as string;
-    const answers = extractAnswers(body);
-    const reviewCards = extractReviewCards(body);
+    const { answers, reviewCards } = resolveInterviewView(body, readStructuredInterview(report.id), locale);
     const topicText = [report.data.description, ...report.data.topics, ...report.data.top.map((item) => `${item.title} ${item.topic}`)].join(' ');
     const categories = categoryRules.filter((rule) => rule.test.test(topicText)).map((rule) => rule.label);
     return { report, answers, reviewCards, categories: categories.length ? categories : ['AI Agent'] };
