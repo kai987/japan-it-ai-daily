@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-18",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-18T00:54:00.000Z",
+  "scope": "Reviewed the September 17–18 Japanese IT/AI news cycle and excluded the September 17 Top 5. Selected original Japanese sources covering Claude Code MCP runtime governance, incremental RAG indexing with ChromaDB, agentic SOC operations, AI-training crawler consent, and PostgreSQL sharding. Facts, measurements, implementation details, rollout status and limitations were checked against the selected originals; author experiments, conference demonstrations and vendor benchmarks are explicitly bounded rather than generalized.",
+  "articles": [
+    {
+      "articleId": "2026-09-18-top-1",
+      "url": "https://dev.classmethod.jp/articles/20260917-cc-updates-v2-1-274/",
+      "originalTitle": "Claude Code v2.1.274 の主要アップデート - type: sdk の MCP 設定廃止と MCP 接続の安定化",
+      "source": "DevelopersIO",
+      "topic": "Claude Code / MCP / Headless / Security / CI",
+      "access": "full",
+      "accessNote": "DevelopersIO公開本文を確認。v2.1.274の108変更、CLAUDE_CODE_MCP_STARTUP_WAIT_MS、--strict-mcp-configを使った4回平均の起動実験、Streamable HTTP MCP Toolの長時間Call修正、MCP SecretのError露出修正、managed settingsのOpenTelemetry Eventを確認した。",
+      "capturedAt": "2026-09-18T00:49:00.000Z",
+      "snapshotSha256": "b08ee8a96a8ba920c053e1734612c29fa5eb0c0c93ef7248ff63cd887353a7cb",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "Claude Code v2.1.274は非対話SessionのMCP起動待ち上限を指定するCLAUDE_CODE_MCP_STARTUP_WAIT_MSを追加した。記事の接続しないstdio MCP Server実験では4回平均が既定33.4秒、0指定3.5秒で、MCPなし3.6秒だった。",
+          "quote": "4回の平均を出す",
+          "locator": "DevelopersIO: MCP接続タイムアウト値の変更と検証結果",
+          "conditions": "The 33.4-to-3.5 second difference is a deliberately non-connecting MCP worst case, not a universal 30-second saving. Setting zero can leave MCP tools unavailable on the first turn, so production CI should set a measured startup budget.",
+          "usedIn": {"zh": "CLAUDE_CODE_MCP_STARTUP_WAIT_MS", "ja": "CLAUDE_CODE_MCP_STARTUP_WAIT_MS", "interview": "CLAUDE_CODE_MCP_STARTUP_WAIT_MS"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-18-top-2",
+      "url": "https://zenn.dev/satoru_o/articles/014317b053f0aa",
+      "originalTitle": "自作RAGニュース検索をMCPサーバー化し、全記事再embedをChromaDBの差分更新に直した",
+      "source": "Zenn",
+      "topic": "RAG / MCP / ChromaDB / Bedrock / Retrieval",
+      "access": "full",
+      "accessNote": "Zenn公開本文を確認。RSS型info-rag MCP Server、ChromaDB PersistentClient、URLをDocument IDにする設計、getで既存IDを確認して新規だけBedrockでembed/addする差分更新、14日Filter、dbt-fivetran-blogの命名と実Feed不一致、Fivetran RSS追加を確認した。",
+      "capturedAt": "2026-09-18T00:49:00.000Z",
+      "snapshotSha256": "86d99800aebdf08b107818b2c5a059d0d97b6edb70f8bda4c4b013c8c8ca86dd",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "info-ragはChromaDB PersistentClientと記事URLのDocument IDを使い、collection.getで既存IDを照合したうえで新規記事のみBedrockでEmbeddingしてaddする方式へ変更し、起動ごとの全件再Embeddingを避けた。",
+          "quote": "差分更新に直した",
+          "locator": "Zenn: ChromaDB導入、URL ID、既存ID確認、新規記事のみEmbedding",
+          "conditions": "An add-only URL identity solves new-document duplication but does not by itself detect same-URL content edits, deletions, canonical-URL changes or embedding-model migrations. This is a personal implementation case, not a production-scale retrieval benchmark.",
+          "usedIn": {"zh": "ChromaDB", "ja": "ChromaDB", "interview": "ChromaDB"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-18-top-3",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/17/news045.html",
+      "originalTitle": "「AIがログを取りに行く」時代、SIEMは何のためにある？　Splunkの答え",
+      "source": "＠IT",
+      "topic": "AI Agent / SIEM / Security / Observability / SOC",
+      "access": "full",
+      "accessNote": "＠IT公開記事を確認。.conf26でのCisco Data Fabric powered by SplunkとCisco Security Cloud Control、複数Data Lake/第三者Toolを使うAgent調査、侵害Identity Session切断、Token Rotation、新Policy提案とHuman Approval、Agent通信量/Token増加のVendor説明を確認した。",
+      "capturedAt": "2026-09-18T00:49:00.000Z",
+      "snapshotSha256": "bb7da9888a063ea1dcb4913d4027d3cc32436faa564c2ec45275ebe5f55bf02c",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "Splunk/Ciscoの.conf26 DemoではAgentがCisco Data Fabricから複数Data Sourceを調査し、侵害されたIdentity Sessionの切断と露出TokenのRotationまで一次対応し、新Control PolicyはHuman Approval後に適用された。",
+          "quote": "AIがログを取りに行く",
+          "locator": "＠IT: .conf26 DemoのAgent調査、一次対応、Policy提案と承認",
+          "conditions": "The incident-response flow, claimed bandwidth increase and token-growth observations are conference/vendor evidence rather than independent production benchmarks. Real deployment must validate false positives, least privilege, rollback, auditability and action blast radius.",
+          "usedIn": {"zh": "Cisco Data Fabric", "ja": "Cisco Data Fabric", "interview": "Cisco Data Fabric"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-18-top-4",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/17/2000001584/",
+      "originalTitle": "AI学習は拒否、検索クロールは維持……Cloudflareの新機能「AI学習の不許可」　Google、Apple、Microsoftが対応",
+      "source": "ITmedia AI＋",
+      "topic": "AI Governance / Web / Crawler / robots.txt / Cloudflare",
+      "access": "full",
+      "accessNote": "ITmedia AI＋公開本文を確認。Cloudflare Disallow AI Training、robots.txtへの学習拒否Rule、mixed-use crawlerでSearchを維持する仕組み、Apple/Googleの対応、Microsoftの2027年初頭までの対応予定、NOARCHIVEの補助手段を確認した。",
+      "capturedAt": "2026-09-18T00:49:00.000Z",
+      "snapshotSha256": "728c004263bccf699fb0c5e56b12bbbf2541ebf5b61e5135717f18c20edf7a9b",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "CloudflareのDisallow AI Trainingはrobots.txtへAI Training拒否を記述し、対応するmixed-use crawlerではSearch Crawlingを維持できる。記事時点でGoogleとAppleは対応し、Microsoftは2027年初頭までの対応を予定していた。",
+          "quote": "AI学習は拒否、検索クロールは維持",
+          "locator": "ITmedia AI＋: Cloudflare新設定、各Crawler Vendorの対応状況",
+          "conditions": "robots.txt is a declarative policy that depends on crawler implementation and compliance; it is not cryptographic enforcement. Site owners should continue validating crawler identity, access logs and vendor support status.",
+          "usedIn": {"zh": "Disallow AI Training", "ja": "Disallow AI Training", "interview": "Disallow AI Training"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-18-top-5",
+      "url": "https://www.publickey1.jp/blog/26/planetscalepostgresql11800qpsdbneki.html",
+      "originalTitle": "PlanetScale、PostgreSQLのシャーディングを自動化して1億1800万QPSを達成。新DBサービス「Neki」をプレビュー公開",
+      "source": "Publickey",
+      "topic": "PostgreSQL / Sharding / Distributed Database / Cloud / DBaaS",
+      "access": "full",
+      "accessNote": "Publickey公開本文を確認。Neki Preview、標準Postgres Protocol、Neki RouterのParser/Distributed Planner/Buffering、各ShardのPrimary/Replica、Control Plane、Single構成からShardingへ移行できる設計、512 Shard・約1.4PB・最大118,538,803 QPSのPlanetScale Benchmarkを確認した。",
+      "capturedAt": "2026-09-18T00:49:00.000Z",
+      "snapshotSha256": "79fabebe831a14a39da7557762a9d68704c58197b14c3105884a219a25b3bc28",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "PlanetScale Nekiは標準Postgres Protocolの入口に水平Scale可能なNeki Routerを置き、QueryをShardへ分配する。PlanetScaleは512 Shard・約1.4PBで最大118,538,803 QPSを報告した。",
+          "quote": "1億1875万QPS",
+          "locator": "Publickey: Neki Architectureと512 Shard Benchmark",
+          "conditions": "Neki was preview software and the 118.5M-QPS figure is a vendor benchmark, not a guarantee for arbitrary schemas or transactions. Cross-shard queries, P99 latency, failover, re-sharding behavior and TCO require workload-specific measurement.",
+          "usedIn": {"zh": "Neki Router", "ja": "Neki Router", "interview": "Neki Router"}
+        }
+      ]
+    }
+  ]
+}
