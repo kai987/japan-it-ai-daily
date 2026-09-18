@@ -1,6 +1,6 @@
 {
   "date": "2026-09-03",
-  "generatedAt": "2026-09-03T13:09:29.884Z",
+  "generatedAt": "2026-09-18T13:12:40.910Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -130,10 +130,10 @@
       "term": "紛れ込む",
       "reading": "まぎれこむ",
       "exampleJa": "公開用の資料に内部情報が紛れ込んでいないか確認します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-11.mp3",
+      "wordHash": "20f3b23851e8c0ed7bfdecd136cc1d14da3ca61a13e4b51380275be1f520e8eb",
+      "example": "example-11.mp3",
+      "exampleHash": "97bf17dd337bdae0e9838a5be7b8b1ce4cd139a9937a14a4088e214d5557725a"
     },
     {
       "index": 12,
@@ -150,10 +150,10 @@
       "term": "盗み出す",
       "reading": "ぬすみだす",
       "exampleJa": "情報を盗み出されないよう、不要なアクセス権を残さない運用にします。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-13.mp3",
+      "wordHash": "1b7323e82330c9a4389f2fd5dca6dbc0777ed65b4c27c5b58793b62cd6b46f45",
+      "example": "example-13.mp3",
+      "exampleHash": "d424f1909879d4318bd3c9e4481285bf9c902e170afe612182757a410bb6c02c"
     },
     {
       "index": 14,
@@ -170,10 +170,10 @@
       "term": "強力",
       "reading": "きょうりょく",
       "exampleJa": "強力な機能ほど、誰が使えるかを明確にします。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-15.mp3",
+      "wordHash": "bbb30a924ece11b19683c715c6ca85b824792e32893ab389da28099cdc26ae7e",
+      "example": "example-15.mp3",
+      "exampleHash": "157e5ecd9e25f3fb4e56e0869a50e410ba1de0c6502dcd41385d987c25f4128a"
     },
     {
       "index": 16,
@@ -200,20 +200,20 @@
       "term": "連鎖",
       "reading": "れんさ",
       "exampleJa": "一つの失敗が連鎖しないよう、処理の依存関係を見直します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-18.mp3",
+      "wordHash": "3af0cdd90dfa7a8816ecc8148fe9e955b9eb19cc50d8a395bed724f1b705f28b",
+      "example": "example-18.mp3",
+      "exampleHash": "6184a43ee9edb049dd49688c48fef69f572eceaefa178437d981ca613d644337"
     },
     {
       "index": 19,
       "term": "いちいち",
       "reading": "いちいち",
       "exampleJa": "同じ内容をいちいち入力しなくてもよいよう、共通項目を保存します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-19.mp3",
+      "wordHash": "ab47666e4924cadf68de6af66b5b371158d83226163656d16a88e00fde6c23af",
+      "example": "example-19.mp3",
+      "exampleHash": "99f376233c22e347b419033d7e5a04f762a3b5bc6e928b5fea1ad4094a31627c"
     },
     {
       "index": 20,
@@ -228,20 +228,28 @@
   ],
   "grammar": [
     {
+      "index": 1,
       "pattern": "～にほかならない",
       "exampleJa": "被害が広がったのは、探索範囲を制限していなかったからにほかなりません。",
-      "example": null,
-      "playback": "browser-tts",
-      "reason": "historical-grammar-repair"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "56deb21796b35327fff564124e6d6ad3c6198746c5e821ba2eab0c6ee713f0c6"
     },
     {
+      "index": 2,
       "pattern": "～を皮切りに",
       "exampleJa": "一つのクラウドとの接続を皮切りに、対応先を広げます。",
-      "example": null,
-      "playback": "browser-tts",
-      "reason": "historical-grammar-repair"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "45f9be4d16dd634f5736fb1fb81e54e93354e18bf52c2efa1ce03b6b90782175"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "とは限らない",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～とは限らない",
+      "exampleJa": "Parameter数が多ければ実務性能が高いとは限りません。",
+      "example": "grammar-example-07.mp3"
     }
-  ],
-  "contentRevision": "jlpt-history-dedup-2026-09-18",
-  "browserTtsCount": 5
+  ]
 }

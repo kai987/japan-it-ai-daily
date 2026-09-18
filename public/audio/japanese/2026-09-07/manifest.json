@@ -1,6 +1,6 @@
 {
   "date": "2026-09-07",
-  "generatedAt": "2026-09-07T14:08:28.603Z",
+  "generatedAt": "2026-09-18T13:13:52.143Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -30,10 +30,10 @@
       "term": "行き届く",
       "reading": "いきとどく",
       "exampleJa": "細かな案内まで行き届いた画面なら、初めてでも操作しやすくなります。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-01.mp3",
+      "wordHash": "5bfbd48e4ddfe70a8645441382292ab254b839c87196f98b6b29bde60a0990d5",
+      "example": "example-01.mp3",
+      "exampleHash": "cf37f14c0a70fe8970c1d06991708aa900804c4f900d3ee3e78e1b7a631690c3"
     },
     {
       "index": 2,
@@ -50,10 +50,10 @@
       "term": "忘れ去る",
       "reading": "わすれさる",
       "exampleJa": "導入時の理由が忘れ去られないよう、判断の経緯を残します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-03.mp3",
+      "wordHash": "3fea1b18507aa3ba1770c7e05a920f35c7b01477208efeaed380729d3dcbeb1e",
+      "example": "example-03.mp3",
+      "exampleHash": "d2f0011390e8e305a222ce3580cd4999f83c0129e870f83f29d3bdf16e87d9ac"
     },
     {
       "index": 4,
@@ -80,10 +80,10 @@
       "term": "培う",
       "reading": "つちかう",
       "exampleJa": "前職で培った画面設計の経験を、新しい開発でも生かします。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-06.mp3",
+      "wordHash": "256d65f5d2167dc6b08ace5068ff0555a6dcb853745152caf7ba5b980b24c496",
+      "example": "example-06.mp3",
+      "exampleHash": "d204582199b13f54f935e3e49e53d5fa9f42069cccc4edf69364c1a8c479a6d4"
     },
     {
       "index": 7,
@@ -170,10 +170,10 @@
       "term": "著しい",
       "reading": "いちじるしい",
       "exampleJa": "条件をそろえても差が著しい場合は、計測方法を見直します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-15.mp3",
+      "wordHash": "854f14c83f4bce74e46ecd69731256e37dd5046376d196f61820b7150bed7c5b",
+      "example": "example-15.mp3",
+      "exampleHash": "0ddd450f22b0500c29d5a5eebb1f7b3032d89bc310a20fd4742ba75ee97eca0f"
     },
     {
       "index": 16,
@@ -210,38 +210,96 @@
       "term": "相反",
       "reading": "そうはん",
       "exampleJa": "相反する要求を整理し、優先する条件を合意します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-19.mp3",
+      "wordHash": "8663d6281aabbeb888ef8b917dd935fc06b5f652e8b896f72142c62780c11cad",
+      "example": "example-19.mp3",
+      "exampleHash": "facf1503e21ce8626960fef13a94f622a04a81550407b012f2b0229dc4ca2f72"
     },
     {
       "index": 20,
       "term": "潜在",
       "reading": "せんざい",
       "exampleJa": "潜在する問題を見つけるため、普段使わない操作も確認します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-20.mp3",
+      "wordHash": "fab90baf2f8e2b78cd97cb566eab4deb218f90cdc87ec25dfe7795d81681ca16",
+      "example": "example-20.mp3",
+      "exampleHash": "e2377449a518159bcf3059a3ad83cbd353f8bc6fb9737f8a22e80c13f4ec01c7"
     }
   ],
   "grammar": [
     {
-      "index": 2,
+      "index": 1,
       "pattern": "～に際して",
       "exampleJa": "Frontier Modelの導入に際して、Data Retentionを先に確認します。",
-      "example": "grammar-example-02.mp3",
+      "example": "grammar-example-01.mp3",
       "exampleHash": "0613b660cdcceefdd9a109b9367f248d039235f73cb6ccdd760a6ead2efa0845"
     },
     {
-      "index": 3,
+      "index": 2,
       "pattern": "～に即して",
       "exampleJa": "料金表ではなく、実際のWorkloadに即してDatabaseを選定します。",
-      "example": "grammar-example-03.mp3",
+      "example": "grammar-example-02.mp3",
       "exampleHash": "1e1f9ef7d2b448ce08ff5b2a764bc167f772126be6148100a50c1aa5afbb87d8"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "を通じて",
+      "firstIntroducedDate": "2026-08-15",
+      "audioDate": "2026-08-15",
+      "pattern": "～を通じて",
+      "exampleJa": "各プラグインは共通のイベントを通じて連携します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "一方で",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～一方で",
+      "exampleJa": "Local LLMはDataを外部に出さない一方で、運用負荷が高くなることがあります。",
+      "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "わけではない",
+      "firstIntroducedDate": "2026-08-30",
+      "audioDate": "2026-08-30",
+      "pattern": "～わけではない",
+      "exampleJa": "AIが差し戻したからといって、仕込んだバグを正しく検出したわけではありません。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "かねない",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～かねない",
+      "exampleJa": "不要なContextを大量に渡すと、判断精度を下げかねません。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 5,
+      "studyKind": "review",
+      "identity": "ままでは",
+      "firstIntroducedDate": "2026-08-31",
+      "audioDate": "2026-08-31",
+      "pattern": "～ままでは",
+      "exampleJa": "暗黙知に依存した組織運営のままでは、AIに必要なContextを十分に渡せません。",
+      "example": "grammar-example-03.mp3"
+    },
+    {
+      "index": 6,
+      "studyKind": "review",
+      "identity": "において",
+      "firstIntroducedDate": "2026-09-04",
+      "audioDate": "2026-09-04",
+      "pattern": "～において",
+      "exampleJa": "エージェントを運用する組織において、アクセス管理は重要です。",
+      "example": "grammar-example-01.mp3"
     }
-  ],
-  "contentRevision": "jlpt-history-dedup-2026-09-18",
-  "browserTtsCount": 6
+  ]
 }

@@ -23,6 +23,20 @@
     "speed": 1,
     "intonationScale": 1
   },
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-13T06:38:49.956Z",
   "interview": [
     {
       "index": 1,
@@ -132,19 +146,5 @@
       "audioHash": "d87d67902e643cd65898f44efe17f6f86934c0bcfe0cfc1c76cd22dff6ec262d",
       "durationSeconds": 6.048
     }
-  ],
-  "durationPolicy": {
-    "source": "ffprobe",
-    "enforceFrom": "2026-08-12",
-    "idealSeconds": [
-      26,
-      34
-    ],
-    "hardSeconds": [
-      22,
-      40
-    ],
-    "maxStoredDriftSeconds": 0.08
-  },
-  "durationMeasuredAt": "2026-09-13T06:38:49.956Z"
+  ]
 }

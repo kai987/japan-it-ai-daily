@@ -1,6 +1,6 @@
 {
   "date": "2026-09-02",
-  "generatedAt": "2026-09-02T04:28:55.982Z",
+  "generatedAt": "2026-09-18T13:12:28.435Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -30,10 +30,10 @@
       "term": "見失う",
       "reading": "みうしなう",
       "exampleJa": "細部の修正に集中して、利用者の目的を見失わないようにします。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-01.mp3",
+      "wordHash": "7468cfc979a0442cac3f3a951dc593da95f002e34c3c1b459904468859c19a58",
+      "example": "example-01.mp3",
+      "exampleHash": "32c08f8372da178b42c22d229b00e465747a35004dbf49341b7069c1920d0b94"
     },
     {
       "index": 2,
@@ -70,20 +70,20 @@
       "term": "残存",
       "reading": "ざんそん",
       "exampleJa": "古い設定が残存していないか、更新後に確認します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-05.mp3",
+      "wordHash": "b41bfbfa999b2e7d63f9b0422a8d0d12c0bce81d0f5a422314c81278488d0f3c",
+      "example": "example-05.mp3",
+      "exampleHash": "727e56ac5f95544eac63fb2a57820c8326f0aeb99fbb351c307624ceacb5850d"
     },
     {
       "index": 6,
       "term": "混在",
       "reading": "こんざい",
       "exampleJa": "異なる日付形式が混在していたため、比較前に統一しました。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-06.mp3",
+      "wordHash": "bf35269108efc21e2f650fd08fdb8cfb327b6a4698ffe5ab2d301cafeb829649",
+      "example": "example-06.mp3",
+      "exampleHash": "53782b11f89c24f2a7e630cb16cd60ced32e1412a9175bed4abe7e0418ef6eae"
     },
     {
       "index": 7,
@@ -100,10 +100,10 @@
       "term": "隔たり",
       "reading": "へだたり",
       "exampleJa": "説明する側と使う側の認識の隔たりを、実演で埋めます。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-08.mp3",
+      "wordHash": "e4a175df06ec9f588d7d9b5d3bbcf91ff7462b628be940d8b1a769df828e0e6a",
+      "example": "example-08.mp3",
+      "exampleHash": "af315250cd8ddfc2e139af6ded9746a47481bc1c19c388129769698595d6fc3e"
     },
     {
       "index": 9,
@@ -140,10 +140,10 @@
       "term": "源泉",
       "reading": "げんせん",
       "exampleJa": "利用者への理解を、改善のアイデアの源泉にします。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-12.mp3",
+      "wordHash": "69103156686a5469cc2f6c7b1b3f7fe0c95650a85bf6812e61dc0903548b5c92",
+      "example": "example-12.mp3",
+      "exampleHash": "b9886c55e278f80830a8db601d11c5aa9ca227346f0e9d4dcb090eb2bb28dc7f"
     },
     {
       "index": 13,
@@ -190,10 +190,10 @@
       "term": "有力",
       "reading": "ゆうりょく",
       "exampleJa": "既存の仕組みを使う方法も、有力な選択肢として検討します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-17.mp3",
+      "wordHash": "1ebe92277acae13603ebd23351cf94b47a2e4575424b324e9ad96d08c5177a7f",
+      "example": "example-17.mp3",
+      "exampleHash": "c13398b658e13732b26fb1005872ba019c6ae5b6f6012f3132779cb9556dabcb"
     },
     {
       "index": 18,
@@ -228,13 +228,41 @@
   ],
   "grammar": [
     {
-      "index": 5,
+      "index": 1,
       "pattern": "～にあたって",
       "exampleJa": "Fable 5.1を利用するにあたって、AccountのData Retention設定を確認します。",
-      "example": "grammar-example-05.mp3",
+      "example": "grammar-example-01.mp3",
       "exampleHash": "e7d5fd642f14188790a1898271c48f6cf09ba1accabf9637310188e38cd1f003"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "とは限らない",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～とは限らない",
+      "exampleJa": "Parameter数が多ければ実務性能が高いとは限りません。",
+      "example": "grammar-example-07.mp3"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "を通じて",
+      "firstIntroducedDate": "2026-08-15",
+      "audioDate": "2026-08-15",
+      "pattern": "～を通じて",
+      "exampleJa": "各プラグインは共通のイベントを通じて連携します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "ために",
+      "firstIntroducedDate": "2026-08-31",
+      "audioDate": "2026-08-31",
+      "pattern": "～ために",
+      "exampleJa": "Taskを達成するために、許可されていない手段を選ばないようGuardrailを設計します。",
+      "example": "grammar-example-04.mp3"
     }
-  ],
-  "contentRevision": "jlpt-history-dedup-2026-09-18",
-  "browserTtsCount": 6
+  ]
 }

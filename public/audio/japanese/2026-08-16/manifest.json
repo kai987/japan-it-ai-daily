@@ -1,6 +1,6 @@
 {
   "date": "2026-08-16",
-  "generatedAt": "2026-08-31T20:14:01.380Z",
+  "generatedAt": "2026-09-18T13:06:23.640Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -100,20 +100,20 @@
       "term": "遡る",
       "reading": "さかのぼる",
       "exampleJa": "変更履歴を遡り、問題が入り込んだ時点を特定します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-08.mp3",
+      "wordHash": "18213b7d6f7e42c308dea1244cc9a95bc22eed1a4084263c6422347beedef932",
+      "example": "example-08.mp3",
+      "exampleHash": "3317ee7d70022cfd90a5dec2424ef9b24c2515c69a0257cfd2b73ab5017a5a7e"
     },
     {
       "index": 9,
       "term": "伏せる",
       "reading": "ふせる",
       "exampleJa": "公開する資料では個人名を伏せ、検証に必要な情報だけを残します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-09.mp3",
+      "wordHash": "705dc911bc31aa7c35aed6e4b3d298b96e6a4486805e6e57360e6ca5c308c1e5",
+      "example": "example-09.mp3",
+      "exampleHash": "eb8d0d2119fe1d896cc782285ec00ca015686fbfd1f433e61896f851758733fc"
     },
     {
       "index": 10,
@@ -140,10 +140,10 @@
       "term": "専有",
       "reading": "せんゆう",
       "exampleJa": "一つの処理が端末を専有しないよう、実行方法を分けました。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-12.mp3",
+      "wordHash": "54bee655ef20fffdadd9a889215521978c39eddca2cb37e58f2dbac8abb678bd",
+      "example": "example-12.mp3",
+      "exampleHash": "113c3321556166157140c6ab8f12a8b277396e915677060ffee0ee8ca9c8ce16"
     },
     {
       "index": 13,
@@ -190,10 +190,10 @@
       "term": "豊富",
       "reading": "ほうふ",
       "exampleJa": "経験が豊富な人にも判断の根拠を説明してもらい、知識を共有します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-17.mp3",
+      "wordHash": "c7d197f7239a1ec560178d8eff79401859ff8498cf05fb6a2864f801693345fe",
+      "example": "example-17.mp3",
+      "exampleHash": "877df4383fc21d6251bbecc49fb06d351d13f3a3fe4266bda24a781d220869c0"
     },
     {
       "index": 18,
@@ -220,21 +220,59 @@
       "term": "一応",
       "reading": "いちおう",
       "exampleJa": "一応動作は確認できましたが、長時間の試験はまだ終わっていません。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-20.mp3",
+      "wordHash": "b59064d66135e9143020e8d2410558cdcf931524a2b8087723290358a4d87f29",
+      "example": "example-20.mp3",
+      "exampleHash": "f917280b561c552b5f0ce23ba10f1d3920132eca55817bb474d2d5b163cf0d25"
     }
   ],
   "grammar": [
     {
+      "index": 1,
       "pattern": "～っぽい",
       "exampleJa": "検証用にモノレポっぽい構成を用意しました。",
-      "example": null,
-      "playback": "browser-tts",
-      "reason": "historical-grammar-repair"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "4e9b2b4f12f8dd4314a7d0c9dd6bff3e9cfe5765c37f2f45f17e77282c56fe62"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "とは限らない",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～とは限らない",
+      "exampleJa": "Parameter数が多ければ実務性能が高いとは限りません。",
+      "example": "grammar-example-07.mp3"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "を通じて",
+      "firstIntroducedDate": "2026-08-15",
+      "audioDate": "2026-08-15",
+      "pattern": "～を通じて",
+      "exampleJa": "各プラグインは共通のイベントを通じて連携します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "に応じて",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～に応じて",
+      "exampleJa": "データの機密性に応じてCloudとLocal Modelを使い分けます。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "に従って",
+      "firstIntroducedDate": "2026-08-15",
+      "audioDate": "2026-08-15",
+      "pattern": "～に従って",
+      "exampleJa": "権限ポリシーに従って、実行前に利用者の承認を得ます。",
+      "example": "grammar-example-02.mp3"
     }
-  ],
-  "contentRevision": "jlpt-history-dedup-2026-09-18",
-  "browserTtsCount": 5
+  ]
 }

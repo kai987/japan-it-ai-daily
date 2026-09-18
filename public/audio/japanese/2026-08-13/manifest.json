@@ -1,6 +1,6 @@
 {
   "date": "2026-08-13",
-  "generatedAt": "2026-09-07T10:42:29.986Z",
+  "generatedAt": "2026-09-18T13:05:35.673Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -150,10 +150,10 @@
       "term": "見抜く",
       "reading": "みぬく",
       "exampleJa": "数値の変化だけでなく、その背後にある問題を見抜くことが重要です。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-13.mp3",
+      "wordHash": "bd5123d8ab079bd5553df70e7f506c949b76a40c82436296d8641d50a1771672",
+      "example": "example-13.mp3",
+      "exampleHash": "d25367a15ff237fa5b77946a1ace02f7ec4970f9e378d34f777a439e80122034"
     },
     {
       "index": 14,
@@ -190,10 +190,10 @@
       "term": "単なる",
       "reading": "たんなる",
       "exampleJa": "今回の修正は単なる表示の変更ではなく、操作手順の見直しです。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-17.mp3",
+      "wordHash": "77809dcf797d015d61acff2981c1ce64fe04cf5f0dd049c4d4724b39d106b81c",
+      "example": "example-17.mp3",
+      "exampleHash": "26d4648b106d49897c03cbae78db58a71c9e365fce0dac2f985c84ee7b3078c7"
     },
     {
       "index": 18,
@@ -220,28 +220,66 @@
       "term": "寄与",
       "reading": "きよ",
       "exampleJa": "記録の共有は、同じ不具合の再発防止に寄与します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-20.mp3",
+      "wordHash": "1dc45a58b6cde42a1a5c367880d4871ae0d85ef2b6c9737b259d7c825c4b69fd",
+      "example": "example-20.mp3",
+      "exampleHash": "7c5e97f0323a5385abef488a07fdfcafc5c217ecefbd1affcd2fa702e4799de4"
     }
   ],
   "grammar": [
     {
-      "index": 6,
+      "index": 1,
       "pattern": "～に基づいて",
       "exampleJa": "実際の会話に基づいて、ルーターを較正します。",
-      "example": "grammar-example-06.mp3",
+      "example": "grammar-example-01.mp3",
       "exampleHash": "0cdc9be42784d18dc3f8db61ec2f78478fd62a3bbe1cac18b82ef7d800c068f6"
     },
     {
-      "index": 7,
+      "index": 2,
       "pattern": "～にかかわらず",
       "exampleJa": "実行場所にかかわらず、外部への送信内容を確認します。",
-      "example": "grammar-example-07.mp3",
+      "example": "grammar-example-02.mp3",
       "exampleHash": "f292907f562d905cb5791179a0847bcb23d36b17c3352c01758628385eafee9c"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "たうえで",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～たうえで",
+      "exampleJa": "Latencyを計測したうえで、利用するModelを決定します。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "とは限らない",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～とは限らない",
+      "exampleJa": "Parameter数が多ければ実務性能が高いとは限りません。",
+      "example": "grammar-example-07.mp3"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "に応じて",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～に応じて",
+      "exampleJa": "データの機密性に応じてCloudとLocal Modelを使い分けます。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "一方で",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～一方で",
+      "exampleJa": "Local LLMはDataを外部に出さない一方で、運用負荷が高くなることがあります。",
+      "example": "grammar-example-05.mp3"
     }
-  ],
-  "contentRevision": "jlpt-history-dedup-2026-09-18",
-  "browserTtsCount": 3
+  ]
 }

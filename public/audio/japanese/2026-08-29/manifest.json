@@ -1,6 +1,6 @@
 {
   "date": "2026-08-29",
-  "generatedAt": "2026-08-31T20:14:01.419Z",
+  "generatedAt": "2026-09-18T13:11:36.632Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -60,10 +60,10 @@
       "term": "積み上げる",
       "reading": "つみあげる",
       "exampleJa": "小さな改善を積み上げ、使いやすさを高めていきます。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-04.mp3",
+      "wordHash": "bbd26e8148bb296367a739d87f62d476c75a50c9cbdd159303d31b9a34d55af5",
+      "example": "example-04.mp3",
+      "exampleHash": "33a06fa6342fd4478a214f198555b10946eb7629db28ec17a39aaa7e0cc2a7ef"
     },
     {
       "index": 5,
@@ -80,10 +80,10 @@
       "term": "落とし込む",
       "reading": "おとしこむ",
       "exampleJa": "利用者の要望を、確認可能な画面の要件に落とし込みます。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-06.mp3",
+      "wordHash": "abe9ae331988dd2f2ac6bf4363e4fed6fc1db84d315f61137a1b1d472af17099",
+      "example": "example-06.mp3",
+      "exampleHash": "50dad6c96289efc5f9c97ba2689eb7dfd814b40b351aef05f8ef4920dac06faf"
     },
     {
       "index": 7,
@@ -120,30 +120,30 @@
       "term": "握りつぶす",
       "reading": "にぎりつぶす",
       "exampleJa": "例外を握りつぶさず、必要な情報を記録してから処理を終了します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-10.mp3",
+      "wordHash": "4460787b97847516efb4fc857ae957fefe2c65c9fabdd94534513bb53f48a146",
+      "example": "example-10.mp3",
+      "exampleHash": "6874e000c2872bd279a08fa289e84606b727224f2309da4e7cfffd579b4cd1c3"
     },
     {
       "index": 11,
       "term": "倣う",
       "reading": "ならう",
       "exampleJa": "公式の例に倣って、失敗時の待ち時間を段階的に延ばします。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-11.mp3",
+      "wordHash": "1df8f5e2a6160d506682e9409a112158817037eb028d069a5c27e16897fabb12",
+      "example": "example-11.mp3",
+      "exampleHash": "4409e4d5e7f8855d76bad2546d121b7f51d0603f7d241e0ff8c31b817e1bbf73"
     },
     {
       "index": 12,
       "term": "充実",
       "reading": "じゅうじつ",
       "exampleJa": "初めて使う人向けの説明を充実させ、問い合わせを減らします。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-12.mp3",
+      "wordHash": "c27d88c240f5c015793848a4d6ff7114a808b7a7689de7a977be1c7e01021595",
+      "example": "example-12.mp3",
+      "exampleHash": "8a0500771561f5003acdb7ba5390c19028623b832784524adf3d8868c72b5e03"
     },
     {
       "index": 13,
@@ -160,10 +160,10 @@
       "term": "多少",
       "reading": "たしょう",
       "exampleJa": "環境によって多少表示が変わるため、主要な端末で確認します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-14.mp3",
+      "wordHash": "fd575b9b63391c2a4cdce5ff2a3bc1004f003f2460a6f2b7c44b88aefbbaef40",
+      "example": "example-14.mp3",
+      "exampleHash": "6f3fe9fbe5e10bed002bbede46374f7f008929cb81320bf61977dc6a665e1df9"
     },
     {
       "index": 15,
@@ -190,10 +190,10 @@
       "term": "たまたま",
       "reading": "たまたま",
       "exampleJa": "今回はたまたま速かった可能性があるので、条件をそろえて測り直します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-17.mp3",
+      "wordHash": "1544f75962a6c2de6a750e6afe10fa643b5459fe1726e2b7aa886ea91a86697b",
+      "example": "example-17.mp3",
+      "exampleHash": "0a4658d5b3e8ae0a35feaef5e6f70413c80511363220d325e0e54848109a6b2a"
     },
     {
       "index": 18,
@@ -228,34 +228,62 @@
   ],
   "grammar": [
     {
-      "index": 6,
+      "index": 1,
       "pattern": "～を余儀なくされる",
       "exampleJa": "Resource不足が長時間続けば、一部TaskをStandardへ戻す対応を余儀なくされる可能性があります。",
-      "example": "grammar-example-06.mp3",
+      "example": "grammar-example-01.mp3",
       "exampleHash": "67299c5e53d771b10c437f25508485945d0391d5ec45cfd9e8f7b34a19709baf"
     },
     {
-      "index": 7,
+      "index": 2,
       "pattern": "～に至るまで",
       "exampleJa": "AI Gatewayでは、Provider接続からSecret管理、SLO設計に至るまで一貫して運用方針を整える必要があります。",
-      "example": "grammar-example-07.mp3",
+      "example": "grammar-example-02.mp3",
       "exampleHash": "1928038571881903dd2ea5d2694a625318cf6f7d63b850dff34e176fbda653f5"
     },
     {
+      "index": 3,
       "pattern": "～に比べて",
       "exampleJa": "従来の構成に比べて運用は簡単ですが、事例はまだ少ないです。",
-      "example": null,
-      "playback": "browser-tts",
-      "reason": "historical-grammar-repair"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "4f2582138f6943fe39e1769654cbfaca8f2da27660182546f0806d6f39358602"
     },
     {
+      "index": 4,
       "pattern": "～て初めて",
       "exampleJa": "本番に近い環境で動かして初めて、通信の制約に気づきました。",
-      "example": null,
-      "playback": "browser-tts",
-      "reason": "historical-grammar-repair"
+      "example": "grammar-example-04.mp3",
+      "exampleHash": "600e75f2d31952da451846b6df00acf09dd68ac42979b88c406831c0861a0b3a"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "たうえで",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～たうえで",
+      "exampleJa": "Latencyを計測したうえで、利用するModelを決定します。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "上で",
+      "firstIntroducedDate": "2026-08-19",
+      "audioDate": "2026-08-19",
+      "pattern": "～上で",
+      "exampleJa": "MCPを本番利用する上で、認可と監査は重要です。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "つつ",
+      "firstIntroducedDate": "2026-08-18",
+      "audioDate": "2026-08-18",
+      "pattern": "～つつ",
+      "exampleJa": "品質を維持しつつ、Model Costを削減します。",
+      "example": "grammar-example-01.mp3"
     }
-  ],
-  "contentRevision": "jlpt-history-dedup-2026-09-18",
-  "browserTtsCount": 7
+  ]
 }

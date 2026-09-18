@@ -1,6 +1,6 @@
 {
   "date": "2026-08-31",
-  "generatedAt": "2026-08-31T20:14:01.424Z",
+  "generatedAt": "2026-09-18T13:12:03.169Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -60,20 +60,20 @@
       "term": "鑑みる",
       "reading": "かんがみる",
       "exampleJa": "これまでの運用状況に鑑みて、保存期間を見直します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-04.mp3",
+      "wordHash": "98bfb91e6df728dc5bb1fca85674f0d044cfa3173c20025b8e6b9955153eba12",
+      "example": "example-04.mp3",
+      "exampleHash": "8f1f797b500b2b1d7b0e17206034fda206c37e9ec59fe1389ddccfb12fdb81f9"
     },
     {
       "index": 5,
       "term": "受け止める",
       "reading": "うけとめる",
       "exampleJa": "使いにくいという意見を受け止め、操作手順を見直しました。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-05.mp3",
+      "wordHash": "56d4039bb81e3e50811227b05e29ba42eda82bdb0aae27e75ca4fbfb44d0cd92",
+      "example": "example-05.mp3",
+      "exampleHash": "8481c082a08ebb6fb7d6bf1aca5a1f4a330384feaeb125de913589a328e8aa6c"
     },
     {
       "index": 6,
@@ -100,10 +100,10 @@
       "term": "突き付ける",
       "reading": "つきつける",
       "exampleJa": "今回の障害は、確認手順の不足という課題を私たちに突き付けました。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-08.mp3",
+      "wordHash": "e0b70a6eefacbf9220222fc1fcfa7a7dac672a1571ed1faedb32d61fd67980bf",
+      "example": "example-08.mp3",
+      "exampleHash": "7e93568e6038a124e1cff0e009550421859048ef42f4d45e77188b983f92d5f2"
     },
     {
       "index": 9,
@@ -140,30 +140,30 @@
       "term": "錯綜",
       "reading": "さくそう",
       "exampleJa": "情報が錯綜しているため、確認済みの事実だけを先に整理します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-12.mp3",
+      "wordHash": "411f51c7869728b6253ca35a0e62a0e85e2cf89ad469ba29c3e05a9b59175d59",
+      "example": "example-12.mp3",
+      "exampleHash": "acd5517ef188685ecc1ad56c69a4161bf85316f6e5bc62acb8963f0d703fd493"
     },
     {
       "index": 13,
       "term": "荒削り",
       "reading": "あらけずり",
       "exampleJa": "まだ荒削りな試作品ですが、操作の流れは確認できます。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-13.mp3",
+      "wordHash": "4bcd3edf656d35099559e58b1f2757af86ea27e94085dd735293ca874ac79b4e",
+      "example": "example-13.mp3",
+      "exampleHash": "c4e2493b5e3d03f20ffa5ed874ae07116f0579b61586d0c983ed1fabfa38cbff"
     },
     {
       "index": 14,
       "term": "かつて",
       "reading": "かつて",
       "exampleJa": "かつては手作業で確認していた部分を、今は自動で検査しています。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-14.mp3",
+      "wordHash": "3802fc31a84168213a2a465117a7e4c9c0f895f672061b79aff7498246a74b6b",
+      "example": "example-14.mp3",
+      "exampleHash": "3369dcc3f11bfbe13ac7ab1aa85c73384ebba2a1dff5ecdf50d2c762d510cd01"
     },
     {
       "index": 15,
@@ -242,20 +242,28 @@
       "exampleHash": "e82f2404b55ac38b887a82f7a2b71b0588e6a7564da4f17d4c0155a4e465ccbc"
     },
     {
-      "index": 4,
+      "index": 3,
       "pattern": "～ままでは",
       "exampleJa": "暗黙知に依存した組織運営のままでは、AIに必要なContextを十分に渡せません。",
-      "example": "grammar-example-04.mp3",
+      "example": "grammar-example-03.mp3",
       "exampleHash": "99bad11d7d8dee9a0d0258a58ba1f84091c5f51a95ea177ee7244c67ec654328"
     },
     {
-      "index": 7,
+      "index": 4,
       "pattern": "～ために",
       "exampleJa": "Taskを達成するために、許可されていない手段を選ばないようGuardrailを設計します。",
-      "example": "grammar-example-07.mp3",
+      "example": "grammar-example-04.mp3",
       "exampleHash": "eefb7c670eb2ae87aab9accad4001eb95781d0ecca26e3e08b2a8759c3464d0c"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "つつ",
+      "firstIntroducedDate": "2026-08-18",
+      "audioDate": "2026-08-18",
+      "pattern": "～つつ",
+      "exampleJa": "品質を維持しつつ、Model Costを削減します。",
+      "example": "grammar-example-01.mp3"
     }
-  ],
-  "contentRevision": "jlpt-history-dedup-2026-09-18",
-  "browserTtsCount": 6
+  ]
 }

@@ -1,0 +1,137 @@
+{
+  "date": "2026-09-18",
+  "generatedAt": "2026-09-18T13:33:04.563Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "検証",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "term": "検証する",
+      "reading": "けんしょうする",
+      "exampleJa": "検索結果の品質を実データで検証します。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "判断",
+      "firstIntroducedDate": "2026-08-13",
+      "audioDate": "2026-08-13",
+      "term": "判断する",
+      "reading": "はんだんする",
+      "exampleJa": "判定モデルが軽量側で解けるかを判断します。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "実行",
+      "firstIntroducedDate": "2026-08-15",
+      "audioDate": "2026-08-15",
+      "term": "実行する",
+      "reading": "じっこうする",
+      "exampleJa": "危険なCommandは隔離されたSandboxで実行します。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "わけではない",
+      "firstIntroducedDate": "2026-08-30",
+      "audioDate": "2026-08-30",
+      "pattern": "～わけではない",
+      "exampleJa": "AIが差し戻したからといって、仕込んだバグを正しく検出したわけではありません。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "一方で",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～一方で",
+      "exampleJa": "Local LLMはDataを外部に出さない一方で、運用負荷が高くなることがあります。",
+      "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "つつ",
+      "firstIntroducedDate": "2026-08-18",
+      "audioDate": "2026-08-18",
+      "pattern": "～つつ",
+      "exampleJa": "品質を維持しつつ、Model Costを削減します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "につれて",
+      "firstIntroducedDate": "2026-08-20",
+      "audioDate": "2026-08-20",
+      "pattern": "～につれて",
+      "exampleJa": "Agent数が増えるにつれて、IdentityとSession Managementも複雑になります。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 5,
+      "studyKind": "review",
+      "identity": "ために",
+      "firstIntroducedDate": "2026-08-31",
+      "audioDate": "2026-08-31",
+      "pattern": "～ために",
+      "exampleJa": "Taskを達成するために、許可されていない手段を選ばないようGuardrailを設計します。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 6,
+      "studyKind": "review",
+      "identity": "に対して",
+      "firstIntroducedDate": "2026-09-09",
+      "audioDate": "2026-09-09",
+      "pattern": "～に対して",
+      "exampleJa": "管理者に対しても、同じアクセス制御を適用します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 7,
+      "studyKind": "review",
+      "identity": "べきだ",
+      "firstIntroducedDate": "2026-09-10",
+      "audioDate": "2026-09-10",
+      "pattern": "～べきだ",
+      "exampleJa": "最終的なリスク評価は、利用する組織自身が行うべきです。",
+      "example": "grammar-example-01.mp3"
+    }
+  ]
+}

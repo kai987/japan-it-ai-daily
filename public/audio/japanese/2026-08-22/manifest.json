@@ -1,6 +1,6 @@
 {
   "date": "2026-08-22",
-  "generatedAt": "2026-08-31T20:14:01.397Z",
+  "generatedAt": "2026-09-18T13:08:24.826Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -120,30 +120,30 @@
       "term": "食い違う",
       "reading": "くいちがう",
       "exampleJa": "仕様書と実際の画面が食い違っていたため、担当者に確認しました。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-10.mp3",
+      "wordHash": "587e836cef0085e205e569154336c6ea07a85a05eb1a5cef6455d4b51a5c87f1",
+      "example": "example-10.mp3",
+      "exampleHash": "feffc7fb2c6988f74f6b9537f5ce9efc060b1a3735eba2abcd1f60491c37cd15"
     },
     {
       "index": 11,
       "term": "匂わせる",
       "reading": "におわせる",
       "exampleJa": "削除を匂わせるだけの名前ではなく、操作内容が分かる名前に変えました。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-11.mp3",
+      "wordHash": "35cecfd22b16693de7819ddc6bf4131afef308bc2e9a7cd75a8f0ae84522dac2",
+      "example": "example-11.mp3",
+      "exampleHash": "7ee588ab68f6cac2de3b5694322f94642122b896766ba80b338d5696a6f566ec"
     },
     {
       "index": 12,
       "term": "照らし合わせる",
       "reading": "てらしあわせる",
       "exampleJa": "画面に表示された金額を、保存された注文情報と照らし合わせます。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-12.mp3",
+      "wordHash": "168b7d3c6c367f2907c54dbbb3703bf00fb81d7641af9edbd58e27d3be77cae1",
+      "example": "example-12.mp3",
+      "exampleHash": "c5da40892b302306da742a6f9348764d4bec7e512420675cd038589918f4c3eb"
     },
     {
       "index": 13,
@@ -160,20 +160,20 @@
       "term": "欠如",
       "reading": "けつじょ",
       "exampleJa": "根拠の説明が欠如している報告だけでは、対応方針を決められません。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-14.mp3",
+      "wordHash": "172221b04afcc90ee9a13ddc14fce0d52ed2d17f71bf8ab8905bb273ce307f1f",
+      "example": "example-14.mp3",
+      "exampleHash": "17aee49d781a52e78ba99e21cf0013d738a9c4e2665b1bce36d2bb089e2e5461"
     },
     {
       "index": 15,
       "term": "帰属",
       "reading": "きぞく",
       "exampleJa": "この記録がどの操作に帰属するか、識別子を使って確認します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-15.mp3",
+      "wordHash": "52f5754f9226732ee7344e020d7b47727c009f86635512eb07b3559805292f91",
+      "example": "example-15.mp3",
+      "exampleHash": "81b129d6dcdde131378ad51f5ac28618f7c6ddb5011cc2b5e6dfde0b86eef772"
     },
     {
       "index": 16,
@@ -200,10 +200,10 @@
       "term": "無害",
       "reading": "むがい",
       "exampleJa": "無害に見える入力でも、保存前に形式を確認します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-18.mp3",
+      "wordHash": "40812c45b753b2b8721e1fd31dbf952a6bc1e29519515360e41cb5d425db4854",
+      "example": "example-18.mp3",
+      "exampleHash": "9f9a18bbd6ee65738a4bd3fe21f3bd66e7a86a7fadc7214ee7f71e26691b8c71"
     },
     {
       "index": 19,
@@ -220,28 +220,36 @@
       "term": "おおむね",
       "reading": "おおむね",
       "exampleJa": "結果はおおむね一致していますが、一部の条件では差が出ました。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-20.mp3",
+      "wordHash": "644c185c2a8a4fbd25872eee615c01c0e96a34ef302f09b9a4f0f3d676c87465",
+      "example": "example-20.mp3",
+      "exampleHash": "2af91227537198e44f802557542b38529df844e1f6c3558d20abf79d9a387219"
     }
   ],
   "grammar": [
     {
-      "index": 5,
+      "index": 1,
       "pattern": "～に備えて",
       "exampleJa": "緊急Patchに備えてDependency Inventoryを維持します。",
-      "example": "grammar-example-05.mp3",
+      "example": "grammar-example-01.mp3",
       "exampleHash": "91f125f5b771c6e0509d8d8fac044949898fa7a9dff9d62c1d6efe8fc2189205"
     },
     {
+      "index": 2,
       "pattern": "～に限って",
       "exampleJa": "この結果は、確認した版と実行条件に限って有効です。",
-      "example": null,
-      "playback": "browser-tts",
-      "reason": "historical-grammar-repair"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "4c20f6660335be669f8d5844f97dbaa6a0739639021f40bd63e7d9341c4456cb"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "たうえで",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～たうえで",
+      "exampleJa": "Latencyを計測したうえで、利用するModelを決定します。",
+      "example": "grammar-example-06.mp3"
     }
-  ],
-  "contentRevision": "jlpt-history-dedup-2026-09-18",
-  "browserTtsCount": 7
+  ]
 }

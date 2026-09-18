@@ -1,6 +1,6 @@
 {
   "date": "2026-09-01",
-  "generatedAt": "2026-09-01T04:12:09.789Z",
+  "generatedAt": "2026-09-18T13:12:15.316Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -60,10 +60,10 @@
       "term": "費やす",
       "reading": "ついやす",
       "exampleJa": "修正に費やす時間も含めて、作業全体を評価します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-04.mp3",
+      "wordHash": "3569a203245c54e845c032d7510c6cfc61dc5e7950d2f48decb3770297072fa1",
+      "example": "example-04.mp3",
+      "exampleHash": "a7b7bc3fb33385f58a7660aa1265e446363fb059834879600af9245ceacf7177"
     },
     {
       "index": 5,
@@ -100,10 +100,10 @@
       "term": "投じる",
       "reading": "とうじる",
       "exampleJa": "大きな費用を投じる前に、小規模な試行で確かめます。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-08.mp3",
+      "wordHash": "e794de217808075dc24b730183923ad1815c692cfbb45f043e84390981718952",
+      "example": "example-08.mp3",
+      "exampleHash": "0d7000839dd83dc597137af927e0d8f0353691a9dcc18629a93096bd08c77059"
     },
     {
       "index": 9,
@@ -120,10 +120,10 @@
       "term": "育む",
       "reading": "はぐくむ",
       "exampleJa": "小さな相談を重ねることで、チーム内の信頼を育みます。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-10.mp3",
+      "wordHash": "2886ec74cc1a75db51aba33bb4f9a107027db2503bad6a767801f903d587bb36",
+      "example": "example-10.mp3",
+      "exampleHash": "835497dbef238f346c0c20a9d427e73bb86ef18055d018c13028df7d7bb93234"
     },
     {
       "index": 11,
@@ -180,30 +180,30 @@
       "term": "とらわれる",
       "reading": "とらわれる",
       "exampleJa": "処理速度だけにとらわれず、使いやすさも確かめます。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-16.mp3",
+      "wordHash": "84fcdb856ad9c29a7210d59ed7fd59cd1dd0cda11b703f821c5ba00d04bd4e48",
+      "example": "example-16.mp3",
+      "exampleHash": "c57339bca928009a112460522d74e4822f42c080951dd9d45f9dbf7ae862bddc"
     },
     {
       "index": 17,
       "term": "手厚い",
       "reading": "てあつい",
       "exampleJa": "初めて使う人には、通常より手厚い説明を用意します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-17.mp3",
+      "wordHash": "9bc89847f3465c70392d0836bce08b5c66273e3f20811d86b079a012f325c723",
+      "example": "example-17.mp3",
+      "exampleHash": "4851dadf5b4c73b6610a56b940c2b5930fd5b4623c8b8e1d2abc6a587ed8a38e"
     },
     {
       "index": 18,
       "term": "やがて",
       "reading": "やがて",
       "exampleJa": "小さな不便でも、放置すればやがて大きな負担になります。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-18.mp3",
+      "wordHash": "4386df0cf923cb401beaf7378fda690c0a2e526e9d6592785b827742e0a99663",
+      "example": "example-18.mp3",
+      "exampleHash": "81f24857660a4b59e8512e91664bbd224073a3f6f7a70279a2676e6782497726"
     },
     {
       "index": 19,
@@ -235,13 +235,51 @@
       "exampleHash": "a91e178516d80f212a1f1ba93d223d3879f1aa0ed4b9fa09cf95d034543c0824"
     },
     {
+      "index": 2,
       "pattern": "～しかない",
       "exampleJa": "根拠が足りない部分は、担当者が直接確認するしかありません。",
-      "example": null,
-      "playback": "browser-tts",
-      "reason": "historical-grammar-repair"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "d12aee9a83ca7f960db66845d01012fa23fbb1caff495adfa3af47e6e01f7643"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "上で",
+      "firstIntroducedDate": "2026-08-19",
+      "audioDate": "2026-08-19",
+      "pattern": "～上で",
+      "exampleJa": "MCPを本番利用する上で、認可と監査は重要です。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "を通じて",
+      "firstIntroducedDate": "2026-08-15",
+      "audioDate": "2026-08-15",
+      "pattern": "～を通じて",
+      "exampleJa": "各プラグインは共通のイベントを通じて連携します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "一方で",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～一方で",
+      "exampleJa": "Local LLMはDataを外部に出さない一方で、運用負荷が高くなることがあります。",
+      "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "に伴って",
+      "firstIntroducedDate": "2026-08-18",
+      "audioDate": "2026-08-18",
+      "pattern": "～に伴って",
+      "exampleJa": "Agent利用の拡大に伴って、Cost Governanceの重要性も高まります。",
+      "example": "grammar-example-02.mp3"
     }
-  ],
-  "contentRevision": "jlpt-history-dedup-2026-09-18",
-  "browserTtsCount": 6
+  ]
 }

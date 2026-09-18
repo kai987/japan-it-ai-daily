@@ -1,6 +1,6 @@
 {
   "date": "2026-08-15",
-  "generatedAt": "2026-08-31T20:14:01.378Z",
+  "generatedAt": "2026-09-18T13:06:12.785Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -30,10 +30,10 @@
       "term": "掲げる",
       "reading": "かかげる",
       "exampleJa": "利用者の負担を減らすという目標を掲げ、画面を設計しました。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-01.mp3",
+      "wordHash": "d2da754e05b674a7284bc2c8e02efe18e5ccd0997af8b50770bf617ff6f29ac9",
+      "example": "example-01.mp3",
+      "exampleHash": "301b2a6a19b19b970c10e6399cfdb544098e4d3d0e4459bded91b19f6ac222a7"
     },
     {
       "index": 2,
@@ -70,10 +70,10 @@
       "term": "至る",
       "reading": "いたる",
       "exampleJa": "画面の構成から通知文の細部に至るまで、利用者の視点で確認します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-05.mp3",
+      "wordHash": "17e38ffcab6407aa772362ac1a39aee30719daf57ec57cb047eaa21044eae13f",
+      "example": "example-05.mp3",
+      "exampleHash": "0bc680a2a282133fa1a4268a5fe1c51c684a9ae3ab7864b1c25290dbef12abc6"
     },
     {
       "index": 6,
@@ -130,20 +130,20 @@
       "term": "紛れる",
       "reading": "まぎれる",
       "exampleJa": "大量の記録に重要な警告が紛れないよう、表示を分けます。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-11.mp3",
+      "wordHash": "6daa7815bac82cb6ec94878f7991071592235bfe3229e09444e6abffc6212084",
+      "example": "example-11.mp3",
+      "exampleHash": "de68b34793ca791c2b07c1af0fbc1922a60487952a765851644b518a3a0a832a"
     },
     {
       "index": 12,
       "term": "行き詰まる",
       "reading": "いきづまる",
       "exampleJa": "実装に行き詰まったときは、前提を整理してから相談します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-12.mp3",
+      "wordHash": "78b8ec964227f9bde3ddf5bc81fb6a041a45df1602bed3844e6ddd9a2b524cb8",
+      "example": "example-12.mp3",
+      "exampleHash": "04cc53bd7015fdeba55ff811f2f9b708f1ba1c7c266bcd241c8f12cd82225851"
     },
     {
       "index": 13,
@@ -190,20 +190,20 @@
       "term": "入念",
       "reading": "にゅうねん",
       "exampleJa": "切り替え前に、復旧手順を入念に確認しておきます。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-17.mp3",
+      "wordHash": "0a81038b861e2cf776816e42c8a5028e82fd732797fb995487bc8b7d16cfa52c",
+      "example": "example-17.mp3",
+      "exampleHash": "516326a3ba960f2a3f1afbfee30b4b226b21d7da4a3eb84bc7a2e2ff2e30a0df"
     },
     {
       "index": 18,
       "term": "あえて",
       "reading": "あえて",
       "exampleJa": "比較条件をそろえるため、今回はあえて既存の設定を変えません。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-18.mp3",
+      "wordHash": "85ff4635b34f4076c6687e44a18d22aa68fc8859b5514f90d1cab14613e0aa5d",
+      "example": "example-18.mp3",
+      "exampleHash": "2e4864e4b795f9ebd7889d338833b1f134af6e3277442f431e361e34df96a6a7"
     },
     {
       "index": 19,
@@ -220,28 +220,36 @@
       "term": "多岐",
       "reading": "たき",
       "exampleJa": "担当する業務は画面設計から運用支援まで多岐にわたります。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-20.mp3",
+      "wordHash": "8012ee2dd7158094df85771991915160093728b23018766cfc58bba5e118f339",
+      "example": "example-20.mp3",
+      "exampleHash": "edc015911815f8411d54c8cf777bcccf739786b83f43974a8e31ba58f1f56e56"
     }
   ],
   "grammar": [
     {
+      "index": 1,
       "pattern": "～を通じて",
       "exampleJa": "各プラグインは共通のイベントを通じて連携します。",
-      "example": null,
-      "playback": "browser-tts",
-      "reason": "historical-grammar-repair"
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "f96dc0b1ae78a2d30d4d8fbca9c0de52e415ed3df40e936dcdf926f79b5c31df"
     },
     {
+      "index": 2,
       "pattern": "～に従って",
       "exampleJa": "権限ポリシーに従って、実行前に利用者の承認を得ます。",
-      "example": null,
-      "playback": "browser-tts",
-      "reason": "historical-grammar-repair"
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "75d0d42459bb1d5cccf2e9ef5b3ee654c44a34913aaa9c360b2d925bd812f655"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "とは限らない",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～とは限らない",
+      "exampleJa": "Parameter数が多ければ実務性能が高いとは限りません。",
+      "example": "grammar-example-07.mp3"
     }
-  ],
-  "contentRevision": "jlpt-history-dedup-2026-09-18",
-  "browserTtsCount": 7
+  ]
 }

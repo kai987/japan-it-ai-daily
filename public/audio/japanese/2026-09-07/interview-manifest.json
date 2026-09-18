@@ -23,6 +23,20 @@
     "speed": 1,
     "intonationScale": 1
   },
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      26,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-18T13:19:09.991Z",
   "interview": [
     {
       "index": 1,
@@ -39,7 +53,7 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "1ebbb667f745f0dbbaa12602e583d01efcb24a1945b32f94c89c2a1633c913c9",
       "durationSeconds": 27.314,
-      "durationStatus": "legacy"
+      "durationStatus": "ideal"
     },
     {
       "index": 2,
@@ -56,7 +70,7 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "994cd49f5c20a2836da70c27fb4d93c9cc5c701c50228f1365e7da4a9c179def",
       "durationSeconds": 25.682,
-      "durationStatus": "legacy"
+      "durationStatus": "warn"
     },
     {
       "index": 3,
@@ -73,7 +87,7 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "a5551a2892ebf3932bc9ec98d70a7df7b24e0c979fb475221fef358b404d7b0e",
       "durationSeconds": 26.771,
-      "durationStatus": "legacy"
+      "durationStatus": "ideal"
     },
     {
       "index": 4,
@@ -90,7 +104,7 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "d737e4d076f3444ed9804faa87556e40312d4086c1fd8a4af5bfeaab5605a7c5",
       "durationSeconds": 27.979,
-      "durationStatus": "legacy"
+      "durationStatus": "ideal"
     },
     {
       "index": 5,
@@ -107,7 +121,7 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "a95ea10a2927fdab64ac454a2b465a6b6d9326699349594f8e44617d170a42fd",
       "durationSeconds": 27.804,
-      "durationStatus": "legacy"
+      "durationStatus": "ideal"
     }
   ],
   "review": [
@@ -132,19 +146,5 @@
       "audioHash": "9ab5454fcbb57711a74d031e8120deb86b309c636b8b80b21a20601d05c32de7",
       "durationSeconds": 5.508
     }
-  ],
-  "durationPolicy": {
-    "source": "ffprobe",
-    "enforceFrom": "2026-09-08",
-    "idealSeconds": [
-      26,
-      34
-    ],
-    "hardSeconds": [
-      22,
-      40
-    ],
-    "maxStoredDriftSeconds": 0.08
-  },
-  "durationMeasuredAt": "2026-09-07T14:09:24.414Z"
+  ]
 }

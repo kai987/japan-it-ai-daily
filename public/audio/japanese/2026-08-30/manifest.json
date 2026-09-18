@@ -1,6 +1,6 @@
 {
   "date": "2026-08-30",
-  "generatedAt": "2026-08-31T20:14:01.421Z",
+  "generatedAt": "2026-09-18T13:11:47.380Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -30,10 +30,10 @@
       "term": "鵜呑み",
       "reading": "うのみ",
       "exampleJa": "自動判定の結果を鵜呑みにせず、判断の根拠を確かめます。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-01.mp3",
+      "wordHash": "995e87944664931bad721bb5da99cb0fa439e3d8487f01f10bb67ee9b1b5955a",
+      "example": "example-01.mp3",
+      "exampleHash": "b5bf97b1a4ab10bd675427704b71a217823e6c7780d226609d77ac75b4e9c68c"
     },
     {
       "index": 2,
@@ -180,10 +180,10 @@
       "term": "素朴",
       "reading": "そぼく",
       "exampleJa": "まず素朴な方法で動きを確かめ、その後で必要な条件を加えます。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-16.mp3",
+      "wordHash": "1fed0dd03163d6548b60964b7ff5fbc87c19fa1459df4ab260750394343a4bbb",
+      "example": "example-16.mp3",
+      "exampleHash": "f26e2fae94f90c7b6c7f2a8ca101e82999cfa053bbfc6ed9a6ee7ac0c83e1f46"
     },
     {
       "index": 17,
@@ -220,35 +220,63 @@
       "term": "じっくり",
       "reading": "じっくり",
       "exampleJa": "結論を急がず、元の記録をじっくり読み直します。",
-      "playback": "browser-tts",
-      "reason": "historical-jlpt-repair",
-      "word": null,
-      "example": null
+      "word": "vocab-20.mp3",
+      "wordHash": "bc58268fe3adbdd31407d05aecd9af36a3634e6709b185e74d1b08abf77524bb",
+      "example": "example-20.mp3",
+      "exampleHash": "898639893a60778852f30c591caa0ea63377a96372a22863c792f9db654ea471"
     }
   ],
   "grammar": [
     {
-      "index": 6,
+      "index": 1,
       "pattern": "～わけではない",
       "exampleJa": "AIが差し戻したからといって、仕込んだバグを正しく検出したわけではありません。",
-      "example": "grammar-example-06.mp3",
+      "example": "grammar-example-01.mp3",
       "exampleHash": "27a699e0f92a08547881598486afbcba58e1f4810427c8c8ac4728eaca64d84b"
     },
     {
-      "index": 7,
+      "index": 2,
       "pattern": "～を踏まえて",
       "exampleJa": "Evaluation結果と契約条件を踏まえて、複数ProviderへのFallbackを設計します。",
-      "example": "grammar-example-07.mp3",
+      "example": "grammar-example-02.mp3",
       "exampleHash": "baadfb1b6fb4349a6088d3323dd7abadbef4c8ab41ae5e2d8db4cae609682821"
     },
     {
+      "index": 3,
       "pattern": "～から～にかけて",
       "exampleJa": "春から夏にかけて、チームの利用状況を調べました。",
-      "example": null,
-      "playback": "browser-tts",
-      "reason": "historical-grammar-repair"
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "0b316503c31691fe888e2c6255ed2bf242c049efd0665b0ffd0727990a209851"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "とは限らない",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～とは限らない",
+      "exampleJa": "Parameter数が多ければ実務性能が高いとは限りません。",
+      "example": "grammar-example-07.mp3"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "に基づいて",
+      "firstIntroducedDate": "2026-08-13",
+      "audioDate": "2026-08-13",
+      "pattern": "～に基づいて",
+      "exampleJa": "実際の会話に基づいて、ルーターを較正します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "からといって",
+      "firstIntroducedDate": "2026-08-18",
+      "audioDate": "2026-08-18",
+      "pattern": "～からといって",
+      "exampleJa": "検知精度が上がったからといって、確認作業が減るとは限りません。",
+      "example": "grammar-example-03.mp3"
     }
-  ],
-  "contentRevision": "jlpt-history-dedup-2026-09-18",
-  "browserTtsCount": 3
+  ]
 }
