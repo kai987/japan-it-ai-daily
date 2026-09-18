@@ -41,12 +41,33 @@ for (const locale of ['zh','ja']) {
     expect(f!.y).toBeGreaterThan(b!.y);
     await frequency.locator('summary').click();
 
-    const denseCard=page.locator('.vocabulary-card').filter({hasText:'検証する'}).first();
+    const denseCard=page.locator('.vocabulary-card[data-study-kind="review"]').filter({hasText:'検証する'}).first();
     const denseFrequency=denseCard.locator('.study-frequency');
     await denseFrequency.locator('summary').click();
     const dateGrid=denseFrequency.locator('.frequency-dates');
     const dateRows=dateGrid.locator('.frequency-date-row');
+    const dateLinks=dateGrid.locator('.frequency-date-link');
     expect(await dateRows.count()).toBeGreaterThan(1);
+    expect(await dateLinks.count()).toBeGreaterThan(1);
+    const firstDateLink=dateLinks.filter({hasText:'2026-08-12'}).first();
+    await expect(firstDateLink).toHaveAttribute('target','_blank');
+    await expect(firstDateLink).toHaveAttribute('rel',/noopener/);
+    await expect(firstDateLink).toHaveAttribute('href',/\/ja\/daily\/2026-08-12\/\?studyFocus=/);
+    if(locale==='zh'){
+      const popupPromise=page.waitForEvent('popup');
+      await firstDateLink.click();
+      const popup=await popupPromise;
+      await popup.waitForLoadState('domcontentloaded');
+      await expect(popup).toHaveURL(/\/ja\/daily\/2026-08-12\/\?studyFocus=/);
+      const focused=popup.locator('#study-focus-target');
+      await expect(focused).toBeVisible();
+      expect((await focused.textContent())?.normalize('NFKC')).toContain('検証');
+      await expect.poll(async()=>focused.evaluate(el=>{
+        const rect=el.getBoundingClientRect();
+        return rect.top < innerHeight && rect.bottom > 0;
+      })).toBe(true);
+      await popup.close();
+    }
     await denseFrequency.locator('summary').click();
 
     await page.locator('.vocabulary-card').first().scrollIntoViewIfNeeded();

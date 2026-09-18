@@ -13,10 +13,12 @@ const dateOf = value => value instanceof Date ? value.toISOString().slice(0,10) 
 export function issueNumbers(dates) {
   return Object.fromEntries([...new Set(dates.map(dateOf))].sort().map((date, i) => [date, i + 1]));
 }
-export function frequencyFor(dates, totalDays) {
+export function frequencyFor(dates, totalDays, appearanceForms = new Map()) {
   const appearedDates = [...new Set(dates)].sort();
   if (!Number.isInteger(totalDays) || totalDays < 1 || appearedDates.length > totalDays) throw new Error('Invalid report-frequency denominator');
-  return { appearedDays: appearedDates.length, totalDays, percent: Number((appearedDates.length / totalDays * 100).toFixed(1)), appearedDates };
+  const forms = Object.fromEntries(appearedDates.map(date => [date, appearanceForms.get(date)]).filter(([, form]) => typeof form === 'string' && form.length));
+  const frequency = { appearedDays: appearedDates.length, totalDays, percent: Number((appearedDates.length / totalDays * 100).toFixed(1)), appearedDates };
+  return Object.keys(forms).length ? { ...frequency, appearanceForms: forms } : frequency;
 }
 export function frequencyText(frequency, locale = 'zh') {
   return `${locale === 'ja' ? '出現頻度' : '出现频率'}：${frequency.percent.toFixed(1)}%（${frequency.appearedDays}/${frequency.totalDays}${locale === 'ja' ? '日' : '天'}）`;
@@ -107,7 +109,7 @@ export function buildStudyArchive(root = process.cwd()) {
       const id = keys[kind](card[kind==='vocabulary'?'term':'pattern']);
       if (id !== keys[kind](ja[i][kind==='vocabulary'?'term':'pattern'])) throw new Error(`${day.date}: mismatched identity`);
       if (registries[kind].has(id)) throw new Error(`${day.date}: repeated NEW ${kind}: ${id}`);
-      registries[kind].set(id, {id,firstDate:day.date,zh:card,ja:ja[i],match:matcherFor(card,kind,rules[kind],keys[kind]),appearedDates:[],evidence:new Map()});
+      registries[kind].set(id, {id,firstDate:day.date,zh:card,ja:ja[i],match:matcherFor(card,kind,rules[kind],keys[kind]),appearedDates:[],appearanceForms:new Map(),evidence:new Map()});
     });
   }
   for (const day of days) for (const kind of ['vocabulary','grammar']) {
@@ -120,7 +122,10 @@ export function buildStudyArchive(root = process.cwd()) {
       }
       if (evidence) entry.evidence.set(day.date,evidence);
       const cardOccurrence = entry.match(day.cardCorpus);
-      if (introduced.has(entry.id) || evidence || cardOccurrence) entry.appearedDates.push(day.date);
+      if (introduced.has(entry.id) || evidence || cardOccurrence) {
+        entry.appearedDates.push(day.date);
+        entry.appearanceForms.set(day.date, evidence?.form || cardOccurrence?.form || clean(entry.ja[kind === 'vocabulary' ? 'term' : 'pattern']).replace(/[~～〜…]/gu, ''));
+      }
     }
   }
   const result = {schemaVersion:1,policy:REVIEW_POLICY,frequencyScope:FREQUENCY_SCOPE,totalDays:dates.length,firstDate:dates[0],lastDate:dates.at(-1),issueNumbers:numbers,lessons:{}};
@@ -140,12 +145,12 @@ export function buildStudyArchive(root = process.cwd()) {
       for (const locale of ['zh','ja']) {
         views[locale][kind] = original.map((_,i) => {
           const card=day.files[locale==='zh'?'japanese':'japanese-ja'].data[kind][i],entry=registries[kind].get(keys[kind](card[field]));
-          return normalizedCard(card,locale,{studyKind:'new',identity:entry.id,firstIntroducedDate:entry.firstDate,reportFrequency:frequencyFor(entry.appearedDates,dates.length)});
+          return normalizedCard(card,locale,{studyKind:'new',identity:entry.id,firstIntroducedDate:entry.firstDate,reportFrequency:frequencyFor(entry.appearedDates,dates.length,entry.appearanceForms)});
         });
         const reviewField = kind==='vocabulary'?'reviewVocabulary':'reviewGrammar';
         views[locale][reviewField] = selected.map(entry=>normalizedCard(entry[locale],locale,{
           studyKind:'review',identity:entry.id,firstIntroducedDate:entry.firstDate,
-          reviewEvidence:entry.evidence.get(day.date),reportFrequency:frequencyFor(entry.appearedDates,dates.length),
+          reviewEvidence:entry.evidence.get(day.date),reportFrequency:frequencyFor(entry.appearedDates,dates.length,entry.appearanceForms),
         }));
         views[locale][kind==='vocabulary'?'studyVocabularyCount':'studyGrammarCount'] = original.length+selected.length;
         if (selected.length<gap) views[locale][kind==='vocabulary'?'reviewVocabularyNote':'reviewGrammarNote'] = locale==='ja'
@@ -160,12 +165,18 @@ export function buildStudyArchive(root = process.cwd()) {
   for (const day of days) {
     const review = result.lessons[day.date].ja;
     const text = [...review.reviewVocabulary,...review.reviewGrammar].flatMap(cardTexts).join('\n');
-    for (const kind of ['vocabulary','grammar']) for (const entry of registries[kind].values())
-      if (!entry.appearedDates.includes(day.date) && entry.match(text)) entry.appearedDates.push(day.date);
+    for (const kind of ['vocabulary','grammar']) for (const entry of registries[kind].values()) {
+      if (entry.appearedDates.includes(day.date)) continue;
+      const match = entry.match(text);
+      if (match) {
+        entry.appearedDates.push(day.date);
+        entry.appearanceForms.set(day.date, match.form);
+      }
+    }
   }
   for (const day of Object.values(result.lessons)) for (const locale of ['zh','ja']) for (const kind of ['vocabulary','grammar'])
     for (const card of [...day[locale][kind],...day[locale][kind==='vocabulary'?'reviewVocabulary':'reviewGrammar']])
-      card.reportFrequency = frequencyFor(registries[kind].get(card.identity).appearedDates,dates.length);
+      card.reportFrequency = frequencyFor(registries[kind].get(card.identity).appearedDates,dates.length,registries[kind].get(card.identity).appearanceForms);
   return result;
 }
 let cached;

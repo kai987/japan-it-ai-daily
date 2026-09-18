@@ -12,6 +12,7 @@ for(const [date,day] of Object.entries(archive.lessons)) for(const locale of ['z
  for(const card of [...fresh,...review]){
   const f=card.reportFrequency;
   if(f.totalDays!==archive.totalDays||f.appearedDays!==new Set(f.appearedDates).size||f.percent!==Number((f.appearedDays/f.totalDays*100).toFixed(1)))throw new Error(`${date}: inaccurate frequency`);
+  if(!f.appearanceForms||f.appearedDates.some(appearedDate=>typeof f.appearanceForms[appearedDate]!=='string'||!f.appearanceForms[appearedDate].trim()))throw new Error(`${date}: missing per-date frequency focus form`);
  }
 }
-console.log(`Study review PASS: ${archive.totalDays} report dates; new identities remain unique, reviews have earlier introductions and current-report evidence; frequencies and issue numbers validated.`);
+console.log(`Study review PASS: ${archive.totalDays} report dates; new identities remain unique, reviews have earlier introductions and current-report evidence; frequencies, per-date focus forms and issue numbers validated.`);

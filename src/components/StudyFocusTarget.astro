@@ -1,0 +1,67 @@
+<script>
+  (() => {
+    const focus = new URLSearchParams(window.location.search).get('studyFocus')?.normalize('NFKC').trim();
+    if (!focus) return;
+
+    const article = document.querySelector('article.prose');
+    if (!(article instanceof HTMLElement)) return;
+
+    const reveal = (element: HTMLElement) => {
+      if (!(element instanceof HTMLElement)) return;
+      element.id = 'study-focus-target';
+      element.classList.add('study-focus-target');
+      requestAnimationFrame(() => element.scrollIntoView({ block: 'center', behavior: 'auto' }));
+    };
+
+    const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent || !node.nodeValue?.trim()) return NodeFilter.FILTER_REJECT;
+        if (parent.closest('script, style, button, a, .report-speech-button')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+
+    let node = walker.nextNode() as Text | null;
+    while (node) {
+      const source = node.nodeValue || '';
+      const index = source.indexOf(focus);
+      if (index < 0) {
+        node = walker.nextNode() as Text | null;
+        continue;
+      }
+
+      const matched = node.splitText(index);
+      matched.splitText(focus.length);
+      const mark = document.createElement('mark');
+      mark.className = 'study-focus-highlight';
+      mark.textContent = matched.nodeValue || focus;
+      matched.replaceWith(mark);
+      reveal(mark);
+      return;
+    }
+
+    const normalizedFocus = focus.normalize('NFKC');
+    const candidates = Array.from(article.querySelectorAll('p, li, h2, h3, h4, blockquote, code, strong, span'))
+      .filter((element) => !element.closest('a, button') && (element.textContent || '').normalize('NFKC').includes(normalizedFocus))
+      .sort((a, b) => (a.textContent?.length || 0) - (b.textContent?.length || 0));
+    const fallback = candidates[0];
+    if (fallback instanceof HTMLElement) reveal(fallback);
+  })();
+</script>
+
+<style>
+  :global(.study-focus-highlight){
+    background:color-mix(in srgb,#ffd84d 58%,transparent);
+    color:inherit;
+    border-radius:3px;
+    padding:0 .08em;
+    scroll-margin-top:120px;
+  }
+  :global(.study-focus-target:not(mark)){
+    outline:3px solid color-mix(in srgb,var(--accent) 40%,transparent);
+    outline-offset:5px;
+    border-radius:5px;
+    scroll-margin-top:120px;
+  }
+</style>
