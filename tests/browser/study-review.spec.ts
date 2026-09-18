@@ -44,11 +44,26 @@ for (const locale of ['zh','ja']) {
     await page.locator('.vocabulary-card').first().scrollIntoViewIfNeeded();
     await page.screenshot({path:testInfo.outputPath('study-desktop.png')});
     await page.setViewportSize({width:390,height:844});
-    await page.locator('.grammar-card[data-study-kind="review"]').first().scrollIntoViewIfNeeded();
-    const mobileMeta=page.locator('.grammar-card[data-study-kind="review"] .study-meta').first();
+    const mobileCard=page.locator('.vocabulary-card').filter({hasText:'一分一秒を争う'}).first();
+    await mobileCard.scrollIntoViewIfNeeded();
+    const mobileHeader=mobileCard.locator('.study-card-header');
+    const mobileLeft=mobileHeader.locator(':scope > :first-child');
+    const mobileMeta=mobileHeader.locator('.study-meta');
+    const mobileBadge=mobileMeta.locator('.level-badge');
+    await expect(mobileBadge).toHaveCSS('white-space','nowrap');
     await expect(mobileMeta.locator('.frequency-ratio')).toBeVisible();
-    const mobilePrimary=await mobileMeta.locator('.frequency-primary').boundingBox();
-    const mobileRatio=await mobileMeta.locator('.frequency-ratio').boundingBox();
+    const [headerBox,leftBox,metaBox,badgeMobileBox,mobilePrimary,mobileRatio]=await Promise.all([
+      mobileHeader.boundingBox(),
+      mobileLeft.boundingBox(),
+      mobileMeta.boundingBox(),
+      mobileBadge.boundingBox(),
+      mobileMeta.locator('.frequency-primary').boundingBox(),
+      mobileMeta.locator('.frequency-ratio').boundingBox(),
+    ]);
+    expect(Math.abs(leftBox!.y-metaBox!.y)).toBeLessThan(3);
+    expect(Math.abs(leftBox!.x-headerBox!.x)).toBeLessThan(3);
+    expect(Math.abs((metaBox!.x+metaBox!.width)-(headerBox!.x+headerBox!.width))).toBeLessThan(3);
+    expect(badgeMobileBox!.height).toBeLessThan(32);
     expect(mobileRatio!.y).toBeGreaterThan(mobilePrimary!.y);
     await page.screenshot({path:testInfo.outputPath('study-mobile.png')});
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

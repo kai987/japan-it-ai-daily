@@ -26,8 +26,8 @@ const frequency = item.reportFrequency;
     align-items:flex-end;
     gap:7px;
     max-width:260px;
-    min-width:0;
-    flex:0 1 auto;
+    min-width:124px;
+    flex:0 0 auto;
     margin-left:auto;
     text-align:right;
   }
@@ -37,6 +37,7 @@ const frequency = item.reportFrequency;
     align-items:flex-end;
     gap:5px;
   }
+  .level-badge{white-space:nowrap}
   .study-kind{
     display:block;
     font-size:12px;
@@ -83,7 +84,7 @@ const frequency = item.reportFrequency;
   .frequency-details{max-width:250px;margin-left:auto;text-align:right}
   .study-frequency p{font-size:12px;margin:5px 0}
   @media(max-width:600px){
-    .study-meta{max-width:46%;min-width:112px}
+    .study-meta{width:100%;max-width:none;min-width:124px}
     .study-frequency{font-size:12px}
   }
 </style>
