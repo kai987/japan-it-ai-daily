@@ -15,7 +15,9 @@ const frequency = item.reportFrequency;
     </summary>
     <div class="frequency-details">
       <p>{locale === 'ja' ? '日報本文・推薦理由・学習カードに出現した日を集計。外部記事の全文は含みません。' : FREQUENCY_SCOPE}</p>
-      <p>{frequency.appearedDates.join(' / ')}</p>
+      <div class="frequency-dates">
+        {frequency.appearedDates.map((date: string) => <span class="frequency-date">{date}</span>)}
+      </div>
     </div>
   </details>}
 </div>
@@ -26,7 +28,7 @@ const frequency = item.reportFrequency;
     align-items:flex-end;
     gap:7px;
     max-width:260px;
-    min-width:124px;
+    min-width:120px;
     flex:0 0 auto;
     margin-left:auto;
     text-align:right;
@@ -82,9 +84,20 @@ const frequency = item.reportFrequency;
   .frequency-primary{grid-area:primary;white-space:nowrap}
   .frequency-ratio{grid-area:ratio;white-space:nowrap}
   .frequency-details{max-width:250px;margin-left:auto;text-align:right}
+  .frequency-dates{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(105px,1fr));
+    gap:2px 10px;
+    width:100%;
+    max-width:250px;
+    margin:5px 0 0 auto;
+    font-variant-numeric:tabular-nums;
+    text-align:right;
+  }
+  .frequency-date{white-space:nowrap}
   .study-frequency p{font-size:12px;margin:5px 0}
   @media(max-width:600px){
-    .study-meta{width:100%;max-width:none;min-width:124px}
+    .study-meta{width:100%;max-width:none;min-width:120px}
     .study-frequency{font-size:12px}
   }
 </style>
