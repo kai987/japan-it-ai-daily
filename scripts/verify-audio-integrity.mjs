@@ -115,8 +115,11 @@ export const verifyRemoteAssets = async (assets, base, fetcher = fetch) => {
   await Promise.all(Array.from({ length: Math.min(8, queue.length) }, async () => {
     while (queue.length) {
       const [path, expected] = queue.shift();
-      // Check the exact URL the site uses, including its normal CDN cache.
-      const response = await fetcher(new URL(path, url), { signal: AbortSignal.timeout(30000) });
+      // Verify the deployed object through a cache-busting URL so a stale CDN
+      // response cannot make a freshly overwritten R2 object look incorrect.
+      const requestUrl = new URL(path, url);
+      requestUrl.searchParams.set('sha256', expected.sha256.slice(0, 16));
+      const response = await fetcher(requestUrl, { signal: AbortSignal.timeout(30000) });
       if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
       const bytes = Buffer.from(await response.arrayBuffer());
       if (bytes.length !== expected.size || digest(bytes) !== expected.sha256) throw new Error(`${path}: deployed MP3 SHA-256 mismatch`);
