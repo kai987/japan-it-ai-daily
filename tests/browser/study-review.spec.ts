@@ -1,4 +1,6 @@
 import { test, expect } from '@playwright/test';
+import { contentDates } from '../../scripts/content-files.mjs';
+const reportDays = contentDates(process.cwd()).length;
 for (const locale of ['zh','ja']) {
   const root=`/japan-it-ai-daily/${locale==='ja'?'ja/':''}`;
   test(`${locale}: learning issue, new/review totals and inspectable date frequency`,async({page},testInfo)=>{
@@ -11,7 +13,7 @@ for (const locale of ['zh','ja']) {
     await expect(page.locator('.vocabulary-card[data-study-kind="review"]')).toHaveCount(3);
     await expect(page.locator('.grammar-card[data-study-kind="review"]')).toHaveCount(7);
     const frequency=page.locator('.study-frequency').first();
-    await expect(frequency).toHaveAttribute('data-frequency-total','38');
+    await expect(frequency).toHaveAttribute('data-frequency-total',String(reportDays));
     await frequency.locator('summary').click();
     await expect(frequency).toHaveAttribute('open','');
     await expect(frequency).toContainText('2026-09-18');
