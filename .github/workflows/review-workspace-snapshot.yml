@@ -1,0 +1,42 @@
+name: Prepare learning review workspace
+on:
+  push:
+    branches: [work/review-frequency-2026-09-18]
+    paths: [.github/workflows/review-workspace-snapshot.yml]
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          path: daily
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: kai987/Japanese-N1-Immersive-Sparring-Partner
+          ref: main
+          path: n1
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24
+      - name: Prepare sources and installed dependencies
+        run: |
+          mkdir -p /tmp/learning-workspace/daily /tmp/learning-workspace/n1 /tmp/learning-workspace/bin
+          for project in daily n1; do
+            git -C "$project" rev-parse HEAD > "/tmp/learning-workspace/$project/source-commit.txt"
+            git -C "$project" archive HEAD | tar -x -C "/tmp/learning-workspace/$project"
+            (cd "$project" && npm ci)
+            cp -a "$project/node_modules" "/tmp/learning-workspace/$project/node_modules"
+          done
+          cp "$(command -v node)" /tmp/learning-workspace/bin/node
+          tar -czf /tmp/learning-workspace.tar.gz -C /tmp learning-workspace
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: learning-review-workspace
+          path: /tmp/learning-workspace.tar.gz
+          retention-days: 2
+          compression-level: 0
