@@ -32,6 +32,20 @@ test('classifies only legacy review recordings as safe auto-prune candidates', (
   expect(result.missingRemote).toEqual([]);
 });
 
+test('treats the audited 2026-08-29 answer-06 orphan as an explicit safe prune', () => {
+  const result = analyzeR2Orphans(
+    ['japanese/2026-08-29/interview-answer-05.mp3'],
+    [
+      { key: 'japanese/2026-08-29/interview-answer-05.mp3', size: 10 },
+      { key: 'japanese/2026-08-29/interview-answer-06.mp3', size: 298414 },
+    ],
+  );
+  expect(result.safeLegacy.map((item) => item.key)).toEqual([
+    'japanese/2026-08-29/interview-answer-06.mp3',
+  ]);
+  expect(result.otherOrphans).toEqual([]);
+});
+
 test('reports local managed files missing from R2 and ignores unrelated prefixes', () => {
   const result = analyzeR2Orphans(
     ['japanese/2026-09-18/vocab-01.mp3', 'japanese/2026-09-18/manifest.json'],
