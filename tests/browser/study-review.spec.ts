@@ -12,19 +12,44 @@ for (const locale of ['zh','ja']) {
     await expect(page.locator('.grammar-card')).toHaveCount(7);
     await expect(page.locator('.vocabulary-card[data-study-kind="review"]')).toHaveCount(3);
     await expect(page.locator('.grammar-card[data-study-kind="review"]')).toHaveCount(7);
-    const frequency=page.locator('.study-frequency').first();
+
+    const reviewMeta=page.locator('.vocabulary-card[data-study-kind="review"] .study-meta').first();
+    await expect(reviewMeta).toHaveCSS('text-align','right');
+    await expect(reviewMeta.locator('.study-kind')).toHaveText('復習');
+    const levelBadge=reviewMeta.locator('.level-badge');
+    const studyKind=reviewMeta.locator('.study-kind');
+    const frequency=reviewMeta.locator('.study-frequency');
     await expect(frequency).toHaveAttribute('data-frequency-total',String(reportDays));
+    await expect(frequency.locator('.frequency-primary')).toHaveText(/出現頻度：\d+\.\d%/);
+    await expect(frequency.locator('.frequency-ratio')).toHaveText(new RegExp(`^（\\d+/${reportDays}日）$`));
+
+    const [badgeBox,kindBox,primaryBox,ratioBox]=await Promise.all([
+      levelBadge.boundingBox(),
+      studyKind.boundingBox(),
+      frequency.locator('.frequency-primary').boundingBox(),
+      frequency.locator('.frequency-ratio').boundingBox(),
+    ]);
+    const right=(box:{x:number;width:number}|null)=>box!.x+box!.width;
+    expect(Math.abs(right(badgeBox)-right(kindBox))).toBeLessThan(2);
+    expect(Math.abs(right(primaryBox)-right(ratioBox))).toBeLessThan(2);
+    expect(ratioBox!.y).toBeGreaterThan(primaryBox!.y);
+
     await frequency.locator('summary').click();
     await expect(frequency).toHaveAttribute('open','');
     await expect(frequency).toContainText('2026-09-18');
-    const badge=frequency.locator('..').locator('.level-badge');
-    const b=await badge.boundingBox(),f=await frequency.boundingBox();
+    const b=await levelBadge.boundingBox(),f=await frequency.boundingBox();
     expect(f!.y).toBeGreaterThan(b!.y);
     await frequency.locator('summary').click();
+
     await page.locator('.vocabulary-card').first().scrollIntoViewIfNeeded();
     await page.screenshot({path:testInfo.outputPath('study-desktop.png')});
     await page.setViewportSize({width:390,height:844});
-    await page.locator('.grammar-card').first().scrollIntoViewIfNeeded();
+    await page.locator('.grammar-card[data-study-kind="review"]').first().scrollIntoViewIfNeeded();
+    const mobileMeta=page.locator('.grammar-card[data-study-kind="review"] .study-meta').first();
+    await expect(mobileMeta.locator('.frequency-ratio')).toBeVisible();
+    const mobilePrimary=await mobileMeta.locator('.frequency-primary').boundingBox();
+    const mobileRatio=await mobileMeta.locator('.frequency-ratio').boundingBox();
+    expect(mobileRatio!.y).toBeGreaterThan(mobilePrimary!.y);
     await page.screenshot({path:testInfo.outputPath('study-mobile.png')});
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
     expect(errors).toEqual([]);
