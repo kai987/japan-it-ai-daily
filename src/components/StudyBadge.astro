@@ -28,9 +28,7 @@ const focusHref = (date: string) => {
             {row.map((date: string, index: number) => (
               <Fragment>
                 {index > 0 && <span class="frequency-date-separator" aria-hidden="true"> / </span>}
-                {item.studyKind === 'review'
-                  ? <a class="frequency-date-link" href={focusHref(date)} target="_blank" rel="noopener noreferrer" data-frequency-date={date}>{date}</a>
-                  : <span class="frequency-date" data-frequency-date={date}>{date}</span>}
+                <a class="frequency-date-link" href={focusHref(date)} target="_blank" rel="noopener noreferrer" data-frequency-date={date}>{date}</a>
               </Fragment>
             ))}
           </div>
