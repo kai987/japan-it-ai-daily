@@ -1,0 +1,34 @@
+name: Export grammar workspace
+on:
+  push:
+    branches: [feat/grammar-range-history-2026-09-18]
+    paths: [.github/workflows/export-grammar-workspace.yml]
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          path: it
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: kai987/Japanese-N1-Immersive-Sparring-Partner
+          ref: main
+          path: n1
+          persist-credentials: false
+      - name: Export tracked sources only
+        run: |
+          mkdir -p workspace/it workspace/n1
+          git -C it archive HEAD -- . ':!public/audio/**/*.mp3' | tar -x -C workspace/it
+          git -C n1 archive HEAD | tar -x -C workspace/n1
+          git -C it rev-parse HEAD > workspace/it-source-commit.txt
+          git -C n1 rev-parse HEAD > workspace/n1-source-commit.txt
+          tar -czf grammar-workspace.tar.gz -C workspace .
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: grammar-workspace
+          path: grammar-workspace.tar.gz
+          retention-days: 1
