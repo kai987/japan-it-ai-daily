@@ -4,6 +4,22 @@ import { tmpdir } from 'node:os';
 import { test, expect } from 'vitest';
 import { collectAudioAssets } from './verify-audio-integrity.mjs';
 
+function copyReferencedReviewAudio(root, learning, currentDate) {
+  const refs = [
+    ...(learning.items || []).filter((item) => item.studyKind === 'review').flatMap((item) =>
+      [item.word, item.example].filter(Boolean).map((filename) => ({ audioDate: item.audioDate, filename }))),
+    ...(learning.grammar || []).filter((item) => item.studyKind === 'review').flatMap((item) =>
+      [item.example].filter(Boolean).map((filename) => ({ audioDate: item.audioDate, filename }))),
+  ];
+  for (const { audioDate, filename } of refs) {
+    if (!audioDate || audioDate === currentDate) continue;
+    const source = join('public/audio/japanese', audioDate, filename);
+    const destinationDir = join(root, 'public/audio/japanese', audioDate);
+    mkdirSync(destinationDir, { recursive: true });
+    cpSync(source, join(destinationDir, filename));
+  }
+}
+
 test('plain-format daily audio passes and stale Japanese text is rejected', () => {
   const root = mkdtempSync(join(tmpdir(), 'daily-audio-integrity-'));
   const date = '2026-09-11';
@@ -16,6 +32,7 @@ test('plain-format daily audio passes and stale Japanese text is rejected', () =
     mkdirSync(join(root, audio), { recursive: true });
     cpSync(audio, join(root, audio), { recursive: true });
     const learning = JSON.parse(readFileSync(`${audio}/manifest.json`, 'utf8'));
+    copyReferencedReviewAudio(root, learning, date);
     const interview = JSON.parse(readFileSync(`${audio}/interview-manifest.json`, 'utf8'));
     const expectedAssets = (interview.interview?.length ?? 0) + (interview.review?.length ?? 0)
       + learning.items.filter((item) => item.playback !== 'browser-tts').length * 2
@@ -53,6 +70,7 @@ test('review entries reuse first-introduced recordings instead of creating dupli
 
     const manifestPath = join(root, audio, 'manifest.json');
     const learning = JSON.parse(readFileSync(manifestPath, 'utf8'));
+    copyReferencedReviewAudio(root, learning, date);
     learning.items.push({
       index: 1,
       studyKind: 'review',
