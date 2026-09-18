@@ -7,6 +7,7 @@ on:
       - 'public/audio/**'
       - '.github/workflows/sync-r2-audio.yml'
       - 'scripts/verify-audio-integrity.mjs'
+      - 'scripts/audit-r2-audio-orphans.mjs'
   workflow_dispatch:
 
 permissions:
@@ -84,27 +85,31 @@ jobs:
           echo "R2_ENDPOINT=${endpoint}" >> "${GITHUB_ENV}"
 
           sync_filters=()
+          upload_audio=true
           # If the push comparison base is available, upload only changed audio.
-          # Manual runs or an unavailable comparison base fall back to a full sync.
+          # Workflow/script-only changes still continue to verification and orphan audit.
           if [[ -n "${SYNC_BEFORE}" ]] && git cat-file -e "${SYNC_BEFORE}^{commit}" 2>/dev/null; then
             git diff --name-only -z --diff-filter=ACMR --relative=public/audio \
               "${SYNC_BEFORE}" HEAD -- public/audio/ > "${RUNNER_TEMP}/audio-changes"
             mapfile -d '' -t changed_audio < "${RUNNER_TEMP}/audio-changes"
             if (( ${#changed_audio[@]} == 0 )); then
-              echo "No audio files changed; nothing to upload."
-              exit 0
+              echo "No audio files changed; skipping upload and continuing verification/audit."
+              upload_audio=false
+            else
+              sync_filters=(--exclude '*')
+              for path in "${changed_audio[@]}"; do
+                sync_filters+=(--include "${path}")
+              done
             fi
-            sync_filters=(--exclude '*')
-            for path in "${changed_audio[@]}"; do
-              sync_filters+=(--include "${path}")
-            done
           fi
 
-          aws s3 sync public/audio/ "s3://${R2_BUCKET}/" \
-            --endpoint-url "${endpoint}" \
-            "${sync_filters[@]}" \
-            --only-show-errors \
-            --cache-control "public,max-age=86400"
+          if [[ "${upload_audio}" == "true" ]]; then
+            aws s3 sync public/audio/ "s3://${R2_BUCKET}/" \
+              --endpoint-url "${endpoint}" \
+              "${sync_filters[@]}" \
+              --only-show-errors \
+              --cache-control "public,max-age=86400"
+          fi
 
       - name: Verify all public recordings against this commit
         shell: bash
@@ -127,3 +132,83 @@ jobs:
             --cache-control "public,max-age=86400"
 
           node scripts/verify-audio-integrity.mjs --remote
+
+      - name: Audit and safely prune legacy R2 audio orphans
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ -z "${R2_ENDPOINT:-}" ]]; then
+            echo "::error::R2 endpoint was not initialized."
+            exit 1
+          fi
+
+          before_json="${RUNNER_TEMP}/r2-audio-objects-before.json"
+          before_report="${RUNNER_TEMP}/r2-audio-orphans-before.json"
+          safe_list="${RUNNER_TEMP}/r2-audio-safe-prune.txt"
+
+          aws s3api list-objects-v2 \
+            --bucket "${R2_BUCKET}" \
+            --endpoint-url "${R2_ENDPOINT}" \
+            --query 'Contents[].{Key:Key,Size:Size}' \
+            --output json > "${before_json}"
+
+          node scripts/audit-r2-audio-orphans.mjs \
+            --remote "${before_json}" \
+            --report "${before_report}" \
+            --safe-list "${safe_list}" \
+            --fail-on-missing
+
+          safe_count=0
+          if [[ -s "${safe_list}" ]]; then
+            while IFS= read -r key; do
+              [[ -z "${key}" ]] && continue
+              case "${key}" in
+                japanese/????-??-??/review-vocab-[0-9][0-9].mp3|\
+                japanese/????-??-??/review-example-[0-9][0-9].mp3|\
+                japanese/????-??-??/review-grammar-example-[0-9][0-9].mp3)
+                  aws s3 rm "s3://${R2_BUCKET}/${key}" \
+                    --endpoint-url "${R2_ENDPOINT}" \
+                    --only-show-errors
+                  safe_count=$((safe_count + 1))
+                  ;;
+                *)
+                  echo "::error::Refusing to auto-delete unexpected key: ${key}"
+                  exit 1
+                  ;;
+              esac
+            done < "${safe_list}"
+          fi
+
+          after_json="${RUNNER_TEMP}/r2-audio-objects-after.json"
+          after_report="${RUNNER_TEMP}/r2-audio-orphans-after.json"
+          aws s3api list-objects-v2 \
+            --bucket "${R2_BUCKET}" \
+            --endpoint-url "${R2_ENDPOINT}" \
+            --query 'Contents[].{Key:Key,Size:Size}' \
+            --output json > "${after_json}"
+
+          node scripts/audit-r2-audio-orphans.mjs \
+            --remote "${after_json}" \
+            --report "${after_report}" \
+            --require-no-safe-orphans \
+            --fail-on-missing
+
+          node - "${before_report}" "${after_report}" "${safe_count}" >> "${GITHUB_STEP_SUMMARY}" <<'NODE'
+          const fs = require('fs');
+          const [beforePath, afterPath, deleted] = process.argv.slice(2);
+          const before = JSON.parse(fs.readFileSync(beforePath, 'utf8'));
+          const after = JSON.parse(fs.readFileSync(afterPath, 'utf8'));
+          console.log('## R2 audio orphan audit');
+          console.log('');
+          console.log(`- Managed local files: ${after.localManagedCount}`);
+          console.log(`- Managed R2 objects: ${after.remoteManagedCount}`);
+          console.log(`- Safe legacy files deleted automatically: ${deleted}`);
+          console.log(`- Remaining R2-only objects (audit only): ${after.otherOrphans.length}`);
+          console.log(`- Local managed files missing from R2: ${after.missingRemote.length}`);
+          if (after.otherOrphans.length) {
+            console.log('');
+            console.log('### Remaining R2-only objects');
+            for (const item of after.otherOrphans) console.log(`- \`${item.key}\``);
+          }
+          NODE
