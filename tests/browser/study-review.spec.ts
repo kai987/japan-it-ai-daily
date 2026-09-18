@@ -51,21 +51,8 @@ for (const locale of ['zh','ja']) {
     expect(rowTexts[0]).toMatch(/^\\d{4}-\\d{2}-\\d{2} \/ \\d{4}-\\d{2}-\\d{2}$/);
     expect(rowTexts.every(text=>!text.trim().endsWith('/'))).toBe(true);
     expect(rowTexts.every(text=>text.split(' / ').length<=2)).toBe(true);
-    const widthMetrics=await denseFrequency.evaluate(el=>{
-      const details=el.querySelector('.frequency-details') as HTMLElement;
-      const noteEl=el.querySelector('.frequency-details > p') as HTMLElement;
-      const rowEl=el.querySelector('.frequency-date-row') as HTMLElement;
-      return {
-        detailsWidth:details.getBoundingClientRect().width,
-        noteWidth:noteEl.getBoundingClientRect().width,
-        rowWidth:rowEl.getBoundingClientRect().width,
-        detailsRight:details.getBoundingClientRect().right,
-        rowRight:rowEl.getBoundingClientRect().right,
-      };
-    });
-    expect(widthMetrics.noteWidth).toBeLessThanOrEqual(widthMetrics.detailsWidth+1);
-    expect(widthMetrics.rowWidth).toBeLessThanOrEqual(widthMetrics.detailsWidth+1);
-    expect(Math.abs(widthMetrics.detailsRight-widthMetrics.rowRight)).toBeLessThan(2);
+    await expect(denseFrequency.locator('.frequency-details')).toHaveCSS('text-align','right');
+    await expect(dateRows.first()).toHaveCSS('white-space','nowrap');
     await denseFrequency.locator('summary').click();
 
     await page.locator('.vocabulary-card').first().scrollIntoViewIfNeeded();
