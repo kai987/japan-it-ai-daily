@@ -1,3 +1,6 @@
+import { readStructuredInterviewFromSource } from './structured-interview.mjs';
+import { structuredAudioItems } from '../src/lib/structuredInterview.mjs';
+
 const normalizeText = (value = '') => value.replace(/^>\s?/gm, '').replace(/\s+/g, ' ').trim();
 
 const extractSection = (source, title) => {
@@ -41,7 +44,9 @@ const quoteBlocks = (section) => {
   return blocks;
 };
 
-export const parseInterview = (source) => {
+export const parseInterview = (source, options = {}) => {
+  const structured = options.legacyOnly ? null : readStructuredInterviewFromSource(source, options.root);
+  if (structured) return structuredAudioItems(structured);
   const section = extractSection(source, '面接で使えるポイント');
   if (!section) return [];
   const lines = section.split(/\r?\n/);
@@ -88,7 +93,9 @@ export const parseInterview = (source) => {
   return quoteBlocks(section).map((text) => ({ type: 'answer', text }));
 };
 
-export const parseReview = (source) => {
+export const parseReview = (source, options = {}) => {
+  const structured = options.legacyOnly ? null : readStructuredInterviewFromSource(source, options.root);
+  if (structured) return structured.review.map(item => item.question);
   const section = (extractSection(source, '面试复习卡') || extractSection(source, '面接復習カード'))
     // Accept **Q1：** question and **Q1**: question without changing the text.
     .replace(/^[\t ]*\*\*Q[\t ]*(\d+)[\t ]*(?:[：:]\*\*|\*\*[：:])[\t ]*(\S[^\r\n]*)\r?$/gmi,

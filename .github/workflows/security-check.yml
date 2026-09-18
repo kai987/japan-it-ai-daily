@@ -60,3 +60,5 @@ jobs:
         run: npm run audio:strip-dist
       - name: Verify CSP
         run: npm run security:check
+      - name: Validate expected publication against the real build
+        run: npm run deployment:prepare
