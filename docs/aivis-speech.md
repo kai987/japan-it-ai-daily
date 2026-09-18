@@ -61,7 +61,7 @@ brew install ffmpeg
 npm run audio:generate:all
 ```
 
-该命令现在会同时读取原始 `vocabulary / grammar` 与 `learning-review.mjs` 派生的 `reviewVocabulary / reviewGrammar`。未变化的 MP3 会直接跳过；只有文字、声音、复习选择或合成参数发生变化且对应文件 hash 不匹配的条目才会重新生成。
+该命令现在会同时读取原始 `vocabulary / grammar` 与 `learning-review.mjs` 派生的 `reviewVocabulary / reviewGrammar`。复习卡不会重新合成同一个词或语法例句，而是引用该项目首次学习日期已经生成的原始 MP3。未变化的 MP3 会直接跳过；只有首次学习录音的文字、声音或合成参数发生变化且 hash 不匹配时才会重新生成。
 
 确实需要全部重做时才使用：
 
@@ -77,9 +77,6 @@ public/audio/japanese/
 │   ├── vocab-01.mp3
 │   ├── example-01.mp3
 │   ├── grammar-example-01.mp3
-│   ├── review-vocab-01.mp3
-│   ├── review-example-01.mp3
-│   ├── review-grammar-example-01.mp3
 │   ├── interview-answer-01.mp3
 │   ├── manifest.json
 │   └── interview-manifest.json
@@ -88,22 +85,26 @@ public/audio/japanese/
 
 MP3 默认：24 kHz、mono、96 kbps。
 
-## 复习卡音频
+## 复习卡音频：首次学习录音只生成一次
 
-复习词汇与复习语法不写回原始 Markdown 的 `vocabulary / grammar` 数组，而是由 `scripts/learning-review.mjs` 根据历史首次学习日期与当天实际用例动态派生。音频生成器会读取同一份派生结果：
+复习词汇与复习语法不写回原始 Markdown 的 `vocabulary / grammar` 数组，而是由 `scripts/learning-review.mjs` 根据历史首次学习日期与当天实际用例动态派生。音频生成器会读取同一份派生结果，但**不会为复习卡再生成第二份 MP3**。
 
-- `reviewVocabulary`：生成 `review-vocab-XX.mp3` 与 `review-example-XX.mp3`
-- `reviewGrammar`：生成 `review-grammar-example-XX.mp3`
-- manifest 记录 `studyKind: "review"`、`identity` 与 `firstIntroducedDate`
-- 页面仍按词条＋读音或完整例句精确匹配，不按卡片显示位置猜测录音
+- 词汇首次学习时生成 `vocab-XX.mp3` 与 `example-XX.mp3`
+- 语法首次学习时生成 `grammar-example-XX.mp3`
+- 后续 `reviewVocabulary / reviewGrammar` 只在当天 manifest 中记录 `audioDate: firstIntroducedDate` 和首次学习日的原始文件名
+- manifest 同时记录 `studyKind: "review"`、`identity` 与 `firstIntroducedDate`
+- 页面按词条＋读音或完整例句精确匹配，再从 `audioDate` 指向的目录播放同一份 MP3
+- 旧版本曾生成的 `review-vocab-* / review-example-* / review-grammar-example-*` 会在重新执行生成器时自动删除
 
-因此历史日报新增复习语法后，推荐执行：
+因此同一个词汇或同一个语法例句，无论在多少天被复习，物理录音文件都只保留首次学习时生成的那一份。
+
+历史日报补充复习语法后，推荐执行：
 
 ```bash
 npm run audio:generate:all
 ```
 
-这会扫描全部日期并利用 hash 缓存，只补齐缺少或已变化的复习录音，不重做所有未变化的原始录音。
+该命令会按日期顺序确认首次学习录音存在、更新各日 manifest 的复用引用，并清理旧的重复复习 MP3。若只运行某一天而它依赖的首次学习录音尚不存在，生成器会停止并提示先执行全历史生成。
 
 ## 生成指定日期
 
