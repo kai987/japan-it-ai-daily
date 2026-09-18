@@ -63,10 +63,18 @@ export const collectAudioAssets = (root) => {
     for (const dir of ['japanese', 'japanese-ja']) {
       const source = read(`src/content/${dir}/${name}`);
       const data = parse(source.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '');
+      const newItems = (learning.items || []).filter((item) => item.studyKind !== 'review');
+      const newGrammar = (learning.grammar || []).filter((item) => item.studyKind !== 'review');
       assertSame(data.vocabulary?.map((item) => [item.term, item.reading, item.exampleJa]),
-        learning.items?.map((item) => [item.term, item.reading, item.exampleJa]), `${dir}/${date} vocabulary`);
+        newItems.map((item) => [item.term, item.reading, item.exampleJa]), `${dir}/${date} vocabulary`);
       assertSame(data.grammar?.map((item) => [item.pattern, item.exampleJa]),
-        learning.grammar?.map((item) => [item.pattern, item.exampleJa]), `${dir}/${date} grammar`);
+        newGrammar.map((item) => [item.pattern, item.exampleJa]), `${dir}/${date} grammar`);
+    }
+    for (const item of (learning.items || []).filter((item) => item.studyKind === 'review')) {
+      if (!item.identity || !item.firstIntroducedDate || item.firstIntroducedDate >= date) throw new Error(`${date}: invalid review vocabulary audio metadata`);
+    }
+    for (const item of (learning.grammar || []).filter((item) => item.studyKind === 'review')) {
+      if (!item.identity || !item.firstIntroducedDate || item.firstIntroducedDate >= date) throw new Error(`${date}: invalid review grammar audio metadata`);
     }
     const learningFiles = learningRecordingFiles(learning.items, date);
     browserTtsCards += learning.items.filter((item) => item.playback === 'browser-tts').length;
