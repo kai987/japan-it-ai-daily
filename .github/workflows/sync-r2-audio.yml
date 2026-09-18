@@ -166,7 +166,8 @@ jobs:
               case "${key}" in
                 japanese/????-??-??/review-vocab-[0-9][0-9].mp3|\
                 japanese/????-??-??/review-example-[0-9][0-9].mp3|\
-                japanese/????-??-??/review-grammar-example-[0-9][0-9].mp3)
+                japanese/????-??-??/review-grammar-example-[0-9][0-9].mp3|\
+                japanese/2026-08-29/interview-answer-06.mp3)
                   aws s3 rm "s3://${R2_BUCKET}/${key}" \
                     --endpoint-url "${R2_ENDPOINT}" \
                     --only-show-errors
