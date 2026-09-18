@@ -3,6 +3,12 @@ import { FREQUENCY_SCOPE } from '../../scripts/learning-review.mjs';
 const { item, locale = 'zh' } = Astro.props;
 const frequency = item.reportFrequency;
 const frequencyRows = frequency ? Array.from({ length: Math.ceil(frequency.appearedDates.length / 2) }, (_, index) => frequency.appearedDates.slice(index * 2, index * 2 + 2)) : [];
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const focusLabel = item.term || item.pattern || item.identity || '';
+const focusHref = (date: string) => {
+  const form = frequency?.appearanceForms?.[date] || focusLabel;
+  return `${base}ja/daily/${date}/?studyFocus=${encodeURIComponent(form)}`;
+};
 ---
 <div class="study-meta" data-study-kind={item.studyKind}>
   <div class="study-badge-stack">
@@ -18,7 +24,16 @@ const frequencyRows = frequency ? Array.from({ length: Math.ceil(frequency.appea
       <p>{locale === 'ja' ? '日報本文・推薦理由・学習カードに出現した日を集計。外部記事の全文は含みません。' : FREQUENCY_SCOPE}</p>
       <div class="frequency-dates">
         {frequencyRows.map((row: string[]) => (
-          <div class="frequency-date-row" data-date-count={row.length}>{row.join(' / ')}</div>
+          <div class="frequency-date-row" data-date-count={row.length}>
+            {row.map((date: string, index: number) => (
+              <>
+                {index > 0 && <span class="frequency-date-separator" aria-hidden="true"> / </span>}
+                {item.studyKind === 'review'
+                  ? <a class="frequency-date-link" href={focusHref(date)} target="_blank" rel="noopener noreferrer" data-frequency-date={date}>{date}</a>
+                  : <span class="frequency-date" data-frequency-date={date}>{date}</span>}
+              </>
+            ))}
+          </div>
         ))}
       </div>
     </div>
@@ -111,6 +126,10 @@ const frequencyRows = frequency ? Array.from({ length: Math.ceil(frequency.appea
     white-space:nowrap;
     text-align:right;
   }
+  .frequency-date-link{color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--muted) 45%,transparent);text-underline-offset:2px}
+  .frequency-date-link:hover{color:var(--accent);text-decoration-color:currentColor}
+  .frequency-date-link:focus-visible{outline:2px solid color-mix(in srgb,var(--accent) 55%,transparent);outline-offset:2px;border-radius:3px}
+  .frequency-date-separator{white-space:pre}
   .study-frequency p{font-size:12px;margin:5px 0}
   @media(max-width:600px){
     .study-meta{width:100%;max-width:none;min-width:120px}
