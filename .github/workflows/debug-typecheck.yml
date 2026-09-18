@@ -1,10 +1,10 @@
-name: Debug typecheck output
+name: Debug deep link browser
 on:
   push:
     branches:
       - feat/review-date-deep-links-2026-09-18
 jobs:
-  debug-typecheck:
+  debug-browser:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -13,18 +13,20 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
-      - name: Capture Astro check
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - name: Capture targeted browser test
         shell: bash
         run: |
           set +e
-          npm run check > typecheck.log 2>&1
+          npx playwright test tests/browser/study-review.spec.ts --reporter=line > browser.log 2>&1
           code=$?
-          echo "$code" > typecheck-exit.txt
+          echo "$code" > browser-exit.txt
           exit 0
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: typecheck-debug
+          name: browser-debug
           path: |
-            typecheck.log
-            typecheck-exit.txt
+            browser.log
+            browser-exit.txt
           retention-days: 1
