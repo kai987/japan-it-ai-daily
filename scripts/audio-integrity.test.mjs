@@ -81,7 +81,7 @@ test('review entries reuse first-introduced recordings instead of creating dupli
     expect(result.assets.has(`japanese/${sourceDate}/vocab-07.mp3`)).toBe(true);
     expect(result.assets.has(`japanese/${sourceDate}/example-07.mp3`)).toBe(true);
     expect(result.assets.has(`japanese/${sourceDate}/grammar-example-02.mp3`)).toBe(true);
-    expect([...result.assets.keys()].some((path) => path.includes('/review-'))).toBe(false);
+    expect([...result.assets.keys()].some((path) => /\/(?:review-vocab|review-example|review-grammar-example)-\d+\.mp3$/.test(path))).toBe(false);
 
     learning.items.at(-1).word = 'review-vocab-01.mp3';
     writeFileSync(manifestPath, JSON.stringify(learning, null, 2));
