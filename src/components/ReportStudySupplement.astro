@@ -5,15 +5,16 @@ const { study, locale } = Astro.props;
 const root = `${import.meta.env.BASE_URL}${locale === 'ja' ? 'ja/' : ''}`;
 const groups = [
   { kind: 'vocabulary', title: '本文で復習できる既習語彙', items: study.reviewVocabulary },
-  { kind: 'grammar', title: '本文で復習できる既習文法', items: study.reviewGrammar },
+  { kind: 'grammar', title: '本文で復習できる既習文法', items: study.reviewGrammar, note: study.reviewGrammarNote },
 ];
 const references = [...study.vocabulary, ...study.grammar].map((item: any) => ({label: item.term || item.pattern, frequency: frequencyText(item.reportFrequency,locale)}));
 ---
 <div data-report-study-reference={JSON.stringify(references)} data-issue-number={study.issueNumber} hidden></div>
-{groups.filter(group => group.items.length).map(group => (
+{groups.filter(group => group.items.length || group.note).map(group => (
   <section class="report-review-supplement" data-review-supplement={group.kind}>
     <h3>{group.title}（{group.items.length}）</h3>
     <p>{locale === 'ja' ? '既習項目を当日の本文で確認します。新規項目とは別に集計しています。' : '用当天日文内容复习已学项目，与新学项目分开统计。'}</p>
+    {group.note && <p class="meta" data-review-shortfall>{group.note}</p>}
     {group.items.map((item: any) => (
       <article class="study-card" data-study-kind="review">
         <header class="study-card-header"><h4>{item.term || item.pattern}{item.reading && <span class="reading">（{item.reading}）</span>}</h4><StudyBadge item={item} locale={locale} /></header>
