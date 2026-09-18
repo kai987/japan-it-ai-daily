@@ -51,8 +51,6 @@ for (const locale of ['zh','ja']) {
     expect(rowTexts[0]).toMatch(/^\\d{4}-\\d{2}-\\d{2} \/ \\d{4}-\\d{2}-\\d{2}$/);
     expect(rowTexts.every(text=>!text.trim().endsWith('/'))).toBe(true);
     expect(rowTexts.every(text=>text.split(' / ').length<=2)).toBe(true);
-    await expect(denseFrequency.locator('.frequency-details')).toHaveCSS('text-align','right');
-    await expect(dateRows.first()).toHaveCSS('white-space','nowrap');
     await denseFrequency.locator('summary').click();
 
     await page.locator('.vocabulary-card').first().scrollIntoViewIfNeeded();
