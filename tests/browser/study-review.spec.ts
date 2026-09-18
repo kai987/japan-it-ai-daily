@@ -52,8 +52,21 @@ for (const locale of ['zh','ja']) {
     expect(rowTexts.every(text=>!text.trim().endsWith('/'))).toBe(true);
     expect(rowTexts.every(text=>text.split(' / ').length<=2)).toBe(true);
     const note=denseFrequency.locator('.frequency-details > p').first();
-    const [noteBox,pairRowBox]=await Promise.all([note.boundingBox(),dateRows.first().boundingBox()]);
-    expect(noteBox!.width).toBeLessThanOrEqual(pairRowBox!.width+1);
+    const widthMetrics=await denseFrequency.evaluate(el=>{
+      const noteEl=el.querySelector('.frequency-details > p') as HTMLElement;
+      const rowEl=el.querySelector('.frequency-date-row') as HTMLElement;
+      const range=document.createRange();
+      range.selectNodeContents(rowEl);
+      return {
+        noteWidth:noteEl.getBoundingClientRect().width,
+        rowBoxWidth:rowEl.getBoundingClientRect().width,
+        rowTextWidth:range.getBoundingClientRect().width,
+        rowScrollWidth:rowEl.scrollWidth,
+        rowClientWidth:rowEl.clientWidth,
+      };
+    });
+    expect(widthMetrics.noteWidth).toBeLessThanOrEqual(widthMetrics.rowTextWidth+2);
+    expect(widthMetrics.rowScrollWidth).toBeLessThanOrEqual(widthMetrics.rowClientWidth+1);
     await denseFrequency.locator('summary').click();
 
     await page.locator('.vocabulary-card').first().scrollIntoViewIfNeeded();
