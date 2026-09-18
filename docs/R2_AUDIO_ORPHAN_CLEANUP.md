@@ -17,7 +17,9 @@ Two classes are handled differently:
 
    These filenames belong to the retired per-review-day recording scheme. Current review cards reuse the first-introduced `vocab-XX.mp3`, `example-XX.mp3`, and `grammar-example-XX.mp3`. If a legacy review file is absent from Git but still exists in R2, the workflow deletes it automatically.
 
-2. **Other R2-only objects** — these are reported in the GitHub Actions step summary but are **not automatically deleted**. They require explicit review before any broader cleanup rule is introduced.
+2. **Explicitly audited one-off orphans** — a specific path may be added only after its manifest and repository references are checked. The currently approved one-off cleanup is `japanese/2026-08-29/interview-answer-06.mp3`: the 8/29 manifest contains only answers 01–05 and the repository has no reference to answer 06.
+
+3. **Other R2-only objects** — these are reported in the GitHub Actions step summary but are **not automatically deleted**. They require explicit review before any broader cleanup rule is introduced.
 
 The workflow also fails if a managed local audio file is missing from R2.
 
@@ -31,7 +33,7 @@ Automatic deletion is intentionally restricted to:
 
 `japanese/YYYY-MM-DD/review-grammar-example-NN.mp3`
 
-The shell step checks the key again immediately before deletion. Unknown prefixes, manifests, interview recordings, review-question recordings, and any other R2-only files are audit-only.
+The shell step checks the key again immediately before deletion. Unknown prefixes, manifests, interview recordings, review-question recordings, and any other R2-only files are audit-only unless that exact path has been separately audited and explicitly approved in both the Node classifier and the shell deletion guard.
 
 ## Local audit helper
 

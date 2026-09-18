@@ -4,6 +4,11 @@ import { pathToFileURL } from 'node:url';
 
 const MANAGED_PREFIX = 'japanese/';
 const LEGACY_REVIEW_RE = /^japanese\/\d{4}-\d{2}-\d{2}\/(?:review-vocab|review-example|review-grammar-example)-\d+\.mp3$/;
+const EXPLICIT_SAFE_ORPHANS = new Set([
+  // Audited 2026-09-18: 2026-08-29 manifest contains only answers 01-05
+  // and the repository has no reference to answer 06.
+  'japanese/2026-08-29/interview-answer-06.mp3',
+]);
 
 const normalizeKey = (value) => String(value ?? '').replaceAll('\\', '/').replace(/^\/+/, '');
 
@@ -43,8 +48,8 @@ export function analyzeR2Orphans(localKeys, remoteObjects) {
 
   const remoteMap = new Map(remoteManaged.map((item) => [item.key, item]));
   const orphaned = [...remoteMap.values()].filter((item) => !local.has(item.key)).sort((a, b) => a.key.localeCompare(b.key));
-  const safeLegacy = orphaned.filter((item) => LEGACY_REVIEW_RE.test(item.key));
-  const otherOrphans = orphaned.filter((item) => !LEGACY_REVIEW_RE.test(item.key));
+  const safeLegacy = orphaned.filter((item) => LEGACY_REVIEW_RE.test(item.key) || EXPLICIT_SAFE_ORPHANS.has(item.key));
+  const otherOrphans = orphaned.filter((item) => !LEGACY_REVIEW_RE.test(item.key) && !EXPLICIT_SAFE_ORPHANS.has(item.key));
   const missingRemote = [...local]
     .filter((key) => !remoteMap.has(key))
     .sort()
