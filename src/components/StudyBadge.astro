@@ -1,22 +1,89 @@
 ---
-import { frequencyText, FREQUENCY_SCOPE } from '../../scripts/learning-review.mjs';
+import { FREQUENCY_SCOPE } from '../../scripts/learning-review.mjs';
 const { item, locale = 'zh' } = Astro.props;
 const frequency = item.reportFrequency;
 ---
 <div class="study-meta" data-study-kind={item.studyKind}>
-  <span class="level-badge">参考：{item.level}</span>
-  <span class="study-kind">{item.studyKind === 'review' ? '復習' : (locale === 'ja' ? '新規' : '新学')}</span>
+  <div class="study-badge-stack">
+    <span class="level-badge">参考：{item.level}</span>
+    <span class="study-kind">{item.studyKind === 'review' ? '復習' : (locale === 'ja' ? '新規' : '新学')}</span>
+  </div>
   {frequency && <details class="study-frequency" data-frequency-days={frequency.appearedDays} data-frequency-total={frequency.totalDays}>
-    <summary title={locale === 'ja' ? '出現した日報の日数 ÷ 全日報の日数 × 100%。同日・日中版は重複集計しません。' : FREQUENCY_SCOPE}>{frequencyText(frequency, locale)}</summary>
-    <p>{locale === 'ja' ? '日報本文・推薦理由・学習カードに出現した日を集計。外部記事の全文は含みません。' : FREQUENCY_SCOPE}</p>
-    <p>{frequency.appearedDates.join(' / ')}</p>
+    <summary title={locale === 'ja' ? '出現した日報の日数 ÷ 全日報の日数 × 100%。同日・日中版は重複集計しません。' : FREQUENCY_SCOPE}>
+      <span class="frequency-primary">出現頻度：{frequency.percent.toFixed(1)}%</span>
+      <span class="frequency-ratio">（{frequency.appearedDays}/{frequency.totalDays}日）</span>
+    </summary>
+    <div class="frequency-details">
+      <p>{locale === 'ja' ? '日報本文・推薦理由・学習カードに出現した日を集計。外部記事の全文は含みません。' : FREQUENCY_SCOPE}</p>
+      <p>{frequency.appearedDates.join(' / ')}</p>
+    </div>
   </details>}
 </div>
 <style>
-  .study-meta{display:flex;flex-direction:column;align-items:flex-start;gap:5px;max-width:260px;min-width:0;flex:0 1 auto}
-  .study-kind{font-size:12px;font-weight:700;color:var(--muted);line-height:1.4}
-  .study-frequency{font-size:12px;line-height:1.6;max-width:100%;color:var(--muted);overflow-wrap:anywhere}
-  .study-frequency summary{cursor:pointer;font-variant-numeric:tabular-nums;list-style-position:inside}
-  .study-frequency p{font-size:12px;margin:5px 0;max-width:250px}
-  @media(max-width:600px){.study-meta{max-width:100%;}.study-frequency{font-size:12px}}
+  .study-meta{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:7px;
+    max-width:260px;
+    min-width:0;
+    flex:0 1 auto;
+    margin-left:auto;
+    text-align:right;
+  }
+  .study-badge-stack{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:5px;
+  }
+  .study-kind{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    color:var(--muted);
+    line-height:1.4;
+    text-align:right;
+  }
+  .study-frequency{
+    display:block;
+    width:100%;
+    max-width:100%;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.55;
+    overflow-wrap:anywhere;
+    text-align:right;
+  }
+  .study-frequency summary{
+    cursor:pointer;
+    display:grid;
+    grid-template-columns:auto auto;
+    grid-template-areas:
+      "marker primary"
+      ". ratio";
+    justify-content:end;
+    align-items:start;
+    column-gap:4px;
+    row-gap:1px;
+    list-style:none;
+    font-variant-numeric:tabular-nums;
+    text-align:right;
+  }
+  .study-frequency summary::-webkit-details-marker{display:none}
+  .study-frequency summary::before{
+    content:'▶';
+    grid-area:marker;
+    font-size:.82em;
+    line-height:1.9;
+  }
+  .study-frequency[open] summary::before{content:'▼'}
+  .frequency-primary{grid-area:primary;white-space:nowrap}
+  .frequency-ratio{grid-area:ratio;white-space:nowrap}
+  .frequency-details{max-width:250px;margin-left:auto;text-align:right}
+  .study-frequency p{font-size:12px;margin:5px 0}
+  @media(max-width:600px){
+    .study-meta{max-width:46%;min-width:112px}
+    .study-frequency{font-size:12px}
+  }
 </style>
