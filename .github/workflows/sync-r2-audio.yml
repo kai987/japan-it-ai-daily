@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'public/audio/**'
+      - '.github/workflows/sync-r2-audio.yml'
+      - 'scripts/verify-audio-integrity.mjs'
   workflow_dispatch:
 
 permissions:
@@ -79,6 +81,7 @@ jobs:
           fi
 
           endpoint="https://${account_id}.r2.cloudflarestorage.com"
+          echo "R2_ENDPOINT=${endpoint}" >> "${GITHUB_ENV}"
 
           sync_filters=()
           # If the push comparison base is available, upload only changed audio.
@@ -104,4 +107,23 @@ jobs:
             --cache-control "public,max-age=86400"
 
       - name: Verify all public recordings against this commit
-        run: node scripts/verify-audio-integrity.mjs --remote
+        shell: bash
+        run: |
+          set -euo pipefail
+          if node scripts/verify-audio-integrity.mjs --remote; then
+            exit 0
+          fi
+
+          echo "::warning::Remote audio drift detected. Performing a one-time full R2 reconciliation."
+          if [[ -z "${R2_ENDPOINT:-}" ]]; then
+            echo "::error::R2 endpoint was not initialized."
+            exit 1
+          fi
+
+          aws s3 cp public/audio/ "s3://${R2_BUCKET}/" \
+            --recursive \
+            --endpoint-url "${R2_ENDPOINT}" \
+            --only-show-errors \
+            --cache-control "public,max-age=86400"
+
+          node scripts/verify-audio-integrity.mjs --remote
