@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { contentDates } from '../../scripts/content-files.mjs';
-const reportDays = contentDates(process.cwd()).length;
+const reportDays = contentDates(new URL('../../', import.meta.url).pathname).length;
 for (const locale of ['zh','ja']) {
   const root=`/japan-it-ai-daily/${locale==='ja'?'ja/':''}`;
   test(`${locale}: learning issue, new/review totals and inspectable date frequency`,async({page},testInfo)=>{
