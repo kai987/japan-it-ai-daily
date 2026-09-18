@@ -19,7 +19,7 @@ const positiveNumber = (value, fallback) => {
 
 const interviewTiming = {
   speed: positiveNumber(process.env.AIVIS_INTERVIEW_SPEED, 1.0),
-  idealMin: positiveNumber(process.env.INTERVIEW_DURATION_IDEAL_MIN, 26),
+  idealMin: positiveNumber(process.env.INTERVIEW_DURATION_IDEAL_MIN, 24),
   idealMax: positiveNumber(process.env.INTERVIEW_DURATION_IDEAL_MAX, 34),
   hardMin: positiveNumber(process.env.INTERVIEW_DURATION_HARD_MIN, 22),
   hardMax: positiveNumber(process.env.INTERVIEW_DURATION_HARD_MAX, 40),
