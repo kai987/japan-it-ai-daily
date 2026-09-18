@@ -1,8 +1,8 @@
 /** Never infer a vocabulary recording from its current display index. */
 export type LearningManifest = {
   voice?: { name?: string; style?: string };
-  items?: { term: string; reading: string; exampleJa: string; word?: string | null; example?: string | null; playback?: string }[];
-  grammar?: { exampleJa: string; example?: string | null; playback?: string }[];
+  items?: { term: string; reading: string; exampleJa: string; word?: string | null; example?: string | null; playback?: string; studyKind?: 'new' | 'review'; identity?: string; firstIntroducedDate?: string }[];
+  grammar?: { pattern?: string; exampleJa: string; example?: string | null; playback?: string; studyKind?: 'new' | 'review'; identity?: string; firstIntroducedDate?: string }[];
 };
 export type SpeechTarget = { kind: string; term?: string; reading?: string; text: string };
 const normalize = (text: unknown) => typeof text === 'string' ? text.replace(/\s+/g, ' ').trim() : '';

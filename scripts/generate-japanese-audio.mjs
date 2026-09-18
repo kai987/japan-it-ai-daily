@@ -10,6 +10,8 @@ import {
   readJsonIfExists,
   sameNumber,
 } from './audio-cache.mjs';
+import { buildStudyArchive } from './learning-review.mjs';
+import { reviewAudioCardsForDate } from './learning-audio-plan.mjs';
 
 const DEFAULT_STYLE_ID = 497929760;
 const DEFAULT_ENGINE_URL = 'http://127.0.0.1:10101';
@@ -20,6 +22,7 @@ const ENGINE_URL = (process.env.AIVIS_ENGINE_URL || DEFAULT_ENGINE_URL).replace(
 
 const root = resolve(process.cwd());
 const contentDir = join(root, 'src', 'content', 'japanese');
+const studyArchive = buildStudyArchive(root);
 const args = process.argv.slice(2);
 const force = args.includes('--force');
 const generateAll = args.includes('--all');
@@ -326,9 +329,12 @@ for (const date of targetDates) {
   const source = readFileSync(contentPath, 'utf8');
   const vocabulary = parseVocabulary(source);
   const grammar = parseGrammar(source);
+  const review = reviewAudioCardsForDate(root, date, studyArchive);
+  const reviewVocabulary = review.vocabulary;
+  const reviewGrammar = review.grammar;
 
-  if (!vocabulary.length && !grammar.length) {
-    console.warn(`WARN ${date}: 没有解析到 vocabulary / grammar 的 exampleJa，已跳过。`);
+  if (!vocabulary.length && !grammar.length && !reviewVocabulary.length && !reviewGrammar.length) {
+    console.warn(`WARN ${date}: 没有解析到新学或复习 vocabulary / grammar 的 exampleJa，已跳过。`);
     continue;
   }
 
@@ -339,7 +345,7 @@ for (const date of targetDates) {
   const previousRecords = previousAudioRecords(previousManifest);
   const legacyConfigMatches = legacyManifestMatchesConfig(previousManifest);
 
-  console.log(`\n=== ${date} · ${vocabulary.length} words · ${grammar.length} grammar ===`);
+  console.log(`\n=== ${date} · new ${vocabulary.length} words / ${grammar.length} grammar · review ${reviewVocabulary.length} words / ${reviewGrammar.length} grammar ===`);
   console.log(`Output: ${outputDir}`);
 
   const manifestItems = [];
@@ -417,6 +423,44 @@ for (const date of targetDates) {
     });
   }
 
+  for (const [zeroIndex, item] of reviewVocabulary.entries()) {
+    const index = zeroIndex + 1;
+    const wordFile = `review-vocab-${pad(index)}.mp3`;
+    const exampleFile = `review-example-${pad(index)}.mp3`;
+    const wordPath = join(outputDir, wordFile);
+    const examplePath = join(outputDir, exampleFile);
+    const wordText = item.reading || item.term;
+
+    const wordHash = await ensureAudio({
+      file: wordFile,
+      path: wordPath,
+      text: wordText,
+      kind: 'word',
+      scope: 'japanese-review-vocabulary-word',
+    });
+    const exampleHash = await ensureAudio({
+      file: exampleFile,
+      path: examplePath,
+      text: item.exampleJa,
+      kind: 'example',
+      scope: 'japanese-review-vocabulary-example',
+    });
+
+    manifestItems.push({
+      index,
+      studyKind: 'review',
+      identity: item.identity,
+      firstIntroducedDate: item.firstIntroducedDate,
+      term: item.term,
+      reading: item.reading,
+      exampleJa: item.exampleJa,
+      word: wordFile,
+      wordHash,
+      example: exampleFile,
+      exampleHash,
+    });
+  }
+
   for (const [zeroIndex, item] of grammar.entries()) {
     const index = zeroIndex + 1;
     const exampleFile = `grammar-example-${pad(index)}.mp3`;
@@ -431,6 +475,30 @@ for (const date of targetDates) {
 
     manifestGrammar.push({
       index,
+      pattern: item.pattern,
+      exampleJa: item.exampleJa,
+      example: exampleFile,
+      exampleHash,
+    });
+  }
+
+  for (const [zeroIndex, item] of reviewGrammar.entries()) {
+    const index = zeroIndex + 1;
+    const exampleFile = `review-grammar-example-${pad(index)}.mp3`;
+    const examplePath = join(outputDir, exampleFile);
+    const exampleHash = await ensureAudio({
+      file: exampleFile,
+      path: examplePath,
+      text: item.exampleJa,
+      kind: 'example',
+      scope: 'japanese-review-grammar-example',
+    });
+
+    manifestGrammar.push({
+      index,
+      studyKind: 'review',
+      identity: item.identity,
+      firstIntroducedDate: item.firstIntroducedDate,
       pattern: item.pattern,
       exampleJa: item.exampleJa,
       example: exampleFile,

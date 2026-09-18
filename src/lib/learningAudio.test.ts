@@ -24,6 +24,31 @@ describe('content-addressed learning audio mapping', () => {
   it('requires an exact grammar example match', () => {
     expect(resolve({ grammar: [{ exampleJa: '確認したうえで提出する。', example: 'grammar-02.mp3' }] }, { kind: 'grammar-example', text: '確認したうえで提出する。' })).toBe('grammar-02.mp3');
   });
+  it('resolves review vocabulary and review grammar recordings from the same manifest', () => {
+    const manifest = {
+      items: [{
+        studyKind: 'review' as const,
+        identity: '検証する',
+        firstIntroducedDate: '2026-08-12',
+        term: '検証する',
+        reading: 'けんしょうする',
+        exampleJa: '実データで検証します。',
+        word: 'review-vocab-01.mp3',
+        example: 'review-example-01.mp3',
+      }],
+      grammar: [{
+        studyKind: 'review' as const,
+        identity: 'わけではない',
+        firstIntroducedDate: '2026-08-12',
+        pattern: '～わけではない',
+        exampleJa: 'すべてのケースに当てはまるわけではない。',
+        example: 'review-grammar-example-01.mp3',
+      }],
+    };
+    expect(resolve(manifest, { kind: 'word', term: '検証する', reading: 'けんしょうする', text: 'けんしょうする' })).toBe('review-vocab-01.mp3');
+    expect(resolve(manifest, { kind: 'example', term: '検証する', reading: 'けんしょうする', text: '実データで検証します。' })).toBe('review-example-01.mp3');
+    expect(resolve(manifest, { kind: 'grammar-example', text: 'すべてのケースに当てはまるわけではない。' })).toBe('review-grammar-example-01.mp3');
+  });
   it('validates rather than silently ignoring missing recordings', () => {
     const fallback = { ...item, playback: 'browser-tts', reason: 'historical-jlpt-repair', word: null, example: null };
     expect(learningRecordingFiles([fallback], 'test')).toEqual([]);

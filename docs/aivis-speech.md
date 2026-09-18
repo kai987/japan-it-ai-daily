@@ -1,6 +1,6 @@
 # AivisSpeech 本地日语语音生成
 
-Japan IT / AI Daily 的词汇卡、例句和面试素材优先播放 AivisSpeech 生成的 MP3；如果对应音频不存在或加载失败，则自动回退到浏览器 `speechSynthesis`。
+Japan IT / AI Daily 的新学词汇、复习词汇、词汇例句、新学语法例句、复习语法例句和面试素材优先播放 AivisSpeech 生成的 MP3；如果对应音频不存在或加载失败，则自动回退到浏览器 `speechSynthesis`。
 
 ## 当前统一声音
 
@@ -61,7 +61,7 @@ brew install ffmpeg
 npm run audio:generate:all
 ```
 
-未变化的 MP3 会直接跳过；只有文字、声音或合成参数发生变化的条目才会重新生成。
+该命令现在会同时读取原始 `vocabulary / grammar` 与 `learning-review.mjs` 派生的 `reviewVocabulary / reviewGrammar`。未变化的 MP3 会直接跳过；只有文字、声音、复习选择或合成参数发生变化且对应文件 hash 不匹配的条目才会重新生成。
 
 确实需要全部重做时才使用：
 
@@ -77,6 +77,9 @@ public/audio/japanese/
 │   ├── vocab-01.mp3
 │   ├── example-01.mp3
 │   ├── grammar-example-01.mp3
+│   ├── review-vocab-01.mp3
+│   ├── review-example-01.mp3
+│   ├── review-grammar-example-01.mp3
 │   ├── interview-answer-01.mp3
 │   ├── manifest.json
 │   └── interview-manifest.json
@@ -84,6 +87,23 @@ public/audio/japanese/
 ```
 
 MP3 默认：24 kHz、mono、96 kbps。
+
+## 复习卡音频
+
+复习词汇与复习语法不写回原始 Markdown 的 `vocabulary / grammar` 数组，而是由 `scripts/learning-review.mjs` 根据历史首次学习日期与当天实际用例动态派生。音频生成器会读取同一份派生结果：
+
+- `reviewVocabulary`：生成 `review-vocab-XX.mp3` 与 `review-example-XX.mp3`
+- `reviewGrammar`：生成 `review-grammar-example-XX.mp3`
+- manifest 记录 `studyKind: "review"`、`identity` 与 `firstIntroducedDate`
+- 页面仍按词条＋读音或完整例句精确匹配，不按卡片显示位置猜测录音
+
+因此历史日报新增复习语法后，推荐执行：
+
+```bash
+npm run audio:generate:all
+```
+
+这会扫描全部日期并利用 hash 缓存，只补齐缺少或已变化的复习录音，不重做所有未变化的原始录音。
 
 ## 生成指定日期
 

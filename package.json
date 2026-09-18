@@ -14,7 +14,7 @@
     "bilingual:check-interview": "node scripts/sync-bilingual-interview.mjs --check",
     "quality:check": "node scripts/validate-daily-quality.mjs",
     "quality:check:latest": "node scripts/validate-daily-quality.mjs --date=$(date +%F)",
-    "audio:check": "node --check scripts/audio-cache.mjs && node --check scripts/generate-japanese-audio.mjs && node --check scripts/generate-interview-audio.mjs && node --check scripts/validate-interview-audio-duration.mjs && node --check scripts/strip-dist-audio.mjs && node --check scripts/validate-daily-quality.mjs",
+    "audio:check": "node --check scripts/audio-cache.mjs && node --check scripts/learning-audio-plan.mjs && node --check scripts/generate-japanese-audio.mjs && node --check scripts/generate-interview-audio.mjs && node --check scripts/validate-interview-audio-duration.mjs && node --check scripts/strip-dist-audio.mjs && node --check scripts/validate-daily-quality.mjs",
     "audio:strip-dist": "node scripts/strip-dist-audio.mjs",
     "audio:duration:check": "node scripts/validate-interview-audio-duration.mjs --from 2026-08-12",
     "audio:duration:write:latest": "node scripts/validate-interview-audio-duration.mjs --latest --write",
