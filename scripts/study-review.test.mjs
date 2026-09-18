@@ -1,5 +1,5 @@
 import {expect,test} from 'vitest';
-import {buildStudyArchive,frequencyFor,issueNumbers,frequencyText} from './learning-review.mjs';
+import {buildStudyArchive,frequencyFor,issueNumbers,frequencyText,reviewCount,reviewLimits,REVIEW_POLICY} from './learning-review.mjs';
 import {exportStudySnapshot} from './export-study-snapshot.mjs';
 const archive=buildStudyArchive();
 test('frequency counts distinct dates, not tokens or language mirrors',()=>{
@@ -36,4 +36,38 @@ test('introducing review does not reinstate duplicated NEW entries in history',(
 });
 test('snapshot uses the main report denominator, not the N1 mirror date count',()=>{
  const snap=exportStudySnapshot(archive,'a'.repeat(40));expect(snap.totalDays).toBe(Object.keys(archive.lessons).length);expect(snap.lessons['2026-09-18'].grammar).toHaveLength(7);expect(snap.sourceCommit).toBe('a'.repeat(40));
+});
+
+test('grammar is a 5–8 range, not an eight-item quota',()=>{
+ for(const total of [5,6,7,8]) expect(reviewCount('grammar',2,total-2,'2026-09-18')+2).toBe(total);
+ expect(reviewCount('grammar',0,3,'2026-09-18')).toBe(3);
+ expect(reviewCount('grammar',5,0,'2026-09-18')).toBe(0);
+ expect(reviewCount('grammar',8,20,'2026-09-18')).toBe(0);
+ expect(reviewCount('grammar',9,20,'2026-09-18')).toBe(0); // Never delete source cards.
+ expect(reviewCount('grammar',2,20,'2026-09-18')).toBe(6);
+ expect(reviewLimits('grammar')).toMatchObject({minimum:5,maximum:8});
+});
+test('historical grammar is supplemented without retroactively adding vocabulary',()=>{
+ let supplemented=0;
+ for(const [date,day] of Object.entries(archive.lessons)) {
+  if(date>=REVIEW_POLICY.effectiveFrom)continue;
+  expect(day.zh.reviewVocabulary).toHaveLength(0);
+  const count=day.zh.grammar.length+day.zh.reviewGrammar.length;
+  expect(count).toBeLessThanOrEqual(8);
+  if(day.zh.reviewGrammar.length)supplemented++;
+  if(count<5)expect(day.zh.reviewGrammarNote?.length).toBeGreaterThan(20);
+  else expect(day.zh.reviewGrammarNote).toBeUndefined();
+ }
+ expect(supplemented).toBeGreaterThan(25);
+ expect(archive.lessons['2026-08-12'].zh.reviewGrammar).toHaveLength(0);
+ expect(archive.lessons['2026-08-13'].zh.studyGrammarCount).toBe(6);
+ expect(archive.lessons['2026-08-14'].zh.studyGrammarCount).toBe(5);
+ expect(archive.lessons['2026-08-15'].zh.studyGrammarCount).toBe(3);
+});
+test('snapshot exports separate complete historical grammar without overwriting old vocabulary',()=>{
+ const snapshot=exportStudySnapshot(archive,'a'.repeat(40));
+ expect(Object.keys(snapshot.grammarLessons)).toEqual(Object.keys(archive.lessons));
+ expect(snapshot.lessons['2026-09-09']).toBeUndefined();
+ expect(snapshot.grammarLessons['2026-09-09'].grammar).toEqual([...archive.lessons['2026-09-09'].zh.grammar,...archive.lessons['2026-09-09'].zh.reviewGrammar]);
+ expect(snapshot.grammarLessons['2026-08-15'].reviewGrammarNote).toBeTruthy();
 });

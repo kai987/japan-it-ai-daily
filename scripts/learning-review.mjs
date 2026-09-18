@@ -5,7 +5,21 @@ import { contentDates, contentDirs, readContent } from './content-files.mjs';
 import { makeLexicalKey } from './check-jlpt-history.mjs';
 import { makeGrammarKey } from './check-grammar-history.mjs';
 
-export const REVIEW_POLICY = { effectiveFrom: '2026-09-18', vocabularyTarget: 20, grammarTarget: 7 };
+export const REVIEW_POLICY = {
+  effectiveFrom: '2026-09-18', vocabularyTarget: 20,
+  grammarEffectiveFrom: '2026-08-12', grammarMinimum: 5, grammarMaximum: 8,
+  // Compatibility for snapshot consumers: this is a ceiling, not a quota.
+  grammarTarget: 8,
+};
+export function reviewLimits(kind, policy = REVIEW_POLICY) {
+  return kind === 'grammar'
+    ? { from: policy.grammarEffectiveFrom, minimum: policy.grammarMinimum, maximum: policy.grammarMaximum }
+    : { from: policy.effectiveFrom, minimum: policy.vocabularyTarget, maximum: policy.vocabularyTarget };
+}
+export function reviewCount(kind, freshCount, candidateCount, date, policy = REVIEW_POLICY) {
+  const limits = reviewLimits(kind, policy);
+  return date < limits.from ? 0 : Math.min(candidateCount, Math.max(0, limits.maximum - freshCount));
+}
 export const FREQUENCY_SCOPE = '日文日报正文、推荐理由及学习卡片（新学＋复习）；同一天和中日镜像只计一次。不含外链全文。';
 const clean = (s = '') => s.normalize('NFKC').replace(/\*\*|`/g, '').replace(/\s+/gu, ' ').trim();
 const escaped = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -135,13 +149,13 @@ export function buildStudyArchive(root = process.cwd()) {
       const field = kind==='vocabulary'?'term':'pattern';
       const original = day.files.japanese.data[kind];
       const currentIds = new Set(original.map(card => keys[kind](card[field])));
-      const target = kind==='vocabulary'?REVIEW_POLICY.vocabularyTarget:REVIEW_POLICY.grammarTarget;
-      const gap = day.date >= REVIEW_POLICY.effectiveFrom ? Math.max(0,target-original.length) : 0;
+      const limits = reviewLimits(kind);
+      const target = limits.minimum;
       const candidates = [...registries[kind].values()].filter(entry => entry.firstDate < day.date && !currentIds.has(entry.id) && entry.evidence.has(day.date));
       const priority = entry => ['N1','N2'].includes(entry.zh.level)?0:1;
       const countAtDate = entry => entry.appearedDates.filter(date=>date<=day.date).length;
       candidates.sort((a,b)=>priority(a)-priority(b) || countAtDate(b)-countAtDate(a) || a.firstDate.localeCompare(b.firstDate) || a.id.localeCompare(b.id,'ja'));
-      const selected = candidates.slice(0,gap);
+      const selected = candidates.slice(0,reviewCount(kind,original.length,candidates.length,day.date));
       for (const locale of ['zh','ja']) {
         views[locale][kind] = original.map((_,i) => {
           const card=day.files[locale==='zh'?'japanese':'japanese-ja'].data[kind][i],entry=registries[kind].get(keys[kind](card[field]));
@@ -153,9 +167,9 @@ export function buildStudyArchive(root = process.cwd()) {
           reviewEvidence:entry.evidence.get(day.date),reportFrequency:frequencyFor(entry.appearedDates,dates.length,entry.appearanceForms),
         }));
         views[locale][kind==='vocabulary'?'studyVocabularyCount':'studyGrammarCount'] = original.length+selected.length;
-        if (selected.length<gap) views[locale][kind==='vocabulary'?'reviewVocabularyNote':'reviewGrammarNote'] = locale==='ja'
-          ? `本文で確認できる既習項目は${selected.length}件です。目標${target}件に足りない分を、本文にない表現や未習項目で埋めていません。`
-          : `本文中可核对的既习项目只有${selected.length}项；不足${target}项的部分不使用未出现或尚未学过的内容凑数。`;
+        if (day.date >= limits.from && original.length+selected.length < limits.minimum) views[locale][kind==='vocabulary'?'reviewVocabularyNote':'reviewGrammarNote'] = locale==='ja'
+          ? `新規${original.length}件＋当日の本文で確認できる既習項目${selected.length}件です。目安${target}件に届かない分を、本文にない表現や未習項目で埋めていません。`
+          : `新学${original.length}项＋当天本文中可核对的既习项目${selected.length}项；未达到参考下限${target}项的部分，不使用未出现或尚未学过的内容凑数。`;
       }
     }
     result.lessons[day.date] = {date:day.date,issueNumber:numbers[day.date],...views};

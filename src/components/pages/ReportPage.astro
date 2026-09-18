@@ -53,6 +53,7 @@ const tocHeadings = [
       <h1>{numberedTitle}</h1>
       <p class="meta">{report.data.description}</p>
       <p class="meta" data-study-counts>{locale === "ja" ? `学習：語彙 ${study.vocabulary.length} 新規＋${study.reviewVocabulary.length} 復習 ／ 文法 ${study.grammar.length} 新規＋${study.reviewGrammar.length} 復習` : `学习：词汇 ${study.vocabulary.length} 新学＋${study.reviewVocabulary.length} 复习 ／ 语法 ${study.grammar.length} 新学＋${study.reviewGrammar.length} 复习`}</p>
+      <p class="meta" data-grammar-range>{locale === 'ja' ? '文法：新規＋復習で5～8項目が目安。適切な用例が少ない日は無理に8項目まで増やしません。' : '语法：新学＋复习合计5～8项为参考范围，合格用例不足时不强行补满8项。'}</p>
       <div class="tags">{report.data.topics.map((topic:string) => <span class="tag">{topic}</span>)}</div>
       <Content />
       <ReportStudySupplement study={study} locale={locale} />

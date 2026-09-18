@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { getStudyArchive } from '../../scripts/learning-review.mjs';
 import { contentDates } from '../../scripts/content-files.mjs';
 const reportDays = contentDates(new URL('../../', import.meta.url).pathname).length;
 for (const locale of ['zh','ja']) {
@@ -133,5 +134,37 @@ for (const locale of ['zh','ja']) {
       const heading=[...el.querySelectorAll('h2')].find(h=>h.textContent?.startsWith('C-4'));
       return Boolean(review && heading && (review.compareDocumentPosition(heading)&Node.DOCUMENT_POSITION_FOLLOWING));
     })).toBe(true);
+  });
+}
+for (const locale of ['zh','ja']) {
+  const prefix=`/japan-it-ai-daily/${locale==='ja'?'ja/':''}`;
+  test(`${locale}: historical grammar range and legitimate shortfall render`,async({page},testInfo)=>{
+    const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+    await page.addInitScript(lang=>localStorage.setItem('site-language',lang),locale);
+    for(const date of ['2026-08-13','2026-08-14','2026-08-15','2026-09-09']) {
+      const data=getStudyArchive().lessons[date][locale];
+      await page.goto(`${prefix}japanese/${date}/`);
+      await expect(page.locator('[data-grammar-range]')).toContainText('5～8');
+      await expect(page.locator('.grammar-card')).toHaveCount(data.studyGrammarCount);
+      await expect(page.locator('.grammar-card[data-study-kind="review"]')).toHaveCount(data.reviewGrammar.length);
+      await expect(page.locator('.vocabulary-card[data-study-kind="review"]')).toHaveCount(0);
+      if(data.reviewGrammarNote)await expect(page.getByText(data.reviewGrammarNote,{exact:true})).toBeVisible();
+    }
+    // Historical additions retain date links and true same-day evidence.
+    const review=page.locator('.grammar-card[data-study-kind="review"]').first();
+    await review.scrollIntoViewIfNeeded();
+    await expect(review.locator('[data-review-evidence]')).toBeVisible();
+    await review.locator('.study-frequency summary').click();
+    await expect(review.locator('.frequency-date-link').first()).toHaveAttribute('target','_blank');
+    await review.locator('.study-frequency summary').click();
+    await page.screenshot({path:testInfo.outputPath('grammar-history-desktop.png')});
+    await page.setViewportSize({width:390,height:844});
+    await review.scrollIntoViewIfNeeded();
+    await page.screenshot({path:testInfo.outputPath('grammar-history-mobile.png')});
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+    await page.goto(`${prefix}daily/2026-08-15/`);
+    await expect(page.locator('[data-review-supplement="grammar"] .study-card')).toHaveCount(1);
+    await expect(page.locator('[data-review-shortfall]')).toBeVisible();
+    expect(errors).toEqual([]);
   });
 }
