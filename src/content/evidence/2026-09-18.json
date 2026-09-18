@@ -46,7 +46,7 @@
           "quote": "差分更新に直した",
           "locator": "Zenn: ChromaDB導入、URL ID、既存ID確認、新規記事のみEmbedding",
           "conditions": "An add-only URL identity solves new-document duplication but does not by itself detect same-URL content edits, deletions, canonical-URL changes or embedding-model migrations. This is a personal implementation case, not a production-scale retrieval benchmark.",
-          "usedIn": {"zh": "ChromaDB", "ja": "ChromaDB", "interview": "ChromaDB"}
+          "usedIn": {"zh": "chromadb.PersistentClient", "ja": "chromadb.PersistentClient", "interview": "ChromaDB"}
         }
       ]
     },
