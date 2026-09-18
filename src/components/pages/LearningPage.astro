@@ -4,6 +4,7 @@ import { pageCopy } from "../../lib/pageCopy";
 const { locale } = Astro.props as { locale: SiteLocale };
 const copy = pageCopy.Learning[locale];
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getStudyDay } from '../../../scripts/learning-review.mjs';
 import { getCollection } from 'astro:content';
 import { getJapaneseLessonListDisplayTitle } from '../../lib/listDisplayTitles';
 
@@ -62,7 +63,8 @@ const levels = [allLevels, 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
 
       <div class="lesson-list" id="lesson-list">
         {lessons.length ? lessons.map((lesson) => {
-          const lessonLevels = ['N5/N4', ...lesson.data.levels];
+          const study = getStudyDay(lesson.id, locale);
+          const lessonLevels = ['N5/N4', ...new Set([...lesson.data.levels, ...study.reviewVocabulary.map((x:any)=>x.level), ...study.reviewGrammar.map((x:any)=>x.level)])];
           return (
             <a class="lesson-row" href={`${root}japanese/${lesson.id}/`} data-levels={lessonLevels.join('|')}>
               <div class="lesson-date">{lesson.data.date.toLocaleDateString('ja-JP')}</div>
@@ -75,8 +77,8 @@ const levels = [allLevels, 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
                 </div>
               </div>
               <div class="lesson-counts">
-                <span>{lesson.data.vocabularyCount} {locale === 'ja' ? '語' : '词'}</span>
-                <span>{lesson.data.grammarCount} {locale === 'ja' ? '文法' : '语法'}</span>
+                <span>{study.studyVocabularyCount} {locale === 'ja' ? '語' : '词'}</span>
+                <span>{study.studyGrammarCount} {locale === 'ja' ? '文法' : '语法'}</span>
                 <strong>{copy.study}</strong>
               </div>
             </a>

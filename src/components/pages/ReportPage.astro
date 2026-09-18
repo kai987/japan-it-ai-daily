@@ -7,8 +7,12 @@ import { getJapaneseArticleTitle } from '../../lib/articleTitles';
 import type { CollectionEntry } from 'astro:content';
 import type { SiteLocale } from '../../lib/locale';
 import LegacyReportEnhancements from '../LegacyReportEnhancements.astro';
+import { titleWithIssue, getStudyDay } from '../../../scripts/learning-review.mjs';
+import ReportStudySupplement from '../ReportStudySupplement.astro';
 import ReportSpeechEnhancer from '../ReportSpeechEnhancer.astro';
 const { report, locale } = Astro.props as { report: CollectionEntry<'daily'> | CollectionEntry<'dailyJa'>; locale: SiteLocale };
+const numberedTitle = titleWithIssue(report.data.title, report.id);
+const study = getStudyDay(report.id, locale);
 const { Content, headings } = await render(report);
 const lessons = locale === 'zh' ? await getCollection('japanese') : [];
 const hasNativeJapanese = headings.some((heading:any) => {
@@ -41,14 +45,16 @@ const tocHeadings = [
   ...(renderedSupplement?.headings ?? [])
 ].filter((heading:any) => heading.depth <= 3);
 ---
-<BaseLayout locale={locale} title={`${report.data.title} · Japan IT / AI Daily`} description={report.data.description}>
+<BaseLayout locale={locale} title={`${numberedTitle} · Japan IT / AI Daily`} description={report.data.description}>
   <div class="container report-layout" data-top-titles={locale === 'zh' ? JSON.stringify(topTitles) : undefined}>
     <article class="prose">
       <div class="eyebrow">{report.data.date.toLocaleDateString('ja-JP')}</div>
-      <h1>{report.data.title}</h1>
+      <h1>{numberedTitle}</h1>
       <p class="meta">{report.data.description}</p>
+      <p class="meta" data-study-counts>{locale === "ja" ? `学習：語彙 ${study.vocabulary.length} 新規＋${study.reviewVocabulary.length} 復習 ／ 文法 ${study.grammar.length} 新規＋${study.reviewGrammar.length} 復習` : `学习：词汇 ${study.vocabulary.length} 新学＋${study.reviewVocabulary.length} 复习 ／ 语法 ${study.grammar.length} 新学＋${study.reviewGrammar.length} 复习`}</p>
       <div class="tags">{report.data.topics.map((topic:string) => <span class="tag">{topic}</span>)}</div>
       <Content />
+      <ReportStudySupplement study={study} locale={locale} />
       {SupplementContent && (
         <section class="learning-supplement">
           <div class="supplement-note">历史日报补生成 · JLPT 等级为学习参考</div>
