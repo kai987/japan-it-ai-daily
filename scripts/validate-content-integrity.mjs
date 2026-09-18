@@ -29,13 +29,18 @@ export const validateContentDay = (date, documents) => {
       const vocabulary = array(data.vocabulary), grammar = array(data.grammar), technical = array(data.technicalTerms);
       require(data.vocabularyCount === vocabulary.length, `${dir} vocabularyCount differs from vocabulary.length`);
       require(data.grammarCount === grammar.length, `${dir} grammarCount differs from grammar.length`);
-      require(vocabulary.length >= 18 && vocabulary.length <= 22, `${dir} vocabulary must contain 18–22 items`);
+      // 18–22 remains the target, but full-history dedupe takes precedence from 2026-09-18 onward.
+      // A smaller set is therefore valid when the day's verified source material has fewer genuinely new items.
+      const vocabularyCountValid = date >= '2026-09-18'
+        ? vocabulary.length <= 22
+        : vocabulary.length >= 18 && vocabulary.length <= 22;
+      require(vocabularyCountValid, `${dir} vocabulary must contain at most 22 items; 18–22 is the target unless history dedupe reduces the eligible set`);
       require(Array.isArray(data.grammar) && grammar.length <= 8, `${dir} grammar must be an array of at most 8 items`);
       require(grammar.length >= 5 || (nonempty(data.grammarSelectionNote) && data.grammarSelectionNote.trim().length >= 20), `${dir} grammar shortage needs an explicit selection note`);
       require(technical.length >= 5 && technical.length <= 10, `${dir} technicalTerms must contain 5–10 items`);
       for (const [key, items, field, count] of [['mustRememberWords', vocabulary, 'term', 10], ['mustRememberGrammar', grammar, 'pattern', 5]]) {
         const selected = array(data[key]);
-        const expected = key === 'mustRememberGrammar' ? Math.min(count, items.length) : count;
+        const expected = Math.min(count, items.length);
         require(selected.length === expected && unique(selected), `${dir} ${key} must contain ${expected} unique items`);
         require(selected.every((value) => items.some((item) => item[field] === value)), `${dir} ${key} contains an unknown item`);
       }
