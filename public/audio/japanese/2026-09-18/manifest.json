@@ -1,6 +1,6 @@
 {
   "date": "2026-09-18",
-  "generatedAt": "2026-09-18T13:33:04.563Z",
+  "generatedAt": "2026-09-18T14:17:49.038Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -25,6 +25,176 @@
     "intonationScale": 1
   },
   "items": [
+    {
+      "index": 1,
+      "term": "桁違い",
+      "reading": "けたちがい",
+      "exampleJa": "処理時間の差が測定誤差より桁違いに大きいか確認します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "3daaa608f13ec717f30db75858aec1c853c5d4df2e01648d006b591ec38d5ece",
+      "example": "example-01.mp3",
+      "exampleHash": "83acf552b6812d66adec037ca8c98047fe6d159d3b939db33b03a18abb6ef8f0"
+    },
+    {
+      "index": 2,
+      "term": "復帰",
+      "reading": "ふっき",
+      "exampleJa": "失敗時に安全な状態へ復帰できる手順を残します。",
+      "word": "vocab-02.mp3",
+      "wordHash": "8e642f4ed55aa12bf9d40e765c68542bc36a61c35633a025d32c1f6a7b9058d0",
+      "example": "example-02.mp3",
+      "exampleHash": "caffa95af80558623fbcb80e36821d3c60ca13f1f0a1b261f25a06ea46a59ad0"
+    },
+    {
+      "index": 3,
+      "term": "秘匿化",
+      "reading": "ひとくか",
+      "exampleJa": "Telemetryへ出す前に設定値を秘匿化します。",
+      "word": "vocab-03.mp3",
+      "wordHash": "5319dd706c54272fd300fd0592445991c9d4667279894c708496b6152d243655",
+      "example": "example-03.mp3",
+      "exampleHash": "0c8d845835b40d8e8f052dffaa36b68a99be255a8a76c231add6fced56b02cce"
+    },
+    {
+      "index": 4,
+      "term": "中断",
+      "reading": "ちゅうだん",
+      "exampleJa": "Window再読み込みで中断したStepを再開します。",
+      "word": "vocab-04.mp3",
+      "wordHash": "1662ead8de48aece20e1afb385f5897047a82e11ad0e1d8462377e21b9a27b8f",
+      "example": "example-04.mp3",
+      "exampleHash": "4904cee4e6b335044e8b49ef38e51a3488f5a3debfdb110fdf88e2bebf71318c"
+    },
+    {
+      "index": 5,
+      "term": "鮮度",
+      "reading": "せんど",
+      "exampleJa": "News RAGでは情報の鮮度を保つため取得期間を絞ります。",
+      "word": "vocab-05.mp3",
+      "wordHash": "35cf871f9bcd860ab340646aa7532c0d3294f2dd3a224f75afc22060153f0bca",
+      "example": "example-05.mp3",
+      "exampleHash": "b92183ea80082282b9542aba0fabefb4086d70df113aa738592f38fe6a96c0df"
+    },
+    {
+      "index": 6,
+      "term": "使い回す",
+      "reading": "つかいまわす",
+      "exampleJa": "同じURLを検索結果のLinkとDocument IDに使い回します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "55f0d5194e65b22ae1a82ecd6e7cc83860de6a5582110431154fd1d3dbabf8bb",
+      "example": "example-06.mp3",
+      "exampleHash": "c79cc794feebd4409263586920ab1767a2ac5a36f0afac89be48b41fc30daf48"
+    },
+    {
+      "index": 7,
+      "term": "裏切る",
+      "reading": "うらぎる",
+      "exampleJa": "設定名が実体を裏切るとData Sourceを誤解します。",
+      "word": "vocab-07.mp3",
+      "wordHash": "fb6435936f88d376f893e89ebdcaa6d0d8e99c259d0691578b67ec1ad61e5101",
+      "example": "example-07.mp3",
+      "exampleHash": "b13da0491bca7998962f4cc50095fbdd81a5195ad2d061593759250e3960fd99"
+    },
+    {
+      "index": 8,
+      "term": "永続化",
+      "reading": "えいぞくか",
+      "exampleJa": "Vectorを永続化して起動ごとの再計算を避けます。",
+      "word": "vocab-08.mp3",
+      "wordHash": "e1069baeba919ea0eea28c837c6de6b72e8050d3f30bf581cb7467b85e7b4224",
+      "example": "example-08.mp3",
+      "exampleHash": "91d52a7f8140218a2e73ee57e58460a3664c8d06a35ab4490c7cfae395f77317"
+    },
+    {
+      "index": 9,
+      "term": "たどり着く",
+      "reading": "たどりつく",
+      "exampleJa": "検索結果から元記事へたどり着けるLinkを残します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "fb739cd4483b3a339095933f84e40c75bb21fb95416cbf61742d374265f41116",
+      "example": "example-09.mp3",
+      "exampleHash": "76816c83f07341cac4ee8b7fbf3254ef57a0b71972c1bf9b50891a3c60905d67"
+    },
+    {
+      "index": 10,
+      "term": "恒常的",
+      "reading": "こうじょうてき",
+      "exampleJa": "Agentが24時間動くと負荷は恒常的になります。",
+      "word": "vocab-10.mp3",
+      "wordHash": "b9a4a212b026cd8d4c6ee0ef8a1dea72175ab80075512943006a3fd38c983e81",
+      "example": "example-10.mp3",
+      "exampleHash": "73e89c5f24ae0b54f2467e362bacd1d7dc2e8d729302fbfcabe544c15b0d43b7"
+    },
+    {
+      "index": 11,
+      "term": "横断的",
+      "reading": "おうだんてき",
+      "exampleJa": "SecurityとObservabilityを横断的に扱うData基盤を作ります。",
+      "word": "vocab-11.mp3",
+      "wordHash": "e5d78c2987198cf3e7c51cd3ad7446065eed37508346c2b718af7aa0e448704c",
+      "example": "example-11.mp3",
+      "exampleHash": "3a415cd86b0eb4e2695adcfcb0e49e866e7f1fabab10d4356906376a26195430"
+    },
+    {
+      "index": 12,
+      "term": "分断",
+      "reading": "ぶんだん",
+      "exampleJa": "SOCとAI EngineerのData分断を共通基盤で埋めます。",
+      "word": "vocab-12.mp3",
+      "wordHash": "9e678bdd437349c93cd3444e6a83bac7e2b3d63e3c6f7bd227b54fe02e1fc6d4",
+      "example": "example-12.mp3",
+      "exampleHash": "9ff2939a4435bcce0933cb5c8c64dba1f6f3dba3b8bda3c19ff5a283059d7fcd"
+    },
+    {
+      "index": 13,
+      "term": "侵害",
+      "reading": "しんがい",
+      "exampleJa": "侵害されたIdentity Sessionを切断します。",
+      "word": "vocab-13.mp3",
+      "wordHash": "dcdb824387a6a92796871f3125728e2414e159fe5c38a674a3aecae1ee543ada",
+      "example": "example-13.mp3",
+      "exampleHash": "9ab7bc6ff07f870c8363aa0c67608df542e000308c478c7f01359acb9f3f4270"
+    },
+    {
+      "index": 14,
+      "term": "遮断",
+      "reading": "しゃだん",
+      "exampleJa": "新しいPolicyで同じ攻撃経路を遮断します。",
+      "word": "vocab-14.mp3",
+      "wordHash": "3c1fb97e503f661c6f184a05f349985118c66d998651335c7651a8d833b027ba",
+      "example": "example-14.mp3",
+      "exampleHash": "dbaf7a4c5e21839a6eef2e2f2507105fee37e69d0d7cc9494d708a3ede09290b"
+    },
+    {
+      "index": 15,
+      "term": "一分一秒を争う",
+      "reading": "いっぷんいちびょうをあらそう",
+      "exampleJa": "Incident Responseでは一分一秒を争う場合があります。",
+      "word": "vocab-15.mp3",
+      "wordHash": "d4fd62acaa887609539ea1653757bbff0666fa72de337229bc84218edd8f7f06",
+      "example": "example-15.mp3",
+      "exampleHash": "e33bca29af2fbf5da953eba057a138aae31afdfb933b3a4ec0d9f875e31027be"
+    },
+    {
+      "index": 16,
+      "term": "まかなう",
+      "reading": "まかなう",
+      "exampleJa": "一つのCrawlerで検索と学習の両方をまかなう場合があります。",
+      "word": "vocab-16.mp3",
+      "wordHash": "0356ac2bd6c3e0fc4693acc68726b80ffb1060f846434c7f4ae828543a92b544",
+      "example": "example-16.mp3",
+      "exampleHash": "635db493aa81b38523d89614fc5bb66d6489ad73278b3cc77969b63557089f52"
+    },
+    {
+      "index": 17,
+      "term": "兼用",
+      "reading": "けんよう",
+      "exampleJa": "同じCrawlerを検索と学習で兼用するとPolicyが衝突しやすくなります。",
+      "word": "vocab-17.mp3",
+      "wordHash": "58e558e46ba3a13d73ef774c22499dd14484b1e59eca0a1deef285337a13e308",
+      "example": "example-17.mp3",
+      "exampleHash": "e28926e9b548333b10a37b2278e1bc6b0efb3db56821986082fb3f6d9b2c1c57"
+    },
     {
       "index": 1,
       "studyKind": "review",
