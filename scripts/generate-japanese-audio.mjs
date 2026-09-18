@@ -289,6 +289,7 @@ const legacyManifestMatchesConfig = (manifest) => Boolean(
 const previousAudioRecords = (manifest) => {
   const records = new Map();
   for (const item of Array.isArray(manifest?.items) ? manifest.items : []) {
+    if (item?.studyKind === 'review') continue;
     if (item?.word) {
       records.set(item.word, {
         hash: item.wordHash,
@@ -303,6 +304,7 @@ const previousAudioRecords = (manifest) => {
     }
   }
   for (const item of Array.isArray(manifest?.grammar) ? manifest.grammar : []) {
+    if (item?.studyKind === 'review') continue;
     if (item?.example) {
       records.set(item.example, {
         hash: item.exampleHash,
@@ -322,6 +324,7 @@ console.log(`Audio cache: SHA-256 v${AUDIO_CACHE_VERSION}\n`);
 let totalGenerated = 0;
 let totalSkipped = 0;
 let totalMigrated = 0;
+let totalPruned = 0;
 let processedDates = 0;
 
 for (const date of targetDates) {
@@ -340,6 +343,13 @@ for (const date of targetDates) {
 
   const outputDir = join(root, 'public', 'audio', 'japanese', date);
   mkdirSync(outputDir, { recursive: true });
+  let pruned = 0;
+  for (const name of readdirSync(outputDir)) {
+    if (!/^review-(?:vocab|example|grammar-example)-\d+\.mp3$/.test(name)) continue;
+    rmSync(join(outputDir, name), { force: true });
+    pruned += 1;
+    console.log(`PRUNE ${name}  [review now reuses first-introduced audio]`);
+  }
   const manifestPath = join(outputDir, 'manifest.json');
   const previousManifest = readJsonIfExists(manifestPath);
   const previousRecords = previousAudioRecords(previousManifest);
@@ -425,39 +435,23 @@ for (const date of targetDates) {
 
   for (const [zeroIndex, item] of reviewVocabulary.entries()) {
     const index = zeroIndex + 1;
-    const wordFile = `review-vocab-${pad(index)}.mp3`;
-    const exampleFile = `review-example-${pad(index)}.mp3`;
-    const wordPath = join(outputDir, wordFile);
-    const examplePath = join(outputDir, exampleFile);
-    const wordText = item.reading || item.term;
-
-    const wordHash = await ensureAudio({
-      file: wordFile,
-      path: wordPath,
-      text: wordText,
-      kind: 'word',
-      scope: 'japanese-review-vocabulary-word',
-    });
-    const exampleHash = await ensureAudio({
-      file: exampleFile,
-      path: examplePath,
-      text: item.exampleJa,
-      kind: 'example',
-      scope: 'japanese-review-vocabulary-example',
-    });
+    const wordPath = join(root, 'public', 'audio', 'japanese', item.audioDate, item.word);
+    const examplePath = join(root, 'public', 'audio', 'japanese', item.audioDate, item.example);
+    if (!existsSync(wordPath) || !existsSync(examplePath)) {
+      fail(`${date}: 复习词「${item.term}」引用的首次学习音频不存在（${item.audioDate}）。请先运行 npm run audio:generate:all。`);
+    }
 
     manifestItems.push({
       index,
       studyKind: 'review',
       identity: item.identity,
       firstIntroducedDate: item.firstIntroducedDate,
+      audioDate: item.audioDate,
       term: item.term,
       reading: item.reading,
       exampleJa: item.exampleJa,
-      word: wordFile,
-      wordHash,
-      example: exampleFile,
-      exampleHash,
+      word: item.word,
+      example: item.example,
     });
   }
 
@@ -484,29 +478,24 @@ for (const date of targetDates) {
 
   for (const [zeroIndex, item] of reviewGrammar.entries()) {
     const index = zeroIndex + 1;
-    const exampleFile = `review-grammar-example-${pad(index)}.mp3`;
-    const examplePath = join(outputDir, exampleFile);
-    const exampleHash = await ensureAudio({
-      file: exampleFile,
-      path: examplePath,
-      text: item.exampleJa,
-      kind: 'example',
-      scope: 'japanese-review-grammar-example',
-    });
+    const examplePath = join(root, 'public', 'audio', 'japanese', item.audioDate, item.example);
+    if (!existsSync(examplePath)) {
+      fail(`${date}: 复习语法「${item.pattern}」引用的首次学习音频不存在（${item.audioDate}）。请先运行 npm run audio:generate:all。`);
+    }
 
     manifestGrammar.push({
       index,
       studyKind: 'review',
       identity: item.identity,
       firstIntroducedDate: item.firstIntroducedDate,
+      audioDate: item.audioDate,
       pattern: item.pattern,
       exampleJa: item.exampleJa,
-      example: exampleFile,
-      exampleHash,
+      example: item.example,
     });
   }
 
-  const changed = generated > 0 || migrated > 0 || !previousManifest;
+  const changed = generated > 0 || migrated > 0 || pruned > 0 || !previousManifest;
   const manifest = {
     date,
     generatedAt: changed
@@ -531,11 +520,12 @@ for (const date of targetDates) {
   };
 
   writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
-  console.log(`完成 ${date}：生成/更新 ${generated} 个，跳过 ${skipped} 个，迁移 hash ${migrated} 个。`);
+  console.log(`完成 ${date}：生成/更新 ${generated} 个，跳过 ${skipped} 个，迁移 hash ${migrated} 个，清理重复复习音频 ${pruned} 个。`);
 
   totalGenerated += generated;
   totalSkipped += skipped;
   totalMigrated += migrated;
+  totalPruned += pruned;
   processedDates += 1;
 }
 
@@ -544,6 +534,7 @@ console.log(`全部完成：${processedDates}/${targetDates.length} 天`);
 console.log(`生成/更新：${totalGenerated} 个 MP3`);
 console.log(`跳过：${totalSkipped} 个 MP3`);
 console.log(`迁移 hash：${totalMigrated} 个 MP3`);
+console.log(`清理重复复习音频：${totalPruned} 个 MP3`);
 console.log(`Voice: ${speaker.name} / ${style.name} / ${STYLE_ID}`);
 console.log(`Speed: ${WORD_SPEED.toFixed(2)} / ${EXAMPLE_SPEED.toFixed(2)}`);
 console.log('========================================\n');
