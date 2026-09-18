@@ -32,9 +32,10 @@ test('plain-format daily audio passes and stale Japanese text is rejected', () =
 });
 
 
-test('learning manifest may append recorded review vocabulary and grammar without changing source NEW arrays', () => {
+test('review entries reuse first-introduced recordings instead of creating duplicate MP3 files', () => {
   const root = mkdtempSync(join(tmpdir(), 'daily-review-audio-integrity-'));
   const date = '2026-09-11';
+  const sourceDate = '2026-08-12';
   try {
     for (const dir of ['daily', 'daily-ja', 'japanese', 'japanese-ja']) {
       mkdirSync(join(root, 'src/content', dir), { recursive: true });
@@ -44,39 +45,46 @@ test('learning manifest may append recorded review vocabulary and grammar withou
     mkdirSync(join(root, audio), { recursive: true });
     cpSync(audio, join(root, audio), { recursive: true });
 
+    const sourceAudio = join(root, 'public/audio/japanese', sourceDate);
+    mkdirSync(sourceAudio, { recursive: true });
+    for (const name of ['vocab-07.mp3', 'example-07.mp3', 'grammar-example-02.mp3']) {
+      writeFileSync(join(sourceAudio, name), Buffer.from([1,2,3]));
+    }
+
     const manifestPath = join(root, audio, 'manifest.json');
     const learning = JSON.parse(readFileSync(manifestPath, 'utf8'));
     learning.items.push({
       index: 1,
       studyKind: 'review',
       identity: '検証する',
-      firstIntroducedDate: '2026-08-12',
+      firstIntroducedDate: sourceDate,
+      audioDate: sourceDate,
       term: '検証する',
       reading: 'けんしょうする',
       exampleJa: '実データで検証します。',
-      word: 'review-vocab-01.mp3',
-      wordHash: 'test',
-      example: 'review-example-01.mp3',
-      exampleHash: 'test',
+      word: 'vocab-07.mp3',
+      example: 'example-07.mp3',
     });
     learning.grammar.push({
       index: 1,
       studyKind: 'review',
       identity: 'わけではない',
-      firstIntroducedDate: '2026-08-12',
+      firstIntroducedDate: sourceDate,
+      audioDate: sourceDate,
       pattern: '～わけではない',
       exampleJa: 'すべてに当てはまるわけではない。',
-      example: 'review-grammar-example-01.mp3',
-      exampleHash: 'test',
+      example: 'grammar-example-02.mp3',
     });
     writeFileSync(manifestPath, JSON.stringify(learning, null, 2));
-    for (const name of ['review-vocab-01.mp3', 'review-example-01.mp3', 'review-grammar-example-01.mp3']) {
-      writeFileSync(join(root, audio, name), Buffer.from([1,2,3]));
-    }
 
     const result = collectAudioAssets(root);
-    expect(result.assets.has(`japanese/${date}/review-vocab-01.mp3`)).toBe(true);
-    expect(result.assets.has(`japanese/${date}/review-example-01.mp3`)).toBe(true);
-    expect(result.assets.has(`japanese/${date}/review-grammar-example-01.mp3`)).toBe(true);
+    expect(result.assets.has(`japanese/${sourceDate}/vocab-07.mp3`)).toBe(true);
+    expect(result.assets.has(`japanese/${sourceDate}/example-07.mp3`)).toBe(true);
+    expect(result.assets.has(`japanese/${sourceDate}/grammar-example-02.mp3`)).toBe(true);
+    expect([...result.assets.keys()].some((path) => path.includes('/review-'))).toBe(false);
+
+    learning.items.at(-1).word = 'review-vocab-01.mp3';
+    writeFileSync(manifestPath, JSON.stringify(learning, null, 2));
+    expect(() => collectAudioAssets(root)).toThrow('duplicated review vocabulary recording');
   } finally { rmSync(root, { recursive: true, force: true }); }
 });
