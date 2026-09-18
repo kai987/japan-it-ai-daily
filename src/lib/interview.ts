@@ -111,7 +111,10 @@ const cleanReviewPoints = (value: string) => stripInlineMarkdown(value)
   .trim();
 
 export const extractReviewCards = (body: string) => {
-  const section = extractSection(body, '面试复习卡') || extractSection(body, '面接復習カード');
+  const section = (extractSection(body, '面试复习卡') || extractSection(body, '面接復習カード'))
+    // Accept **Q1：** question and **Q1**: question without changing the text.
+    .replace(/^[\t ]*\*\*Q[\t ]*(\d+)[\t ]*(?:[：:]\*\*|\*\*[：:])[\t ]*(\S[^\r\n]*)\r?$/gmi,
+      (_match, number, question) => `### Q${number}\n\n${question.trim()}`);
   if (!section) return [];
   const lines = section.split(/\r?\n/);
   const cards: Array<{ question: string; points: string }> = [];

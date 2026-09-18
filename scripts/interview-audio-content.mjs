@@ -89,7 +89,10 @@ export const parseInterview = (source) => {
 };
 
 export const parseReview = (source) => {
-  const section = extractSection(source, '面试复习卡') || extractSection(source, '面接復習カード');
+  const section = (extractSection(source, '面试复习卡') || extractSection(source, '面接復習カード'))
+    // Accept **Q1：** question and **Q1**: question without changing the text.
+    .replace(/^[\t ]*\*\*Q[\t ]*(\d+)[\t ]*(?:[：:]\*\*|\*\*[：:])[\t ]*(\S[^\r\n]*)\r?$/gmi,
+      (_match, number, question) => `### Q${number}\n\n${question.trim()}`);
   if (!section) return [];
   const quoted = quoteBlocks(section);
   if (quoted.length) return quoted;
