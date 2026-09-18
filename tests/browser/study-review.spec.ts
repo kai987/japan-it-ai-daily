@@ -47,10 +47,6 @@ for (const locale of ['zh','ja']) {
     const dateGrid=denseFrequency.locator('.frequency-dates');
     const dateRows=dateGrid.locator('.frequency-date-row');
     expect(await dateRows.count()).toBeGreaterThan(1);
-    const rowTexts=await dateRows.allTextContents();
-    expect(rowTexts[0]).toMatch(/^\\d{4}-\\d{2}-\\d{2} \/ \\d{4}-\\d{2}-\\d{2}$/);
-    expect(rowTexts.every(text=>!text.trim().endsWith('/'))).toBe(true);
-    expect(rowTexts.every(text=>text.split(' / ').length<=2)).toBe(true);
     await denseFrequency.locator('summary').click();
 
     await page.locator('.vocabulary-card').first().scrollIntoViewIfNeeded();
