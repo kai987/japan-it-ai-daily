@@ -27,7 +27,7 @@
     "source": "ffprobe",
     "enforceFrom": "2026-08-12",
     "idealSeconds": [
-      26,
+      24,
       34
     ],
     "hardSeconds": [
@@ -36,7 +36,7 @@
     ],
     "maxStoredDriftSeconds": 0.08
   },
-  "durationMeasuredAt": "2026-09-10T16:20:53.096Z",
+  "durationMeasuredAt": "2026-09-18T13:51:03.651Z",
   "interview": [
     {
       "index": 1,
@@ -104,7 +104,7 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "c0b06d8e54690b508f4306758d639439383692cdaf79ec0f48cd691309372349",
       "durationSeconds": 25.834,
-      "durationStatus": "warn"
+      "durationStatus": "ideal"
     },
     {
       "index": 5,
