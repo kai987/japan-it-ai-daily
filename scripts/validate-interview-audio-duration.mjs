@@ -18,7 +18,7 @@ const requestedDate = argValue('--date');
 const fromArg = argValue('--from');
 
 const POLICY_FROM = process.env.INTERVIEW_ACTUAL_DURATION_FROM || fromArg || policy.from;
-const IDEAL_MIN = Number(process.env.INTERVIEW_DURATION_IDEAL_MIN || '26');
+const IDEAL_MIN = Number(process.env.INTERVIEW_DURATION_IDEAL_MIN || '24');
 const IDEAL_MAX = Number(process.env.INTERVIEW_DURATION_IDEAL_MAX || '34');
 const HARD_MIN = Number(process.env.INTERVIEW_DURATION_HARD_MIN || '22');
 const HARD_MAX = Number(process.env.INTERVIEW_DURATION_HARD_MAX || '40');
