@@ -1,0 +1,69 @@
+---
+import StudyBadge from './StudyBadge.astro';
+import { frequencyText } from '../../scripts/learning-review.mjs';
+const { study, locale } = Astro.props;
+const root = `${import.meta.env.BASE_URL}${locale === 'ja' ? 'ja/' : ''}`;
+const groups = [
+  { kind: 'vocabulary', title: '本文で復習できる既習語彙', items: study.reviewVocabulary },
+  { kind: 'grammar', title: '本文で復習できる既習文法', items: study.reviewGrammar },
+];
+const references = [...study.vocabulary, ...study.grammar].map((item: any) => ({label: item.term || item.pattern, frequency: frequencyText(item.reportFrequency,locale)}));
+---
+<div data-report-study-reference={JSON.stringify(references)} data-issue-number={study.issueNumber} hidden></div>
+{groups.filter(group => group.items.length).map(group => (
+  <section class="report-review-supplement" data-review-supplement={group.kind}>
+    <h3>{group.title}（{group.items.length}）</h3>
+    <p>{locale === 'ja' ? '既習項目を当日の本文で確認します。新規項目とは別に集計しています。' : '用当天日文内容复习已学项目，与新学项目分开统计。'}</p>
+    {group.items.map((item: any) => (
+      <article class="study-card" data-study-kind="review">
+        <header class="study-card-header"><h4>{item.term || item.pattern}{item.reading && <span class="reading">（{item.reading}）</span>}</h4><StudyBadge item={item} locale={locale} /></header>
+        <p><strong>{locale === 'ja' ? '意味：' : '含义：'}</strong>{item.meaning}</p>
+        {item.structure && <p><strong>{locale === 'ja' ? '接続：' : '接续：'}</strong>{item.structure}</p>}
+        {item.usage && <p>{item.usage}</p>}
+        {item.collocations?.length > 0 && <p>{item.collocations.join(' ／ ')}</p>}
+        <div class="nuance-note" data-review-evidence><strong>本文で確認</strong><p lang="ja">{item.reviewEvidence.excerpt}</p></div>
+        <div class="example-box"><p lang="ja">{item.exampleJa}</p>{item.exampleMeaning && <small>{item.exampleMeaning}</small>}</div>
+        {(item.note || item.nuance) && <p>{item.nuance || item.note}</p>}
+        <a href={`${root}japanese/${item.firstIntroducedDate}/`}>{locale === 'ja' ? '初出' : '首次学习'}：{item.firstIntroducedDate}</a>
+      </article>
+    ))}
+  </section>
+))}
+<script>
+  const marker = document.querySelector<HTMLElement>('[data-report-study-reference]');
+  const article = marker?.closest('article.prose');
+  if (marker && article) {
+    const headings = Array.from(article.querySelectorAll<HTMLHeadingElement>('h2'));
+    for (const kind of ['vocabulary','grammar']) {
+      const section = article.querySelector<HTMLElement>(`[data-review-supplement="${kind}"]`);
+      const next = headings.find(h => (h.textContent || '').trim().startsWith(kind === 'vocabulary' ? 'C-2' : 'C-4'));
+      if (section && next?.parentElement === article) article.insertBefore(section,next);
+    }
+    const references: Array<{label:string;frequency:string}> = JSON.parse(marker.dataset.reportStudyReference || '[]');
+    for (const h of article.querySelectorAll<HTMLHeadingElement>('h3')) {
+      const label = (h.textContent || '').replace(/^(?:C-[13]-)?\d+\.\s*/,'').split(/[（(]/)[0].trim();
+      const item = references.find(r => r.label === label);
+      if (!item) continue;
+      let node = h.nextElementSibling;
+      while (node && !/^H[1-3]$/.test(node.tagName)) {
+        if ((node.textContent || '').includes('参考：')) {
+          if (!node.nextElementSibling?.classList.contains('report-reference-frequency')) {
+            const p = document.createElement('p'); p.className = 'meta report-reference-frequency'; p.textContent = item.frequency;
+            node.insertAdjacentElement('afterend',p);
+          }
+          break;
+        }
+        node = node.nextElementSibling;
+      }
+    }
+    for (const h of article.querySelectorAll('h1')) {
+      if ((h.textContent || '').includes('日') && !/第\d+号/.test(h.textContent || '')) h.append(`（第${marker.dataset.issueNumber}号）`);
+    }
+  }
+</script>
+<style>
+  .report-review-supplement{margin-block:32px;min-width:0}
+  .report-review-supplement .study-card{margin-block:16px;padding:20px;border:1px solid var(--border);border-radius:12px;overflow-wrap:anywhere}
+  .report-review-supplement h4{font-size:20px;margin:0}
+  .report-review-supplement .study-card-header{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+</style>
