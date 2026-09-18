@@ -41,6 +41,17 @@ for (const locale of ['zh','ja']) {
     expect(f!.y).toBeGreaterThan(b!.y);
     await frequency.locator('summary').click();
 
+    const denseCard=page.locator('.vocabulary-card').filter({hasText:'検証する'}).first();
+    const denseFrequency=denseCard.locator('.study-frequency');
+    await denseFrequency.locator('summary').click();
+    const dateGrid=denseFrequency.locator('.frequency-dates');
+    const dateCells=dateGrid.locator('.frequency-date');
+    expect(await dateCells.count()).toBeGreaterThan(2);
+    expect((await dateCells.allTextContents()).some(text=>text.includes('/'))).toBe(false);
+    const columns=await dateGrid.evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').filter(Boolean).length);
+    expect(columns).toBeLessThanOrEqual(2);
+    await denseFrequency.locator('summary').click();
+
     await page.locator('.vocabulary-card').first().scrollIntoViewIfNeeded();
     await page.screenshot({path:testInfo.outputPath('study-desktop.png')});
     await page.setViewportSize({width:390,height:844});
@@ -63,6 +74,8 @@ for (const locale of ['zh','ja']) {
     expect(Math.abs(leftBox!.y-metaBox!.y)).toBeLessThan(3);
     expect(Math.abs(leftBox!.x-headerBox!.x)).toBeLessThan(3);
     expect(Math.abs((metaBox!.x+metaBox!.width)-(headerBox!.x+headerBox!.width))).toBeLessThan(3);
+    expect(metaBox!.width/headerBox!.width).toBeLessThan(0.4);
+    expect(leftBox!.width).toBeGreaterThan(metaBox!.width);
     expect(badgeMobileBox!.height).toBeLessThan(32);
     expect(mobileRatio!.y).toBeGreaterThan(mobilePrimary!.y);
     await page.screenshot({path:testInfo.outputPath('study-mobile.png')});
