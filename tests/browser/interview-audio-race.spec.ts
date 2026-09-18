@@ -2,6 +2,7 @@ import { test, expect, type Page } from '@playwright/test';
 
 // Exercise the actual built component; only network/media are deterministic.
 async function openReport(page: Page, locale: 'zh' | 'ja') {
+  await page.addInitScript((language) => localStorage.setItem('site-language', language), locale);
   await page.addInitScript(() => {
     const state: any = { audios: [], spoken: [], manifest: {}, resolve: null };
     (window as any).__audioRace = state;
@@ -31,7 +32,10 @@ async function openReport(page: Page, locale: 'zh' | 'ja') {
   });
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
-  await page.goto(`/japan-it-ai-daily/${locale === 'ja' ? 'ja/' : ''}daily/2026-09-18/`, { waitUntil: 'domcontentloaded' });
+  const path = `/japan-it-ai-daily/${locale === 'ja' ? 'ja/' : ''}daily/2026-09-18/`;
+  await page.goto(path, { waitUntil: 'domcontentloaded' });
+  await expect(page).toHaveURL(new RegExp(`${path}$`));
+  await expect(page.locator('html')).toHaveAttribute('data-locale', locale);
   await expect(page).toHaveTitle(/2026/);
   await expect(page.locator('h1').first()).toBeVisible();
   await page.waitForFunction(() => typeof (window as any).__audioRace?.resolve === 'function');
