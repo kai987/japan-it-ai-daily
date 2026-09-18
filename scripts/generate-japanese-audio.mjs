@@ -74,7 +74,10 @@ const frontmatterOf = (source) => source.match(/^---\r?\n([\s\S]*?)\r?\n---/m)?.
 
 const parseVocabulary = (source) => {
   const frontmatter = frontmatterOf(source);
-  const vocabularyBlock = frontmatter.match(/(?:^|\n)vocabulary:\s*\n([\s\S]*?)(?=\ngrammar:\s*\n)/)?.[1] ?? '';
+  // Stop at the grammar key itself, not only at the multiline form "grammar:\n".
+  // Days with zero new grammar use "grammar: []", and the old lookahead made
+  // the whole vocabulary block disappear on those days.
+  const vocabularyBlock = frontmatter.match(/(?:^|\n)vocabulary:\s*\n([\s\S]*?)(?=\ngrammar:)/)?.[1] ?? '';
 
   const flowItems = Array.from(vocabularyBlock.matchAll(/^\s*-\s*\{(.+)\}\s*$/gm));
   if (flowItems.length) {
