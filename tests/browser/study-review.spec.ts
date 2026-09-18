@@ -62,10 +62,10 @@ for (const locale of ['zh','ja']) {
       const focused=popup.locator('#study-focus-target');
       await expect(focused).toBeVisible();
       expect((await focused.textContent())?.normalize('NFKC')).toContain('検証');
-      const focusBox=await focused.boundingBox();
-      const viewport=popup.viewportSize();
-      expect(focusBox!.y+focusBox!.height).toBeGreaterThan(0);
-      expect(focusBox!.y).toBeLessThan(viewport!.height);
+      await expect.poll(async()=>focused.evaluate(el=>{
+        const rect=el.getBoundingClientRect();
+        return rect.top < innerHeight && rect.bottom > 0;
+      })).toBe(true);
       await popup.close();
     }
     await denseFrequency.locator('summary').click();
