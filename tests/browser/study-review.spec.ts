@@ -70,6 +70,27 @@ for (const locale of ['zh','ja']) {
     }
     await denseFrequency.locator('summary').click();
 
+    const newCard=page.locator('.vocabulary-card[data-study-kind="new"]').first();
+    const newFrequency=newCard.locator('.study-frequency');
+    await newFrequency.locator('summary').click();
+    const newDateLinks=newFrequency.locator('.frequency-date-link');
+    expect(await newDateLinks.count()).toBeGreaterThan(0);
+    const newDateLink=newDateLinks.first();
+    await expect(newDateLink).toHaveAttribute('target','_blank');
+    await expect(newDateLink).toHaveAttribute('rel',/noopener/);
+    await expect(newDateLink).toHaveAttribute('href',/\/ja\/daily\/\d{4}-\d{2}-\d{2}\/\?studyFocus=/);
+    if(locale==='zh'){
+      const popupPromise=page.waitForEvent('popup');
+      await newDateLink.click();
+      const popup=await popupPromise;
+      await popup.waitForLoadState('domcontentloaded');
+      await expect(popup).toHaveURL(/\/ja\/daily\/\d{4}-\d{2}-\d{2}\/\?studyFocus=/);
+      const focused=popup.locator('#study-focus-target');
+      await expect(focused).toBeVisible();
+      await popup.close();
+    }
+    await newFrequency.locator('summary').click();
+
     await page.locator('.vocabulary-card').first().scrollIntoViewIfNeeded();
     await page.screenshot({path:testInfo.outputPath('study-desktop.png')});
     await page.setViewportSize({width:390,height:844});
