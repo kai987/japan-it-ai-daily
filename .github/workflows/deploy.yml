@@ -53,10 +53,25 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Verify browser interactions
         run: npm run test:browser
+      - name: Retain learning UI verification
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: learning-ui-verification
+          path: test-results/**/*.png
+          if-no-files-found: ignore
+          retention-days: 3
       - name: Strip CDN-hosted MP3 from artifact
         run: npm run audio:strip-dist
       - name: Verify CSP
         run: npm run security:check
+      - name: Export verified learning snapshot
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: it-study-snapshot
+          path: ./dist/study-index.json
+          if-no-files-found: error
+          retention-days: 30
       - name: Setup Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - name: Upload artifact
