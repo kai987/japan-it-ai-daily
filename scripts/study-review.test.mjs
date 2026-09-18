@@ -35,5 +35,5 @@ test('introducing review does not reinstate duplicated NEW entries in history',(
  for(const kind of ['vocabulary','grammar']){const ids=Object.values(archive.lessons).flatMap(day=>day.zh[kind].map(x=>x.identity));expect(new Set(ids).size).toBe(ids.length);}
 });
 test('snapshot uses the main report denominator, not the N1 mirror date count',()=>{
- const snap=exportStudySnapshot(archive,'a'.repeat(40));expect(snap.totalDays).toBe(38);expect(snap.lessons['2026-09-18'].grammar).toHaveLength(7);expect(snap.sourceCommit).toBe('a'.repeat(40));
+ const snap=exportStudySnapshot(archive,'a'.repeat(40));expect(snap.totalDays).toBe(Object.keys(archive.lessons).length);expect(snap.lessons['2026-09-18'].grammar).toHaveLength(7);expect(snap.sourceCommit).toBe('a'.repeat(40));
 });
