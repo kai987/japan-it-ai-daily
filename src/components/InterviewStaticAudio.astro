@@ -89,6 +89,7 @@
         button.setAttribute('aria-busy', 'true');
         const status = document.createElement('span');
         status.dataset.audioLoading = '';
+        status.className = 'sr-only';
         status.setAttribute('aria-live', 'polite');
         status.textContent = document.documentElement.lang.startsWith('zh') ? ' · 加载中' : ' · 読み込み中';
         button.append(status);
@@ -175,3 +176,28 @@
     window.addEventListener('pagehide', stopAll);
   }
 </script>
+
+<style is:global>
+  /* Runtime-injected controls retain their original 34/38px grid cell. */
+  .report-speech-button.is-loading::after {
+    content: '';
+    grid-area: 1 / 1;
+    box-sizing: border-box;
+    width: 23px;
+    height: 23px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: interview-audio-loading 0.9s linear infinite;
+    pointer-events: none;
+  }
+  .report-speech-button.is-loading .speech-icon-stop {
+    grid-area: 1 / 1;
+    width: 11px;
+    height: 11px;
+  }
+  @keyframes interview-audio-loading { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) {
+    .report-speech-button.is-loading::after { animation: none; }
+  }
+</style>

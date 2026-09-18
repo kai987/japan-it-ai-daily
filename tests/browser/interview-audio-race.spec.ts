@@ -135,8 +135,19 @@ test('mobile: loading is visible, cancellable and leaves the original label inta
   await page.setViewportSize({ width: 390, height: 844 });
   const { buttons, release, errors } = await openReport(page, 'ja');
   const originalLabel = await buttons.nth(0).innerText();
+  const originalSize = await buttons.nth(0).evaluate(button => ({ width: button.clientWidth, height: button.clientHeight }));
   await buttons.nth(0).click();
   await expect(buttons.nth(0)).toContainText('読み込み中');
+  const loadingGeometry = await buttons.nth(0).evaluate(button => {
+    const indicator = getComputedStyle(button, '::after');
+    return { width: button.clientWidth, height: button.clientHeight,
+      content: indicator.content, ringWidth: Number.parseFloat(indicator.width),
+      hintWidth: button.querySelector('[data-audio-loading]')!.getBoundingClientRect().width };
+  });
+  expect({ width: loadingGeometry.width, height: loadingGeometry.height }).toEqual(originalSize);
+  expect(loadingGeometry.content).toBe('""');
+  expect(loadingGeometry.ringWidth).toBeLessThan(originalSize.width);
+  expect(loadingGeometry.hintWidth).toBeLessThanOrEqual(1);
   await page.screenshot({ path: info.outputPath('audio-loading-mobile.png') });
   await buttons.nth(0).click();
   await release();

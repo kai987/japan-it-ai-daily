@@ -9,8 +9,9 @@ system, database, visual redesign, historical prose rewrite or audio regeneratio
 `InterviewStaticAudio.astro` owns a monotonically increasing request number.
 Stop, switch and every `pagehide` invalidate older manifest, media and speech
 callbacks. The selected button is set before awaiting the manifest, so the same
-button can cancel a pending request. Loading is visible and exposed through
-`aria-busy`; the original label is restored when loading ends. Manifest loading
+button can cancel a pending request. Loading uses a reduced-motion-aware ring inside the existing button plus a
+screen-reader-only status and `aria-busy`; no loading text expands the small
+control. The original label is restored when loading ends. Manifest loading
 has a 10-second timeout with the existing browser-speech fallback. Old media is
 paused before fallback. Old utterance completion cannot clear a newer request
 on the same button.
