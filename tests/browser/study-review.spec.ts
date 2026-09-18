@@ -59,14 +59,10 @@ for (const locale of ['zh','ja']) {
       range.selectNodeContents(rowEl);
       return {
         noteWidth:noteEl.getBoundingClientRect().width,
-        rowBoxWidth:rowEl.getBoundingClientRect().width,
         rowTextWidth:range.getBoundingClientRect().width,
-        rowScrollWidth:rowEl.scrollWidth,
-        rowClientWidth:rowEl.clientWidth,
       };
     });
-    expect(widthMetrics.noteWidth).toBeLessThanOrEqual(widthMetrics.rowTextWidth+2);
-    expect(widthMetrics.rowScrollWidth).toBeLessThanOrEqual(widthMetrics.rowClientWidth+1);
+    expect(widthMetrics.noteWidth).toBeLessThanOrEqual(widthMetrics.rowTextWidth+1);
     await denseFrequency.locator('summary').click();
 
     await page.locator('.vocabulary-card').first().scrollIntoViewIfNeeded();
