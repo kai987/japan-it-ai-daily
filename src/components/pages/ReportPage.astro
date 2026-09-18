@@ -15,6 +15,19 @@ const { report, locale } = Astro.props as { report: CollectionEntry<'daily'> | C
 const numberedTitle = titleWithIssue(report.data.title, report.id);
 const study = getStudyDay(report.id, locale);
 const { Content, headings } = await render(report);
+const normalizeLeadReportTitle = (value: string) => value
+  .normalize('NFKC')
+  .replace(/^[🇯🇵🇨🇳\s]+/gu, '')
+  .replace(/\s*[（(]第\d+号[）)]\s*$/u, '')
+  .replace(/\s+/g, ' ')
+  .trim();
+const firstBodyHeading = headings[0];
+const duplicateLeadHeading = Boolean(
+  firstBodyHeading
+  && firstBodyHeading.depth === 1
+  && normalizeLeadReportTitle(firstBodyHeading.text ?? '') === normalizeLeadReportTitle(report.data.title)
+);
+const duplicateLeadSlug = duplicateLeadHeading ? firstBodyHeading.slug : '';
 const lessons = locale === 'zh' ? await getCollection('japanese') : [];
 const hasNativeJapanese = headings.some((heading:any) => {
   if (heading.depth > 2) return false;
@@ -44,11 +57,11 @@ const normalizedHeadings = locale === 'ja' ? headings : headings.map((heading:an
 const tocHeadings = [
   ...normalizedHeadings,
   ...(renderedSupplement?.headings ?? [])
-].filter((heading:any) => heading.depth <= 3);
+].filter((heading:any) => heading.depth <= 3 && heading.slug !== duplicateLeadSlug);
 ---
 <BaseLayout locale={locale} title={`${numberedTitle} · Japan IT / AI Daily`} description={report.data.description}>
   <div class="container report-layout" data-top-titles={locale === 'zh' ? JSON.stringify(topTitles) : undefined}>
-    <article class="prose">
+    <article class={`prose${duplicateLeadHeading ? ' has-duplicate-lead-title' : ''}`}>
       <div class="eyebrow">{report.data.date.toLocaleDateString('ja-JP')}</div>
       <h1>{numberedTitle}</h1>
       <p class="meta">{report.data.description}</p>
@@ -74,6 +87,9 @@ const tocHeadings = [
   <ReportSpeechEnhancer />
   <StudyFocusTarget />
   <style>
+    :global(.prose.has-duplicate-lead-title > .tags + h1){
+      display:none;
+    }
     .report-speech-target{
       display:flex;
       align-items:flex-start;
