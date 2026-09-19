@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-19",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-19T01:24:00.000Z",
+  "scope": "Reviewed the September 18–19 Japanese IT/AI publication window and excluded the September 18 Top 5. Selected originals cover continuous LLM red teaming, a multi-cloud generative-AI golden path, Claude Code upgrade regressions, an AWS large-corpus RAG reference architecture, and Shiseido's domain-judgment agent. Implementation details, measured or reported figures, rollout conditions and evidence boundaries were checked against the public originals; vendor/demo and conference claims are not generalized.",
+  "articles": [
+    {
+      "articleId": "2026-09-19-top-1",
+      "url": "https://tech.smarthr.jp/entry/2026/09/18/113623",
+      "originalTitle": "AIアシスタントにレッドチーミングを導入して学んだこと",
+      "source": "SmartHR Tech Blog",
+      "topic": "AI Security / Red Teaming / RAG / CI / LLM-as-a-Judge",
+      "access": "full",
+      "accessNote": "SmartHR公開本文を確認。OWASP Top 10 for LLM Applications 2026を基にしたRisk分類、質問・文書検索・回答の3層、CSVを毎朝読むCI、判定用LLM、固定Mock文書、通常回答精度Datasetとの二重評価を確認した。",
+      "capturedAt": "2026-09-19T01:24:00.000Z",
+      "snapshotSha256": "327c3a60e7ae319fc1da025801f10bce5b7a7fa107334f916d67c30f2d9e3797",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "SmartHRはOWASP分類で攻撃Caseを整理し、質問・検索・回答の3層をCSVで管理して毎朝CI実行し、判定用LLMで合否を見る。通常回答精度Datasetも防御変更前後で併走する。",
+          "quote": "CIが毎朝そのCSVを読み込み",
+          "locator": "SmartHR Tech Blog: CIでの定期実行と3層Test",
+          "conditions": "This is SmartHR's engineering practice description. The article does not publish attack pass-rate, judge accuracy or a quantified security improvement, so the flow should not be generalized as a benchmark.",
+          "usedIn": {
+            "zh": "OWASP Top 10 for LLM Applications 2026",
+            "ja": "OWASP Top 10 for LLM Applications 2026",
+            "interview": "OWASP Top 10 for LLM Applications 2026"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-19-top-2",
+      "url": "https://engineering.dena.com/blog/2026/09/golden-path-for-generative-ai-platform/",
+      "originalTitle": "生成 AI 機能開発を加速するゴールデンパス [DeNA インフラ SRE]",
+      "source": "DeNA Engineering",
+      "topic": "Generative AI / Platform Engineering / AWS / EKS / Multi-cloud / SRE",
+      "access": "full",
+      "accessNote": "DeNA Engineering公開本文を確認。SQS＋EKSの非同期推論、Terraform/Helmの責任分界、OIDC/Workload Identity Federation、At-Least-OnceとCallback冪等性、KEDA、ApproximateAgeOfOldestMessageの意味と限界、Spot価格注記を確認した。",
+      "capturedAt": "2026-09-19T01:24:00.000Z",
+      "snapshotSha256": "8c942d88164845bd8351fc8bfb2c06c9035c84364233435fb439eb302781b9d9",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "DeNAはSQSとEKSをGolden Path化し、OIDCでCloudごとの短期Authを揃える。SQS At-Least-OnceのためCallbackを冪等化し、ApproximateAgeOfOldestMessageはQueue滞留兆候に限定して使う。",
+          "quote": "SQS は少なくとも 1 回（At-Least-Once）の配信を前提とする",
+          "locator": "DeNA Engineering: SQS/EKS Pipeline, At-Least-Once, Monitoring",
+          "conditions": "The c8g.large Spot saving is a point-in-time price comparison, not measured platform TCO. Queue-age is not per-request latency and vendor API quotas constrain autoscaling.",
+          "usedIn": {
+            "zh": "At-Least-Once",
+            "ja": "At-Least-Once",
+            "interview": "At-Least-Once"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-19-top-3",
+      "url": "https://dev.classmethod.jp/articles/20260918-cc-updates-v2-1-276/",
+      "originalTitle": "Claude Code v2.1.275〜v2.1.276 の主要アップデート - claude.ai のスキル・プラグイン同期とプロキシ経由の 400 エラー修正",
+      "source": "DevelopersIO",
+      "topic": "Claude Code / Plugin / Gateway / Security / Upgrade",
+      "access": "full",
+      "accessNote": "DevelopersIO公開本文を確認。v2.1.275〜276の97変更分類、ANTHROPIC_BASE_URL Proxy/Gateway 400 Regressionとv2.1.276単Fix、claude.ai Skill/Plugin同期、npm pack --ignore-scripts、/rewind破損修正、Secret露出修正を確認した。",
+      "capturedAt": "2026-09-19T01:24:00.000Z",
+      "snapshotSha256": "9055674796b9c257883e9f86629b1a3760eb87a68718cae488e1f6c901c764d7",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "Claude Code v2.1.275はANTHROPIC_BASE_URL経由の400 Regressionを含み、v2.1.276はその1件だけを修正した。npm Plugin取得のignore-scripts化やSession復元、Token露出もUpgrade確認点になる。",
+          "quote": "v2.1.276 はこの 1 件だけのリリースです",
+          "locator": "DevelopersIO: Proxy/Gateway 400 fix and v2.1.276 scope",
+          "conditions": "This is changelog plus author verification, not an independent productivity benchmark. Fixed exposure paths do not erase secrets already written to historical logs.",
+          "usedIn": {
+            "zh": "ANTHROPIC_BASE_URL",
+            "ja": "ANTHROPIC_BASE_URL",
+            "interview": "ANTHROPIC_BASE_URL"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-19-top-4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/18/news025.html",
+      "originalTitle": "散在する“29万ファイル”をAmazon S3に集約、「AIに聞くだけ」で検索可能に――AWSはどう実現？：航空データを想定して実装",
+      "source": "＠IT",
+      "topic": "RAG / AWS / S3 / Bedrock / AgentCore / Kiro",
+      "access": "full",
+      "accessNote": "＠IT公開本文を確認。38GB・約29万FileをS3へ集約、Bedrock Knowledge BasesのIndex、AgentCore Gateway、S3変更のIndex反映、Transcribe/Location Service、30分超→数秒のVendor説明、Kiro生成架空Data、12 Subsystem/79 Spec/24 Requirement/9 Phaseを確認した。",
+      "capturedAt": "2026-09-19T01:24:00.000Z",
+      "snapshotSha256": "28a50279797116005ca57d6e82fbdb1579da80160c81951bf3887c0f76b6e96e",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "AWS Referenceは38GB・約29万FileをS3へ集約し、Bedrock Knowledge BasesとAgentCore Gatewayで横断検索する。DataはKiro生成の架空Demoで、30分超を数秒という説明はVendor Referenceの範囲である。",
+          "quote": "38GB、約29万ファイルの航空データはAmazon S3に集約する",
+          "locator": "＠IT: AIによる横断検索を実現した構成",
+          "conditions": "The corpus is synthetic demo data generated with Kiro. The 30-minutes-to-seconds statement is vendor reference evidence, not production recall, latency, ACL or TCO measurement.",
+          "usedIn": {
+            "zh": "38GB",
+            "ja": "38GB",
+            "interview": "38GB"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-19-top-5",
+      "url": "https://www.itmedia.co.jp/enterprise/articles/2609/18/news020.html",
+      "originalTitle": "資生堂、AIエージェントで原料探索時間を95％削減　研究員の「目利き」を複数LLMで再現：Google Cloud Next Tokyo 26",
+      "source": "ITmedia エンタープライズ",
+      "topic": "AI Agent / RAG / LLM Evaluation / Enterprise AI / Google Cloud",
+      "access": "full",
+      "accessNote": "ITmedia エンタープライズ公開本文を確認。約40部門/130 Ambassador、Gemini利用指標、HyDE＋Hybrid RAG＋複数LLM Review、Model Armor/IAM、Private Service Connect/AlloyDB、探索95％削減と提案20〜50％増のCompany Caseを確認した。",
+      "capturedAt": "2026-09-19T01:24:00.000Z",
+      "snapshotSha256": "81390f2d6751b24c6b42b09154690222ccdaf2fecc2c4c39df77d05b3ed4e35b",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "資生堂の原料探索AgentはHyDE、Hybrid RAG、複数LLM Reviewで研究員判断を再現し、会社は探索時間95％削減・提案数20〜50％増を報告した。",
+          "quote": "探索時間が95％削減され、原料提案数は20～50％増えた",
+          "locator": "ITmedia Enterprise: エキス原料探索AgentのArchitectureと効果",
+          "conditions": "The metrics are Shiseido's conference case reported at Google Cloud Next Tokyo 26. Sample size, before/after definition, expert agreement, failure cases and long-term TCO are not published.",
+          "usedIn": {
+            "zh": "HyDE",
+            "ja": "HyDE",
+            "interview": "HyDE"
+          }
+        }
+      ]
+    }
+  ]
+}
