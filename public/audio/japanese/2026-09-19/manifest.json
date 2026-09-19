@@ -1,0 +1,295 @@
+{
+  "date": "2026-09-19",
+  "generatedAt": "2026-09-19T11:24:02.406Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "抜け漏れ",
+      "reading": "ぬけもれ",
+      "exampleJa": "Security TestはRisk分類を先に作り、抜け漏れを減らします。",
+      "word": "vocab-01.mp3",
+      "wordHash": "df68691dc52e6a516ff2ac6b0f6679c98161b4b5927ecfdaa970526e96a7f49d",
+      "example": "example-01.mp3",
+      "exampleHash": "53fd5e5972d0537efa351362c8266438c573d5cdc3d212226252da9a2e9d421d"
+    },
+    {
+      "index": 2,
+      "term": "手直し",
+      "reading": "てなおし",
+      "exampleJa": "AIが作ったTest Caseを人が手直ししてからCIへ入れます。",
+      "word": "vocab-02.mp3",
+      "wordHash": "bb3cd40aa88069103221a12329aa0097c527419aa1983fc517a9da4248fa269f",
+      "example": "example-02.mp3",
+      "exampleHash": "39a29b6c794a69e484eb37d2045cc4752b3e248eee3691fc2fa2447fd8279047"
+    },
+    {
+      "index": 3,
+      "term": "固める",
+      "reading": "かためる",
+      "exampleJa": "Guardrailを固める前に正常質問への影響も測ります。",
+      "word": "vocab-03.mp3",
+      "wordHash": "3f4df421591f6f2af4c2e0249eee49d9dcf20c56d14ee49294fbddefb0d505a7",
+      "example": "example-03.mp3",
+      "exampleHash": "d870adacae1adb59f7a8df8534b679f9feb100ef10f3d7251bbda7315bd53f39"
+    },
+    {
+      "index": 4,
+      "term": "補助的",
+      "reading": "ほじょてき",
+      "exampleJa": "Promptの禁止文は補助的な対策として扱います。",
+      "word": "vocab-04.mp3",
+      "wordHash": "752158609a49158a5bdcad40b5fcd0ce312a11e2bf1697056e133f6cfe196187",
+      "example": "example-04.mp3",
+      "exampleHash": "dc9f04c345cb216b1bd6351fc2518fefaa4f5a4aaf14b8c3254b7e7c1265ca17"
+    },
+    {
+      "index": 5,
+      "term": "日頃",
+      "reading": "ひごろ",
+      "exampleJa": "日頃使う評価DatasetをSecurity変更の前後でも回します。",
+      "word": "vocab-05.mp3",
+      "wordHash": "1bbefad9e6d73dc2640e0eacebc3fbff59fee99e69b8e1f265d1992c782f971f",
+      "example": "example-05.mp3",
+      "exampleHash": "9cc6c98aaf81e40065400a4fd3cd235e528d2dbeb2d579e0b9330c5ea5ad682a"
+    },
+    {
+      "index": 6,
+      "term": "気軽に",
+      "reading": "きがるに",
+      "exampleJa": "自動Checkがあれば変更を気軽に試しやすくなります。",
+      "word": "vocab-06.mp3",
+      "wordHash": "ddec2daeac81d02b4d3b29ce181bfdad2ce54cd21b6012daf6c04078d657c093",
+      "example": "example-06.mp3",
+      "exampleHash": "68ffd0abfbdad23da24b5f7d3c686b1f638695db290395fd7ed8d9a5e767c5f0"
+    },
+    {
+      "index": 7,
+      "term": "断る",
+      "reading": "ことわる",
+      "exampleJa": "正常な質問まで断るGuardrailになっていないか確認します。",
+      "word": "vocab-07.mp3",
+      "wordHash": "7b72ac1387113e5ecd39e27d28858419eff6e0c120a1e2c0d77fcd93a02011ed",
+      "example": "example-07.mp3",
+      "exampleHash": "aff90ba387645231c10f807336e46095450b197bbf2948f8434e172ba327dff1"
+    },
+    {
+      "index": 8,
+      "term": "波及",
+      "reading": "はきゅう",
+      "exampleJa": "推論APIの遅延を本体Requestへ波及させないよう非同期化します。",
+      "word": "vocab-08.mp3",
+      "wordHash": "58acef68d2cde761a4b0d9e383d062795ebaafe43343b19e5b4fb8dffec38489",
+      "example": "example-08.mp3",
+      "exampleHash": "c5448543a68b586cbf0f795f1e9fed53e981ba995de59a3cc6561c8d3b7714f1"
+    },
+    {
+      "index": 9,
+      "term": "即時性",
+      "reading": "そくじせい",
+      "exampleJa": "即時性が必要な機能ではWorkerを常時起動します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "63a78561fa25ddca3ca5e46d6bfa60396b7ec775ae4747f0ca2716764ffdc9b8",
+      "example": "example-09.mp3",
+      "exampleHash": "69414006ea642d841633f85ef33f212620d8427039be5d688b71087885554ae2"
+    },
+    {
+      "index": 10,
+      "term": "常時",
+      "reading": "じょうじ",
+      "exampleJa": "Latency優先なら最小1 Podを常時起動する設計もあります。",
+      "word": "vocab-10.mp3",
+      "wordHash": "2c1fa7b9a6348214f7578cfa3a1bbb8d79d02a1cc78160a3d3867cb043f16f7a",
+      "example": "example-10.mp3",
+      "exampleHash": "147567d3f9b59474a3892a5782ff21f11486210cf699a2a00e716988243def5a"
+    },
+    {
+      "index": 11,
+      "term": "借用",
+      "reading": "しゃくよう",
+      "exampleJa": "固定Keyを配らず、必要な権限だけ短時間借用します。",
+      "word": "vocab-11.mp3",
+      "wordHash": "e27b351fc91293ca2fc60c0b386a9f8e3e0ac189ef77f83ab75938a83b3fb6ab",
+      "example": "example-11.mp3",
+      "exampleHash": "a06dc8e2148b90ced291c0ced88f99992169d63203710f2a9dea6f7ed83ad0f8"
+    },
+    {
+      "index": 12,
+      "term": "増やす",
+      "reading": "ふやす",
+      "exampleJa": "Queueが伸びてもPod数を無制限に増やさないよう上限を置きます。",
+      "word": "vocab-12.mp3",
+      "wordHash": "d0f96419d6b0c91b727687c306ff9c6be8e7a6e71fe8bb2d4ad03f2482a6454f",
+      "example": "example-12.mp3",
+      "exampleHash": "49af43c839d0fedf426d86dd79f338f490d377f52ab4f6571c444335f0189211"
+    },
+    {
+      "index": 13,
+      "term": "整合性",
+      "reading": "せいごうせい",
+      "exampleJa": "Plugin取得後にPackageの整合性を検証します。",
+      "word": "vocab-13.mp3",
+      "wordHash": "a410c34abccd9da076db44f52d7d7da8433dc9a16b0c5d5e987cba66b8928cd9",
+      "example": "example-13.mp3",
+      "exampleHash": "5c454e69a7c145d9ea9327eb192409e9cb9f8d3c7016516537ff8a10a3cdd886"
+    },
+    {
+      "index": 14,
+      "term": "偏り",
+      "reading": "かたより",
+      "exampleJa": "RAG投入前にCorpusの偏りをDashboardで確認します。",
+      "word": "vocab-14.mp3",
+      "wordHash": "4bf25f196d9c55830f576f1e97752453a98198561c12405a4c5ca92bae869b65",
+      "example": "example-14.mp3",
+      "exampleHash": "97260557c91d8d360eb4688ef3b96f435a38cca85a0be5f2456ed10c44b68714"
+    },
+    {
+      "index": 15,
+      "term": "成し遂げる",
+      "reading": "なしとげる",
+      "exampleJa": "Tool導入だけでなく、現場定着まで成し遂げる仕組みが必要です。",
+      "word": "vocab-15.mp3",
+      "wordHash": "421fd3c71fd6b20042617577e7f245b6bdb478a277143cc72f55b662e0b0e3c6",
+      "example": "example-15.mp3",
+      "exampleHash": "1b1588c2ca6a556682617ed10b4462d0b26eb486170dfd20a6418362f210cd01"
+    },
+    {
+      "index": 16,
+      "term": "熱量",
+      "reading": "ねつりょう",
+      "exampleJa": "制度だけでなく、現場の熱量を保つCommunityも設計します。",
+      "word": "vocab-16.mp3",
+      "wordHash": "96ab7f077c8f5b32e9973f035a53f4fd7d7e6e670d0479b11591d5b020697834",
+      "example": "example-16.mp3",
+      "exampleHash": "fe94a12e9bd11f1aa1a45263eb73da2b92cb02246bdbfe2ef1f1d81dbe43abf3"
+    },
+    {
+      "index": 17,
+      "term": "色濃く",
+      "reading": "いろこく",
+      "exampleJa": "属人的な経験が判断へ色濃く反映される業務を分析します。",
+      "word": "vocab-17.mp3",
+      "wordHash": "af9c1a3ceae90c9c9f44fa0ce0c499f0cfc7502b6e8aab6e878c5d2835dfea11",
+      "example": "example-17.mp3",
+      "exampleHash": "80be31df5092aad30d0fc028212566a784ba9294243c3bf3a9631bf6c41da41a"
+    },
+    {
+      "index": 18,
+      "term": "多面的",
+      "reading": "ためんてき",
+      "exampleJa": "一つのScoreだけでなく候補を多面的に評価します。",
+      "word": "vocab-18.mp3",
+      "wordHash": "577ef2515a0fae3f8b770d82b65667ba264ec83cf2bef74c4bec9c325e8ccf73",
+      "example": "example-18.mp3",
+      "exampleHash": "f75e673bedd345cb2b2310cebaa47e2ccb9dce4dfbd9899363968216cccd990b"
+    },
+    {
+      "index": 19,
+      "term": "有望",
+      "reading": "ゆうぼう",
+      "exampleJa": "有望な候補を残す基準をExpertと定義します。",
+      "word": "vocab-19.mp3",
+      "wordHash": "6911d1e68ed238bec7ed7989cc49ec82b19eabcfa1da9d598e6874fc909e6b34",
+      "example": "example-19.mp3",
+      "exampleHash": "e36bad4b4284b00abe49e082c3b50ca56cefe6d081c2a87159208007739e3151"
+    },
+    {
+      "index": 20,
+      "term": "掛け合わせる",
+      "reading": "かけあわせる",
+      "exampleJa": "Platformの標準化と現場知識を掛け合わせてAgentを改善します。",
+      "word": "vocab-20.mp3",
+      "wordHash": "4c99717d8c088aaeac11981fe8217e38adf82c48be9fc03f06faf7ddd81f2d3e",
+      "example": "example-20.mp3",
+      "exampleHash": "a0e61e20242158c1b82dc89488504544f16ad29526bc91fd5a109f4083e8d60a"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～に向けて",
+      "exampleJa": "本番導入に向けて、SecurityとCostの両方を検証します。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "cae1559da57f82a596c5e46645edaf7ded8d4a523e2ea55523f535ab69d327bd"
+    },
+    {
+      "index": 2,
+      "pattern": "～をはじめとする",
+      "exampleJa": "RAGをはじめとする検索機能では、Source Dataの品質も確認します。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "ae938cc1c93db9426d40be13cadafa064098ba0cb1262fbb2eb8337593528943"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "に基づいて",
+      "firstIntroducedDate": "2026-08-13",
+      "audioDate": "2026-08-13",
+      "pattern": "～に基づいて",
+      "exampleJa": "実際の会話に基づいて、ルーターを較正します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "わけではない",
+      "firstIntroducedDate": "2026-08-30",
+      "audioDate": "2026-08-30",
+      "pattern": "～わけではない",
+      "exampleJa": "AIが差し戻したからといって、仕込んだバグを正しく検出したわけではありません。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "つつ",
+      "firstIntroducedDate": "2026-08-18",
+      "audioDate": "2026-08-18",
+      "pattern": "～つつ",
+      "exampleJa": "品質を維持しつつ、Model Costを削減します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "をもとに",
+      "firstIntroducedDate": "2026-09-16",
+      "audioDate": "2026-09-16",
+      "pattern": "～をもとに",
+      "exampleJa": "利用データをもとに、改善の傾向を調べます。",
+      "example": "grammar-example-02.mp3"
+    },
+    {
+      "index": 5,
+      "studyKind": "review",
+      "identity": "べきだ",
+      "firstIntroducedDate": "2026-09-10",
+      "audioDate": "2026-09-10",
+      "pattern": "～べきだ",
+      "exampleJa": "最終的なリスク評価は、利用する組織自身が行うべきです。",
+      "example": "grammar-example-01.mp3"
+    }
+  ]
+}
