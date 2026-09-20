@@ -40,6 +40,8 @@ export function dailyGrammarPatterns(body) {
 export function dailyMustGrammar(body) {
   const section = body.match(/^## C-4[^\n]*\n([\s\S]*)/m)?.[1];
   if (section === undefined) throw new Error('Missing C4 grammar section');
+  const explicitZero = section.match(/^(?:- )?\*\*(?:新(?:语法|語法)|新規文法)\s*0\s*(?:个|個|項目)?[：:]\*\*/m);
+  if (explicitZero) return [];
   const line = section.match(/^(?:- )?\*\*(\d+)\s*(?:文法|语法|語法)[：:]\*\*\s*([^\n]*)/m);
   if (line) return Number(line[1]) === 0 ? [] : line[2].replace(/`/g,'').split(/・|\s+\/\s+/).map(x=>x.trim());
   const legacy = section.match(/### \d+ 个重点语法\s*\n([\s\S]*?)(?=###|$)/)?.[1];
