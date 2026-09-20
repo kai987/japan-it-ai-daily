@@ -58,7 +58,7 @@
       "snapshotSha256": "f5286e6f4c411ca87fe74f756b1b062b04ddba6b5c61cb01948b06da56025c80",
       "claims": [{
         "id": "fact-3",
-        "kind": "vendor-claim",
+        "kind": "source-fact",
         "statement": "ZscalerはAgentic SOCでAlert TriageからRoot Cause調査、Response Workflow起動までをAgent化し、Zero Trust基盤の1日7500億件規模のTransaction Telemetry活用を説明した。一方、誤検知による正当User隔離などのRiskがありEvidenceと実行Actionの確認が必要である。",
         "quote": "AIが判断を誤る可能性はゼロではない。",
         "locator": "キーマンズネット: Agentic SOCの自動化範囲と誤検知Risk",
