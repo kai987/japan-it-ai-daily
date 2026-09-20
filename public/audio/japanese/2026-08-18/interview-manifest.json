@@ -44,7 +44,8 @@
       "text": "AIサービスの費用を可視化した後、何を確認しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "afd76dccb0392951d38099d3517f5fe0d263162461e41d69edc096308cbfeaba",
-      "durationSeconds": 4.487
+      "durationSeconds": 4.487,
+      "audioSha256": "af06491ad9f35569c4c40208322d2c5c62d715dd3f36325fa67516ad2b9f8295"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "34bf5a974ad9d15f8c047639d6b950697069ab672f642fdfb5cf67bf8f783f5b",
       "durationSeconds": 28.151,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "c46c53ed475afa174796b8cb88a7074c0d1cc86563957892ac6d31d0ccce419f"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "画面を変更した直後、効率よく確認するにはどうしますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "8776758b116cedf658f6fd4c7bf25393cefab4c20d833c10c65961649fab8179",
-      "durationSeconds": 4.922
+      "durationSeconds": 4.922,
+      "audioSha256": "77b29e82762d3702e3b95f349a30bdfbadf7f448cf34f58c80252fcf1fd54ed4"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "dd1e7e94f0d2f38090ba1d502f18feb7a19ccc78e3e69236c11cc10bead7a12e",
       "durationSeconds": 27.598,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "4c8972e3cd065e34f6b8eb54862d7eb8f1911f83d46b6d6c2ef788514ae56fd0"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "依存関係の自動移行が成功したら、そのまま取り込めますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "7596a98be5e1a69b960556febb703d0c6062d6a1f33d5358dfa03f3ce2d8bc39",
-      "durationSeconds": 4.864
+      "durationSeconds": 4.864,
+      "audioSha256": "9664bf2bd7b1727daf930a02ff6484ed8d94e9ab614faf327232eb8b0f80ba56"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "0d8f265b2edddd396fb4e49863f3610a88628f0e98c3465be952e80f4c29af1a",
       "durationSeconds": 28.488,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "c8dc8af9745b1dfbcff59af34f9a8a5e5987ff649e85ae163b24fa870c916ccd"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "コンテキストの設定値を増やせば、長い入力を確実に扱えますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "2bef02008287829201c73e7e66e1e492cfa5b7a4a4f724aca11f6fb51f48b7d1",
-      "durationSeconds": 5.398
+      "durationSeconds": 5.398,
+      "audioSha256": "72bbee73c7df14ad2e3646a13669c889dca88935b591b4e4c3392cf3a0c82597"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "73bf852e4ceb8706cff8917517bdee55ab3f85a75ca907e8a3a58378b331fdee",
       "durationSeconds": 28.435,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "e4fc4a4a721d3b24bc5f2d483fca5cf2e65603c705a19f52afd8c187962cd469"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "AIの分析を人が承認する運用なら、安全と言えますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "cd1478ada45337a96b10b793f3cc7a6f2668aee1ec2c9f36f95cc2a1be8ef98c",
-      "durationSeconds": 4.747
+      "durationSeconds": 4.747,
+      "audioSha256": "b600ffdd17ccf0567e96e65ddedcc235bc8efe7e58fa2e1cd2cf621a2bbfb860"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "6a033c0f53a1091a57d4fc9cb78984eddd6dadc0ff9726070b192bea78738ef5",
       "durationSeconds": 27.794,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "b81e5dc03009a06031330f09dd2ff689860be2126eb4eefd7d83f039aab8d289"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "Agent minutesと、実際に待った時間は同じですか。",
       "audio": "review-question-01.mp3",
       "audioHash": "596d3261a490967e7d4a5117969d64c6776b3d27c4541199f0d369755c4ff564",
-      "durationSeconds": 4.318
+      "durationSeconds": 4.318,
+      "audioSha256": "95de9d1f79a048de8e1967101c881d8222d5570431ec5ddd704e2b92315758f4"
     },
     {
       "index": 2,
       "text": "Codexで828Kと表示されたら、何が分かりますか。",
       "audio": "review-question-02.mp3",
       "audioHash": "1bc590d228d6b1cf44ca36974f1a9df819314417ea22938fdd454f194e8dd467",
-      "durationSeconds": 5.212
+      "durationSeconds": 5.212,
+      "audioSha256": "81ab1a8b62718f4b6cff1a82135a2ad0b4490a9831cddfefce4d248bde86fdb6"
     },
     {
       "index": 3,
       "text": "教育にAIを使う場合、何を成果として評価しますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "d4960e1796f12606435d73610446b32768c371643cf24ecac9a9b01cdd4840e8",
-      "durationSeconds": 4.632
+      "durationSeconds": 4.632,
+      "audioSha256": "6bf11717a6efe8d35665d7d36892ff91e1007febd232484db252d19ec7f7db81"
     }
   ]
 }

@@ -1,103 +1,44 @@
 <script>
-  import { configuredAudioAssetUrl, localAudioAssetUrl } from '../lib/audioUrl';
+  import { configuredAudioAssetUrl, localAudioAssetUrl, versionAudioAssetUrl } from '../lib/audioUrl';
   import { resolveLearningRecordingAsset, type LearningManifest } from '../lib/learningAudio';
+  import { createSpeechPlayback, fetchAudioManifest } from '../lib/speechPlayback';
 
   const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.speech-button'));
   const parts = location.pathname.split('/').filter(Boolean);
-  const lessonId = parts[parts.lastIndexOf('japanese') + 1];
-  const synth = 'speechSynthesis' in window ? window.speechSynthesis : null;
-  let activeButton: HTMLButtonElement | null = null;
-  let activeAudio: HTMLAudioElement | null = null;
-  const normalize = (text: string) => text.replace(/\s+/g, ' ').trim();
-
-  function clearActive() {
-    activeButton?.classList.remove('is-speaking');
-    activeButton?.setAttribute('aria-pressed', 'false');
-    activeButton = null;
-  }
-  function activate(button: HTMLButtonElement) {
-    activeButton = button;
-    button.classList.add('is-speaking');
-    button.setAttribute('aria-pressed', 'true');
-  }
-  function stopAll() {
-    const audio = activeAudio;
-    activeAudio = null;
-    if (audio) { audio.pause(); audio.currentTime = 0; }
-    synth?.cancel();
-    clearActive();
-  }
-  function speakFallback(button: HTMLButtonElement, text: string) {
-    if (!synth || !('SpeechSynthesisUtterance' in window)) {
-      button.dataset.speechUnavailable = 'true';
-      clearActive();
-      return;
-    }
-    const utterance = new SpeechSynthesisUtterance(text);
-    const voices = synth.getVoices();
-    const voice = voices.find((v) => v.lang.toLowerCase() === 'ja-jp' && v.localService)
-      || voices.find((v) => v.lang.toLowerCase() === 'ja-jp')
-      || voices.find((v) => v.lang.toLowerCase().startsWith('ja'));
-    if (voice) utterance.voice = voice;
-    utterance.lang = 'ja-JP';
-    utterance.rate = button.dataset.speechKind === 'word' ? 0.82 : 0.9;
-    utterance.pitch = 1;
-    utterance.volume = 1;
-    activate(button);
-    utterance.onend = utterance.onerror = () => { if (activeButton === button) clearActive(); };
-    synth.speak(utterance);
-  }
-  function play(button: HTMLButtonElement, text: string, url: string) {
-    const audio = new Audio(url);
-    activeAudio = audio;
-    activate(button);
-    const fallback = () => {
-      if (activeAudio !== audio) return;
-      activeAudio = null;
-      clearActive();
-      markBrowserSpeech(button);
-      speakFallback(button, text);
-    };
-    audio.addEventListener('ended', () => {
-      if (activeAudio === audio) { activeAudio = null; clearActive(); }
-    }, { once: true });
-    audio.addEventListener('error', fallback, { once: true });
-    void audio.play().catch(fallback);
-  }
+  const lessonIndex = parts.lastIndexOf('japanese');
+  const lessonId = lessonIndex >= 0 ? parts[lessonIndex + 1] : '';
 
   function markBrowserSpeech(button: HTMLButtonElement) {
     delete button.dataset.audio;
     button.dataset.audioProvider = 'browser-tts';
     button.title = document.documentElement.lang.startsWith('ja') ? 'ブラウザーの日本語音声で朗読' : '浏览器日语朗读';
   }
-  // Fail closed even when the manifest is unavailable, stale, or malformed.
   buttons.forEach(markBrowserSpeech);
-  async function attachAudio() {
+  const manifestReady = (async () => {
     if (!lessonId || !buttons.length) return;
+    const manifest = await fetchAudioManifest<LearningManifest>(localAudioAssetUrl('japanese', lessonId, 'manifest.json'));
+    if (!manifest) return;
     try {
-      const response = await fetch(localAudioAssetUrl('japanese', lessonId, 'manifest.json'), { cache: 'no-cache' });
-      if (!response.ok) return;
-      const manifest: LearningManifest = await response.json();
       for (const button of buttons) {
         const asset = resolveLearningRecordingAsset(manifest, {
           kind: button.dataset.speechKind || '', term: button.dataset.vocabularyTerm,
           reading: button.dataset.vocabularyReading, text: button.dataset.speech || '',
         });
         if (!asset) continue;
-        button.dataset.audio = configuredAudioAssetUrl('japanese', asset.audioDate || lessonId, asset.file);
+        button.dataset.audio = versionAudioAssetUrl(configuredAudioAssetUrl('japanese', asset.audioDate || lessonId, asset.file), asset.sha256);
         button.dataset.audioProvider = 'aivis';
         button.title = `AivisSpeech · ${manifest.voice?.name || 'AivisSpeech'}${manifest.voice?.style ? ` · ${manifest.voice.style}` : ''}`;
       }
     } catch { buttons.forEach(markBrowserSpeech); }
-  }
-  for (const button of buttons) button.addEventListener('click', () => {
-    const text = (button.dataset.speech || '').trim();
-    if (!text) return;
-    if (activeButton === button) { stopAll(); return; }
-    stopAll();
-    if (button.dataset.audio) play(button, text, button.dataset.audio);
-    else speakFallback(button, text);
+  })();
+  const playback = createSpeechPlayback({
+    rate: (button) => button.dataset.speechKind === 'word' ? 0.82 : 0.9,
+    onRecordingError: markBrowserSpeech,
   });
-  void attachAudio();
-  window.addEventListener('pagehide', stopAll);
+  for (const button of buttons) button.addEventListener('click', () => {
+    void playback.toggle(button, (button.dataset.speech || '').trim(), async () => {
+      await manifestReady;
+      return button.dataset.audio || null;
+    });
+  });
 </script>

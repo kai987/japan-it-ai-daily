@@ -8,6 +8,8 @@ import { collectAudioAssets, verifyRemoteAssets } from './verify-audio-integrity
 
 function fixture(date, check) {
   const root = mkdtempSync(join(tmpdir(), 'daily-gate-'));
+  mkdirSync(join(root, 'docs'), { recursive: true });
+  copyFileSync('docs/structured-interview-policy.json', join(root, 'docs/structured-interview-policy.json'));
   for (const dir of ['daily', 'daily-ja', 'japanese', 'japanese-ja']) {
     mkdirSync(join(root, 'src/content', dir), { recursive: true });
     copyFileSync(`src/content/${dir}/${date}.md`, join(root, 'src/content', dir, `${date}.md`));
@@ -56,7 +58,7 @@ test('audio integrity validates both languages and catches edited answers withou
   });
 });
 
-test('a dated report may publish without audio while explicit audio validation stays strict', () => {
+test('a dated report may publish without audio and audio validation reports it as pending', () => {
   const root = mkdtempSync(join(tmpdir(), 'optional-audio-'));
   for (const dir of ['daily', 'daily-ja', 'japanese', 'japanese-ja']) {
     mkdirSync(join(root, 'src/content', dir), { recursive: true });
@@ -66,7 +68,8 @@ test('a dated report may publish without audio while explicit audio validation s
     const result = quality(root, '--date=2026-09-08');
     expect(result.status, result.stderr).toBe(0);
     expect(result.stdout).toContain('2026-09-08: PASS');
-    expect(() => collectAudioAssets(root)).toThrow('interview-manifest.json');
+    expect(collectAudioAssets(root).pendingDates).toEqual(['2026-09-08']);
+    expect(collectAudioAssets(root).assets.size).toBe(0);
   } finally { rmSync(root, { recursive: true, force: true }); }
 });
 

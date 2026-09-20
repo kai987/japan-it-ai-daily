@@ -42,8 +42,19 @@ Each date has four files:
 | `src/content/japanese/` | Study identities/examples with Chinese explanations |
 | `src/content/japanese-ja/` | Corresponding study data with Japanese explanations |
 | `src/content/evidence/` | Reviewed provenance records for new reports from 2026-09-08 |
+| `src/data/interviews/` | Canonical Japanese Q&A and localized review points for 9/18 and all dates from 9/19 |
 
-Top article URL, publisher, topic and order must correspond between languages; display titles and explanations may be localized. The five Japanese interview questions/answers are shared verbatim, with `daily` as their canonical copy. Study terms, readings, levels, grammar identities and must-remember selections correspond across modes.
+Top article URL, publisher, topic and order must correspond between languages; display titles and explanations may be localized. The five Japanese interview questions/answers are shared verbatim. For 9/18 and all dates from 9/19, `src/data/interviews/YYYY-MM-DD.json` is canonical; earlier dates retain their existing Markdown adapters. `docs/structured-interview-policy.json` automatically requires canonical data for every new report, including when its JSON is missing. Study terms, readings, levels, grammar identities and must-remember selections correspond across modes.
+
+Author the canonical Q&A from original articles, then generate the two Markdown sections without retyping them:
+
+```sh
+npm run interview:render -- --date 2026-09-20 --locale ja --section interview
+npm run interview:render -- --date 2026-09-20 --locale zh --section review
+npm run interview:check
+```
+
+The renderer prints fragments to stdout; it does not overwrite either language's documents or unrelated sections. Keep the report's existing section 4 between interview and review. The JSON also holds the review questions' article references and both languages' review points. `interview:check` verifies report mirrors and article order; the interview page and audio generator read canonical JSON directly. This migration preserves existing prose and recordings.
 
 Original articles are the source of facts. A source evidence draft stores article metadata, then reviewers add short original quotes, locations, conditions and links to the actual article/QA excerpts. Never generate Japanese prose by translating the Chinese report. See the [lightweight pilot](docs/evidence/README.md) and [completed history repair records](docs/japanese-history-repair/README.md).
 
@@ -51,7 +62,9 @@ Original articles are the source of facts. A source evidence draft stores articl
 
 `src/pages/` and `src/pages/ja/` are thin route adapters. `src/components/pages/` owns shared home, archive, interview, learning list/detail, knowledge, topic list/detail and report rendering. `src/lib/pageCopy.ts` contains interface labels only; `src/lib/learningView.ts` normalizes field names without translating or falling back to the other language's prose.
 
-Interview Markdown extraction lives in `src/lib/interview.ts`. Both modes use the same filters and pagination, while keeping localized labels and existing links. `LessonAudio.astro` handles study playback, root-relative manifests, R2 URLs, stop/switch behavior and browser speech fallback. `InterviewStaticAudio.astro` handles report recordings. The Chinese report's legacy supplement/title enhancements remain isolated in `LegacyReportEnhancements.astro` so older report behavior is preserved.
+Legacy interview Markdown extraction lives in `src/lib/interview.ts`; structured records bypass those presentation-dependent parsers. Both modes use the same filters and pagination, while keeping localized labels and existing links. `LessonAudio.astro` handles study playback and `InterviewStaticAudio.astro` handles report recordings; both wait for manifests and invalidate older playback callbacks when stopped or switched. The Chinese report's legacy supplement/title enhancements remain isolated in `LegacyReportEnhancements.astro` so older report behavior is preserved.
+
+Search loads a small `search-index.json` manifest with the latest six article suggestions on focus. A nonempty query loads every monthly `search/YYYY-MM.json` shard for its language, with cooperative processing so input/cancellation remain responsive. It retains full-history ranking, snippets and deep links; a failed month is reported as a retryable error, never a complete partial result. Successfully loaded shards are reused within the page. With the current 40 dates, the entry manifests are 3,879 bytes (zh) and 3,949 bytes (ja), versus roughly 1.5 MB for the previous full index. Full-text queries still load all historical prose.
 
 ## Validation
 
@@ -78,7 +91,7 @@ These checks do not replace original-source review or judgment of natural spoken
 
 ## Audio generation
 
-MP3s and manifests are currently versioned under `public/audio/japanese/YYYY-MM-DD/`. R2 is the production delivery copy; manifests are also served with the site when present. Existing local MP3s allow development without R2.
+MP3s and manifests are versioned under `public/audio/japanese/YYYY-MM-DD/`. R2 is the production delivery copy; manifests are also served with the site when present. Existing local MP3s allow development without R2. Production playback uses an immutable `name--<file-sha256>.mp3` object path, so a new manifest cannot accidentally cache older bytes while R2 is still publishing. Legacy object names remain available for existing pages. Hash-named delivery copies are derived during publication and are not duplicated in Git; local development uses the original files with a version query.
 
 To regenerate audio, start AivisSpeech (default `http://127.0.0.1:10101`) and install ffmpeg:
 
@@ -94,10 +107,15 @@ Before committing audio, run:
 
 ```sh
 npm run audio:integrity:check
+npm run audio:versions:check
 npm run audio:duration:check
 ```
 
 Default voice style ID is `497929760`; interview speed is `1.00`. Generation reuses audio when its text/settings match. Do not edit a manifest to make stale audio appear current. Standard answers target 26–34 seconds, with a hard acceptable range of 22–40 seconds.
+
+Generators write actual file SHA-256 metadata (`wordSha256`, `exampleSha256`, `audioSha256`) separately from synthesis-task hashes, including source recordings reused by later review cards. `npm run audio:versions:write` refreshes only these byte versions for existing files; `audio:versions:check` detects stale versions without writing. Updating byte versions does not validate or change the recording's spoken text. Neither command regenerates MP3s.
+
+Integrity and duration checks report dates with no manifests or recordings as not generated yet. A partial generation (one manifest missing, or MP3s without manifests) fails, as do broken files, stale text and missing cross-date review sources. Local integrity still covers every generated date.
 
 ## Deployment
 
@@ -126,10 +144,12 @@ text/manifest integrity + ffprobe duration checks
     ↓
 upload changed recordings to Cloudflare R2
     ↓
-verify deployed MP3 SHA-256 hashes
+verify changed recordings and their cross-date references by SHA-256
 ```
 
 The audio workflow also supports manual execution. Missing R2 credentials or an audio integrity/public-byte mismatch fail the audio workflow, but do not roll back or block an otherwise valid text-only Pages release.
+
+Daily audio pushes verify the changed dates/files and referenced review recordings. Manual runs, weekly audits and verifier/policy changes run full inventory checks. Transient network failures, 429 and 5xx responses receive bounded retries; exhausted network/authentication failures do not trigger bulk reuploads. Only confirmed missing or byte-mismatched objects are repaired, then verified again. The existing orphan cleanup allowlist remains narrow; other remote-only objects, including older content-hash versions, are reported for review.
 
 Configure repository secrets `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`; the bucket is `japan-it-ai-daily-audio`. `PUBLIC_AUDIO_BASE_URL` is an optional repository variable overriding the configured R2 public endpoint. It must use HTTPS. Production Pages artifacts omit committed MP3 binaries while retaining any available manifests. No audio credentials are included in the client.
 

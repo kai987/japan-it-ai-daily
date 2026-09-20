@@ -7,8 +7,27 @@ on:
       - 'public/audio/**'
       - '.github/workflows/sync-r2-audio.yml'
       - 'scripts/verify-audio-integrity.mjs'
+      - 'scripts/audio-manifest-state.mjs'
+      - 'scripts/remote-audio.mjs'
+      - 'scripts/audio-publication.mjs'
+      - 'scripts/stage-audio-publication.mjs'
+      - 'src/lib/audioVersion.mjs'
+      - 'scripts/validate-interview-audio-duration.mjs'
+      - 'scripts/interview-audio-content.mjs'
+      - 'scripts/structured-interview.mjs'
+      - 'scripts/validate-structured-interviews.mjs'
+      - 'src/lib/structuredInterview.mjs'
+      - 'src/data/interviews/**'
+      - 'docs/structured-interview-policy.json'
+      - 'scripts/daily-quality-policy.mjs'
+      - 'docs/daily-quality-policy.json'
+      - 'scripts/audio-file-versions.mjs'
       - 'scripts/audit-r2-audio-orphans.mjs'
+      - 'package.json'
+      - 'package-lock.json'
   workflow_dispatch:
+  schedule:
+    - cron: '43 2 * * 1'
 
 permissions:
   contents: read
@@ -84,11 +103,16 @@ jobs:
           endpoint="https://${account_id}.r2.cloudflarestorage.com"
           echo "R2_ENDPOINT=${endpoint}" >> "${GITHUB_ENV}"
 
-          sync_filters=()
+          # Full/manual runs inspect MP3 bytes before any repair. Manifests are
+          # retained in R2 for the existing complete-object inventory audit.
+          sync_filters=(--exclude '*.mp3')
+          sync_source=public/audio/
           upload_audio=true
+          echo "R2_VERIFY_SCOPE=full" >> "${GITHUB_ENV}"
           # If the push comparison base is available, upload only changed audio.
           # Workflow/script-only changes still continue to verification and orphan audit.
           if [[ -n "${SYNC_BEFORE}" ]] && git cat-file -e "${SYNC_BEFORE}^{commit}" 2>/dev/null; then
+            git diff --name-only -z "${SYNC_BEFORE}" HEAD > "${RUNNER_TEMP}/audio-verify-changes"
             git diff --name-only -z --diff-filter=ACMR --relative=public/audio \
               "${SYNC_BEFORE}" HEAD -- public/audio/ > "${RUNNER_TEMP}/audio-changes"
             mapfile -d '' -t changed_audio < "${RUNNER_TEMP}/audio-changes"
@@ -96,42 +120,39 @@ jobs:
               echo "No audio files changed; skipping upload and continuing verification/audit."
               upload_audio=false
             else
-              sync_filters=(--exclude '*')
-              for path in "${changed_audio[@]}"; do
-                sync_filters+=(--include "${path}")
-              done
+              # A simultaneous verifier/policy change merits a full audit.
+              if git diff --quiet "${SYNC_BEFORE}" HEAD -- scripts/ src/lib/audioVersion.mjs .github/workflows/sync-r2-audio.yml docs/daily-quality-policy.json package.json package-lock.json; then
+                echo "R2_VERIFY_SCOPE=changed" >> "${GITHUB_ENV}"
+              fi
+              sync_source="${RUNNER_TEMP}/audio-publication-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/"
+              node scripts/stage-audio-publication.mjs \
+                --changed-file "${RUNNER_TEMP}/audio-verify-changes" --staging "${sync_source}"
+              sync_filters=()
             fi
           fi
 
           if [[ "${upload_audio}" == "true" ]]; then
-            aws s3 sync public/audio/ "s3://${R2_BUCKET}/" \
+            aws s3 sync "${sync_source}" "s3://${R2_BUCKET}/" \
               --endpoint-url "${endpoint}" \
               "${sync_filters[@]}" \
               --only-show-errors \
               --cache-control "public,max-age=86400"
           fi
 
-      - name: Verify all public recordings against this commit
+      - name: Verify recordings and repair only confirmed remote drift
         shell: bash
         run: |
           set -euo pipefail
-          if node scripts/verify-audio-integrity.mjs --remote; then
-            exit 0
-          fi
-
-          echo "::warning::Remote audio drift detected. Performing a one-time full R2 reconciliation."
           if [[ -z "${R2_ENDPOINT:-}" ]]; then
             echo "::error::R2 endpoint was not initialized."
             exit 1
           fi
 
-          aws s3 cp public/audio/ "s3://${R2_BUCKET}/" \
-            --recursive \
-            --endpoint-url "${R2_ENDPOINT}" \
-            --only-show-errors \
-            --cache-control "public,max-age=86400"
-
-          node scripts/verify-audio-integrity.mjs --remote
+          verify_args=(--remote --repair)
+          if [[ "${R2_VERIFY_SCOPE}" == "changed" ]]; then
+            verify_args+=(--changed-file "${RUNNER_TEMP}/audio-verify-changes")
+          fi
+          node scripts/verify-audio-integrity.mjs "${verify_args[@]}"
 
       - name: Audit and safely prune legacy R2 audio orphans
         shell: bash

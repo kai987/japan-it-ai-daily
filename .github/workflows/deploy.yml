@@ -47,6 +47,8 @@ jobs:
         run: npm run quality:check
       - name: Check audio scripts
         run: npm run audio:check
+      - name: Verify recorded audio URL versions
+        run: npm run audio:versions:check
       - name: Run tests
         run: npm test
       - name: Build

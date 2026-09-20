@@ -44,7 +44,8 @@
       "text": "書き込みが遅いのにCPUに余裕がある場合、何を調べますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "a0e16750cac9120fc0107e6f37868e95f2e52aa399bd9112c711045852500eb2",
-      "durationSeconds": 5.049
+      "durationSeconds": 5.049,
+      "audioSha256": "f2e432664b2bf631ae48f9ce11d4cdab4790a719d416cc96cd9df3f0e366965b"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "5511ba0840cab2b91f61e8c4d0446aa7a9d6681c0e9f6d606db3ad3d97a3f529",
       "durationSeconds": 26.599,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "8d72bbe2d39e622e8a9507ef2fc5f39ccfda40053712042ee06b71267d54ab2e"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "エージェント向けのデータ基盤では、データ量以外に何を整えますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "5d8b7c4b17137596fefe9e0960445074f0019fefb4fef9deee1fc2c38259f3b0",
-      "durationSeconds": 5.142
+      "durationSeconds": 5.142,
+      "audioSha256": "061c23765d82cf0745f15e0fa667c75b1191c4dbadc62f0b59ef426a9579f31e"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "ef19b7f0914eeb3d757cd005824503f1a60b041aa981fc363c6633dc6e727499",
       "durationSeconds": 27.956,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "2e3367129074f223ffda6a731e013f6e8fe077d3a1397e3f6824b147c9e8c913"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "推論のeffortは、難しい場面ごとに細かく切り替えますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "d91c19216c6255b1f4380b345317f4b3fe0e4b744b8144b8d69ae90629435f9d",
-      "durationSeconds": 4.992
+      "durationSeconds": 4.992,
+      "audioSha256": "d98820ca9ee2f52d24abcb88c0d6e4d7a27e0eddc0581ba99a90052ed764391c"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "7f800d9917aacd0a2990ce7cdd57e829f9cd87bb02269244251d9896d2e27a58",
       "durationSeconds": 27.373,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "f48b5860cfe323346861292df780f470d773432b74d75b7f8582a2f56f42de63"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "複数プロジェクトの会話を管理するとき、見落としをどう減らしますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "bf89c02ab8c1367ac2a357a48acd4e8216888134e9fa32961e455b28d757ad8b",
-      "durationSeconds": 5.154
+      "durationSeconds": 5.154,
+      "audioSha256": "c8e986d35cf4456c752582d1220c6ca8c75baeafb08673f84dbdf7697694a744"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "5f77ef70f7888071e216860e70c90ce96e67d8e2251ebfe7eee07d43391ddeee",
       "durationSeconds": 26.586,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "86bc743f52d6a35afb2c2349e18f6b6c5f4628978c6e21f4318bc0715b6af322"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "エージェントには、人と同じアカウント権限を渡してよいですか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "5a8d6c4abc426434bdc62c99c8b98490edd5d7b5c27064a201cf619ef4ccbd96",
-      "durationSeconds": 4.678
+      "durationSeconds": 4.678,
+      "audioSha256": "4236cff9036731a7dc2543acb08791cb17540bc8dc781b7283401c7f8c60c5f2"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "ba04a188f607a3ee45054ebbd63d23970a5aca81894ed5a23400f8538a1e58a8",
       "durationSeconds": 27.863,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "3ada0e3beee68234e6ae1bcd0fb0080029f6ef3a7adf4661dbac1e97de54758c"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "LangfuseでClickHouseの読み取りを省く前に、何を確認しますか。",
       "audio": "review-question-01.mp3",
       "audioHash": "1a53831c5e625a64e53e0d44d8fca0e1fe11f5d72595ec0b2944edb8c28ee0a9",
-      "durationSeconds": 5.433
+      "durationSeconds": 5.433,
+      "audioSha256": "6daccce7ea92b32e88fadbd915e0fa2263a5873be73721f302e9feecabf28726"
     },
     {
       "index": 2,
       "text": "effortとthinkingは同じ設定ですか。",
       "audio": "review-question-02.mp3",
       "audioHash": "6c7824d0f7de1f722e51f18675799767d5e2b49a044ba0e9ed894acdce4e1641",
-      "durationSeconds": 3.099
+      "durationSeconds": 3.099,
+      "audioSha256": "903032b4878fa8ffd5150b5d654c8fe8b8e139e6db9ae8482292685005ad419a"
     },
     {
       "index": 3,
       "text": "一工程95%なら、20工程も95%で成功しますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "bd28ccfd14a533909dd1690fa8c0250d459fd628785bbb46a6e62852fb4b084d",
-      "durationSeconds": 6.141
+      "durationSeconds": 6.141,
+      "audioSha256": "a121fde02a342dbbe7e0a1eff70df75dcedfa828ed589976ae91e769c1703655"
     }
   ]
 }

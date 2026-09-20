@@ -69,6 +69,32 @@
 
 .speech-button[data-speech-unavailable='true']{display:none}
 
+/* Loading shares the icon cell, preserving the existing 34/38px hit target. */
+.speech-button.is-loading::after,
+.report-speech-button.is-loading::after{
+  content:'';
+  grid-area:1 / 1;
+  box-sizing:border-box;
+  width:23px;
+  height:23px;
+  border:2px solid currentColor;
+  border-right-color:transparent;
+  border-radius:50%;
+  animation:audio-loading .9s linear infinite;
+  pointer-events:none;
+}
+.speech-button.is-loading .speech-icon-stop,
+.report-speech-button.is-loading .speech-icon-stop{
+  grid-area:1 / 1;
+  width:11px;
+  height:11px;
+}
+@keyframes audio-loading{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){
+  .speech-button.is-loading::after,
+  .report-speech-button.is-loading::after{animation:none}
+}
+
 /*
  * Daily report interview speech controls are injected at runtime, so this
  * layout must live in global CSS rather than an Astro-scoped <style> block.

@@ -44,7 +44,8 @@
       "text": "AIシステムの運用状況をどのように観測し、改善につなげますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "371d23cf4033266b67197d741ddcee0967a4f73d14da742b5dae49346b03072a",
-      "durationSeconds": 5.375
+      "durationSeconds": 5.375,
+      "audioSha256": "54ba257459d9596f6df4679faadeb26368a2f30103c509197228b2912f40aaf2"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "fbdd202771edf07331c8f595f0c55ca9790d1fb2764bf60370f3d25d879dc295",
       "durationSeconds": 26.679,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "7dceff5e722ee47f82361d1d661cee1117354878c5c4fbf1b37af0c1a8812103"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "BM25をコード検索に使う場合、導入効果をどう確かめますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "78638621e40ac88f0ba0adca2177c48f309f3d0df1d7e449fbb009e6ba166e8e",
-      "durationSeconds": 5.653
+      "durationSeconds": 5.653,
+      "audioSha256": "9ee4b1cc3612cca2268b5681b1760ae7b4b906d28a5943c3789bbe8ab672c44f"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "6b6d42c356e392bafbed37c0a394350da686f7dec57b27975cfce026e132698a",
       "durationSeconds": 27.724,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "1b0eee3e49296ba34e471cc87e0fb9629be7b40b0a8ebe4883e4c2097b203a8d"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "SageMakerがサーバーレスなら、モデルの調整はすべてサービス側に任せられますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "d050aadb004e543e5be9f64183c95cef96d6eed1a91138cb54126bb070f3d849",
-      "durationSeconds": 6.419
+      "durationSeconds": 6.419,
+      "audioSha256": "fdbf8dd5479827d4cb3da6d44e2ce63f7f621dbf999a9784bb01bbe6ac2cf9c7"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "a3dfa099095d6bdcfcbb9fa45f6bcd09472955d3b7603c98f4824250e88a9826",
       "durationSeconds": 27.474,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "64049108c51c963604f0593c0a270ff9ad833cce60bdbc0a6e38a3f2bab6615c"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "Next.jsで画面遷移を改善したとき、効果や品質をどう確かめますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "db348e7fb4ac8a52cd03130d4c5da57f6b2c19c7c6ffd0c146163de77ce9e330",
-      "durationSeconds": 6.036
+      "durationSeconds": 6.036,
+      "audioSha256": "348f62fba8a10be2fdcb7cbbf32bdf9dd05b45cf443aa3513f38fc20c20b0a97"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "fc702547ca8881c48a624a787873b5565b76897bc5382ca96f8628fe7f15578d",
       "durationSeconds": 26.288,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "ccc35824ebd2515516f9e5819902f3cc4b85d8d7bb92a577783c05c3f87e8167"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "Muse Glimmerのようなローカルモデルを業務に使う場合、何を確認しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "3a72f390bf33e828d037fba39bd8c80251324b92ab8a8c33368b83bd29fcd4b8",
-      "durationSeconds": 5.711
+      "durationSeconds": 5.711,
+      "audioSha256": "42acb665b06d9093a03bcdbcf2dde5e18abd6bc6b52dc6a7808e81a1567f9a3f"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "42b3ea7860bab5951c6c6138b88303a9e3b8579ea7315c94c6e053405c219c7e",
       "durationSeconds": 26.409,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "5f5a0e4ce8e8fa611df2fb4ba4bd92606af102cdd47bb1a301080eb6715b2938"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "実行ログと結果の確認は、なぜ分けるのですか。",
       "audio": "review-question-01.mp3",
       "audioHash": "9a23b10adc17cd4f022b3de1e86b199c19171c480bb5424c166d6c2575bcc0f0",
-      "durationSeconds": 4.132
+      "durationSeconds": 4.132,
+      "audioSha256": "2c0d7455a10996780a4aae8b6d6145e0f0882d45bf9c89258464838ad0c4b869"
     },
     {
       "index": 2,
       "text": "約 30％のトークン削減という結果を説明する際の注意点は何ですか。",
       "audio": "review-question-02.mp3",
       "audioHash": "f367e118f407f9b2db40dd9626d54da039373b3aa35fa24cd69efea4cec1e7b6",
-      "durationSeconds": 6.17
+      "durationSeconds": 6.17,
+      "audioSha256": "e61d048713d576fe84441e9bf2a0726ffabec04e8c426d0488a67527a25a5bef"
     },
     {
       "index": 3,
       "text": "製品の機能一覧だけで導入を決められますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "d5310dccbfd8140496a821c2eff7837d5e3d5e76384abbcd7ebbe2f0b62259b9",
-      "durationSeconds": 3.912
+      "durationSeconds": 3.912,
+      "audioSha256": "e9e902c2ec6f34c5edc277fe4872cacd43be3c32c6568c911f87fc291abb9fbe"
     }
   ]
 }

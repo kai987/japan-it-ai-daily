@@ -44,7 +44,8 @@
       "text": "AIエージェントからのWebアクセスを、どう観測しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "7d82f72521ff624eb7b3f8d7ae81d659bd04a92b85d84555344ed337d87bb5c4",
-      "durationSeconds": 4.226
+      "durationSeconds": 4.226,
+      "audioSha256": "19088ac48f0024230de76e08fb301dddb8d92493fed71485d5008040e5065022"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "8ba7def984ff1d82a5be026c546937379469e70055b9acfc72d136077ae51fa5",
       "durationSeconds": 26.948,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "357a002eda221e8e63b627c3fb791ce573e9f303f52604d1f8bc3994c42085a5"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "エージェントへテスト追加を非同期で任せるとき、何を決めますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "cbff68b74093efe23ef2814507618423f0ad966428f069d7862e1f418fc7e5f5",
-      "durationSeconds": 5.038
+      "durationSeconds": 5.038,
+      "audioSha256": "87453e3ebb4cd92e05bc4e6d4f200f55b8f55f0c339b0c9ee3fd1640e7060c42"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "7b2860787be4fa99f61f5828427b37f73a3acef3f765bf2f5548efed13329d40",
       "durationSeconds": 27.419,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "76c8e26a6c80afef41dc7a56a927a647ab1c2bff822fae8fff6d4c2595afced2"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "AIエージェントが使うAPIを増やすとき、何から管理しますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "38febedd8932df819ab8ace84e08a167bd0db364e6a445ff4acd31c17a3a576e",
-      "durationSeconds": 5.119
+      "durationSeconds": 5.119,
+      "audioSha256": "6eac99ad6bb4710ba3e5532e2a1cc143cf39ea728c60fd2cee8a2973570b3ad7"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "5f8da483897ec996c0dcd285e74bc5bbe29efd2f67a695e6b4916eb60e490f8b",
       "durationSeconds": 26.096,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "5a1ee167c621082846ab93c6b3427b1f01f4209039b03d859f4292f68d210ce4"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "APIコスト監査ツールがレポートを作ったら、改善完了と判断しますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "3bf5d64f4f34215e31d0ebbe89efe8dcafee4c84f255867c1e03cfbeb6627623",
-      "durationSeconds": 5.792
+      "durationSeconds": 5.792,
+      "audioSha256": "ec38aedd89b518321e7e0582c2bbd407a0542b4cb1224555a329f6a3883be397"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "cbf3b7a5059064ee527763394e0ee95741ffc866d5de05ded76017701623adfc",
       "durationSeconds": 27.669,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "0dab6859440acb464a6be1586a61cf196e987b6af66ecf4b58e31346143f1502"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "MCPのツールを変えたとき、配信するスキルとの整合性をどう保ちますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "ee6316271120ff3d592d99dfa32ea3704f88ac96f87dc92c66854456aed91949",
-      "durationSeconds": 5.885
+      "durationSeconds": 5.885,
+      "audioSha256": "765f42561526129f80642937e719ae6f60e29ecbfb8cdefa190725bdb7aa9a3c"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "5a16c9a8867d0eb468ab09c274180a6f0c860c6858a085104f54ba68965c7f59",
       "durationSeconds": 26.76,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "d4873e90b847540ebf4f00259c92014e417de3291bc47994ad0a06f57f7e3c8f"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "カバレッジが高ければ、テスト追加を合格にできますか。",
       "audio": "review-question-01.mp3",
       "audioHash": "d6445203bd8a2c3138d382a7e391f8d4576539c1046aa3459e992f560fd7ca39",
-      "durationSeconds": 4.538
+      "durationSeconds": 4.538,
+      "audioSha256": "dfc107d8e4e47b9bfbc996696b754c436a5c257ad06077fac714af49538d1c5e"
     },
     {
       "index": 2,
       "text": "コスト監査のレポートは、削減効果の証拠ですか。",
       "audio": "review-question-02.mp3",
       "audioHash": "f201bb5074bd79223d3def882606bbdd07a38147463d9ab33f6c32f62a245da8",
-      "durationSeconds": 4.19
+      "durationSeconds": 4.19,
+      "audioSha256": "b2e20c267d5525e2a58ad567074469afde96febfe5381e09f0458b067c0afdc4"
     },
     {
       "index": 3,
       "text": "サーバーのスキルを更新すれば、公開プラグインも即座に変わりますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "b5e8956d84f5e6ed3535946614a8647ad54c25191cdfbae9b54b7c7e616303ef",
-      "durationSeconds": 5.282
+      "durationSeconds": 5.282,
+      "audioSha256": "0efab81298e0c51eeaa48c1270d31a65d2bdda6adb76ae276e54d1fee3302c6e"
     }
   ]
 }

@@ -24,7 +24,7 @@ export function assertInterviewMirror(record, body, locale) {
 
 export function validateStructuredInterviews(root = process.cwd()) {
   const dates = structuredInterviewDates(root);
-  if (!dates.length) throw new Error('No structured interview pilot found');
+  if (!dates.length) throw new Error('No structured interviews found');
   for (const date of dates) {
     const record = readStructuredInterview(date, root);
     if (!record) throw new Error(`${date}: missing structured interview`);

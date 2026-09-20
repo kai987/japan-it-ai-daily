@@ -44,7 +44,8 @@
       "text": "蓄積したMarkdownを、エージェントから安全に参照させるにはどうしますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "008c83b712614b83f6d262f687957d635c450747e9c68cabf351fa489e0da6cb",
-      "durationSeconds": 5.581
+      "durationSeconds": 5.581,
+      "audioSha256": "62827fcaa327be053cc2cc172a46c7e08e27afcf4f802e80997193bce98b21d7"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "71ea3147b6d25cffc673b25bcffa8f3d7daad66dedb7d00b9a8a5ed3d729d6f9",
       "durationSeconds": 26.841,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "16298176d957fc9339813a36850c44478e4cba200154143d96927b484120e986"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "AIが生成するフルスタックのコードを、どう検証しやすくしますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "e5dd304e76971f104f20924d49be34ce8fe276aed9abbabd4ffa3ccf6cac4598",
-      "durationSeconds": 4.863
+      "durationSeconds": 4.863,
+      "audioSha256": "5f58df39857f061c5cc5a480f58a9854b5a2cd0502613d7d3de6120ac01f76c0"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "c1790df294be31e5d043351411005048b9ba58efc8792cb32e42586dc42eadf5",
       "durationSeconds": 27.398,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "7b2cf310b5526cb758744ec1166299c22fa8cba25d9de5af7e3efcfc324292fb"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "自動作成されたLambdaの実行ロールを、そのまま本番で使えますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "e59a439b01206a12edcbd87c532a47b5c291357f2f3e7edd372d0f0d0ec82735",
-      "durationSeconds": 5.409
+      "durationSeconds": 5.409,
+      "audioSha256": "6dfabb93f3c2f3f4b0e3ec9ce7eb4fe4206e0be3a571bd8dbcbd8ca8ae753a9c"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "90f33dc9568581e5edbd5b56c530b9c3df4dcd03f7d64f71fd5ece7262447fd3",
       "durationSeconds": 26.02,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "ceae66eeb3f666460227f5ecb98753dbcbc88d76d2cf44e340000beca2eb282f"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "生成AIが作った評価基準を、どのように業務へ組み込みますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "5e78a73bd7507d79d700d1d425cd00cd3b091b2de38271d3732177062e7996fb",
-      "durationSeconds": 5.119
+      "durationSeconds": 5.119,
+      "audioSha256": "a4d4e8f36bec478ce28ed07004e8bd3cf614360d9648a0e4d12015d006284c2d"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "92c387a1b6e7c922ff33c867c073a94e941261a26994283d9736f874bfbd92d6",
       "durationSeconds": 26.76,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "577a1d4f71062640b3a58ea8cd1bff768fe6e7f06c01e002b7bd5a44ebb7f9ea"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "テストで欠陥が見つからなくなったら、QAを減らしてよいですか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "a2d56cd0b19dccc7c4f712880131328ec10963c9aa8007720e4f52228ea68093",
-      "durationSeconds": 4.61
+      "durationSeconds": 4.61,
+      "audioSha256": "53f1dfe24562a51916899cc6a544279a28e4c604d71e291be94c8ee954642827"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "71c6e7f7a3cb33b4d9eee41392d6165adf1be976c64739b9fae18d516f0726e4",
       "durationSeconds": 27.503,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "72a1114bca913cf24a499613bea1882fbc5b463bfbe7092250dd670026932bf4"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "ローカルMCPなら、取得した文書もローカルだけに残りますか。",
       "audio": "review-question-01.mp3",
       "audioHash": "9e39cb6ed0b59836d4d2e97b3554e43168d54b1442e9b4570db337e1230dfcaf",
-      "durationSeconds": 5.07
+      "durationSeconds": 5.07,
+      "audioSha256": "1ee5245775d7671c5d9154cc153d55a0a7654a5c24b2e0e05decf81c670e1acc"
     },
     {
       "index": 2,
       "text": "型検査に通れば、入力値の検証は不要ですか。",
       "audio": "review-question-02.mp3",
       "audioHash": "f1434550f63bf6bab8ed556f629c6c47da6d41f405536c3386aed4c315932720",
-      "durationSeconds": 4.304
+      "durationSeconds": 4.304,
+      "audioSha256": "888f971b5a99534a4bcba074b835fc98901911b0ccfc90452918d576e468efcb"
     },
     {
       "index": 3,
       "text": "欠陥の検出数が減ったとき、何を確かめますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "ca8e62d8ee1820724bdd7fdd470b1e46841c9412be5e942d7651d9301cfa39e9",
-      "durationSeconds": 4.25
+      "durationSeconds": 4.25,
+      "audioSha256": "292612690d75d09b0aeb984b0b1e273f68f353757131f575d28db2988bb0a193"
     }
   ]
 }

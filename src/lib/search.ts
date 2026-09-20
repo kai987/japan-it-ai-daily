@@ -184,6 +184,11 @@ interface ScoredSearchItem {
   score: number;
 }
 
+const scoreItem = (item: SearchItem, query: string): ScoredSearchItem => {
+  const segment = matchingSegment(item, query);
+  return { item, segment, score: itemScore(item, query, segment) };
+};
+
 const compareSearchItems = (a: ScoredSearchItem, b: ScoredSearchItem): number => {
   const bothAreFullTextReports = a.item.kind === 'report'
     && b.item.kind === 'report'
@@ -212,6 +217,12 @@ const compareSearchItems = (a: ScoredSearchItem, b: ScoredSearchItem): number =>
   return a.item.kind === 'article' ? -1 : 1;
 };
 
+const rankedResults = (scored: ScoredSearchItem[], query: string, limit: number): SearchResult[] => scored
+  .filter(({ score }) => score >= 0.72)
+  .sort(compareSearchItems)
+  .slice(0, limit)
+  .map(({ item, segment }) => ({ ...item, matchSnippet: makeSearchSnippet(segment, query) }));
+
 export const searchItems = (
   items: readonly SearchItem[],
   query: string,
@@ -225,16 +236,28 @@ export const searchItems = (
       .map((item) => ({ ...item, matchSnippet: '' }));
   }
 
-  return items
-    .map((item) => {
-      const segment = matchingSegment(item, normalized);
-      return { item, segment, score: itemScore(item, normalized, segment) };
-    })
-    .filter(({ score }) => score >= 0.72)
-    .sort(compareSearchItems)
-    .slice(0, limit)
-    .map(({ item, segment }) => ({
-      ...item,
-      matchSnippet: makeSearchSnippet(segment, query),
-    }));
+  return rankedResults(items.map((item) => scoreItem(item, normalized)), query, limit);
+};
+
+// Keep input, dismissal and paint responsive while normalizing historical prose
+// and scoring. Both paths share the exact same global ranking and limit.
+export const searchItemsAsync = async (
+  items: readonly SearchItem[],
+  query: string,
+  { signal, yieldControl = () => new Promise<void>((resolve) => setTimeout(resolve, 0)) }: {
+    signal?: AbortSignal;
+    yieldControl?: () => Promise<void>;
+  } = {},
+): Promise<SearchResult[]> => {
+  signal?.throwIfAborted();
+  const normalized = normalizeSearchText(query);
+  if (!normalized) return searchItems(items, query);
+  const scored: ScoredSearchItem[] = [];
+  for (let offset = 0; offset < items.length; offset += 6) {
+    await yieldControl();
+    signal?.throwIfAborted();
+    for (const item of items.slice(offset, offset + 6)) scored.push(scoreItem(item, normalized));
+  }
+  signal?.throwIfAborted();
+  return rankedResults(scored, query, 8);
 };

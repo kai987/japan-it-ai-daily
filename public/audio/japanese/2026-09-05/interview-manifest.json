@@ -44,7 +44,8 @@
       "text": "AIの概念実証で成果が出ないとき、何を見直しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "e52f314e732743cb8b650a36ddc5dd9b3dcc5d0861cc9f4f98b92e0e14d6db74",
-      "durationSeconds": 4.91
+      "durationSeconds": 4.91,
+      "audioSha256": "f93e477bdcdf33a668e6ac48f0b96a1d7bdba903d5917535607be41d87613f75"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "a04bac29dafaf5e8f11c09e2c5ccd270299befb5ec9a125b8044e931eb74207c",
       "durationSeconds": 28.131,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "bb659184864d469aba4b94a9f0a624597edccd28e73d3a4dd9609c751dbec769"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "AIサービスが学習に使わないなら、顧客データを送ってよいですか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "c75f6e538f88f0e634546f353188bdd5f65f7260dc9e800c28acdb324be34201",
-      "durationSeconds": 5.2
+      "durationSeconds": 5.2,
+      "audioSha256": "8e62f9e7a956453c9fb4d5cb669fe3367403ffcdcb98fa0fdda37f612b287a94"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "91d3f866d244a4b6b53d27e37282d2ebb1d3d90b9aefa48c7b7fcf17b1091cd9",
       "durationSeconds": 26.049,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "aef172bfe395535315c8c51c09dbe069710299bcf1b6eb53759105e9dee581b4"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "セキュリティ修正の完了を、どう判断しますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "2809812f6b294d66cc29eddbe1c41ffe2c29b9f68ebc2ac06ddc685cfed5cdda",
-      "durationSeconds": 3.561
+      "durationSeconds": 3.561,
+      "audioSha256": "446511cb914cb1f1c336df5f87dd2b33a4497b74ac6f8d8a740e2d595123f911"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "143d355b2d6fe7748ec31ac135acf885e1a970f8ca7bc120187d42c248a54c0b",
       "durationSeconds": 28.213,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "d080d84c7e024f9bc856785a5ce78fd76a3d05222d4cd393c7d3e07ea1290503"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "AIツールを無人実行へ組み込むとき、確認待ちをどう扱いますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "b2c5078d68e39dead0c17ceab1e3cceaa681760c4c561b10e329ad217718bdd0",
-      "durationSeconds": 5.363
+      "durationSeconds": 5.363,
+      "audioSha256": "0c2c3da296bae6d9a0775befc8dd06862a65c8a5f70bfa4ec6af6989504cafc3"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "5d8b9e356f591b74ad98fdb4a7c65dd52b99f2058b115925098be01e899dee22",
       "durationSeconds": 26.27,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "4478d30e67ce090e734ab19b96965919200dfec31945907056b3927303c0d012"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "人と同じDBロールを使うAIだけ、操作を制限できますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "dc05b819a0148a577c443e978e0c51d746e536085f03284673db2ecff4c82070",
-      "durationSeconds": 5.003
+      "durationSeconds": 5.003,
+      "audioSha256": "b06be4f9491d308cf0feec545f3b805b7550f58cbed51295fce076d1ecd856ac"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "dbf88afbcca2498c2c6a37f37e6dc3a39e1f6fa6b5c73128741f98b62964c0a9",
       "durationSeconds": 28.446,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "61769014f9272e2a1dc6d237555c0614ea2e8c016ae019eaf5c0f18dc489718a"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "AIとロジックをどう分担させますか。",
       "audio": "review-question-01.mp3",
       "audioHash": "897ebc3bcdbce6951a9ef57d3923891e817e13dd7e4e316a446e278a65fc3df3",
-      "durationSeconds": 3.111
+      "durationSeconds": 3.111,
+      "audioSha256": "2fc8b7ffc5d2a44b1047100bcbfe7dbe8ac2093198b6eeaa08dcbea7140be6b6"
     },
     {
       "index": 2,
       "text": "学習利用なしという回答で、何がまだ分かりませんか。",
       "audio": "review-question-02.mp3",
       "audioHash": "ace1955cf46740ccd5aee474a16567e87b7bf68caec5b59d080c3a47a1f5d27b",
-      "durationSeconds": 4.446
+      "durationSeconds": 4.446,
+      "audioSha256": "08eb1586cfdcf14f149b048ede03ccd3d504b65c81629bb05979c82415d58a05"
     },
     {
       "index": 3,
       "text": "権限制限のテストは何を比較しますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "05069a2eef2d4dff370787e4f66b55297d5ce4d4b8c11af6dc7e7c923147c4bd",
-      "durationSeconds": 3.575
+      "durationSeconds": 3.575,
+      "audioSha256": "72da34561ccf2fa6fde5cb6b23826b28fba318e5576d2a004c29760bc73df18a"
     }
   ]
 }

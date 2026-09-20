@@ -44,7 +44,8 @@
       "text": "AIが意図と違う行動をした場合、何を記録して判断しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "b4451f7a7e2aa211d8abf4236b8fce8dcabc1e8ecc9d90dbbe44f0bf739cd1c2",
-      "durationSeconds": 5.073
+      "durationSeconds": 5.073,
+      "audioSha256": "44baa64d49c34b745fc1431e9374974ed185753a03ab0f58a7acb19993641cc5"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "d28f74ca98f730327e8c4de7cb42db00339afcb4619c1ab1bc65dbb6cabb4537",
       "durationSeconds": 28.747,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "fbf642fa72952e9c56e3a022085b596486bfe37cc60afe6eebb49d0854e6e7ab"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "AIサービスの監査ログが使えるなら、保存地域も確認済みですか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "1d916d9762e4fefeac98ef5a4d78939c96aed67ec8c17ae72a877b72f146f2a9",
-      "durationSeconds": 5.34
+      "durationSeconds": 5.34,
+      "audioSha256": "94a360880d1e969abca90cb8b40798060d8b08d05177dbf515c3b055c07f3b5a"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "3e1f0d5632784815131faf3a077b6cc8a66f991718176e4c6d757d70621426dd",
       "durationSeconds": 27.934,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "b2a02aabfcba114db3196cdc54acdcc85dd2d225e53e505edc9283badd1ae1d0"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "AIの評価点が下がったら、すぐモデルを変えますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "6e48470ca43b04634076de0ecf4c7a6e53c3af7d8439a4d357bf6171db40302e",
-      "durationSeconds": 3.911
+      "durationSeconds": 3.911,
+      "audioSha256": "fc281d2ce9b694cfae5418bfc5a21978a0ff9c98b152e483abfc65001736cfbd"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "fed93339c37cdcc9b7541de0d9195f53961c8ad9155e8182bf1e14548d5234fa",
       "durationSeconds": 28.687,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "55e16d533e32da5edac6063ab50a98f1406aad3c900bafd6d001d9b506049a25"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "モデルが一覧に出るのに401になるとき、どう調べますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "6f3c136ff3ebd772cd37301854024c208002dd1f27a9c2ae04d29d518b11b2fe",
-      "durationSeconds": 5.038
+      "durationSeconds": 5.038,
+      "audioSha256": "42bb42e3fb518e112824354cc104cec1edad43e550a08dbfdca7da942b4421df"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "e32111023e69826fa81de897f13a75f50ceec79d2af23ce2237498f26f0c5d87",
       "durationSeconds": 29.164,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "2375e31f378b39a53d88785868519be0c0e2a27bff93ccda7806d541b4e82396"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "AI向けの構造文書を減らす前に、何を確認しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "b707124202982388ce91ae09f0b6131c1b9e593d596e0310f3cf37c0c419b264",
-      "durationSeconds": 4.667
+      "durationSeconds": 4.667,
+      "audioSha256": "ada5cce50288650244670d01f4de3e3b44baed149c69d749ce5494e326d55e13"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "945e08bed29fb904665f4dd13d8eaeaf101a28e61a3560dc84b0ab43e5f3ca29",
       "durationSeconds": 27.77,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "b4ccc36a579992d04aabb302fefef466c8370b62b37a3906d86f8b21f3edcb58"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "ログがあることから、何を推測してはいけませんか。",
       "audio": "review-question-01.mp3",
       "audioHash": "8a4169f805a092cdb0799d95ef4d978d3c98bcadeea7d7b0fbe63bdf4db36e84",
-      "durationSeconds": 4.109
+      "durationSeconds": 4.109,
+      "audioSha256": "e1e529675c74a40ec59770513f44dc0285d50a873755427b95477042dac3d784"
     },
     {
       "index": 2,
       "text": "評価が悪化した原因を、どう切り分けますか。",
       "audio": "review-question-02.mp3",
       "audioHash": "f81a22b619a126ed6638ace67ecdabb8fc3335f99e32252c5c6f3344e4d17160",
-      "durationSeconds": 3.447
+      "durationSeconds": 3.447,
+      "audioSha256": "86a61530b5f437ded59f46d2b0e8d582e3618690ac901401453106618bd48995"
     },
     {
       "index": 3,
       "text": "一覧や文書に存在することと、実際に使えることはどう違いますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "2b36d747a142061b6d2b2ac5389435ef856b5f122fcf75e04cbc458fadac9780",
-      "durationSeconds": 5.711
+      "durationSeconds": 5.711,
+      "audioSha256": "eb954483a2fa4ab7edd11596517e37252fedf5fcafe6692927cd4f20c04a9fc0"
     }
   ]
 }

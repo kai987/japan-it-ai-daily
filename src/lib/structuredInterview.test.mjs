@@ -4,10 +4,11 @@ import { readFileSync, mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'nod
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { validateStructuredInterview, structuredAudioItems, structuredAnswers, structuredReviewCards } from './structuredInterview.mjs';
-import { readStructuredInterview } from '../../scripts/structured-interview.mjs';
+import { readStructuredInterview, structuredInterviewDates } from '../../scripts/structured-interview.mjs';
 import { parseInterview, parseReview } from '../../scripts/interview-audio-content.mjs';
 import { assertInterviewMirror, validateStructuredInterviews } from '../../scripts/validate-structured-interviews.mjs';
 import { readContent } from '../../scripts/content-files.mjs';
+import { renderInterviewSections } from '../../scripts/render-interview-sections.mjs';
 
 const root = process.cwd(), date = '2026-09-18';
 const pilot = JSON.parse(readFileSync(join(root, 'src/data/interviews', `${date}.json`), 'utf8'));
@@ -23,6 +24,8 @@ for (const [name, mutate, expected] of [
   ['unknown version', record => { record.schemaVersion = 2; }, /schema/],
   ['date mismatch', record => { record.date = '2026-09-17'; }, /date/],
   ['empty answer', record => { record.interview[0].answer = ''; }, /answer/],
+  ['missing interview', record => { record.interview.pop(); }, /interview requires 5/],
+  ['missing review', record => { record.review.pop(); }, /review requires 3/],
   ['duplicate id', record => { record.interview[1].id = record.interview[0].id; }, /duplicate/],
   ['duplicate references', record => { record.interview[0].articleIds.push(record.interview[0].articleIds[0]); }, /articleIds/],
   ['missing Japanese points', record => { delete record.review[0].points.ja; }, /locales/],
@@ -72,5 +75,40 @@ test('missing required or corrupt records cannot silently fall back', () => {
     assert.equal(readStructuredInterview('2026-09-17', dir), null);
     writeFileSync(join(dir, 'src/data/interviews', `${date}.json`), '{bad');
     assert.throws(() => readStructuredInterview(date, dir));
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
+for (const migratedDate of ['2026-09-18', '2026-09-19', '2026-09-20']) {
+  for (const [locale, dir] of [['zh', 'daily'], ['ja', 'daily-ja']]) {
+    test(`${migratedDate}/${locale}: canonical data and generated sections preserve existing speech and review points`, () => {
+      const record = readStructuredInterview(migratedDate);
+      const source = readFileSync(join(root, 'src/content', dir, `${migratedDate}.md`), 'utf8');
+      const { data } = readContent(root, dir, migratedDate);
+      assert.deepEqual(structuredAudioItems(record), parseInterview(source, { legacyOnly: true }));
+      assert.deepEqual(record.review.map(item => item.question), parseReview(source, { legacyOnly: true }));
+      const sections = renderInterviewSections(record, data.top, locale);
+      const generated = `${sections.interview}\n${sections.review}`;
+      assert.deepEqual(parseInterview(generated, { legacyOnly: true }), structuredAudioItems(record));
+      assert.deepEqual(parseReview(generated, { legacyOnly: true }), record.review.map(item => item.question));
+      assertInterviewMirror(record, generated, locale);
+      assertInterviewMirror(record, source, locale);
+    });
+  }
+}
+
+test('new report dates require canonical JSON without a manually maintained date list', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'structured-rollout-'));
+  try {
+    for (const child of ['docs', 'src/data/interviews', 'src/content/daily', 'src/content/daily-ja']) {
+      mkdirSync(join(dir, child), { recursive: true });
+    }
+    writeFileSync(join(dir, 'docs/structured-interview-policy.json'), JSON.stringify({
+      schemaVersion: 1, requiredDates: [], requiredFrom: '2026-09-19',
+    }));
+    writeFileSync(join(dir, 'src/content/daily/2026-09-21.md'), 'new report');
+    assert.deepEqual(structuredInterviewDates(dir), ['2026-09-21']);
+    assert.throws(() => readStructuredInterview('2026-09-21', dir), /unavailable/);
+    assert.throws(() => validateStructuredInterviews(dir), /unavailable/);
+    assert.equal(readStructuredInterview('2026-09-17', dir), null);
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });

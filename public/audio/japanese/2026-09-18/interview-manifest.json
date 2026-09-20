@@ -44,7 +44,8 @@
       "text": "Claude CodeをCIからHeadless実行するとき、MCPの起動待ちをどう設計しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "411fa9a9f2e982c359e6c2cfc35323d714c103d1aa08232c67a2694b2c4d5669",
-      "durationSeconds": 6.89
+      "durationSeconds": 6.89,
+      "audioSha256": "024e1b9872de4bb3164acb75bfd92c7aae299e252625e274dc1b5e9c38fe78be"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "df9f2936f55593a7c6d9903c74d2aa8a3a3f692d2cb00ed496804c5effcaa882",
       "durationSeconds": 26.864,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "fb873b5e30e91e9790121d1700185b2c6ac88d7ffd6b85b13d6dc605a7aa7ac5"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "RSS型RAGをMCP化するとき、Embeddingの更新をどう設計しますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "8867b1e3bed1f7d65ece1af39dafb6f97929836810b51be4904de85ca18e52d4",
-      "durationSeconds": 6.152
+      "durationSeconds": 6.152,
+      "audioSha256": "61c207d58f674fd996d88c3cb919b68505c1a3857383ce703db406723fff362e"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "b71f039ac1c57d76aedc6016a217411f757698a7769a24803051972b281ce6b5",
       "durationSeconds": 25.576,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "473c227db7e1e95d7cce741d53a3500f691353968d1012cf772a43f01530324a"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "AIエージェントをSOCへ組み込む場合、どこまで自動化しますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "0971e54514a7e23339258b45ca09537b493d49b64bd5f9010477898b0df45c95",
-      "durationSeconds": 5.07
+      "durationSeconds": 5.07,
+      "audioSha256": "e36b5302185acdc46292820f02c328bc1ce2d007e035ddb5bcb591145a35da93"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "4e9c5236ddc3aea0daf944330c005f4ae5fe02fbdab43c8bfcf43eba0df064ba",
       "durationSeconds": 24.824,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "67797d503c1ccfa61c352558e9dcb0fd49db4d6bf35ec83099a03b64037e8a65"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "検索Crawlerを残しながらAI学習を拒否したい場合、何を確認しますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "69b35afc165cfdae1421b5b72b32e77398be97ec2542f11d019b574119de66ae",
-      "durationSeconds": 6.141
+      "durationSeconds": 6.141,
+      "audioSha256": "c2e52917c622d6bbd3f34fc5e13ffde4018e447af605b661207c5443d2c5c3f9"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "c30498e8650f76064d4b2fc870f172009f2658c63129b9254eee060ae313c486",
       "durationSeconds": 26.493,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "7bc31cd1afda202236bccc0448328f476b63b19f08b29a3f12c77cb4cbb03f7c"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "PostgreSQLのSharding基盤を採用するとき、Benchmarkをどう評価しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "3248ac356c18c17a5ad76f0eec66baf0c3b406d2a4794ffdd21b930c9967d28e",
-      "durationSeconds": 6.082
+      "durationSeconds": 6.082,
+      "audioSha256": "bdaf4c73a56da3bd5b1bcb19c24248c42aa636efdbc1d1ba539b5bfbb0117b00"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "c9e3aaed1469a2dc56a2e61112b1afb07da9cd9716b7f236fed775d7a2afadd5",
       "durationSeconds": 27.699,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "1d5f409e7a8fa6d6d7c4481733489c5fd1365fa7347e8e76acd2eb87f8f690f0"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "Claude CodeのMCP起動待ちを0にすれば常に速くなりますか。",
       "audio": "review-question-01.mp3",
       "audioHash": "73865cb7385382b8ae22ee4da6d2aaba1a4ce823b2c4278a8e40bd1b632d6567",
-      "durationSeconds": 5.63
+      "durationSeconds": 5.63,
+      "audioSha256": "216ac58cae27eab7a70418ed89fb70c0835bf934b7bc209bcf91ce6231fd0665"
     },
     {
       "index": 2,
       "text": "RAGの差分更新でURLをIDにする場合、どんな更新を取りこぼしますか。",
       "audio": "review-question-02.mp3",
       "audioHash": "3cb40305265c9b51a9db00301db099962c4841193347fa89f8e3c9024fa21a95",
-      "durationSeconds": 6.118
+      "durationSeconds": 6.118,
+      "audioSha256": "09f57324c64f821e127562519c5a4022d936bdc9c16e8cb7b208227e92cbe8fd"
     },
     {
       "index": 3,
       "text": "Agentic SOCでHuman Approvalを残すべき箇所はどこですか。",
       "audio": "review-question-03.mp3",
       "audioHash": "f4fd5d0ec270c935aa52d1ae8b9898cc984a1ef4a9ad2605ad7acf5300203fc6",
-      "durationSeconds": 5.212
+      "durationSeconds": 5.212,
+      "audioSha256": "cc8b8e8b1297940081b60ec4a918eba94e8dd602f4db9d277f578d160b53f34b"
     }
   ]
 }

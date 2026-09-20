@@ -44,7 +44,8 @@
       "text": "フレームワークの重要なセキュリティ更新が予告されたら、どう対応しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "b83661730e6709ab308d8c1f698f85bcef3269d4b3b7114ad2e7df62244b9bae",
-      "durationSeconds": 5.468
+      "durationSeconds": 5.468,
+      "audioSha256": "8ef4f3e7defb125073014163edb7e503a3e1e97871d9badbcbd30f228d890685"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "df8c6c92ef133373ab181f5116c6edfd6697aca53f358655dbfa81ed5b7744d6",
       "durationSeconds": 29.326,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "c8203555dcc6c557712ec2eb0af4fc4794e8eb03661099c24a8419ac345bd9f5"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "複数のAIクライアントに同じ拡張を配るとき、互換性をどう設計しますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "2d41d1e65d2863da90598707396b2395580d97073dc065987f04e4b5a5f95850",
-      "durationSeconds": 6.162
+      "durationSeconds": 6.162,
+      "audioSha256": "ff09bc798aac4abc0d4fa888f3fcfb4196b4f08570ae20b079b09b7b17160088"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "7b6ceba873920fdd099c9a7b673a92102f4b6d5107410822a5c868ed6f274e3e",
       "durationSeconds": 28.306,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "c53f311fde43e89ef89db6d2f061d3abbc161c927f329273dd1dc8429aa567e9"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "MCPツールの説明に「読み取り専用」とあれば、そのまま信用できますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "00303cbc4001db26bab4a5d8b24af915fdb470474ca5eec32f59ad7ed394a5eb",
-      "durationSeconds": 6.026
+      "durationSeconds": 6.026,
+      "audioSha256": "f4cd8a3029939f3eb1d2cc790b331813228814f8777d9987ea01fdb60eff0a4f"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "bdae524b799596b2ba78c289bfcb4ce5d1317100f7f406d8ff822b5a5d21ba4e",
       "durationSeconds": 26.272,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "6bfe3ff0a935139d9aab0063d3c23311fc0312d4e43753aa7a00f10949e8fa7c"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "日本語のWeb検索をエージェントへ組み込む前に、何を評価しますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "6d9401fc447d17a42776a832f8efaeba46e659c7dde2e235d5c158f1d27ce69e",
-      "durationSeconds": 5.374
+      "durationSeconds": 5.374,
+      "audioSha256": "836bb901027bd9d70f32976ce71bf82451fabd2569a7c09fcf1b9ab2061ae267"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "c73eecfade994af82016066877988f5878e52ce653d8f1504f182911b7dbae9d",
       "durationSeconds": 26.669,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "af220b596eeb3e5368ebfee482cf6a9587b437c33acc179a18255d8715875787"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "CLIの非永続化オプションが要件どおり動いたことを、どう検証しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "807327a571e0bee8a25bc8bfd0cd305550d238889520d49dc9f0105dcc517c6b",
-      "durationSeconds": 5.421
+      "durationSeconds": 5.421,
+      "audioSha256": "c1034cd61a44bdca9cf16b1dd1e729e572b9c27ae847ed8dc043694340cedf59"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "92d3c818a0d05215a9c17b8c3fb2c14fe491a7425ccc3b31be5eca73884d48a3",
       "durationSeconds": 27.491,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "6cb0d64928bc35bbe12eb7606f458f337612cc3e7ea69431810e4f01690c3c86"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "スキーマが正しければ、ツールの動作も説明どおりですか。",
       "audio": "review-question-01.mp3",
       "audioHash": "6d161ce0a86239047f7888ef664e41c323dac6fed58209054bab291786c1a74b",
-      "durationSeconds": 4.515
+      "durationSeconds": 4.515,
+      "audioSha256": "9236f8468ff81f8357517be18e6be3f601d3f4af115e3a54f452282ac39ed85d"
     },
     {
       "index": 2,
       "text": "検索の85%という結果を、日本語サイト全体へ適用できますか。",
       "audio": "review-question-02.mp3",
       "audioHash": "9c2aeac85a094651d4bf38be318d6b03e392b0183bcd39e67098a6d324918d2b",
-      "durationSeconds": 5.978
+      "durationSeconds": 5.978,
+      "audioSha256": "5f428aa7305d9e3308a83376790cbf5f2b0bffd639f83fa0de17ce00add65266"
     },
     {
       "index": 3,
       "text": "ファイルが大きくなっただけで、特定の再開ターンが原因だと言えますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "d7ec8ef4ff182efcbeb5aeba2673d27d72d8fe78f4c74eb1e89c9c90848a9deb",
-      "durationSeconds": 5.165
+      "durationSeconds": 5.165,
+      "audioSha256": "96858927bf84f83fe2ec14b3287b693b8af7d75edf793d3e8e2e5f9b118e1d03"
     }
   ]
 }

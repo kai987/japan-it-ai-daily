@@ -35,7 +35,8 @@ const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base
 </div>
 
 <script>
-  import { prepareSearchItems, searchItems, type SearchItem, type SearchResult } from '../lib/search';
+  import { searchItemsAsync, type SearchResult } from '../lib/search';
+  import { createSearchLoader } from '../lib/search-loader';
 
   (() => {
     const root = document.querySelector('[data-site-search]');
@@ -59,31 +60,15 @@ const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base
     root.addEventListener('pointerdown', (event) => event.stopPropagation());
     root.addEventListener('click', (event) => event.stopPropagation());
 
-    let items: SearchItem[] | null = null;
-    let loadPromise: Promise<SearchItem[]> | null = null;
+    const loader = createSearchLoader(indexUrl);
+    let request: AbortController | null = null;
+    let renderPromise: Promise<void> | null = null;
+    let ready = false;
     let currentResults: SearchResult[] = [];
     let activeIndex = -1;
     let renderVersion = 0;
     let renderedQuery = '';
     let inputTimer: ReturnType<typeof setTimeout> | undefined;
-
-    const loadItems = async (): Promise<SearchItem[]> => {
-      if (items) return items;
-      if (!loadPromise) {
-        loadPromise = (async () => {
-          const response = await fetch(indexUrl, { cache: 'no-cache' });
-          if (!response.ok) throw new Error(`Search index HTTP ${response.status}`);
-          const data: unknown = await response.json();
-          items = Array.isArray(data) ? data as SearchItem[] : [];
-          prepareSearchItems(items);
-          return items;
-        })().catch((error: unknown) => {
-          loadPromise = null;
-          throw error;
-        });
-      }
-      return loadPromise;
-    };
 
     const appendHighlighted = (container: HTMLElement, text: string, query: string): void => {
       const lowerText = text.toLocaleLowerCase('ja-JP');
@@ -103,6 +88,7 @@ const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base
 
     const close = (): void => {
       renderVersion += 1;
+      request?.abort();
       clearTimeout(inputTimer);
       popover.hidden = true;
       input.setAttribute('aria-expanded', 'false');
@@ -144,24 +130,30 @@ const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base
       open();
     };
 
-    const render = async (): Promise<void> => {
+    const renderNow = async (): Promise<void> => {
       const version = ++renderVersion;
-      if (!items) {
-        status.textContent = '検索データを読み込み中…';
-        resultsEl.replaceChildren();
-        open();
-        try {
-          await loadItems();
-        } catch (error) {
-          console.error('Search index load failed:', error);
-          if (version === renderVersion) showLoadError();
-          return;
-        }
-        if (version !== renderVersion) return;
-      }
-
+      request?.abort();
+      const controller = new AbortController();
+      request = controller;
       const query = input.value.trim();
-      currentResults = searchItems(items ?? [], query);
+      ready = false;
+      currentResults = [];
+      input.removeAttribute('aria-activedescendant');
+      status.textContent = query ? 'すべての日報を検索中…' : '最近の記事を読み込み中…';
+      resultsEl.replaceChildren();
+      open();
+      try {
+        const items = await (query ? loader.all(controller.signal) : loader.recent(controller.signal));
+        const results = await searchItemsAsync(items, query, { signal: controller.signal });
+        if (version !== renderVersion) return;
+        currentResults = results;
+      } catch (error) {
+        if (controller.signal.aborted || version !== renderVersion) return;
+        console.error('Search index load failed:', error);
+        showLoadError();
+        return;
+      }
+      ready = true;
       renderedQuery = query;
       activeIndex = -1;
       resultsEl.replaceChildren();
@@ -226,8 +218,16 @@ const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base
       open();
     };
 
+    const render = (): Promise<void> => {
+      const promise = renderNow();
+      renderPromise = promise;
+      void promise.finally(() => { if (renderPromise === promise) renderPromise = null; });
+      return promise;
+    };
+
     input.addEventListener('input', (event) => {
       renderVersion += 1;
+      request?.abort();
       clearTimeout(inputTimer);
       if (event instanceof InputEvent && event.isComposing) return;
       inputTimer = setTimeout(() => { void render(); }, 120);
@@ -242,9 +242,10 @@ const searchIndexUrl = locale === 'ja' ? `${base}ja/search-index.json` : `${base
       if (['ArrowDown', 'ArrowUp', 'Enter'].includes(event.key)) {
         event.preventDefault();
         clearTimeout(inputTimer);
-        if (!items || popover.hidden || renderedQuery !== input.value.trim()) {
-          await render();
-          if (document.activeElement !== input || popover.hidden) return;
+        if (!ready || popover.hidden || renderedQuery !== input.value.trim()) {
+          await (renderPromise && !request?.signal.aborted ? renderPromise : render());
+          if (document.activeElement !== input || popover.hidden || !ready
+            || renderedQuery !== input.value.trim()) return;
         }
       }
       if (event.key === 'ArrowDown') {

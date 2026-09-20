@@ -45,7 +45,7 @@ async function openReport(page: Page, locale: 'zh' | 'ja') {
     await page.evaluate(async (withAudio) => {
       const state = (window as any).__audioRace;
       state.manifest = withAudio ? { interview: [...document.querySelectorAll<HTMLButtonElement>('.report-speech-button')]
-        .map((button, index) => ({ text: button.dataset.speech, audio: `race-${index}.mp3` })) } : {};
+        .map((button, index) => ({ text: button.dataset.speech, audio: `race-${index}.mp3`, audioSha256: 'b'.repeat(64) })) } : {};
       state.resolve();
       // Drain the controlled fetch/json microtasks, not a network timing guess.
       await new Promise(resolve => setTimeout(resolve, 0));
@@ -63,7 +63,12 @@ for (const locale of ['zh', 'ja'] as const) {
       await buttons.nth(1).click();
       await expect(buttons.nth(0)).toHaveAttribute('aria-pressed', 'false');
       await release();
-      expect(await page.evaluate(() => (window as any).__audioRace.audios.map((a: any) => a.url))).toHaveLength(1);
+      const urls = await page.evaluate(() => (window as any).__audioRace.audios.map((a: any) => a.url));
+      expect(urls).toHaveLength(1);
+      const mediaPath = urls[0].startsWith('https:')
+        ? `/japanese/2026-09-18/race-1--${'b'.repeat(64)}.mp3`
+        : `/japanese/2026-09-18/race-1.mp3?v=${'b'.repeat(64)}`;
+      expect(urls[0].endsWith(mediaPath)).toBe(true);
       await expect(buttons.nth(1)).toHaveAttribute('aria-pressed', 'true');
       await expect(buttons.nth(1)).not.toHaveAttribute('aria-busy', 'true');
       await buttons.nth(1).click();

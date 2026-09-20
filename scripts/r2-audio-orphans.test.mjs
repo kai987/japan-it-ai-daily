@@ -1,5 +1,10 @@
 import { expect, test } from 'vitest';
-import { analyzeR2Orphans, parseRemoteObjects } from './audit-r2-audio-orphans.mjs';
+import { analyzeR2Orphans, listLocalAudioKeys, parseRemoteObjects } from './audit-r2-audio-orphans.mjs';
+import { createHash } from 'node:crypto';
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
+import { versionedAudioKey } from '../src/lib/audioVersion.mjs';
 
 test('classifies only legacy review recordings as safe auto-prune candidates', () => {
   const local = [
@@ -66,4 +71,21 @@ test('parses AWS-style object JSON or bare key arrays', () => {
   expect(parseRemoteObjects('["japanese/b.mp3"]')).toEqual([
     { key: 'japanese/b.mp3', size: null },
   ]);
+});
+
+test('current immutable keys are expected inventory and older versions are audit-only', () => {
+  const root = mkdtempSync(join(tmpdir(), 'r2-immutable-inventory-'));
+  const key = 'japanese/2026-09-20/review-vocab-01.mp3';
+  const bytes = Buffer.from('current version');
+  try {
+    mkdirSync(join(root, 'public/audio/japanese/2026-09-20'), { recursive: true });
+    writeFileSync(join(root, 'public/audio', key), bytes);
+    const current = versionedAudioKey(key, createHash('sha256').update(bytes).digest('hex'));
+    const old = versionedAudioKey(key, '0'.repeat(64));
+    expect(listLocalAudioKeys(root)).toEqual([current, key].sort());
+    const audit = analyzeR2Orphans(listLocalAudioKeys(root), [key, current, old].map(key => ({ key, size: 10 })));
+    expect(audit.missingRemote).toEqual([]);
+    expect(audit.safeLegacy).toEqual([]);
+    expect(audit.otherOrphans.map(item => item.key)).toEqual([old]);
+  } finally { rmSync(root, { recursive: true, force: true }); }
 });

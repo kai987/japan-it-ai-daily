@@ -1,3 +1,4 @@
+import { annotateAudioFileVersions, synchronizeAudioFileVersions } from './audio-file-versions.mjs';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { basename, join, resolve } from 'node:path';
@@ -522,6 +523,7 @@ for (const date of targetDates) {
     grammar: manifestGrammar,
   };
 
+  annotateAudioFileVersions(manifest, join(root, 'public', 'audio', 'japanese'));
   writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
   console.log(`完成 ${date}：生成/更新 ${generated} 个，跳过 ${skipped} 个，迁移 hash ${migrated} 个，清理重复复习音频 ${pruned} 个。`);
 
@@ -541,3 +543,6 @@ console.log(`清理重复复习音频：${totalPruned} 个 MP3`);
 console.log(`Voice: ${speaker.name} / ${style.name} / ${STYLE_ID}`);
 console.log(`Speed: ${WORD_SPEED.toFixed(2)} / ${EXAMPLE_SPEED.toFixed(2)}`);
 console.log('========================================\n');
+
+// Refresh later review references if a source recording was regenerated.
+synchronizeAudioFileVersions(join(root, 'public', 'audio', 'japanese'));

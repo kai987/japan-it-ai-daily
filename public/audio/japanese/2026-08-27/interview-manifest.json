@@ -44,7 +44,8 @@
       "text": "ノーコードのエージェント開発と、本番の安定性をどう両立しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "4683d92dcd3fac480917600107b485824d378a4bd8481cb0608b01d277d8a232",
-      "durationSeconds": 5.09
+      "durationSeconds": 5.09,
+      "audioSha256": "65902494c692e8318d3302790036859378af2b158cc07b5a47c49b7ff52b8af2"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "b831eeb5c96c84ac26d5c632f071f541bc7f772090d7a96504d0a0adafd7a1da",
       "durationSeconds": 29.56,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "ae6723d0a091745adf29f96ef1415988dc756a655281ba4f1a07d2a844d2f719"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "AIを使える人が一部に偏る場合、組織として何を変えますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "cc6ef77ffa1917447fe7dc94e8016dd2e483dc884d0fea6f9dbbcc136ebfa73c",
-      "durationSeconds": 5.409
+      "durationSeconds": 5.409,
+      "audioSha256": "fbb1d66e28649d533f234c078d40b784021b7190a1a8c4a4ba9c7bdbb1c94ea2"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "c11958483187b5a8ef2987692547c7fdb3a0346a702ef970fa7234f5e6ff156b",
       "durationSeconds": 28.712,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "deb417ba12a5bab53aeb15e6e9eab6d74b494f2deb511300ff021e7019462c61"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "CopilotのMCP接続を社内で制限するとき、何を検証しますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "5d612d8f439e974a520b2024a5579a48d13dc92d9244b60f40a35bf64d259289",
-      "durationSeconds": 6.026
+      "durationSeconds": 6.026,
+      "audioSha256": "962888ee496a536b4aced186ed7684124e93cfe202852a89ec1edbcf9175c0ea"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "6e897e69b4f69cf2f893822bf297824401e675f6be496debe1f5c4dc2a429398",
       "durationSeconds": 26.39,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "1cb38ac4c09793a46e4293975433fb40ae60b5899d74f2c7176e557200a8ede3"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "フロントエンドがAPI実装を待たずに進めるには、どうしますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "dd6347c012fcfa93748c6d2c0b2ab1bc2eac527d2a21800fd186aa5908e65dc2",
-      "durationSeconds": 4.956
+      "durationSeconds": 4.956,
+      "audioSha256": "1652d73d9aa3ff3c67e4219cf002858085b55f81f52de632ca0d8b87cea5791f"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "2f191ee1eab021643311705ac0b534a41fb8605f12d76380fc025dd5515a927c",
       "durationSeconds": 30.275,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "e592de33c4b2daca18511ce3260d7b8e1725082cef975a3f1fd60793e4e55226"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "ローカルのコーディングエージェントを採用するとき、何を比較しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "54dd67b81698dcbed803867a339563ce8447d9019f68c8b63a52a294d96ae465",
-      "durationSeconds": 4.989
+      "durationSeconds": 4.989,
+      "audioSha256": "5346a751a41ed6ba7d527d7bee4d31ffb656aea159a760f75d566f139b58579f"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "47843755c3b6f171ae67ab41f74ac12c338c3e52e4597772fef1c8caad9afae9",
       "durationSeconds": 28.016,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "3445a5ff1c5e927a0fb24336831746a6ea9c103c00d2698c82b48801671935ed"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "Namespaceを分ければ、実行時の認可も不要ですか。",
       "audio": "review-question-01.mp3",
       "audioHash": "5105d4064f0b9f1a578630779debb8bc92a34138e719a6c024db234a7e9e94de",
-      "durationSeconds": 4.248
+      "durationSeconds": 4.248,
+      "audioSha256": "d2ccf149c06842041bd893d8925da94bb18d5f8232f49e42488661842b7dd527"
     },
     {
       "index": 2,
       "text": "QAAPの49.4%削減は、すべてのテスト業務の値ですか。",
       "audio": "review-question-02.mp3",
       "audioHash": "e16fda6d33a113cde6c47516f49ddf87d7a9e633cb214c094cc2b52d6cb174a2",
-      "durationSeconds": 6.141
+      "durationSeconds": 6.141,
+      "audioSha256": "fe0995cace5102a72be1d66771228a50c41929459ee6b0f24a34aba1804b68f0"
     },
     {
       "index": 3,
       "text": "TypeSpecの型があれば、JSONから判別項目を省けますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "8d430c43618104f2b38d797609e378316e993cef280fc007cc3e97f3a356cbfa",
-      "durationSeconds": 5.142
+      "durationSeconds": 5.142,
+      "audioSha256": "7fa019dd544ab94d4663877c2d973b71ed13b96d8290ac1ee5a2e3ee2c7261f9"
     }
   ]
 }

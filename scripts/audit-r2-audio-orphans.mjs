@@ -1,6 +1,9 @@
 import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative, resolve, sep } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { createHash } from 'node:crypto';
+import { versionedAudioKey } from '../src/lib/audioVersion.mjs';
+import { managedMp3Key } from './audio-publication.mjs';
 
 const MANAGED_PREFIX = 'japanese/';
 const LEGACY_REVIEW_RE = /^japanese\/\d{4}-\d{2}-\d{2}\/(?:review-vocab|review-example|review-grammar-example)-\d+\.mp3$/;
@@ -20,7 +23,14 @@ export function listLocalAudioKeys(root = process.cwd()) {
       const full = join(dir, name);
       const stat = statSync(full);
       if (stat.isDirectory()) walk(full);
-      else if (stat.isFile()) keys.push(normalizeKey(relative(base, full).split(sep).join('/')));
+      else if (stat.isFile()) {
+        const key = normalizeKey(relative(base, full).split(sep).join('/'));
+        keys.push(key);
+        if (managedMp3Key(key)) {
+          const hash = createHash('sha256').update(readFileSync(full)).digest('hex');
+          keys.push(versionedAudioKey(key, hash));
+        }
+      }
     }
   };
   walk(base);

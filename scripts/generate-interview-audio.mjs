@@ -1,3 +1,4 @@
+import { annotateAudioFileVersions, synchronizeAudioFileVersions } from './audio-file-versions.mjs';
 import { parseInterview, parseReview } from './interview-audio-content.mjs';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -333,6 +334,7 @@ for (const date of targetDates) {
     interview: manifestInterview,
     review: manifestReview,
   };
+  annotateAudioFileVersions(manifest, join(root, 'public', 'audio', 'japanese'));
   writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
   console.log(`完成 ${date}：生成/更新 ${generated} 个，跳过 ${skipped} 个，迁移 hash ${migrated} 个。`);
   totalGenerated += generated;
@@ -349,3 +351,5 @@ console.log(`迁移 hash：${totalMigrated} 个 MP3`);
 console.log(`Voice: ${speaker.name} / ${style.name} / ${STYLE_ID}`);
 console.log(`Speed: ${INTERVIEW_SPEED.toFixed(2)}`);
 console.log('========================================\n');
+// Refresh later review references if a source recording was regenerated.
+synchronizeAudioFileVersions(join(root, 'public', 'audio', 'japanese'));

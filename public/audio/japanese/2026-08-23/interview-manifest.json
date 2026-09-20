@@ -44,7 +44,8 @@
       "text": "AI主導の開発フローを導入するとき、何を設計しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "39b7343b9d1a71dde573983a37a600dc1091ef6e9361c4d9e81433a1cf2241ba",
-      "durationSeconds": 4.898
+      "durationSeconds": 4.898,
+      "audioSha256": "6dc320501e59f79f015f34b52b60db5c3897ae103943d5d457c76844e1086668"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "6b6d01c70c928ec4b48e3f0ac2ae4ceb0123bf7b906bd6c39ec489a3265f0275",
       "durationSeconds": 27.896,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "7d17d430d9e27027b0f86fc07aba0e02329067f164ddfb8228c54eb81013ca60"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "AI開発ツールを遠隔から使う際、どの不具合を優先して確認しますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "f8df7160502367c1ae5f20bb06b2d3cbb309093571897027422c93701531506a",
-      "durationSeconds": 5.897
+      "durationSeconds": 5.897,
+      "audioSha256": "9a35d190db62fd2312e6512f55bd15a85273b5e4881c53195f0c1607456304bd"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "e521bd46e3281e114bd18f72b7e9d095486478121fd897eec0fddf35e6c61b10",
       "durationSeconds": 26.411,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "4b50e8323368cfaa96521eed034ece410907964131bfc4e81336be9e95b4fd54"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "学習型のモデルルーターを、生成型の判定役とどう比較しますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "49a0bb4c042712abcae9735c837934459d8c026791bc40d96a7dc29383eb6872",
-      "durationSeconds": 5.467
+      "durationSeconds": 5.467,
+      "audioSha256": "67c17bccfbee02baef07594d4c9f20eb93ade9a6cfc2f6b3b8950a96e58d691d"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "3bae46fcb145a65ef5c4080fd6f48dd43302a62f03cf2a9e41cf7036d616ddb5",
       "durationSeconds": 28.78,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "dafe9be4784881bf697c58fceb2ea2809ca81b88a1a333f1d456e35d85fc60f1"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "APIの値下げを、自社の費用見積もりへどう反映しますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "6e8928246527f8a20f3b0b60fc546b5d0b343ffac319bf218682d712ec2e8ab6",
-      "durationSeconds": 4.687
+      "durationSeconds": 4.687,
+      "audioSha256": "18ca3fb2fabcbc33b4f638151205ff315dca7675723ec4c75ebfedac92e6e8b4"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "5eb5bd3ffec107bc0a855c7d9f9aee7818301108cf01cd8812c062032378fe7e",
       "durationSeconds": 27.864,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "5a0228af57d9bb67597abb6aa6ab66e5398ca3c1d252eea1fd8004c2fd5f405c"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "VLMに検査プロンプトを作らせる場合、どこを検証しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "f5c4f6161a5983918b9dbac67cd2f28c6408b8af01b6ac0c98d71142f7ba280c",
-      "durationSeconds": 5.107
+      "durationSeconds": 5.107,
+      "audioSha256": "2a71026e258aba6ed80ab596ca0ce766698b15e299793574ea483d5c4c881b2a"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "c2c31cb2678c1e901091850ea92cc9cf740a427e8f95af2a405907bd4a25d143",
       "durationSeconds": 27.682,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "94728adf0e4ebdf8d6a788a6255940f2d588c919dd78b0d794a39f758aa61e82"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "重複しない学習ファイルなら、長期運用でも整理は不要ですか。",
       "audio": "review-question-01.mp3",
       "audioHash": "0bb529d18d63864fc5c2a30b05eb8a191e7eda2042127b5fd7f8c3398eb95505",
-      "durationSeconds": 4.98
+      "durationSeconds": 4.98,
+      "audioSha256": "b5157cbadcb884ce02f0e6793604017689d50c985ab8be4777ceceb27fc17f36"
     },
     {
       "index": 2,
       "text": "AUCが高いルーターなら、固定しきい値でも正しく振り分けられますか。",
       "audio": "review-question-02.mp3",
       "audioHash": "1415c850cc62f0699a127a290ffb8b7b9d822b4c3518ac85446987c93a639b80",
-      "durationSeconds": 5.549
+      "durationSeconds": 5.549,
+      "audioSha256": "5fef5e0a1b81f8a4e3aee86dd6bcb33de3c9ad7ec6b60637547eb13a8abb32a8"
     },
     {
       "index": 3,
       "text": "最初の検査仕様で見逃しゼロなら、4×4が最善と結論できますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "d36da4a101bfe24e55f5c1705574f6b51caa1e52be4c145e1837d5a2742cba83",
-      "durationSeconds": 5.966
+      "durationSeconds": 5.966,
+      "audioSha256": "e8e16cc828bd09e6341d17c760d766a0c92244e4e90b5b805700507d73c0ac82"
     }
   ]
 }

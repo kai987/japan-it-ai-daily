@@ -44,7 +44,8 @@
       "text": "Claude Codeで大きな機能を実装させる場合、どのようにHarnessを設計しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "4993b2f773f98c2c7cbfa2baa16c5c91820a4e54c02a469e4db1970f5ef041a1",
-      "durationSeconds": 5.908
+      "durationSeconds": 5.908,
+      "audioSha256": "716de6401b9c6edc424271da3284b11fafc3ab52b50262388bbd35268fecf40e"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "ac3c9edebd6e6072f396679b58b27bd603f417bfabe7683d3ec42c1e50e56740",
       "durationSeconds": 27.605,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "e72f6be1fe8c203c0b9883f4f9ee7281debabaa39ad1efe96ea4ef08a634a336"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "高トラフィック環境でTail-based Samplingを運用するなら、何を設計しますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "e9ce2e36c5e8be49de2996c4f9f82a84600185f765d1d945faacd463365893e2",
-      "durationSeconds": 5.978
+      "durationSeconds": 5.978,
+      "audioSha256": "fbe3b47aed2641b765c300aaf69ee0f7aa0c0a0ac99a8efb7b5a97120ebc379a"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "4a0eb15d176f13ee2abbce50cd4b4c6c587480fd7370ab84469d3f2a00eb002c",
       "durationSeconds": 26.147,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "d57ee5bf8ffc6f00f37b8d1a2ccf874bb2026e589d3752633c560445db209b19"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "Coding AgentのCommand許可リストをSecurity Boundaryとして使えますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "918c2fce6b82e8994a54ebe68b7f499526974c07c896eb55468bbcb22babd99e",
-      "durationSeconds": 5.514
+      "durationSeconds": 5.514,
+      "audioSha256": "81b519f3cd46d32b00a1c0e98dad48b58c48dfc3c07c49720f34df62e6cc23cc"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "f6809cb3910e8e0a7a761f9d9b7633773cf44fe31993264427c25d1969dd1ea7",
       "durationSeconds": 30.362,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "72b014ce18dfc3d204edb9f1f6649a4bd78abf487dfec30f4b137cef5762aae1"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "AI開発PlatformのFrontend Preview基盤を高速化するとき、Benchmarkをどう読みますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "03d18fbc23a2f899f9ae50a3baec09d9d9d9923586140cd0f022b52af32f056a",
-      "durationSeconds": 7.186
+      "durationSeconds": 7.186,
+      "audioSha256": "e25b391b42fd96bd878d1b94cba4e6ae905aea18804f627a5ad033e50c77eb9b"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "208021e83997b479f3673397ec82c2b1c34a7a44bd0c0cb54c431bdeceb36062",
       "durationSeconds": 31.564,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "4a5d4a4760d5f775d048262605c11951756ad9cb34adf82fbee97c1d8e8e8744"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "Realtime Voice AgentでToolを非同期実行する場合、何を設計しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "3625ef0653e5c470a6f40e070136163152463d6c0530b317061d9d6c423d551e",
-      "durationSeconds": 5.943
+      "durationSeconds": 5.943,
+      "audioSha256": "d5f0e4420975d24d6b3feee5f3a67ce0a0bbd0a036657dc8634a9796d8e49e4e"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "5286683eef0089b8fa11f89f53d84376380183c7fd7786382caa38629a2e9233",
       "durationSeconds": 26.966,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "43654b357c2646fccaf12d32fcf0f9884cdc75dc5b6e4cac854faabd035f5753"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "AI Coding Agentの「完了」をModelの自己申告に任せないため、どのようなGateを置きますか。",
       "audio": "review-question-01.mp3",
       "audioHash": "0f3df5e6d8b03b7b191aceab7f76be9be63e5a39a847458d1f783a8f898f1487",
-      "durationSeconds": 6.93
+      "durationSeconds": 6.93,
+      "audioSha256": "a0d4950c5d918ddd962edaa0b40f99fbd1cf77b90eb2cf793d2950c8b1666ef9"
     },
     {
       "index": 2,
       "text": "Tail-based Samplingを大規模環境へ入れるとき、保存率以外に何を見ますか。",
       "audio": "review-question-02.mp3",
       "audioHash": "bae8183e4e78bc1038cb5c3ff69e862fd0445bbfbeb5f262499d8de42c26cb75",
-      "durationSeconds": 6.373
+      "durationSeconds": 6.373,
+      "audioSha256": "980161dc6145ffbdb787d5a678ba0cfc9983cb1140438ec6886156f009b57b58"
     },
     {
       "index": 3,
       "text": "Coding AgentのHuman ApprovalがあってもSandboxが必要な理由は何ですか。",
       "audio": "review-question-03.mp3",
       "audioHash": "e1ff0daa889b5e0f9350a98ea5cdec4428963decdb9b02877808e05cb7e1a646",
-      "durationSeconds": 5.722
+      "durationSeconds": 5.722,
+      "audioSha256": "f7466f9ffb68d1e3d8c57b20576e559e815fcfe9bbb92e4d76aa7726b3b957b1"
     }
   ]
 }

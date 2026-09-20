@@ -265,7 +265,11 @@ INTERVIEW_DURATION_HARD_MAX
 
 Section 3 の `質問 + 30秒回答` は、日中両モードで同一文字列を使います。
 
-canonical shared text は中国語モード側に置き、日本語モードでは逐字コピーします。
+2026-09-18の移行済み日付と2026-09-19以降は、`src/data/interviews/YYYY-MM-DD.json` にcanonical shared textを置きます。質問・回答は原文記事から作成した同一の日本語文字列を両モードで使い、復習カードの要点は`points.zh`と`points.ja`で管理します。過去の未移行日付は既存Markdownと互換Parserを維持します。
+
+`docs/structured-interview-policy.json`の`requiredFrom`以降は、新規日付を一覧へ手作業で追加しなくてもJSONが必須です。JSONが欠落・破損している場合、Markdownへの自動Fallbackは禁止します。5組のQ&A、3問の復習カード、Top 5との参照・順序、両モードの表示用コピーを検証します。
+
+JSONから表示用Markdownを生成するには、`npm run interview:render -- --date YYYY-MM-DD --locale ja --section interview`を使います。`--locale zh`、`--section review`も指定できます。出力は標準出力のみで、既存ファイルや他のSectionを上書きしません。中国語本文を日本語生成の出典には使いません。
 
 次の項目は完全一致が必要です。
 
@@ -285,12 +289,15 @@ AivisSpeech の `interview-manifest.json` はテキストを厳密一致で音�
 
 ```bash
 npm run bilingual:check-interview
+npm run interview:check
 ```
 
 実装:
 
 ```text
 scripts/sync-bilingual-interview.mjs
+scripts/validate-structured-interviews.mjs
+scripts/render-interview-sections.mjs
 ```
 
 ---

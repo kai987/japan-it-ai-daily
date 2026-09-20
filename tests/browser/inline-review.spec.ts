@@ -24,7 +24,7 @@ for (const locale of ['zh', 'ja']) {
     }, locale);
     // The speech interaction is tested with a deterministic browser-TTS stub,
     // not as a claim of audible playback or a newly generated recording.
-    await page.route('**/*.mp3', (route) => route.abort());
+    await page.route(/\.mp3(?:\?|$)/, (route) => route.abort());
     const root = `/japan-it-ai-daily/${locale === 'ja' ? 'ja/' : ''}`;
     await page.goto(`${root}daily/2026-09-18/`);
     await expect(page.locator('article.prose')).toBeVisible();

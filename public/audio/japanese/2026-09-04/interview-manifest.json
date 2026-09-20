@@ -44,7 +44,8 @@
       "text": "AIエージェントの所在を把握した後、何を管理しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "50486a7e406292574b940eedac33d8366e77141a8a9881015ae1e1cf8a300f7a",
-      "durationSeconds": 4.422
+      "durationSeconds": 4.422,
+      "audioSha256": "ebe857856125ca42889cf1c6cfe17d1b6f3ac9fb42dee0238450368d1cbc0ebb"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "d5c1f60358acd8c093cc899c2ba65413439960bf16bc779654bcad77577ca3a2",
       "durationSeconds": 29.012,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "5691a5fe4814dcedccc38fd0e3df41e616a0c8d4896211ef03dc306aceff80e3"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "複数利用者のAIメモリを、どう分離しますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "50690e5a98b38d1ac3538fcb497224990fb8bcd7bd54704c0859b14efafc4031",
-      "durationSeconds": 3.691
+      "durationSeconds": 3.691,
+      "audioSha256": "0d444e7e0f89d9d92c1b841d151c24f09bd9728cd0ed1e97a7ddd99390c5447f"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "96d94f3e9758ff919ddea8db879753c0aa9dca0ff82a9342c77a54babb5a7a4c",
       "durationSeconds": 27.773,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "cbab2586d71d5e5fd321fc1e6c7e97759cc82fc00d01beb8c4d59789f12034d3"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "開発チームごとに、AIの既定モデルを変えるならどう管理しますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "70f8c6e4f1c7c0f9cf1af01d959d808cb996238601bde5ade9fb2bf300776553",
-      "durationSeconds": 5.189
+      "durationSeconds": 5.189,
+      "audioSha256": "bf0e160c53b80ae3e15b2501a70f67cc9acc02dba5f049566983d98cbab22fa3"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "c69aa5bd1644b676cdd3ff5b4c7723c1b1d9c3bff6f3be57d0a5b7e0c5bbd415",
       "durationSeconds": 27.256,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "614bcd3cb1b4012faeb70633e16ca495f09082484628c52ffc883d0bfc040097"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "AIが分析するデータ基盤で、DBの速度以外に何を整えますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "e0c504d5dfeb70d8ed13133f766d26f92ccee9f886cd3e1fe2a64e3eb02e5205",
-      "durationSeconds": 5.62
+      "durationSeconds": 5.62,
+      "audioSha256": "62913293675b057aa686ec5dd12d95084d456cb1d7414cbdacc91d15ea0102c0"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "ecac49a0164948534583100190f1fd60605c59467479941ac11cae510e4395e7",
       "durationSeconds": 28.649,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "77dd4e8ac5f5017865672106fa26a210d670b81557754aa9e1acb948f7b30e38"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "同じAIを複数の窓口へ公開するとき、何を共通化しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "1cc7889f5916455b5cb00211dcc6455f1412ff5c783d9256a5572050999f1a19",
-      "durationSeconds": 5.488
+      "durationSeconds": 5.488,
+      "audioSha256": "4b92149327de3efa1c7ffd9ecfa9011c2033860527622066a33c366107647aec"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "f87f0ad99f6eb83ba634dff5a35a5bdc1d94824c3c28b14305d2393db42364ce",
       "durationSeconds": 29.261,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "cb59063b4b4f704aaff7a4331d313b974438570ce28e361154b86ea86972420b"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "可視性と、認証と、認可はどう違いますか。",
       "audio": "review-question-01.mp3",
       "audioHash": "000a3de5eb08dff1af2c8594bb51adc1ec98451035d8b9e0abe5fcb5a1566406",
-      "durationSeconds": 4.109
+      "durationSeconds": 4.109,
+      "audioSha256": "4ad4f9716fb18d2ef7b9e4df9734863b6d30d14cfd6b0c8bcf087eb36df1a9ad"
     },
     {
       "index": 2,
       "text": "既定モデルの設定で、何が自動的には決まりませんか。",
       "audio": "review-question-02.mp3",
       "audioHash": "82334b8d484b63a8f22b083d7a0e3f9d8f65629746c3759c64f3d0b6a6e837be",
-      "durationSeconds": 4.608
+      "durationSeconds": 4.608,
+      "audioSha256": "af45849852cc16d8fc3a405f3b6d3fca1c1f0a43d1dffe3e18a372080f69be2a"
     },
     {
       "index": 3,
       "text": "データ基盤やchannelを共有するとき、何を分離しますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "6f5da1ea863ca0060a854d97c9c6d41b403f3b9e7c5792a477d621aaec5e036b",
-      "durationSeconds": 4.852
+      "durationSeconds": 4.852,
+      "audioSha256": "c7f038bc0a557fcb7a9dd7b57d3813865d86baaf6f6053d356919090be4b0585"
     }
   ]
 }

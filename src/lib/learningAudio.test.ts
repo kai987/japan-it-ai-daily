@@ -4,6 +4,14 @@ import { learningRecordingFiles } from '../../scripts/verify-audio-integrity.mjs
 const item = { term: '耐性', reading: 'たいせい', exampleJa: '耐性を確認します。', word: 'vocab-07.mp3', example: 'example-07.mp3' };
 const target = { kind: 'word', term: '耐性', reading: 'たいせい', text: 'たいせい' };
 describe('content-addressed learning audio mapping', () => {
+  it('selects each real recording byte version, including cross-day review references', () => {
+    const wordSha256 = 'a'.repeat(64);
+    const exampleSha256 = 'b'.repeat(64);
+    const manifest = { items: [{ ...item, audioDate: '2026-08-12', wordSha256, exampleSha256 }], grammar: [{ exampleJa: item.exampleJa, example: 'grammar-02.mp3', exampleSha256 }] };
+    expect(resolveAsset(manifest, target)).toEqual({ file: item.word, audioDate: '2026-08-12', sha256: wordSha256 });
+    expect(resolveAsset(manifest, { ...target, kind: 'example', text: item.exampleJa })).toEqual({ file: item.example, audioDate: '2026-08-12', sha256: exampleSha256 });
+    expect(resolveAsset(manifest, { kind: 'grammar-example', text: item.exampleJa })).toEqual({ file: 'grammar-02.mp3', sha256: exampleSha256 });
+  });
   it('keeps the existing filename when a word changes display position', () => {
     expect(resolve({ items: [item] }, target)).toBe('vocab-07.mp3');
   });

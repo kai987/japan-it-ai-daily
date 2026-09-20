@@ -2,6 +2,7 @@ import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from '
 import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { policy, referenceMatches } from './daily-quality-policy.mjs';
+import { audioManifestState } from './audio-manifest-state.mjs';
 
 const root = resolve(process.cwd());
 const audioRoot = join(root, 'public', 'audio', 'japanese');
@@ -83,6 +84,13 @@ if (fromArg) dates = dates.filter((date) => date >= fromArg);
 if (!dates.length) {
   console.log(`Interview audio duration: no audio date directories to check${fromArg ? ` (from ${fromArg})` : ''}.`);
   process.exit(1);
+}
+const pendingDates = dates.filter((date) => audioManifestState(root, date) === 'pending');
+if (pendingDates.length) console.log(`Audio not generated yet (optional): ${pendingDates.join(', ')}`);
+dates = dates.filter((date) => !pendingDates.includes(date));
+if (!dates.length) {
+  console.log('Interview audio duration: no generated recordings to measure.');
+  process.exit(0);
 }
 if (spawnSync('ffprobe', ['-version'], { stdio: 'ignore' }).status !== 0) {
   fail('找不到 ffprobe。安装 ffmpeg 后会同时提供 ffprobe。');

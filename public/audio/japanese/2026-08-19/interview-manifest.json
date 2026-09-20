@@ -44,7 +44,8 @@
       "text": "AIが多くの脆弱性を挙げたとき、どれから対応しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "2927a512769ef7b5d90aef3e4ee1b5ab3c810170cc3dc947ffa802d9cf514e2c",
-      "durationSeconds": 4.641
+      "durationSeconds": 4.641,
+      "audioSha256": "9a18cd017b60a67e22ea25a8ddd6dbaa05e2422d3667bee6259a8e684f4e1c75"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "008eebdb04350e760b9b1d92f2644b8992ee41d076f455b3abd823a03f6a8ab3",
       "durationSeconds": 26.586,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "89fb4be917e75960e939e936b68b87d2dc9f0a3e1e662223d95038c4a5958783"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "エージェントにサンドボックスがあれば、生成物も安全ですか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "10cb6cc723ea2525ab191cf9cafed1f4fcdfbcd2585dfe7c8ef7cc081abba87f",
-      "durationSeconds": 4.516
+      "durationSeconds": 4.516,
+      "audioSha256": "4c5f4cea84f2b4110093b2bc416e4bb2559a638aa03ab544446af1ee3d1fa892"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "e87d85be6c2d95797a702018740314a849e5ff7ba747c75fd91e9cfb5d0e27d5",
       "durationSeconds": 27.818,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "9d7ce783dc8792bc7a916e0018c4c56d1377784a174eb70e4e58f8fa0c11f980"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "外部APIを使うAIアプリには、必ずMCPを入れますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "38b36a2e477240437112db2cb5c8ce22fec442928296d04a9c9a3d618aac880c",
-      "durationSeconds": 5.224
+      "durationSeconds": 5.224,
+      "audioSha256": "aea41a04afeeb1a3c90f87bece6ccab080497f5a72594fc980a22f709c6be775"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "52611098e468fba5da441fc16be969778ae798112b1ea96dfc1f2742d4be0d4d",
       "durationSeconds": 27.814,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "0bb29464beab806a9cbf6fd38ca24937e084f71612cbb3a136238064db8b4fe5"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "バックエンドの監視だけでは分からない画面の障害を、どう調べますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "b5d7bccf92dc3fabddca514d5d4828fc1d7f7d26e49b0be5f1d29a273b2de343",
-      "durationSeconds": 5.107
+      "durationSeconds": 5.107,
+      "audioSha256": "eff86f6f2b3aa0a9b9c1fec90fb69dd173be0dff6d8b21275745d7ffbb37a837"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "6518af5ec3ddfb40cab0484b1196662d4838af7752ac77342ba8d371bc8b48f0",
       "durationSeconds": 27.435,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "c17448f96af15d834b1bf27ded89019071f8c598ed33026ca3b3c0668b571201"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "機密データを外部で計算するとき、FHEは何を変えますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "22010f5081396688fdcf2d929e5faf79591aaa37cfbe9eceea4c3edf1c913904",
-      "durationSeconds": 5.072
+      "durationSeconds": 5.072,
+      "audioSha256": "9d8d145b454d007ecef425e3b6c725325c3e60c4e5e59b7bd7dd6b06216d59d2"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "68b5909edcf89060091b68a0e5f67d8099f17d335b0d7032df8869f8732e6f87",
       "durationSeconds": 27.074,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "66a318197c08e5ea551af661d9ec82dacad3bd1eabb427698d5428eb00470f58"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "Zedの隔離がある場合、どの経路が対象外ですか。",
       "audio": "review-question-01.mp3",
       "audioHash": "bb3b82ca30cd3f5011e7a782eb6d9d6b4048ee0d9aea2a7927fabcf2e519173f",
-      "durationSeconds": 4.12
+      "durationSeconds": 4.12,
+      "audioSha256": "e1fadb28ce1229f72afa1f2828939dbaf1f146bda5aa7f4d06c893d5230ea899"
     },
     {
       "index": 2,
       "text": "MCPを入れると下流APIの認証情報は不要ですか。",
       "audio": "review-question-02.mp3",
       "audioHash": "9f5156f30e1997096dd3a32091e27331d6f1fe0edeaae4c1c462f86ed813736e",
-      "durationSeconds": 4.736
+      "durationSeconds": 4.736,
+      "audioSha256": "64907125572f0a479eb6a816839a819512171ef3e5125f0b86f442982b3670cd"
     },
     {
       "index": 3,
       "text": "HEIRの応用例から、平文と同じ性能だと言えますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "0d496fe328b384056043d4bfb4052c6af0cb0a6d596af97ea8232eff7f52f046",
-      "durationSeconds": 4.19
+      "durationSeconds": 4.19,
+      "audioSha256": "0c52220e5c8c85abb2aa88c53ec2c293815224f5f93b050cf61bb621e13d17c4"
     }
   ]
 }

@@ -44,7 +44,8 @@
       "text": "秘密情報をGitへ入れなければ、AI開発環境は安全ですか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "ed72a7ad2fc32a2820cc2820797a38ec3a135c121718c363231d6f77151a154d",
-      "durationSeconds": 5.339
+      "durationSeconds": 5.339,
+      "audioSha256": "aeeb5aa628a493f86218698f1058d4b3412796fd3a1db6105bcb12e1e95efb38"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "8c09f89a7c251401429b6972ce6a331da7dfe7e33f5b0a7a8484b449bd53f633",
       "durationSeconds": 28.167,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "e7a92b4e1eb83b68dd586e7b732e2ecfe4125407bdbfcad2280c2270c3fa0bc4"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "運用AIの調査結果を、自動修復へつなぐには何が必要ですか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "e760e256bda443f7a28a346e9855bdfeea13a6e1c47573e283bd905822e8f713",
-      "durationSeconds": 5.41
+      "durationSeconds": 5.41,
+      "audioSha256": "72e0f812c543a607b8d93ed50506a5ec1bc47f72fa9e16314c3856d1d66fb0d6"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "5c1eb3757c4f86d33e687dff80012eb499daeda1dd5f448bac069e0b2f1d58f1",
       "durationSeconds": 27.377,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "995b6a334f519f57cc2de114d1d37103c110f0e5d84c883b2048c6d80a1833b4"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "新モデルの単価が同じなら、そのまま置き換えてよいですか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "1fe8ad0233bbbcb0048544b2cfbddbfd11a5653f650d445a4dc981e2a4455a84",
-      "durationSeconds": 4.562
+      "durationSeconds": 4.562,
+      "audioSha256": "d3d42a49f915709f34eafd5c5ca7f92aa9fce61d0f86bad60de4ecca8db0aaae"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "286848cb0041222cd9b5e72f5b025c44631f690509ff099c2d4df18af5a7d89f",
       "durationSeconds": 28.931,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "28e9e5d8c2d2fdce1b1d05f03b56d577501cba383e3df67737da8ee616818ed7"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "AIの営業提案を、業務ルールに沿って実行するにはどうしますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "ecbb90ad8642649c69569cb9c9ce385fb711a73a7cc27ed19afd9d02b29f55c5",
-      "durationSeconds": 4.98
+      "durationSeconds": 4.98,
+      "audioSha256": "3b47e8742ecb36b5124acc926e159e8f3dcaa92fa21bfd046c6587bf1b6ad46e"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "58f4009a8389e36733cb0eaefcfbd72d7a0f4efc27050dc2da4a0a05441cdfe7",
       "durationSeconds": 27.828,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "bb73965bb398a61d66d21918c5a2ba5ee5897f0534e07dce50746d6afea77e14"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "クラウド間の専用接続を選ぶとき、帯域以外に何を見ますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "c7c502d29615dcaf28540759d80abade34e7bf7943f3609362619413f046eb2c",
-      "durationSeconds": 5.223
+      "durationSeconds": 5.223,
+      "audioSha256": "061bac5c2261a8ef7c52d84f6cd9248832d86866f1a2c2a2173e74c76e987220"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "d477608bd2f12497c51f3b7a07001af7529c34028007fa6bf8babc04380d2b1a",
       "durationSeconds": 28.666,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "93b3ba6de9f48722ef5fb72107c9b0b8b33c2ce7fb2016986f5ff2830e270eff"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "認証済みのCLIを、なぜ実行境界で管理しますか。",
       "audio": "review-question-01.mp3",
       "audioHash": "775b8794e057cb43e3800fafa0ecad35cb283892d9d64b4d5ee4c28c6a4e159e",
-      "durationSeconds": 4.539
+      "durationSeconds": 4.539,
+      "audioSha256": "7f27a493dae27fdd77e078981997dd71a194951c12d69ed43c3566df253114cf"
     },
     {
       "index": 2,
       "text": "最大値や単価据え置きを、どう解釈しますか。",
       "audio": "review-question-02.mp3",
       "audioHash": "69589c9d15dc06998b284f91b1d3dac56b18fd93e763fb311ebc0470b651a22b",
-      "durationSeconds": 3.819
+      "durationSeconds": 3.819,
+      "audioSha256": "4fbcb3eb18f8ee5bd4be72d3e93152e8a6fe7122affae8de776d0f73066ef08f"
     },
     {
       "index": 3,
       "text": "AIの提案を実行へつなぐ前に何を決めますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "6bd516ba75d29470baa34421eef24bd27929a4f21908c7a40f415a5b2d8d5424",
-      "durationSeconds": 4.062
+      "durationSeconds": 4.062,
+      "audioSha256": "1ac11afc103cd4fd961412b026807955bc449507387b832aebc6dc13b9a38e22"
     }
   ]
 }

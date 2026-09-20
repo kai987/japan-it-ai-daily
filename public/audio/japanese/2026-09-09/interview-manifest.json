@@ -44,7 +44,8 @@
       "text": "AWS TransformのようなAIレガシー刷新を本番で進めるとき、何を重視しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "29f13ded2450229e2841f165c5b6b7482277e2504edc4a3b0dbef1f734d213ea",
-      "durationSeconds": 7.209
+      "durationSeconds": 7.209,
+      "audioSha256": "675dc23f80aab8877659d51c8b0a33515962e3f84b2d80c7e33670c64fe55317"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "652570adfd7d3d3ede715a4033693fcac264336d38418b679b4f4957a414f37b",
       "durationSeconds": 27.723,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "665fdb20309edbbb787a10b796bd5ad9ba153f7a292f1d0c506a366b792e3b17"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "LLMジャッキングを防ぐには、どこを優先して監視しますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "97b26bb8636878ea1d826bc9603ea9158d5dff69917207beb32906ee805bd0d4",
-      "durationSeconds": 4.782
+      "durationSeconds": 4.782,
+      "audioSha256": "dc31fb48bc567d32b4adcf93ec5c9c662c894c9ab234347e5c8cc1e1125ce13b"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "5dc85993e6dceeee5c8820f4b950193390686f6906a428cb9ad18ebeb7b01ddb",
       "durationSeconds": 28.015,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "84ef09a1e58bab42a2da2cd50b49642d95d6a653245d1c7c1fd3483a0999de8e"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "Claude CodeのSupply Chain Riskに対して、実行環境をどう隔離しますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "ef993649935e7eeacb8a862cdf5ef6787c14c62daf3dc5cb4ad2d2f8e22fe4b4",
-      "durationSeconds": 5.815
+      "durationSeconds": 5.815,
+      "audioSha256": "9bce854e5b0f44ce1bf7981d9791ea256e071fe2ad79ae117787b9c0dd9472fc"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "9b272f8690cc4f482fc916e5bd2caa10488f9010d509f7bdc5264c3e9de350c4",
       "durationSeconds": 26.33,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "fb8afdb00ee5c102cb7462706de67bd400069bdda35afd60db1e8026842b8d20"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "MuseのようなPersonal Agentで、Side Effectをどう制御しますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "51ff2268a0964a97f1a73c84f20ad372bdcc74f4487232d373a41a7255515bf3",
-      "durationSeconds": 4.979
+      "durationSeconds": 4.979,
+      "audioSha256": "c8cd431bbe9818522d9a6a26eda9d7c405b1542e3ed6b60a5d88257382cbaddf"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "3fce28be720a282378afdeb33e388d28d0f7fc0a7fe938b13dd2ca0661ee4bb2",
       "durationSeconds": 26.145,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "4fb82971629cbdbc9afa1d724583476d86d27235cec9bf9968a18b49601bd74f"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "Amazon Linux 2027を本番採用する前に、何を確認しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "b11ca31d8db4d50d266ed27136bde8d6100cda890286bb51b67d77ca5b6428c1",
-      "durationSeconds": 5.827
+      "durationSeconds": 5.827,
+      "audioSha256": "c5004008fac543af4b8400c3909ca19dc0ae5f5bffe72e0e9bb3e5ff8c955efa"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "ae9db73c627cd4b54c3a937d12c0fad4c0c0173915892667e3ff83167eebed3e",
       "durationSeconds": 27.876,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "bed37db0256fea69bf033cca6117426a498fa1bef79eadb8c92fffc3443fc3fb"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "AIを使ったLegacy Modernizationで、速度以外に何を確認しますか。",
       "audio": "review-question-01.mp3",
       "audioHash": "e30b63656913a4f80ef944ca835ac7ccf4e6bee233d4a5bda8ae56af0fc0266b",
-      "durationSeconds": 5.595
+      "durationSeconds": 5.595,
+      "audioSha256": "2c51bc512aa8452eca583f981772f5548ac70010cd40383e9b984981522edb66"
     },
     {
       "index": 2,
       "text": "LLM Jackingが通常のAPI Key漏えいより深刻になり得るのはなぜですか。",
       "audio": "review-question-02.mp3",
       "audioHash": "98aa07022f3b332564d94eeb970f40d66a6fac6b52bdb0a7694dba4be13d7c3a",
-      "durationSeconds": 5.908
+      "durationSeconds": 5.908,
+      "audioSha256": "0644dc2eaff15512bfc40420bb80ca59414ca2a8c305f38cb5799b22b0d24fda"
     },
     {
       "index": 3,
       "text": "Agent Sandboxを導入しただけでは十分でない理由は何ですか。",
       "audio": "review-question-03.mp3",
       "audioHash": "dc04bc17fa4106bd3fe0cd19180f2a058200548fd296c4e3a09b114b3fd47ce4",
-      "durationSeconds": 4.899
+      "durationSeconds": 4.899,
+      "audioSha256": "772a9b1e124a12772c6bb513ee073f6d0e49f6d1269a821b92a33b0aa82c745f"
     }
   ]
 }

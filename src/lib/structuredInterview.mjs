@@ -22,7 +22,8 @@ export function validateStructuredInterview(input, date) {
   const ids = new Set();
   for (const kind of ['interview', 'review']) {
     const items = record[kind];
-    if (!Array.isArray(items) || !items.length || items.length > 20) throw new Error(`${date}: invalid ${kind} array`);
+    const expectedCount = kind === 'interview' ? 5 : 3;
+    if (!Array.isArray(items) || items.length !== expectedCount) throw new Error(`${date}: ${kind} requires ${expectedCount} items`);
     for (const item of items) {
       keys(item, kind === 'interview' ? ['id','articleIds','question','answer'] : ['id','articleIds','question','points'], kind);
       if (!text(item.id) || !idPattern.test(item.id) || ids.has(item.id)) throw new Error(`${date}: invalid or duplicate item id`);

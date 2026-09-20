@@ -44,7 +44,8 @@
       "text": "SRE Agentにどこまで自律性を与えるか、何を基準に決めますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "9f9d7009b0c67ad4af137f3b89a1f1169a959d4abe9584b4087721f79b0e32b6",
-      "durationSeconds": 5.721
+      "durationSeconds": 5.721,
+      "audioSha256": "fe7effef84fcbd380db6e021b2024db623e38189e5ca7d146f6da8e928b89893"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "b0a8941d3a1d49d84952cbf98c27a29943bf22eb364dd662faee74666a819ff0",
       "durationSeconds": 25.571,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "5fc5dd4187f715733758ceb720b3e5547bd166765e73408582d319e2fd159c79"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "Realtime音声AgentでAppの状態を書き換えるとき、どの境界を設けますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "49b56f534a61ed36a78c4d096c67e7255a7a3328ddae4b3be8324151cc2ba515",
-      "durationSeconds": 6.396
+      "durationSeconds": 6.396,
+      "audioSha256": "77bd8bc32228ff2da242475628733b02a5285e71b4b7ee70fe65d0daebb56cca"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "767e4193eff3529e49ecde65cd2682cefec9a883f44d083d333de52b21fac5c2",
       "durationSeconds": 26.708,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "5781a22c21022e0571f144f86aea38c31e373398362bec76222f68a683083091"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "大規模MySQLを8.4へ移行するとき、HA方式をどう比較しますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "4773e24ba92e70f2310fe64a0e28b659172f24d43a4dc91c0dfeb66217beadc0",
-      "durationSeconds": 5.957
+      "durationSeconds": 5.957,
+      "audioSha256": "58201033c3082eb1081ba00922e1dfc4ac2a285a3cc59b8a62c544bd028026c6"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "5dc3d5562443a099a72e85cdc1e02c5dca1df8a00b59aaf47b50d3a66fc36b01",
       "durationSeconds": 29.337,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "85f16075f75e1c1a65e97f43a07088b81d3e903fc8c7311d572046f67eab6985"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "AI-Ready DataとAI for Dataをどう使い分けますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "abe58cf693dad9830d103bcf2e0a6c988a1d7fa5188395041a16197170a3d47b",
-      "durationSeconds": 4.397
+      "durationSeconds": 4.397,
+      "audioSha256": "e1c82d150abbcd40e2d72503c1e9aa8135ef58e85bd93487187652b289bba160"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "43736b0946c67d51408c66023ac36c108c13e7499dc7b14171c6142779961b1d",
       "durationSeconds": 25.39,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "294fec73be3f4fde0a582e18431d4f5c958b6fb96ed08ccd2a6d994248539f7f"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "Embedded DashboardとAI推論を組み合わせるとき、どのData Pathを確認しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "19293a533a21f81590259bddd554e3a2b3b4673df483d552dfaf72a2b9e8f41e",
-      "durationSeconds": 6.663
+      "durationSeconds": 6.663,
+      "audioSha256": "0879413d73d2df244b6c615acf05b21abb5049e37f5bb034cb114052bd29fc51"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "165486aba2a15ae0b636911fb27af13814691feb4c34c33f68f369e7e01ac3e4",
       "durationSeconds": 27.248,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "38f6888a1fa28328d4b8f82485b3956c734d39369ccf6285a71a410c3dac7d75"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "SRE AgentをSelf Mergeまで自動化しない理由は何ですか。",
       "audio": "review-question-01.mp3",
       "audioHash": "ca63149fcc134f0fc77ebb9e475375d153545276315cd742892b60f2923bc607",
-      "durationSeconds": 4.655
+      "durationSeconds": 4.655,
+      "audioSha256": "2368fc441fd2936fce919081c3ee8f6aa86f8090d1c1255caa0b08f5770b2aa9"
     },
     {
       "index": 2,
       "text": "Voice AgentのFunction Callingで、Model出力をそのまま保存しない理由は何ですか。",
       "audio": "review-question-02.mp3",
       "audioHash": "ebdf7ac1e2f1e14c957f7f39c828b8c971bc8761740ac348438b779a7a3c255a",
-      "durationSeconds": 6.454
+      "durationSeconds": 6.454,
+      "audioSha256": "b34d28792c18666362d146d312e039ce1aec0f9ec106f6edadbb81bbb69dc059"
     },
     {
       "index": 3,
       "text": "Managed Databaseを選ぶとき、Feature以外に何を比較しますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "1a276966aa69f4f66871a7340d79bed818b94ec7d30c48bad74b56cf10e7e757",
-      "durationSeconds": 5.166
+      "durationSeconds": 5.166,
+      "audioSha256": "e07edcc1d93f1ff099af6116a1374e1c4f08b6b0c8f6ef9a3e50e7d5bb0941ac"
     }
   ]
 }

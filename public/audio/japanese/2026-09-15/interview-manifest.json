@@ -44,7 +44,8 @@
       "text": "AIでGrafanaダッシュボードをIaC化するとき、本番変更の安全性をどう担保しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "8f879d3e91d8ac7164d9a041252d42a33b6d7d29f1a4d1cc3867c002e65fe7c8",
-      "durationSeconds": 6.71
+      "durationSeconds": 6.71,
+      "audioSha256": "2cb55b0ae7a24b84b2b356ae81fd553f2c6d5c859fa4654d5220993a6090bd20"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "592290fbbf6ff6d92c53cf9bbfcd626e6e88ebd28d825f2136d3f4b71e0e1fb8",
       "durationSeconds": 27.279,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "6322dd15a2ff6620b1c7005e81ba1cad2b390fae1120ce617c550ddd62d73a08"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "Claude CodeのPluginやSkillが本当に効果を出しているか、どう評価しますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "dc301468f602f6ebd449e6576149dbd0f2cdd1c302b0b5ef8bd21ad217de9be7",
-      "durationSeconds": 6.045
+      "durationSeconds": 6.045,
+      "audioSha256": "72ebe4bde12a26ae364c4a7c4475ceb4469cf3ef7eadf3045a3bb233ba09b88e"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "110170aac27439ab76dbc3fd5a33fc422b3317f9b5f1712b4b8b86d6865bd083",
       "durationSeconds": 27.018,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "6e870073260be22c60262a49a086efa38a097583564b94e4378af8c36e07945f"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "S3のCost最適化をAIに支援させる場合、どんな順序で進めますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "8293c88edc9d9bc0c4967882b57cefa06babb2bf1b9c24edd84245705f249fd1",
-      "durationSeconds": 6.05
+      "durationSeconds": 6.05,
+      "audioSha256": "ebd7530720be9accc3b548c442ed69cc9ebfaeb7e66547f494c942c0c866c3da"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "e08279fec976c52e25764e6454e884729f53b1ba610e1a7455c332f22d7a9869",
       "durationSeconds": 27.283,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "0c89b2d0fdc604e49f6c05afaf74a7f73d264c99912af2e9b7cd80ac308ad283"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "AI AgentのHarness Engineeringは、単にPromptを書くことと何が違いますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "8c7fd6f75cd85eb6864ff1a49d881ad64bdea3e66766b538ef7f771da51215a7",
-      "durationSeconds": 6.199
+      "durationSeconds": 6.199,
+      "audioSha256": "643037e5a98a2d8d7c73b4281f47c533d766860b53fc97bb8be45a46ec52c645"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "88233a6afc50ff44e1dd67d872da870a0346dec88a746c82b2df268476301aa0",
       "durationSeconds": 29.316,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "d8243f8b43b45201f17ad66e96852159617535aa941f4c06dd5f5d0a3fede103"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "生成AIを禁止するだけではシャドーAIを防げない場合、何を変えますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "6dd4655dbf84cf64e3682a4a540014a3f5cbfc78f9969c28cbc87af169051ee0",
-      "durationSeconds": 5.734
+      "durationSeconds": 5.734,
+      "audioSha256": "38c706d22b99bdca9613f27d94cfa9342421a59711600452cfa7fb55bcafca53"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "ad6fade4f98d4dbb40829d63509a14fbebc75836539f22fbd31829449378ff19",
       "durationSeconds": 25.922,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "3680c481e4505bd0aeb28cf8a55864fbbe6ca1dfb24bad823b6301967df9af4e"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "AgentにProduction Dataを読ませる場合、Write権限も同じ経路で与えるべきですか。",
       "audio": "review-question-01.mp3",
       "audioHash": "42b46ff2726aa1808ba1a4b6bdf2bbad170a9488a29f167bf683ffdab51b7f89",
-      "durationSeconds": 6.373
+      "durationSeconds": 6.373,
+      "audioSha256": "6e809ca7f22b8be66ea8376e6f3b9da7171f7ed85bf1875c3fa808115e2eabd0"
     },
     {
       "index": 2,
       "text": "AI Skillの評価でBaselineが必要なのはなぜですか。",
       "audio": "review-question-02.mp3",
       "audioHash": "4d9bce08f93fd502f255d9afb4ad3ca52d63b874b33ac47003b19eb78e9571d6",
-      "durationSeconds": 4.422
+      "durationSeconds": 4.422,
+      "audioSha256": "5dfec75637e8d011e5b7b3617270227de50383a5b0cea6734eb0710051ea481b"
     },
     {
       "index": 3,
       "text": "AI Governanceで「禁止」以外に何をKPIとして持ちますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "d774de42b73251fdfeec63ad30fb3b2e7b80e249833fa48cb30c7bb953307d64",
-      "durationSeconds": 4.61
+      "durationSeconds": 4.61,
+      "audioSha256": "ab5786a59ef267ca638a145029df257bfe82927f8b4806ce222ed4b4637859f8"
     }
   ]
 }

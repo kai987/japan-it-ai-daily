@@ -57,9 +57,8 @@ test('closing search invalidates an in-flight response', async ({ page }) => {
   await input.press('ArrowDown');
   await input.press('Escape');
   await expect(page.locator('.site-search-popover')).toBeHidden();
-  const response = page.waitForResponse((response) => response.url().endsWith('/search-index.json'));
   release();
-  await response;
+  // Dismissal now aborts the request, so a response is not guaranteed to arrive.
   await page.waitForTimeout(250);
   await expect(page.locator('.site-search-popover')).toBeHidden();
   await input.fill('Sandbox');

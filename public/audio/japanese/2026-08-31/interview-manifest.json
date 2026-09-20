@@ -44,7 +44,8 @@
       "text": "エージェントの実行環境を隔離するとき、何を確認しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "146420e762666efbf1ebca7b0323df175e3727f0b96a80f7cc1bde409448dbb7",
-      "durationSeconds": 4.957
+      "durationSeconds": 4.957,
+      "audioSha256": "de9fcdea6ff561dea346417bb62a8c7ed8539b1ef9904eeac351056a4f04dc72"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "973efefa372e5734019d2f3f12ef62dde3c6820e6f56ef7d4329ee1443968cc5",
       "durationSeconds": 27.962,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "68a31756aaeb88952a81c413468f56ba071139d517a288b3525f0b590e007343"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "AIエージェントの設定変更を、安全に本番へ反映するにはどうしますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "f27ef42ffd51cbece378ae33ad14cf301380287cbf76d56aec45e3f8f2206618",
-      "durationSeconds": 5.432
+      "durationSeconds": 5.432,
+      "audioSha256": "2c0f565fa31fdac63a61650128438206210443cec2cc06c9811ec855e9b8fafc"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "8c7cf63037c97d2c823a75956c3639895e30542ca589ad88199860ba7b86b0ec",
       "durationSeconds": 28.603,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "b4507fa47880255ac70ceefb8734aa591c89568a3bd67e484b3833c2062ea7a4"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "技術方針について意見が分かれたとき、どう合意を作りますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "e246a4ada8fde0e9218d24120f13b602350c6ab4c3ea058770a2f3abd30e66ce",
-      "durationSeconds": 4.957
+      "durationSeconds": 4.957,
+      "audioSha256": "c3205fadad27b0aaf29034b68528b82385bdc3e7dd7766cbc7d25f84cc0db83f"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "612c6f173a9c4a4a407dc28617e52fcc0978386957b50b870e6efc4c51045ac9",
       "durationSeconds": 28.493,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "15b7807308f589e6963305bb47162a0294dd31571a9dc3790479d672f48459c8"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "Bedrockでaccess_deniedが返ったら、まず何を見ますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "dfb036b9cf095d003e969cf0166110306a2812dbaab1e0a2fc59e1038af1daa1",
-      "durationSeconds": 4.538
+      "durationSeconds": 4.538,
+      "audioSha256": "ff46df3f3b78b5ee811347514a5e8037b44aba0c1ea3f15c9dea431086ab2fee"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "fe22aefdacf1c8f297bfe27c15a66d651e06b89df85f89c2e40c4043885fcc95",
       "durationSeconds": 27.719,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "4cd0c10d704c3ab7668faa32d1ecdb2b3c35007e95aa72f15e9f44861d20a589"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "AIを社内へ配った後、何を整えると業務に定着しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "6967cb96694a38e3f297d00c4a1c4f82fa3b521e3b05a47fc780022943041fed",
-      "durationSeconds": 5.433
+      "durationSeconds": 5.433,
+      "audioSha256": "33ebbef605f982805595d70f1d07cf421500346d7b251d50d998c615d82b2504"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "b242503f3c4045013e9987a0438696103f7d78ff23eebfbf317ae802050820ee",
       "durationSeconds": 28.06,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "2571dc34bcb5232cf432a0afb455c528804e787b5e6d4f1057954aa28d056f46"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "設定した権限と実際の到達範囲を、どう比べますか。",
       "audio": "review-question-01.mp3",
       "audioHash": "27e95f1768dd4cc3d9d8658902f675dfe3e45a65328eceea86fe877b24b941cc",
-      "durationSeconds": 4.852
+      "durationSeconds": 4.852,
+      "audioSha256": "32e861e9a5581ec154fc349cde3201979a0a5c7b7c73e128569f8a26e7cb6099"
     },
     {
       "index": 2,
       "text": "バージョンの作成だけで本番反映が終わらない理由は何ですか。",
       "audio": "review-question-02.mp3",
       "audioHash": "cf44ca651c1823d957fc04606b182e3882ecc804f19e7fe4fd837c0c7a29d8ab",
-      "durationSeconds": 4.55
+      "durationSeconds": 4.55,
+      "audioSha256": "3371598d1ea94c4d3e8f20ab70b17aa57745403e316a92947a8d711c1aae89aa"
     },
     {
       "index": 3,
       "text": "組織の暗黙知を残すとき、何を明示しますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "bdf18e9daeea8d85a6309ddf72cf0f0abfaa82ca9a21277818c3e678b3850c20",
-      "durationSeconds": 4.213
+      "durationSeconds": 4.213,
+      "audioSha256": "1e0914e339f68d8aeb7b079846684f48ea1f30df97c1d257d61cba7e6df2a597"
     }
   ]
 }

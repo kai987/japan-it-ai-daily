@@ -1,5 +1,11 @@
 # Reliability first pass
 
+This records the original first pass. The September 20 follow-up extends the
+playback controller to study pages, versions recording URLs by file bytes, and
+requires structured Q&A for all new reports from September 19 (also migrating
+September 19 and 20 without prose changes). See the current [README](../README.md)
+for authoring commands, incremental audio verification and search loading.
+
 Scope: interview playback ownership, post-deployment publication verification,
 and a single-date structured-interview pilot. No dependency upgrades, account
 system, database, visual redesign, historical prose rewrite or audio regeneration.

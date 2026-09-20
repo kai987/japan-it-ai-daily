@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { readImmutableAudioFixture } from './audio-fixture.mjs';
 
 for (const locale of ['zh', 'ja']) {
   const root = `/japan-it-ai-daily/${locale === 'ja' ? 'ja/' : ''}`;
@@ -79,6 +80,13 @@ for (const locale of ['zh', 'ja']) {
     const failures: string[] = [];
     page.on('pageerror', (error) => failures.push(error.message));
     page.on('response', (response) => { if (response.status() >= 400) failures.push(`${response.status()} ${response.url()}`); });
+    // Production URLs reference derived objects that are not published during
+    // local QA. Serve the exact verified bytes at that immutable URL, preserving
+    // real browser MP3 decoding/playback without relying on today's R2 state.
+    await page.route(/--[a-f0-9]{64}\.mp3$/, async (route) => {
+      const bytes = await readImmutableAudioFixture(route.request().url());
+      await route.fulfill({ body: bytes, contentType: 'audio/mpeg' });
+    });
     await page.addInitScript(() => {
       const original = HTMLMediaElement.prototype.play;
       HTMLMediaElement.prototype.play = function () {
@@ -92,6 +100,7 @@ for (const locale of ['zh', 'ja']) {
     const first = page.locator('[data-speech-kind="example"]').first();
     const second = page.locator('[data-speech-kind="grammar-example"]').first();
     await expect(first).toHaveAttribute('data-audio-provider', 'aivis');
+    await expect(first).toHaveAttribute('data-audio', /(?:\.mp3\?v=[a-f0-9]{64}|--[a-f0-9]{64}\.mp3)$/);
     await first.click();
     await expect(first).toHaveAttribute('aria-pressed', 'true');
     await expect.poll(() => page.evaluate(() => (window as any).__lastPlayed?.currentTime || 0)).toBeGreaterThan(0);
@@ -104,19 +113,31 @@ for (const locale of ['zh', 'ja']) {
     expect(failures).toEqual([]);
   });
 
-  test(`${locale}: failed recording falls back to Japanese speech`, async ({ page }) => {
+  test(`${locale}: failed versioned recording falls back to Japanese speech without retrying a mutable CDN key`, async ({ page }) => {
     await page.addInitScript(() => {
       Object.defineProperty(window, 'speechSynthesis', { value: {
         getVoices: () => [], cancel: () => {},
         speak: (utterance: SpeechSynthesisUtterance) => { (window as any).__fallback = { text: utterance.text, lang: utterance.lang }; },
       } });
     });
-    await page.route('**/*.mp3', (route) => route.abort());
+    const requestedMedia: string[] = [];
+    await page.route(/\.mp3(?:\?|$)/, (route) => {
+      requestedMedia.push(route.request().url());
+      return route.abort();
+    });
     await page.goto(`${root}japanese/2026-09-07/`);
     const button = page.locator('[data-speech-kind="example"]').first();
+    await expect(button).toHaveAttribute('data-audio-provider', 'aivis');
+    const recordingUrl = await button.getAttribute('data-audio');
     await button.click();
     await expect.poll(() => page.evaluate(() => (window as any).__fallback?.lang)).toBe('ja-JP');
     expect(await page.evaluate(() => (window as any).__fallback.text)).toBe(await button.getAttribute('data-speech'));
+    expect(requestedMedia.length).toBeGreaterThan(0);
+    if (recordingUrl?.startsWith('https:')) {
+      expect(new URL(recordingUrl).pathname).toMatch(/--[a-f0-9]{64}\.mp3$/);
+      expect(new URL(recordingUrl).search).toBe('');
+      expect(requestedMedia.every((url) => url === recordingUrl)).toBe(true);
+    }
     await button.click();
     await expect(button).toHaveAttribute('aria-pressed', 'false');
   });

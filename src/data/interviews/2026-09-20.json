@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-20",
+  "interview": [
+    {
+      "id": "qa-01",
+      "articleIds": [
+        "2026-09-20-top-1"
+      ],
+      "question": "Amazon Quickの生成BIを業務で使うなら、どこを検証しますか。",
+      "answer": "生成結果を完成品ではなく設定付きの叩き台として扱います。Generate Sheetは280文字のPromptで5〜6 Visualを作れましたが、明示したFilter ControlとCalculated Fieldは0件でした。一方、画像生成は9 Visual・5 Control・profit_ratioを生成しました。ただし集計意味やSheet構成はずれるため、公開前に各VisualのAggregationを確認します。"
+    },
+    {
+      "id": "qa-02",
+      "articleIds": [
+        "2026-09-20-top-2"
+      ],
+      "question": "LLM RouterのClassifierを専用モデルへ替えるとき、何を評価しますか。",
+      "answer": "Model Routingでは精度だけでなく判定時間と観測可能性を見ます。NemoHermesの13シナリオ×3回で、従来judgeは36/39、Jevは39/39が期待どおりで、判定と変換の中央値は1.55秒から0.27〜0.42秒へ短縮しました。ただしJevはearly accessで画像内容を見ず、判定根拠もJSONLに残らないため、外部送信とAuditを別途確認します。"
+    },
+    {
+      "id": "qa-03",
+      "articleIds": [
+        "2026-09-20-top-3"
+      ],
+      "question": "Agentic SOCでAIに対応アクションまで任せる場合、どこにGateを置きますか。",
+      "answer": "AI SOCでは調査の自動化と対応権限を分けます。Zscaler Agentic SOCはZero Trust Telemetryと第三者Dataを相関し、Triage、Root Cause調査、Response Workflow起動まで扱います。1日7500億件のTransactionを活用するとしていますが、誤検知でUserを隔離するRiskがあるため、根拠・実行Action・Human Escalationを監査可能にします。"
+    },
+    {
+      "id": "qa-04",
+      "articleIds": [
+        "2026-09-20-top-4"
+      ],
+      "question": "AgentCore Runtime V2のMemory Costをどう測りますか。",
+      "answer": "AgentCore Runtime V2はProcess RSSではなくUSAGE_LOGSで費用を見ます。課金換算はピーク約2839MBから下がり、667秒後でも約796MBでした。一方、VmRSSは約33MBで代理指標になりません。3 Sessionの実測なので、本番に近いSession長とMemory PatternでGB-hoursを再計測します。"
+    },
+    {
+      "id": "qa-05",
+      "articleIds": [
+        "2026-09-20-top-5"
+      ],
+      "question": "Claude Code v2.1.277〜v2.1.278を組織導入する際、何を回帰確認しますか。",
+      "answer": "Upgradeでは新機能より既定値と削除機能のRegressionを先に見ます。Claude Code v2.1.277ではCLAUDE.mdが無い場合にAGENTS.mdを読みますが、Bedrock・Vertex・Foundryは未対応です。TaskOutputも削除され、v2.1.278ではAuto mode classifierが既定でServer-sideになりました。導入前に/config、/status、GatewayとSandbox設定を実環境で確認します。"
+    }
+  ],
+  "review": [
+    {
+      "id": "review-01",
+      "articleIds": [
+        "2026-09-20-top-1"
+      ],
+      "question": "AIが生成したDashboardを本番公開する前に、何を確認しますか。",
+      "points": {
+        "zh": "見た目だけでなくMeasure、Aggregation、Filter、Calculated Field、Date Grain、Sheet構成を元仕様と照合する。Review前提の生成機能なら公開を別Gateにする。",
+        "ja": "見た目だけでなくMeasure、Aggregation、Filter、Calculated Field、Date Grain、Sheet構成を元仕様と照合する。Review前提の生成機能なら公開を別Gateにする。"
+      }
+    },
+    {
+      "id": "review-02",
+      "articleIds": [
+        "2026-09-20-top-2"
+      ],
+      "question": "LLM Routingの改善を評価するとき、Accuracy以外に何を見ますか。",
+      "points": {
+        "zh": "P50/P95判定時間、Cost、Connection条件、External Data Boundary、Audit Log、Image対応、Criteria Driftを見る。13 Scenarioの結果を一般化しない。",
+        "ja": "P50/P95判定時間、Cost、Connection条件、External Data Boundary、Audit Log、Image対応、Criteria Driftを見る。13 Scenarioの結果を一般化しない。"
+      }
+    },
+    {
+      "id": "review-03",
+      "articleIds": [
+        "2026-09-20-top-3"
+      ],
+      "question": "Agentic SOCの自動化範囲をどう段階的に広げますか。",
+      "points": {
+        "zh": "Triage→Evidence Gathering→Recommendation→可逆Action→強いActionの順。False Positive時のRollback、Human Escalation、Action Logを先に設計する。",
+        "ja": "Triage→Evidence Gathering→Recommendation→可逆Action→強いActionの順。False Positive時のRollback、Human Escalation、Action Logを先に設計する。"
+      }
+    }
+  ]
+}

@@ -30,7 +30,8 @@
       "text": "LLMアプリのレッドチーミングをCIへ入れるなら、何を分けて評価しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "8a886bd43f4c64285b1c600a527556f64a81d1eaa16443bfc6b15f73c34cf04d",
-      "durationSeconds": 5.769
+      "durationSeconds": 5.769,
+      "audioSha256": "f361f7ac3f86e8802856ca0012d99fbcfb8db6846a09b61680e563afce49749e"
     },
     {
       "index": 1,
@@ -39,7 +40,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "07935b09e94d46d469615789ee84780bb14c20e578a0c0defd0099707e130cee",
       "durationSeconds": 28.712,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "50cb9b9ed04c219b08078c0e9ec725b8d11933a10070a03648df02f65d706c64"
     },
     {
       "index": 2,
@@ -47,7 +49,8 @@
       "text": "マルチクラウドの生成AI機能を増やすとき、共通化する範囲をどう決めますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "6044c417220fd24e47fbb040c70e53aefeb7b10b28654669caff3ad50f3e0f5d",
-      "durationSeconds": 5.918
+      "durationSeconds": 5.918,
+      "audioSha256": "25e8651140dd317d3300bb1bd903bcb6cda1a7b4033aae05ab988d6ec1bee157"
     },
     {
       "index": 2,
@@ -56,7 +59,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "449a40af2e01e8ae9b743fa2480fe4594b7467abc40f4a4522e6bd8c828515fa",
       "durationSeconds": 28.383,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "2a26156083652e9ae46bd5d63a19c92359904b7713760fc89c8f6f44a7247a56"
     },
     {
       "index": 3,
@@ -64,7 +68,8 @@
       "text": "Claude Code v2.1.275系を組織でUpgradeするとき、どこをRegression確認しますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "1cfa9ca1589d010a87ecf29c298797a5bf1c9573d405100aaa57f0bd90fc7bdd",
-      "durationSeconds": 7.242
+      "durationSeconds": 7.242,
+      "audioSha256": "a9488676d1dee6ae566396ac527b9a6775f2818a71cfc228ede53e3f2882b430"
     },
     {
       "index": 3,
@@ -73,7 +78,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "747163d543a7bde72dab0071f7dd0751c470cc5c24fab23e20951cde3d9b4951",
       "durationSeconds": 27.959,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "5fec8674ab3e3e1d7cd2c21641579c901fcf6b58f2c4c0a0dad619bb81c7a30c"
     },
     {
       "index": 4,
@@ -81,7 +87,8 @@
       "text": "大規模RAGのReference実装を自社へ持ち込むとき、何をそのまま信じず検証しますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "dccdb3402af118755b50346c9c4974dc18ec42a8a006568d9cd1f49ff7782171",
-      "durationSeconds": 6.723
+      "durationSeconds": 6.723,
+      "audioSha256": "262d9ba4f1b971a1a83bc5bd37156283e877eba983d10b1faf03845485ec16bb"
     },
     {
       "index": 4,
@@ -90,7 +97,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "b1f4e9f42c2c625714928928e166224017c531d141ad5aa9e02eb819a5a90c1b",
       "durationSeconds": 30.592,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "5213afd2b03c26941ffbf03f13a827453fa54a8eec08dec2a84d989a819595f8"
     },
     {
       "index": 5,
@@ -98,7 +106,8 @@
       "text": "専門家の「目利き」をAI Agentへ移すなら、どのEvidenceを残しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "1d222ddb4982fdc0871ca8d71d56f4b7985566545379b7424ffb6d0026aac608",
-      "durationSeconds": 5.885
+      "durationSeconds": 5.885,
+      "audioSha256": "6ac044c62c74058a46e7e90da8d57a1c1dab8c43ebf5bbace02004e31d9dab13"
     },
     {
       "index": 5,
@@ -107,7 +116,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "85f4164b7a62479c379001d1b5a76958280570aedac034f175c376d5452304a0",
       "durationSeconds": 28.781,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "9a24a73232b67b40b331a21992930606263c9220f3bff0c71f4635610df8d7dc"
     }
   ],
   "review": [
@@ -116,21 +126,24 @@
       "text": "生成AI機能の共通Platformでは、何を共通化しすぎない方がよいですか。",
       "audio": "review-question-01.mp3",
       "audioHash": "01965fa114a01d35b0f4da156da6e013b6746f65a3b3f35c8a611e00115ca53d",
-      "durationSeconds": 6.002
+      "durationSeconds": 6.002,
+      "audioSha256": "c575da28ffb0c4f49f33777ce63f05a26428299734b103178ceb2c47c9e352e7"
     },
     {
       "index": 2,
       "text": "Red TeamingでSecurity Scoreだけを上げると何が起きますか。",
       "audio": "review-question-02.mp3",
       "audioHash": "3b69a35bf447a43de360275218c46f7df1ba6a723becaec2e449c41b7d49770c",
-      "durationSeconds": 4.562
+      "durationSeconds": 4.562,
+      "audioSha256": "33be0d4e5a8c2a3eca52bf82f39fa15615f38d31d3e0de703a330303e80907b4"
     },
     {
       "index": 3,
       "text": "Vendor Demoの改善率を自社に当てはめる前に何を確認しますか。",
       "audio": "review-question-03.mp3",
       "audioHash": "30da271057375666e6e62b90fee784894805b73bac3c88db8bb9a0459d266e75",
-      "durationSeconds": 5.432
+      "durationSeconds": 5.432,
+      "audioSha256": "78ca80c24c601a1be23cf0f5642d86d9ed9f2c67241c119bd571e43756b7b5e6"
     }
   ],
   "durationPolicy": {

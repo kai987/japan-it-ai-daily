@@ -44,7 +44,8 @@
       "text": "LLMによるレビューが信頼できるか、どう評価しますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "6e2595be4b57130cfb52813d516dbbd01208d96c8eea91415e584a35708ee88e",
-      "durationSeconds": 4.446
+      "durationSeconds": 4.446,
+      "audioSha256": "c3f20e0af4156cf74e77b1668f52140000faf8d0dd4a9fe472578eeca5c80cf8"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "0c936656c3f73bae9cdb46570862bc064b8ab62f4e1c89babce99f538af47df3",
       "durationSeconds": 26.945,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "c8c6e3cf0bb17d9f64d163d5a402c175ba4aa09af10a171dcbe473ebc9c08788"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "複数のAIが同じリポジトリで作業する場合、何を決めますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "5981443a34a501dee63f7da2897bfced774a2969649397efaeef458c59fd19ca",
-      "durationSeconds": 5.212
+      "durationSeconds": 5.212,
+      "audioSha256": "d5bc140ee0eb68c75311169bec467f2ddf3d25b7b3e5bbfd6df10f8bc7dfd013"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "2408290456c0edc66521081d1531188e1c06936a3743227c166c34c789129895",
       "durationSeconds": 27.654,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "c453dbdee584e6cf3c4e138e0cd05d8dae2d767f7696cf1027223d517e0db51a"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "モデルの単価が下がっても、AI費用が増えるのはなぜですか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "f951d0f19646bd55fe25fc8c70e3a2c08d51d283369ecdd5c8975dc75e046f73",
-      "durationSeconds": 4.725
+      "durationSeconds": 4.725,
+      "audioSha256": "3ce1988f4bdfedefdf676eae033d1647dfcbf96e3f452eb85fd3627aa529b074"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "7918b696beb6d210de591a95b24798abe3446f3f27f645772e594c1dee1d32df",
       "durationSeconds": 27.32,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "bc80240032902aa829a0f8fc02ce727f500a77109da30c7d0a75f73e39912dd5"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "AIを物理機器につなぐとき、共通仕様だけで十分ですか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "842e5d538de67fb22c99c765f8ef507b49b3aa5c01d8a35a783ed93f502d9bc5",
-      "durationSeconds": 4.946
+      "durationSeconds": 4.946,
+      "audioSha256": "d0e270c8cd5186bd64db46e35c3703be7b199e2ce56398542c9cb7b772f7ec21"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "84f2ab3eb2019b3ed4662d688bcea03db90667683b58dc551fb78d4ef9562989",
       "durationSeconds": 28.443,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "e88f171bc957b0815a3f62be729a5d8c53dcb5b29ec5d07393ddc3ccc4bfe1ab"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "利用しているモデルの提供が終了する場合、どう備えますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "77c1534464959f5c0a1558a77f7386079c20c8dca2b1067a654a7af3c525bae0",
-      "durationSeconds": 4.62
+      "durationSeconds": 4.62,
+      "audioSha256": "b38a71b6d6b6f5a5daa538894a8008f847a849c6970cd4e478de5888a31b722d"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "bbaf001b19af563d4a7298f963696eaa4cfe3b81abe0ef0bd19ea357b6ee676b",
       "durationSeconds": 28.642,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "dd823f27b8431c25cb0cedf741ae5468a18d9e5d0eb9d1b7254fb2b81654fe26"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "レビューの却下と誤りの検出は、どう違いますか。",
       "audio": "review-question-01.mp3",
       "audioHash": "c2d7e1064b0153ac31e0ef2b19098bab05b2b002c1222fa6ea19f3f62da6f522",
-      "durationSeconds": 4.12
+      "durationSeconds": 4.12,
+      "audioSha256": "e3ade29545c80a5c754e6cbea4043ff78c901725816057c290338032e95a5e9a"
     },
     {
       "index": 2,
       "text": "AI費用と共同作業で、責任者を決める理由は何ですか。",
       "audio": "review-question-02.mp3",
       "audioHash": "10fed75990c436a38f1ee9deec779cb3daff218cbb444190d72c65f903a56592",
-      "durationSeconds": 4.922
+      "durationSeconds": 4.922,
+      "audioSha256": "9cc4f4bf2d109db6fd12d4b927b7af14431edbe2cc37e7bb3ad9e6c90a49c7ab"
     },
     {
       "index": 3,
       "text": "接続仕様が共通でも、なぜ再検証が必要ですか。",
       "audio": "review-question-03.mp3",
       "audioHash": "d22c05ec5b1ddaf11002cc3450a2592469b234cceafb01e4080e78d26986923d",
-      "durationSeconds": 4.701
+      "durationSeconds": 4.701,
+      "audioSha256": "3a4da41a2678d71801c124c9030e4d36b42bbb0ce5d0cbb70ddbea28ce060509"
     }
   ]
 }

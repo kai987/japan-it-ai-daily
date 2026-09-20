@@ -44,7 +44,8 @@
       "text": "複数企業が使うエージェントで、データの混在をどう防ぎますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "39076c0b767d36d7b5bedc3413b7952a88e44501c25a05c95b45627b57579fe1",
-      "durationSeconds": 4.887
+      "durationSeconds": 4.887,
+      "audioSha256": "0915c8b84e5f1139dabee52ab2e435682c959c982996dc7af0107efe051db7f5"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "077c8c49cb40cc7465385fc081cc32ff377ad366f45dc5e4bc7eca45478fef3d",
       "durationSeconds": 27.489,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "74f860a0e4d07d204d4cb5462b1ef440099c4a2c03d0e2f97ac3ee43139d82fa"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "エージェント用のブラウザーを選ぶとき、何を確かめますか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "d45744edc7cb64031c5584e87db574159b4785f3a09083f3a5f0b0f619f2e076",
-      "durationSeconds": 4.457
+      "durationSeconds": 4.457,
+      "audioSha256": "ba422b4f65557764f0b27ee1241547278abea5be469f8c6202f96b46dfe7cb6f"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "dd307cbb1439210ffbb08466808148d9b1e8e01914526a650837701d614f1bd8",
       "durationSeconds": 26.574,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "355b3f2ad1ea1def2e86032599cb3f111709eaf46926346cb91ec4ccdfb3e1a5"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "AIが行った変更の理由を、チームでどう共有しますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "49af6a2ca2abb2f849b7090b30f26f0a7f241464488502a639627a5f906ff8c1",
-      "durationSeconds": 4.353
+      "durationSeconds": 4.353,
+      "audioSha256": "5482fc549b10fbbc15e9a31bef3a1510c4312f20f977af5e382fb929e4487908"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "13a0f7b99b0576362b0f1c0bcc1dc164282182c8f962c5730de6b854d5168d84",
       "durationSeconds": 27.153,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "8f4e3e9045efa6b7e0e46ce463c35153a8d754e24ed2086307773c8488cd7746"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "GraphRAGの回答がもっともらしいとき、どこまで確認しますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "b382056397e8686b6a0ef9dd460a73b7195794266fd9588a7e85d8ccc8a6e25a",
-      "durationSeconds": 4.957
+      "durationSeconds": 4.957,
+      "audioSha256": "6787d8f85835d803752fce6b09a56e118a73e80aebd5bc0e0a1bdc0feb3875a9"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "45684a2439b135d9d6a1477f99d90f227a362d1d24d7d0baa78a4aa5629dddfd",
       "durationSeconds": 27.503,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "ba18b071cf1fe5734d4f9897a538b959cb7726224f683ef99ce8db242212b273"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "調整したモデルが本番経路でだけ失敗するとき、何を調べますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "1804f4c54f1f0f07944ab9db1bf267b2babc933e2f378772206f15b520d6876f",
-      "durationSeconds": 5.711
+      "durationSeconds": 5.711,
+      "audioSha256": "614c28d8f5fab02677923c4b8fcb0da9e0f3fd65c7e53ccccbf3867200f23be7"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "605e6b792959c18db084928e8e1c1a8305f401565b5d4c6f8b25574f22c69252",
       "durationSeconds": 27.154,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "e558b77b818da142f1769cf61924852ee9b8066598fba987ca72241d6b0511ed"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "セッションを分ければ、共有データの認可は不要ですか。",
       "audio": "review-question-01.mp3",
       "audioHash": "f74d2c6aff12d44cdf43b445ba9558f488696708c5ddc8b6af1e7e746ce9156a",
-      "durationSeconds": 3.993
+      "durationSeconds": 3.993,
+      "audioSha256": "99acb432e48bd4ffb420acde619967dc890ca2a6653c3873ae618654912cb92a"
     },
     {
       "index": 2,
       "text": "GraphRAGの図が描けたら、索引は正しいと言えますか。",
       "audio": "review-question-02.mp3",
       "audioHash": "66f77ebd9744a0179ceb61c648134321675ba18d3db1b9bbafc353e0c74984e8",
-      "durationSeconds": 4.365
+      "durationSeconds": 4.365,
+      "audioSha256": "e7662ae5495eca4b089503102928ba046166e552991a0174aecd233727c0f340"
     },
     {
       "index": 3,
       "text": "JSONの意味が同じなら、構造化出力の順序も無関係ですか。",
       "audio": "review-question-03.mp3",
       "audioHash": "208a89413a78342d561d1e687a1b1f562b87bcda4e53cc84a9d47125992c6a08",
-      "durationSeconds": 5.107
+      "durationSeconds": 5.107,
+      "audioSha256": "6091017b3c91552a3752a9082a30f3c0f9e4667e83f9484b7bb814053899d41c"
     }
   ]
 }

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-19",
+  "interview": [
+    {
+      "id": "qa-01",
+      "articleIds": [
+        "2026-09-19-top-1"
+      ],
+      "question": "LLMアプリのレッドチーミングをCIへ入れるなら、何を分けて評価しますか。",
+      "answer": "攻撃耐性と通常回答の品質を別Gateにします。SmartHRではOWASP Top 10 for LLM Applications 2026を基に、質問・文書検索・回答の3層へ攻撃Caseを分け、CSVを毎朝CIで実行し、判定用LLMが合否を確認します。ただし守りを強めると正常質問も拒否し得るため、回答精度Datasetも変更前後で併走させます。"
+    },
+    {
+      "id": "qa-02",
+      "articleIds": [
+        "2026-09-19-top-2"
+      ],
+      "question": "マルチクラウドの生成AI機能を増やすとき、共通化する範囲をどう決めますか。",
+      "answer": "認証と実行基盤は共通化し、Model固有処理は残します。DeNAはSQSとEKSをGolden Pathにし、Kubernetes ServiceAccountのOIDCでBedrock・Google Cloud・Microsoft Foundryの短期認証を揃えました。一方、推論APIは独自共通APIに隠さず公式SDKを使います。SQSはAt-Least-OnceなのでCallbackの冪等性も必須です。"
+    },
+    {
+      "id": "qa-03",
+      "articleIds": [
+        "2026-09-19-top-3"
+      ],
+      "question": "Claude Code v2.1.275系を組織でUpgradeするとき、どこをRegression確認しますか。",
+      "answer": "Gateway、Plugin、Session復元を優先します。v2.1.275ではANTHROPIC_BASE_URL経由が400になるRegressionが入り、v2.1.276がその1件だけを修正しました。npm Pluginはnpm pack --ignore-scriptsへ変わり、/rewindの破損修正やToken露出修正もあります。ただしLogとInstall Script依存まで確認してから展開します。"
+    },
+    {
+      "id": "qa-04",
+      "articleIds": [
+        "2026-09-19-top-4"
+      ],
+      "question": "大規模RAGのReference実装を自社へ持ち込むとき、何をそのまま信じず検証しますか。",
+      "answer": "Data量と検索Latencyだけでなく、DatasetとIndex更新条件を確認します。AWSのDemoは38GB・約29万FileをS3へ集約し、Bedrock Knowledge BasesとAgentCore Gatewayで検索し、12 Subsystemを79仕様Fileで実装しました。ただしDataはKiro生成の架空Dataで、30分超を数秒という値もVendor Demoなので、自社Corpusで再測定します。"
+    },
+    {
+      "id": "qa-05",
+      "articleIds": [
+        "2026-09-19-top-5"
+      ],
+      "question": "専門家の「目利き」をAI Agentへ移すなら、どのEvidenceを残しますか。",
+      "answer": "検索結果だけでなく、候補を選ぶ判断過程を構造化します。資生堂はHyDE、Hybrid RAG、複数LLM Reviewを組み合わせ、原料探索時間95％削減、提案数20〜50％増と報告しました。Model ArmorとIAMも使います。ただしConference Caseで再現条件は公開されていないため、Expert一致率や採用率を自社で継続評価します。"
+    }
+  ],
+  "review": [
+    {
+      "id": "review-01",
+      "articleIds": [
+        "2026-09-19-top-2"
+      ],
+      "question": "生成AI機能の共通Platformでは、何を共通化しすぎない方がよいですか。",
+      "points": {
+        "zh": "Auth / Queue / Retry / Deploy / Monitorは共通化；Model固有API・Prompt・Guardrailは公式SDKで残す；最小公分母化を避ける。",
+        "ja": "Auth / Queue / Retry / Deploy / Monitorは共通化；Model固有API・Prompt・Guardrailは公式SDKで残す；最小公分母化を避ける。"
+      }
+    },
+    {
+      "id": "review-02",
+      "articleIds": [
+        "2026-09-19-top-1"
+      ],
+      "question": "Red TeamingでSecurity Scoreだけを上げると何が起きますか。",
+      "points": {
+        "zh": "False Positiveで正常質問も拒否；Security Regressionと通常回答精度Datasetを別Gateで前後比較；Judge LLM自体の誤判定も考慮。",
+        "ja": "False Positiveで正常質問も拒否；Security Regressionと通常回答精度Datasetを別Gateで前後比較；Judge LLM自体の誤判定も考慮。"
+      }
+    },
+    {
+      "id": "review-03",
+      "articleIds": [
+        "2026-09-19-top-4",
+        "2026-09-19-top-5"
+      ],
+      "question": "Vendor Demoの改善率を自社に当てはめる前に何を確認しますか。",
+      "points": {
+        "zh": "Datasetの実在性 / Sample Size / Before-After定義 / Production SLO / Access Control / TCO / 独立再測定。",
+        "ja": "Datasetの実在性 / Sample Size / Before-After定義 / Production SLO / Access Control / TCO / 独立再測定。"
+      }
+    }
+  ]
+}

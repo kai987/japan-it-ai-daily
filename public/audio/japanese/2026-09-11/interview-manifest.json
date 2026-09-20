@@ -44,7 +44,8 @@
       "text": "Agent Routerを本番のAIエージェント基盤へ入れる場合、どこを設計ポイントにしますか。",
       "audio": "interview-question-01.mp3",
       "audioHash": "1ed65a8ddb59831074779fa4021b75af3a7c7c05edd910e94d4f90f11c07d4e8",
-      "durationSeconds": 6.42
+      "durationSeconds": 6.42,
+      "audioSha256": "a55cdd496bd72df03b44ca2460dcfd028dde243a3652ecc34588c96e182c3918"
     },
     {
       "index": 1,
@@ -53,7 +54,8 @@
       "audio": "interview-answer-01.mp3",
       "audioHash": "3c73e9c86426b7530bedb77d1b8f176b6a846dbea0426b271899a6baad814fbc",
       "durationSeconds": 27.436,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "ec71fe9a63f7fc0906ed68542583ad6f55273f5cd7d63afc95c72de2af3344ca"
     },
     {
       "index": 2,
@@ -61,7 +63,8 @@
       "text": "クラウドAIの信頼性を評価するとき、外部からの監査だけで十分でしょうか。",
       "audio": "interview-question-02.mp3",
       "audioHash": "b671df1c9ef1417769088afd62b14068672f953b31601167c77bbf09142f1986",
-      "durationSeconds": 5.943
+      "durationSeconds": 5.943,
+      "audioSha256": "e52baaafa44ace5cac0b64d867605bce58cba75f2b7a373c164378fbf29150c9"
     },
     {
       "index": 2,
@@ -70,7 +73,8 @@
       "audio": "interview-answer-02.mp3",
       "audioHash": "0675d141730fbf9d2b5744e77ddf6ef07e83ac34d89a6b6a8cd2a251c93a095f",
       "durationSeconds": 26.095,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "427baae61f4a4ed6344bd4dafb341c38eb6d86cab812062fceaf3fde8a14721e"
     },
     {
       "index": 3,
@@ -78,7 +82,8 @@
       "text": "Claude Code v2.1.267を組織で使う場合、どのUpdateを優先して確認しますか。",
       "audio": "interview-question-03.mp3",
       "audioHash": "75518b449afa4357e4db77572cccb4e14bb4085a3756dc3c7e84dc9b17195202",
-      "durationSeconds": 7.114
+      "durationSeconds": 7.114,
+      "audioSha256": "e6140c233aee6a3ff83f7b3935fb236f0e9fa44883be7c031bca148e20667292"
     },
     {
       "index": 3,
@@ -87,7 +92,8 @@
       "audio": "interview-answer-03.mp3",
       "audioHash": "15dbe5c049442fad054647f0ef814ebd5d158f575abce3ffb83ef98c60a9cce5",
       "durationSeconds": 24.927,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "1d7a653b78d11d130db3c2b677965d1a6b2dd0424fa637c5413a299cd16bfe78"
     },
     {
       "index": 4,
@@ -95,7 +101,8 @@
       "text": "複数のAIエージェントを組織として運用するとき、どのように統制しますか。",
       "audio": "interview-question-04.mp3",
       "audioHash": "2fe371ca1670eb222f48629587fc058c0570c6a61b9abb29506c44f38838ad0e",
-      "durationSeconds": 5.653
+      "durationSeconds": 5.653,
+      "audioSha256": "b4a3b04d429c64d6a38aa3474c709c04f1f2f89279ae9b34bd4140a6a0065b1b"
     },
     {
       "index": 4,
@@ -104,7 +111,8 @@
       "audio": "interview-answer-04.mp3",
       "audioHash": "87e63e1aa4b579452d88f2fecd962d77ddfe620cc9e949a2b88f05148b03f3c3",
       "durationSeconds": 28.014,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "21f8e26cf8a96dec238fe9e603045af451906f98d31cfb6fafabc10af0128c2a"
     },
     {
       "index": 5,
@@ -112,7 +120,8 @@
       "text": "FDEとしてAI Workflowを顧客業務へ定着させるとき、何を重視しますか。",
       "audio": "interview-question-05.mp3",
       "audioHash": "708ced116a5549566621c66732f4377671182ee4852c9564b32d5c64d94d65c4",
-      "durationSeconds": 6.605
+      "durationSeconds": 6.605,
+      "audioSha256": "494863a85b8deedfcb0400f8c971dfba47529a8ef3560567813562867891e2f1"
     },
     {
       "index": 5,
@@ -121,7 +130,8 @@
       "audio": "interview-answer-05.mp3",
       "audioHash": "f77dcffc00d9688879bac6430a023cd7319065be05cb44197dadee88c9b26f36",
       "durationSeconds": 28.143,
-      "durationStatus": "ideal"
+      "durationStatus": "ideal",
+      "audioSha256": "24ccca7d312f11d797fe54fbd98a9a05dc4a583caaa0e8d8e1ff2543c91acdb8"
     }
   ],
   "review": [
@@ -130,21 +140,24 @@
       "text": "Agent RouterのようなAI Gatewayを導入すると、Agent Application側から何を分離できますか。",
       "audio": "review-question-01.mp3",
       "audioHash": "80eaad287105b609240cb0b7f654eb6c5b543a243ed6f86bac254d47e320b641",
-      "durationSeconds": 7.394
+      "durationSeconds": 7.394,
+      "audioSha256": "66bb788876d3509e9b77295050db8aa45fa1dfc5f9173e56877bb796bf04eca9"
     },
     {
       "index": 2,
       "text": "閉域AI基盤はCloud AIより必ず安全だと言えますか。",
       "audio": "review-question-02.mp3",
       "audioHash": "f5a26dbbc28ff146499289b391ae69d02e4267f7fa043b64d4756f960de417dd",
-      "durationSeconds": 5.026
+      "durationSeconds": 5.026,
+      "audioSha256": "cd9464b8da83081b8b5f51c7d072c21681e7898613d941684a86bfb50e5d2e91"
     },
     {
       "index": 3,
       "text": "FDEがAI Workflowを本番定着させるとき、Demoの次に何を見るべきですか。",
       "audio": "review-question-03.mp3",
       "audioHash": "c1673571fe1ea159133e67e28456dcf3d0fa247ffc0f3d0d71a0884dc08728d1",
-      "durationSeconds": 6.578
+      "durationSeconds": 6.578,
+      "audioSha256": "88af43e0bc5d4dd29cea18fa7f9e5c67b1d61824b106e264a700e85133d6a5cc"
     }
   ]
 }
