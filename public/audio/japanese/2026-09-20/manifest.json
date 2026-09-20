@@ -1,0 +1,323 @@
+{
+  "date": "2026-09-20",
+  "generatedAt": "2026-09-20T07:55:47.978Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "添付する",
+      "reading": "てんぷする",
+      "exampleJa": "Dashboard画像をPromptに添付して、再構成結果を比較します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "8ca2b6737ac43f7610889bda9e248d3b3c9ade8dd2545c9b2cee8714d84e148a",
+      "example": "example-01.mp3",
+      "exampleHash": "bf7744701378e7f50cb7c708ac12ab2dc8ef6cc8f400da15424f3e6bcbc0e320"
+    },
+    {
+      "index": 2,
+      "term": "作り直す",
+      "reading": "つくりなおす",
+      "exampleJa": "分析全体を作り直さず、必要なSheetだけを追加します。",
+      "word": "vocab-02.mp3",
+      "wordHash": "4bef177b08cdae55c76f78d0bd6dc25045de71e20b1ddfe110d3e57654e8f4b2",
+      "example": "example-02.mp3",
+      "exampleHash": "5846d2a42bdf3bf45dc9513d22fc2eedf514e4802b220f4bc360ec37ef3f4022"
+    },
+    {
+      "index": 3,
+      "term": "読み取る",
+      "reading": "よみとる",
+      "exampleJa": "AIが画像から読み取ったKPIと元Dashboardの定義を照合します。",
+      "word": "vocab-03.mp3",
+      "wordHash": "437aeca26a07026db54f49ea3e9e5f1a1921e4437f5c2626e95abdb1e356b00d",
+      "example": "example-03.mp3",
+      "exampleHash": "b13e4ec69418f1035ab4fa77e424fd427987b72d718feac01dd800f9f57e2eac"
+    },
+    {
+      "index": 4,
+      "term": "書き写す",
+      "reading": "かきうつす",
+      "exampleJa": "共通指示をToolごとに書き写す運用は差分を生みやすいです。",
+      "word": "vocab-04.mp3",
+      "wordHash": "8ac918301de567a117f68ed678429c0357c2a843bcc223ca3bcc0315ac3121c0",
+      "example": "example-04.mp3",
+      "exampleHash": "43d54338e1b3c2a8cdf10dbc4e6771d2e6e239fd50c0681281b2e7162eda06ba"
+    },
+    {
+      "index": 5,
+      "term": "退避する",
+      "reading": "たいひする",
+      "exampleJa": "検証ではAGENTS.mdを一度退避して読み込み差分を確認します。",
+      "word": "vocab-05.mp3",
+      "wordHash": "f5d7a236da688d6563d2c358eb0c8cce08236d5e98edcf707f8246ecd8c59546",
+      "example": "example-05.mp3",
+      "exampleHash": "0fca287e06d134577c77f0d90d6efcc0c109d39d4499cd22507f3c8ffbd3d86b"
+    },
+    {
+      "index": 6,
+      "term": "縮小する",
+      "reading": "しゅくしょうする",
+      "exampleJa": "Peak後に課金Memoryがどの速度で縮小するかを観測します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "b4f366bb2439733f41873f6d9321c06eb93dd99097ae733584c00856a77a803a",
+      "example": "example-06.mp3",
+      "exampleHash": "771ef0264f6447178a8684ab98acd74c2de0dc375b99ebba0c57c10d4d9c6e57"
+    },
+    {
+      "index": 7,
+      "term": "確保する",
+      "reading": "かくほする",
+      "exampleJa": "Testでは1000MBを確保して課金側のPeakを測りました。",
+      "word": "vocab-07.mp3",
+      "wordHash": "b37f9307695d396350a8153fbd461a1d8877d3f13f7b5e574d164365f4e7c784",
+      "example": "example-07.mp3",
+      "exampleHash": "37ffe74e64a0d9974fe6ab610e6e5b640babe8f2eb9af778eadcf1247653ee3e"
+    },
+    {
+      "index": 8,
+      "term": "解放する",
+      "reading": "かいほうする",
+      "exampleJa": "Memoryを解放しても課金値が即時に同じ水準へ戻るとは限りません。",
+      "word": "vocab-08.mp3",
+      "wordHash": "5909e0d91d1134e2214ba563f01ee1e12e7c56d301d28bd42ea4aefc20559c08",
+      "example": "example-08.mp3",
+      "exampleHash": "8d89247b0677b2e6e6df5373a3ee03063496e1424fe1939c001cae9fe1562884"
+    },
+    {
+      "index": 9,
+      "term": "積み上がる",
+      "reading": "つみあがる",
+      "exampleJa": "Idle時間が長いと、処理後も課金Costが積み上がります。",
+      "word": "vocab-09.mp3",
+      "wordHash": "26fa167e316fdd4d33f425b11dfa7d649e913f4818a366425ad15dcf1de51b36",
+      "example": "example-09.mp3",
+      "exampleHash": "e377ab6879b258bf78c782da98fa94e6e413482b81c7904c1d507ad6cbf74a51"
+    },
+    {
+      "index": 10,
+      "term": "張り直す",
+      "reading": "はりなおす",
+      "exampleJa": "APIを一回ずつ呼ぶ測定ではTLS接続を毎回張り直します。",
+      "word": "vocab-10.mp3",
+      "wordHash": "aee5b37a03dba85041458614b86fb2246743746b8eee28d80df3e3767cdabd50",
+      "example": "example-10.mp3",
+      "exampleHash": "742592be530bb6e87bba6f3deaa0cfcf4d7fce4ab4e4fbcaac66d1181be4b6f8"
+    },
+    {
+      "index": 11,
+      "term": "差し引く",
+      "reading": "さしひく",
+      "exampleJa": "Total時間から生成時間を差し引き、ClassifierのOverheadを比べます。",
+      "word": "vocab-11.mp3",
+      "wordHash": "9591f2e3fcdebf1ab9421d5c354bb86c564ac0c542aff00d9aed808226ea13ed",
+      "example": "example-11.mp3",
+      "exampleHash": "5d1447c4e4c82ec531ecf01ca4d658d525b850dfd5b413dbf034ca1387ca66c2"
+    },
+    {
+      "index": 12,
+      "term": "画期的",
+      "reading": "かっきてき",
+      "exampleJa": "画期的な機能でも公開前の設定確認は省けません。",
+      "word": "vocab-12.mp3",
+      "wordHash": "01abc5fe1f72832d82112008163a98b14356ff5f1cb9042055e8e2d2c41e03dc",
+      "example": "example-12.mp3",
+      "exampleHash": "1fc6196f5641a6b2a2dc29670b3b188e6c18e9ff17173a9f414f5385b79d2991"
+    },
+    {
+      "index": 13,
+      "term": "重大な",
+      "reading": "じゅうだいな",
+      "exampleJa": "重大なIncidentだけを人へEscalationできる基準を作ります。",
+      "word": "vocab-13.mp3",
+      "wordHash": "12e1181b207b3644f2e7b610016c98b892ea010ab7e539bd07732f1c2360bdbb",
+      "example": "example-13.mp3",
+      "exampleHash": "a0145cae702f42760785c199b29de41072ac61186ab62c349e9450353d8b64b5"
+    },
+    {
+      "index": 14,
+      "term": "緩やかに",
+      "reading": "ゆるやかに",
+      "exampleJa": "課金MemoryはPeak後に緩やかに低下する区間がありました。",
+      "word": "vocab-14.mp3",
+      "wordHash": "d50e63346a2e9e93a14574c16bfa1f98ec2da0bfec53df66cbfd5a7dab9c98f7",
+      "example": "example-14.mp3",
+      "exampleHash": "4dfd112ff06bfd860a3688c9a63ad60f7aa7fcad6a5fe52d20ca016331602232"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "検証",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "term": "検証する",
+      "reading": "けんしょうする",
+      "exampleJa": "検索結果の品質を実データで検証します。",
+      "word": "vocab-07.mp3",
+      "example": "example-07.mp3"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "判断",
+      "firstIntroducedDate": "2026-08-13",
+      "audioDate": "2026-08-13",
+      "term": "判断する",
+      "reading": "はんだんする",
+      "exampleJa": "判定モデルが軽量側で解けるかを判断します。",
+      "word": "vocab-08.mp3",
+      "example": "example-08.mp3"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "実行",
+      "firstIntroducedDate": "2026-08-15",
+      "audioDate": "2026-08-15",
+      "term": "実行する",
+      "reading": "じっこうする",
+      "exampleJa": "危険なCommandは隔離されたSandboxで実行します。",
+      "word": "vocab-06.mp3",
+      "example": "example-06.mp3"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "ただし",
+      "firstIntroducedDate": "2026-09-07",
+      "audioDate": "2026-09-07",
+      "term": "ただし",
+      "reading": "ただし",
+      "exampleJa": "Latencyは改善しました。ただし、一回の測定なので一般化できません。",
+      "word": "vocab-18.mp3",
+      "example": "example-18.mp3"
+    },
+    {
+      "index": 5,
+      "studyKind": "review",
+      "identity": "出典",
+      "firstIntroducedDate": "2026-09-08",
+      "audioDate": "2026-09-08",
+      "term": "出典",
+      "reading": "しゅってん",
+      "exampleJa": "Memoryの結論だけでなく、出典情報まで追跡できるようにします。",
+      "word": "vocab-03.mp3",
+      "example": "example-03.mp3"
+    },
+    {
+      "index": 6,
+      "studyKind": "review",
+      "identity": "運用",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "term": "運用",
+      "reading": "うんよう",
+      "exampleJa": "本番運用ではLatencyとError Rateを継続的に確認します。",
+      "word": "vocab-01.mp3",
+      "example": "example-01.mp3"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "とは限らない",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～とは限らない",
+      "exampleJa": "Parameter数が多ければ実務性能が高いとは限りません。",
+      "example": "grammar-example-07.mp3"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "に応じて",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～に応じて",
+      "exampleJa": "データの機密性に応じてCloudとLocal Modelを使い分けます。",
+      "example": "grammar-example-04.mp3"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "たうえで",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～たうえで",
+      "exampleJa": "Latencyを計測したうえで、利用するModelを決定します。",
+      "example": "grammar-example-06.mp3"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "一方で",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～一方で",
+      "exampleJa": "Local LLMはDataを外部に出さない一方で、運用負荷が高くなることがあります。",
+      "example": "grammar-example-05.mp3"
+    },
+    {
+      "index": 5,
+      "studyKind": "review",
+      "identity": "ものの",
+      "firstIntroducedDate": "2026-09-08",
+      "audioDate": "2026-09-08",
+      "pattern": "～ものの",
+      "exampleJa": "以前は一般的だったものの、現在は推奨されない実装もあります。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 6,
+      "studyKind": "review",
+      "identity": "といった",
+      "firstIntroducedDate": "2026-08-28",
+      "audioDate": "2026-08-28",
+      "pattern": "～といった",
+      "exampleJa": "設定が失われるといった問題を、更新前に確認します。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 7,
+      "studyKind": "review",
+      "identity": "にとどまらず",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～にとどまらず",
+      "exampleJa": "ObservabilityはError確認にとどまらず、CostやSecurityの分析にも役立ちます。",
+      "example": "grammar-example-01.mp3"
+    },
+    {
+      "index": 8,
+      "studyKind": "review",
+      "identity": "べきだ",
+      "firstIntroducedDate": "2026-09-10",
+      "audioDate": "2026-09-10",
+      "pattern": "～べきだ",
+      "exampleJa": "最終的なリスク評価は、利用する組織自身が行うべきです。",
+      "example": "grammar-example-01.mp3"
+    }
+  ]
+}
