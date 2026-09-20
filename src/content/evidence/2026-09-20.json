@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-20",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-20T01:08:52.000Z",
+  "scope": "Reviewed the September 19–20 Japanese IT/AI publication window and excluded the September 19 Top 5. Sunday publishing was sparse: three selected originals are explicitly dated September 20, while two DevelopersIO pages are dated September 19 without a public clock time and are treated as transparent date-boundary inclusions rather than asserted strict-window matches. Selected originals cover generated BI verification, dedicated LLM routing classification, agentic SOC governance, AgentCore Runtime V2 memory billing telemetry, and Claude Code upgrade boundaries. Author hands-on measurements, vendor statements and release/changelog facts are kept distinct and not generalized beyond their conditions.",
+  "articles": [
+    {
+      "articleId": "2026-09-20-top-1",
+      "url": "https://dev.classmethod.jp/articles/20260919-amazon-quick-generate-sheets-and-analysis-from-an-image/",
+      "originalTitle": "[アップデート] Amazon Quick で画像やプロンプトからBI画面を自動生成できるようになったので試してみた",
+      "source": "DevelopersIO",
+      "topic": "Amazon Quick / BI / Generative AI / Migration / Evaluation",
+      "access": "full",
+      "accessNote": "DevelopersIO公開本文を確認。Generate Sheetと画像からのGenerate Analysis、280/1,400文字制限、東京/バージニア北部差、Superstore実測、5〜6 Visual対9 Visual、Control/Calculated Fieldの生成差、profit_ratio、集計意味のずれと公開前Review注意を確認した。",
+      "capturedAt": "2026-09-20T01:08:52.000Z",
+      "snapshotSha256": "453ac72f3e6a936d41a5696ec0441d2fdb171a8bcc60438ab5e150252d7783b7",
+      "claims": [{
+        "id": "fact-1",
+        "kind": "source-fact",
+        "statement": "Amazon QuickのGenerate Sheetは作者実測で日本語Promptから5 Visualを生成したが、明示したFilter ControlとCalculated Fieldは0件だった。一方、1600×1000のDashboard画像からは9 Visual・5 Control・profit_ratioを生成したが、Tab構造や集計意味は完全再現しなかった。",
+        "quote": "Generated analyses should be reviewed before publishing.",
+        "locator": "DevelopersIO: Generate Sheet / image generation hands-on and review warning",
+        "conditions": "Single-author hands-on with Superstore data and one generation sequence; not a general accuracy benchmark. At the observation time Generate Sheet entry was not visible in Tokyo although What's New said general availability, so region rollout behavior also needs re-checking.",
+        "usedIn": {"zh": "profit_ratio", "ja": "profit_ratio", "interview": "profit_ratio"}
+      }]
+    },
+    {
+      "articleId": "2026-09-20-top-2",
+      "url": "https://dev.classmethod.jp/articles/reona-dgx-spark-switchyard-jev-classifier/",
+      "originalTitle": "NemoHermes の LLM ルーティングに使っている NeMo Switchyard の Classifier を TypeSafe の Jev に替えて計測してみた",
+      "source": "DevelopersIO",
+      "topic": "LLM Routing / NeMo Switchyard / TypeSafe Jev / Evaluation / Cost",
+      "access": "full",
+      "accessNote": "DevelopersIO公開本文を確認。type_safe_classifier設定、13 Scenario×3比較、judge 36/39対Jev 39/39、判定+変換中央値1.55秒対0.27〜0.42秒、直接API 130回、早期Access、画像非対応、JSONL監査制約を確認した。",
+      "capturedAt": "2026-09-20T01:08:52.000Z",
+      "snapshotSha256": "d379fa6d134602132dc57478ce932c4514cf710bb362d1a750526128b334382e",
+      "claims": [{
+        "id": "fact-2",
+        "kind": "source-fact",
+        "statement": "作者の13 Scenario×3比較では従来judgeが期待どおり36/39、Jevが39/39で、判定と変換の中央値は1.55秒から0.27〜0.42秒になった。直接API 130回は全件期待一致だったが、Jevは画像内容を見ず判定根拠もJSONLに残らない。",
+        "quote": "Jev は 39 件すべてで期待どおりに振りました。",
+        "locator": "DevelopersIO: Jev results and constraints",
+        "conditions": "Small hand-authored 13-scenario routing test, not a broad routing benchmark. Jev was early access; pricing, limits and audit behavior can change. Correct routing still depends on criteria and the agent's actual capabilities.",
+        "usedIn": {"zh": "39/39", "ja": "39/39", "interview": "39/39"}
+      }]
+    },
+    {
+      "articleId": "2026-09-20-top-3",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/20/2000001661/",
+      "originalTitle": "AI攻撃は「調べて対応」では間に合わない　ゼットスケーラーがSOCをAIエージェント化",
+      "source": "キーマンズネット",
+      "topic": "AI Agent / SOC / Security / Zero Trust / Incident Response",
+      "access": "full",
+      "accessNote": "キーマンズネット公開本文を確認。Agentic SOCがZero Trust Telemetryと第三者Security Dataを相関し、Triage、Root Cause調査、判断、Response Workflowまで扱う構想、User隔離・通信遮断・Lateral Movement停止、Anthropic/OpenAI/Red Canary連携、誤検知時の影響と人のEvidence確認を確認した。",
+      "capturedAt": "2026-09-20T01:08:52.000Z",
+      "snapshotSha256": "f5286e6f4c411ca87fe74f756b1b062b04ddba6b5c61cb01948b06da56025c80",
+      "claims": [{
+        "id": "fact-3",
+        "kind": "vendor-claim",
+        "statement": "ZscalerはAgentic SOCでAlert TriageからRoot Cause調査、Response Workflow起動までをAgent化し、Zero Trust基盤の1日7500億件規模のTransaction Telemetry活用を説明した。一方、誤検知による正当User隔離などのRiskがありEvidenceと実行Actionの確認が必要である。",
+        "quote": "AIが判断を誤る可能性はゼロではない。",
+        "locator": "キーマンズネット: Agentic SOCの自動化範囲と誤検知Risk",
+        "conditions": "Vendor/product reporting. The article does not publish independent false-positive, MTTR, autonomous-action success or rollback benchmarks, so transaction scale is not evidence of response quality.",
+        "usedIn": {"zh": "7500亿", "ja": "7500億", "interview": "7500億"}
+      }]
+    },
+    {
+      "articleId": "2026-09-20-top-4",
+      "url": "https://dev.classmethod.jp/articles/amazon-bedrock-agentcore-runtime-v2-memory-usage-logs/",
+      "originalTitle": "Amazon Bedrock AgentCore Runtime V2 の課金メモリがピーク後に縮小する挙動を USAGE_LOGS で観測してみた",
+      "source": "DevelopersIO",
+      "topic": "AWS / AgentCore Runtime V2 / FinOps / Memory / Observability",
+      "access": "full",
+      "accessNote": "DevelopersIO公開本文を確認。ap-northeast-1のV2 RuntimeでUSAGE_LOGSを1秒粒度で取得し、agent.runtime.memory.gb_hours.usedからMB換算、1000MB確保Peak約2839MB、667秒後約796MB、VmRSS約33MB、3 Session合計0.469416 GB-hoursを確認した。",
+      "capturedAt": "2026-09-20T01:08:52.000Z",
+      "snapshotSha256": "3077948fc16b53df48020ff681cf64755a067e9b84b1de166943ca479898d0d7",
+      "claims": [{
+        "id": "fact-4",
+        "kind": "source-fact",
+        "statement": "作者のV2実測では課金Memory換算が1000MB確保後Peak約2839MBとなり、667秒後でも約796MBだった。Process RSS約33MBとは大きく乖離し、3 Sessionのtotal mem_gb_hoursは0.469416だった。",
+        "quote": "667 秒後の約 796MB でも、プロセス RSS（約 33MB）の約 24 倍でした。",
+        "locator": "DevelopersIO: USAGE_LOGS measurement table and summary",
+        "conditions": "Controlled author hands-on with three sessions and one runtime image. Process RSS is not a billing proxy; production cost should be re-measured with realistic session duration and memory patterns.",
+        "usedIn": {"zh": "2839MB", "ja": "2839MB", "interview": "2839MB"}
+      }]
+    },
+    {
+      "articleId": "2026-09-20-top-5",
+      "url": "https://dev.classmethod.jp/articles/20260919-cc-updates-v2-1-278/",
+      "originalTitle": "Claude Code v2.1.277〜v2.1.278 の主要アップデート - 待望の AGENTS.md 対応と TaskOutput ツールの削除",
+      "source": "DevelopersIO",
+      "topic": "Claude Code / AGENTS.md / Security / Gateway / Enterprise",
+      "access": "full",
+      "accessNote": "DevelopersIO公開本文を確認。CLAUDE.mdがない場合のAGENTS.md fallbackと親Directory探索、Bedrock/Vertex/Foundry未対応、TaskOutput削除、v2.1.278 Auto mode classifierのserver-side既定、Gateway egress boundary/Sandbox関連Fixを確認した。",
+      "capturedAt": "2026-09-20T01:08:52.000Z",
+      "snapshotSha256": "9388b254f2976e4ac3fcae0a1d99397914f3729333f2b7d3a8c7436630032c30",
+      "claims": [{
+        "id": "fact-5",
+        "kind": "source-fact",
+        "statement": "Claude Code v2.1.277はCLAUDE.mdが無い場合にAGENTS.mdへfallbackするがBedrock・Vertex・Foundryでは未対応で、TaskOutputを削除した。v2.1.278ではAuto mode classifierが対象Provider/Gatewayでserver-side既定になった。",
+        "quote": "Bedrock・Vertex・Foundry では未対応です。",
+        "locator": "DevelopersIO: AGENTS.md support, TaskOutput removal and auto-mode default",
+        "conditions": "Release changelog plus author hands-on, not a productivity benchmark. Availability and defaults depend on provider and settings, and parent CLAUDE.md precedence can prevent AGENTS.md fallback.",
+        "usedIn": {"zh": "AGENTS.md", "ja": "AGENTS.md", "interview": "AGENTS.md"}
+      }]
+    }
+  ]
+}
