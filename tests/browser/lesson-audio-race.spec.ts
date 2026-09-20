@@ -154,8 +154,11 @@ test('mobile lesson loading preserves button dimensions and can be cancelled', a
   await buttons.nth(0).click();
   await expect(buttons.nth(0)).toContainText('読み込み中');
   const loading = await buttons.nth(0).boundingBox();
-  expect(loading?.width).toBe(original?.width);
-  expect(loading?.height).toBe(original?.height);
+  expect(original).not.toBeNull();
+  expect(loading).not.toBeNull();
+  // Chromium can introduce subpixel rounding when scrolling the button into view.
+  expect(loading!.width).toBeCloseTo(original!.width, 2);
+  expect(loading!.height).toBeCloseTo(original!.height, 2);
   expect(await buttons.nth(0).evaluate((button) => getComputedStyle(button, '::after').content)).toBe('""');
   await page.screenshot({ path: info.outputPath('lesson-audio-loading-mobile.png') });
   await buttons.nth(0).click();
