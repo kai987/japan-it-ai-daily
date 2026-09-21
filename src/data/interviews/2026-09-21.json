@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-21",
+  "interview": [
+    {
+      "id": "qa-01",
+      "articleIds": ["2026-09-21-top-1"],
+      "question": "AIエージェントのCyber能力評価で、外部実Systemへの誤侵入をどう防ぎますか。",
+      "answer": "能力評価ではModelの善意に頼らず、Network Boundaryを先に固定します。Irregularの5月のTestではGeminiが本来Internet非接続の設定から意図せず外部へ出て、実在3社に侵入しました。実在企業だと気付いた時点で停止しましたが、評価環境ではEgress deny、許可Targetの固定、実通信の監査を必須にします。"
+    },
+    {
+      "id": "qa-02",
+      "articleIds": ["2026-09-21-top-2"],
+      "question": "AWS ContinuumのAgent Pentestを実行する前に、何をPreflightしますか。",
+      "answer": "AWS Continuumでは本番のPentest前にCredentialとScopeをPreflightします。作者の検証ではCredential Testは約2〜3分で、15分でTimeoutし、Login中に到達したapi.tak1wa.comとassets.tak1wa.comがAccessible候補に出ました。ただし到達しないDomainは自動提案されないため、最終Scopeと非本番Credentialは人が確認します。"
+    },
+    {
+      "id": "qa-03",
+      "articleIds": ["2026-09-21-top-3"],
+      "question": "dbt ChartsをSnowflakeのTeam運用へ入れるなら、どこを設計しますか。",
+      "answer": "dbt ChartsをTeam運用するなら、YAMLをCode Reviewできる利点と公開面のSecurityを分けます。0.7.1ではref()やdct validate、render、serveを使えますがpre-1.0です。さらにdct serveには認証Optionがないため、dct serve --host localhostを基本にし、SnowflakeはSELECT専用Roleで接続します。"
+    },
+    {
+      "id": "qa-04",
+      "articleIds": ["2026-09-21-top-4"],
+      "question": "Copilot導入後も社内情報が分散している場合、横断検索をどう評価しますか。",
+      "answer": "M365外のKnowledgeをつなぐ前に、検索対象と権限境界を可視化します。従業員1000人以上でCopilot導入済み企業の推進担当105人調査では、78.0％がM365だけでも検索をカバーできる一方、87.5％が情報分散を課題と回答しました。これは期待調査なので、横断検索はRecall、権限漏れ、Citationを自社データで検証します。"
+    },
+    {
+      "id": "qa-05",
+      "articleIds": ["2026-09-21-top-5"],
+      "question": "AI予算を増やすとき、FinOpsと業務KPIをどう結び付けますか。",
+      "answer": "AI予算は利用量ではなくOutcome単位で管理します。435人調査では今後の強化領域は情報システム69.2％、最大費目はAI SaaS License31.8％で、API料金を上位3費目に挙げた人は47.7％でした。ただしSurveyは従業員300人以上の予算関与者なので、自社ではCost削減、Speed、品質を業務KPIへ結び付けます。"
+    }
+  ],
+  "review": [
+    {
+      "id": "review-01",
+      "articleIds": ["2026-09-21-top-1"],
+      "question": "AI AgentのEvaluation Sandboxで、Model Safety以外に必ず確認すべきものは何ですか。",
+      "points": {
+        "zh": "Egress default-deny、Target Allowlist、Credential Scope、DNS/HTTP監査、実Systemへ出た場合のKill Switch。Modelの停止判断をNetwork Isolationの代わりにしない。",
+        "ja": "Egress default-deny、Target Allowlist、Credential Scope、DNS/HTTP監査、実Systemへ出た場合のKill Switch。Modelの停止判断をNetwork Isolationの代わりにしない。"
+      }
+    },
+    {
+      "id": "review-02",
+      "articleIds": ["2026-09-21-top-4"],
+      "question": "Enterprise RAGでData Sourceを増やす前に何を確認しますか。",
+      "points": {
+        "zh": "Source Owner、Freshness、ACL継承、検索対象範囲、代表Question Set、Recall、Citation、Permission Leakage。期待値のSurveyと本番Measurementを分ける。",
+        "ja": "Source Owner、Freshness、ACL継承、検索対象範囲、代表Question Set、Recall、Citation、Permission Leakage。期待値のSurveyと本番Measurementを分ける。"
+      }
+    },
+    {
+      "id": "review-03",
+      "articleIds": ["2026-09-21-top-5"],
+      "question": "AI FinOpsでAPI料金だけを見てはいけない理由は何ですか。",
+      "points": {
+        "zh": "License、Infra、API、人件費が別費目で積み上がるため。Cost-per-success、工数削減、Speed、QualityなどOutcome単位へ配賦して比較する。",
+        "ja": "License、Infra、API、人件費が別費目で積み上がるため。Cost-per-success、工数削減、Speed、QualityなどOutcome単位へ配賦して比較する。"
+      }
+    }
+  ]
+}
