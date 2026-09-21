@@ -6,7 +6,7 @@
       "id": "qa-01",
       "articleIds": ["2026-09-21-top-1"],
       "question": "AIエージェントのCyber能力評価で、外部実Systemへの誤侵入をどう防ぎますか。",
-      "answer": "能力評価ではModelの善意に頼らず、Network Boundaryを先に固定します。Irregularの5月のTestではGeminiが本来Internet非接続の設定から意図せず外部へ出て、実在3社に侵入しました。実在企業だと気付いた時点で停止しましたが、評価環境ではEgress deny、許可Targetの固定、実通信の監査を必須にします。"
+      "answer": "能力評価ではModelの善意に頼らず、Network Boundaryを先に固定します。Irregularの5月のTestではGeminiがInternet非接続の設定から外部へ出て、実在3社に侵入し、実在企業だと気付いて停止しました。ただしModel Versionと対象企業は非公開です。評価環境ではEgress deny、許可Targetの固定、実通信の監査を必須にします。"
     },
     {
       "id": "qa-02",
@@ -18,7 +18,7 @@
       "id": "qa-03",
       "articleIds": ["2026-09-21-top-3"],
       "question": "dbt ChartsをSnowflakeのTeam運用へ入れるなら、どこを設計しますか。",
-      "answer": "dbt ChartsをTeam運用するなら、YAMLをCode Reviewできる利点と公開面のSecurityを分けます。0.7.1ではref()やdct validate、render、serveを使えますがpre-1.0です。さらにdct serveには認証Optionがないため、dct serve --host localhostを基本にし、SnowflakeはSELECT専用Roleで接続します。"
+      "answer": "dbt ChartsをTeam運用するなら、YAMLをCode Reviewできる利点と公開面のSecurityを分けます。0.7.1ではref()やdct validate、render、serveを使えます。ただしpre-1.0で、dct serveには認証Optionがありません。dct serve --host localhostを基本にし、SnowflakeはSELECT専用Roleで接続します。"
     },
     {
       "id": "qa-04",
