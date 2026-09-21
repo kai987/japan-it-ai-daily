@@ -9,6 +9,7 @@ export const validateContentDay = (date, documents) => {
   const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
   const unique = (values) => new Set(values).size === values.length;
   const nonempty = (value) => typeof value === 'string' && value.trim().length > 0;
+  const hasKana = (value) => typeof value === 'string' && /[\u3040-\u30ff]/u.test(value);
   for (const dir of contentDirs) {
     const data = documents[dir];
     require(Boolean(data), `${dir} missing`);
@@ -46,6 +47,16 @@ export const validateContentDay = (date, documents) => {
       }
       for (const [items, key] of [[vocabulary, 'term'], [grammar, 'pattern'], [technical, 'term']]) {
         require(items.every((item) => nonempty(item[key])) && unique(items.map((item) => item[key])), `${dir} duplicate or empty ${key}`);
+      }
+      if (dir === 'japanese-ja') {
+        require(
+          vocabulary.every((item) => !nonempty(item.exampleMeaning) || hasKana(item.exampleMeaning)),
+          `${dir} vocabulary exampleMeaning must be written in Japanese`
+        );
+        require(
+          grammar.every((item) => !nonempty(item.exampleMeaning) || hasKana(item.exampleMeaning)),
+          `${dir} grammar exampleMeaning must be written in Japanese`
+        );
       }
     }
   }
