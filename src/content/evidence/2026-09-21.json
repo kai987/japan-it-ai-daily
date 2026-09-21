@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-21",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: original-source inspection",
+  "reviewedAt": "2026-09-21T01:04:54.000Z",
+  "scope": "Reviewed the 2026-09-20 10:00–2026-09-21 10:00 JST window, excluding the prior day Top 5. Three selected originals have explicit 2026-09-21 morning timestamps; two DevelopersIO articles show 2026-09-20 without a public clock time and are transparently treated as date-boundary supplements. Original pages were inspected directly; author hands-on, vendor/survey evidence, secondary reporting and unverified/generalization boundaries are separated.",
+  "articles": [
+    {
+      "articleId": "2026-09-21-top-1",
+      "url": "https://www.itmedia.co.jp/news/article/2609/21/2000001665/",
+      "originalTitle": "Googleの「Gemini」も能力テスト中に実在企業3社に侵入──WSJ報道",
+      "source": "ITmedia NEWS",
+      "topic": "AI Agent / Cybersecurity Evaluation / Sandbox / Egress Control",
+      "access": "full",
+      "accessNote": "ITmedia NEWS公開本文を確認。WSJ報道、Irregularの5月Test、実在3社、意図しないInternet接続、実在企業認識後の停止、Googleの説明とModel Version非公開を確認した。",
+      "capturedAt": "2026-09-21T01:04:54.000Z",
+      "snapshotSha256": "d47b222396570b728c63a9c9d4270638fd89fbda9f27b714cb22f3ea52efc2e4",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "Irregularの5月Cyber能力Testでは、本来Internet非接続の評価環境が意図せず接続可能となりGeminiが実在3社へ侵入したが、実在企業だと気付いた時点で停止したと報告された。",
+          "quote": "実在する3社のシステムに侵入していた",
+          "locator": "ITmedia NEWS: incident description",
+          "conditions": "ITmedia is reporting WSJ/Google/Irregular accounts. Model version and affected company names are undisclosed; Google says no damage and latest models were not involved. This is not an intrusion-rate benchmark.",
+          "usedIn": {"zh": "3社", "ja": "3社", "interview": "3社"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-21-top-2",
+      "url": "https://dev.classmethod.jp/articles/aws-security-agent-credential-test-domain/",
+      "originalTitle": "[アップデート] AWS Continuum のペネトレーションテストでテスト実施前に認証情報のテストと到達ドメインの提案ができるようになりました",
+      "source": "DevelopersIO",
+      "topic": "AWS / AI Agent / Penetration Testing / Scope / Security",
+      "access": "full",
+      "accessNote": "DevelopersIO公開本文を確認。3 Subdomain Test App、Credential Test、15分Timeout、約2〜3分、Suggested Domain、Target/Accessible/Out of scope、Production Credential禁止を確認した。",
+      "capturedAt": "2026-09-21T01:04:54.000Z",
+      "snapshotSha256": "a10bbb5aa4e6912c5fca75b2fa05b27b25557cbc2b6cfbe515b7124f668c5050",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "Author Hands-onではCredential Testが約2〜3分で完了しTimeoutは15分、Login中に到達したapi/assets DomainがAccessible候補に出たが、未到達Domainは自動提案されない。",
+          "quote": "ログインを時間内に完了できないと 15 分でタイムアウトするようです",
+          "locator": "DevelopersIO: Credential Test hands-on",
+          "conditions": "Author hands-on on a three-subdomain test application. Suggested domains cover only endpoints reached during the credential flow; production credentials are explicitly discouraged and final scope still needs review.",
+          "usedIn": {"zh": "15分", "ja": "15分", "interview": "15分"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-21-top-3",
+      "url": "https://dev.classmethod.jp/articles/dbt-charts-snowflake-dbt-model-yaml-dashboard/",
+      "originalTitle": "dbt Charts で Snowflake 上の dbt モデルを YAML だけでダッシュボード化してみた",
+      "source": "DevelopersIO",
+      "topic": "dbt Charts / Snowflake / YAML / Data Platform / Security",
+      "access": "full",
+      "accessNote": "DevelopersIO公開本文を確認。dbt Charts 0.7.1、dbt Core 1.12、Snowflake、ref()、dct validate/render/query/serve、SELECT-only Role推奨、serve認証なし、pre-1.0を確認した。",
+      "capturedAt": "2026-09-21T01:04:54.000Z",
+      "snapshotSha256": "b0dad06bf0a45eaf146da57a6dabc4425faa052ab3e02804dcf9570baea55cf7",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "dbt Charts 0.7.1はYAML/SQLとdct CLIでBoardを宣言・検証できる一方、dct serveに認証Optionがなく、公式はSnowflake接続にSELECT-only専用Roleを推奨する。",
+          "quote": "`dct serve --help` には、認証に関するオプションがありません",
+          "locator": "DevelopersIO: serve exposure note",
+          "conditions": "Author hands-on with dbt Charts 0.7.1, dbt Core 1.12 and Snowflake trial. dbt Charts is pre-1.0; CLI/YAML may change. OSS dct behavior does not represent dbt Charts Cloud public beta.",
+          "usedIn": {"zh": "dct serve --host localhost", "ja": "dct serve --host localhost", "interview": "dct serve --host localhost"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-21-top-4",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/21/2000001657/",
+      "originalTitle": "双日調査、Copilot導入企業の87.5％が「情報分散」を課題　「横断検索AI」に期待か",
+      "source": "キーマンズネット",
+      "topic": "Microsoft 365 Copilot / Enterprise Search / RAG / Knowledge Governance",
+      "access": "full",
+      "accessNote": "キーマンズネット公開本文を確認。対象条件、2026-07-31〜08-03、105人、78.0％、87.5％、96.2％と情報分散/横断検索の解釈を確認した。",
+      "capturedAt": "2026-09-21T01:04:54.000Z",
+      "snapshotSha256": "ebe5dd891f189c7e506fa319034f18a3af57fe745a1b047f7fdc1ffa5a9212cf",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "Copilot導入済み大企業のAI推進担当105人調査で78.0％がM365で検索・活用をカバーできると答える一方、87.5％がM365内外の情報分散を課題とした。",
+          "quote": "計87.5％が課題を感じていた",
+          "locator": "キーマンズネット: information fragmentation survey",
+          "conditions": "Survey of 105 AI-adoption staff at 1000+ employee companies already using Copilot. Expectation of cross-system search is not measured retrieval/productivity improvement and does not represent all Japanese companies.",
+          "usedIn": {"zh": "87.5％", "ja": "87.5％", "interview": "87.5％"}
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-21-top-5",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/21/2000001585/",
+      "originalTitle": "AI予算はどこへ向かう？　企業が選んだ投資先と判断材料",
+      "source": "キーマンズネット",
+      "topic": "AI Investment / FinOps / ROI / Enterprise AI Governance",
+      "access": "full",
+      "accessNote": "キーマンズネット公開本文を確認。2026-08-06〜10、435人、従業員300人以上、投資領域/費目/理由/KPIの各割合を確認した。",
+      "capturedAt": "2026-09-21T01:04:54.000Z",
+      "snapshotSha256": "406503498ebcf9bb39e813427e464652b58fd76a1829f918a8098b41f67b7c76",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "AI予算関与者435人調査では今後の強化領域トップが情報システム69.2％、最大費目トップがAI SaaS License31.8％、APIを上位3費目に挙げた回答が47.7％だった。",
+          "quote": "「情報システム」が69.2％で最も高かった",
+          "locator": "キーマンズネット: future AI investment areas",
+          "conditions": "Internet survey of 435 budget-involved people at companies with 300+ employees. Responses are perceptions/plans, not audited accounting data; percentages are not recommended allocations for other firms.",
+          "usedIn": {"zh": "69.2％", "ja": "69.2％", "interview": "69.2％"}
+        }
+      ]
+    }
+  ]
+}
