@@ -1,0 +1,353 @@
+{
+  "date": "2026-09-21",
+  "generatedAt": "2026-09-21T06:22:35.222Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "気付く",
+      "reading": "きづく",
+      "exampleJa": "Agentが許可外の宛先に到達したことへ早く気付ける監視を入れます。",
+      "word": "vocab-01.mp3",
+      "wordHash": "2e3699c2c9904dcd1ac9d183fe71b0af4a2e6d4f92265ad8d0a760cbd481b4e9",
+      "example": "example-01.mp3",
+      "exampleHash": "3ea30d87710e5cb4ef237f7f54d3a9d2ac107fd1a93bb98a25b6d4793a621790",
+      "wordSha256": "0c24e4c4b65321ddea9b6ba7016535c02cd7d4a1ae7c72b9437ac0745452bbf3",
+      "exampleSha256": "0e9a7e14a4604ebc1574d72d882a0ddf2869a9dd0d52a06f0f0c13cc65720cd1"
+    },
+    {
+      "index": 2,
+      "term": "中止する",
+      "reading": "ちゅうしする",
+      "exampleJa": "実在Systemだと判明したら、Agentの処理を直ちに中止します。",
+      "word": "vocab-02.mp3",
+      "wordHash": "8d0246853594fcca57d7611dd627a97fc1c6633733bde731a8fec0bec9a3b59e",
+      "example": "example-02.mp3",
+      "exampleHash": "0bf6c10ce309c3ffddd72e12179750251513b14c82ce1a410528bcb71e7c18d3",
+      "wordSha256": "0a92c404ccf759cb8ac6cf0aa19cb41cbb7fbdc3b086cfe8ee7f3fe2878f105f",
+      "exampleSha256": "bbd23c5fe1d757fc90192c63c9b25b0e2a64bbd3ebbee7205da7c120ba20b9df"
+    },
+    {
+      "index": 3,
+      "term": "振り向ける",
+      "reading": "ふりむける",
+      "exampleJa": "効果を確認できた業務へ追加Budgetを振り向けます。",
+      "word": "vocab-03.mp3",
+      "wordHash": "ee083245431725a8f318e03b2233bdf3a49821a59b557bf27f1c191abdcd86a7",
+      "example": "example-03.mp3",
+      "exampleHash": "ee63c68761e873031307fd51c609aa06489d13b9693f50edf110282390b8b9f4",
+      "wordSha256": "63d793c4338ec683369744a0f38c976f7edddcb792822ca69fb6c27298701a2b",
+      "exampleSha256": "71902811d6e2bc0ab4f5aa2a1efa2c49b8f30b4f6f18130ee9a43f6927df569e"
+    },
+    {
+      "index": 4,
+      "term": "強化する",
+      "reading": "きょうかする",
+      "exampleJa": "横断検索を広げる前にAccess Controlを強化します。",
+      "word": "vocab-04.mp3",
+      "wordHash": "2e45e1d9a3f2dedab5d0d2b05c7c377bb9305b127f49f6b4f2caff6b2b3beb6f",
+      "example": "example-04.mp3",
+      "exampleHash": "db0312349e119b51c1b1a23e44790b10fdfd884eee3da025881dfc384bec8e95",
+      "wordSha256": "bed7b0c0e171ba57c1ef89798b100d34848c2fea491ac395ebdd38c4b1fdc590",
+      "exampleSha256": "3a9bd1cc8785358843cf0ec99c35c6c1e2ff829275807f239c204fd5eab5ea75"
+    },
+    {
+      "index": 5,
+      "term": "到達する",
+      "reading": "とうたつする",
+      "exampleJa": "Login中に到達したDomainだけを自動候補として扱います。",
+      "word": "vocab-05.mp3",
+      "wordHash": "4b83ed42dc96a0fdee6b0a286850d009001315cb9b28b1211cc243241fd14bdd",
+      "example": "example-05.mp3",
+      "exampleHash": "0dbf8d8f15a1619db84c83ff67ab32a909aeb550df965eacc67b765779e8191b",
+      "wordSha256": "6bc7cce3f3b73aa3cb91ae4649e1e45c02fbfa910401b66cca6573c084b1564d",
+      "exampleSha256": "91b081abe8c9adf447ccb575058a09d9481ae85bceb67b3995db03205f9d34aa"
+    },
+    {
+      "index": 6,
+      "term": "提示する",
+      "reading": "ていじする",
+      "exampleJa": "Agentが提示したScope候補を人が最終確認します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "4ba435fe5bd895bb2c2f6496f1503cec47d4ea473650b0d729556e4c8d2e169f",
+      "example": "example-06.mp3",
+      "exampleHash": "5b94fec989f86373f36196306a1d0c91a5f95f3588e944b9c1cf7352d41dacff",
+      "wordSha256": "439a546c9e6f5325e7b6add8423ffa5cbb34da5135f832f93566aae8156e087d",
+      "exampleSha256": "3b2e48847e30f26e32905a56ed3d3a3c8966daae901209c5a2a09453c6aba0ac"
+    },
+    {
+      "index": 7,
+      "term": "置き換わる",
+      "reading": "おきかわる",
+      "exampleJa": "依存解決でdbt v2がCore 1.xへ置き換わるRiskを確認します。",
+      "word": "vocab-07.mp3",
+      "wordHash": "e7822f0cc514d0cac4c40b72e615230b19e4b1d1be26e633068f5e3219744c11",
+      "example": "example-07.mp3",
+      "exampleHash": "839de7003f579fe7dad30e44ad7e6be00595e4e7782d44dc2a5406c0657ed002",
+      "wordSha256": "eb4135d01edf20b3ae9c0bbf762da357eb96cc8f68d8b8692938acad59535145",
+      "exampleSha256": "47c0e5865964a07004146cf66ccc7744eb16ff616d64a1f3ce5a4ae6dad7d42c"
+    },
+    {
+      "index": 8,
+      "term": "実在",
+      "reading": "じつざい",
+      "exampleJa": "実在する企業をTest Targetと誤認しない仕組みが必要です。",
+      "word": "vocab-08.mp3",
+      "wordHash": "b33b27588201943e8a8b8a843580c8c0a3236aac86d86ad1a094590c6d8c6bba",
+      "example": "example-08.mp3",
+      "exampleHash": "d6feadfbb14651e43fe385c653d19c4f79c7039796b98ef234ecf90334b99c78",
+      "wordSha256": "9bd6fe1c885ce64afe8538d923a5e3fee463abc875f3657e22efed8a5071da38",
+      "exampleSha256": "856cb2f25cfeecee7e6a53abf70effbc065dcf742d6a3b60b113e531562680e7"
+    },
+    {
+      "index": 9,
+      "term": "配分",
+      "reading": "はいぶん",
+      "exampleJa": "AI予算の配分をLicense、API、Infraに分けて追います。",
+      "word": "vocab-09.mp3",
+      "wordHash": "5bc2d53f5fda997e6d7150bbb7a9c8a1f303b17bed0bd55d2762362db93150ab",
+      "example": "example-09.mp3",
+      "exampleHash": "9a65b5a7d904de9078f631e1d134e003a3d01ace549b4a0aea0d70a7ab04114b",
+      "wordSha256": "e490d0b22d391d8e36fa267c9ac401ab33d5a7bae8fc84876444cbe119886a0b",
+      "exampleSha256": "0882debb67e3dd82094d20fe435533e54919cd6bbdda84dd823c872789d01b7b"
+    },
+    {
+      "index": 10,
+      "term": "不備",
+      "reading": "ふび",
+      "exampleJa": "Credentialの不備をPreflightで検出して無駄なTestを避けます。",
+      "word": "vocab-10.mp3",
+      "wordHash": "dd958f6a4c51bf41dc1f62ac98b63176b883a625bc8168f53300afa073b808eb",
+      "example": "example-10.mp3",
+      "exampleHash": "7a7a48329809e2db6653af6ea49e1930c38eeebf1f2a50edf110ee968ab46ee4",
+      "wordSha256": "64d4a9be34b0b7b0a96de8011f12a1d0c143f6c8b44a793261cd45cd444479ca",
+      "exampleSha256": "1e2ff4a7ebcd3a922d40cddf8c1ebdc13c30458c8053a161b97347e7548db4e0"
+    },
+    {
+      "index": 11,
+      "term": "費目",
+      "reading": "ひもく",
+      "exampleJa": "AI Costを費目別に分けて、Outcomeとの関係を確認します。",
+      "word": "vocab-11.mp3",
+      "wordHash": "fa3d35dd7c58d319551db12be20f9b2d2806205283180e15082fa7515109fa06",
+      "example": "example-11.mp3",
+      "exampleHash": "050940e89d808a107a204ee93491a7cecb9ad813be3b26d6031750d341ea0739",
+      "wordSha256": "7a715c2187a61e51e0fba77c97ae9ee13b46c12f11389581aff0676a7e13eb4e",
+      "exampleSha256": "4bf9eb2484c08bead549ea8a6aa381f5265b65555003efbbcc9a5b2970761ee3"
+    },
+    {
+      "index": 12,
+      "term": "有効回答",
+      "reading": "ゆうこうかいとう",
+      "exampleJa": "Surveyの有効回答数と対象条件を確認してから割合を読みます。",
+      "word": "vocab-12.mp3",
+      "wordHash": "d1445c90b80473d7277cc4e85380c876c504575c360b270b162d9e765e303dbf",
+      "example": "example-12.mp3",
+      "exampleHash": "41a0a3d415be9c4bbeb235c806d45800a7e1abdd841c07649bfde142244b0ddd",
+      "wordSha256": "bac83bac30944c8e053c9c9c3433022742edd97b656a17af73527bc6ce3b15b7",
+      "exampleSha256": "9ccc3094305803f7ecfc908a21dec0141b362ac0e375d75464a4c634edc4684a"
+    },
+    {
+      "index": 13,
+      "term": "決裁",
+      "reading": "けっさい",
+      "exampleJa": "AI投資の最終決裁ではCostと業務KPIを同時に示します。",
+      "word": "vocab-13.mp3",
+      "wordHash": "20ce8a89b2b2739fe87dfd27cdcf2bcc2508ddd1f78ae5a56f6a202f8346d3e5",
+      "example": "example-13.mp3",
+      "exampleHash": "644b20a81034c54c195614efe7add05a6f285edbbf0d782a6290b6b9f997f760",
+      "wordSha256": "1ad9742efdde826bd8eb20ed5b156d6578a311a560d81e1f6f1e1cc7c8964fb5",
+      "exampleSha256": "c11e2b4abac258c23213f621646c567241770989f1a668e37799dd2704f42151"
+    },
+    {
+      "index": 14,
+      "term": "領域",
+      "reading": "りょういき",
+      "exampleJa": "投資領域ごとに成功指標を分けて評価します。",
+      "word": "vocab-14.mp3",
+      "wordHash": "7477f46725acf85a5f181c93c8b657b060c500daffb4de4e51de08aeee5d5646",
+      "example": "example-14.mp3",
+      "exampleHash": "d6cfc6778be15fecbc6752283bd46046dfba6e8a1bc08bc74a3175086ed46fe0",
+      "wordSha256": "71e3580ee8c272bdaf5deac4569cbe544f4ffb87b1ad447199e91675571725a2",
+      "exampleSha256": "ae68d419f0dbf088ad82ecfd0080ff7f76c6c8f3ed5fc94147699a2fcaaad02d"
+    },
+    {
+      "index": 15,
+      "term": "構文",
+      "reading": "こうぶん",
+      "exampleJa": "pre-1.0ではYAML構文の変更をVersion固定で吸収します。",
+      "word": "vocab-15.mp3",
+      "wordHash": "f22cdbe86f3f372e5a8c9fce1c2102918b66613db67a31d55f1153342dcbae20",
+      "example": "example-15.mp3",
+      "exampleHash": "ec91cda08b19cc78cf1b6ce836d71da658cddfaef8b14d38bbaf2ecca628c7a4",
+      "wordSha256": "6b8f5c7ef00d813a5ff5caaa551eb851342ce758c48a59abdbf8211a38531120",
+      "exampleSha256": "33951f7d50b83e5d80f1156d93c5ce922195582458fc294afaa32087ec13196f"
+    },
+    {
+      "index": 16,
+      "term": "代表的",
+      "reading": "だいひょうてき",
+      "exampleJa": "非本番で代表的な権限を持つAccountを用意します。",
+      "word": "vocab-16.mp3",
+      "wordHash": "385ead259f03d77dd951fde4a8e4fb02430309179c3d3cecf821fea6cee1e5b0",
+      "example": "example-16.mp3",
+      "exampleHash": "2ea850ede389c2e427ebedf68b6e241ecf1f6f2a41b5b303d886c8f2fb0e5a40",
+      "wordSha256": "6771fa9f1b2497c80c9af7856f0f22afbc7cb25b1d8f7aeab90cbd58809db640",
+      "exampleSha256": "85fac994fe242a1c2175b3c8f648914c613e9c92b4d5d5d980418b2d0237a2b2"
+    },
+    {
+      "index": 17,
+      "term": "不要",
+      "reading": "ふよう",
+      "exampleJa": "不要なDB権限を外し、SELECTだけを付与します。",
+      "word": "vocab-17.mp3",
+      "wordHash": "03bf9576798be9a17d63cefe51190eadb20add7523615c509a5d2f3c4eed80b6",
+      "example": "example-17.mp3",
+      "exampleHash": "7ceeab9b5eb7a32b518dcad54a7ddcd11312b92aea47f06ee9a54742add534b3",
+      "wordSha256": "4d055704fc89e82e985593b31d48ad9d765a4c833d8055b3a2eff51a8610faff",
+      "exampleSha256": "a8cfcd0e616a0062088cef6ef947ee5b566c17795f162cf1af04c9d41cbdefc6"
+    },
+    {
+      "index": 18,
+      "term": "一通り",
+      "reading": "ひととおり",
+      "exampleJa": "Agentが触れる範囲を一通り確認してからCredentialを渡します。",
+      "word": "vocab-18.mp3",
+      "wordHash": "480540401d4fe8a71086b53d4674e237a029ba575c7084262c3a47e4259d374a",
+      "example": "example-18.mp3",
+      "exampleHash": "9f526d794172c509070bff64197df91ccd164a0b111a999bbf5322f894d0f05b",
+      "wordSha256": "86ef6a270839f20afae160c35bc75e1a98320da59434e0630112661040d48586",
+      "exampleSha256": "98a1b82e3b567c3e6a3e7ce3b97beef55309d76da4a192c9ff06cf585093fbbb"
+    },
+    {
+      "index": 19,
+      "term": "最も",
+      "reading": "もっとも",
+      "exampleJa": "最も大きい費目だけでなく総Costも確認します。",
+      "word": "vocab-19.mp3",
+      "wordHash": "49f464dae01181cbbbb7506d690de59859b0c6e353e3161fa815abf87dea1da6",
+      "example": "example-19.mp3",
+      "exampleHash": "363ab42fcf6bce5c7aeb437358621499b139e2009ee0bce1f3e4407969ccd013",
+      "wordSha256": "0e94a7cb2c53a9f3763cf5c515082cc6a91fef31c24b0a83b0d4f48d32b85b50",
+      "exampleSha256": "a6876f03d2214f0fbc3a1b2894821be00a60e59f34f9c61deb6e3d53bc4cc912"
+    },
+    {
+      "index": 20,
+      "term": "これに対して",
+      "reading": "これにたいして",
+      "exampleJa": "License費は固定的です。これに対してAPI費は利用量で変動します。",
+      "word": "vocab-20.mp3",
+      "wordHash": "8edca5a0c0b7b65b0f234116985f9b89d2266bea53c1027e7590cb4c072dc845",
+      "example": "example-20.mp3",
+      "exampleHash": "2f96ffd5d42ccb4e567663d23399b2a8a118ff41ff69abea9c6045f7a3630035",
+      "wordSha256": "9375a77b3033f193062a5c061818243caaa402cbbd4162c00cee2d79721cfbc2",
+      "exampleSha256": "89c3b7750ab63c3ae15b143d6068bb1e9da8f1ff36bef993077d669ff3b25c72"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～にとどまる",
+      "exampleJa": "Vendor調査の数字は参考にとどまり、自社の投資判断は実測KPIで補います。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "09809b1c3a8a0604be6628508b2a07d16e8b5df0cce23112a3323636536622ff",
+      "exampleSha256": "9e6dd043141372e66b83dd052c8d3d9a7eaa10c405d189e48b0b29c1788cf391"
+    },
+    {
+      "index": 2,
+      "pattern": "～ずに済む",
+      "exampleJa": "事前にCredentialを検証すれば、失敗したPentestにTask-hourを使わずに済みます。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "52d6b78c200e91725de40619f979826896a94a86a3ee37a5659c428abf1ea2ef",
+      "exampleSha256": "728e07b835dca48ee50432fd1bf14f5d27906288089010cf7245b44cbf80d9a3"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "に加えて",
+      "firstIntroducedDate": "2026-09-12",
+      "audioDate": "2026-09-12",
+      "pattern": "～に加えて",
+      "exampleJa": "対談に加えて、企業の導入事例も紹介します。",
+      "example": "grammar-example-01.mp3",
+      "exampleSha256": "f180e3a9e1b66370d4219181d9890e024373fc63099b90b119303650385f656f"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "たうえで",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～たうえで",
+      "exampleJa": "Latencyを計測したうえで、利用するModelを決定します。",
+      "example": "grammar-example-06.mp3",
+      "exampleSha256": "e8482c64352d42613ebba7fb87a728a026b7b3f476eaf85982cccc31b973c095"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "上で",
+      "firstIntroducedDate": "2026-08-19",
+      "audioDate": "2026-08-19",
+      "pattern": "～上で",
+      "exampleJa": "MCPを本番利用する上で、認可と監査は重要です。",
+      "example": "grammar-example-01.mp3",
+      "exampleSha256": "8acb9b947e8527ce255cd06aca551dbf5666d52eee0e8c08191cca3afd169492"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "一方で",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～一方で",
+      "exampleJa": "Local LLMはDataを外部に出さない一方で、運用負荷が高くなることがあります。",
+      "example": "grammar-example-05.mp3",
+      "exampleSha256": "4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950"
+    },
+    {
+      "index": 5,
+      "studyKind": "review",
+      "identity": "によれば",
+      "firstIntroducedDate": "2026-08-25",
+      "audioDate": "2026-08-25",
+      "pattern": "～によれば",
+      "exampleJa": "公式資料によれば、常駐プロセスは利用者ごとに起動します。",
+      "example": "grammar-example-02.mp3",
+      "exampleSha256": "c69ff333ba163a3fda4fb18e36028d7d6f2d6ec26ce8010f116c9c73d8dd0f42"
+    },
+    {
+      "index": 6,
+      "studyKind": "review",
+      "identity": "にとどまらず",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～にとどまらず",
+      "exampleJa": "ObservabilityはError確認にとどまらず、CostやSecurityの分析にも役立ちます。",
+      "example": "grammar-example-01.mp3",
+      "exampleSha256": "5e6d5fa7ed097db250e4da8dea5838d57f36835527335215f86fec33c274548e"
+    }
+  ]
+}

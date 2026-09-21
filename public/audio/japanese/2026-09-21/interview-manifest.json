@@ -1,0 +1,163 @@
+{
+  "date": "2026-09-21",
+  "generatedAt": "2026-09-21T06:23:38.044Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIエージェントのCyber能力評価で、外部実Systemへの誤侵入をどう防ぎますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "582b5362ae5ef54e903f3aa1a11837e8c7fdf7ae5e8a5003347ebbcceb9c3a41",
+      "audioSha256": "55c95a72bd053bf9aab3cd0a670432613cfeeb88a1cb99866856567776eeb110",
+      "durationSeconds": 6.32
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "能力評価ではModelの善意に頼らず、Network Boundaryを先に固定します。Irregularの5月のTestではGeminiがInternet非接続の設定から外部へ出て、実在3社に侵入し、実在企業だと気付いて停止しました。ただしModel Versionと対象企業は非公開です。評価環境ではEgress deny、許可Targetの固定、実通信の監査を必須にします。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "efea51445d6116794d2fbab9bc55b82045e8b4b2e9e87e71094aac455144a9ec",
+      "audioSha256": "4952201e34321cc016de0d7af3cb4a708fe96ea59b02d2dfa7b59d363383018b",
+      "durationSeconds": 27.277,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "AWS ContinuumのAgent Pentestを実行する前に、何をPreflightしますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "67cbceb8e4943b3099c6a7726be4d1714a572d1a1fdf8a0c552924bcd4e012ab",
+      "audioSha256": "70f7100329fb711adb8ada301c0f2846ffd330ebb27d8a817833de47b59c71da",
+      "durationSeconds": 6.684
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "AWS Continuumでは本番のPentest前にCredentialとScopeをPreflightします。作者の検証ではCredential Testは約2〜3分で、15分でTimeoutし、Login中に到達したapi.tak1wa.comとassets.tak1wa.comがAccessible候補に出ました。ただし到達しないDomainは自動提案されないため、最終Scopeと非本番Credentialは人が確認します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "80b4ebea9bf20c02c078d283da2eebe3a0755aed8ae9cfa56bbae94b5b21a1ff",
+      "audioSha256": "186e6d77070670701c5e51814c55beac9015b8498a17882a929165db2745335e",
+      "durationSeconds": 28.315,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "dbt ChartsをSnowflakeのTeam運用へ入れるなら、どこを設計しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "7dafb5241a993acb1f9123db1653aa0e755a8845e6ba6541d8b881c36f809403",
+      "audioSha256": "b2d3d52be4b24390c89ee0f73aab69889e18334f14aa0697b343032298d38a43",
+      "durationSeconds": 5.56
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "dbt ChartsをTeam運用するなら、YAMLをCode Reviewできる利点と公開面のSecurityを分けます。0.7.1ではref()やdct validate、render、serveを使えます。ただしpre-1.0で、dct serveには認証Optionがありません。dct serve --host localhostを基本にし、SnowflakeはSELECT専用Roleで接続します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "85b7187ab5b827f693bceea8d503f68ee69edb5e97c89482c6861858cfa78386",
+      "audioSha256": "e13a19a9ec4f465b3bc94827d491d67bdb8a6319024675442205365e038dc628",
+      "durationSeconds": 24.542,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "Copilot導入後も社内情報が分散している場合、横断検索をどう評価しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "fada571d5ea3f6e00af1a430830ae8d91d56610ef369492e6dc739284a702301",
+      "audioSha256": "fcbcd433ef532cc0c5d9f909add01ae0f7ac5c1fb4902ddab14f593f36b3f81d",
+      "durationSeconds": 6.68
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "M365外のKnowledgeをつなぐ前に、検索対象と権限境界を可視化します。従業員1000人以上でCopilot導入済み企業の推進担当105人調査では、78.0％がM365だけでも検索をカバーできる一方、87.5％が情報分散を課題と回答しました。これは期待調査なので、横断検索はRecall、権限漏れ、Citationを自社データで検証します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "36cfb6a9315a1c6448465dcdfa0fdf15fb9f5dc8971515dc092401dfff9ca838",
+      "audioSha256": "ac37ad88417fafe90358d3ca8120c6d1258e1d518093a55f72ed16f11f3fe0c1",
+      "durationSeconds": 30.798,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "AI予算を増やすとき、FinOpsと業務KPIをどう結び付けますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "e9a8eb66b03a02d0768c9dbe1e6a5aed4adf80393b23751c8b483205aded75f7",
+      "audioSha256": "4e3668789153becced50536d45648f29903f5c6c2c16f42013923c9a52a3648e",
+      "durationSeconds": 5.897
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "AI予算は利用量ではなくOutcome単位で管理します。435人調査では今後の強化領域は情報システム69.2％、最大費目はAI SaaS License31.8％で、API料金を上位3費目に挙げた人は47.7％でした。ただしSurveyは従業員300人以上の予算関与者なので、自社ではCost削減、Speed、品質を業務KPIへ結び付けます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "2c0f183381f0547b4df1ca39477b834068845e225e683e15efe168dcc9303990",
+      "audioSha256": "fa81d3c2deb3e75a422a4577c2771a1a31dc82c8c98c3638ca17a856c836d850",
+      "durationSeconds": 31.421,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "AI AgentのEvaluation Sandboxで、Model Safety以外に必ず確認すべきものは何ですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "40fab163f96899a9431fe4357c197c631d1ee057468159c1f3ff642af97cdcb8",
+      "audioSha256": "29691c451d45a2172a7f7880ae15c76085899d3f84540e784b18eaed10971c8f",
+      "durationSeconds": 7.265
+    },
+    {
+      "index": 2,
+      "text": "Enterprise RAGでData Sourceを増やす前に何を確認しますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "b88f9d95dc63b621df07d16d289dda1f6b9d948bfa4273b735e63b218d4a3fbb",
+      "audioSha256": "86cf8cfdd716b2176ac4147897b79905dea3b5a9434d7405340094a58daecdf8",
+      "durationSeconds": 4.922
+    },
+    {
+      "index": 3,
+      "text": "AI FinOpsでAPI料金だけを見てはいけない理由は何ですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "8678b7e38341cc9826d4f5db813f816eea865f6080b5534c95c6b85f9e78a7db",
+      "audioSha256": "2a8a658fca89aa69be8e59df2b0972f9878907a38e29726525b6ac8fd71f7bd9",
+      "durationSeconds": 5.33
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-21T06:23:39.243Z"
+}
