@@ -1,17 +1,53 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-22",
-  "stage": "registered",
-  "sourceCommit": "9f5f8ba43794daeaa7d92a9b3c380e54455b37f3",
+  "stage": "published",
+  "sourceCommit": "b4f90e263334d07805adf104e5c2106251577fb3",
   "sourceWindow": {
     "from": "2026-09-21T10:00:00+09:00",
     "to": "2026-09-22T10:00:00+09:00"
   },
   "createdAt": "2026-09-22T15:48:00+09:00",
-  "updatedAt": "2026-09-22T16:05:04+09:00",
-  "completedArtifacts": [],
-  "resumeFrom": "registered",
-  "nextAction": "Verify September 22 source articles, checkpoint source facts, complete full-history dedupe, draft bilingual report and learning data.",
+  "updatedAt": "2026-09-22T16:56:27+09:00",
+  "completedArtifacts": [
+    "src/content/daily/2026-09-22.md",
+    "src/content/daily-ja/2026-09-22.md",
+    "src/content/japanese/2026-09-22.md",
+    "src/content/japanese-ja/2026-09-22.md",
+    "src/content/evidence/2026-09-22.json",
+    "src/data/interviews/2026-09-22.json"
+  ],
+  "resumeFrom": null,
+  "nextAction": null,
   "lastError": null,
-  "publication": null
+  "publication": {
+    "releaseCommit": "b4f90e263334d07805adf104e5c2106251577fb3",
+    "runId": 35701805504,
+    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35701805504",
+    "conclusion": "success",
+    "pagesDeploy": "success",
+    "postDeployVerification": "success",
+    "snapshotArtifactId": 10682459457,
+    "pagesArtifactId": 10682334697,
+    "learningUiArtifactId": 10682883286,
+    "snapshot": {
+      "sourceCommit": "b4f90e263334d07805adf104e5c2106251577fb3",
+      "lastDate": "2026-09-22",
+      "totalDays": 42,
+      "issueNumber": 42,
+      "grammarLessonsCount": 42,
+      "grammarFirstDate": "2026-08-12",
+      "grammarLastDate": "2026-09-22",
+      "vocabulary": {
+        "new": 20,
+        "review": 0,
+        "total": 20
+      },
+      "grammar": {
+        "new": 3,
+        "review": 5,
+        "total": 8
+      }
+    }
+  }
 }
