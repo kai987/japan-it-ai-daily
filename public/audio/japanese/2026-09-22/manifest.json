@@ -1,0 +1,350 @@
+{
+  "date": "2026-09-22",
+  "generatedAt": "2026-09-22T08:01:32.190Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "属人化",
+      "reading": "ぞくじんか",
+      "exampleJa": "手順と判断基準をPlaybookに残し、運用の属人化を減らします。",
+      "word": "vocab-01.mp3",
+      "wordHash": "97c94654ed9ebf9d53447cc4fcea2c12035796d1db43992b00e32def96870564",
+      "example": "example-01.mp3",
+      "exampleHash": "e65716f1a21fd90aedbe71e67cace8bfd39c447e7f75f4c1d7483f9008c92043",
+      "wordSha256": "fdecef6400fc7024824876f58fbdead084add5027624852883848b0c79bc5168",
+      "exampleSha256": "904a723019424788fef0bcf2c252a7bf1cd808aa2680e1c8a3879be3a39c8c43"
+    },
+    {
+      "index": 2,
+      "term": "工数",
+      "reading": "こうすう",
+      "exampleJa": "AI導入前後で開発工数と手戻り回数を分けて記録します。",
+      "word": "vocab-02.mp3",
+      "wordHash": "7129c323754b62eb0449ac5d78225a4e97959406db63d86b819a22baa9878e26",
+      "example": "example-02.mp3",
+      "exampleHash": "345c06e8aa7d618520e53504d45a5042de515370e034716de7ad8f92ef5fc232",
+      "wordSha256": "01399e6ddec9dc90241579a4fc6dae48b731f6f73904340dbcc50341cd204b6e",
+      "exampleSha256": "83cfb74570e6f83b045f5aa6f7dd236e94bb904e053e0b5b8f38776b3d2589f8"
+    },
+    {
+      "index": 3,
+      "term": "道筋",
+      "reading": "みちすじ",
+      "exampleJa": "PoCから全工場へ広げる道筋を段階ごとに定義します。",
+      "word": "vocab-03.mp3",
+      "wordHash": "96d39090b605262218e651127f62bf2d8810d1d5fc803f99bfeb7c4cbf82bfc8",
+      "example": "example-03.mp3",
+      "exampleHash": "6da7717bcfe842bf9f9c5cb812cdb1abddb5aa884a8038925e3a7a111636e578",
+      "wordSha256": "eacba32a991903031df5ec299b5c96792bd4ab3502f65498d62bf58311cc1356",
+      "exampleSha256": "a7bf8ee8235513e687a1060ed33976b99dfef1ea954370839c1c73d1787b493b"
+    },
+    {
+      "index": 4,
+      "term": "据え置き",
+      "reading": "すえおき",
+      "exampleJa": "価格が据え置きでも、Task成功率が上がるかは別に測ります。",
+      "word": "vocab-04.mp3",
+      "wordHash": "69c0e311a5a74c07a78bb034d3d940282952c64d9d77ec83c91fdcef8885bb9d",
+      "example": "example-04.mp3",
+      "exampleHash": "45f3a20e3d31e7e4cc272816f0ed943b404799edd9a70aad4885986b5872bc9f",
+      "wordSha256": "9efdd486baf0a3b00cc6524b2eda28debb7fe88734c3a59f736b881deab9d483",
+      "exampleSha256": "c42c7053c0765a4a95aafa00e620b202995342ca19ecadf18e7b4df8214464f7"
+    },
+    {
+      "index": 5,
+      "term": "汎用的",
+      "reading": "はんようてき",
+      "exampleJa": "専用言語では汎用的なLLMだけで十分とは限りません。",
+      "word": "vocab-05.mp3",
+      "wordHash": "5e28632b976cdd9bc8364ae9c64e482bb632b8f6ffe1926ccc2028707bed4b54",
+      "example": "example-05.mp3",
+      "exampleHash": "96f0d7c9d3f7f82749a6e44d90611165f71740c6f1a9a96b384772f64445969d",
+      "wordSha256": "d02b7a49cb2831247fb42298b86d962218e009139c62328aa9cc5f7b71520991",
+      "exampleSha256": "2ac1ba943b339776fb9b7f57dc4e150cd958c912651645778a4c032d1e3f2926"
+    },
+    {
+      "index": 6,
+      "term": "自律的",
+      "reading": "じりつてき",
+      "exampleJa": "Agentが自律的に修正しても、最終Gateは機械的に残します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "51a4603da36b60dbf6ea384e29e7339cc1b6558c2a64fb436d7c59f66237f603",
+      "example": "example-06.mp3",
+      "exampleHash": "9b173498701119254c7172ce5cd53ed8d2533544daebce6016a3342e1c9be953",
+      "wordSha256": "0f713d9e50d075a602c6e490790930abbb87054531a695edc1f75070b386b15e",
+      "exampleSha256": "e552ca7e9459436f9ae220aae40ffba3d0f53c20b00e19cf09a073e4fca31cea"
+    },
+    {
+      "index": 7,
+      "term": "有利",
+      "reading": "ゆうり",
+      "exampleJa": "Gemini側に有利な接続条件でもLatency差が残りました。",
+      "word": "vocab-07.mp3",
+      "wordHash": "df1d67f67f2e96a0884e2b85bfc91b5a5ed365aad9aa2bd6160e2ea809185b88",
+      "example": "example-07.mp3",
+      "exampleHash": "b75634f0dfe1322aae3c4eae27c1530a322bb7646cf3a97a3e1db3c11ce0d3ed",
+      "wordSha256": "9cf1486749434aca3f47b8dd5ea3d59ba9593423c97a3c2b48e4b0e3c5fb491c",
+      "exampleSha256": "852932fdc96f8c1edc67f929ae6d72983324d26f7c2d0b216d7cde4d5093b7cc"
+    },
+    {
+      "index": 8,
+      "term": "切り出す",
+      "reading": "きりだす",
+      "exampleJa": "GUIが必要な実行処理だけをLocal CLIへ切り出します。",
+      "word": "vocab-08.mp3",
+      "wordHash": "20c42f4e8c7123fdd1801ba7967918cbb7ffb8afde4aa260a295134beb1739e9",
+      "example": "example-08.mp3",
+      "exampleHash": "40fe4fa4a7a18df4a6ac419b6cf0bbb134fec70cef0edc6450ff8377b5026f6e",
+      "wordSha256": "2dcfbc6e9a9fe470d76987f4febabd6a34c5172761aa844e1c0aa791ff40a12a",
+      "exampleSha256": "bf480952db574577a2e1550e35e60183f6ea93389d2258a051976ac17d7b5508"
+    },
+    {
+      "index": 9,
+      "term": "整備する",
+      "reading": "せいびする",
+      "exampleJa": "失敗例を再利用できる形でDocumentに整備します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "b000d70d317576894fee91086db4cb9c7fa9dc7b833054426a104445f5201d32",
+      "example": "example-09.mp3",
+      "exampleHash": "a140d2e1fc6d287f56b5ff4bf674e94f4a2e055d3e86ec51fcf036e67477cf9c",
+      "wordSha256": "eca1c885f958bc6a66245cd0175258199f70c572676dd2532d3ebd13a28bbe6f",
+      "exampleSha256": "64ffd9a00f769dd9ea9c633db255fc2a2662c6a90b244d8619b4c79fa7cac342"
+    },
+    {
+      "index": 10,
+      "term": "延ばす",
+      "reading": "のばす",
+      "exampleJa": "難しいTaskを増やし、強化学習の期間も延ばしたと説明されています。",
+      "word": "vocab-10.mp3",
+      "wordHash": "aeb00de4cc721d67fe08755c3b5648fa3bd274d2de6dcbd1b6ac34db05817962",
+      "example": "example-10.mp3",
+      "exampleHash": "c9be17f885e816499379fd7ceb2b6b6cbcf58957a36adaba5947aeff6505949e",
+      "wordSha256": "d58042c50073bfe8f75196d7ab309d9da392acd48e07c90088d9ac0d4fdddae2",
+      "exampleSha256": "2ac6e2a6868ed2fa41d88f3843287c78fcf9ca8d981d1ec3dbb7f8c11116191d"
+    },
+    {
+      "index": 11,
+      "term": "扱う",
+      "reading": "あつかう",
+      "exampleJa": "長いContextを扱う場合はCostと精度を同時に確認します。",
+      "word": "vocab-11.mp3",
+      "wordHash": "f19dc3d20e38092c73fda19f9b188ba128f944bfdbda619a79d2cc5e37eb865e",
+      "example": "example-11.mp3",
+      "exampleHash": "3fe032a65d23b46860221a157b3ab951119eef2cd6f9cd02fc6537f7e656560a",
+      "wordSha256": "16b7a55e4e14d2f49f2a7844193fed602d8c1c1c225dd8b31cd7a5aef27711c4",
+      "exampleSha256": "ddef7f257624e6d82ba761236019d503fd6c269336ca6c524085e2c7a2dfdc9e"
+    },
+    {
+      "index": 12,
+      "term": "かさむ",
+      "reading": "かさむ",
+      "exampleJa": "Reasoning Tokenが増えると、短い出力でもCostがかさみます。",
+      "word": "vocab-12.mp3",
+      "wordHash": "0adf9e5591775d71d243cc7139a9e4e364816546fcedbb2fa11e71ddf07f32e0",
+      "example": "example-12.mp3",
+      "exampleHash": "379ac83e88df177c2b641e100c18a3e31fbe597ef4e8b4657f3d634c2f3afa12",
+      "wordSha256": "612680488566714ec22853a49ad1920d230573e2d897edb2965c1ab58ee363fe",
+      "exampleSha256": "bb0fcd26ff2b5829da11a5ba80fa6cfcfa8b13ac9080a028eb043db4ab322153"
+    },
+    {
+      "index": 13,
+      "term": "揃える",
+      "reading": "そろえる",
+      "exampleJa": "比較ではDatasetと閾値を揃えて差を読みます。",
+      "word": "vocab-13.mp3",
+      "wordHash": "d67f47be6fbdea4a156c4eeff13ce1443ea83671ad325ff2424f04ba95a0fe36",
+      "example": "example-13.mp3",
+      "exampleHash": "ff71490b3adfaebdfecf6406915cef13ffc124b651b1431df3c28bda5d57bf02",
+      "wordSha256": "37002635b21d7fed363eaca22d6795392b3cd714df239282f5036deaec40705a",
+      "exampleSha256": "7452679d0a9528956b356e11f876acebac909eb22ba14001d622581c8069eb83"
+    },
+    {
+      "index": 14,
+      "term": "導き出す",
+      "reading": "みちびきだす",
+      "exampleJa": "単一Benchmarkから万能な結論を導き出さないようにします。",
+      "word": "vocab-14.mp3",
+      "wordHash": "1af2812e5a45b7b827a748c34082f041a677315cbb0f427d24dc7a241cb094fc",
+      "example": "example-14.mp3",
+      "exampleHash": "68c7c449e08094d6f55f22218a7640135e28562d4a1b5be481d18f91ede610a1",
+      "wordSha256": "2d203a70fc28c42a716f1dd4cd74a587f022cccc5268edfcb0fd2861a9ffce97",
+      "exampleSha256": "e95e808a83e9bd602838c14717e9b275cfefa94a920892287fe4eb30a4ec25db"
+    },
+    {
+      "index": 15,
+      "term": "外れる",
+      "reading": "はずれる",
+      "exampleJa": "作者の予想は外れ、短い出力でも速度差が残りました。",
+      "word": "vocab-15.mp3",
+      "wordHash": "294bc695e2c99479daaba99a9834f32259c56a44e52d68151a6582eb72422f09",
+      "example": "example-15.mp3",
+      "exampleHash": "e98a8c610a70bbe8f43448ed2fee9b7f3cce6e6527b3fd171019575d1b76c2ca",
+      "wordSha256": "a56178962ee0733a57675375f5bf84a2e2f01a092e6f726fe103994337bc1ec0",
+      "exampleSha256": "212db1da56e760b55dad15271ec49429d7aa51b8bdcfee68ea6228c70e9bebb9"
+    },
+    {
+      "index": 16,
+      "term": "膨らむ",
+      "reading": "ふくらむ",
+      "exampleJa": "Cacheが効かないと長いSystem Promptの入力Costが膨らみます。",
+      "word": "vocab-16.mp3",
+      "wordHash": "e10855dfeb1ebf4aa805882c86178397aa7c1f8c26a89a3a0ed38bcda90bcaaf",
+      "example": "example-16.mp3",
+      "exampleHash": "bba21def46c16bc4278d98febf1f56f4b6733d53dc6f8bab72159e8d4d68b929",
+      "wordSha256": "7bf58c9c10de73831c41bd99da805b4a1e6415d0b3658049ec72d7d60a4b52c7",
+      "exampleSha256": "cf5640ded11431acbf2025f42ece50d5231f680a12a405ffd8e5298349cc92e1"
+    },
+    {
+      "index": 17,
+      "term": "一気通貫",
+      "reading": "いっきつうかん",
+      "exampleJa": "実行から修正まで一気通貫で回せる仕組みを作ります。",
+      "word": "vocab-17.mp3",
+      "wordHash": "527ecc36f25e76dd53e053b16d27d794c4c58d0884bd42012e8a4f0a0cd00b1e",
+      "example": "example-17.mp3",
+      "exampleHash": "82910b7a7a6cca16e7892ebb3488f9ba17c84abc9ae12784dd99fe470ecdb43d",
+      "wordSha256": "30705e960ef504fe26da69503836d500e6d7ab6cede863afc6886ca8f4fce2b4",
+      "exampleSha256": "3d899c6c1716f26e7121927d238fd523159fe2025b836453d02260b75513cef0"
+    },
+    {
+      "index": 18,
+      "term": "想定通り",
+      "reading": "そうていどおり",
+      "exampleJa": "小規模Modelが想定通りに動いても、大規模化では再検証します。",
+      "word": "vocab-18.mp3",
+      "wordHash": "67edac6b38b186b39584e09aab879367362833873a012cdef8c69390dc536d27",
+      "example": "example-18.mp3",
+      "exampleHash": "afd6a86827c299050d89ef1b6a49559d804b47ce665fdb449849f4f376837278",
+      "wordSha256": "6981bb5c8d6169752b295c858a6fa982525c9235c344eb183e1c16ff232d2f36",
+      "exampleSha256": "275b39a614c9b9e722aa7e6453583222795fcde06f4c9da0afef830b64da1f68"
+    },
+    {
+      "index": 19,
+      "term": "いい勝負",
+      "reading": "いいしょうぶ",
+      "exampleJa": "出力を短くすれば両Modelがいい勝負になるという仮説を検証しました。",
+      "word": "vocab-19.mp3",
+      "wordHash": "f4bd72ba130584dc6479d68bab04780801560eda726b2af6b67ac35482b97753",
+      "example": "example-19.mp3",
+      "exampleHash": "ff17bfcb58a784f4cfba1a42ba7179c7404d93cd10f4ecd634751d1bf0305aa1",
+      "wordSha256": "682107b9273558589b8049531fdd815b0ca024dddee5fa9fced49e8b3aedca66",
+      "exampleSha256": "ff93710d694d7cf32fa5345f713ff87fe8947b4871bb09640ec5aeb9e9f67265"
+    },
+    {
+      "index": 20,
+      "term": "逆に言えば",
+      "reading": "ぎゃくにいえば",
+      "exampleJa": "逆に言えば、Ownership Keyが違えば別経路として扱われます。",
+      "word": "vocab-20.mp3",
+      "wordHash": "1329f846df6a550700818280f73c69a4808b05b958b648dddb8c9e15cb94d513",
+      "example": "example-20.mp3",
+      "exampleHash": "20e151efe81c3e4c067b0131ca7b3947a8ba13522b0d3fe054ef7234ef1581cb",
+      "wordSha256": "03f89646a62900b675ec0012b379f9f17ed6e8d24357821ed8b4c8e6a24f3f35",
+      "exampleSha256": "a4fe99f73feb014ea57b6250cf52c8af668f18db70cbe3c6087c6b1da966a3d4"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～ことから",
+      "exampleJa": "GUIでしか実行できないことから、実行処理だけをLocalへ切り出しました。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "156ebec8fe2e69f46790026ab340054ae71aa870ef5f30c2ba754903e87f226e",
+      "exampleSha256": "b8a60250fdfa69812b50b71e94b9704c48835b9cf96ccb26cfdeabc7f3dc343d"
+    },
+    {
+      "index": 2,
+      "pattern": "～てもなお",
+      "exampleJa": "出力Tokenを減らしてもなお、内部ReasoningのCostが残る場合があります。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "4bb1f861feffb887eb37397d67021e0db8df45f41bf1b917dadf9d7bcba55495",
+      "exampleSha256": "6df379343c582aa6caede90ac0553ac715fde420d62bf54c204bc59392db0a66"
+    },
+    {
+      "index": 3,
+      "pattern": "～限りでは",
+      "exampleJa": "今回の107ケースで確認した限りでは、JevのLatencyが低い結果でした。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "8b279a896850edd3930397f456c29ad9a60005614308edbb884db6d386d2cf35",
+      "exampleSha256": "cb9dc819bd3adb497316a0ec0e7cdb5a430813f9e67e62331143f1b3852f2ed6"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "とは限らない",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～とは限らない",
+      "exampleJa": "Parameter数が多ければ実務性能が高いとは限りません。",
+      "example": "grammar-example-07.mp3",
+      "exampleSha256": "c3539e1ac57836054946ffdf28d379ea58f8d696fe4768eec408e4a57f8dedee"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "に加えて",
+      "firstIntroducedDate": "2026-09-12",
+      "audioDate": "2026-09-12",
+      "pattern": "～に加えて",
+      "exampleJa": "対談に加えて、企業の導入事例も紹介します。",
+      "example": "grammar-example-01.mp3",
+      "exampleSha256": "f180e3a9e1b66370d4219181d9890e024373fc63099b90b119303650385f656f"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "上で",
+      "firstIntroducedDate": "2026-08-19",
+      "audioDate": "2026-08-19",
+      "pattern": "～上で",
+      "exampleJa": "MCPを本番利用する上で、認可と監査は重要です。",
+      "example": "grammar-example-01.mp3",
+      "exampleSha256": "8acb9b947e8527ce255cd06aca551dbf5666d52eee0e8c08191cca3afd169492"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "一方で",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～一方で",
+      "exampleJa": "Local LLMはDataを外部に出さない一方で、運用負荷が高くなることがあります。",
+      "example": "grammar-example-05.mp3",
+      "exampleSha256": "4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950"
+    },
+    {
+      "index": 5,
+      "studyKind": "review",
+      "identity": "を通じて",
+      "firstIntroducedDate": "2026-08-15",
+      "audioDate": "2026-08-15",
+      "pattern": "～を通じて",
+      "exampleJa": "各プラグインは共通のイベントを通じて連携します。",
+      "example": "grammar-example-01.mp3",
+      "exampleSha256": "5d00c292952c7d40e4eb9332c7984a151745177b76839d40804697ff0b6f3dc8"
+    }
+  ]
+}
