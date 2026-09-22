@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-22",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: direct original-source inspection",
+  "reviewedAt": "2026-09-22T07:15:00.000Z",
+  "scope": "Reviewed the locked 2026-09-21 10:00–2026-09-22 10:00 JST window and excluded the previous Top 5. The two 2026-09-22 articles expose exact morning timestamps. The three DevelopersIO pages expose only 2026.09.21, so they are explicitly treated as date-boundary supplements rather than asserted strict-24-hour items. Public article text was inspected directly; author hands-on, vendor benchmarks, reported PoC evidence and applicability limits are separated. Snapshot hashes identify the external review captures retained outside Git; offline CI validates declared traceability, not live-source semantics.",
+  "articles": [
+    {
+      "articleId": "2026-09-22-top-1",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/22/news009.html",
+      "originalTitle": "キユーピー、AIで工場シミュレーションモデルの開発工数を8割削減　3つの壁をどう乗り越えた？",
+      "source": "＠IT",
+      "topic": "AI Agent / Manufacturing / Devin / Plant Simulation / SimTalk",
+      "access": "full",
+      "accessNote": "＠IT公開本文を直接確認。Plant Simulation/SimTalk、Cloud DevinとDevin CLIの分離、Playbook、8.5人日→1.8人日、78.8％削減、小規模1モデルPoCという制約を確認した。",
+      "capturedAt": "2026-09-22T07:05:00.000Z",
+      "snapshotSha256": "7763173b3ca1c8b4916707e53d425ac44ec2faee3f2acf16c1d8c470bbbcb7ad",
+      "claims": [
+        {
+          "id": "fact-1",
+          "kind": "source-fact",
+          "statement": "キユーピーの小規模Simulation Model PoCでは、手作業なら8.5人日想定の開発を1.8人日で完了し78.8％削減したが、実績は現時点で小規模1モデルに限定される。",
+          "quote": "1.8人日で完了し、78.8％削減した",
+          "locator": "＠IT: 1シミュレーションモデル当たりの開発工数、8.5人日が1.8人日に",
+          "conditions": "Reported company PoC result, not an independent benchmark. Current evidence is one small simulation model; engineer involvement remains in the local execution environment.",
+          "usedIn": {
+            "zh": "8.5人日降到1.8人日",
+            "ja": "8.5人日想定だった工数を",
+            "interview": "8.5人日想定を1.8人日まで削減"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-22-top-2",
+      "url": "https://www.itmedia.co.jp/news/article/2609/22/2000001668/",
+      "originalTitle": "SpaceXAI、「Grok 4.7」発表　コーディングと知識労働向けで同社最高性能、価格は据え置き",
+      "source": "ITmedia NEWS",
+      "topic": "LLM / Coding Agent / Grok 4.7 / Benchmark / Cost",
+      "access": "full",
+      "accessNote": "ITmedia NEWS公開本文を直接確認。Base Model/RL/Harness説明、CursorBench 4.0、Terminal-Bench 4.0、HealthBench、HackerBench、Cursor/Grok Build提供、API価格を確認した。",
+      "capturedAt": "2026-09-22T07:06:00.000Z",
+      "snapshotSha256": "f5af1dd078b29c3b5c76c6c8b6b9861c8cc4d5c5db22bbee78e59c4733650183",
+      "claims": [
+        {
+          "id": "fact-2",
+          "kind": "source-fact",
+          "statement": "Vendor公表のCursorBench 4.0ではGrok 4.7 xHighが46.3％、Grok 4.6が40.4％、GPT-5.6 Solが41.7％、Fable 5.1が51.8％で、API料金は100万Token当たり入力2ドル・出力6ドルから。",
+          "quote": "Grok 4.7が46.3％",
+          "locator": "ITmedia NEWS: Grok 4.7 benchmark comparison",
+          "conditions": "Vendor benchmark reported by ITmedia. Different workloads and effort settings do not support a universal winner; Terminal-Bench and HealthBench are not led by Grok 4.7.",
+          "usedIn": {
+            "zh": "46.3%",
+            "ja": "46.3％",
+            "interview": "CursorBench 4.0は46.3％"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-22-top-3",
+      "url": "https://dev.classmethod.jp/articles/jev-vs-gemini-flash-cross-match/",
+      "originalTitle": "【TypeSafe】出力を絞ればLLMも速くなる？ Gemini 3.8 Flash と Jev で同じ107ケースの速度・コストを比較してみた",
+      "source": "DevelopersIO",
+      "topic": "LLM Evaluation / Jev / Gemini 3.8 Flash / Latency / Cost",
+      "access": "full",
+      "accessNote": "DevelopersIO公開本文を直接確認。同一107ケース、exact/semantic閾値0.8、逐次実行、Gemini thinking=low、keepalive、Accuracy/Latency/Cost表とCalibration上の注意を確認した。",
+      "capturedAt": "2026-09-22T07:07:00.000Z",
+      "snapshotSha256": "5777a81b88ee6b3a9a5caf84accc68326eee9d0dd3dfae11d333bb01cc234e7e",
+      "claims": [
+        {
+          "id": "fact-3",
+          "kind": "source-fact",
+          "statement": "同一107ケースでJevはLatency中央値約0.71秒・約0.35円、Gemini 3.8 Flashは約1.64秒・約6.4円で、Semantic正答率はGeminiが95.3％、Jevが90.6％だった。",
+          "quote": "レイテンシ 中央値",
+          "locator": "DevelopersIO: 4.1 全体の数字",
+          "conditions": "Author hands-on on one document cross-match dataset. Gemini used keepalive while the earlier Jev test reconnected each request; Gemini probability outputs are self-reported text values and are not calibrated confidence guarantees.",
+          "usedIn": {
+            "zh": "0.71秒 vs 1.64秒",
+            "ja": "0.71秒 vs 1.64秒",
+            "interview": "Jevは中央値0.71秒"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-22-top-4",
+      "url": "https://dev.classmethod.jp/articles/moonshot-ai-kimi-k3-bedrock/",
+      "originalTitle": "Amazon Bedrock で一般提供になった Moonshot AI の Kimi K3 を試してみた",
+      "source": "DevelopersIO",
+      "topic": "Amazon Bedrock / Kimi K3 / OpenAI-compatible API / Prompt Cache / Reasoning",
+      "access": "full",
+      "accessNote": "DevelopersIO公開本文を直接確認。Inference Profile、東京Regionのglobal Profile、Reasoning Token、Responses/Chat Completions、明示Prompt Cache条件と実測、Converse Known Limitationの非再現範囲を確認した。",
+      "capturedAt": "2026-09-22T07:08:00.000Z",
+      "snapshotSha256": "2514ef355c36eb1fd8e9d61b257454b94fe87959753fdabdf7dc32d08982317e",
+      "claims": [
+        {
+          "id": "fact-4",
+          "kind": "source-fact",
+          "statement": "Kimi K3の明示Prompt CacheはResponsesとChat Completions APIで利用でき、Checkpoint最小1024 Token・最低30分保持で、作者実測では2997 Input中2972 TokenがCache対象になった。",
+          "quote": "最小トークン数は 1,024、保持期間は最低30分",
+          "locator": "DevelopersIO: 2.5 明示的なプロンプトキャッシュ",
+          "conditions": "Author hands-on plus AWS model-card conditions. The simple two-request measurement showed cache reuse but did not demonstrate lower latency; Converse known limitations were not reproduced only in a simple two-turn test.",
+          "usedIn": {
+            "zh": "1024 Token",
+            "ja": "1024 Token",
+            "interview": "1024 Token以上、最低30分保持"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-22-top-5",
+      "url": "https://dev.classmethod.jp/articles/20260921-aws-glue-zero-etl-ownership-conflicts/",
+      "originalTitle": "[アップデート] AWS Glue zero-ETL integration で同じテーブルへの二重書き込みが ConflictException で止まるようになったので試してみた",
+      "source": "DevelopersIO",
+      "topic": "AWS Glue / zero-ETL / Ownership / ConflictException / Data Platform",
+      "access": "full",
+      "accessNote": "DevelopersIO公開本文を直接確認。Target Resource ARN×Source Table NameのOwnership、CREATING時のIntegrationArn、2本目のConflictException、Owner ARN、必要CLI/botocore Versionを確認した。",
+      "capturedAt": "2026-09-22T07:09:00.000Z",
+      "snapshotSha256": "d9b68e362368cb44055f925a08f9eb1829c253092257a0a636f49b4aebd2c4d2",
+      "claims": [
+        {
+          "id": "fact-5",
+          "kind": "source-fact",
+          "statement": "AWS Glue zero-ETLではTarget Resource ARN×Source Table Nameを1 Integrationだけが所有し、2本目はConflictExceptionで拒否され、OwnershipはACTIVE前のCREATINGでIntegrationArnとして記録される。",
+          "quote": "ConflictException で拒否されました",
+          "locator": "DevelopersIO: 同じ組み合わせで2つ目を作ると競合する",
+          "conditions": "Author hands-on in ap-northeast-1 with DynamoDB source and Glue database target. Constraint applies to the same target-resource/source-table combination; other concurrent-change handling has different semantics.",
+          "usedIn": {
+            "zh": "ConflictException",
+            "ja": "ConflictException",
+            "interview": "2本目はConflictExceptionで拒否"
+          }
+        }
+      ]
+    }
+  ]
+}
