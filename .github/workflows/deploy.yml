@@ -2,13 +2,13 @@ name: Deploy Astro site to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'draft/daily-*']
   workflow_dispatch:
 
 permissions: {}
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -35,6 +35,8 @@ jobs:
         run: npm ci
       - name: Audit dependencies
         run: npm audit --audit-level=high
+      - name: Verify publication recovery
+        run: node --test tests/publication/recovery.node.mjs
       - name: Type check
         run: npm run check
       - name: Verify content integrity
@@ -88,6 +90,7 @@ jobs:
         with:
           path: ./dist
   deploy:
+    if: github.ref == 'refs/heads/main'
     permissions:
       contents: read
       pages: write

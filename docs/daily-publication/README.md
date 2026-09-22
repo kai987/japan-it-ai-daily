@@ -1,0 +1,78 @@
+# Daily publication: resumable generation and verified release
+
+Effective 2026-09-22. This runbook extends, rather than relaxes, the existing content and publication rules. It covers failures **before the first content commit**, partial generation, validation failures and Pages failures. A successful code-only deployment is not a successful publication of a missing report.
+
+## Entrypoints and policy
+
+The 10:00 Asia/Tokyo ChatGPT task is the primary author. The permanent hourly recovery task is a second entrypoint into the SAME state machine, not another independent author. Recovery considers today's report after 11:00 JST and checks every missing date from 2026-09-22 through the most recently due date, plus all earlier explicitly checkpointed dates. It does not require four files or a failed Actions run to exist. Pick the oldest unfinished date first so later vocabulary does not invalidate a backfill's first-introduction chronology. Continue to the next pending date when practical; otherwise leave durable state for the next run. Never disable a recurring task just because one report succeeded or failed.
+
+Before extensive research, first confirm JST, read current main SHA and this runbook, inspect the progress branch, then register/acquire the target. This ensures that a failed research/generation attempt leaves a resumable target. The platform can still fail before any tool call; a missing checkpoint is therefore explicitly recoverable, not evidence that the date should be skipped. We do not know the internal root cause of the September 22 scheduler error and must not label it a timeout, quota issue or permission failure without logs.
+
+`scripts/daily-publication.mjs` provides the tested, read-only planner and lease helpers. With real observations, run:
+
+```sh
+node scripts/daily-publication.mjs plan /tmp/publication-observation.json
+node --test tests/publication/recovery.node.mjs
+```
+
+The planner is NOT a news generator, a GitHub API client, or a replacement for the content validators. The authorized task collects current observations, invokes the planner, and performs the selected operation through the connected GitHub tools. Do not invent tool names or treat planning output as execution evidence. If tools are unavailable, retain the target and report the precise blocker.
+
+## Durable checkpoints, outside the published content
+
+Branch: `automation/daily-progress` (create once from a known main SHA if absent; never force-reset it).
+
+- `locks/publisher.json`: one repository-wide generation/promotion lease.
+- `runs/YYYY-MM-DD/status.json`: targetDate, sourceWindow, stage, base/source commit, updatedAt, completed artifact paths/blob SHAs, current attempt, and lastError.
+- `runs/YYYY-MM-DD/sources.json`: selected article identities, URLs, timestamps, independently verified facts/conditions, short evidence anchors, and access limitations.
+- `runs/YYYY-MM-DD/history.json`: exact source commit, complete historical date coverage, identity decisions and actual dedupe results.
+- `runs/YYYY-MM-DD/interviews.json`: canonical shared Japanese questions/answers, used once for both language mirrors.
+- `runs/YYYY-MM-DD/drafts/`: the actual completed portions/files, retaining all explanations and card fields.
+- `runs/YYYY-MM-DD/checks.json`: commands, checked commit, pass/fail, run/job/step links and concise error evidence.
+
+Only persist completed work; do not manufacture a full draft or mark a stage complete to satisfy a checkpoint. Each verified article, history scan, language draft and completed learning section should be saved promptly. Do not wait until all four files are finished. Store concise source evidence, not full copyrighted articles, secrets, cookies, tokens or private tool output in this public repository. Keep original captures outside Git according to docs/evidence/README.md; when captures are unavailable on resume, re-read the originals rather than inventing capture hashes.
+
+Stages: `registered` -> `sources_verified` -> `learning_verified` -> `drafts_ready` -> `preflight_passed` -> `committed` -> `deploying` -> `published`. A failure retains the last complete stage and records `resumeFrom`, `lastError` and `nextAction`; it never resets the whole day or calls unfinished work published. A partial draft can be saved without advancing the stage. On resume, verify the artifact paths/SHAs; changed main requires a fresh complete history check before promotion. Freeze the original targetDate and sourceWindow across midnight. The default news window is previous day 10:00 to target day 10:00 JST. If an earlier attempt already locked a different genuine window, preserve and disclose it. Never label later news as belonging to the missed day.
+
+## Single-writer lease and safe Git writes
+
+Use `claimLease`, `renewLease` and `assertLease` from the module. A lease contains a unique owner/token, targetDate, updatedAt and expiresAt; TTL is 45 minutes. Renew after each checkpoint and at least every 5 minutes during active work. Use GitHub contents writes with the latest blob SHA (CAS), read back, and verify the same token. A live lease means wait, not run a second writer. Expired leases can be reclaimed with a NEW token and current SHA. If the lock cannot be read reliably, do not write.
+
+Immediately before every checkpoint or content write, re-read the lease and assert ownership; a resumed stale worker must stop. Immediately before promoting to main, also re-read main SHA. Use an atomic Git tree/commit and non-force ref update. A 409/422 or changed main is not a reason to force-push: re-read, reconcile only the intended paths, and rerun history/validation where needed. Never overwrite a newer source, silently discard another worker's progress, or merge the whole progress branch into main. Cooperating task leases plus non-fast-forward rejection are safeguards; they are not a claim of a distributed transaction with GitHub.
+
+Release the lease on orderly yield, after persisting the checkpoint. An abrupt task termination leaves an expiring lease. Running Pages jobs are observed, not blindly cancelled. Do not keep long busy-poll loops: poll at roughly 30-60 seconds when a run is progressing, otherwise save its ID and let the hourly recovery continue. The recovery task remains enabled after success and is silent for already verified dates.
+
+## Content contract: unchanged
+
+Read current `docs/DAILY_CONTENT_QUALITY_RULES.md`, `docs/daily-quality-policy.json`, `src/content.config.ts`, `docs/evidence/README.md`, `docs/structured-interview-policy.json`, `docs/learning-review/README.md`, `scripts/learning-review.mjs`, and the current vocabulary/grammar identity rules and authoring commands. Latest user constraints below prevail over outdated examples in older docs.
+
+Keep detailed technical explanation, Japanese job-interview preparation and Japanese learning, not a news digest. Prioritize the user's 20 Japanese IT/AI sites and original articles from the locked last-24-hour window; exclude the previous report's Top 5. Verify originals in full/publicly available scope; record title/source/topic/URL/products/APIs/versions/facts/numbers/conditions/results/limitations. Do not use search snippets or invented citations as article evidence. Explicitly disclose a genuine shortage or out-of-window supplemental reading.
+
+The final four files are `src/content/daily/YYYY-MM-DD.md`, `src/content/daily-ja/YYYY-MM-DD.md`, `src/content/japanese/YYYY-MM-DD.md`, and `src/content/japanese-ja/YYYY-MM-DD.md`. Also include the required `src/content/evidence/YYYY-MM-DD.json` and `src/data/interviews/YYYY-MM-DD.json` according to their current schemas. Four files alone are not a complete release. Use current frontmatter schemas and exact counts; Top 5 identity/order/facts stay shared. Titles match their body headings; preserve original Japanese article titles for both modes under the user's current rule.
+
+A: each Top article has at least two complete argument paragraphs, mechanisms/API/architecture, specific evidence with conditions and boundaries, and learning/interview value. No fixed prose character count or padded claims. Include the four-category overview, EXACTLY five article-aligned Japanese Q&A sets with related projects and three keywords, a detailed technical theme (mechanism/benefits/limits/Japan adoption), and three parser-compatible review questions. Canonical Q&A is authored once from the originals and stored in the required structured interview JSON; render/copy the same question+answer strings to both Markdown versions, without rewriting punctuation or examples. Each answer has two article-specific verifiable anchors, a real boundary, and distinct reasoning. Weighted speech estimate at AIVIS_INTERVIEW_SPEED=1.00: ideal 26-34 seconds, allowed 22-40; Jaccard >=0.68 fails. Do not replace article terms with generic English jargon.
+
+B: 2-4 knowledge points per Top article in order; Chinese mode includes Chinese and Japanese points, Japanese mode uses natural Japanese. No extra articles, repeated full summaries or extra 30-second answers. Apart from shared Q&A, write Chinese and Japanese directly and independently from the originals, never translate an entire Markdown draft. Keep Markdown structure out of translation pipelines.
+
+C: new vocabulary aims at 20, N1/N2 first, noun count at most half in principle, with verbs/adjectives/adverbs/connective expressions. Do not invent words or lower difficulty to fill a quota. Preserve reading/partOfSpeech/level/meaning/2-4 collocations/article context/original example/translation/nuance. IT terms 5-10 with term/japanese/meaning/context. Japanese-mode explanation fields, including BOTH vocabulary and grammar `exampleMeaning`, must be natural Japanese, not copied Chinese text or Chinese with a Japanese suffix.
+
+New grammar may genuinely be 0-8; every new grammar needs a Top-5 sourceUrl, actual sourceForm and sourceAnchor, separate from the original teaching example. Below five new grammar items, retain a >=20-character grammarSelectionNote that explicitly states the NEW count and separate review section; zero uses grammar: [] and grammarCount: 0. Preserve meaning/structure/usage/example/translation/nuance. C-4 selects at most ten new words and min(5,newGrammarCount) new grammar. Never mix review into new arrays or C-4.
+
+Before generation/promotion enumerate ALL earlier dates of all four collections, record complete date coverage and source SHA, and apply existing lexical/grammar identity rules plus semantic review. NFKC, kanji/kana/okurigana, conjugation and nominal+suru variants cannot create fake novelty. Keep different functions distinct (する上で/した上で, かねる/かねない, にかかわらず/にもかかわらず, つつ/つつも). Exclude the same target date from earlier-history checks. Failed/truncated reads cannot yield a zero-duplicate claim; do not rewrite historical lessons to conceal a conflict.
+
+Review and frequency MUST come from the unmodified shared learning-review module: vocabulary supplements up to 20; grammar new+review aims at 5-8 with 8 only a ceiling. Five/six/seven are valid; 0-4 are valid with a truthful reviewGrammarNote. Review candidates require an earlier independent card plus actual evidence in that day's Japanese prose/recommendation/original example, with firstIntroducedDate, identity, studyKind and reviewEvidence. Do not add sentences merely to qualify review candidates. Retain real levels and all detailed card fields. Derive historical grammar using only earlier introductions, without overwriting historical new learning. Issue numbering uses actual dates, not N1 Day. Frequencies use distinct saved-report dates/all actual report dates, one decimal with numerator/denominator/date links; no external-full-text scan claim. Preserve full-history grammarLessons and the current historical vocabulary supplementation range.
+
+## Validation branch and atomic promotion
+
+After checkpointed drafts are complete, create/update `draft/daily-YYYY-MM-DD` from the current main, carrying only this target's content/evidence/interview changes plus a necessary narrowly scoped fix. A single atomic commit on that branch triggers the SAME deploy.yml build gates. The deploy job is restricted to main; draft CI can never publish Pages. Progress branch saves do not trigger Pages. Draft and main have separate concurrency groups so a checkpoint/preflight cannot cancel a production release.
+
+Run actual checks, locally where available and in the authorized CI otherwise: type check, content:integrity:check (including jlpt/grammar/study/interview), evidence:check and evidence:pilot, bilingual:check-interview, quality:check, audio checks, unit tests, build, browser regression and security/CSP. Do not fake logs or inject [skip ci]. Let CI exercise the real commands. When local dependency/network access is unavailable, use the draft branch's real CI rather than claiming local success. Existing audio is reused only by exact text/identity; no recording means explicitly browser Japanese speech, not fabricated AivisSpeech audio.
+
+After the draft's exact commit passes, re-read the lease and main. Promote only the expected target paths atomically to main; do not cherry-pick unrelated progress files or blindly merge an old base. If main changed, reconcile and rerun the checks before promotion. Main repeats the complete checks and builds a fresh sourceCommit-bound snapshot.
+
+## Failures and completion
+
+Read the exact failed run/job/step logs BEFORE retrying. Transient network/runner failures: bounded backoff, at most three attempts per invocation; honor Retry-After and retain attempt/error state for the next recovery. Deterministic content/schema/code/test failures: fix only the supported root cause and rerun; detector false positives require evidence and regression tests, never weaker checks. 401/403: report authorization, do not bypass. 409/422: refetch and reconcile. Unknown platform failures stay `unknown`; the planner is conservative, not a universal root-cause classifier. A generic `There was a problem with your scheduled task` cannot identify an internal failing step. Record what is observed without inventing an exception stack.
+
+Only `published` after all of the following refer to the same final main commit: full deploy.yml success, build and Pages deploy success, post-deploy snapshot and bilingual-byte verification success, it-study-snapshot artifact sourceCommit == workflow.head_sha, target date included, totalDays/issueNumbers consistent with every complete report, and grammarLessons covering the full report history. A prior day's green run, audio-upload run, draft build, successful push, or artifact upload is NOT this day's publication success.
+
+Record releaseCommit/runId/artifact IDs and verification results in the progress status; do not touch main just to record success and trigger a deployment loop. Only then send a short success message with target date/issue number, actual new+review counts and real check/deploy results. If blocked, report the exact failed stage and saved recovery state, not a promise that work continues without an enabled recovery task. The restoration of this recovery mechanism is separate from completion of a still-missing daily report.
