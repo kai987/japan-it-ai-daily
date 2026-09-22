@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-22",
+  "stage": "registered",
+  "sourceCommit": "3fcf804282a1d02ca2a5dc0b0e08860c7d9ffff1",
+  "sourceWindow": {
+    "from": "2026-09-21T10:00:00+09:00",
+    "to": "2026-09-22T10:00:00+09:00"
+  },
+  "createdAt": "2026-09-22T15:48:00+09:00",
+  "updatedAt": "2026-09-22T15:48:00+09:00",
+  "completedArtifacts": [],
+  "resumeFrom": "registered",
+  "nextAction": "Acquire publisher lease; read current main rules; verify original articles and checkpoint sources before drafting.",
+  "lastError": {
+    "kind": "unknown",
+    "stage": "before_content_commit",
+    "message": "The scheduled task returned a generic failure. No September 22 content commit was observed; no internal exception stack is available. Do not infer timeout, authentication failure or a specific failed tool call.",
+    "observedSourceCommit": "3fcf804282a1d02ca2a5dc0b0e08860c7d9ffff1"
+  },
+  "publication": null
+}
