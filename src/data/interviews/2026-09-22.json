@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-22",
+  "interview": [
+    {
+      "id": "qa-01",
+      "articleIds": ["2026-09-22-top-1"],
+      "question": "工場シミュレーションをAI化するとき、Devinをどのように組み込みますか。",
+      "answer": "工場シミュレーションをAI化するなら、コード生成だけでなく実行環境までHarness化します。キユーピーではPlant SimulationのSimTalk生成をDevinに任せ、実行と修正はDevin CLIへ切り出し、8.5人日想定を1.8人日まで削減しました。ただし78.8％削減は小規模な1モデルのPoC実績なので、規模を広げる前に再現性を測ります。"
+    },
+    {
+      "id": "qa-02",
+      "articleIds": ["2026-09-22-top-2"],
+      "question": "Grok 4.7をコーディング用途へ採用するとき、何を評価しますか。",
+      "answer": "Grok 4.7を主力Model候補にするなら、Vendor Benchmarkをそのまま採用判断にしません。CursorBench 4.0は46.3％でGrok 4.6の40.4％を上回り、APIは100万Token当たり入力2ドル・出力6ドルからです。ただしTerminal-Bench 4.0は38.0％でFable 5.1に劣るため、自社Repositoryの長時間Taskで成功率とCostを測ります。"
+    },
+    {
+      "id": "qa-03",
+      "articleIds": ["2026-09-22-top-3"],
+      "question": "Jevのような判定専用Modelと生成LLMをどう使い分けますか。",
+      "answer": "判定専用Taskでは、生成量を短くするだけで十分速くなるとは限りません。同じ107ケースでJevは中央値0.71秒、約0.35円、Gemini 3.8 Flashは1.64秒、約6.4円で、Semantic正答はGeminiが95.3％でした。ただしGemini側はkeepaliveで有利な条件なので、精度・Latency・Costを同じDatasetで測って使い分けます。"
+    },
+    {
+      "id": "qa-04",
+      "articleIds": ["2026-09-22-top-4"],
+      "question": "Kimi K3をAmazon Bedrockで使うとき、何を先に確認しますか。",
+      "answer": "Kimi K3をBedrockで使うなら、API差とReasoning Costを先に確認します。東京からはglobal.moonshotai.kimi-k3を使い、明示CacheはResponsesかChat Completionsで1024 Token以上、最低30分保持です。ただしConverseの既知制限は作者の単純な2 Turnでは再現しなかったため、Agent FrameworkではOpenAI互換APIも検証します。"
+    },
+    {
+      "id": "qa-05",
+      "articleIds": ["2026-09-22-top-5"],
+      "question": "AWS Glue zero-ETLを複数Teamで運用するとき、競合をどう防ぎますか。",
+      "answer": "zero-ETLを複数Teamで運用するなら、Ownershipを作成時に衝突検出させます。AWS GlueではTarget Resource ARNとSource Table名の組み合わせを1 Integrationだけが所有し、2本目はConflictExceptionで拒否され、OwnershipはCREATINGで記録されます。ただし同時変更検出は別扱いなので、更新競合の手順も残します。"
+    }
+  ],
+  "review": [
+    {
+      "id": "review-01",
+      "articleIds": ["2026-09-22-top-1"],
+      "question": "AI Agentの生産性を評価するとき、Model性能以外に何を測りますか。",
+      "points": {
+        "zh": "Harness整備度、Task成功率、返工回数、人工介入時間、Validation、Domain Knowledge更新。小規模PoCの工数削減率をそのまま全社へ外挿しない。",
+        "ja": "Harness整備度、Task成功率、手戻り回数、人工介入時間、Validation、Domain Knowledge更新。小規模PoCの工数削減率をそのまま全社へ外挿しない。"
+      }
+    },
+    {
+      "id": "review-02",
+      "articleIds": ["2026-09-22-top-2"],
+      "question": "LLMのVendor Benchmarkを採用判断へ使うとき、何に注意しますか。",
+      "points": {
+        "zh": "Benchmark Task、effort、Harness、価格条件、比較Model、得意不得意を分離し、自社Repositoryや業務DatasetでCost-per-successを再測定する。",
+        "ja": "Benchmark Task、effort、Harness、価格条件、比較Model、得意不得意を分離し、自社Repositoryや業務DatasetでCost-per-successを再測定する。"
+      }
+    },
+    {
+      "id": "review-03",
+      "articleIds": ["2026-09-22-top-5"],
+      "question": "Data PipelineでOwnershipを明示する利点は何ですか。",
+      "points": {
+        "zh": "二重書き込みを作成時に拒否でき、OwnerをARNなどで追跡できる。Alertだけでなく、Invalid TopologyをControl Planeで作れない設計にする。",
+        "ja": "二重書き込みを作成時に拒否でき、OwnerをARNなどで追跡できる。Alertだけでなく、Invalid TopologyをControl Planeで作れない設計にする。"
+      }
+    }
+  ]
+}
