@@ -34,18 +34,21 @@ export function checkDays(days, key) {
 }
 const identity = (v) => [v.term, v.reading, v.level];
 const exact = (a, b, label) => { if (JSON.stringify(a) !== JSON.stringify(b)) throw new Error(`${label}: bilingual identity mismatch`); };
-function c1Terms(body) {
+export function c1Terms(body) {
   const section = body.match(/^## C-1[^\n]*\n([\s\S]*?)(?=^## C-2\b)/m)?.[1];
   if (!section) throw new Error('Missing daily C-1 section');
   const headings = [...section.matchAll(/^### (?:C-1-)?\d+\.\s+([^\n（(]+)/gm)].map((m) => m[1].trim());
   if (headings.length) return headings;
-  return [...section.matchAll(/^\d+\.\s+\*\*(.+?)[（(]/gm)].map((m) => m[1].trim());
+  // List-style cards may omit redundant furigana for kana-only terms such as 「とどまる」.
+  // Capture the term up to either a reading parenthesis or the level separator, then let the
+  // canonical bilingual identity comparison below remain the source of truth.
+  return [...section.matchAll(/^\d+\.\s+\*\*(.+?)(?=[（(｜|])/gm)].map((m) => m[1].trim());
 }
-function c4Words(body) {
+export function c4Words(body) {
   const section = body.match(/^## C-4[^\n]*\n([\s\S]*)/m)?.[1];
   if (!section) throw new Error('Missing daily C-4 section');
-  const line = section.match(/^(?:- )?\*\*(?:10\s*(?:語|词)|词汇\s*10\s*个|語彙\s*10\s*語)[：:]\*\*\s*(.+)$/m)?.[1];
-  if (line) return line.replace(/`/g, '').trim().split(/・|\s+\/\s+/).map((x) => x.trim());
+  const line = section.match(/^(?:- )?\*\*(?:10\s*(?:語|词)|词汇\s*10\s*个|語彙\s*10\s*語|新词\s*10\s*个|新規語彙)[：:]\*\*\s*(.+)$/m)?.[1];
+  if (line) return line.replace(/`/g, '').trim().split(/・|\s+\/\s+|／/).map((x) => x.trim()).filter(Boolean);
   // Legacy first day's C-4 uses a numbered list under its own heading.
   const legacy = section.match(/### 10 个重点词\s*\n([\s\S]*?)(?=###|$)/)?.[1];
   if (legacy) return [...legacy.matchAll(/^(?:\d+\.|-)\s+(.+)/gm)].map((m) => m[1].replace(/\*\*|`/g, '').split(/[（(｜|]/)[0].trim());

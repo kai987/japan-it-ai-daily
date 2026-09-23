@@ -33,17 +33,20 @@ const same=(a,b,label)=>{if(JSON.stringify(a)!==JSON.stringify(b))throw new Erro
 export function dailyGrammarPatterns(body) {
   const section = body.match(/^## C-3[^\n]*\n([\s\S]*?)(?=^## C-4\b)/m)?.[1];
   if (section === undefined) throw new Error('Missing C3 grammar section');
-  const headings = [...section.matchAll(/^### (?:C-3-)?\d+\.\s+([^\n]+)/gm)].map(m=>m[1].trim());
+  const headings = [...section.matchAll(/^### (?:C-3-)?\d+\.\s+([^\n]+)/gm)].map(m=>m[1].split(/[｜|]/,1)[0].trim());
   if (headings.length) return headings;
   return [...section.matchAll(/^\d+\.\s+\*\*([^｜|\n]+)[｜|]/gm)].map(m=>m[1].trim());
 }
+const splitGrammarList = (value) => value.replace(/`/g,'').split(/・|\s+\/\s+|／(?=～)/).map(x=>x.trim()).filter(Boolean);
 export function dailyMustGrammar(body) {
   const section = body.match(/^## C-4[^\n]*\n([\s\S]*)/m)?.[1];
   if (section === undefined) throw new Error('Missing C4 grammar section');
   const explicitZero = section.match(/^(?:- )?\*\*(?:新(?:语法|語法)|新規文法)\s*0\s*(?:个|個|項目)?[：:]\*\*/m);
   if (explicitZero) return [];
   const line = section.match(/^(?:- )?\*\*(\d+)\s*(?:文法|语法|語法)[：:]\*\*\s*([^\n]*)/m);
-  if (line) return Number(line[1]) === 0 ? [] : line[2].replace(/`/g,'').split(/・|\s+\/\s+/).map(x=>x.trim());
+  if (line) return Number(line[1]) === 0 ? [] : splitGrammarList(line[2]);
+  const localized = section.match(/^(?:- )?\*\*(?:(?:新(?:语法|語法))\s*(\d+)\s*(?:个|個|項目)?|新規文法)[：:]\*\*\s*([^\n]*)/m);
+  if (localized) return localized[1] === '0' ? [] : splitGrammarList(localized[2]);
   const legacy = section.match(/### \d+ 个重点语法\s*\n([\s\S]*?)(?=###|$)/)?.[1];
   if (legacy) return [...legacy.matchAll(/^(?:\d+\.|-)\s+(.+)/gm)].map(m=>m[1].replace(/\*\*|`/g,'').trim());
   throw new Error('Unrecognized C4 grammar selection');
