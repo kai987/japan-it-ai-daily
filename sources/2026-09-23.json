@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-23",
+  "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
+  "sourceWindow": {
+    "from": "2026-09-22T10:00:00+09:00",
+    "to": "2026-09-23T10:00:00+09:00"
+  },
+  "capturedAt": "2026-09-23T10:11:48+09:00",
+  "previousTop5Excluded": [
+    "キユーピー、AIで工場シミュレーションモデルの開発工数を8割削減　3つの壁をどう乗り越えた？",
+    "SpaceXAI、「Grok 4.7」発表　コーディングと知識労働向けで同社最高性能、価格は据え置き",
+    "【TypeSafe】出力を絞ればLLMも速くなる？ Gemini 3.8 Flash と Jev で同じ107ケースの速度・コストを比較してみた",
+    "Amazon Bedrock で一般提供になった Moonshot AI の Kimi K3 を試してみた",
+    "[アップデート] AWS Glue zero-ETL integration で同じテーブルへの二重書き込みが ConflictException で止まるようになったので試してみた"
+  ],
+  "articles": [
+    {
+      "articleId": "2026-09-23-top-1",
+      "title": "OpenAI、「GPT-6 Sol」と「GPT-6 Luna」公開　API料金は前世代の半額に",
+      "source": "ITmedia NEWS",
+      "publishedAt": "2026-09-23T09:12:00+09:00",
+      "url": "https://www.itmedia.co.jp/news/article/2609/23/2000001674/",
+      "upstreamUrl": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "topic": "GPT-6 Sol / GPT-6 Luna / API Pricing / Prompt Caching / Coding Agent",
+      "access": "full+upstream",
+      "snapshotSha256": "a5e6fecf59162961093445dca2b5c4f4cc4d3f04cc477fc0a74beb1bc358f4d6",
+      "facts": [
+        "OpenAI released gpt-6-sol and gpt-6-luna on September 22; ITmedia published the Japanese report at 09:12 JST on September 23.",
+        "Standard short-context API pricing is $2 input/$10 output per 1M tokens for Sol and $0.10/$0.50 for Luna, 50% below GPT-5.6 promotional pricing.",
+        "Both models expose a 1.05M context window and 128K max output; Sol is positioned for complex coding/agentic workflows and Luna for high-volume focused tasks.",
+        "OpenAI reports 90% discounts on cached input reads and vendor benchmarks including DeepSWE, AutomationBench and OSWorld; these are vendor evaluations rather than independent production results."
+      ],
+      "boundary": "Pricing depends on processing tier/context length, and vendor benchmark results are not a universal workload guarantee. Production ChatGPT and research/API evaluation environments can differ."
+    },
+    {
+      "articleId": "2026-09-23-top-2",
+      "title": "AIは新規開発より既存改修が苦手？より得意？　Android開発の実力を測る「Android Bench 2.0」が公開",
+      "source": "窓の杜",
+      "publishedAt": "2026-09-22T11:45:00+09:00",
+      "url": "https://forest.watch.impress.co.jp/docs/news/2142521.html",
+      "upstreamUrl": "https://android-developers.googleblog.com/2026/09/android-bench-2-long-horizon-tasks.html",
+      "topic": "Android Bench 2.0 / Long-Horizon Tasks / Coding Agent / Evaluation Harness",
+      "access": "full+upstream",
+      "snapshotSha256": "4fb62c776863608ab0b1e634375018cd1e28faaadaafce9313f4427033535534",
+      "facts": [
+        "Android Bench 2.0 adds long-horizon tasks that can take engineers multiple days or a week, instead of mainly incremental fixes.",
+        "Task types include dependency upgrades, new features, apps built from scratch and cross-platform-to-Android conversion.",
+        "Evaluation now includes provider agents and continuous scoring; Google explicitly notes harness design, prompt caching and compact tool windowing can change token use and outcomes.",
+        "Google reports GPT-6 Astra at the top of the then-current leaderboard with a 28% pass rate."
+      ],
+      "boundary": "Model and agent/harness are paired in the initial evaluation, so scores cannot be attributed to the base model alone; the benchmark is Android-specific and the first LHT set is not all software engineering."
+    },
+    {
+      "articleId": "2026-09-23-top-3",
+      "title": "たった1つの拡張機能で5つのWebブラウザーのAIを乗っ取れちゃう!?　「BragJack」脆弱性",
+      "source": "窓の杜",
+      "publishedAt": "2026-09-22T17:45:00+09:00",
+      "url": "https://forest.watch.impress.co.jp/docs/serial/yajiuma/2142598.html",
+      "upstreamUrl": "https://forever.security/blog/bragjack-attack-hijacks-every-browser-agent",
+      "topic": "Browser Agent Security / BragJack / declarativeNetRequest / Prompt Forcing / CVE",
+      "access": "full+upstream",
+      "snapshotSha256": "bee2eb2de6567ad10f3212f4eaeb02eed1a0b074948b44f63fbb8f23bdbc52a1",
+      "facts": [
+        "Forever Security demonstrated one ordinary-looking Chromium extension against five AI-agent surfaces: Chrome Gemini Live, Perplexity Comet, Edge, Opera Neon and Claude in Chrome.",
+        "A core technique abused declarativeNetRequest to weaken response security headers and redirect JavaScript into privileged/trusted web contexts, enabling prompt forcing rather than normal indirect prompt injection.",
+        "Impact varied by product and included agent hijack, local-file/profile/history access, screenshots, and in Chrome camera/microphone access; the malicious extension being installed is a prerequisite.",
+        "Chrome CVE-2026-0628 and Edge CVE-2026-55945 were assigned and reported fixed; the research was coordinated disclosure, not evidence of in-the-wild compromise."
+      ],
+      "boundary": "The demonstrated chains require a malicious extension with granted permissions; impact is product-specific, and fixed Chrome/Edge versions should not be described as currently vulnerable to the disclosed path."
+    },
+    {
+      "articleId": "2026-09-23-top-4",
+      "title": "OpenAI、数学者の独立諮問グループと連携　内部モデルは「100件超の未解決問題を解決」",
+      "source": "ITmedia NEWS",
+      "publishedAt": "2026-09-22T11:49:00+09:00",
+      "url": "https://www.itmedia.co.jp/news/article/2609/22/2000001671/",
+      "upstreamUrl": "https://openai.com/index/advisory-group-on-mathematics-and-ai/",
+      "topic": "AI for Science / Mathematics / Evaluation Governance / AGMAI",
+      "access": "full+upstream",
+      "snapshotSha256": "917ca4cbb82961db7190abd06a9fdfa18d11dad90fc7114ec0e2e8764e61b7a4",
+      "facts": [
+        "OpenAI says an internal model whose training began August 28 resolved more than 100 long-standing open problems across most areas of mathematics.",
+        "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence hosted at IAS to review significance, dissemination and research standards.",
+        "Members are unpaid by OpenAI, may publish unsolicited advice and can publicly challenge OpenAI; the group does not advise on pacing OpenAI's internal math research.",
+        "The announcement explicitly responds to criticism about attribution, citation and negative externalities from using open-problem solving as an AI benchmark."
+      ],
+      "boundary": "The 100+ result is OpenAI's own claim about an internal model, not an independently reproduced benchmark. Governance advice does not independently validate every claimed solution."
+    },
+    {
+      "articleId": "2026-09-23-top-5",
+      "title": "ネットワーク障害による残業が「ほぼゼロ」に　情シス担当“実質2人”の病院は何を変えた？",
+      "source": "＠IT",
+      "publishedAt": "2026-09-22T11:00:00+09:00",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/22/news012.html",
+      "upstreamUrl": "https://www.allied-telesis.co.jp/solution/manage/",
+      "topic": "Network Operations / VCS / AMF / AWC / Observability / Hospital IT",
+      "access": "full",
+      "snapshotSha256": "069b9b704ec70e17d6c7ff783ca6219ecd1ccefa3f962e251006a12bc9f285db",
+      "facts": [
+        "The hospital operates about 500 electronic medical-record terminals with an IT operations staff effectively numbering two.",
+        "The redesign combined AT-SBx908 GEN2 VCS redundancy, AMF auto-recovery, AWC radio optimization, Net.Monitor 24/365 monitoring and Vista Manager EX visibility.",
+        "The hospital reports fault-isolation time falling to less than one tenth of the previous level and overtime recovery work becoming almost zero.",
+        "Remote maintenance links from multiple vendors are being consolidated to improve centralized visibility and control."
+      ],
+      "boundary": "This is a single customer case reported by the vendor/media, not a controlled before/after study. The improvement combines hardware refresh, redundancy, management, wireless control and operations services, so it should not be attributed to one feature."
+    }
+  ]
+}
