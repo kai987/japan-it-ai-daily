@@ -11,8 +11,8 @@
       "url": "https://www.itmedia.co.jp/news/article/2609/23/2000001674/",
       "originalTitle": "OpenAI、「GPT-6 Sol」と「GPT-6 Luna」公開　API料金は前世代の半額に",
       "source": "ITmedia NEWS",
-      "topic": "GPT-6 Sol / GPT-6 Luna / API Pricing / Prompt Caching / Coding Agent",
-      "access": "full+upstream",
+      "topic": "GPT-6 Sol / GPT-6 Luna / API Pricing / Prompt Cache / Coding Agent",
+      "access": "full",
       "accessNote": "ITmedia NEWSの公開本文とOpenAI公式発表を確認。Sol/Lunaの役割、標準API単価、Cached Input read割引、長文Context、Coding/Agent向け位置付け、およびVendor BenchmarkというEvidence Boundaryを確認した。",
       "capturedAt": "2026-09-23T01:11:48.000Z",
       "snapshotSha256": "a5e6fecf59162961093445dca2b5c4f4cc4d3f04cc477fc0a74beb1bc358f4d6",
@@ -24,7 +24,7 @@
           "quote": "90% discount on cached input reads",
           "locator": "OpenAI official: Pricing and prompt caching; ITmedia NEWS pricing summary",
           "conditions": "Pricing varies with processing tier and context length. Performance figures in the launch material are vendor evaluations and do not guarantee production workload results.",
-          "usedIn": {"zh": "Sol $2/$10、Luna $0.10/$0.50", "ja": "Solは入力2ドル・出力10ドル", "interview": "Cached Inputは90％割引"}
+          "usedIn": {"zh": "Cached Input read再提供90%折扣", "ja": "Cached Input readは90％割引", "interview": "Cached Inputは90％割引"}
         }
       ]
     },
@@ -33,8 +33,8 @@
       "url": "https://forest.watch.impress.co.jp/docs/news/2142521.html",
       "originalTitle": "AIは新規開発より既存改修が苦手？より得意？　Android開発の実力を測る「Android Bench 2.0」が公開",
       "source": "窓の杜",
-      "topic": "Android Bench 2.0 / Long-Horizon Tasks / Coding Agent / Evaluation Harness",
-      "access": "full+upstream",
+      "topic": "Android Bench 2.0 / Long-Horizon Task / Coding Agent / Evaluation Harness",
+      "access": "full",
       "accessNote": "窓の杜本文とAndroid Developers Blogを確認。30件のLong-Horizon Task、4カテゴリ、Continuous Scoring、Provider Agentとの組合せ評価、28％の最高Pass率、Harness/Prompt Cache/Context Windowingが結果へ影響する点を確認した。",
       "capturedAt": "2026-09-23T01:13:12.000Z",
       "snapshotSha256": "4fb62c776863608ab0b1e634375018cd1e28faaadaafce9313f4427033535534",
@@ -46,7 +46,7 @@
           "quote": "highest-performing pairing only passed 28%",
           "locator": "Android Developers Blog: long-horizon task set and leaderboard",
           "conditions": "The leaderboard evaluates a model paired with a provider agent/harness; the score is Android-specific and cannot be attributed to the base model alone.",
-          "usedIn": {"zh": "30个Long-Horizon Task、最高28%", "ja": "30件のLong-Horizon Task、最高28％", "interview": "首位でもPass率は28％"}
+          "usedIn": {"zh": "Pass率也只有28%", "ja": "最高組合せでもPass率は28％", "interview": "首位でもPass率は28％"}
         }
       ]
     },
@@ -55,8 +55,8 @@
       "url": "https://forest.watch.impress.co.jp/docs/serial/yajiuma/2142598.html",
       "originalTitle": "たった1つの拡張機能で5つのWebブラウザーのAIを乗っ取れちゃう!?　「BragJack」脆弱性",
       "source": "窓の杜",
-      "topic": "Browser Agent Security / BragJack / declarativeNetRequest / Prompt Forcing / CVE",
-      "access": "full+upstream",
+      "topic": "Browser Agent Security / BragJack / Prompt Forcing / declarativeNetRequest",
+      "access": "full",
       "accessNote": "窓の杜本文とForever Securityの研究公開を確認。1つのChromium拡張から5つのBrowser Agent surfaceを狙うDemo、declarativeNetRequest、Prompt Forcing、Product別Impact、CVE-2026-0628/CVE-2026-55945、悪意あるExtensionのInstall/権限付与という前提を確認した。",
       "capturedAt": "2026-09-23T01:14:20.000Z",
       "snapshotSha256": "bee2eb2de6567ad10f3212f4eaeb02eed1a0b074948b44f63fbb8f23bdbc52a1",
@@ -68,7 +68,7 @@
           "quote": "one extension across five browser agents",
           "locator": "Forever Security: BragJack overview and attack paths",
           "conditions": "The demonstrated chains require installation of a malicious extension with granted permissions. Impact is product-specific; the disclosed Chrome and Edge paths were reported fixed and the research is not evidence of in-the-wild compromise.",
-          "usedIn": {"zh": "一个扩展影响5类Agent界面", "ja": "1つの拡張で5種類のAgent surface", "interview": "拡張のInstallと権限付与が前提"}
+          "usedIn": {"zh": "恶意Extension已经被安装并获得相应权限", "ja": "悪意あるExtensionがInstallされ、必要な権限を与えられていること", "interview": "拡張のInstallと権限付与が前提"}
         }
       ]
     },
@@ -78,7 +78,7 @@
       "originalTitle": "OpenAI、数学者の独立諮問グループと連携　内部モデルは「100件超の未解決問題を解決」",
       "source": "ITmedia NEWS",
       "topic": "AI for Science / Mathematics / Evaluation Governance / AGMAI",
-      "access": "full+upstream",
+      "access": "full",
       "accessNote": "ITmedia NEWS本文とOpenAI公式発表を確認。8月28日にTraining開始した内部Modelについての100件超というOpenAIの主張、IASを拠点とする独立諮問Group、無報酬・自主助言・公開反論可能というGovernance設計、および独立再現とは別である点を確認した。",
       "capturedAt": "2026-09-23T01:15:10.000Z",
       "snapshotSha256": "917ca4cbb82961db7190abd06a9fdfa18d11dad90fc7114ec0e2e8764e61b7a4",
@@ -90,7 +90,7 @@
           "quote": "more than 100 longstanding open problems",
           "locator": "OpenAI official: Advisory Group on Mathematics and AI",
           "conditions": "The 100+ result is OpenAI's claim about an internal model, not an independently reproduced benchmark. Governance advice does not independently validate each proof.",
-          "usedIn": {"zh": "内部模型声称解决100多个未解问题", "ja": "内部Modelが100件超を解決したとの主張", "interview": "独立再現とは分けて評価"}
+          "usedIn": {"zh": "100件以上", "ja": "100件超の長年の未解決数学問題", "interview": "100件超の未解決問題"}
         }
       ]
     },
@@ -112,7 +112,7 @@
           "quote": "10分の1以下",
           "locator": "＠IT: hospital network renewal case study",
           "conditions": "This is one customer case reported by vendor/media, not a controlled study. The result combines hardware refresh, redundancy, wireless control, observability and operations services, so it cannot be attributed to one feature.",
-          "usedIn": {"zh": "原因定位降到十分之一以下", "ja": "原因特定時間を10分の1以下", "interview": "時間外復旧をほぼゼロ"}
+          "usedIn": {"zh": "原因定位压到原来的十分之一以下", "ja": "原因特定時間が従来の10分の1以下", "interview": "時間外復旧をほぼゼロ"}
         }
       ]
     }
