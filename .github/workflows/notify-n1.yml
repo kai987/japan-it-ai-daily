@@ -1,0 +1,60 @@
+name: Notify ready N1 sync after verified publication
+
+on:
+  workflow_run:
+    workflows: ['Deploy Astro site to GitHub Pages']
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: n1-publication-handoff-${{ github.event.workflow_run.head_sha }}
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      # Do not check out or execute untrusted artifacts in this privileged workflow.
+      - name: Check optional cross-repository credential
+        id: config
+        env:
+          N1_SYNC_TOKEN: ${{ secrets.N1_SYNC_TOKEN }}
+        run: |
+          if [ -z "$N1_SYNC_TOKEN" ]; then
+            echo 'enabled=false' >> "$GITHUB_OUTPUT"
+            echo 'callback_unconfigured: N1_SYNC_TOKEN is absent. This is not a completed N1 handoff. Existing ChatGPT publication continuation and daily N1 entrypoints remain responsible.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'enabled=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verify finished upstream deployment
+        if: steps.config.outputs.enabled == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          SOURCE_COMMIT: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RUN_ID" > /tmp/release.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RUN_ID/jobs?per_page=100" > /tmp/jobs.json
+          node <<'NODE'
+          const fs=require('fs');
+          const r=JSON.parse(fs.readFileSync('/tmp/release.json','utf8'));
+          const jobs=JSON.parse(fs.readFileSync('/tmp/jobs.json','utf8')).jobs;
+          const deploy=jobs.find(j=>j.name==='deploy');
+          if(r.head_sha!==process.env.SOURCE_COMMIT||r.path!=='.github/workflows/deploy.yml'||r.head_branch!=='main'||r.repository.full_name!==process.env.GITHUB_REPOSITORY||r.status!=='completed'||r.conclusion!=='success') throw new Error('not an exact successful main release');
+          if(jobs.find(j=>j.name==='build')?.conclusion!=='success'||deploy?.conclusion!=='success'||deploy.steps.find(s=>s.name==='Verify published snapshot and bilingual report bytes')?.conclusion!=='success') throw new Error('publication gates incomplete');
+          NODE
+
+      - name: Replay only a matching prepared N1 request
+        if: steps.config.outputs.enabled == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.N1_SYNC_TOKEN }}
+          SOURCE_COMMIT: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          # The receiver compares this hint against its own locked request and all source checks.
+          gh workflow run sync-n1-daily.yml --repo kai987/Japanese-N1-Immersive-Sparring-Partner --ref main -f source_commit="$SOURCE_COMMIT"
+          echo 'callback_dispatched: not publication success. A missing/mismatched request remains pending; verify final N1 Pages separately.' >> "$GITHUB_STEP_SUMMARY"
