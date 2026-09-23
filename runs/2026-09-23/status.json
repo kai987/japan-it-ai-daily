@@ -1,15 +1,12 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-23",
-  "stage": "validating_draft",
-  "leaseToken": "787f22a7-8e8b-48f3-a876-74d916e57c6b",
+  "stage": "publishing_main",
+  "leaseToken": "06943717-33a7-47d0-87eb-56a7b70dc756",
   "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
-  "sourceWindow": {
-    "from": "2026-09-22T10:00:00+09:00",
-    "to": "2026-09-23T10:00:00+09:00"
-  },
+  "sourceWindow": {"from": "2026-09-22T10:00:00+09:00", "to": "2026-09-23T10:00:00+09:00"},
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T16:14:39+09:00",
+  "updatedAt": "2026-09-23T08:02:00Z",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
@@ -21,37 +18,41 @@
     "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
     "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "draft_ci_failure_35830526216_quality",
-  "nextAction": "Repair only the Chinese Section 3 heading so the unchanged daily-quality extractor can find the existing five canonical Japanese Q&A pairs. Keep all five questions/answers byte-for-byte unchanged, checkpoint the draft, and rerun the unchanged deploy.yml gates on a new draft commit.",
-  "lastError": {
+  "resumeFrom": "verified_draft_35830889175",
+  "nextAction": "Promote the exact verified draft tree to the unchanged main base using a non-forced atomic ref update. Then verify the new main workflow through final Pages Deploy, post-deploy bilingual bytes and the same-commit study snapshot. Do not regenerate the articles or canonical interviews.",
+  "lastError": null,
+  "resolvedFailure": {
     "kind": "deterministic",
     "runId": 35830526216,
     "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35830526216",
     "jobId": 107081813490,
     "step": "Verify daily content quality",
-    "message": "2026-09-23: 中文模式 Section 3 应为 5 组 Q&A，实际 0",
-    "evidence": "The exact log shows recovery tests, Astro typecheck, four-file content integrity, JLPT/grammar/study/history, structured interviews, evidence+pilot, and bilingual interview validation all passed. The unchanged quality extractor uses headingRange(source, '面接で使えるポイント'); the Chinese report's Section 3 title lacks that established marker even though its five canonical Japanese Q&A bodies are present."
+    "message": "Chinese Section 3 marker was missing; corrected in d87559720d5f81a0b36ada91dd20da713877ac65 without changing the five canonical Q&A pairs.",
+    "verifiedByRunId": 35830889175
   },
-  "planner": {
-    "mode": "recovery",
-    "observedAt": "2026-09-23T15:18:00+09:00",
-    "targetDate": "2026-09-23",
-    "pendingDates": ["2026-09-23"],
-    "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
-    "action": "wait",
-    "reason": "active_publisher",
-    "owner": "chatgpt-daily-recovery-2026-09-23-run1",
-    "note": "Read-only planner executed against the immutable non-truncated main inventory; wait refers to this run's own live fenced publisher lease."
+  "previousPlanner": {
+    "mode": "recovery", "observedAt": "2026-09-23T15:18:00+09:00", "targetDate": "2026-09-23",
+    "pendingDates": ["2026-09-23"], "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
+    "action": "wait", "reason": "active_publisher", "owner": "chatgpt-daily-recovery-2026-09-23-run1"
+  },
+  "takeover": {
+    "previousOwner": "chatgpt-daily-recovery-2026-09-23-run1",
+    "previousLeaseExpiredAt": "2026-09-23T07:59:39Z",
+    "claimedAt": "2026-09-23T08:00:56.423795+00:00",
+    "reason": "Lease expired without renewal; draft was already fully validated but main was unchanged. No live lease was revoked."
   },
   "draft": {
     "branch": "draft/daily-2026-09-23",
-    "commit": "b1b88013b7f4bca686407e7ca6db75cf4290e91c",
-    "workflowRunId": 35830526216,
-    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35830526216",
-    "attempts": 8,
+    "commit": "d87559720d5f81a0b36ada91dd20da713877ac65",
+    "tree": "16c1bcc6bdb0423fd885d42a2fa7268ba178e80d",
+    "workflowRunId": 35830889175,
+    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35830889175",
+    "build": "success", "deploy": "skipped",
+    "snapshotArtifactId": 10737346512,
+    "snapshotVerified": true,
     "narrowFix": {
-      "paths": ["src/content/daily/2026-09-23.md"],
-      "purpose": "Restore the established quality-parser Section 3 marker in the Chinese report heading only; preserve all canonical Japanese Q&A text and all article/learning content."
+      "paths": ["src/content/evidence/2026-09-23.json", "src/content/daily/2026-09-23.md", "src/content/daily-ja/2026-09-23.md", "scripts/check-jlpt-history.mjs", "scripts/check-grammar-history.mjs", "tests/jlpt-history.test.mjs", "tests/grammar-history.test.mjs"],
+      "purpose": "Reconcile evidence and supported display/section markers with regression tests, preserving original facts and canonical learning/interview identities."
     }
   },
   "publication": null
