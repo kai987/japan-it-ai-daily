@@ -9,7 +9,7 @@
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T15:20:30+09:00",
+  "updatedAt": "2026-09-23T15:34:06+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
@@ -21,9 +21,17 @@
     "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
     "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "draft_ci_run_35826286229",
-  "nextAction": "Inspect draft/daily-2026-09-23 workflow run 35826286229. If deterministic failure occurs, read the exact failed step log and apply the smallest content fix on the draft branch. If fully green, re-read main and the fenced lease, then atomically promote only the six 2026-09-23 publication artifacts to main.",
-  "lastError": null,
+  "resumeFrom": "draft_ci_failure_35826286229_jlpt",
+  "nextAction": "Apply the smallest representation-only fix for the C-1 parser mismatch in both daily language mirrors, checkpoint those corrected drafts, then run the unchanged deploy.yml gates on draft/daily-2026-09-23. If green, re-read main and the fenced lease before atomically promoting only the six 2026-09-23 publication artifacts.",
+  "lastError": {
+    "kind": "deterministic",
+    "runId": 35826286229,
+    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35826286229",
+    "jobId": 107068640299,
+    "step": "Verify content integrity / jlpt:check",
+    "message": "daily/2026-09-23 C-1: bilingual identity mismatch",
+    "evidence": "The canonical vocabulary has 20 identities. In the daily C-1 list, the kana-only term とどまる is the only entry without a reading parenthesis, so the unchanged c1Terms parser does not capture it; daily-ja has the same representation and would fail next. No validator rule is being changed."
+  },
   "planner": {
     "mode": "recovery",
     "observedAt": "2026-09-23T15:18:00+09:00",
