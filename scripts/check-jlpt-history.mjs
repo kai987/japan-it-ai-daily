@@ -34,12 +34,15 @@ export function checkDays(days, key) {
 }
 const identity = (v) => [v.term, v.reading, v.level];
 const exact = (a, b, label) => { if (JSON.stringify(a) !== JSON.stringify(b)) throw new Error(`${label}: bilingual identity mismatch`); };
-function c1Terms(body) {
+export function c1Terms(body) {
   const section = body.match(/^## C-1[^\n]*\n([\s\S]*?)(?=^## C-2\b)/m)?.[1];
   if (!section) throw new Error('Missing daily C-1 section');
   const headings = [...section.matchAll(/^### (?:C-1-)?\d+\.\s+([^\n（(]+)/gm)].map((m) => m[1].trim());
   if (headings.length) return headings;
-  return [...section.matchAll(/^\d+\.\s+\*\*(.+?)[（(]/gm)].map((m) => m[1].trim());
+  // List-style cards may omit redundant furigana for kana-only terms such as 「とどまる」.
+  // Capture the term up to either a reading parenthesis or the level separator, then let the
+  // canonical bilingual identity comparison below remain the source of truth.
+  return [...section.matchAll(/^\d+\.\s+\*\*(.+?)(?=[（(｜|])/gm)].map((m) => m[1].trim());
 }
 function c4Words(body) {
   const section = body.match(/^## C-4[^\n]*\n([\s\S]*)/m)?.[1];
