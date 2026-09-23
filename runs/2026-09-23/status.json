@@ -9,7 +9,7 @@
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T16:06:18+09:00",
+  "updatedAt": "2026-09-23T16:09:26+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
@@ -21,16 +21,16 @@
     "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
     "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "draft_ci_run_35829926977",
-  "nextAction": "Wait for the unchanged deploy.yml gates on draft commit 64c5f4ff2ac05aa66f3c922c784440c75e0157cb. If they pass, re-read main and the fenced lease, then atomically publish only the six 2026-09-23 target artifacts. If they fail, read the exact failed job/step logs before any further change.",
+  "resumeFrom": "draft_ci_failure_35829926977_bilingual",
+  "nextAction": "Inspect sync-bilingual-interview.mjs and the exact 2026-09-23 interview-section markup, then make the smallest structural repair that lets the unchanged bilingual gate parse all five already-canonical Japanese Q&A pairs. Preserve the Q&A wording byte-for-byte and rerun the unchanged deploy.yml gates on a new draft commit.",
   "lastError": {
     "kind": "deterministic",
-    "runId": 35829700606,
-    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35829700606",
-    "jobId": 107079213839,
-    "step": "Verify original-source evidence",
-    "message": "2026-09-23 evidence had one remaining Top 5 zh citation mapping mismatch; all earlier integrity gates passed.",
-    "evidence": "The exact log reported only: 2026-09-23: Top 5 zh citation no longer matches content. The mapped text was corrected to the actual Top 5 article body phrase without changing the report, source facts, schema, or validation rules."
+    "runId": 35829926977,
+    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35829926977",
+    "jobId": 107079913087,
+    "step": "Verify bilingual interview Q&A",
+    "message": "2026-09-23: original-article interviews require five complete Q&A pairs",
+    "evidence": "The exact failed-step log shows recovery tests, Astro typecheck, four-file content integrity, JLPT history, grammar history, study review, structured interview validation, evidence check and evidence pilot all passed first. The bilingual parser then failed validateOriginalPairs because extractPairs only searches a section title containing 面接で使えるポイント, while the Japanese report currently titles section 3 日本企業の面接で使える5組のQ&A. The five canonical Q&A bodies themselves are present and structured interview validation already confirms the bilingual mirror text/order."
   },
   "planner": {
     "mode": "recovery",
@@ -50,8 +50,8 @@
     "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35829926977",
     "attempts": 7,
     "narrowFix": {
-      "paths": ["src/content/evidence/2026-09-23.json"],
-      "purpose": "Reconcile evidence topic/access metadata and usedIn mappings to the already verified original-source research and unchanged bilingual report/interview text; no gate or content standard was relaxed."
+      "paths": ["src/content/daily-ja/2026-09-23.md"],
+      "purpose": "Restore the bilingual parser's established section-title contract only; leave all five canonical Japanese interview questions and answers unchanged."
     }
   },
   "publication": null
