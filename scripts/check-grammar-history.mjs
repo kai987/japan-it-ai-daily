@@ -37,7 +37,7 @@ export function dailyGrammarPatterns(body) {
   if (headings.length) return headings;
   return [...section.matchAll(/^\d+\.\s+\*\*([^｜|\n]+)[｜|]/gm)].map(m=>m[1].trim());
 }
-const splitGrammarList = (value) => value.replace(/`/g,'').split(/・|\s+\/\s+|／/).map(x=>x.trim()).filter(Boolean);
+const splitGrammarList = (value) => value.replace(/`/g,'').split(/・|\s+\/\s+|／(?=～)/).map(x=>x.trim()).filter(Boolean);
 export function dailyMustGrammar(body) {
   const section = body.match(/^## C-4[^\n]*\n([\s\S]*)/m)?.[1];
   if (section === undefined) throw new Error('Missing C4 grammar section');
