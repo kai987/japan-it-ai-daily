@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-23",
+  "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
+  "historyCoverage": {
+    "firstDate": "2026-08-12",
+    "lastDate": "2026-09-22",
+    "totalCompleteFourFileDays": 42,
+    "complete": true,
+    "snapshotSourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed"
+  },
+  "registryCounts": {
+    "vocabularyIdentities": 831,
+    "grammarIdentities": 80
+  },
+  "newVocabulary": [
+    "引き下げる",
+    "推論",
+    "改修",
+    "採点",
+    "後継",
+    "完遂",
+    "移植",
+    "成否",
+    "抜け道",
+    "悪意",
+    "改ざん",
+    "すり替える",
+    "書き換える",
+    "特権",
+    "未解決",
+    "剽窃",
+    "助言",
+    "老朽化",
+    "稼働",
+    "故障"
+  ],
+  "newGrammar": [
+    "を受けて",
+    "をめぐって"
+  ],
+  "semanticExclusions": [
+    {"candidate":"依存関係","reason":"既存Identity『依存』と意味範囲が強く重なるため新規語彙へ数えない"},
+    {"candidate":"評価軸","reason":"既存Identity『評価』の派生的な複合語として新規Card化を避ける"},
+    {"candidate":"冗長構成","reason":"既存Identity『冗長』と同じ概念族のため新規Card化を避ける"},
+    {"candidate":"代替機","reason":"既存Identity『代替』の具体物化であり、重複回避を優先"},
+    {"candidate":"曖昧さ","reason":"既存Identity『曖昧』と同一概念"},
+    {"candidate":"切り分け","reason":"既存Identity『切り分ける』と同一語彙Identity"},
+    {"candidate":"に伴う","reason":"grammar identity ruleで既存『に伴って』へ統合"},
+    {"candidate":"に当たり","reason":"grammar identity ruleで既存『にあたって』へ統合"},
+    {"candidate":"を通して","reason":"grammar identity ruleで既存『を通じて』へ統合"},
+    {"candidate":"のみならず","reason":"既存『にとどまらず』『に限らず』と意味機能が近く、今回の新規枠では採用しない"}
+  ],
+  "reviewPolicy": {
+    "vocabularyTarget": 20,
+    "grammarMinimum": 5,
+    "grammarMaximum": 8,
+    "reviewsDerivedOnlyBy": "scripts/learning-review.mjs"
+  }
+}
