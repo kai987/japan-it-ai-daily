@@ -9,7 +9,7 @@
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T15:43:30+09:00",
+  "updatedAt": "2026-09-23T15:44:43+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
@@ -21,8 +21,8 @@
     "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
     "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "draft_ci_failure_35828019425_grammar_c4",
-  "nextAction": "Refine only the grammar C-4 list separator: treat a full-width slash as an item separator only when it introduces the next grammar pattern (／ followed by ～), so the reading inside ～得る（うる／える） remains part of the canonical pattern. The existing regression test already contains this internal slash and must pass unchanged. Then rerun deploy.yml.",
+  "resumeFrom": "draft_ci_run_35828195100",
+  "nextAction": "Wait for deploy.yml run 35828195100. The grammar C-4 parser now treats ／ as an item separator only when the next grammar item begins with ～, preserving the internal reading in ～得る（うる／える）. The unchanged regression test includes that exact case. If green, proceed to the remaining unchanged gates; if any deterministic gate fails, inspect its exact log before modifying anything.",
   "lastError": {
     "kind": "deterministic",
     "runId": 35828019425,
@@ -30,7 +30,7 @@
     "jobId": 107073964667,
     "step": "Verify content integrity / grammar:check",
     "message": "2026-09-23/daily C4: grammar representation mismatch",
-    "evidence": "Run 35828019425 now passes C-3 parsing, JLPT history and reaches C-4. The localized C-4 line is ‘～ことを受けて／～得る（うる／える）／～ようにする’. Splitting every full-width slash incorrectly splits the internal reading ‘うる／える’. The correction narrows only separator recognition; exact mustRememberGrammar equality remains unchanged."
+    "evidence": "The previous parser split every full-width slash, including the reading separator in ～得る（うる／える）. Draft commit 58b6365b01103adafebed66b7cb0d691bb4cf5ae narrows only that delimiter rule; exact mustRememberGrammar equality remains unchanged."
   },
   "planner": {
     "mode": "recovery",
@@ -45,10 +45,10 @@
   },
   "draft": {
     "branch": "draft/daily-2026-09-23",
-    "commit": "59e9298aaef18ac2492587b507ba07f66f3ddd61",
-    "workflowRunId": 35828019425,
-    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35828019425",
-    "attempts": 4,
+    "commit": "58b6365b01103adafebed66b7cb0d691bb4cf5ae",
+    "workflowRunId": 35828195100,
+    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35828195100",
+    "attempts": 5,
     "narrowFix": {
       "paths": ["scripts/check-jlpt-history.mjs", "tests/jlpt-history.test.mjs", "scripts/check-grammar-history.mjs", "tests/grammar-history.test.mjs"],
       "purpose": "Accept valid bilingual display forms while retaining exact canonical learning identities, provenance, history and deduplication validation."
