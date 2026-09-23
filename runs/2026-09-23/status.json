@@ -9,7 +9,7 @@
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T15:38:20+09:00",
+  "updatedAt": "2026-09-23T15:40:00+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
@@ -21,8 +21,8 @@
     "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
     "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "draft_ci_failure_35827605984_c4",
-  "nextAction": "Extend the same narrow display-parser regression fix to the two valid C-4 labels used by the bilingual reports (新词10个 and 新規語彙), keep exact mustRememberWords identity comparison unchanged, add regression coverage, then rerun the unchanged deploy.yml gates on draft/daily-2026-09-23.",
+  "resumeFrom": "draft_ci_run_35827809247",
+  "nextAction": "Wait for deploy.yml run 35827809247 on draft/daily-2026-09-23. The validator now recognizes kana-only C-1 labels plus the localized C-4 labels and full-width slash separators while preserving the exact canonical vocabulary/C-4 equality checks. If this run fails, read its exact failed job step before changing anything; if green, re-read main and the fenced lease before promotion.",
   "lastError": {
     "kind": "deterministic",
     "runId": 35827605984,
@@ -30,7 +30,7 @@
     "jobId": 107072690470,
     "step": "Verify content integrity / jlpt:check",
     "message": "Unrecognized C-4 words format",
-    "evidence": "The preceding C-1 mismatch is resolved: the same run reports 43 four-file sets with 0 base integrity errors and advances into c4Words. The target reports use the localized labels ‘新词10个’ and ‘新規語彙’; c4Words currently accepts only the older 10語/10词/词汇10个/語彙10語 labels. The canonical C-4 list is still checked by exact identity after parsing, so adding these labels does not relax history or deduplication validation."
+    "evidence": "Run 35827605984 proves the C-1 fix worked and failed only after advancing to c4Words. Draft commit a190bad1aceecade0e9fcf77cf83343ac1234bba adds the two localized C-4 labels and the existing full-width slash separator, with regression tests. Exact canonical identity comparison is unchanged."
   },
   "planner": {
     "mode": "recovery",
@@ -45,13 +45,13 @@
   },
   "draft": {
     "branch": "draft/daily-2026-09-23",
-    "commit": "6b7dc3365ecc272d91a86fa89d313ce2f0421edc",
-    "workflowRunId": 35827605984,
-    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35827605984",
-    "attempts": 2,
+    "commit": "a190bad1aceecade0e9fcf77cf83343ac1234bba",
+    "workflowRunId": 35827809247,
+    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35827809247",
+    "attempts": 3,
     "narrowFix": {
       "paths": ["scripts/check-jlpt-history.mjs", "tests/jlpt-history.test.mjs"],
-      "purpose": "Accept valid kana-only C-1 display labels and localized C-4 display labels while retaining exact bilingual and history identity validation."
+      "purpose": "Accept valid kana-only C-1 and localized C-4 display forms while retaining exact bilingual identity, history and deduplication validation."
     }
   },
   "publication": null
