@@ -9,7 +9,7 @@
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T15:42:32+09:00",
+  "updatedAt": "2026-09-23T15:43:30+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
@@ -21,16 +21,16 @@
     "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
     "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "draft_ci_run_35828019425",
-  "nextAction": "Wait for deploy.yml run 35828019425 on draft/daily-2026-09-23. The narrow validator fixes retain all exact canonical identity/provenance/history checks and now include regression tests for the target C-1/C-3/C-4 bilingual display formats. If the run fails, inspect its exact failed step before any further modification; if green, re-read main and the fenced lease before promotion.",
+  "resumeFrom": "draft_ci_failure_35828019425_grammar_c4",
+  "nextAction": "Refine only the grammar C-4 list separator: treat a full-width slash as an item separator only when it introduces the next grammar pattern (／ followed by ～), so the reading inside ～得る（うる／える） remains part of the canonical pattern. The existing regression test already contains this internal slash and must pass unchanged. Then rerun deploy.yml.",
   "lastError": {
     "kind": "deterministic",
-    "runId": 35827809247,
-    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35827809247",
-    "jobId": 107073321999,
+    "runId": 35828019425,
+    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35828019425",
+    "jobId": 107073964667,
     "step": "Verify content integrity / grammar:check",
-    "message": "2026-09-23/daily C3: grammar representation mismatch",
-    "evidence": "The same run passes base integrity and JLPT history (43 dates, 851 unique lexical identities, 0 duplicates) before failing on a display-only grammar level suffix. Draft commit 59e9298aaef18ac2492587b507ba07f66f3ddd61 strips only that display suffix and recognizes the localized C-4 grammar labels/separators while preserving canonical grammar equality, source provenance and cross-date uniqueness validation."
+    "message": "2026-09-23/daily C4: grammar representation mismatch",
+    "evidence": "Run 35828019425 now passes C-3 parsing, JLPT history and reaches C-4. The localized C-4 line is ‘～ことを受けて／～得る（うる／える）／～ようにする’. Splitting every full-width slash incorrectly splits the internal reading ‘うる／える’. The correction narrows only separator recognition; exact mustRememberGrammar equality remains unchanged."
   },
   "planner": {
     "mode": "recovery",
