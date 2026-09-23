@@ -9,7 +9,7 @@
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T16:09:26+09:00",
+  "updatedAt": "2026-09-23T16:14:39+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
@@ -21,16 +21,16 @@
     "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
     "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "draft_ci_failure_35829926977_bilingual",
-  "nextAction": "Inspect sync-bilingual-interview.mjs and the exact 2026-09-23 interview-section markup, then make the smallest structural repair that lets the unchanged bilingual gate parse all five already-canonical Japanese Q&A pairs. Preserve the Q&A wording byte-for-byte and rerun the unchanged deploy.yml gates on a new draft commit.",
+  "resumeFrom": "draft_ci_failure_35830526216_quality",
+  "nextAction": "Repair only the Chinese Section 3 heading so the unchanged daily-quality extractor can find the existing five canonical Japanese Q&A pairs. Keep all five questions/answers byte-for-byte unchanged, checkpoint the draft, and rerun the unchanged deploy.yml gates on a new draft commit.",
   "lastError": {
     "kind": "deterministic",
-    "runId": 35829926977,
-    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35829926977",
-    "jobId": 107079913087,
-    "step": "Verify bilingual interview Q&A",
-    "message": "2026-09-23: original-article interviews require five complete Q&A pairs",
-    "evidence": "The exact failed-step log shows recovery tests, Astro typecheck, four-file content integrity, JLPT history, grammar history, study review, structured interview validation, evidence check and evidence pilot all passed first. The bilingual parser then failed validateOriginalPairs because extractPairs only searches a section title containing 面接で使えるポイント, while the Japanese report currently titles section 3 日本企業の面接で使える5組のQ&A. The five canonical Q&A bodies themselves are present and structured interview validation already confirms the bilingual mirror text/order."
+    "runId": 35830526216,
+    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35830526216",
+    "jobId": 107081813490,
+    "step": "Verify daily content quality",
+    "message": "2026-09-23: 中文模式 Section 3 应为 5 组 Q&A，实际 0",
+    "evidence": "The exact log shows recovery tests, Astro typecheck, four-file content integrity, JLPT/grammar/study/history, structured interviews, evidence+pilot, and bilingual interview validation all passed. The unchanged quality extractor uses headingRange(source, '面接で使えるポイント'); the Chinese report's Section 3 title lacks that established marker even though its five canonical Japanese Q&A bodies are present."
   },
   "planner": {
     "mode": "recovery",
@@ -45,13 +45,13 @@
   },
   "draft": {
     "branch": "draft/daily-2026-09-23",
-    "commit": "64c5f4ff2ac05aa66f3c922c784440c75e0157cb",
-    "workflowRunId": 35829926977,
-    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35829926977",
-    "attempts": 7,
+    "commit": "b1b88013b7f4bca686407e7ca6db75cf4290e91c",
+    "workflowRunId": 35830526216,
+    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35830526216",
+    "attempts": 8,
     "narrowFix": {
-      "paths": ["src/content/daily-ja/2026-09-23.md"],
-      "purpose": "Restore the bilingual parser's established section-title contract only; leave all five canonical Japanese interview questions and answers unchanged."
+      "paths": ["src/content/daily/2026-09-23.md"],
+      "purpose": "Restore the established quality-parser Section 3 marker in the Chinese report heading only; preserve all canonical Japanese Q&A text and all article/learning content."
     }
   },
   "publication": null
