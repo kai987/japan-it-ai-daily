@@ -9,7 +9,7 @@
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T15:40:00+09:00",
+  "updatedAt": "2026-09-23T15:41:04+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
@@ -21,16 +21,16 @@
     "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
     "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "draft_ci_run_35827809247",
-  "nextAction": "Wait for deploy.yml run 35827809247 on draft/daily-2026-09-23. The validator now recognizes kana-only C-1 labels plus the localized C-4 labels and full-width slash separators while preserving the exact canonical vocabulary/C-4 equality checks. If this run fails, read its exact failed job step before changing anything; if green, re-read main and the fenced lease before promotion.",
+  "resumeFrom": "draft_ci_failure_35827809247_grammar",
+  "nextAction": "Apply the smallest grammar representation parser fix: strip the display-level suffix from C-3 headings and recognize the target bilingual C-4 labels (新语法3个 / 新規文法) plus the existing full-width slash separators. Keep the canonical grammar pattern, provenance, cross-date uniqueness and mustRememberGrammar equality checks unchanged, add regression tests, then rerun deploy.yml.",
   "lastError": {
     "kind": "deterministic",
-    "runId": 35827605984,
-    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35827605984",
-    "jobId": 107072690470,
-    "step": "Verify content integrity / jlpt:check",
-    "message": "Unrecognized C-4 words format",
-    "evidence": "Run 35827605984 proves the C-1 fix worked and failed only after advancing to c4Words. Draft commit a190bad1aceecade0e9fcf77cf83343ac1234bba adds the two localized C-4 labels and the existing full-width slash separator, with regression tests. Exact canonical identity comparison is unchanged."
+    "runId": 35827809247,
+    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35827809247",
+    "jobId": 107073321999,
+    "step": "Verify content integrity / grammar:check",
+    "message": "2026-09-23/daily C3: grammar representation mismatch",
+    "evidence": "The same run now passes base integrity and the complete JLPT gate: 43 four-file sets, 851 lexical identities and 0 cross-date duplicates. The target C-3 headings include a display-only level suffix such as ‘～ことを受けて｜N2’, while the canonical grammar pattern is ‘～ことを受けて’. The validator currently compares the full heading string. The target C-4 labels also use ‘新语法3个’ and ‘新規文法’, which need the same display-format handling before the unchanged exact canonical selection comparison."
   },
   "planner": {
     "mode": "recovery",
@@ -50,8 +50,8 @@
     "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35827809247",
     "attempts": 3,
     "narrowFix": {
-      "paths": ["scripts/check-jlpt-history.mjs", "tests/jlpt-history.test.mjs"],
-      "purpose": "Accept valid kana-only C-1 and localized C-4 display forms while retaining exact bilingual identity, history and deduplication validation."
+      "paths": ["scripts/check-jlpt-history.mjs", "tests/jlpt-history.test.mjs", "scripts/check-grammar-history.mjs", "tests/grammar-history.test.mjs"],
+      "purpose": "Accept valid bilingual display forms while retaining exact canonical learning identities, provenance, history and deduplication validation."
     }
   },
   "publication": null
