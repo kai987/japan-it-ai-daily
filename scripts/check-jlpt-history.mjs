@@ -44,11 +44,11 @@ export function c1Terms(body) {
   // canonical bilingual identity comparison below remain the source of truth.
   return [...section.matchAll(/^\d+\.\s+\*\*(.+?)(?=[（(｜|])/gm)].map((m) => m[1].trim());
 }
-function c4Words(body) {
+export function c4Words(body) {
   const section = body.match(/^## C-4[^\n]*\n([\s\S]*)/m)?.[1];
   if (!section) throw new Error('Missing daily C-4 section');
-  const line = section.match(/^(?:- )?\*\*(?:10\s*(?:語|词)|词汇\s*10\s*个|語彙\s*10\s*語)[：:]\*\*\s*(.+)$/m)?.[1];
-  if (line) return line.replace(/`/g, '').trim().split(/・|\s+\/\s+/).map((x) => x.trim());
+  const line = section.match(/^(?:- )?\*\*(?:10\s*(?:語|词)|词汇\s*10\s*个|語彙\s*10\s*語|新词\s*10\s*个|新規語彙)[：:]\*\*\s*(.+)$/m)?.[1];
+  if (line) return line.replace(/`/g, '').trim().split(/・|\s+\/\s+|／/).map((x) => x.trim()).filter(Boolean);
   // Legacy first day's C-4 uses a numbered list under its own heading.
   const legacy = section.match(/### 10 个重点词\s*\n([\s\S]*?)(?=###|$)/)?.[1];
   if (legacy) return [...legacy.matchAll(/^(?:\d+\.|-)\s+(.+)/gm)].map((m) => m[1].replace(/\*\*|`/g, '').split(/[（(｜|]/)[0].trim());
