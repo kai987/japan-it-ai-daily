@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-23",
-  "stage": "drafting",
+  "stage": "validating_draft",
   "leaseToken": "787f22a7-8e8b-48f3-a876-74d916e57c6b",
   "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
   "sourceWindow": {
@@ -9,24 +9,38 @@
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T15:08:36+09:00",
+  "updatedAt": "2026-09-23T15:20:30+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
     "runs/2026-09-23/interviews.json",
-    "runs/2026-09-23/drafts/src/content/japanese/2026-09-23.md"
+    "runs/2026-09-23/drafts/src/content/daily/2026-09-23.md",
+    "runs/2026-09-23/drafts/src/content/japanese/2026-09-23.md",
+    "runs/2026-09-23/drafts/src/content/daily-ja/2026-09-23.md",
+    "runs/2026-09-23/drafts/src/content/japanese-ja/2026-09-23.md",
+    "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
+    "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "history_interviews_and_chinese_learning_draft_saved",
-  "nextAction": "Resume from the verified Top 5 sources, sourceCommit-bound 42-day history registry, canonical interviews, and completed Chinese learning draft. Complete the remaining drafts and sidecars, record card-level identity decisions, then validate the exact target artifacts on draft/daily-2026-09-23 before atomic main promotion.",
+  "resumeFrom": "draft_ci_run_35826286229",
+  "nextAction": "Inspect draft/daily-2026-09-23 workflow run 35826286229. If deterministic failure occurs, read the exact failed step log and apply the smallest content fix on the draft branch. If fully green, re-read main and the fenced lease, then atomically promote only the six 2026-09-23 publication artifacts to main.",
   "lastError": null,
   "planner": {
     "mode": "recovery",
-    "observedAt": "2026-09-23T13:57:35+09:00",
+    "observedAt": "2026-09-23T15:18:00+09:00",
     "targetDate": "2026-09-23",
     "pendingDates": ["2026-09-23"],
+    "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
     "action": "wait",
     "reason": "active_publisher",
-    "owner": "chatgpt-daily-recovery-2026-09-23-run1"
+    "owner": "chatgpt-daily-recovery-2026-09-23-run1",
+    "note": "Read-only planner executed against the immutable non-truncated main inventory; wait refers to this run's own live fenced publisher lease."
+  },
+  "draft": {
+    "branch": "draft/daily-2026-09-23",
+    "commit": "b8a153a77098e9b43f91070667caeac5bcf46f92",
+    "workflowRunId": 35826286229,
+    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35826286229",
+    "attempts": 1
   },
   "publication": null
 }
