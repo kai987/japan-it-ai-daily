@@ -9,7 +9,7 @@
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T15:34:06+09:00",
+  "updatedAt": "2026-09-23T15:37:22+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
@@ -21,8 +21,8 @@
     "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
     "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "draft_ci_failure_35826286229_jlpt",
-  "nextAction": "Apply the smallest representation-only fix for the C-1 parser mismatch in both daily language mirrors, checkpoint those corrected drafts, then run the unchanged deploy.yml gates on draft/daily-2026-09-23. If green, re-read main and the fenced lease before atomically promoting only the six 2026-09-23 publication artifacts.",
+  "resumeFrom": "draft_ci_run_35827605984",
+  "nextAction": "Wait for deploy.yml run 35827605984 on draft/daily-2026-09-23. The fix is a narrowly scoped parser false-positive correction that keeps exact canonical identity checks unchanged and adds regression coverage for kana-only vocabulary labels. If the run is green, re-read main and the fenced lease, then promote the six 2026-09-23 artifacts together with this necessary validator regression fix; if it fails, read the exact failed step before any further change.",
   "lastError": {
     "kind": "deterministic",
     "runId": 35826286229,
@@ -30,7 +30,7 @@
     "jobId": 107068640299,
     "step": "Verify content integrity / jlpt:check",
     "message": "daily/2026-09-23 C-1: bilingual identity mismatch",
-    "evidence": "The canonical vocabulary has 20 identities. In the daily C-1 list, the kana-only term とどまる is the only entry without a reading parenthesis, so the unchanged c1Terms parser does not capture it; daily-ja has the same representation and would fail next. No validator rule is being changed."
+    "evidence": "The canonical vocabulary has 20 identities. The Markdown renderer legitimately omitted redundant furigana for the kana-only term とどまる, but c1Terms only recognized entries containing a reading parenthesis. Draft commit 6b7dc3365ecc272d91a86fa89d313ce2f0421edc now recognizes either a reading parenthesis or the existing level separator while preserving the exact canonical term comparison, with a dedicated regression test."
   },
   "planner": {
     "mode": "recovery",
@@ -45,10 +45,14 @@
   },
   "draft": {
     "branch": "draft/daily-2026-09-23",
-    "commit": "b8a153a77098e9b43f91070667caeac5bcf46f92",
-    "workflowRunId": 35826286229,
-    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35826286229",
-    "attempts": 1
+    "commit": "6b7dc3365ecc272d91a86fa89d313ce2f0421edc",
+    "workflowRunId": 35827605984,
+    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35827605984",
+    "attempts": 2,
+    "narrowFix": {
+      "paths": ["scripts/check-jlpt-history.mjs", "tests/jlpt-history.test.mjs"],
+      "purpose": "Accept kana-only C-1 display labels without redundant furigana while retaining exact bilingual identity validation."
+    }
   },
   "publication": null
 }
