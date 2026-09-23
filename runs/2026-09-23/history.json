@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-23",
+  "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
+  "verifiedSnapshot": {
+    "sha256": "17e6ed18552ed3c49653a5a5a46c0ce40c5ee14a6abf79b9d3f9b4508c28c67d",
+    "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
+    "totalDays": 42,
+    "firstDate": "2026-08-12",
+    "lastDate": "2026-09-22",
+    "issueNumberForNextDate": 43,
+    "vocabularyIdentities": 831,
+    "grammarIdentities": 80,
+    "grammarLessonDates": 42
+  },
+  "completeHistoricalDates": [
+    "2026-08-12","2026-08-13","2026-08-14","2026-08-15","2026-08-16","2026-08-17","2026-08-18","2026-08-19","2026-08-20","2026-08-21","2026-08-22","2026-08-23","2026-08-24","2026-08-25","2026-08-26","2026-08-27","2026-08-28","2026-08-29","2026-08-30","2026-08-31","2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-05","2026-09-06","2026-09-07","2026-09-08","2026-09-09","2026-09-10","2026-09-11","2026-09-12","2026-09-13","2026-09-14","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-19","2026-09-20","2026-09-21","2026-09-22"
+  ],
+  "inventoryTrees": {
+    "src/content/daily": "0e1523bc2f6c2e48899ed499dc897b1d9ad0f8b2",
+    "src/content/daily-ja": "f6b967f520231a4857955aa66bf118cbaf602775",
+    "src/content/japanese": "e4c0a9b2461c531ef1b3cfaf7b1556c3d5cfd93e",
+    "src/content/japanese-ja": "4c46eb7c8318a910202cc865e2d6ca62b5838f6d",
+    "src/content/evidence": "60bb0b939886b11eb3863b3ed0d475ed376467ef",
+    "src/data/interviews": "d2998fe38cfd8bfad2733d375d8e0fe5bd376c8a"
+  },
+  "dedupe": {
+    "normalization": "repository identity rules plus NFKC; lexical and grammar registries are taken from the verified 42-day sourceCommit-bound study snapshot",
+    "targetExcludedFromHistory": true,
+    "candidateDecisions": [],
+    "candidateReviewStatus": "pending_until_new_cards_are_authored",
+    "note": "The historical registry is complete and sourceCommit-bound. Semantic novelty decisions must be recorded card-by-card after 2026-09-23 candidates are drafted; no zero-duplicate claim is made before that step."
+  },
+  "planner": {
+    "mode": "recovery",
+    "observedAt": "2026-09-23T12:45:00+09:00",
+    "targetDate": "2026-09-23",
+    "pendingDates": ["2026-09-23"],
+    "action": "wait",
+    "reason": "active_publisher",
+    "owner": "chatgpt-daily-recovery-2026-09-23",
+    "interpretation": "The read-only planner selected 2026-09-23 as the oldest pending date; wait was returned only because this recovery invocation had already acquired the shared live lease."
+  }
+}
