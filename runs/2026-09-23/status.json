@@ -9,7 +9,7 @@
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T15:46:00+09:00",
+  "updatedAt": "2026-09-23T16:06:18+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
@@ -21,16 +21,16 @@
     "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
     "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "draft_ci_failure_35828195100_evidence",
-  "nextAction": "Reconcile the 2026-09-23 evidence sidecar with the verified source checkpoint and the current bilingual report/structured interviews. Read validate-source-evidence.mjs and the complete source/evidence/interview artifacts, then correct only genuine metadata/citation drift; do not relax evidence validation. After checkpointing the corrected evidence, rerun the unchanged deploy.yml gates.",
+  "resumeFrom": "draft_ci_run_35829926977",
+  "nextAction": "Wait for the unchanged deploy.yml gates on draft commit 64c5f4ff2ac05aa66f3c922c784440c75e0157cb. If they pass, re-read main and the fenced lease, then atomically publish only the six 2026-09-23 target artifacts. If they fail, read the exact failed job/step logs before any further change.",
   "lastError": {
     "kind": "deterministic",
-    "runId": 35828195100,
-    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35828195100",
-    "jobId": 107074503604,
+    "runId": 35829700606,
+    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35829700606",
+    "jobId": 107079213839,
     "step": "Verify original-source evidence",
-    "message": "2026-09-23 evidence FAIL after all content/history/interview integrity gates passed",
-    "evidence": "Base integrity passes 43 four-file sets; JLPT passes 851 lexical identities with 0 duplicates; grammar passes 83 identities with 0 duplicates; study review and structured interviews pass. Evidence reports Top 1-3 topic/source/citation mismatches, Top 4 source/citation/interview mismatch, and Top 5 zh/ja citation mismatch. Offline CI does not re-check source access, so this is evidence-sidecar/report metadata drift to reconcile against the persisted original-source research, not a transient network error."
+    "message": "2026-09-23 evidence had one remaining Top 5 zh citation mapping mismatch; all earlier integrity gates passed.",
+    "evidence": "The exact log reported only: 2026-09-23: Top 5 zh citation no longer matches content. The mapped text was corrected to the actual Top 5 article body phrase without changing the report, source facts, schema, or validation rules."
   },
   "planner": {
     "mode": "recovery",
@@ -45,13 +45,13 @@
   },
   "draft": {
     "branch": "draft/daily-2026-09-23",
-    "commit": "58b6365b01103adafebed66b7cb0d691bb4cf5ae",
-    "workflowRunId": 35828195100,
-    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35828195100",
-    "attempts": 5,
+    "commit": "64c5f4ff2ac05aa66f3c922c784440c75e0157cb",
+    "workflowRunId": 35829926977,
+    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35829926977",
+    "attempts": 7,
     "narrowFix": {
-      "paths": ["scripts/check-jlpt-history.mjs", "tests/jlpt-history.test.mjs", "scripts/check-grammar-history.mjs", "tests/grammar-history.test.mjs"],
-      "purpose": "Accept valid bilingual display forms while retaining exact canonical learning identities, provenance, history and deduplication validation."
+      "paths": ["src/content/evidence/2026-09-23.json"],
+      "purpose": "Reconcile evidence topic/access metadata and usedIn mappings to the already verified original-source research and unchanged bilingual report/interview text; no gate or content standard was relaxed."
     }
   },
   "publication": null
