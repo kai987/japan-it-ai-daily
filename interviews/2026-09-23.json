@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-23",
+  "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
+  "speedScale": 1.0,
+  "targetDurationSeconds": {
+    "ideal": [26, 34],
+    "allowed": [22, 40]
+  },
+  "interview": [
+    {
+      "id": "qa-01",
+      "articleIds": ["2026-09-23-top-1"],
+      "question": "GPT-6 SolをCoding Agentへ採用するとき、何を評価しますか。",
+      "answer": "GPT-6 Solを採用するなら、安さだけでなく長いContextと実Taskの成功率を一緒に見ます。標準APIは100万Token当たり入力2ドル・出力10ドルで、Contextは105万Token、Cached Inputは90％割引です。ただしDeepSWEやOSWorldはOpenAIのVendor評価なので、自社Repositoryで品質とCost-per-successを再測定します。",
+      "estimatedSeconds": 31.4,
+      "anchors": ["100万Token当たり入力2ドル・出力10ドル", "Contextは105万Token", "Cached Inputは90％割引"]
+    },
+    {
+      "id": "qa-02",
+      "articleIds": ["2026-09-23-top-2"],
+      "question": "Android Bench 2.0の結果をModel選定へどう使いますか。",
+      "answer": "Android Bench 2.0を見るときは、Model単体の順位だと解釈しません。Long-Horizon Taskは依存関係更新や新機能、移植まで含み、当時GPT-6 AstraのPass率は28％でした。ただしProvider AgentとHarnessを組み合わせた評価なので、Prompt CacheやTool Windowまで固定して比較します。",
+      "estimatedSeconds": 26.9,
+      "anchors": ["Long-Horizon Task", "GPT-6 AstraのPass率は28％", "Provider Agent"]
+    },
+    {
+      "id": "qa-03",
+      "articleIds": ["2026-09-23-top-3"],
+      "question": "Browser AgentをBragJackのような攻撃から守るには、何を確認しますか。",
+      "answer": "BragJack対策では、Prompt InjectionだけでなくBrowser Extensionの信頼境界を確認します。実証ではdeclarativeNetRequestでSecurity Headerを書き換え、5つのBrowser AgentをPrompt Forcingへ誘導しました。悪意ある拡張機能の導入が前提で、ChromeのCVE-2026-0628などは修正済みなので、権限監査と更新を優先します。",
+      "estimatedSeconds": 31.8,
+      "anchors": ["declarativeNetRequest", "5つのBrowser Agent", "CVE-2026-0628"]
+    },
+    {
+      "id": "qa-04",
+      "articleIds": ["2026-09-23-top-4"],
+      "question": "AIが数学の未解決問題を扱うとき、どんな検証体制が必要ですか。",
+      "answer": "AIが数学研究を支援する場合、解答数より検証と帰属のProcessを重視します。OpenAIは8月28日に学習開始した内部Modelが100件超の未解決問題を解いたと発表し、IASの独立諮問Groupとも連携しました。ただし未解決問題の解決はOpenAI側の主張なので、第三者による証明確認と引用・剽窃Checkを分けます。",
+      "estimatedSeconds": 32.7,
+      "anchors": ["8月28日に学習開始", "100件超の未解決問題", "IASの独立諮問Group"]
+    },
+    {
+      "id": "qa-05",
+      "articleIds": ["2026-09-23-top-5"],
+      "question": "少人数の情シスで病院Networkを安定運用するなら、どこから改善しますか。",
+      "answer": "少人数の情シスでNetworkを運用するなら、復旧作業の自動化と可視化を組み合わせます。病院事例ではVCS、AMF、AWC、Vista Manager EXを使い、故障箇所の特定時間を従来の10分の1未満へ減らしたと報告されました。ただし単一事例で複数施策を同時導入しているため、機能別の効果は分離して測ります。",
+      "estimatedSeconds": 32.1,
+      "anchors": ["VCS", "AMF", "Vista Manager EX", "10分の1未満"]
+    }
+  ],
+  "review": [
+    {
+      "id": "review-01",
+      "articleIds": ["2026-09-23-top-1", "2026-09-23-top-2"],
+      "question": "Coding AgentのBenchmarkを採用判断へ使うとき、Model以外に何を固定しますか。",
+      "points": {
+        "zh": "固定Agent/Harness、Tool权限、Prompt Cache、Task Set和Cost计算方式，再用自家Repository测Task Success与Cost-per-success。",
+        "ja": "Agent／Harness、Tool権限、Prompt Cache、Task Set、Cost算出条件を固定し、自社RepositoryでTask SuccessとCost-per-successを測る。"
+      }
+    },
+    {
+      "id": "review-02",
+      "articleIds": ["2026-09-23-top-3"],
+      "question": "Browser AgentのSecurityで、Prompt対策だけでは不十分な理由は何ですか。",
+      "points": {
+        "zh": "BragJack显示扩展权限、declarativeNetRequest与Trusted Context也会改变Agent看到的环境；因此需要扩展审计、最小权限、浏览器更新和Prompt层防护一起做。",
+        "ja": "BragJackはExtension権限、declarativeNetRequest、Trusted Contextまで攻撃面になるため、Extension監査・最小権限・Browser更新とPrompt層対策を組み合わせる。"
+      }
+    },
+    {
+      "id": "review-03",
+      "articleIds": ["2026-09-23-top-4", "2026-09-23-top-5"],
+      "question": "単一のVendor発表や導入事例を面接で使うとき、どうEvidence Boundaryを説明しますか。",
+      "points": {
+        "zh": "把Vendor主张、单一Customer Case、独立复现和自己的推论明确区分；数字可以引用，但不能把100+数学问题或1/10故障定位时间直接外推为普遍效果。",
+        "ja": "Vendor主張、単一Customer Case、独立再現、自分の推論を分ける。100件超や10分の1未満という数字は引用しても、一般的効果へそのまま外挿しない。"
+      }
+    }
+  ]
+}
