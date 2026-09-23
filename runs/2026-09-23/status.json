@@ -2,21 +2,31 @@
   "schemaVersion": 1,
   "targetDate": "2026-09-23",
   "stage": "sources_verified",
-  "leaseToken": "fa6f20d9-e0af-405e-8df3-16985fb119ab",
+  "leaseToken": "6566455d-f84c-488e-a3ef-aa5ef8a02d39",
   "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
   "sourceWindow": {
     "from": "2026-09-22T10:00:00+09:00",
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T12:55:00+09:00",
+  "updatedAt": "2026-09-23T13:58:30+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
-    "runs/2026-09-23/interviews.json"
+    "runs/2026-09-23/interviews.json",
+    "runs/2026-09-23/drafts/src/content/japanese/2026-09-23.md"
   ],
-  "resumeFrom": "history_and_interviews_saved",
-  "nextAction": "Recovery lease reacquired; resume from the verified sources, sourceCommit-bound 42-day history registry, and canonical interviews without regenerating prior work. Author and persist the four target drafts plus evidence/interview sidecars, record lexical/grammar identity decisions, then validate on draft/daily-2026-09-23.",
+  "resumeFrom": "history_interviews_and_chinese_learning_draft_saved",
+  "nextAction": "The previous lease expired and was reclaimed with a new fencing token. The read-only recovery planner selected 2026-09-23 as the only pending date; its wait result is solely this invocation observing its own live lease. Resume from the verified Top 5 sources, sourceCommit-bound 42-day history registry, canonical interviews, and completed Chinese learning draft. Complete the remaining drafts and sidecars, record card-level identity decisions, then validate the exact target artifacts on draft/daily-2026-09-23 before atomic main promotion.",
   "lastError": null,
+  "planner": {
+    "mode": "recovery",
+    "observedAt": "2026-09-23T13:57:35+09:00",
+    "targetDate": "2026-09-23",
+    "pendingDates": ["2026-09-23"],
+    "action": "wait",
+    "reason": "active_publisher",
+    "owner": "chatgpt-daily-recovery-2026-09-23-run1"
+  },
   "publication": null
 }
