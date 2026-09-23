@@ -9,7 +9,7 @@
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T15:41:04+09:00",
+  "updatedAt": "2026-09-23T15:42:32+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
@@ -21,8 +21,8 @@
     "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
     "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "draft_ci_failure_35827809247_grammar",
-  "nextAction": "Apply the smallest grammar representation parser fix: strip the display-level suffix from C-3 headings and recognize the target bilingual C-4 labels (新语法3个 / 新規文法) plus the existing full-width slash separators. Keep the canonical grammar pattern, provenance, cross-date uniqueness and mustRememberGrammar equality checks unchanged, add regression tests, then rerun deploy.yml.",
+  "resumeFrom": "draft_ci_run_35828019425",
+  "nextAction": "Wait for deploy.yml run 35828019425 on draft/daily-2026-09-23. The narrow validator fixes retain all exact canonical identity/provenance/history checks and now include regression tests for the target C-1/C-3/C-4 bilingual display formats. If the run fails, inspect its exact failed step before any further modification; if green, re-read main and the fenced lease before promotion.",
   "lastError": {
     "kind": "deterministic",
     "runId": 35827809247,
@@ -30,7 +30,7 @@
     "jobId": 107073321999,
     "step": "Verify content integrity / grammar:check",
     "message": "2026-09-23/daily C3: grammar representation mismatch",
-    "evidence": "The same run now passes base integrity and the complete JLPT gate: 43 four-file sets, 851 lexical identities and 0 cross-date duplicates. The target C-3 headings include a display-only level suffix such as ‘～ことを受けて｜N2’, while the canonical grammar pattern is ‘～ことを受けて’. The validator currently compares the full heading string. The target C-4 labels also use ‘新语法3个’ and ‘新規文法’, which need the same display-format handling before the unchanged exact canonical selection comparison."
+    "evidence": "The same run passes base integrity and JLPT history (43 dates, 851 unique lexical identities, 0 duplicates) before failing on a display-only grammar level suffix. Draft commit 59e9298aaef18ac2492587b507ba07f66f3ddd61 strips only that display suffix and recognizes the localized C-4 grammar labels/separators while preserving canonical grammar equality, source provenance and cross-date uniqueness validation."
   },
   "planner": {
     "mode": "recovery",
@@ -45,10 +45,10 @@
   },
   "draft": {
     "branch": "draft/daily-2026-09-23",
-    "commit": "a190bad1aceecade0e9fcf77cf83343ac1234bba",
-    "workflowRunId": 35827809247,
-    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35827809247",
-    "attempts": 3,
+    "commit": "59e9298aaef18ac2492587b507ba07f66f3ddd61",
+    "workflowRunId": 35828019425,
+    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35828019425",
+    "attempts": 4,
     "narrowFix": {
       "paths": ["scripts/check-jlpt-history.mjs", "tests/jlpt-history.test.mjs", "scripts/check-grammar-history.mjs", "tests/grammar-history.test.mjs"],
       "purpose": "Accept valid bilingual display forms while retaining exact canonical learning identities, provenance, history and deduplication validation."
