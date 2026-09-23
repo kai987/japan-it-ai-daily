@@ -1,25 +1,21 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-23",
-  "stage": "publishing_main",
+  "stage": "published",
   "leaseToken": "06943717-33a7-47d0-87eb-56a7b70dc756",
   "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
   "sourceWindow": {"from": "2026-09-22T10:00:00+09:00", "to": "2026-09-23T10:00:00+09:00"},
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T08:02:00Z",
+  "updatedAt": "2026-09-23T08:07:48.516468+00:00",
+  "publishedAt": "2026-09-23T08:06:07Z",
   "completedArtifacts": [
-    "sources/2026-09-23.json",
-    "runs/2026-09-23/history.json",
-    "runs/2026-09-23/interviews.json",
-    "runs/2026-09-23/drafts/src/content/daily/2026-09-23.md",
-    "runs/2026-09-23/drafts/src/content/japanese/2026-09-23.md",
-    "runs/2026-09-23/drafts/src/content/daily-ja/2026-09-23.md",
-    "runs/2026-09-23/drafts/src/content/japanese-ja/2026-09-23.md",
-    "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
-    "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
+    "sources/2026-09-23.json", "runs/2026-09-23/history.json", "runs/2026-09-23/interviews.json",
+    "src/content/daily/2026-09-23.md", "src/content/japanese/2026-09-23.md",
+    "src/content/daily-ja/2026-09-23.md", "src/content/japanese-ja/2026-09-23.md",
+    "src/content/evidence/2026-09-23.json", "src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "verified_draft_35830889175",
-  "nextAction": "Promote the exact verified draft tree to the unchanged main base using a non-forced atomic ref update. Then verify the new main workflow through final Pages Deploy, post-deploy bilingual bytes and the same-commit study snapshot. Do not regenerate the articles or canonical interviews.",
+  "resumeFrom": null,
+  "nextAction": null,
   "lastError": null,
   "resolvedFailure": {
     "kind": "deterministic",
@@ -48,12 +44,39 @@
     "workflowRunId": 35830889175,
     "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35830889175",
     "build": "success", "deploy": "skipped",
-    "snapshotArtifactId": 10737346512,
-    "snapshotVerified": true,
+    "snapshotArtifactId": 10737346512, "snapshotVerified": true,
     "narrowFix": {
       "paths": ["src/content/evidence/2026-09-23.json", "src/content/daily/2026-09-23.md", "src/content/daily-ja/2026-09-23.md", "scripts/check-jlpt-history.mjs", "scripts/check-grammar-history.mjs", "tests/jlpt-history.test.mjs", "tests/grammar-history.test.mjs"],
       "purpose": "Reconcile evidence and supported display/section markers with regression tests, preserving original facts and canonical learning/interview identities."
     }
   },
-  "publication": null
+  "publication": {
+    "headSha": "604118a63c338ed755af0a929e94e5eda8a40c08",
+    "releaseCommit": "604118a63c338ed755af0a929e94e5eda8a40c08",
+    "tree": "16c1bcc6bdb0423fd885d42a2fa7268ba178e80d",
+    "branch": "main", "path": ".github/workflows/deploy.yml",
+    "runId": 35834997410,
+    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35834997410",
+    "status": "completed", "conclusion": "success", "build": "success", "deploy": "success",
+    "publicationVerification": "success",
+    "buildJobId": 107096202038, "deployJobId": 107096830762,
+    "snapshotArtifactId": 10738497496, "pagesArtifactId": 10739081229,
+    "snapshotSourceCommit": "604118a63c338ed755af0a929e94e5eda8a40c08",
+    "snapshotHash": "f5603355fe617350128a61af233e146e2fc4cb089ccc3da810aafe530e8f09b8",
+    "snapshotDates": ["2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23"],
+    "grammarLessonDates": ["2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-29", "2026-08-30", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-05", "2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23"],
+    "snapshot": {
+      "verified": true, "issueNumber": 43, "totalDays": 43, "firstDate": "2026-08-12", "lastDate": "2026-09-23", "grammarLessonsCount": 43,
+      "vocabulary": {"new": 20, "review": 0, "total": 20},
+      "grammar": {"new": 3, "review": 5, "total": 8},
+      "frequencyArithmeticAndDateSets": "PASS",
+      "preflightPayloadPreservedExceptSourceCommit": true
+    },
+    "historyChecks": {"fourFileDates": 43, "lexicalIdentities": 851, "grammarIdentities": 83, "crossDateNewItemDuplicates": 0},
+    "checks": {"typecheck": "success", "contentIntegrity": "success", "jlpt": "success", "grammar": "success", "study": "success", "structuredInterviews": "success", "evidenceAndPilot": "success", "bilingualInterviews": "success", "quality": "success", "audioChecks": "success", "tests": "success", "build": "success", "browser": "success", "csp": "success"},
+    "pages": [
+      {"path": "daily/2026-09-23/", "sha256": "52c7f6b24d5a36dc3dcc1a291a5173ed14a0cf0a029d0196019103f74fa6770d"},
+      {"path": "ja/daily/2026-09-23/", "sha256": "95936212d102ade1d3d0e18e8cb956911ca8c9ea68bef32d22316d34b17f236e"}
+    ]
+  }
 }
