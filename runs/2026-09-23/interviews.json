@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-23",
+  "sourceCommit": "d28097c3d54bd8e304471551db5001250c1d7fed",
+  "interview": [
+    {
+      "id": "qa-01",
+      "articleIds": ["2026-09-23-top-1"],
+      "question": "GPT-6 SolとLunaを業務で使い分けるなら、何を基準にしますか。",
+      "answer": "複雑なCodingやAgent処理はSol、高頻度で範囲の狭い処理はLunaから検証します。APIはSolが100万Token当たり入力2ドル・出力10ドル、Lunaが0.1ドル・0.5ドルで、Cached Inputは90％割引です。ただしVendor Benchmarkだけで決めず、自社Taskの成功率、Latency、Cost-per-successを同じHarnessで測ります。"
+    },
+    {
+      "id": "qa-02",
+      "articleIds": ["2026-09-23-top-2"],
+      "question": "AI Coding Agentを評価するとき、Android Bench 2.0から何を学べますか。",
+      "answer": "短い修正だけでなく、数日から数週間規模のLong-Horizon Taskで評価する点が重要です。Android Bench 2.0は依存関係更新、新機能、ゼロからのApp作成、移植を含む30 Taskを用意し、首位でもPass率は28％でした。ただしModelとAgent Harnessの組み合わせ評価なので、Base Model単独の性能とは切り分けます。"
+    },
+    {
+      "id": "qa-03",
+      "articleIds": ["2026-09-23-top-3"],
+      "question": "Browser Agentを導入するとき、BragJackの事例から何を対策しますか。",
+      "answer": "ModelへのPrompt対策だけでなく、Browser拡張と権限境界を監査します。BragJackでは1つの悪意あるChromium拡張が5種類のAI Agent面を狙い、Prompt Forcingから履歴やFile、Screenshotなどへ到達しました。ただし拡張のInstallと権限付与が前提で、ChromeとEdgeの公開された経路は修正済みなので、条件を分けてRisk評価します。"
+    },
+    {
+      "id": "qa-04",
+      "articleIds": ["2026-09-23-top-4"],
+      "question": "AIが数学の未解決問題を解いたという主張を、どう評価しますか。",
+      "answer": "生成結果と独立検証を分けて扱います。OpenAIは8月28日に学習開始した内部Modelが100件超の未解決問題を解いたと主張し、IASを拠点とする独立諮問Groupと成果の意義や公表方法を検討しています。ただしGroupのGovernance助言は各証明の独立再現を意味しないため、査読、再現、形式検証まで確認して評価します。"
+    },
+    {
+      "id": "qa-05",
+      "articleIds": ["2026-09-23-top-5"],
+      "question": "少人数の情シスでNetwork障害対応を改善するなら、何を優先しますか。",
+      "answer": "冗長化だけでなく、可視化、復旧自動化、監視を一体化します。公立小浜病院は約500台の電子カルテ端末を実質2人で支え、VCS、AMF、AWC、24時間監視、Vista Manager EXを組み合わせ、原因特定を従来の10分の1以下、時間外復旧をほぼゼロにしました。ただし単一事例なので、効果を1製品だけに帰属させません。"
+    }
+  ],
+  "anchors": {
+    "qa-01": ["Sol $2/$10, Luna $0.10/$0.50 per 1M tokens", "cached input read 90% discount", "vendor benchmarks are not workload guarantees"],
+    "qa-02": ["30 long-horizon tasks", "top reported pass rate 28%", "model+agent/harness paired evaluation"],
+    "qa-03": ["one extension / five agent surfaces", "prompt forcing and privileged browser actions", "malicious extension install is prerequisite; Chrome/Edge path fixed"],
+    "qa-04": ["training began 2026-08-28", "OpenAI claim: more than 100 open problems", "governance advice is not independent reproduction"],
+    "qa-05": ["about 500 EMR terminals / effectively two IT staff", "fault isolation less than one tenth", "combined hardware, management and operations case" ]
+  }
+}
