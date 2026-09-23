@@ -9,7 +9,7 @@
     "to": "2026-09-23T10:00:00+09:00"
   },
   "createdAt": "2026-09-23T10:08:42+09:00",
-  "updatedAt": "2026-09-23T15:44:43+09:00",
+  "updatedAt": "2026-09-23T15:46:00+09:00",
   "completedArtifacts": [
     "sources/2026-09-23.json",
     "runs/2026-09-23/history.json",
@@ -21,16 +21,16 @@
     "runs/2026-09-23/drafts/src/content/evidence/2026-09-23.json",
     "runs/2026-09-23/drafts/src/data/interviews/2026-09-23.json"
   ],
-  "resumeFrom": "draft_ci_run_35828195100",
-  "nextAction": "Wait for deploy.yml run 35828195100. The grammar C-4 parser now treats ／ as an item separator only when the next grammar item begins with ～, preserving the internal reading in ～得る（うる／える）. The unchanged regression test includes that exact case. If green, proceed to the remaining unchanged gates; if any deterministic gate fails, inspect its exact log before modifying anything.",
+  "resumeFrom": "draft_ci_failure_35828195100_evidence",
+  "nextAction": "Reconcile the 2026-09-23 evidence sidecar with the verified source checkpoint and the current bilingual report/structured interviews. Read validate-source-evidence.mjs and the complete source/evidence/interview artifacts, then correct only genuine metadata/citation drift; do not relax evidence validation. After checkpointing the corrected evidence, rerun the unchanged deploy.yml gates.",
   "lastError": {
     "kind": "deterministic",
-    "runId": 35828019425,
-    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35828019425",
-    "jobId": 107073964667,
-    "step": "Verify content integrity / grammar:check",
-    "message": "2026-09-23/daily C4: grammar representation mismatch",
-    "evidence": "The previous parser split every full-width slash, including the reading separator in ～得る（うる／える）. Draft commit 58b6365b01103adafebed66b7cb0d691bb4cf5ae narrows only that delimiter rule; exact mustRememberGrammar equality remains unchanged."
+    "runId": 35828195100,
+    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35828195100",
+    "jobId": 107074503604,
+    "step": "Verify original-source evidence",
+    "message": "2026-09-23 evidence FAIL after all content/history/interview integrity gates passed",
+    "evidence": "Base integrity passes 43 four-file sets; JLPT passes 851 lexical identities with 0 duplicates; grammar passes 83 identities with 0 duplicates; study review and structured interviews pass. Evidence reports Top 1-3 topic/source/citation mismatches, Top 4 source/citation/interview mismatch, and Top 5 zh/ja citation mismatch. Offline CI does not re-check source access, so this is evidence-sidecar/report metadata drift to reconcile against the persisted original-source research, not a transient network error."
   },
   "planner": {
     "mode": "recovery",
