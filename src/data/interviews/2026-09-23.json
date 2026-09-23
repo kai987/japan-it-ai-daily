@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-23",
+  "interview": [
+    {
+      "id": "qa-01",
+      "articleIds": ["2026-09-23-top-1"],
+      "question": "GPT-6 SolとLunaを業務で使い分けるなら、何を基準にしますか。",
+      "answer": "複雑なCodingやAgent処理はSol、高頻度で範囲の狭い処理はLunaから検証します。APIはSolが100万Token当たり入力2ドル・出力10ドル、Lunaが0.1ドル・0.5ドルで、Cached Inputは90％割引です。ただしVendor Benchmarkだけで決めず、自社Taskの成功率、Latency、Cost-per-successを同じHarnessで測ります。"
+    },
+    {
+      "id": "qa-02",
+      "articleIds": ["2026-09-23-top-2"],
+      "question": "AI Coding Agentを評価するとき、Android Bench 2.0から何を学べますか。",
+      "answer": "短い修正だけでなく、数日から数週間規模のLong-Horizon Taskで評価する点が重要です。Android Bench 2.0は依存関係更新、新機能、ゼロからのApp作成、移植を含む30 Taskを用意し、首位でもPass率は28％でした。ただしModelとAgent Harnessの組み合わせ評価なので、Base Model単独の性能とは切り分けます。"
+    },
+    {
+      "id": "qa-03",
+      "articleIds": ["2026-09-23-top-3"],
+      "question": "Browser Agentを導入するとき、BragJackの事例から何を対策しますか。",
+      "answer": "ModelへのPrompt対策だけでなく、Browser拡張と権限境界を監査します。BragJackでは1つの悪意あるChromium拡張が5種類のAI Agent面を狙い、Prompt Forcingから履歴やFile、Screenshotなどへ到達しました。ただし拡張のInstallと権限付与が前提で、ChromeとEdgeの公開された経路は修正済みなので、条件を分けてRisk評価します。"
+    },
+    {
+      "id": "qa-04",
+      "articleIds": ["2026-09-23-top-4"],
+      "question": "AIが数学の未解決問題を解いたという主張を、どう評価しますか。",
+      "answer": "生成結果と独立検証を分けて扱います。OpenAIは8月28日に学習開始した内部Modelが100件超の未解決問題を解いたと主張し、IASを拠点とする独立諮問Groupと成果の意義や公表方法を検討しています。ただしGroupのGovernance助言は各証明の独立再現を意味しないため、査読、再現、形式検証まで確認して評価します。"
+    },
+    {
+      "id": "qa-05",
+      "articleIds": ["2026-09-23-top-5"],
+      "question": "少人数の情シスでNetwork障害対応を改善するなら、何を優先しますか。",
+      "answer": "冗長化だけでなく、可視化、復旧自動化、監視を一体化します。公立小浜病院は約500台の電子カルテ端末を実質2人で支え、VCS、AMF、AWC、24時間監視、Vista Manager EXを組み合わせ、原因特定を従来の10分の1以下、時間外復旧をほぼゼロにしました。ただし単一事例なので、効果を1製品だけに帰属させません。"
+    }
+  ],
+  "review": [
+    {
+      "id": "review-01",
+      "articleIds": ["2026-09-23-top-1"],
+      "question": "LLMのAPIコストを比較するとき、Token単価以外に何を見ますか。",
+      "points": {
+        "zh": "缓存折扣、实际Input/Output量、Task成功率、Latency和Cost-per-success要放在同一Workload里测。Sol/Luna的单价差很大，但Cached Input 90%折扣与Vendor Benchmark都不能单独代表本公司的最终成本。",
+        "ja": "Cache割引、実際のInput/Output量、Task成功率、Latency、Cost-per-successを同じWorkloadで測る。Sol/Lunaは単価差が大きいが、Cached Input 90％割引やVendor Benchmarkだけで自社の最終Costは決められない。"
+      }
+    },
+    {
+      "id": "review-02",
+      "articleIds": ["2026-09-23-top-2"],
+      "question": "Coding AgentのBenchmarkでModelとHarnessを分けて考える理由は何ですか。",
+      "points": {
+        "zh": "Android Bench 2.0把Provider Agent与Model作为组合评测，Tool设计、Prompt Cache和Context Windowing都会影响Token与成功率，因此28%的结果不能归因于Base Model单项能力。",
+        "ja": "Android Bench 2.0はProvider AgentとModelの組合せを評価し、Tool設計、Prompt Cache、Context WindowingがToken量と成功率へ影響する。28％という結果をBase Model単独の能力へ帰属させない。"
+      }
+    },
+    {
+      "id": "review-03",
+      "articleIds": ["2026-09-23-top-3"],
+      "question": "Browser AgentのSecurityでExtension権限をなぜ監査しますか。",
+      "points": {
+        "zh": "BragJack展示的是Browser扩展进入Trusted Context后对Agent进行Prompt Forcing的风险。需要限制Host/Network权限、对高风险Action再次授权，并区分已修复产品与仍需独立评估的产品。",
+        "ja": "BragJackはBrowser拡張がTrusted Contextへ入り、AgentへPrompt ForcingするRiskを示した。Host/Network権限を絞り、高Risk Actionを再認可し、修正済みProductと個別評価が必要なProductを分ける。"
+      }
+    }
+  ]
+}
