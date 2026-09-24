@@ -10,7 +10,7 @@
     "to": "2026-09-24T10:00:00+09:00"
   },
   "createdAt": "2026-09-24T10:30:30+09:00",
-  "updatedAt": "2026-09-24T07:25:26.000Z",
+  "updatedAt": "2026-09-24T08:31:38.000Z",
   "completedArtifacts": [
     "sources/2026-09-24.json",
     "runs/2026-09-24/history.json",
@@ -26,8 +26,12 @@
   ],
   "artifactValidation": "Exact Git blob identities are recorded in checks.json. Preserved drafts are not publication approval; history candidate-cache hash mismatch and source-access blockers remain explicit.",
   "resumeFrom": "sources_verified",
-  "nextAction": "wait_for_draft_run_35969526409",
-  "lastError": null,
+  "nextAction": "await_next_authorized_publication_run",
+  "lastError": {
+    "kind": "cancelled",
+    "at": "2026-09-24T08:31:38.000Z",
+    "message": "chatgpt-manual-repair was cancelled by explicit user request; no active GitHub Actions run remained at cancellation time."
+  },
   "takeover": {
     "previousOwner": "it-recovery",
     "previousLeaseExpiredAt": "2026-09-24T06:22:00Z",
@@ -99,5 +103,11 @@
     "result": "verified_in_public_scope",
     "reverifiedAt": "2026-09-24T16:23:40+09:00",
     "captureHashesPreserved": true
+  },
+  "cancellation": {
+    "writer": "chatgpt-manual-repair",
+    "token": "chatgpt-manual-repair-20260924T070124Z-qa4",
+    "cancelledAt": "2026-09-24T08:31:38.000Z",
+    "reason": "user_requested_cancel"
   }
 }
