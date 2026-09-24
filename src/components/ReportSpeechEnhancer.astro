@@ -2,15 +2,12 @@
   const article = document.querySelector('.report-layout article.prose');
 
   if (article instanceof HTMLElement) {
-    const makeButton = (text: string, label: string): HTMLButtonElement => {
+    const makeButton = (text: string, kind: 'interview' | 'review'): HTMLButtonElement => {
       const button = document.createElement('button');
       button.className = 'speech-button report-speech-button';
       button.type = 'button';
       button.dataset.speech = text;
       button.dataset.speechKind = 'interview';
-      button.dataset.speechPlayLabel = `${label}を再生`;
-      button.dataset.speechStopLabel = `${label}を停止`;
-      button.setAttribute('aria-label', button.dataset.speechPlayLabel);
       button.setAttribute('aria-pressed', 'false');
       button.title = '日本語で読み上げる';
       button.innerHTML = `
@@ -21,13 +18,25 @@
         <svg class="speech-icon-stop" viewBox="0 0 24 24" aria-hidden="true">
           <rect x="7" y="7" width="10" height="10" rx="1"></rect>
         </svg>`;
-      const syncAccessibleLabel = () => button.setAttribute(
-        'aria-label',
-        button.getAttribute('aria-pressed') === 'true'
-          ? button.dataset.speechStopLabel!
-          : button.dataset.speechPlayLabel!,
-      );
-      new MutationObserver(syncAccessibleLabel).observe(button, { attributes: true, attributeFilter: ['aria-pressed'] });
+
+      if (kind === 'review') {
+        // Keep the long-standing exact label used by the review interaction
+        // contract. Review buttons are located repeatedly after each click, so
+        // changing their accessible name while pressed would invalidate that
+        // stable locator even though playback itself is correct.
+        button.setAttribute('aria-label', '面接復習の質問を読み上げる');
+      } else {
+        button.dataset.speechPlayLabel = '面接内容を再生';
+        button.dataset.speechStopLabel = '面接内容を停止';
+        button.setAttribute('aria-label', button.dataset.speechPlayLabel);
+        const syncAccessibleLabel = () => button.setAttribute(
+          'aria-label',
+          button.getAttribute('aria-pressed') === 'true'
+            ? button.dataset.speechStopLabel!
+            : button.dataset.speechPlayLabel!,
+        );
+        new MutationObserver(syncAccessibleLabel).observe(button, { attributes: true, attributeFilter: ['aria-pressed'] });
+      }
       return button;
     };
 
@@ -56,11 +65,9 @@
       if (target.dataset.speechEnhanced === 'true') return;
       const text = (speechText ?? target.textContent ?? '').replace(/\s+/g, ' ').trim();
       if (!text) return;
-
       target.dataset.speechEnhanced = 'true';
       target.classList.add('report-speech-target');
-      const label = kind === 'review' ? '面接復習の質問' : '面接内容';
-      target.insertBefore(makeButton(text, label), target.firstChild);
+      target.insertBefore(makeButton(text, kind), target.firstChild);
     };
 
     const enhanceLegacyQuotes = (nodes: Element[], kind: 'interview' | 'review'): number => {
@@ -86,7 +93,6 @@
     if (interviewHeading instanceof HTMLHeadingElement) {
       const nodes = sectionNodes(interviewHeading);
       const quoteCount = enhanceLegacyQuotes(nodes, 'interview');
-
       if (quoteCount === 0) {
         for (const node of nodes) {
           if (!(node instanceof HTMLParagraphElement)) continue;
@@ -108,7 +114,6 @@
     if (reviewHeading instanceof HTMLHeadingElement) {
       const nodes = sectionNodes(reviewHeading);
       const quoteCount = enhanceLegacyQuotes(nodes, 'review');
-
       if (quoteCount === 0) {
         for (const node of nodes) {
           if (node instanceof HTMLParagraphElement) {
