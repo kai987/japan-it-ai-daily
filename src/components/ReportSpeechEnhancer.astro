@@ -2,6 +2,13 @@
   const article = document.querySelector('.report-layout article.prose');
 
   if (article instanceof HTMLElement) {
+    const normalizeSpeech = (value: string): string => value.replace(/\s+/g, ' ').trim();
+    const seenSpeech = new Set(
+      Array.from(article.querySelectorAll<HTMLButtonElement>('.report-speech-button'))
+        .map((button) => normalizeSpeech(button.dataset.speech || ''))
+        .filter(Boolean),
+    );
+
     const makeButton = (text: string, kind: 'interview' | 'review'): HTMLButtonElement => {
       const button = document.createElement('button');
       button.className = 'speech-button report-speech-button';
@@ -59,11 +66,16 @@
 
     const enhanceElement = (target: HTMLElement, kind: 'interview' | 'review', speechText?: string): void => {
       if (target.dataset.speechEnhanced === 'true') return;
-      const text = (speechText ?? target.textContent ?? '').replace(/\s+/g, ' ').trim();
+      const text = normalizeSpeech(speechText ?? target.textContent ?? '');
       if (!text) return;
+      if (seenSpeech.has(text)) {
+        target.dataset.speechEnhanced = 'true';
+        return;
+      }
       target.dataset.speechEnhanced = 'true';
       target.classList.add('report-speech-target');
       target.insertBefore(makeButton(text, kind), target.firstChild);
+      seenSpeech.add(text);
     };
 
     const enhanceLegacyQuotes = (nodes: Element[], kind: 'interview' | 'review'): number => {
@@ -107,12 +119,14 @@
         if (!(parent instanceof HTMLParagraphElement)) continue;
         let speech = textAfterStrong(label);
         if (!speech) speech = nextPlainParagraph(parent)?.textContent?.replace(/\s+/g, ' ').trim() || '';
-        if (!speech) continue;
+        speech = normalizeSpeech(speech);
+        if (!speech || seenSpeech.has(speech)) continue;
         // One canonical label corresponds to one independent speech action. Do
         // not mark the whole paragraph as enhanced because Markdown may place a
         // question and its 30-second answer in the same paragraph.
         const button = makeButton(speech, 'interview');
         label.parentNode?.insertBefore(button, label);
+        seenSpeech.add(speech);
       }
     };
 

@@ -138,13 +138,13 @@
         return Array.from(new Set(quotes));
       };
 
-      const enhanceElement = (target, kind, speechText) => {
+      const enhanceElement = (target, kind) => {
         if (!(target instanceof HTMLElement) || target.dataset.speechEnhanced === 'true') return;
-        const text = (speechText || target.textContent || '').replace(/\s+/g, ' ').trim();
+        const text = (target.textContent || '').replace(/\s+/g, ' ').trim();
         if (!text) return;
         target.dataset.speechEnhanced = 'true';
         target.classList.add('report-speech-target');
-        const label = kind === 'review' ? '面接復習の質問を読み上げる' : '面接内容を読み上げる';
+        const label = kind === 'review' ? '面试复习问题を読み上げる' : '面试内容を読み上げる';
         const button = makeButton(text, label);
         target.insertBefore(button, target.firstChild);
       };
@@ -187,21 +187,6 @@
         const quoteCount = enhanceLegacyQuotes(nodes, 'review');
         if (quoteCount === 0) {
           nodes.forEach((node) => {
-            if (node instanceof HTMLParagraphElement) {
-              const label = node.firstElementChild;
-              if (!label || label.tagName !== 'STRONG' || !/^Q\s*\d+\s*[:：]?$/i.test((label.textContent || '').trim())) return;
-              const pieces = [];
-              let part = label.nextSibling;
-              while (part && !(part instanceof HTMLBRElement)) {
-                pieces.push(part.textContent || '');
-                part = part.nextSibling;
-              }
-              const question = pieces.join('').replace(/^\s*[:：]\s*/, '').trim();
-              if (question && !/^(?:回答要点|回答ポイント|要点)\s*[:：]/.test(question)) {
-                enhanceElement(node, 'review', question);
-              }
-              return;
-            }
             if (!(node instanceof HTMLHeadingElement) || !/^H[3-6]$/.test(node.tagName)) return;
             if (!/^Q\s*\d+/i.test((node.textContent || '').trim())) return;
             const target = nextPlainParagraph(node);
