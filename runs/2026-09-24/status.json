@@ -10,7 +10,7 @@
     "to": "2026-09-24T10:00:00+09:00"
   },
   "createdAt": "2026-09-24T10:30:30+09:00",
-  "updatedAt": "2026-09-24T08:58:08.000Z",
+  "updatedAt": "2026-09-24T09:37:04.000Z",
   "completedArtifacts": [
     "sources/2026-09-24.json",
     "runs/2026-09-24/history.json",
@@ -26,7 +26,7 @@
   ],
   "artifactValidation": "Exact Git blob identities are recorded in checks.json. Preserved drafts are not publication approval; history candidate-cache hash mismatch and source-access blockers remain explicit.",
   "resumeFrom": "published",
-  "nextAction": "n1_handoff",
+  "nextAction": "none",
   "lastError": null,
   "takeover": {
     "previousOwner": "it-recovery",
@@ -87,8 +87,14 @@
     "snapshotArtifactId": 10799091347
   },
   "n1Handoff": {
-    "stage": "not_started",
-    "reason": "Corresponding IT report has not newly completed verified main publication; no N1 request was written."
+    "stage": "published",
+    "targetDate": "2026-09-24",
+    "requestCommit": "87c0d1a1a264049e8a091eddf9a1b88278297971",
+    "syncRunId": 35981989203,
+    "contentCommit": "1a99c07476735b1a3f75f8c9891442dea5411f8c",
+    "pagesRunId": 35982127945,
+    "liveTargetVerification": "success",
+    "sourceCommit": "384c81dfcf7ab63831d6ff2a1c5488be66576705"
   },
   "repairTakeover": {
     "previousOwner": "chatgpt-manual-republish",
