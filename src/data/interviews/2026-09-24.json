@@ -2,15 +2,80 @@
   "schemaVersion": 1,
   "date": "2026-09-24",
   "interview": [
-    {"id":"qa-01","articleIds":["2026-09-24-top-1"],"question":"Google AIのColab特典をML開発で評価するとき、何を確認しますか。","answer":"まずGoogle AI Subscriptionで得られるColabのResource条件を分けて確認します。一般Subscriberは高速Acceleratorと高性能MachineへのPriority Access、UltraはBackground ExecutionとPremium GPUが追加されます。ただし無制限容量の保証ではなく、数週間かけてRolloutされるため、実案件では利用可能地域、待ち時間、Job完走率、Costを測ります。"},
-    {"id":"qa-02","articleIds":["2026-09-24-top-2"],"question":"AI編集機能を設計するとき、YouTubeの会話型編集から何を学べますか。","answer":"AIだけに編集を閉じず、Manual操作へ戻れる設計が重要だと考えます。YouTubeはGemini Omniの会話型編集で初稿、Frameの並べ替え、Trim、Beat同期を支援し、手動Timelineと往復できます。さらに最大3種類の動画A/Bテストも予定しています。ただし多くの機能は提供時期や地域が未定なので、段階的Rolloutを前提にします。"},
-    {"id":"qa-03","articleIds":["2026-09-24-top-3"],"question":"AI Agentの権限管理で、Human-in-the-loopだけでは不十分なのはなぜですか。","answer":"AI Agentが大量操作を行うと承認疲労が起き、人が反射的に許可するRiskがあるからです。そこでJITで短命な最小権限だけを付与し、事前定義したflight planから逸脱したら自動停止する設計を重ねます。ただしHuman Review自体を捨てるのではなく、高Risk Actionの最終確認など役割を限定して使います。"},
-    {"id":"qa-04","articleIds":["2026-09-24-top-4"],"question":"AI Codingの生産性を、開発者の実感だけで評価しないために何を測りますか。","answer":"自己申告とDelivery Dataを分けます。GitKrakenの554人調査では84％が生産性向上を実感しましたが、何らかの方法で測定できる組織は20％にとどまり、39％は測定手段がありません。導入前の基準線を作り、Cycle Time、Quality、Review負荷、Costと実際にShipした成果を同じ期間で比較します。"},
-    {"id":"qa-05","articleIds":["2026-09-24-top-5"],"question":"Legacy SystemのAI移行で、IBM Bobの事例から何を学べますか。","answer":"いきなり書き換えるより、まず既存の業務ロジックを可視化して人が確認する工程が重要です。NICPではExcelマクロの仕様把握が平均1～3日から約30分になり、約6週間想定のWeb再構築も約2.5日でした。ただし単一案件の実績で、担当者のReviewとTestも実施しているため、自社でも同じ短縮率を前提にしません。"}
+    {
+      "id": "qa-01",
+      "articleIds": [
+        "2026-09-24-top-1"
+      ],
+      "question": "Google AIのColab特典をML開発で評価するとき、何を確認しますか。",
+      "answer": "まずGoogle AIの契約特典と、実際に使えるColabの計算資源を分けて確認します。一般の有料プランでは高速なアクセラレータや高性能なマシンへの優先アクセスがあり、Ultraではバックグラウンド実行とPremium GPUも利用できます。ただし無制限ではなく段階的に提供されるため、実案件では待ち時間、完走率、コストを測ります。"
+    },
+    {
+      "id": "qa-02",
+      "articleIds": [
+        "2026-09-24-top-2"
+      ],
+      "question": "AI編集機能を設計するとき、YouTubeの会話型編集から何を学べますか。",
+      "answer": "AIだけで編集を完結させず、手動編集へ戻れる設計が重要です。YouTubeはGemini Omniで初稿作成、フレームの並べ替え、トリミング、ビート同期を支援し、手動タイムラインと往復できます。さらに最大3種類の動画A/Bテストも発表しました。ただし多くの機能は提供時期や地域が未定なので、段階的な公開を前提に設計します。"
+    },
+    {
+      "id": "qa-03",
+      "articleIds": [
+        "2026-09-24-top-3"
+      ],
+      "question": "AI Agentの権限管理で、Human-in-the-loopだけでは不十分なのはなぜですか。",
+      "answer": "AIエージェントが大量の操作を行うと承認疲れが起き、人が内容を十分に確認せず許可する恐れがあります。そこでJITで短時間だけ最小権限を与え、事前に定めたflight planから外れたら自動停止する仕組みを重ねます。ただし人の確認をなくすのではなく、高リスク操作の最終確認など役割を限定して残します。"
+    },
+    {
+      "id": "qa-04",
+      "articleIds": [
+        "2026-09-24-top-4"
+      ],
+      "question": "AI Codingの生産性を、開発者の実感だけで評価しないために何を測りますか。",
+      "answer": "自己申告と実測データを分けます。GitKrakenの顧客・ユーザーコミュニティー554人の調査では84％が生産性向上を実感しましたが、測定している組織は20％、39％は測定手段がありません。導入前の基準線とサイクルタイム、品質、レビュー負荷、コスト、リリース成果を比較します。ただし自己申告調査なので因果関係は示せず、自社データで再検証します。"
+    },
+    {
+      "id": "qa-05",
+      "articleIds": [
+        "2026-09-24-top-5"
+      ],
+      "question": "Legacy SystemのAI移行で、IBM Bobの事例から何を学べますか。",
+      "answer": "いきなり書き換えるのではなく、まず既存の業務ロジックを可視化し、人が確認できる状態にすることが重要です。NICPではExcelマクロの仕様把握が平均1～3日から約30分になり、約6週間を見込んだWeb再構築も約2.5日でした。ただし単一企業の事例で、レビューとテストも行っているため、同じ短縮率を自社にそのまま当てはめません。"
+    }
   ],
   "review": [
-    {"id":"review-01","articleIds":["2026-09-24-top-1"],"question":"ColabのPremium特典を比較するとき、Plan名以外に何を記録しますか。","points":{"zh":"记录实际获得的Accelerator/Machine、排队时间、长Job完走率与成本。Priority Access不是无限容量，Ultra专属Background Execution也不能当作所有方案共有。","ja":"実際に使えたAccelerator/Machine、Queue待ち、長時間Job完走率、Costを記録する。Priority Accessは無制限容量ではなく、Background ExecutionはUltra特典として分ける。"}},
-    {"id":"review-02","articleIds":["2026-09-24-top-3"],"question":"Agentの承認疲れを減らすには何を設計しますか。","points":{"zh":"把广泛常驻权限改为JIT短命最小权限，用flight plan限制行动范围，异常自动停止，只把高风险Action送人工确认。","ja":"Standing PrivilegeをJIT短命最小権限へ変え、flight planで行動範囲を限定し、逸脱時は自動停止する。Human Gateは高Risk Actionへ絞る。"}},
-    {"id":"review-03","articleIds":["2026-09-24-top-4"],"question":"AI Codingの効果を自己申告から実測へ変えるには何が必要ですか。","points":{"zh":"导入前先保存Delivery/Quality基准线，之后用Cycle Time、Review负荷、Defect、Cost与Ship成果比较。主观实感可以参考，但不应替代Measurement。","ja":"導入前にDelivery/Qualityの基準線を保存し、Cycle Time、Review負荷、Defect、Cost、Ship Outputを比較する。実感は補助情報でありMeasurementの代替にしない。"}}
+    {
+      "id": "review-01",
+      "articleIds": [
+        "2026-09-24-top-1"
+      ],
+      "question": "ColabのPremium特典を比較するとき、Plan名以外に何を記録しますか。",
+      "points": {
+        "zh": "记录实际获得的Accelerator/Machine、排队时间、长Job完走率与成本。Priority Access不是无限容量，Ultra专属Background Execution也不能当作所有方案共有。",
+        "ja": "実際に使えたAccelerator/Machine、Queue待ち、長時間Job完走率、Costを記録する。Priority Accessは無制限容量ではなく、Background ExecutionはUltra特典として分ける。"
+      }
+    },
+    {
+      "id": "review-02",
+      "articleIds": [
+        "2026-09-24-top-3"
+      ],
+      "question": "Agentの承認疲れを減らすには何を設計しますか。",
+      "points": {
+        "zh": "把广泛常驻权限改为JIT短命最小权限，用flight plan限制行动范围，异常自动停止，只把高风险Action送人工确认。",
+        "ja": "Standing PrivilegeをJIT短命最小権限へ変え、flight planで行動範囲を限定し、逸脱時は自動停止する。Human Gateは高Risk Actionへ絞る。"
+      }
+    },
+    {
+      "id": "review-03",
+      "articleIds": [
+        "2026-09-24-top-4"
+      ],
+      "question": "AI Codingの効果を自己申告から実測へ変えるには何が必要ですか。",
+      "points": {
+        "zh": "导入前先保存Delivery/Quality基准线，之后用Cycle Time、Review负荷、Defect、Cost与Ship成果比较。主观实感可以参考，但不应替代Measurement。",
+        "ja": "導入前にDelivery/Qualityの基準線を保存し、Cycle Time、Review負荷、Defect、Cost、Ship Outputを比較する。実感は補助情報でありMeasurementの代替にしない。"
+      }
+    }
   ]
 }
