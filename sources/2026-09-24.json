@@ -105,5 +105,19 @@
       ],
       "boundary": "This is one company case reported by NICP and IBM, not a controlled benchmark. The one-to-three-day and six-week baselines include internal estimates, human review and testing remained necessary, and the result should not be generalized to arbitrary legacy systems."
     }
-  ]
+  ],
+  "reverifiedAt": "2026-09-24T16:23:40+09:00",
+  "reverification": {
+    "result": "verified_in_public_scope",
+    "note": "Re-read current public source scope without replacing retained capture hashes. Top 1 was revalidated via exact ITmedia article search/body evidence plus current official Google AI/Colab plan help; Top 2-5 were re-read from their public article pages. Existing snapshotSha256 values remain the original retained captures.",
+    "articleIds": [
+      "2026-09-24-top-1",
+      "2026-09-24-top-2",
+      "2026-09-24-top-3",
+      "2026-09-24-top-4",
+      "2026-09-24-top-5"
+    ],
+    "searchSnippetsUsedAsOriginalCapture": false,
+    "captureHashesChanged": false
+  }
 }
