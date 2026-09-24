@@ -8,7 +8,9 @@
       button.type = 'button';
       button.dataset.speech = text;
       button.dataset.speechKind = 'interview';
-      button.setAttribute('aria-label', label);
+      button.dataset.speechPlayLabel = `${label}を再生`;
+      button.dataset.speechStopLabel = `${label}を停止`;
+      button.setAttribute('aria-label', button.dataset.speechPlayLabel);
       button.setAttribute('aria-pressed', 'false');
       button.title = '日本語で読み上げる';
       button.innerHTML = `
@@ -19,6 +21,13 @@
         <svg class="speech-icon-stop" viewBox="0 0 24 24" aria-hidden="true">
           <rect x="7" y="7" width="10" height="10" rx="1"></rect>
         </svg>`;
+      const syncAccessibleLabel = () => button.setAttribute(
+        'aria-label',
+        button.getAttribute('aria-pressed') === 'true'
+          ? button.dataset.speechStopLabel!
+          : button.dataset.speechPlayLabel!,
+      );
+      new MutationObserver(syncAccessibleLabel).observe(button, { attributes: true, attributeFilter: ['aria-pressed'] });
       return button;
     };
 
@@ -50,9 +59,7 @@
 
       target.dataset.speechEnhanced = 'true';
       target.classList.add('report-speech-target');
-      const label = kind === 'review'
-        ? '面接復習の質問を読み上げる'
-        : '面接内容を読み上げる';
+      const label = kind === 'review' ? '面接復習の質問' : '面接内容';
       target.insertBefore(makeButton(text, label), target.firstChild);
     };
 
@@ -80,10 +87,6 @@
       const nodes = sectionNodes(interviewHeading);
       const quoteCount = enhanceLegacyQuotes(nodes, 'interview');
 
-      // Current source-of-truth reports keep canonical questions/answers as plain
-      // paragraphs so the Japanese strings can be copied byte-for-byte between
-      // language modes. Legacy reports use blockquotes. Only use this path when
-      // the section contains no quotes to avoid duplicate speech controls.
       if (quoteCount === 0) {
         for (const node of nodes) {
           if (!(node instanceof HTMLParagraphElement)) continue;
@@ -108,8 +111,6 @@
 
       if (quoteCount === 0) {
         for (const node of nodes) {
-          // Markdown **Q1：** question + hard break + hints becomes one <p>.
-          // Read only the question after its label and before the first <br>.
           if (node instanceof HTMLParagraphElement) {
             const label = node.firstElementChild;
             if (!label || label.tagName !== 'STRONG' || !/^Q\s*\d+\s*[:：]?$/i.test((label.textContent || '').trim())) continue;
