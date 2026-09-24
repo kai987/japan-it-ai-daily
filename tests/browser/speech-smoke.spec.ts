@@ -11,6 +11,9 @@ for (const [locale, date, format] of cases) {
   test(`${locale} ${format} report has one speech owner and 13 unique controls`, async ({ page }) => {
     const errors: string[] = [];
     page.on('pageerror', (error) => errors.push(error.message));
+    page.on('console', (message) => {
+      if (message.type() === 'error' && /Content Security Policy|Refused to execute/i.test(message.text())) errors.push(message.text());
+    });
     await page.addInitScript((language) => localStorage.setItem('site-language', language), locale);
     const root = `/japan-it-ai-daily/${locale === 'ja' ? 'ja/' : ''}`;
     await page.goto(`${root}daily/${date}/`);
