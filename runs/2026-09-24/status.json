@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-24",
-  "stage": "deploying",
-  "stageNote": "Verified target paths were promoted atomically to main; exact release commit is running the full production Pages workflow.",
+  "stage": "published",
+  "stageNote": "Exact main commit passed full deploy.yml build, Pages deployment, post-deploy snapshot verification and bilingual byte verification.",
   "leaseToken": "chatgpt-manual-repair-20260924T070124Z-qa4",
   "sourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
   "sourceWindow": {
@@ -10,7 +10,7 @@
     "to": "2026-09-24T10:00:00+09:00"
   },
   "createdAt": "2026-09-24T10:30:30+09:00",
-  "updatedAt": "2026-09-24T08:54:39.000Z",
+  "updatedAt": "2026-09-24T08:58:08.000Z",
   "completedArtifacts": [
     "sources/2026-09-24.json",
     "runs/2026-09-24/history.json",
@@ -25,8 +25,8 @@
     "runs/2026-09-24/checks.json"
   ],
   "artifactValidation": "Exact Git blob identities are recorded in checks.json. Preserved drafts are not publication approval; history candidate-cache hash mismatch and source-access blockers remain explicit.",
-  "resumeFrom": "deploying",
-  "nextAction": "verify_exact_main_pages_and_snapshot",
+  "resumeFrom": "published",
+  "nextAction": "n1_handoff",
   "lastError": null,
   "takeover": {
     "previousOwner": "it-recovery",
@@ -109,5 +109,37 @@
     "reason": "user_requested_cancel"
   },
   "releaseCommit": "384c81dfcf7ab63831d6ff2a1c5488be66576705",
-  "releaseRunId": 35977925568
+  "releaseRunId": 35977925568,
+  "release": {
+    "branch": "main",
+    "path": ".github/workflows/deploy.yml",
+    "headSha": "384c81dfcf7ab63831d6ff2a1c5488be66576705",
+    "status": "completed",
+    "conclusion": "success",
+    "build": "success",
+    "deploy": "success",
+    "publicationVerification": "success",
+    "snapshotArtifactId": 10798727485,
+    "snapshotSha256": "44e878c0e1524e90e6b23aa99c98611b322941134a8f381f61174b44d4b36ae6",
+    "snapshotSourceCommit": "384c81dfcf7ab63831d6ff2a1c5488be66576705",
+    "snapshotDates": {
+      "first": "2026-08-12",
+      "last": "2026-09-24",
+      "totalDays": 44
+    },
+    "issueNumber": 44,
+    "grammarLessonDates": 44,
+    "studyCounts": {
+      "vocabulary": {
+        "new": 12,
+        "review": 8,
+        "total": 20
+      },
+      "grammar": {
+        "new": 3,
+        "review": 5,
+        "total": 8
+      }
+    }
+  }
 }
