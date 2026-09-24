@@ -1,14 +1,17 @@
 {
-  "schemaVersion":1,
-  "targetDate":"2026-09-24",
-  "stage":"sources_verified",
-  "stageNote":"Last completed stage inherited from the original checkpoint. Saved drafts exist but are not editorially approved; fresh original-source revalidation is currently blocked.",
-  "leaseToken":"991f6c83-93fa-41af-8c30-5c5b0cbc29c5",
-  "sourceCommit":"71841501105c069b0badf8418b2457357946f2f1",
-  "sourceWindow":{"from":"2026-09-23T10:00:00+09:00","to":"2026-09-24T10:00:00+09:00"},
-  "createdAt":"2026-09-24T10:30:30+09:00",
-  "updatedAt":"2026-09-24T06:56:29.246Z",
-  "completedArtifacts":[
+  "schemaVersion": 1,
+  "targetDate": "2026-09-24",
+  "stage": "sources_verified",
+  "stageNote": "Repair lease acquired after the prior writer released cleanly. Saved six-file draft is being revised from verified originals; no regeneration from scratch.",
+  "leaseToken": "chatgpt-manual-repair-20260924T070124Z-qa4",
+  "sourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
+  "sourceWindow": {
+    "from": "2026-09-23T10:00:00+09:00",
+    "to": "2026-09-24T10:00:00+09:00"
+  },
+  "createdAt": "2026-09-24T10:30:30+09:00",
+  "updatedAt": "2026-09-24T07:02:43.000Z",
+  "completedArtifacts": [
     "sources/2026-09-24.json",
     "runs/2026-09-24/history.json",
     "runs/2026-09-24/drafts/src/content/daily/2026-09-24.md",
@@ -21,52 +24,78 @@
     "runs/2026-09-24/checks-before-c4.json",
     "runs/2026-09-24/checks.json"
   ],
-  "artifactValidation":"Exact Git blob identities are recorded in checks.json. Preserved drafts are not publication approval; history candidate-cache hash mismatch and source-access blockers remain explicit.",
-  "resumeFrom":"sources_verified",
-  "nextAction":"reverify_originals_and_revise_saved_QA4_B_C_Japanese_then_full_history_and_full_draft_CI",
-  "lastError":{
-    "kind":"deterministic",
-    "runId":35966483752,
-    "jobId":107526101312,
-    "runUrl":"https://github.com/kai987/japan-it-ai-daily/actions/runs/35966483752",
-    "checkedCommit":"4499165e531b24bb603b5d944f8a0ae9ba2512ed",
-    "step":"Verify daily content quality",
-    "message":"Q&A 4 对应日语文章存在限制/边界，但回答未体现任何限制或验证条件",
-    "logsRead":true,
-    "additionalBlockers":"Original-source revalidation unavailable (Cache miss; root cause unknown), B/C language/content deficiencies and historical draft-cache hash mismatch. See checks.json."
+  "artifactValidation": "Exact Git blob identities are recorded in checks.json. Preserved drafts are not publication approval; history candidate-cache hash mismatch and source-access blockers remain explicit.",
+  "resumeFrom": "sources_verified",
+  "nextAction": "revise_QA4_B_C_Japanese_then_full_history_and_full_draft_CI",
+  "lastError": {
+    "kind": "deterministic",
+    "runId": 35966483752,
+    "jobId": 107526101312,
+    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35966483752",
+    "checkedCommit": "4499165e531b24bb603b5d944f8a0ae9ba2512ed",
+    "step": "Verify daily content quality",
+    "message": "Q&A 4 对应日语文章存在限制/边界，但回答未体现任何限制或验证条件",
+    "logsRead": true,
+    "additionalBlockers": "Original-source revalidation unavailable (Cache miss; root cause unknown), B/C language/content deficiencies and historical draft-cache hash mismatch. See checks.json."
   },
-  "takeover":{
-    "previousOwner":"it-recovery",
-    "previousLeaseExpiredAt":"2026-09-24T06:22:00Z",
-    "claimedAt":"2026-09-24T06:38:20.458Z",
-    "reason":"Expired lease acquired with a new token and latest blob SHA; ownership read back and assertLease passed. No live lease revoked."
+  "takeover": {
+    "previousOwner": "it-recovery",
+    "previousLeaseExpiredAt": "2026-09-24T06:22:00Z",
+    "claimedAt": "2026-09-24T06:38:20.458Z",
+    "reason": "Expired lease acquired with a new token and latest blob SHA; ownership read back and assertLease passed. No live lease revoked."
   },
-  "planner":{
-    "mode":"daily","observedAt":"2026-09-24T06:38:20.458Z",
-    "targetDate":"2026-09-24","pendingDates":["2026-09-24"],
-    "sourceCommit":"71841501105c069b0badf8418b2457357946f2f1",
-    "action":"resume_generation","reason":"no_content_commit",
-    "missing":["src/content/daily/2026-09-24.md","src/content/japanese/2026-09-24.md","src/content/daily-ja/2026-09-24.md","src/content/japanese-ja/2026-09-24.md"],
-    "resumeFrom":"sources_verified"
+  "planner": {
+    "mode": "daily",
+    "observedAt": "2026-09-24T06:38:20.458Z",
+    "targetDate": "2026-09-24",
+    "pendingDates": [
+      "2026-09-24"
+    ],
+    "sourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
+    "action": "resume_generation",
+    "reason": "no_content_commit",
+    "missing": [
+      "src/content/daily/2026-09-24.md",
+      "src/content/japanese/2026-09-24.md",
+      "src/content/daily-ja/2026-09-24.md",
+      "src/content/japanese-ja/2026-09-24.md"
+    ],
+    "resumeFrom": "sources_verified"
   },
-  "observation":{
-    "publicationCollectionsComplete":true,
-    "fourCollectionDateCount":43,"firstDate":"2026-08-12","lastDate":"2026-09-23",
-    "currentMainDeployRunId":35855854973,"currentMainDeploy":"success",
-    "postDeployByteVerification":"success",
-    "snapshotArtifactId":10747745992,
-    "snapshotSha256":"36b41bd032b1023ae69c013e8e1eebd5365714b8b605e9667ac322b058c63268",
-    "snapshotSourceCommit":"71841501105c069b0badf8418b2457357946f2f1",
-    "grammarLessonsCount":43,"targetPublished":false
+  "observation": {
+    "publicationCollectionsComplete": true,
+    "fourCollectionDateCount": 43,
+    "firstDate": "2026-08-12",
+    "lastDate": "2026-09-23",
+    "currentMainDeployRunId": 35855854973,
+    "currentMainDeploy": "success",
+    "postDeployByteVerification": "success",
+    "snapshotArtifactId": 10747745992,
+    "snapshotSha256": "36b41bd032b1023ae69c013e8e1eebd5365714b8b605e9667ac322b058c63268",
+    "snapshotSourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
+    "grammarLessonsCount": 43,
+    "targetPublished": false
   },
-  "draft":{
-    "branch":"draft/daily-2026-09-24-clean",
-    "commit":"4499165e531b24bb603b5d944f8a0ae9ba2512ed",
-    "workflowRunId":35966483752,"build":"failure","deploy":"skipped",
-    "expectedIssueNumber":44,
-    "c4LabelRepair":"applied and verified by exact subsequent CI",
-    "finalNewAndReviewCountsVerified":false,
-    "readyForPromotion":false
+  "draft": {
+    "branch": "draft/daily-2026-09-24-clean",
+    "commit": "4499165e531b24bb603b5d944f8a0ae9ba2512ed",
+    "workflowRunId": 35966483752,
+    "build": "failure",
+    "deploy": "skipped",
+    "expectedIssueNumber": 44,
+    "c4LabelRepair": "applied and verified by exact subsequent CI",
+    "finalNewAndReviewCountsVerified": false,
+    "readyForPromotion": false
   },
-  "n1Handoff":{"stage":"not_started","reason":"Corresponding IT report has not newly completed verified main publication; no N1 request was written."}
+  "n1Handoff": {
+    "stage": "not_started",
+    "reason": "Corresponding IT report has not newly completed verified main publication; no N1 request was written."
+  },
+  "repairTakeover": {
+    "previousOwner": "chatgpt-manual-republish",
+    "previousReleasedAt": "2026-09-24T07:00:09.049Z",
+    "claimedAt": "2026-09-24T07:01:24.000Z",
+    "token": "chatgpt-manual-repair-20260924T070124Z-qa4",
+    "reason": "Prior writer released orderly with durable blockers; new lease claimed via latest lock blob SHA and read back."
+  }
 }
