@@ -10,38 +10,152 @@
       button.dataset.speechKind = 'interview';
       button.setAttribute('aria-pressed', 'false');
       button.title = '日本語で読み上げる';
-      button.innerHTML = `<svg class="speech-icon-speaker" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 7 9H4v6h3l4 4V5Z"></path><path d="M15 9.5a4 4 0 0 1 0 5M17.5 7a7.3 7.3 0 0 1 0 10"></path></svg><svg class="speech-icon-stop" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="1"></rect></svg>`;
+      button.innerHTML = `
+        <svg class="speech-icon-speaker" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M11 5 7 9H4v6h3l4 4V5Z"></path>
+          <path d="M15 9.5a4 4 0 0 1 0 5M17.5 7a7.3 7.3 0 0 1 0 10"></path>
+        </svg>
+        <svg class="speech-icon-stop" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="7" y="7" width="10" height="10" rx="1"></rect>
+        </svg>`;
+
       if (kind === 'review') {
         button.setAttribute('aria-label', '面接復習の質問を読み上げる');
       } else {
         button.dataset.speechPlayLabel = '面接内容を再生';
         button.dataset.speechStopLabel = '面接内容を停止';
         button.setAttribute('aria-label', button.dataset.speechPlayLabel);
-        const syncAccessibleLabel = () => button.setAttribute('aria-label', button.getAttribute('aria-pressed') === 'true' ? button.dataset.speechStopLabel! : button.dataset.speechPlayLabel!);
+        const syncAccessibleLabel = () => button.setAttribute(
+          'aria-label',
+          button.getAttribute('aria-pressed') === 'true'
+            ? button.dataset.speechStopLabel!
+            : button.dataset.speechPlayLabel!,
+        );
         new MutationObserver(syncAccessibleLabel).observe(button, { attributes: true, attributeFilter: ['aria-pressed'] });
       }
       return button;
     };
-    const sectionNodes = (heading: HTMLHeadingElement): Element[] => { const nodes: Element[] = []; let node = heading.nextElementSibling; while (node && node.tagName !== 'H1' && node.tagName !== 'H2') { nodes.push(node); node = node.nextElementSibling; } return nodes; };
-    const blockquotesFrom = (nodes: Element[]): HTMLQuoteElement[] => { const quotes: HTMLQuoteElement[] = []; for (const node of nodes) { if (node instanceof HTMLQuoteElement) quotes.push(node); node.querySelectorAll('blockquote').forEach((quote) => { if (quote instanceof HTMLQuoteElement) quotes.push(quote); }); } return Array.from(new Set(quotes)); };
-    const enhanceElement = (target: HTMLElement, kind: 'interview' | 'review', speechText?: string): void => { if (target.dataset.speechEnhanced === 'true') return; const text = (speechText ?? target.textContent ?? '').replace(/\s+/g, ' ').trim(); if (!text) return; target.dataset.speechEnhanced = 'true'; target.classList.add('report-speech-target'); target.insertBefore(makeButton(text, kind), target.firstChild); };
-    const enhanceLegacyQuotes = (nodes: Element[], kind: 'interview' | 'review'): number => { const quotes = blockquotesFrom(nodes); quotes.forEach((quote) => enhanceElement(quote, kind)); return quotes.length; };
-    const nextPlainParagraph = (label: Element): HTMLParagraphElement | null => { let node = label.nextElementSibling; while (node) { if (node.tagName === 'P') return node as HTMLParagraphElement; if (/^H[1-6]$/.test(node.tagName)) return null; node = node.nextElementSibling; } return null; };
+
+    const sectionNodes = (heading: HTMLHeadingElement): Element[] => {
+      const nodes: Element[] = [];
+      let node = heading.nextElementSibling;
+      while (node && node.tagName !== 'H1' && node.tagName !== 'H2') {
+        nodes.push(node);
+        node = node.nextElementSibling;
+      }
+      return nodes;
+    };
+
+    const blockquotesFrom = (nodes: Element[]): HTMLQuoteElement[] => {
+      const quotes: HTMLQuoteElement[] = [];
+      for (const node of nodes) {
+        if (node instanceof HTMLQuoteElement) quotes.push(node);
+        node.querySelectorAll('blockquote').forEach((quote) => {
+          if (quote instanceof HTMLQuoteElement) quotes.push(quote);
+        });
+      }
+      return Array.from(new Set(quotes));
+    };
+
+    const enhanceElement = (target: HTMLElement, kind: 'interview' | 'review', speechText?: string): void => {
+      if (target.dataset.speechEnhanced === 'true') return;
+      const text = (speechText ?? target.textContent ?? '').replace(/\s+/g, ' ').trim();
+      if (!text) return;
+      target.dataset.speechEnhanced = 'true';
+      target.classList.add('report-speech-target');
+      target.insertBefore(makeButton(text, kind), target.firstChild);
+    };
+
+    const enhanceLegacyQuotes = (nodes: Element[], kind: 'interview' | 'review'): number => {
+      const quotes = blockquotesFrom(nodes);
+      quotes.forEach((quote) => enhanceElement(quote, kind));
+      return quotes.length;
+    };
+
+    const nextPlainParagraph = (label: Element): HTMLParagraphElement | null => {
+      let node = label.nextElementSibling;
+      while (node) {
+        if (node.tagName === 'P') return node as HTMLParagraphElement;
+        if (/^H[1-6]$/.test(node.tagName)) return null;
+        node = node.nextElementSibling;
+      }
+      return null;
+    };
+
+    const textAfterStrong = (label: HTMLElement): string => {
+      const pieces: string[] = [];
+      let part = label.nextSibling;
+      while (part && !(part instanceof HTMLBRElement) && !(part instanceof HTMLElement && part.tagName === 'STRONG')) {
+        pieces.push(part.textContent || '');
+        part = part.nextSibling;
+      }
+      return pieces.join('').replace(/^\s*[:：]\s*/, '').replace(/\s+/g, ' ').trim();
+    };
+
+    const enhancePlainInterview = (nodes: Element[]): void => {
+      const labels: HTMLElement[] = [];
+      for (const node of nodes) {
+        if (node instanceof HTMLElement && node.tagName === 'STRONG') labels.push(node);
+        node.querySelectorAll('strong').forEach((strong) => {
+          if (strong instanceof HTMLElement) labels.push(strong);
+        });
+      }
+      for (const label of Array.from(new Set(labels))) {
+        const labelText = (label.textContent || '').replace(/\s+/g, '').trim();
+        if (!/^(?:質問|面接質問|面试问题|(?:約|约)?30秒回答)[:：]?$/.test(labelText)) continue;
+        const parent = label.closest('p');
+        if (!(parent instanceof HTMLParagraphElement)) continue;
+        let speech = textAfterStrong(label);
+        if (!speech) speech = nextPlainParagraph(parent)?.textContent?.replace(/\s+/g, ' ').trim() || '';
+        if (!speech) continue;
+        // One canonical label corresponds to one independent speech action. Do
+        // not mark the whole paragraph as enhanced because Markdown may place a
+        // question and its 30-second answer in the same paragraph.
+        const button = makeButton(speech, 'interview');
+        label.parentNode?.insertBefore(button, label);
+      }
+    };
+
     const headings = Array.from(article.querySelectorAll('h2'));
-    const interviewHeading = headings.find((heading) => (heading.textContent || '').includes('面接で使えるポイント'));
+    const interviewHeading = headings.find((heading) =>
+      (heading.textContent || '').includes('面接で使えるポイント'));
+
     if (interviewHeading instanceof HTMLHeadingElement) {
-      const nodes = sectionNodes(interviewHeading); const quoteCount = enhanceLegacyQuotes(nodes, 'interview');
-      if (quoteCount === 0) for (const node of nodes) { if (!(node instanceof HTMLParagraphElement)) continue; const label = (node.textContent || '').replace(/\s+/g, ' ').trim(); const isInterviewLabel = /(?:面试问题|面接質問|(?:約|约)?30秒回答)/.test(label) || /^質問\s*[:：]?$/.test(label); if (!isInterviewLabel) continue; const target = nextPlainParagraph(node); if (target) enhanceElement(target, 'interview'); }
+      const nodes = sectionNodes(interviewHeading);
+      if (enhanceLegacyQuotes(nodes, 'interview') === 0) enhancePlainInterview(nodes);
     }
-    const reviewHeading = headings.find((heading) => { const text = heading.textContent || ''; return text.includes('面接復習カード') || text.includes('面试复习卡'); });
+
+    const reviewHeading = headings.find((heading) => {
+      const text = heading.textContent || '';
+      return text.includes('面接復習カード') || text.includes('面试复习卡');
+    });
+
     if (reviewHeading instanceof HTMLHeadingElement) {
-      const nodes = sectionNodes(reviewHeading); const quoteCount = enhanceLegacyQuotes(nodes, 'review');
-      if (quoteCount === 0) for (const node of nodes) {
-        if (node instanceof HTMLParagraphElement) { const label = node.firstElementChild; if (!label || label.tagName !== 'STRONG' || !/^Q\s*\d+\s*[:：]?$/i.test((label.textContent || '').trim())) continue; const pieces: string[] = []; let part = label.nextSibling; while (part && !(part instanceof HTMLBRElement)) { pieces.push(part.textContent || ''); part = part.nextSibling; } const question = pieces.join('').replace(/^\s*[:：]\s*/, '').trim(); if (question && !/^(?:回答要点|回答ポイント|要点)\s*[:：]/.test(question)) enhanceElement(node, 'review', question); continue; }
-        if (!(node instanceof HTMLHeadingElement) || !/^H[3-6]$/.test(node.tagName) || !/^Q\s*\d+/i.test((node.textContent || '').trim())) continue; const target = nextPlainParagraph(node); if (target) enhanceElement(target, 'review');
+      const nodes = sectionNodes(reviewHeading);
+      const quoteCount = enhanceLegacyQuotes(nodes, 'review');
+      if (quoteCount === 0) {
+        for (const node of nodes) {
+          if (node instanceof HTMLParagraphElement) {
+            const label = node.firstElementChild;
+            if (!label || label.tagName !== 'STRONG' || !/^Q\s*\d+\s*[:：]?$/i.test((label.textContent || '').trim())) continue;
+            const pieces: string[] = [];
+            let part = label.nextSibling;
+            while (part && !(part instanceof HTMLBRElement)) {
+              pieces.push(part.textContent || '');
+              part = part.nextSibling;
+            }
+            const question = pieces.join('').replace(/^\s*[:：]\s*/, '').trim();
+            if (question && !/^(?:回答要点|回答ポイント|要点)\s*[:：]/.test(question)) {
+              enhanceElement(node, 'review', question);
+            }
+            continue;
+          }
+          if (!(node instanceof HTMLHeadingElement) || !/^H[3-6]$/.test(node.tagName)) continue;
+          if (!/^Q\s*\d+/i.test((node.textContent || '').trim())) continue;
+          const target = nextPlainParagraph(node);
+          if (target) enhanceElement(target, 'review');
+        }
       }
     }
-    const controls = Array.from(article.querySelectorAll<HTMLButtonElement>('.report-speech-button'));
-    const debug = document.createElement('pre'); debug.id = 'report-speech-debug'; debug.textContent = `speech-count=${controls.length}\n${controls.map((button, index) => `${index}:${button.getAttribute('aria-label')}`).join('\n')}`; Object.assign(debug.style,{position:'fixed',top:'6px',right:'6px',zIndex:'99999',background:'white',color:'black',padding:'8px',fontSize:'11px',maxHeight:'90vh',overflow:'auto'}); document.body.append(debug);
   }
 </script>
