@@ -1,64 +1,96 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-24",
-  "updatedAt": "2026-09-24T06:47:55.384Z",
+  "updatedAt": "2026-09-24T06:56:29.246Z",
   "sourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
+  "previousChecks": {"path":"runs/2026-09-24/checks-before-c4.json","gitBlobSha":"00a66d5de51a59fdc98b1acc19361fd54ccbb744"},
   "checkpoint": {
-    "draftCommit": "a429de66d6c7fd8a87ac3d43b6e2b3f94903628f",
-    "draftBranch": "draft/daily-2026-09-24-clean",
-    "pathPrefix": "runs/2026-09-24/drafts/",
-    "files": 6,
-    "copyMethod": "Existing Git blobs copied without modifying their bytes; this is preservation, not editorial approval.",
-    "readyForPromotion": false
+    "draftCommit":"4499165e531b24bb603b5d944f8a0ae9ba2512ed",
+    "draftBranch":"draft/daily-2026-09-24-clean",
+    "pathPrefix":"runs/2026-09-24/drafts/",
+    "files":6,
+    "readyForPromotion":false,
+    "gitBlobs":{
+      "src/content/daily/2026-09-24.md":"17f7d393edf4015aec86524b7fd59095be8cba68",
+      "src/content/daily-ja/2026-09-24.md":"cabdd958ea22a69047913d852ac40923148e06ee",
+      "src/content/japanese/2026-09-24.md":"4a21224b7cee3a24ec6e31f25fe3045ba0fd8d8a",
+      "src/content/japanese-ja/2026-09-24.md":"cb36d171ca6e92a848199bf668ef627b04fb78ee",
+      "src/content/evidence/2026-09-24.json":"6281248bbaf0935d680a65a3e85131e2beb2d8d1",
+      "src/data/interviews/2026-09-24.json":"92b814c89ba01110e939b78e55414b8480edda75"
+    }
   },
-  "failedPreflight": {
-    "runId": 35960722999,
-    "jobId": 107508506376,
-    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35960722999",
-    "jobUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35960722999/job/107508506376",
-    "checkedCommit": "a429de66d6c7fd8a87ac3d43b6e2b3f94903628f",
-    "step": "Verify content integrity",
-    "command": "npm run content:integrity:check",
-    "logsRead": true,
-    "error": "Error: Unrecognized C4 grammar selection",
-    "errorLocation": "scripts/check-grammar-history.mjs:52, dailyMustGrammar",
-    "classification": "deterministic",
-    "observedPriorPasses": ["22 publication recovery tests", "astro check: 141 files, 0 errors", "content integrity: 44 four-file sets, 0 errors", "JLPT history: 44 dates, 871 lexical identities, 0 cross-date duplicates"],
-    "notEstablishedByThisRun": ["grammar history completion", "study review", "structured interviews", "evidence", "quality", "audio", "unit tests", "build", "browser", "CSP", "Pages"]
+  "resolvedFailure":{
+    "runId":35960722999,
+    "jobId":107508506376,
+    "error":"Error: Unrecognized C4 grammar selection",
+    "repair":"Changed only the Chinese C4 count label from 新语法3项 to 新语法3个. No validator, grammar identity, question, answer or historical lesson was changed.",
+    "repairCommit":"4499165e531b24bb603b5d944f8a0ae9ba2512ed",
+    "repairedContentSha256":"2614d4a79fcb036f0070970a365cc1906fe579a78b83ad9dac59177c1a581062",
+    "localIsolatedRegression":"PASS; exact parser blob and original/fixed content blobs verified; full details retained in checks-before-c4.json",
+    "confirmedResolvedByRunId":35966483752
   },
-  "localRegression": {
-    "result": "PASS",
-    "checkedAt": "2026-09-24T06:47:07.085Z",
-    "scope": "Exact main C4 parser function; imports and CLI entrypoint excluded only in the isolated test harness. Not a full repository test run.",
-    "parserGitBlob": "730094ab3ff9589d9f289d1f248241b2ef98f3a7",
-    "originalContentGitBlob": "13861d950f947f8af55e439389537190c460eb3b",
-    "repairedContentGitBlob": "17f7d393edf4015aec86524b7fd59095be8cba68",
-    "assertions": ["Original 新语法3项 label reproduces the exact error", "Replacing only 项 with 个 yields the unchanged three grammar identities", "C3 and C4 identities remain identical"],
-    "repositoryChecksModified": false
+  "latestPreflight":{
+    "runId":35966483752,
+    "runUrl":"https://github.com/kai987/japan-it-ai-daily/actions/runs/35966483752",
+    "jobId":107526101312,
+    "jobUrl":"https://github.com/kai987/japan-it-ai-daily/actions/runs/35966483752/job/107526101312",
+    "checkedCommit":"4499165e531b24bb603b5d944f8a0ae9ba2512ed",
+    "status":"completed",
+    "conclusion":"failure",
+    "logsRead":true,
+    "failedStep":"Verify daily content quality",
+    "failedCommand":"npm run quality:check",
+    "error":"Q&A 4 对应日语文章存在限制/边界，但回答未体现任何限制或验证条件",
+    "classification":"deterministic",
+    "warning":"Q&A 1 estimated 34.1 seconds at AivisSpeech speed=1.00; this is a warning, not the failing condition.",
+    "checks":{
+      "publicationRecoveryTests":"PASS: 22 tests",
+      "typecheck":"PASS: 141 files, zero errors/warnings/hints",
+      "contentIntegrity":"PASS: 44 complete four-file sets",
+      "jlptHistory":"PASS: all 44 dates/four representations, 871 lexical identities, zero cross-date duplicates",
+      "grammarHistory":"PASS: 44 dates, 86 identities, zero duplicates",
+      "studyReview":"PASS: earlier introductions, current-report evidence, frequencies, focus forms and issue numbers",
+      "structuredInterviews":"PASS: seven dates, schema/article references/exact bilingual mirror text and order",
+      "evidence":"PASS: declared traceability only; offline CI explicitly does not re-check original-source access",
+      "evidencePilot":"PASS",
+      "bilingualInterviews":"PASS",
+      "quality":"FAIL: Q&A 4 boundary missing",
+      "audio":"NOT_RUN",
+      "unitTests":"NOT_RUN",
+      "build":"NOT_RUN",
+      "browser":"NOT_RUN",
+      "csp":"NOT_RUN",
+      "pages":"SKIPPED: draft branch and failed build"
+    },
+    "currentInvocationDraftPushes":1,
+    "blindWorkflowRetries":0
   },
-  "editorialBlockers": [
-    "B has one brief bullet per article instead of the required 2-4 knowledge points and lacks Chinese-mode Japanese counterparts.",
-    "Japanese prose and teaching fields substitute many ordinary Japanese words with generic English; natural independent Japanese revision is required.",
-    "The vocabulary selection is noun/technical-compound heavy and must be reviewed against the established part-of-speech and JLPT/IT separation rules without quota padding.",
-    "Chinese technicalTerms meaningZh/contextZh currently contain Japanese explanations and need independent Chinese authoring."
+  "editorialBlockers":[
+    "The fourth canonical answer must explicitly preserve the self-reported vendor/community survey boundary, with the same repaired string in both daily Markdown mirrors and structured interviews. Revalidate speech duration, anchors and similarity; do not silence the check.",
+    "B has one brief bullet per article instead of 2-4 knowledge points and lacks Chinese-mode Japanese counterparts.",
+    "Japanese prose and teaching fields replace many ordinary Japanese words with generic English; independent natural Japanese revision is required.",
+    "New vocabulary is heavily noun/technical-compound based. Recheck part-of-speech diversity and JLPT/IT separation without manufacturing new items or changing levels to fill a quota.",
+    "Chinese technicalTerms meaningZh/contextZh currently contain Japanese explanations rather than Chinese."
   ],
-  "reuseValidation": {
-    "historySourceCommitMatches": true,
-    "verifiedSnapshotSha256": "36b41bd032b1023ae69c013e8e1eebd5365714b8b605e9667ac322b058c63268",
-    "historicalDateCoverage": "All 43 complete four-file dates from 2026-08-12 through 2026-09-23; target excluded.",
-    "lexicalRuleGitBlobMatches": "2d1ba5e3edb4a1e00f2e71d40954e9ca275d62d8",
-    "grammarRuleGitBlobMatches": "b1a3cbc62f26747ec838cac054943820ce7838cb",
-    "candidateCacheAccepted": false,
-    "reason": "history.json candidateFileHashes.dailyZh is c14e307d6e807502b9ebece2068416c56dee35a44993d54a70db785e0fd26ef0, but the actual byte-verified draft dailyZh is 00d25cdd061c2d37d50e9ade76c413af632a555a31f0de8b39bf4ae649f55eea. Do not claim that cache validates this draft."
+  "reuseValidation":{
+    "historySourceCommitMatches":true,
+    "historicalDateCoverage":"All 43 earlier complete four-file dates, 2026-08-12 through 2026-09-23; target excluded.",
+    "verifiedSnapshotSha256":"36b41bd032b1023ae69c013e8e1eebd5365714b8b605e9667ac322b058c63268",
+    "lexicalRuleGitBlob":"2d1ba5e3edb4a1e00f2e71d40954e9ca275d62d8",
+    "grammarRuleGitBlob":"b1a3cbc62f26747ec838cac054943820ce7838cb",
+    "candidateCacheAccepted":false,
+    "reason":"The saved history.json candidate hash did not match the actual pre-repair dailyZh bytes; details retained in checks-before-c4.json. The new CI confirms deterministic identity checks only. Full semantic/editorial revalidation must accompany any content revision."
   },
-  "sourceRevalidation": {
-    "result": "blocked",
-    "originalCapturesAvailableLocally": false,
-    "observedErrors": "Direct browser opens of all five original article URLs returned Cache miss or not accessible; mobile/public alternatives also failed. Container DNS lookups for GitHub, raw content and npm failed with Temporary failure in name resolution.",
-    "searchResultsAreNotFullOriginalVerification": true,
-    "upstreamConflict": "Opening the saved generic YouTube upstream URL returned a Made On YouTube 2025 page, while search indexed 2026 material; this response cannot establish 2026 original-source verification.",
-    "rootCause": "unknown",
-    "captureHashesInventedOrReplaced": false
+  "sourceRevalidation":{
+    "result":"blocked",
+    "originalCapturesAvailableLocally":false,
+    "observedErrors":"Original article direct opens and public/mobile alternatives returned Cache miss or inaccessible. The independently found official YouTube Japanese 2026 article also returned Cache miss at 2026-09-24T15:55:27+09:00. Container DNS lookups failed with Temporary failure in name resolution.",
+    "youtubeJapaneseUrl":"https://blog.youtube/intl/ja-jp/news-and-events/made-on-youtube-new-tools-power-creation-journey/",
+    "searchSnippetsUsedAsVerification":false,
+    "originalCaptureHashesInventedOrReplaced":false,
+    "rootCause":"unknown"
   },
-  "nextAction": "Apply the one-character C4 content repair to the existing draft only, inspect its exact CI result, then re-read originals and revise B/C/Japanese prose, refresh full-history validation and all six checkpoints before any promotion."
+  "publication":{"targetPublished":false,"mainUnchanged":"71841501105c069b0badf8418b2457357946f2f1","newReleaseSnapshot":null,"finalNewAndReviewCountsVerified":false},
+  "n1Handoff":{"stage":"not_started","reason":"No newly completed and verified upstream IT report; no request written."},
+  "nextAction":"Acquire the shared lease; resume the six saved draft blobs rather than regenerate from scratch. Re-read originals within the locked window, resolve Q&A 4 and the independent B/C/Japanese editorial defects, refresh complete-history semantic and artifact-hash validation, checkpoint every completed portion, then rerun the same full draft CI. Promote only after all content and source requirements pass; verify exact main Pages and snapshot before N1 handoff."
 }
