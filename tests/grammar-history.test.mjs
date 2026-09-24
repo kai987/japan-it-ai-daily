@@ -12,6 +12,11 @@ describe('daily grammar representation parsing', () => {
     expect(dailyMustGrammar(body)).toEqual(['～ことを受けて', '～得る（うる／える）', '～ようにする']);
   });
 
+  it('parses the simplified Chinese 项 counter in C-4 grammar labels', () => {
+    const body = `## C-4. 今日必背\n- **新语法3项：** ～なければならない / ～ことこそ / ～に満たない\n`;
+    expect(dailyMustGrammar(body)).toEqual(['～なければならない', '～ことこそ', '～に満たない']);
+  });
+
   it('parses the Japanese localized C-4 grammar label', () => {
     const body = `## C-4. 今日必ず覚える項目\n**新規文法：** ～ことを受けて／～得る（うる／える）／～ようにする\n`;
     expect(dailyMustGrammar(body)).toEqual(['～ことを受けて', '～得る（うる／える）', '～ようにする']);
