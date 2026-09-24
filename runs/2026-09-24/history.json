@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-24",
+  "sourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
+  "verifiedSnapshot": {
+    "artifactId": 10747745992,
+    "sha256": "36b41bd032b1023ae69c013e8e1eebd5365714b8b605e9667ac322b058c63268",
+    "sourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
+    "totalDays": 43,
+    "firstDate": "2026-08-12",
+    "lastDate": "2026-09-23",
+    "issueNumberForNextDate": 44,
+    "vocabularyIdentities": 851,
+    "grammarIdentities": 83,
+    "grammarLessonDates": 43
+  },
+  "identityRules": {
+    "lexical": {"schemaVersion": 1, "gitBlobSha": "2d1ba5e3edb4a1e00f2e71d40954e9ca275d62d8"},
+    "grammar": {"schemaVersion": 1, "gitBlobSha": "b1a3cbc62f26747ec838cac054943820ce7838cb"}
+  },
+  "completeHistoricalDates": [
+    "2026-08-12","2026-08-13","2026-08-14","2026-08-15","2026-08-16","2026-08-17","2026-08-18","2026-08-19","2026-08-20","2026-08-21","2026-08-22","2026-08-23","2026-08-24","2026-08-25","2026-08-26","2026-08-27","2026-08-28","2026-08-29","2026-08-30","2026-08-31","2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-05","2026-09-06","2026-09-07","2026-09-08","2026-09-09","2026-09-10","2026-09-11","2026-09-12","2026-09-13","2026-09-14","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-19","2026-09-20","2026-09-21","2026-09-22","2026-09-23"
+  ],
+  "dedupe": {
+    "scope": "full-history sourceCommit-bound study snapshot plus repository lexical/grammar identity rules; target date excluded from history",
+    "semanticReview": "Candidate vocabulary compounds were manually checked against the complete firstVocabulary registry and overlapping learned roots; candidates that were already learned or merely inflection/notation changes were not selected. Grammar candidates were checked against all 83 prior identities and aliases and anchored to original-source forms.",
+    "vocabularyCandidatesAccepted": ["加速器","演算資源","購読","会話型","初稿","並べ替える","同期","動的","短命","自己申告","基準線","成熟度","仕様解読","業務ロジック","再構築","再利用","承認疲れ","効果測定","実感","証明"],
+    "grammarCandidatesAccepted": ["～なければならない","～ことこそ","～に満たない"],
+    "rejectedExamples": ["中断","照合","文脈","逸脱","属人化","可視化","蓄積","生産性","に伴い","に対し"],
+    "note": "Rejected examples are already present directly or collapse to an existing identity family; no recent-N-day shortcut was used. Final uniqueness and review selection remain subject to the repository's full-history CI checks."
+  },
+  "candidateFileHashes": {
+    "dailyZh": "c14e307d6e807502b9ebece2068416c56dee35a44993d54a70db785e0fd26ef0",
+    "dailyJa": "de3737029aa5c0e410c2d39c1a19f9e5afcc4c77b2922f319faa4472c6e3a190",
+    "studyZh": "36fce4b8b74ca651386893d5b832fa0705773a77fb177f09f50545624bee362e",
+    "studyJa": "78868dfe33db910d2726858cba35fc08a5ec7b196e5b4e974449ef489152dcdb",
+    "evidence": "6a8a4613da332fb8e24fce88c73dc3f8189f14c08c57a46f986fa12a9a30dbb3",
+    "interviews": "23c0b79a193d8553e98c1a9b84203c315e7003732511251a809dd93a60123f43"
+  }
+}
