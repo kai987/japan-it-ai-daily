@@ -84,7 +84,7 @@ const tocHeadings = [
   </div>
 
   {locale === "zh" && <LegacyReportEnhancements />}
-  <ReportSpeechEnhancer />
+  {locale === "ja" && <ReportSpeechEnhancer />}
   <StudyFocusTarget />
   <style>
     :global(.prose.has-duplicate-lead-title > .tags + h1){
