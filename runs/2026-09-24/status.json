@@ -10,7 +10,7 @@
     "to": "2026-09-24T10:00:00+09:00"
   },
   "createdAt": "2026-09-24T10:30:30+09:00",
-  "updatedAt": "2026-09-24T07:23:40.000Z",
+  "updatedAt": "2026-09-24T07:25:26.000Z",
   "completedArtifacts": [
     "sources/2026-09-24.json",
     "runs/2026-09-24/history.json",
@@ -26,7 +26,7 @@
   ],
   "artifactValidation": "Exact Git blob identities are recorded in checks.json. Preserved drafts are not publication approval; history candidate-cache hash mismatch and source-access blockers remain explicit.",
   "resumeFrom": "sources_verified",
-  "nextAction": "wait_for_exact_draft_CI_then_read_job_steps_and_logs",
+  "nextAction": "wait_for_draft_run_35969526409",
   "lastError": null,
   "takeover": {
     "previousOwner": "it-recovery",
@@ -68,20 +68,21 @@
   },
   "draft": {
     "branch": "draft/daily-2026-09-24-clean",
-    "commit": "c4872efdf979ba2d20ed45716dc72daa1671ce1c",
-    "tree": "140efc010883e2c34b844c42972e382fdd14fe89",
+    "commit": "78be5ad9946306483ab8e14e1164304421a20e92",
+    "tree": "478d30b1f113442137105f716961b23cd6d8e19e",
     "expectedIssueNumber": 44,
-    "build": "pending",
+    "build": "in_progress",
     "deploy": "skipped_on_draft",
     "readyForPromotion": false,
     "contentBlobs": {
       "src/content/daily/2026-09-24.md": "a9acbc2203676a16a72f8a1ab942791abc30cd73",
-      "src/content/daily-ja/2026-09-24.md": "777bf74a1c36aa70a9c2f4ea0ee607c587704c92",
+      "src/content/daily-ja/2026-09-24.md": "85a533e4cf990eda8206d444e034614a9fd5174f",
       "src/content/japanese/2026-09-24.md": "d97bab6c4eb10b17ca2823cdd09bea06b06cc572",
       "src/content/japanese-ja/2026-09-24.md": "4b975bc15e6fd7f70f0b64b528616e149a2b2f04",
       "src/content/evidence/2026-09-24.json": "ae1bc4f7f5744bbb037b3ef0e998733bff51e6a9",
       "src/data/interviews/2026-09-24.json": "251086943ccc2cd6f7934a2e4d1262238a6fa8b7"
-    }
+    },
+    "workflowRunId": 35969526409
   },
   "n1Handoff": {
     "stage": "not_started",
