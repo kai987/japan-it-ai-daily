@@ -47,6 +47,18 @@ test('expired leases can be taken over but stale workers cannot renew', () => {
   assert.throws(() => renewLease(lease, 'one', later));
   assert.equal(renewLease(second, 'two', later).token, 'two');
 });
+test('active unique publisher blocks a second author even after the author lease is released', () => {
+  const publisherRun = {
+    id: 456,
+    branch: POLICY.requestBranch,
+    path: POLICY.publisherWorkflowPath,
+    status: 'in_progress',
+  };
+  const plan = planPublication(observed({ publisherRun }));
+  assert.equal(plan.action, 'wait');
+  assert.equal(plan.reason, 'publisher_in_progress');
+  assert.equal(plan.runId, publisherRun.id);
+});
 test('active Pages run is not cancelled or duplicated', () => assert.equal(planPublication(observed({ latestRun: { ...run, status: 'in_progress' } })).reason, 'main_pages_run_in_progress'));
 test('required evidence and structured interviews are not forgotten', () => assert.equal(planPublication(observed({ inventory: { ...inventory, files: requiredFiles(date) } })).reason, 'missing_evidence_or_interviews'));
 test('no rerun without the exact failed run logs', () => {

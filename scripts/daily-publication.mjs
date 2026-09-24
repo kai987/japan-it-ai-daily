@@ -8,7 +8,11 @@ export const POLICY = Object.freeze({
   recoveryFrom: '2026-09-22', timeZone: 'Asia/Tokyo',
   dueHour: 10, recoveryGraceMinutes: 60, leaseMinutes: 45,
   progressBranch: 'automation/daily-progress',
-  workflowPath: '.github/workflows/deploy.yml', maxTransientAttempts: 3,
+  requestBranch: 'automation/daily-publish-request',
+  requestPath: '.github/daily-publication-request.json',
+  workflowPath: '.github/workflows/deploy.yml',
+  publisherWorkflowPath: '.github/workflows/publish-daily.yml',
+  maxTransientAttempts: 3,
 });
 const ACTIVE = new Set(['queued', 'pending', 'requested', 'waiting', 'in_progress']);
 const SHA = /^[a-f0-9]{40}$/;
@@ -101,7 +105,7 @@ export function releaseVerified(release, sourceCommit, targetDate) {
     Array.isArray(release.grammarLessonDates) && release.grammarLessonDates.includes(targetDate));
 }
 export function planPublication(observation) {
-  const { now, inventory, checkpoints = {}, lease, release, latestRun, failure } = observation;
+  const { now, inventory, checkpoints = {}, lease, release, latestRun, publisherRun, failure } = observation;
   instant(now);
   // A failed/truncated API read is not evidence that the file does not exist.
   if (!inventory?.complete || !SHA.test(inventory.sourceCommit || '') || !Array.isArray(inventory.files)) {
@@ -118,6 +122,11 @@ export function planPublication(observation) {
   const targetDate = pending[0];
   const base = { targetDate, pendingDates: pending, sourceCommit: inventory.sourceCommit };
   if (leaseActive(lease, now)) return { ...base, action: 'wait', reason: 'active_publisher', owner: lease.owner };
+  if (publisherRun?.branch === POLICY.requestBranch &&
+      publisherRun.path === POLICY.publisherWorkflowPath &&
+      ACTIVE.has(publisherRun.status)) {
+    return { ...base, action: 'wait', reason: 'publisher_in_progress', runId: publisherRun.id };
+  }
   if (latestRun?.branch === 'main' && latestRun.path === POLICY.workflowPath && ACTIVE.has(latestRun.status)) {
     return { ...base, action: 'wait', reason: 'main_pages_run_in_progress', runId: latestRun.id };
   }

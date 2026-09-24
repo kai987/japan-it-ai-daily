@@ -25,18 +25,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
+          fetch-depth: 2
           persist-credentials: false
       - name: Setup Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 24
           cache: npm
+      - name: Verify main daily publisher ownership
+        if: github.ref == 'refs/heads/main'
+        run: node scripts/verify-publisher-origin.mjs
       - name: Install dependencies
         run: npm ci
       - name: Audit dependencies
         run: npm audit --audit-level=high
       - name: Verify publication recovery
-        run: node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs
+        run: node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs
       - name: Type check
         run: npm run check
       - name: Verify content integrity

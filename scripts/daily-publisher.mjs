@@ -3,9 +3,9 @@ import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { validDate, requiredFiles, requiredSidecars, POLICY } from './daily-publication.mjs';
 
-export const REQUEST_BRANCH = 'automation/daily-publish-request';
-export const REQUEST_PATH = '.github/daily-publication-request.json';
-export const PUBLISHER_WORKFLOW_PATH = '.github/workflows/publish-daily.yml';
+export const REQUEST_BRANCH = POLICY.requestBranch;
+export const REQUEST_PATH = POLICY.requestPath;
+export const PUBLISHER_WORKFLOW_PATH = POLICY.publisherWorkflowPath;
 export const PLATFORM_REPAIR_ALLOWLIST = Object.freeze([
   'src/components/ReportSpeechEnhancer.astro',
   'src/components/pages/ReportPage.astro',

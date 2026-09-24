@@ -76,7 +76,7 @@ jobs:
       - name: Audit dependencies
         run: npm audit --audit-level=high
       - name: Verify publication state machine
-        run: node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs
+        run: node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs
       - name: Type check
         run: npm run check
       - name: Verify content integrity
@@ -116,6 +116,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add --pathspec-from-file=/tmp/daily-publication-paths.txt
           git diff --cached --quiet && { echo "request produces no publication change"; exit 1; }
-          git commit -m "content: publish verified Japan IT/AI daily $TARGET_DATE"
+          git commit -m "content: publish verified Japan IT/AI daily $TARGET_DATE" \
+            -m "Daily-Publisher: .github/workflows/publish-daily.yml" \
+            -m "Publication-Request: $REQUEST_ID"
           git push origin HEAD:main
           echo "Published commit $(git rev-parse HEAD) from request $REQUEST_ID"
