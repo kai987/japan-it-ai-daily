@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-24",
+  "updatedAt": "2026-09-24T06:47:55.384Z",
+  "sourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
+  "checkpoint": {
+    "draftCommit": "a429de66d6c7fd8a87ac3d43b6e2b3f94903628f",
+    "draftBranch": "draft/daily-2026-09-24-clean",
+    "pathPrefix": "runs/2026-09-24/drafts/",
+    "files": 6,
+    "copyMethod": "Existing Git blobs copied without modifying their bytes; this is preservation, not editorial approval.",
+    "readyForPromotion": false
+  },
+  "failedPreflight": {
+    "runId": 35960722999,
+    "jobId": 107508506376,
+    "runUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35960722999",
+    "jobUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/35960722999/job/107508506376",
+    "checkedCommit": "a429de66d6c7fd8a87ac3d43b6e2b3f94903628f",
+    "step": "Verify content integrity",
+    "command": "npm run content:integrity:check",
+    "logsRead": true,
+    "error": "Error: Unrecognized C4 grammar selection",
+    "errorLocation": "scripts/check-grammar-history.mjs:52, dailyMustGrammar",
+    "classification": "deterministic",
+    "observedPriorPasses": ["22 publication recovery tests", "astro check: 141 files, 0 errors", "content integrity: 44 four-file sets, 0 errors", "JLPT history: 44 dates, 871 lexical identities, 0 cross-date duplicates"],
+    "notEstablishedByThisRun": ["grammar history completion", "study review", "structured interviews", "evidence", "quality", "audio", "unit tests", "build", "browser", "CSP", "Pages"]
+  },
+  "localRegression": {
+    "result": "PASS",
+    "checkedAt": "2026-09-24T06:47:07.085Z",
+    "scope": "Exact main C4 parser function; imports and CLI entrypoint excluded only in the isolated test harness. Not a full repository test run.",
+    "parserGitBlob": "730094ab3ff9589d9f289d1f248241b2ef98f3a7",
+    "originalContentGitBlob": "13861d950f947f8af55e439389537190c460eb3b",
+    "repairedContentGitBlob": "17f7d393edf4015aec86524b7fd59095be8cba68",
+    "assertions": ["Original 新语法3项 label reproduces the exact error", "Replacing only 项 with 个 yields the unchanged three grammar identities", "C3 and C4 identities remain identical"],
+    "repositoryChecksModified": false
+  },
+  "editorialBlockers": [
+    "B has one brief bullet per article instead of the required 2-4 knowledge points and lacks Chinese-mode Japanese counterparts.",
+    "Japanese prose and teaching fields substitute many ordinary Japanese words with generic English; natural independent Japanese revision is required.",
+    "The vocabulary selection is noun/technical-compound heavy and must be reviewed against the established part-of-speech and JLPT/IT separation rules without quota padding.",
+    "Chinese technicalTerms meaningZh/contextZh currently contain Japanese explanations and need independent Chinese authoring."
+  ],
+  "reuseValidation": {
+    "historySourceCommitMatches": true,
+    "verifiedSnapshotSha256": "36b41bd032b1023ae69c013e8e1eebd5365714b8b605e9667ac322b058c63268",
+    "historicalDateCoverage": "All 43 complete four-file dates from 2026-08-12 through 2026-09-23; target excluded.",
+    "lexicalRuleGitBlobMatches": "2d1ba5e3edb4a1e00f2e71d40954e9ca275d62d8",
+    "grammarRuleGitBlobMatches": "b1a3cbc62f26747ec838cac054943820ce7838cb",
+    "candidateCacheAccepted": false,
+    "reason": "history.json candidateFileHashes.dailyZh is c14e307d6e807502b9ebece2068416c56dee35a44993d54a70db785e0fd26ef0, but the actual byte-verified draft dailyZh is 00d25cdd061c2d37d50e9ade76c413af632a555a31f0de8b39bf4ae649f55eea. Do not claim that cache validates this draft."
+  },
+  "sourceRevalidation": {
+    "result": "blocked",
+    "originalCapturesAvailableLocally": false,
+    "observedErrors": "Direct browser opens of all five original article URLs returned Cache miss or not accessible; mobile/public alternatives also failed. Container DNS lookups for GitHub, raw content and npm failed with Temporary failure in name resolution.",
+    "searchResultsAreNotFullOriginalVerification": true,
+    "upstreamConflict": "Opening the saved generic YouTube upstream URL returned a Made On YouTube 2025 page, while search indexed 2026 material; this response cannot establish 2026 original-source verification.",
+    "rootCause": "unknown",
+    "captureHashesInventedOrReplaced": false
+  },
+  "nextAction": "Apply the one-character C4 content repair to the existing draft only, inspect its exact CI result, then re-read originals and revise B/C/Japanese prose, refresh full-history validation and all six checkpoints before any promotion."
+}
