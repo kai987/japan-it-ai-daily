@@ -134,7 +134,7 @@
     const interviewHeading = headings.find((heading) =>
       (heading.textContent || '').includes('面接で使えるポイント'));
 
-    if (interviewHeading instanceof HTMLHeadingElement) {
+    if (document.documentElement.dataset.locale !== 'zh' && interviewHeading instanceof HTMLHeadingElement) {
       const nodes = sectionNodes(interviewHeading);
       if (enhanceLegacyQuotes(nodes, 'interview') === 0) enhancePlainInterview(nodes);
     }
