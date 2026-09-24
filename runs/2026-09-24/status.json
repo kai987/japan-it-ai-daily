@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-24",
-  "stage": "preflight_passed",
-  "stageNote": "Exact clean draft commit passed the complete deploy.yml build gate; draft deploy remained skipped by branch policy.",
+  "stage": "deploying",
+  "stageNote": "Verified target paths were promoted atomically to main; exact release commit is running the full production Pages workflow.",
   "leaseToken": "chatgpt-manual-repair-20260924T070124Z-qa4",
   "sourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
   "sourceWindow": {
@@ -10,7 +10,7 @@
     "to": "2026-09-24T10:00:00+09:00"
   },
   "createdAt": "2026-09-24T10:30:30+09:00",
-  "updatedAt": "2026-09-24T08:52:38.000Z",
+  "updatedAt": "2026-09-24T08:54:39.000Z",
   "completedArtifacts": [
     "sources/2026-09-24.json",
     "runs/2026-09-24/history.json",
@@ -25,8 +25,8 @@
     "runs/2026-09-24/checks.json"
   ],
   "artifactValidation": "Exact Git blob identities are recorded in checks.json. Preserved drafts are not publication approval; history candidate-cache hash mismatch and source-access blockers remain explicit.",
-  "resumeFrom": "preflight_passed",
-  "nextAction": "promote_verified_target_paths_to_main",
+  "resumeFrom": "deploying",
+  "nextAction": "verify_exact_main_pages_and_snapshot",
   "lastError": null,
   "takeover": {
     "previousOwner": "it-recovery",
@@ -107,5 +107,7 @@
     "token": "chatgpt-manual-repair-20260924T070124Z-qa4",
     "cancelledAt": "2026-09-24T08:31:38.000Z",
     "reason": "user_requested_cancel"
-  }
+  },
+  "releaseCommit": "384c81dfcf7ab63831d6ff2a1c5488be66576705",
+  "releaseRunId": 35977925568
 }
