@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-24",
-  "stage": "sources_verified",
-  "stageNote": "Revised six-file draft is atomically committed on the clean draft branch; source scope has been revalidated. Draft is not preflight-approved until the exact CI commit passes.",
+  "stage": "preflight_passed",
+  "stageNote": "Exact clean draft commit passed the complete deploy.yml build gate; draft deploy remained skipped by branch policy.",
   "leaseToken": "chatgpt-manual-repair-20260924T070124Z-qa4",
   "sourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
   "sourceWindow": {
@@ -10,7 +10,7 @@
     "to": "2026-09-24T10:00:00+09:00"
   },
   "createdAt": "2026-09-24T10:30:30+09:00",
-  "updatedAt": "2026-09-24T08:31:38.000Z",
+  "updatedAt": "2026-09-24T08:52:38.000Z",
   "completedArtifacts": [
     "sources/2026-09-24.json",
     "runs/2026-09-24/history.json",
@@ -25,13 +25,9 @@
     "runs/2026-09-24/checks.json"
   ],
   "artifactValidation": "Exact Git blob identities are recorded in checks.json. Preserved drafts are not publication approval; history candidate-cache hash mismatch and source-access blockers remain explicit.",
-  "resumeFrom": "sources_verified",
-  "nextAction": "await_next_authorized_publication_run",
-  "lastError": {
-    "kind": "cancelled",
-    "at": "2026-09-24T08:31:38.000Z",
-    "message": "chatgpt-manual-repair was cancelled by explicit user request; no active GitHub Actions run remained at cancellation time."
-  },
+  "resumeFrom": "preflight_passed",
+  "nextAction": "promote_verified_target_paths_to_main",
+  "lastError": null,
   "takeover": {
     "previousOwner": "it-recovery",
     "previousLeaseExpiredAt": "2026-09-24T06:22:00Z",
@@ -72,21 +68,23 @@
   },
   "draft": {
     "branch": "draft/daily-2026-09-24-clean",
-    "commit": "78be5ad9946306483ab8e14e1164304421a20e92",
-    "tree": "478d30b1f113442137105f716961b23cd6d8e19e",
-    "expectedIssueNumber": 44,
-    "build": "in_progress",
-    "deploy": "skipped_on_draft",
-    "readyForPromotion": false,
-    "contentBlobs": {
-      "src/content/daily/2026-09-24.md": "a9acbc2203676a16a72f8a1ab942791abc30cd73",
-      "src/content/daily-ja/2026-09-24.md": "85a533e4cf990eda8206d444e034614a9fd5174f",
-      "src/content/japanese/2026-09-24.md": "d97bab6c4eb10b17ca2823cdd09bea06b06cc572",
-      "src/content/japanese-ja/2026-09-24.md": "4b975bc15e6fd7f70f0b64b528616e149a2b2f04",
-      "src/content/evidence/2026-09-24.json": "ae1bc4f7f5744bbb037b3ef0e998733bff51e6a9",
-      "src/data/interviews/2026-09-24.json": "251086943ccc2cd6f7934a2e4d1262238a6fa8b7"
+    "commit": "d2585151037247d43e19d16e952ae2c16ab2368f",
+    "runId": 35977508086,
+    "conclusion": "success",
+    "checks": {
+      "typecheck": "success",
+      "contentIntegrity": "success",
+      "evidence": "success",
+      "bilingualInterview": "success",
+      "quality": "success",
+      "audio": "success",
+      "unitTests": "success",
+      "build": "success",
+      "browser": "success",
+      "csp": "success",
+      "snapshotExport": "success"
     },
-    "workflowRunId": 35969526409
+    "snapshotArtifactId": 10799091347
   },
   "n1Handoff": {
     "stage": "not_started",
