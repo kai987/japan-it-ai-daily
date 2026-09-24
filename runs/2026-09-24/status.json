@@ -2,24 +2,24 @@
   "schemaVersion": 1,
   "targetDate": "2026-09-24",
   "stage": "sources_verified",
-  "leaseToken": "daily-20260924-76e85f7bce9e4eba8d7568e455668df9",
+  "leaseToken": "it-recovery-20260924-052103z-a14c",
   "sourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
   "sourceWindow": {"from": "2026-09-23T10:00:00+09:00", "to": "2026-09-24T10:00:00+09:00"},
   "createdAt": "2026-09-24T10:30:30+09:00",
-  "updatedAt": "2026-09-24T10:36:00+09:00",
+  "updatedAt": "2026-09-24T14:21:03+09:00",
   "completedArtifacts": ["sources/2026-09-24.json"],
   "resumeFrom": "sources_verified",
   "nextAction": "scan_history_and_author_learning",
   "lastError": null,
   "planner": {
-    "mode": "daily",
-    "observedAt": "2026-09-24T10:30:30+09:00",
+    "mode": "recovery",
+    "observedAt": "2026-09-24T14:20:18+09:00",
     "targetDate": "2026-09-24",
     "pendingDates": ["2026-09-24"],
     "sourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
-    "action": "register_and_generate",
+    "action": "resume_generation",
     "reason": "no_content_commit",
     "missing": ["src/content/daily/2026-09-24.md","src/content/japanese/2026-09-24.md","src/content/daily-ja/2026-09-24.md","src/content/japanese-ja/2026-09-24.md"],
-    "resumeFrom": "registered"
+    "resumeFrom": "sources_verified"
   }
 }
