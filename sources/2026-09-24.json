@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-24",
+  "sourceCommit": "71841501105c069b0badf8418b2457357946f2f1",
+  "sourceWindow": {
+    "from": "2026-09-23T10:00:00+09:00",
+    "to": "2026-09-24T10:00:00+09:00"
+  },
+  "capturedAt": "2026-09-24T10:33:35+09:00",
+  "previousTop5Excluded": [
+    "OpenAI、「GPT-6 Sol」と「GPT-6 Luna」公開　API料金は前世代の半額に",
+    "AIは新規開発より既存改修が苦手？より得意？　Android開発の実力を測る「Android Bench 2.0」が公開",
+    "たった1つの拡張機能で5つのWebブラウザーのAIを乗っ取れちゃう!?　「BragJack」脆弱性",
+    "OpenAI、数学者の独立諮問グループと連携　内部モデルは「100件超の未解決問題を解決」",
+    "ネットワーク障害による残業が「ほぼゼロ」に　情シス担当“実質2人”の病院は何を変えた？"
+  ],
+  "articles": [
+    {
+      "articleId": "2026-09-24-top-1",
+      "title": "Google AIサブスクに「Colab」有料特典をバンドル　「高性能GPU」にアクセス可能に",
+      "source": "ITmedia AI＋",
+      "publishedAt": "2026-09-24T09:47:00+09:00",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2609/24/2000001685/",
+      "upstreamUrl": "https://developers.googleblog.com/colab-is-now-part-of-your-google-ai-plan/",
+      "topic": "Google Colab / Google AI Subscription / GPU / Background Execution",
+      "access": "full+upstream",
+      "snapshotSha256": "6f8b8e066a9f59489777983bb15e3df0f40afbeee9d4baace0d26c70f78c95c4",
+      "facts": [
+        "Google AI subscribers are being given premium Colab benefits including priority access to faster accelerators and more powerful machines.",
+        "Google AI Ultra adds uninterrupted background execution and Premium GPU access so long-running training jobs can continue without keeping a browser tab open.",
+        "Existing Colab subscriptions are unchanged and Google says the benefits can be stacked with Google AI subscription benefits.",
+        "The new benefits are rolling out over the next few weeks in Colab-supported countries."
+      ],
+      "boundary": "This is a subscription entitlement and priority-access change, not a guarantee of unlimited accelerator capacity. Uninterrupted background execution and Premium GPU access are specifically described for Google AI Ultra, and rollout is gradual."
+    },
+    {
+      "articleId": "2026-09-24-top-2",
+      "title": "YouTube、クリエイター向け新機能を多数発表　Geminiによる会話型編集、動画のA/Bテスト、ライブ配信者のマッチングなど",
+      "source": "ITmedia NEWS",
+      "publishedAt": "2026-09-24T07:14:00+09:00",
+      "url": "https://www.itmedia.co.jp/news/article/2609/24/2000001682/",
+      "upstreamUrl": "https://blog.youtube/madeonyoutube/",
+      "topic": "YouTube / Gemini / Conversational Editing / A/B Testing / Creator Tools",
+      "access": "full+upstream",
+      "snapshotSha256": "a082033b30b2bbf7795486f0e45068f47bcfbc5d984c09e5a9c9f0c77b8c8e87",
+      "facts": [
+        "YouTube announced a Gemini-powered conversational editing assistant for Shorts and YouTube Create that can draft an initial edit and then suggest reordering, trimming and beat synchronization through chat.",
+        "Creators can move back and forth between the conversational assistant and manual timeline editing.",
+        "YouTube says a forthcoming video A/B test can compare up to three edited versions, extending its earlier title and thumbnail testing.",
+        "YouTube also announced AI comment moderation, creator-live matching and other creator tools, but timing and regional availability were not specified for most functions."
+      ],
+      "boundary": "Most features were announced rather than universally released, and timing/region are unspecified for many of them. YouTube's usage and commerce figures are vendor-reported adoption metrics, not independent outcome measurements."
+    },
+    {
+      "articleId": "2026-09-24-top-3",
+      "title": "「ヒューマン・イン・ザ・ループ万能説」崩壊　AIエージェント時代に企業が迫られる“防御の再設計”",
+      "source": "＠IT",
+      "publishedAt": "2026-09-23T17:00:00+09:00",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/23/news006.html",
+      "upstreamUrl": null,
+      "topic": "AI Agent Security / JIT Privilege / Least Privilege / Human in the Loop / Dynamic Policy",
+      "access": "full",
+      "snapshotSha256": "fa8d1a4b998d6876bf02a5fb5760e80b0baece44f5436ac272e329f35357b5ef",
+      "facts": [
+        "The article argues that agent authorization needs semantic and task-level context rather than relying only on department, title or static metadata.",
+        "It recommends just-in-time and short-lived least privilege so agents receive only the permissions needed for the current task rather than broad standing access.",
+        "The article describes a flight-plan style model in which allowed behavior is pre-defined and automation stops when behavior deviates from that plan.",
+        "Human approval is treated as one control rather than a universal safety boundary because machine-speed actions can outpace manual review and repeated prompts can create approval fatigue."
+      ],
+      "boundary": "This is an analytical Japanese article synthesizing external guidance and threat examples. Claims about specific external incidents or NIST guidance remain attributed secondary-source claims here unless separately reproduced from their originals; the implementation advice is not a claim that HITL is never useful."
+    },
+    {
+      "articleId": "2026-09-24-top-4",
+      "title": "開発者の84％が「AIコーディングによる生産性向上」を実感――だがその効果をどう測定？",
+      "source": "＠IT",
+      "publishedAt": "2026-09-23T11:00:00+09:00",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/23/news011.html",
+      "upstreamUrl": "https://gitkraken.com/reports/state-of-ai",
+      "topic": "AI Coding / Engineering Productivity / Agent Adoption / Measurement / DORA",
+      "access": "full+upstream",
+      "snapshotSha256": "c970629f0a90f1617d6ce2f0e38b7e5b5c299ce1ecebc697a5ea18a5e42a5f42",
+      "facts": [
+        "GitKraken surveyed 554 developers and engineering leaders in its customer and user community during 2026.",
+        "The report says 96.4% of teams have adopted AI coding tools, 84% of developers feel more productive and 43% say they feel much more productive.",
+        "Only 20% are described as able to measure AI productivity impact; 39% of organizations have no measurement method and another 33% rely on developer self-report.",
+        "The report recommends establishing delivery and quality baselines and measuring agents on cost, cycle time, review burden and shipped-output quality rather than relying only on perceived speed."
+      ],
+      "boundary": "This is a vendor/community survey and the productivity result is self-reported, not a randomized causal measurement. GitKraken states that its audience skews toward developers already engaged with modern Git and engineering tooling, and some subgroups should be read directionally."
+    },
+    {
+      "articleId": "2026-09-24-top-5",
+      "title": "“作成者しか分からないExcelマクロ”の仕様解読、AIで「3日→30分」に　IT企業はどう実現？",
+      "source": "＠IT",
+      "publishedAt": "2026-09-23T11:00:00+09:00",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/23/news014.html",
+      "upstreamUrl": "https://jp.newsroom.ibm.com/2026-08-19-NIC-Partners-and-IBM-Japan-Use-IBM-Bob",
+      "topic": "IBM Bob / Legacy Modernization / Excel VBA / Code Comprehension / Web Migration",
+      "access": "full+upstream",
+      "snapshotSha256": "80e9340435cddd2cc82fdc96a09fa17d04b413dfc87643dabd0fd40bf37e23dc",
+      "facts": [
+        "NICP used IBM Bob to analyze a legacy Excel/VBA quotation macro and generate documentation describing code structure, processing and data structures.",
+        "NICP and IBM report that understanding the macro specification fell from an average of one to three days to about 30 minutes in this case.",
+        "A broader migration that staff had estimated at roughly six weeks was completed in about 2.5 days in the reported project, with staff reviewing and testing generated work.",
+        "The resulting logic was rebuilt as a web application and the organization says data can now be accumulated, searched and reused."
+      ],
+      "boundary": "This is one company case reported by NICP and IBM, not a controlled benchmark. The one-to-three-day and six-week baselines include internal estimates, human review and testing remained necessary, and the result should not be generalized to arbitrary legacy systems."
+    }
+  ]
+}
