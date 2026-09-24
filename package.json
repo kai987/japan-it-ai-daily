@@ -40,7 +40,8 @@
     "interview:check": "node scripts/validate-structured-interviews.mjs",
     "interview:render": "node scripts/render-interview-sections.mjs",
     "deployment:prepare": "node scripts/verify-deployment.mjs --prepare dist",
-    "deployment:verify": "node scripts/verify-deployment.mjs"
+    "deployment:verify": "node scripts/verify-deployment.mjs",
+    "test:browser:speech-smoke": "playwright test tests/browser/speech-smoke.spec.ts"
   },
   "dependencies": {
     "@astrojs/rss": "4.0.19",

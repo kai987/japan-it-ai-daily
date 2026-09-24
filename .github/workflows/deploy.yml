@@ -9,7 +9,7 @@ permissions: {}
 
 concurrency:
   group: pages-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -36,7 +36,7 @@ jobs:
       - name: Audit dependencies
         run: npm audit --audit-level=high
       - name: Verify publication recovery
-        run: node --test tests/publication/recovery.node.mjs
+        run: node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs
       - name: Type check
         run: npm run check
       - name: Verify content integrity
@@ -57,6 +57,8 @@ jobs:
         run: npm run build
       - name: Install browser for regression checks
         run: npx playwright install --with-deps chromium
+      - name: Verify report speech smoke
+        run: npm run test:browser:speech-smoke
       - name: Verify browser interactions
         run: npm run test:browser
       - name: Retain learning UI verification

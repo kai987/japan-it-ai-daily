@@ -1,0 +1,121 @@
+name: Publish verified daily request
+
+on:
+  push:
+    branches: [automation/daily-publish-request]
+    paths:
+      - .github/daily-publication-request.json
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: japan-it-ai-daily-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    permissions:
+      contents: write
+      actions: read
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_AUDIO_BASE_URL: ${{ vars.PUBLIC_AUDIO_BASE_URL || 'https://pub-7561025e67be4103ac4bafb331864381.r2.dev' }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Load and validate publication request
+        run: |
+          git fetch --no-tags origin automation/daily-publish-request:refs/remotes/origin/automation/daily-publish-request
+          git show origin/automation/daily-publish-request:.github/daily-publication-request.json > /tmp/daily-publication-request.json
+          node scripts/daily-publisher.mjs validate /tmp/daily-publication-request.json >/dev/null
+          node scripts/daily-publisher.mjs env /tmp/daily-publication-request.json >> "$GITHUB_ENV"
+          node scripts/daily-publisher.mjs paths /tmp/daily-publication-request.json > /tmp/daily-publication-paths.txt
+      - name: Verify base commit, draft commit and exact successful preflight
+        run: |
+          test "$(git rev-parse HEAD)" = "$BASE_COMMIT"
+          git fetch --no-tags origin "$DRAFT_BRANCH"
+          git cat-file -e "$DRAFT_COMMIT^{commit}"
+          git merge-base --is-ancestor "$BASE_COMMIT" "$DRAFT_COMMIT"
+          gh api "/repos/$GITHUB_REPOSITORY/actions/runs/$PREFLIGHT_RUN_ID" > /tmp/preflight.json
+          node --input-type=module - <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const run = JSON.parse(readFileSync('/tmp/preflight.json', 'utf8'));
+          const expected = {
+            sha: process.env.DRAFT_COMMIT,
+            branch: process.env.DRAFT_BRANCH,
+            path: process.env.PREFLIGHT_WORKFLOW_PATH,
+          };
+          if (run.head_sha !== expected.sha || run.head_branch !== expected.branch ||
+              run.path !== expected.path || run.status !== 'completed' || run.conclusion !== 'success') {
+            throw new Error('Exact draft preflight run is not a completed success');
+          }
+          NODE
+      - name: Materialize only authorized candidate paths
+        run: |
+          while IFS= read -r path; do
+            test -n "$path"
+            git checkout "$DRAFT_COMMIT" -- "$path"
+          done < /tmp/daily-publication-paths.txt
+          node scripts/daily-publisher.mjs candidate /tmp/daily-publication-request.json
+          test -n "$(git diff --name-only "$BASE_COMMIT" --)"
+          unexpected="$(comm -23 <(git diff --name-only "$BASE_COMMIT" -- | sort) <(sort /tmp/daily-publication-paths.txt))"
+          test -z "$unexpected" || { printf 'Unexpected candidate paths:\n%s\n' "$unexpected"; exit 1; }
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
+      - name: Verify publication state machine
+        run: node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs
+      - name: Type check
+        run: npm run check
+      - name: Verify content integrity
+        run: npm run content:integrity:check
+      - name: Verify original-source evidence
+        run: npm run evidence:check && npm run evidence:pilot
+      - name: Verify bilingual interview Q&A
+        run: npm run bilingual:check-interview
+      - name: Verify daily content quality
+        run: npm run quality:check
+      - name: Check audio scripts
+        run: npm run audio:check
+      - name: Verify recorded audio URL versions
+        run: npm run audio:versions:check
+      - name: Run unit tests
+        run: npm test
+      - name: Build candidate
+        run: npm run build
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+      - name: Fast report speech smoke
+        run: npm run test:browser:speech-smoke
+      - name: Full browser regression
+        run: npm run test:browser
+      - name: Strip CDN-hosted MP3 from artifact
+        run: npm run audio:strip-dist
+      - name: Verify CSP
+        run: npm run security:check
+      - name: Commit and fast-forward main
+        run: |
+          git fetch --no-tags origin main
+          test "$(git rev-parse origin/main)" = "$BASE_COMMIT" || {
+            echo "main changed after request creation; refusing non-CAS promotion"
+            exit 1
+          }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --pathspec-from-file=/tmp/daily-publication-paths.txt
+          git diff --cached --quiet && { echo "request produces no publication change"; exit 1; }
+          git commit -m "content: publish verified Japan IT/AI daily $TARGET_DATE"
+          git push origin HEAD:main
+          echo "Published commit $(git rev-parse HEAD) from request $REQUEST_ID"
