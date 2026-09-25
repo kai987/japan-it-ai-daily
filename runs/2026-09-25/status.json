@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-25",
-  "stage": "drafts_ready",
+  "stage": "request_ready",
   "leaseToken": "n1-sync-20260925T020300Z",
   "sourceCommit": "56591391c9e15759a00f27488000ef5657d6c8d3",
   "sourceWindow": {
@@ -9,7 +9,7 @@
     "to": "2026-09-25T10:00:00+09:00"
   },
   "createdAt": "2026-09-25T11:03:00+09:00",
-  "updatedAt": "2026-09-25T07:31:04.580Z",
+  "updatedAt": "2026-09-25T07:41:20.104Z",
   "completedArtifacts": [
     "src/content/daily/2026-09-25.md",
     "src/content/daily-ja/2026-09-25.md",
@@ -18,19 +18,20 @@
     "src/content/evidence/2026-09-25.json",
     "src/data/interviews/2026-09-25.json"
   ],
-  "resumeFrom": "drafts_ready",
-  "nextAction": "Evaluate exact preflight run 36108018712 for draft commit 498c8b4d25bce680d8d2a0ad457e6fb21607bc4d; if it fails, read that run's exact failed job/step logs before repair.",
-  "lastError": {
-    "runId": 36107662614,
-    "jobId": 107983789482,
-    "step": "Verify content integrity / jlpt:check",
-    "message": "daily/2026-09-25 C-1: bilingual identity mismatch",
-    "repairedBy": "498c8b4d25bce680d8d2a0ad457e6fb21607bc4d"
-  },
+  "resumeFrom": "request_ready",
+  "nextAction": "Submit the exact checkpointed request to automation/daily-publish-request if the publisher slot remains free, then yield to the unique publisher workflow.",
+  "lastError": null,
   "publication": null,
   "draft": {
     "branch": "draft/daily-2026-09-25",
-    "commit": "498c8b4d25bce680d8d2a0ad457e6fb21607bc4d",
-    "preflightRunId": 36108018712
+    "commit": "8d73b87d722c5add463e9feba1295c32b8870d60",
+    "preflightRunId": 36108618435
+  },
+  "publicationRequest": {
+    "requestId": "daily-2026-09-25-8d73b87d722c",
+    "baseCommit": "56591391c9e15759a00f27488000ef5657d6c8d3",
+    "draftCommit": "8d73b87d722c5add463e9feba1295c32b8870d60",
+    "preflightRunId": 36108618435,
+    "path": "runs/2026-09-25/request.json"
   }
 }
