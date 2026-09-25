@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-25",
+  "sourceCommit": "56591391c9e15759a00f27488000ef5657d6c8d3",
+  "coverage": {
+    "from": "2026-08-12",
+    "to": "2026-09-24",
+    "totalCompleteDates": 44,
+    "completeDates": [
+      "2026-08-12",
+      "2026-08-13",
+      "2026-08-14",
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19",
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-22",
+      "2026-08-23",
+      "2026-08-24",
+      "2026-08-25",
+      "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-08-31",
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03",
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-19",
+      "2026-09-20",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24"
+    ]
+  },
+  "identityRules": {
+    "vocabulary": "docs/jlpt-history/identity-rules.json",
+    "grammar": "docs/grammar-history/identity-rules.json"
+  },
+  "newVocabulary": [
+    "軌道",
+    "振動",
+    "冷却",
+    "真空",
+    "搭載する",
+    "音色",
+    "口頭",
+    "同意",
+    "読み解く",
+    "兼ね合い",
+    "欠かせない",
+    "要約する",
+    "下書き",
+    "相互作用",
+    "時代遅れ"
+  ],
+  "newGrammar": [
+    "～だけでなく",
+    "～とともに",
+    "～ようになる",
+    "～を軸に"
+  ],
+  "excludedAsHistorical": [
+    {
+      "item": "前提",
+      "firstSeen": "2026-08-31"
+    },
+    {
+      "item": "見直す",
+      "firstSeen": "2026-09-05"
+    },
+    {
+      "item": "担う",
+      "firstSeen": "2026-08-23"
+    },
+    {
+      "item": "耐える",
+      "firstSeen": "2026-09-11"
+    },
+    {
+      "item": "膨大",
+      "firstSeen": "2026-08-17"
+    },
+    {
+      "item": "回避する",
+      "firstSeen": "2026-08-22"
+    },
+    {
+      "item": "～に比べて",
+      "firstSeen": "2026-08-29"
+    },
+    {
+      "item": "～に応じて",
+      "firstSeen": "historical identity rule / prior lesson"
+    },
+    {
+      "item": "～にとどまらず",
+      "firstSeen": "historical identity rule / prior lesson"
+    }
+  ],
+  "note": "All 44 complete four-file report dates through 2026-09-24 were enumerated. New-item decisions were checked against the full historical term/pattern inventory and current alias rules; no fixed-N-day shortcut was used."
+}
