@@ -1,5 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { BOT_EMAIL, PUBLISHER_TRAILER, isDailyPublicationPath, verifyPublisherOrigin } from '../../scripts/verify-publisher-origin.mjs';
 
 const daily = 'src/content/daily/2026-09-25.md';
@@ -35,4 +36,11 @@ test('publisher bot commit requires exact publisher and request trailers', () =>
     message: `content: publish\n\n${PUBLISHER_TRAILER}\nPublication-Request: x`,
     authorEmail: BOT_EMAIL,
   }));
+});
+
+
+test('publisher explicitly dispatches Pages after its GITHUB_TOKEN main push', () => {
+  const workflow = readFileSync(new URL('../../.github/workflows/publish-daily.yml', import.meta.url), 'utf8');
+  assert.match(workflow, /actions:\s*write/);
+  assert.match(workflow, /gh workflow run deploy\.yml --repo "\$GITHUB_REPOSITORY" --ref main/);
 });
