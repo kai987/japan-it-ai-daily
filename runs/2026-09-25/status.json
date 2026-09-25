@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-25",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "leaseToken": "n1-sync-20260925T020300Z",
   "sourceCommit": "56591391c9e15759a00f27488000ef5657d6c8d3",
   "sourceWindow": {
@@ -9,7 +9,7 @@
     "to": "2026-09-25T10:00:00+09:00"
   },
   "createdAt": "2026-09-25T11:03:00+09:00",
-  "updatedAt": "2026-09-25T07:41:20.104Z",
+  "updatedAt": "2026-09-25T07:41:46.765Z",
   "completedArtifacts": [
     "src/content/daily/2026-09-25.md",
     "src/content/daily-ja/2026-09-25.md",
@@ -18,8 +18,8 @@
     "src/content/evidence/2026-09-25.json",
     "src/data/interviews/2026-09-25.json"
   ],
-  "resumeFrom": "request_ready",
-  "nextAction": "Submit the exact checkpointed request to automation/daily-publish-request if the publisher slot remains free, then yield to the unique publisher workflow.",
+  "resumeFrom": "publisher_queued",
+  "nextAction": "Observe publisher run 36108926883. After its exact main commit is created, verify the exact main deploy.yml build, Pages deploy, post-deploy byte check and sourceCommit-bound study snapshot before continuing N1.",
   "lastError": null,
   "publication": null,
   "draft": {
@@ -33,5 +33,10 @@
     "draftCommit": "8d73b87d722c5add463e9feba1295c32b8870d60",
     "preflightRunId": 36108618435,
     "path": "runs/2026-09-25/request.json"
+  },
+  "publisher": {
+    "runId": 36108926883,
+    "requestCommit": "cf34dd958ebd75c12a46968c0ebbe1a08bd28133",
+    "status": "in_progress"
   }
 }
