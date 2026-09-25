@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-25",
+  "sourceWindow": {
+    "from": "2026-09-24T10:00:00+09:00",
+    "to": "2026-09-25T10:00:00+09:00"
+  },
+  "selectedAt": "2026-09-25T16:16:00+09:00",
+  "previousTop5Excluded": true,
+  "articles": [
+    {
+      "articleId": "2026-09-25-top-1",
+      "title": "Google、宇宙AIデータセンター構想「Project Suncatcher」初の試作衛星をFalcon 9で打ち上げへ",
+      "source": "ITmedia NEWS",
+      "publishedAtJST": "2026-09-25T07:18:00+09:00",
+      "url": "https://www.itmedia.co.jp/news/article/2609/25/2000001728/",
+      "access": "full-public-text",
+      "captureSha256": "78ab621620bba0aecfd7f02e9c1d805b2bddb21f9ef84953d3b8d30e491a2976",
+      "facts": [
+        "TPU搭載の試作衛星をFalcon 9で打ち上げる計画",
+        "低軌道では地上比最大8倍の太陽光発電条件",
+        "打ち上げ時は最大10G、部品には50～100Gの加速度条件",
+        "真空での冷却をヒートパイプとラジエータで検証"
+      ]
+    },
+    {
+      "articleId": "2026-09-25-top-2",
+      "title": "ゼロから声を作れる音声生成モデル「Gemini 3.8 Flash TTS」公開　「Gemini Notebook」でも利用可能に",
+      "source": "ITmedia NEWS",
+      "publishedAtJST": "2026-09-24T16:46:00+09:00",
+      "url": "https://www.itmedia.co.jp/news/article/2609/24/2000001703/",
+      "access": "full-public-text",
+      "captureSha256": "b1a8cc38d40a69bc29cb6f9dc6cd2806051a40522cfc688ff1262156846443f3",
+      "facts": [
+        "Flash TTSは130言語、Flash-Lite TTSは101言語に対応",
+        "30秒の音声サンプルからVoice Replication",
+        "本人または利用権を持つ声に限定し口頭同意録音と話者一致確認が必要",
+        "2027年1月1日から価格変更予定"
+      ]
+    },
+    {
+      "articleId": "2026-09-25-top-3",
+      "title": "自治体、企業で進む「Google回帰」　事例で分かる「Gemini Notebook」の活用アイデア",
+      "source": "キーマンズネット",
+      "publishedAtJST": "2026-09-24T16:09:00+09:00",
+      "url": "https://kn.itmedia.co.jp/kn/article/2609/24/2000001698/",
+      "access": "public-portion",
+      "captureSha256": "a6324a4e20c32a35f084693373703b55dd711749dddf8d566dbc9cb1050f4e57",
+      "facts": [
+        "複数資料の要約・情報整理・資料間関係把握にGemini Notebookを利用",
+        "秋田県と札幌市の事例を扱う",
+        "既存システムとの兼ね合い、セキュリティ、運用、職員環境が導入条件"
+      ]
+    },
+    {
+      "articleId": "2026-09-25-top-4",
+      "title": "生成AIでメール処理が劇的効率化？　ClaudeでGmailが操作できる「Gmailコネクタ」設定と安全な活用法",
+      "source": "＠IT",
+      "publishedAtJST": "2026-09-25T05:00:00+09:00",
+      "url": "https://atmarkit.itmedia.co.jp/ait/spv/2609/25/news015.html",
+      "access": "public-portion",
+      "captureSha256": "0fc2c281dd3cdda6867994561ff2b1e1a9d006f47030c8f7f380ac04f3473ecd",
+      "facts": [
+        "Gmail連携でメール検索・要約・返信下書き作成をチャットから指示",
+        "誤送信を防ぐ安全運用ルールとエラー対処を解説",
+        "無料版Claudeでも利用できる範囲がある"
+      ]
+    },
+    {
+      "articleId": "2026-09-25-top-5",
+      "title": "デジタルと現実世界を統合し、市場変革をもたらすフィジカルAIエコシステム",
+      "source": "＠IT / Gartner Insights",
+      "publishedAtJST": "2026-09-25T05:00:00+09:00",
+      "url": "https://atmarkit.itmedia.co.jp/ait/spv/2609/25/news003.html",
+      "access": "public-portion",
+      "captureSha256": "1ed9bb57c631692ad549b3b782595ff70413cd4743d9a366fb999b9ae1e7496e",
+      "facts": [
+        "フィジカルAIを知能と物理的実体を統合するエコシステムとして説明",
+        "2035年の見通しはGartnerの予測で確定事実ではない",
+        "企業向けに3つの戦略的課題を提示"
+      ]
+    }
+  ]
+}
