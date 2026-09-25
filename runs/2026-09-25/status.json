@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-25",
-  "stage": "registered",
+  "stage": "drafts_ready",
   "leaseToken": "n1-sync-20260925T020300Z",
   "sourceCommit": "56591391c9e15759a00f27488000ef5657d6c8d3",
   "sourceWindow": {
@@ -9,10 +9,22 @@
     "to": "2026-09-25T10:00:00+09:00"
   },
   "createdAt": "2026-09-25T11:03:00+09:00",
-  "updatedAt": "2026-09-25T11:03:00+09:00",
-  "completedArtifacts": [],
-  "resumeFrom": "registered",
-  "nextAction": "Verify target-window sources, full history and identity rules; prepare the six target artifacts on draft/daily-2026-09-25, run exact preflight, submit request-only publication, then continue N1 sync.",
+  "updatedAt": "2026-09-25T07:27:04.295Z",
+  "completedArtifacts": [
+    "src/content/daily/2026-09-25.md",
+    "src/content/daily-ja/2026-09-25.md",
+    "src/content/japanese/2026-09-25.md",
+    "src/content/japanese-ja/2026-09-25.md",
+    "src/content/evidence/2026-09-25.json",
+    "src/data/interviews/2026-09-25.json"
+  ],
+  "resumeFrom": "drafts_ready",
+  "nextAction": "Wait for exact draft commit preflight; read exact failed job/step logs if it fails. On success, checkpoint request_ready and submit request-only publication.",
   "lastError": null,
-  "publication": null
+  "publication": null,
+  "draft": {
+    "branch": "draft/daily-2026-09-25",
+    "commit": "6bbc01bd5f7fe354c561664f18138de8be8ef93b",
+    "preflightRunId": 36107662614
+  }
 }
