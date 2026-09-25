@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-25",
+  "stage": "registered",
+  "leaseToken": "n1-sync-20260925T020300Z",
+  "sourceCommit": "56591391c9e15759a00f27488000ef5657d6c8d3",
+  "sourceWindow": {
+    "from": "2026-09-24T10:00:00+09:00",
+    "to": "2026-09-25T10:00:00+09:00"
+  },
+  "createdAt": "2026-09-25T11:03:00+09:00",
+  "updatedAt": "2026-09-25T11:03:00+09:00",
+  "completedArtifacts": [],
+  "resumeFrom": "registered",
+  "nextAction": "Verify target-window sources, full history and identity rules; prepare the six target artifacts on draft/daily-2026-09-25, run exact preflight, submit request-only publication, then continue N1 sync.",
+  "lastError": null,
+  "publication": null
+}
