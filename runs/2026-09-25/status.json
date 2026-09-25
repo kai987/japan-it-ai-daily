@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-25",
-  "stage": "publisher_queued",
+  "stage": "published",
   "leaseToken": "n1-sync-20260925T020300Z",
   "sourceCommit": "56591391c9e15759a00f27488000ef5657d6c8d3",
   "sourceWindow": {
@@ -9,7 +9,7 @@
     "to": "2026-09-25T10:00:00+09:00"
   },
   "createdAt": "2026-09-25T11:03:00+09:00",
-  "updatedAt": "2026-09-25T07:41:46.765Z",
+  "updatedAt": "2026-09-25T08:46:41.612Z",
   "completedArtifacts": [
     "src/content/daily/2026-09-25.md",
     "src/content/daily-ja/2026-09-25.md",
@@ -18,10 +18,21 @@
     "src/content/evidence/2026-09-25.json",
     "src/data/interviews/2026-09-25.json"
   ],
-  "resumeFrom": "publisher_queued",
-  "nextAction": "Observe publisher run 36108926883. After its exact main commit is created, verify the exact main deploy.yml build, Pages deploy, post-deploy byte check and sourceCommit-bound study snapshot before continuing N1.",
+  "resumeFrom": "published",
+  "nextAction": "Continue the preserved 2026-09-25 N1 handoff using exact main deploy run 36114398173 and its verified it-study-snapshot.",
   "lastError": null,
-  "publication": null,
+  "publication": {
+    "releaseCommit": "5666e407f43358d4d0bb6f6d70f20b9c89c1f438",
+    "runId": 36114398173,
+    "snapshotArtifactId": 10854506053,
+    "snapshotSha256": "c2e06910d5a64a70ca5a6a15d419eb0d54eb8f10379784fff164769936664956",
+    "issueNumber": 45,
+    "totalDays": 45,
+    "targetDateVerified": true,
+    "build": "success",
+    "deploy": "success",
+    "publicationVerification": "success"
+  },
   "draft": {
     "branch": "draft/daily-2026-09-25",
     "commit": "8d73b87d722c5add463e9feba1295c32b8870d60",
