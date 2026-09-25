@@ -9,7 +9,7 @@
     "to": "2026-09-25T10:00:00+09:00"
   },
   "createdAt": "2026-09-25T11:03:00+09:00",
-  "updatedAt": "2026-09-25T07:27:04.295Z",
+  "updatedAt": "2026-09-25T07:31:04.580Z",
   "completedArtifacts": [
     "src/content/daily/2026-09-25.md",
     "src/content/daily-ja/2026-09-25.md",
@@ -19,12 +19,18 @@
     "src/data/interviews/2026-09-25.json"
   ],
   "resumeFrom": "drafts_ready",
-  "nextAction": "Wait for exact draft commit preflight; read exact failed job/step logs if it fails. On success, checkpoint request_ready and submit request-only publication.",
-  "lastError": null,
+  "nextAction": "Evaluate exact preflight run 36108018712 for draft commit 498c8b4d25bce680d8d2a0ad457e6fb21607bc4d; if it fails, read that run's exact failed job/step logs before repair.",
+  "lastError": {
+    "runId": 36107662614,
+    "jobId": 107983789482,
+    "step": "Verify content integrity / jlpt:check",
+    "message": "daily/2026-09-25 C-1: bilingual identity mismatch",
+    "repairedBy": "498c8b4d25bce680d8d2a0ad457e6fb21607bc4d"
+  },
   "publication": null,
   "draft": {
     "branch": "draft/daily-2026-09-25",
-    "commit": "6bbc01bd5f7fe354c561664f18138de8be8ef93b",
-    "preflightRunId": 36107662614
+    "commit": "498c8b4d25bce680d8d2a0ad457e6fb21607bc4d",
+    "preflightRunId": 36108018712
   }
 }
