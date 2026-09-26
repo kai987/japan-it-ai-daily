@@ -1,0 +1,30 @@
+{
+ "schemaVersion":1,
+ "targetDate":"2026-09-26",
+ "sourceCommit":"5666e407f43358d4d0bb6f6d70f20b9c89c1f438",
+ "checkedAt":"2026-09-26T07:36:03.436Z",
+ "candidateBlobs":{
+  "src/content/daily/2026-09-26.md":{"gitBlob":"f8a2838f07c07278358f78a06b8f0af81121a002","sha256":"562f9193972756f12d5d9f7df6fb856ce3551b8936150e637aa7882ac8d1aec5","bytes":39642},
+  "src/content/daily-ja/2026-09-26.md":{"gitBlob":"dce17ef2fd44427c98c27c3d33a496cd46124442","sha256":"531844517f1159a28cc012076101ffb1fbc281b5890a21eb130c01e5eab72d66","bytes":42755},
+  "src/content/japanese/2026-09-26.md":{"gitBlob":"fe0d9c54f1da786aa885c272c37f74aa87a46019","sha256":"8ccf1d1c4821c5b88a38649bb9be2a0bb404db091fcc32632d90b9440b11964a","bytes":16331},
+  "src/content/japanese-ja/2026-09-26.md":{"gitBlob":"831bbc69da99169ed50dcd155ec20573f09229cc","sha256":"281dd3bae104dd4f54ff6708b7bd5b1e360a4b0d012f60a3602614552f4b65dc","bytes":19174},
+  "src/content/evidence/2026-09-26.json":{"gitBlob":"4991b29cff522fe63df185e68c3a2e72974526f2","sha256":"d113adf9649381bc79e2067e6cbf083cae7f503e65c921c2f624a4ae51524e0b","bytes":14908},
+  "src/data/interviews/2026-09-26.json":{"gitBlob":"d540156614a66f615c8fe81e70953b4424068408","sha256":"18baf38b27d7b945b2730077da38a83257b26c7475dcd2c7e156e82a49dc5715","bytes":4313}
+ },
+ "byteVerification":"All six local candidate bytes calculate the same Git blob SHAs as the saved progress files; sidecars only changed whitespace during remote persistence and were reconstructed and hash-matched before revalidation.",
+ "localChecks":{
+  "jlpt":"PASS: 46 dates/four representations, 893 lexical identities, 0 cross-date duplicates",
+  "grammar":"PASS: 46 full four-file dates, 92 unique identities, 0 duplicates",
+  "structuredInterviews":"PASS: 9 structured dates, required files, article references, bilingual mirror exact text/order",
+  "bilingual":"PASS: 36 legacy pairs identical; 10 original-source reports preserved independently",
+  "quality":"PASS: target 2026-09-26 including five canonical answer timing, anchors and distinctness",
+  "evidence":"PASS: target five articles, actual captured quote inclusion and source snapshot hashes checked",
+  "evidencePilot":"PASS: existing 2026-09-07 pilot; offline traceability only, not renewed source-access claim",
+  "contentIntegrity":"PASS: 46 four-file sets, 0 errors",
+  "studyReview":"PASS: unique new identities, earlier review introduction/current evidence, frequencies, focus membership and issue sequence",
+  "audioSyntax":"PASS: unchanged npm run audio:check"
+ },
+ "studyCounts":{"vocabulary":{"new":15,"review":5,"total":20},"grammar":{"new":2,"review":6,"total":8},"issueNumber":46},
+ "ciRequired":{"typecheck":"not_started","unitTests":"not_started","audioVersions":"not_started","build":"not_started","speechSmoke":"not_started","fullBrowser":"not_started","securityCsp":"not_started","deploy":"not_started","postDeployBytes":"not_started"},
+ "nextAction":"Run the unchanged complete deploy.yml on the exact six-file draft commit. Local checks are not a substitute for full preflight or publication."
+}
