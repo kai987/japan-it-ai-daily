@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-26",
+  "stage": "regression_verified_locally",
+  "sourceCommit": "d1263f244fb08fb3e50286fb88f616c1cf378560",
+  "leaseToken": "0bc855ee-fc56-48e2-89c5-77bcd2f9b36d",
+  "reason": "Same-day semantic review found spatial 上で and lexical に加える wrongly used as grammar evidence. After excluding the spatial match, a candidate using テストを通しただけ also proved to be a lexical completed action rather than the means construction.",
+  "repairPaths": ["scripts/learning-review.mjs", "src/lib/grammarReviewEvidence.test.mjs"],
+  "dailyPublicationPathsChanged": [],
+  "scope": "Code-only matcher maintenance; no raw reports, facts, C-4, originals, policy thresholds or publisher allowlist are changed. All six target publication files retain their existing publisher-owned blobs.",
+  "checks": {
+    "baselineFalseMatchesReproduced": true,
+    "localRegressionTests": {"passed": 4, "failed": 0},
+    "completeHistoryDates": 46,
+    "lexicalIdentities": 893,
+    "grammarIdentities": 92,
+    "contentIntegrity": "passed",
+    "newItemDuplicates": 0
+  },
+  "snapshotDiagnostic": {
+    "verificationRun": 36229988865,
+    "finding": "The diagnostic workflow env entry did not replace GitHub's default GITHUB_SHA; the rebuilt snapshot had the verification commit. All other JSON content was identical. Running the original exporter with the explicit upstream commit produced an exact byte match to the successful artifact.",
+    "originalSnapshotSha256": "b95d55e604b21217c693566f1061a99a24b199221bc9026e1e0a8cbb1a90787a",
+    "explicitSourceExportByteMatch": true
+  },
+  "nextAction": "Run the exact code-only repair through complete deploy.yml preflight and main Pages verification; obtain its newly source-bound artifact, release the upstream lease, then continue the unchanged N1 September 26 source through the normal sync request workflow."
+}
