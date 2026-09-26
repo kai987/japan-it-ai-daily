@@ -1,0 +1,63 @@
+name: Export fixed recovery inputs 2026-09-26
+on:
+  push:
+    branches: [automation/daily-progress]
+    paths: [.github/workflows/export-recovery-20260926.yml]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout fixed main source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 5666e407f43358d4d0bb6f6d70f20b9c89c1f438
+          fetch-depth: 1
+          persist-credentials: true
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24
+      - name: Install locked parser dependency
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Export complete inventory and source text without recordings
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/recovery-inputs
+          test "$(git rev-parse HEAD)" = 5666e407f43358d4d0bb6f6d70f20b9c89c1f438
+          git ls-tree -rz --full-tree HEAD > /tmp/inventory.git
+          python3 <<'PY'
+          import json, pathlib, tarfile, subprocess, datetime
+          records=[]
+          for record in pathlib.Path('/tmp/inventory.git').read_bytes().split(b'\0'):
+              if not record: continue
+              meta,path=record.split(b'\t',1)
+              mode,kind,sha=meta.decode().split()
+              records.append({'path':path.decode(),'mode':mode,'type':kind,'sha':sha})
+          pathlib.Path('/tmp/recovery-inputs/inventory.json').write_text(json.dumps({'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'complete':True,'entries':records},ensure_ascii=False))
+          with tarfile.open('/tmp/recovery-inputs/main-source.tar','w') as archive:
+              for entry in records:
+                  if entry['type']=='blob' and not entry['path'].endswith('.mp3'):
+                      archive.add(entry['path'],arcname=entry['path'],recursive=False)
+              archive.add('node_modules/yaml',arcname='node_modules/yaml')
+          PY
+          git fetch --no-tags origin automation/daily-progress:refs/remotes/origin/automation/daily-progress
+          git fetch --no-tags origin automation/daily-publish-request:refs/remotes/origin/automation/daily-publish-request
+          git archive --format=tar origin/automation/daily-progress runs locks > /tmp/recovery-inputs/progress.tar
+          git show origin/automation/daily-publish-request:.github/daily-publication-request.json > /tmp/recovery-inputs/current-request.json
+          gh api "repos/$GITHUB_REPOSITORY/branches/main" > /tmp/recovery-inputs/main.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/deploy.yml/runs?branch=main&per_page=10" > /tmp/recovery-inputs/deploy-runs.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/publish-daily.yml/runs?per_page=10" > /tmp/recovery-inputs/publisher-runs.json
+          printf '%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > /tmp/recovery-inputs/observedAt.txt
+          sha256sum /tmp/recovery-inputs/*.tar > /tmp/recovery-inputs/SHA256SUMS
+      - name: Upload exact recovery inputs
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: recovery-inputs-20260926
+          path: /tmp/recovery-inputs/
+          if-no-files-found: error
+          retention-days: 3
