@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-26",
+  "status": "reviewed",
+  "reviewedBy": "ChatGPT: direct public-original and linked-primary inspection",
+  "reviewedAt": "2026-09-26T07:19:58.501899+00:00",
+  "scope": "Declared claims and their source conditions, with author interpretation separated. All five selected articles were read as ordinary unauthenticated HTTP 200 responses within the fixed 2026-09-25 10:00 to 2026-09-26 10:00 JST publication window. Original announcement dates are disclosed where older. No paywall credentials or registration-only whitepaper were used. CI checks traceability, not a claim of automatic semantic verification of every sentence.",
+  "articles": [
+    {
+      "articleId": "2026-09-26-top-1",
+      "url": "https://forest.watch.impress.co.jp/docs/news/2143099.html",
+      "originalTitle": "しゃべるAIが“顔”付きに ～Google、「Gemini 3.8 Live with Live Avatar」を発表",
+      "source": "窓の杜",
+      "topic": "Gemini Live Avatar / Asynchronous Tools / Multimodal UX",
+      "access": "full",
+      "accessNote": "Read the full returned ordinary public article response. Linked primary announcement was reviewed independently. No credentials or cookies were supplied.",
+      "capturedAt": "2026-09-26T06:55:34.120406+00:00",
+      "snapshotSha256": "932725cdaeb42f083b47564f791d6a1e5c8c173e898a6d0643dca82ad1cbf9d7",
+      "claims": [
+        {"id":"interaction","kind":"source-fact","statement":"Live Avatar supports asynchronous tool calls while dialogue continues and has 97-language lip synchronization.","quote":"非同期のツール呼び出し","locator":"Feature description followed by language-coverage paragraph.","conditions":"Product-announced functionality, not an independently measured latency or business-success result.","usedIn":{"zh":"支持包括日语在内的97种语言","ja":"日本語を含む97言語","interview":"97言語で口の動きを同期します"}},
+        {"id":"scope","kind":"source-fact","statement":"Custom avatars require approval and current continuous avatar dialogue is limited to minutes, not hours.","quote":"数分程度","locator":"Final limitation paragraph before related links.","conditions":"Current reported scope; no promise of unrestricted custom avatars or unlimited call duration.","usedIn":{"zh":"自定义头像目前仅向获得Google许可的部分企业开放","ja":"カスタムアバターの作成はGoogleが許可した一部の企業に限られます","interview":"ただし連続対話は現時点で数分程度です"}},
+        {"id":"design-application","kind":"author-interpretation","statement":"Separate conversational liveness from tool completion; provide visible waiting/failure states and fallbacks.","conditions":"Engineering interpretation, not a claim that the product supplies the complete proposed state machine.","basedOn":["interaction","scope"],"usedIn":{"zh":"这是从原文异步调用及持续时间限制推导的设计建议","ja":"以下は記事から考えた実装方針","interview":"会話の応答と外部ツールの完了を別の状態として扱います"}}
+      ],
+      "supplementalPrimary":{"url":"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/","capturedAt":"2026-09-26T07:00:34.483548+00:00","rawSha256":"b1c7d7d159f872e62d8e2a4e5228fe5232b40815bea585871d1d85db610a70c5","access":"full public announcement; no linked gated material included"}
+    },
+    {
+      "articleId":"2026-09-26-top-2",
+      "url":"https://ai.watch.impress.co.jp/docs/news/2143106.html",
+      "originalTitle":"Unity、「Meta VR Glasses」の開発サポートを開始。AIツール連携で対応を加速",
+      "source":"AI Watch",
+      "topic":"Unity / Meta VR Glasses / OpenXR / CLI",
+      "access":"full",
+      "accessNote":"Read the full returned ordinary public article response. Linked primary announcement was reviewed independently. No credentials or cookies were supplied.",
+      "capturedAt":"2026-09-26T06:55:35.728859+00:00",
+      "snapshotSha256":"dcd2051f69fdd2ad26481d80a78c864cd997fdf9d999973ada026213487728df",
+      "claims":[
+        {"id":"availability","kind":"source-fact","statement":"Unity engine support starts immediately, ahead of the planned spring 2027 general release of Meta VR Glasses.","quote":"2027年春","locator":"Opening hardware and support-availability paragraphs.","conditions":"A release plan, not hardware availability today or guaranteed migration performance.","usedIn":{"zh":"计划2027年春一般发售","ja":"一般発売は2027年春の予定","interview":"ただし一般発売は2027年春の予定です"}},
+        {"id":"workflow","kind":"source-fact","statement":"The Unity CLI workflow works with AI tools in the Meta SDK for preparation.","quote":"CLIワークフロー","locator":"Closing developer-workflow paragraph.","conditions":"SDK/tool support does not demonstrate final on-device comfort, performance or universal application compatibility.","usedIn":{"zh":"Unity的CLI工作流可与Meta SDK中的AI工具结合","ja":"UnityのCLIワークフローをMetaのSDK内のAIツールと組み合わせ","interview":"CLIとSDK内のAIツールを組み合わせて開発できます"}},
+        {"id":"design-application","kind":"author-interpretation","statement":"Keep editor-level preparation and final physical-device acceptance separate.","conditions":"Specific Unity versions and OpenXR/editor features are additionally corroborated by the directly linked official release, recorded below; hardware acceptance remains a proposed project responsibility.","basedOn":["availability","workflow"],"usedIn":{"zh":"可复用的是代码和开发工作流，不是无需验证的最终体验","ja":"これは装着したときの見え方や継続的な性能まで保証するものではありません","interview":"発売前の準備と実機での合格判定を分けます"}}
+      ],
+      "supplementalPrimary":{"url":"https://unity3d.jp/news/build-for-meta-vr-glasses-with-unity/","capturedAt":"2026-09-26T06:55:40.438490+00:00","snapshotSha256":"0182fcdbac102d04be05bbbee0bdd3a804873a7f6b16959393ef2f7acc7f3b57","scope":"Official Unity announcement independently confirms Unity 6.6+, Meta XR All-in-One SDK v207, OpenXR workflow and editor testing without hardware. Editor results do not replace physical-device acceptance."}
+    },
+    {
+      "articleId":"2026-09-26-top-3",
+      "url":"https://cloud.watch.impress.co.jp/docs/news/2142958.html",
+      "originalTitle":"KDDI、モルゲンロット、トークネットの3社、リテールロボットを活用した分散型データセンターの実証を開始",
+      "source":"クラウド Watch",
+      "topic":"APN / GPU Virtualization / Physical AI",
+      "access":"full",
+      "accessNote":"Read the full returned ordinary public article response. Linked primary announcement was reviewed independently. No credentials or cookies were supplied.",
+      "capturedAt":"2026-09-26T06:55:37.058261+00:00",
+      "snapshotSha256":"b85ceb41b844c1c1c8295401d040c8f9791f8fcb6e0e103df9e7f7a89c541b98",
+      "claims":[
+        {"id":"architecture","kind":"source-fact","statement":"The trial connects Osaka Sakai and Tama with APN and combines GPU virtualization with simulated point-to-multipoint user-site connectivity.","quote":"大阪堺データセンター","locator":"Architecture paragraph beginning 実証では.","conditions":"September-start trial; company announcement September 18 and article September 25 are distinct dates.","usedIn":{"zh":"大阪堺数据中心与多摩网络中心用APN连接","ja":"大阪堺データセンターと多摩ネットワークセンターをAPNで接続","interview":"大阪堺と多摩をAPNでつなぎ"}},
+        {"id":"experiment","kind":"source-fact","statement":"Training compares near-only, remote-only and distributed cases; inference compares four distances from local 0km to 500km and above.","quote":"県外（500km～）","locator":"Training-comparison and inference-placement paragraphs.","conditions":"These are experimental configurations; article does not report a measured latency guarantee or achieved energy-savings percentage.","usedIn":{"zh":"跨县500km以上四种GPU配置","ja":"500km以上という4配置を比較します","interview":"推論は端末内から500キロ以上離れた配置まで比較します"}},
+        {"id":"design-application","kind":"author-interpretation","statement":"Measure total response and robot task success separately from training completion time.","conditions":"Safety stops, response budgets and task-success metrics are author-derived evaluation suggestions, not reported experimental outcomes.","basedOn":["architecture","experiment"],"usedIn":{"zh":"这些是实验条件与待验证指标","ja":"今回は実証開始の報告","interview":"遅延だけでなく作業成功率も確認します"}}
+      ],
+      "supplementalPrimary":{"url":"https://newsroom.kddi.com/news/detail/kddi_nr-1169_4723.html","capturedAt":"2026-09-26T07:00:35.835543+00:00","rawSha256":"c804cca97976a1387138a5acebea46e8f40c252649ff12594ddf499762ce5024","access":"full public announcement; no linked gated material included"}
+    },
+    {
+      "articleId":"2026-09-26-top-4",
+      "url":"https://forest.watch.impress.co.jp/docs/news/2143091.html",
+      "originalTitle":"スクリプト言語「PHP」にセキュリティ更新、v8.5.11、v8.4.26、v8.3.35、v8.2.34が公開",
+      "source":"窓の杜",
+      "topic":"PHP / Security Update / TLS / FPM",
+      "access":"full",
+      "accessNote":"Read the full returned ordinary public article response. Linked primary announcement was reviewed independently. No credentials or cookies were supplied.",
+      "capturedAt":"2026-09-26T06:55:38.584346+00:00",
+      "snapshotSha256":"7f7419cdcf45ecb6cc7f314b7375d78794a288cad5a52130bfb64b0fe2d8ce0e",
+      "claims":[
+        {"id":"security-boundaries","kind":"source-fact","statement":"The patch set includes credentials crossing origins during HTTP-wrapper redirects and incomplete IPv6 client restriction comparison in PHP-FPM.","quote":"listen.allowed_clients","locator":"Bulleted security fixes, HTTP wrapper and PHP-FPM entries.","conditions":"Exposure depends on runtime series, extensions and actual network/configuration paths. No universal exploitation or measured local compromise is claimed.","usedIn":{"zh":"HTTP流包装器跟随重定向时可能把凭证泄露给其他来源","ja":"HTTPのリダイレクト時に別オリジンへ認証情報が漏れる問題","interview":"HTTPリダイレクト時の認証情報漏えい"}},
+        {"id":"lifecycle","kind":"source-fact","statement":"The four series have security releases; PHP 8.2 support ends December 31, 2026, while 8.3 ends December 31, 2027.","quote":"2026年12月31日","locator":"Release-version introduction and support-lifecycle closing paragraph.","conditions":"A patch within a series does not extend that series support lifecycle.","usedIn":{"zh":"8.5.11、8.4.26、8.3.35和8.2.34","ja":"8.5.11、8.4.26、8.3.35、8.2.34","interview":"ただし8.2系のサポートは2026年末までです"}},
+        {"id":"design-application","kind":"author-interpretation","statement":"Validate real connection/authentication paths and track patching separately from migration.","conditions":"Recommendations for cross-team delivery; never disable TLS/access verification simply to pass a test.","basedOn":["security-boundaries","lifecycle"],"usedIn":{"zh":"不建议通过关闭证书或访问校验来让测试变绿","ja":"短期の修正適用と後継版への移行を別の課題","interview":"更新後の接続テストと、後継版への移行計画を分けて管理します"}}
+      ],
+      "supplementalPrimary":{"url":"https://www.php.net/archive/2026.php","capturedAt":"2026-09-26T07:00:36.386104+00:00","rawSha256":"238cd8ed874a9552442a07aa37c7fac4e5d09bbdfa249f81e1376aeefef729a0","access":"full public announcement; no linked gated material included"}
+    },
+    {
+      "articleId":"2026-09-26-top-5",
+      "url":"https://www.itmedia.co.jp/enterprise/articles/2609/26/news009.html",
+      "originalTitle":"国内企業の75％が「セキュリティ疲れ」　4つの構造的な要因とは",
+      "source":"ITmedia エンタープライズ",
+      "topic":"Security Operations / Alert Triage / BCP",
+      "access":"public-portion",
+      "accessNote":"Membership banner present. Only content returned by ordinary unauthenticated HTTP 200 was reviewed, decoded using declared Shift_JIS. Public TD SYNNEX announcement corroborates conditions and figures; registration-only whitepaper was not retrieved.",
+      "capturedAt":"2026-09-26T06:55:39.315019+00:00",
+      "snapshotSha256":"0fec99773d24b304de6a815e2042290630f7980ff3b3c66214253d079984b5c2",
+      "claims":[
+        {"id":"sample","kind":"source-fact","statement":"The survey includes 410 IT/security/management respondents from domestic firms with at least 300 employees and multiple security products.","quote":"計410人","locator":"Survey description preceding fatigue percentages.","conditions":"Selected respondent population, not all Japanese companies; no registration-only whitepaper accessed.","usedIn":{"zh":"共410人","ja":"経営層410人が対象です","interview":"企業の410人が対象で"}},
+        {"id":"results","kind":"source-fact","statement":"75.4% report fatigue/limits, 87.3% person dependence, and 78.8% staffing impacts; four structural factors and desired triage/visibility improvements are discussed.","quote":"75.4％","locator":"Paragraph under 属人化87.3％、人材不足の影響78.8％と運用限界が顕在化.","conditions":"Self-reported percentages; demand for automation is not controlled evidence of incident reduction.","usedIn":{"zh":"75.4％回答感到疲弊或接近运维极限","ja":"75.4％という数字","interview":"75.4％が疲弊感を示しました"}},
+        {"id":"design-application","kind":"author-interpretation","statement":"Use transparent prioritization and handoff UI, evaluating first response together with missed important alerts.","conditions":"Application to the user-facing operational workflow is author analysis and is not generalized prevalence or proven intervention impact.","basedOn":["sample","results"],"usedIn":{"zh":"它衡量的是这组回答者的主观情况","ja":"要望の多さは効果の実証とは異なります","interview":"ただし全企業へ一般化はできません"}}
+      ],
+      "supplementalPrimary":{"url":"https://jp.tdsynnex.com/news/260907/","capturedAt":"2026-09-26T07:00:38.383810+00:00","rawSha256":"05acfd108c198f1d6ce298b0419093f089dbb0d845836aced2b0c970d0d4a91e","access":"full public announcement; no linked gated material included"}
+    }
+  ]
+}
