@@ -1,0 +1,163 @@
+{
+  "date": "2026-09-24",
+  "generatedAt": "2026-09-26T17:52:49.019Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "Google AIのColab特典をML開発で評価するとき、何を確認しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "a8139116e90196dc71007a2080a6edb932bddf1bdaf0e1fae914e28eb56e9ab9",
+      "audioSha256": "9091a762d033d5702dba3a20592caceec3f8f952d7fbe216f20156035c089302",
+      "durationSeconds": 6.386
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "まずGoogle AIの契約特典と、実際に使えるColabの計算資源を分けて確認します。一般の有料プランでは高速なアクセラレータや高性能なマシンへの優先アクセスがあり、Ultraではバックグラウンド実行とPremium GPUも利用できます。ただし無制限ではなく段階的に提供されるため、実案件では待ち時間、完走率、コストを測ります。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "7ab8eccdc957e644edbe705dafe82f3d6fe36d38cf86806bf9b9300b2025df2f",
+      "audioSha256": "c904abc5c0c2c0bdfe6c9ba5f3b2e30e011acac1ea0d30be121dddb67e74037c",
+      "durationSeconds": 26.762,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "AI編集機能を設計するとき、YouTubeの会話型編集から何を学べますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "d03686c9f1b39fad7db050bc583d3b1718dcf71d55ad4c1158749d30daa2e49f",
+      "audioSha256": "df2d4b36edfbcb4c98b3716bba3f2d694c1266e7fd8f98df4a24f571cbaa04ae",
+      "durationSeconds": 6.209
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "AIだけで編集を完結させず、手動編集へ戻れる設計が重要です。YouTubeはGemini Omniで初稿作成、フレームの並べ替え、トリミング、ビート同期を支援し、手動タイムラインと往復できます。さらに最大3種類の動画A/Bテストも発表しました。ただし多くの機能は提供時期や地域が未定なので、段階的な公開を前提に設計します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "40de7deb9e9d1ace84cf78a9490a631916f35e71ce65c8b9d05e08e02aefc4c6",
+      "audioSha256": "1c6a030dcc17019d730fc49dcc01c797b4feea4ed642d159839b3d0ebc0d4143",
+      "durationSeconds": 25.899,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "AI Agentの権限管理で、Human-in-the-loopだけでは不十分なのはなぜですか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "353cf10d592f9812236a91629f2cfe773128dc60a40f688858721f100c38a5a4",
+      "audioSha256": "0b2ee488e13fec5e4a10d619d057f9e5b33f7387cc1a2a2d7e12c087365cf4b0",
+      "durationSeconds": 5.769
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "AIエージェントが大量の操作を行うと承認疲れが起き、人が内容を十分に確認せず許可する恐れがあります。そこでJITで短時間だけ最小権限を与え、事前に定めたflight planから外れたら自動停止する仕組みを重ねます。ただし人の確認をなくすのではなく、高リスク操作の最終確認など役割を限定して残します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "96d5af7b2beb14cf6a1ee2145b8ac52aba2b3253e8d66bd2d15485ae5f821121",
+      "audioSha256": "22b025a873082b078cab4930b33ea03ea7e600b10d580263759bd16a48cb555d",
+      "durationSeconds": 24.891,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "AI Codingの生産性を、開発者の実感だけで評価しないために何を測りますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "bb09c3eec1c9fef077c8a524ecf91938dbed280daeb76efdc490b98b241f6327",
+      "audioSha256": "205bc8ae632492703a12a0e26b1f77da362ecb0db4df6f4dbcbffa422397b026",
+      "durationSeconds": 6.558
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "自己申告と実測データを分けます。GitKrakenの顧客・ユーザーコミュニティー554人の調査では84％が生産性向上を実感しましたが、測定している組織は20％、39％は測定手段がありません。導入前の基準線とサイクルタイム、品質、レビュー負荷、コスト、リリース成果を比較します。ただし自己申告調査なので因果関係は示せず、自社データで再検証します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "10668bd03ff67ac86cf714836eb622c32e7e739b6ed86c43d26274986052050c",
+      "audioSha256": "a4f4c11b6cb3863c7380276a8fe8a164f4aac0fa2ec0be9ecf14a26e87e727b2",
+      "durationSeconds": 30.984,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "Legacy SystemのAI移行で、IBM Bobの事例から何を学べますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "dc7ff81f454eb0193f93390ba89b173753ddb481830e60d13c9b42bf127baf60",
+      "audioSha256": "3548e348adede6f34903788802357fe9f817a2e708190bfa5b3aa60aa5c8132a",
+      "durationSeconds": 5.699
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "いきなり書き換えるのではなく、まず既存の業務ロジックを可視化し、人が確認できる状態にすることが重要です。NICPではExcelマクロの仕様把握が平均1～3日から約30分になり、約6週間を見込んだWeb再構築も約2.5日でした。ただし単一企業の事例で、レビューとテストも行っているため、同じ短縮率を自社にそのまま当てはめません。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "7825e44ea8995206db841fae7802761e276387d65ab107649206b0cbaabc615c",
+      "audioSha256": "e798856f9c8d0fd702dad5ef059fc1fe099a546f3d5efb24a3aea6aaffc725a3",
+      "durationSeconds": 27.547,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "ColabのPremium特典を比較するとき、Plan名以外に何を記録しますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "cb7e83c9579bc9fb92808d388a9a4c4c5746e79b64dd2a9be95bdfb1fcb6a7d4",
+      "audioSha256": "febe78a1276fc7aa045967d00646669953277770fab599be4a31bfd1cf5f376b",
+      "durationSeconds": 5.886
+    },
+    {
+      "index": 2,
+      "text": "Agentの承認疲れを減らすには何を設計しますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "b324da9f09221267c8325ae4caa88a2e578de875a7adb06b97fc94818709e741",
+      "audioSha256": "f0102ef352587a5a21de0884525d36587c0a805219ea685ce343fb6b77790cf1",
+      "durationSeconds": 4.237
+    },
+    {
+      "index": 3,
+      "text": "AI Codingの効果を自己申告から実測へ変えるには何が必要ですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "1fbf02abf2673d61c1762d42c0a927270ffbe1a91c18670c85fd37af9f8a38c4",
+      "audioSha256": "5be6a66c363fe5bfef50a2b223ea9ccac60f7d359095775ad312aebe45da2a5a",
+      "durationSeconds": 5.746
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-26T17:52:49.698Z"
+}

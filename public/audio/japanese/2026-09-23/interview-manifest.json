@@ -1,0 +1,163 @@
+{
+  "date": "2026-09-23",
+  "generatedAt": "2026-09-26T17:49:07.566Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "GPT-6 SolとLunaを業務で使い分けるなら、何を基準にしますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "ab9a3f20e6377e61b6a70f035f68f04f79431f57b07075195e81abf7ce98f68a",
+      "audioSha256": "dc5e6aacd6a5c342faa1409bcdb7554291bb85663bdf4afaf3c6998eb3f375ee",
+      "durationSeconds": 5.676
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "複雑なCodingやAgent処理はSol、高頻度で範囲の狭い処理はLunaから検証します。APIはSolが100万Token当たり入力2ドル・出力10ドル、Lunaが0.1ドル・0.5ドルで、Cached Inputは90％割引です。ただしVendor Benchmarkだけで決めず、自社Taskの成功率、Latency、Cost-per-successを同じHarnessで測ります。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "9ec7ac6b24e62c7ac1b1cb027a7d9702969fce740672083becc4b9bc057d4504",
+      "audioSha256": "d95ee95ed0cc5a44a8989398d928a19185bcb25338253ca5692b1bb19b17ac29",
+      "durationSeconds": 26.786,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "AI Coding Agentを評価するとき、Android Bench 2.0から何を学べますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "0907d1426999501dc05a42a34e0ef7da1dde72f00e6803f42d0900b31cc58b52",
+      "audioSha256": "c4e43f23b95729ca418ed95f7468ceb63338046e174fca2238c71b387b99f40a",
+      "durationSeconds": 6.466
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "短い修正だけでなく、数日から数週間規模のLong-Horizon Taskで評価する点が重要です。Android Bench 2.0は依存関係更新、新機能、ゼロからのApp作成、移植を含む30 Taskを用意し、首位でもPass率は28％でした。ただしModelとAgent Harnessの組み合わせ評価なので、Base Model単独の性能とは切り分けます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "deb113aa302c812fd3955f464e65d1511cfef09ed6f0077bfaac5e48e11ffea0",
+      "audioSha256": "9a7623e6d10a6d0917b5d59e726987d29922750471fccbacbe8b7e1c5f6b6bfa",
+      "durationSeconds": 26.502,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "Browser Agentを導入するとき、BragJackの事例から何を対策しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "4880261396d208615b4b15d0816f4f8be54b81b1954c8e2b3284b913b05e6d54",
+      "audioSha256": "57da35fa4a6cc8f271a497e0e95275f3df37db7f77a0da6ee9ef9fc8e8d5dd01",
+      "durationSeconds": 5.827
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "ModelへのPrompt対策だけでなく、Browser拡張と権限境界を監査します。BragJackでは1つの悪意あるChromium拡張が5種類のAI Agent面を狙い、Prompt Forcingから履歴やFile、Screenshotなどへ到達しました。ただし拡張のInstallと権限付与が前提で、ChromeとEdgeの公開された経路は修正済みなので、条件を分けてRisk評価します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "2ad2fff380fb8557fab25c5c87f809dfc141af0ab84d0e100a765fa1ca7c949e",
+      "audioSha256": "7ed68d0a304742ef8f47351a97dc9cccd9d3e66cd918ccd636a5f1c9b2144778",
+      "durationSeconds": 27.28,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "AIが数学の未解決問題を解いたという主張を、どう評価しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "a854376543e4a5cc4b66fde1769c584b39ab142c583a9dd79c80c2665837dc1b",
+      "audioSha256": "1e04c7b3705ac72e275f6537597aec654c8f67a9b6b8c5a43aaa21e2b2c9dffa",
+      "durationSeconds": 5.247
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "生成結果と独立検証を分けて扱います。OpenAIは8月28日に学習開始した内部Modelが100件超の未解決問題を解いたと主張し、IASを拠点とする独立諮問Groupと成果の意義や公表方法を検討しています。ただしGroupのGovernance助言は各証明の独立再現を意味しないため、査読、再現、形式検証まで確認して評価します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "d9a092aaf935c2d9c4bae7b088e3dd126b3ed53331011babcfb69c70b3449520",
+      "audioSha256": "1a6694abeb6da8fe89a461be127e620704dac351d8c1deb5fe929bb3e8eed776",
+      "durationSeconds": 27.878,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "少人数の情シスでNetwork障害対応を改善するなら、何を優先しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "99f72a25b87fd6dee5287dd09a9b0a81d465ba923fb461e93191795085ca8724",
+      "audioSha256": "a1dc5157a56f7b2f30d8470bd2e6f4ed190f2cec91fb9bce86996bab039c4136",
+      "durationSeconds": 6.071
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "冗長化だけでなく、可視化、復旧自動化、監視を一体化します。公立小浜病院は約500台の電子カルテ端末を実質2人で支え、VCS、AMF、AWC、24時間監視、Vista Manager EXを組み合わせ、原因特定を従来の10分の1以下、時間外復旧をほぼゼロにしました。ただし単一事例なので、効果を1製品だけに帰属させません。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "74bbff6104e57a197806a9bc4c0d39c9724ecc8b48c8db985a219473ce4b1687",
+      "audioSha256": "184a6248267ae7a150d8786abc743022dfc3c22b3fc5e2d7ae66a9ccf4c9cdf6",
+      "durationSeconds": 28.223,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "LLMのAPIコストを比較するとき、Token単価以外に何を見ますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "9b27fce4b1a2677999ccf0f9131b5e67a9cbb12377ebfd9ae00ae5fdb281af26",
+      "audioSha256": "5e84d6ebcd89062e6b9051954718ab091a6ad33c995b9d8e26a1c29d708eb20b",
+      "durationSeconds": 5.862
+    },
+    {
+      "index": 2,
+      "text": "Coding AgentのBenchmarkでModelとHarnessを分けて考える理由は何ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "2ba4b445f5ca27b2d55745c94012ab5956ff9b267b66fe79350e7c6b07fa008c",
+      "audioSha256": "c59a22d7c24c711b3bbf962cdef5effd712e4b4abc9854efe707a84c632543dc",
+      "durationSeconds": 5.92
+    },
+    {
+      "index": 3,
+      "text": "Browser AgentのSecurityでExtension権限をなぜ監査しますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "d623226227c6edae3070c4f663a8749f7f0f9add7de5fd18d3fa9dd6479eec4a",
+      "audioSha256": "8ccb70db62712fabf8437ce2cb0847bfb4918949bb44a5adb43613ed12a5ce7c",
+      "durationSeconds": 5.328
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-26T17:49:08.575Z"
+}

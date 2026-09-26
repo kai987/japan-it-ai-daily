@@ -1,0 +1,350 @@
+{
+  "date": "2026-09-23",
+  "generatedAt": "2026-09-26T17:50:54.438Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "悪意",
+      "reading": "あくい",
+      "exampleJa": "悪意のあるExtensionを前提にPermission Boundaryを点検します。",
+      "word": "vocab-01.mp3",
+      "wordHash": "62ed328cbd859a0a470cf5f2080b84ec275dd919204fc221f98773c21e13f0ff",
+      "example": "example-01.mp3",
+      "exampleHash": "946ae39b3cdde2aec93e2eb49eddd31b0a4e569069c329091f63f211af883258",
+      "wordSha256": "53e113ec79eee2be7457e7c35cbcef3ad350f46ec96b21c1a08cbe705f42992a",
+      "exampleSha256": "7a952e4ea1538a853cd6d074e4d3381d7fc4e1a8d5fae342bcc32391959f7465"
+    },
+    {
+      "index": 2,
+      "term": "諮問",
+      "reading": "しもん",
+      "exampleJa": "重要なAI成果を公表する前に、独立した専門家へ諮問します。",
+      "word": "vocab-02.mp3",
+      "wordHash": "f44c35269aaddd66577f2facf5f8210f03fec965254dbb1ddbd01a218ffd1e0d",
+      "example": "example-02.mp3",
+      "exampleHash": "9cc30abc577718700d2ac137e5e3ded8c564b6f7ac728fcefbdfab057253e37e",
+      "wordSha256": "8710854a8ec91e2be878ad322ba0c6aaae5209eef6641d500fd41918aea18e19",
+      "exampleSha256": "0eba1973fbba24706bfb84489e77dad575d496cda8c07e0e1d581112d1a96bb9"
+    },
+    {
+      "index": 3,
+      "term": "未解決",
+      "reading": "みかいけつ",
+      "exampleJa": "未解決問題をBenchmarkに使うなら、成果の検証手順も先に決めます。",
+      "word": "vocab-03.mp3",
+      "wordHash": "0bdcffd8cdc71c1c269b19af1779d2f3abd661b9be77f15b2a02611613a108e3",
+      "example": "example-03.mp3",
+      "exampleHash": "26cb1153411d3189089839b0e7287fcccdbfb5b58d7693e1aab9f38a7089e9bb",
+      "wordSha256": "6fd2992b6f47d3df6438ebfc78aadf3abbfb0faf464b535c9ba5e59d1b76f2a1",
+      "exampleSha256": "b80bee84fba9ba07daf6daa20fb1d8ddb687c65899f7da92b32988d0fcbe496d"
+    },
+    {
+      "index": 4,
+      "term": "意義",
+      "reading": "いぎ",
+      "exampleJa": "Scoreだけでなく、その成果が業務に持つ意義を説明します。",
+      "word": "vocab-04.mp3",
+      "wordHash": "53a611d3350f01016434bb4cab6ff9349117be71e8bf506e4be924bbe0ff641b",
+      "example": "example-04.mp3",
+      "exampleHash": "dd76a637ab380015e57975c6a05ac6b2a173c07531509de185395118b953e429",
+      "wordSha256": "2dc40e2c879b1493db7dcc19fb50183a0a142e0d7d6381b8031f5f9b577f6dfe",
+      "exampleSha256": "17983c9c9d6a8f4509c9c3e271fb110c4ecea6fce16281f05e45bb48f23d709d"
+    },
+    {
+      "index": 5,
+      "term": "反論",
+      "reading": "はんろん",
+      "exampleJa": "Vendorの主張に反論がある場合は、双方のEvidenceを分けて確認します。",
+      "word": "vocab-05.mp3",
+      "wordHash": "2ec5dad4b95181405cb6e64015d332076c113bcca8a6d28e4e3912c5ccdb6fab",
+      "example": "example-05.mp3",
+      "exampleHash": "b603ec0ee258be277a5b6d22036dd61901c97f5de05ea9ef9d56d71ea79aba4f",
+      "wordSha256": "e68dde7487a7bbaeb5a78b6aeaa13064f2e8880093293742a8728b6bc9520aa7",
+      "exampleSha256": "7b474225f4908293b92a0bf5620210dea26d1c2ab11aea7ff2cd480b7576799f"
+    },
+    {
+      "index": 6,
+      "term": "実質",
+      "reading": "じっしつ",
+      "exampleJa": "担当者は名目上の人数ではなく、実質何人で運用しているか確認します。",
+      "word": "vocab-06.mp3",
+      "wordHash": "d0166ffa482ea1ef6e62ff326c2ca94712518bfd9b710279d111639522a1c7e1",
+      "example": "example-06.mp3",
+      "exampleHash": "23e2fac41685c30bf493b7794ea757206afac60e9a162cb5a15724332d2f03d3",
+      "wordSha256": "d93327493a11a3fd585e8b25544b8a08fee41cc3fddd7584fe236666e6ec79df",
+      "exampleSha256": "7797bcfeb0e643b29950f6965cff26df97b3bcb765c508e893c0fe5718939561"
+    },
+    {
+      "index": 7,
+      "term": "冗長化",
+      "reading": "じょうちょうか",
+      "exampleJa": "Core Switchを冗長化し、単一障害点を減らします。",
+      "word": "vocab-07.mp3",
+      "wordHash": "2b53425bc00c207b10a01f9b0ce47104f61f5a73db583f90b51cb94f49604683",
+      "example": "example-07.mp3",
+      "exampleHash": "965d1a458d3a21d9419e9562f785e6b14baa49462926d73d913e69f3ad95fcc1",
+      "wordSha256": "e775f7096a39f4ebce6c80d62f571a7cc53d5fae89dc484c587f97fe414ed725",
+      "exampleSha256": "56f7b62c069e25edaa708f4b6a2c3ac9b47c7e122cddaf32dd64b886aa859646"
+    },
+    {
+      "index": 8,
+      "term": "集約",
+      "reading": "しゅうやく",
+      "exampleJa": "Vendorごとに分散した保守回線を集約して管理します。",
+      "word": "vocab-08.mp3",
+      "wordHash": "67a4c16d7d0c683c3e54402877eaad15b43c91609f26cdf049b9b482474f1e31",
+      "example": "example-08.mp3",
+      "exampleHash": "18b13cb51e01cc5eba48efa1469aa1ad13918acce30f15b48b7f17e8bbed0f05",
+      "wordSha256": "ee2a6f14050f62d39c64b492cf9f96fd82ece3883beb1028f0a6d7848880163b",
+      "exampleSha256": "c6eded7e52f0c69782893e4261cb400ca2bb368b3bce4191eadd8fd87a952d5e"
+    },
+    {
+      "index": 9,
+      "term": "遠隔",
+      "reading": "えんかく",
+      "exampleJa": "遠隔保守の接続経路はOwnerと利用時間を記録します。",
+      "word": "vocab-09.mp3",
+      "wordHash": "c791679e7828928f8be553a7f053fe00aca8f7d877767a6689aaf9e7875201fc",
+      "example": "example-09.mp3",
+      "exampleHash": "3b963263441eb9d4cf19952459b4125a5ff7cf8cb6d7d904293a044b639482cd",
+      "wordSha256": "ec56f659681b6e706f8bd4d08663fbc7348b20c850433e75c0bdf550731bf7bb",
+      "exampleSha256": "c9125b8a74f52b313719c1fa30a0ca63a7d3419c465185a55b6ccf8ed6f5c559"
+    },
+    {
+      "index": 10,
+      "term": "移植",
+      "reading": "いしょく",
+      "exampleJa": "React NativeのAppをNative Androidへ移植するTaskも評価対象です。",
+      "word": "vocab-10.mp3",
+      "wordHash": "e98cdfb5f0fa6615b480fa89eb0eb3c39dfb2d1930972748e0c17cb9993bab5b",
+      "example": "example-10.mp3",
+      "exampleHash": "679fb94b9c737bd9007e0aea3038abc2ffa66443442861f6cdf17f868b22dcef",
+      "wordSha256": "acc9a884f0781d2a741c46d725bc887f812149d89138fc3beff68e49325a9987",
+      "exampleSha256": "db4f01b00ae15daa6428374a92b7be2c939d2bcee4326c799a0bd484b5cb4246"
+    },
+    {
+      "index": 11,
+      "term": "弱める",
+      "reading": "よわめる",
+      "exampleJa": "Security Headerを弱める変更はAgentのTrusted Boundaryを崩しかねません。",
+      "word": "vocab-11.mp3",
+      "wordHash": "83233996a1de8bd51c2eb25de5420a07d5b3fe139ae422a65c8378e359db18c8",
+      "example": "example-11.mp3",
+      "exampleHash": "2ce12e82723e88e823bb1e962fad3dc0016764155429e2d1e23b538fe5ef5f8c",
+      "wordSha256": "e4208900897c86ecf6c9ac5e575f974f22b9a90c056251763395f6eef476f623",
+      "exampleSha256": "ae112cdf25f6dc2beaf8b8ad5b38fe3ec4715f5059a7a92fc51a85556ab6239c"
+    },
+    {
+      "index": 12,
+      "term": "書き換える",
+      "reading": "かきかえる",
+      "exampleJa": "Cross-platform AppをJetpack Composeへ書き換えるTaskを比較します。",
+      "word": "vocab-12.mp3",
+      "wordHash": "34ce104e34a0ec7b477f4bbe420d97d01c472d91f4a17a282eb767aeac24a16d",
+      "example": "example-12.mp3",
+      "exampleHash": "f0a728a761dad3c1bb56d8d2eb3bed3bc1b4e5425913a0961cedb6b9df544a21",
+      "wordSha256": "1b75a53e7f72b1e8f81f9b4250481f0d133c14697410a3be2ce03b2cb128a1eb",
+      "exampleSha256": "d7fe5ea8295f0fe36325444d5846517e9a67b4e746857bc6f57939ad93b6eb93"
+    },
+    {
+      "index": 13,
+      "term": "突き止める",
+      "reading": "つきとめる",
+      "exampleJa": "Observabilityを整え、障害原因を現場へ行く前に突き止めます。",
+      "word": "vocab-13.mp3",
+      "wordHash": "320efc236413376411cac8cd3a614f1b8ff2bb3c5162c020a534c32dedff82bb",
+      "example": "example-13.mp3",
+      "exampleHash": "979e5f9cab9772c51a0a8169fab179a7c63c855753daf0b15eaea3adb93c0883",
+      "wordSha256": "2110a95bd177202b872a0c8dd8f3e19e22441a823ecb1ff6fe488d0771b2d25b",
+      "exampleSha256": "06bdd29eb0405bd0c22570af1fa7c565b8ac33cc4c897632fd3097d6314a771d"
+    },
+    {
+      "index": 14,
+      "term": "挑む",
+      "reading": "いどむ",
+      "exampleJa": "AIが難しい数学問題に挑むほど、独立検証の重要性も高まります。",
+      "word": "vocab-14.mp3",
+      "wordHash": "ab6c4b6fc1ef2782e8c43e9791ada1be82726e0430d50deeee3f1846ff4ef154",
+      "example": "example-14.mp3",
+      "exampleHash": "d3278662aa787815dc6819b55b46fab9f3231e54957808ba5dbacafc5e21b0ca",
+      "wordSha256": "de457075581d15244a92f2be65f9a67719105f737791d811c1d068939ae359aa",
+      "exampleSha256": "cb09a56638cee83be091ac65b417c7aeaf9b9f3ade1d04ce70d23dca58dba84f"
+    },
+    {
+      "index": 15,
+      "term": "奪う",
+      "reading": "うばう",
+      "exampleJa": "ExtensionにAgentの主導権を奪われないよう、Actionを認可します。",
+      "word": "vocab-15.mp3",
+      "wordHash": "872353cfdb712b5b0d097eeb5955f9614f231f625e9c7b68f31d6112ec44eef1",
+      "example": "example-15.mp3",
+      "exampleHash": "d395c3a43da4cbb02d22c0ab930fda25e7279a0cbd450fc631ff71ddf4a413f2",
+      "wordSha256": "9e31ae570bae2d3d3eea51527e06c63cdf48d82d5db3248b57d85e73a28716f0",
+      "exampleSha256": "986725627cb7e11a84f8e06a6fcaee86d2b13d19435ffdfcb0183a7d4d25faed"
+    },
+    {
+      "index": 16,
+      "term": "封じる",
+      "reading": "ふうじる",
+      "exampleJa": "Patchだけでなく不要なExtension Permissionも減らし、攻撃経路を封じます。",
+      "word": "vocab-16.mp3",
+      "wordHash": "6d0327165ff4d9e6dd92112fbbb53a899be5d09e07004c192711c7af067117d8",
+      "example": "example-16.mp3",
+      "exampleHash": "fb50d7a4822d0df317ffff680ae3d9c2bcab37360b4e65ba1c25dafd9b43c336",
+      "wordSha256": "6a469d66af7f450c4a132db8bdbf2d52b7b4070f1bf29dc5875bd8a5b4374802",
+      "exampleSha256": "680f08fd6cbca2e87eb6e08a4168772b38f5a95aa002968228c30f29a813fddf"
+    },
+    {
+      "index": 17,
+      "term": "乗り越える",
+      "reading": "のりこえる",
+      "exampleJa": "Long-Horizon Taskを乗り越えられるか、途中の失敗理由も記録します。",
+      "word": "vocab-17.mp3",
+      "wordHash": "ae1a08ffea521ca599e8219d45bda017cee0e0e0bbef6b2a98304ae3eed326bf",
+      "example": "example-17.mp3",
+      "exampleHash": "5a2af1a03ea0f20d13d775a758e27fcd1161a78ad788a64ade26f574d02c8a0f",
+      "wordSha256": "5109ef030aa0f6acc93a6836f812cf4e6481caa18da94aae9864fba98de8c64b",
+      "exampleSha256": "f714fe914be3d562dfb4e6ee4c5d503117ece349d7c6ca459fbe1b9bf5992b7f"
+    },
+    {
+      "index": 18,
+      "term": "逐一",
+      "reading": "ちくいち",
+      "exampleJa": "少人数運用では現場を逐一確認しなくても切り分けられる状態を目指します。",
+      "word": "vocab-18.mp3",
+      "wordHash": "7bfa48e8b14c58a29cc155068c76ed6f6a2dae6f9709805e84468da858bdca2e",
+      "example": "example-18.mp3",
+      "exampleHash": "a28b3056bb8fca00b06f4b6fba1701256c63b5582110fbdfddee2b849a92fbe9",
+      "wordSha256": "f93783a945a13bdfcb6dcdaf03e9b72d994b729f9fdd6b41d2d50a82a490b15a",
+      "exampleSha256": "8e3a906aaaef5f0fbc0178400f9bd5c41a24b00d98e0ea8664bb79ba9caa89d5"
+    },
+    {
+      "index": 19,
+      "term": "とどまる",
+      "reading": "とどまる",
+      "exampleJa": "Android移植の最高Completion Rateも80％にとどまりました。",
+      "word": "vocab-19.mp3",
+      "wordHash": "3e4a99d62c0f22979326db909ca941ede9478b0d535c6b59d28e4d153438d3d2",
+      "example": "example-19.mp3",
+      "exampleHash": "adc2b391337fd7f7f0127ed7c89242a3ecc916f4693d71fa00a91b1217fc5f84",
+      "wordSha256": "0cf0815c0abedb5258d972a001a8c955df65ba6d04474252b2d819f41b249bcb",
+      "exampleSha256": "d733c0f666290b784b63383082d71068726df26fed35310d7eaa0226f48f2d57"
+    },
+    {
+      "index": 20,
+      "term": "送り付ける",
+      "reading": "おくりつける",
+      "exampleJa": "悪意あるExtensionがAgentへ不正なPromptを送り付ける経路を遮断します。",
+      "word": "vocab-20.mp3",
+      "wordHash": "0bff35625dd05c32b557bfe57348006887a34b2effd3e50984eddb123e30c73f",
+      "example": "example-20.mp3",
+      "exampleHash": "00e7dced0e4d18e804d3838121da09c18720f6c37f9b3cfdb13865acf34dcfcc",
+      "wordSha256": "6f9e3fa3734d59ff86d7cdb339a2045f4f74ce2b8205b3c9ff8bf3c8dc2d3716",
+      "exampleSha256": "90ef211cde8b36bce10d3a59cd459a30241730e252b33f72317ac35fc0f16595"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～ことを受けて",
+      "exampleJa": "旧Benchmarkの合格率が上がったことを受けて、長期間Taskを追加しました。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "84bad38221ae18deb3505084996f9eaa63a55915ef96ce127c60a21bd873d0bb",
+      "exampleSha256": "c29e19944629106de95c45b91dc757e26b243a86e46c5a112de1da225a7f3d7c"
+    },
+    {
+      "index": 2,
+      "pattern": "～得る（うる／える）",
+      "exampleJa": "Browser Agentの権限設計次第では、Extensionが重大な操作へ到達し得ます。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "c0ff31172c29bc4a0cf0c2865868657ddb71c20c6187bf49f7eed83788fbac92",
+      "exampleSha256": "79393d0439d5787df74626fd7a293bd96c1e384e94ad2f9fdcc44e58b1693f0d"
+    },
+    {
+      "index": 3,
+      "pattern": "～ようにする",
+      "exampleJa": "現場へ出向く前に原因を切り分けられるようにします。",
+      "example": "grammar-example-03.mp3",
+      "exampleHash": "7b312eeaf3ea328b0ffa71e6dd6c217383ee8a7538e71f92e2fd5df366d966be",
+      "exampleSha256": "c4c83f55625e64fb85163cb7c05acc76930ab5bf1ada859cdfc734fe86b472b7"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "に加えて",
+      "firstIntroducedDate": "2026-09-12",
+      "audioDate": "2026-09-12",
+      "pattern": "～に加えて",
+      "exampleJa": "対談に加えて、企業の導入事例も紹介します。",
+      "example": "grammar-example-01.mp3",
+      "exampleSha256": "f180e3a9e1b66370d4219181d9890e024373fc63099b90b119303650385f656f"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "に応じて",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～に応じて",
+      "exampleJa": "データの機密性に応じてCloudとLocal Modelを使い分けます。",
+      "example": "grammar-example-04.mp3",
+      "exampleSha256": "310dedda3a58dd3aeb153fbb2326144a3307da4ea6a17ede76b36109c051930f"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "わけではない",
+      "firstIntroducedDate": "2026-08-30",
+      "audioDate": "2026-08-30",
+      "pattern": "～わけではない",
+      "exampleJa": "AIが差し戻したからといって、仕込んだバグを正しく検出したわけではありません。",
+      "example": "grammar-example-01.mp3",
+      "exampleSha256": "81d3ca23d46e0bc94d717592f938d8dd8c6f0e30a1515af9d5adf14dcca51409"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "一方で",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～一方で",
+      "exampleJa": "Local LLMはDataを外部に出さない一方で、運用負荷が高くなることがあります。",
+      "example": "grammar-example-05.mp3",
+      "exampleSha256": "4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950"
+    },
+    {
+      "index": 5,
+      "studyKind": "review",
+      "identity": "つつ",
+      "firstIntroducedDate": "2026-08-18",
+      "audioDate": "2026-08-18",
+      "pattern": "～つつ",
+      "exampleJa": "品質を維持しつつ、Model Costを削減します。",
+      "example": "grammar-example-01.mp3",
+      "exampleSha256": "31c15f99bccd58c5c2dbd68c0b50f9fe01ec20695c7c2e24ed14ad79c4f10f83"
+    }
+  ]
+}
