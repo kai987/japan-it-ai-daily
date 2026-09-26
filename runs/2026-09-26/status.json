@@ -1,17 +1,26 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-26",
-  "stage": "registered",
+  "stage": "sources_verified",
   "sourceCommit": "5666e407f43358d4d0bb6f6d70f20b9c89c1f438",
-  "sourceWindow": {
-    "from": "2026-09-25T10:00:00+09:00",
-    "to": "2026-09-26T10:00:00+09:00"
-  },
+  "sourceWindow": {"from":"2026-09-25T10:00:00+09:00","to":"2026-09-26T10:00:00+09:00"},
   "createdAt": "2026-09-26T15:50:41+09:00",
-  "updatedAt": "2026-09-26T15:50:41+09:00",
-  "completedArtifacts": [],
+  "updatedAt": "2026-09-26T07:15:31Z",
+  "completedArtifacts": ["runs/2026-09-26/sources.json","runs/2026-09-26/history.json","runs/2026-09-26/interviews.json"],
   "lastError": null,
-  "resumeFrom": "registered",
-  "nextAction": "collect_complete_main_inventory_and_existing_runs_before_generation",
-  "attempt": 1
+  "resumeFrom": "sources_verified",
+  "nextAction": "Persist completed bilingual drafts and full learning cards; verify the same six-file candidate with unchanged validators before draft preflight.",
+  "attempt": 1,
+  "sourceVerification": {
+    "originalsRunId":36225206750,
+    "originalsArtifactId":10900915366,
+    "primaryRunId":36225455597,
+    "primaryArtifactId":10900766881,
+    "originalArticlesReviewed":5,
+    "primaryAnnouncementsReviewed":5,
+    "source5DecodedAs":"Shift_JIS declared by original HTML",
+    "source5TextSha256":"0fec99773d24b304de6a815e2042290630f7980ff3b3c66214253d079984b5c2",
+    "accessLimit":"Top 5 reviewed only as returned by unauthenticated HTTP 200; no membership-only whitepaper or authenticated content was fetched."
+  },
+  "historyVerification":{"completeDates":45,"collections":4,"vocabularyIdentities":878,"grammarIdentities":90,"candidateValidation":"not_yet_run"}
 }
