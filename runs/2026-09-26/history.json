@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-26",
+  "sourceCommit": "5666e407f43358d4d0bb6f6d70f20b9c89c1f438",
+  "inventoryComplete": true,
+  "inventoryEntries": 3010,
+  "verifiedNonRecordingBlobs": 503,
+  "inputArtifact": {"runId":36225038386,"id":10900451698,"sha256":"0318d8b0220c3670348314344e4ff5f2d5ced43c9487c8fc873c54a76761c20b"},
+  "collections": ["daily","daily-ja","japanese","japanese-ja"],
+  "datesPerCollection": 45,
+  "completeDates": ["2026-08-12","2026-08-13","2026-08-14","2026-08-15","2026-08-16","2026-08-17","2026-08-18","2026-08-19","2026-08-20","2026-08-21","2026-08-22","2026-08-23","2026-08-24","2026-08-25","2026-08-26","2026-08-27","2026-08-28","2026-08-29","2026-08-30","2026-08-31","2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-05","2026-09-06","2026-09-07","2026-09-08","2026-09-09","2026-09-10","2026-09-11","2026-09-12","2026-09-13","2026-09-14","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-19","2026-09-20","2026-09-21","2026-09-22","2026-09-23","2026-09-24","2026-09-25"],
+  "rules": {
+    "vocabulary": {"version":1,"sha256":"614de8204cb9d25205daa15a9f27c502002548de9e5364a1a818db0c99f266ef"},
+    "grammar": {"version":1,"sha256":"7105ca61642e2e9cf190a929fa6af2635e87789760906484a84950fa2e1b7679"},
+    "learningReviewSha256":"7406e1264a4e4af22502b9c7c619237afb8db7e3a103e524101c4f00f643db13"
+  },
+  "baselineChecks": {"jlpt":{"dates":45,"vocabulary":878,"duplicates":0},"grammar":{"dates":45,"grammar":90,"duplicates":0}},
+  "semanticReview": {
+    "scope":"Read complete 878 historical vocabulary term/reading inventory, associated candidate-match cards, and all 90 grammar patterns and meanings; not a recent-N-days scan.",
+    "excluded":[
+      {"candidate":"手がける","reason":"Same lexeme as 手掛ける introduced2026-09-05; spelling variation cannot create novelty."},
+      {"candidate":"乱立する","reason":"Nominal+suru identity already introduced as 乱立2026-09-13."},
+      {"candidate":"懸念する","reason":"Nominal+suru identity already introduced as 懸念2026-09-04."},
+      {"candidate":"分断する","reason":"Nominal+suru identity already introduced as 分断2026-09-18."},
+      {"candidate":"使い果たす","reason":"Conservative exclusion from new-card selection because exhaustion usage was already taught through 使い切る; retain only as article context."},
+      {"candidate":"拍車を掛ける","reason":"Do not repackage prior 拍車 card as new idiom."}
+    ],
+    "selectedNewVocabulary":["手繰り寄せる","途切れる","挟む","埋め込む","精密","即日","模擬する","協調する","一体的","後継","疲弊する","顕在化する","平時","有事","初動"],
+    "distinctions":["精密 concerns exactness/tolerance, not prior 精巧 structural intricacy.","一体的 concerns coordinated single-system handling; not prior 表裏一体 describing inseparable two sides.","即日 means on the same day, not prior 即座に meaning immediately.","埋め込む in watermark context means placing information within output, distinguished from prior 組み込む system integration."],
+    "selectedNewGrammar":["～に合わせて","～かつ"],
+    "grammarReason":"Neither form is in the complete historical grammar inventory. に合わせて synchronizes to an explicit reference or timing, distinguished from conditional variation に応じて. かつ conjoins simultaneous properties. All other qualifying previously taught forms remain review, not new grammar."
+  },
+  "nextAction":"Write complete cards and run unchanged full-history checks again on the finished six-file candidate; main changes invalidate this checkpoint."
+}
