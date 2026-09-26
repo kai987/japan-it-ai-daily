@@ -13,6 +13,7 @@ import {
 } from './audio-cache.mjs';
 import { buildStudyArchive } from './learning-review.mjs';
 import { reviewAudioCardsForDate } from './learning-audio-plan.mjs';
+import { learningAudioCards } from './learning-audio-content.mjs';
 
 const DEFAULT_STYLE_ID = 497929760;
 const DEFAULT_ENGINE_URL = 'http://127.0.0.1:10101';
@@ -39,107 +40,6 @@ const useLatest = args.includes('--latest') || (!requestedDate && !generateAll);
 const fail = (message) => {
   console.error(`\n[AivisSpeech] ${message}\n`);
   process.exit(1);
-};
-
-const parseScalar = (raw = '') => {
-  const value = raw.trim();
-  if (!value) return '';
-  if (value.startsWith('"')) {
-    try {
-      return JSON.parse(value);
-    } catch {
-      return value.slice(1, value.endsWith('"') ? -1 : undefined);
-    }
-  }
-  if (value.startsWith("'") && value.endsWith("'")) {
-    return value.slice(1, -1).replace(/''/g, "'");
-  }
-  return value;
-};
-
-const extractField = (segment, field) => {
-  const match = segment.match(new RegExp(`^\\s+${field}:\\s*(.+)$`, 'm'));
-  return match ? parseScalar(match[1]) : '';
-};
-
-const extractFlowField = (segment, field) => {
-  const escaped = field.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const pattern = new RegExp(
-    `(?:^|,\\s*)${escaped}:\\s*(.*?)(?=,\\s*[A-Za-z][A-Za-z0-9]*:\\s*|$)`,
-  );
-  const match = segment.match(pattern);
-  return match ? parseScalar(match[1]) : '';
-};
-
-const frontmatterOf = (source) => source.match(/^---\r?\n([\s\S]*?)\r?\n---/m)?.[1] ?? '';
-
-const parseVocabulary = (source) => {
-  const frontmatter = frontmatterOf(source);
-  // Stop at the grammar key itself, not only at the multiline form "grammar:\n".
-  // Days with zero new grammar use "grammar: []", and the old lookahead made
-  // the whole vocabulary block disappear on those days.
-  const vocabularyBlock = frontmatter.match(/(?:^|\n)vocabulary:\s*\n([\s\S]*?)(?=\ngrammar:)/)?.[1] ?? '';
-
-  const flowItems = Array.from(vocabularyBlock.matchAll(/^\s*-\s*\{(.+)\}\s*$/gm));
-  if (flowItems.length) {
-    return flowItems
-      .map((match) => {
-        const segment = match[1] ?? '';
-        return {
-          term: extractFlowField(segment, 'term'),
-          reading: extractFlowField(segment, 'reading'),
-          exampleJa: extractFlowField(segment, 'exampleJa'),
-        };
-      })
-      .filter((item) => item.term && item.exampleJa);
-  }
-
-  const itemStarts = Array.from(vocabularyBlock.matchAll(/^\s*-\s+term:\s*(.+)$/gm));
-  return itemStarts
-    .map((match, index) => {
-      const start = match.index ?? 0;
-      const end = itemStarts[index + 1]?.index ?? vocabularyBlock.length;
-      const segment = vocabularyBlock.slice(start, end);
-      return {
-        term: parseScalar(match[1]),
-        reading: extractField(segment, 'reading'),
-        exampleJa: extractField(segment, 'exampleJa'),
-      };
-    })
-    .filter((item) => item.term && item.exampleJa);
-};
-
-const parseGrammar = (source) => {
-  const frontmatter = frontmatterOf(source);
-  const grammarBlock = frontmatter.match(
-    /(?:^|\n)grammar:\s*\n([\s\S]*?)(?=\n(?:technicalTerms|mustRememberWords|mustRememberGrammar):|$)/,
-  )?.[1] ?? '';
-
-  const flowItems = Array.from(grammarBlock.matchAll(/^\s*-\s*\{(.+)\}\s*$/gm));
-  if (flowItems.length) {
-    return flowItems
-      .map((match) => {
-        const segment = match[1] ?? '';
-        return {
-          pattern: extractFlowField(segment, 'pattern'),
-          exampleJa: extractFlowField(segment, 'exampleJa'),
-        };
-      })
-      .filter((item) => item.pattern && item.exampleJa);
-  }
-
-  const itemStarts = Array.from(grammarBlock.matchAll(/^\s*-\s+pattern:\s*(.+)$/gm));
-  return itemStarts
-    .map((match, index) => {
-      const start = match.index ?? 0;
-      const end = itemStarts[index + 1]?.index ?? grammarBlock.length;
-      const segment = grammarBlock.slice(start, end);
-      return {
-        pattern: parseScalar(match[1]),
-        exampleJa: extractField(segment, 'exampleJa'),
-      };
-    })
-    .filter((item) => item.pattern && item.exampleJa);
 };
 
 const allDates = () => readdirSync(contentDir)
@@ -334,8 +234,7 @@ let processedDates = 0;
 for (const date of targetDates) {
   const contentPath = join(contentDir, `${date}.md`);
   const source = readFileSync(contentPath, 'utf8');
-  const vocabulary = parseVocabulary(source);
-  const grammar = parseGrammar(source);
+  const { vocabulary, grammar } = learningAudioCards(source, date);
   const review = reviewAudioCardsForDate(root, date, studyArchive);
   const reviewVocabulary = review.vocabulary;
   const reviewGrammar = review.grammar;
