@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-26",
-  "stage": "publisher_queued",
+  "stage": "published",
   "sourceCommit": "5666e407f43358d4d0bb6f6d70f20b9c89c1f438",
   "sourceWindow": {
     "from": "2026-09-25T10:00:00+09:00",
     "to": "2026-09-26T10:00:00+09:00"
   },
   "createdAt": "2026-09-26T15:50:41+09:00",
-  "updatedAt": "2026-09-26T07:58:33.000Z",
+  "updatedAt": "2026-09-26T08:03:48.000Z",
   "completedArtifacts": [
     "runs/2026-09-26/sources.json",
     "runs/2026-09-26/history.json",
@@ -23,9 +23,9 @@
     "runs/2026-09-26/request.json"
   ],
   "lastError": null,
-  "resumeFrom": "publisher_queued",
+  "resumeFrom": "published",
   "attempt": 1,
-  "nextAction": "Observe unique publish-daily.yml run 36228377824. If it succeeds, verify the exact resulting main commit with deploy.yml Pages/post-deploy snapshot and then perform the one-time N1 handoff.",
+  "nextAction": "none",
   "draft": {
     "branch": "draft/daily-2026-09-26",
     "commit": "0ee335ca783036580a032fbce0e9c2dc1d8a5b3a",
@@ -96,6 +96,31 @@
   "publisher": {
     "runId": 36228377824,
     "requestCommit": "a5cb156c32b1bb0aeea9649256476f16f843df09",
-    "status": "in_progress"
+    "status": "success"
+  },
+  "publication": {
+    "releaseCommit": "d1263f244fb08fb3e50286fb88f616c1cf378560",
+    "runId": 36228496329,
+    "issueNumber": 46,
+    "totalDays": 46,
+    "build": "success",
+    "deploy": "success",
+    "publicationVerification": "success",
+    "targetDateVerified": true,
+    "snapshotArtifactId": 10902020320,
+    "snapshotArtifactDigest": "sha256:720579b000aa884b4993dc6bb5973d7f34dafca64afb1605fd56950a6d6d051b",
+    "studyCounts": {
+      "vocabulary": {
+        "new": 15,
+        "review": 5,
+        "total": 20
+      },
+      "grammar": {
+        "new": 2,
+        "review": 6,
+        "total": 8
+      },
+      "issueNumber": 46
+    }
   }
 }
