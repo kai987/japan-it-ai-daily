@@ -1,0 +1,45 @@
+name: Capture linked primary announcements 2026-09-26
+on:
+  push:
+    branches: [automation/daily-progress]
+    paths: [.github/workflows/capture-primary-20260926.yml]
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read public primary announcements without credentials
+        run: |
+          mkdir -p /tmp/primary
+          python3 <<'PY'
+          import json,hashlib,datetime
+          from urllib.request import Request,urlopen
+          from pathlib import Path
+          urls=[
+          'https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/',
+          'https://newsroom.kddi.com/news/detail/kddi_nr-1169_4723.html',
+          'https://www.php.net/archive/2026.php',
+          'https://jp.tdsynnex.com/news/260907/'
+          ]
+          records=[]
+          for index,url in enumerate(urls,1):
+              record={'index':index,'url':url}
+              try:
+                  with urlopen(Request(url,headers={'User-Agent':'DailyPublicationSourceVerifier/1.0'}),timeout=40) as response:
+                      data=response.read();record.update(status=response.status,finalUrl=response.url,contentType=response.headers.get('Content-Type'))
+                  Path(f'/tmp/primary/{index:02}.html').write_bytes(data)
+                  record.update(bytes=len(data),sha256=hashlib.sha256(data).hexdigest(),capturedAt=datetime.datetime.now(datetime.timezone.utc).isoformat())
+              except Exception as e:
+                  record.update(status='unavailable',error=str(e))
+              records.append(record)
+              print(json.dumps(record,ensure_ascii=False))
+          Path('/tmp/primary/report.json').write_text(json.dumps(records,ensure_ascii=False,indent=2)+'\n')
+          PY
+      - name: Retain public captures outside Git
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: primary-announcements-20260926
+          path: /tmp/primary/
+          if-no-files-found: error
+          retention-days: 1
