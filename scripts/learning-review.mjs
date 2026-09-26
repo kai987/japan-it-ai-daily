@@ -52,7 +52,7 @@ function formsFor(card, kind, rules, key) {
   }
   return [...forms].map(clean).filter(x => x.length >= 2).sort((a,b) => b.length - a.length);
 }
-function matcherFor(card, kind, rules, key) {
+export function matcherFor(card, kind, rules, key) {
   const id = key(kind === 'vocabulary' ? card.term : card.pattern);
   const forms = formsFor(card, kind, rules, key);
   const patterns = forms.map(form => {
@@ -60,7 +60,16 @@ function matcherFor(card, kind, rules, key) {
       // Similar-looking, different-function grammar must not be merged.
       if (kind === 'grammar' && id === 'つつ') pattern += '(?!も|ある|あり|あっ)';
       if (kind === 'grammar' && id === 'わけではない') pattern = '(?<!ない)' + pattern;
-      if (kind === 'grammar' && id === '上で') pattern = '(?<![ただ])' + pattern;
+      if (kind === 'grammar' && id === '上で') {
+        // This registry identity is V-dictionary + 上で, not a location
+        // (エディター上で / 300人以上で) or the separate V-past + 上で.
+        pattern = '(?<![ただ])' + pattern;
+        if (/^(?:上で|うえで)$/.test(form)) pattern = '(?<=[うくぐすつぬぶむる])' + pattern;
+      }
+      // The short conjunctive alias must not match the lexical verb 加える.
+      if (kind === 'grammar' && id === 'に加えて' && form === 'に加え') pattern += '(?!る)';
+      // を通した is a noun-modifying means expression; 通しただけ is a completed lexical action.
+      if (kind === 'grammar' && id === 'を通じて' && form === 'を通した') pattern += '(?!だけ)';
       if (kind === 'grammar' && id === 'に至る') pattern += '(?!まで)';
       if (kind === 'grammar' && id === 'かねる') pattern += '(?!ない)';
       return {form, regex:new RegExp(pattern,'u')};
