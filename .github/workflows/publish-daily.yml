@@ -17,7 +17,7 @@ jobs:
   publish:
     permissions:
       contents: write
-      actions: read
+      actions: write
     runs-on: ubuntu-latest
     env:
       PUBLIC_AUDIO_BASE_URL: ${{ vars.PUBLIC_AUDIO_BASE_URL || 'https://pub-7561025e67be4103ac4bafb331864381.r2.dev' }}
@@ -121,3 +121,5 @@ jobs:
             -m "Publication-Request: $REQUEST_ID"
           git push origin HEAD:main
           echo "Published commit $(git rev-parse HEAD) from request $REQUEST_ID"
+      - name: Dispatch exact main Pages workflow
+        run: gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY" --ref main
