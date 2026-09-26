@@ -1,0 +1,17 @@
+{
+ "schemaVersion":1,
+ "targetDate":"2026-09-26",
+ "baseCommit":"5666e407f43358d4d0bb6f6d70f20b9c89c1f438",
+ "draftBranch":"draft/daily-2026-09-26",
+ "draftCommit":"0ee335ca783036580a032fbce0e9c2dc1d8a5b3a",
+ "draftTree":"c8bd4cc1f1976f5974c19e2dd227b3b3814fa6b8",
+ "runId":36227372203,
+ "jobId":108363860236,
+ "path":".github/workflows/deploy.yml",
+ "observedAt":"2026-09-26T07:39:38Z",
+ "status":"in_progress",
+ "lastCompletedStep":"Build",
+ "currentStep":"Install browser for regression checks",
+ "nextAction":"Await same-run speech smoke/full browser/CSP/snapshot checks. No request submission or publication claim before complete preflight.",
+ "requestBranchWorkflowObservation":{"blobSha":"f0dc6c7ab6cdb25281007578c95b6776c42a70c8","staleAgainstMain":true,"missing":"actions:write and explicit Pages dispatch already fixed on main","nextAction":"Copy the exact validated current-main publish-daily.yml to request branch before submitting the complete 9/26 request; preserve all gates and do not modify main."}
+}
