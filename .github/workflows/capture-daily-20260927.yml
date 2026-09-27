@@ -24,8 +24,8 @@ jobs:
             'https://dev.classmethod.jp/articles/litellm-deepeval-jev/',
             'https://dev.classmethod.jp/articles/20260924-cc-updates-v2-1-283/',
             'https://dev.classmethod.jp/articles/kiro-web-upload-local-kiro/',
-            'https://zenn.dev/kichiemon/articles/comfyui-h3-text-encoder',
-            'https://zenn.dev/hontsuke/articles/0118c6df497a6a',
+            'https://qiita.com/sphereSky/items/3956d10b9d8b280516de',
+            'https://dev.classmethod.jp/articles/amazon-dcv-remote-desktop-ec2-ubuntu2404/',
           ]
           out=pathlib.Path('/tmp/originals-20260927');out.mkdir()
           records=[]
