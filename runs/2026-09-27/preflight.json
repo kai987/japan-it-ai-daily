@@ -1,12 +1,10 @@
 {
-  "schemaVersion":1,"targetDate":"2026-09-27","observedAt":"2026-09-27T09:11:10Z",
+  "schemaVersion":1,"targetDate":"2026-09-27","observedAt":"2026-09-27T09:14:17Z",
   "baseCommit":"f7fc7972ecad8af8ed1ccc1a08f8fae3795abcce",
-  "draftBranch":"draft/daily-2026-09-27",
-  "draftCommit":"1feb2c6ca8976004b5958ac926ab455a2aef8a27",
-  "draftTree":"fb9c1f2e31b9b0ad2b40f2cd15ff0feec7ed01bc",
-  "preflightWorkflowPath":".github/workflows/deploy.yml",
-  "preflightRunId":36308538763,
-  "status":"in_progress","conclusion":null,
+  "draftBranch":"draft/daily-2026-09-27","draftCommit":"1feb2c6ca8976004b5958ac926ab455a2aef8a27","draftTree":"fb9c1f2e31b9b0ad2b40f2cd15ff0feec7ed01bc",
+  "preflightWorkflowPath":".github/workflows/deploy.yml","preflightRunId":36308538763,
+  "buildJobId":108589833935,"status":"completed","conclusion":"success","build":"success","draftDeploy":"skipped_by_policy",
+  "checks":{"audit":"success","publicationRecovery":"success","typecheck":"success","contentIntegrityAndAllHistory":"success","evidenceAndPilot":"success","bilingualInterview":"success","quality":"success","audioScripts":"success","audioVersions":"success","unitTests":"success","build":"success","speechSmoke":"success","fullBrowser":"success","csp":"success","snapshotExport":"success"},
   "ancestryVerified":true,"changedPathsCount":6,"historicalFilesChanged":0,"platformRepair":false,
-  "nextAction":"Inspect exact run/job/step results; require all mandatory gates before request_ready."
+  "nextAction":"Persist request_ready, refresh main/lease/request slot/active runs, then submit the complete source-bound publication request."
 }
