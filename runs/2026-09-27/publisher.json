@@ -1,0 +1,11 @@
+{
+  "schemaVersion":1,"targetDate":"2026-09-27","observedAt":"2026-09-27T09:18:15Z",
+  "stage":"publisher_queued",
+  "requestId":"daily-2026-09-27-7d2b0aa3-9646-4759-bc35-01d7e801b0f0",
+  "requestCommit":"5fb197e40c172a1df02e1f2d49e460e431e5bb7d",
+  "requestBlobSha":"bb38bf67bdd470ba94bf1b2fe9686337f8eaeffd",
+  "requestReadBack":"exact_bytes_match",
+  "draftCommit":"1feb2c6ca8976004b5958ac926ab455a2aef8a27","preflightRunId":36308538763,
+  "publisherRunId":36308882019,"workflowPath":".github/workflows/publish-daily.yml","branch":"automation/daily-publish-request","status":"in_progress","conclusion":null,
+  "nextAction":"Release author lease after this durable transfer, observe the unique publisher, then verify its final main deploy and source-bound snapshot before published. Do not replace the occupied request slot."
+}
