@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-27",
+  "scope": "lease_and_daily_schedule_repair",
+  "stage": "lease_claim_and_renew_verified",
+  "sourceCommit": "316664cb8774d09b3b0058f80a657c9613f11d81",
+  "sourceWindow": {
+    "from": "2026-09-26T10:00:00+09:00",
+    "to": "2026-09-27T10:00:00+09:00"
+  },
+  "updatedAt": "2026-09-27T04:12:35.575Z",
+  "observations": {
+    "queuedRuns": 0,
+    "inProgressRuns": 0,
+    "previousLease": "released",
+    "claimCommit": "7fbd786624140422a3ff77e3160019035319549c",
+    "renewCommit": "a4622f864299f3718a39d7362e6798d634acd01f",
+    "leaseBlobSha": "61cd04c5636349c05d23f08bd7a8444b507ab9f8",
+    "claimLease": "passed",
+    "renewLease": "passed",
+    "assertLease": "passed",
+    "readBack": "matched",
+    "previousSafetyBlock": "not_reproduced_in_current_authorized_write"
+  },
+  "dailyPublication": "not_performed_by_this_repair",
+  "nextAction": "Clarify public lease identity and schedule retention in canonical docs and daily prompt; run regression checks; verify repair deployment; release lease.",
+  "lastError": null
+}
