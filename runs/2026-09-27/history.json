@@ -1,1 +1,59 @@
-{"schemaVersion":1,"targetDate":"2026-09-27","sourceCommit":"48345d405e0e8338a0425bd4bb34ad7a50ba599c","checkedAt":"2026-09-27T05:12:16.961208+00:00","phase":"complete_historical_baseline_before_candidate_authoring","completeEarlierDates":["2026-08-12","2026-08-13","2026-08-14","2026-08-15","2026-08-16","2026-08-17","2026-08-18","2026-08-19","2026-08-20","2026-08-21","2026-08-22","2026-08-23","2026-08-24","2026-08-25","2026-08-26","2026-08-27","2026-08-28","2026-08-29","2026-08-30","2026-08-31","2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-05","2026-09-06","2026-09-07","2026-09-08","2026-09-09","2026-09-10","2026-09-11","2026-09-12","2026-09-13","2026-09-14","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-19","2026-09-20","2026-09-21","2026-09-22","2026-09-23","2026-09-24","2026-09-25","2026-09-26"],"collections":["daily","daily-ja","japanese","japanese-ja"],"collectionFileCount":184,"inventoryEntries":3215,"exportedSourceBlobsVerified":520,"identityRules":{"docs/jlpt-history/identity-rules.json":{"sha256":"614de8204cb9d25205daa15a9f27c502002548de9e5364a1a818db0c99f266ef","version":null},"docs/grammar-history/identity-rules.json":{"sha256":"7105ca61642e2e9cf190a929fa6af2635e87789760906484a84950fa2e1b7679","version":null}},"commands":{"checkHistory":{"dates":46,"vocabulary":893,"duplicates":0},"checkGrammarHistory":{"dates":46,"grammar":92,"duplicates":0},"buildStudyArchive":{"dates":46,"lastDate":"2026-09-26"}},"candidateIdentityValidation":"not_yet_authored","exportRunId":36295839451,"exportArtifactId":10922924788,"exportArtifactSha256":"5a6a535bead2eaa0ae1d48418f932956bd986c3c595884a7063b91e4409e8f1c","historyArchiveSha256":"6a09cd406d2d1b8506dee3582e182b640c2e9ab4cc91d93ec5fa483d4820e830","priorReportTop5Excluded":["https://forest.watch.impress.co.jp/docs/news/2143099.html","https://ai.watch.impress.co.jp/docs/news/2143106.html","https://cloud.watch.impress.co.jp/docs/news/2142958.html","https://forest.watch.impress.co.jp/docs/news/2143091.html","https://www.itmedia.co.jp/enterprise/articles/2609/26/news009.html"]}
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-27",
+  "sourceCommit": "f7fc7972ecad8af8ed1ccc1a08f8fae3795abcce",
+  "sourceTree": "01abd4c349690953cf8c6aa7174482ad004ad4ab",
+  "checkedAt": "2026-09-27T09:07:10Z",
+  "phase": "complete_history_and_candidate_verified",
+  "completeEarlierDates": ["2026-08-12","2026-08-13","2026-08-14","2026-08-15","2026-08-16","2026-08-17","2026-08-18","2026-08-19","2026-08-20","2026-08-21","2026-08-22","2026-08-23","2026-08-24","2026-08-25","2026-08-26","2026-08-27","2026-08-28","2026-08-29","2026-08-30","2026-08-31","2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-05","2026-09-06","2026-09-07","2026-09-08","2026-09-09","2026-09-10","2026-09-11","2026-09-12","2026-09-13","2026-09-14","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-19","2026-09-20","2026-09-21","2026-09-22","2026-09-23","2026-09-24","2026-09-25","2026-09-26"],
+  "collections": ["daily","daily-ja","japanese","japanese-ja"],
+  "earlierCollectionFiles": 184,
+  "mainInventoryBlobCount": 3219,
+  "identityRules": {
+    "docs/jlpt-history/identity-rules.json": {"schemaVersion":1,"sha256":"614de8204cb9d25205daa15a9f27c502002548de9e5364a1a818db0c99f266ef"},
+    "docs/grammar-history/identity-rules.json": {"schemaVersion":1,"sha256":"7105ca61642e2e9cf190a929fa6af2635e87789760906484a84950fa2e1b7679"}
+  },
+  "baselineRevalidation": {
+    "originalExportRunId":36295839451,
+    "originalExportArtifactId":10922924788,
+    "originalExportArtifactSha256":"5a6a535bead2eaa0ae1d48418f932956bd986c3c595884a7063b91e4409e8f1c",
+    "originalExportSourceCommit":"48345d405e0e8338a0425bd4bb34ad7a50ba599c",
+    "currentTreeReconstructedAndMatched":true,
+    "maintenanceChangedOnlyEightLeaseCodeDocumentationTestPaths":true,
+    "allHistoricalContentAndIdentityRuleBlobsUnchanged":true,
+    "currentBaselineSnapshotRunId":36297994809,
+    "currentBaselineSnapshotArtifactId":10924657504,
+    "currentBaselineSnapshotSha256":"7a02a6bd885d5ddc6a0bac98aaa2b7dd4eddac04942b3d6c7f4dad01a2e22681",
+    "rebuiltSnapshotByteIdentical":true
+  },
+  "candidateChecks": {
+    "fourFileDates":47,
+    "lexicalIdentities":905,
+    "grammarIdentities":92,
+    "crossDateNewVocabularyDuplicates":0,
+    "crossDateNewGrammarDuplicates":0,
+    "contentIntegrity":"pass",
+    "studyReviewIdentityEligibilityFrequencyIssueNumbers":"pass",
+    "canonicalInterviewMirrors":"pass",
+    "historicalFilesModified":0
+  },
+  "newVocabulary": ["際どい","繰り越す","折り返す","書き添える","遂行する","枯渇する","不都合","どうやら","一括","前置き","空振り","度合い"],
+  "newGrammar": [],
+  "semanticReview": [
+    "All 893 earlier vocabulary cards and 92 grammar identities were enumerated; no recent-N-days substitute. Candidate source forms and full bilingual card meanings were compared.",
+    "繰り越す denotes period-bound balances/allowances and is distinguished from the broader earlier 持ち越す; this is not a spelling or conjugation variant.",
+    "書き添える specifically denotes written supplementary material; distinguished from earlier 添える without recasting a same-form card as new.",
+    "遂行する, 枯渇する and nominal/suru variants were checked through existing identity normalization, not credited by adding する.",
+    "一括 is collective processing rather than 一元化 of management; no identity-rule edit was used to create novelty.",
+    "A 揺れる candidate was not used to pad the count; earlier related wording and basic-level concerns were retained.",
+    "Selected major source grammar families were already introduced. New grammar is truthfully zero, with bilingual selection notes; review and frequency remain generated by the unmodified learning-review module."
+  ],
+  "studyCounts": {"issueNumber":47,"vocabulary":{"new":12,"review":8,"total":20},"grammar":{"new":0,"review":8,"total":8}},
+  "candidateArtifactManifest": "runs/2026-09-27/checks.json",
+  "sourceCheckpointCorrections": [
+    "The linked migration demo video was not watched; its public/private visibility was not assessed. Earlier source notes calling it private must not be reused.",
+    "A source-data-readable key is required; the article did not establish the stronger readonly-key assertion. Final bilingual prose uses the supported wording.",
+    "Exact quote anchors for Top 4 and Top 5 are respectively 100行をサンプリング and インバウンドルールを削除する. Final evidence.json supersedes preliminary shortAnchor notes."
+  ],
+  "nextAction": "Run all mandatory gates on the exact six-path draft commit; this local/history pass is not publication."
+}
