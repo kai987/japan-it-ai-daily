@@ -1,0 +1,51 @@
+name: Capture replacement originals 2026-09-27
+on:
+  push:
+    branches: [automation/daily-progress]
+    paths: [.github/workflows/capture-replacements-20260927.yml]
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Install parser
+        run: python -m pip install beautifulsoup4==4.13.5
+      - name: Capture public originals without credentials
+        run: |
+          python - <<'PY'
+          import urllib.request,pathlib,json,datetime,hashlib,re
+          from bs4 import BeautifulSoup
+          urls=['https://dev.classmethod.jp/articles/lerobot-dataset-so-arm101/','https://qiita.com/sphereSky/items/3956d10b9d8b280516de']
+          out=pathlib.Path('/tmp/replacement-originals');out.mkdir()
+          records=[]
+          for i,url in enumerate(urls,4):
+              r={'id':i,'url':url,'capturedAt':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 PublicSourceVerification'}),timeout=40) as response:
+                      data=response.read();r['status']=response.status;r['finalUrl']=response.url
+                  (out/f'{i:02}.html').write_bytes(data);r['htmlSha256']=hashlib.sha256(data).hexdigest()
+                  soup=BeautifulSoup(data,'html.parser');r['title']=soup.title.get_text(' ',strip=True)
+                  r['jsonLd']=[s.get_text() for s in soup.find_all('script',type='application/ld+json')]
+                  r['times']=[dict(attrs=x.attrs,text=x.get_text()) for x in soup.find_all('time')]
+                  r['links']=[{'url':a.get('href'),'text':a.get_text(' ',strip=True)} for a in soup.find_all('a',href=True)]
+                  for s in soup(['script','style','nav','footer','header','noscript']):s.decompose()
+                  article=soup.find('article') or soup.find('main') or soup.body
+                  raw=(article.get_text('\n',strip=True)+'\n').encode()
+                  (out/f'{i:02}.txt').write_bytes(raw);r['sha256']=hashlib.sha256(raw).hexdigest();r['textBytes']=len(raw)
+                  for pre in article.find_all('pre'):pre.replace_with('\n```\n'+pre.get_text('',strip=False)+'\n```\n')
+                  (out/f'{i:02}.read.txt').write_text(article.get_text('\n',strip=True))
+              except Exception as e:r['error']=str(e)
+              records.append(r)
+          (out/'manifest.json').write_text(json.dumps(records,ensure_ascii=False,indent=2))
+          if any(r.get('status')!=200 for r in records):raise SystemExit('Original capture incomplete; inspect errors.')
+          PY
+      - name: Retain originals outside Git
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: replacement-originals-20260927
+          path: /tmp/replacement-originals
+          retention-days: 3
+          if-no-files-found: error
