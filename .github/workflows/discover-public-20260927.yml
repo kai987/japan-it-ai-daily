@@ -1,0 +1,44 @@
+name: Discover public publication sources 2026-09-27
+on:
+  push:
+    branches: [automation/daily-progress]
+    paths: [.github/workflows/discover-public-20260927.yml]
+permissions:
+  contents: read
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Install parser
+        run: python -m pip install beautifulsoup4==4.13.5
+      - name: Read public indexes without credentials
+        run: |
+          python - <<'PY'
+          import urllib.request,pathlib,json,datetime,hashlib
+          from bs4 import BeautifulSoup
+          urls=['https://dev.classmethod.jp/','https://dev.classmethod.jp/feed/','https://zenn.dev/feed','https://qiita.com/popular-items/feed','https://www.publickey1.jp/atom.xml']
+          out=pathlib.Path('/tmp/source-discovery');out.mkdir()
+          results=[]
+          for i,url in enumerate(urls):
+              r={'url':url,'capturedAt':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 PublicSourceVerification'}),timeout=30) as res:
+                      b=res.read();r['status']=res.status
+                  (out/f'{i}.raw').write_bytes(b)
+                  r['sha256']=hashlib.sha256(b).hexdigest()
+                  soup=BeautifulSoup(b,'html.parser')
+                  r['links']=[{'url':a.get('href'),'text':a.get_text(' ',strip=True)} for a in soup.find_all('a',href=True)]
+                  for x in soup(['script','style','nav','footer','header']):x.decompose()
+                  (out/f'{i}.txt').write_text(soup.get_text('\n',strip=True))
+              except Exception as e:r['error']=str(e)
+              results.append(r)
+          (out/'manifest.json').write_text(json.dumps(results,ensure_ascii=False,indent=2))
+          PY
+      - name: Retain read-only discovery artifacts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: public-source-discovery-20260927
+          path: /tmp/source-discovery
+          retention-days: 3
+          if-no-files-found: error
