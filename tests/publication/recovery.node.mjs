@@ -1,4 +1,5 @@
 import { test } from 'node:test';
+import { randomUUID } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { POLICY, validDate, tokyoClock, dueDates, requiredFiles, requiredSidecars, initialCheckpoint,
   claimLease, renewLease, assertLease, classifyFailure, releaseVerified, planPublication } from '../../scripts/daily-publication.mjs';
@@ -92,4 +93,46 @@ test('checkpoint locks original target date and news window', () => {
   assert.equal(state.sourceWindow.from, '2026-09-21T10:00:00+09:00');
   assert.equal(state.sourceWindow.to, '2026-09-22T10:00:00+09:00');
   assert.equal(state.targetDate, date); assert.equal(state.stage, 'registered');
+});
+
+// Lease tokens are fresh public coordination identifiers, never API credentials.
+test('public UUID lease survives JSON round trips without weakening fencing or TTL', () => {
+  const token = randomUUID();
+  const lease = claimLease(null, { owner: 'daily', token, targetDate: date, now });
+  const readBack = JSON.parse(JSON.stringify(lease));
+  assert.equal(readBack.token, token);
+  assert.equal(Date.parse(readBack.expiresAt) - Date.parse(now), 45 * 60_000);
+  assert.doesNotThrow(() => assertLease(readBack, token, date, now));
+  assert.throws(() => assertLease(readBack, randomUUID(), date, now));
+  assert.throws(() => assertLease(readBack, token, '2026-09-23', now));
+  assert.throws(() => claimLease(readBack, { owner: 'other', token: randomUUID(), targetDate: date, now }));
+  const next = '2026-09-22T15:36:00+09:00';
+  const renewed = JSON.parse(JSON.stringify(renewLease(readBack, token, next)));
+  assert.equal(renewed.token, token);
+  assert.equal(renewed.acquiredAt, lease.acquiredAt);
+  assert.equal(Date.parse(renewed.expiresAt) - Date.parse(next), 45 * 60_000);
+  assert.doesNotThrow(() => assertLease(renewed, token, date, next));
+  const { token: removed, ...withoutToken } = renewed;
+  assert.equal(removed, token);
+  assert.throws(() => assertLease(withoutToken, token, date, next), /Malformed lease/);
+  assert.throws(() => assertLease(renewed, token, date, renewed.expiresAt));
+});
+test('a token field name or generic scheduler message cannot establish a permission error', () => {
+  assert.equal(classifyFailure({ log: 'There was a problem with your scheduled task' }), 'unknown');
+  assert.equal(classifyFailure({ log: 'Lease JSON contains a token field' }), 'unknown');
+  assert.equal(classifyFailure({ statusCode: 401 }), 'permission');
+  assert.equal(classifyFailure({ statusCode: 403 }), 'permission');
+});
+test('failed daily plans preserve a resumable target, not a schedule-disable action', () => {
+  for (const [statusCode, attempts, expected] of [
+    [401, 0, 'report_permission_blocker'], [403, 0, 'report_permission_blocker'],
+    [409, 0, 'refresh_and_reconcile'], [422, 0, 'refresh_and_reconcile'],
+    [503, 3, 'defer_retry'], [undefined, 0, 'investigate'],
+  ]) {
+    const plan = planPublication(observed({ mode: 'daily', inventory: full, latestRun: run,
+      failure: { logsRead: true, runId: run.id, headSha: sha, statusCode, attempts, log: '' } }));
+    assert.equal(plan.targetDate, date);
+    assert.equal(plan.action, expected);
+    assert.equal(Object.hasOwn(plan, 'is_enabled'), false);
+  }
 });
