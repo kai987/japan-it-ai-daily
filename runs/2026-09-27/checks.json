@@ -1,0 +1,32 @@
+{
+  "schemaVersion":1,
+  "targetDate":"2026-09-27",
+  "sourceCommit":"f7fc7972ecad8af8ed1ccc1a08f8fae3795abcce",
+  "checkedAt":"2026-09-27T09:08:02Z",
+  "stage":"local_content_validated_preflight_pending",
+  "artifacts":[
+    {"path":"src/content/daily/2026-09-27.md","checkpoint":"runs/2026-09-27/drafts/daily.md","blobSha":"dd5330522f7295b1c8a3459be80c2f9fef22bd16","sha256":"9d32ebe4caefd2a6cca59f3542d37ea7304199356de20add64dc5c297bb9e009","bytes":38674},
+    {"path":"src/content/daily-ja/2026-09-27.md","checkpoint":"runs/2026-09-27/drafts/daily-ja.md","blobSha":"9b00fcaf66a9049335ee2a72fa131ff4c2ce67d9","sha256":"1fa983bc103a72f385b413d48e7cea9f634d8e076dfc295c17bb1b0626135c2e","bytes":41518},
+    {"path":"src/content/japanese/2026-09-27.md","checkpoint":"runs/2026-09-27/drafts/japanese.md","blobSha":"ca44e9de26602a29e0654e197a20accc6ecee9bd","sha256":"66200190fc68355bfa7e2e8e2a7bb5bf1f95985f00132fcdf2550aaece31180d","bytes":13092},
+    {"path":"src/content/japanese-ja/2026-09-27.md","checkpoint":"runs/2026-09-27/drafts/japanese-ja.md","blobSha":"f326ebd6f26075fbc98133db813aec420019f71a","sha256":"5d7e86302fb0fa2b450bdeab4cb11911a5d48bdc16ca90a2942d8b51ed2c9392","bytes":14724},
+    {"path":"src/content/evidence/2026-09-27.json","checkpoint":"runs/2026-09-27/evidence.json","blobSha":"d4eadf9eedd9ec32c38f00bef396fd6742d2f5e3","sha256":"33f3125c8133d6b976e765a7891547b8bad498d5841bd0b2df039e942a512f57","bytes":19058},
+    {"path":"src/data/interviews/2026-09-27.json","checkpoint":"runs/2026-09-27/interviews.json","blobSha":"7dd03b4d7f2a735c95356da20ab922257185dab7","sha256":"5c0003331743b4e760dd38869af3df4090238465a1add7f6f4dcda7b74892fc1","bytes":4968}
+  ],
+  "remoteCheckpointVerification":"All six remote Git blob SHAs and byte lengths match complete locally read and validated artifacts. Canonical interview JSON was also read back in full and compared before adopting its exact serialization.",
+  "localChecks":[
+    {"command":"npm run content:integrity:check","result":"pass","details":"47 complete four-file dates; 905 lexical identities, 92 grammar identities, zero cross-date duplicates; shared review/frequency/issue checks and 10 structured interview dates passed."},
+    {"command":"npm run evidence:check -- --date 2026-09-27 --source-dir ../originals","result":"pass","details":"All five original capture hashes and declared source quote occurrences checked."},
+    {"command":"npm run evidence:check && npm run evidence:pilot","result":"pass","details":"Current evidence metadata and preserved pilot passed; offline checks do not independently reproduce the articles' experiments."},
+    {"command":"npm run bilingual:check-interview","result":"pass","details":"Five canonical September 27 questions/answers remain exact strings in both languages."},
+    {"command":"npm run quality:check","result":"pass","details":"All 47 dates passed under unchanged existing policy, including pre-existing reference exceptions; current answers satisfy article anchors, boundaries, duration and similarity checks."},
+    {"command":"npm run audio:check","result":"pass","details":"Audio script syntax checks, not a claim of new recorded MP3 generation."},
+    {"command":"node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs","result":"pass","details":"70 tests passed, 0 failed. These are publication component tests, not the full project unit-test suite."}
+  ],
+  "interviewEstimatedSeconds":[30.14294,26.66176,28.59471,30.60176,29.67],
+  "studyCounts":{"issueNumber":47,"vocabulary":{"new":12,"review":8,"total":20},"grammar":{"new":0,"review":8,"total":8}},
+  "requiredRemoteGates":"Exact deploy.yml draft CI must still run audit, typecheck, integrity, evidence/pilot, bilingual, quality, audio/version checks, full unit tests, build, speech smoke, full browser regression and CSP.",
+  "preflight":null,
+  "publisher":null,
+  "mainPublication":null,
+  "nextAction":"Build a six-path-only draft from unchanged current main, run exact full preflight, then submit a source-bound request."
+}
