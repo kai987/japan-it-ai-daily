@@ -2,7 +2,8 @@
   "schemaVersion": 1,
   "scope": "lease_and_daily_schedule_repair",
   "sourceCommit": "316664cb8774d09b3b0058f80a657c9613f11d81",
-  "checkedAt": "2026-09-27T04:15:41.193Z",
+  "verifiedCommit": "48345d405e0e8338a0425bd4bb34ad7a50ba599c",
+  "checkedAt": "2026-09-27T04:24:34.549Z",
   "localChecks": [{
     "command": "node --test tests/publication/recovery.node.mjs",
     "runtime": "Node v22.16.0",
@@ -26,6 +27,48 @@
     "sha256": "af1a7461e9d349ca598b109a1f4cd75adf5f498fe43aeb020d3938238b47ac9c"
   }],
   "schedule": {"enabled": true, "timeZone": "Asia/Tokyo", "hour": 10, "minute": 0, "hourlyRecoveryReenabled": false},
-  "fullDeploymentChecks": "pending_exact_maintenance_commit",
-  "dailyPublication": "not_performed"
+  "fullDeploymentChecks": {
+    "workflowPath": ".github/workflows/deploy.yml",
+    "runId": 36293984472,
+    "runAttempt": 1,
+    "headSha": "48345d405e0e8338a0425bd4bb34ad7a50ba599c",
+    "status": "completed",
+    "conclusion": "success",
+    "buildJobId": 108549290518,
+    "deployJobId": 108549663622,
+    "exactBuildAndDeployLogsRead": true,
+    "dailyPublicationPathsChanged": false,
+    "publicationRecoveryTestsPassed": 36,
+    "vitestTestsPassed": 214,
+    "speechSmokeTestsPassed": 4,
+    "browserTestsPassed": 71,
+    "typecheck": "passed",
+    "contentIntegrity": "passed",
+    "evidenceAndPilot": "passed_offline_declared_evidence_checks",
+    "bilingualInterviews": "passed",
+    "dailyQuality": "passed_existing_rules_unchanged",
+    "audioScriptsAndVersions": "passed",
+    "build": "success",
+    "cspHtmlFilesPassed": 208,
+    "pagesDeploy": "success",
+    "postDeploySnapshotAndBilingualBytes": "success",
+    "postDeployAttempt": 1,
+    "publishedLatestReportDate": "2026-09-26",
+    "snapshotHash": "6cbb34fead6cf736dd13aa626dae1e70b429f52404fd079d72134418e16e788f",
+    "reportPageHashes": {
+      "daily/2026-09-26/": "c2c220315d913da31ca0eb53f86d1cce3b3032ccca47d139fcd830471afcfd38",
+      "ja/daily/2026-09-26/": "9950ffde758410d52beeac54485708543c4cf8436241a5104385686061ece650"
+    },
+    "history": {
+      "completeReportDates": 46,
+      "representationsPerDate": 4,
+      "lexicalIdentities": 893,
+      "lexicalCrossDateDuplicates": 0,
+      "grammarIdentities": 92,
+      "grammarCrossDateDuplicates": 0,
+      "studyReviewFrequenciesAndIssueNumbers": "passed"
+    }
+  },
+  "dailyPublication": "not_performed",
+  "n1Handoff": "not_requested_by_this_maintenance"
 }
