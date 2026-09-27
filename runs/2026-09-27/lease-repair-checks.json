@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "scope": "lease_and_daily_schedule_repair",
+  "sourceCommit": "316664cb8774d09b3b0058f80a657c9613f11d81",
+  "checkedAt": "2026-09-27T04:15:41.193Z",
+  "localChecks": [{
+    "command": "node --test tests/publication/recovery.node.mjs",
+    "runtime": "Node v22.16.0",
+    "tests": 26,
+    "passed": 26,
+    "failed": 0,
+    "skipped": 0
+  }],
+  "sourceVerification": {
+    "scripts/daily-publication.mjs": "808c1fc3ba7943e2cde26d5c2d1f76a34803aef1",
+    "originalRecoveryTestBlob": "ef7a2624dfafccfddbb246ed1561235bb16f1f85",
+    "originalAutomationDocBlob": "8c96971bbd05803dd60497ef8fe7ac54598af89b"
+  },
+  "candidateFiles": [{
+    "path": "docs/automation/README.md",
+    "blobSha": "0f99cb6e9d962c655501b1eefd0ea97c1ecd374e",
+    "sha256": "4d57e213dd0739ec2b99504e243827c0bd8dc1afa75999dd5eca7ead2514e7ee"
+  }, {
+    "path": "tests/publication/recovery.node.mjs",
+    "blobSha": "b53149ca40488c7bb11b43aa908c9a05df582606",
+    "sha256": "af1a7461e9d349ca598b109a1f4cd75adf5f498fe43aeb020d3938238b47ac9c"
+  }],
+  "schedule": {"enabled": true, "timeZone": "Asia/Tokyo", "hour": 10, "minute": 0, "hourlyRecoveryReenabled": false},
+  "fullDeploymentChecks": "pending_exact_maintenance_commit",
+  "dailyPublication": "not_performed"
+}
