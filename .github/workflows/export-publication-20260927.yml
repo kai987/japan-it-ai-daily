@@ -1,0 +1,93 @@
+name: Export fixed publication inputs 2026-09-27
+on:
+  push:
+    branches: [automation/daily-progress]
+    paths: [.github/workflows/export-publication-20260927.yml]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: publication-input-export-20260927
+  cancel-in-progress: false
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact main source without persisted credentials
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 48345d405e0e8338a0425bd4bb34ad7a50ba599c
+          fetch-depth: 1
+          persist-credentials: false
+          path: main-source
+      - name: Checkout progress for read-only checkpoint export
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: automation/daily-progress
+          fetch-depth: 1
+          persist-credentials: false
+          path: progress-source
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24
+      - name: Install locked parser dependency without lifecycle scripts
+        working-directory: main-source
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Export complete tracked inventory and exact text sources
+        working-directory: main-source
+        env:
+          EXPECTED_SOURCE: 48345d405e0e8338a0425bd4bb34ad7a50ba599c
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/publication-inputs
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SOURCE"
+          git ls-tree -rz --full-tree HEAD > /tmp/inventory.git
+          python3 <<'PY'
+          import json, pathlib, tarfile, subprocess, hashlib
+          out=pathlib.Path('/tmp/publication-inputs')
+          records=[]
+          for record in pathlib.Path('/tmp/inventory.git').read_bytes().split(b'\0'):
+              if not record:
+                  continue
+              meta,path=record.split(b'\t',1)
+              mode,kind,sha=meta.decode().split()
+              records.append({'path':path.decode(),'mode':mode,'type':kind,'sha':sha})
+          source=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          (out/'inventory.json').write_text(json.dumps({'sourceCommit':source,'complete':True,'entries':records},ensure_ascii=False,indent=2)+'\n')
+          with tarfile.open(out/'main-source.tar','w') as archive:
+              for entry in records:
+                  if entry['type']=='blob' and not entry['path'].endswith('.mp3'):
+                      data=pathlib.Path(entry['path']).read_bytes()
+                      actual=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+                      if actual!=entry['sha']:
+                          raise RuntimeError('Checkout blob mismatch: '+entry['path'])
+                      archive.add(entry['path'],arcname=entry['path'],recursive=False)
+              archive.add('node_modules/yaml',arcname='node_modules/yaml')
+          print('Exported source',source,'with',len(records),'complete tracked inventory entries.')
+          PY
+      - name: Export real remote observations without changing refs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git -C progress-source rev-parse HEAD > /tmp/publication-inputs/progress-commit.txt
+          git -C progress-source archive --format=tar HEAD runs locks > /tmp/publication-inputs/progress.tar
+          gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/main" > /tmp/publication-inputs/main.json
+          gh api "repos/$GITHUB_REPOSITORY/contents/.github/daily-publication-request.json?ref=automation%2Fdaily-publish-request" > /tmp/publication-inputs/request-contents.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/deploy.yml/runs?branch=main&per_page=10" > /tmp/publication-inputs/deploy-runs.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/workflows/publish-daily.yml/runs?per_page=10" > /tmp/publication-inputs/publisher-runs.json
+          for status in queued in_progress waiting pending requested; do
+            gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/actions/runs?status=$status&per_page=100" > "/tmp/publication-inputs/runs-$status.json"
+          done
+          date -u +%Y-%m-%dT%H:%M:%SZ > /tmp/publication-inputs/observedAt.txt
+          cd /tmp/publication-inputs
+          sha256sum *.tar inventory.json > SHA256SUMS
+      - name: Upload exact publication inputs
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: publication-inputs-20260927-48345d4
+          path: /tmp/publication-inputs/
+          if-no-files-found: error
+          retention-days: 3
