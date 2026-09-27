@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Publication author lease, v2 with legacy compatibility",
+  "$comment": "Structural schema only. scripts/publication-lease.mjs additionally enforces timestamp order, TTL <=45 minutes, matching release instants, ownership, CAS byte/blob integrity, and fresh claim IDs. Do not treat a schema pass as authorized remote execution.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/v2"
+    },
+    {
+      "$ref": "#/$defs/legacy"
+    }
+  ],
+  "$defs": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d{1,9})?(?:Z|[+-](?:0\\d|1[0-4]):[0-5]\\d)$"
+    },
+    "v2": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": 2
+        },
+        "leaseId": {
+          "type": "string",
+          "description": "Fresh public coordination UUID; never an authentication credential.",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^(?=.*\\S)[^\\u0000-\\u001f\\u007f]+$"
+        },
+        "targetDate": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "acquiredAt": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "expiresAt": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "releasedAt": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "releaseReason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512,
+          "pattern": "^(?=.*\\S)[^\\u0000-\\u001f\\u007f]+$"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "leaseId",
+        "owner",
+        "targetDate",
+        "acquiredAt",
+        "updatedAt",
+        "expiresAt"
+      ],
+      "dependentRequired": {
+        "releaseReason": [
+          "releasedAt"
+        ]
+      }
+    },
+    "legacy": {
+      "type": "object",
+      "description": "Read and finish an existing tenure in its original schema. Do not create new v1 claims.",
+      "additionalProperties": true,
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "token": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256,
+          "pattern": "^(?=.*\\S)[^\\u0000-\\u001f\\u007f]+$"
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^(?=.*\\S)[^\\u0000-\\u001f\\u007f]+$"
+        },
+        "targetDate": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "acquiredAt": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updatedAt": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "expiresAt": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "releasedAt": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "releaseReason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512,
+          "pattern": "^(?=.*\\S)[^\\u0000-\\u001f\\u007f]+$"
+        }
+      },
+      "required": [
+        "token",
+        "owner",
+        "targetDate",
+        "acquiredAt",
+        "updatedAt",
+        "expiresAt"
+      ],
+      "not": {
+        "required": [
+          "leaseId"
+        ]
+      },
+      "dependentRequired": {
+        "releaseReason": [
+          "releasedAt"
+        ]
+      }
+    }
+  }
+}

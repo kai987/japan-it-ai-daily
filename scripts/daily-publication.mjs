@@ -1,13 +1,15 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { LEASE_POLICY, leaseActive } from './publication-lease.mjs';
+export { leaseActive, claimLease, renewLease, assertLease, releaseLease, leaseIdentity, validateLease } from './publication-lease.mjs';
 
 // Read-only planner. Observations must come from complete, authenticated reads.
 // This module never generates news, weakens a content gate, or writes Git refs.
 export const POLICY = Object.freeze({
   recoveryFrom: '2026-09-22', timeZone: 'Asia/Tokyo',
-  dueHour: 10, recoveryGraceMinutes: 60, leaseMinutes: 45,
-  progressBranch: 'automation/daily-progress',
+  dueHour: 10, recoveryGraceMinutes: 60, leaseMinutes: LEASE_POLICY.leaseMinutes,
+  progressBranch: LEASE_POLICY.branch,
   requestBranch: 'automation/daily-publish-request',
   requestPath: '.github/daily-publication-request.json',
   workflowPath: '.github/workflows/deploy.yml',
@@ -65,26 +67,6 @@ export function initialCheckpoint(date, sourceCommit, now) {
     createdAt: now, updatedAt: now, completedArtifacts: [], lastError: null,
   };
 }
-export function leaseActive(lease, now) {
-  if (lease == null) return false;
-  if (!lease.owner || !lease.token || !lease.targetDate) throw new Error('Malformed lease');
-  validDate(lease.targetDate);
-  return instant(lease.expiresAt) > instant(now);
-}
-export function claimLease(lease, { owner, token, targetDate, now }) {
-  if (!owner || !token) throw new Error('Owner and unique fencing token required');
-  validDate(targetDate); instant(now);
-  if (leaseActive(lease, now)) throw new Error('Another live publisher owns the lease');
-  return { owner, token, targetDate, acquiredAt: now, updatedAt: now,
-    expiresAt: new Date(instant(now) + POLICY.leaseMinutes * 60000).toISOString() };
-}
-export function assertLease(lease, token, targetDate, now) {
-  if (!leaseActive(lease, now) || lease.token !== token || lease.targetDate !== targetDate) throw new Error('Lost or expired publication lease; do not write');
-}
-export function renewLease(lease, token, now) {
-  assertLease(lease, token, lease?.targetDate, now);
-  return { ...lease, updatedAt: now, expiresAt: new Date(instant(now) + POLICY.leaseMinutes * 60000).toISOString() };
-}
 // Only classify the failed step's real logs, not unrelated warnings in a full run.
 export function classifyFailure({ statusCode, log = '' } = {}) {
   if (statusCode === 401 || statusCode === 403) return 'permission';
@@ -121,7 +103,7 @@ export function planPublication(observation) {
   if (!pending.length) return { action: 'idle', reason: 'no_due_unverified_date' };
   const targetDate = pending[0];
   const base = { targetDate, pendingDates: pending, sourceCommit: inventory.sourceCommit };
-  if (leaseActive(lease, now)) return { ...base, action: 'wait', reason: 'active_publisher', owner: lease.owner };
+  if (leaseActive(lease ?? null, now)) return { ...base, action: 'wait', reason: 'active_publisher', owner: lease.owner };
   if (publisherRun?.branch === POLICY.requestBranch &&
       publisherRun.path === POLICY.publisherWorkflowPath &&
       ACTIVE.has(publisherRun.status)) {

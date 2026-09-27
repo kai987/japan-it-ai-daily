@@ -1,3 +1,4 @@
+import './lease.cases.mjs';
 import { test } from 'node:test';
 import { randomUUID } from 'node:crypto';
 import assert from 'node:assert/strict';
@@ -36,17 +37,18 @@ test('API failure and truncated inventory never mean no content', () => {
   assert.equal(planPublication(observed({ inventory: { ...inventory, sourceCommit: '' } })).action, 'inspect');
 });
 test('live lease prevents another writer', () => {
-  const lease = claimLease(null, { owner: 'daily', token: 'fence-1', targetDate: date, now });
+  const lease = claimLease(null, { owner: 'daily', leaseId: randomUUID(), targetDate: date, now });
   assert.equal(planPublication(observed({ lease })).action, 'wait');
-  assert.throws(() => claimLease(lease, { owner: 'recovery', token: 'fence-2', targetDate: date, now }));
+  assert.throws(() => claimLease(lease, { owner: 'recovery', leaseId: randomUUID(), targetDate: date, now }));
 });
 test('expired leases can be taken over but stale workers cannot renew', () => {
-  const lease = claimLease(null, { owner: 'daily', token: 'one', targetDate: date, now });
+  const one = randomUUID(), two = randomUUID();
+  const lease = claimLease(null, { owner: 'daily', leaseId: one, targetDate: date, now });
   const later = '2026-09-22T16:17:00+09:00';
-  const second = claimLease(lease, { owner: 'recovery', token: 'two', targetDate: date, now: later });
-  assert.throws(() => assertLease(second, 'one', date, later));
-  assert.throws(() => renewLease(lease, 'one', later));
-  assert.equal(renewLease(second, 'two', later).token, 'two');
+  const second = claimLease(lease, { owner: 'recovery', leaseId: two, targetDate: date, now: later });
+  assert.throws(() => assertLease(second, one, date, later));
+  assert.throws(() => renewLease(lease, one, later));
+  assert.equal(renewLease(second, two, later).leaseId, two);
 });
 test('active unique publisher blocks a second author even after the author lease is released', () => {
   const publisherRun = {
@@ -95,27 +97,27 @@ test('checkpoint locks original target date and news window', () => {
   assert.equal(state.targetDate, date); assert.equal(state.stage, 'registered');
 });
 
-// Lease tokens are fresh public coordination identifiers, never API credentials.
+// Lease IDs are fresh public coordination identifiers, never API credentials.
 test('public UUID lease survives JSON round trips without weakening fencing or TTL', () => {
-  const token = randomUUID();
-  const lease = claimLease(null, { owner: 'daily', token, targetDate: date, now });
+  const leaseId = randomUUID();
+  const lease = claimLease(null, { owner: 'daily', leaseId, targetDate: date, now });
   const readBack = JSON.parse(JSON.stringify(lease));
-  assert.equal(readBack.token, token);
+  assert.equal(readBack.leaseId, leaseId);
   assert.equal(Date.parse(readBack.expiresAt) - Date.parse(now), 45 * 60_000);
-  assert.doesNotThrow(() => assertLease(readBack, token, date, now));
+  assert.doesNotThrow(() => assertLease(readBack, leaseId, date, now));
   assert.throws(() => assertLease(readBack, randomUUID(), date, now));
-  assert.throws(() => assertLease(readBack, token, '2026-09-23', now));
-  assert.throws(() => claimLease(readBack, { owner: 'other', token: randomUUID(), targetDate: date, now }));
+  assert.throws(() => assertLease(readBack, leaseId, '2026-09-23', now));
+  assert.throws(() => claimLease(readBack, { owner: 'other', leaseId: randomUUID(), targetDate: date, now }));
   const next = '2026-09-22T15:36:00+09:00';
-  const renewed = JSON.parse(JSON.stringify(renewLease(readBack, token, next)));
-  assert.equal(renewed.token, token);
+  const renewed = JSON.parse(JSON.stringify(renewLease(readBack, leaseId, next)));
+  assert.equal(renewed.leaseId, leaseId);
   assert.equal(renewed.acquiredAt, lease.acquiredAt);
   assert.equal(Date.parse(renewed.expiresAt) - Date.parse(next), 45 * 60_000);
-  assert.doesNotThrow(() => assertLease(renewed, token, date, next));
-  const { token: removed, ...withoutToken } = renewed;
-  assert.equal(removed, token);
-  assert.throws(() => assertLease(withoutToken, token, date, next), /Malformed lease/);
-  assert.throws(() => assertLease(renewed, token, date, renewed.expiresAt));
+  assert.doesNotThrow(() => assertLease(renewed, leaseId, date, next));
+  const { leaseId: removed, ...withoutId } = renewed;
+  assert.equal(removed, leaseId);
+  assert.throws(() => assertLease(withoutId, leaseId, date, next), /Malformed lease/);
+  assert.throws(() => assertLease(renewed, leaseId, date, renewed.expiresAt));
 });
 test('a token field name or generic scheduler message cannot establish a permission error', () => {
   assert.equal(classifyFailure({ log: 'There was a problem with your scheduled task' }), 'unknown');
