@@ -1,60 +1,24 @@
 {
-  "schemaVersion": 1,
-  "targetDate": "2026-09-27",
-  "stage": "registered",
-  "sourceCommit": "f7fc7972ecad8af8ed1ccc1a08f8fae3795abcce",
-  "sourceWindow": {
-    "from": "2026-09-26T10:00:00+09:00",
-    "to": "2026-09-27T10:00:00+09:00"
-  },
-  "createdAt": "2026-09-27T04:57:06.360Z",
-  "updatedAt": "2026-09-27T08:20:46.162Z",
-  "completedArtifacts": [],
-  "lastError": null,
-  "resumeFrom": "registered",
-  "attempt": 2,
-  "nextAction": "Verify all five original sources in the frozen window, persist evidence and canonical interviews, then complete bilingual drafts and candidate identity checks on all 46 earlier dates.",
-  "observation": {
-    "mainCommit": "f7fc7972ecad8af8ed1ccc1a08f8fae3795abcce",
-    "mainTree": "01abd4c349690953cf8c6aa7174482ad004ad4ab",
-    "inventoryComplete": true,
-    "inventoryBlobCount": 3219,
-    "historyDateCount": 46,
-    "historyCollectionFiles": 184,
-    "baselineDeployRunId": 36297994809,
-    "baselineSnapshotArtifactId": 10924657504,
-    "baselineSnapshotSha256": "7a02a6bd885d5ddc6a0bac98aaa2b7dd4eddac04942b3d6c7f4dad01a2e22681",
-    "baselineSnapshotSourceCommit": "f7fc7972ecad8af8ed1ccc1a08f8fae3795abcce",
-    "baselineGrammarLessons": 46,
-    "queuedRuns": 0,
-    "inProgressRuns": 0,
-    "maintenanceIsNotPublication": true
-  },
-  "localEnvironment": {
-    "gitRead": "Could not resolve host: github.com",
-    "authorizedConnector": "read_and_CAS_write_available"
-  },
-  "previousSourceCommit": "48345d405e0e8338a0425bd4bb34ad7a50ba599c",
-  "planner": {
-    "targetDate": "2026-09-27",
-    "pendingDates": [
-      "2026-09-27"
-    ],
-    "sourceCommit": "f7fc7972ecad8af8ed1ccc1a08f8fae3795abcce",
-    "action": "resume_generation",
-    "reason": "no_content_commit",
-    "missing": [
-      "src/content/daily/2026-09-27.md",
-      "src/content/japanese/2026-09-27.md",
-      "src/content/daily-ja/2026-09-27.md",
-      "src/content/japanese-ja/2026-09-27.md"
-    ],
-    "resumeFrom": "registered"
-  },
-  "takeover": {
-    "previousLeaseExpiredAt": "2026-09-27T08:15:08.000Z",
-    "claimedAt": "2026-09-27T08:19:58.866Z",
-    "leaseId": "cd1a6732-1247-4c91-a9ae-e512a34a3ad4",
-    "reason": "Expired v2 tenure reclaimed through current helper and exact CAS/read-back; no live lease revoked."
-  }
+  "schemaVersion":1,
+  "targetDate":"2026-09-27",
+  "stage":"drafts_ready",
+  "sourceCommit":"f7fc7972ecad8af8ed1ccc1a08f8fae3795abcce",
+  "sourceWindow":{"from":"2026-09-26T10:00:00+09:00","to":"2026-09-27T10:00:00+09:00"},
+  "createdAt":"2026-09-27T04:57:06.360Z",
+  "updatedAt":"2026-09-27T09:08:34Z",
+  "completedArtifacts":["runs/2026-09-27/sources.json","runs/2026-09-27/history.json","runs/2026-09-27/interviews.json","runs/2026-09-27/evidence.json","runs/2026-09-27/drafts/daily.md","runs/2026-09-27/drafts/daily-ja.md","runs/2026-09-27/drafts/japanese.md","runs/2026-09-27/drafts/japanese-ja.md","runs/2026-09-27/checks.json"],
+  "artifactIdentityManifest":"runs/2026-09-27/checks.json",
+  "lastError":null,
+  "resumeFrom":"drafts_ready",
+  "attempt":2,
+  "nextAction":"Create the exact six-path draft from current main and run full deploy.yml preflight. No daily main write or request submission is authorized until exact green preflight.",
+  "observation":{"mainCommit":"f7fc7972ecad8af8ed1ccc1a08f8fae3795abcce","mainTree":"01abd4c349690953cf8c6aa7174482ad004ad4ab","inventoryComplete":true,"inventoryBlobCount":3219,"historyDateCount":46,"historyCollectionFiles":184,"baselineDeployRunId":36297994809,"baselineSnapshotArtifactId":10924657504,"baselineSnapshotSha256":"7a02a6bd885d5ddc6a0bac98aaa2b7dd4eddac04942b3d6c7f4dad01a2e22681","baselineSnapshotSourceCommit":"f7fc7972ecad8af8ed1ccc1a08f8fae3795abcce","baselineGrammarLessons":46,"maintenanceIsNotPublication":true},
+  "sourceVerification":{"stage":"sources_verified","articles":5,"captureRunId":36298449733,"captureArtifactId":10924617028,"captureArtifactSha256":"c54d4841c6c70efd5b7e17875a0e9ee28b7851bcec1d71e48d6e3e2c00869cf9","allPublicationTimesInFrozenWindow":true,"scope":"Full public captures, no private material or experiment-reproduction claim; corrected preliminary notes are recorded in history.json and final evidence."},
+  "historyVerification":{"stage":"learning_verified","completeEarlierDates":46,"candidateDates":47,"lexicalIdentities":905,"grammarIdentities":92,"newItemDuplicates":0,"historicalFilesModified":0},
+  "studyCounts":{"issueNumber":47,"vocabulary":{"new":12,"review":8,"total":20},"grammar":{"new":0,"review":8,"total":8}},
+  "localEnvironment":{"gitRead":"Could not resolve host: github.com","authorizedConnector":"read_and_CAS_write_available"},
+  "previousSourceCommit":"48345d405e0e8338a0425bd4bb34ad7a50ba599c",
+  "planner":{"targetDate":"2026-09-27","pendingDates":["2026-09-27"],"sourceCommit":"f7fc7972ecad8af8ed1ccc1a08f8fae3795abcce","action":"resume_generation","reason":"no_content_commit","resumeFrom":"registered"},
+  "takeover":{"previousLeaseExpiredAt":"2026-09-27T08:15:08.000Z","claimedAt":"2026-09-27T08:19:58.866Z","leaseId":"cd1a6732-1247-4c91-a9ae-e512a34a3ad4","reason":"Expired v2 tenure reclaimed through current helper and exact CAS/read-back; no live lease revoked."},
+  "n1Handoff":{"stage":"not_started","reason":"Requires newly verified final IT release for this date."}
 }
