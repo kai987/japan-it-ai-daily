@@ -1,0 +1,22 @@
+{
+  "schemaVersion":1,
+  "targetDate":"2026-09-27",
+  "stage":"published",
+  "verifiedAt":"2026-09-27T09:25:50Z",
+  "releaseCommit":"21c57ef67fd03a37861e18dfa33ade114af35ce7",
+  "releaseTree":"fb9c1f2e31b9b0ad2b40f2cd15ff0feec7ed01bc",
+  "baseCommit":"f7fc7972ecad8af8ed1ccc1a08f8fae3795abcce",
+  "sourceWindow":{"from":"2026-09-26T10:00:00+09:00","to":"2026-09-27T10:00:00+09:00"},
+  "draft":{"branch":"draft/daily-2026-09-27","commit":"1feb2c6ca8976004b5958ac926ab455a2aef8a27","preflightRunId":36308538763,"workflowPath":".github/workflows/deploy.yml","conclusion":"success","publicationPaths":6,"platformRepair":false},
+  "publicationRequest":{"requestId":"daily-2026-09-27-7d2b0aa3-9646-4759-bc35-01d7e801b0f0","commit":"5fb197e40c172a1df02e1f2d49e460e431e5bb7d","blobSha":"bb38bf67bdd470ba94bf1b2fe9686337f8eaeffd","readBack":"exact_bytes_match"},
+  "publisher":{"runId":36308882019,"workflowPath":".github/workflows/publish-daily.yml","status":"completed","conclusion":"success","originAndRequestTrailers":"verified","mainWriter":"github-actions[bot]","finalTreeMatchesDraft":true},
+  "deployment":{"runId":36308995427,"workflowPath":".github/workflows/deploy.yml","branch":"main","headSha":"21c57ef67fd03a37861e18dfa33ade114af35ce7","status":"completed","conclusion":"success","buildJobId":108591149370,"deployJobId":108591502764,"build":"success","pagesDeploy":"success","postDeployVerification":"success","postDeployVerifiedAt":"2026-09-27T09:22:02.3369938Z","postDeployAttempt":1},
+  "checks":{"publisherOrigin":"success","dependencyAudit":"success","publicationRecovery":"success","typecheck":"success","contentIntegrityAndFullHistory":"success","evidenceAndPilot":"success","bilingualInterviews":"success","quality":"success","audioScripts":"success","audioVersions":"success","unitTests":"success","build":"success","speechSmoke":"success","fullBrowser":"success","csp":"success","snapshotExport":"success"},
+  "snapshot":{"artifactId":10927693942,"artifactZipSha256":"d5f20e10c45f87519d837b5c463350a78a5a9d14876b6cdf8d46e9465f1e0892","sha256":"a4c861ee0dda8a3600c61af67e7e8eaa8d30be3f5a48ff2fbb8886bc64c8f7cc","bytes":1551990,"sourceCommit":"21c57ef67fd03a37861e18dfa33ade114af35ce7","firstDate":"2026-08-12","lastDate":"2026-09-27","totalDays":47,"issueNumber":47,"grammarLessonsCount":47,"completeIssueAndGrammarDateSets":"verified_all_dates_2026-08-12_through_2026-09-27","rebuiltExpectedBytesMatch":true,"liveBytesMatchArtifact":true},
+  "livePages":[{"path":"daily/2026-09-27/","sha256":"593026b813fd2e00ccccbf5904b4c0140f0ad56c49aac4af3bb47ac660d02045","byteVerification":"success"},{"path":"ja/daily/2026-09-27/","sha256":"da6a3e456b43a2b8bc6db303e90ae3450e220779fb3e3e11d8a1c4af5ec43182","byteVerification":"success"}],
+  "history":{"earlierDates":46,"publishedDates":47,"lexicalIdentities":905,"grammarIdentities":92,"crossDateNewItemDuplicates":0,"historicalProseChanged":0,"identityRuleChanges":0},
+  "studyCounts":{"issueNumber":47,"vocabulary":{"new":12,"review":8,"total":20},"grammar":{"new":0,"review":8,"total":8},"technicalTerms":8,"c4NewWords":10,"c4NewGrammar":0},
+  "artifactIdentityManifest":"runs/2026-09-27/checks.json",
+  "sourceCaptureArtifactId":10924617028,
+  "n1Handoff":"Not implied by IT success. Release the verification lease, then inspect this date original/outbox and the N1 request slot before a single handoff."
+}
