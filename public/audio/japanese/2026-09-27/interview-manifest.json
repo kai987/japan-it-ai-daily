@@ -1,0 +1,163 @@
+{
+  "date": "2026-09-27",
+  "generatedAt": "2026-09-27T11:59:16.901Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "DeepEvalの判定役をJevに替えるとき、速度以外に何を検証しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "6bc08b9bb1554184afe9118f1049251372aca6bd5c5f09fcc6bd8a9f7f3dd57e",
+      "audioSha256": "11dc3b7c3b99bcf9cbdf235b9238e85fa38060b9531b0c33c27ede74f17be037",
+      "durationSeconds": 5.909
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "判定の定義をそろえてから比較します。DeepEvalのsystem_oneは同梱の質問で裏付けを調べますが、標準設定のLLM版は矛盾を中心に見ます。記事では正しい前置きでも閾値0.7を下回りました。ただし六つの事例だけでは日本語全般に一般化できません。自社の正解付きデータで誤った合格と不合格を測ります。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "431a8febb4b6807320d681c54b56639b397b16229228bc5c83236db126fecb15",
+      "audioSha256": "1876633828921b27ad5f6f5e55349d45de21bb021cf9671505af93bff67ce967",
+      "durationSeconds": 25.864,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "Claude Codeのprompt-auditを、チームの開発ルールの保守にどう使いますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "ee40079a6b17d20886a23bbab2eaa0b94c8480d9c6ffc861b86a4801bec21262",
+      "audioSha256": "fe12167a72483ec264957ea0d9619f9432489514b18e997fbee6822a839c927c",
+      "durationSeconds": 5.85
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "監査結果を変更提案としてレビューします。prompt-auditは古いパスや存在しないnpmコマンドを調べ、レポートと差分を示します。ただしsettingsファイルやMCP設定は対象外です。権限設定まで点検済みとは扱わず、指摘の根拠を実ファイルと照合してから、必要な修正だけを承認します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "5070cbf4f2c00d748388dfe5b324854301fb6228168f376c4a61dcc2ad450f7e",
+      "audioSha256": "18c101b9db9cef8356386b45eaa8f73cec55c1a2a298b3c8a67a8c4ad82ddc74",
+      "durationSeconds": 23.021,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "Kiro Webへ設定を移すとき、アップロード成功のほかに何を確かめますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "27288cd7c848280c42660558d4ae9016a6a8f7b0829a965ec49386476e172460",
+      "audioSha256": "182cb98fbf38fc0254f174ab4c5a58c27b862b2fad7bdc509a6f8a2e9cbfdfad",
+      "durationSeconds": 5.839
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "移した指示と実行環境を別々に確認します。Kiro Webの例では八つのsteeringファイルを取り込めましたが、ローカルの実行パスを含むMCP設定は利用時に失敗しました。また四メガバイトを超えるPDFも制約になります。ファイルの存在だけで同じ動作を保証せず、依存先と実際のツール呼び出しを試します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "651f64837ee1600da430accf946b8c46382b76a415606c131e91d69b7652b065",
+      "audioSha256": "0d93ad7f037f31e2f5698f99b6e03c0171ff602af74d80132aa7962cf50060e9",
+      "durationSeconds": 23.719,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "QdrantからZilliz Cloudへの移行を、アプリ側ではどう受け入れますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "facbe84a8948912a5af854c0ee6fe2281f3cdecdc05cd9057983504af02b031b",
+      "audioSha256": "7eac945d560c0347ae706a43adada43a6179205059295736ad4dd61bce0b348e",
+      "durationSeconds": 5.444
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "件数に加え、識別子と検索結果を照合します。記事では384次元のベクトルとCOSINEを設定し、1178件を索引化しています。ただし型の推定は100件の標本に基づくため、少数の例外は別に調べます。同じ埋め込みと質問、フィルターで検索し、更新と削除に使うIDが維持されることまで確認します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "6b6c7da6b0f9bf34b48ed43f5c3fac65c5ed93b518af34ed6fc68d5a7da8f358",
+      "audioSha256": "8d3a3eb41053e1a51bbcb1c4e135a6ea5ef846f98676f58701b50a5aec6cd873",
+      "durationSeconds": 26.435,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "GPUなしのEC2へAmazon DCVで接続する構成を、どう安全に評価しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "a6359353a520b63d7672f8a813f1ba31f53473246c350fdc3826cbdd95b70472",
+      "audioSha256": "506c9dd91d4041232c96651113ba2a3fcfa68bd257c7b963a220da9418de2334",
+      "durationSeconds": 6.779
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "入口の制限と接続後の認証を分けます。記事の構成はセキュリティグループの受信を開けず、SSMで8443番を転送し、OSの認証も通します。ただしサーバーがUDPを待ち受けても、記録された接続はWebSocketです。設定値だけで通信方式や描画性能を決めつけず、ログと必要な画面操作で確認します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "cabe8d91d9fd374a8401cb74b18adb389fb9847577bd266c94a306826e3233d9",
+      "audioSha256": "6ce64735ab6d9331b22dcf9be4790a33a313efe276a30fe9216d2d4a50e5bf22",
+      "durationSeconds": 25.818,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "同じFaithfulnessという名前でも、判定役の比較条件がそろわないのはなぜですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "8d011b77e4c61b5fbdb4f7393e89121cc9d89eec0debc1e869252f33657d67eb",
+      "audioSha256": "1ae1ecacd1b0b3b25011c38329a6587e72630b66ebd116f6d506ec5f0238edf5",
+      "durationSeconds": 6.199
+    },
+    {
+      "index": 2,
+      "text": "設定ファイルやベクトルの移行完了だけでは、アプリの受け入れを終えられないのはなぜですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "1e43046bff57069dd5b5812135a6850aed9d71fd037b7d89a634a6f8e419d24b",
+      "audioSha256": "28fd6b35e80bcdd5b854b0c99b707ccd4476bfa484c38fecbed98bbcb4cce718",
+      "durationSeconds": 6.408
+    },
+    {
+      "index": 3,
+      "text": "監査レポートやポートの待ち受けを、どの実行結果と区別して説明しますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "ff916962830772f214aa89b6f1558ea7a07a8ce1618e4a7789c012c3979ff4be",
+      "audioSha256": "39c1e6d895c4c7c914ad9ab412e01a1ecd4a68127091e4de5d5116a21ef408e8",
+      "durationSeconds": 6.023
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-27T11:59:17.986Z"
+}
