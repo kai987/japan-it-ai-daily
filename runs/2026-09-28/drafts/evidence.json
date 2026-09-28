@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-28",
+  "status": "reviewed",
+  "reviewedBy": "daily-author-2026-09-28",
+  "reviewedAt": "2026-09-28T03:59:24.717250+00:00",
+  "scope": "Declared claims bind five full public prose/code snapshots to both authored languages and shared interviews. Captures are retained outside Git. Screenshots, external linked sources, universal performance and this author hands-on execution are not claimed. Editorial recommendations and original teaching examples are separated from source facts.",
+  "articles": [
+    {
+      "articleId": "2026-09-28-top-1",
+      "url": "https://dev.classmethod.jp/articles/claude-code-web-multiple-repositories/",
+      "originalTitle": "Claude Code on the web で複数リポジトリを接続する：CLAUDE.md・Skillsの挙動",
+      "source": "DevelopersIO",
+      "topic": "AI開発",
+      "access": "full",
+      "accessNote": "Full public prose and inline code read. Screenshots and external linked documentation were not independently verified; no hands-on execution by this author.",
+      "capturedAt": "2026-09-28T03:40:07.686068+00:00",
+      "snapshotSha256": "4e78b7da966898cae8cb8de34fb36c515531cc1b86c71e4d364e3cf26257bcaf",
+      "claims": [
+        {
+          "id": "fact-01",
+          "kind": "source-fact",
+          "statement": "先に選択したリポジトリの同名Skillが、二つの順序で各一回実行された。",
+          "conditions": "Claude Code 2.1.278、二つの実験用リポジトリ、各順序一回。恒久的な優先規則は検証していない。",
+          "quote": "今回の2条件では、先に選択したリポジトリ側のSkillが実行されました。",
+          "locator": "3. Skills / 同名スキルの検証",
+          "usedIn": {
+            "zh": "同名 `shared-probe` 在界面只出现一个候选",
+            "ja": "同名の `shared-probe` は先に選んだリポジトリ側が使われました。",
+            "interview": "shared-probeは先に選んだリポジトリ側が呼ばれました。"
+          }
+        },
+        {
+          "id": "fact-02",
+          "kind": "source-fact",
+          "statement": "追加ディレクトリの指示読み込みに関わる環境変数が、記事のWeb環境で設定されていた。",
+          "conditions": "記事が調べた環境の値であり、任意のローカルCLIの既定動作ではない。",
+          "quote": "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD",
+          "locator": "2. CLAUDE.md / Web環境の補足",
+          "usedIn": {
+            "zh": "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1",
+            "ja": "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1"
+          }
+        },
+        {
+          "id": "interpretation-01",
+          "kind": "author-interpretation",
+          "statement": "Use unique skill names and inspect actual diffs rather than assuming stable collision priority.",
+          "conditions": "Engineering interpretation grounded in the captured original, not a reported deployment result.",
+          "basedOn": [
+            "fact-01",
+            "fact-02"
+          ]
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-28-top-2",
+      "url": "https://dev.classmethod.jp/articles/strands-harness-vs-agent/",
+      "originalTitle": "Strands Agentsに「Strands harness」が追加されました！",
+      "source": "DevelopersIO",
+      "topic": "AIエージェント",
+      "access": "full",
+      "accessNote": "Full public prose and inline code read. Screenshots and external linked documentation were not independently verified; no hands-on execution by this author.",
+      "capturedAt": "2026-09-28T03:42:27.698214+00:00",
+      "snapshotSha256": "c3fc32a99fe03bff15b6c988315e73aee953a9e04157e5a73991e08a07eff22a",
+      "claims": [
+        {
+          "id": "fact-01",
+          "kind": "source-fact",
+          "statement": "builtin_toolsで三つに絞った例でも、既定プラグインによる四つのツールが残った。",
+          "conditions": "Python 3.13.13、harness 0.1.2、agents 1.57.0の列挙結果。構成変更後の集合を再確認する必要がある。",
+          "quote": "残りの4つは既定のプラグインが足すツールです。",
+          "locator": "ほかにも変えられる設定 / tune_params.py結果",
+          "usedIn": {
+            "zh": "还存在插件加入的四项辅助工具",
+            "ja": "プラグイン由来の四つが残る点は重要です。",
+            "interview": "プラグイン由来の四つが残る例があります。"
+          }
+        },
+        {
+          "id": "fact-02",
+          "kind": "source-fact",
+          "statement": "interventions=askで中断し、承認又は拒否を返して処理を継続する例を示した。",
+          "conditions": "承認が安全性を自動保証するという意味ではなく、記事のツール呼び出し実験。",
+          "quote": "承認・拒否を返すと、止まったところから続きを動かせます。",
+          "locator": "ツールの実行前に承認を挟む",
+          "usedIn": {
+            "zh": "interruptResponse",
+            "ja": "interruptResponse",
+            "interview": "承認待ちの中断と再開"
+          }
+        },
+        {
+          "id": "interpretation-01",
+          "kind": "author-interpretation",
+          "statement": "Inspect actual tool enumeration and approval/resumption states instead of treating defaults as least privilege.",
+          "conditions": "Engineering interpretation grounded in the captured original, not a reported deployment result.",
+          "basedOn": [
+            "fact-01",
+            "fact-02"
+          ]
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-28-top-3",
+      "url": "https://dev.classmethod.jp/articles/slug-aws-cognito-sso-oidc-adminInitiateAuth/",
+      "originalTitle": "Cognito で AdminInitiateAuth を使ったときの SSO を試してみた",
+      "source": "DevelopersIO",
+      "topic": "認証・Web",
+      "access": "full",
+      "accessNote": "Full public prose and inline code read. Screenshots and external linked documentation were not independently verified; no hands-on execution by this author.",
+      "capturedAt": "2026-09-28T03:37:51.180573+00:00",
+      "snapshotSha256": "4cdcf338d7686a692eb962251f45907563cd1e30632547739da8aeed2c2378ab",
+      "claims": [
+        {
+          "id": "fact-01",
+          "kind": "source-fact",
+          "statement": "AdminInitiateAuthを使うAアプリでは、ブラウザがCognitoドメインを訪れず認証済みのIdPセッションが成立しなかった。",
+          "conditions": "同じユーザープールのAアプリとOIDC RPのBアプリによる実験。Cookieの単なる存在と認証済み状態は異なる。",
+          "quote": "A システムのログインでブラウザが Cognito のドメインを通らない",
+          "locator": "なぜSSOにならないのか",
+          "usedIn": {
+            "zh": "浏览器从未在 Cognito 域建立已认证的登录会话",
+            "ja": "ブラウザは Cognito ドメインでログインしていない",
+            "interview": "ブラウザがCognitoのドメインを通らず"
+          }
+        },
+        {
+          "id": "fact-02",
+          "kind": "source-fact",
+          "statement": "サンプルの署名検証省略は検証専用の条件である。",
+          "conditions": "本文と付録コードを読んだ。自社での再実行、実運用への適合性は未検証。",
+          "quote": "ID Token の署名検証は省いているので、本番では使わないでください。",
+          "locator": "検証構成の注意",
+          "usedIn": {
+            "zh": "示例 RP 明确省略 JWT 签名校验",
+            "ja": "RP で JWT 署名検証を省いている"
+          }
+        },
+        {
+          "id": "interpretation-01",
+          "kind": "author-interpretation",
+          "statement": "Model app sessions and IdP sessions separately; production authentication needs additional security validation.",
+          "conditions": "Engineering interpretation grounded in the captured original, not a reported deployment result.",
+          "basedOn": [
+            "fact-01",
+            "fact-02"
+          ]
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-28-top-4",
+      "url": "https://dev.classmethod.jp/articles/kiro-crew-auto-jev-model-route-local-kev/",
+      "originalTitle": "Kiro Crew の Auto (Jev) によるモデルルーティングをローカル Kev で試してみた",
+      "source": "DevelopersIO",
+      "topic": "モデルルーティング",
+      "access": "full",
+      "accessNote": "Full public prose and inline code read. Screenshots and external linked documentation were not independently verified; no hands-on execution by this author.",
+      "capturedAt": "2026-09-28T03:42:30.672118+00:00",
+      "snapshotSha256": "2a8cfe2348214648a3e36261ca0690a21e6114b20db381bdf1ca74445e8ce5f8",
+      "claims": [
+        {
+          "id": "fact-01",
+          "kind": "source-fact",
+          "statement": "ローカルKevの判定を待つためtimeout_msを1000から5000へ変更した。",
+          "conditions": "Crew 0.7.1、kiro-cli 2.24.0、M4 Pro/MLX上のKev4b。全環境の推奨値ではない。",
+          "quote": "timeout_ms は既定の 1000 から 5000 に伸ばしました。",
+          "locator": "Crew の設定",
+          "usedIn": {
+            "zh": "判定超时从 1000ms 增至 5000ms",
+            "ja": "既定の 1000ms から 5000ms に延ばしています。",
+            "interview": "判定待ちを千から五千ミリ秒へ延ばし"
+          }
+        },
+        {
+          "id": "fact-02",
+          "kind": "source-fact",
+          "statement": "model_chosen、applied、model_usedを確認し、選択と実利用を区別した。",
+          "conditions": "三件の例の判定時間367/433/1291msであり、品質全体やP95を示す統計ではない。判定のローカル化と応答生成の送信先は別。",
+          "quote": "model_chosen",
+          "locator": "プロンプトの複雑さでモデルが切り替わる / decisionsログ",
+          "usedIn": {
+            "zh": "model_chosen",
+            "ja": "model_chosen",
+            "interview": "選択モデルと使用モデルの一致をログで確認"
+          }
+        },
+        {
+          "id": "interpretation-01",
+          "kind": "author-interpretation",
+          "statement": "Separate routing decision, actual generation and data destinations; three log samples do not establish population accuracy.",
+          "conditions": "Engineering interpretation grounded in the captured original, not a reported deployment result.",
+          "basedOn": [
+            "fact-01",
+            "fact-02"
+          ]
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-28-top-5",
+      "url": "https://dev.classmethod.jp/articles/202609-aws-backup-ec2-restore-to-another-az/",
+      "originalTitle": "AWS Backupの復旧ポイントからEC2を別のAZへ、プライベートIPを指定してリストアする",
+      "source": "DevelopersIO",
+      "topic": "クラウド運用",
+      "access": "full",
+      "accessNote": "Full public prose and inline code read. Screenshots and external linked documentation were not independently verified; no hands-on execution by this author.",
+      "capturedAt": "2026-09-28T03:42:31.865774+00:00",
+      "snapshotSha256": "7c6f4f71c521380efa7575700a3610c4d9321fd76d3c4d2088eb577ff6e39fb0",
+      "claims": [
+        {
+          "id": "fact-01",
+          "kind": "source-fact",
+          "statement": "PlacementとNetworkInterfacesは文字列化したJSONを展開・変更して戻す必要がある。",
+          "conditions": "同一VPCの別AZ、移動先サブネットの未使用IPを選ぶ例。旧ENIと競合するネットワーク設定を残さない。",
+          "quote": "Placement の値はJSON文字列なので",
+          "locator": "2-2. AZを書き換える / jqコメント",
+          "usedIn": {
+            "zh": "JSON 字符串",
+            "ja": "JSON 文字列",
+            "interview": "PlacementとNetworkInterfacesのJSON文字列を展開"
+          }
+        },
+        {
+          "id": "fact-02",
+          "kind": "source-fact",
+          "statement": "記事ではインスタンスとEBSボリュームが復元先AZに作られたことを照合した。",
+          "conditions": "COMPLETED後の配置確認。業務正常性、接続先切り替え、復旧時間の完了まで主張しない。",
+          "quote": "ボリュームはAZを指定しなくても、リストア先のAZに作られます。",
+          "locator": "5. リストア先を確認する",
+          "usedIn": {
+            "zh": "EC2 与 EBS 查询核对实际 AZ",
+            "ja": "EBS ボリュームの AZ を照合",
+            "interview": "EC2とEBSの配置"
+          }
+        },
+        {
+          "id": "interpretation-01",
+          "kind": "author-interpretation",
+          "statement": "Treat infrastructure restore and application-level recovery as separate acceptance stages.",
+          "conditions": "Engineering interpretation grounded in the captured original, not a reported deployment result.",
+          "basedOn": [
+            "fact-01",
+            "fact-02"
+          ]
+        }
+      ]
+    }
+  ]
+}
