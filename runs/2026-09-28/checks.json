@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-28",
+  "baseCommit": "5d0dfd731abd70f26010d109c4ae03b726f8406a",
+  "checkedAt": "2026-09-28T04:12:48.668679+00:00",
+  "stage": "drafts_ready",
+  "progressDraftCommit": "ab5cb9ec739e2ea84b4c62bf7fd3884a9b7cfb1f",
+  "exactRemoteBlobMatch": true,
+  "files": [
+    {"path":"src/content/daily/2026-09-28.md","progressPath":"runs/2026-09-28/drafts/daily.md","blobSha":"60620473f6641dfc5f3db9329de92ecefc9c01f7","sha256":"e2f3addef64115befb57e8a6ea938ec4a3701b6582a3185a68dd25bbc093d197","bytes":32566},
+    {"path":"src/content/daily-ja/2026-09-28.md","progressPath":"runs/2026-09-28/drafts/daily-ja.md","blobSha":"c0c414e83860457200ca86c456dbd3830176ae64","sha256":"e1284b7d853e747a2d960a1a8346d0582572acee17493b51f6d6061b5a63d794","bytes":36635},
+    {"path":"src/content/japanese/2026-09-28.md","progressPath":"runs/2026-09-28/drafts/japanese.md","blobSha":"00a51507c8ebf531adccba580744c555dc0950e1","sha256":"8aaaea669617b5f4607007e2a66ba512bccb2855f8eb500c5fea64da58bfeef1","bytes":11872},
+    {"path":"src/content/japanese-ja/2026-09-28.md","progressPath":"runs/2026-09-28/drafts/japanese-ja.md","blobSha":"3d49e47124322f13755f388cff15f7cc90d0d144","sha256":"6b377711dcd8aecc320e1ef4224de14ba3fb9b99ea8e89f9f3c03ffd725326c9","bytes":13914},
+    {"path":"src/content/evidence/2026-09-28.json","progressPath":"runs/2026-09-28/drafts/evidence.json","blobSha":"5896ecc2d1bc38c8519804d3a5d253f7c01e0549","sha256":"d9a2c6dd99e6517f883f463a3bfdf8253f1d83760826424ea8beb68553349ac5","bytes":13553},
+    {"path":"src/data/interviews/2026-09-28.json","progressPath":"runs/2026-09-28/drafts/interviews.json","blobSha":"24407144093053929d4fbcc54bee40f7c1c4187a","sha256":"b98a67637c91652c2da79202bf5f76fc0634390be0ad73222429d08b47566379","bytes":5971}
+  ],
+  "localChecks": [
+    {"command":"node scripts/validate-content-integrity.mjs","exitCode":0,"result":"48 four-file sets, zero errors"},
+    {"command":"node scripts/check-jlpt-history.mjs","exitCode":0,"result":"48 full-history dates, 915 identities, zero duplicates"},
+    {"command":"node scripts/check-grammar-history.mjs","exitCode":0,"result":"48 full-history dates, 92 identities, zero duplicates"},
+    {"command":"node scripts/check-study-review.mjs","exitCode":0,"result":"48 dates; introduction, current evidence, frequencies and issue numbers passed"},
+    {"command":"node scripts/validate-structured-interviews.mjs","exitCode":0,"result":"Schema, article references and bilingual text/order passed"},
+    {"command":"node scripts/sync-bilingual-interview.mjs --check","exitCode":0,"result":"36 legacy and 12 original reports passed; no rewrites"},
+    {"command":"node scripts/validate-daily-quality.mjs --date=2026-09-28","exitCode":0,"result":"Passed with no warnings; five distinct source-bound Q&A and timing boundaries checked"},
+    {"command":"node scripts/validate-source-evidence.mjs --date 2026-09-28 --source-dir ../source-text","exitCode":0,"result":"Five full original text hashes and declared quotations checked"}
+  ],
+  "localCheckArtifactSha256": "f872c8014ef209a011f2a1c59fd8b04ae1f18dcd6752e10d17e9bc0a70a6063b",
+  "learning": {"issueNumber":48,"vocabularyNew":10,"vocabularyReview":10,"grammarNew":0,"grammarReview":8,"grammarLessons":48},
+  "preflight": {"status":"not_started","workflowPath":".github/workflows/deploy.yml"},
+  "unexecutedGates": ["CI typecheck","dependency audit","evidence pilot","audio","unit tests","build","speech smoke","full browser","CSP"],
+  "published": false,
+  "nextAction": "Create an exact six-path draft commit on current main and run the unchanged deploy.yml preflight."
+}
