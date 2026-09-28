@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-28",
+  "sourceCommit": "5d0dfd731abd70f26010d109c4ae03b726f8406a",
+  "sourceWindow": {"from":"2026-09-27T10:00:00+09:00","to":"2026-09-28T10:00:00+09:00"},
+  "stage": "partial_source_review",
+  "captureArtifacts": [10949883189,10950492544],
+  "verifiedArticles": [
+    {
+      "articleId": "2026-09-28-top-1",
+      "url": "https://dev.classmethod.jp/articles/claude-code-web-multiple-repositories/",
+      "originalTitle": "Claude Code on the web で複数リポジトリを接続する：CLAUDE.md・Skillsの挙動",
+      "source": "DevelopersIO",
+      "publishedAt": "2026-09-28T08:00:00+09:00",
+      "timestampEvidence": "Original embedded datePublished and publisher RSS agree.",
+      "capturedAt": "2026-09-28T03:40:07.686068+00:00",
+      "rawSha256": "819b3036a93b70053cf1a338fc4b1e365b80c35cb79c8303c9f29e8fa6259da0",
+      "snapshotSha256": "4e78b7da966898cae8cb8de34fb36c515531cc1b86c71e4d364e3cf26257bcaf",
+      "access": "full",
+      "accessNote": "Full public article text and inline code read. Screenshots and external linked documentation are not independently validated.",
+      "facts": [
+        "Author tested two repositories in A-to-B and B-to-A order, one execution per condition, on Claude Code 2.1.278.",
+        "The observed cloud environment set CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1; both root and .claude/CLAUDE.md instructions were reflected in initial answers and checked output files.",
+        "Uniquely named skills from both repositories were callable. The same-named shared-probe chose the first selected repository in the two tested sessions; this is not a guaranteed precedence contract."
+      ],
+      "boundary": "Two one-shot conditions cannot establish universal selection priority. Naming skills distinctly and verifying file/PR diffs is an editorial engineering recommendation, not a new benchmark result."
+    }
+  ],
+  "excludedOutsideWindow": [
+    {"url":"https://dev.classmethod.jp/articles/clm-contrastive-language-model-switchyard-judge/","publishedAt":"2026-09-26T16:36:27.317Z"},
+    {"url":"https://dev.classmethod.jp/articles/20260927-aws-startup-advisor/","publishedAt":"2026-09-26T17:16:10.549Z"},
+    {"url":"https://zenn.dev/katsu658/articles/5dc8de146e0964","publishedAt":"2026-09-27T00:25:13.089+09:00"},
+    {"url":"https://zenn.dev/aynyan/articles/ayn-jarvis-voice-assistant-intro","publishedAt":"2026-09-27T03:43:34.485+09:00"},
+    {"url":"https://dev.classmethod.jp/articles/kev-oss-jev-compatible-mlx-mac/","publishedAt":"2026-09-27T00:27:37.613Z"}
+  ],
+  "nextAction": "Read and verify four remaining in-window originals selected from live publisher feeds; preserve exact publication timestamps and factual boundaries."
+}
