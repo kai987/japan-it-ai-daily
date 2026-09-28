@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-28",
+  "baseCommit": "5d0dfd731abd70f26010d109c4ae03b726f8406a",
+  "progressDraftCommit": "2378b12b4fca98c535837347b6eab98d797e92c8",
+  "stage": "drafts_ready",
+  "reason": "Final human review required B to contain two to four points per Top5 article in order. Both languages now contain five ordered article blocks with two knowledge points each. Chinese mode includes Chinese and Japanese explanations. A, C, canonical Q&A, learning identities and factual evidence remain unchanged.",
+  "supersedesDraftCommit": "e9cb30a10c3ff8e916007b2b2cfa0b66498fae39",
+  "supersededPreflightRunId": 36377015325,
+  "supersededPreflightResult": "success; not usable for the revised exact commit",
+  "files": [
+    {"path":"src/content/daily/2026-09-28.md","blobSha":"e4682700d8ce54ee9bc9285ec61fe78d0c103725","sha256":"06de80f382e43905d803ede2537249ee60559ca4fce0ce25baf4c50a10bae04c","bytes":36994},
+    {"path":"src/content/daily-ja/2026-09-28.md","blobSha":"430f271dfc9c4591dfc334378948700c9ad42483","sha256":"81df225ce4e23405c90e726f86c6cf4afcbe7d3f0a4fa3d8f2f7c2973e974e3f","bytes":39307},
+    {"path":"src/content/japanese/2026-09-28.md","blobSha":"00a51507c8ebf531adccba580744c555dc0950e1","sha256":"8aaaea669617b5f4607007e2a66ba512bccb2855f8eb500c5fea64da58bfeef1","bytes":11872},
+    {"path":"src/content/japanese-ja/2026-09-28.md","blobSha":"3d49e47124322f13755f388cff15f7cc90d0d144","sha256":"6b377711dcd8aecc320e1ef4224de14ba3fb9b99ea8e89f9f3c03ffd725326c9","bytes":13914},
+    {"path":"src/content/evidence/2026-09-28.json","blobSha":"5896ecc2d1bc38c8519804d3a5d253f7c01e0549","sha256":"d9a2c6dd99e6517f883f463a3bfdf8253f1d83760826424ea8beb68553349ac5","bytes":13553},
+    {"path":"src/data/interviews/2026-09-28.json","blobSha":"24407144093053929d4fbcc54bee40f7c1c4187a","sha256":"b98a67637c91652c2da79202bf5f76fc0634390be0ad73222429d08b47566379","bytes":5971}
+  ],
+  "localRegression": {"contentIntegrity":"pass;48 four-file dates,0 errors","jlptHistory":"pass;48 dates,915 identities,0 duplicates","grammarHistory":"pass;48 dates,92 identities,0 duplicates","studyReview":"pass;48 dates","structuredInterviews":"pass","bilingualInterviews":"pass;36 legacy and12 original reports","dailyQuality":"pass;no warnings","sourceEvidence":"pass;5 original snapshot hashes and declared quotes"},
+  "learning": {"issueNumber":48,"vocabularyNew":10,"vocabularyReview":10,"grammarNew":0,"grammarReview":8,"grammarLessons":48},
+  "nextAction": "Fast-forward draft with only the two revised body blobs, then run the same complete deploy.yml on that exact revised commit."
+}
