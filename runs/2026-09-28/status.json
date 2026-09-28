@@ -1,12 +1,13 @@
 {
-  "schemaVersion": 1,
-  "targetDate": "2026-09-28",
-  "stage": "drafts_ready",
-  "sourceCommit": "5d0dfd731abd70f26010d109c4ae03b726f8406a",
-  "sourceWindow": {"from":"2026-09-27T10:00:00+09:00","to":"2026-09-28T10:00:00+09:00"},
-  "createdAt": "2026-09-28T03:31:35.720Z",
-  "updatedAt": "2026-09-28T04:31:24+00:00",
-  "completedArtifacts": [
+  "schemaVersion":1,
+  "targetDate":"2026-09-28",
+  "stage":"preflight_passed",
+  "publicationStage":"request_ready",
+  "sourceCommit":"5d0dfd731abd70f26010d109c4ae03b726f8406a",
+  "sourceWindow":{"from":"2026-09-27T10:00:00+09:00","to":"2026-09-28T10:00:00+09:00"},
+  "createdAt":"2026-09-28T03:31:35.720Z",
+  "updatedAt":"2026-09-28T04:33:21.907Z",
+  "completedArtifacts":[
     {"path":"runs/2026-09-28/sources.json","blobSha":"ef9f51178adc29c7b84a459e4a23ffab9fb8e28b"},
     {"path":"runs/2026-09-28/history.json","commit":"122f874426a333d20f69cc8e44a99515a49d4b3d"},
     {"path":"runs/2026-09-28/drafts/daily.md","blobSha":"e4682700d8ce54ee9bc9285ec61fe78d0c103725"},
@@ -16,17 +17,18 @@
     {"path":"runs/2026-09-28/drafts/evidence.json","blobSha":"5896ecc2d1bc38c8519804d3a5d253f7c01e0549"},
     {"path":"runs/2026-09-28/drafts/interviews.json","blobSha":"24407144093053929d4fbcc54bee40f7c1c4187a"},
     {"path":"runs/2026-09-28/checks.json","commit":"058836f3d0f1ee8136f183a2141a861ea772d802"},
-    {"path":"runs/2026-09-28/checks-b-revision.json","commit":"24a66b4ba1266884caea8d286baa037cb051bf51"}
+    {"path":"runs/2026-09-28/checks-b-revision.json","commit":"24a66b4ba1266884caea8d286baa037cb051bf51"},
+    {"path":"runs/2026-09-28/preflight.json","commit":"ae7fd8406b0902550922fe6a2e773f18d9476502"}
   ],
-  "canonicalInterviews": "runs/2026-09-28/drafts/interviews.json",
-  "lastError": null,
-  "issueNumberExpected": 48,
-  "observation": {"inventoryFiles":3264,"rootTreeSha":"faede9e73bf958851d24c03c2ddc4ae327edfd27","historyDates":47,"firstDate":"2026-08-12","lastDate":"2026-09-27","plannerAction":"register_and_generate","pendingDates":["2026-09-28"],"previousReleaseRunId":36317530414,"previousSnapshotArtifactId":10930404460},
-  "learning": {"vocabularyNew":10,"vocabularyReview":10,"grammarNew":0,"grammarReview":8,"grammarLessons":48},
-  "authorLease": {"schemaVersion":2,"leaseId":"c68d35a5-242e-40d9-bf55-6e2201ab277f"},
-  "draftBranch": "draft/daily-2026-09-28",
-  "draftCommit": "633140f3f4dc62945eb7b80c883bd1f867c9c3eb",
-  "preflight": {"status":"in_progress","runId":36378002067,"headSha":"633140f3f4dc62945eb7b80c883bd1f867c9c3eb","workflowPath":".github/workflows/deploy.yml"},
-  "supersededPreflight": {"runId":36377015325,"headSha":"e9cb30a10c3ff8e916007b2b2cfa0b66498fae39","conclusion":"success","reason":"B required a final article-wise revision; not usable for current draft"},
-  "nextAction": "Inspect the exact revised preflight; only after success advance preflight_passed/request_ready and submit a source-bound request."
+  "canonicalInterviews":"runs/2026-09-28/drafts/interviews.json",
+  "lastError":null,
+  "issueNumberExpected":48,
+  "observation":{"inventoryFiles":3264,"rootTreeSha":"faede9e73bf958851d24c03c2ddc4ae327edfd27","historyDates":47,"firstDate":"2026-08-12","lastDate":"2026-09-27","plannerAction":"register_and_generate","pendingDates":["2026-09-28"],"previousReleaseRunId":36317530414,"previousSnapshotArtifactId":10930404460},
+  "learning":{"vocabularyNew":10,"vocabularyReview":10,"grammarNew":0,"grammarReview":8,"grammarLessons":48},
+  "authorLease":{"schemaVersion":2,"leaseId":"c68d35a5-242e-40d9-bf55-6e2201ab277f"},
+  "draftBranch":"draft/daily-2026-09-28",
+  "draftCommit":"633140f3f4dc62945eb7b80c883bd1f867c9c3eb",
+  "preflight":{"status":"completed","conclusion":"success","runId":36378002067,"headSha":"633140f3f4dc62945eb7b80c883bd1f867c9c3eb","workflowPath":".github/workflows/deploy.yml","buildJobId":108787677041},
+  "supersededPreflight":{"runId":36377015325,"headSha":"e9cb30a10c3ff8e916007b2b2cfa0b66498fae39","conclusion":"success","reason":"B revised; not usable for current draft"},
+  "nextAction":"Reread lease, current main, request slot and active publisher; save complete source-bound request to progress, then CAS-write request slot."
 }
