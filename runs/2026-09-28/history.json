@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-28",
+  "sourceCommit": "5d0dfd731abd70f26010d109c4ae03b726f8406a",
+  "sourceTree": "faede9e73bf958851d24c03c2ddc4ae327edfd27",
+  "sourceArtifactId": 10950387782,
+  "sourceArtifactSha256": "d850489287118bde46013f655e5f00168250a0c153646c3743f9612031c2d00b",
+  "completeHistory": true,
+  "directories": ["daily","daily-ja","japanese","japanese-ja"],
+  "dates": ["2026-08-12","2026-08-13","2026-08-14","2026-08-15","2026-08-16","2026-08-17","2026-08-18","2026-08-19","2026-08-20","2026-08-21","2026-08-22","2026-08-23","2026-08-24","2026-08-25","2026-08-26","2026-08-27","2026-08-28","2026-08-29","2026-08-30","2026-08-31","2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-05","2026-09-06","2026-09-07","2026-09-08","2026-09-09","2026-09-10","2026-09-11","2026-09-12","2026-09-13","2026-09-14","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-19","2026-09-20","2026-09-21","2026-09-22","2026-09-23","2026-09-24","2026-09-25","2026-09-26","2026-09-27"],
+  "historyFilesRead": 188,
+  "vocabularyIntroduced": 905,
+  "grammarIntroduced": 92,
+  "ruleHashes": {
+    "docs/jlpt-history/identity-rules.json": "614de8204cb9d25205daa15a9f27c502002548de9e5364a1a818db0c99f266ef",
+    "docs/grammar-history/identity-rules.json": "7105ca61642e2e9cf190a929fa6af2635e87789760906484a84950fa2e1b7679",
+    "scripts/learning-review.mjs": "575856cd2726c2f99dca04c3d4c7c0dd3958e839ff723f01c00a26ca9b097916"
+  },
+  "proposedNewVocabulary": ["統合する","推奨する","誤認する","読み込む","書き込む","持ち出す","使いこなす","簡便","堅実","余裕"],
+  "duplicateCandidates": [],
+  "semanticReview": "All 905 historical headwords and normalized identity aliases were reviewed. These are distinct lexical identities, not spelling, inflection or example substitutions for existing cards. Similar but different words such as 統合/集約 and 推奨/提言 are distinguished.",
+  "newGrammarSelected": 0,
+  "grammarSelectionReason": "No unverified new pattern is asserted. Reviewed source-linked constructions already have historical cards, including に応じて, 一方で, とは限らない, たうえで, としても, にかかわらず, に加えて and ようにする. New grammar stays zero; eligible review counts will be computed from the actual completed daily corpus, not padded.",
+  "fullLocalCoverageProofSha256": "a5b9e80308073357c977130bf58d25fdc06e9203aa659ce0f34ece3db0f439e6",
+  "validationState": "Baseline buildStudyArchive succeeded across all 47 dates. Candidate lexical identities have no historical matches. Final four-file integrity, review eligibility, counts and quality gates must still run after drafting.",
+  "nextAction": "Author complete detailed cards and independent bilingual text, then derive review counts using unchanged learning-review."
+}
