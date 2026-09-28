@@ -1,33 +1,28 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-28",
-  "stage": "registered",
+  "stage": "drafts_ready",
   "sourceCommit": "5d0dfd731abd70f26010d109c4ae03b726f8406a",
-  "sourceWindow": {
-    "from": "2026-09-27T10:00:00+09:00",
-    "to": "2026-09-28T10:00:00+09:00"
-  },
+  "sourceWindow": {"from":"2026-09-27T10:00:00+09:00","to":"2026-09-28T10:00:00+09:00"},
   "createdAt": "2026-09-28T03:31:35.720Z",
-  "updatedAt": "2026-09-28T03:31:35.720Z",
-  "completedArtifacts": [],
+  "updatedAt": "2026-09-28T04:15:04.976Z",
+  "completedArtifacts": [
+    {"path":"runs/2026-09-28/sources.json","blobSha":"ef9f51178adc29c7b84a459e4a23ffab9fb8e28b"},
+    {"path":"runs/2026-09-28/history.json","commit":"122f874426a333d20f69cc8e44a99515a49d4b3d"},
+    {"path":"runs/2026-09-28/drafts/daily.md","blobSha":"60620473f6641dfc5f3db9329de92ecefc9c01f7"},
+    {"path":"runs/2026-09-28/drafts/daily-ja.md","blobSha":"c0c414e83860457200ca86c456dbd3830176ae64"},
+    {"path":"runs/2026-09-28/drafts/japanese.md","blobSha":"00a51507c8ebf531adccba580744c555dc0950e1"},
+    {"path":"runs/2026-09-28/drafts/japanese-ja.md","blobSha":"3d49e47124322f13755f388cff15f7cc90d0d144"},
+    {"path":"runs/2026-09-28/drafts/evidence.json","blobSha":"5896ecc2d1bc38c8519804d3a5d253f7c01e0549"},
+    {"path":"runs/2026-09-28/drafts/interviews.json","blobSha":"24407144093053929d4fbcc54bee40f7c1c4187a"},
+    {"path":"runs/2026-09-28/checks.json","commit":"058836f3d0f1ee8136f183a2141a861ea772d802"}
+  ],
+  "canonicalInterviews": "runs/2026-09-28/drafts/interviews.json",
   "lastError": null,
   "issueNumberExpected": 48,
-  "observation": {
-    "inventoryFiles": 3264,
-    "rootTreeSha": "faede9e73bf958851d24c03c2ddc4ae327edfd27",
-    "historyDates": 47,
-    "firstDate": "2026-08-12",
-    "lastDate": "2026-09-27",
-    "plannerAction": "register_and_generate",
-    "pendingDates": [
-      "2026-09-28"
-    ],
-    "previousReleaseRunId": 36317530414,
-    "previousSnapshotArtifactId": 10930404460
-  },
-  "authorLease": {
-    "schemaVersion": 2,
-    "leaseId": "c68d35a5-242e-40d9-bf55-6e2201ab277f"
-  },
-  "nextAction": "Verify five original articles within the frozen source window and persist source evidence before drafting."
+  "observation": {"inventoryFiles":3264,"rootTreeSha":"faede9e73bf958851d24c03c2ddc4ae327edfd27","historyDates":47,"firstDate":"2026-08-12","lastDate":"2026-09-27","plannerAction":"register_and_generate","pendingDates":["2026-09-28"],"previousReleaseRunId":36317530414,"previousSnapshotArtifactId":10930404460},
+  "learning": {"vocabularyNew":10,"vocabularyReview":10,"grammarNew":0,"grammarReview":8,"grammarLessons":48},
+  "authorLease": {"schemaVersion":2,"leaseId":"c68d35a5-242e-40d9-bf55-6e2201ab277f"},
+  "preflight": {"status":"not_started","workflowPath":".github/workflows/deploy.yml"},
+  "nextAction": "Create only the six verified daily paths on a current-main draft commit, then run exact-commit deploy.yml preflight. Main, publisher and Pages have not yet received this daily."
 }
