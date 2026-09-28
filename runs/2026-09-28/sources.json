@@ -3,29 +3,17 @@
   "targetDate": "2026-09-28",
   "sourceCommit": "5d0dfd731abd70f26010d109c4ae03b726f8406a",
   "sourceWindow": {"from":"2026-09-27T10:00:00+09:00","to":"2026-09-28T10:00:00+09:00"},
-  "stage": "partial_source_review",
-  "captureArtifacts": [10949883189,10950492544],
+  "stage": "sources_verified",
+  "captureArtifacts": [10949883189,10950492544,10949823742],
   "verifiedArticles": [
-    {
-      "articleId": "2026-09-28-top-1",
-      "url": "https://dev.classmethod.jp/articles/claude-code-web-multiple-repositories/",
-      "originalTitle": "Claude Code on the web で複数リポジトリを接続する：CLAUDE.md・Skillsの挙動",
-      "source": "DevelopersIO",
-      "publishedAt": "2026-09-28T08:00:00+09:00",
-      "timestampEvidence": "Original embedded datePublished and publisher RSS agree.",
-      "capturedAt": "2026-09-28T03:40:07.686068+00:00",
-      "rawSha256": "819b3036a93b70053cf1a338fc4b1e365b80c35cb79c8303c9f29e8fa6259da0",
-      "snapshotSha256": "4e78b7da966898cae8cb8de34fb36c515531cc1b86c71e4d364e3cf26257bcaf",
-      "access": "full",
-      "accessNote": "Full public article text and inline code read. Screenshots and external linked documentation are not independently validated.",
-      "facts": [
-        "Author tested two repositories in A-to-B and B-to-A order, one execution per condition, on Claude Code 2.1.278.",
-        "The observed cloud environment set CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1; both root and .claude/CLAUDE.md instructions were reflected in initial answers and checked output files.",
-        "Uniquely named skills from both repositories were callable. The same-named shared-probe chose the first selected repository in the two tested sessions; this is not a guaranteed precedence contract."
-      ],
-      "boundary": "Two one-shot conditions cannot establish universal selection priority. Naming skills distinctly and verifying file/PR diffs is an editorial engineering recommendation, not a new benchmark result."
-    }
+    {"articleId":"2026-09-28-top-1","url":"https://dev.classmethod.jp/articles/claude-code-web-multiple-repositories/","originalTitle":"Claude Code on the web で複数リポジトリを接続する：CLAUDE.md・Skillsの挙動","source":"DevelopersIO","topic":"AI開発","publishedAt":"2026-09-28T08:00:00+09:00","capturedAt":"2026-09-28T03:40:07.686068+00:00","rawSha256":"819b3036a93b70053cf1a338fc4b1e365b80c35cb79c8303c9f29e8fa6259da0","snapshotSha256":"4e78b7da966898cae8cb8de34fb36c515531cc1b86c71e4d364e3cf26257bcaf","access":"full","facts":["Two repositories, two orders, one test per order, Claude Code 2.1.278.","Both CLAUDE.md scopes reflected; uniquely named skills callable. Same-name shared-probe selected the first repository in the two observed tests."],"boundary":"No guaranteed universal skill precedence can be inferred from two one-shot conditions."},
+    {"articleId":"2026-09-28-top-2","url":"https://dev.classmethod.jp/articles/strands-harness-vs-agent/","originalTitle":"Strands Agentsに「Strands harness」が追加されました！","source":"DevelopersIO","topic":"AIエージェント","publishedAt":"2026-09-27T14:11:49.752Z","capturedAt":"2026-09-28T03:42:27.698214+00:00","rawSha256":"09098b92b15ce62d2ca230698d97960e5a4ac42f0c0d3015678a723b4b140450","snapshotSha256":"c3fc32a99fe03bff15b6c988315e73aee953a9e04157e5a73991e08a07eff22a","access":"full","facts":["Python 3.13.13, strands-harness 0.1.2, strands-agents 1.57.0; create_harness returned twelve tools and SnapshotSessionManager.","Local .agent storage and an AgentCoreMemorySessionManager replacement with memory=False were demonstrated. Selecting three builtin_tools still left four plugin tools. interventions=ask interrupted before tool approval."],"boundary":"The plain Agent comparison had no tools; it does not prove superior model intelligence. No independent validation of the linked 28 percent cost claim."},
+    {"articleId":"2026-09-28-top-3","url":"https://dev.classmethod.jp/articles/slug-aws-cognito-sso-oidc-adminInitiateAuth/","originalTitle":"Cognito で AdminInitiateAuth を使ったときの SSO を試してみた","source":"DevelopersIO","topic":"認証・Web","publishedAt":"2026-09-27T14:57:14.592Z","capturedAt":"2026-09-28T03:37:51.180573+00:00","rawSha256":"37b4a1e94d5d7d75cc2f818b83837b1e634565ae442b5820c3409aaff626f527","snapshotSha256":"4cdcf338d7686a692eb962251f45907563cd1e30632547739da8aeed2c2378ab","access":"full","facts":["AdminInitiateAuth created only the application session, not an authenticated Cognito browser session. Merely opening login generated an unauthenticated Cookie; successful login changed its value.","The example RP omitted JWT signature verification and was explicitly restricted to experimentation."],"boundary":"Successful token acquisition and mere Cookie presence are not proof of a valid IdP browser session; example code is not production-ready."},
+    {"articleId":"2026-09-28-top-4","url":"https://dev.classmethod.jp/articles/kiro-crew-auto-jev-model-route-local-kev/","originalTitle":"Kiro Crew の Auto (Jev) によるモデルルーティングをローカル Kev で試してみた","source":"DevelopersIO","topic":"モデルルーティング","publishedAt":"2026-09-27T07:43:49.543Z","capturedAt":"2026-09-28T03:42:30.672118+00:00","rawSha256":"1e34115c8a21cd872a9650133ff9c079f0f2415a0eff59ce3eefefc541bdb47f","snapshotSha256":"2a8cfe2348214648a3e36261ca0690a21e6114b20db381bdf1ca74445e8ce5f8","access":"full","facts":["Crew 0.7.1/kiro-cli 2.24.0 with host MLX Kev4b used /v1/systemone and decisions.model_route; decision timeout increased from 1000 to 5000ms.","Three log samples showed 367/433/1291ms for simple/medium/complex. Endpoint-specific consent, model_chosen versus model_used, and tool-risk reporting were inspected."],"boundary":"Three examples are not a representative latency/quality benchmark. Local routing does not make downstream generation local or tool execution universally safe."},
+    {"articleId":"2026-09-28-top-5","url":"https://dev.classmethod.jp/articles/202609-aws-backup-ec2-restore-to-another-az/","originalTitle":"AWS Backupの復旧ポイントからEC2を別のAZへ、プライベートIPを指定してリストアする","source":"DevelopersIO","topic":"クラウド運用","publishedAt":"2026-09-28T00:30:28.730Z","capturedAt":"2026-09-28T03:42:31.865774+00:00","rawSha256":"4033e04fc9db48a0d5ee7945357340cec8881c1337543e4cd0842c84807c6950","snapshotSha256":"7c6f4f71c521380efa7575700a3610c4d9321fd76d3c4d2088eb577ff6e39fb0","access":"full","facts":["Same-VPC different-AZ restore used an unused destination subnet IP. Placement and NetworkInterfaces are JSON strings requiring fromjson and reserialization.","Remove old ENI/top-level network conflicts; inspect restore status, then EC2/EBS AZ and private IP."],"boundary":"COMPLETED is not proof of application health or restoration of all original instance settings."}
   ],
+  "accessNote": "All selected public prose and inline code have been read. Screenshots and externally linked documentation are not independently verified. No hands-on execution was performed by this author. Snapshot hashes bind the normalized full article text, retained outside Git.",
+  "timestampEvidence": "Original embedded datePublished values agree with publisher RSS; all five fall within the unchanged source window. Event dates and publication dates are distinguished.",
   "excludedOutsideWindow": [
     {"url":"https://dev.classmethod.jp/articles/clm-contrastive-language-model-switchyard-judge/","publishedAt":"2026-09-26T16:36:27.317Z"},
     {"url":"https://dev.classmethod.jp/articles/20260927-aws-startup-advisor/","publishedAt":"2026-09-26T17:16:10.549Z"},
@@ -33,5 +21,5 @@
     {"url":"https://zenn.dev/aynyan/articles/ayn-jarvis-voice-assistant-intro","publishedAt":"2026-09-27T03:43:34.485+09:00"},
     {"url":"https://dev.classmethod.jp/articles/kev-oss-jev-compatible-mlx-mac/","publishedAt":"2026-09-27T00:27:37.613Z"}
   ],
-  "nextAction": "Read and verify four remaining in-window originals selected from live publisher feeds; preserve exact publication timestamps and factual boundaries."
+  "nextAction": "Complete candidate-level full-history identity review and canonical interviews; author independent bilingual A+B+C and source-bound evidence."
 }
