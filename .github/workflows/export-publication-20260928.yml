@@ -1,0 +1,49 @@
+name: Read-only publication source export 2026-09-28
+on:
+  push:
+    branches: [automation/daily-progress]
+    paths: [.github/workflows/export-publication-20260928.yml]
+permissions:
+  contents: read
+concurrency:
+  group: publication-input-export-20260928
+  cancel-in-progress: false
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact main without persisted credentials
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 5d0dfd731abd70f26010d109c4ae03b726f8406a
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Export verified complete inventory and text source
+        run: |
+          python3 <<'PY'
+          import pathlib, subprocess, json, hashlib, tarfile
+          out=pathlib.Path('/tmp/publication-20260928'); out.mkdir()
+          source=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          assert source=='5d0dfd731abd70f26010d109c4ae03b726f8406a'
+          entries=[]
+          with tarfile.open(out/'source.tar','w') as tar:
+              for raw in subprocess.check_output(['git','ls-tree','-rz','--full-tree','HEAD']).split(b'\0'):
+                  if not raw: continue
+                  meta,path=raw.split(b'\t',1); mode,kind,sha=meta.decode().split(); path=path.decode()
+                  entries.append({'path':path,'mode':mode,'type':kind,'sha':sha})
+                  if kind=='blob' and not path.endswith('.mp3'):
+                      data=pathlib.Path(path).read_bytes()
+                      assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()==sha
+                      tar.add(path,arcname=path,recursive=False)
+          (out/'inventory.json').write_text(json.dumps({'sourceCommit':source,'complete':True,'entries':entries},indent=2)+'\n')
+          (out/'SHA256SUMS').write_text('\n'.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name for p in sorted(out.iterdir()) if p.is_file())+'\n')
+          print(source,len(entries),'tracked entries exported; no Git writes.')
+          PY
+      - name: Upload exact publication input source
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: publication-inputs-20260928-5d0dfd7
+          path: /tmp/publication-20260928/
+          if-no-files-found: error
+          retention-days: 3
