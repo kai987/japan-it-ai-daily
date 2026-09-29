@@ -1,9 +1,0 @@
----
-import Page from "../../../components/pages/ReportPage.astro";
-import { getCollection } from "astro:content";
-export async function getStaticPaths() {
-  return (await getCollection("dailyJa")).map((report) => ({ params: { id: report.id }, props: { report } }));
-}
-const { report } = Astro.props;
----
-<Page locale="ja" report={report} />

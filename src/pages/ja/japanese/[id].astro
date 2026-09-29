@@ -1,9 +1,0 @@
----
-import Page from "../../../components/pages/LessonPage.astro";
-import { getCollection } from "astro:content";
-export async function getStaticPaths() {
-  return (await getCollection("japaneseJa")).map((lesson) => ({ params: { id: lesson.id }, props: { lesson } }));
-}
-const { lesson } = Astro.props;
----
-<Page locale="ja" lesson={lesson} />

@@ -1,9 +1,0 @@
----
-import Page from "../../../components/pages/TopicPage.astro";
-import { featuredTopics } from "../../../lib/topics";
-export function getStaticPaths() {
-  return featuredTopics.map((topic) => ({ params: { slug: topic.key }, props: { topic } }));
-}
-const { topic } = Astro.props;
----
-<Page locale="ja" topic={topic} />
