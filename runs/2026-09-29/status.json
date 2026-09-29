@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "stage": "request_ready",
+  "stage": "publisher_running",
   "sourceCommit": "cad1a3abce2c8fed92578ea5abeb46b70300b3cc",
   "sourceWindow": {
     "from": "2026-09-28T10:00:00+09:00",
     "to": "2026-09-29T10:00:00+09:00"
   },
   "createdAt": "2026-09-29T04:25:05.000Z",
-  "updatedAt": "2026-09-29T08:20:12.000Z",
+  "updatedAt": "2026-09-29T08:22:12.000Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-09-29/sources.json",
@@ -81,7 +81,7 @@
     "schemaVersion": 2,
     "leaseId": "698fc285-1dd9-4cdd-9686-ec02aa9fac81"
   },
-  "nextAction": "CAS-write the source-bound publication request to automation/daily-publish-request after rechecking lease, main SHA, request slot and active publisher.",
+  "nextAction": "Track publisher run 36542262587 to completion; then verify the resulting main commit with its final deploy.yml, Pages, post-deploy bytes and it-study-snapshot.",
   "draftBranch": "draft/daily-2026-09-29",
   "draftCommit": "c83c44d18cb00cc4628d9e1520de1e3d0fa6a673",
   "preflight": {
@@ -91,9 +91,15 @@
     "headSha": "c83c44d18cb00cc4628d9e1520de1e3d0fa6a673",
     "workflowPath": ".github/workflows/deploy.yml"
   },
-  "publicationStage": "preflight_passed",
+  "publicationStage": "publisher_running",
   "publicationRequest": {
     "requestId": "daily-2026-09-29-cd9fb041-5de9-44cb-b93a-8e72b16288de",
-    "status": "prepared_in_progress"
+    "branch": "automation/daily-publish-request",
+    "commit": "7c590d3b6d18ab5965ec312307fb8d9065ffbdfa",
+    "readbackBlob": "0497a68e9ae684d0ac1b010e1d8efe901e6b2785"
+  },
+  "publisher": {
+    "runId": 36542262587,
+    "status": "in_progress"
   }
 }
