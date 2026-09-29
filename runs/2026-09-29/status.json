@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "stage": "publisher_running",
+  "stage": "published",
   "sourceCommit": "cad1a3abce2c8fed92578ea5abeb46b70300b3cc",
   "sourceWindow": {
     "from": "2026-09-28T10:00:00+09:00",
     "to": "2026-09-29T10:00:00+09:00"
   },
   "createdAt": "2026-09-29T04:25:05.000Z",
-  "updatedAt": "2026-09-29T08:22:12.000Z",
+  "updatedAt": "2026-09-29T08:26:44.000Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-09-29/sources.json",
@@ -75,13 +75,16 @@
       "見過ごす",
       "留める",
       "引き換え"
-    ]
+    ],
+    "vocabularyReview": 10,
+    "grammarReview": 6,
+    "grammarLessons": 49
   },
   "authorLease": {
     "schemaVersion": 2,
     "leaseId": "698fc285-1dd9-4cdd-9686-ec02aa9fac81"
   },
-  "nextAction": "Track publisher run 36542262587 to completion; then verify the resulting main commit with its final deploy.yml, Pages, post-deploy bytes and it-study-snapshot.",
+  "nextAction": "Perform the one-time source-bound N1 handoff for 2026-09-29 using release commit 730b21196e8f8070a2b3f14ed20c1799dbc2abb2 and verified it-study-snapshot artifact 11021340094.",
   "draftBranch": "draft/daily-2026-09-29",
   "draftCommit": "c83c44d18cb00cc4628d9e1520de1e3d0fa6a673",
   "preflight": {
@@ -91,7 +94,7 @@
     "headSha": "c83c44d18cb00cc4628d9e1520de1e3d0fa6a673",
     "workflowPath": ".github/workflows/deploy.yml"
   },
-  "publicationStage": "publisher_running",
+  "publicationStage": "published",
   "publicationRequest": {
     "requestId": "daily-2026-09-29-cd9fb041-5de9-44cb-b93a-8e72b16288de",
     "branch": "automation/daily-publish-request",
@@ -100,6 +103,24 @@
   },
   "publisher": {
     "runId": 36542262587,
-    "status": "in_progress"
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "release": {
+    "commit": "730b21196e8f8070a2b3f14ed20c1799dbc2abb2",
+    "deployRunId": 36542511270,
+    "buildJobId": 109321035636,
+    "deployJobId": 109321685714,
+    "conclusion": "success",
+    "pages": "success",
+    "publicationVerification": "success",
+    "snapshotArtifactId": 11021340094,
+    "snapshotArtifactDigest": "sha256:eeb6f054387dd148e20efc3e9146b96fb2a9f3a467db829437c5958ef5d8f520",
+    "snapshotContentSha256": "27bd44ac7f21f706033302d3a84172af835a07acc60a1d4e7295011420dc9bed",
+    "snapshotSourceCommit": "730b21196e8f8070a2b3f14ed20c1799dbc2abb2",
+    "snapshotTotalDays": 49,
+    "snapshotIssueNumber": 49,
+    "snapshotLastDate": "2026-09-29",
+    "grammarLessons": 49
   }
 }
