@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "stage": "drafts_ready",
+  "stage": "preflight_running",
   "sourceCommit": "cad1a3abce2c8fed92578ea5abeb46b70300b3cc",
   "sourceWindow": {
     "from": "2026-09-28T10:00:00+09:00",
     "to": "2026-09-29T10:00:00+09:00"
   },
   "createdAt": "2026-09-29T04:25:05.000Z",
-  "updatedAt": "2026-09-29T06:10:45.000Z",
+  "updatedAt": "2026-09-29T06:30:15.000Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-09-29/sources.json",
@@ -44,10 +44,7 @@
       "path": "runs/2026-09-29/checks.json"
     }
   ],
-  "lastError": {
-    "code": "preflight_trigger_unavailable",
-    "detail": "GitHub connector writes to the existing draft/daily-2026-09-29 branch (update_ref, contents update, and PR merge) changed the branch head through b7bca7a0adf0c5eab1d6bf79bd5817178674aa32 but did not create a new deploy.yml workflow run. The publisher requires an exact successful run whose head_sha equals the current draft commit and head_branch equals draft/daily-2026-09-29, so publication cannot proceed without weakening the contract."
-  },
+  "lastError": null,
   "issueNumberExpected": 49,
   "observation": {
     "inventoryFiles": 3394,
@@ -72,18 +69,13 @@
     "schemaVersion": 2,
     "leaseId": "ded3afe2-2a58-4933-af77-caac0fc755ad"
   },
-  "nextAction": "Trigger .github/workflows/deploy.yml on exact branch draft/daily-2026-09-29 at head b7bca7a0adf0c5eab1d6bf79bd5817178674aa32 using an authorized workflow_dispatch or a genuine push event. Then verify all gates, set preflight_passed/request_ready, submit the source-bound publication request, and continue through publisher and final Pages verification.",
+  "nextAction": "Wait for exact draft preflight 36531360792 to complete; inspect exact failing job/step if any.",
   "draftBranch": "draft/daily-2026-09-29",
-  "draftCommit": "b7bca7a0adf0c5eab1d6bf79bd5817178674aa32",
+  "draftCommit": "4da4d5c392562f19a8d384436ff5e836e6c07ec1",
   "preflight": {
-    "status": "blocked_before_exact_run",
-    "previousRunId": 36528551664,
-    "previousHeadSha": "ce2f5237dc030e3b1bd9a1b52e43f70db9e0ee7f",
-    "previousConclusion": "failure",
-    "previousFailure": "npm audit high vulnerability before dependency repair",
-    "dependencyRepairCommit": "492bb2d26ea6330e7939b9fa9c2090ab2d2d49fc",
-    "dependencyRepairDeployRunId": 36528923704,
-    "dependencyRepairDeployConclusion": "success",
-    "exactCurrentDraftRunId": null
+    "status": "in_progress",
+    "runId": 36531360792,
+    "headSha": "4da4d5c392562f19a8d384436ff5e836e6c07ec1",
+    "workflowPath": ".github/workflows/deploy.yml"
   }
 }
