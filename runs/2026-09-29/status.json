@@ -1,15 +1,20 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "stage": "registered",
+  "stage": "sources_verified",
   "sourceCommit": "cad1a3abce2c8fed92578ea5abeb46b70300b3cc",
   "sourceWindow": {
     "from": "2026-09-28T10:00:00+09:00",
     "to": "2026-09-29T10:00:00+09:00"
   },
   "createdAt": "2026-09-29T04:25:05.000Z",
-  "updatedAt": "2026-09-29T04:25:05.000Z",
-  "completedArtifacts": [],
+  "updatedAt": "2026-09-29T04:40:30.000Z",
+  "completedArtifacts": [
+    {
+      "path": "runs/2026-09-29/sources.json",
+      "blobSha": "94566b75a5a6d4cf9db0baebc4934e42820de2d4"
+    }
+  ],
   "lastError": null,
   "issueNumberExpected": 49,
   "observation": {
@@ -26,7 +31,7 @@
   },
   "authorLease": {
     "schemaVersion": 2,
-    "leaseId": "77d1f694-7784-4a92-8dc0-feb915f86d3e"
+    "leaseId": "f049bb70-ad2a-4ba9-8c9d-8d503f09e862"
   },
-  "nextAction": "Verify five original articles within the frozen source window and persist source evidence before drafting."
+  "nextAction": "Complete full-history identity review and canonical interviews before drafting."
 }
