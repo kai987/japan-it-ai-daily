@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "baseCommit": "cad1a3abce2c8fed92578ea5abeb46b70300b3cc",
+  "baseCommit": "492bb2d26ea6330e7939b9fa9c2090ab2d2d49fc",
   "stage": "drafts_ready",
-  "checkedAt": "2026-09-29T05:47:55.000Z",
+  "checkedAt": "2026-09-29T08:12:15.000Z",
   "publicationPaths": [
     "src/content/daily/2026-09-29.md",
     "src/content/japanese/2026-09-29.md",
@@ -15,15 +15,19 @@
   "localChecks": [
     {
       "name": "source evidence",
-      "result": "reused verified runs/2026-09-29/sources.json on unchanged sourceCommit"
+      "result": "verified target-window Top5 artifacts preserved on unchanged source set"
     },
     {
       "name": "full-history identity",
-      "result": "48 prior dates, 915 vocabulary identities, 92 grammar identities; candidate duplicates 0"
+      "result": "all 48 published dates / 192 four-representation files covered; inline and multiline YAML vocabulary cards recognized; six duplicate draft candidates removed; final ten have no historical identity match before workflow validation"
+    },
+    {
+      "name": "grammar history",
+      "result": "92 existing grammar identities covered; new grammar remains 0 with selection note; no padding"
     },
     {
       "name": "canonical interviews",
-      "result": "5 article-aligned Q&A and 3 review cards saved; exact strings used in both daily mirrors"
+      "result": "5 article-aligned Japanese Q&A plus 3 review cards preserved with shared exact strings"
     }
   ],
   "preflight": {
@@ -31,5 +35,7 @@
     "workflowPath": ".github/workflows/deploy.yml"
   },
   "published": false,
-  "nextAction": "Create exact six-path draft commit from current main and run unchanged deploy.yml preflight."
+  "nextAction": "Trigger one stable push on the exact draft after syncing the final daily-ja progress bytes, then require all deploy.yml gates to pass.",
+  "draftBranch": "draft/daily-2026-09-29",
+  "draftCommit": "7bc16f0ff447674f6e80aa87ff9d5c1c0147de06"
 }
