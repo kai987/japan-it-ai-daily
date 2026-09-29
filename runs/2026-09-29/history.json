@@ -75,7 +75,7 @@
   "proposedNewVocabulary": [
     "先回りする",
     "取り外す",
-    "絞り込む",
+    "失効",
     "近視眼的",
     "相応",
     "刷新",
@@ -85,16 +85,16 @@
     "引き換え"
   ],
   "normalizedVariantSearches": [
-    "見据える",
     "先回り",
-    "逆算",
-    "見極める",
     "取り外す",
-    "絞り込む",
-    "近視眼的な",
-    "相応な",
-    "あえて",
-    "盲点"
+    "失効",
+    "近視眼的",
+    "相応",
+    "刷新",
+    "織り込む",
+    "見過ごす",
+    "留める",
+    "引き換え"
   ],
   "duplicateCandidates": [
     {
@@ -116,18 +116,23 @@
     {
       "term": "盲点",
       "introducedOn": "2026-09-16"
+    },
+    {
+      "term": "絞り込む",
+      "introducedOn": "2026-08-12"
     }
   ],
-  "semanticReview": "All final ten candidates were checked across every published Japanese vocabulary frontmatter from 2026-08-12 through 2026-09-28 under the current NFKC/suru/alias identity contract. Five earlier candidates were found in full history and removed rather than relabeled. The final set has no historical identity match; final workflow jlpt:check remains authoritative.",
+  "semanticReview": "All final ten candidates were rescanned across every published Japanese vocabulary frontmatter from 2026-08-12 through 2026-09-28, recognizing both inline and multiline YAML card formats and applying the current NFKC/suru/alias identity contract. Six earlier draft candidates were found in full history and removed rather than relabeled. The final set has no historical identity match; final workflow jlpt:check remains authoritative.",
   "newGrammarSelected": 0,
   "grammarSelectionReason": "No new grammar identity is asserted. The report will use previously introduced patterns naturally and let the unchanged learning-review module select only those with genuine target-day evidence. Reviews remain separate from NEW grammar.",
-  "validationState": "Refreshed against main 492bb2d26ea6330e7939b9fa9c2090ab2d2d49fc after the dependency-only main repair. All 48 published dates were scanned; five duplicate draft candidates were removed. Exact draft full-history checks must still pass.",
+  "validationState": "Refreshed against main 492bb2d26ea6330e7939b9fa9c2090ab2d2d49fc. All 48 published dates were rescanned with inline and multiline YAML forms recognized; six duplicate draft candidates were removed. Exact draft full-history checks must still pass.",
   "validatedAgainstMain": "492bb2d26ea6330e7939b9fa9c2090ab2d2d49fc",
   "replacementCandidates": [
     "刷新",
     "織り込む",
     "見過ごす",
     "留める",
-    "引き換え"
+    "引き換え",
+    "失効"
   ]
 }
