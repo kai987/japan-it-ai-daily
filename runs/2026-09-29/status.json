@@ -1,18 +1,26 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "stage": "sources_verified",
+  "stage": "learning_verified",
   "sourceCommit": "cad1a3abce2c8fed92578ea5abeb46b70300b3cc",
   "sourceWindow": {
     "from": "2026-09-28T10:00:00+09:00",
     "to": "2026-09-29T10:00:00+09:00"
   },
   "createdAt": "2026-09-29T04:25:05.000Z",
-  "updatedAt": "2026-09-29T04:40:30.000Z",
+  "updatedAt": "2026-09-29T05:47:55.000Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-09-29/sources.json",
       "blobSha": "94566b75a5a6d4cf9db0baebc4934e42820de2d4"
+    },
+    {
+      "path": "runs/2026-09-29/history.json",
+      "blobSha": "671c0a4c573e06d3c6feeeeb3adcb02be35b7382"
+    },
+    {
+      "path": "runs/2026-09-29/interviews.json",
+      "blobSha": "60bc3ca22e51b8c9882e6554b09cfab1a018a62f"
     }
   ],
   "lastError": null,
@@ -29,9 +37,16 @@
     "previousReleaseRunId": 36438770816,
     "previousSnapshotArtifactId": 10977056785
   },
+  "learning": {
+    "vocabularyNew": 10,
+    "grammarNew": 0,
+    "historyDatesCovered": 48,
+    "vocabularyIntroducedBeforeTarget": 915,
+    "grammarIntroducedBeforeTarget": 92
+  },
   "authorLease": {
     "schemaVersion": 2,
-    "leaseId": "f049bb70-ad2a-4ba9-8c9d-8d503f09e862"
+    "leaseId": "ded3afe2-2a58-4933-af77-caac0fc755ad"
   },
-  "nextAction": "Complete full-history identity review and canonical interviews before drafting."
+  "nextAction": "Author independent Chinese/Japanese A+B+C plus source-bound evidence and exact structured interviews; persist completed draft sections."
 }
