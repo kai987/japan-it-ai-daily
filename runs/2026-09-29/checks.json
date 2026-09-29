@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-29",
+  "baseCommit": "cad1a3abce2c8fed92578ea5abeb46b70300b3cc",
+  "stage": "drafts_ready",
+  "checkedAt": "2026-09-29T05:47:55.000Z",
+  "publicationPaths": [
+    "src/content/daily/2026-09-29.md",
+    "src/content/japanese/2026-09-29.md",
+    "src/content/daily-ja/2026-09-29.md",
+    "src/content/japanese-ja/2026-09-29.md",
+    "src/content/evidence/2026-09-29.json",
+    "src/data/interviews/2026-09-29.json"
+  ],
+  "localChecks": [
+    {
+      "name": "source evidence",
+      "result": "reused verified runs/2026-09-29/sources.json on unchanged sourceCommit"
+    },
+    {
+      "name": "full-history identity",
+      "result": "48 prior dates, 915 vocabulary identities, 92 grammar identities; candidate duplicates 0"
+    },
+    {
+      "name": "canonical interviews",
+      "result": "5 article-aligned Q&A and 3 review cards saved; exact strings used in both daily mirrors"
+    }
+  ],
+  "preflight": {
+    "status": "not_started",
+    "workflowPath": ".github/workflows/deploy.yml"
+  },
+  "published": false,
+  "nextAction": "Create exact six-path draft commit from current main and run unchanged deploy.yml preflight."
+}
