@@ -1,0 +1,526 @@
+{
+  "observedAt": "2026-09-29T10:26:34.542409+00:00",
+  "baseCommit": "947ed74cb9cadd7e29c23440a2f9137dfa44cd04",
+  "remoteDeleted": 30,
+  "localDeleted": 2,
+  "backup": "Local verified Git bundle under Codex maintenance/japan-it-ai-daily/2026-09-29-branches; not public",
+  "policy": "Delete only ancestor-of-main branches or exact merged PR heads whose merge commit is reachable from main. Preserve open PRs, runtime workflow defaults, coordination branches, the current publication request draft, main and unmerged work. Remote SHAs and open PRs rechecked immediately before atomic deletion; absence verified after deletion.",
+  "branches": [
+    {
+      "ref": "codex/article-specific-interview",
+      "sha": "7d55eb7e3e479ead8812ed1a8f2015cdf04af1a4",
+      "merged": true,
+      "delete": true,
+      "reason": "ancestor of main"
+    },
+    {
+      "ref": "codex/publish-aug12-japanese-detail",
+      "sha": "8c69c3c3ab97625916709561a1b4f49e77b6df7a",
+      "merged": true,
+      "delete": true,
+      "reason": "ancestor of main"
+    },
+    {
+      "ref": "main",
+      "sha": "947ed74cb9cadd7e29c23440a2f9137dfa44cd04",
+      "merged": true,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "repair/japanese-history-from-originals",
+      "sha": "fb7cbf2eb0b41653e497067481df706cd162daac",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/HEAD",
+      "sha": "947ed74cb9cadd7e29c23440a2f9137dfa44cd04",
+      "merged": true,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/automation/daily-2026-09-17",
+      "sha": "2b791b9bc83b4cb1dcba76c1377f4eca2620d1a3",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #15, exact branch tip, merge reachable on main",
+      "pr": 15
+    },
+    {
+      "ref": "origin/automation/daily-2026-09-20",
+      "sha": "a41f26701ee91699d2ae27c6c0d63015f5160a14",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/automation/daily-2026-09-21",
+      "sha": "3c3ecc4b046ce0e83ea5cd122be34616d9f2d56d",
+      "merged": true,
+      "delete": true,
+      "reason": "ancestor of main"
+    },
+    {
+      "ref": "origin/automation/daily-progress",
+      "sha": "a38aa79cb7b733dd81aa082512ac5019f51c3455",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/automation/daily-publish-request",
+      "sha": "7c590d3b6d18ab5965ec312307fb8d9065ffbdfa",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/backfill/full-daily-20260812-30",
+      "sha": "64e356fbfe004c621b667f8483b3fe7bcd61840d",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #6, exact branch tip, merge reachable on main",
+      "pr": 6
+    },
+    {
+      "ref": "origin/backfill/source-export-20260901",
+      "sha": "303ea7f52502da0ae7d01921e898841a3be6e731",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/chore/prune-confirmed-r2-orphan-2026-08-29",
+      "sha": "565c63eccc65913ab327527d5ec8d04e7da01b27",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #33, exact branch tip, merge reachable on main",
+      "pr": 33
+    },
+    {
+      "ref": "origin/daily-2026-09-13-auto",
+      "sha": "2e490e25ae7cb65d4c6cba5c33648923ccbe5cca",
+      "merged": true,
+      "delete": true,
+      "reason": "ancestor of main"
+    },
+    {
+      "ref": "origin/dependabot/github_actions/actions/checkout-7.0.1",
+      "sha": "d72caf6d092c8db1ea06dbd5ffbc13f83f171843",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/dependabot/github_actions/actions/configure-pages-6.0.0",
+      "sha": "6f7406834d2736014ba2fff21e255dc3496e2ad0",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/dependabot/github_actions/actions/deploy-pages-5.0.0",
+      "sha": "b5c2d7d6c2c4be950091a42ff4f80a751bde2046",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/dependabot/github_actions/actions/setup-node-7.0.0",
+      "sha": "a5c9241ef17a7e7fbeafa197586c28ff46b90353",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/dependabot/github_actions/actions/upload-pages-artifact-5.0.0",
+      "sha": "097ff0ebe345f5be1c5938db78f1ac1844567547",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/dependabot/npm_and_yarn/frontend-runtime-b22a39c02b",
+      "sha": "fc777cb432df66a980133183f61633421a8e1070",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/dependabot/npm_and_yarn/typescript-7.0.2",
+      "sha": "c466920d049b84c513af27fcea364d01fc07eb01",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/dependabot/npm_and_yarn/vitest-5.0.1",
+      "sha": "f36fc6a63e3f403ddee9035923df1b5decd35c36",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/dependabot/npm_and_yarn/yaml-2.9.1",
+      "sha": "7ef0e14f101a5a221209b67545ab980c5b556e76",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/draft/daily-2026-09-22",
+      "sha": "8d2dcae509ff5a805c6da86fc9a61c0a75985955",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/draft/daily-2026-09-23",
+      "sha": "d87559720d5f81a0b36ada91dd20da713877ac65",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/draft/daily-2026-09-24",
+      "sha": "f14f285720858995fe4ab1744bb9ceb7dc17f65e",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/draft/daily-2026-09-24-clean",
+      "sha": "d2585151037247d43e19d16e952ae2c16ab2368f",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/draft/daily-2026-09-24-final",
+      "sha": "e0182c35b925cb11e0c3da7d8e38ddd8a40c9a9f",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/draft/daily-2026-09-25",
+      "sha": "8d73b87d722c5add463e9feba1295c32b8870d60",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/draft/daily-2026-09-26",
+      "sha": "0ee335ca783036580a032fbce0e9c2dc1d8a5b3a",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/draft/daily-2026-09-27",
+      "sha": "1feb2c6ca8976004b5958ac926ab455a2aef8a27",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/draft/daily-2026-09-28",
+      "sha": "633140f3f4dc62945eb7b80c883bd1f867c9c3eb",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/draft/daily-2026-09-29",
+      "sha": "c83c44d18cb00cc4628d9e1520de1e3d0fa6a673",
+      "merged": false,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/draft/daily-2026-09-29-preflight-trigger",
+      "sha": "1890d1d41ea9506d77a25fb353bc912c70a88974",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/draft/daily-p0-p1",
+      "sha": "56591391c9e15759a00f27488000ef5657d6c8d3",
+      "merged": true,
+      "delete": true,
+      "reason": "ancestor of main"
+    },
+    {
+      "ref": "origin/draft/daily-publication-recovery",
+      "sha": "9f5f8ba43794daeaa7d92a9b3c380e54455b37f3",
+      "merged": true,
+      "delete": true,
+      "reason": "ancestor of main"
+    },
+    {
+      "ref": "origin/draft/daily-publisher-deploy-handoff",
+      "sha": "5666e407f43358d4d0bb6f6d70f20b9c89c1f438",
+      "merged": true,
+      "delete": true,
+      "reason": "ancestor of main"
+    },
+    {
+      "ref": "origin/draft/daily-review-evidence-2026-09-26",
+      "sha": "b19f4ca98743cfba6b0e8381dc655c94cc12d874",
+      "merged": true,
+      "delete": true,
+      "reason": "ancestor of main"
+    },
+    {
+      "ref": "origin/draft/recovery-2026-09-24-clean",
+      "sha": "a429de66d6c7fd8a87ac3d43b6e2b3f94903628f",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/feat/generate-review-learning-audio-2026-09-18",
+      "sha": "1261078eb3597585f7e295f05fea8fec623ebab6",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #27, exact branch tip, merge reachable on main",
+      "pr": 27
+    },
+    {
+      "ref": "origin/feat/grammar-range-history-2026-09-18",
+      "sha": "479fc2cbdb2f4ed1d2aab39ba4047d9fc48fe1e8",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #26, exact branch tip, merge reachable on main",
+      "pr": 26
+    },
+    {
+      "ref": "origin/feat/new-study-date-deep-links-2026-09-18",
+      "sha": "3ad986ddd3cf650ad2f7f2b4f41e675e83166f96",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #25, exact branch tip, merge reachable on main",
+      "pr": 25
+    },
+    {
+      "ref": "origin/feat/r2-orphan-audit-safe-prune-2026-09-18",
+      "sha": "069cddcb42896194482b54811d868ae2792416e3",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #32, exact branch tip, merge reachable on main",
+      "pr": 32
+    },
+    {
+      "ref": "origin/feat/review-date-deep-links-2026-09-18",
+      "sha": "2274d0395868798891e6a9b9ddd1a4ee78d964be",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #24, exact branch tip, merge reachable on main",
+      "pr": 24
+    },
+    {
+      "ref": "origin/feat/study-review-frequency-2026-09-18",
+      "sha": "8c2996d015983e873917c84e25a5325672fd1983",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #18, exact branch tip, merge reachable on main",
+      "pr": 18
+    },
+    {
+      "ref": "origin/feature/default-japanese-locale",
+      "sha": "cde78b61872ff88fd4ee41ae076708ecac659096",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #12, exact branch tip, merge reachable on main",
+      "pr": 12
+    },
+    {
+      "ref": "origin/feature/fix-ja-interview-audio",
+      "sha": "00c02705ac3e6d3d5dd7734400e6a5bf6c69a743",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/feature/share-interview-qa",
+      "sha": "d0c91b5bafa6e32586b3ebe6ba31aa31a52bf852",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #14, exact branch tip, merge reachable on main",
+      "pr": 14
+    },
+    {
+      "ref": "origin/feature/zh-ja-language-mode",
+      "sha": "6bf722de1f3b2e85735db32581c2e7122792c6d8",
+      "merged": false,
+      "delete": false,
+      "reason": "still referenced by existing manual workflow defaults",
+      "pr": 8
+    },
+    {
+      "ref": "origin/fix/audio-parser-empty-grammar-2026-09-18",
+      "sha": "8fd91ca3206a77ff349528c791c7ab4d9eb50a68",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #30, exact branch tip, merge reachable on main",
+      "pr": 30
+    },
+    {
+      "ref": "origin/fix/frequency-date-grid-2026-09-18",
+      "sha": "f8d8d1a8210f239c61d1438909366193ad128d50",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #22, exact branch tip, merge reachable on main",
+      "pr": 22
+    },
+    {
+      "ref": "origin/fix/frequency-paired-dates-2026-09-18",
+      "sha": "1676bc29030991fdab1fdf1978805934a0ad7d0f",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #23, exact branch tip, merge reachable on main",
+      "pr": 23
+    },
+    {
+      "ref": "origin/fix/grammar-history-dedup-2026-09-18",
+      "sha": "c74e53953386ffca980703459b80110960fdcb0b",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/fix/inline-review-questions-2026-09-18",
+      "sha": "fa26d82e547089796bb76f9bb95d14e1fd2bfd6c",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #17, exact branch tip, merge reachable on main",
+      "pr": 17
+    },
+    {
+      "ref": "origin/fix/interview-ideal-range-24-34-2026-09-18",
+      "sha": "a467abc950ab1b5e4741a67454eda2543cd88848",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #29, exact branch tip, merge reachable on main",
+      "pr": 29
+    },
+    {
+      "ref": "origin/fix/jlpt-history-dedup-2026-09-18",
+      "sha": "13a2d1dd254e329cbf530a07a7c46de7971875f8",
+      "merged": false,
+      "delete": false,
+      "reason": "still referenced by existing manual workflow defaults",
+      "pr": 16
+    },
+    {
+      "ref": "origin/fix/jlpt-history-dedup-20260918",
+      "sha": "7c162eeea9456f226d28e342cf19a5e571977123",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/fix/jlpt-vocabulary-history-20260918",
+      "sha": "3d7a74f37d9b573b4b882f905c8392178e6ed498",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/fix/mobile-study-header-row-2026-09-18",
+      "sha": "5151ceaa6981369171a61312d4705d6cc90f63d7",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #21, exact branch tip, merge reachable on main",
+      "pr": 21
+    },
+    {
+      "ref": "origin/fix/r2-reconcile-stale-audio-2026-09-18",
+      "sha": "c98571d94a91ad173e1063a71a0bf62f0a875ad6",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #31, exact branch tip, merge reachable on main",
+      "pr": 31
+    },
+    {
+      "ref": "origin/fix/reliability-audio-deploy-interview-20260919",
+      "sha": "1dd1d0ba89cc8522a3088eff9a82eea3847a8457",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #34, exact branch tip, merge reachable on main",
+      "pr": 34
+    },
+    {
+      "ref": "origin/fix/report-title-duplication-20260919",
+      "sha": "9befa02893d038ae21f95b8ec57a396b08e89603",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #35, exact branch tip, merge reachable on main",
+      "pr": 35
+    },
+    {
+      "ref": "origin/fix/reuse-single-learning-audio-2026-09-18",
+      "sha": "0b676dd1f4d56a4c73bff730348c2ca3c32eb2d3",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #28, exact branch tip, merge reachable on main",
+      "pr": 28
+    },
+    {
+      "ref": "origin/fix/study-badge-right-align-2026-09-18",
+      "sha": "ca693e4ffcbde99e9ad0347b530903cabc4bfbb2",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #20, exact branch tip, merge reachable on main",
+      "pr": 20
+    },
+    {
+      "ref": "origin/fix/verify-historical-source-urls-20260901",
+      "sha": "7828f5f0424d8fdcbe1d847c2bf455e8a785d5a2",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #7, exact branch tip, merge reachable on main",
+      "pr": 7
+    },
+    {
+      "ref": "origin/main",
+      "sha": "947ed74cb9cadd7e29c23440a2f9137dfa44cd04",
+      "merged": true,
+      "delete": false,
+      "reason": "protected or open PR or current publication reference"
+    },
+    {
+      "ref": "origin/repair/japanese-history-from-originals",
+      "sha": "fb7cbf2eb0b41653e497067481df706cd162daac",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/test/study-frequency-growing-archive",
+      "sha": "6e0b8420eca99b1891a2417a25f76fd734cb83d8",
+      "merged": false,
+      "delete": true,
+      "reason": "merged PR #19, exact branch tip, merge reachable on main",
+      "pr": 19
+    },
+    {
+      "ref": "origin/work/review-frequency-2026-09-18",
+      "sha": "5a16cd9778094ede31df864a8551ceb381b3965b",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    },
+    {
+      "ref": "origin/work/study-ui-test-2026-09-18",
+      "sha": "f713ed9e0d3e0034ae0d156b850879714e563fd4",
+      "merged": false,
+      "delete": false,
+      "reason": "unmerged commits"
+    }
+  ]
+}

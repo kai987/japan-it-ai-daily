@@ -1,5 +1,7 @@
 # Daily scheduling and N1 publication handoff
 
+For the local Codex migration, see [CODEX_LOCAL.md](CODEX_LOCAL.md) and [the reusable prompt](CODEX_DAILY_PROMPT.md). The user authorized the local Codex scheduler cutover on 2026-09-29, effective 2026-09-30 at 10:00 Asia/Tokyo. The original ChatGPT daily task is paused; Codex uses the same publisher contract. N1 schedules are unchanged.
+
 Effective 2026-09-23. This document supplements docs/daily-publication/README.md without replacing its full content contract. The 10:00 author and any enabled/manual IT recovery read both documents plus scripts/daily-publication.mjs. A user-disabled hourly recovery stays disabled; do not recreate it as part of publication repair. N1 has its own canonical contract at kai987/Japanese-N1-Immersive-Sparring-Partner:docs/automation/README.md and policy.json.
 
 

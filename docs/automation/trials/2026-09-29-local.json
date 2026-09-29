@@ -1,0 +1,251 @@
+{
+  "mode": "trial",
+  "observedAt": "2026-09-29T09:41:00.484Z",
+  "sourceCommit": "947ed74cb9cadd7e29c23440a2f9137dfa44cd04",
+  "targetDate": "2026-09-29",
+  "plan": {
+    "action": "idle",
+    "reason": "no_due_unverified_date"
+  },
+  "releaseRunId": 36547429876,
+  "artifactIds": {
+    "snapshot": 11022634500,
+    "pages": 11022594508
+  },
+  "expectedRelease": {
+    "version": 1,
+    "commit": "947ed74cb9cadd7e29c23440a2f9137dfa44cd04",
+    "date": "2026-09-29",
+    "snapshotHash": "1acf1a25d13eb6a00d99dea4a02af1d2f5329087b2f7d8b8a4e57bde09e76b19",
+    "pages": [
+      {
+        "path": "daily/2026-09-29/",
+        "sha256": "7fd04cb8319dbb3abf762576c6207ada45eca44c58d8941d21af135601b7bc54"
+      },
+      {
+        "path": "ja/daily/2026-09-29/",
+        "sha256": "0ecd84ff5d3288c2008a54745065645c8581313379477b4868eac5b338a4a885"
+      }
+    ]
+  },
+  "liveVerification": {
+    "commit": "947ed74cb9cadd7e29c23440a2f9137dfa44cd04",
+    "date": "2026-09-29",
+    "attempt": 1
+  },
+  "history": {
+    "reportDates": 49,
+    "grammarLessonDates": 49,
+    "registeredDueDates": [
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-27",
+      "2026-09-28",
+      "2026-09-29"
+    ]
+  },
+  "contentUnchanged": {
+    "trackedFiles": 3126,
+    "headAndWorkingTreeMatch": true,
+    "gitBlobInventorySha256": "87a8230a431ef84d6fbfd99d11c460839195c40eb339f0f171b9254b5c8e6440"
+  },
+  "checks": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/publication/recovery.node.mjs",
+        "tests/publication/request.node.mjs",
+        "tests/publication/publisher-origin.node.mjs"
+      ],
+      "exitCode": 0,
+      "seconds": 0.41,
+      "log": "check-01.log",
+      "logSha256": "763514eff01406cf17f41e9675ca596c44d167526340ecc8c9cf3a084ca79127"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "exitCode": 0,
+      "seconds": 7.74,
+      "log": "check-02.log",
+      "logSha256": "67a00d1a26cd78ae24afbaf534ee62b0e8ff20eebce82b769c0c33f771ca60ce"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "content:integrity:check"
+      ],
+      "exitCode": 0,
+      "seconds": 2.71,
+      "log": "check-03.log",
+      "logSha256": "6107157a2bbaea39967bfe97caa266b3fc7b6f1db83742bd9ccd6dd14646dfe9"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "evidence:check"
+      ],
+      "exitCode": 0,
+      "seconds": 0.22,
+      "log": "check-04.log",
+      "logSha256": "2660babeb5960638a39cbd1ac2d662e20296cc4c84435270fe96d6dc59b15466"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "evidence:pilot"
+      ],
+      "exitCode": 0,
+      "seconds": 0.17,
+      "log": "check-05.log",
+      "logSha256": "24ecf4fda708c8c186bd0f462d167ce825861f008890501b1290b7467a78f263"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "bilingual:check-interview"
+      ],
+      "exitCode": 0,
+      "seconds": 0.16,
+      "log": "check-06.log",
+      "logSha256": "666ba868fb08e4db217804e5b68b12ab7f4b1f7396fdc0cf761b92aaf25cd9f1"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "quality:check"
+      ],
+      "exitCode": 0,
+      "seconds": 0.32,
+      "log": "check-07.log",
+      "logSha256": "46b854dbe2c3a671b2a8bf8cc2231c83e67ac66eb1cc05ceadfc30a853d83747"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "audio:check"
+      ],
+      "exitCode": 0,
+      "seconds": 0.58,
+      "log": "check-08.log",
+      "logSha256": "32f3e96fbfdad2671301e006e26d0b19abc58e4e3cec913cf9424e44ab02a454"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "audio:versions:check"
+      ],
+      "exitCode": 0,
+      "seconds": 0.8,
+      "log": "check-09.log",
+      "logSha256": "8dc89e4237c0bb7769b2f5381d8fb473aee14fc0f246f6ded3144cdf4e6fc116"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "audio:integrity:check"
+      ],
+      "exitCode": 0,
+      "seconds": 0.88,
+      "log": "check-10.log",
+      "logSha256": "a265dedcbeaa37c60236c691d943ec80b57d84a5f2a1e1dac690b6bfb0b59150"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "audio:duration:check"
+      ],
+      "exitCode": 0,
+      "seconds": 19.81,
+      "log": "check-11.log",
+      "logSha256": "bb166052cd9750be69dc0d36485ed9a7948d288f63447786c48a3346cf5af8c5"
+    },
+    {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exitCode": 0,
+      "seconds": 3.14,
+      "log": "check-12.log",
+      "logSha256": "8cd964b6a45fb7c7bf6ec595b75c5dbb2422c9d83abf2b98eb83e1fe08ad098d"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exitCode": 0,
+      "seconds": 4.67,
+      "log": "check-13.log",
+      "logSha256": "2936c2298f3b3e387b535ce1e943868bfcefc32884d4a7ce7dac249e58e9e43a"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "test:browser:speech-smoke"
+      ],
+      "exitCode": 0,
+      "seconds": 3.19,
+      "log": "check-14.log",
+      "logSha256": "daf0d77f70079afdb2d9c7357091943715b1503b1dbaf89e032b7a89b5ea46f8"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "test:browser"
+      ],
+      "exitCode": 0,
+      "seconds": 33.87,
+      "log": "check-15.log",
+      "logSha256": "74ed2427327b54831b84d159877bbe79fc00ba2459170b74e8dfcd77accb4e67"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "security:check"
+      ],
+      "exitCode": 0,
+      "seconds": 0.33,
+      "log": "check-16.log",
+      "logSha256": "7713bf2b3d3eddb0004effd75636623f40a7bb578c7c6a5560beedafd8e001cb"
+    }
+  ],
+  "dependencyAudit": {
+    "command": [
+      "npm",
+      "audit",
+      "--audit-level=high"
+    ],
+    "exitCode": 0,
+    "vulnerabilities": 0
+  },
+  "notExecuted": [
+    "new-day original-source research and authoring",
+    "remote lease/CAS write",
+    "new draft/preflight/request/publisher/deployment",
+    "new audio synthesis and R2 upload",
+    "N1 handoff",
+    "scheduler cutover"
+  ]
+}

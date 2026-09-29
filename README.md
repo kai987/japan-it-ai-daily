@@ -4,6 +4,12 @@ A bilingual static site for Japanese IT/AI news, engineering interview preparati
 
 [Read the site](https://kai987.github.io/japan-it-ai-daily/) · [Content quality rules](docs/DAILY_CONTENT_QUALITY_RULES.md) · [Evidence workflow](docs/evidence/README.md)
 
+## Codex local daily task
+
+Start with [AGENTS.md](AGENTS.md), the [local authoring and trial runbook](docs/automation/CODEX_LOCAL.md), and the [reusable task prompt](docs/automation/CODEX_DAILY_PROMPT.md). The local Codex daily task is enabled from 2026-09-30 at 10:00 Asia/Tokyo in the existing repository chat; the old ChatGPT daily task is paused. Keep the Mac awake, connected and Codex running. Daily content continues through the existing request-only publisher. Trial records distinguish existing-release validation from a newly generated and published report.
+
+The [20 preferred news sources](docs/automation/NEWS_SOURCES.md) are versioned alongside the rules. The [2026-09-29 local trial](docs/automation/trials/2026-09-29-local.md) passed the already-published/no-work path, local gates and live byte verification; it did not generate or republish a date. The subsequent [audio rehearsal and branch audit](docs/automation/trials/2026-09-29-audio.md) records the preserved-settings correction, real playback checks and conservative cleanup.
+
 ## Stack
 
 - Astro **7.2.9**, TypeScript, Markdown content collections
@@ -83,7 +89,7 @@ npm run security:check
 
 Install ffmpeg/ffprobe only when generating or validating AivisSpeech recordings (`brew install ffmpeg` on macOS). Content integrity checks four-file date coverage, Top 5 identity/order, study counts, unique entries and must-remember membership. Content quality includes article detail, evidence boundaries, technical anchors, repetition and estimated answer duration.
 
-Audio is an optional enhancement to the published text site. Missing audio for a newly published report does **not** block GitHub Pages. When no matching AivisSpeech manifest/MP3 is available, the existing browser Japanese speech fallback remains available. Once audio is generated and committed, the dedicated audio workflow validates the exact text-to-manifest mapping, measures interview duration with ffprobe, uploads the recordings to R2 and verifies the public bytes.
+Audio is an optional enhancement for text-site deployment. The local Codex daily task, starting 2026-09-30, must attempt the complete post-publication audio workflow and resume incomplete audio on later runs; see [CODEX_AUDIO.md](docs/automation/CODEX_AUDIO.md). Missing audio for a newly published report does **not** block GitHub Pages. When no matching AivisSpeech manifest/MP3 is available, the existing browser Japanese speech fallback remains available. Once audio is generated and committed, the dedicated audio workflow validates the exact text-to-manifest mapping, measures interview duration with ffprobe, uploads the recordings to R2 and verifies the public bytes.
 
 Historical content checks cover **2026-08-12 onward**. The unchanged 9/7 reference has narrowly documented, file-hash-pinned exceptions in [daily-quality-policy.json](docs/daily-quality-policy.json). The new-source evidence policy starts on 9/8.
 
@@ -111,7 +117,7 @@ npm run audio:versions:check
 npm run audio:duration:check
 ```
 
-Default voice style ID is `497929760`; interview speed is `1.00`. Generation reuses audio when its text/settings match. Do not edit a manifest to make stale audio appear current. Standard answers target 26–34 seconds, with a hard acceptable range of 22–40 seconds.
+Default voice style ID is `497929760`; interview speed is `1.00`. Generation reuses audio when its text/settings match. Do not edit a manifest to make stale audio appear current. Standard answers target 24–34 seconds, with a hard acceptable range of 22–40 seconds.
 
 Generators write actual file SHA-256 metadata (`wordSha256`, `exampleSha256`, `audioSha256`) separately from synthesis-task hashes, including source recordings reused by later review cards. `npm run audio:versions:write` refreshes only these byte versions for existing files; `audio:versions:check` detects stale versions without writing. Updating byte versions does not validate or change the recording's spoken text. Neither command regenerates MP3s.
 

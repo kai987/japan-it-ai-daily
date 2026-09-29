@@ -1,0 +1,275 @@
+{
+  "observedAt": "2026-09-29T10:26:34.543024+00:00",
+  "kind": "user-authorized audio rehearsal on an already-published date",
+  "targetDate": "2026-09-29",
+  "sourceCommit": "947ed74cb9cadd7e29c23440a2f9137dfa44cd04",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760
+  },
+  "negativeTrial": {
+    "interviewSpeed": 1.0,
+    "synthesizedRecordings": 13,
+    "durationGate": "rejected",
+    "answerSeconds": [
+      20.77,
+      21.11
+    ],
+    "published": false,
+    "resolution": "Restored baseline recordings and preserved validated per-date speed 0.86; no prose or threshold changes."
+  },
+  "recoveryTrial": {
+    "wordSpeed": 1.0,
+    "exampleSpeed": 1.0,
+    "interviewSpeed": 0.86,
+    "learningCached": 20,
+    "interviewAndReviewCached": 13,
+    "checks": [
+      {
+        "command": [
+          "node",
+          "scripts/generate-japanese-audio.mjs",
+          "--date",
+          "2026-09-29"
+        ],
+        "exitCode": 0,
+        "seconds": 1.28,
+        "log": "preserved-0.log",
+        "logSha256": "33a305d53e537d7bf372f0cf7e1aecf9759ca5cebbae0799fdc20d19e2f4f054"
+      },
+      {
+        "command": [
+          "node",
+          "scripts/generate-interview-audio.mjs",
+          "--date",
+          "2026-09-29"
+        ],
+        "exitCode": 0,
+        "seconds": 0.34,
+        "log": "preserved-1.log",
+        "logSha256": "c1912208eb99f33ebaa6660faa6346e56355be31c59dfce52a0b4990704d61cc"
+      },
+      {
+        "command": [
+          "node",
+          "scripts/validate-interview-audio-duration.mjs",
+          "--date",
+          "2026-09-29",
+          "--write"
+        ],
+        "exitCode": 0,
+        "seconds": 0.5,
+        "log": "preserved-2.log",
+        "logSha256": "25293bc2f74a86b7c4195ab8752d10ec8327fadec2b61558dbd6d373753243ff"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "audio:check"
+        ],
+        "exitCode": 0,
+        "seconds": 0.65,
+        "log": "preserved-3.log",
+        "logSha256": "32f3e96fbfdad2671301e006e26d0b19abc58e4e3cec913cf9424e44ab02a454"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "audio:integrity:check"
+        ],
+        "exitCode": 0,
+        "seconds": 0.85,
+        "log": "preserved-4.log",
+        "logSha256": "a265dedcbeaa37c60236c691d943ec80b57d84a5f2a1e1dac690b6bfb0b59150"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "audio:versions:check"
+        ],
+        "exitCode": 0,
+        "seconds": 0.39,
+        "log": "preserved-5.log",
+        "logSha256": "8dc89e4237c0bb7769b2f5381d8fb473aee14fc0f246f6ded3144cdf4e6fc116"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "audio:duration:check"
+        ],
+        "exitCode": 0,
+        "seconds": 20.48,
+        "log": "preserved-6.log",
+        "logSha256": "bb166052cd9750be69dc0d36485ed9a7948d288f63447786c48a3346cf5af8c5"
+      }
+    ],
+    "protectedFilesByteIdentical": 3126
+  },
+  "remoteAudio": {
+    "count": 59,
+    "sha256Verified": true,
+    "logSha256": "ad4400067249d90b818335ddb035986387815db1b8317f006514282e0e5372ae"
+  },
+  "playback": [
+    {
+      "locale": "ja",
+      "kind": "daily",
+      "selector": "#interview-answer-01 .report-speech-button",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-09-29/interview-answer-01--80d6ffb4d69ef00a66de754ee7edc2dd7e85617ae70821562a07bca5fd8d65ce.mp3",
+      "duration": 23.798333,
+      "currentTime": 0.162766,
+      "error": null,
+      "paused": false,
+      "endTime": 0.415786
+    },
+    {
+      "locale": "ja",
+      "kind": "japanese",
+      "selector": ".speech-button[data-speech-kind=\"word\"]",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-09-29/vocab-02--d780243d529b93f7c2246d406cc2818784bf2e55455434d9803d36aaf68c8423.mp3",
+      "duration": 1.23125,
+      "currentTime": 0.15849,
+      "error": null,
+      "paused": false,
+      "endTime": 0.412867
+    },
+    {
+      "locale": "ja",
+      "kind": "japanese",
+      "selector": ".speech-button[data-speech-kind=\"example\"]",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-09-29/example-02--6040af449078daaf697abecf46dc4ee0065873004e163af3f15166eb46bb9225.mp3",
+      "duration": 4.491833,
+      "currentTime": 0.166085,
+      "error": null,
+      "paused": false,
+      "endTime": 0.418614
+    },
+    {
+      "locale": "ja",
+      "kind": "japanese",
+      "selector": ".speech-button[data-speech-kind=\"grammar-example\"]",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-05--4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950.mp3",
+      "duration": 6.361958,
+      "currentTime": 0.170516,
+      "error": null,
+      "paused": false,
+      "endTime": 0.424445
+    },
+    {
+      "locale": "ja",
+      "kind": "japanese",
+      "selector": ".vocabulary-card[data-study-kind=\"review\"] .speech-button[data-speech-kind=\"word\"]",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/vocab-07--6879988dfa0086fb52b8a1f25a5b19b8322dc9b7b757911e5a486cf42a8680b8.mp3",
+      "duration": 1.242875,
+      "currentTime": 0.156701,
+      "error": null,
+      "paused": false,
+      "endTime": 0.411473
+    },
+    {
+      "locale": "zh",
+      "kind": "daily",
+      "selector": "#interview-answer-01 .report-speech-button",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-09-29/interview-answer-01--80d6ffb4d69ef00a66de754ee7edc2dd7e85617ae70821562a07bca5fd8d65ce.mp3",
+      "duration": 23.798333,
+      "currentTime": 0.157792,
+      "error": null,
+      "paused": false,
+      "endTime": 0.409354
+    },
+    {
+      "locale": "zh",
+      "kind": "japanese",
+      "selector": ".speech-button[data-speech-kind=\"word\"]",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-09-29/vocab-02--d780243d529b93f7c2246d406cc2818784bf2e55455434d9803d36aaf68c8423.mp3",
+      "duration": 1.23125,
+      "currentTime": 0.164617,
+      "error": null,
+      "paused": false,
+      "endTime": 0.416163
+    },
+    {
+      "locale": "zh",
+      "kind": "japanese",
+      "selector": ".speech-button[data-speech-kind=\"example\"]",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-09-29/example-02--6040af449078daaf697abecf46dc4ee0065873004e163af3f15166eb46bb9225.mp3",
+      "duration": 4.491833,
+      "currentTime": 0.157799,
+      "error": null,
+      "paused": false,
+      "endTime": 0.410023
+    },
+    {
+      "locale": "zh",
+      "kind": "japanese",
+      "selector": ".speech-button[data-speech-kind=\"grammar-example\"]",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-05--4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950.mp3",
+      "duration": 6.361958,
+      "currentTime": 0.166735,
+      "error": null,
+      "paused": false,
+      "endTime": 0.419908
+    },
+    {
+      "locale": "zh",
+      "kind": "japanese",
+      "selector": ".vocabulary-card[data-study-kind=\"review\"] .speech-button[data-speech-kind=\"word\"]",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/vocab-07--6879988dfa0086fb52b8a1f25a5b19b8322dc9b7b757911e5a486cf42a8680b8.mp3",
+      "duration": 1.242875,
+      "currentTime": 0.157011,
+      "error": null,
+      "paused": false,
+      "endTime": 0.409836
+    }
+  ],
+  "release": {
+    "pagesRun": 36547429876,
+    "reverifiedArtifactDerivedSnapshotAndBothReportHashes": true
+  },
+  "r2TrialRun": 36555272290,
+  "limits": [
+    "No fresh report source selection, bilingual authoring, lease/CAS publication or N1 handoff performed.",
+    "Fresh 1.00-speed recordings were rejected, not uploaded. The recovery path reuses existing validated recordings.",
+    "The live R2 sync audit exercises existing remote objects; no new audio publication commit is necessary when bytes are unchanged."
+  ],
+  "remoteManifests": [
+    {
+      "url": "https://kai987.github.io/japan-it-ai-daily/audio/japanese/2026-09-29/manifest.json",
+      "sha256": "aed68b65de46520a9ff0ef062471d6c05c1e7ddb2274b62c839578c097857ab7"
+    },
+    {
+      "url": "https://kai987.github.io/japan-it-ai-daily/audio/japanese/2026-09-29/interview-manifest.json",
+      "sha256": "e307cfdc48b901e8c5eb99112a8f956a212e3c9b45b5246b98b54788dac4f35c"
+    },
+    {
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-09-29/manifest.json",
+      "sha256": "aed68b65de46520a9ff0ef062471d6c05c1e7ddb2274b62c839578c097857ab7"
+    },
+    {
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-09-29/interview-manifest.json",
+      "sha256": "e307cfdc48b901e8c5eb99112a8f956a212e3c9b45b5246b98b54788dac4f35c"
+    }
+  ],
+  "r2TrialResult": {
+    "conclusion": "success",
+    "logSha256": "90306cf3a1aca4d457bc706c5ed48bdf1115ddd3b84cb59f167cacbb02662414",
+    "summary": [
+      "2026-09-29T10:27:59.0005276Z Verified 5596 deployed MP3 SHA-256 hashes; repaired 0 object(s)."
+    ],
+    "verifiedMp3Objects": 5596,
+    "repairedObjects": 0,
+    "localManagedObjects": 5694,
+    "remoteManagedObjects": 5694,
+    "orphans": 0,
+    "missingObjects": 0
+  },
+  "publicationTests": {
+    "passed": 70,
+    "failed": 0
+  }
+}
