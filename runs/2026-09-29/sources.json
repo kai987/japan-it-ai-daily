@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-29",
+  "sourceCommit": "cad1a3abce2c8fed92578ea5abeb46b70300b3cc",
+  "sourceWindow": {
+    "from": "2026-09-28T10:00:00+09:00",
+    "to": "2026-09-29T10:00:00+09:00"
+  },
+  "stage": "sources_verified",
+  "verifiedArticles": [
+    {
+      "articleId": "2026-09-29-top-1",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/28/news027.html",
+      "originalTitle": "AIエージェントに頼るだけでは失敗する　「あと5年」で打つべき次の一手",
+      "source": "＠IT",
+      "topic": "AIエージェント",
+      "publishedAt": "2026-09-29T05:00:00+09:00",
+      "capturedAt": "2026-09-29T04:38:00.000Z",
+      "snapshotSha256": "7108e389ef738b388301365c8d51cdc460a5af47efca7b3340957b9aa6203028",
+      "access": "public-portion",
+      "facts": [
+        "ITR analyst Hiroaki Komoto described harness engineering as an integrated environment spanning upstream design through deployment, including testing, security/compliance and human-in-the-loop controls.",
+        "The analyst characterized adoption among ordinary Japanese companies as almost nonexistent and argued local task-level AI use is not the same as an end-to-end harness."
+      ],
+      "boundary": "This is an attributed analyst interview, not a census or measured adoption study. Statements about a three-year investment horizon or a five-year competitive window are opinion/strategy claims, not measured forecasts."
+    },
+    {
+      "articleId": "2026-09-29-top-2",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/29/news008.html",
+      "originalTitle": "AIが書いたコードは「ブラックボックス」でいい？　Claude Code作者が語るプロトタイプと本番の線引き",
+      "source": "＠IT",
+      "topic": "AI開発",
+      "publishedAt": "2026-09-29T05:00:00+09:00",
+      "capturedAt": "2026-09-29T04:38:10.000Z",
+      "snapshotSha256": "e6f82e509c26cec6a5938fc1fda545f326a51ab5d3d61f7ff56b0ebe1f6584f7",
+      "access": "full",
+      "facts": [
+        "Boris Cherny distinguishes disposable prototypes from production code: limited-impact prototypes may be treated as black boxes, while production code should meet a higher quality bar.",
+        "The article lists guardrails used at Anthropic, including linting, tests, Claude-run E2E tests, fuzzing, automated code/security review and refactoring."
+      ],
+      "boundary": "The article relays Cherny's public response and the editor's small-scale practice; it is not a controlled comparison showing that a specific guardrail set guarantees fewer defects."
+    },
+    {
+      "articleId": "2026-09-29-top-3",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/29/news017.html",
+      "originalTitle": "「攻撃者思考でDevSecOpsに取り組め」　元ハッカーのGitLab CISOが語るセキュリティの姿",
+      "source": "＠IT",
+      "topic": "DevSecOps",
+      "publishedAt": "2026-09-29T05:00:00+09:00",
+      "capturedAt": "2026-09-29T04:38:20.000Z",
+      "snapshotSha256": "94c7056be6cb642f4c0565a986826e87544c9a2eb5cf73c72f4e3c54ab225ea4",
+      "access": "public-portion",
+      "facts": [
+        "Chaim Mazel described an earlier environment with 70 distributed development teams and no unified security process, then using internal testing to derive CI/CD controls and requirements.",
+        "He contrasts reactive defense based on past events with an attacker mindset that asks what could happen and actively probes systems for unknown gaps."
+      ],
+      "boundary": "These are interviewee recollections and operating principles, not an audited benchmark of 70 teams or proof that offensive testing alone produces secure software."
+    },
+    {
+      "articleId": "2026-09-29-top-4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/29/news030.html",
+      "originalTitle": "ネットワークも認証サーバも要らない「多要素認証」、Windows端末でどう実現？",
+      "source": "＠IT",
+      "topic": "認証・セキュリティ",
+      "publishedAt": "2026-09-29T08:00:00+09:00",
+      "capturedAt": "2026-09-29T04:38:30.000Z",
+      "snapshotSha256": "59b5bf5c9507558259ec0bac8fce7c0db1e6e995eb3c29713a1e1c4ef3dfdff7",
+      "access": "public-portion",
+      "facts": [
+        "YubiOn FIDO Logon Standalone combines endpoint software with a FIDO2 security key so Windows logon can be completed on the endpoint without an external authentication server.",
+        "The article says a hardware authenticator plus PIN/biometric can be operated in a configuration meeting AAL3 requirements, and describes recovery-code/master-key operations for lost or failed authenticators."
+      ],
+      "boundary": "The AAL3 statement is a vendor/product claim reported by the article; this author did not independently certify the configuration or test recovery/master-key abuse scenarios."
+    },
+    {
+      "articleId": "2026-09-29-top-5",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/29/news053.html",
+      "originalTitle": "「10年ぶり刷新」　Android向けサードパーティーストアアプリ「F-Droid 2.0」公開",
+      "source": "＠IT",
+      "topic": "Android・OSS",
+      "publishedAt": "2026-09-29T08:00:00+09:00",
+      "capturedAt": "2026-09-29T04:38:40.000Z",
+      "snapshotSha256": "057ad9ab1f3a503b74140284679f2fb2de62a981aea65bf98ee5f5d583706631",
+      "access": "full",
+      "facts": [
+        "F-Droid 2.0 adopts Kotlin and Jetpack Compose, reorganizes navigation into Discover/Search/My Apps, and drops Android 6 because the new toolchain depends on fixes added from Android 7.",
+        "Search now covers descriptions, categories and translations with improved CJK support; the installer uses Android's pre-approval API where supported, while the wipe feature is not included in the initial 2.0 release."
+      ],
+      "boundary": "The release describes feature and architecture changes, not a benchmark proving better search precision or performance. Rollout is gradual and some prior features remain deferred."
+    }
+  ],
+  "accessNote": "Five publisher originals were read within the frozen window. Member-only pages are treated strictly as public-portion sources; no inaccessible text was reconstructed. Snapshot hashes bind the captured public text retained outside Git for this invocation.",
+  "timestampEvidence": "All five pages state 2026-09-29 05:00 or 08:00 JST, which falls inside 2026-09-28 10:00 through 2026-09-29 10:00 JST. Product/event dates inside the stories are not substituted for article publication time.",
+  "nextAction": "Persist complete-history identity review and canonical interviews, then author independent Chinese/Japanese A+B+C plus evidence."
+}
