@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "sourceCommit": "cad1a3abce2c8fed92578ea5abeb46b70300b3cc",
+  "sourceCommit": "492bb2d26ea6330e7939b9fa9c2090ab2d2d49fc",
   "completeHistory": true,
   "baseline": {
     "checkpoint": "runs/2026-09-28/history.json",
@@ -73,16 +73,16 @@
   "vocabularyIntroducedBeforeTarget": 915,
   "grammarIntroducedBeforeTarget": 92,
   "proposedNewVocabulary": [
-    "見据える",
     "先回りする",
-    "逆算する",
-    "見極める",
     "取り外す",
     "絞り込む",
     "近視眼的",
     "相応",
-    "あえて",
-    "盲点"
+    "刷新",
+    "織り込む",
+    "見過ごす",
+    "留める",
+    "引き換え"
   ],
   "normalizedVariantSearches": [
     "見据える",
@@ -96,9 +96,38 @@
     "あえて",
     "盲点"
   ],
-  "duplicateCandidates": [],
-  "semanticReview": "All ten candidates are treated as distinct lexical identities after NFKC, suru-removal and reviewed alias rules. Exact current-main card searches found no matching term or normalized suru/na variant. Similar concepts such as 将来を見る/見据える, 前もって行う/先回りする and 視野が狭い/近視眼的 are not spelling or inflection variants.",
+  "duplicateCandidates": [
+    {
+      "term": "見据える",
+      "introducedOn": "2026-08-19"
+    },
+    {
+      "term": "逆算する",
+      "introducedOn": "2026-08-18"
+    },
+    {
+      "term": "あえて",
+      "introducedOn": "2026-08-15"
+    },
+    {
+      "term": "見極める",
+      "introducedOn": "2026-09-13"
+    },
+    {
+      "term": "盲点",
+      "introducedOn": "2026-09-16"
+    }
+  ],
+  "semanticReview": "All final ten candidates were checked across every published Japanese vocabulary frontmatter from 2026-08-12 through 2026-09-28 under the current NFKC/suru/alias identity contract. Five earlier candidates were found in full history and removed rather than relabeled. The final set has no historical identity match; final workflow jlpt:check remains authoritative.",
   "newGrammarSelected": 0,
   "grammarSelectionReason": "No new grammar identity is asserted. The report will use previously introduced patterns naturally and let the unchanged learning-review module select only those with genuine target-day evidence. Reviews remain separate from NEW grammar.",
-  "validationState": "Reusable complete 47-day baseline was verified against unchanged rule blobs, then the published 2026-09-28 four-file set was appended. Final 49-day integrity/history/study checks must still run on the exact draft."
+  "validationState": "Refreshed against main 492bb2d26ea6330e7939b9fa9c2090ab2d2d49fc after the dependency-only main repair. All 48 published dates were scanned; five duplicate draft candidates were removed. Exact draft full-history checks must still pass.",
+  "validatedAgainstMain": "492bb2d26ea6330e7939b9fa9c2090ab2d2d49fc",
+  "replacementCandidates": [
+    "刷新",
+    "織り込む",
+    "見過ごす",
+    "留める",
+    "引き換え"
+  ]
 }
