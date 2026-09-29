@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
   "baseCommit": "492bb2d26ea6330e7939b9fa9c2090ab2d2d49fc",
-  "stage": "drafts_ready",
+  "stage": "preflight_passed",
   "checkedAt": "2026-09-29T08:12:15.000Z",
   "publicationPaths": [
     "src/content/daily/2026-09-29.md",
@@ -31,11 +31,14 @@
     }
   ],
   "preflight": {
-    "status": "not_started",
+    "status": "completed",
+    "conclusion": "success",
+    "runId": 36541801491,
+    "headSha": "c83c44d18cb00cc4628d9e1520de1e3d0fa6a673",
     "workflowPath": ".github/workflows/deploy.yml"
   },
   "published": false,
-  "nextAction": "Trigger one stable push on the exact draft after syncing the final daily-ja progress bytes, then require all deploy.yml gates to pass.",
+  "nextAction": "Submit source-bound publication request after final coordination read.",
   "draftBranch": "draft/daily-2026-09-29",
-  "draftCommit": "7bc16f0ff447674f6e80aa87ff9d5c1c0147de06"
+  "draftCommit": "c83c44d18cb00cc4628d9e1520de1e3d0fa6a673"
 }
