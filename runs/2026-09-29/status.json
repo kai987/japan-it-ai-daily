@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-09-29",
+  "stage": "registered",
+  "sourceCommit": "cad1a3abce2c8fed92578ea5abeb46b70300b3cc",
+  "sourceWindow": {
+    "from": "2026-09-28T10:00:00+09:00",
+    "to": "2026-09-29T10:00:00+09:00"
+  },
+  "createdAt": "2026-09-29T04:25:05.000Z",
+  "updatedAt": "2026-09-29T04:25:05.000Z",
+  "completedArtifacts": [],
+  "lastError": null,
+  "issueNumberExpected": 49,
+  "observation": {
+    "inventoryFiles": 3394,
+    "historyDates": 48,
+    "firstDate": "2026-08-12",
+    "lastDate": "2026-09-28",
+    "plannerAction": "register_and_generate",
+    "pendingDates": [
+      "2026-09-29"
+    ],
+    "previousReleaseRunId": 36438770816,
+    "previousSnapshotArtifactId": 10977056785
+  },
+  "authorLease": {
+    "schemaVersion": 2,
+    "leaseId": "77d1f694-7784-4a92-8dc0-feb915f86d3e"
+  },
+  "nextAction": "Verify five original articles within the frozen source window and persist source evidence before drafting."
+}
