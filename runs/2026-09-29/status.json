@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "stage": "drafts_ready",
+  "stage": "request_ready",
   "sourceCommit": "cad1a3abce2c8fed92578ea5abeb46b70300b3cc",
   "sourceWindow": {
     "from": "2026-09-28T10:00:00+09:00",
     "to": "2026-09-29T10:00:00+09:00"
   },
   "createdAt": "2026-09-29T04:25:05.000Z",
-  "updatedAt": "2026-09-29T08:12:15.000Z",
+  "updatedAt": "2026-09-29T08:20:12.000Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-09-29/sources.json",
@@ -81,11 +81,19 @@
     "schemaVersion": 2,
     "leaseId": "698fc285-1dd9-4cdd-9686-ec02aa9fac81"
   },
-  "nextAction": "Trigger one stable exact-draft preflight after syncing final daily-ja bytes; publish only after all gates pass.",
+  "nextAction": "CAS-write the source-bound publication request to automation/daily-publish-request after rechecking lease, main SHA, request slot and active publisher.",
   "draftBranch": "draft/daily-2026-09-29",
-  "draftCommit": "7bc16f0ff447674f6e80aa87ff9d5c1c0147de06",
+  "draftCommit": "c83c44d18cb00cc4628d9e1520de1e3d0fa6a673",
   "preflight": {
-    "status": "not_started",
+    "status": "completed",
+    "conclusion": "success",
+    "runId": 36541801491,
+    "headSha": "c83c44d18cb00cc4628d9e1520de1e3d0fa6a673",
     "workflowPath": ".github/workflows/deploy.yml"
+  },
+  "publicationStage": "preflight_passed",
+  "publicationRequest": {
+    "requestId": "daily-2026-09-29-cd9fb041-5de9-44cb-b93a-8e72b16288de",
+    "status": "prepared_in_progress"
   }
 }
