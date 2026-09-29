@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-29",
+  "status": "reviewed",
+  "reviewedBy": "manual-author-2026-09-29-takeover",
+  "reviewedAt": "2026-09-29T05:47:55.000Z",
+  "scope": "Five publisher originals were checked in the frozen window. Member-only articles use only captured public portions; inaccessible prose was not reconstructed. Interviewee/vendor claims are attributed and are not converted into measured adoption, efficacy or certification results.",
+  "articles": [
+    {
+      "articleId": "2026-09-29-top-1",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/28/news027.html",
+      "originalTitle": "AIエージェントに頼るだけでは失敗する　「あと5年」で打つべき次の一手",
+      "source": "＠IT",
+      "topic": "AIエージェント",
+      "access": "public-portion",
+      "accessNote": "Only captured public portions were used; member-only text was not reconstructed.",
+      "capturedAt": "2026-09-29T04:38:00.000Z",
+      "snapshotSha256": "7108e389ef738b388301365c8d51cdc460a5af47efca7b3340957b9aa6203028",
+      "claims": [
+        {
+          "id": "fact-01",
+          "kind": "source-fact",
+          "statement": "ハーネスエンジニアリングを上流設計からデプロイまでの統合環境として扱う見解が示された。",
+          "conditions": "ITRアナリストの見解。日本企業全体の実測採用率ではない。",
+          "quote": "ハーネスエンジニアリング",
+          "locator": "公開導入部・インタビュー要旨",
+          "usedIn": {
+            "zh": "从上游设计到部署的一体化环境",
+            "ja": "上流設計からデプロイまでを一つの環境",
+            "interview": "上流設計からデプロイまでを一つの流れ"
+          }
+        },
+        {
+          "id": "fact-02",
+          "kind": "source-fact",
+          "statement": "日本企業の取り組みを「ほぼ皆無」とする評価が紹介された。",
+          "conditions": "アナリストによる評価であり統計調査として扱わない。",
+          "quote": "ほぼ皆無",
+          "locator": "記事タイトル・公開要旨",
+          "usedIn": {
+            "zh": "日本企业几乎没有开展",
+            "ja": "日本企業ではほぼ皆無",
+            "interview": "日本企業ではほぼ皆無"
+          }
+        },
+        {
+          "id": "interpretation-01",
+          "kind": "author-interpretation",
+          "statement": "Pilot one controlled workflow and measure governance/effect before scaling.",
+          "conditions": "Engineering interpretation; not a reported deployment result.",
+          "basedOn": [
+            "fact-01",
+            "fact-02"
+          ]
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-29-top-2",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/29/news008.html",
+      "originalTitle": "AIが書いたコードは「ブラックボックス」でいい？　Claude Code作者が語るプロトタイプと本番の線引き",
+      "source": "＠IT",
+      "topic": "AI開発",
+      "access": "full",
+      "accessNote": "Full public article read; linked external material not independently validated.",
+      "capturedAt": "2026-09-29T04:38:10.000Z",
+      "snapshotSha256": "e6f82e509c26cec6a5938fc1fda545f326a51ab5d3d61f7ff56b0ebe1f6584f7",
+      "claims": [
+        {
+          "id": "fact-01",
+          "kind": "source-fact",
+          "statement": "使い捨てのプロトタイプと本番コードでブラックボックス化の許容範囲を分ける考えが示された。",
+          "conditions": "Boris Cherny氏の公開回答を記事が整理したもの。",
+          "quote": "どちらにも適した場面がある",
+          "locator": "チャーニー氏の回答",
+          "usedIn": {
+            "zh": "一次性原型、验证脚本",
+            "ja": "使い捨てのプロトタイプ",
+            "interview": "使い捨てのプロトタイプと本番コード"
+          }
+        },
+        {
+          "id": "fact-02",
+          "kind": "source-fact",
+          "statement": "Lint、テスト、E2E、fuzzer、自動レビュー等のガードレールが挙げられた。",
+          "conditions": "特定の組み合わせが欠陥率を必ず下げる比較実験ではない。",
+          "quote": "コード品質の基準を守ることだ",
+          "locator": "品質基準とガードレール",
+          "usedIn": {
+            "zh": "Lint、各类测试",
+            "ja": "Lint、各種テスト",
+            "interview": "Lint、E2Eテスト、fuzzer、自動コードレビュー"
+          }
+        },
+        {
+          "id": "interpretation-01",
+          "kind": "author-interpretation",
+          "statement": "Validate whether tests can actually fail on defects; green tests alone are not evidence of quality.",
+          "conditions": "Engineering interpretation.",
+          "basedOn": [
+            "fact-01",
+            "fact-02"
+          ]
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-29-top-3",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/29/news017.html",
+      "originalTitle": "「攻撃者思考でDevSecOpsに取り組め」　元ハッカーのGitLab CISOが語るセキュリティの姿",
+      "source": "＠IT",
+      "topic": "DevSecOps",
+      "access": "public-portion",
+      "accessNote": "Captured public pages were used; inaccessible member-only text was not reconstructed.",
+      "capturedAt": "2026-09-29T04:38:20.000Z",
+      "snapshotSha256": "94c7056be6cb642f4c0565a986826e87544c9a2eb5cf73c72f4e3c54ab225ea4",
+      "claims": [
+        {
+          "id": "fact-01",
+          "kind": "source-fact",
+          "statement": "内部テストからCI/CDのセキュリティコントロールへ落とし込んだ経験が語られた。",
+          "conditions": "70チームは本人の経験であり効果測定ベンチマークではない。",
+          "quote": "攻撃者の思考",
+          "locator": "インタビュー・攻撃者視点",
+          "usedIn": {
+            "zh": "内部测试中发现的问题转化为CI/CD",
+            "ja": "内部テストの結果を要件や自動化へ",
+            "interview": "内部テストを基にCI/CDへ"
+          }
+        },
+        {
+          "id": "fact-02",
+          "kind": "source-fact",
+          "statement": "GitとIaCで作業を反復可能かつ監査可能にする考えが説明された。",
+          "conditions": "ツール導入だけで全社統制が成立するとは主張していない。",
+          "quote": "繰り返し可能かつ監査可能",
+          "locator": "自動化とIaC",
+          "usedIn": {
+            "zh": "可重复、可审计",
+            "ja": "反復可能・監査可能"
+          }
+        },
+        {
+          "id": "interpretation-01",
+          "kind": "author-interpretation",
+          "statement": "Use attacker thinking to expose blind spots, not as a replacement for other controls.",
+          "conditions": "Engineering interpretation.",
+          "basedOn": [
+            "fact-01",
+            "fact-02"
+          ]
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-29-top-4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/29/news030.html",
+      "originalTitle": "ネットワークも認証サーバも要らない「多要素認証」、Windows端末でどう実現？",
+      "source": "＠IT",
+      "topic": "認証・セキュリティ",
+      "access": "public-portion",
+      "accessNote": "Public product description read; certification status not independently tested.",
+      "capturedAt": "2026-09-29T04:38:30.000Z",
+      "snapshotSha256": "59b5bf5c9507558259ec0bac8fce7c0db1e6e995eb3c29713a1e1c4ef3dfdff7",
+      "claims": [
+        {
+          "id": "fact-01",
+          "kind": "source-fact",
+          "statement": "端末ソフトとFIDO2セキュリティキーで外部認証サーバなしのWindowsログオンを行う。",
+          "conditions": "対応OS・アカウント・RDP等は記事掲載条件。",
+          "quote": "Windows端末単体で認証を完結",
+          "locator": "製品の仕組み",
+          "usedIn": {
+            "zh": "认证在Windows端点上完成",
+            "ja": "Windows端末側で認証を完結",
+            "interview": "端末ソフトでログオンを完結"
+          }
+        },
+        {
+          "id": "fact-02",
+          "kind": "source-fact",
+          "statement": "AAL3適合構成、リカバリコード、マスターキーが製品機能として説明された。",
+          "conditions": "AAL3は製品側の説明で、本稿は独立認証試験をしていない。",
+          "quote": "AAL3",
+          "locator": "認証保証レベル・運用機能",
+          "usedIn": {
+            "zh": "AAL3要求",
+            "ja": "AAL3適合構成",
+            "interview": "AAL3要件に適合する構成"
+          }
+        },
+        {
+          "id": "interpretation-01",
+          "kind": "author-interpretation",
+          "statement": "Treat recovery codes and master keys as privileged credentials requiring lifecycle controls.",
+          "conditions": "Engineering interpretation.",
+          "basedOn": [
+            "fact-01",
+            "fact-02"
+          ]
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-29-top-5",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/29/news053.html",
+      "originalTitle": "「10年ぶり刷新」　Android向けサードパーティーストアアプリ「F-Droid 2.0」公開",
+      "source": "＠IT",
+      "topic": "Android・OSS",
+      "access": "full",
+      "accessNote": "Full public article read; no independent benchmark of search precision/performance.",
+      "capturedAt": "2026-09-29T04:38:40.000Z",
+      "snapshotSha256": "057ad9ab1f3a503b74140284679f2fb2de62a981aea65bf98ee5f5d583706631",
+      "claims": [
+        {
+          "id": "fact-01",
+          "kind": "source-fact",
+          "statement": "F-Droid 2.0はKotlinとJetpack Composeへ移行し検索・ナビゲーション・更新経路を刷新した。",
+          "conditions": "1年以上の開発、14テストリリース、段階的ロールアウト。性能向上の比較結果ではない。",
+          "quote": "Kotlin",
+          "locator": "F-Droid 2.0の刷新点",
+          "usedIn": {
+            "zh": "迁移到Kotlin并采用Jetpack Compose",
+            "ja": "KotlinとJetpack Compose",
+            "interview": "KotlinとJetpack Compose"
+          }
+        },
+        {
+          "id": "fact-02",
+          "kind": "source-fact",
+          "statement": "Android 6対応を終了し初期2.0にはwipe機能が含まれない。",
+          "conditions": "新ツールチェーンの依存と初期リリース範囲。",
+          "quote": "Android 6",
+          "locator": "互換性と未実装機能",
+          "usedIn": {
+            "zh": "Android 6被停止支持",
+            "ja": "Android 6対応を終了",
+            "interview": "Android 6と初期版のワイプ機能"
+          }
+        },
+        {
+          "id": "interpretation-01",
+          "kind": "author-interpretation",
+          "statement": "Evaluate gained features and lost compatibility together before rollout.",
+          "conditions": "Engineering interpretation.",
+          "basedOn": [
+            "fact-01",
+            "fact-02"
+          ]
+        }
+      ]
+    }
+  ]
+}
