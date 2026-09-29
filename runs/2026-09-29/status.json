@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-09-29",
-  "stage": "preflight_running",
+  "stage": "drafts_ready",
   "sourceCommit": "cad1a3abce2c8fed92578ea5abeb46b70300b3cc",
   "sourceWindow": {
     "from": "2026-09-28T10:00:00+09:00",
     "to": "2026-09-29T10:00:00+09:00"
   },
   "createdAt": "2026-09-29T04:25:05.000Z",
-  "updatedAt": "2026-09-29T06:30:15.000Z",
+  "updatedAt": "2026-09-29T08:12:15.000Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-09-29/sources.json",
@@ -63,19 +63,29 @@
     "grammarNew": 0,
     "historyDatesCovered": 48,
     "vocabularyIntroducedBeforeTarget": 915,
-    "grammarIntroducedBeforeTarget": 92
+    "grammarIntroducedBeforeTarget": 92,
+    "finalNewVocabulary": [
+      "先回りする",
+      "取り外す",
+      "失効",
+      "近視眼的",
+      "相応",
+      "刷新",
+      "織り込む",
+      "見過ごす",
+      "留める",
+      "引き換え"
+    ]
   },
   "authorLease": {
     "schemaVersion": 2,
-    "leaseId": "ded3afe2-2a58-4933-af77-caac0fc755ad"
+    "leaseId": "698fc285-1dd9-4cdd-9686-ec02aa9fac81"
   },
-  "nextAction": "Wait for exact draft preflight 36531360792 to complete; inspect exact failing job/step if any.",
+  "nextAction": "Trigger one stable exact-draft preflight after syncing final daily-ja bytes; publish only after all gates pass.",
   "draftBranch": "draft/daily-2026-09-29",
-  "draftCommit": "4da4d5c392562f19a8d384436ff5e836e6c07ec1",
+  "draftCommit": "7bc16f0ff447674f6e80aa87ff9d5c1c0147de06",
   "preflight": {
-    "status": "in_progress",
-    "runId": 36531360792,
-    "headSha": "4da4d5c392562f19a8d384436ff5e836e6c07ec1",
+    "status": "not_started",
     "workflowPath": ".github/workflows/deploy.yml"
   }
 }
