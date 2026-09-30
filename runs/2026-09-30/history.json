@@ -1072,5 +1072,96 @@
     "～を軸に",
     "～に合わせて",
     "～かつ"
-  ]
+  ],
+  "semanticReview": {
+    "completedAt": "2026-09-30T01:24:06.728Z",
+    "newVocabulary": 15,
+    "excludedAsExisting": [
+      "永続的 (永続化 already introduced)",
+      "ひも付ける",
+      "継承する",
+      "潜む",
+      "見積もる",
+      "順次"
+    ],
+    "grammarDecision": "はずなのに not previously introduced; confirmed sourceForm/anchor in Top2. No spelling/conjugation variants added.",
+    "reviewVocabulary": [
+      {
+        "term": "検証する",
+        "firstIntroducedDate": "2026-08-12",
+        "evidence": {
+          "form": "検証",
+          "excerpt": "アクセス時には、許可するアクションに加えて接続先のホストやパスを検証します。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "term": "判断する",
+        "firstIntroducedDate": "2026-08-13",
+        "evidence": {
+          "form": "判断",
+          "excerpt": "設定名だけで判断せず、Sync reportsで各段階の結果と未検証の部分を説明します。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "term": "ただし",
+        "firstIntroducedDate": "2026-09-07",
+        "evidence": {
+          "form": "ただし",
+          "excerpt": "ただし、専用型へasを書き換えるだけでは実データの整合性は保証されません。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "term": "運用",
+        "firstIntroducedDate": "2026-08-12",
+        "evidence": {
+          "form": "運用",
+          "excerpt": "また、実キーを渡さないことだけで参照トークンの安全な運用が保証されるわけではありません。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "term": "実行する",
+        "firstIntroducedDate": "2026-08-15",
+        "evidence": {
+          "form": "実行",
+          "excerpt": "永続的な親アイデンティティーから、タスクの範囲に限定した一時的なエージェントの実行主体を発行し、サブエージェントには親の権限の一部だけを継承させます。",
+          "sourceKind": "report-body"
+        }
+      }
+    ],
+    "newGrammar": 1,
+    "reviewGrammar": [
+      {
+        "pattern": "～に加えて",
+        "firstIntroducedDate": "2026-09-12",
+        "evidence": {
+          "form": "に加えて",
+          "excerpt": "アクセス時には、許可するアクションに加えて接続先のホストやパスを検証します。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "pattern": "～だけでなく",
+        "firstIntroducedDate": "2026-09-25",
+        "evidence": {
+          "form": "だけでなく",
+          "excerpt": "導入時には、正常な呼び出しだけでなく、範囲外の操作や期限後のアクセスが拒否されるかまで確かめる、というのが本稿の設計上の提案です。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "pattern": "～に合わせて",
+        "firstIntroducedDate": "2026-09-26",
+        "evidence": {
+          "form": "に合わせて",
+          "excerpt": "取得経路に合わせてOrderGSIItemを分け、必要ならZodで形を検証します。",
+          "sourceKind": "report-body"
+        }
+      }
+    ],
+    "grammarShortage": "新規1件＋当日の本文で確認できる既習項目3件です。目安5件に届かない分を、本文にない表現や未習項目で埋めていません。"
+  }
 }
