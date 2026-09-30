@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-30",
+  "status": "reviewed",
+  "reviewedBy": "Codex source-direct editorial review",
+  "reviewedAt": "2026-09-30T01:24:34.416Z",
+  "scope": "Declared source facts and interpretations in the five reports; selected public originals and explicitly labelled official supplemental reading reviewed. Not an independent execution of vendor experiments.",
+  "articles": [
+    {
+      "articleId": "2026-09-30-top-1",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/29/news036.html",
+      "originalTitle": "「APIキーを守る」ではなく「AIエージェントに渡さない」――Postmanが発表した新アプローチ",
+      "source": "＠IT",
+      "topic": "AIエージェント・認可",
+      "access": "public-portion",
+      "accessNote": "公開HTTP本文を読み取り。会員限定表示がある記事は取得できた公開部分のみ。検索抜粋を本文証拠にせず、非公開部分を補完していません。",
+      "capturedAt": "2026-09-30T01:16:40.039408+00:00",
+      "snapshotSha256": "6444f3d6b5e5fb7179e4d67dec2c38e633532ad65afc179a63ed326da9b3c74d",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "実キーをVPC/Vaultに保持し、参照トークンを配布する",
+          "quote": "実際のAPIキーなどをユーザー企業のVPC",
+          "locator": "資格情報の保管",
+          "conditions": "ベンダー/当事者の発表・事例。独立した再測定ではない。",
+          "usedIn": {
+            "zh": "VPC",
+            "ja": "VPC",
+            "interview": "VPC"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "ホスト・パス・アクションを検証する",
+          "quote": "接続先のホストやパスまで指定",
+          "locator": "アクセス規則",
+          "conditions": "ベンダー/当事者の発表・事例。独立した再測定ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "タスク限定身份と子への部分継承を利用する",
+          "quote": "一時的かつ実行するタスクの範囲に限定",
+          "locator": "タスク身份",
+          "conditions": "ベンダー/当事者の発表・事例。独立した再測定ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "参照トークン、タスク単位のアイデンティティー、権限の一部継承から、秘密情報の非配布と認可を分けて考えます。",
+          "conditions": "記事に基づく設計・検証の学習上の整理。原文の新たな実測結果ではない。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "usedIn": {
+            "zh": "理解参照令牌、任务身份与权限委派，区分不暴露密钥和不允许越权。",
+            "ja": "参照トークン、タスク単位のアイデンティティー、権限の一部継承から、秘密情報の非配布と認可を分けて考えます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-30-top-2",
+      "url": "https://dev.classmethod.jp/articles/dynamodb-gsi-type-lie/",
+      "originalTitle": "エラーが出ないバグに遭遇した：DynamoDB GSI射影 × 型アサート",
+      "source": "DevelopersIO",
+      "topic": "TypeScript・データ契約",
+      "access": "full",
+      "accessNote": "公開本文全体を読み取り。実行コードと結果を含む作者の検証を確認。",
+      "capturedAt": "2026-09-30T01:16:40.039408+00:00",
+      "snapshotSha256": "5d18ae123fccf0f3518874d36127f7eb66c1af6619de2d3e412734341560a640",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "INCLUDEからamountを除外した再現",
+          "quote": "// amountを含めない",
+          "locator": "GSI定義",
+          "conditions": "作者の最小再現：INCLUDEからamountを外したGSI、as OrderItem、既定値1000。",
+          "usedIn": {
+            "zh": "5000",
+            "ja": "5000",
+            "interview": "5000"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "5000が1000の既定値になる",
+          "quote": "5000を入れたはずなのに、デフォルト値の1000",
+          "locator": "実行結果",
+          "conditions": "作者の最小再現：INCLUDEからamountを外したGSI、as OrderItem、既定値1000。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "asは実データ検証ではない",
+          "quote": "実際のデータ構造との整合性は一切保証されません",
+          "locator": "型断言の説明",
+          "conditions": "作者の最小再現：INCLUDEからamountを外したGSI、as OrderItem、既定値1000。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "GSIの射影、型アサート、既定値の組み合わせを追い、エラーのない業務不具合を説明します。",
+          "conditions": "記事に基づく設計・検証の学習上の整理。原文の新たな実測結果ではない。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "usedIn": {
+            "zh": "把 GSI 投影、类型断言和默认值串起来，解释为什么 HTTP 200 仍可能产生错误业务结果。",
+            "ja": "GSIの射影、型アサート、既定値の組み合わせを追い、エラーのない業務不具合を説明します。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-30-top-3",
+      "url": "https://dev.classmethod.jp/articles/quick-dlp-knowledge-onedrive/",
+      "originalTitle": "Amazon Quick の DLP をナレッジベース（OneDrive 同期）で確認してみた",
+      "source": "DevelopersIO",
+      "topic": "AIナレッジ・DLP",
+      "access": "full",
+      "accessNote": "公開本文全体を読み取り。実行コードと結果を含む作者の検証を確認。",
+      "capturedAt": "2026-09-30T01:16:40.039408+00:00",
+      "snapshotSha256": "f82fdb1cec9529e8008a19998b3b5cbb3852ce129e6e5aee24bbf9cea889d4dc",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "OneDrive同期の追加権限",
+          "quote": "Files.Read.All",
+          "locator": "権限を追加",
+          "conditions": "作者のOneDrive検証：3つのラベル付きExcel。Allow/Warn正常取り込みは別エラーで未実測。",
+          "usedIn": {
+            "zh": "Files.Read.All",
+            "ja": "Files.Read.All",
+            "interview": "Files.Read.All"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "1件拒否と2件別原因失敗",
+          "quote": "Blocked が1件、Failed が 2 件",
+          "locator": "再同期結果",
+          "conditions": "作者のOneDrive検証：3つのラベル付きExcel。Allow/Warn正常取り込みは別エラーで未実測。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Warnの正常取り込みは未実測",
+          "quote": "実際の取り込みまでは確認できていません",
+          "locator": "Warnの境界",
+          "conditions": "作者のOneDrive検証：3つのラベル付きExcel。Allow/Warn正常取り込みは別エラーで未実測。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "権限不足、DLPのBlocked、別の取り込み失敗を分け、チャットと同期処理のWarnの違いを確認します。",
+          "conditions": "記事に基づく設計・検証の学習上の整理。原文の新たな実測結果ではない。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "usedIn": {
+            "zh": "区分权限失败、DLP 阻断及内容解析失败，防止把 Warn 配置误认为警告弹窗。",
+            "ja": "権限不足、DLPのBlocked、別の取り込み失敗を分け、チャットと同期処理のWarnの違いを確認します。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-30-top-4",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/29/news047.html",
+      "originalTitle": "NECが全社員に「Claude Cowork」導入――なぜ「Claude Enterprise」じゃなく“Amazon Bedrock経由”を選んだ？",
+      "source": "＠IT",
+      "topic": "企業AI・国内推論",
+      "access": "public-portion",
+      "accessNote": "公開HTTP本文を読み取り。会員限定表示がある記事は取得できた公開部分のみ。検索抜粋を本文証拠にせず、非公開部分を補完していません。 過去日付のリンク先公式原文を補足核読し、複合キャプチャへURL付きで収録。新しいTop記事には数えません。",
+      "capturedAt": "2026-09-30T01:16:40.039408+00:00",
+      "snapshotSha256": "673587e043fc0944ec7e941ea4a2af0e1e3be91fcff298a401956c9af518e17d",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "最大12万人に提供可能な環境を2週間で構築",
+          "quote": "要件定義から2週間",
+          "locator": "構築期間",
+          "conditions": "ベンダー/当事者の発表・事例。独立した再測定ではない。",
+          "usedIn": {
+            "zh": "JP-CRIS",
+            "ja": "JP-CRIS",
+            "interview": "JP-CRIS"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "JP-CRISとEntra ID/IAMを利用",
+          "quote": "国内のリージョン間で処理を完結",
+          "locator": "国内推論",
+          "conditions": "ベンダー/当事者の発表・事例。独立した再測定ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "国内推論のモデル別TPMをパイロットで設計",
+          "quote": "TPM（Tokens Per Minute",
+          "locator": "容量制約",
+          "conditions": "ベンダー/当事者の発表・事例。独立した再測定ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact4",
+          "kind": "source-fact",
+          "statement": "MCP/OAuthの実装差を吸収",
+          "quote": "NEC独自の認可中継サーバ",
+          "locator": "SaaS接続",
+          "conditions": "ベンダー/当事者の発表・事例。独立した再測定ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact5",
+          "kind": "source-fact",
+          "statement": "8月18日時点の実利用者11,000人、業務効果測定は今後。最大12万人とは異なる。",
+          "quote": "利用者は 8 月 18 日時点で 11,000 名",
+          "locator": "補足AWS/NEC原文「実運用開始後」 https://aws.amazon.com/jp/blogs/news/nec-claude-desktop-bedrock-120k-users-2-weeks/",
+          "conditions": "選定記事のリンク先8/30公式共著。過去事例の補足。",
+          "usedIn": {
+            "zh": "11,000",
+            "ja": "11,000"
+          }
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "国内データ所在、Entra ID/IAM、TPM容量計画、認可中継を全社導入の条件として整理します。",
+          "conditions": "記事に基づく設計・検証の学習上の整理。原文の新たな実測結果ではない。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "usedIn": {
+            "zh": "从数据所在地、身份、TPM 配额和 SaaS 连接差异理解大规模 AI 部署。",
+            "ja": "国内データ所在、Entra ID/IAM、TPM容量計画、認可中継を全社導入の条件として整理します。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-09-30-top-5",
+      "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/29/news046.html",
+      "originalTitle": "なぜ「光ファイバー」ではなく「無線」なのか？　2Tbpsを実現したNTTの伝送技術",
+      "source": "＠IT",
+      "topic": "AIインフラ・無線通信",
+      "access": "public-portion",
+      "accessNote": "公開HTTP本文を読み取り。会員限定表示がある記事は取得できた公開部分のみ。検索抜粋を本文証拠にせず、非公開部分を補完していません。 過去日付のリンク先公式原文を補足核読し、複合キャプチャへURL付きで収録。新しいTop記事には数えません。",
+      "capturedAt": "2026-09-30T01:16:40.039408+00:00",
+      "snapshotSha256": "50ea7807a7e74dc9f632b36517d4b80ed533a14099343d03f6464381fad1a25b",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "屋外100mで2Tbps",
+          "quote": "屋外で100メートル",
+          "locator": "実証条件",
+          "conditions": "NTTの屋外100m・最大22多重実験。長期運用や多地点化は将来。",
+          "usedIn": {
+            "zh": "2Tbps",
+            "ja": "2Tbps",
+            "interview": "2Tbps"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "OAM-MIMO、最大22多重、アナログ/デジタル分担",
+          "quote": "最大22の信号",
+          "locator": "実験構成",
+          "conditions": "NTTの屋外100m・最大22多重実験。長期運用や多地点化は将来。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "反射鏡と軸ずれ補正で距離を延長",
+          "quote": "イメージングリフレクタ技術",
+          "locator": "長距離化",
+          "conditions": "NTTの屋外100m・最大22多重実験。長期運用や多地点化は将来。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact4",
+          "kind": "source-fact",
+          "statement": "長期運用、多地点、10Tbpsは未達の将来項目",
+          "quote": "実環境での長期運用",
+          "locator": "今後の検証",
+          "conditions": "NTTの屋外100m・最大22多重実験。長期運用や多地点化は将来。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact5",
+          "kind": "source-fact",
+          "statement": "SINRピーク探索による軸合わせ。",
+          "quote": "SINRのピーク探索",
+          "locator": "補足NTT9/14公式発表 技術ポイント③ https://group.ntt/jp/newsrelease/2026/09/14/260914a.html",
+          "conditions": "研究発表の装置構成。一般の無線すべてに適用と断言しない。",
+          "usedIn": {
+            "zh": "SINR",
+            "ja": "SINR"
+          }
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "OAM-MIMO、アナログ/デジタル分担、高利得化と軸合わせから、容量と距離の両立を考えます。",
+          "conditions": "記事に基づく設計・検証の学習上の整理。原文の新たな実測結果ではない。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "usedIn": {
+            "zh": "将容量、空间复用与天线对准放在一起，保留 100m 实验条件和长时间运维边界。",
+            "ja": "OAM-MIMO、アナログ/デジタル分担、高利得化と軸合わせから、容量と距離の両立を考えます。"
+          }
+        }
+      ]
+    }
+  ]
+}
