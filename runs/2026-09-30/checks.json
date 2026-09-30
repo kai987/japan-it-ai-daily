@@ -115,5 +115,14 @@
       "exitCode": 0,
       "log": "/tmp/japan-daily-20260930/logs/15-evidence-check.log"
     }
-  ]
+  ],
+  "draftCommit": "8e5a9b1c26ba42f27652731befe914fd28cf0e32",
+  "preflight": {
+    "runId": 36655249634,
+    "path": ".github/workflows/deploy.yml",
+    "headSha": "8e5a9b1c26ba42f27652731befe914fd28cf0e32",
+    "build": "success",
+    "deploy": "skipped",
+    "conclusion": "success"
+  }
 }
