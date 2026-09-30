@@ -8,7 +8,7 @@
     "to": "2026-09-30T10:00:00+09:00"
   },
   "createdAt": "2026-09-30T01:04:17.747Z",
-  "updatedAt": "2026-09-30T01:39:36.040Z",
+  "updatedAt": "2026-09-30T01:49:56.021Z",
   "completedArtifacts": [],
   "lastError": null,
   "draftCommit": "8e5a9b1c26ba42f27652731befe914fd28cf0e32",
@@ -39,27 +39,27 @@
   "requestCommit": "4e3fc826b1c6df95c9a05cdd7d43f1eb200b41c7",
   "requestBlob": "02690ac60bc90d1996b614fffb1a5a6581365c31",
   "submittedAt": "2026-09-30T01:31:25.368Z",
-  "releaseCommit": "e2e6a6616137793fb3ec93d6ade7dec6da774d7b",
-  "pagesRunId": 36655707298,
+  "releaseCommit": "c89a7e6a96b99603d5d33dfa32c2885c94d51f66",
+  "pagesRunId": 36656587901,
   "publishedAt": "2026-09-30T01:38:38.197Z",
   "verification": {
-    "label": "text",
-    "runId": 36655707298,
-    "releaseCommit": "e2e6a6616137793fb3ec93d6ade7dec6da774d7b",
-    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/36655707298",
+    "label": "audio",
+    "runId": 36656587901,
+    "releaseCommit": "c89a7e6a96b99603d5d33dfa32c2885c94d51f66",
+    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/36656587901",
     "artifacts": [
       {
-        "id": 11072806078,
+        "id": 11073047091,
         "name": "it-study-snapshot",
-        "digest": "sha256:c1a18fc0aee2695a5777938796ccbfd071d4df37b112e15eff4e8827f95e9c71"
+        "digest": "sha256:d48067e66966209e7bfebb7c36c3a6f66f099fe1d34b55153f83bfebbb6a889c"
       },
       {
-        "id": 11072451789,
+        "id": 11072079639,
         "name": "github-pages",
-        "digest": "sha256:df7422bda1223156b47c6f332e36fea3ef2088997cd4ca5fdb923dc57f77d926"
+        "digest": "sha256:cc703e846328171805d59a34768ae2c1d87f0d43dffae7ec644fecb2ff75c8ad"
       }
     ],
-    "sourceCommit": "e2e6a6616137793fb3ec93d6ade7dec6da774d7b",
+    "sourceCommit": "c89a7e6a96b99603d5d33dfa32c2885c94d51f66",
     "targetDate": "2026-09-30",
     "totalDays": 50,
     "issueNumber": 50,
@@ -116,12 +116,12 @@
       "2026-09-30"
     ],
     "fullSnapshotCompared": true,
-    "snapshotHash": "b53b184da10dd611878cfd73086ee5f2ef0a4d1300aec4d8677198c9226eb648",
+    "snapshotHash": "3e77a729ae19ff2ab020d9880f2fe4874cb30aa1a8b3520fe5a324e668c1b7e3",
     "expected": {
       "version": 1,
-      "commit": "e2e6a6616137793fb3ec93d6ade7dec6da774d7b",
+      "commit": "c89a7e6a96b99603d5d33dfa32c2885c94d51f66",
       "date": "2026-09-30",
-      "snapshotHash": "b53b184da10dd611878cfd73086ee5f2ef0a4d1300aec4d8677198c9226eb648",
+      "snapshotHash": "3e77a729ae19ff2ab020d9880f2fe4874cb30aa1a8b3520fe5a324e668c1b7e3",
       "pages": [
         {
           "path": "daily/2026-09-30/",
@@ -134,14 +134,56 @@
       ]
     },
     "live": {
-      "commit": "e2e6a6616137793fb3ec93d6ade7dec6da774d7b",
+      "commit": "c89a7e6a96b99603d5d33dfa32c2885c94d51f66",
       "date": "2026-09-30",
       "attempt": 1
     },
-    "verifiedAt": "2026-09-30T01:38:38.197Z",
-    "site": "/tmp/japan-daily-20260930/text-release-36655707298/site"
+    "verifiedAt": "2026-09-30T01:48:53.813Z",
+    "site": "/tmp/japan-daily-20260930/audio-release-36656587901/site"
   },
   "resumeFrom": null,
-  "nextAction": "text complete; audio pending and N1 handoff",
-  "publisherRunId": 36655526135
+  "nextAction": null,
+  "publisherRunId": 36655526135,
+  "textPublicationCommit": "e2e6a6616137793fb3ec93d6ade7dec6da774d7b",
+  "audio": {
+    "stage": "playback_verified",
+    "releaseCommit": "c89a7e6a96b99603d5d33dfa32c2885c94d51f66",
+    "r2RunId": 36656587933,
+    "pagesRunId": 36656587901,
+    "newRecordings": 44,
+    "referencedRecordings": 58,
+    "playbackChecks": 10
+  },
+  "n1": {
+    "stage": "published",
+    "targetDate": "2026-09-30",
+    "sourceCommit": "e2e6a6616137793fb3ec93d6ade7dec6da774d7b",
+    "releaseCommit": "747fcca10ee17224310545c8b10d0da77df698a3",
+    "sourceBlobSha": "1465bf9a9c2d4b5c2af3a2680e70b5e5f519dfb5",
+    "sourceSha256": "94c56646d161a80a817ad0c798d51ab3aa04b59237edb0f52d94ab04830e2f9a",
+    "snapshotSha256": "b53b184da10dd611878cfd73086ee5f2ef0a4d1300aec4d8677198c9226eb648",
+    "storedSnapshotSha256": "360f8da0dbc3902ae72364c910a56517e84cc10b6f71d5ddfb6a5bb6cc35ead6",
+    "pagesRunId": 36656584286,
+    "syncRunId": 36656434925,
+    "issueNumber": 50,
+    "totalDays": 50,
+    "rawVocabulary": 10,
+    "rawGrammar": 1,
+    "displayVocabulary": 20,
+    "displayGrammar": 5,
+    "checks": {
+      "exactPages": true,
+      "postDeploy": true,
+      "originalUnchanged": true,
+      "snapshotExact": true,
+      "liveArtifactBytes": true,
+      "display": {
+        "date": "2026-09-30",
+        "day": 32,
+        "issue": 50,
+        "titleVisible": true
+      }
+    },
+    "verifiedAt": "2026-09-30T01:47:47.086Z"
+  }
 }
