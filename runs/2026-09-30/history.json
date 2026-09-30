@@ -1074,7 +1074,7 @@
     "～かつ"
   ],
   "semanticReview": {
-    "completedAt": "2026-09-30T01:24:06.728Z",
+    "completedAt": "2026-09-30T01:29:55.880Z",
     "newVocabulary": 15,
     "excludedAsExisting": [
       "永続的 (永続化 already introduced)",
@@ -1144,6 +1144,15 @@
         }
       },
       {
+        "pattern": "～一方で",
+        "firstIntroducedDate": "2026-08-12",
+        "evidence": {
+          "form": "一方で",
+          "excerpt": "一方で、今回のAllow/Warnの2件は別エラーで取り込めず、その正常系は実測できていません。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
         "pattern": "～だけでなく",
         "firstIntroducedDate": "2026-09-25",
         "evidence": {
@@ -1162,6 +1171,24 @@
         }
       }
     ],
-    "grammarShortage": "新規1件＋当日の本文で確認できる既習項目3件です。目安5件に届かない分を、本文にない表現や未習項目で埋めていません。"
-  }
+    "grammarShortage": null,
+    "newVocabularyItems": [
+      "拡散する",
+      "保持する",
+      "欠落する",
+      "区別する",
+      "宣言する",
+      "深追いする",
+      "干渉する",
+      "敷設する",
+      "吸収する",
+      "定める",
+      "見えづらい",
+      "構造的",
+      "無理やり",
+      "明細",
+      "常に"
+    ]
+  },
+  "draftCommit": "8e5a9b1c26ba42f27652731befe914fd28cf0e32"
 }
