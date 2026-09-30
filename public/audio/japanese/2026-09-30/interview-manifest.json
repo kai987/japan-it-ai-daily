@@ -1,0 +1,163 @@
+{
+  "date": "2026-09-30",
+  "generatedAt": "2026-09-30T01:41:59.718Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIエージェントに外部APIを使わせるとき、APIキーの配布と権限管理をどう設計しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "2b7be88bf5741ad40a947a0634770bb3988cc40804838e4194e9a5884c36e610",
+      "audioSha256": "9d760111bafefa32508a2f21fd8c3c26f04d34b8980a9aa126479d5d00685ea5",
+      "durationSeconds": 7.662
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "実際のAPIキーを配る範囲と、実行できる操作を分けて設計します。Passportでは秘密をVPCやVaultに保持し、参照トークンを渡して、ホストやパスごとにアクセスを検証します。さらにタスク単位の実行主体と、サブエージェントへの権限の一部継承を使います。ただし、これはベンダーの発表なので、期限後や範囲外の呼び出しが拒否されるかは自分たちで確認します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "5f5c07c782989c054583b1be896ccefaa20142a71340753354638ed4ade977a2",
+      "audioSha256": "ae51948ba1d2c1c027ca4633a846d4b8a5ba2b8c7987e1e9592d165991c162a9",
+      "durationSeconds": 28.178,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "TypeScriptで型チェックが通り、APIも成功しているのに値が誤るとき、何を確認しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "2a4e5e9640d6be4a87b8ad11877281d0aa0c52f858181200c9a4081f3368ce98",
+      "audioSha256": "39117ee522f638f88db1160f27b39b086cf0b1418a0a9a8205fd3755ec1cba9e",
+      "durationSeconds": 8.077
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "返ってきたデータと、コードが信じている型を照合します。この記事ではGSIの射影からamountを外したのに、as OrderItemで扱い、実値5000の代わりに既定値1000が選ばれました。HTTP 200でも業務結果は誤ります。取得経路に合わせてOrderGSIItemを分け、必要ならZodで形を検証します。ただし型の分離だけでは実データを保証できないので、欠落時の振る舞いもテストします。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "669fcba5ecfc9284d330c9233aee6a520900e5c55078eedff96160fb0618130d",
+      "audioSha256": "57038635abc8606a0e23569a8c74cfd8b5e88c4bdab5f9e0668578cea6ffd254",
+      "durationSeconds": 29.869,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "AIナレッジベースのDLPを検証するとき、同期結果をどう読み分けますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "932da6c5aed4ddb1c86c0577d835dddf29768d2069d793101db326865d3d92bf",
+      "audioSha256": "f22cbd5645163d9b678379f97ac8956892f9a007084276d1e8371032d1b4096c",
+      "durationSeconds": 6.029
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "権限不足、DLPの拒否、内容の取り込み失敗を別々に見ます。QuickのOneDrive同期ではFiles.Read.Allを追加した後、1件がBlocked、2件がEmpty fileでFailedになりました。公式仕様ではWarnに確認画面はありませんが、ただし、この実験ではWarnの取り込み成功まで確認できていません。設定名だけで判断せず、Sync reportsで各段階の結果と未検証の部分を説明します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "3eb1bff4353264124240b9329ea50f5cb3f034c4444e558354c1e3aa1b4cd32f",
+      "audioSha256": "05da84d04a3e030aca729a8bd03516ff94749fdacd47e1013d557848ef7137e5",
+      "durationSeconds": 30.301,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "企業向けAIの推論基盤を選ぶとき、機能以外にどんな条件を設計しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "58ddb93ddd11934f11044bec63b7726c6dfa5617dc5e9969bd419b50aac9561a",
+      "audioSha256": "08dc7871b87ead1e592a914453bd9107f70576787637aa75a34a9c5f084dc5a0",
+      "durationSeconds": 6.152
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "データの所在、認証と認可、必要な処理量を先に決めます。NECはJP-CRISで国内推論を選び、Entra IDとIAMを組み合わせ、SaaS連携には認可中継サーバを設けました。一方、海外へ分散できないのでモデルごとのTPMが上限になります。最大12万人が利用可能でも同時利用の実測ではありません。パイロットで容量を見積もり、必要な機能が使えるかも確認します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "17ff6ad2b0d4889c3e5305e539076ad224b1b4c04cd9aad565b92ef662f2808e",
+      "audioSha256": "b86ca3841ba5ea8da4b6bfcad514dfddd3223d3052eb5aa4851a947f621a0f97",
+      "durationSeconds": 30.347,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "大容量無線の実験結果を、企業ネットワークの採用判断につなげるには何を確認しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "df9caf360687528a685f9b15fd9dfd6ac65a6d237dce25af6506469812199a07",
+      "audioSha256": "126acaa8a3748ed0ec222c50c0b0e7899619c0185a1f9a4dc625f312a46cd73d",
+      "durationSeconds": 7.174
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "伝送容量だけでなく、距離と設置条件を確認します。NTTは屋外100mで約2Tbpsを実現し、OAM-MIMOの最大22多重と、アナログ主体の処理を組み合わせました。距離を伸ばすイメージングリフレクタと軸ずれ補正も必要です。ただし長期運用や多地点接続は今後の検証なので、配線削減の利点と対向設置の条件を、自社の環境に照らして判断します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "83a401632b3cb4dd8c38fcf9b177699f23037fc9e2532bcd9033c2d724cf3551",
+      "audioSha256": "c11f4797bd1cc9a578c9acd4f27e36a7392816ccfe4328a30ff3b7bdd4b63502",
+      "durationSeconds": 30.37,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "APIアクセス制御とDLPの結果を、どのように別々に検証しますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "5578930d6839e4a9debef74eae2e4344dd6b1a132e1d9dafbc2edeeffc09dcae",
+      "audioSha256": "ef3f9b986d80915e288cf42083dde2b8fef969c8790127c9a11d63144b93237c",
+      "durationSeconds": 5.99
+    },
+    {
+      "index": 2,
+      "text": "型チェックとHTTP 200がそろっていても、業務結果を検証する必要があるのはなぜですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "1a51848f6239056297b4967708acec973b391f67951353f47091a6631baca3c5",
+      "audioSha256": "abc19b887b72114498a3f9948231cfe05740c0008d457f2f4780342eb8f2b8f1",
+      "durationSeconds": 7.217
+    },
+    {
+      "index": 3,
+      "text": "大きな利用者数や通信速度を、容量設計へそのまま使えない理由は何ですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "4d798bf6a536387a3fc8b4dcaca259ca65c68e56d4200174b7bc5bdb0da251e8",
+      "audioSha256": "267151cddcc8ff8c242366c0f8000bb34dc539686fde2267d14a75f98bf179ad",
+      "durationSeconds": 5.908
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-09-30T01:42:00.784Z"
+}
