@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-01",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-01T03:09:46.309Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. Microsoft and Google specification supplements separately identified in prose. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-01-top-1",
+      "url": "https://dev.classmethod.jp/articles/guardduty-ai-protection-bedrock-guardrails-tier-verification/",
+      "originalTitle": "GuardDuty AI Protectionは日本語のプロンプトインジェクションを本当に防げるのか？",
+      "source": "DevelopersIO",
+      "topic": "AIセキュリティ・多言語防御",
+      "access": "full",
+      "accessNote": "Public article body fetched HTTP 200 and read in full; no independent repetition of experiments.",
+      "publishedAt": "2026-09-30T08:39:17.033Z",
+      "capturedAt": "2026-10-01T02:51:15.786862+00:00",
+      "snapshotSha256": "f99bcff2c09e8d9b8154bf3162623dcd6f11809d4d6d4968ee977ec6c41e57d6",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "PromptInjection.Direct依赖前段过滤器。",
+          "quote": "前段のGuardrails設定",
+          "locator": "今回検証したこと",
+          "conditions": "作者の東京Converse API検証、High/DRAFT設定。Classicは5入力、Standard再実行は3入力。未知の攻撃や誤報率を測定した結果ではない。",
+          "usedIn": {
+            "zh": "Guardrails",
+            "ja": "Guardrails",
+            "interview": "Guardrails"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Standard只重跑3种漏过输入。",
+          "quote": "3つ",
+          "locator": "ラウンド2再実行対象",
+          "conditions": "作者の東京Converse API検証、High/DRAFT設定。Classicは5入力、Standard再実行は3入力。未知の攻撃や誤報率を測定した結果ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Standard采用跨区域处理，存在国内限定约束。",
+          "quote": "Cross-Region inference",
+          "locator": "ただし、トレードオフがある",
+          "conditions": "作者の東京Converse API検証、High/DRAFT設定。Classicは5入力、Standard再実行は3入力。未知の攻撃や誤報率を測定した結果ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "防御と記録の役割、モデル自身の拒否との違い、処理先の条件を一つの検証例で説明できます。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "能够具体说明防御链、模型拒绝与过滤器介入的差异，以及跨区域推理的采用边界。",
+            "ja": "防御と記録の役割、モデル自身の拒否との違い、処理先の条件を一つの検証例で説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-01-top-2",
+      "url": "https://dev.classmethod.jp/articles/shoma-connect-claude-code-and-miro-to-auto-capture-all-web-app-screens-and-create-screen-transition-diagram/",
+      "originalTitle": "Claude Code と Miro を繋いで Web アプリの全画面を自動キャプチャして画面遷移図を作ってみた",
+      "source": "DevelopersIO",
+      "topic": "フロントエンド・画面棚卸し",
+      "access": "full",
+      "accessNote": "Public article body fetched HTTP 200 and read in full; no independent repetition of experiments.",
+      "publishedAt": "2026-09-30T14:59:10.073Z",
+      "capturedAt": "2026-10-01T02:51:15.525926+00:00",
+      "snapshotSha256": "09d81aee371cc0eb310e66823504dad59545d2bfe41e14c21e0e8478947854f6",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "部分画面要求导航状态，25条路由不能覆盖模态窗与标签页。",
+          "quote": "location.state",
+          "locator": "画面一覧と動線をコードから洗い出す",
+          "conditions": "ローカルのReact/TypeScript/antd+Django REST Framework。54枚・68動線の開発事例。全権限の網羅測定やMCP SVG一括作成の比較ではない。",
+          "usedIn": {
+            "zh": "location.state",
+            "ja": "location.state",
+            "interview": "location.state"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "54张画面采用REST脚本排列。",
+          "quote": "54",
+          "locator": "実行結果とOAuthトークン／MCP比較",
+          "conditions": "ローカルのReact/TypeScript/antd+Django REST Framework。54枚・68動線の開発事例。全権限の網羅測定やMCP SVG一括作成の比較ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "MCP SVG批量创建未验证。",
+          "quote": "今回試していない",
+          "locator": "MCPとの使い分け末尾",
+          "conditions": "ローカルのReact/TypeScript/antd+Django REST Framework。54枚・68動線の開発事例。全権限の網羅測定やMCP SVG一括作成の比較ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "React固有の状態と到達性を説明し、生成物の検証と認可先の確認へつなげられます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "保留前端特有的状态与可达性问题，也能说明脚本复现、认证与人工审查的边界。",
+            "ja": "React固有の状態と到達性を説明し、生成物の検証と認可先の確認へつなげられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-01-top-3",
+      "url": "https://dev.classmethod.jp/articles/202609-windows-userdata-japanese-comment-parse-error/",
+      "originalTitle": "[小ネタ] 日本語版Windows EC2のユーザーデータに日本語コメントを書いたら、スクリプトが1行も実行されなかった",
+      "source": "DevelopersIO",
+      "topic": "インフラ・文字コード障害",
+      "access": "full",
+      "accessNote": "Public article body fetched HTTP 200 and read in full; no independent repetition of experiments.",
+      "publishedAt": "2026-09-30T05:44:31.771Z",
+      "capturedAt": "2026-10-01T02:51:15.613538+00:00",
+      "snapshotSha256": "29326c21e1281c71d9b096a4395c201079fbadc6523d147fc3753ea2b45cf8b7",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "日语Windows PowerShell 5.1将无BOM脚本按CP932读取。",
+          "quote": "CP932",
+          "locator": "今回の環境／原因",
+          "conditions": "Windows Server 2025日本語版、EC2Launch v2.5.2、Windows PowerShell 5.1.26100、CloudFormation/LF/CP932。全WindowsやPowerShell 6+の一般的な挙動を実験したわけではない。",
+          "usedIn": {
+            "zh": "CP932",
+            "ja": "CP932",
+            "interview": "CP932"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "末尾字节8B和LF导致try并入注释。",
+          "quote": "8B",
+          "locator": "原因のバイト列",
+          "conditions": "Windows Server 2025日本語版、EC2Launch v2.5.2、Windows PowerShell 5.1.26100、CloudFormation/LF/CP932。全WindowsやPowerShell 6+の一般的な挙動を実験したわけではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "4种对策各有文字化け及维护限制。",
+          "quote": "4つ",
+          "locator": "対策",
+          "conditions": "Windows Server 2025日本語版、EC2Launch v2.5.2、Windows PowerShell 5.1.26100、CloudFormation/LF/CP932。全WindowsやPowerShell 6+の一般的な挙動を実験したわけではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "実行前の構文解析と実行中の失敗を区別し、文字コードと行末のバイトから原因を説明できます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "提供“脚本未开始执行”和“执行中失败”的区别，并能用实际字节解释注释导致的故障。",
+            "ja": "実行前の構文解析と実行中の失敗を区別し、文字コードと行末のバイトから原因を説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-01-top-4",
+      "url": "https://tech.layerx.co.jp/entry/2026/09/30/200852",
+      "originalTitle": "LayerXのFDEインターンに参加した話",
+      "source": "LayerX Engineering Blog",
+      "topic": "業務AI・OCR検証",
+      "access": "full",
+      "accessNote": "Public article body fetched HTTP 200 and read in full; no independent repetition of experiments.",
+      "publishedAt": "2026-09-30T20:08:52+09:00",
+      "capturedAt": "2026-10-01T02:51:15.735361+00:00",
+      "snapshotSha256": "88681bc196f9f374fb32a8aa64fdd2587b9a167d995c61a6855ee28110f80bf1",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "高解像度OCRを採用し、小さい文字と符号を改善。",
+          "quote": "ocrHighResolution",
+          "locator": "対応内容と結果",
+          "conditions": "2026年5–7月の実習回顧。スキャンPDF中心、観測出力では数値が残り文字が混入。件数、誤認識率、顧客効果の定量測定はない。",
+          "usedIn": {
+            "zh": "ocrHighResolution",
+            "ja": "ocrHighResolution",
+            "interview": "ocrHighResolution"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "LLM整形の前提は数字自体が残ること。",
+          "quote": "数値自体は取得できていて",
+          "locator": "対応内容と結果",
+          "conditions": "2026年5–7月の実習回顧。スキャンPDF中心、観測出力では数値が残り文字が混入。件数、誤認識率、顧客効果の定量測定はない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "顧客提案は未完了。",
+          "quote": "提案を実際に行うところまでは",
+          "locator": "Agentic Workflowへの移行とBox連携",
+          "conditions": "2026年5–7月の実習回顧。スキャンPDF中心、観測出力では数値が残り文字が混入。件数、誤認識率、顧客効果の定量測定はない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "入力形式と誤り方から選択を説明し、後処理の前提と未測定の効果を明示できます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "可具体说明输入格式、错误类型和后处理前提如何影响 AI 工具采用，并避免把定性经验说成测量结果。",
+            "ja": "入力形式と誤り方から選択を説明し、後処理の前提と未測定の効果を明示できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-01-top-5",
+      "url": "https://dev.classmethod.jp/articles/update-cloud-run-custom-url/",
+      "originalTitle": "[アップデート] Cloud Run のカスタムURL機能が Preview になりました",
+      "source": "DevelopersIO",
+      "topic": "クラウド・URLライフサイクル",
+      "access": "full",
+      "accessNote": "Public article body fetched HTTP 200 and read in full; no independent repetition of experiments.",
+      "publishedAt": "2026-09-30T03:37:35.455Z",
+      "capturedAt": "2026-10-01T02:51:15.787604+00:00",
+      "snapshotSha256": "1d87bf237be5b2a0707e98427322c791feab5d78d6122b426dde2b58a46dab7f",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "关闭默认URL不会关闭自定义映射。",
+          "quote": "カスタムURLの設定は残る",
+          "locator": "注意点・既定HTTPSエンドポイント",
+          "conditions": "Public Previewのコンソール実測とGoogle公式仕様の補足。作成、複数マッピング、IAP、内部ingressの挙動。全認証方式、可用率、移行遅延の比較ではない。",
+          "usedIn": {
+            "zh": "run.app",
+            "ja": "run.app",
+            "interview": "run.app"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "删除后名称可被立即再取得。",
+          "quote": "削除した時点で他のユーザーが再利用できる",
+          "locator": "注意点・URL削除",
+          "conditions": "Public Previewのコンソール実測とGoogle公式仕様の補足。作成、複数マッピング、IAP、内部ingressの挙動。全認証方式、可用率、移行遅延の比較ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "作者确认IAP限制在其自定义URL生效。",
+          "quote": "IAP",
+          "locator": "IAPでアクセス制限をかけてみる",
+          "conditions": "Public Previewのコンソール実測とGoogle公式仕様の補足。作成、複数マッピング、IAP、内部ingressの挙動。全認証方式、可用率、移行遅延の比較ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "URLの便利さだけでなく、認証・撤去・名前の再取得を具体的に説明できます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "能把地址易用性与认证、撤销和名称生命周期分开，明确“关掉默认地址”不等于“服务不可访问”。",
+            "ja": "URLの便利さだけでなく、認証・撤去・名前の再取得を具体的に説明できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
