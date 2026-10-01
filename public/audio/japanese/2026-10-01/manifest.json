@@ -1,0 +1,353 @@
+{
+  "date": "2026-10-01",
+  "generatedAt": "2026-10-01T03:27:32.326Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "収奪",
+      "reading": "しゅうだつ",
+      "exampleJa": "資源の収奪を防ぐため、利用量の異常を調べます。",
+      "word": "vocab-01.mp3",
+      "wordHash": "e515b25bbaed185c7eef7ca9c3abff2909ab2ade593dfaec0c9a35fc1be543a4",
+      "example": "example-01.mp3",
+      "exampleHash": "86f28a378bf21e55c64c7d08411f54e1c04d132ee6b6fc07beab7f48efe4ac4d",
+      "wordSha256": "a64d5372a3be0b3aae416657cc07fc872a4d83a3d311e6d554443ea74b65bed1",
+      "exampleSha256": "2075ec59ca28b2913ea7deb8fb3e8569e5c981d6050f07968ae0529370e52f4a"
+    },
+    {
+      "index": 2,
+      "term": "偵察",
+      "reading": "ていさつ",
+      "exampleJa": "不審な偵察を見つけたら、対象の操作を追います。",
+      "word": "vocab-02.mp3",
+      "wordHash": "58ce1d72c7560cb709432117a7678da5fab6a88fcb04018d4c4e59f4df7d43d5",
+      "example": "example-02.mp3",
+      "exampleHash": "d502b18b0fa68e9b2d894146b448d79e9bfa40c4f20025ed486b7ae940f0e355",
+      "wordSha256": "15cd85274220e12e7cc9b7d05e789ee02fe0dfe85d977889866598ba81cbd0c1",
+      "exampleSha256": "cc23e952f0149c4cde225f31b28620cb4a686685e4c3fde985b64be914a40ea2"
+    },
+    {
+      "index": 3,
+      "term": "見張る",
+      "reading": "みはる",
+      "exampleJa": "入口を見張るだけでなく、内部の操作も確認します。",
+      "word": "vocab-03.mp3",
+      "wordHash": "892525b4627219e79727cfba6d3c8c62aea6681d658f8a46f1115d260627497b",
+      "example": "example-03.mp3",
+      "exampleHash": "6157e1a8bac3786a17cb77f9da780faaf603955a623acb9e5498321c60d49904",
+      "wordSha256": "d4a121f1922578ae76fd5232a6c2c12805dd055746c1db0496f22c672d1155f4",
+      "exampleSha256": "e71526f154e16f33d804be9ccafa2e006cd23bc2bc31c72c7d96c9bc31f990cc"
+    },
+    {
+      "index": 4,
+      "term": "素通り",
+      "reading": "すどおり",
+      "exampleJa": "検査を素通りした入力も、応答と一緒に記録します。",
+      "word": "vocab-04.mp3",
+      "wordHash": "c54dabcec52fd801a762603992093c6feddba74aaac794166965a470ee91aa9e",
+      "example": "example-04.mp3",
+      "exampleHash": "3bf18e2d61ea04217a2701eb6b37213705f19034a7420ccd2c563988e8899631",
+      "wordSha256": "bec1e250924483e997a73238873fa6a0ac1629c723e8c9e2ec711b7179bf221b",
+      "exampleSha256": "d47108d84c0c5769689ee22c0fbee17385370d5695d10ec5c80413116289b0aa"
+    },
+    {
+      "index": 5,
+      "term": "精緻",
+      "reading": "せいち",
+      "exampleJa": "分類が精緻でも、未知の入力は別に検証します。",
+      "word": "vocab-05.mp3",
+      "wordHash": "559167180d54b9a69b9e7c546e567eb17ce236bbe1ee124be972b7a6a7f15639",
+      "example": "example-05.mp3",
+      "exampleHash": "22ddf6673f5201bfab5159a47d70396b68f72ed17076b53ecaafc6ef1f0bf1c1",
+      "wordSha256": "787c14615f7506bbdfee3599a4dc219128124231e85b0f740a33ac9815854132",
+      "exampleSha256": "569c92115105d823e87da14f878a5431c52795f1c8b430b0441cde15d8c46401"
+    },
+    {
+      "index": 6,
+      "term": "棚卸し",
+      "reading": "たなおろし",
+      "exampleJa": "画面の棚卸しで、使われていない入口を見つけました。",
+      "word": "vocab-06.mp3",
+      "wordHash": "cec5fc41e6828c89fabd2eccab17ea72464d78890830f6dee3f5d2fbfbbe79f0",
+      "example": "example-06.mp3",
+      "exampleHash": "1e6c5cbab93ece887eda2acaef7edf11454c382fd87625ee11eb776c656a2407",
+      "wordSha256": "c878dfb5260bbc56810ab463a05ff225325010e8b644c4ac8f7f37b2260e665f",
+      "exampleSha256": "46714c249fb5018b76cf83373314a22bb0cb94ee4cb0e69584c3eca73c1e51b5"
+    },
+    {
+      "index": 7,
+      "term": "罫線",
+      "reading": "けいせん",
+      "exampleJa": "罫線を消しただけで、同じ不具合が再発しました。",
+      "word": "vocab-07.mp3",
+      "wordHash": "6034578a60128c973ff6d02581a3ac9d450d42240701eab0a717ba2467902a91",
+      "example": "example-07.mp3",
+      "exampleHash": "a07034ef9ff80e6725e6dc3becd7cd3f0e1710a5764b79f578dd4b980538d687",
+      "wordSha256": "f8fbeacc4db0890f7d10bb7a0bf08aab7063229af1a490ad673d278b2adba332",
+      "exampleSha256": "1b1d4dd5b0279c8a2035f90c5bd6d192449b6e20157b9d0f6e3c951255c9c045"
+    },
+    {
+      "index": 8,
+      "term": "巻き込む",
+      "reading": "まきこむ",
+      "exampleJa": "文字コードの違いが、次の行まで巻き込みました。",
+      "word": "vocab-08.mp3",
+      "wordHash": "d77a45c1f0536cb320aabb5b4f7b97bea452895f8ebe3d5362479332aa0d4392",
+      "example": "example-08.mp3",
+      "exampleHash": "965fb6f0cee0fc2f782c55bb9934dd98f2a6f96f4f24b41f12c23f7ef80f197d",
+      "wordSha256": "404f2fe495702af93f66178f5a1320c613b2eb849de27078e3f55304ae0831bf",
+      "exampleSha256": "1e5e38c0c8090f779ec61f483f268f90f4b25418c6f53e663a305c715ae9c3f2"
+    },
+    {
+      "index": 9,
+      "term": "切れ目",
+      "reading": "きれめ",
+      "exampleJa": "切れ目がずれると、同じバイト列でも解釈が変わります。",
+      "word": "vocab-09.mp3",
+      "wordHash": "a5f5b188dde9d781bb06844e394832ad7a05e580bcef93674afa73e329718a87",
+      "example": "example-09.mp3",
+      "exampleHash": "9125f80c351b566f75c10d07c4b7aecc002cf642d9706709ff2c2738cfb9fad5",
+      "wordSha256": "f811bcee42a3f01e87e10cf738c721a3bc37f6d7e8679bae00a5f6b660746779",
+      "exampleSha256": "e2f51e3fa0a4ebe16fe8d47760c47d9ab9bb0e12866caa94409afbd59711bd2e"
+    },
+    {
+      "index": 10,
+      "term": "行末",
+      "reading": "ぎょうまつ",
+      "exampleJa": "行末を確認すると、改行の直前に余ったバイトがありました。",
+      "word": "vocab-10.mp3",
+      "wordHash": "8467597ab2498aec8e91ea3fc89701a5e8bee036723a5dc8c985f31f89a245f4",
+      "example": "example-10.mp3",
+      "exampleHash": "a574d01683dcfc3786e0c99414a2623a497999011cf2cff6cee1ba4185087d2e",
+      "wordSha256": "7243c3b2f1c8a505c44d00da624a6d738cd32a397cd73d17411244b51905fc91",
+      "exampleSha256": "0b80e1bd2e5c971a836c6653ce9a082a61f1b47fa0a49bdddf064f8563d29b72"
+    },
+    {
+      "index": 11,
+      "term": "目印",
+      "reading": "めじるし",
+      "exampleJa": "文字コードの目印がないと、別の方式として読まれることがあります。",
+      "word": "vocab-11.mp3",
+      "wordHash": "2e02f94e48535ded1738bc27fe64f0eca163c6cc0e1abd0318c064f80482b560",
+      "example": "example-11.mp3",
+      "exampleHash": "787e8253ed5fbf112de4c12827a1bbab82ee5796c235a5e6c16e298a1a48b3e4",
+      "wordSha256": "01fc932458bbb6c67b2e242773e3f7d9d9a120ca2f427a08cfc117e49dcd5265",
+      "exampleSha256": "9f6a8d36a869a2dff76e334d8e1d31cfcc67a9b81592c7c00c34170f15c3ffd4"
+    },
+    {
+      "index": 12,
+      "term": "透かし",
+      "reading": "すかし",
+      "exampleJa": "透かしが重なる数値は、原本と照合して確認します。",
+      "word": "vocab-12.mp3",
+      "wordHash": "66d824c30c6ceaec2ff46e90ebb279ecf9a7b7a1e8e8f760a69b2743ebc1e3c4",
+      "example": "example-12.mp3",
+      "exampleHash": "435a0754cb21c90585ccdbe0355f4051cd801d9d9c3a5e26264f9c105793a532",
+      "wordSha256": "fbf396980d7f4d72c82c048d5af1af4b83191facedbcba8d87c697a284eb5d9f",
+      "exampleSha256": "9bb571e3d9328288f2bd6bd8c99f95bf0c189340a287bc515e824248629134dc"
+    },
+    {
+      "index": 13,
+      "term": "致命的",
+      "reading": "ちめいてき",
+      "exampleJa": "金額の符号の誤りは、後段の計算にとって致命的です。",
+      "word": "vocab-13.mp3",
+      "wordHash": "c3e07e1c1aab17b6e43da2fe2c451b881a548aec8c52052eee6c189e1008a92b",
+      "example": "example-13.mp3",
+      "exampleHash": "c2aa863c58a366a2d594976fcb58b5a993b585359fbc94c56c748aee46134de3",
+      "wordSha256": "960c6c607d8872a516e29bd8442ac6df9743ce285a751198ee094d80d1caf9f3",
+      "exampleSha256": "9f6f3873a544085664d4be81e3626c2fe243364cfa88811d1bd80ed9461e5313"
+    },
+    {
+      "index": 14,
+      "term": "伴走",
+      "reading": "ばんそう",
+      "exampleJa": "導入後も運用に伴走し、現場の課題を確かめます。",
+      "word": "vocab-14.mp3",
+      "wordHash": "5af6acc6532d99df8531f4b8449453c98ede355abffa712cd09e35fa0ee710ae",
+      "example": "example-14.mp3",
+      "exampleHash": "e44599f45ee4940711ebd467ac425cf328b3e5695a81e8576a8023d1f93aa5f1",
+      "wordSha256": "7d2ad086ab9330b13e50d9d6e23696ac5209c76654983548db2b54925737552c",
+      "exampleSha256": "289c32649eea13a61b49745ad7cd7ef2d3ef1723c4d5ab19dcb3593c75cb2acd"
+    },
+    {
+      "index": 15,
+      "term": "早い者勝ち",
+      "reading": "はやいものがち",
+      "exampleJa": "共有の名前は早い者勝ちなので、削除後の再取得を保証できません。",
+      "word": "vocab-15.mp3",
+      "wordHash": "560ef3fca77568af78baf35c0811c01cb1807b31680fed91d7504489d36e1d89",
+      "example": "example-15.mp3",
+      "exampleHash": "c843957545e3a3546163df42e27777658c6a770b19c6b9038bc2d0f38daa7bcb",
+      "wordSha256": "3bdc35c0d856293c0fccc8bad91f6140d5f8f22fa20e9c0b617e96fc3bf57eae",
+      "exampleSha256": "cfd82c9a30ef5c6d44d2b8105604c50b22c877159ee37ae6a0acc83d2df2ad6e"
+    },
+    {
+      "index": 16,
+      "term": "受け付ける",
+      "reading": "うけつける",
+      "exampleJa": "この画面は作成と削除だけを受け付けます。",
+      "word": "vocab-16.mp3",
+      "wordHash": "79a4107e68e3225c2948811ca5900cbba3d007ef26c5da431883547f2b573ae1",
+      "example": "example-16.mp3",
+      "exampleHash": "f2628a354e2cb18a5c78ef5e19f6d0d291062f6b9502b83949aa68246a98602d",
+      "wordSha256": "05e7cd118e126cb8d4c5093eb53bd6c7a59db2ed487a878ee77e99afb9ca3ddb",
+      "exampleSha256": "a6b90ed4230689aab985fd605c60766c351d90882cd332b86d125a2113cbb397"
+    },
+    {
+      "index": 17,
+      "term": "見当",
+      "reading": "けんとう",
+      "exampleJa": "内部ログがないため、原因の見当がつきませんでした。",
+      "word": "vocab-17.mp3",
+      "wordHash": "ec7e3007992805d1c27b7b0918900d0551a885359bb4f47da6065e49fc6c8f00",
+      "example": "example-17.mp3",
+      "exampleHash": "6e2cd8e60a113b2e5ccc35dbb898995d22eb7e0a702997b91e75c9bbf833097b",
+      "wordSha256": "89995759e265196083fa39e196632ff321fb2aa2d942b64a8e8212cbfb4f33f6",
+      "exampleSha256": "78cf1033f60cffb16c6bb0a4219d12d98018d6663631dd480f86e7c97a19c802"
+    },
+    {
+      "index": 18,
+      "term": "取り消す",
+      "reading": "とりけす",
+      "exampleJa": "提供元が名前を取り消す可能性も、利用条件として確認します。",
+      "word": "vocab-18.mp3",
+      "wordHash": "4ab4be13b0f2fa5b8b6468238654f811b29badf011e9223081a1ccc938471c3b",
+      "example": "example-18.mp3",
+      "exampleHash": "a1de1f598d94840467de93a4a07238e135b0e2f31959c15aba728fcdcea2ccb5",
+      "wordSha256": "c2c185ed079adb713b23d1e454392ca141e88999697a04dcd88da700c43a301c",
+      "exampleSha256": "37d8953b374f9c40a5b87980f4a89429251fde383808927be3d4b931c4beb53b"
+    },
+    {
+      "index": 19,
+      "term": "余る",
+      "reading": "あまる",
+      "exampleJa": "一バイトが余り、次の改行と一緒に読まれました。",
+      "word": "vocab-19.mp3",
+      "wordHash": "af204d4ca499f9353c42a74b033490d8bcfe0b0cc7cfbb6e514f10e52c8324ab",
+      "example": "example-19.mp3",
+      "exampleHash": "59f166edf4d972580caf9543ff894e0687038c93d71c676a2f95bd6f59365c3e",
+      "wordSha256": "98d6fde0696a74649d63039003eacc473ee85569f39b82a2c9d932185fd70508",
+      "exampleSha256": "abb208a6b1b638c405d4f221ebfbad772b0f5c112a7001ea2dac06a80d7889f6"
+    },
+    {
+      "index": 20,
+      "term": "連動する",
+      "reading": "れんどうする",
+      "exampleJa": "二つの入口は連動しないため、それぞれの公開状態を確認します。",
+      "word": "vocab-20.mp3",
+      "wordHash": "38ea53e04568bd498be490dab930e5e1ec3eea86567c3b065d0cb67add3dcf2a",
+      "example": "example-20.mp3",
+      "exampleHash": "03f8320fe046afe1ad57e96c47aece94b21f0eae06bc3c12885cec97fc09d500",
+      "wordSha256": "9e9ae1cbf9558d94514ea7ed57f64d53dda738a956c5c920815f0e043026cd41",
+      "exampleSha256": "fdd50d53d5240a911301b47646e7925e62023035732131eab5dfa5c9c0c32a57"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～次第だ",
+      "exampleJa": "改行が消えるかどうかは、行末のバイト次第です。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "dc95173a5e4e8e482feb8073704b97a0f27e487e55417022c38b285d63791c88",
+      "exampleSha256": "06b5cff18ec1625229bf70465a3186a5660f0d5c5238e18d92c205b0b0400d0f"
+    },
+    {
+      "index": 2,
+      "pattern": "～だけで",
+      "exampleJa": "設定を変えるだけで、今回の三つの入力は遮断されました。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "be26f87470ce443ec8502b1c2cbf6a3e3c2fc5b47568324203578cd522f6ce87",
+      "exampleSha256": "fdef0362bb34fe894828fce5e27b18c1c4c251aa353e0717e71fb7e6e1b6b6c7"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "とは限らない",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～とは限らない",
+      "exampleJa": "Parameter数が多ければ実務性能が高いとは限りません。",
+      "example": "grammar-example-07.mp3",
+      "exampleSha256": "c3539e1ac57836054946ffdf28d379ea58f8d696fe4768eec408e4a57f8dedee"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "に応じて",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～に応じて",
+      "exampleJa": "データの機密性に応じてCloudとLocal Modelを使い分けます。",
+      "example": "grammar-example-04.mp3",
+      "exampleSha256": "310dedda3a58dd3aeb153fbb2326144a3307da4ea6a17ede76b36109c051930f"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "に基づいて",
+      "firstIntroducedDate": "2026-08-13",
+      "audioDate": "2026-08-13",
+      "pattern": "～に基づいて",
+      "exampleJa": "実際の会話に基づいて、ルーターを較正します。",
+      "example": "grammar-example-01.mp3",
+      "exampleSha256": "4c19d62bd951f46609864be3a601a1938da453812bf1afdd225c654a8ab350a3"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "たうえで",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～たうえで",
+      "exampleJa": "Latencyを計測したうえで、利用するModelを決定します。",
+      "example": "grammar-example-06.mp3",
+      "exampleSha256": "e8482c64352d42613ebba7fb87a728a026b7b3f476eaf85982cccc31b973c095"
+    },
+    {
+      "index": 5,
+      "studyKind": "review",
+      "identity": "すら",
+      "firstIntroducedDate": "2026-08-31",
+      "audioDate": "2026-08-31",
+      "pattern": "～すら",
+      "exampleJa": "グローバル化を積極的に進めた企業ですら、暗黙知の壁に直面する可能性があります。",
+      "example": "grammar-example-02.mp3",
+      "exampleSha256": "06043a0419bc6d6c75238e293d822f148b15794d719623d11bb8bb4980a6fb09"
+    },
+    {
+      "index": 6,
+      "studyKind": "review",
+      "identity": "だけでなく",
+      "firstIntroducedDate": "2026-09-25",
+      "audioDate": "2026-09-25",
+      "pattern": "～だけでなく",
+      "exampleJa": "音質だけでなく、同意管理と利用権も確認します。",
+      "example": "grammar-example-01.mp3",
+      "exampleSha256": "3eb6c6458f6896d5828376dac74ecb2126d58dd46e7fe8c4a769f9e62de3e6b5"
+    }
+  ]
+}
