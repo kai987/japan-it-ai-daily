@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-01",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "c89a7e6a96b99603d5d33dfa32c2885c94d51f66",
   "sourceWindow": {
     "from": "2026-09-30T10:00:00+09:00",
     "to": "2026-10-01T10:00:00+09:00"
   },
   "createdAt": "2026-10-01T02:50:58.046Z",
-  "updatedAt": "2026-10-01T03:19:44.165Z",
+  "updatedAt": "2026-10-01T03:20:25.422Z",
   "completedArtifacts": [
     "sources.json",
     "history-verified.json",
@@ -38,5 +38,7 @@
   ],
   "verifiedAt": "2026-10-01T03:13:26.544Z",
   "preflightRunId": 36809513534,
-  "nextStep": "Verify exact draft deploy.yml preflight before submitting source-bound request."
+  "nextStep": "Wait for exact publisher and promoted main Pages; verify full release",
+  "publisherRunId": 36810013418,
+  "publicationRequestCommit": "b10d8105cbfd9cbbec85a3de65380780b347cda4"
 }
