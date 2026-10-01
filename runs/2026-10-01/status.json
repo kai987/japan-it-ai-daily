@@ -8,7 +8,7 @@
     "to": "2026-10-01T10:00:00+09:00"
   },
   "createdAt": "2026-10-01T02:50:58.046Z",
-  "updatedAt": "2026-10-01T03:36:32.273Z",
+  "updatedAt": "2026-10-01T04:44:10.326Z",
   "completedArtifacts": [
     "sources.json",
     "history-verified.json",
@@ -38,7 +38,7 @@
   ],
   "verifiedAt": "2026-10-01T03:13:26.544Z",
   "preflightRunId": 36809513534,
-  "nextStep": "Text and audio complete; N1 awaiting explicit approval to replay exact original after runtime safety rejection",
+  "nextStep": "Complete: text, audio/R2/playback and N1 publication all verified",
   "publisherRunId": 36810013418,
   "publicationRequestCommit": "b10d8105cbfd9cbbec85a3de65380780b347cda4",
   "releaseCommit": "362b359e1a255901b9f0524aedff46c97900f4c6",
@@ -145,24 +145,44 @@
   },
   "n1": {
     "targetDate": "2026-10-01",
-    "day": 33,
+    "sourceCommit": "73f2166c500c38b170ef05ed4ed86c1555c100ba",
+    "releaseCommit": "75c0f69934c67532a40565795ba4897094b8cf9e",
+    "sourceBlobSha": "18cceb44bda2d3955c234584f6c77c058dfdd1a3",
     "sourceSha256": "bae0494f88c757eeb2b686b96d45a496cf97a6919339fa0ac425c733315c87cf",
-    "sourceBytes": 14231,
-    "sourceCheckpoint": "automation/n1-progress:runs/2026-10-01/source.json",
-    "sourceCheckpointBlobSha": "235f9c7d62f1589005c6fdcc9d6eacca716316e4",
-    "stage": "source_pending_promotion",
-    "attemptedAt": "2026-10-01T03:24:52.915Z",
-    "lastError": {
-      "stage": "source_promotion",
-      "type": "prior_runtime_safety_rejection",
-      "message": "Existing source promotion was rejected by runtime safety review before create_file completed. No specific rejection reason or 401/403 was recorded; do not bypass by changing transport."
-    },
-    "nextAction": "Explicit user clarification or approval for same original promotion through the original authorized flow; retain verified outbox. No N1 request submitted.",
-    "sourceCommit": "362b359e1a255901b9f0524aedff46c97900f4c6",
-    "sourcePagesRunId": 36810208477,
-    "snapshotSha256": "1708f81a66f5ae358820bc2878292f79994d4e81c85b9bd0cd8ad247dc431ecd",
+    "snapshotSha256": "272a84c55b8b499b293c3741a939d544e13d103f3e2eef19747829416a47f1ea",
+    "storedSnapshotSha256": "c4e0fccd910167f0938a04d324d10860d7a90dff15e29a6756d2bc2a797012cc",
+    "pagesRunId": 36816088552,
+    "syncRunId": 36815968947,
     "issueNumber": 51,
-    "totalDays": 51
+    "totalDays": 51,
+    "rawVocabulary": 10,
+    "rawGrammar": 2,
+    "displayVocabulary": 20,
+    "displayGrammar": 8,
+    "checks": {
+      "exactPages": true,
+      "postDeploy": true,
+      "originalUnchanged": true,
+      "snapshotExact": true,
+      "liveArtifactBytes": true,
+      "display": {
+        "date": "2026-10-01",
+        "day": 33,
+        "issue": 51,
+        "titleVisible": true,
+        "vocabularyCount": 20,
+        "grammarNew": 2,
+        "grammarReview": 6,
+        "frequencyDenominator": 51,
+        "readingParagraphs": 3
+      }
+    },
+    "verifiedAt": "2026-10-01T04:42:43.455Z",
+    "status": "published",
+    "lastError": null,
+    "blocker": null,
+    "nextAction": "Complete: exact N1 Pages, public bytes, Day 33 / issue 51 and all-history snapshot verified",
+    "nextStep": "Complete"
   },
   "audio": {
     "stage": "playback_verified",
