@@ -2,6 +2,17 @@
   const article = document.querySelector('.report-layout article.prose');
 
   if (article instanceof HTMLElement) {
+    // Markdown typography can change command flags and quotation marks. Audio
+    // uses the canonical strings, while the visible article keeps its rendering.
+    const canonicalSpeech = article.dataset.canonicalSpeech
+      ? JSON.parse(article.dataset.canonicalSpeech) as { interview: string[]; review: string[] }
+      : null;
+    if (canonicalSpeech && (!Array.isArray(canonicalSpeech.interview)
+      || canonicalSpeech.interview.length !== 10
+      || !Array.isArray(canonicalSpeech.review) || canonicalSpeech.review.length !== 3
+      || [...canonicalSpeech.interview, ...canonicalSpeech.review].some((text) => typeof text !== 'string' || !text.trim()))) {
+      throw new Error('Invalid canonical report speech');
+    }
     const normalizeSpeech = (value: string): string => value.replace(/\s+/g, ' ').trim();
     const seenSpeech = new Set(
       Array.from(article.querySelectorAll<HTMLButtonElement>('.report-speech-button'))
@@ -80,7 +91,11 @@
 
     const enhanceLegacyQuotes = (nodes: Element[], kind: 'interview' | 'review'): number => {
       const quotes = blockquotesFrom(nodes);
-      quotes.forEach((quote) => enhanceElement(quote, kind));
+      const canonical = canonicalSpeech?.[kind];
+      if (canonical && quotes.length && quotes.length !== canonical.length) {
+        throw new Error('Canonical report speech order/count mismatch');
+      }
+      quotes.forEach((quote, index) => enhanceElement(quote, kind, canonical?.[index]));
       return quotes.length;
     };
 
@@ -106,6 +121,7 @@
 
     const enhancePlainInterview = (nodes: Element[]): void => {
       const labels: HTMLElement[] = [];
+      let speechIndex = 0;
       for (const node of nodes) {
         if (node instanceof HTMLElement && node.tagName === 'STRONG') labels.push(node);
         node.querySelectorAll('strong').forEach((strong) => {
@@ -119,6 +135,7 @@
         if (!(parent instanceof HTMLParagraphElement)) continue;
         let speech = textAfterStrong(label);
         if (!speech) speech = nextPlainParagraph(parent)?.textContent?.replace(/\s+/g, ' ').trim() || '';
+        if (speech && canonicalSpeech) speech = canonicalSpeech.interview[speechIndex++];
         speech = normalizeSpeech(speech);
         if (!speech || seenSpeech.has(speech)) continue;
         // One canonical label corresponds to one independent speech action. Do
@@ -148,6 +165,7 @@
       const nodes = sectionNodes(reviewHeading);
       const quoteCount = enhanceLegacyQuotes(nodes, 'review');
       if (quoteCount === 0) {
+        let reviewIndex = 0;
         for (const node of nodes) {
           if (node instanceof HTMLParagraphElement) {
             const label = node.firstElementChild;
@@ -160,14 +178,14 @@
             }
             const question = pieces.join('').replace(/^\s*[:：]\s*/, '').trim();
             if (question && !/^(?:回答要点|回答ポイント|要点)\s*[:：]/.test(question)) {
-              enhanceElement(node, 'review', question);
+              enhanceElement(node, 'review', canonicalSpeech?.review[reviewIndex++] ?? question);
             }
             continue;
           }
           if (!(node instanceof HTMLHeadingElement) || !/^H[3-6]$/.test(node.tagName)) continue;
           if (!/^Q\s*\d+/i.test((node.textContent || '').trim())) continue;
           const target = nextPlainParagraph(node);
-          if (target) enhanceElement(target, 'review');
+          if (target) enhanceElement(target, 'review', canonicalSpeech?.review[reviewIndex++]);
         }
       }
     }

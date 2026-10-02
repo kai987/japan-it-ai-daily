@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
 import { getJapaneseArticleTitle } from '../../lib/articleTitles';
+import { readStructuredInterview } from '../../../scripts/structured-interview.mjs';
 
 
 import type { CollectionEntry } from 'astro:content';
@@ -15,6 +16,11 @@ const { report, locale } = Astro.props as { report: CollectionEntry<'daily'> | C
 const numberedTitle = titleWithIssue(report.data.title, report.id);
 const study = getStudyDay(report.id, locale);
 const { Content, headings } = await render(report);
+const canonicalInterview = readStructuredInterview(report.id);
+const canonicalSpeech = canonicalInterview ? {
+  interview: canonicalInterview.interview.flatMap((item) => [item.question, item.answer]),
+  review: canonicalInterview.review.map((item) => item.question),
+} : undefined;
 const normalizeLeadReportTitle = (value: string) => value
   .normalize('NFKC')
   .replace(/^[🇯🇵🇨🇳\s]+/gu, '')
@@ -61,7 +67,7 @@ const tocHeadings = [
 ---
 <BaseLayout locale={locale} title={`${numberedTitle} · Japan IT / AI Daily`} description={report.data.description}>
   <div class="container report-layout" data-top-titles={locale === 'zh' ? JSON.stringify(topTitles) : undefined}>
-    <article class={`prose${duplicateLeadHeading ? ' has-duplicate-lead-title' : ''}`}>
+    <article class={`prose${duplicateLeadHeading ? ' has-duplicate-lead-title' : ''}`} data-canonical-speech={canonicalSpeech ? JSON.stringify(canonicalSpeech) : undefined}>
       <div class="eyebrow">{report.data.date.toLocaleDateString('ja-JP')}</div>
       <h1>{numberedTitle}</h1>
       <p class="meta">{report.data.description}</p>
