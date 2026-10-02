@@ -8,7 +8,7 @@
     "to": "2026-10-02T10:00:00+09:00"
   },
   "createdAt": "2026-10-02T01:03:17.703Z",
-  "updatedAt": "2026-10-02T02:07:58.827Z",
+  "updatedAt": "2026-10-02T02:09:17.752Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -29,7 +29,7 @@
     "audit": "0 vulnerabilities",
     "completedAt": "2026-10-02T01:23:33.000Z"
   },
-  "nextStep": "Audio complete; verify final N1 Pages and live Day 34",
+  "nextStep": "Complete: text, AivisSpeech/R2/real playback and N1 separately verified; resume only if source or manifest inputs change",
   "draftCommit": "710e7f6ebf37d93426e8cd85bb990848ded3b2a6",
   "draftBranch": "draft/daily-2026-10-02",
   "preflightRunId": 36951075823,
@@ -183,17 +183,166 @@
     "r2FullVerificationScope": 5902
   },
   "n1": {
+    "stage": "published",
     "targetDate": "2026-10-02",
-    "stage": "source_saved",
-    "sourcePromotion": {
-      "targetDate": "2026-10-02",
-      "promotionCommit": "9965d2473bf1687f0698695e04c79c6875bda782",
-      "sourceBlobSha": "5247246c2f6847cbe752b11e7cd7fafeacaef658",
-      "sha256": "97e6e13fdd319b870edc0c3788ac36681df8fc7554c087835e8aa2752818f7af",
-      "bytes": 14732,
-      "verifiedAt": "2026-10-02T01:40:11.458Z"
-    }
+    "sourceCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+    "releaseCommit": "590ed4046ed0ab1366954e4809e8b8df7bb02c41",
+    "sourceBlobSha": "5247246c2f6847cbe752b11e7cd7fafeacaef658",
+    "sourceSha256": "97e6e13fdd319b870edc0c3788ac36681df8fc7554c087835e8aa2752818f7af",
+    "snapshotSha256": "00a75ae38759332b747dadf0a4ae5f17107648fa6071199574c8d6b5f12b6de8",
+    "storedSnapshotSha256": "be180e38d25f0a92dc6780a829d2366776deb89817e518b627c327bcc05cc7b3",
+    "pagesRunId": 36954085479,
+    "syncRunId": 36953952709,
+    "issueNumber": 52,
+    "totalDays": 52,
+    "rawVocabulary": 10,
+    "rawGrammar": 1,
+    "displayVocabulary": 20,
+    "displayGrammar": 8,
+    "checks": {
+      "exactPages": true,
+      "postDeploy": true,
+      "originalUnchanged": true,
+      "snapshotExact": true,
+      "liveArtifactBytes": true,
+      "display": {
+        "date": "2026-10-02",
+        "day": 34,
+        "issue": 52,
+        "titleVisible": true,
+        "vocabularyCount": 20,
+        "grammarNew": 1,
+        "grammarReview": 7,
+        "frequencyDenominator": 52,
+        "readingParagraphs": 3
+      }
+    },
+    "verifiedAt": "2026-10-02T02:08:25.945Z",
+    "status": "published",
+    "lastError": null,
+    "nextStep": "Complete: exact original, full snapshot, final Pages and live Day 34 verified"
   },
   "latestVerifiedReleaseCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
-  "latestVerifiedPagesRunId": 36953611048
+  "latestVerifiedPagesRunId": 36953611048,
+  "latestRelease": {
+    "label": "audio",
+    "runId": 36953611048,
+    "releaseCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/36953611048",
+    "artifacts": [
+      {
+        "id": 11205500172,
+        "name": "github-pages",
+        "digest": "sha256:3a89254a473f1971dfbf266e1f80c7a7e9264196101224519f45d5951d56564a"
+      },
+      {
+        "id": 11205455204,
+        "name": "it-study-snapshot",
+        "digest": "sha256:a183063d1a825baf880faa1afa13c89843658cee05adb8f6370f878d7fb6a8eb"
+      }
+    ],
+    "sourceCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+    "targetDate": "2026-10-02",
+    "totalDays": 52,
+    "issueNumber": 52,
+    "grammarLessonDates": [
+      "2026-08-12",
+      "2026-08-13",
+      "2026-08-14",
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19",
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-22",
+      "2026-08-23",
+      "2026-08-24",
+      "2026-08-25",
+      "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-08-31",
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03",
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-19",
+      "2026-09-20",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-27",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30",
+      "2026-10-01",
+      "2026-10-02"
+    ],
+    "fullSnapshotCompared": true,
+    "snapshotHash": "00a75ae38759332b747dadf0a4ae5f17107648fa6071199574c8d6b5f12b6de8",
+    "expected": {
+      "version": 1,
+      "commit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+      "date": "2026-10-02",
+      "snapshotHash": "00a75ae38759332b747dadf0a4ae5f17107648fa6071199574c8d6b5f12b6de8",
+      "pages": [
+        {
+          "path": "daily/2026-10-02/",
+          "sha256": "57d90d4878309f0d7f2afb40ea510e9ad1061498cae5693873f28c599cf64d6e"
+        },
+        {
+          "path": "ja/daily/2026-10-02/",
+          "sha256": "6ede81ba0204f62e55e3ae719f3c726292aae515e4e2b1078d7d71ee014a1829"
+        }
+      ]
+    },
+    "live": {
+      "commit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+      "date": "2026-10-02",
+      "attempt": 1
+    },
+    "verifiedAt": "2026-10-02T02:03:47.578Z",
+    "site": "/tmp/japan-daily-20261002/audio-release-36953611048/site"
+  },
+  "cutoverAudioAudit": [
+    {
+      "targetDate": "2026-09-30",
+      "stage": "playback_verified",
+      "sourceAndManifestHashesUnchanged": true,
+      "audioCommit": "c89a7e6a96b99603d5d33dfa32c2885c94d51f66"
+    },
+    {
+      "targetDate": "2026-10-01",
+      "stage": "playback_verified",
+      "sourceAndManifestHashesUnchanged": true,
+      "audioCommit": "73f2166c500c38b170ef05ed4ed86c1555c100ba"
+    },
+    {
+      "targetDate": "2026-10-02",
+      "stage": "playback_verified",
+      "sourceAndManifestHashesUnchanged": true,
+      "audioCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd"
+    }
+  ]
 }
