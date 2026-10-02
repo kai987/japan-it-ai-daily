@@ -8,7 +8,7 @@
     "to": "2026-10-02T10:00:00+09:00"
   },
   "createdAt": "2026-10-02T01:03:17.703Z",
-  "updatedAt": "2026-10-02T01:39:14.853Z",
+  "updatedAt": "2026-10-02T01:42:25.386Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -29,7 +29,7 @@
     "audit": "0 vulnerabilities",
     "completedAt": "2026-10-02T01:23:33.000Z"
   },
-  "nextStep": "Text verified; required audio pending; independent one-time N1 handoff",
+  "nextStep": "Verify audio release; prepare N1 request from latest verified release",
   "draftCommit": "710e7f6ebf37d93426e8cd85bb990848ded3b2a6",
   "draftBranch": "draft/daily-2026-10-02",
   "preflightRunId": 36951075823,
@@ -161,5 +161,25 @@
     },
     "verifiedAt": "2026-10-02T01:39:14.399Z",
     "site": "/tmp/japan-daily-20261002/text-release-36951655243/site"
+  },
+  "audio": {
+    "stage": "pushed",
+    "audioCommit": "d72213eceaef52796e3bdffc97cbfb5e31081310",
+    "workflowRunIds": {
+      "r2": 36952158349,
+      "pages": 36952158317
+    }
+  },
+  "n1": {
+    "targetDate": "2026-10-02",
+    "stage": "source_saved",
+    "sourcePromotion": {
+      "targetDate": "2026-10-02",
+      "promotionCommit": "9965d2473bf1687f0698695e04c79c6875bda782",
+      "sourceBlobSha": "5247246c2f6847cbe752b11e7cd7fafeacaef658",
+      "sha256": "97e6e13fdd319b870edc0c3788ac36681df8fc7554c087835e8aa2752818f7af",
+      "bytes": 14732,
+      "verifiedAt": "2026-10-02T01:40:11.458Z"
+    }
   }
 }
