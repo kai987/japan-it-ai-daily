@@ -8,7 +8,7 @@
     "to": "2026-10-02T10:00:00+09:00"
   },
   "createdAt": "2026-10-02T01:03:17.703Z",
-  "updatedAt": "2026-10-02T02:03:22.848Z",
+  "updatedAt": "2026-10-02T02:07:58.827Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -29,7 +29,7 @@
     "audit": "0 vulnerabilities",
     "completedAt": "2026-10-02T01:23:33.000Z"
   },
-  "nextStep": "Verify final playback repair release and independently complete N1 request",
+  "nextStep": "Audio complete; verify final N1 Pages and live Day 34",
   "draftCommit": "710e7f6ebf37d93426e8cd85bb990848ded3b2a6",
   "draftBranch": "draft/daily-2026-10-02",
   "preflightRunId": 36951075823,
@@ -163,7 +163,7 @@
     "site": "/tmp/japan-daily-20261002/text-release-36951655243/site"
   },
   "audio": {
-    "stage": "pushed",
+    "stage": "playback_verified",
     "audioCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
     "generatedAudioCommit": "d72213eceaef52796e3bdffc97cbfb5e31081310",
     "playbackRepairCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
@@ -171,13 +171,16 @@
       "r2": 36953672465,
       "pages": 36953611048
     },
-    "error": {
-      "stage": "playback",
-      "type": "canonical_text_mismatch",
-      "message": "Rendered Markdown converts --bare to en dash bare; button payload does not match canonical recording text",
-      "observedAt": "2026-10-02T01:46:00Z"
+    "manifestHashes": {
+      "public/audio/japanese/2026-10-02/manifest.json": "f4e006afb325fe466fe64b02cd660d96b438edb08d4c51a17248cda17aef811f",
+      "public/audio/japanese/2026-10-02/interview-manifest.json": "3bdbdb451102bb144ff7ddec743799a016103ca87d5af7b107071d82c31f28e0"
     },
-    "nextStep": "Verify exact playback-repair revision Pages, R2 full scope, unchanged target MP3 hashes and real playback"
+    "completedAt": "2026-10-02T02:07:04.258Z",
+    "error": null,
+    "newMP3": 54,
+    "referencedMP3": 61,
+    "playbackTests": 10,
+    "r2FullVerificationScope": 5902
   },
   "n1": {
     "targetDate": "2026-10-02",
@@ -190,5 +193,7 @@
       "bytes": 14732,
       "verifiedAt": "2026-10-02T01:40:11.458Z"
     }
-  }
+  },
+  "latestVerifiedReleaseCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+  "latestVerifiedPagesRunId": 36953611048
 }
