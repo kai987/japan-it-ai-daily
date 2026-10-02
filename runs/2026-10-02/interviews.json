@@ -16,7 +16,7 @@
         "2026-10-02-top-2"
       ],
       "question": "障害調査エージェントにOS情報を渡す際、権限をどう設計しますか。",
-      "answer": "調査の種類だけを選ばせ、任意のコマンドは渡しません。この記事はSSM Documentに処理を固定し、Lambdaの権限もそのDocumentに限定しています。READ_ONLYのMCPでreport-batchを特定し、停止は別のアクションへ分けました。Amazon Linuxの人工負荷での結果なので、他のOSや引数の範囲は別途確認します。"
+      "answer": "調査の種類だけを選ばせ、任意のコマンドは渡しません。この記事はSSM Documentに処理を固定し、Lambdaの権限もそのDocumentに限定しています。READ_ONLYのMCPでreport-batchを特定し、停止は別のアクションへ分けました。ただし、Amazon Linuxの人工負荷の実験で、他のOSへの一般化は未検証です。"
     },
     {
       "id": "interview-03",
