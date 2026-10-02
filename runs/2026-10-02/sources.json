@@ -1,0 +1,169 @@
+{
+  "date": "2026-10-02",
+  "sourceCommit": "73f2166c500c38b170ef05ed4ed86c1555c100ba",
+  "sourceWindow": {
+    "start": "2026-10-01T10:00:00+09:00",
+    "end": "2026-10-02T10:00:00+09:00"
+  },
+  "discovery": {
+    "method": "Date/topic web search grouped across all 20 source names; selected originals fetched and read. Not a complete site crawl.",
+    "sourcesConsidered": [
+      "Qiita",
+      "Zenn",
+      "Publickey",
+      "ITmedia AI＋",
+      "＠IT",
+      "CodeZine",
+      "gihyo.jp",
+      "DevelopersIO",
+      "TechFeed",
+      "はてなブックマーク・テクノロジー",
+      "ASCII × AI",
+      "AINOW",
+      "Ledge.ai",
+      "CyberAgent Developers Blog",
+      "LINEヤフー Tech Blog",
+      "Mercari Engineering",
+      "SmartHR Tech Blog",
+      "LayerX Engineering Blog",
+      "DeNA Engineering",
+      "Money Forward Developers Blog"
+    ],
+    "rejected": [
+      {
+        "url": "https://zenn.dev/sean_from_japan/articles/wakeword-ja-synth",
+        "reason": "Oct1 00:09 JST outside locked window"
+      },
+      {
+        "source": "Zenn Expo/React Native experience",
+        "reason": "Oct1 07:41:51 JST outside locked window"
+      },
+      {
+        "source": "ITmedia Gemini Oct1",
+        "reason": "07:16 JST outside locked window"
+      },
+      {
+        "source": "Publickey Vite+ announcement",
+        "reason": "Publication hour not confirmed; underlying announcement Sep28 outside window"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "title": "Claude Code v2.1.286 の主要アップデート - --bare の変更とプラグインの npm ソース制限",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/20261001-cc-updates-v2-1-286/",
+      "publishedAt": "2026-10-01T10:03:20.205Z",
+      "conditions": "作者の一時設定ディレクトリを使った小規模インストール実験。依存関係の取得制限は未実測。",
+      "facts": [
+        [
+          "拒否はインストール時に発生します。",
+          "結果のまとめ",
+          "validate成功とinstall成功は別。"
+        ],
+        [
+          "このハンズオンでは確認していません。",
+          "結果のまとめ末尾",
+          "依存関係のレジストリ限定はCHANGELOGの記述で実験していない。"
+        ]
+      ],
+      "access": "full",
+      "accessNote": "公開本文を取得し読了。リンク先の有料資料や実験の再実行は範囲外。",
+      "capturedAt": "2026-10-02T01:04:34.122928+00:00",
+      "snapshotSha256": "e13889fa9341a32d87c12b061157d54c0ac3c5c68f2281fcb94d8d5291bde0ad"
+    },
+    {
+      "title": "DevOps AgentにMCPサーバーを追加してEC2のOS調査をしてみた",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/devops-agent-mcp-ec2-os-investigation/",
+      "publishedAt": "2026-10-01T05:21:12.241Z",
+      "conditions": "Amazon Linux 2023のEC2、OS内部の情報をCloudWatchへ送らない構成。yes由来の二つの負荷プロセスでのデモ。",
+      "facts": [
+        [
+          "SSM Documentに固定",
+          "MCPの実装",
+          "コマンド本文を固定して公開し、Lambdaの実行ロールもDocumentを限定する。"
+        ],
+        [
+          "今回はLinuxを対象に",
+          "最後に",
+          "Windows等は将来の拡張案で今回の検証ではない。"
+        ]
+      ],
+      "access": "full",
+      "accessNote": "公開本文を取得し読了。リンク先の有料資料や実験の再実行は範囲外。",
+      "capturedAt": "2026-10-02T01:04:34.397951+00:00",
+      "snapshotSha256": "f99e24010080993e15e2f4b55599e9dc8cc81cdcc12e46b3462d65ca97e44b4b"
+    },
+    {
+      "title": "AI に伴走してもらうチームマネジメントの試み",
+      "source": "LayerX Engineering Blog",
+      "url": "https://tech.layerx.co.jp/entry/ai-empowered-team-management",
+      "publishedAt": "2026-10-01T02:00:05Z",
+      "conditions": "2026年4〜9月の13〜20人のチームを一人のマネージャーが見渡す個人アプリの運用経験。因果効果を測った対照実験ではない。",
+      "facts": [
+        [
+          "Obsidian の専用 Vault",
+          "自分アプリをつくる",
+          "専用VaultへMarkdownを集め、ローカルでAIから読む。"
+        ],
+        [
+          "そのまま評価に使ったりすることはありません。",
+          "運用の責任分担表の直後",
+          "AIの提案を本人へ確認する仮説として扱う。"
+        ]
+      ],
+      "access": "full",
+      "accessNote": "公開本文を取得し読了。リンク先の有料資料や実験の再実行は範囲外。",
+      "capturedAt": "2026-10-02T01:04:34.397962+00:00",
+      "snapshotSha256": "d84727477180489020b0635700bf9ccb9d7a77d8b7e4d5a6488fe215ead66f49"
+    },
+    {
+      "title": "TORCSのレースAIを122秒から106秒台へ：区間ごとの切り替え、衝突区間の特定、補正ネットワーク",
+      "source": "Zenn",
+      "url": "https://zenn.dev/sean_from_japan/articles/torcs-racing-ai-106s",
+      "publishedAt": "2026-10-01T12:03:47Z",
+      "conditions": "特定のTORCSコースの調整経験。106.630秒は72評価の最良一回。別PCの固定環境は107.082秒で完全同値ではない。",
+      "facts": [
+        [
+          "71.4 km/h",
+          "急カーブの区間の診断",
+          "衝突する区間だけへ速度の天井を設けた。"
+        ],
+        [
+          "最も速かった1回として選んだ値",
+          "他のPCでは再現できなかった",
+          "106.63秒は最良値で平均ではない。"
+        ]
+      ],
+      "access": "full",
+      "accessNote": "公開本文を取得し読了。リンク先の有料資料や実験の再実行は範囲外。",
+      "capturedAt": "2026-10-02T01:06:00.115396+00:00",
+      "snapshotSha256": "94826c7d2290cedddc0ac4882b70c5130115f01e1c18efa4a73e613c40af60ab"
+    },
+    {
+      "title": "vCPUを減らせばVMが速くなる！？ Linux 7.4でマージが期待される“Steal Governor”",
+      "source": "gihyo.jp",
+      "url": "https://gihyo.jp/article/2026/10/daily-linux-261001",
+      "publishedAt": "2026-10-01T11:41:00+09:00",
+      "conditions": "tipツリーへキュー済みでLinux 7.4への提出見込み。ロック依存の強い負荷での説明であり、記事内に測定環境と改善率の一覧はない。",
+      "facts": [
+        [
+          "Preferred CPU",
+          "Steal Governorの仕組み",
+          "steal timeが長いと優先して使うvCPUを動的に減らす。"
+        ],
+        [
+          "他のVMと直接通信するわけではない。",
+          "協調展開の説明",
+          "各VMの自身のsteal timeに基づく調整。"
+        ]
+      ],
+      "access": "full",
+      "accessNote": "公開本文を取得し読了。リンク先の有料資料や実験の再実行は範囲外。",
+      "capturedAt": "2026-10-02T01:05:41.995219+00:00",
+      "snapshotSha256": "2642917ff6bc4427ff3ee54ace6069c5d6081bfb09663ff8cd19fad3cb148005"
+    }
+  ],
+  "previousTopExcluded": true
+}
