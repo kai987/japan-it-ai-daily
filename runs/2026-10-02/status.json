@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-02",
-  "stage": "request_submitted",
+  "stage": "publisher_running",
   "sourceCommit": "aa60c9e72903da7cbb6d6cb584bdddc4f24c3d22",
   "sourceWindow": {
     "from": "2026-10-01T10:00:00+09:00",
     "to": "2026-10-02T10:00:00+09:00"
   },
   "createdAt": "2026-10-02T01:03:17.703Z",
-  "updatedAt": "2026-10-02T01:33:16.873Z",
+  "updatedAt": "2026-10-02T01:34:29.856Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -29,7 +29,7 @@
     "audit": "0 vulnerabilities",
     "completedAt": "2026-10-02T01:23:33.000Z"
   },
-  "nextStep": "Existing maintenance R2 full verifier must finish before request submission; preserve locked target and source window",
+  "nextStep": "Verify publisher promotion and final exact main Pages/artifacts/live bytes",
   "draftCommit": "710e7f6ebf37d93426e8cd85bb990848ded3b2a6",
   "draftBranch": "draft/daily-2026-10-02",
   "preflightRunId": 36951075823,
@@ -57,5 +57,6 @@
   },
   "requestCommit": "9d78f51622e87a48c2fbf9840f30ab87b58fdd88",
   "requestBlob": "60b573f21708c888f070dab9b634d1a446c27e51",
-  "submittedAt": "2026-10-02T01:33:16.492Z"
+  "submittedAt": "2026-10-02T01:33:16.492Z",
+  "publisherRunId": 36951484142
 }
