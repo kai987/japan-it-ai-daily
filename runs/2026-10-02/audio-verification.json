@@ -1,0 +1,355 @@
+{
+  "verificationEvidence": {
+    "text": {
+      "label": "text",
+      "runId": 36951655243,
+      "releaseCommit": "7d0bfacc090a2778de6db37abfd7cebb405c97b7",
+      "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/36951655243",
+      "artifacts": [
+        {
+          "id": 11204222231,
+          "name": "it-study-snapshot",
+          "digest": "sha256:e4fba74a82d5338962432b99a87dc07b30f63b24bc93ddbc2da2275c4abd6dcb"
+        },
+        {
+          "id": 11203832714,
+          "name": "github-pages",
+          "digest": "sha256:8db754fb2e6145931e9e1b4a3d95c7a9491eda3d8e182834a0f27d6dcc522234"
+        }
+      ],
+      "sourceCommit": "7d0bfacc090a2778de6db37abfd7cebb405c97b7",
+      "targetDate": "2026-10-02",
+      "totalDays": 52,
+      "issueNumber": 52,
+      "grammarLessonDates": [
+        "2026-08-12",
+        "2026-08-13",
+        "2026-08-14",
+        "2026-08-15",
+        "2026-08-16",
+        "2026-08-17",
+        "2026-08-18",
+        "2026-08-19",
+        "2026-08-20",
+        "2026-08-21",
+        "2026-08-22",
+        "2026-08-23",
+        "2026-08-24",
+        "2026-08-25",
+        "2026-08-26",
+        "2026-08-27",
+        "2026-08-28",
+        "2026-08-29",
+        "2026-08-30",
+        "2026-08-31",
+        "2026-09-01",
+        "2026-09-02",
+        "2026-09-03",
+        "2026-09-04",
+        "2026-09-05",
+        "2026-09-06",
+        "2026-09-07",
+        "2026-09-08",
+        "2026-09-09",
+        "2026-09-10",
+        "2026-09-11",
+        "2026-09-12",
+        "2026-09-13",
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18",
+        "2026-09-19",
+        "2026-09-20",
+        "2026-09-21",
+        "2026-09-22",
+        "2026-09-23",
+        "2026-09-24",
+        "2026-09-25",
+        "2026-09-26",
+        "2026-09-27",
+        "2026-09-28",
+        "2026-09-29",
+        "2026-09-30",
+        "2026-10-01",
+        "2026-10-02"
+      ],
+      "fullSnapshotCompared": true,
+      "snapshotHash": "bc21553a2e090271672deb125f8eb9666a1691db97f8183a229aaca9b310cce2",
+      "expected": {
+        "version": 1,
+        "commit": "7d0bfacc090a2778de6db37abfd7cebb405c97b7",
+        "date": "2026-10-02",
+        "snapshotHash": "bc21553a2e090271672deb125f8eb9666a1691db97f8183a229aaca9b310cce2",
+        "pages": [
+          {
+            "path": "daily/2026-10-02/",
+            "sha256": "5d753045edd968a0c3c739380061cc4ca5cb4c5fbf900be140e1d10b20c8270b"
+          },
+          {
+            "path": "ja/daily/2026-10-02/",
+            "sha256": "4a9d8bb366c1eee0abe769ac9704813005b4356ea1903a848155b22919838afc"
+          }
+        ]
+      },
+      "live": {
+        "commit": "7d0bfacc090a2778de6db37abfd7cebb405c97b7",
+        "date": "2026-10-02",
+        "attempt": 1
+      },
+      "verifiedAt": "2026-10-02T01:39:14.399Z",
+      "site": "/tmp/japan-daily-20261002/text-release-36951655243/site"
+    },
+    "audioRelease": {
+      "label": "audio",
+      "runId": 36953611048,
+      "releaseCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+      "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/36953611048",
+      "artifacts": [
+        {
+          "id": 11205500172,
+          "name": "github-pages",
+          "digest": "sha256:3a89254a473f1971dfbf266e1f80c7a7e9264196101224519f45d5951d56564a"
+        },
+        {
+          "id": 11205455204,
+          "name": "it-study-snapshot",
+          "digest": "sha256:a183063d1a825baf880faa1afa13c89843658cee05adb8f6370f878d7fb6a8eb"
+        }
+      ],
+      "sourceCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+      "targetDate": "2026-10-02",
+      "totalDays": 52,
+      "issueNumber": 52,
+      "grammarLessonDates": [
+        "2026-08-12",
+        "2026-08-13",
+        "2026-08-14",
+        "2026-08-15",
+        "2026-08-16",
+        "2026-08-17",
+        "2026-08-18",
+        "2026-08-19",
+        "2026-08-20",
+        "2026-08-21",
+        "2026-08-22",
+        "2026-08-23",
+        "2026-08-24",
+        "2026-08-25",
+        "2026-08-26",
+        "2026-08-27",
+        "2026-08-28",
+        "2026-08-29",
+        "2026-08-30",
+        "2026-08-31",
+        "2026-09-01",
+        "2026-09-02",
+        "2026-09-03",
+        "2026-09-04",
+        "2026-09-05",
+        "2026-09-06",
+        "2026-09-07",
+        "2026-09-08",
+        "2026-09-09",
+        "2026-09-10",
+        "2026-09-11",
+        "2026-09-12",
+        "2026-09-13",
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18",
+        "2026-09-19",
+        "2026-09-20",
+        "2026-09-21",
+        "2026-09-22",
+        "2026-09-23",
+        "2026-09-24",
+        "2026-09-25",
+        "2026-09-26",
+        "2026-09-27",
+        "2026-09-28",
+        "2026-09-29",
+        "2026-09-30",
+        "2026-10-01",
+        "2026-10-02"
+      ],
+      "fullSnapshotCompared": true,
+      "snapshotHash": "00a75ae38759332b747dadf0a4ae5f17107648fa6071199574c8d6b5f12b6de8",
+      "expected": {
+        "version": 1,
+        "commit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+        "date": "2026-10-02",
+        "snapshotHash": "00a75ae38759332b747dadf0a4ae5f17107648fa6071199574c8d6b5f12b6de8",
+        "pages": [
+          {
+            "path": "daily/2026-10-02/",
+            "sha256": "57d90d4878309f0d7f2afb40ea510e9ad1061498cae5693873f28c599cf64d6e"
+          },
+          {
+            "path": "ja/daily/2026-10-02/",
+            "sha256": "6ede81ba0204f62e55e3ae719f3c726292aae515e4e2b1078d7d71ee014a1829"
+          }
+        ]
+      },
+      "live": {
+        "commit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+        "date": "2026-10-02",
+        "attempt": 1
+      },
+      "verifiedAt": "2026-10-02T02:03:47.578Z",
+      "site": "/tmp/japan-daily-20261002/audio-release-36953611048/site"
+    },
+    "playback": [
+      {
+        "locale": "ja",
+        "kind": "daily",
+        "selector": "#interview-answer-01 .report-speech-button",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-02/interview-answer-01--ff13714d03eeb237fe7ee184952287ab98394b131f9fe50fb2c9543de0027cd1.mp3",
+        "duration": 23.764333,
+        "currentTime": 0.159805,
+        "error": null,
+        "paused": false,
+        "endTime": 0.418298
+      },
+      {
+        "locale": "ja",
+        "kind": "japanese",
+        "selector": ".speech-button[data-speech-kind=\"word\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-02/vocab-01--d07a9897112f2e18490160e109286b00564131d7d3e97d982324a6b1191c5eaf.mp3",
+        "duration": 0.999083,
+        "currentTime": 0.167491,
+        "error": null,
+        "paused": false,
+        "endTime": 0.420355
+      },
+      {
+        "locale": "ja",
+        "kind": "japanese",
+        "selector": ".speech-button[data-speech-kind=\"example\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-02/example-01--74c7980cec2ae9b3acc83fa3d3c6a04f990f21eb272d51537093fedb0ebcc11b.mp3",
+        "duration": 3.493375,
+        "currentTime": 0.157289,
+        "error": null,
+        "paused": false,
+        "endTime": 0.413742
+      },
+      {
+        "locale": "ja",
+        "kind": "japanese",
+        "selector": ".speech-button[data-speech-kind=\"grammar-example\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-02/grammar-example-01--9f7d88f5ffbe76db55cf701309d3f1dd9f717e5f5c001150162976963add7de3.mp3",
+        "duration": 4.234583,
+        "currentTime": 0.154914,
+        "error": null,
+        "paused": false,
+        "endTime": 0.408801
+      },
+      {
+        "locale": "ja",
+        "kind": "japanese",
+        "selector": ".grammar-card[data-study-kind=\"review\"] .speech-button[data-speech-kind=\"grammar-example\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-07--c3539e1ac57836054946ffdf28d379ea58f8d696fe4768eec408e4a57f8dedee.mp3",
+        "duration": 4.549917,
+        "currentTime": 0.168008,
+        "error": null,
+        "paused": false,
+        "endTime": 0.424356
+      },
+      {
+        "locale": "zh",
+        "kind": "daily",
+        "selector": "#interview-answer-01 .report-speech-button",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-02/interview-answer-01--ff13714d03eeb237fe7ee184952287ab98394b131f9fe50fb2c9543de0027cd1.mp3",
+        "duration": 23.764333,
+        "currentTime": 0.163846,
+        "error": null,
+        "paused": false,
+        "endTime": 0.417549
+      },
+      {
+        "locale": "zh",
+        "kind": "japanese",
+        "selector": ".speech-button[data-speech-kind=\"word\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-02/vocab-01--d07a9897112f2e18490160e109286b00564131d7d3e97d982324a6b1191c5eaf.mp3",
+        "duration": 0.999083,
+        "currentTime": 0.164877,
+        "error": null,
+        "paused": false,
+        "endTime": 0.419093
+      },
+      {
+        "locale": "zh",
+        "kind": "japanese",
+        "selector": ".speech-button[data-speech-kind=\"example\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-02/example-01--74c7980cec2ae9b3acc83fa3d3c6a04f990f21eb272d51537093fedb0ebcc11b.mp3",
+        "duration": 3.493375,
+        "currentTime": 0.158889,
+        "error": null,
+        "paused": false,
+        "endTime": 0.413302
+      },
+      {
+        "locale": "zh",
+        "kind": "japanese",
+        "selector": ".speech-button[data-speech-kind=\"grammar-example\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-02/grammar-example-01--9f7d88f5ffbe76db55cf701309d3f1dd9f717e5f5c001150162976963add7de3.mp3",
+        "duration": 4.234583,
+        "currentTime": 0.158469,
+        "error": null,
+        "paused": false,
+        "endTime": 0.410806
+      },
+      {
+        "locale": "zh",
+        "kind": "japanese",
+        "selector": ".grammar-card[data-study-kind=\"review\"] .speech-button[data-speech-kind=\"grammar-example\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-07--c3539e1ac57836054946ffdf28d379ea58f8d696fe4768eec408e4a57f8dedee.mp3",
+        "duration": 4.549917,
+        "currentTime": 0.164769,
+        "error": null,
+        "paused": false,
+        "endTime": 0.417531
+      }
+    ],
+    "r2": {
+      "commit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+      "baseUrl": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev",
+      "workflowRunId": 36953672465,
+      "referencedRecordings": 61,
+      "workflowScope": {
+        "scope": "full",
+        "count": 5902,
+        "targetReferencedCount": 61
+      },
+      "manifestChecks": [
+        {
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-02/manifest.json",
+          "sha256": "f4e006afb325fe466fe64b02cd660d96b438edb08d4c51a17248cda17aef811f",
+          "bytes": 16009
+        },
+        {
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-02/interview-manifest.json",
+          "sha256": "3bdbdb451102bb144ff7ddec743799a016103ca87d5af7b107071d82c31f28e0",
+          "bytes": 7727
+        }
+      ],
+      "verifiedAt": "2026-10-02T02:07:04.196Z"
+    },
+    "remoteAudio": {
+      "count": 61,
+      "hashAlgorithm": "SHA-256",
+      "changedFileScope": [
+        "public/audio/japanese/2026-10-02/manifest.json",
+        "public/audio/japanese/2026-10-02/interview-manifest.json"
+      ],
+      "output": "Audio integrity: 52/52 generated dates, bilingual text mappings and 2732 referenced local recordings verified; full local inventory 2951 MP3s; 0 vocabulary cards explicitly use browser Japanese speech (not recordings).\nRemote audio scope: changed files and manifest references; 61 recording(s).\nVerified 61 deployed MP3 SHA-256 hashes.",
+      "verifiedAt": "2026-10-02T02:07:04.257Z"
+    }
+  },
+  "error": null,
+  "completedAt": "2026-10-02T02:07:04.258Z",
+  "nextStep": "Complete: unchanged source and manifest inputs require no synthesis or upload"
+}
