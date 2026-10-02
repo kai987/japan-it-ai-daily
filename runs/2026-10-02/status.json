@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-02",
-  "stage": "draft_generated",
+  "stage": "draft_pushed",
   "sourceCommit": "aa60c9e72903da7cbb6d6cb584bdddc4f24c3d22",
   "sourceWindow": {
     "from": "2026-10-01T10:00:00+09:00",
     "to": "2026-10-02T10:00:00+09:00"
   },
   "createdAt": "2026-10-02T01:03:17.703Z",
-  "updatedAt": "2026-10-02T01:24:05.123Z",
+  "updatedAt": "2026-10-02T01:28:23.734Z",
   "completedArtifacts": [],
   "lastError": null,
   "maintenance": {
@@ -22,5 +22,7 @@
     "audit": "0 vulnerabilities",
     "completedAt": "2026-10-02T01:23:33.000Z"
   },
-  "nextStep": "Verify maintenance Pages; exact complete-main draft preflight then publisher"
+  "nextStep": "Await exact-commit deploy.yml draft CI",
+  "draftCommit": "710e7f6ebf37d93426e8cd85bb990848ded3b2a6",
+  "draftBranch": "draft/daily-2026-10-02"
 }
