@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-02",
+  "generatedAt": "2026-10-02T01:40:53.023Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "開発エージェントを更新するとき、互換性をどのように確かめますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "74648d93037546d812e2008bb65e48d1dcda073e65e445fe23605c3aba1dc3a4",
+      "audioSha256": "3367f81a21456418b992fb50474ed4fbff94e014b50e3f7615204b8d4e056e50",
+      "durationSeconds": 5.131
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "設定の検証と実際の動作を分けます。Claude Codeでは、claude plugin validateが通ってもnpmのfile:やgithub:はinstallで拒否され、相対パスは成功しました。--bareのMCP接続は明示指定なので、配布方法と起動条件を試します。依存関係の取得制限は記事では未検証です。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "594d5f7eb647041c03e3c85c30a42db58634535293f5197241e687bb5c936ba7",
+      "audioSha256": "ff13714d03eeb237fe7ee184952287ab98394b131f9fe50fb2c9543de0027cd1",
+      "durationSeconds": 23.764,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "障害調査エージェントにOS情報を渡す際、権限をどう設計しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "bca97d2283650021806dcb9f7ab4fe3752332da873e35de4710685d7d4eb9fe0",
+      "audioSha256": "1f460868ebfd8982e2384269822b3e45d82591418718332681c9a0459f0827d2",
+      "durationSeconds": 5.711
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "調査の種類だけを選ばせ、任意のコマンドは渡しません。この記事はSSM Documentに処理を固定し、Lambdaの権限もそのDocumentに限定しています。READ_ONLYのMCPでreport-batchを特定し、停止は別のアクションへ分けました。ただし、Amazon Linuxの人工負荷の実験で、他のOSへの一般化は未検証です。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "bc34ba0764bf1ba91b8899f7aeb744d637238a53b2073342091d40fdf6895706",
+      "audioSha256": "5de49c3a9d423bf62e4b6874149aaf1d0b10589867c3ca461a4ac6e2bed75a5f",
+      "durationSeconds": 24.054,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "チームの活動をAIで把握するとき、どこまで任せますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "21d73b18136eb6e3cc66a3b59f26bf66829b1d8cd5dff8778e34af324b5b6ac2",
+      "audioSha256": "af304596e516c2dbaff05888da8f1177d7e246bdef70472fb8c42bfa6c91928e",
+      "durationSeconds": 4.725
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "情報の整理は任せても、人の状態を断定する判断は分けます。LayerXはObsidianのVaultへ活動を集め、Claude Codeで1on1の話題候補を作っています。ただし、機密の会話や収集失敗による欠落があります。称賛や負荷の兆候は本人に確かめる仮説とし、評価へ直結させません。組織利用には閲覧権限も必要です。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "e4604ce3b6c2bc282000906c6d2d76c71df8392e7199a8632fd45168f1bd8ac0",
+      "audioSha256": "1594020430fb83409ca999ab5a880ebd98e6ec927946aa24c07d09c4c041f2a0",
+      "durationSeconds": 26.02,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "機械学習の性能改善を説明するとき、再現性をどう確かめますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "18e911dbad345f8c7495af8965f907f6ba3c713e278bc837bd9f99cca3658195",
+      "audioSha256": "d4b1d1b4af13a0a04629cde9c265a633dc01d8c44c91b836efc6bcb0da4c746f",
+      "durationSeconds": 5.792
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "最良値と再現結果を分けて示します。TORCSはCMA-ESの制御へ、0.2倍に制限した残差ネットワークを加えています。106.63秒は72評価の最速一回です。重みがGitの対象外で他のPCでは再現できず、Dockerで固定した後は107.08秒でした。同じ値ではないため、重みと設定を保存し、複数走行のばらつきも確かめます。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "ad58a90a1a7b5b7c5c514fbc2d14a0a6e0132ef614ef28e76d364251eed93855",
+      "audioSha256": "4ca7332b9802d87777e7231ad0759242f0262cd4d0e9b506519e384910fd4ec1",
+      "durationSeconds": 28.13,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "仮想マシンのCPU数を増やしても速くならない場合、何を調べますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "7c17258010e3799008123bc30247ce98f569aaa64950207fed0213f008b31892",
+      "audioSha256": "8638ebb9cd784943963dbf75038b6b847bcfb71fc89854d46e80a3398dcd3840",
+      "durationSeconds": 5.653
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "CPUの数と処理量を分けて見ます。Steal Governorはsteal timeを見てPreferred CPUを減らし、停止したロック保持側を待つ処理を減らす仕組みです。VMの契約CPU数を変える操作ではありません。ただし独立したCPU負荷には不利になり得ます。記事時点ではtipへ入った段階なので、対象kernelと負荷別の結果を確認します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "19f85df7e8f50224d4c04e8a483278b750ee51fca03008bf3e25d4bfa14e3a71",
+      "audioSha256": "074fe2685e0d3f23af2d523a7e910c015a073dd6a5e4ee6e8f9a6dd299414f11",
+      "durationSeconds": 25.332,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "検証の成功と実行の成功をどう切り分けますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "31c6ddc65cba9714ee043e0143d7109d0f0d6321de4ea0172cfe070d9ac46c35",
+      "audioSha256": "ad8cc290f02c75614291da928eb597baf23b179e9546c5dd160a157ebfe0b540",
+      "durationSeconds": 4.19
+    },
+    {
+      "index": 2,
+      "text": "改善を示す数字を説明するとき、何を添えますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "c78f67364bea870e5e716c85d08d76a1b65c90a008f692071aed6bd40770c76f",
+      "audioSha256": "8ff4de15c3c0a2372b4d9c2a345b6288154d8a4ee51c531eacd55d1f786329a9",
+      "durationSeconds": 4.48
+    },
+    {
+      "index": 3,
+      "text": "CPU使用率と処理の進み方をどう調べますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "cb3c0058bbeef742ac34471f3c1a868a06e2ad5f8e1abc2bbe3724a63c7f3a8c",
+      "audioSha256": "d27bf2fe8aa7d89e153b6a74bb54a487207577f1bdda9a7fa18e34b7763a4024",
+      "durationSeconds": 4.492
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-02T01:40:53.754Z"
+}
