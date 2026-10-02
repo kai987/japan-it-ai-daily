@@ -8,7 +8,7 @@
     "to": "2026-10-02T10:00:00+09:00"
   },
   "createdAt": "2026-10-02T01:03:17.703Z",
-  "updatedAt": "2026-10-02T01:42:25.386Z",
+  "updatedAt": "2026-10-02T02:03:22.848Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -29,7 +29,7 @@
     "audit": "0 vulnerabilities",
     "completedAt": "2026-10-02T01:23:33.000Z"
   },
-  "nextStep": "Verify audio release; prepare N1 request from latest verified release",
+  "nextStep": "Verify final playback repair release and independently complete N1 request",
   "draftCommit": "710e7f6ebf37d93426e8cd85bb990848ded3b2a6",
   "draftBranch": "draft/daily-2026-10-02",
   "preflightRunId": 36951075823,
@@ -164,11 +164,20 @@
   },
   "audio": {
     "stage": "pushed",
-    "audioCommit": "d72213eceaef52796e3bdffc97cbfb5e31081310",
+    "audioCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+    "generatedAudioCommit": "d72213eceaef52796e3bdffc97cbfb5e31081310",
+    "playbackRepairCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
     "workflowRunIds": {
-      "r2": 36952158349,
-      "pages": 36952158317
-    }
+      "r2": 36953672465,
+      "pages": 36953611048
+    },
+    "error": {
+      "stage": "playback",
+      "type": "canonical_text_mismatch",
+      "message": "Rendered Markdown converts --bare to en dash bare; button payload does not match canonical recording text",
+      "observedAt": "2026-10-02T01:46:00Z"
+    },
+    "nextStep": "Verify exact playback-repair revision Pages, R2 full scope, unchanged target MP3 hashes and real playback"
   },
   "n1": {
     "targetDate": "2026-10-02",
