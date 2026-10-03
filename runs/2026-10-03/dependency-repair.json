@@ -1,0 +1,19 @@
+{
+  "commit": "dddd7ef20d6f3f3fadc1a9232ca24697bc6282f4",
+  "parent": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+  "paths": [
+    "README.md",
+    "package-lock.json",
+    "package.json",
+    "tests/security/http-cache-semantics.test.mjs",
+    "vendor/http-cache-semantics/LICENSE",
+    "vendor/http-cache-semantics/README.md",
+    "vendor/http-cache-semantics/index.js",
+    "vendor/http-cache-semantics/package.json"
+  ],
+  "advisory": "GHSA-ch52-4w7c-c8xp",
+  "forkIdentity": "http-cache-semantics@4.2.0",
+  "upstreamReleaseAvailable": false,
+  "securityRegressionTests": 46,
+  "completedAt": "2026-10-03T05:47:59.991Z"
+}
