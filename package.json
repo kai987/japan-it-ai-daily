@@ -14,7 +14,7 @@
     "bilingual:check-interview": "node scripts/sync-bilingual-interview.mjs --check",
     "quality:check": "node scripts/validate-daily-quality.mjs",
     "quality:check:latest": "node scripts/validate-daily-quality.mjs --date=$(date +%F)",
-    "audio:check": "node --check scripts/audio-cache.mjs && node --check scripts/learning-audio-plan.mjs && node --check scripts/generate-japanese-audio.mjs && node --check scripts/generate-interview-audio.mjs && node --check scripts/validate-interview-audio-duration.mjs && node --check scripts/strip-dist-audio.mjs && node --check scripts/validate-daily-quality.mjs && node --check scripts/audit-r2-audio-orphans.mjs && node --check scripts/audio-file-versions.mjs && node --check scripts/backfill-audio-versions.mjs && node --check scripts/audio-manifest-state.mjs && node --check scripts/audio-publication.mjs && node --check scripts/stage-audio-publication.mjs && node --check scripts/remote-audio.mjs && node --check scripts/verify-audio-integrity.mjs",
+    "audio:check": "node --check scripts/audio-cache.mjs && node --check scripts/learning-audio-plan.mjs && node --check scripts/generate-japanese-audio.mjs && node --check scripts/generate-interview-audio.mjs && node --check scripts/validate-interview-audio-duration.mjs && node --check scripts/strip-dist-audio.mjs && node --check scripts/validate-daily-quality.mjs && node --check scripts/audit-r2-audio-orphans.mjs && node --check scripts/audio-file-versions.mjs && node --check scripts/backfill-audio-versions.mjs && node --check scripts/audio-manifest-state.mjs && node --check scripts/audio-publication.mjs && node --check scripts/stage-audio-publication.mjs && node --check scripts/remote-audio.mjs && node --check scripts/verify-audio-integrity.mjs && npm run daily:runtime:check",
     "audio:strip-dist": "node scripts/strip-dist-audio.mjs",
     "audio:duration:check": "node scripts/validate-interview-audio-duration.mjs --from 2026-08-12",
     "audio:duration:write:latest": "node scripts/validate-interview-audio-duration.mjs --latest --write",
@@ -41,6 +41,8 @@
     "interview:render": "node scripts/render-interview-sections.mjs",
     "deployment:prepare": "node scripts/verify-deployment.mjs --prepare dist",
     "deployment:verify": "node scripts/verify-deployment.mjs",
+    "daily:resume": "node scripts/daily-resume.mjs",
+    "daily:runtime:check": "node --check scripts/daily-resume.mjs && node --check scripts/local-publication-lease.mjs && node --check scripts/verify-publisher-origin.mjs && node --check scripts/r2-sync-baseline.mjs && node --check scripts/workflow-success-baseline.mjs",
     "test:browser:speech-smoke": "playwright test tests/browser/speech-smoke.spec.ts"
   },
   "dependencies": {

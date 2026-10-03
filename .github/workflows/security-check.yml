@@ -12,6 +12,7 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     env:
       PUBLIC_AUDIO_BASE_URL: ${{ vars.PUBLIC_AUDIO_BASE_URL || 'https://pub-7561025e67be4103ac4bafb331864381.r2.dev' }}
     steps:
@@ -28,6 +29,8 @@ jobs:
         run: npm ci
       - name: Audit dependencies
         run: npm audit --audit-level=high
+      - name: Verify publication recovery
+        run: node --test tests/publication/*.node.mjs
       - name: Type check
         run: npm run check
       - name: Verify content integrity
@@ -42,6 +45,10 @@ jobs:
         run: npm run audio:check
       - name: Verify recorded audio URL versions
         run: npm run audio:versions:check
+      - name: Install audio regression tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
       - name: Run tests
         run: npm test
       - name: Build

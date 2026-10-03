@@ -10,6 +10,8 @@ The original task delegates its full contract to this repository. Its old `token
 
 ## Required reading on every authoring run
 
+Use the [fixed local recovery commands](RECOVERY_COMMANDS.md) for observation planning, explicit-date local audio and versioned lease operations. The full contracts below remain the authority for authoring and remote publication.
+
 1. `AGENTS.md`, this file, `docs/automation/NEWS_SOURCES.md`, `docs/daily-publication/README.md`, `docs/automation/README.md`, `docs/daily-publication/LEASE_V2.md` and `lease.schema.json`.
 2. `docs/DAILY_CONTENT_QUALITY_RULES.md`, `docs/daily-quality-policy.json`, `src/content.config.ts` and `scripts/validate-daily-quality.mjs`.
 3. `docs/evidence/README.md`, `scripts/source-evidence.mjs`, `scripts/validate-source-evidence.mjs`.
