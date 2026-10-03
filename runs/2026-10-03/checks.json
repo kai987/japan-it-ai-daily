@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-03",
+  "checkedBaseCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+  "worktree": "six uncommitted target files",
+  "checks": [
+    {
+      "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
+      "startedAt": "2026-10-03T01:22:12.768Z",
+      "completedAt": "2026-10-03T01:22:13.087Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/00-tests-publication-recovery-node-mjs.log"
+    },
+    {
+      "command": "npm audit --audit-level=high",
+      "startedAt": "2026-10-03T01:22:14.807Z",
+      "completedAt": "2026-10-03T01:22:15.663Z",
+      "exitCode": 1,
+      "log": "/tmp/japan-daily-20261003/logs/01---audit-level-high.log"
+    },
+    {
+      "command": "npm run check",
+      "startedAt": "2026-10-03T01:23:20.474Z",
+      "completedAt": "2026-10-03T01:23:27.495Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/02-check.log"
+    },
+    {
+      "command": "npm run content:integrity:check",
+      "startedAt": "2026-10-03T01:23:29.149Z",
+      "completedAt": "2026-10-03T01:23:31.773Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/03-content-integrity-check.log"
+    },
+    {
+      "command": "npm run evidence:check",
+      "startedAt": "2026-10-03T01:23:33.457Z",
+      "completedAt": "2026-10-03T01:23:33.697Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/04-evidence-check.log"
+    },
+    {
+      "command": "npm run evidence:pilot",
+      "startedAt": "2026-10-03T01:23:35.531Z",
+      "completedAt": "2026-10-03T01:23:35.713Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/05-evidence-pilot.log"
+    },
+    {
+      "command": "npm run bilingual:check-interview",
+      "startedAt": "2026-10-03T01:23:37.469Z",
+      "completedAt": "2026-10-03T01:23:37.651Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/06-bilingual-check-interview.log"
+    },
+    {
+      "command": "npm run quality:check",
+      "startedAt": "2026-10-03T01:23:39.247Z",
+      "completedAt": "2026-10-03T01:23:39.586Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/07-quality-check.log"
+    },
+    {
+      "command": "npm run audio:check",
+      "startedAt": "2026-10-03T01:23:41.547Z",
+      "completedAt": "2026-10-03T01:23:42.139Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/08-audio-check.log"
+    },
+    {
+      "command": "npm run audio:versions:check",
+      "startedAt": "2026-10-03T01:23:43.919Z",
+      "completedAt": "2026-10-03T01:23:44.696Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/09-audio-versions-check.log"
+    },
+    {
+      "command": "npm run test",
+      "startedAt": "2026-10-03T01:23:46.518Z",
+      "completedAt": "2026-10-03T01:23:49.694Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/10-test.log"
+    },
+    {
+      "command": "npm run build",
+      "startedAt": "2026-10-03T01:23:51.469Z",
+      "completedAt": "2026-10-03T01:23:56.373Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/11-build.log"
+    },
+    {
+      "command": "npm run test:browser:speech-smoke",
+      "startedAt": "2026-10-03T01:23:57.941Z",
+      "completedAt": "2026-10-03T01:24:01.047Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/12-test-browser-speech-smoke.log"
+    },
+    {
+      "command": "npm run test:browser",
+      "startedAt": "2026-10-03T01:24:02.774Z",
+      "completedAt": "2026-10-03T01:24:37.962Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/13-test-browser.log"
+    },
+    {
+      "command": "npm run security:check",
+      "startedAt": "2026-10-03T01:24:39.876Z",
+      "completedAt": "2026-10-03T01:24:40.217Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/14-security-check.log"
+    },
+    {
+      "command": "npm run evidence:check -- --date 2026-10-03 --source-dir /tmp/japan-daily-20261003/originals",
+      "startedAt": "2026-10-03T01:24:41.901Z",
+      "completedAt": "2026-10-03T01:24:42.091Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261003/logs/15-evidence-check.log"
+    }
+  ]
+}
