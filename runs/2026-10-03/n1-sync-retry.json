@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-10-03",
+  "day": 35,
+  "status": "waiting_upstream",
+  "stage": "waiting_upstream",
+  "sourceSaved": true,
+  "sourceVerification": {
+    "targetDate": "2026-10-03",
+    "day": 35,
+    "sourceMainCommit": "703d703fbe8c5573c01c29ec1e2e0e5201022422",
+    "sourceBlobSha": "cb46ceb581ec4f3749cb7330d6bfd7e13061225d",
+    "sourceSha256": "a233e58002e5ca0fa56ee53fba876661f5c425349f9f8184343bf1701aceac7e",
+    "sourceBytes": 14684,
+    "sourceOutboxBlobSha": "037bcabae300ef9ef5e6c035cb44508bb3d035ac",
+    "sourceGeneratedAtJST": "2026-10-03T09:05:39+09:00",
+    "exactOriginalOutboxMatch": true,
+    "verifiedAt": "2026-10-03T05:24:45.769Z"
+  },
+  "observedUpstreamMain": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+  "missingUpstreamPaths": [
+    "src/content/daily/2026-10-03.md",
+    "src/content/daily-ja/2026-10-03.md",
+    "src/content/japanese/2026-10-03.md",
+    "src/content/japanese-ja/2026-10-03.md",
+    "src/content/evidence/2026-10-03.json",
+    "src/data/interviews/2026-10-03.json"
+  ],
+  "observedSnapshot": {
+    "sourceCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+    "lastDate": "2026-10-02",
+    "totalDays": 52,
+    "targetDatePresent": false
+  },
+  "currentRequestDate": "2026-10-02",
+  "requestSubmitted": false,
+  "lastError": {
+    "phase": "upstream_publication_prerequisite",
+    "type": "unpublished_target_date",
+    "message": "10/3 IT report is absent from main and the source-bound published snapshot. Its local dependency audit still fails with GHSA-ch52-4w7c-c8xp. No complete source-bound N1 request can be submitted.",
+    "auditCommand": "npm audit --audit-level=high",
+    "auditExitCode": 1,
+    "auditAdvisory": "GHSA-ch52-4w7c-c8xp",
+    "observedAt": "2026-10-03T05:24:45.769Z"
+  },
+  "nextStep": "After verified 2026-10-03 IT main publication, map this exact original and C-4 from the same verified full-history snapshot, validate the complete request, submit through sync-n1-daily.yml, then verify exact N1 Pages/live target.",
+  "updatedAt": "2026-10-03T05:24:45.769Z"
+}
