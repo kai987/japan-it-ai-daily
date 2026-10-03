@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-03",
-  "stage": "drafts_ready",
+  "stage": "preflight_passed",
   "sourceCommit": "dddd7ef20d6f3f3fadc1a9232ca24697bc6282f4",
   "sourceWindow": {
     "from": "2026-10-02T10:00:00+09:00",
     "to": "2026-10-03T10:00:00+09:00"
   },
   "createdAt": "2026-10-03T01:02:55.002Z",
-  "updatedAt": "2026-10-03T05:57:34.172Z",
+  "updatedAt": "2026-10-03T06:01:06.917Z",
   "completedArtifacts": [
     "sources.json",
     "history-registry.json",
@@ -35,10 +35,14 @@
     "src/content/evidence/2026-10-03.json": "a9783b892ee4a81d8202c078e0124c39a9888dfb0f454d6042ecd9f84fb3c1cc",
     "src/data/interviews/2026-10-03.json": "e84a0e3d434d04a3a3d2fbb31402b6a11f6ebc87f340c45409c89860a54b7e4e"
   },
-  "nextStep": "Push six-path complete-tree draft and verify exact CI preflight",
+  "nextStep": "Submit exact verified source-bound publication request",
   "audioStatus": "waiting_verified_text_publication",
   "n1Status": "waiting_verified_text_publication",
   "generatedFromCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
   "historyReverifiedAt": "2026-10-03T05:57:24.687Z",
-  "dependencyRepairCommit": "dddd7ef20d6f3f3fadc1a9232ca24697bc6282f4"
+  "dependencyRepairCommit": "dddd7ef20d6f3f3fadc1a9232ca24697bc6282f4",
+  "draftCommit": "335f44cb0bc8fe210f06f2638d79d7aeca74df22",
+  "preflightRunId": 37101499398,
+  "preflightWorkflowPath": ".github/workflows/deploy.yml",
+  "requestId": "codex-2026-10-03-df8ad561-d95c-41f9-bb9f-7489fd623008"
 }
