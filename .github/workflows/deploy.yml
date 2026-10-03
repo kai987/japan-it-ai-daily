@@ -64,6 +64,10 @@ jobs:
         run: npm run audio:check
       - name: Verify recorded audio URL versions
         run: npm run audio:versions:check
+      - name: Install audio regression tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
       - name: Run tests
         run: npm test
       - name: Build
