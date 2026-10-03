@@ -19,6 +19,7 @@ jobs:
       contents: write
       actions: write
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     env:
       PUBLIC_AUDIO_BASE_URL: ${{ vars.PUBLIC_AUDIO_BASE_URL || 'https://pub-7561025e67be4103ac4bafb331864381.r2.dev' }}
       GH_TOKEN: ${{ github.token }}
@@ -76,7 +77,7 @@ jobs:
       - name: Audit dependencies
         run: npm audit --audit-level=high
       - name: Verify publication state machine
-        run: node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs
+        run: node --test tests/publication/*.node.mjs
       - name: Type check
         run: npm run check
       - name: Verify content integrity
@@ -122,4 +123,4 @@ jobs:
           git push origin HEAD:main
           echo "Published commit $(git rev-parse HEAD) from request $REQUEST_ID"
       - name: Dispatch exact main Pages workflow
-        run: gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY" --ref main
+        run: gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY" --ref main -f source_commit="$(git rev-parse HEAD)"

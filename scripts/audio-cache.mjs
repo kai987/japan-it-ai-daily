@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
+import { assertAudioFileVersion } from './audio-file-versions.mjs';
 
 export const AUDIO_CACHE_VERSION = 1;
 export const DEFAULT_MP3_FORMAT = Object.freeze({
@@ -42,11 +43,21 @@ export const isReusableAudio = ({
   filePath,
   expectedHash,
   previousHash,
+  previousSha256,
   legacyMatches = false,
 }) => {
   if (force || !existsSync(filePath)) return false;
-  if (typeof previousHash === 'string' && previousHash) return previousHash === expectedHash;
-  return legacyMatches;
+  // Check recorded bytes before either reuse or a settings/text regeneration.
+  // A changed synthesis task does not authorize repairing a damaged recording.
+  if (previousSha256 !== undefined) assertAudioFileVersion(filePath, previousSha256);
+  const matches = typeof previousHash === 'string' && previousHash
+    ? previousHash === expectedHash
+    : legacyMatches;
+  if (!matches) return false;
+  // Old manifests can acquire missing byte versions through the explicit
+  // backfill tool. A generator must never infer that unrecorded bytes are safe.
+  if (previousSha256 === undefined) assertAudioFileVersion(filePath, previousSha256);
+  return true;
 };
 
 export const sameNumber = (left, right) => Number(left) === Number(right);

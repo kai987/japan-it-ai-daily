@@ -114,12 +114,19 @@ const levels = [allLevels, 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
       const lessonsSection = document.querySelector('#lessons');
       if (!buttons.length || !rows.length) return;
 
-      const initialUrl = new URL(window.location.href);
       const allowedLevels = buttons.map((button) => button instanceof HTMLButtonElement ? button.dataset.levelFilter : '').filter(Boolean);
-      const requestedLevel = initialUrl.searchParams.get('level') || allLevels;
-      let currentLevel = allowedLevels.includes(requestedLevel) ? requestedLevel : allLevels;
-      const requestedPage = Number.parseInt(initialUrl.searchParams.get('page') || '1', 10);
-      let currentPage = Number.isFinite(requestedPage) && requestedPage > 0 ? requestedPage : 1;
+      const stateFromUrl = () => {
+        const url = new URL(window.location.href);
+        const requestedLevel = url.searchParams.get('level') || allLevels;
+        const requestedPage = Number.parseInt(url.searchParams.get('page') || '1', 10);
+        return {
+          level: allowedLevels.includes(requestedLevel) ? requestedLevel : allLevels,
+          page: Number.isFinite(requestedPage) && requestedPage > 0 ? requestedPage : 1,
+        };
+      };
+      const initialState = stateFromUrl();
+      let currentLevel = initialState.level;
+      let currentPage = initialState.page;
 
       const getFilteredRows = () => rows.filter((row) => {
         const rowLevels = (row.dataset.levels || '').split('|');
@@ -132,18 +139,21 @@ const levels = [allLevels, 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
         return Array.from(values).filter((value) => value >= 1 && value <= totalPages).sort((a, b) => a - b);
       };
 
-      const syncUrl = () => {
+      const syncUrl = (mode: 'replace' | 'push' | 'none') => {
+        if (mode === 'none') return;
         const url = new URL(window.location.href);
         if (currentLevel === allLevels) url.searchParams.delete('level');
         else url.searchParams.set('level', currentLevel);
         if (currentPage <= 1) url.searchParams.delete('page');
         else url.searchParams.set('page', String(currentPage));
-        url.hash = 'lessons';
-        history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+        if (!url.hash) url.hash = 'lessons';
+        const nextUrl = `${url.pathname}${url.search}${url.hash}`;
+        if (mode === 'push') history.pushState(null, '', nextUrl);
+        else history.replaceState(null, '', nextUrl);
       };
 
       const scrollToLessons = () => {
-        if (lessonsSection instanceof HTMLElement) lessonsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (lessonsSection instanceof HTMLElement) lessonsSection.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
       };
 
       const renderPagination = (filteredRows: HTMLElement[]) => {
@@ -155,6 +165,7 @@ const levels = [allLevels, 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
         if (next instanceof HTMLButtonElement) next.disabled = currentPage >= totalPages;
 
         if (pageContainer instanceof HTMLElement) {
+          const restoreFocus = pageContainer.contains(document.activeElement);
           pageContainer.replaceChildren();
           const pages = pageNumbers(totalPages, currentPage);
           let previousPage = 0;
@@ -178,11 +189,12 @@ const levels = [allLevels, 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
             pageButton.addEventListener('click', () => {
               if (page === currentPage) return;
               currentPage = page;
-              render(true);
+              render({ scroll: true, historyMode: 'push' });
             });
             pageContainer.appendChild(pageButton);
             previousPage = page;
           });
+          if (restoreFocus) pageContainer.querySelector<HTMLButtonElement>('[aria-current="page"]')?.focus({ preventScroll: true });
         }
 
         if (status instanceof HTMLElement) {
@@ -195,7 +207,7 @@ const levels = [allLevels, 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
         }
       };
 
-      const render = (shouldScroll = false) => {
+      const render = (options: { scroll?: boolean; historyMode?: 'replace' | 'push' | 'none' } = {}) => {
         const filteredRows = getFilteredRows();
         const totalPages = Math.max(1, Math.ceil(filteredRows.length / PAGE_SIZE));
         currentPage = Math.min(Math.max(1, currentPage), totalPages);
@@ -208,28 +220,35 @@ const levels = [allLevels, 'N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
         });
         if (empty instanceof HTMLElement) empty.hidden = filteredRows.length !== 0;
         renderPagination(filteredRows);
-        syncUrl();
-        if (shouldScroll) scrollToLessons();
+        syncUrl(options.historyMode || 'replace');
+        if (options.scroll) scrollToLessons();
       };
 
       buttons.forEach((button) => button.addEventListener('click', () => {
         if (!(button instanceof HTMLButtonElement)) return;
+        if (button.dataset.levelFilter === currentLevel && currentPage === 1) return;
         currentLevel = button.dataset.levelFilter || allLevels;
         currentPage = 1;
-        render(false);
+        render({ historyMode: 'push' });
       }));
       if (prev instanceof HTMLButtonElement) prev.addEventListener('click', () => {
         if (currentPage <= 1) return;
         currentPage -= 1;
-        render(true);
+        render({ scroll: true, historyMode: 'push' });
       });
       if (next instanceof HTMLButtonElement) next.addEventListener('click', () => {
         const totalPages = Math.ceil(getFilteredRows().length / PAGE_SIZE);
         if (currentPage >= totalPages) return;
         currentPage += 1;
-        render(true);
+        render({ scroll: true, historyMode: 'push' });
       });
-      render(false);
+      window.addEventListener('popstate', () => {
+        const state = stateFromUrl();
+        currentLevel = state.level;
+        currentPage = state.page;
+        render({ historyMode: 'none' });
+      });
+      render({ historyMode: 'replace' });
     })();
   </script>
 
