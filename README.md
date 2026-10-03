@@ -25,6 +25,8 @@ npm ci
 npm run dev
 ```
 
+Astro's `http-cache-semantics` dependency currently uses a [tracked local security patch](vendor/http-cache-semantics/README.md) for GHSA-ch52-4w7c-c8xp, pending an official fixed release. Keep its dependency regression tests alongside the unchanged npm audit gate; local file dependencies are outside registry audit coverage.
+
 The site base path is `/japan-it-ai-daily/`. The default display language is Japanese; the language selector preserves the corresponding route. Chinese and Japanese article prose are separate content, not runtime translations.
 
 For a production preview and browser regression tests:
