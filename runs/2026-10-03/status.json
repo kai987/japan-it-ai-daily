@@ -8,7 +8,7 @@
     "to": "2026-10-03T10:00:00+09:00"
   },
   "createdAt": "2026-10-03T01:02:55.002Z",
-  "updatedAt": "2026-10-03T06:08:13.383Z",
+  "updatedAt": "2026-10-03T06:22:02.778Z",
   "completedArtifacts": [
     "sources.json",
     "history-registry.json",
@@ -35,7 +35,7 @@
     "src/content/evidence/2026-10-03.json": "a9783b892ee4a81d8202c078e0124c39a9888dfb0f454d6042ecd9f84fb3c1cc",
     "src/data/interviews/2026-10-03.json": "e84a0e3d434d04a3a3d2fbb31402b6a11f6ebc87f340c45409c89860a54b7e4e"
   },
-  "nextStep": "Required independent audio generation and N1 source-bound handoff",
+  "nextStep": "Complete: text, recorded audio/R2/playback and N1 independently verified",
   "audioStatus": "waiting_verified_text_publication",
   "n1Status": "waiting_verified_text_publication",
   "generatedFromCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
@@ -149,5 +149,23 @@
     },
     "verifiedAt": "2026-10-03T06:07:33.353Z",
     "site": "/tmp/japan-daily-20261003/text-release-37101832098/site"
+  },
+  "latestVerifiedMain": "263ee13b4e5c9c7735c9a175cb8caac043a3e77d",
+  "audio": {
+    "stage": "playback_verified",
+    "commit": "263ee13b4e5c9c7735c9a175cb8caac043a3e77d",
+    "workflowRunIds": {
+      "r2": 37102197811,
+      "pages": 37102197773
+    },
+    "completedAt": "2026-10-03T06:15:35.069Z"
+  },
+  "n1Handoff": {
+    "stage": "published",
+    "sourceCommit": "3c905031187fbb234f10423a3e352c7a3cb571a4",
+    "releaseCommit": "eb60dbdfa474629bbd7ac7b89747054a3ad43b83",
+    "syncRunId": 37102545382,
+    "pagesRunId": 37102624253,
+    "verifiedAt": "2026-10-03T06:20:42.755Z"
   }
 }
