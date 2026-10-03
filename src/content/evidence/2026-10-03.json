@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-03",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-03T01:21:55.732Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-03-top-1",
+      "url": "https://dev.classmethod.jp/articles/20261002-cc-updates-v2-1-287/",
+      "originalTitle": "Claude Code v2.1.287 の主要アップデート - Claude Mods の追加とシェル書き込みの安全策強化",
+      "source": "DevelopersIO",
+      "topic": "AI開発・拡張の安全性",
+      "access": "full",
+      "accessNote": "公開原文の本文・表・コードをHTTP 200で全文読み取り。画像の画面内容や未読リンク先の実験詳細は独立の根拠にしない。",
+      "publishedAt": "2026-10-02T11:47:23.690Z",
+      "capturedAt": "2026-10-03T01:04:26.512354+00:00",
+      "snapshotSha256": "e24a11e5807dd1ea1c219319ff8282eb167d365dd890aef10bee3ea982e13bc7",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "tool.callで計数と再描画を行いnext(e)で処理を継続する。",
+          "quote": "tool.call",
+          "locator": "Claude Modsを試してみた／Step 4",
+          "conditions": "Claude Code v2.1.287、macOS／Linux、bash／zsh。非対話の最小試験と公式資料に基づく対話UI説明を区別。1Mの記述には資料間の差が残る。",
+          "usedIn": {
+            "zh": "tool.call",
+            "ja": "tool.call",
+            "interview": "tool.call"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "validateは静的な検査でありmodの実行テストではない。",
+          "quote": "コードを実行せず",
+          "locator": "Step 5: プラグインを検証する",
+          "conditions": "Claude Code v2.1.287、macOS／Linux、bash／zsh。非対話の最小試験と公式資料に基づく対話UI説明を区別。1Mの記述には資料間の差が残る。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "非対話/tallyの実行例は0回を返す。",
+          "quote": "0 tool calls",
+          "locator": "Step 6: 非対話モードで読み込む",
+          "conditions": "Claude Code v2.1.287、macOS／Linux、bash／zsh。非対話の最小試験と公式資料に基づく対話UI説明を区別。1Mの記述には資料間の差が残る。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact4",
+          "kind": "source-fact",
+          "statement": "modは利用者の権限を継承し、信頼する配布元と無効化手段の確認が必要。",
+          "quote": "サンドボックス化されず",
+          "locator": "Claude Mods の安全性に関する説明",
+          "conditions": "Claude Code v2.1.287、macOS／Linux、bash／zsh。非対話の最小試験と公式資料に基づく対話UI説明を区別。1Mの記述には資料間の差が残る。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "拡張の実行権限、静的な検査、実際のイベント処理を分けると、導入できたことや回数表示を作業成功と取り違えずに済みます。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "把扩展代码的运行权限、静态检查和实际事件处理分开理解，能避免把“装得上”或“计数正常”当成任务成功。",
+            "ja": "拡張の実行権限、静的な検査、実際のイベント処理を分けると、導入できたことや回数表示を作業成功と取り違えずに済みます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-03-top-2",
+      "url": "https://dev.classmethod.jp/articles/how-chronos-2-forecast-changes-when-covariates-are-missing/",
+      "originalTitle": "共変量に欠損があるとChronos-2の予測はどう変わるか",
+      "source": "DevelopersIO",
+      "topic": "機械学習・時系列予測",
+      "access": "full",
+      "accessNote": "公開原文の本文・表・コードをHTTP 200で全文読み取り。画像の画面内容や未読リンク先の実験詳細は独立の根拠にしない。",
+      "publishedAt": "2026-10-02T07:15:17.798Z",
+      "capturedAt": "2026-10-03T01:04:26.476552+00:00",
+      "snapshotSha256": "c65c798c2da01714172020420fe3e954579eb1909ef3ef439b99c5897f1fccb2",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Dartsは過去の欠けた時間行をNaNで追加し、AutoGluonは共変量を補完する。",
+          "quote": "Darts",
+          "locator": "処理の整理／過去の共変量",
+          "conditions": "Bike Sharing Demand version 2、過去17520時間中17355行、予測2012-12-31の24時間。CPU、記事記載のバージョンと50%分位評価。単一日・データセットで、精度改善の保証ではない。",
+          "usedIn": {
+            "zh": "Darts",
+            "ja": "Darts",
+            "interview": "Darts"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "未来の共変量が全欠損した本例のAutoGluonの補完値は過去の中央値20.5。",
+          "quote": "20.5",
+          "locator": "未来の共変量を揃える",
+          "conditions": "Bike Sharing Demand version 2、過去17520時間中17355行、予測2012-12-31の24時間。CPU、記事記載のバージョンと50%分位評価。単一日・データセットで、精度改善の保証ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "時間行と補完を明示的にそろえた三者のMAEは小数二桁で84.76に一致。",
+          "quote": "84.76",
+          "locator": "欠損値を明示的に埋めた場合の結果",
+          "conditions": "Bike Sharing Demand version 2、過去17520時間中17355行、予測2012-12-31の24時間。CPU、記事記載のバージョンと50%分位評価。単一日・データセットで、精度改善の保証ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "欠けた時刻、NaN、誤差の比較から、同じモデルを使う場合にも実際の入力を先に照合する理由が分かります。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "用真实的缺失行、NaN 和误差对照，理解相同模型经不同包装器调用时，为什么应先比较实际输入。",
+            "ja": "欠けた時刻、NaN、誤差の比較から、同じモデルを使う場合にも実際の入力を先に照合する理由が分かります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-03-top-3",
+      "url": "https://dev.classmethod.jp/articles/guardduty-org-enablement-policies/",
+      "originalTitle": "[アップデート] Amazon GuardDuty の有効化を AWS Organizations の宣言型ポリシーで一元管理できるようになりました",
+      "source": "DevelopersIO",
+      "topic": "クラウド・セキュリティ",
+      "access": "full",
+      "accessNote": "公開原文の本文・表・コードをHTTP 200で全文読み取り。画像の画面内容や未読リンク先の実験詳細は独立の根拠にしない。",
+      "publishedAt": "2026-10-02T08:00:10.775Z",
+      "capturedAt": "2026-10-03T01:04:26.673787+00:00",
+      "snapshotSha256": "982a4aaa4d005130ac4f6b2ae2aa04a45b889081ce8df90019caa09f6cf39b1d",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "defaultは全対象リージョンへ適用され、地域別ブロックは全体を置換する。",
+          "quote": "default",
+          "locator": "アップデートの概要",
+          "conditions": "検証用Organizations、東京で操作、既存S3／RDS自動有効化、対象は一つのメンバー。東京と大阪の表示を確認。全組織移行・検知精度・費用削減の実測ではない。",
+          "usedIn": {
+            "zh": "default",
+            "ja": "default",
+            "interview": "default"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "タイプ有効化時に組織の旧自動有効化が全プランで効かなくなる。",
+          "quote": "組織全体でまとめて",
+          "locator": "ポリシー管理に移行するときに気をつけること",
+          "conditions": "検証用Organizations、東京で操作、既存S3／RDS自動有効化、対象は一つのメンバー。東京と大阪の表示を確認。全組織移行・検知精度・費用削減の実測ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "デタッチでは既存の有効状態が残り、タイプ無効化は旧自動有効化を再開する。",
+          "quote": "現在の状態のまま残る",
+          "locator": "無効化・デタッチ・ポリシータイプ無効化の比較表",
+          "conditions": "検証用Organizations、東京で操作、既存S3／RDS自動有効化、対象は一つのメンバー。東京と大阪の表示を確認。全組織移行・検知精度・費用削減の実測ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "一部のアカウントへの適用でも組織の自動有効化が変わります。移行と解除の具体的な動作から、保護範囲と費用を考えられます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "小范围绑定也可能改变组织级自动启用行为；从具体迁移和撤销语义理解安全基线与费用边界。",
+            "ja": "一部のアカウントへの適用でも組織の自動有効化が変わります。移行と解除の具体的な動作から、保護範囲と費用を考えられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-03-top-4",
+      "url": "https://tech.layerx.co.jp/entry/2026/10/02/110935",
+      "originalTitle": "JaSST'26 Niigata 参加レポート：基調講演・事例発表でLayerXメンバー4名がお話ししました #JaSST",
+      "source": "LayerX エンジニアブログ",
+      "topic": "業務AI・品質保証",
+      "access": "full",
+      "accessNote": "公開原文の本文・表・コードをHTTP 200で全文読み取り。画像の画面内容や未読リンク先の実験詳細は独立の根拠にしない。",
+      "publishedAt": "2026-10-02T11:09:35+09:00",
+      "capturedAt": "2026-10-03T01:04:26.651399+00:00",
+      "snapshotSha256": "e15db0345ab92d0cf01a17a4ffee29db04c5b5ed31a4ca03baa69287ef5c8b7b",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "守りと攻めの二層でテストし、スコアの差分と利用者の声を評価とケース追加に使う。",
+          "quote": "スコアの差分",
+          "locator": "確率と戦うAIプロダクト",
+          "conditions": "2026-09-18の登壇を10月2日に報告。公開参加報告本文のみ。スコア定義・閾値・試行回数・定量結果は未記載で、本稿は未読スライドの実験詳細を補わない。",
+          "usedIn": {
+            "zh": "スコアの差分",
+            "ja": "スコアの差分",
+            "interview": "スコアの差分"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "ガイド・ルール・サンプルを先に用意し、集中レビューは指摘がなくなった段階で終える。",
+          "quote": "指摘がなくなった段階",
+          "locator": "コードベースE2E自動テスト",
+          "conditions": "2026-09-18の登壇を10月2日に報告。公開参加報告本文のみ。スコア定義・閾値・試行回数・定量結果は未記載で、本稿は未読スライドの実験詳細を補わない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "バクラク給与でAI提案と人のリスクベース設計のテストを比較する。",
+          "quote": "給与計算機能",
+          "locator": "QAエンジニアの暗黙知",
+          "conditions": "2026-09-18の登壇を10月2日に報告。公開参加報告本文のみ。スコア定義・閾値・試行回数・定量結果は未記載で、本稿は未読スライドの実験詳細を補わない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "出力が揺らぐAIの二層テストと人の品質責任を学び、参加報告だけでは分からない評価条件も確認できます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "学习随机输出的两层测试与人的质量责任，同时辨认会议简报没有披露的度量和试验细节。",
+            "ja": "出力が揺らぐAIの二層テストと人の品質責任を学び、参加報告だけでは分からない評価条件も確認できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-03-top-5",
+      "url": "https://moneyforward-dev.jp/entry/2026/10/02/172012",
+      "originalTitle": "iOSDC Japan 2026参加レポート",
+      "source": "Money Forward Developers Blog",
+      "topic": "フロントエンド・モバイル",
+      "access": "full",
+      "accessNote": "公開原文の本文・表・コードをHTTP 200で全文読み取り。画像の画面内容や未読リンク先の実験詳細は独立の根拠にしない。",
+      "publishedAt": "2026-10-02T10:00:00+09:00",
+      "capturedAt": "2026-10-03T01:04:26.370656+00:00",
+      "snapshotSha256": "93850a96455fa6ac86621df840361e148c4699e09fa5af39cb1ce366b23be656",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "バックグラウンド遷移時の全面オーバーレイで、App Switcherのスナップショット内の機密情報を隠す実装を紹介。",
+          "quote": "App Switcher",
+          "locator": "筆者のパンフレット記事",
+          "conditions": "9月11〜13日の会議の参加報告。公開記事本文と寄稿の概要のみ、完全コード・OS別試験・市場代表性は未提示。実機確認は本稿の学習例。",
+          "usedIn": {
+            "zh": "App Switcher",
+            "ja": "App Switcher",
+            "interview": "App Switcher"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "MEの利用数284はブース参加者の回答で、市場全体の比率ではない。",
+          "quote": "284",
+          "locator": "サービス利用状況アンケート",
+          "conditions": "9月11〜13日の会議の参加報告。公開記事本文と寄稿の概要のみ、完全コード・OS別試験・市場代表性は未提示。実機確認は本稿の学習例。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "暗黙Sendableの認識以外の例外を講演で学んだと述べるが全条件は掲載しない。",
+          "quote": "暗黙のSendable",
+          "locator": "モジュールの視点からSwiftを読み解く",
+          "conditions": "9月11〜13日の会議の参加報告。公開記事本文と寄稿の概要のみ、完全コード・OS別試験・市場代表性は未提示。実機確認は本稿の学習例。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "前面の画面だけでなくアプリ切替のスナップショットも表示面です。金融アプリの具体的な覆いから、UIの情報保護を考えられます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "移动端前台页面之外还有应用切换器快照；以金融应用的具体遮罩机制补充前端隐私验证视角。",
+            "ja": "前面の画面だけでなくアプリ切替のスナップショットも表示面です。金融アプリの具体的な覆いから、UIの情報保護を考えられます。"
+          }
+        }
+      ]
+    }
+  ]
+}
