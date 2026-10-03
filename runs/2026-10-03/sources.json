@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-03",
+  "sourceCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+  "sourceWindow": {
+    "start": "2026-10-02T10:00:00+09:00",
+    "end": "2026-10-03T10:00:00+09:00"
+  },
+  "discovery": "指定20サイトを含む日付・領域別検索グループで発見し、公開原文の時刻を核対。全20サイトの全記事クロールではなく、検索の無結果は当日の記事不在の証明ではない。前日Top5のURLは除外。",
+  "selected": [
+    {
+      "title": "Claude Code v2.1.287 の主要アップデート - Claude Mods の追加とシェル書き込みの安全策強化",
+      "url": "https://dev.classmethod.jp/articles/20261002-cc-updates-v2-1-287/",
+      "source": "DevelopersIO",
+      "publishedAt": "2026-10-02T11:47:23.690Z",
+      "capturedAt": "2026-10-03T01:04:26.512354+00:00",
+      "snapshotSha256": "e24a11e5807dd1ea1c219319ff8282eb167d365dd890aef10bee3ea982e13bc7",
+      "access": "full",
+      "accessNote": "公開原文の本文・表・コードをHTTP 200で全文読み取り。画像の画面内容や未読リンク先の実験詳細は独立の根拠にしない。",
+      "conditions": "Claude Code v2.1.287、macOS／Linux、bash／zsh。非対話の最小試験と公式資料に基づく対話UI説明を区別。1Mの記述には資料間の差が残る。"
+    },
+    {
+      "title": "共変量に欠損があるとChronos-2の予測はどう変わるか",
+      "url": "https://dev.classmethod.jp/articles/how-chronos-2-forecast-changes-when-covariates-are-missing/",
+      "source": "DevelopersIO",
+      "publishedAt": "2026-10-02T07:15:17.798Z",
+      "capturedAt": "2026-10-03T01:04:26.476552+00:00",
+      "snapshotSha256": "c65c798c2da01714172020420fe3e954579eb1909ef3ef439b99c5897f1fccb2",
+      "access": "full",
+      "accessNote": "公開原文の本文・表・コードをHTTP 200で全文読み取り。画像の画面内容や未読リンク先の実験詳細は独立の根拠にしない。",
+      "conditions": "Bike Sharing Demand version 2、過去17520時間中17355行、予測2012-12-31の24時間。CPU、記事記載のバージョンと50%分位評価。単一日・データセットで、精度改善の保証ではない。"
+    },
+    {
+      "title": "[アップデート] Amazon GuardDuty の有効化を AWS Organizations の宣言型ポリシーで一元管理できるようになりました",
+      "url": "https://dev.classmethod.jp/articles/guardduty-org-enablement-policies/",
+      "source": "DevelopersIO",
+      "publishedAt": "2026-10-02T08:00:10.775Z",
+      "capturedAt": "2026-10-03T01:04:26.673787+00:00",
+      "snapshotSha256": "982a4aaa4d005130ac4f6b2ae2aa04a45b889081ce8df90019caa09f6cf39b1d",
+      "access": "full",
+      "accessNote": "公開原文の本文・表・コードをHTTP 200で全文読み取り。画像の画面内容や未読リンク先の実験詳細は独立の根拠にしない。",
+      "conditions": "検証用Organizations、東京で操作、既存S3／RDS自動有効化、対象は一つのメンバー。東京と大阪の表示を確認。全組織移行・検知精度・費用削減の実測ではない。"
+    },
+    {
+      "title": "JaSST'26 Niigata 参加レポート：基調講演・事例発表でLayerXメンバー4名がお話ししました #JaSST",
+      "url": "https://tech.layerx.co.jp/entry/2026/10/02/110935",
+      "source": "LayerX エンジニアブログ",
+      "publishedAt": "2026-10-02T11:09:35+09:00",
+      "capturedAt": "2026-10-03T01:04:26.651399+00:00",
+      "snapshotSha256": "e15db0345ab92d0cf01a17a4ffee29db04c5b5ed31a4ca03baa69287ef5c8b7b",
+      "access": "full",
+      "accessNote": "公開原文の本文・表・コードをHTTP 200で全文読み取り。画像の画面内容や未読リンク先の実験詳細は独立の根拠にしない。",
+      "conditions": "2026-09-18の登壇を10月2日に報告。公開参加報告本文のみ。スコア定義・閾値・試行回数・定量結果は未記載で、本稿は未読スライドの実験詳細を補わない。"
+    },
+    {
+      "title": "iOSDC Japan 2026参加レポート",
+      "url": "https://moneyforward-dev.jp/entry/2026/10/02/172012",
+      "source": "Money Forward Developers Blog",
+      "publishedAt": "2026-10-02T10:00:00+09:00",
+      "capturedAt": "2026-10-03T01:04:26.370656+00:00",
+      "snapshotSha256": "93850a96455fa6ac86621df840361e148c4699e09fa5af39cb1ce366b23be656",
+      "access": "full",
+      "accessNote": "公開原文の本文・表・コードをHTTP 200で全文読み取り。画像の画面内容や未読リンク先の実験詳細は独立の根拠にしない。",
+      "conditions": "9月11〜13日の会議の参加報告。公開記事本文と寄稿の概要のみ、完全コード・OS別試験・市場代表性は未提示。実機確認は本稿の学習例。"
+    }
+  ],
+  "publicationTimeNotes": [
+    "Money ForwardのURL末尾172012ではなくJSON-LDとarticle:published_timeの10:00JSTを採用。窓の始端に一致。",
+    "Claudeのリリースは10月1日、LayerXの会議は9月18日、iOSDCは9月11〜13日。記事の公開日と事象の日を分離。"
+  ]
+}
