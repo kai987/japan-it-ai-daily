@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-03",
+  "baseCommit": "38e25704c1b7f845f7609ae662c86a2e8e7c67cd",
+  "observedAt": "2026-10-03T01:27:23.801981+00:00",
+  "error": {
+    "stage": "local_dependency_audit",
+    "classification": "deterministic_dependency_security_blocker",
+    "command": "npm audit --audit-level=high",
+    "exitCode": 1,
+    "advisory": "GHSA-ch52-4w7c-c8xp",
+    "url": "https://github.com/advisories/GHSA-ch52-4w7c-c8xp",
+    "dependency": "http-cache-semantics@4.2.0 via astro@7.2.9",
+    "severity": "high",
+    "patchedVersionAvailable": false,
+    "verifiedLatestAstro": "7.3.5 also depends on ^4.2.0",
+    "message": "2 high audit findings; GitHub advisory has no patched version. npm suggests a breaking downgrade to Astro 2.10.9. No force fix, audit exemption, or gate weakening performed.",
+    "log": "runs/2026-10-03/check-logs/dependency-audit.txt",
+    "occurredAt": "2026-10-03T01:27:23.801981+00:00",
+    "attempts": 1
+  },
+  "nextStep": "Resolve the dependency audit with a verified compatible fix; preserve frozen source window and exact draft, reconcile latest main, rerun affected gates and exact draft CI before request submission.",
+  "passedChecks": 15,
+  "failedChecks": 1,
+  "sourceHashes": {
+    "src/content/daily/2026-10-03.md": "9542eaf4326407b4c1a2ebb3c5708e1d9343ab494a8df550f607c097a5911ec0",
+    "src/content/daily-ja/2026-10-03.md": "796a58a051808871d5e1421e1506307d1e7bf064996c693fdb96d1667480d4d8",
+    "src/content/japanese/2026-10-03.md": "79c7f2c3bb1ad631bc9209b35bce1dae50424de8942ef9144a516384605cce0f",
+    "src/content/japanese-ja/2026-10-03.md": "3cbf02ac9cc622cd73f2b0b629b7e4883bc8de5d8256df9815185e0c9376a035",
+    "src/content/evidence/2026-10-03.json": "a9783b892ee4a81d8202c078e0124c39a9888dfb0f454d6042ecd9f84fb3c1cc",
+    "src/data/interviews/2026-10-03.json": "e84a0e3d434d04a3a3d2fbb31402b6a11f6ebc87f340c45409c89860a54b7e4e"
+  },
+  "publicationRequestSubmitted": false,
+  "mainContentWritten": false,
+  "audio": "not started: target text has not passed publication verification",
+  "n1": "not started: no newly verified text publication",
+  "priorAudio": "2026-09-30 through 2026-10-02 playback verified and unchanged source/manifest hashes at current main"
+}
