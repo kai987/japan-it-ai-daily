@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-10-04",
+  "sourceCommit": "263ee13b4e5c9c7735c9a175cb8caac043a3e77d",
+  "sourceWindow": {
+    "start": "2026-10-03T10:00:00+09:00",
+    "end": "2026-10-04T10:00:00+09:00"
+  },
+  "discovery": {
+    "sourceCount": 20,
+    "method": "Date/domain grouped web searches of all 20 contract sources plus official DevelopersIO RSS. Search coverage is not a complete crawl; no-result searches do not prove absence.",
+    "sources": [
+      "Qiita",
+      "Zenn",
+      "Publickey",
+      "ITmedia AI+",
+      "@IT",
+      "CodeZine",
+      "gihyo.jp",
+      "DevelopersIO",
+      "TechFeed",
+      "Hatena Technology",
+      "ASCII x AI",
+      "AINOW",
+      "Ledge.ai",
+      "CyberAgent",
+      "LINE Yahoo",
+      "Mercari",
+      "SmartHR",
+      "LayerX",
+      "DeNA",
+      "Money Forward"
+    ],
+    "excludedOutsideWindow": [
+      {
+        "url": "https://dev.classmethod.jp/articles/cloudwatch-estimate-log-generation/",
+        "publishedAt": "2026-10-03T05:20:24+09:00"
+      },
+      {
+        "title": "Kiro Sonnet 5.5 article",
+        "publishedAt": "2026-10-03T06:17:50+09:00"
+      },
+      {
+        "title": "React useUpdateEffect Qiita article",
+        "publishedAt": "2026-10-03T09:52:32+09:00"
+      }
+    ],
+    "priorTop5Excluded": true
+  },
+  "originals": [
+    {
+      "index": 1,
+      "url": "https://dev.classmethod.jp/articles/claude-code-block-reads-outside-working-directories/",
+      "status": 200,
+      "meta": [
+        {
+          "property": "og:title",
+          "content": "Claude Code の blockReadsOutsideWorkingDirectories で作業ディレクトリ外の読み取りを拒否してみた | DevelopersIO"
+        },
+        {
+          "name": "twitter:title",
+          "content": "Claude Code の blockReadsOutsideWorkingDirectories で作業ディレクトリ外の読み取りを拒否してみた | DevelopersIO"
+        }
+      ],
+      "ld": [],
+      "links": [],
+      "chars": 12717,
+      "capturedAt": "2026-10-04T01:09:48.774702+00:00",
+      "snapshotSha256": "8b5379e7227df69672a6cf1ced326c297a8244a3851a15ab978cab696583155e",
+      "publishedAt": "2026-10-03T19:37:00.836+09:00",
+      "publicationTimeEvidence": "Original page embedded metadata and official RSS",
+      "readComplete": true,
+      "sourceCaptureOutsideRepository": "/tmp/japan-daily-20261004/originals/01.txt"
+    },
+    {
+      "index": 2,
+      "url": "https://dev.classmethod.jp/articles/aurora-dsql-partial-indexes/",
+      "status": 200,
+      "meta": [
+        {
+          "property": "og:title",
+          "content": "[アップデート] Amazon Aurora DSQL でパーシャルインデックスが使えるようになりました | DevelopersIO"
+        },
+        {
+          "name": "twitter:title",
+          "content": "[アップデート] Amazon Aurora DSQL でパーシャルインデックスが使えるようになりました | DevelopersIO"
+        }
+      ],
+      "ld": [],
+      "links": [],
+      "chars": 4438,
+      "capturedAt": "2026-10-04T01:09:48.818484+00:00",
+      "snapshotSha256": "bb641d7dc26c9d0c5e99687768959ce8445af7b87810ddf2a67e29c91123856c",
+      "publishedAt": "2026-10-03T17:42:46.491+09:00",
+      "publicationTimeEvidence": "Original page embedded metadata and official RSS",
+      "readComplete": true,
+      "sourceCaptureOutsideRepository": "/tmp/japan-daily-20261004/originals/02.txt"
+    },
+    {
+      "index": 3,
+      "url": "https://dev.classmethod.jp/articles/bedrock-troubleshooting-assistant-search-both-sources/",
+      "status": 200,
+      "meta": [
+        {
+          "property": "og:title",
+          "content": "[Amazon Bedrock] 設備が止まった。マニュアルと過去トラブル履歴を組み合わせたトラブル対応アシスタントを、50 問で評価しながら作ってみました | DevelopersIO"
+        },
+        {
+          "name": "twitter:title",
+          "content": "[Amazon Bedrock] 設備が止まった。マニュアルと過去トラブル履歴を組み合わせたトラブル対応アシスタントを、50 問で評価しながら作ってみました | DevelopersIO"
+        }
+      ],
+      "ld": [],
+      "links": [],
+      "chars": 11463,
+      "capturedAt": "2026-10-04T01:12:08.879947+00:00",
+      "snapshotSha256": "9767c64012888b88990e456463422bf137c66b70aec9e3667dbdea52132f2d34",
+      "publishedAt": "2026-10-04T09:32:02+09:00",
+      "publicationTimeEvidence": "Official publisher RSS",
+      "readComplete": true,
+      "sourceCaptureOutsideRepository": "/tmp/japan-daily-20261004/originals/03.txt"
+    },
+    {
+      "index": 4,
+      "url": "https://dev.classmethod.jp/articles/qwik-2-rc-changes/",
+      "status": 200,
+      "meta": [
+        {
+          "property": "og:title",
+          "content": "Qwik 2.0 RC で何が変わったのか、HTML コメントまで削った設計のこだわりを読んでみた | DevelopersIO"
+        },
+        {
+          "name": "twitter:title",
+          "content": "Qwik 2.0 RC で何が変わったのか、HTML コメントまで削った設計のこだわりを読んでみた | DevelopersIO"
+        }
+      ],
+      "ld": [],
+      "links": [],
+      "chars": 14051,
+      "capturedAt": "2026-10-04T01:12:08.943876+00:00",
+      "snapshotSha256": "a73e10bd79a503c5afc42a524e598c983bec1fb58524b96281ea89e569964711",
+      "publishedAt": "2026-10-03T13:10:14+09:00",
+      "publicationTimeEvidence": "Official publisher RSS",
+      "readComplete": true,
+      "sourceCaptureOutsideRepository": "/tmp/japan-daily-20261004/originals/04.txt"
+    },
+    {
+      "index": 5,
+      "url": "https://qiita.com/j45delight/items/59c989d4d9413660badc",
+      "status": 200,
+      "chars": 4392,
+      "capturedAt": "2026-10-04T01:10:48.041727+00:00",
+      "snapshotSha256": "c4052c54b89d543cd8639d1d4be8b1701d86f452894b4f45a40fd104415191cf",
+      "publishedAt": "2026-10-03T18:23:25+09:00",
+      "modifiedAt": "2026-10-03T18:36:28+09:00",
+      "publicationTimeEvidence": "Original page published/modified time metadata",
+      "readComplete": true,
+      "sourceCaptureOutsideRepository": "/tmp/japan-daily-20261004/originals/05.txt"
+    }
+  ]
+}
