@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-04",
+  "interview": [
+    {
+      "id": "interview-01",
+      "articleIds": [
+        "2026-10-04-top-1"
+      ],
+      "question": "AIエージェントのファイル読取権限を、どのように確かめますか。",
+      "answer": "設定名だけで判断せず、読む経路ごとに確かめます。Claude CodeのblockReadsOutsideWorkingDirectoriesはReadを拒否しますが、Bashは別です。記事ではsandboxとallowUnsandboxedCommandsの無効化を併用して、Bashも止めています。追加ディレクトリも試し、未検証のモードは安全だと保証しません。"
+    },
+    {
+      "id": "interview-02",
+      "articleIds": [
+        "2026-10-04-top-2"
+      ],
+      "question": "パーシャルインデックスを使うとき、何を確認しますか。",
+      "answer": "よく検索する少数の行だけを索引に載せます。Aurora DSQLではopen100件、completed3万3千件でCREATE INDEX ASYNCとWHEREを使いました。EXPLAINはopenでIndex Scan、completedでFull Scanです。条件なしでは使われず、実時間やサイズは別に測ります。"
+    },
+    {
+      "id": "interview-03",
+      "articleIds": [
+        "2026-10-04-top-3"
+      ],
+      "question": "複数の資料を使うAI検索の精度を、どう改善しますか。",
+      "answer": "答えに必要な資料が両方届いているかを先に調べます。Bedrockの記事では、マニュアルと履歴を一緒に検索すると片方が落ち、二つを必ず取る構成で正答が32問から44問になりました。曖昧な相談だけStrandsで追加検索する方法も試しています。ただし架空の50問で、採点にも誤りがあったため、実業務の質問と人の確認で評価します。"
+    },
+    {
+      "id": "interview-04",
+      "articleIds": [
+        "2026-10-04-top-4"
+      ],
+      "question": "フロントエンドの新しい版が速いか、どう判断しますか。",
+      "answer": "仕組みの説明と、同じ条件の実測を分けます。Qwik 2の記事では、状態をqwik/stateとqwik/vnodeに保存し、HTMLコメントは60個からゼロになりました。ただしHTMLのgzip量は増えています。初期読込み、待機中の先読み、操作後の通信を分けて調べ、RC版で動かなかったrouteLoaderの条件も残して判断します。"
+    },
+    {
+      "id": "interview-05",
+      "articleIds": [
+        "2026-10-04-top-5"
+      ],
+      "question": "AIにアプリ開発を任せるとき、仕様に何を書きますか。",
+      "answer": "使う技術、変えてはいけない点、確認できる完了条件を書きます。ServiceNowの記事では、星の計算と描画のライブラリを固定し、数値の期待値で最初の画面を確かめました。AI用の認証情報はConnection & Credential Aliasに置き、サーバーのRESTで扱います。ただし三回目の後にボタンが動かず、生成できたことと完成は分けて確認します。"
+    }
+  ],
+  "review": [
+    {
+      "id": "review-01",
+      "articleIds": [
+        "2026-10-04-top-1",
+        "2026-10-04-top-5"
+      ],
+      "question": "設定を入れただけで、権限の確認は終わりますか。",
+      "points": {
+        "zh": "Read 与 Bash 分别测试；Alias 只说明凭据放置，仍要检查普通用户 ACL 和实际外发数据。",
+        "ja": "ReadとBashを別に試します。Aliasへ置けても、通常利用者のACLと実際の送信内容は続けて確認します。"
+      }
+    },
+    {
+      "id": "review-02",
+      "articleIds": [
+        "2026-10-04-top-2",
+        "2026-10-04-top-4"
+      ],
+      "question": "一つの指標が改善したら、性能がよいと言えますか。",
+      "points": {
+        "zh": "DSQL 的 Index Scan 不是实测时间；Qwik 注释归零但 gzip HTML 增加。检查实际查询和加载阶段。",
+        "ja": "DSQLのIndex Scanは実時間ではありません。QwikのコメントはゼロでもgzipのHTMLは増え、問合せや読込段階を分けて測ります。"
+      }
+    },
+    {
+      "id": "review-03",
+      "articleIds": [
+        "2026-10-04-top-3"
+      ],
+      "question": "別データでも高得点なら、方式の優劣は確定しますか。",
+      "points": {
+        "zh": "Qwen 新集带完整型号，Top15已包含正解；原集的系列名难题缺失。先说明题目条件，再解释不同阶段的差。",
+        "ja": "Qwenの別集は型番が詳しく、15件で根拠が届きました。元のシリーズ名だけの難問がないため、条件を示してから差を説明します。"
+      }
+    }
+  ]
+}
