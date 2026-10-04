@@ -1,0 +1,353 @@
+{
+  "date": "2026-10-04",
+  "generatedAt": "2026-10-04T01:52:47.592Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "intonationScale": 1
+  },
+  "items": [
+    {
+      "index": 1,
+      "term": "併用",
+      "reading": "へいよう",
+      "exampleJa": "二つの設定を併用しても、同じ範囲に作用するとは限らない。",
+      "word": "vocab-01.mp3",
+      "wordHash": "4b542fe655e6c71c920f67781bb326629f76901f4fd3e237b322e89c261b90a0",
+      "example": "example-01.mp3",
+      "exampleHash": "76c77d4f91e728353ba33f66b9b35f07d49b0052eac131e881d8b68db46f4cb1",
+      "wordSha256": "bf5bdc6a5bc6b448153b6a5e4a9b9b8d46cad0146e5ac5a5e7a4d3b656143823",
+      "exampleSha256": "e5f5c1cfad4e12215c5dca4fb8a78d95e10794a87a1b81c53648e1efda05dd48"
+    },
+    {
+      "index": 2,
+      "term": "抽選",
+      "reading": "ちゅうせん",
+      "exampleJa": "条件の一覧から抽選して、評価用の組み合わせを作った。",
+      "word": "vocab-02.mp3",
+      "wordHash": "e5ca2f5a9dfe28f38c26309ffdc38af981ecc70b544e91ae7bd53d0b77310084",
+      "example": "example-02.mp3",
+      "exampleHash": "8aa01bda8ed481379c16c27ef3a0036e6a198cc88b27d72035b3f16db7472f3c",
+      "wordSha256": "508a50a1404907722f6d14eef62c7a3e7b1c914a1686af02756ae4e0ce871b11",
+      "exampleSha256": "2ea4e4c9b898bc8a7d410a223ffba775ec738be0c59db74b9141300656b7fff7"
+    },
+    {
+      "index": 3,
+      "term": "括弧書き",
+      "reading": "かっこがき",
+      "exampleJa": "括弧書きの補足と、必須の条件を分けて採点する。",
+      "word": "vocab-03.mp3",
+      "wordHash": "fca67ffaff179c4326dcb74414e5413c27b3006163b88201200b8040dc19915a",
+      "example": "example-03.mp3",
+      "exampleHash": "6f3bafad601ff859e6bb188be8f6b70c9d06e24fb0b6883d55c5dde6a30a3ac5",
+      "wordSha256": "c8992d24968d8801ad55e4c86c1621e2090d264550bd811044723527628bdfa7",
+      "exampleSha256": "d94cef987b125f3186164b1d78e8145043bdaa936fc61a5ea8bb18cbfa6eaeeb"
+    },
+    {
+      "index": 4,
+      "term": "枝番",
+      "reading": "えだばん",
+      "exampleJa": "枝番を省くと、別の仕様の部品まで同じ候補に入る。",
+      "word": "vocab-04.mp3",
+      "wordHash": "ee0f5839302485b90c83c89b8fb8c3a428f9150d458a2a6a7597d992d6aed5d4",
+      "example": "example-04.mp3",
+      "exampleHash": "4b5b7a9977b9db69ea0f0ceb693b4094f591bb2f8174207fa0381d7503b87f7f",
+      "wordSha256": "7cd9747ed0f2e86bd08e5a9c98238add2cbf5ed784722d8b701567165f470899",
+      "exampleSha256": "03e590e3585d2a985d4c250bc46730afda8dc1659412885059c1b83d6feaa61c"
+    },
+    {
+      "index": 5,
+      "term": "捏造",
+      "reading": "ねつぞう",
+      "exampleJa": "根拠を確かめずに、回答を捏造だと決めつけてはいけない。",
+      "word": "vocab-05.mp3",
+      "wordHash": "9fae69c1a4b8f75e3c3900250c3973a900811ffa1627608c1b85fa5afefa4e28",
+      "example": "example-05.mp3",
+      "exampleHash": "51e7b87142e8b2de2e5824a44bda084531436199c29b98cf417d3575566238a5",
+      "wordSha256": "4dfe108411e262b78349eb60b856e704d3d8865bcf6f961092ca9b906c79adf3",
+      "exampleSha256": "0b6ab09104bd87ad34e577b0b9d88fd3340163997ea9b745421c6a98b87e12d0"
+    },
+    {
+      "index": 6,
+      "term": "こだわり",
+      "reading": "こだわり",
+      "exampleJa": "設計へのこだわりは、測定結果と一緒に説明したい。",
+      "word": "vocab-06.mp3",
+      "wordHash": "eb50376f3ad5a08b5dd72d7f6279c847409094221db4a46d0127c89205b051be",
+      "example": "example-06.mp3",
+      "exampleHash": "236ca18ab996d6e7b8f4883eba9929ecdc5c01203e1c070e06da19da7b566506",
+      "wordSha256": "9e62363d2894818c2fb94865907b0ab8008879994c4c031a1141323e8ce49ee8",
+      "exampleSha256": "a24afc407c6be7355915b1c47a429ffb66b523f6193a71c0ae05ebbb4a73225c"
+    },
+    {
+      "index": 7,
+      "term": "譲る",
+      "reading": "ゆずる",
+      "exampleJa": "長い処理は途中でブラウザへ譲り、操作を受け付ける。",
+      "word": "vocab-07.mp3",
+      "wordHash": "76a9dfa6616fe7d94367fc678388e00cedffedb3baed8a6101d0d38f68cbee5b",
+      "example": "example-07.mp3",
+      "exampleHash": "925ba62ec80832b5d6570318c109c4f78191fdfe0636ebd286fdb4253029b72e",
+      "wordSha256": "28e908d37bd600d6ce0c55d675d44c3bd7507260d9de40bbe6844f9489776689",
+      "exampleSha256": "e7fc2b24559fc5cf400eca4498637e1928241144b9c8031632860de06c44e0c0"
+    },
+    {
+      "index": 8,
+      "term": "執着する",
+      "reading": "しゅうちゃくする",
+      "exampleJa": "一つの数値に執着すると、別の失敗を見落とす。",
+      "word": "vocab-08.mp3",
+      "wordHash": "e1c4d1474005594f29497710e27d72f94e7126fd822562b84ee761f485beba7d",
+      "example": "example-08.mp3",
+      "exampleHash": "0899d2c62b88c660147bf3d587d497ee29303f96836adf534d6e2e2c242f0b56",
+      "wordSha256": "aecb84cfe4d7081ae3d6f0d3447d090cf812a1539ad28a2a56e731ab1653f087",
+      "exampleSha256": "e639d18a3a6b9e240274a8c270022ea97bc52bf5e3cfe6cf07b224d9b426af74"
+    },
+    {
+      "index": 9,
+      "term": "詰め直す",
+      "reading": "つめなおす",
+      "exampleJa": "情報を別の形式に詰め直しても、対応関係は保つ必要がある。",
+      "word": "vocab-09.mp3",
+      "wordHash": "cbd86c204eb779e1cf39b65abfd4c3cfd4e81483aaabb6f3b0ab3d54ac1d4bbb",
+      "example": "example-09.mp3",
+      "exampleHash": "0d4d3dfd479d03aec8b25f38eac3c463ffe78ca55d7e72b832a5a4ebda61b70e",
+      "wordSha256": "6f4bc560c6c3f937f58b23f1731538ee3f57009277583c78807df3ae5d767272",
+      "exampleSha256": "256e88d6aae75ed2b50a125f2dbc1c8659c564fcb0f1c0d4c5db0925eb3e17c3"
+    },
+    {
+      "index": 10,
+      "term": "逸れる",
+      "reading": "それる",
+      "exampleJa": "話が本題から逸れたので、測定の条件に戻した。",
+      "word": "vocab-10.mp3",
+      "wordHash": "ff92d47a886b30ed07926ff6ee6620e62576ec89d7e53fe01794cd3219231719",
+      "example": "example-10.mp3",
+      "exampleHash": "fa5e807c02a12c176de7300bf0cf8989741b6fc5898730d721ed08c15dffbe0f",
+      "wordSha256": "62a8f0fe446d7e7d860614915137817d499e1b65d46740c885c64e3dd6077837",
+      "exampleSha256": "a2792a4869c01d4edb63808eb60a878c44aa665d945d56d270ccddf5e51b6ea9"
+    },
+    {
+      "index": 11,
+      "term": "格闘する",
+      "reading": "かくとうする",
+      "exampleJa": "エラーと格闘した経緯も、再現条件とともに残した。",
+      "word": "vocab-11.mp3",
+      "wordHash": "bcb1ea27b96ecd3d4ae756c8e22882d3a452ce89f391344e46a9373f22bb1c86",
+      "example": "example-11.mp3",
+      "exampleHash": "48108f4baf83e487d6ea234604a7ab2ec5dd5de63bc7da1ba6faec5f07587ba2",
+      "wordSha256": "7983f9a291cba842319468acb8b415b5cc06b6201065737bbdd259f907420a3d",
+      "exampleSha256": "4058fee201d319dcbf4aa5176bb999ec3eb1185d33057323b8c1d58905ede163"
+    },
+    {
+      "index": 12,
+      "term": "解消する",
+      "reading": "かいしょうする",
+      "exampleJa": "入力のずれを解消してから、検索方式を比較した。",
+      "word": "vocab-12.mp3",
+      "wordHash": "76ecfbd98ff6e2148beba285be58b04efa0e3cb018f8dc2eecd47499d4c15085",
+      "example": "example-12.mp3",
+      "exampleHash": "32b0c83b36fa6b30e9c5bc3d4c3788211263f32ac6b4129ea17a824a5085cd16",
+      "wordSha256": "2ebb86e4d35d81b2bd0447b0d089afdd1062508f8fdd4be104d2bbc028f2c419",
+      "exampleSha256": "5dab823b5e67d62629370cca77d2371fe8d20dccacc2a7b95d6700912d816bc6"
+    },
+    {
+      "index": 13,
+      "term": "素っ気ない",
+      "reading": "そっけない",
+      "exampleJa": "画面は素っ気ないが、必要な計算結果は確認できる。",
+      "word": "vocab-13.mp3",
+      "wordHash": "3ee029951cf4572299bbf0df105e599d2373cc305efa467198e729fa81d3215c",
+      "example": "example-13.mp3",
+      "exampleHash": "3981f1bab9ed3853eece31bbec94658328f61161eb41cfcdd4b9e7e74d8b1c10",
+      "wordSha256": "604bd0bef2d885961aa6047070c13224308abf1f7614d43e756023a8125a6b98",
+      "exampleSha256": "a74a849360b775bc0eb9405c367caf26357e9bcb1d12ac0ff38149c3570cf9fc"
+    },
+    {
+      "index": 14,
+      "term": "適当",
+      "reading": "てきとう",
+      "exampleJa": "検証用の件数は適当に置き、実際の分布とは区別した。",
+      "word": "vocab-14.mp3",
+      "wordHash": "aab63e886df217c9c7205cd1ba02ec2b17381c330d5f9ed2ea6496a9e752b375",
+      "example": "example-14.mp3",
+      "exampleHash": "89362897ab6a9560c3fc9cafd2ed80d0cc9d56a4c47e5f18e981ca7467981069",
+      "wordSha256": "9b40dd9db0afdf220f57a1d269d7f5dc185de17017245ea1a724edb8c07e1d66",
+      "exampleSha256": "4626ea230a6ea7a8528f8ea522b8885b76260d1303463eadc1eeee9f5efa2f44"
+    },
+    {
+      "index": 15,
+      "term": "無駄",
+      "reading": "むだ",
+      "exampleJa": "確認条件を決めずに依頼すると、やり直しが無駄になりやすい。",
+      "word": "vocab-15.mp3",
+      "wordHash": "02022cd2811c143dd9761b127cb116f71854f39b8b0bd09fd0d857db4c037d08",
+      "example": "example-15.mp3",
+      "exampleHash": "a7ee4a6c9339eb1ae1f4ba097e05ebfbbae2c8fbc09f33b782b9f5e79cf1513d",
+      "wordSha256": "0aab460a2b67fce1d3896feddbb1f69cf1729748bde590de5e96ceb9d43cda7c",
+      "exampleSha256": "9564e7b13bf3d657ad2c87f661a8ba874ae711e7fb988420d59f66de99e3d9fd"
+    },
+    {
+      "index": 16,
+      "term": "果たして",
+      "reading": "はたして",
+      "exampleJa": "果たして同じ索引が使われるのか、計画を確認した。",
+      "word": "vocab-16.mp3",
+      "wordHash": "1be4c2f36d2a8fd8f83d7963e9e55f8000a97abe85ccf2e559c615d5adc9923c",
+      "example": "example-16.mp3",
+      "exampleHash": "7e760678a1769454ff843a4df74875f999090f718c9c6f49a900853cd3d9acf6",
+      "wordSha256": "633868173935bfa8fb35bf5b3c47be63020027da37905f780898201b1c7cad15",
+      "exampleSha256": "9f2e245dd182f4666180f1439e99f3955fdbc8c126bb2dd55cc16e0facb09b26"
+    },
+    {
+      "index": 17,
+      "term": "逆に",
+      "reading": "ぎゃくに",
+      "exampleJa": "初期の通信は減ったが、待機中の先読みは逆に増えた。",
+      "word": "vocab-17.mp3",
+      "wordHash": "391097400ee8832830638baa1473957baf700aeca6539601e1e4e075c3c041f9",
+      "example": "example-17.mp3",
+      "exampleHash": "fbc35e5d0e76856535d94bccd1f059d0f9444acb1de72d6bb8776e7dd9e1160d",
+      "wordSha256": "87cb3eaaf3aa70737b1349528869fdc153d659c549b42e958c5561584fa391b5",
+      "exampleSha256": "92cabec53133ec767e43529c426d70ac85d036920e601319b6113cb84e361494"
+    },
+    {
+      "index": 18,
+      "term": "とりあえず",
+      "reading": "とりあえず",
+      "exampleJa": "とりあえず動かす前に、確認する数値を決めておこう。",
+      "word": "vocab-18.mp3",
+      "wordHash": "2f6a7c1015d8ee7929d57e280c2c3149171a581d5716e4741c8291d1f2dc1558",
+      "example": "example-18.mp3",
+      "exampleHash": "a015cb35bc07c35f3b1c376abafe456532ce4544f9e4842a42dfbdea78381bef",
+      "wordSha256": "0fe46d967c40e6b070c0ed528a78715a16ea7d777d4502517fdab98aa1052b1a",
+      "exampleSha256": "2cf39bbb018e4ad97a57ddb80eea9bf8f3ed14e48fd5224a83ae2826b2dd7f39"
+    },
+    {
+      "index": 19,
+      "term": "後回し",
+      "reading": "あとまわし",
+      "exampleJa": "保存は後回しにしたが、数値の確認は先に行った。",
+      "word": "vocab-19.mp3",
+      "wordHash": "5051b1a68fcb117c6c4e55140cb82020a91ec7ce490c1d75777aea7e0d40c08c",
+      "example": "example-19.mp3",
+      "exampleHash": "a7189e370250282c6d6133834b87da1cbe4f1e3bc5d67447f8719020165f8f86",
+      "wordSha256": "3ae510e85b6556c9a8048b08514deaa611be0f5a0e376770ae0c856114744dea",
+      "exampleSha256": "1e427326021157a1fd6c0bbac676a01e6a5053286929d6733bf26c733c037f6b"
+    },
+    {
+      "index": 20,
+      "term": "ご愛敬",
+      "reading": "ごあいきょう",
+      "exampleJa": "表示が少し素っ気ないのはご愛敬だが、計算の誤りは直す。",
+      "word": "vocab-20.mp3",
+      "wordHash": "ee60385bbbd7a673175178cbe7b1259fa98f97ccca96a2fb119167985297e2f8",
+      "example": "example-20.mp3",
+      "exampleHash": "c1cc2bf5d8eda77373b32c0b86fced7e3be8893af7436ca0d3149fd23275e7ff",
+      "wordSha256": "12f399f869a9ca9258db11e5c6f6503ebb2e9c6619859f577e108d2683752688",
+      "exampleSha256": "ef498fe3153beed08b6de609266561c5a35a1fc59d3dd5d5372330d544a8895f"
+    }
+  ],
+  "grammar": [
+    {
+      "index": 1,
+      "pattern": "～じみた",
+      "exampleJa": "冗談じみた案でも、試す条件が具体的なら検証できる。",
+      "example": "grammar-example-01.mp3",
+      "exampleHash": "7d69d4c1062789a833682e8e7d726bfbc23da8fa0bebe3a2da30edcb4ac02f54",
+      "exampleSha256": "dc99b9f29c3d6ec385b4511f06447d866784039ed75e4bccd45b86df80ed5773"
+    },
+    {
+      "index": 2,
+      "pattern": "～ならでは",
+      "exampleJa": "実装を二つ持つ構成ならではの検算を、移行時にも生かす。",
+      "example": "grammar-example-02.mp3",
+      "exampleHash": "f4dddf004aa5ba60766a9e0f9c455b823c6e36b235b91a578848b73b809bee3a",
+      "exampleSha256": "fa5d6a98b4d8ec17feee9d11e0cc4988211c10512f6c3e3ac2ef335ec6a495fe"
+    },
+    {
+      "index": 1,
+      "studyKind": "review",
+      "identity": "とは限らない",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～とは限らない",
+      "exampleJa": "Parameter数が多ければ実務性能が高いとは限りません。",
+      "example": "grammar-example-07.mp3",
+      "exampleSha256": "c3539e1ac57836054946ffdf28d379ea58f8d696fe4768eec408e4a57f8dedee"
+    },
+    {
+      "index": 2,
+      "studyKind": "review",
+      "identity": "一方で",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～一方で",
+      "exampleJa": "Local LLMはDataを外部に出さない一方で、運用負荷が高くなることがあります。",
+      "example": "grammar-example-05.mp3",
+      "exampleSha256": "4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950"
+    },
+    {
+      "index": 3,
+      "studyKind": "review",
+      "identity": "たうえで",
+      "firstIntroducedDate": "2026-08-12",
+      "audioDate": "2026-08-12",
+      "pattern": "～たうえで",
+      "exampleJa": "Latencyを計測したうえで、利用するModelを決定します。",
+      "example": "grammar-example-06.mp3",
+      "exampleSha256": "e8482c64352d42613ebba7fb87a728a026b7b3f476eaf85982cccc31b973c095"
+    },
+    {
+      "index": 4,
+      "studyKind": "review",
+      "identity": "とともに",
+      "firstIntroducedDate": "2026-09-25",
+      "audioDate": "2026-09-25",
+      "pattern": "～とともに",
+      "exampleJa": "振動とともに大きな加速度も発生する条件を検証します。",
+      "example": "grammar-example-02.mp3",
+      "exampleSha256": "528851008943e308af92588fdf1ab35ad63c02a32e4d264272186ac1147a5c13"
+    },
+    {
+      "index": 5,
+      "studyKind": "review",
+      "identity": "かつ",
+      "firstIntroducedDate": "2026-09-26",
+      "audioDate": "2026-09-26",
+      "pattern": "～かつ",
+      "exampleJa": "低遅延かつ安定した処理が必要でも、遠隔化の効果は実測して判断します。",
+      "example": "grammar-example-02.mp3",
+      "exampleSha256": "a76fc500b529bb265b6cdd278e1565ec2b337ee1f6b39b5417a9a332b2ab4dfa"
+    },
+    {
+      "index": 6,
+      "studyKind": "review",
+      "identity": "からといって",
+      "firstIntroducedDate": "2026-08-18",
+      "audioDate": "2026-08-18",
+      "pattern": "～からといって",
+      "exampleJa": "検知精度が上がったからといって、確認作業が減るとは限りません。",
+      "example": "grammar-example-03.mp3",
+      "exampleSha256": "f1d7aacebfbeaa61f73c8f31545ba674aa5fa0c7dde36caf910be9e0fd9b4b8a"
+    }
+  ]
+}
