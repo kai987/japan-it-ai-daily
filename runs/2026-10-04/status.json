@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-04",
-  "stage": "request_ready",
+  "stage": "request_submitted",
   "sourceCommit": "263ee13b4e5c9c7735c9a175cb8caac043a3e77d",
   "sourceWindow": {
     "from": "2026-10-03T10:00:00+09:00",
     "to": "2026-10-04T10:00:00+09:00"
   },
   "createdAt": "2026-10-04T01:07:44.317Z",
-  "updatedAt": "2026-10-04T01:45:27.080Z",
+  "updatedAt": "2026-10-04T01:45:38.819Z",
   "completedArtifacts": [],
   "lastError": null,
   "baseCommit": "263ee13b4e5c9c7735c9a175cb8caac043a3e77d",
@@ -44,5 +44,29 @@
     "src/data/interviews/2026-10-04.json"
   ],
   "platformRepair": false,
-  "platformRepairPaths": []
+  "platformRepairPaths": [],
+  "request": {
+    "schemaVersion": 1,
+    "requestId": "codex-2026-10-04-fb3813cc-f207-46b1-b4b7-aecc372a432a",
+    "targetDate": "2026-10-04",
+    "baseCommit": "263ee13b4e5c9c7735c9a175cb8caac043a3e77d",
+    "draftCommit": "43a8944c5b8ca16594251f6fd9b01a49150831f0",
+    "draftBranch": "draft/daily-2026-10-04",
+    "preflightRunId": 37168822220,
+    "preflightWorkflowPath": ".github/workflows/deploy.yml",
+    "requestedAt": "2026-10-04T01:45:22.389Z",
+    "files": [
+      "src/content/daily/2026-10-04.md",
+      "src/content/japanese/2026-10-04.md",
+      "src/content/daily-ja/2026-10-04.md",
+      "src/content/japanese-ja/2026-10-04.md",
+      "src/content/evidence/2026-10-04.json",
+      "src/data/interviews/2026-10-04.json"
+    ],
+    "platformRepair": false,
+    "platformRepairPaths": []
+  },
+  "requestCommit": "7a2a856cab548b89c39d61a2cd7d2356fc68bad8",
+  "requestBlob": "8c1d25ba63fcd84ae471a2e0bfafc6ddf34a624e",
+  "submittedAt": "2026-10-04T01:45:38.441Z"
 }
