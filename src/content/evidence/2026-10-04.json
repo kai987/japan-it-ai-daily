@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-04",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-04T01:39:12.494Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-04-top-1",
+      "url": "https://dev.classmethod.jp/articles/claude-code-block-reads-outside-working-directories/",
+      "originalTitle": "Claude Code の blockReadsOutsideWorkingDirectories で作業ディレクトリ外の読み取りを拒否してみた",
+      "source": "DevelopersIO",
+      "topic": "AI開発・アクセス境界",
+      "access": "full",
+      "accessNote": "Public original returned HTTP 200; complete readable original captured outside Git. Publication time checked against publisher metadata/RSS. Images are not independent verification of the experiments.",
+      "publishedAt": "2026-10-03T19:37:00.836+09:00",
+      "capturedAt": "2026-10-04T01:09:48.774702+00:00",
+      "snapshotSha256": "8b5379e7227df69672a6cf1ced326c297a8244a3851a15ab978cab696583155e",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Read制限だけではBashの読取りまで閉じず、sandboxとの併用を試した。",
+          "quote": "Bash も止めたい場合は sandbox の併用が必要です。",
+          "locator": "まとめ",
+          "conditions": "Claude Code 2.1.287、ユーザー設定を中心とした実験。bypassPermissionsとmanaged settingsは未検証。ローカル設定の不一致は原因未解決。",
+          "usedIn": {
+            "zh": "blockReadsOutsideWorkingDirectories",
+            "ja": "blockReadsOutsideWorkingDirectories",
+            "interview": "blockReadsOutsideWorkingDirectories"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "ユーザー側allowReadはsandbox内Bashに作用し、組込みReadは別に制限される。",
+          "quote": "allowRead",
+          "locator": "sandbox.filesystem.allowRead の検証",
+          "conditions": "Claude Code 2.1.287、ユーザー設定を中心とした実験。bypassPermissionsとmanaged settingsは未検証。ローカル設定の不一致は原因未解決。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "同じ読取りでも組込みツールとシェルの境界が違い、実際の経路で権限を確かめる練習になります。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "同一读取操作在内置工具与 shell 走不同边界，适合练习按实际路径验收权限。",
+            "ja": "同じ読取りでも組込みツールとシェルの境界が違い、実際の経路で権限を確かめる練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-04-top-2",
+      "url": "https://dev.classmethod.jp/articles/aurora-dsql-partial-indexes/",
+      "originalTitle": "[アップデート] Amazon Aurora DSQL でパーシャルインデックスが使えるようになりました",
+      "source": "DevelopersIO",
+      "topic": "クラウド・データベース",
+      "access": "full",
+      "accessNote": "Public original returned HTTP 200; complete readable original captured outside Git. Publication time checked against publisher metadata/RSS. Images are not independent verification of the experiments.",
+      "publishedAt": "2026-10-03T17:42:46.491+09:00",
+      "capturedAt": "2026-10-04T01:09:48.818484+00:00",
+      "snapshotSha256": "bb641d7dc26c9d0c5e99687768959ce8445af7b87810ddf2a67e29c91123856c",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "customer_idの索引にWHERE status=openを付け、DSQLのASYNC構文で作成した。",
+          "quote": "CREATE INDEX ASYNC",
+          "locator": "インデックス作成",
+          "conditions": "東京の検証クラスター、open 100件とcompleted 33,000件。EXPLAINのみの比較で、実時間、容量、料金の実測なし。",
+          "usedIn": {
+            "zh": "CREATE INDEX ASYNC",
+            "ja": "CREATE INDEX ASYNC",
+            "interview": "CREATE INDEX ASYNC"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "openの条件を満たす検索だけが部分索引を使い、他の二例はFull Scanだった。",
+          "quote": "Full Scan",
+          "locator": "statusなし／completed の EXPLAIN",
+          "conditions": "東京の検証クラスター、open 100件とcompleted 33,000件。EXPLAINのみの比較で、実時間、容量、料金の実測なし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "偏りのある注文データで、索引条件、問合せ条件、実行計画の関係を具体的に学べます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "用有偏斜的订单数据具体说明索引条件、查询条件和执行计划的关系。",
+            "ja": "偏りのある注文データで、索引条件、問合せ条件、実行計画の関係を具体的に学べます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-04-top-3",
+      "url": "https://dev.classmethod.jp/articles/bedrock-troubleshooting-assistant-search-both-sources/",
+      "originalTitle": "[Amazon Bedrock] 設備が止まった。マニュアルと過去トラブル履歴を組み合わせたトラブル対応アシスタントを、50 問で評価しながら作ってみました",
+      "source": "DevelopersIO",
+      "topic": "業務AI・検索評価",
+      "access": "full",
+      "accessNote": "Public original returned HTTP 200; complete readable original captured outside Git. Publication time checked against publisher metadata/RSS. Images are not independent verification of the experiments.",
+      "publishedAt": "2026-10-04T09:32:02+09:00",
+      "capturedAt": "2026-10-04T01:12:08.879947+00:00",
+      "snapshotSha256": "9767c64012888b88990e456463422bf137c66b70aec9e3667dbdea52132f2d34",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "取説と履歴を必ず検索する方式で、元の50問の正答が32から44へ改善した。",
+          "quote": "両方を必ず検索",
+          "locator": "段階2",
+          "conditions": "全て合成データ。元の8機種・300履歴・50問。後半は三回反復。Qwen別集は型番条件が容易で、実工場、料金、一般性能の保証なし。",
+          "usedIn": {
+            "zh": "Bedrock",
+            "ja": "Bedrock",
+            "interview": "Bedrock"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "150回答中122回答は追加ツールなしで、平均0.29回の呼出しだった。",
+          "quote": "122 回",
+          "locator": "段階4 の追加検索",
+          "conditions": "全て合成データ。元の8機種・300履歴・50問。後半は三回反復。Qwen別集は型番条件が容易で、実工場、料金、一般性能の保証なし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "500回答で16件の採点を修正し、7件は評定モデルの事実誤認だった。",
+          "quote": "16 件",
+          "locator": "採点の見直し",
+          "conditions": "全て合成データ。元の8機種・300履歴・50問。後半は三回反復。Qwen別集は型番条件が容易で、実工場、料金、一般性能の保証なし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "検索を分ける理由、段階別の比較、別データでの確認があり、評価の限界まで説明する練習になります。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "检索分工的改动有明确失败原因、分阶段对照和独立数据检查，能练习解释评估边界。",
+            "ja": "検索を分ける理由、段階別の比較、別データでの確認があり、評価の限界まで説明する練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-04-top-4",
+      "url": "https://dev.classmethod.jp/articles/qwik-2-rc-changes/",
+      "originalTitle": "Qwik 2.0 RC で何が変わったのか、HTML コメントまで削った設計のこだわりを読んでみた",
+      "source": "DevelopersIO",
+      "topic": "フロントエンド・実測",
+      "access": "full",
+      "accessNote": "Public original returned HTTP 200; complete readable original captured outside Git. Publication time checked against publisher metadata/RSS. Images are not independent verification of the experiments.",
+      "publishedAt": "2026-10-03T13:10:14+09:00",
+      "capturedAt": "2026-10-04T01:12:08.943876+00:00",
+      "snapshotSha256": "a73e10bd79a503c5afc42a524e598c983bec1fb58524b96281ea89e569964711",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "v2はqwik/stateとqwik/vnodeを使い、starterのHTMLコメントが60から0になった。",
+          "quote": "qwik/state",
+          "locator": "HTML のシリアライズ方式",
+          "conditions": "1.20.1対2.0.0-rc.0、同じstarter、2026-10-02のApple Silicon macOS/Bun1.3.10/Node24.18.0。公式ベンチマーク未再測定、RCのrouteLoader動作未解決。",
+          "usedIn": {
+            "zh": "qwik/state",
+            "ja": "qwik/state",
+            "interview": "qwik/state"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "gzip後のHTMLは7,115Bから8,716Bに増えた。",
+          "quote": "7,115",
+          "locator": "同じ starter のサイズ比較",
+          "conditions": "1.20.1対2.0.0-rc.0、同じstarter、2026-10-02のApple Silicon macOS/Bun1.3.10/Node24.18.0。公式ベンチマーク未再測定、RCのrouteLoader動作未解決。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "著者のVite previewではrouteLoaderの期待したstreamingが動かなかった。",
+          "quote": "blockSSR: false",
+          "locator": "routeLoader の検証",
+          "conditions": "1.20.1対2.0.0-rc.0、同じstarter、2026-10-02のApple Silicon macOS/Bun1.3.10/Node24.18.0。公式ベンチマーク未再測定、RCのrouteLoader動作未解決。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "コメント削減と転送量増加の両方を残しており、一つの指標だけで性能を判断しない練習になります。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "同时保留评论标记消失与传输体积上升的实测，让前端性能判断避免单一指标。",
+            "ja": "コメント削減と転送量増加の両方を残しており、一つの指標だけで性能を判断しない練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-04-top-5",
+      "url": "https://qiita.com/j45delight/items/59c989d4d9413660badc",
+      "originalTitle": "【ServiceNow】Build Agent に\"設計書\"を渡したら、ホロスコープ占いアプリが本気の仕上がりになった🔮(前編)",
+      "source": "Qiita",
+      "topic": "AI開発・仕様と検証",
+      "access": "full",
+      "accessNote": "Public original returned HTTP 200; complete readable original captured outside Git. Publication time checked against publisher metadata/RSS. Images are not independent verification of the experiments.",
+      "publishedAt": "2026-10-03T18:23:25+09:00",
+      "capturedAt": "2026-10-04T01:10:48.041727+00:00",
+      "snapshotSha256": "c4052c54b89d543cd8639d1d4be8b1701d86f452894b4f45a40fd104415191cf",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "サーバーのScripted REST APIでDeepSeekを呼び、Aliasに認証情報を置く設計。",
+          "quote": "Connection & Credential Alias",
+          "locator": "3回目: AI と保存",
+          "conditions": "PDI試用の一アプリ、本文は六promptの一〜三回目のみ。初回の一計算例。送信データ、通常ユーザーACLの独立検証なし。三回目後の不具合未解決。",
+          "usedIn": {
+            "zh": "Connection & Credential Alias",
+            "ja": "Connection & Credential Alias",
+            "interview": "Connection & Credential Alias"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "三回目の後にAI解説ボタンが動かず、前編では修正完了が確認できない。",
+          "quote": "AI 解説のボタンがうまく起動せず",
+          "locator": "おわりに",
+          "conditions": "PDI試用の一アプリ、本文は六promptの一〜三回目のみ。初回の一計算例。送信データ、通常ユーザーACLの独立検証なし。三回目後の不具合未解決。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "設計、数値の確認、認証情報の置き場所、未完了の不具合が揃い、確かめられる依頼を学べます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "具体设计、数值验收、凭据边界与未完成错误同时出现，适合学习可检查的代理任务。",
+            "ja": "設計、数値の確認、認証情報の置き場所、未完了の不具合が揃い、確かめられる依頼を学べます。"
+          }
+        }
+      ]
+    }
+  ]
+}
