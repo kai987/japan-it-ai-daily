@@ -1,0 +1,316 @@
+[
+  {
+    "title": "Claude Code の blockReadsOutsideWorkingDirectories で作業ディレクトリ外の読み取りを拒否してみた",
+    "url": "https://dev.classmethod.jp/articles/claude-code-block-reads-outside-working-directories/",
+    "source": "DevelopersIO",
+    "topic": "AI開発・アクセス境界",
+    "publishedAt": "2026-10-03T19:37:00.836+09:00",
+    "capturedAt": "2026-10-04T01:09:48.774702+00:00",
+    "snapshotSha256": "8b5379e7227df69672a6cf1ced326c297a8244a3851a15ab978cab696583155e",
+    "access": "full",
+    "accessNote": "Public original returned HTTP 200; complete readable original captured outside Git. Publication time checked against publisher metadata/RSS. Images are not independent verification of the experiments.",
+    "question": "AIエージェントのファイル読取権限を、どのように確かめますか。",
+    "answer": "設定名だけで判断せず、読む経路ごとに確かめます。Claude CodeのblockReadsOutsideWorkingDirectoriesはReadを拒否しますが、Bashは別です。記事ではsandboxとallowUnsandboxedCommandsの無効化を併用して、Bashも止めています。追加ディレクトリの許可も試し、未検証のモードまで安全だとは言わないようにします。",
+    "whyZh": "同一读取操作在内置工具与 shell 走不同边界，适合练习按实际路径验收权限。",
+    "whyJa": "同じ読取りでも組込みツールとシェルの境界が違い、実際の経路で権限を確かめる練習になります。",
+    "projectZh": "为代码代理准备工作目录内外两个测试文件，分别测试 Read、Bash、追加目录和 sandbox 退避开关，保存版本及拒绝结果。",
+    "projectJa": "作業ディレクトリの内外に検証用ファイルを用意し、Read、Bash、追加ディレクトリ、sandboxの退避設定を版とともに記録します。",
+    "keywords": [
+      "Read",
+      "sandbox",
+      "allowUnsandboxedCommands"
+    ],
+    "zh": [
+      "Claude Code 的 blockReadsOutsideWorkingDirectories 不是一个覆盖全部读取途径的统一开关。原文说明该设置在 2.1.257 加入，作者实际使用 2.1.287、用户级配置和 auto 模式测试。文章公开于 10 月 3 日，但功能加入的版本事件更早；不能把当天文章误写成当天新发布。核心问题是：阻止内置 Read 读取工作目录外文件后，Bash 是否也受相同限制？",
+      "作者先把该设置设为 true。内置 Read 在 auto、plan、manual、acceptEdits 下直接拒绝目录外文件，不弹出询问。关闭 sandbox 时，Bash 的 cat 仍会要求人工批准，并能在批准后读到文件。随后同时启用 sandbox，并将 allowUnsandboxedCommands 设为 false，Bash 读取也被操作系统以 Operation not permitted 拒绝。反过来，只开 sandbox、关闭 blockReadsOutsideWorkingDirectories 时，Read 仍能读目录外文件：sandbox 默认不能被当作完整读取隔离。",
+      "明确的例外也分两层。会话里的 /add-dir，以及用户级 permissions.additionalDirectories，可让追加目录中的 Read 和 Bash 都成功；用户级 sandbox.filesystem.allowRead 则放行 sandbox 内的 Bash，不能单独解除 Read 的工作目录限制。两类设置不能互换。工程验收应同时列出“工具是否允许”和“操作系统是否放行”，否则会误把一个路径的成功当作另一个路径也能访问。",
+      "配置层级是本次实验的重要限制。作者在本地设置里放 additionalDirectories 和 allowRead，分别试了未跟踪文件、绝对路径等变体，仍没有得到与用户级相同的结果。原文将部分行为标为与文档描述不一致或原因未解，并未证明所有版本都如此。Claude Code 自己需要的 ~/.claude/CLAUDE.md 能读到，而 settings.json 被拒绝，也提示特殊处理存在；这不是允许整个 ~/.claude 目录的证据。",
+      "原文没有测试 bypassPermissions，也没有在 managed settings 场景复现策略强制。本文保留这些空白，不把多个成功拒绝例子扩展成对全部模式或恶意命令的安全保证。本文的应用建议是：固定版本、配置层级与实际命令，分别验证 Read、Bash 和批准后的行为，再对确实需要的目录追加例外。它增加了测试成本，却能让权限边界更容易解释。"
+    ],
+    "ja": [
+      "blockReadsOutsideWorkingDirectoriesは、すべての読取経路を一度に閉じる設定ではありません。原文では2.1.257で追加された機能を、2.1.287、ユーザー設定、autoモードで確かめています。記事は10月3日の公開ですが、機能追加はそれより前です。中心の問いは、組込みのReadを止めたとき、Bashによる読取りも止まるのか、という点です。",
+      "trueにすると、Readはauto、plan、manual、acceptEditsで作業ディレクトリ外のファイルを拒否し、許可を尋ねませんでした。一方でsandboxを切ったBashのcatは承認を求め、承認後には読めています。sandboxを有効にし、allowUnsandboxedCommandsをfalseにして退避も認めない構成では、BashもOSからOperation not permittedで拒否されました。逆に、この読取設定を切ってsandboxだけを有効にするとReadは外を読めました。sandboxだけで読み取りを隔離できるとは限らない、という比較です。",
+      "例外の仕組みも区別が必要です。セッションの/add-dirとユーザー設定のpermissions.additionalDirectoriesでは、追加先にReadとBashの両方がアクセスできました。ユーザー設定のsandbox.filesystem.allowReadはBash側を通しますが、Readの制限を解除しません。設定を併用するときは、組込みツールの判断とOS側の判断を分けて、どちらが許可したのかを確認します。",
+      "ローカル設定には未解決の点が残ります。additionalDirectoriesやallowReadをローカルに置き、未追跡ファイルや絶対パスなども試しましたが、ユーザー設定と同じ結果になりませんでした。文書との不一致を含む観察であり、すべての版に共通する仕様とは断定できません。また、Claude Code自身が必要とする~/.claude/CLAUDE.mdは読めてもsettings.jsonは拒否されました。この一例から同じディレクトリ全体が許可されるとは言えません。",
+      "bypassPermissionsは実験対象外で、managed settingsによる強制も検証していません。本稿の提案は、版、設定を置く場所、実際の命令を固定し、Read、Bash、承認後の状態を別々に試すことです。必要な場所だけを追加し、未検証のモードは未検証と記録します。検証の手間はかかりますが、一つの拒否結果を全体の安全性へ広げずに説明できます。"
+    ],
+    "pointsZh": [
+      "内置 Read 与 Bash 的访问路径不同；同时检查 blockReadsOutsideWorkingDirectories、sandbox 及禁止非沙箱退避。",
+      "additionalDirectories 可影响两个路径，allowRead 仅调整沙箱读取；配置层级、2.1.287 和未测试模式必须跟结果一起说明。"
+    ],
+    "pointsJa": [
+      "ReadとBashは別の経路です。blockReadsOutsideWorkingDirectories、sandbox、非sandbox実行への退避設定を組み合わせて確認します。",
+      "additionalDirectoriesとallowReadは作用先が異なります。2.1.287と設定の階層を示し、試していないモードは未検証と伝えます。"
+    ],
+    "facts": [
+      [
+        "Bash も止めたい場合は sandbox の併用が必要です。",
+        "まとめ",
+        "Read制限だけではBashの読取りまで閉じず、sandboxとの併用を試した。"
+      ],
+      [
+        "allowRead",
+        "sandbox.filesystem.allowRead の検証",
+        "ユーザー側allowReadはsandbox内Bashに作用し、組込みReadは別に制限される。"
+      ]
+    ],
+    "conditions": "Claude Code 2.1.287、ユーザー設定を中心とした実験。bypassPermissionsとmanaged settingsは未検証。ローカル設定の不一致は原因未解決。",
+    "evidenceAnchor": "blockReadsOutsideWorkingDirectories"
+  },
+  {
+    "title": "[アップデート] Amazon Aurora DSQL でパーシャルインデックスが使えるようになりました",
+    "url": "https://dev.classmethod.jp/articles/aurora-dsql-partial-indexes/",
+    "source": "DevelopersIO",
+    "topic": "クラウド・データベース",
+    "publishedAt": "2026-10-03T17:42:46.491+09:00",
+    "capturedAt": "2026-10-04T01:09:48.818484+00:00",
+    "snapshotSha256": "bb641d7dc26c9d0c5e99687768959ce8445af7b87810ddf2a67e29c91123856c",
+    "access": "full",
+    "accessNote": "Public original returned HTTP 200; complete readable original captured outside Git. Publication time checked against publisher metadata/RSS. Images are not independent verification of the experiments.",
+    "question": "パーシャルインデックスを使うとき、何を確認しますか。",
+    "answer": "よく検索する少数の行だけを索引に載せられるかを考えます。Aurora DSQLの記事では、openが100件、completedが3万3千件の注文でCREATE INDEX ASYNCを使い、WHEREでopenだけを対象にしました。EXPLAINではopenの検索にIndex Scanが出ますが、completedや条件なしはFull Scanです。実時間や索引サイズは別途測る必要があります。",
+    "whyZh": "用有偏斜的订单数据具体说明索引条件、查询条件和执行计划的关系。",
+    "whyJa": "偏りのある注文データで、索引条件、問合せ条件、実行計画の関係を具体的に学べます。",
+    "projectZh": "构造 open/completed 测试表，保存异步建索引任务结果，比较三类查询的计划；随后独立测量时延、写入成本与索引大小。",
+    "projectJa": "openとcompletedを持つ検証表で非同期作成の完了を確認し、三つの問合せの計画を比べます。時間、書込負担、索引サイズは別に測ります。",
+    "keywords": [
+      "CREATE INDEX ASYNC",
+      "WHERE",
+      "EXPLAIN"
+    ],
+    "zh": [
+      "部分索引的背景是“表中绝大多数行不是常用查询的目标”。Aurora DSQL 现在可以在建索引时加 WHERE，仅把满足条件的行纳入索引。原文不是笼统宣称所有查询会更快，而是在东京区域创建测试集群，用 orders 表的 customer_id 与 status 演示适用范围：open 100 条、completed 33,000 条，行数是为实验人工选定，不是线上订单分布。",
+      "建索引语句为 CREATE INDEX ASYNC open_orders_idx ON orders(customer_id) WHERE status='open'。DSQL 必须用 ASYNC，提交后先返回 job_id，建索引在后台执行；作者查看 pg_indexes，确认定义出现后再检查查询计划。因此“命令已返回”与“索引已可用”应分别验收。索引键是 customer_id，而 WHERE 限定可进入索引的行，不是把所有状态按同样方式加速。",
+      "三个 EXPLAIN 对照说明了条件边界。customer_id=42 且 status='open' 的查询显示 Index Scan，使用 open_orders_idx；把状态改为 completed，计划是 Full Scan；只用 customer_id=42 而不限定状态，也仍是 Full Scan。查询必须保证候选行都落在部分索引条件内，否则索引不可能覆盖全部答案。不能只看到某个 Index Scan 就删掉业务里其他查询需要的索引。",
+      "原文的 cost 是优化器估计，不是实测毫秒，也没有测出索引文件的实际体积、真实账单或写入吞吐变化。因此这里保留“索引可能更小、可减少不必要维护”的机制解释，不能把它写成已量化的降本结论。采用前可以先检查状态分布和关键查询是否固定带有 open 条件，再测执行时间、更新频率及维护成本。DSQL 的异步语法也不代表 PostgreSQL 所有索引特性都兼容。"
+    ],
+    "ja": [
+      "パーシャルインデックスは、表の大半が普段の検索対象ではないときに、必要な行だけを索引へ載せる仕組みです。原文は東京のAurora DSQLクラスターでordersを用意し、openを100件、completedを33,000件にしています。件数は説明用に置いた条件で、実サービスの分布を測った値ではありません。customer_idへの索引にWHEREを加え、対象をopenへ絞ります。",
+      "使った文はCREATE INDEX ASYNC open_orders_idx ON orders(customer_id) WHERE status='open'です。DSQLではASYNCが必須で、要求後にはjob_idが返り、作成は背後で進みます。著者はpg_indexesで定義を確認してから計画を比較しました。作成要求の受付と、検索に使える状態の確認は別です。WHEREが定めるのは索引に入れる行であり、すべての状態に同じ効果を与える設定ではありません。",
+      "EXPLAINの比較では、customer_id=42かつopenの検索にopen_orders_idxのIndex Scanが出ました。completedを指定した場合と、statusを指定しない場合はFull Scanです。果たして条件を変えても使われるのかを、実行計画で確かめた例です。問合せが索引の対象外の行を含むなら、その索引だけで全件を返せません。業務の条件を先に列挙し、対象に含まれるかを確認する必要があります。",
+      "小さい対象だけを索引へ載せるので、容量や更新時の負担を抑えられる可能性があります。ただし原文のcostは計画の推定値で、実時間、索引の実サイズ、料金、書込性能は測っていません。採用時には偏りのある実データと各問合せを使い、それらを別に測るのが本稿の提案です。PostgreSQLに似た構文であっても、すべての索引機能の互換性を保証する記事ではありません。"
+    ],
+    "pointsZh": [
+      "CREATE INDEX ASYNC 的成功返回只是后台任务已受理，应再确认索引定义和可用状态。",
+      "部分索引要求查询条件被索引的 WHERE 条件覆盖；EXPLAIN 的 cost、真实时延、体积及账单是不同证据。"
+    ],
+    "pointsJa": [
+      "CREATE INDEX ASYNCの戻り値は作成要求の受付です。索引の定義と利用できる状態を続けて確認します。",
+      "問合せ条件と索引のWHERE条件の関係を確認します。EXPLAINのcostと、実時間、容量、料金の測定は分けます。"
+    ],
+    "facts": [
+      [
+        "CREATE INDEX ASYNC",
+        "インデックス作成",
+        "customer_idの索引にWHERE status=openを付け、DSQLのASYNC構文で作成した。"
+      ],
+      [
+        "Full Scan",
+        "statusなし／completed の EXPLAIN",
+        "openの条件を満たす検索だけが部分索引を使い、他の二例はFull Scanだった。"
+      ]
+    ],
+    "conditions": "東京の検証クラスター、open 100件とcompleted 33,000件。EXPLAINのみの比較で、実時間、容量、料金の実測なし。",
+    "evidenceAnchor": "CREATE INDEX ASYNC"
+  },
+  {
+    "title": "[Amazon Bedrock] 設備が止まった。マニュアルと過去トラブル履歴を組み合わせたトラブル対応アシスタントを、50 問で評価しながら作ってみました",
+    "url": "https://dev.classmethod.jp/articles/bedrock-troubleshooting-assistant-search-both-sources/",
+    "source": "DevelopersIO",
+    "topic": "業務AI・検索評価",
+    "publishedAt": "2026-10-04T09:32:02+09:00",
+    "capturedAt": "2026-10-04T01:12:08.879947+00:00",
+    "snapshotSha256": "9767c64012888b88990e456463422bf137c66b70aec9e3667dbdea52132f2d34",
+    "access": "full",
+    "accessNote": "Public original returned HTTP 200; complete readable original captured outside Git. Publication time checked against publisher metadata/RSS. Images are not independent verification of the experiments.",
+    "question": "複数の資料を使うAI検索の精度を、どう改善しますか。",
+    "answer": "答えに必要な資料が両方届いているかを先に調べます。Bedrockの記事では、マニュアルと履歴を一緒に検索すると片方が落ち、二つを必ず取る構成で正答が32問から44問になりました。曖昧な相談だけStrandsで追加検索する方法も試しています。ただし架空の50問で、採点にも誤りがあったため、実業務の質問と人の確認で評価します。",
+    "whyZh": "检索分工的改动有明确失败原因、分阶段对照和独立数据检查，能练习解释评估边界。",
+    "whyJa": "検索を分ける理由、段階別の比較、別データでの確認があり、評価の限界まで説明する練習になります。",
+    "projectZh": "制作手册与历史两源的最小问答集，固定答案依据和评分规则，先验证必取两源，再增加有条件的代理搜索，记录问题级错误和费用。",
+    "projectJa": "取説と履歴の小さな問答集で根拠と採点基準を固定し、必ず二つを取る構成から始めます。必要な追加検索を加え、設問ごとの誤りと費用を記録します。",
+    "keywords": [
+      "Bedrock Knowledge Bases",
+      "DynamoDB",
+      "Strands"
+    ],
+    "zh": [
+      "文章把“机器停了，需要同时看手册与以往故障”的场景变成逐步可评估的检索系统。全部材料是合成的：8 类设备手册、300 条历史，其中 40 条人工设计为正解依据，其余 260 条按手册警报目录抽取设备、型号和代码后让 Claude 写叙述。50 个问题覆盖 8 类情形，并指定 expected、gold_incidents、gold_manual。手册由 Markdown 经 WeasyPrint 转为 PDF。它是受控演示，不能把样本说成真实工厂维修记录。",
+      "第一阶段将手册和历史混在一个 Bedrock Knowledge Base，以语义搜索取前 5 条，50 问正答 32；跨两源问题只对 3/10。7 个失败里有 6 个没把需要的手册片段放进前五。把候选加到 15 条，跨源题也仅到 4/10。问题主要不是模型不懂，而是输入遗漏了必要的一种材料。",
+      "第二阶段固定必取两源：手册 Knowledge Base 按设备系列过滤后取 5 条，历史用 DynamoDB 按代码和型号匹配；只有系列名时用前方一致处理。总分提高到 44/50，跨源题 10/10。作者也用带系列过滤的历史向量搜索得到 44 分，因此不能把提升全归因于“精确搜索优于语义搜索”；保证两源同时到场也是关键变化。",
+      "第三阶段把 search_manual 和 search_incident_history 交给 Strands，并用 docstring 说明调用时机，三次都是 47/50；但有四题在不同运行间波动，输入 token 约为第二阶段的 1.8 倍。第四阶段先执行第二阶段，再仅在多型号、前提不符或信息不足时追加代理搜索，三次为 47、47、45。150 个回答里 122 个没有追加调用，平均 0.29 次，相比第三阶段的 1.94 次更少。多型号题每次均为 6/6，但不代表其余题型同样稳定。",
+      "第五阶段针对没有警报码、仅有症状的咨询，追加历史语义搜索 5 条，并让 LLM 从目录提出最多 3 个候选代码，每码再取精确匹配历史最多 15 条。旧的仅取 5 条方案错过了第六条正解。三次成绩 49、48、47，症状题都是 8/8，追加调用均值 0.22；这是特定难题下的改进，不能写成所有问题都必须调用更多工具。",
+      "为了减轻同一模型既造题又答题的偏差，作者让 Qwen3 235B 独立造新的 8 系列、300 历史和 50 问，建立独立 Knowledge Base 与 DynamoDB，保持类别比例。阶段 1 是 37 分，阶段 2 是 47，阶段 3 为 49/48/48，阶段 4 为 50/49/50，阶段 5 为 49/48/50。不过新集的全部症状题都给出了带枝番的完整型号，每型号平均 12.5 条历史（8～18），第二阶段取 15 条已经能覆盖；原来仅给系列名的冬季故障难题没有出现。因此别集验证支持基本路径，但不能确立后三阶段的普遍排名。",
+      "原始 50 问下，第一阶段输入 1,458 token、平均 6.9 秒；第二阶段 3,732 token、8.3 秒；第三阶段约 6,700、约 13 秒；第四阶段约 6,800、11～19 秒；第五阶段约 5,900、约 12 秒。原文没有真实生产负载费用测量。评分先由 Claude Opus 4.8 执行，再由人主要复核非◎；500 个回答中修正了 16 个评分，其中 7 个是评委理解事实错误。括号补充不扣分等规则事前固定，不能看完结果再调分。",
+      "实现中还有两个值得保留的边界：型号枝番不一致会让精确搜索漏检，需要在工具内部处理粒度；超时从 120 秒调到 300 秒、设有限重试并保存已完成题，帮助长批次恢复，却不证明实时响应适用。本文建议先建立必取两源的确定性基线，再对真正的歧义增加搜索；把失败题、评委错误、耗时和合成数据限制一起保留，避免只给一个高正确率。"
+    ],
+    "ja": [
+      "設備の停止時には、取扱説明書だけでも過去履歴だけでも答えが足りない場合があります。著者はこれを、架空の8機種のマニュアル、300件の履歴、8分類の50問で評価しました。履歴40件を正解の根拠として設計し、残る260件はアラーム一覧から型番・コード・原因を抽選して文章を生成しています。Markdownの取説はWeasyPrintでPDF化しました。expected、gold_incidents、gold_manualを持つ合成データで、実工場の実績ではありません。",
+      "最初は取説と履歴を一つのBedrock Knowledge Baseに混在させ、意味検索で上位5件を取りました。正答は32/50で、両方が必要な設問は3/10でした。失敗7問中6問では必要な取説が上位5件に入りません。15件へ増やしても両資料を使う設問は4/10です。回答生成だけを変える前に、必要な情報が入力から落ちていないかを調べたのが出発点です。",
+      "段階2は必ず二つの情報源を取ります。取説はシリーズで絞ったKnowledge Baseから5件、履歴はDynamoDBでコード・型番を照合し、シリーズ名だけなら前方一致に切り替えます。44/50となり、両資料が必要な10問は全問正答しました。ただし履歴もシリーズ付きベクトル検索にした比較で44問でした。完全一致が意味検索より常に優れるという証明ではなく、二つの資料を必ず届けた効果も含みます。",
+      "段階3ではsearch_manualとsearch_incident_historyをStrandsに渡し、docstringで使いどころを説明しました。三回とも47/50ですが、四問は回によって揺れ、入力tokenは段階2の約1.8倍です。段階4は段階2を必ず行い、複数型番、前提の不一致、情報不足だけ追加検索します。三回は47、47、45で、150回答の122件は追加なし、平均呼出しは0.29回でした。段階3の1.94回より少なく、多型番問題は毎回6/6です。すべての分類が同じ安定性を持つとは言えません。",
+      "段階5はコードのない相談に限り、履歴の意味検索5件と、LLMがアラーム一覧から挙げる最大3コードの完全一致検索を加えました。後者はコードごとに15件です。古い履歴を5件だけ取る構成では、六件目にあった正解を逃していました。結果は49、48、47問で、症状の8問は三回とも全問正答、追加は平均0.22回です。件数や追加条件が効いた例であり、いつも工具を増やせばよいという結論ではありません。",
+      "別データの確認ではQwen3 235Bに新しい8シリーズ、300履歴、50問を作らせ、別のKnowledge BaseとDynamoDBを使いました。分類比率は同じです。段階1は37、段階2は47、段階3は49/48/48、段階4は50/49/50、段階5は49/48/50でした。ただし新しい症状の質問は全て枝番付きの型番を含み、履歴は型番あたり平均12.5件、範囲8〜18件です。15件を取る段階2でも8問全部の根拠が届きました。元のシリーズ名だけの難問がなく、追加方式の一般的な順位までは確定できません。",
+      "元の50問の入力tokenと平均時間は、段階1が1,458・6.9秒、段階2が3,732・8.3秒です。段階3は約6,700・約13秒、段階4は約6,800・11〜19秒、段階5は約5,900・約12秒でした。実業務の負荷や料金の実測はありません。採点は回答とは別のClaude Opus 4.8が行い、主に◎以外を人が確認しました。500回答の採点を16件直し、そのうち7件は評定モデルの事実誤認でした。expectedの括弧書きは補足とする基準を先に固定し、結果を見て基準は変えていません。",
+      "型番とシリーズの粒度のずれは、ツール側の前方一致処理で解消しています。処理の超過には120秒から300秒へのtimeout変更、有限の再試行、完了済み設問の保存も使っていますが、これで即時の現場対応に使えると保証されたわけではありません。本稿の提案は、二資料を必ず取る単純な基準を作ったうえで、根拠が不足する質問に追加検索を限ることです。誤答、採点の誤り、処理時間と合成データという限界を合わせて残します。"
+    ],
+    "pointsZh": [
+      "混合 Top5 缺少手册是可观察的失败原因；固定两源后 32→44/50，向量历史对照也为44，不能只归因于精确搜索。",
+      "代理调用次数、题型成绩和重复运行差异须一起记录；Qwen 新集更易提供完整型号，不足以决定阶段3～5普遍优劣。",
+      "500 回答的16项评分修正提示自动评委也会出错；事前评分规则、人工复核与合成数据限制不能省略。"
+    ],
+    "pointsJa": [
+      "混合Top5では取説が落ちました。二資料を必ず取って32から44問に改善しましたが、履歴の意味検索でも44問で、完全一致だけの効果とは言えません。",
+      "呼出回数、設問分類、三回の差を一緒に示します。Qwenの別集には完全な型番が多く、段階3〜5の一般的な優劣は未確定です。",
+      "500回答で16件の採点を修正しています。事前の基準、人の見直し、合成データという条件を添えて評価します。"
+    ],
+    "facts": [
+      [
+        "両方を必ず検索",
+        "段階2",
+        "取説と履歴を必ず検索する方式で、元の50問の正答が32から44へ改善した。"
+      ],
+      [
+        "122 回",
+        "段階4 の追加検索",
+        "150回答中122回答は追加ツールなしで、平均0.29回の呼出しだった。"
+      ],
+      [
+        "16 件",
+        "採点の見直し",
+        "500回答で16件の採点を修正し、7件は評定モデルの事実誤認だった。"
+      ]
+    ],
+    "conditions": "全て合成データ。元の8機種・300履歴・50問。後半は三回反復。Qwen別集は型番条件が容易で、実工場、料金、一般性能の保証なし。",
+    "evidenceAnchor": "Bedrock"
+  },
+  {
+    "title": "Qwik 2.0 RC で何が変わったのか、HTML コメントまで削った設計のこだわりを読んでみた",
+    "url": "https://dev.classmethod.jp/articles/qwik-2-rc-changes/",
+    "source": "DevelopersIO",
+    "topic": "フロントエンド・実測",
+    "publishedAt": "2026-10-03T13:10:14+09:00",
+    "capturedAt": "2026-10-04T01:12:08.943876+00:00",
+    "snapshotSha256": "a73e10bd79a503c5afc42a524e598c983bec1fb58524b96281ea89e569964711",
+    "access": "full",
+    "accessNote": "Public original returned HTTP 200; complete readable original captured outside Git. Publication time checked against publisher metadata/RSS. Images are not independent verification of the experiments.",
+    "question": "フロントエンドの新しい版が速いか、どう判断しますか。",
+    "answer": "仕組みの説明と、同じ条件の実測を分けます。Qwik 2の記事では、状態をqwik/stateとqwik/vnodeに保存し、HTMLコメントは60個からゼロになりました。ただしHTMLのgzip量は増えています。初期読込み、待機中の先読み、操作後の通信を分けて調べ、RC版で動かなかったrouteLoaderの条件も残して判断します。",
+    "whyZh": "同时保留评论标记消失与传输体积上升的实测，让前端性能判断避免单一指标。",
+    "whyJa": "コメント削減と転送量増加の両方を残しており、一つの指標だけで性能を判断しない練習になります。",
+    "projectZh": "以相同 starter 比较正式旧版与 RC 的 HTML、gzip、加载/空闲/点击通信；把 Pending 流式处理与 routeLoader 失败分别记录。",
+    "projectJa": "同じstarterでHTML、gzip、初期・待機・クリックの通信を比べます。PendingのストリーミングとrouteLoaderの未解決動作を分けて残します。",
+    "keywords": [
+      "qwik/state",
+      "qwik/vnode",
+      "routeLoader$"
+    ],
+    "zh": [
+      "Qwik 的 resumability 希望让浏览器从服务端保存的状态继续执行，而不先对整棵组件树做 hydration。Optimizer 通过带 $ 的边界拆出闭包与代码片段，Qwikloader 在用户事件到来时再载入相应处理。Qwik 2.0 RC 于 10 月 1 日发布，文章在 10 月 3 日公开；作者 10 月 2 日在 Apple Silicon macOS、Bun 1.3.10、Node 24.18.0 下对相同 playground starter 做生产构建与预览。比较的是 1.20.1 与 2.0.0-rc.0，不是正式版与生产流量。",
+      "v1 用 qv、文本边界等 HTML 注释，以及 q:id/q:key 和 qwik/json 表示恢复所需信息。v2 改成 qwik/state 保存状态、qwik/vnode 保存 DOM 对应关系，元素使用单字符冒号属性，事件仍有 q-e:click。必要时从紧凑信息生成内存中的 vnode，更新时不再重新扫描 HTML 边界。原文引用了约每 15ms 让回浏览器的调度设计；那是设计说明，不是本文实测全部操作延迟。包名也从 @builder.io/qwik 转为 @qwik.dev/core，路由为 @qwik.dev/router，Vite 从 7.3.1 到 8.2.1。",
+      "同一 starter 的 HTML 注释从 60 个到 0，q:id 从20到0，q:key从42到0，冒号属性从0到104。标记少了，却不是页面字节少了：原始 HTML 19,191→22,991B，gzip 7,115→8,716B；客户端构建从50文件115,020B到66文件193,491B，Qwikloader 3,100→5,222B。新增序列化状态和 vnode 的体积抵消了标记删减，不能以“注释零个”推导带宽节省。",
+      "作者用 headless Chromium 分阶段观察实际请求。初始载入的 JS 从3文件59,435B到2文件9,048B；等待3秒的预取从8,938B到161,612B；点击后 v1 没新增请求，v2 新取2文件940B，计数器70→71正常。等待时下载并不等于代码已执行，初始体积小也不等于整个使用过程传输少。官方 js-framework-benchmark 给出的相对 vanilla 几何均值为 v1 2.59、v2 1.23，但浏览器硬件等条件未完整披露，作者也没有重跑该基准，因此不能当作本次 starter 实测的“两倍快”。",
+      "实验性 Pending 特性包含 pendingBoundary、catchBoundary、blockSSR。作者用等待2秒的 useComputed$，让 fallback 与 footer 在约5ms出现，约2011ms后同一HTTP响应补上真实内容，并附模板与 qO(1) 的就地替换脚本。另一方面，routeLoader$ 的 blockSSR:false 在该 Vite preview 中没产生预期流式效果，除 HTML 开头外仍一起等待2秒，原因未解。一个异步组件案例成功不能代替路由加载路径验收。",
+      "路由文档还介绍每个 routeLoader$ 独立数据端点及 maxAge:60、immutable、ETag/304 缓存，而旧版以一路由一个 q-data.json 为中心。TypeScript Optimizer 通过 tsOptimizer:true 选择，文档称 snapshot 与 Rust 一致并计划将其设为默认；本文没有独立复验编译性能。server 目录代码被客户端 import 会构建报错，迁移命令 bunx qwik migrate-v2 也不能代替 hooks、resource、测试监听等手工检查。",
+      "学习价值在于看懂“把工作推迟”如何改变状态保存、事件分片与传输时点。本文建议前端团队用相同页面分开测首屏、空闲、操作与失败路径，核对缓存和流式行为，再决定是否试用。RC 仍可能变化，原文未提供真实设备的用户体验、全站可靠性或生产适用证明。"
+    ],
+    "ja": [
+      "Qwikのresumabilityは、サーバーが残した状態から続けて動き、最初に部品の木全体をhydrationしない設計です。Optimizerは$の境界で閉包を分け、Qwikloaderが利用者のイベント時に必要な処理を取得します。RCの公開は10月1日、記事の公開は10月3日です。著者の比較は10月2日、Apple SiliconのmacOS、Bun 1.3.10、Node 24.18.0で同じplayground starterをproduction build・previewした、1.20.1と2.0.0-rc.0のものです。",
+      "v1ではqvなどのHTMLコメント、q:id、q:key、qwik/jsonが再開のための目印でした。v2は状態をqwik/state、DOMの対応をqwik/vnodeへ詰め直し、要素の情報には一文字のコロン属性を使います。q-e:clickのようなイベント情報は残ります。必要なときにvnodeを復元し、その後はメモリ上の木を使うので、更新のたびにHTMLを走査しません。15msごとにブラウザへ譲る設計も紹介されますが、全操作の実測値ではありません。パッケージは@qwik.dev/coreと@qwik.dev/routerへ、Viteは7.3.1から8.2.1へ変わりました。",
+      "実際のstarterではHTMLコメントが60から0、q:idが20から0、q:keyが42から0になり、コロン属性は0から104です。しかしHTMLは19,191から22,991B、gzipでも7,115から8,716Bへ増えました。クライアントの成果物は50ファイル115,020Bから66ファイル193,491B、Qwikloaderは3,100から5,222Bです。状態とvnodeの文字列が増えたため、目印を削ったこととバイト数の削減は同じ結果になりませんでした。",
+      "headless Chromiumでは通信を三段階で見ています。初期JSは3ファイル59,435Bから2ファイル9,048Bへ減る一方、三秒待機中の先読みは8,938Bから161,612Bへ増えました。クリック時はv1に追加通信なし、v2に2ファイル940Bがあり、カウンターは70から71へ動きました。先読みした量と実行した量は分ける必要があります。公式のjs-framework-benchmarkはvanillaを1とした幾何平均が2.59から1.23ですが、ブラウザや機材などの条件は未記載で、著者のstarter測定で再現した値ではありません。",
+      "実験的なPendingにはpendingBoundary、catchBoundary、blockSSRがあります。二秒待つuseComputed$では、fallbackとfooterが約5ms、実内容が約2011msで届き、同じHTTP応答のtemplateとqO(1)が内容を差し替えました。一方、routeLoader$のblockSSR:falseはVite previewで期待どおりに流れず、HTMLの冒頭を除いて二秒待ちました。原因は未解決です。非同期部品が動いたからといって、routeLoaderも同じように流れるとは判断できません。",
+      "文書にはrouteLoader$ごとのデータ端点とmaxAge:60、immutable、ETag/304の利用もあります。旧版のルート単位のq-data.jsonとは違う粒度です。tsOptimizer:trueによるTypeScript Optimizerの選択と、Rustとのsnapshot一致は公式説明で、著者が速度を再測定した結果ではありません。serverディレクトリをクライアントからimportするとbuild errorになる点、bunx qwik migrate-v2の後にもhooksやresource、テストの変更を確認する点も残ります。",
+      "本稿では、仕事を遅らせるために状態、分割、通信の時点を変える設計を学びます。原文の「狂気じみた」は設計への賞賛を込めた表現で、人への非難とは文脈が違います。状態の保存に正しさが依存する点は、この方式ならではの確認課題です。採用時は同じ画面で初期、待機、操作、失敗の各経路を測り、RCの未解決点も残します。実利用者の体験や本番の信頼性まで検証した記事ではありません。"
+    ],
+    "pointsZh": [
+      "qwik/state 与 qwik/vnode 将恢复信息移到序列化数据和内存树；注释消失不等于 HTML 或总构建体积减少。",
+      "首屏 JS、空闲预取与点击通信须分开；传输量不能直接当作执行量，官方基准不能冒充作者实测。",
+      "useComputed$ 的流式成功与 routeLoader$ 的 blockSSR:false 失败是不同路径；RC 升级需保留失败条件和迁移人工检查。"
+    ],
+    "pointsJa": [
+      "qwik/stateとqwik/vnodeへ情報を移して再開します。HTMLコメントがなくなっても、HTMLと構築物の総量は増えています。",
+      "初期JS、待機中の先読み、クリック後を分けます。転送と実行も区別し、公式ベンチマークを著者の測定値にしません。",
+      "useComputed$のstreamingとrouteLoader$のblockSSR:falseは別の結果でした。RCの失敗条件と移行後の手動確認を残します。"
+    ],
+    "facts": [
+      [
+        "qwik/state",
+        "HTML のシリアライズ方式",
+        "v2はqwik/stateとqwik/vnodeを使い、starterのHTMLコメントが60から0になった。"
+      ],
+      [
+        "7,115",
+        "同じ starter のサイズ比較",
+        "gzip後のHTMLは7,115Bから8,716Bに増えた。"
+      ],
+      [
+        "blockSSR: false",
+        "routeLoader の検証",
+        "著者のVite previewではrouteLoaderの期待したstreamingが動かなかった。"
+      ]
+    ],
+    "conditions": "1.20.1対2.0.0-rc.0、同じstarter、2026-10-02のApple Silicon macOS/Bun1.3.10/Node24.18.0。公式ベンチマーク未再測定、RCのrouteLoader動作未解決。",
+    "evidenceAnchor": "qwik/state"
+  },
+  {
+    "title": "【ServiceNow】Build Agent に\"設計書\"を渡したら、ホロスコープ占いアプリが本気の仕上がりになった🔮(前編)",
+    "url": "https://qiita.com/j45delight/items/59c989d4d9413660badc",
+    "source": "Qiita",
+    "topic": "AI開発・仕様と検証",
+    "publishedAt": "2026-10-03T18:23:25+09:00",
+    "capturedAt": "2026-10-04T01:10:48.041727+00:00",
+    "snapshotSha256": "c4052c54b89d543cd8639d1d4be8b1701d86f452894b4f45a40fd104415191cf",
+    "access": "full",
+    "accessNote": "Public original returned HTTP 200; complete readable original captured outside Git. Publication time checked against publisher metadata/RSS. Images are not independent verification of the experiments.",
+    "question": "AIにアプリ開発を任せるとき、仕様に何を書きますか。",
+    "answer": "使う技術、変えてはいけない点、確認できる完了条件を書きます。ServiceNowの記事では、星の計算と描画のライブラリを固定し、数値の期待値で最初の画面を確かめました。AI用の認証情報はConnection & Credential Aliasに置き、サーバーのRESTで扱います。ただし三回目の後にボタンが動かず、生成できたことと完成は分けて確認します。",
+    "whyZh": "具体设计、数值验收、凭据边界与未完成错误同时出现，适合学习可检查的代理任务。",
+    "whyJa": "設計、数値の確認、認証情報の置き場所、未完了の不具合が揃い、確かめられる依頼を学べます。",
+    "projectZh": "先做固定库的最小输入/计算/绘图链路，用期待值验收，再加入服务端 AI 接口和按用户访问控制，逐阶段记录错误。",
+    "projectJa": "ライブラリを固定して入力・計算・描画を期待値で確認し、その後にサーバーのAI呼出しと利用者別の制御を足します。各段階の不具合を記録します。",
+    "keywords": [
+      "Connection & Credential Alias",
+      "Scripted REST API",
+      "ACL"
+    ],
+    "zh": [
+      "这是一篇 NOW HOROSCOPE 应用构建的前篇，说明如何把技术调查交给 Claude Opus 5.5，再让 ServiceNow Build Agent 按设计实现。作者的 PDI 试用每月可使用25次提示，接近用完，因此不采用无计划地生成再修补，而分成6轮任务：最小计算与绘图、日语和输入选项、AI及保存、错误与设计、继续修错、UX。本文实际展开第1～3轮，后篇内容没有在这里核实。",
+      "设计固定 circular-natal-horoscope-js 负责浏览器天体计算，@astrodraw/astrochart 绘制 SVG；日本地点可使用无需 key 的 OpenPOI，海外地点手工输入经纬度。第一轮暂缓保存和 AI，只做输入→计算→圆形图。作者用1990-06-15 14:30、纬度35.6895、经度139.6917、Placidus，与太阳83.87、月亮341.74、上升点209.30、MC123.14等期待值核对，报告秒级一致。单例数值验证不等于全部地区/时间输入精度，更不能作为占星预测科学有效性的证据。",
+      "第二轮加入昵称、地点、宫位选项和日语显示；第三轮加入 DeepSeek 解说、保存表及凭据。调用由服务器端 Scripted REST API 执行，密钥通过 Connection & Credential Alias 管理，不放在浏览器代码或系统属性。作者说明只发送计算后的数据、不发送出生输入。本文未独立检查网络流量，因此把这一点保持为设计/作者报告，不能声称已完成隐私审计。",
+      "自定义表保存输入、结果、模型与 token，ACL 设计为用户仅能访问自己的记录。截图使用的是管理员账号，不能由管理员能看到表推导普通用户的访问控制正确；还需要不同账号的正反向验证。生成计划、创建表或安装应用也不是整条操作链路可用的证明：作者明确承认第三次提示之后 AI 解说按钮没正常启动，本前篇没有给出已修复的结果。",
+      "可迁移的做法是把库与版本、禁止改动的范围、数值期待、失败后停止并报告写入设计，分阶段验收。本文建议实际团队把浏览器端数据、服务器凭据和表访问分别检查，再以真实用户完成按钮到保存的全流程。需要保留的限制是：一个占星应用的试作、前篇只覆盖部分提示、访问与外发数据未独立验证，不能当作 Build Agent 自动交付完整生产应用的结论。"
+    ],
+    "ja": [
+      "NOW HOROSCOPEを作る前編です。著者は技術調査と設計をClaude Opus 5.5、ServiceNow上の実装をBuild Agentへ分けました。PDIの試用は月25回のpromptで、残りが少なかったため、とりあえず生成してから直す依頼を避けています。六回を最小の計算・描画、日本語と入力、AIと保存、エラーと設計、再修正、UXへ分け、本文は一〜三回目を扱います。後編の解決はここでは確認していません。",
+      "ブラウザではcircular-natal-horoscope-jsで計算し、@astrodraw/astrochartでSVGを描きます。日本の地点はkey不要のOpenPOIを使い、海外は緯度経度を入力する設計です。初回は保存とAIを後回しにして、入力、計算、円形チャートだけを依頼しました。1990年6月15日14:30、緯度35.6895・経度139.6917、Placidusで、太陽83.87、月341.74、ASC209.30、MC123.14などの期待値と比べ、秒単位で一致したと報告しています。一つのケースであり、全入力の精度や占いの科学的な妥当性を示すものではありません。",
+      "二回目にニックネーム、場所、ハウス、日本語を加え、三回目にDeepSeekの解説と保存を加えました。認証情報はConnection & Credential Aliasへ置き、サーバーのScripted REST APIで扱います。ブラウザのソースやSystem Propertiesへkeyを置かず、外部へは出生入力でなく計算済みデータを送るという設計です。本稿は通信を独立に検査していないため、外部送信の実証やプライバシー監査の完了とは表現しません。",
+      "独自テーブルには入力、結果、モデル、tokenを持たせ、ACLで自分の記録だけを扱わせます。ただし画面はADMINであり、通常の利用者の拒否テストは本文から確認できません。Plan、テーブル作成、アプリのインストールと、操作が最後まで通ることも別です。三回目の後にAI解説ボタンが動かず格闘したと著者は明記しています。前編に修正完了の根拠がない以上、動作したことにはしません。",
+      "学べるのは、ライブラリと版、変更禁止の範囲、数値の期待値、失敗時に止めて報告する条件を設計へ入れることです。本稿の提案として、ブラウザのデータ、サーバーの認証情報、テーブルへの権限を別々に確かめ、実利用者の操作で保存まで確認します。限定的な試作の前編であり、AIが本番の全機能を自動で完成させたという保証ではありません。"
+    ],
+    "pointsZh": [
+      "固定计算/绘图库与数值期待，让第一阶段“完成”可检查；别把单一测试延伸为全输入精度。",
+      "Alias＋服务器 Scripted REST API 避免把 key 交给浏览器；实际外发数据及普通用户 ACL 仍须独立验证。",
+      "第三轮后 AI 按钮未能正常工作，设计生成/表创建与完整应用交付是不同验收。"
+    ],
+    "pointsJa": [
+      "計算・描画のライブラリと期待値を固定し、初回の完了を確かめます。一つのケースから全入力の精度を保証しません。",
+      "AliasとサーバーのScripted REST APIでkeyを扱います。送信データと通常利用者のACLは別に確認が必要です。",
+      "三回目の後にAIボタンが動いていません。設計や表を作れたことと、アプリ全体の完成を区別します。"
+    ],
+    "facts": [
+      [
+        "Connection & Credential Alias",
+        "3回目: AI と保存",
+        "サーバーのScripted REST APIでDeepSeekを呼び、Aliasに認証情報を置く設計。"
+      ],
+      [
+        "AI 解説のボタンがうまく起動せず",
+        "おわりに",
+        "三回目の後にAI解説ボタンが動かず、前編では修正完了が確認できない。"
+      ]
+    ],
+    "conditions": "PDI試用の一アプリ、本文は六promptの一〜三回目のみ。初回の一計算例。送信データ、通常ユーザーACLの独立検証なし。三回目後の不具合未解決。",
+    "evidenceAnchor": "Connection & Credential Alias"
+  }
+]
