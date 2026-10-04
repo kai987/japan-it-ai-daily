@@ -1,14 +1,34 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-04",
-  "stage": "local_checks_passed",
+  "stage": "draft_pushed",
   "sourceCommit": "263ee13b4e5c9c7735c9a175cb8caac043a3e77d",
   "sourceWindow": {
     "from": "2026-10-03T10:00:00+09:00",
     "to": "2026-10-04T10:00:00+09:00"
   },
   "createdAt": "2026-10-04T01:07:44.317Z",
-  "updatedAt": "2026-10-04T01:34:27.167Z",
+  "updatedAt": "2026-10-04T01:34:45.880Z",
   "completedArtifacts": [],
-  "lastError": null
+  "lastError": null,
+  "baseCommit": "263ee13b4e5c9c7735c9a175cb8caac043a3e77d",
+  "draftCommit": "98dcd92d4889f2dddf1e624eecaa028419c37a79",
+  "draftBranch": "draft/daily-2026-10-04",
+  "paths": [
+    "src/content/daily-ja/2026-10-04.md",
+    "src/content/daily/2026-10-04.md",
+    "src/content/evidence/2026-10-04.json",
+    "src/content/japanese-ja/2026-10-04.md",
+    "src/content/japanese/2026-10-04.md",
+    "src/data/interviews/2026-10-04.json"
+  ],
+  "changedPaths": [
+    "A\tsrc/content/daily-ja/2026-10-04.md",
+    "A\tsrc/content/daily/2026-10-04.md",
+    "A\tsrc/content/evidence/2026-10-04.json",
+    "A\tsrc/content/japanese-ja/2026-10-04.md",
+    "A\tsrc/content/japanese/2026-10-04.md",
+    "A\tsrc/data/interviews/2026-10-04.json"
+  ],
+  "verifiedAt": "2026-10-04T01:34:41.446Z"
 }
