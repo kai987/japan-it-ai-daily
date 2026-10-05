@@ -1,0 +1,171 @@
+{
+  "targetDate": "2026-10-05",
+  "sourceWindow": {
+    "start": "2026-10-04T10:00:00+09:00",
+    "end": "2026-10-05T10:00:00+09:00"
+  },
+  "stage": "originals_read",
+  "scope": "20 designated sites included in grouped date/domain searches; accessible originals read in full; no claim of exhaustive site crawling or independently rerunning author experiments.",
+  "selected": [
+    {
+      "index": 1,
+      "url": "https://dev.classmethod.jp/articles/cloudflare-clef-cross-match/",
+      "status": 200,
+      "meta": [
+        {
+          "property": "og:title",
+          "content": "Cloudflare の Clef で書類の値の突合をさせて、Jev と比べてみた | DevelopersIO"
+        },
+        {
+          "name": "twitter:title",
+          "content": "Cloudflare の Clef で書類の値の突合をさせて、Jev と比べてみた | DevelopersIO"
+        }
+      ],
+      "ld": [],
+      "links": [],
+      "chars": 11260,
+      "capturedAt": "2026-10-05T01:06:59.090154+00:00",
+      "snapshotSha256": "448352955ccac3a23569034f97ddd238aad0e7fcb2844797f8efe536f52cadeb",
+      "articleId": "2026-10-05-top-1",
+      "originalTitle": "Cloudflare の Clef で書類の値の突合をさせて、Jev と比べてみた",
+      "publishedAt": "2026-10-05T08:00+09:00",
+      "publishedAtJst": "2026-10-05T08:00:00+09:00",
+      "capturePath": "/tmp/japan-daily-20261005/originals/01.txt",
+      "candidateIndex": 1
+    },
+    {
+      "index": 9,
+      "url": "https://dev.classmethod.jp/articles/security-agent-pr-review-condition/",
+      "status": 200,
+      "meta": [
+        {
+          "property": "og:title",
+          "content": "[アップデート] AWS Security Agent の PR 自動レビューが対象ブランチやラベルで絞れるようになりました | DevelopersIO"
+        },
+        {
+          "name": "twitter:title",
+          "content": "[アップデート] AWS Security Agent の PR 自動レビューが対象ブランチやラベルで絞れるようになりました | DevelopersIO"
+        }
+      ],
+      "ld": [],
+      "links": [],
+      "chars": 2639,
+      "capturedAt": "2026-10-05T01:09:00.348428+00:00",
+      "snapshotSha256": "a2fd1f584925eabf8fd68c9ccd8ece61e41eb8a59dd40b8f74ef2936c16c6c84",
+      "articleId": "2026-10-05-top-2",
+      "originalTitle": "[アップデート] AWS Security Agent の PR 自動レビューが対象ブランチやラベルで絞れるようになりました",
+      "publishedAt": "2026-10-04T10:49:55.590Z",
+      "publishedAtJst": "2026-10-04T19:49:55.590000+09:00",
+      "capturePath": "/tmp/japan-daily-20261005/originals/02.txt",
+      "candidateIndex": 9
+    },
+    {
+      "index": 10,
+      "url": "https://dev.classmethod.jp/articles/snowflake-set-notification-custom-actions-to-root-account-budget/",
+      "status": 200,
+      "meta": [
+        {
+          "property": "og:title",
+          "content": "Snowflakeアカウントのアカウント予算にカスタムアクションによる通知を追加する | DevelopersIO"
+        },
+        {
+          "name": "twitter:title",
+          "content": "Snowflakeアカウントのアカウント予算にカスタムアクションによる通知を追加する | DevelopersIO"
+        }
+      ],
+      "ld": [],
+      "links": [],
+      "chars": 5366,
+      "capturedAt": "2026-10-05T01:09:00.488741+00:00",
+      "snapshotSha256": "8d0a01d271d841f319ce7a280fb80069580f8ff3f3585dd9ef7a525bc417cd16",
+      "articleId": "2026-10-05-top-3",
+      "originalTitle": "Snowflakeアカウントのアカウント予算にカスタムアクションによる通知を追加する",
+      "publishedAt": "2026-10-04T02:03:49.529Z",
+      "publishedAtJst": "2026-10-04T11:03:49.529000+09:00",
+      "capturePath": "/tmp/japan-daily-20261005/originals/03.txt",
+      "candidateIndex": 10
+    },
+    {
+      "index": 5,
+      "url": "https://zenn.dev/ishizakahiroshi/articles/20261004-dots-slack-instruction",
+      "status": 200,
+      "meta": [
+        {
+          "property": "og:title",
+          "content": "ChatGPTとClaudeからSlack経由でdotsに依頼する仕組み",
+          "data-next-head": ""
+        },
+        {
+          "content": "Zenn",
+          "name": "apple-mobile-web-app-title"
+        }
+      ],
+      "ld": [],
+      "links": [],
+      "chars": 5259,
+      "capturedAt": "2026-10-05T01:06:59.089023+00:00",
+      "snapshotSha256": "8592f28167f31e3bdb6d8ee25af7618633e34fa30cf33cca9c583fc6f05d0526",
+      "articleId": "2026-10-05-top-4",
+      "originalTitle": "ChatGPTとClaudeからSlack経由でdotsに依頼する仕組み",
+      "publishedAt": "2026-10-04T14:17:23.052+09:00",
+      "publishedAtJst": "2026-10-04T14:17:23.052000+09:00",
+      "capturePath": "/tmp/japan-daily-20261005/originals/04.txt",
+      "candidateIndex": 5
+    },
+    {
+      "index": 8,
+      "url": "https://zenn.dev/null_teck/articles/jeff-08b-vs-kev-08b-decision-models",
+      "status": 200,
+      "meta": [
+        {
+          "property": "og:title",
+          "content": "Jeff-0.8B vs Kev-0.8B 実機対決｜0.8B級判断モデル頂上決戦と並列スループット検証",
+          "data-next-head": ""
+        },
+        {
+          "content": "Zenn",
+          "name": "apple-mobile-web-app-title"
+        }
+      ],
+      "ld": [],
+      "links": [],
+      "chars": 17970,
+      "capturedAt": "2026-10-05T01:09:00.489351+00:00",
+      "snapshotSha256": "aba6301623dce7a40859a91990dd892372f33761c72ac732facf43edd6d9475b",
+      "articleId": "2026-10-05-top-5",
+      "originalTitle": "Jeff-0.8B vs Kev-0.8B 実機対決｜0.8B級判断モデル頂上決戦と並列スループット検証",
+      "publishedAt": "2026-10-04T12:09:48.566+09:00",
+      "publishedAtJst": "2026-10-04T12:09:48.566000+09:00",
+      "capturePath": "/tmp/japan-daily-20261005/originals/05.txt",
+      "candidateIndex": 8
+    }
+  ],
+  "exclusions": [
+    {
+      "candidateIndex": 2,
+      "reason": "Original publication 2026-10-04 06:28 JST before window"
+    },
+    {
+      "candidateIndex": 3,
+      "reason": "Original publication 2026-10-04 02:05 JST before window"
+    },
+    {
+      "candidateIndex": 4,
+      "reason": "Original publication October 3; October 4 is update only"
+    },
+    {
+      "candidateIndex": 7,
+      "reason": "Original publication 2026-10-04 06:06 JST before window"
+    }
+  ],
+  "supplementaryChecks": [
+    {
+      "url": "https://docs.snowflake.com/en/sql-reference/classes/budget/methods/add_custom_action",
+      "verified": "ACTUAL actual spend; PROJECTED projected spend, default PROJECTED"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/securityagent/latest/userguide/configure-code-review-triggers.html",
+      "verified": "AND within each group, OR across groups; full-name RE2 regex; eventless group includes drafts"
+    }
+  ]
+}
