@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-05",
+  "generatedAt": "2026-10-05T01:58:44.148Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "書類の照合モデルを変えるとき、何を確かめますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "04507b610b058e67ec4c1530d5f3ab2445176085370db6620f847301c8b80b36",
+      "audioSha256": "6d391705ab5a504bf2e16f8add0e806b33adb569d59fd7d5a0fbba1a1fad0f08",
+      "durationSeconds": 4.341
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "同じ項目でも、文字列の完全一致と意味の一致を分けて評価します。Clefの記事では107ケースを使い、曖昧な日付を除いた意味の判定は106件です。Jev用の閾値0.8を流用すると見逃しが増え、下げると誤検知も増えます。質問の言語と人へ回す条件を固定し、費用も合わせて比べます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "d139977e63998e002d7a7ee6a60f9300da3aab1b029c9ede32e45f8ac9c15c06",
+      "audioSha256": "d47eb5f635657a3afa0eefbb184bbba6a72c4d77cdda7feacfb75650788dcf5a",
+      "durationSeconds": 24.182,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "自動セキュリティレビューの対象を、どう絞りますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "3919c6bd43c432e9fe48875ef334f0db1c38607a55faf852578fb2c5203eb748",
+      "audioSha256": "64a444c7aaa8a166c8514cd6e8441d561c89793ba81026c334da4f4e6fe3265c",
+      "durationSeconds": 3.622
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "実行したいイベントと対象を分けて設定します。Security Agentの記事では、mainのレビュー準備完了と、security-.*のラベル追加を別グループにしています。条件はグループ内で全て満たし、グループ間はどれか一つで起動します。正規表現は名前全体へ一致させ、ドラフトと対象外PRも試します。コメント対応は非公開リポジトリなので、公開側に同じ動作を期待しません。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "7bce3783a41f12d0b58506fbe5b466780daef095c3fe2aec1b3610549a52cb48",
+      "audioSha256": "2404ac2444d5f1fffa32f36bbc5947ced3474e02e887fd828b2236f03f2dc427",
+      "durationSeconds": 28.861,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "クラウドの予算通知を設計するとき、何に注意しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "3970558784d9b53f86591326e4d15843241f9cb77db9f74c174e4def0e0c91a6",
+      "audioSha256": "f05ab678390c20c6c3cb741424f99c79fc4023464b28e0d3da483040c45b4b64",
+      "durationSeconds": 4.527
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "通知基準と遅れを確かめます。Snowflakeの記事はACCOUNT_ROOT_BUDGETに通知処理を登録し、ACTUALで実消費75％を指定しています。予測消費とは別です。1クレジットの検証では75％と100％が遅れて届きました。実環境でも受信時刻を測り、即時停止を保証する仕組みとは考えません。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "6257714652a1946412f3c383020711822fdda4c66f51a075bbd3b87d1bccd9dc",
+      "audioSha256": "2fdcd342ec9be0925e2c14e79d657d5b7d0c82afe759d4dcb3175f35ead334b7",
+      "durationSeconds": 25.079,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "複数のAIへ開発を依頼するとき、どう引き継ぎますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "a2356f8a66cd4ef07c89d8f6b9cc34a30e3a0a59c4b4d2d5e80794d48c2c24b4",
+      "audioSha256": "4b902976decca8aa45b08ea63a69dcb325b0771098d5e97a613a0dcf1aed5921",
+      "durationSeconds": 4.515
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "指示と進捗を分け、成果で完了を確かめます。dotsの記事はREADMEとREVIEWを固定commitで渡し、PROGRESSは成果ブランチで更新します。同じSlackスレッドで受付を確認し、成果commitを別環境で試します。60分は著者の停滞の目安で、完了時間の保証ではありません。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "15a7ff99ecd343f1bd762b94039b991d65e30a5b3da90af26d954c3a4f0fad94",
+      "audioSha256": "4512a4d4fa2d070f78c771d3ddfde78f2ede643dde1fdd1e624ee76aaace9838",
+      "durationSeconds": 22.383,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "小型モデルの比較結果を、どう導入判断へ使いますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "13af7f2f65029b53717e15b5af6ca949d3fd24b1f75d38107da04012e1ab66cb",
+      "audioSha256": "8ac37d17524f62cfbdcf6ee7567a476d4c7585c088b84001dac6156c207bc086",
+      "durationSeconds": 4.539
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "速度だけでなく、出力型と評価条件を確認します。JeffとKevの記事では、同じ3090でもCUDA Graphsの有無が違います。分類250問とスコアを含む300問も分けて読みます。誤検知率は4988件と500件で分母が違い、Kevの全件時間も換算です。同じ入力と実行条件で測り直し、未対応の型や見逃しを確認して選びます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "894e2e6ffd17b1af71cc344d5f9ca855523e39809e79cdfb37282141ee561f66",
+      "audioSha256": "25d384a1bbe9829966d5c1ee7430299876e70bdb29af05f8e647930921d84874",
+      "durationSeconds": 29.291,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "二つの正答率を、そのまま比べてもよいですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "d56094b7818fcd06f2c56a0d635916066dcb17a96bfcafda7b295ca95f56b4f0",
+      "audioSha256": "2910810e2a2910813e26ea4531bec04f06154838143a9b88e4b699f532799847",
+      "durationSeconds": 4.085
+    },
+    {
+      "index": 2,
+      "text": "設定した条件が、思った意味で動くかをどう確かめますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "d08eecd8f8696edd9ce871360a2945424ed574da476b328e064db403558e296b",
+      "audioSha256": "e6d83c3fca5d28e5acf44ac979ee8352b01306081b13ad28ac58b1db84911c07",
+      "durationSeconds": 4.794
+    },
+    {
+      "index": 3,
+      "text": "依頼の送信ができたら、仕事は完了していますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "1200adaf2b0b1f62945977d95fe66b1409e5860b7ef6bc5d14f60c7e273856bd",
+      "audioSha256": "4b7b6d1d8d7f11f8fd4bc70f1ea1ad6df00c942162fc9b0c4e898f16a3e9be36",
+      "durationSeconds": 4.132
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-05T01:58:54.048Z"
+}
