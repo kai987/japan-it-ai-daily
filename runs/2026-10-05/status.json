@@ -8,7 +8,7 @@
     "to": "2026-10-05T10:00:00+09:00"
   },
   "createdAt": "2026-10-05T01:04:20.587Z",
-  "updatedAt": "2026-10-05T01:48:41.638Z",
+  "updatedAt": "2026-10-05T02:16:21.663Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -183,6 +183,206 @@
     "verifiedAt": "2026-10-05T01:46:47.094Z",
     "site": "/tmp/japan-daily-20261005/text-release-37252438470/site"
   },
-  "nextStep": "Generate and verify frozen-date audio and complete corresponding N1 handoff",
-  "publishedAt": "2026-10-05T01:48:41.247Z"
+  "nextStep": "Complete: verified text, audio/R2/real playback and one-time N1 handoff. Resume only changed or unfinished state on the next scheduled run.",
+  "publishedAt": "2026-10-05T01:48:41.247Z",
+  "audioStatus": "playback_verified",
+  "audioCommit": "3e0de816907cadcd516f1145b5620545149826a2",
+  "audioWorkflowRunIds": {
+    "r2": 37253662580,
+    "pages": 37253662570
+  },
+  "n1Status": "published",
+  "n1ReleaseCommit": "79666fc763357429fcd988c68cc1f393b58213de",
+  "n1SourceCommit": "3e0de816907cadcd516f1145b5620545149826a2",
+  "n1PagesRunId": 37254254193,
+  "n1SyncRunId": 37254147785,
+  "n1ReleaseEvidence": {
+    "targetDate": "2026-10-05",
+    "sourceCommit": "3e0de816907cadcd516f1145b5620545149826a2",
+    "releaseCommit": "79666fc763357429fcd988c68cc1f393b58213de",
+    "sourceBlobSha": "e39c339174a67bb8599cc14b3e15f3dc3d136fda",
+    "sourceSha256": "bb43de655b749989a2a272e594a362255c7704cb8b1e79e4e6ad2705daa4e71d",
+    "snapshotSha256": "ebe547d06735ac7958a195baa6761a590d2d52411b696bc1c164646b17f5c096",
+    "storedSnapshotSha256": "cb868e1d1dd63c5b861b478d9cb2bfb40a03e0fcfd857aff7ee4b9d0a7bf153e",
+    "pagesRunId": 37254254193,
+    "syncRunId": 37254147785,
+    "issueNumber": 55,
+    "totalDays": 55,
+    "rawVocabulary": 10,
+    "rawGrammar": 1,
+    "displayVocabulary": 20,
+    "displayGrammar": 8,
+    "checks": {
+      "exactPages": true,
+      "postDeploy": true,
+      "originalUnchanged": true,
+      "snapshotExact": true,
+      "liveArtifactBytes": true,
+      "display": {
+        "date": "2026-10-05",
+        "day": 37,
+        "issue": 55,
+        "titleVisible": true,
+        "vocabularyCount": 20,
+        "grammarNew": 1,
+        "grammarReview": 7,
+        "frequencyDenominator": 55,
+        "readingParagraphs": 2
+      }
+    },
+    "verifiedAt": "2026-10-05T02:13:32.163Z"
+  },
+  "latestVerifiedMainCommit": "3e0de816907cadcd516f1145b5620545149826a2",
+  "latestReleaseEvidence": {
+    "label": "audio",
+    "runId": 37253662570,
+    "releaseCommit": "3e0de816907cadcd516f1145b5620545149826a2",
+    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/37253662570",
+    "artifacts": [
+      {
+        "id": 11322266084,
+        "name": "github-pages",
+        "digest": "sha256:014de5b85223e0e3ecfcdb4cc1a6d5662cfd780dbdeb938c286647abefda3b7c"
+      },
+      {
+        "id": 11321272819,
+        "name": "it-study-snapshot",
+        "digest": "sha256:fab41ac0e55cd0fa8b99c3927737db8cdaa4c5c845ecc3de499215137cac502f"
+      }
+    ],
+    "sourceCommit": "3e0de816907cadcd516f1145b5620545149826a2",
+    "targetDate": "2026-10-05",
+    "totalDays": 55,
+    "issueNumber": 55,
+    "grammarLessonDates": [
+      "2026-08-12",
+      "2026-08-13",
+      "2026-08-14",
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19",
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-22",
+      "2026-08-23",
+      "2026-08-24",
+      "2026-08-25",
+      "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-08-31",
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03",
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-19",
+      "2026-09-20",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-27",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30",
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-04",
+      "2026-10-05"
+    ],
+    "fullSnapshotCompared": true,
+    "snapshotHash": "ebe547d06735ac7958a195baa6761a590d2d52411b696bc1c164646b17f5c096",
+    "expected": {
+      "version": 1,
+      "commit": "3e0de816907cadcd516f1145b5620545149826a2",
+      "date": "2026-10-05",
+      "snapshotHash": "ebe547d06735ac7958a195baa6761a590d2d52411b696bc1c164646b17f5c096",
+      "pages": [
+        {
+          "path": "daily/2026-10-05/",
+          "sha256": "fdf32485b7d89ff90473b8e349d154106adbd19a1374c6e89d804806beddcafe"
+        },
+        {
+          "path": "ja/daily/2026-10-05/",
+          "sha256": "0037597aa13c7877fdd19e91dcf206408c74fc4248cf8469f4a12aef4090ddf6"
+        }
+      ]
+    },
+    "live": {
+      "commit": "3e0de816907cadcd516f1145b5620545149826a2",
+      "date": "2026-10-05",
+      "attempt": 1
+    },
+    "verifiedAt": "2026-10-05T02:04:24.439Z",
+    "site": "/tmp/japan-daily-20261005/audio-release-37253662570/site"
+  },
+  "audioCutoverAudit": {
+    "main": "3e0de816907cadcd516f1145b5620545149826a2",
+    "verifiedAt": "2026-10-05T02:15:40.035Z",
+    "dates": [
+      {
+        "date": "2026-09-30",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      },
+      {
+        "date": "2026-10-01",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      },
+      {
+        "date": "2026-10-02",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      },
+      {
+        "date": "2026-10-03",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      },
+      {
+        "date": "2026-10-04",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      },
+      {
+        "date": "2026-10-05",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      }
+    ]
+  },
+  "completionPlan": {
+    "action": "idle",
+    "reason": "no_due_unverified_date"
+  },
+  "outsideGitOriginalCapturesRetained": true,
+  "completedAt": "2026-10-05T02:15:40.037Z"
 }
