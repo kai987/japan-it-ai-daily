@@ -1,15 +1,22 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-05",
-  "stage": "publisher_queued",
+  "stage": "published",
   "sourceCommit": "59710be757518554bb57c8095dee9500e9c0468c",
   "sourceWindow": {
     "from": "2026-10-04T10:00:00+09:00",
     "to": "2026-10-05T10:00:00+09:00"
   },
   "createdAt": "2026-10-05T01:04:20.587Z",
-  "updatedAt": "2026-10-05T01:39:28.504Z",
-  "completedArtifacts": [],
+  "updatedAt": "2026-10-05T01:48:41.638Z",
+  "completedArtifacts": [
+    "sources.json",
+    "history.json",
+    "interviews.json",
+    "draft.json",
+    "checks.json",
+    "request.json"
+  ],
   "lastError": null,
   "baseCommit": "59710be757518554bb57c8095dee9500e9c0468c",
   "draftCommit": "5b829d86a8c1f8761dbc28a100f0ac8281511aa8",
@@ -68,5 +75,114 @@
   },
   "requestCommit": "bc3e241274fcc56ac72abaefac5657524d3ffdcf",
   "requestBlob": "1161c0346804cd842f155fd40d8840ac665bd039",
-  "submittedAt": "2026-10-05T01:39:22.529Z"
+  "submittedAt": "2026-10-05T01:39:22.529Z",
+  "publishedCommit": "6c0edaffc4c815f99f25241a069535517e765682",
+  "pagesRunId": 37252438470,
+  "publisherRunId": 37252275148,
+  "verifiedRelease": {
+    "label": "text",
+    "runId": 37252438470,
+    "releaseCommit": "6c0edaffc4c815f99f25241a069535517e765682",
+    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/37252438470",
+    "artifacts": [
+      {
+        "id": 11322195300,
+        "name": "github-pages",
+        "digest": "sha256:8d9d4245f929036eda44ff1d015094101c8f96c764e1a2302fdd9bfc07f1c30e"
+      },
+      {
+        "id": 11322010827,
+        "name": "it-study-snapshot",
+        "digest": "sha256:fceee64f706cfa1d2faef0ac45d1921228b507d6a236f8a2c3b18a0853672f9c"
+      }
+    ],
+    "sourceCommit": "6c0edaffc4c815f99f25241a069535517e765682",
+    "targetDate": "2026-10-05",
+    "totalDays": 55,
+    "issueNumber": 55,
+    "grammarLessonDates": [
+      "2026-08-12",
+      "2026-08-13",
+      "2026-08-14",
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19",
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-22",
+      "2026-08-23",
+      "2026-08-24",
+      "2026-08-25",
+      "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-08-31",
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03",
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-19",
+      "2026-09-20",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-27",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30",
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-04",
+      "2026-10-05"
+    ],
+    "fullSnapshotCompared": true,
+    "snapshotHash": "51db2cb5007410752cd412eae317d876b25cb30146e91ac3c2a6d754378cfce2",
+    "expected": {
+      "version": 1,
+      "commit": "6c0edaffc4c815f99f25241a069535517e765682",
+      "date": "2026-10-05",
+      "snapshotHash": "51db2cb5007410752cd412eae317d876b25cb30146e91ac3c2a6d754378cfce2",
+      "pages": [
+        {
+          "path": "daily/2026-10-05/",
+          "sha256": "fdf32485b7d89ff90473b8e349d154106adbd19a1374c6e89d804806beddcafe"
+        },
+        {
+          "path": "ja/daily/2026-10-05/",
+          "sha256": "0037597aa13c7877fdd19e91dcf206408c74fc4248cf8469f4a12aef4090ddf6"
+        }
+      ]
+    },
+    "live": {
+      "commit": "6c0edaffc4c815f99f25241a069535517e765682",
+      "date": "2026-10-05",
+      "attempt": 1
+    },
+    "verifiedAt": "2026-10-05T01:46:47.094Z",
+    "site": "/tmp/japan-daily-20261005/text-release-37252438470/site"
+  },
+  "nextStep": "Generate and verify frozen-date audio and complete corresponding N1 handoff",
+  "publishedAt": "2026-10-05T01:48:41.247Z"
 }
