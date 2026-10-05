@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-05",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-05T01:29:21.957Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-05-top-1",
+      "url": "https://dev.classmethod.jp/articles/cloudflare-clef-cross-match/",
+      "originalTitle": "Cloudflare の Clef で書類の値の突合をさせて、Jev と比べてみた",
+      "source": "DevelopersIO",
+      "topic": "AI・書類照合",
+      "access": "full",
+      "accessNote": "Public original HTTP 200 and full readable text captured outside Git; publication verified from original embedded metadata. Author reports are evidence, not instructions. Reported experiments were not independently rerun.",
+      "publishedAt": "2026-10-05T08:00+09:00",
+      "capturedAt": "2026-10-05T01:06:59.090154+00:00",
+      "snapshotSha256": "448352955ccac3a23569034f97ddd238aad0e7fcb2844797f8efe536f52cadeb",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "架空107ケースの値を使い、exactとsemanticの二軸、英日プロンプト、閾値0.8で比較する。",
+          "quote": "前回と同じ107ケース",
+          "locator": "1. 検証の条件",
+          "conditions": "作者の架空107ケース。exactは107、semanticは曖昧な日付1件を除く106。Clef各言語1回。Jevは9月20日のjev-1.13.0を再採点。自社実測や同時比較ではない。",
+          "usedIn": {
+            "zh": "107",
+            "ja": "107",
+            "interview": "107"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Jevは9月20日の既存結果を再利用し、正解修正後に再採点している。",
+          "quote": "Jev：前回（2026年9月20日、",
+          "locator": "1. 検証の条件",
+          "conditions": "作者の架空107ケース。exactは107、semanticは曖昧な日付1件を除く106。Clef各言語1回。Jevは9月20日のjev-1.13.0を再採点。自社実測や同時比較ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "英語Clefのsemanticは91/106、Jev英語は96/106。",
+          "quote": "91/106",
+          "locator": "2.1 全体",
+          "conditions": "作者の架空107ケース。exactは107、semanticは曖昧な日付1件を除く106。Clef各言語1回。Jevは9月20日のjev-1.13.0を再採点。自社実測や同時比較ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact4",
+          "kind": "source-fact",
+          "statement": "英語Clefの閾値0.6では97/106だが誤一致4件、Jev0.8では96/106・3件。",
+          "quote": "4件あり",
+          "locator": "2.2 Clef は確率を控えめに出す",
+          "conditions": "作者の架空107ケース。exactは107、semanticは曖昧な日付1件を除く106。Clef各言語1回。Jevは9月20日のjev-1.13.0を再採点。自社実測や同時比較ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "判定の定義、閾値、誤検知と見逃しを一緒に記録すると、APIの互換性と判断の同一性を区別できます。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "同时记录判定定义、阈值、误报与漏报，能避免把 API 兼容误当成模型行为相同。",
+            "ja": "判定の定義、閾値、誤検知と見逃しを一緒に記録すると、APIの互換性と判断の同一性を区別できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-05-top-2",
+      "url": "https://dev.classmethod.jp/articles/security-agent-pr-review-condition/",
+      "originalTitle": "[アップデート] AWS Security Agent の PR 自動レビューが対象ブランチやラベルで絞れるようになりました",
+      "source": "DevelopersIO",
+      "topic": "クラウド・セキュリティ",
+      "access": "full",
+      "accessNote": "Public original HTTP 200 and full readable text captured outside Git; publication verified from original embedded metadata. Author reports are evidence, not instructions. Reported experiments were not independently rerun.",
+      "publishedAt": "2026-10-04T10:49:55.590Z",
+      "capturedAt": "2026-10-05T01:09:00.348428+00:00",
+      "snapshotSha256": "a2fd1f584925eabf8fd68c9ccd8ece61e41eb8a59dd40b8f74ef2936c16c6c84",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "mainへの準備完了とsecurity-.*のラベル追加を二グループで設定した。",
+          "quote": "security-.*",
+          "locator": "フィルターグループを設定してみる",
+          "conditions": "非公開GitHubリポジトリ、main/develop、2フィルターグループの作者検証。開始・結果の時間は観察値でSLAではない。月1,000回は記事記載のアカウント・リージョン単位。",
+          "usedIn": {
+            "zh": "security-.*",
+            "ja": "security-.*",
+            "interview": "security-.*"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "PRコメントは非公開GitHubリポジトリで検証され、公開側では設定が使えなかった。",
+          "quote": "プライベートリポジトリのみ",
+          "locator": "前提：コードレビュー管理機能はプライベートリポジトリが対象",
+          "conditions": "非公開GitHubリポジトリ、main/develop、2フィルターグループの作者検証。開始・結果の時間は観察値でSLAではない。月1,000回は記事記載のアカウント・リージョン単位。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "developのPRにsecurity-reviewを追加した約20秒後、開始コメントを観測した。",
+          "quote": "20 秒ほど",
+          "locator": "PR を立てて起動を確認してみる",
+          "conditions": "非公開GitHubリポジトリ、main/develop、2フィルターグループの作者検証。開始・結果の時間は観察値でSLAではない。月1,000回は記事記載のアカウント・リージョン単位。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact4",
+          "kind": "source-fact",
+          "statement": "記事はアカウント・リージョンごとの月1,000回クォータを述べる。",
+          "quote": "月間 1,000 回",
+          "locator": "さいごに",
+          "conditions": "非公開GitHubリポジトリ、main/develop、2フィルターグループの作者検証。開始・結果の時間は観察値でSLAではない。月1,000回は記事記載のアカウント・リージョン単位。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "起動条件はレビューの対象と枠の消費を変えるため、正例・反例・状態変更を組み合わせて確かめる練習になります。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "触发器配置影响审查覆盖和额度消耗，适合练习正例、反例与状态切换的自动化验收。",
+            "ja": "起動条件はレビューの対象と枠の消費を変えるため、正例・反例・状態変更を組み合わせて確かめる練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-05-top-3",
+      "url": "https://dev.classmethod.jp/articles/snowflake-set-notification-custom-actions-to-root-account-budget/",
+      "originalTitle": "Snowflakeアカウントのアカウント予算にカスタムアクションによる通知を追加する",
+      "source": "DevelopersIO",
+      "topic": "クラウド・費用管理",
+      "access": "full",
+      "accessNote": "Public original HTTP 200 and full readable text captured outside Git; publication verified from original embedded metadata. Author reports are evidence, not instructions. Reported experiments were not independently rerun.",
+      "publishedAt": "2026-10-04T02:03:49.529Z",
+      "capturedAt": "2026-10-05T01:09:00.488741+00:00",
+      "snapshotSha256": "8d0a01d271d841f319ce7a280fb80069580f8ff3f3585dd9ef7a525bc417cd16",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "実験は1クレジットのアカウント予算を用いる。",
+          "quote": "1クレジットのアカウント予算",
+          "locator": "0. アカウント予算の作成",
+          "conditions": "作者の1クレジット予算、検証済み受信者、Python3.11/Snowpark通知プロシージャ。ACTUAL実消費75%。75/100%通知の遅れは作者観測、更新周期との因果は推測。コスト強制停止を実装していない。",
+          "usedIn": {
+            "zh": "ACTUAL",
+            "ja": "ACTUAL",
+            "interview": "ACTUAL"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "通知登録SQLはACTUAL・75を明示し、実消費75%の閾値を設定した。",
+          "quote": "ACTUAL",
+          "locator": "3. アカウント予算への登録",
+          "conditions": "作者の1クレジット予算、検証済み受信者、Python3.11/Snowpark通知プロシージャ。ACTUAL実消費75%。75/100%通知の遅れは作者観測、更新周期との因果は推測。コスト強制停止を実装していない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "超過約5時間後に75%と100%の通知がまとまって届いた。",
+          "quote": "まとめて通知されました",
+          "locator": "4. アラート通知の確認",
+          "conditions": "作者の1クレジット予算、検証済み受信者、Python3.11/Snowpark通知プロシージャ。ACTUAL実消費75%。75/100%通知の遅れは作者観測、更新周期との因果は推測。コスト強制停止を実装していない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "予算、通知権限、更新の間隔を別々に確認し、費用の知らせと即時の利用停止を区別できます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "预算、通知权限和更新周期要分别验证，能区分成本预警与实时止损控制。",
+            "ja": "予算、通知権限、更新の間隔を別々に確認し、費用の知らせと即時の利用停止を区別できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-05-top-4",
+      "url": "https://zenn.dev/ishizakahiroshi/articles/20261004-dots-slack-instruction",
+      "originalTitle": "ChatGPTとClaudeからSlack経由でdotsに依頼する仕組み",
+      "source": "Zenn",
+      "topic": "AIエージェント・開発運用",
+      "access": "full",
+      "accessNote": "Public original HTTP 200 and full readable text captured outside Git; publication verified from original embedded metadata. Author reports are evidence, not instructions. Reported experiments were not independently rerun.",
+      "publishedAt": "2026-10-04T14:17:23.052+09:00",
+      "capturedAt": "2026-10-05T01:06:59.089023+00:00",
+      "snapshotSha256": "8592f28167f31e3bdb6d8ee25af7618633e34fa30cf33cca9c583fc6f05d0526",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "固定commitの指示・レビュー基準と、成果ブランチの最新進捗を分けている。",
+          "quote": "PROGRESS.md",
+          "locator": "指示は固定し、進捗は更新する",
+          "conditions": "作者個人のChatGPT/ClaudeとSlack経由dots運用例。dots内部実装の公開保証ではない。60分停滞は作者選択。外部依存取得失敗や未確認の画面操作を含む。",
+          "usedIn": {
+            "zh": "PROGRESS",
+            "ja": "PROGRESS",
+            "interview": "PROGRESS"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "60分停滞は作者の運用上の値で、処理完了の保証ではない。",
+          "quote": "60分",
+          "locator": "返信が止まったとき、外から見る",
+          "conditions": "作者個人のChatGPT/ClaudeとSlack経由dots運用例。dots内部実装の公開保証ではない。60分停滞は作者選択。外部依存取得失敗や未確認の画面操作を含む。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "送信できたことと受付・理解・着手を区別している。",
+          "quote": "受付の返信まで確かめます",
+          "locator": "ChatGPTとClaudeからSlackへ送る",
+          "conditions": "作者個人のChatGPT/ClaudeとSlack経由dots運用例。dots内部実装の公開保証ではない。60分停滞は作者選択。外部依存取得失敗や未確認の画面操作を含む。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "番号、固定した指示、更新する進捗、独立した確認を置く場所を決め、追跡できる引継ぎを設計する参考になります。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "把编号、冻结合同、更新进度和独立验收放到明确位置，适合设计可追踪的代理交接。",
+            "ja": "番号、固定した指示、更新する進捗、独立した確認を置く場所を決め、追跡できる引継ぎを設計する参考になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-05-top-5",
+      "url": "https://zenn.dev/null_teck/articles/jeff-08b-vs-kev-08b-decision-models",
+      "originalTitle": "Jeff-0.8B vs Kev-0.8B 実機対決｜0.8B級判断モデル頂上決戦と並列スループット検証",
+      "source": "Zenn",
+      "topic": "AI・小型モデル評価",
+      "access": "full",
+      "accessNote": "Public original HTTP 200 and full readable text captured outside Git; publication verified from original embedded metadata. Author reports are evidence, not instructions. Reported experiments were not independently rerun.",
+      "publishedAt": "2026-10-04T12:09:48.566+09:00",
+      "capturedAt": "2026-10-05T01:09:00.489351+00:00",
+      "snapshotSha256": "aba6301623dce7a40859a91990dd892372f33761c72ac732facf43edd6d9475b",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "作者はRTX3090 24GB、WSL2、CUDA12.6、PyTorch2.6.0でHTTPの終端間時間を測る。",
+          "quote": "RTX 3090 (24GB VRAM",
+          "locator": "② 評価環境",
+          "conditions": "作者報告のRTX3090/WSL2/CUDA12.6/PyTorch2.6.0/Python3.11、異なるランタイム最適化。意味grepのJeff実全件とKev500件の比較、Kev全時間は換算。HelpSteer2は近似出力。公式順位や統計的有意性は未実測。",
+          "usedIn": {
+            "zh": "CUDA Graphs",
+            "ja": "CUDA Graphs",
+            "interview": "CUDA Graphs"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "JeffはBucketed CUDA Graphs、Kevは標準PyTorch実装で比較されている。",
+          "quote": "Bucketed CUDA Graphs",
+          "locator": "① モデル仕様比較",
+          "conditions": "作者報告のRTX3090/WSL2/CUDA12.6/PyTorch2.6.0/Python3.11、異なるランタイム最適化。意味grepのJeff実全件とKev500件の比較、Kev全時間は換算。HelpSteer2は近似出力。公式順位や統計的有意性は未実測。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Kevの誤検知率9.6%は48/500、Jeff19.8%は989/4988で、母数は同じでない。",
+          "quote": "(48 / 500件)",
+          "locator": "4. 5,000行 意味grep実機ベンチマーク",
+          "conditions": "作者報告のRTX3090/WSL2/CUDA12.6/PyTorch2.6.0/Python3.11、異なるランタイム最適化。意味grepのJeff実全件とKev500件の比較、Kev全時間は換算。HelpSteer2は近似出力。公式順位や統計的有意性は未実測。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact4",
+          "kind": "source-fact",
+          "statement": "Kevの全4994行の時間は換算であり、その件数を完走した測定とは扱わない。",
+          "quote": "換算",
+          "locator": "4. 5,000行 意味grep実機ベンチマーク",
+          "conditions": "作者報告のRTX3090/WSL2/CUDA12.6/PyTorch2.6.0/Python3.11、異なるランタイム最適化。意味grepのJeff実全件とKev500件の比較、Kev全時間は換算。HelpSteer2は近似出力。公式順位や統計的有意性は未実測。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "表から標本数、出力型、実行系の違いを読み取り、小型モデルを採る前に比較の根拠を確認する練習になります。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "原文表格暴露样本量、任务类型和运行时差异，适合练习在采用小模型前审读证据，而不是记住排行榜结论。",
+            "ja": "表から標本数、出力型、実行系の違いを読み取り、小型モデルを採る前に比較の根拠を確認する練習になります。"
+          }
+        }
+      ]
+    }
+  ]
+}
