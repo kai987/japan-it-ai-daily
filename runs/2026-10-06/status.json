@@ -8,7 +8,7 @@
     "to": "2026-10-06T10:00:00+09:00"
   },
   "createdAt": "2026-10-06T01:09:18.394Z",
-  "updatedAt": "2026-10-06T02:03:03.876Z",
+  "updatedAt": "2026-10-06T02:08:46.674Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -127,7 +127,7 @@
     "verifiedAt": "2026-10-06T01:44:46.602Z",
     "site": "/tmp/japan-daily-20261006/text-release-37400424936/site"
   },
-  "nextStep": "Await exact N1 sync commit, Pages and live Day 38 validation",
+  "nextStep": "Complete: verified text, audio/R2/real playback and one-time N1 handoff. Resume only changed or unfinished state on the next scheduled run.",
   "publishedAt": "2026-10-06T01:45:09.602585+00:00",
   "audioStatus": "playback_verified",
   "audioCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
@@ -171,7 +171,7 @@
     "public/audio/japanese/2026-10-06/manifest.json": "0b2c46f469b50b45fa5790b92a6efbf07f9be46285a3aeaf060bf0b8123d6e44",
     "public/audio/japanese/2026-10-06/interview-manifest.json": "6d86439e7476ca246897af3fc159328092955de2cb2a093e66e941a2ab347869"
   },
-  "n1Status": "waiting_upstream",
+  "n1Status": "published",
   "n1OriginalPromotion": {
     "targetDate": "2026-10-06",
     "day": 38,
@@ -725,5 +725,356 @@
         "browser": "Chromium real HTMLAudioElement; no media mocks or request interception"
       }
     ]
-  }
+  },
+  "n1ReleaseCommit": "bded58bf9e4553fb85405fb312b60181adc801b6",
+  "n1SourceCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+  "n1PagesRunId": 37402164092,
+  "n1SyncRunId": 37402035087,
+  "n1ReleaseEvidence": {
+    "targetDate": "2026-10-06",
+    "sourceCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+    "releaseCommit": "bded58bf9e4553fb85405fb312b60181adc801b6",
+    "sourceBlobSha": "24d467c1d5ff7dfe1ac85f14659bf7b94aaa5bbe",
+    "sourceSha256": "05c6403ea7e251b818a4a393f80037b8ca0d07fa353f3e39ce32cbe7ece92ba9",
+    "snapshotSha256": "a5082ef003dc05bd9d47cd2546e56147417853af3b661a3b5577e318f83d9f1d",
+    "storedSnapshotSha256": "29a9f772057c4c26e204d26e44e6761775a08fbdca92d0ba0ee6e2a7dd018275",
+    "pagesRunId": 37402164092,
+    "syncRunId": 37402035087,
+    "issueNumber": 56,
+    "totalDays": 56,
+    "rawVocabulary": 10,
+    "rawGrammar": 1,
+    "displayVocabulary": 20,
+    "displayGrammar": 8,
+    "checks": {
+      "exactPages": true,
+      "postDeploy": true,
+      "originalUnchanged": true,
+      "snapshotExact": true,
+      "liveArtifactBytes": true,
+      "display": {
+        "date": "2026-10-06",
+        "day": 38,
+        "issue": 56,
+        "titleVisible": true,
+        "vocabularyCount": 20,
+        "grammarNew": 1,
+        "grammarReview": 7,
+        "frequencyDenominator": 56,
+        "readingParagraphs": 1
+      }
+    },
+    "verifiedAt": "2026-10-06T02:05:01.978Z"
+  },
+  "latestVerifiedMainCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+  "latestReleaseEvidence": {
+    "label": "audio",
+    "runId": 37402147637,
+    "releaseCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/37402147637",
+    "artifacts": [
+      {
+        "id": 11385851846,
+        "name": "github-pages",
+        "digest": "sha256:093f9a497cc53a030cf72fae549d5e51198b310854a4922504195dd41f2b78fb"
+      },
+      {
+        "id": 11385781982,
+        "name": "it-study-snapshot",
+        "digest": "sha256:e961a851d26e207aca97d71f69ae9de95ed8a7af9d64b7e5f036b10f14381172"
+      }
+    ],
+    "sourceCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+    "targetDate": "2026-10-06",
+    "totalDays": 56,
+    "issueNumber": 56,
+    "grammarLessonDates": [
+      "2026-08-12",
+      "2026-08-13",
+      "2026-08-14",
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19",
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-22",
+      "2026-08-23",
+      "2026-08-24",
+      "2026-08-25",
+      "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-08-31",
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03",
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-19",
+      "2026-09-20",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-27",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30",
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-04",
+      "2026-10-05",
+      "2026-10-06"
+    ],
+    "fullSnapshotCompared": true,
+    "snapshotHash": "a5082ef003dc05bd9d47cd2546e56147417853af3b661a3b5577e318f83d9f1d",
+    "expected": {
+      "version": 1,
+      "commit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+      "date": "2026-10-06",
+      "snapshotHash": "a5082ef003dc05bd9d47cd2546e56147417853af3b661a3b5577e318f83d9f1d",
+      "pages": [
+        {
+          "path": "daily/2026-10-06/",
+          "sha256": "9b21d39e4e9fd1252ccac7a3b5a822db6812c0e223b3d05534d8694822998ddb"
+        },
+        {
+          "path": "ja/daily/2026-10-06/",
+          "sha256": "6016c111a2806e9352790713dcdd14e56f9b920a12c4b123810c95fb68c3dc3e"
+        }
+      ]
+    },
+    "live": {
+      "commit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+      "date": "2026-10-06",
+      "attempt": 1
+    },
+    "verifiedAt": "2026-10-06T02:06:49.648Z",
+    "site": "/tmp/japan-daily-20261006/audio-release-37402147637/site"
+  },
+  "audioCutoverAudit": {
+    "main": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+    "verifiedAt": "2026-10-06T02:08:34.863Z",
+    "dates": [
+      {
+        "date": "2026-09-30",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      },
+      {
+        "date": "2026-10-01",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      },
+      {
+        "date": "2026-10-02",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      },
+      {
+        "date": "2026-10-03",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      },
+      {
+        "date": "2026-10-04",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      },
+      {
+        "date": "2026-10-05",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      },
+      {
+        "date": "2026-10-06",
+        "stage": "playback_verified",
+        "sourceEqual": true,
+        "manifestsEqual": true
+      }
+    ]
+  },
+  "completionPlan": {
+    "action": "idle",
+    "reason": "no_due_unverified_date"
+  },
+  "outsideGitOriginalCapturesRetained": true,
+  "dependencyFix": {
+    "baseCommit": "3e0de816907cadcd516f1145b5620545149826a2",
+    "commit": "d712cb0754f8c7e0a58103c55b6ae0a4629e16e0",
+    "paths": [
+      "package-lock.json"
+    ],
+    "versions": {
+      "source-map-js": "1.2.2",
+      "smol-toml": "1.9.0"
+    },
+    "validation": {
+      "date": "2026-10-06",
+      "checkedBaseCommit": "3e0de816907cadcd516f1145b5620545149826a2",
+      "worktree": "six uncommitted target files",
+      "checks": [
+        {
+          "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
+          "startedAt": "2026-10-06T01:25:45.963Z",
+          "completedAt": "2026-10-06T01:25:46.267Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/00-tests-publication-recovery-node-mjs.log"
+        },
+        {
+          "command": "npm audit --audit-level=high",
+          "startedAt": "2026-10-06T01:25:48.041Z",
+          "completedAt": "2026-10-06T01:25:48.493Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/01---audit-level-high.log"
+        },
+        {
+          "command": "npm run check",
+          "startedAt": "2026-10-06T01:25:50.293Z",
+          "completedAt": "2026-10-06T01:25:57.507Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/02-check.log"
+        },
+        {
+          "command": "npm run content:integrity:check",
+          "startedAt": "2026-10-06T01:25:59.349Z",
+          "completedAt": "2026-10-06T01:26:02.107Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/03-content-integrity-check.log"
+        },
+        {
+          "command": "npm run evidence:check",
+          "startedAt": "2026-10-06T01:26:03.908Z",
+          "completedAt": "2026-10-06T01:26:04.157Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/04-evidence-check.log"
+        },
+        {
+          "command": "npm run evidence:pilot",
+          "startedAt": "2026-10-06T01:26:05.800Z",
+          "completedAt": "2026-10-06T01:26:05.986Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/05-evidence-pilot.log"
+        },
+        {
+          "command": "npm run bilingual:check-interview",
+          "startedAt": "2026-10-06T01:26:07.654Z",
+          "completedAt": "2026-10-06T01:26:07.838Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/06-bilingual-check-interview.log"
+        },
+        {
+          "command": "npm run quality:check",
+          "startedAt": "2026-10-06T01:26:09.565Z",
+          "completedAt": "2026-10-06T01:26:09.914Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/07-quality-check.log"
+        },
+        {
+          "command": "npm run audio:check",
+          "startedAt": "2026-10-06T01:26:11.625Z",
+          "completedAt": "2026-10-06T01:26:12.219Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/08-audio-check.log"
+        },
+        {
+          "command": "npm run audio:versions:check",
+          "startedAt": "2026-10-06T01:26:13.841Z",
+          "completedAt": "2026-10-06T01:26:14.648Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/09-audio-versions-check.log"
+        },
+        {
+          "command": "npm run test",
+          "startedAt": "2026-10-06T01:26:16.244Z",
+          "completedAt": "2026-10-06T01:26:19.658Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/10-test.log"
+        },
+        {
+          "command": "npm run build",
+          "startedAt": "2026-10-06T01:26:21.540Z",
+          "completedAt": "2026-10-06T01:26:26.799Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/11-build.log"
+        },
+        {
+          "command": "npm run test:browser:speech-smoke",
+          "startedAt": "2026-10-06T01:26:28.602Z",
+          "completedAt": "2026-10-06T01:26:31.675Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/12-test-browser-speech-smoke.log"
+        },
+        {
+          "command": "npm run test:browser",
+          "startedAt": "2026-10-06T01:26:33.363Z",
+          "completedAt": "2026-10-06T01:27:08.814Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/13-test-browser.log"
+        },
+        {
+          "command": "npm run security:check",
+          "startedAt": "2026-10-06T01:27:10.612Z",
+          "completedAt": "2026-10-06T01:27:10.973Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/14-security-check.log"
+        },
+        {
+          "command": "npm run evidence:check -- --date 2026-10-06 --source-dir /tmp/japan-daily-20261006/originals",
+          "startedAt": "2026-10-06T01:27:12.656Z",
+          "completedAt": "2026-10-06T01:27:12.848Z",
+          "exitCode": 0,
+          "log": "/tmp/japan-daily-20261006/logs/15-evidence-check.log"
+        }
+      ]
+    },
+    "regression": {
+      "sourceMapVersion": "1.2.2",
+      "smolTomlVersion": "1.9.0",
+      "rejectedOffsets": 4,
+      "validMapPassed": true,
+      "tomlKeys": 64000,
+      "tomlParseMs": 43.799875,
+      "totalMs": 57.845708
+    },
+    "pushedAt": "2026-10-06T01:28:03.079Z"
+  },
+  "audioLateWorkflows": {
+    "pagesRunId": 37402147637,
+    "r2RunId": 37402147605,
+    "pagesArtifactBytesUnchanged": true,
+    "sourceCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+    "snapshotHash": "a5082ef003dc05bd9d47cd2546e56147417853af3b661a3b5577e318f83d9f1d",
+    "r2ReferencedMP3": 61,
+    "repairedObjects": 0,
+    "reason": "Original push workflows appeared after manual fallback; both retained and verified",
+    "checkedAt": "2026-10-06T02:07:39.381Z"
+  },
+  "completedAt": "2026-10-06T02:08:34.864Z"
 }
