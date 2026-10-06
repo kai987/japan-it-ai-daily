@@ -8,7 +8,7 @@
     "to": "2026-10-06T10:00:00+09:00"
   },
   "createdAt": "2026-10-06T01:09:18.394Z",
-  "updatedAt": "2026-10-06T01:51:58.341Z",
+  "updatedAt": "2026-10-06T01:54:31.587Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -182,5 +182,25 @@
     "sourceBytes": 13998,
     "exactReadback": true,
     "at": "2026-10-06T01:46:30.788Z"
-  }
+  },
+  "audioWorkflowRunIds": {
+    "pages": 37401457701,
+    "r2": 37401472999
+  },
+  "audioDispatchEvidence": [
+    {
+      "workflow": "deploy.yml",
+      "commit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+      "reason": "No exact audio commit run triggered after observed push; no active same-workflow run",
+      "observedRuns": 0,
+      "dispatchedAt": "2026-10-06T01:53:42.558Z"
+    },
+    {
+      "workflow": "sync-r2-audio.yml",
+      "commit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+      "reason": "No exact audio commit run triggered after observed push; no active same-workflow run",
+      "observedRuns": 0,
+      "dispatchedAt": "2026-10-06T01:53:53.903Z"
+    }
+  ]
 }
