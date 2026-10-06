@@ -8,7 +8,7 @@
     "to": "2026-10-06T10:00:00+09:00"
   },
   "createdAt": "2026-10-06T01:09:18.394Z",
-  "updatedAt": "2026-10-06T01:45:16.003Z",
+  "updatedAt": "2026-10-06T01:51:58.341Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -127,6 +127,60 @@
     "verifiedAt": "2026-10-06T01:44:46.602Z",
     "site": "/tmp/japan-daily-20261006/text-release-37400424936/site"
   },
-  "nextStep": "Generate and verify frozen-date audio and complete corresponding N1 handoff",
-  "publishedAt": "2026-10-06T01:45:09.602585+00:00"
+  "nextStep": "Verify exact audio commit R2/Pages/live playback, then submit same-date N1 source-bound request",
+  "publishedAt": "2026-10-06T01:45:09.602585+00:00",
+  "audioStatus": "pushed",
+  "audioCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+  "audioLocalVerification": {
+    "newRecordings": 54,
+    "referencedRecordings": 61,
+    "wordCards": 20,
+    "grammarCards": 8,
+    "answers": [
+      {
+        "index": 1,
+        "durationSeconds": 22.567,
+        "status": "warn"
+      },
+      {
+        "index": 2,
+        "durationSeconds": 23.033,
+        "status": "warn"
+      },
+      {
+        "index": 3,
+        "durationSeconds": 24.674,
+        "status": "ideal"
+      },
+      {
+        "index": 4,
+        "durationSeconds": 25.274,
+        "status": "ideal"
+      },
+      {
+        "index": 5,
+        "durationSeconds": 23.637,
+        "status": "warn"
+      }
+    ],
+    "voiceVerified": true,
+    "textMappingsVerified": true,
+    "at": "2026-10-06T01:50:52.978Z"
+  },
+  "audioManifestHashes": {
+    "public/audio/japanese/2026-10-06/manifest.json": "0b2c46f469b50b45fa5790b92a6efbf07f9be46285a3aeaf060bf0b8123d6e44",
+    "public/audio/japanese/2026-10-06/interview-manifest.json": "6d86439e7476ca246897af3fc159328092955de2cb2a093e66e941a2ab347869"
+  },
+  "n1Status": "waiting_upstream",
+  "n1OriginalPromotion": {
+    "targetDate": "2026-10-06",
+    "day": 38,
+    "base": "79666fc763357429fcd988c68cc1f393b58213de",
+    "commit": "9711ea915d0400f22f8a2805799f54cfd814ce88",
+    "blobSha": "24d467c1d5ff7dfe1ac85f14659bf7b94aaa5bbe",
+    "sourceSha256": "05c6403ea7e251b818a4a393f80037b8ca0d07fa353f3e39ce32cbe7ece92ba9",
+    "sourceBytes": 13998,
+    "exactReadback": true,
+    "at": "2026-10-06T01:46:30.788Z"
+  }
 }
