@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-06",
+  "generatedAt": "2026-10-06T01:48:36.147Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AI開発ツールの権限制御が効いていることを、どう確かめますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "5337d04978cbee90bdd6daf8f9687d42aad9bca19e79af8d399087e557cab140",
+      "audioSha256": "e279e9bea4d9f799f52128d068ab453b65aab97ace1e72623ffbb0939b27d462",
+      "durationSeconds": 4.946
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "設定を眺めるだけでなく、拒否ありとなしで同じ操作を比べます。この記事ではsandboxの自動許可を有効にし、環境変数を前置したtouchを試しています。permission_denialsとファイルの有無を合わせて見ます。ただし、一つのコマンドの結果なので、別の入口も個別に確かめる必要があります。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "f528fcc1e3279701ce930ae5980eaf7d9d3dd4136186f62dad0a4b3371b488f4",
+      "audioSha256": "4c36341e0d67f542fa4b2eb86b941936a6f658803d6d40e839543ff7da7c9150",
+      "durationSeconds": 22.567,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "ユーザーごとに分離したクラウド開発環境を、どう構成しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "da90698d6ae624d1b92136d3345a5d4b056c409951379e9bece8df4a225fec3a",
+      "audioSha256": "f6a93d9fd2f8995b93154b93ce2b30635585111841381200db06cbe2885a5724",
+      "durationSeconds": 4.817
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "ECSのタスクにcode-serverを置き、認証済みユーザーの環境へProxyで振り分けます。この記事では起動後のIPをDynamoDBへ登録し、WebSocketも中継します。ただし、タスクは保守で止まることがあるので、保存方法と寿命を決めます。画面が開いたことだけでは、運用の安定性までは判断できません。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "faa0de2fb59476fe81eead13b1919301401e09565f4cf5c4313d75b4075b266e",
+      "audioSha256": "18b32d8761544bc6788086d996e70f313dc7e8ddf6640a5f756560e73430abce",
+      "durationSeconds": 23.033,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "AIエージェントからAWSを操作するとき、認証情報をどう管理しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "b73b977d5abe31b7a65b577235b888a318b7542390f7626ab23339ea59285b0a",
+      "audioSha256": "4580156b8892636c804b7da2fa72f56b3798bb7534b7afd51943dca9c2509e4f",
+      "durationSeconds": 6.036
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "長期キーはaws-vaultの暗号化ストアに置き、credential_processで一時情報を渡します。1PasswordはMFAの発行に使い、作業先のロールで権限を絞ります。ただし、切替後のキーはCLIのキャッシュに残るので、平文を一切残せない規則にはそのまま適合しません。保管と利用時の境界を分けて確認します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "280c229e335b2fa6726a0589ae2d2a18ddc9e8af4579ed6f932c69c730263cca",
+      "audioSha256": "8af993d45bfd70ac86d00ce9d4f6e9daabc509a1bd1d41f3bc8c1ac575645588",
+      "durationSeconds": 24.674,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "AIで作った業務画面のデータ鮮度を、どう確認しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "940f8b96dfc70cd1675dcb79e3d888513c8893ad49fd7ba236069958057caccf",
+      "audioSha256": "16a14726981be41a2099c2916dd6ed162e81df0a682794b226998a89052e7c92",
+      "durationSeconds": 4.571
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "表示を信じる前に、元データを変えて反映の契機を比べます。Amazon Quickの例ではDirect Queryは再読込みで更新され、SPICEは取り込みの完了まで旧値でした。ただし、表示ごとにAthenaのクエリが走ります。更新頻度だけでなく閲覧数と費用を見て選び、画面の最終編集日をデータの更新時刻と混同しません。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "0028509646fe43a3935f8e023785c2865049cc3d48c5ac6a18b390fabbd03c4a",
+      "audioSha256": "6698e5672e4380b6cee369678bd6c5472e4453ea39e32785fa3db98fa07a38f8",
+      "durationSeconds": 25.274,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "入力内容を装飾するUIで、何を壊さないようにしますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "f4890ff9f3b07d36642b497ee7aabae7f7eb592a0fd0f15c8f57b3eca5a2e28d",
+      "audioSha256": "9fbced10072bdcb92c8f2b0beacb6cc48f3a0a970db56667782b74ed232f83d6",
+      "durationSeconds": 5.13
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "送る文字とカーソル位置を保ち、見た目だけを変えます。md-promptはprompt.editでdecorationsを足し、装飾計算を純関数でテストしています。ただし、長い貼り付けは編集イベントが出ない場合があり、コードのテストだけでは画面を保証できません。展開後の入力や端末の見え方も実際に確認します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "2777693b8579f713c757fbe7fb0d5951a35b256a8f472772708ba8db1cb2373b",
+      "audioSha256": "b5988fe6df46d41d8896885516a3b7f670e7c565c32530fb81e9597658360502",
+      "durationSeconds": 23.637,
+      "durationStatus": "warn"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "ログの終了理由だけでは、なぜ権限拒否を判断できませんか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "73e4efa1b75085b4bce30d404a05e3b025faa7801fcd38c0d04107f89ba87ee5",
+      "audioSha256": "0cbb3dd32e874c91e82d6f7b7b6e4a8d5fbd56a23eefc109d3f2fc715d56edfb",
+      "durationSeconds": 5.038
+    },
+    {
+      "index": 2,
+      "text": "長期キーを暗号化しても、残る確認事項は何ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "06d4bdfc592dbb78c7bfe4535df543fb60f18e66998fd500d02f08dc5bc52e1b",
+      "audioSha256": "2506636eb6e5c56b3003e690e9901ecf550cc17f7d75102948f08e429b75c432",
+      "durationSeconds": 4.527
+    },
+    {
+      "index": 3,
+      "text": "データと表示の更新を、どう区別して検証しますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "d92022eb946981ccffee1362f40cb4c5afa64baa3e0543c80d931d39f51c47e7",
+      "audioSha256": "daa7279d5d68f316efd06c92ea02a2d8fc2ff24b54b490eea29801c2695fac90",
+      "durationSeconds": 4.492
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-06T01:48:47.859Z"
+}
