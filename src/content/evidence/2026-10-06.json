@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-06",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-06T01:23:35.313Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-06-top-1",
+      "url": "https://dev.classmethod.jp/articles/20261005-cc-updates-v2-1-289/",
+      "originalTitle": "Claude Code v2.1.289 の主要アップデート - sandbox auto-allow 時の Bash deny ルール修正と agent.spawn の teammate 対応",
+      "source": "DevelopersIO",
+      "topic": "AI開発・権限制御",
+      "access": "full",
+      "accessNote": "公開本文を末尾まで読み、コード例・報告された結果・既知制約を確認。画像内のみの情報を補完せず、実験の独立再実行はしていません。",
+      "publishedAt": "2026-10-05T08:15:59.357Z",
+      "capturedAt": "2026-10-06T01:17:33.607Z",
+      "snapshotSha256": "d6f7081325e5f68e4eece98156f61aed1ade756c39f1364de5032bf89183d51e",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "27件の変更中、セキュリティ修正は5件。",
+          "quote": "セキュリティ修正 5 件",
+          "locator": "アップデートサマリー",
+          "conditions": "記事のv2.1.289、sandbox auto-allow、Bash(touch *)、failIfUnavailable、project設定だけを読む条件。max-turns=1の対照実験。全コマンドや全OSを検証した結果ではない。",
+          "usedIn": {
+            "zh": "permission_denials",
+            "ja": "permission_denials",
+            "interview": "permission_denials"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "denyありでは拒否記録と未作成ファイル、denyなしでは拒否なしと作成ファイル。",
+          "quote": "permission_denials",
+          "locator": "Step 4: 結果を比較する",
+          "conditions": "記事のv2.1.289、sandbox auto-allow、Bash(touch *)、failIfUnavailable、project設定だけを読む条件。max-turns=1の対照実験。全コマンドや全OSを検証した結果ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "teammate起動をagent.spawnで判別する。",
+          "quote": "e.isTeammate",
+          "locator": "注目のアップデート",
+          "conditions": "記事のv2.1.289、sandbox auto-allow、Bash(touch *)、failIfUnavailable、project設定だけを読む条件。max-turns=1の対照実験。全コマンドや全OSを検証した結果ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "設定の存在だけでなく、拒否記録と成果物を対照で確かめる考え方を学べます。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合把“权限规则已配置”落实为可观察的拒绝行为，并区分执行上限退出与工具权限拒绝。",
+            "ja": "設定の存在だけでなく、拒否記録と成果物を対照で確かめる考え方を学べます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-06-top-2",
+      "url": "https://dev.classmethod.jp/articles/ecs-task-sandbox/",
+      "originalTitle": "ECS のタスクをクラウド開発環境として使う",
+      "source": "DevelopersIO",
+      "topic": "クラウド開発環境",
+      "access": "full",
+      "accessNote": "公開本文を末尾まで読み、コード例・報告された結果・既知制約を確認。画像内のみの情報を補完せず、実験の独立再実行はしていません。",
+      "publishedAt": "2026-10-05T08:37:33.654Z",
+      "capturedAt": "2026-10-06T01:17:33.612Z",
+      "snapshotSha256": "871f4d248d8cb9c68f007dd50282ac922d74f54e03bd39240fd1725dae90dd22",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Proxyはcode-serverのWebSocketも扱う必要がある。",
+          "quote": "WebSocket",
+          "locator": "ECS サービス（Proxy）",
+          "conditions": "記事のcode-serverをユーザー別タスクで動かす実装例。画面遷移・起動停止は報告されるが、負荷試験やSLAは示されない。",
+          "usedIn": {
+            "zh": "DynamoDB",
+            "ja": "DynamoDB",
+            "interview": "DynamoDB"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "利用可能になったタスクのENI IPをDynamoDBに登録する。",
+          "quote": "DynamoDB",
+          "locator": "Lambda + API Gateway",
+          "conditions": "記事のcode-serverをユーザー別タスクで動かす実装例。画面遷移・起動停止は報告されるが、負荷試験やSLAは示されない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "8時間上限はライフサイクル対策の提案で、検証された保証ではない。",
+          "quote": "最大稼働時間を8時間",
+          "locator": "Fargate のタスク廃止",
+          "conditions": "記事のcode-serverをユーザー別タスクで動かす実装例。画面遷移・起動停止は報告されるが、負荷試験やSLAは示されない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "ユーザー認証から自分のタスクへ到達する経路と、自作する場合の運用責任を説明できます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "能具体解释从浏览器身份到用户任务地址的链路，也能讨论自主搭建相比托管 IDE 的运维责任。",
+            "ja": "ユーザー認証から自分のタスクへ到達する経路と、自作する場合の運用責任を説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-06-top-3",
+      "url": "https://dev.classmethod.jp/articles/aws-vault-mfa-claude-code/",
+      "originalTitle": "ジャンプアカウント運用下でAWS CLI（+ AIエージェント）の認証情報を安全に扱う",
+      "source": "DevelopersIO",
+      "topic": "AWS認証・AI運用",
+      "access": "full",
+      "accessNote": "公開本文を末尾まで読み、コード例・報告された結果・既知制約を確認。画像内のみの情報を補完せず、実験の独立再実行はしていません。",
+      "publishedAt": "2026-10-05T05:26:34.747Z",
+      "capturedAt": "2026-10-06T01:17:33.613Z",
+      "snapshotSha256": "813ea26e78fc504ba85b7eaf325812fca647f161c8cb2079f90cad1885699d17",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "aws-vaultのJSON出力をAWS CLIの認証情報供給に利用する。",
+          "quote": "credential_process",
+          "locator": "aws-vaultとは",
+          "conditions": "macOSのaws-vault、1PasswordによるMFA、main/common/targetのロール連鎖。スイッチ先の一時キーはCLIキャッシュに残る点を含む。",
+          "usedIn": {
+            "zh": "credential_process",
+            "ja": "credential_process",
+            "interview": "credential_process"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "スイッチ後の一時認証情報はCLIキャッシュに保存される。",
+          "quote": "~/.aws/cli/cache",
+          "locator": "運用上の注意",
+          "conditions": "macOSのaws-vault、1PasswordによるMFA、main/common/targetのロール連鎖。スイッチ先の一時キーはCLIキャッシュに残る点を含む。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "元セッションの8時間指定と、スイッチ先の最大1時間を区別する。",
+          "quote": "--duration=8h",
+          "locator": "~/.aws/config の設定",
+          "conditions": "macOSのaws-vault、1PasswordによるMFA、main/common/targetのロール連鎖。スイッチ先の一時キーはCLIキャッシュに残る点を含む。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "長期キーの保管、MFA、ロール切替、エージェントの子プロセスと一時キャッシュを分けて説明できます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合说明长期钥匙、MFA、角色切换、代理子进程和临时缓存的责任边界，不把加密存储夸大成完全无明文。",
+            "ja": "長期キーの保管、MFA、ロール切替、エージェントの子プロセスと一時キャッシュを分けて説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-06-top-4",
+      "url": "https://dev.classmethod.jp/articles/20261005-amazon-quick-live-data-in-app/",
+      "originalTitle": "[アップデート] Amazon Quick のアプリでデータセットのライブデータが使えるようになったので、Direct Query と SPICE で比べてみた",
+      "source": "DevelopersIO",
+      "topic": "AIアプリ・データ鮮度",
+      "access": "full",
+      "accessNote": "公開本文を末尾まで読み、コード例・報告された結果・既知制約を確認。画像内のみの情報を補完せず、実験の独立再実行はしていません。",
+      "publishedAt": "2026-10-05T04:36:02.321Z",
+      "capturedAt": "2026-10-06T01:17:33.613Z",
+      "snapshotSha256": "bf51b67a8c9deefdc873508aae518b3fcce9a808ee6237e26fea066c16390ba2",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "18行の合計は1,312,000。",
+          "quote": "1,312,000",
+          "locator": "やってみた／検証用データ",
+          "conditions": "Enterprise、ADMIN_PRO、IDリージョン東京、Apps/データセットus-east-1。Athena＋S3 CSVの18行に1行追加した比較。RLSのユーザー別対照試験はしていない。",
+          "usedIn": {
+            "zh": "Direct Query",
+            "ja": "Direct Query",
+            "interview": "Direct Query"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "追加後Direct Queryは19行/1,512,000、SPICEは更新完了まで旧値。",
+          "quote": "1,512,000",
+          "locator": "データを追加して鮮度を比較する",
+          "conditions": "Enterprise、ADMIN_PRO、IDリージョン東京、Apps/データセットus-east-1。Athena＋S3 CSVの18行に1行追加した比較。RLSのユーザー別対照試験はしていない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "画面表示のDirect Queryビジュアル3つに対応するAthenaクエリを観測。",
+          "quote": "3 本",
+          "locator": "データを追加して鮮度を比較する",
+          "conditions": "Enterprise、ADMIN_PRO、IDリージョン東京、Apps/データセットus-east-1。Athena＋S3 CSVの18行に1行追加した比較。RLSのユーザー別対照試験はしていない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "生成された画面を、データの更新、権限、クエリ費用、表示の意味に分けて評価できます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "能把生成应用的正确性拆成数据更新、读取权限、查询成本和显示语义，并用实际对照解释选择。",
+            "ja": "生成された画面を、データの更新、権限、クエリ費用、表示の意味に分けて評価できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-06-top-5",
+      "url": "https://zenn.dev/nogu66/articles/md-prompt-claude-code-markdown-painting",
+      "originalTitle": "Claude Codeの入力欄でMarkdownが読みにくい問題をmd-promptで解決する",
+      "source": "Zenn",
+      "topic": "入力UI・表示検証",
+      "access": "full",
+      "accessNote": "公開本文を末尾まで読み、コード例・報告された結果・既知制約を確認。画像内のみの情報を補完せず、実験の独立再実行はしていません。",
+      "publishedAt": "2026-10-05T14:50:11.399+09:00",
+      "capturedAt": "2026-10-06T01:17:33.614Z",
+      "snapshotSha256": "ecf0459811fe9d59e40e1e230628655e03da92443b732a06284ad462654a9eb3",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "編集イベントで装飾配列を追加し文字とカーソルは変更しない。",
+          "quote": "prompt.edit",
+          "locator": "仕組み／何をしているのか",
+          "conditions": "記事はAI名義で、実画面を直接観察していないと明示。コード/README/装飾関数/374testsの記録。commonmark.jsとの生成ケース比較であり、全端末GUIの視認性証明ではない。",
+          "usedIn": {
+            "zh": "prompt.edit",
+            "ja": "prompt.edit",
+            "interview": "prompt.edit"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "7ファイルの374テスト成功を報告。",
+          "quote": "374件すべて",
+          "locator": "どう確かめているのか",
+          "conditions": "記事はAI名義で、実画面を直接観察していないと明示。コード/README/装飾関数/374testsの記録。commonmark.jsとの生成ケース比較であり、全端末GUIの視認性証明ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "超過時に装飾せず、例外時も元下書きを返す。",
+          "quote": "60,000文字",
+          "locator": "なぜこの形なのか",
+          "conditions": "記事はAI名義で、実画面を直接観察していないと明示。コード/README/装飾関数/374testsの記録。commonmark.jsとの生成ケース比較であり、全端末GUIの視認性証明ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "純関数による装飾、入力を変えない境界、誤認識と性能の制約を、画面観察と分けて説明できます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合前端面试中的纯函数、非破坏性显示、误识别与性能边界，同时保留代码测试和真实视觉验收的区别。",
+            "ja": "純関数による装飾、入力を変えない境界、誤認識と性能の制約を、画面観察と分けて説明できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
