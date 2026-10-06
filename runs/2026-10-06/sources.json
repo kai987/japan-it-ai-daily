@@ -1,0 +1,224 @@
+{
+  "date": "2026-10-06",
+  "sourceCommit": "3e0de816907cadcd516f1145b5620545149826a2",
+  "sourceWindow": {
+    "from": "2026-10-05T10:00:00+09:00",
+    "to": "2026-10-06T10:00:00+09:00"
+  },
+  "discoveryScope": "20指定名を含む一般検索と全指定ドメインを対象にした限定検索。検索インデックスの範囲は部分的で、20サイトの全記事巡回を主張しない。採用した5原文は直接取得して全文を読む。",
+  "excluded": [
+    {
+      "url": "https://zenn.dev/gakken_leap/articles/c67ca43199e63d",
+      "publishedAt": "2026-10-05T07:01:05.407+09:00",
+      "reason": "対象期間の開始より前。Top 5には採用しない。"
+    }
+  ],
+  "previousTop5Excluded": true,
+  "articles": [
+    {
+      "title": "Claude Code v2.1.289 の主要アップデート - sandbox auto-allow 時の Bash deny ルール修正と agent.spawn の teammate 対応",
+      "source": "DevelopersIO",
+      "topic": "AI開発・権限制御",
+      "url": "https://dev.classmethod.jp/articles/20261005-cc-updates-v2-1-289/",
+      "publishedAt": "2026-10-05T08:15:59.357Z",
+      "evidenceAnchor": "permission_denials",
+      "conditions": "記事のv2.1.289、sandbox auto-allow、Bash(touch *)、failIfUnavailable、project設定だけを読む条件。max-turns=1の対照実験。全コマンドや全OSを検証した結果ではない。",
+      "facts": [
+        [
+          "セキュリティ修正 5 件",
+          "アップデートサマリー",
+          "27件の変更中、セキュリティ修正は5件。"
+        ],
+        [
+          "permission_denials",
+          "Step 4: 結果を比較する",
+          "denyありでは拒否記録と未作成ファイル、denyなしでは拒否なしと作成ファイル。"
+        ],
+        [
+          "e.isTeammate",
+          "注目のアップデート",
+          "teammate起動をagent.spawnで判別する。"
+        ]
+      ],
+      "whyZh": "适合把“权限规则已配置”落实为可观察的拒绝行为，并区分执行上限退出与工具权限拒绝。",
+      "whyJa": "設定の存在だけでなく、拒否記録と成果物を対照で確かめる考え方を学べます。",
+      "question": "AI開発ツールの権限制御が効いていることを、どう確かめますか。",
+      "answer": "設定を眺めるだけでなく、拒否ありとなしで同じ操作を比べます。この記事ではsandboxの自動許可を有効にし、環境変数を前置したtouchを試しています。permission_denialsとファイルの有無を合わせて見ます。ただし、一つのコマンドの結果なので、別の入口も個別に確かめる必要があります。",
+      "keywords": [
+        "sandbox auto-allow",
+        "permission_denials",
+        "agent.spawn"
+      ],
+      "projectZh": "在隔离的练习目录设计非破坏性权限对照测试，记录配置、拒绝日志与产物状态。",
+      "projectJa": "隔離した練習環境で無害な操作の対照テストを作り、設定・拒否記録・成果物を残します。",
+      "access": "full",
+      "accessNote": "公開本文を末尾まで読み、コード例・報告された結果・既知制約を確認。画像内のみの情報を補完せず、実験の独立再実行はしていません。",
+      "capturedAt": "2026-10-06T01:17:33.607Z",
+      "snapshotSha256": "d6f7081325e5f68e4eece98156f61aed1ade756c39f1364de5032bf89183d51e"
+    },
+    {
+      "title": "ECS のタスクをクラウド開発環境として使う",
+      "source": "DevelopersIO",
+      "topic": "クラウド開発環境",
+      "url": "https://dev.classmethod.jp/articles/ecs-task-sandbox/",
+      "publishedAt": "2026-10-05T08:37:33.654Z",
+      "evidenceAnchor": "DynamoDB",
+      "conditions": "記事のcode-serverをユーザー別タスクで動かす実装例。画面遷移・起動停止は報告されるが、負荷試験やSLAは示されない。",
+      "facts": [
+        [
+          "WebSocket",
+          "ECS サービス（Proxy）",
+          "Proxyはcode-serverのWebSocketも扱う必要がある。"
+        ],
+        [
+          "DynamoDB",
+          "Lambda + API Gateway",
+          "利用可能になったタスクのENI IPをDynamoDBに登録する。"
+        ],
+        [
+          "最大稼働時間を8時間",
+          "Fargate のタスク廃止",
+          "8時間上限はライフサイクル対策の提案で、検証された保証ではない。"
+        ]
+      ],
+      "whyZh": "能具体解释从浏览器身份到用户任务地址的链路，也能讨论自主搭建相比托管 IDE 的运维责任。",
+      "whyJa": "ユーザー認証から自分のタスクへ到達する経路と、自作する場合の運用責任を説明できます。",
+      "question": "ユーザーごとに分離したクラウド開発環境を、どう構成しますか。",
+      "answer": "ECSのタスクにcode-serverを置き、認証済みユーザーの環境へProxyで振り分けます。この記事では起動後のIPをDynamoDBへ登録し、WebSocketも中継します。ただし、タスクは保守で止まることがあるので、保存方法と寿命を決めます。画面が開いたことだけでは、運用の安定性までは判断できません。",
+      "keywords": [
+        "code-server",
+        "Proxy",
+        "DynamoDB"
+      ],
+      "projectZh": "画出用户身份、任务地址和 WebSocket 的路由图，再设计停止、重新创建与数据恢复的流程。",
+      "projectJa": "認証・タスクIP・WebSocketの経路を図にし、停止後の再作成とデータ復元を設計します。",
+      "access": "full",
+      "accessNote": "公開本文を末尾まで読み、コード例・報告された結果・既知制約を確認。画像内のみの情報を補完せず、実験の独立再実行はしていません。",
+      "capturedAt": "2026-10-06T01:17:33.612Z",
+      "snapshotSha256": "871f4d248d8cb9c68f007dd50282ac922d74f54e03bd39240fd1725dae90dd22"
+    },
+    {
+      "title": "ジャンプアカウント運用下でAWS CLI（+ AIエージェント）の認証情報を安全に扱う",
+      "source": "DevelopersIO",
+      "topic": "AWS認証・AI運用",
+      "url": "https://dev.classmethod.jp/articles/aws-vault-mfa-claude-code/",
+      "publishedAt": "2026-10-05T05:26:34.747Z",
+      "evidenceAnchor": "credential_process",
+      "conditions": "macOSのaws-vault、1PasswordによるMFA、main/common/targetのロール連鎖。スイッチ先の一時キーはCLIキャッシュに残る点を含む。",
+      "facts": [
+        [
+          "credential_process",
+          "aws-vaultとは",
+          "aws-vaultのJSON出力をAWS CLIの認証情報供給に利用する。"
+        ],
+        [
+          "~/.aws/cli/cache",
+          "運用上の注意",
+          "スイッチ後の一時認証情報はCLIキャッシュに保存される。"
+        ],
+        [
+          "--duration=8h",
+          "~/.aws/config の設定",
+          "元セッションの8時間指定と、スイッチ先の最大1時間を区別する。"
+        ]
+      ],
+      "whyZh": "适合说明长期钥匙、MFA、角色切换、代理子进程和临时缓存的责任边界，不把加密存储夸大成完全无明文。",
+      "whyJa": "長期キーの保管、MFA、ロール切替、エージェントの子プロセスと一時キャッシュを分けて説明できます。",
+      "question": "AIエージェントからAWSを操作するとき、認証情報をどう管理しますか。",
+      "answer": "長期キーはaws-vaultの暗号化ストアに置き、credential_processで一時情報を渡します。1PasswordはMFAの発行に使い、作業先のロールで権限を絞ります。ただし、切替後のキーはCLIのキャッシュに残るので、平文を一切残せない規則にはそのまま適合しません。保管と利用時の境界を分けて確認します。",
+      "keywords": [
+        "aws-vault",
+        "credential_process",
+        "MFA"
+      ],
+      "projectZh": "用示意账户画出 main／common／target 三段身份链，逐项列出存储位置、有效期和最小权限。",
+      "projectJa": "架空のアカウントでmain／common／targetの連鎖を描き、保存先・期限・権限を整理します。",
+      "access": "full",
+      "accessNote": "公開本文を末尾まで読み、コード例・報告された結果・既知制約を確認。画像内のみの情報を補完せず、実験の独立再実行はしていません。",
+      "capturedAt": "2026-10-06T01:17:33.613Z",
+      "snapshotSha256": "813ea26e78fc504ba85b7eaf325812fca647f161c8cb2079f90cad1885699d17"
+    },
+    {
+      "title": "[アップデート] Amazon Quick のアプリでデータセットのライブデータが使えるようになったので、Direct Query と SPICE で比べてみた",
+      "source": "DevelopersIO",
+      "topic": "AIアプリ・データ鮮度",
+      "url": "https://dev.classmethod.jp/articles/20261005-amazon-quick-live-data-in-app/",
+      "publishedAt": "2026-10-05T04:36:02.321Z",
+      "evidenceAnchor": "Direct Query",
+      "conditions": "Enterprise、ADMIN_PRO、IDリージョン東京、Apps/データセットus-east-1。Athena＋S3 CSVの18行に1行追加した比較。RLSのユーザー別対照試験はしていない。",
+      "facts": [
+        [
+          "1,312,000",
+          "やってみた／検証用データ",
+          "18行の合計は1,312,000。"
+        ],
+        [
+          "1,512,000",
+          "データを追加して鮮度を比較する",
+          "追加後Direct Queryは19行/1,512,000、SPICEは更新完了まで旧値。"
+        ],
+        [
+          "3 本",
+          "データを追加して鮮度を比較する",
+          "画面表示のDirect Queryビジュアル3つに対応するAthenaクエリを観測。"
+        ]
+      ],
+      "whyZh": "能把生成应用的正确性拆成数据更新、读取权限、查询成本和显示语义，并用实际对照解释选择。",
+      "whyJa": "生成された画面を、データの更新、権限、クエリ費用、表示の意味に分けて評価できます。",
+      "question": "AIで作った業務画面のデータ鮮度を、どう確認しますか。",
+      "answer": "表示を信じる前に、元データを変えて反映の契機を比べます。Amazon Quickの例ではDirect Queryは再読込みで更新され、SPICEは取り込みの完了まで旧値でした。ただし、表示ごとにAthenaのクエリが走ります。更新頻度だけでなく閲覧数と費用を見て選び、画面の最終編集日をデータの更新時刻と混同しません。",
+      "keywords": [
+        "Direct Query",
+        "SPICE",
+        "Athena"
+      ],
+      "projectZh": "用同一数据源的两个数据集构建对照画面，记录新增一行前后、SPICE 更新前后及查询次数。",
+      "projectJa": "同じソースの二つのデータセットを並べ、1行追加とSPICE更新の前後、クエリ数を記録します。",
+      "access": "full",
+      "accessNote": "公開本文を末尾まで読み、コード例・報告された結果・既知制約を確認。画像内のみの情報を補完せず、実験の独立再実行はしていません。",
+      "capturedAt": "2026-10-06T01:17:33.613Z",
+      "snapshotSha256": "bf51b67a8c9deefdc873508aae518b3fcce9a808ee6237e26fea066c16390ba2"
+    },
+    {
+      "title": "Claude Codeの入力欄でMarkdownが読みにくい問題をmd-promptで解決する",
+      "source": "Zenn",
+      "topic": "入力UI・表示検証",
+      "url": "https://zenn.dev/nogu66/articles/md-prompt-claude-code-markdown-painting",
+      "publishedAt": "2026-10-05T14:50:11.399+09:00",
+      "evidenceAnchor": "prompt.edit",
+      "conditions": "記事はAI名義で、実画面を直接観察していないと明示。コード/README/装飾関数/374testsの記録。commonmark.jsとの生成ケース比較であり、全端末GUIの視認性証明ではない。",
+      "facts": [
+        [
+          "prompt.edit",
+          "仕組み／何をしているのか",
+          "編集イベントで装飾配列を追加し文字とカーソルは変更しない。"
+        ],
+        [
+          "374件すべて",
+          "どう確かめているのか",
+          "7ファイルの374テスト成功を報告。"
+        ],
+        [
+          "60,000文字",
+          "なぜこの形なのか",
+          "超過時に装飾せず、例外時も元下書きを返す。"
+        ]
+      ],
+      "whyZh": "适合前端面试中的纯函数、非破坏性显示、误识别与性能边界，同时保留代码测试和真实视觉验收的区别。",
+      "whyJa": "純関数による装飾、入力を変えない境界、誤認識と性能の制約を、画面観察と分けて説明できます。",
+      "question": "入力内容を装飾するUIで、何を壊さないようにしますか。",
+      "answer": "送る文字とカーソル位置を保ち、見た目だけを変えます。md-promptはprompt.editでdecorationsを足し、装飾計算を純関数でテストしています。ただし、長い貼り付けは編集イベントが出ない場合があり、コードのテストだけでは画面を保証できません。展開後の入力や端末の見え方も実際に確認します。",
+      "keywords": [
+        "prompt.edit",
+        "decorations",
+        "commonmark.js"
+      ],
+      "projectZh": "对照普通通配符和 Markdown 输入测试装饰范围，再实际检查粘贴折叠、展开和异常回退。",
+      "projectJa": "普通の記号とMarkdownの装飾範囲を比べ、貼り付けの折畳み・展開・例外時を画面で確認します。",
+      "access": "full",
+      "accessNote": "公開本文を末尾まで読み、コード例・報告された結果・既知制約を確認。画像内のみの情報を補完せず、実験の独立再実行はしていません。",
+      "capturedAt": "2026-10-06T01:17:33.614Z",
+      "snapshotSha256": "ecf0459811fe9d59e40e1e230628655e03da92443b732a06284ad462654a9eb3"
+    }
+  ]
+}
