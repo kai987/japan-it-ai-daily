@@ -1,14 +1,21 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-06",
-  "stage": "sources_verified",
-  "sourceCommit": "3e0de816907cadcd516f1145b5620545149826a2",
+  "stage": "drafts_ready",
+  "sourceCommit": "d712cb0754f8c7e0a58103c55b6ae0a4629e16e0",
   "sourceWindow": {
     "from": "2026-10-05T10:00:00+09:00",
     "to": "2026-10-06T10:00:00+09:00"
   },
   "createdAt": "2026-10-06T01:09:18.394Z",
-  "updatedAt": "2026-10-06T01:22:40.880Z",
-  "completedArtifacts": [],
+  "updatedAt": "2026-10-06T01:35:05.441Z",
+  "completedArtifacts": [
+    "sources.json",
+    "history.json",
+    "interviews.json",
+    "draft.json",
+    "checks.json",
+    "dependency-fix.json"
+  ],
   "lastError": null
 }
