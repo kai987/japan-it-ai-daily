@@ -8,11 +8,11 @@
     "to": "2026-10-07T10:00:00+09:00"
   },
   "createdAt": "2026-10-07T01:04:19.307Z",
-  "updatedAt": "2026-10-07T01:24:10.843Z",
+  "updatedAt": "2026-10-07T01:28:07.447Z",
   "completedArtifacts": [],
   "lastError": null,
   "resumeFrom": "local_checks",
-  "nextAction": "Wait for existing exact dependency R2 run; restore six saved drafts, refresh draft base and run full gates before commit.",
+  "nextAction": "Run full 16 gates for six exact saved draft files on complete patched main.",
   "baseCommit": "0004b7dff5a508049efcb6c605f341c1b7e8c0aa",
   "dependencyFix": {
     "baseCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
