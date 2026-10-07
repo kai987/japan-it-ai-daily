@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-07",
-  "stage": "preflight_passed",
+  "stage": "request_ready",
   "sourceCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
   "sourceWindow": {
     "from": "2026-10-06T10:00:00+09:00",
     "to": "2026-10-07T10:00:00+09:00"
   },
   "createdAt": "2026-10-07T01:04:19.307Z",
-  "updatedAt": "2026-10-07T01:33:10.939Z",
+  "updatedAt": "2026-10-07T01:33:19.466Z",
   "completedArtifacts": [],
   "lastError": null,
   "resumeFrom": "local_checks",
-  "nextAction": "Await exact draft deploy.yml CI result; prepare request only after complete success.",
+  "nextAction": "CAS-submit exact source-bound request to unique publisher.",
   "baseCommit": "0004b7dff5a508049efcb6c605f341c1b7e8c0aa",
   "dependencyFix": {
     "baseCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
@@ -462,5 +462,26 @@
     "A\tsrc/data/interviews/2026-10-07.json"
   ],
   "verifiedAt": "2026-10-07T01:30:11.106Z",
-  "preflightRunId": 37557415766
+  "preflightRunId": 37557415766,
+  "publicationRequest": {
+    "schemaVersion": 1,
+    "requestId": "codex-2026-10-07-ba25eb04-8b09-426b-9e1c-91efcb70f92d",
+    "targetDate": "2026-10-07",
+    "baseCommit": "0004b7dff5a508049efcb6c605f341c1b7e8c0aa",
+    "draftCommit": "4c4a6e2ae359e2d21064b34d3c16c05d45a057b2",
+    "draftBranch": "draft/daily-2026-10-07",
+    "preflightRunId": 37557415766,
+    "preflightWorkflowPath": ".github/workflows/deploy.yml",
+    "requestedAt": "2026-10-07T01:33:10.394Z",
+    "files": [
+      "src/content/daily/2026-10-07.md",
+      "src/content/japanese/2026-10-07.md",
+      "src/content/daily-ja/2026-10-07.md",
+      "src/content/japanese-ja/2026-10-07.md",
+      "src/content/evidence/2026-10-07.json",
+      "src/data/interviews/2026-10-07.json"
+    ],
+    "platformRepair": false,
+    "platformRepairPaths": []
+  }
 }
