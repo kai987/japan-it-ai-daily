@@ -8,11 +8,11 @@
     "to": "2026-10-07T10:00:00+09:00"
   },
   "createdAt": "2026-10-07T01:04:19.307Z",
-  "updatedAt": "2026-10-07T01:22:11.974Z",
+  "updatedAt": "2026-10-07T01:24:10.843Z",
   "completedArtifacts": [],
   "lastError": null,
   "resumeFrom": "local_checks",
-  "nextAction": "Run full 16 gates for six exact saved draft files on complete patched main.",
+  "nextAction": "Wait for existing exact dependency R2 run; restore six saved drafts, refresh draft base and run full gates before commit.",
   "baseCommit": "0004b7dff5a508049efcb6c605f341c1b7e8c0aa",
   "dependencyFix": {
     "baseCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
@@ -317,5 +317,14 @@
     },
     "verifiedAt": "2026-10-07T01:21:40.636Z",
     "site": "/tmp/japan-daily-20261007/dependency-release-37556395187/site"
+  },
+  "coordination": {
+    "stage": "waiting_dependency_r2",
+    "runId": 37556395197,
+    "sourceCommit": "0004b7dff5a508049efcb6c605f341c1b7e8c0aa",
+    "textPagesVerified": true,
+    "sixDraftPathsPreserved": true,
+    "sixDraftPathsMaterialized": false,
+    "deferredCheck": "Target-date evidence gate requires restore after shared release slot is free."
   }
 }
