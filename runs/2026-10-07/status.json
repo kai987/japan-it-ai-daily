@@ -8,7 +8,13 @@
     "to": "2026-10-07T10:00:00+09:00"
   },
   "createdAt": "2026-10-07T01:04:19.307Z",
-  "updatedAt": "2026-10-07T01:11:32.275Z",
+  "updatedAt": "2026-10-07T01:15:24.444Z",
   "completedArtifacts": [],
-  "lastError": null
+  "lastError": {
+    "stage": "local_checks",
+    "message": "npm audit: sharp <0.35.5 vulnerable librsvg CVE-2026-96889; exact log saved",
+    "observedAt": "2026-10-07T01:12:05.466Z"
+  },
+  "resumeFrom": "local_checks",
+  "nextAction": "Validate narrow sharp 0.35.5 lockfile fix separately; preserve six draft paths and run all gates again."
 }
