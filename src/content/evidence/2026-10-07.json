@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-07",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-07T01:11:29.376Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-07-top-1",
+      "url": "https://dev.classmethod.jp/articles/aws_durable_execution_pydantic_ai/",
+      "originalTitle": "AWS Lambda durable functionsがPydantic AIと統合されたので試してみる",
+      "source": "DevelopersIO",
+      "topic": "AIエージェント・耐障害性",
+      "access": "full",
+      "accessNote": "公開HTMLのarticle本文、コード、表、図キャプションを読了。図の画素から追加の事実は推測しない。",
+      "publishedAt": "2026-10-06T02:00:10.422Z",
+      "capturedAt": "2026-10-07T01:05:10.129529+00:00",
+      "snapshotSha256": "77a99616383d2599dccf2e15d53e5c96bd89558fe3f16b85c028da7fcba21681",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "capabilityと専用ハンドラでモデル・ツールI/Oをチェックポイント化。",
+          "quote": "AWSLambdaDurability",
+          "locator": "Pydantic AIとdurable functionsの統合とは",
+          "conditions": "東京、Python3.13 arm64、harness0.36.0/slim2.51.0/SDK2.0.1、Nova Lite。外部APIはモック。Lambda20秒・天気待ち30秒を設定変更で0秒にする単一実験。exactly-onceや商用SLAを示さない。",
+          "usedIn": {
+            "zh": "AWSLambdaDurability",
+            "ja": "AWSLambdaDurability",
+            "interview": "AWSLambdaDurability"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "到達順にステップを識別し、並列ツール呼び出しを無効化。",
+          "quote": "ツール呼び出しは直列実行",
+          "locator": "制約",
+          "conditions": "東京、Python3.13 arm64、harness0.36.0/slim2.51.0/SDK2.0.1、Nova Lite。外部APIはモック。Lambda20秒・天気待ち30秒を設定変更で0秒にする単一実験。exactly-onceや商用SLAを示さない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "副作用直後・保存前の中断では再実行され得る。",
+          "quote": "ステップはat-least-once",
+          "locator": "制約",
+          "conditions": "東京、Python3.13 arm64、harness0.36.0/slim2.51.0/SDK2.0.1、Nova Lite。外部APIはモック。Lambda20秒・天気待ち30秒を設定変更で0秒にする単一実験。exactly-onceや商用SLAを示さない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "完了済みの記録と副作用の再実行を分け、復旧の設計を具体的に説明できます。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "能用完成记录、调用次数和副作用边界解释 Agent 恢复设计。",
+            "ja": "完了済みの記録と副作用の再実行を分け、復旧の設計を具体的に説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-07-top-2",
+      "url": "https://dev.classmethod.jp/articles/reona-shoki-realtime-transcription/",
+      "originalTitle": "DGX Spark 上でリアルタイムに文字起こしや翻訳、話者分離する議事録用 Chrome 拡張機能を作る",
+      "source": "DevelopersIO",
+      "topic": "ローカル音声AI・Chrome拡張",
+      "access": "full",
+      "accessNote": "公開HTMLのarticle本文、コード、表、図キャプションを読了。図の画素から追加の事実は推測しない。",
+      "publishedAt": "2026-10-06T08:47:54.300Z",
+      "capturedAt": "2026-10-07T01:05:10.124258+00:00",
+      "snapshotSha256": "b32cb9f9ee2697430c9419cef0b4cd78931621d7a0158dbe1e1161fc2666aa51",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "チャンクをまたいで話者の状態を保持する。",
+          "quote": "speaker_cache",
+          "locator": "話者分離のストリーミング",
+          "conditions": "DGX Sparkの実装報告。会議冒頭3分の更新、同じ動画10分の分割、FLEURS100文と社内80区間の非ストリーミング比較は別測定。清書は意味改変が残り、Slack運用は未検証。",
+          "usedIn": {
+            "zh": "speaker_cache",
+            "ja": "speaker_cache",
+            "interview": "speaker_cache"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "冒頭3分で258回更新した観測。",
+          "quote": "約 0.7 秒ごと",
+          "locator": "はじめに・文字起こしのストリーミング",
+          "conditions": "DGX Sparkの実装報告。会議冒頭3分の更新、同じ動画10分の分割、FLEURS100文と社内80区間の非ストリーミング比較は別測定。清書は意味改変が残り、Slack運用は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "文脈補正は誤った意味へ書き換えることがある。",
+          "quote": "かえって意味が変わってしまう例",
+          "locator": "LLM による清書",
+          "conditions": "DGX Sparkの実装報告。会議冒頭3分の更新、同じ動画10分の分割、FLEURS100文と社内80区間の非ストリーミング比較は別測定。清書は意味改変が残り、Slack運用は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "録音の持ち方、途中表示と確定の遅れ、認識誤りと清書の境界を一緒に学べます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "同时练习录音生命周期、延迟指标、ASR误差与 LLM 改写边界。",
+            "ja": "録音の持ち方、途中表示と確定の遅れ、認識誤りと清書の境界を一緒に学べます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-07-top-3",
+      "url": "https://dev.classmethod.jp/articles/postgresql-select-for-update-lock-waiting-pg-locks/",
+      "originalTitle": "【PostgreSQL】SELECT FOR UPDATE でロック待ちを発生させて pg_locks で観測してみた",
+      "source": "DevelopersIO",
+      "topic": "データベース・ロック観測",
+      "access": "full",
+      "accessNote": "公開HTMLのarticle本文、コード、表、図キャプションを読了。図の画素から追加の事実は推測しない。",
+      "publishedAt": "2026-10-06T06:00:32.462Z",
+      "capturedAt": "2026-10-07T01:05:10.077356+00:00",
+      "snapshotSha256": "17556bbe34093ad47feea00eb2b225f28ca9eaaa99e0b49c9552acbfb42bbdb0",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "granted=falseから待機PIDとtransactionidを確認する。",
+          "quote": "pg_locks",
+          "locator": "ロックの状態を確認する",
+          "conditions": "AL2023/t3.micro/PostgreSQL17.10、accounts同一行、三つのセッション。デッドロック、多数同時待機、時間計測は未検証。",
+          "usedIn": {
+            "zh": "pg_locks",
+            "ja": "pg_locks",
+            "interview": "pg_locks"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "待機側は同じtransactionidのShareLockを待つ。",
+          "quote": "ShareLock",
+          "locator": "ロックの状態を確認する",
+          "conditions": "AL2023/t3.micro/PostgreSQL17.10、accounts同一行、三つのセッション。デッドロック、多数同時待機、時間計測は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "保持側COMMIT直後に待機側SELECTが返った。",
+          "quote": "COMMIT",
+          "locator": "ロックを解放する",
+          "conditions": "AL2023/t3.micro/PostgreSQL17.10、accounts同一行、三つのセッション。デッドロック、多数同時待機、時間計測は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "返ってこないクエリを、待機するPIDと保持するPIDの関係として説明できます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合把“查询卡住”变为可证实的等待关系，解释事务边界。",
+            "ja": "返ってこないクエリを、待機するPIDと保持するPIDの関係として説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-07-top-4",
+      "url": "https://dev.classmethod.jp/articles/deploy-vite-react-to-cloudflare-workers-with-cf/",
+      "originalTitle": "cfコマンドを使ってViteで作成したReactアプリをCloudflare Workersにデプロイする",
+      "source": "DevelopersIO",
+      "topic": "React・Cloudflare配信",
+      "access": "full",
+      "accessNote": "公開HTMLのarticle本文、コード、表、図キャプションを読了。図の画素から追加の事実は推測しない。",
+      "publishedAt": "2026-10-06T09:28:55.813Z",
+      "capturedAt": "2026-10-07T01:05:10.114248+00:00",
+      "snapshotSha256": "1f15bd6eb2a12e5cf689e6cb768cd60bf9d3ab1462d8269b9dc9470496ebd7f3",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "/api/*をWorkerに先行させる。",
+          "quote": "runWorkerFirst",
+          "locator": "3. Worker用のコード実装や設定を作成する",
+          "conditions": "cf1.0.0-beta.12、Vite-pluginv2beta、React/TypeScript/React Compiler/Oxlintの例。v1.62.5非互換。SPA直接アクセスとAPI応答の実測で、認証や負荷は未検証。",
+          "usedIn": {
+            "zh": "runWorkerFirst",
+            "ja": "runWorkerFirst",
+            "interview": "runWorkerFirst"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "SPA用のnotFoundHandlingを指定。",
+          "quote": "single-page-application",
+          "locator": "3. Worker用のコード実装や設定を作成する",
+          "conditions": "cf1.0.0-beta.12、Vite-pluginv2beta、React/TypeScript/React Compiler/Oxlintの例。v1.62.5非互換。SPA直接アクセスとAPI応答の実測で、認証や負荷は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "v1系との非互換が実際にエラーになった。",
+          "quote": "v2 betaが必要",
+          "locator": "2. cfコマンドとViteプラグインをインストールする",
+          "conditions": "cf1.0.0-beta.12、Vite-pluginv2beta、React/TypeScript/React Compiler/Oxlintの例。v1.62.5非互換。SPA直接アクセスとAPI応答の実測で、認証や負荷は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "Reactの画面だけでなく、APIの経路と深いURLへの直接アクセスを検証する材料になります。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "贴合 React 求职：类型生成、API路由优先级与 SPA 深链接验收。",
+            "ja": "Reactの画面だけでなく、APIの経路と深いURLへの直接アクセスを検証する材料になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-07-top-5",
+      "url": "https://dev.classmethod.jp/articles/aws-ruby-driver-wrapper-available/",
+      "originalTitle": "[アップデート] Ruby アプリから Amazon Aurora のフェイルオーバーを速くする「AWS Advanced Ruby Driver Wrapper」が GA になったので使ってみた",
+      "source": "DevelopersIO",
+      "topic": "Aurora・フェイルオーバー",
+      "access": "full",
+      "accessNote": "公開HTMLのarticle本文、コード、表、図キャプションを読了。図の画素から追加の事実は推測しない。",
+      "publishedAt": "2026-10-06T03:00:38.186Z",
+      "capturedAt": "2026-10-07T01:05:10.032437+00:00",
+      "snapshotSha256": "4e0fb7b1b80018c4897b4db4afcb2eb35c4efda54db66dc42eb6b7bf0b94a198",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "新Writer再接続成功時にも例外が出る。",
+          "quote": "FailoverSuccessError",
+          "locator": "Advanced Driver Wrapper でフェイルオーバーを検証してみる",
+          "conditions": "Ruby3.3以上、wrapper1.0.0、Aurora PostgreSQL17.6/Writer+Reader、pg直接接続、1秒ごとのSELECT。約6秒/36.4秒/別昇格10秒は少数例。トランザクション重放の安全性や分布は未測定。",
+          "usedIn": {
+            "zh": "FailoverSuccessError",
+            "ja": "FailoverSuccessError",
+            "interview": "FailoverSuccessError"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "wrapper実験では中断から復旧が約6秒。",
+          "quote": "約 6 秒",
+          "locator": "Advanced Driver Wrapper でフェイルオーバーを検証してみる",
+          "conditions": "Ruby3.3以上、wrapper1.0.0、Aurora PostgreSQL17.6/Writer+Reader、pg直接接続、1秒ごとのSELECT。約6秒/36.4秒/別昇格10秒は少数例。トランザクション重放の安全性や分布は未測定。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "標準pgの別昇格パターンで約10秒、復旧時間に幅。",
+          "quote": "約 10 秒",
+          "locator": "標準の pg の場合でもフェイルオーバーさせてみる",
+          "conditions": "Ruby3.3以上、wrapper1.0.0、Aurora PostgreSQL17.6/Writer+Reader、pg直接接続、1秒ごとのSELECT。約6秒/36.4秒/別昇格10秒は少数例。トランザクション重放の安全性や分布は未測定。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "接続の復帰とSQLのやり直しを分け、少数の測定を一般化しない説明ができます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "可练习连接恢复、SQL重试、事务副作用和单次比较的证据边界。",
+            "ja": "接続の復帰とSQLのやり直しを分け、少数の測定を一般化しない説明ができます。"
+          }
+        }
+      ]
+    }
+  ]
+}
