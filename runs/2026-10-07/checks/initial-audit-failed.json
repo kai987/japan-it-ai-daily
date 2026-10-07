@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-07",
+  "checkedBaseCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+  "worktree": "six uncommitted target files",
+  "checks": [
+    {
+      "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
+      "startedAt": "2026-10-07T01:12:02.546Z",
+      "completedAt": "2026-10-07T01:12:02.857Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261007/logs/00-tests-publication-recovery-node-mjs.log"
+    },
+    {
+      "command": "npm audit --audit-level=high",
+      "startedAt": "2026-10-07T01:12:04.691Z",
+      "completedAt": "2026-10-07T01:12:05.466Z",
+      "exitCode": 1,
+      "log": "/tmp/japan-daily-20261007/logs/01---audit-level-high.log"
+    }
+  ]
+}
