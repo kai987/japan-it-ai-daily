@@ -1,0 +1,350 @@
+{
+  "targetDate": "2026-10-07",
+  "sourceCommit": "3286365fdf4620222d349cbd8ad05e278a43ed4a",
+  "sourceWindow": {
+    "from": "2026-10-06T10:00:00+09:00",
+    "to": "2026-10-07T10:00:00+09:00"
+  },
+  "discovery": [
+    {
+      "name": "Qiita",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "Zenn",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "Publickey",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "Two Oct6 candidates found; not selected, hour not verified"
+    },
+    {
+      "name": "ITmedia AI＋",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "Date listings/candidates found; not selected"
+    },
+    {
+      "name": "＠IT",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "CodeZine",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "gihyo.jp",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "Date listings/candidates found; not selected"
+    },
+    {
+      "name": "DevelopersIO",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "Five original experiments read and timestamps verified"
+    },
+    {
+      "name": "TechFeed",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "はてなブックマーク・テクノロジー",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "ASCII × AI",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "Date listings/candidates found; not selected"
+    },
+    {
+      "name": "AINOW",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "Ledge.ai",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "LINEヤフー Tech Blog",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "Mercari Engineering",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "DeNA Engineering",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "method": "Date-scoped search query via web tool",
+      "coverage": "Partial search index; not a complete site crawl",
+      "result": "No verified in-window original selected from returned results; no absence claim"
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://dev.classmethod.jp/articles/strands-decider-local-setup/",
+      "reason": "Initial publication Oct6 09:00 JST precedes frozen window"
+    }
+  ],
+  "previousTop5": [
+    "https://dev.classmethod.jp/articles/20261005-cc-updates-v2-1-289/",
+    "https://dev.classmethod.jp/articles/ecs-task-sandbox/",
+    "https://dev.classmethod.jp/articles/aws-vault-mfa-claude-code/",
+    "https://dev.classmethod.jp/articles/20261005-amazon-quick-live-data-in-app/",
+    "https://zenn.dev/nogu66/articles/md-prompt-claude-code-markdown-painting"
+  ],
+  "selected": [
+    {
+      "topic": "AIエージェント・耐障害性",
+      "evidenceAnchor": "AWSLambdaDurability",
+      "conditions": "東京、Python3.13 arm64、harness0.36.0/slim2.51.0/SDK2.0.1、Nova Lite。外部APIはモック。Lambda20秒・天気待ち30秒を設定変更で0秒にする単一実験。exactly-onceや商用SLAを示さない。",
+      "facts": [
+        [
+          "AWSLambdaDurability",
+          "Pydantic AIとdurable functionsの統合とは",
+          "capabilityと専用ハンドラでモデル・ツールI/Oをチェックポイント化。"
+        ],
+        [
+          "ツール呼び出しは直列実行",
+          "制約",
+          "到達順にステップを識別し、並列ツール呼び出しを無効化。"
+        ],
+        [
+          "ステップはat-least-once",
+          "制約",
+          "副作用直後・保存前の中断では再実行され得る。"
+        ]
+      ],
+      "whyZh": "能用完成记录、调用次数和副作用边界解释 Agent 恢复设计。",
+      "whyJa": "完了済みの記録と副作用の再実行を分け、復旧の設計を具体的に説明できます。",
+      "question": "長く動くAIエージェントを、失敗後に安全に再開するにはどうしますか。",
+      "answer": "完了済みの処理を保存し、副作用の重複に備えます。Pydantic AIではAWSLambdaDurabilityとdurable_agent_handlerで呼び出しを記録できます。記事はタイムアウト後もモデル呼び出しが二回のままと確認しています。ただし、保存前のツールは再実行され得るため、支払いなどは冪等にする必要があります。",
+      "keywords": [
+        "AWSLambdaDurability",
+        "durable_agent_handler",
+        "at-least-once"
+      ],
+      "projectZh": "用无外部副作用的旅行工具模拟中断，逐步比对模型请求、工具执行和保存状态。",
+      "projectJa": "副作用のない旅行ツールで中断を模擬し、モデル要求・ツール実行・保存状態を分けて調べます。",
+      "title": "AWS Lambda durable functionsがPydantic AIと統合されたので試してみる",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/aws_durable_execution_pydantic_ai/",
+      "publishedAt": "2026-10-06T02:00:10.422Z",
+      "capturedAt": "2026-10-07T01:05:10.129529+00:00",
+      "snapshotSha256": "77a99616383d2599dccf2e15d53e5c96bd89558fe3f16b85c028da7fcba21681",
+      "access": "full",
+      "accessNote": "公開HTMLのarticle本文、コード、表、図キャプションを読了。図の画素から追加の事実は推測しない。"
+    },
+    {
+      "topic": "ローカル音声AI・Chrome拡張",
+      "evidenceAnchor": "speaker_cache",
+      "conditions": "DGX Sparkの実装報告。会議冒頭3分の更新、同じ動画10分の分割、FLEURS100文と社内80区間の非ストリーミング比較は別測定。清書は意味改変が残り、Slack運用は未検証。",
+      "facts": [
+        [
+          "speaker_cache",
+          "話者分離のストリーミング",
+          "チャンクをまたいで話者の状態を保持する。"
+        ],
+        [
+          "約 0.7 秒ごと",
+          "はじめに・文字起こしのストリーミング",
+          "冒頭3分で258回更新した観測。"
+        ],
+        [
+          "かえって意味が変わってしまう例",
+          "LLM による清書",
+          "文脈補正は誤った意味へ書き換えることがある。"
+        ]
+      ],
+      "whyZh": "同时练习录音生命周期、延迟指标、ASR误差与 LLM 改写边界。",
+      "whyJa": "録音の持ち方、途中表示と確定の遅れ、認識誤りと清書の境界を一緒に学べます。",
+      "question": "社内音声を外へ出さずに文字起こしする場合、何を評価しますか。",
+      "answer": "途中表示の速さと、確定した文の正しさを別に見ます。shokiはspeaker_cacheで話者を引き継ぎ、Nemotronの音声認識をストリーミングで動かします。記事では清書前の文も残しています。ただし、LLMがもっともらしい別の意味に直すことがあるので、議事録は元の発言と照合してから共有します。",
+      "keywords": [
+        "speaker_cache",
+        "Nemotron 3.5 ASR",
+        "offscreen"
+      ],
+      "projectZh": "制作本地录音流程图，保留 ASR 原文与清书版本，分别测量中间显示、确定和修订延迟。",
+      "projectJa": "録音の流れを図にし、ASRの元文と清書を残して、途中表示・確定・修正の時間を測ります。",
+      "title": "DGX Spark 上でリアルタイムに文字起こしや翻訳、話者分離する議事録用 Chrome 拡張機能を作る",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/reona-shoki-realtime-transcription/",
+      "publishedAt": "2026-10-06T08:47:54.300Z",
+      "capturedAt": "2026-10-07T01:05:10.124258+00:00",
+      "snapshotSha256": "b32cb9f9ee2697430c9419cef0b4cd78931621d7a0158dbe1e1161fc2666aa51",
+      "access": "full",
+      "accessNote": "公開HTMLのarticle本文、コード、表、図キャプションを読了。図の画素から追加の事実は推測しない。"
+    },
+    {
+      "topic": "データベース・ロック観測",
+      "evidenceAnchor": "pg_locks",
+      "conditions": "AL2023/t3.micro/PostgreSQL17.10、accounts同一行、三つのセッション。デッドロック、多数同時待機、時間計測は未検証。",
+      "facts": [
+        [
+          "pg_locks",
+          "ロックの状態を確認する",
+          "granted=falseから待機PIDとtransactionidを確認する。"
+        ],
+        [
+          "ShareLock",
+          "ロックの状態を確認する",
+          "待機側は同じtransactionidのShareLockを待つ。"
+        ],
+        [
+          "COMMIT",
+          "ロックを解放する",
+          "保持側COMMIT直後に待機側SELECTが返った。"
+        ]
+      ],
+      "whyZh": "适合把“查询卡住”变为可证实的等待关系，解释事务边界。",
+      "whyJa": "返ってこないクエリを、待機するPIDと保持するPIDの関係として説明できます。",
+      "question": "データベースのクエリが止まったように見えるとき、どう調べますか。",
+      "answer": "まずpg_locksのgrantedがfalseの行を探し、待っているPIDとtransactionidを確認します。同じIDで絞ると、保持側のExclusiveLockと待機側のShareLockを結び付けられます。記事では保持側のCOMMIT直後に処理が進みました。ただし、三つのセッションの検証なので、デッドロックまで確認した結果ではありません。",
+      "keywords": [
+        "pg_locks",
+        "transactionid",
+        "SELECT FOR UPDATE"
+      ],
+      "projectZh": "在练习数据库用三个独立会话重现等待，保存持锁、等锁和提交后的观察结果。",
+      "projectJa": "練習用DBの三つの接続で待機を再現し、保持・待機・COMMIT後の状態を保存します。",
+      "title": "【PostgreSQL】SELECT FOR UPDATE でロック待ちを発生させて pg_locks で観測してみた",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/postgresql-select-for-update-lock-waiting-pg-locks/",
+      "publishedAt": "2026-10-06T06:00:32.462Z",
+      "capturedAt": "2026-10-07T01:05:10.077356+00:00",
+      "snapshotSha256": "17556bbe34093ad47feea00eb2b225f28ca9eaaa99e0b49c9552acbfb42bbdb0",
+      "access": "full",
+      "accessNote": "公開HTMLのarticle本文、コード、表、図キャプションを読了。図の画素から追加の事実は推測しない。"
+    },
+    {
+      "topic": "React・Cloudflare配信",
+      "evidenceAnchor": "runWorkerFirst",
+      "conditions": "cf1.0.0-beta.12、Vite-pluginv2beta、React/TypeScript/React Compiler/Oxlintの例。v1.62.5非互換。SPA直接アクセスとAPI応答の実測で、認証や負荷は未検証。",
+      "facts": [
+        [
+          "runWorkerFirst",
+          "3. Worker用のコード実装や設定を作成する",
+          "/api/*をWorkerに先行させる。"
+        ],
+        [
+          "single-page-application",
+          "3. Worker用のコード実装や設定を作成する",
+          "SPA用のnotFoundHandlingを指定。"
+        ],
+        [
+          "v2 betaが必要",
+          "2. cfコマンドとViteプラグインをインストールする",
+          "v1系との非互換が実際にエラーになった。"
+        ]
+      ],
+      "whyZh": "贴合 React 求职：类型生成、API路由优先级与 SPA 深链接验收。",
+      "whyJa": "Reactの画面だけでなく、APIの経路と深いURLへの直接アクセスを検証する材料になります。",
+      "question": "ReactのSPAを公開するとき、どこまで動作確認しますか。",
+      "answer": "画面遷移だけでなく、深いURLへの直接アクセスとAPIを確かめます。記事はsingle-page-applicationとrunWorkerFirstを設定し、画面とAPIの経路を分けています。React Routerの二画面は直接開いても表示されました。ただし、cfとViteプラグインはベータなので、組合せを固定し、更新後も同じ経路を確認します。",
+      "keywords": [
+        "runWorkerFirst",
+        "single-page-application",
+        "cf workers types"
+      ],
+      "projectZh": "部署包含两个路径和一个API的练习 SPA，用直接访问、刷新及按钮响应确认路由边界。",
+      "projectJa": "二画面と一つのAPIを持つSPAで、直接アクセス・再読込み・ボタンの応答を確かめます。",
+      "title": "cfコマンドを使ってViteで作成したReactアプリをCloudflare Workersにデプロイする",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/deploy-vite-react-to-cloudflare-workers-with-cf/",
+      "publishedAt": "2026-10-06T09:28:55.813Z",
+      "capturedAt": "2026-10-07T01:05:10.114248+00:00",
+      "snapshotSha256": "1f15bd6eb2a12e5cf689e6cb768cd60bf9d3ab1462d8269b9dc9470496ebd7f3",
+      "access": "full",
+      "accessNote": "公開HTMLのarticle本文、コード、表、図キャプションを読了。図の画素から追加の事実は推測しない。"
+    },
+    {
+      "topic": "Aurora・フェイルオーバー",
+      "evidenceAnchor": "FailoverSuccessError",
+      "conditions": "Ruby3.3以上、wrapper1.0.0、Aurora PostgreSQL17.6/Writer+Reader、pg直接接続、1秒ごとのSELECT。約6秒/36.4秒/別昇格10秒は少数例。トランザクション重放の安全性や分布は未測定。",
+      "facts": [
+        [
+          "FailoverSuccessError",
+          "Advanced Driver Wrapper でフェイルオーバーを検証してみる",
+          "新Writer再接続成功時にも例外が出る。"
+        ],
+        [
+          "約 6 秒",
+          "Advanced Driver Wrapper でフェイルオーバーを検証してみる",
+          "wrapper実験では中断から復旧が約6秒。"
+        ],
+        [
+          "約 10 秒",
+          "標準の pg の場合でもフェイルオーバーさせてみる",
+          "標準pgの別昇格パターンで約10秒、復旧時間に幅。"
+        ]
+      ],
+      "whyZh": "可练习连接恢复、SQL重试、事务副作用和单次比较的证据边界。",
+      "whyJa": "接続の復帰とSQLのやり直しを分け、少数の測定を一般化しない説明ができます。",
+      "question": "データベース接続の復旧が速くなれば、アプリの再試行は不要ですか。",
+      "answer": "接続の復帰と処理のやり直しは別です。RubyのWrapperPgConnectionは新しいWriterを探し、成功時にもFailoverSuccessErrorを返します。記事は約六秒で復旧しましたが、アプリ側で状態を戻して安全に再実行する必要があります。ただし、標準pgも別の昇格では約十秒だったので、一回の比較を保証値にはしません。",
+      "keywords": [
+        "WrapperPgConnection",
+        "FailoverSuccessError",
+        "Failover Plugin"
+      ],
+      "projectZh": "只在练习环境演练故障切换，分别记录连接地址、可写状态和安全可重试SQL的恢复时刻。",
+      "projectJa": "練習環境で接続先・書込み可否・安全に再試行できるSQLの復帰時刻を分けて測ります。",
+      "title": "[アップデート] Ruby アプリから Amazon Aurora のフェイルオーバーを速くする「AWS Advanced Ruby Driver Wrapper」が GA になったので使ってみた",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/aws-ruby-driver-wrapper-available/",
+      "publishedAt": "2026-10-06T03:00:38.186Z",
+      "capturedAt": "2026-10-07T01:05:10.032437+00:00",
+      "snapshotSha256": "4e0fb7b1b80018c4897b4db4afcb2eb35c4efda54db66dc42eb6b7bf0b94a198",
+      "access": "full",
+      "accessNote": "公開HTMLのarticle本文、コード、表、図キャプションを読了。図の画素から追加の事実は推測しない。"
+    }
+  ]
+}
