@@ -8,7 +8,7 @@
     "to": "2026-10-08T10:00:00+09:00"
   },
   "createdAt": "2026-10-08T01:06:40.149Z",
-  "updatedAt": "2026-10-08T01:39:27.991Z",
+  "updatedAt": "2026-10-08T01:44:00.018Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-08/checks.json",
@@ -202,5 +202,9 @@
     "nextStep": "Existing N111:00/12:00 entrypoints resume after exact original/outbox becomes available.",
     "updatedAt": "2026-10-08T01:39:25.904Z"
   },
-  "n1ProgressBlob": "9d431fd14bf5f4517fa981fd7f6eaddb35e16fa3"
+  "n1ProgressBlob": "9d431fd14bf5f4517fa981fd7f6eaddb35e16fa3",
+  "audioCommit": "0675f68a74bfbb94e1a8b1d2f61cbae8c80b4f53",
+  "remoteReadback": "0675f68a74bfbb94e1a8b1d2f61cbae8c80b4f53",
+  "pushedAt": "2026-10-08T01:43:59.489Z",
+  "nextStep": "Verify exact audio commit R2/Pages/manifest bytes, 61 referenced MP3 hashes and real playback"
 }
