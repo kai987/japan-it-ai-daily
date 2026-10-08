@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-08",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-08T01:20:59.259Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-08-top-1",
+      "url": "https://dev.classmethod.jp/articles/20261007-cc-updates-v2-1-292/",
+      "originalTitle": "Claude Code v2.1.292 の主要アップデート - stdio MCP のプロトコル既定化とサブエージェントの effort 指定",
+      "source": "DevelopersIO",
+      "topic": "AI Agent",
+      "access": "full",
+      "accessNote": "Public primary-author article captured and read in full; experiment not independently reproduced.",
+      "publishedAt": "2026-10-07T03:09:47.667Z",
+      "capturedAt": "2026-10-08T01:08:58.288252+00:00",
+      "snapshotSha256": "72759f8c9a4167f1ddc2d3d5f4ede6f59528025362bbc7ab45a005a937c8970c",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "ultra was rejected; self-reports did not always agree with requested effort.",
+          "quote": "ultra",
+          "locator": "effort指定の試行",
+          "conditions": "Author inspection of v2.1.292 release changes and effort calls; no task-quality benchmark or independent security audit.",
+          "usedIn": {
+            "zh": "effort",
+            "ja": "effort",
+            "interview": "effort"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Protocol negotiation defaults changed and unresponsive-server fallback memory lasts seven days.",
+          "quote": "7 日間",
+          "locator": "stdio MCP互換性",
+          "conditions": "Author inspection of v2.1.292 release changes and effort calls; no task-quality benchmark or independent security audit.",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Failing test hooks are reported as failures.",
+          "quote": "expect",
+          "locator": "plugin test修正",
+          "conditions": "Author inspection of v2.1.292 release changes and effort calls; no task-quality benchmark or independent security audit.",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "設定の指定、互換性、観測した結果を分けて読める記事です。設定確認と成果物の評価を別々に説明する練習になります。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "这篇文章把参数指定、协议兼容性和可观察结果分开，适合练习“配置已生效”与“产物已正确”的不同验收。",
+            "ja": "設定の指定、互換性、観測した結果を分けて読める記事です。設定確認と成果物の評価を別々に説明する練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-08-top-2",
+      "url": "https://dev.classmethod.jp/articles/ec2-ami-shared-tags/",
+      "originalTitle": "Amazon EC2 の AMI の新機能「共有タグ」を試してみた",
+      "source": "DevelopersIO",
+      "topic": "Cloud / Platform",
+      "access": "full",
+      "accessNote": "Public primary-author article captured and read in full; experiment not independently reproduced.",
+      "publishedAt": "2026-10-07T05:41:21.047Z",
+      "capturedAt": "2026-10-08T01:08:58.288516+00:00",
+      "snapshotSha256": "faaa751b7b16dae54de642321947ae887bd1b02789af2013559d7d5400d2dfd4",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Prefix-marked owner tags were visible across two accounts.",
+          "quote": "ec2:SharedTag/",
+          "locator": "共有タグ作成と別アカウントのdescribe-images",
+          "conditions": "Two accounts in ap-northeast-1; copied Amazon Linux 2023 x86_64 AMI; one propagation observation; no Organizations/public-sharing test and no automatic deployment-blocking test.",
+          "usedIn": {
+            "zh": "ec2:SharedTag/",
+            "ja": "ec2:SharedTag/",
+            "interview": "ec2:SharedTag/"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "All three recipient write attempts were denied; ordinary local tags remained possible.",
+          "quote": "AccessDenied",
+          "locator": "タグの変更・削除・追加",
+          "conditions": "Two accounts in ap-northeast-1; copied Amazon Linux 2023 x86_64 AMI; one propagation observation; no Organizations/public-sharing test and no automatic deployment-blocking test.",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Recipient observed approved-to-deprecated change after about five seconds.",
+          "quote": "5 秒",
+          "locator": "所有者のタグ変更",
+          "conditions": "Two accounts in ap-northeast-1; copied Amazon Linux 2023 x86_64 AMI; one propagation observation; no Organizations/public-sharing test and no automatic deployment-blocking test.",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "同じAMIを所有者と利用者の両方から観察し、見える情報、編集権限、利用判断の違いを学べます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "通过同一 AMI 的所有者与使用者视角，具体理解可见性、修改权限和部署策略的边界。",
+            "ja": "同じAMIを所有者と利用者の両方から観察し、見える情報、編集権限、利用判断の違いを学べます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-08-top-3",
+      "url": "https://dev.classmethod.jp/articles/wireguard-remote-access-via-teltonika-rut956/",
+      "originalTitle": "LTE ルーター Teltonika RUT956 を経由して配下のマシンへ WireGuard でリモートアクセスしてみた",
+      "source": "DevelopersIO",
+      "topic": "Infrastructure / Network",
+      "access": "full",
+      "accessNote": "Public primary-author article captured and read in full; experiment not independently reproduced.",
+      "publishedAt": "2026-10-07T05:48:23.532Z",
+      "capturedAt": "2026-10-08T01:08:58.318160+00:00",
+      "snapshotSha256": "162eec84fe25ed3d31a191286b5088662ebcdfa9e97c2fc507db88c5224a52ca",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Both tunnel and site-LAN ranges are configured with routing/forwarding.",
+          "quote": "AllowedIPs",
+          "locator": "ハブと各peerの設定",
+          "conditions": "RUT956 firmware RUT9M_R_00.07.24.3; SORACOM LTE; Tokyo Ubuntu24.04LTS512MB Lightsail; Mac/Android; three pings per target and camera RTSP demonstration, not long-duration reliability testing.",
+          "usedIn": {
+            "zh": "AllowedIPs",
+            "ja": "AllowedIPs",
+            "interview": "AllowedIPs"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Keepalive interval is 25 seconds.",
+          "quote": "PersistentKeepalive",
+          "locator": "RUT956設定",
+          "conditions": "RUT956 firmware RUT9M_R_00.07.24.3; SORACOM LTE; Tokyo Ubuntu24.04LTS512MB Lightsail; Mac/Android; three pings per target and camera RTSP demonstration, not long-duration reliability testing.",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Three packets yielded 15.356 ms mean with zero observed loss.",
+          "quote": "15.356",
+          "locator": "Raspberry Pi ping出力",
+          "conditions": "RUT956 firmware RUT9M_R_00.07.24.3; SORACOM LTE; Tokyo Ubuntu24.04LTS512MB Lightsail; Mac/Android; three pings per target and camera RTSP demonstration, not long-duration reliability testing.",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "CGNAT、トンネル、LANへの経路、アプリ利用を、具体的な構成で分けて理解できます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "用具体拓扑说明 CGNAT、隧道、LAN 路由和应用访问不是同一层的成功条件。",
+            "ja": "CGNAT、トンネル、LANへの経路、アプリ利用を、具体的な構成で分けて理解できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-08-top-4",
+      "url": "https://dev.classmethod.jp/articles/bedrock-claude-haiku-5-5/",
+      "originalTitle": "Amazon Bedrock で Claude Haiku 5.5 が利用可能になりました",
+      "source": "DevelopersIO",
+      "topic": "AI / Cloud",
+      "access": "full",
+      "accessNote": "Public primary-author article captured and read in full; experiment not independently reproduced.",
+      "publishedAt": "2026-10-07T22:28:33.465Z",
+      "capturedAt": "2026-10-08T01:08:58.267146+00:00",
+      "snapshotSha256": "4fa6486b80dfb280dcdeade0f1f5349f2303ffba314313b6a35895210449b632",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Observed JP run in Tokyo and Global run in us-east-1, while both resource ARNs used Tokyo.",
+          "quote": "inferenceRegion",
+          "locator": "CloudTrail追加情報",
+          "conditions": "Two identical brief prompts invoked from Tokyo with IAM role session; CloudTrail observed about ten minutes later; prices frozen to2026-10-07T18:37:33Z; no quality, latency or cache-hit benchmark.",
+          "usedIn": {
+            "zh": "inferenceRegion",
+            "ja": "inferenceRegion",
+            "interview": "inferenceRegion"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "JP usage39/469/508; Global39/335/374; empty visible reasoningContent is not a billing count.",
+          "quote": "outputTokens",
+          "locator": "Converse応答",
+          "conditions": "Two identical brief prompts invoked from Tokyo with IAM role session; CloudTrail observed about ten minutes later; prices frozen to2026-10-07T18:37:33Z; no quality, latency or cache-hit benchmark.",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Global0.10/0.50USD per million becomes0.50/2.50 above100K; JP/US1.1 times Global.",
+          "quote": "100K",
+          "locator": "Price API比較表",
+          "conditions": "Two identical brief prompts invoked from Tokyo with IAM role session; CloudTrail observed about ten minutes later; prices frozen to2026-10-07T18:37:33Z; no quality, latency or cache-hit benchmark.",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "API応答、CloudTrail、価格の取得結果から、モデル名、接続先、実行先、課金の境界を別々に確かめられます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "这篇文章用实际 API 响应、CloudTrail 和价格快照说明，模型名、调用区域、执行区域与计费边界必须分别核实。",
+            "ja": "API応答、CloudTrail、価格の取得結果から、モデル名、接続先、実行先、課金の境界を別々に確かめられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-08-top-5",
+      "url": "https://zenn.dev/manay_kozokaai/articles/eab31670b285a7",
+      "originalTitle": "「JSはオンデマンドで」 初期JSを2割削って高速化させる。",
+      "source": "Zenn",
+      "topic": "Frontend / Engineering",
+      "access": "full",
+      "accessNote": "Public primary-author article captured and read in full; experiment not independently reproduced.",
+      "publishedAt": "2026-10-07T13:38:04.989+09:00",
+      "capturedAt": "2026-10-08T01:08:58.352839+00:00",
+      "snapshotSha256": "332c583a0f58a473e81e5fe5ed9668cc4e2a760fdea64daba96f0c4fc7d33bb8",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Always-mounted closed dialogs still load dynamic modules; first-open mount gating solves this.",
+          "quote": "next/dynamic",
+          "locator": "罠1とマウントの説明",
+          "conditions": "Author Next.js16/Turbopack application;61 routes; raw referenced chunks deduplicated; separate two-PR and single-PR bases; gzip module-ID noise; no measured user-latency/Lighthouse gain.",
+          "usedIn": {
+            "zh": "next/dynamic",
+            "ja": "next/dynamic",
+            "interview": "next/dynamic"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Immediate unmount cut closing animation; mount retained after first open.",
+          "quote": "200ms",
+          "locator": "閉じるアニメーション",
+          "conditions": "Author Next.js16/Turbopack application;61 routes; raw referenced chunks deduplicated; separate two-PR and single-PR bases; gzip module-ID noise; no measured user-latency/Lighthouse gain.",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Single PR reduces log-list raw JS by192728B; combined21% uses a different base.",
+          "quote": "192,728",
+          "locator": "オンデマンド化のPR結果",
+          "conditions": "Author Next.js16/Turbopack application;61 routes; raw referenced chunks deduplicated; separate two-PR and single-PR bases; gzip module-ID noise; no measured user-latency/Lighthouse gain.",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact4",
+          "kind": "source-fact",
+          "statement": "Delayed loading indicator avoids flashing; old deployment chunks can404; local ErrorBoundary preserves caller input.",
+          "quote": "150ms",
+          "locator": "遅延ロードには代償",
+          "conditions": "Author Next.js16/Turbopack application;61 routes; raw referenced chunks deduplicated; separate two-PR and single-PR bases; gzip module-ID noise; no measured user-latency/Lighthouse gain.",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "バイト数、マウント時期、閉じる動き、古いページの失敗をまとめて確認する例で、フロントエンド面接にも使えます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "把包体字节、组件挂载时机、关闭动画和旧页面故障一起检查，比笼统“用了动态导入就变快”更适合前端面试。",
+            "ja": "バイト数、マウント時期、閉じる動き、古いページの失敗をまとめて確認する例で、フロントエンド面接にも使えます。"
+          }
+        }
+      ]
+    }
+  ]
+}
