@@ -1,14 +1,52 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-08",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "e4b34033d5757485e22f2ab1f71a0a3063849e9c",
   "sourceWindow": {
     "from": "2026-10-07T10:00:00+09:00",
     "to": "2026-10-08T10:00:00+09:00"
   },
   "createdAt": "2026-10-08T01:06:40.149Z",
-  "updatedAt": "2026-10-08T01:32:13.694Z",
-  "completedArtifacts": [],
-  "lastError": null
+  "updatedAt": "2026-10-08T01:33:19.005Z",
+  "completedArtifacts": [
+    {
+      "path": "runs/2026-10-08/checks.json",
+      "sha": "0f849e55503bde6917a06e60fe5db0ee1337dfb7"
+    },
+    {
+      "path": "runs/2026-10-08/draft-committed.json",
+      "sha": "30baa245196d3a1465a07e563ebfda376fbf11cb"
+    },
+    {
+      "path": "runs/2026-10-08/draft.json",
+      "sha": "3a8372f30d8fd248605465677278230ce3507165"
+    },
+    {
+      "path": "runs/2026-10-08/history-check.json",
+      "sha": "e0faa02ec54e9cdc83ef7e7934263d3535494fa4"
+    },
+    {
+      "path": "runs/2026-10-08/history.json",
+      "sha": "2684b1e1ce65ec8dd5390d507ac7b2e9eaa44255"
+    },
+    {
+      "path": "runs/2026-10-08/interviews.json",
+      "sha": "61d168a55e5fc2e4152b43a042c4330fb8b9d704"
+    },
+    {
+      "path": "runs/2026-10-08/request.json",
+      "sha": "0a7be7c8ff96a40e65230b73c9d280bc0464b236"
+    },
+    {
+      "path": "runs/2026-10-08/sources.json",
+      "sha": "7fdc141dd977064f2ff4126ad2c92c885ada87c5"
+    }
+  ],
+  "lastError": null,
+  "publisherRunId": 37713435652,
+  "requestCommit": "4f17355ccb2168ac5280d36c43b556c11e9f1158",
+  "draftCommit": "bff7c86b33ff7b04ab7115dc4f342f0205be337f",
+  "preflightRunId": 37713171848,
+  "nextAction": "Publisher owns request. Verify exact final main Pages and live snapshot before text success."
 }
