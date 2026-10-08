@@ -1,0 +1,153 @@
+{
+  "date": "2026-10-08",
+  "sourceCommit": "e4b34033d5757485e22f2ab1f71a0a3063849e9c",
+  "sourceWindow": {
+    "start": "2026-10-07T10:00:00+09:00",
+    "end": "2026-10-08T10:00:00+09:00"
+  },
+  "searchScope": "Queries considered all20 NEWS_SOURCES entries; search results are not a full crawl. Selected public primary-author originals read in full. Four DevelopersIO and one Zenn; not asserted representative of all Japanese news.",
+  "previousTop5Excluded": true,
+  "excluded": [
+    "Zenn bug-form article published03:25JST, outside window",
+    "LayerX Wiki article publishedOct5; bookmark date was not publication date",
+    "SmartHR09:00JST, outside window",
+    "Flutter environment candidate in window, not selected to diversify subjects"
+  ],
+  "articles": [
+    {
+      "title": "Claude Code v2.1.292 の主要アップデート - stdio MCP のプロトコル既定化とサブエージェントの effort 指定",
+      "url": "https://dev.classmethod.jp/articles/20261007-cc-updates-v2-1-292/",
+      "publishedAt": "2026-10-07T03:09:47.667Z",
+      "capturedAt": "2026-10-08T01:08:58.288252+00:00",
+      "snapshotSha256": "72759f8c9a4167f1ddc2d3d5f4ede6f59528025362bbc7ab45a005a937c8970c",
+      "conditions": "Author inspection of v2.1.292 release changes and effort calls; no task-quality benchmark or independent security audit.",
+      "facts": [
+        [
+          "ultra",
+          "effort指定の試行",
+          "ultra was rejected; self-reports did not always agree with requested effort."
+        ],
+        [
+          "7日間",
+          "stdio MCP互換性",
+          "Protocol negotiation defaults changed and unresponsive-server fallback memory lasts seven days."
+        ],
+        [
+          "expect",
+          "plugin test修正",
+          "Failing test hooks are reported as failures."
+        ]
+      ],
+      "localSourceDir": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-08/originals"
+    },
+    {
+      "title": "Amazon EC2 の AMI の新機能「共有タグ」を試してみた",
+      "url": "https://dev.classmethod.jp/articles/ec2-ami-shared-tags/",
+      "publishedAt": "2026-10-07T05:41:21.047Z",
+      "capturedAt": "2026-10-08T01:08:58.288516+00:00",
+      "snapshotSha256": "faaa751b7b16dae54de642321947ae887bd1b02789af2013559d7d5400d2dfd4",
+      "conditions": "Two accounts in ap-northeast-1; copied Amazon Linux 2023 x86_64 AMI; one propagation observation; no Organizations/public-sharing test and no automatic deployment-blocking test.",
+      "facts": [
+        [
+          "ec2:SharedTag/",
+          "共有タグ作成と別アカウントのdescribe-images",
+          "Prefix-marked owner tags were visible across two accounts."
+        ],
+        [
+          "AccessDenied",
+          "タグの変更・削除・追加",
+          "All three recipient write attempts were denied; ordinary local tags remained possible."
+        ],
+        [
+          "5秒",
+          "所有者のタグ変更",
+          "Recipient observed approved-to-deprecated change after about five seconds."
+        ]
+      ],
+      "localSourceDir": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-08/originals"
+    },
+    {
+      "title": "LTE ルーター Teltonika RUT956 を経由して配下のマシンへ WireGuard でリモートアクセスしてみた",
+      "url": "https://dev.classmethod.jp/articles/wireguard-remote-access-via-teltonika-rut956/",
+      "publishedAt": "2026-10-07T05:48:23.532Z",
+      "capturedAt": "2026-10-08T01:08:58.318160+00:00",
+      "snapshotSha256": "162eec84fe25ed3d31a191286b5088662ebcdfa9e97c2fc507db88c5224a52ca",
+      "conditions": "RUT956 firmware RUT9M_R_00.07.24.3; SORACOM LTE; Tokyo Ubuntu24.04LTS512MB Lightsail; Mac/Android; three pings per target and camera RTSP demonstration, not long-duration reliability testing.",
+      "facts": [
+        [
+          "AllowedIPs",
+          "ハブと各peerの設定",
+          "Both tunnel and site-LAN ranges are configured with routing/forwarding."
+        ],
+        [
+          "PersistentKeepalive",
+          "RUT956設定",
+          "Keepalive interval is 25 seconds."
+        ],
+        [
+          "15.356",
+          "Raspberry Pi ping出力",
+          "Three packets yielded 15.356 ms mean with zero observed loss."
+        ]
+      ],
+      "localSourceDir": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-08/originals"
+    },
+    {
+      "title": "Amazon Bedrock で Claude Haiku 5.5 が利用可能になりました",
+      "url": "https://dev.classmethod.jp/articles/bedrock-claude-haiku-5-5/",
+      "publishedAt": "2026-10-07T22:28:33.465Z",
+      "capturedAt": "2026-10-08T01:08:58.267146+00:00",
+      "snapshotSha256": "4fa6486b80dfb280dcdeade0f1f5349f2303ffba314313b6a35895210449b632",
+      "conditions": "Two identical brief prompts invoked from Tokyo with IAM role session; CloudTrail observed about ten minutes later; prices frozen to2026-10-07T18:37:33Z; no quality, latency or cache-hit benchmark.",
+      "facts": [
+        [
+          "inferenceRegion",
+          "CloudTrail追加情報",
+          "Observed JP run in Tokyo and Global run in us-east-1, while both resource ARNs used Tokyo."
+        ],
+        [
+          "outputTokens",
+          "Converse応答",
+          "JP usage39/469/508; Global39/335/374; empty visible reasoningContent is not a billing count."
+        ],
+        [
+          "100K",
+          "Price API比較表",
+          "Global0.10/0.50USD per million becomes0.50/2.50 above100K; JP/US1.1 times Global."
+        ]
+      ],
+      "localSourceDir": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-08/originals"
+    },
+    {
+      "title": "「JSはオンデマンドで」 初期JSを2割削って高速化させる。",
+      "url": "https://zenn.dev/manay_kozokaai/articles/eab31670b285a7",
+      "publishedAt": "2026-10-07T13:38:04.989+09:00",
+      "capturedAt": "2026-10-08T01:08:58.352839+00:00",
+      "snapshotSha256": "332c583a0f58a473e81e5fe5ed9668cc4e2a760fdea64daba96f0c4fc7d33bb8",
+      "conditions": "Author Next.js16/Turbopack application;61 routes; raw referenced chunks deduplicated; separate two-PR and single-PR bases; gzip module-ID noise; no measured user-latency/Lighthouse gain.",
+      "facts": [
+        [
+          "next/dynamic",
+          "罠1とマウントの説明",
+          "Always-mounted closed dialogs still load dynamic modules; first-open mount gating solves this."
+        ],
+        [
+          "200ms",
+          "閉じるアニメーション",
+          "Immediate unmount cut closing animation; mount retained after first open."
+        ],
+        [
+          "192,728",
+          "オンデマンド化のPR結果",
+          "Single PR reduces log-list raw JS by192728B; combined21% uses a different base."
+        ],
+        [
+          "150ms",
+          "遅延ロードには代償",
+          "Delayed loading indicator avoids flashing; old deployment chunks can404; local ErrorBoundary preserves caller input."
+        ]
+      ],
+      "localSourceDir": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-08/originals"
+    }
+  ]
+}
