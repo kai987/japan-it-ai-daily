@@ -1,0 +1,55 @@
+{
+  "targetDate": "2026-10-09",
+  "sourceCommit": "0675f68a74bfbb94e1a8b1d2f61cbae8c80b4f53",
+  "sourceWindow": {
+    "from": "2026-10-08T10:00:00+09:00",
+    "to": "2026-10-09T10:00:00+09:00"
+  },
+  "discoveryScope": "Grouped domain-restricted searches across all 20 preferred source names; DevelopersIO homepage and five complete originals fetched. Search results are partial discovery, not a full crawl of every site.",
+  "selected": [
+    {
+      "url": "https://dev.classmethod.jp/articles/openai-decisions-api-hands-on/",
+      "publishedAt": "2026-10-08T06:46:19.806Z",
+      "snapshotSha256": "6a431d79e8d17c64d8fd6fa70d8bc309a1728cf0164d90e710afaffff94e603a",
+      "capturedAt": "2026-10-09T01:04:35.064109+00:00",
+      "access": "full-text"
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/twilio-voice-rnnoise-noise-cancellation-listening/",
+      "publishedAt": "2026-10-08T06:18:15.702Z",
+      "snapshotSha256": "7881f12734bcd726ea9a921fe1f469ad4c8f5c9cd9bffd67c079a1fd9028eefb",
+      "capturedAt": "2026-10-09T01:04:35.060944+00:00",
+      "access": "full-text"
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/aws-continuum-penetration-testing/",
+      "publishedAt": "2026-10-08T02:47:24.922Z",
+      "snapshotSha256": "95248edd1a26c07be44e6ed2c066b81813bcc7625178783868d2756db23360ac",
+      "capturedAt": "2026-10-09T01:04:35.019250+00:00",
+      "access": "full-text"
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/aws-cdk-internals-and-best-practices/",
+      "publishedAt": "2026-10-08T06:47:17.889Z",
+      "snapshotSha256": "c11046485cc51b6e0a50b48dc63d9d7765c1d36cece63453d62cdb67c7fc9430",
+      "capturedAt": "2026-10-09T01:04:35.040582+00:00",
+      "access": "full-text"
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/embeddinggemma-2-decisions-api-rag/",
+      "publishedAt": "2026-10-08T10:32:25.422Z",
+      "snapshotSha256": "1fb5a5029fd5cd3b0b6c6874a5e6a27c764d2778142a8eb80437e303a6c386b1",
+      "capturedAt": "2026-10-09T01:04:35.077022+00:00",
+      "access": "full-text"
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://dev.classmethod.jp/articles/acm-acme-privatelink-closed-network/",
+      "reason": "09:16 JST before frozen window start; not selected"
+    },
+    {
+      "reason": "Previous report five original URLs excluded from selected set"
+    }
+  ]
+}
