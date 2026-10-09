@@ -1,15 +1,40 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-09",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "0675f68a74bfbb94e1a8b1d2f61cbae8c80b4f53",
   "sourceWindow": {
     "from": "2026-10-08T10:00:00+09:00",
     "to": "2026-10-09T10:00:00+09:00"
   },
   "createdAt": "2026-10-09T01:03:33.128Z",
-  "updatedAt": "2026-10-09T01:16:17.048Z",
-  "completedArtifacts": [],
+  "updatedAt": "2026-10-09T01:16:50.531Z",
+  "completedArtifacts": [
+    {
+      "path": "runs/2026-10-09/checks.json",
+      "sha": "98dc5b60c4dde759bcf45701598d7a85ca2d7a57"
+    },
+    {
+      "path": "runs/2026-10-09/draft.json",
+      "sha": "e6a809f629b49c6d49cd77b12256e8a003d27404"
+    },
+    {
+      "path": "runs/2026-10-09/history.json",
+      "sha": "c068afe544fd2e30085dc690282018558f6c1192"
+    },
+    {
+      "path": "runs/2026-10-09/interviews.json",
+      "sha": "ae78b1a2630c442b106e6d71a5791bb37f3df31a"
+    },
+    {
+      "path": "runs/2026-10-09/request.json",
+      "sha": "a768232c329b2dcbd6d8b08b892eb9978dca2c8f"
+    },
+    {
+      "path": "runs/2026-10-09/sources.json",
+      "sha": "59a6e69ea232a98a2a0a1daea7ab285535f62e65"
+    }
+  ],
   "lastError": null,
   "baseCommit": "0675f68a74bfbb94e1a8b1d2f61cbae8c80b4f53",
   "draftCommit": "ada6fe8adada1e3ee885386e9e903eab1a417ea7",
@@ -44,5 +69,8 @@
     "src/data/interviews/2026-10-09.json"
   ],
   "platformRepair": false,
-  "platformRepairPaths": []
+  "platformRepairPaths": [],
+  "publisherRunId": 37868987155,
+  "requestCommit": "9652bf90191532d1515c3acc8ed30d0c10413c08",
+  "nextAction": "Unique publisher owns request. Observe exact resulting main Pages and full live snapshot."
 }
