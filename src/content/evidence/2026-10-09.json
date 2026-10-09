@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-09",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-09T01:10:37.914Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-09-top-1",
+      "url": "https://dev.classmethod.jp/articles/openai-decisions-api-hands-on/",
+      "originalTitle": "OpenAI Decisions API を日本語テキストと画像で試してみた",
+      "source": "DevelopersIO",
+      "topic": "AI / LLM",
+      "access": "full",
+      "accessNote": "Public original author report read in full; experiments not independently reproduced.",
+      "publishedAt": "2026-10-08T06:46:19.806Z",
+      "capturedAt": "2026-10-09T01:04:35.064109+00:00",
+      "snapshotSha256": "6a431d79e8d17c64d8fd6fa70d8bc309a1728cf0164d90e710afaffff94e603a",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "All 900 responses were HTTP 200 but two color-classification answers were refusals.",
+          "quote": "refusal",
+          "locator": "注意点：HTTP 200 でも「回答拒否（refusal）」が発生する",
+          "conditions": "Nine task groups of100; author measurements, network included, preprocessing excluded; no billing verification.",
+          "usedIn": {
+            "zh": "refusal",
+            "ja": "refusal",
+            "interview": "refusal"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Text predicate matched 93 of 100, while classification matched 84 of 100.",
+          "quote": "93 / 100",
+          "locator": "手順2: 日本語テキストの検証結果",
+          "conditions": "Nine task groups of100; author measurements, network included, preprocessing excluded; no billing verification.",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "回答の型、正解の基準、拒否時の経路を具体的に説明できます。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "可练习任务定义、指标分母和拒答处理，避免用HTTP状态代表业务成功。",
+            "ja": "回答の型、正解の基準、拒否時の経路を具体的に説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-09-top-2",
+      "url": "https://dev.classmethod.jp/articles/twilio-voice-rnnoise-noise-cancellation-listening/",
+      "originalTitle": "Twilio Voice のブラウザ通話に RNNoise のノイズキャンセリングを組み込んで聞き比べた",
+      "source": "DevelopersIO",
+      "topic": "Frontend / 音声",
+      "access": "full",
+      "accessNote": "Public original author report read in full; experiments not independently reproduced.",
+      "publishedAt": "2026-10-08T06:18:15.702Z",
+      "capturedAt": "2026-10-09T01:04:35.060944+00:00",
+      "snapshotSha256": "7881f12734bcd726ea9a921fe1f469ad4c8f5c9cd9bffd67c079a1fd9028eefb",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Noise was mixed5dB below the single speaker voice.",
+          "quote": "5 dB",
+          "locator": "聞き比べ用の音声の用意",
+          "conditions": "Single speaker, Mac built-in microphone and Chrome; synthetic/file noise, one recording per condition; not ASR benchmark.",
+          "usedIn": {
+            "zh": "RNNoise",
+            "ja": "RNNoise",
+            "interview": "RNNoise"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Voice level also dropped5–8dB; nearby speech remained.",
+          "quote": "5〜8 dB",
+          "locator": "声の音量・帯域",
+          "conditions": "Single speaker, Mac built-in microphone and Chrome; synthetic/file noise, one recording per condition; not ASR benchmark.",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "ブラウザの音声処理を、設定と聞こえ方の両面で説明する材料です。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "浏览器音频处理的对照设计具体，适合前端通话产品的面试讨论。",
+            "ja": "ブラウザの音声処理を、設定と聞こえ方の両面で説明する材料です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-09-top-3",
+      "url": "https://dev.classmethod.jp/articles/aws-continuum-penetration-testing/",
+      "originalTitle": "[アップデート] AWS Continuum のペネトレーションテストが CI/CD パイプライン統合に対応したので GitHub Actions で試してみた",
+      "source": "DevelopersIO",
+      "topic": "Cloud / Security",
+      "access": "full",
+      "accessNote": "Public original author report read in full; experiments not independently reproduced.",
+      "publishedAt": "2026-10-08T02:47:24.922Z",
+      "capturedAt": "2026-10-09T01:04:35.019250+00:00",
+      "snapshotSha256": "95248edd1a26c07be44e6ed2c066b81813bcc7625178783868d2756db23360ac",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Formal execution initially failed because CI/CD mode was not enabled.",
+          "quote": "HTTP 400",
+          "locator": "本番ゲートを実行してみる",
+          "conditions": "Public preview; one static site; GitHub Actions only; dry-run and job initiation observed, completed findings not available.",
+          "usedIn": {
+            "zh": "dry-run",
+            "ja": "dry-run",
+            "interview": "dry-run"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Author interrupted the charged test and did not report a completed security verdict.",
+          "quote": "途中でジョブを中断",
+          "locator": "本番ゲートを実行してみる",
+          "conditions": "Public preview; one static site; GitHub Actions only; dry-run and job initiation observed, completed findings not available.",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "起動の確認を安全性の確認と取り違えないための具体例です。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "原文真实失败步骤有助于理解CI门禁的状态边界。",
+            "ja": "起動の確認を安全性の確認と取り違えないための具体例です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-09-top-4",
+      "url": "https://dev.classmethod.jp/articles/aws-cdk-internals-and-best-practices/",
+      "originalTitle": "AWS CDKの内部動作と設計ベストプラクティスを整理してみた",
+      "source": "DevelopersIO",
+      "topic": "Cloud / IaC",
+      "access": "full",
+      "accessNote": "Public original author report read in full; experiments not independently reproduced.",
+      "publishedAt": "2026-10-08T06:47:17.889Z",
+      "capturedAt": "2026-10-09T01:04:35.040582+00:00",
+      "snapshotSha256": "c11046485cc51b6e0a50b48dc63d9d7765c1d36cece63453d62cdb67c7fc9430",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Construct paths affect logical IDs; Default ID can preserve certain wrapper refactors.",
+          "quote": "Default",
+          "locator": "1-2. Construct でまとめ、論理 ID の変化を防ぐ",
+          "conditions": "Design explanation based on referenced documentation, not a production migration or performance experiment.",
+          "usedIn": {
+            "zh": "Construct",
+            "ja": "Construct",
+            "interview": "Construct"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Asset publishing and template references are separate stages.",
+          "quote": "assets.json",
+          "locator": "3-2. Asset がデプロイされる 2 段階の仕組み",
+          "conditions": "Design explanation based on referenced documentation, not a production migration or performance experiment.",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "コード整理とデータ保護の関係を、論理IDから説明できます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合云端架构面试：解释代码结构变化如何影响持久数据。",
+            "ja": "コード整理とデータ保護の関係を、論理IDから説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-09-top-5",
+      "url": "https://dev.classmethod.jp/articles/embeddinggemma-2-decisions-api-rag/",
+      "originalTitle": "EmbeddingGemma 2とDecisionsでRAG検索を比較してみた",
+      "source": "DevelopersIO",
+      "topic": "AI / Search",
+      "access": "full",
+      "accessNote": "Public original author report read in full; experiments not independently reproduced.",
+      "publishedAt": "2026-10-08T10:32:25.422Z",
+      "capturedAt": "2026-10-09T01:04:35.077022+00:00",
+      "snapshotSha256": "1fb5a5029fd5cd3b0b6c6874a5e6a27c764d2778142a8eb80437e303a6c386b1",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Embedding top10 reranking attained Hit@1 93% with Recall@10 97%.",
+          "quote": "93%",
+          "locator": "1. 検索精度の比較",
+          "conditions": "100 selected single-answer-page questions and100 pages, full-evaluation score reuse; costs and serial times estimated, not production end-to-end results.",
+          "usedIn": {
+            "zh": "Recall@10",
+            "ja": "Recall@10",
+            "interview": "Recall@10"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Combined rankings reuse scores from the full evaluation; top10 costs are estimates.",
+          "quote": "スコアを再利用",
+          "locator": "検証結果",
+          "conditions": "100 selected single-answer-page questions and100 pages, full-evaluation score reuse; costs and serial times estimated, not production end-to-end results.",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "候補の取りこぼしと順位改善を、異なる指標で説明できます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "可将检索指标、候选阶段和重排成本串成具体设计判断。",
+            "ja": "候補の取りこぼしと順位改善を、異なる指標で説明できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
