@@ -8,7 +8,7 @@
     "to": "2026-10-09T10:00:00+09:00"
   },
   "createdAt": "2026-10-09T01:03:33.128Z",
-  "updatedAt": "2026-10-09T01:22:23.393Z",
+  "updatedAt": "2026-10-09T01:22:55.329Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-09/checks.json",
@@ -185,5 +185,36 @@
   },
   "publishedAt": "2026-10-09T01:21:54.349Z",
   "audioStatus": "pending",
-  "n1Status": "pending"
+  "n1Status": "waiting_source",
+  "n1Handoff": {
+    "targetDate": "2026-10-09",
+    "day": 41,
+    "status": "waiting_source",
+    "stage": "waiting_source",
+    "sourceCommit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
+    "sourcePagesRunId": 37869152912,
+    "snapshotSha256": "cfa248d52c6127e22682dc82f465f6fd62b64e54c00f2ee5fb4413603791bc8b",
+    "issueNumber": 59,
+    "totalDays": 59,
+    "handoffAttemptedAt": "2026-10-09T01:22:52.864Z",
+    "sourceObservation": {
+      "mainCommit": "95262ad35651ac91cf378bca3ad63fc07c0724d7",
+      "mainFileCount": 133,
+      "completeMainInventory": true,
+      "completeProgressInventory": true,
+      "originalPath": "n1-source/2026-10-09.md",
+      "originalPresent": false,
+      "outboxPath": "runs/2026-10-09/source.json",
+      "outboxPresent": false,
+      "finalDailyPresent": false,
+      "requestDate": "2026-10-08"
+    },
+    "lastError": {
+      "kind": "source_missing",
+      "message": "Neither target-date original nor full source outbox exists. No lesson or source reconstructed."
+    },
+    "nextStep": "Existing N111:00/12:00 entrypoints resume after exact original/outbox becomes available.",
+    "updatedAt": "2026-10-09T01:22:52.864Z"
+  },
+  "n1ProgressBlob": "435de4062eadaf5fa4e586f8eac0e7b702162a71"
 }
