@@ -8,7 +8,7 @@
     "to": "2026-10-09T10:00:00+09:00"
   },
   "createdAt": "2026-10-09T01:03:33.128Z",
-  "updatedAt": "2026-10-09T01:22:55.329Z",
+  "updatedAt": "2026-10-09T01:27:52.887Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-09/checks.json",
@@ -72,7 +72,7 @@
   "platformRepairPaths": [],
   "publisherRunId": 37868987155,
   "requestCommit": "9652bf90191532d1515c3acc8ed30d0c10413c08",
-  "nextAction": "Complete independent audio and N1 handoff",
+  "nextAction": "Verify R2, exact audio Pages and playback; N1 waiting_source",
   "releaseCommit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
   "pagesRunId": 37869152912,
   "releaseEvidence": {
@@ -184,7 +184,7 @@
     "site": "/tmp/japan-daily-20261009/text-release-37869152912/site"
   },
   "publishedAt": "2026-10-09T01:21:54.349Z",
-  "audioStatus": "pending",
+  "audioStatus": "pushed",
   "n1Status": "waiting_source",
   "n1Handoff": {
     "targetDate": "2026-10-09",
@@ -216,5 +216,50 @@
     "nextStep": "Existing N111:00/12:00 entrypoints resume after exact original/outbox becomes available.",
     "updatedAt": "2026-10-09T01:22:52.864Z"
   },
-  "n1ProgressBlob": "435de4062eadaf5fa4e586f8eac0e7b702162a71"
+  "n1ProgressBlob": "435de4062eadaf5fa4e586f8eac0e7b702162a71",
+  "audioCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+  "audioLocalVerification": {
+    "manifestHashes": {
+      "public/audio/japanese/2026-10-09/manifest.json": "0b1917fa8b10883e950844c5b5c6a110cd8ad7c375129386946ac7076528e638",
+      "public/audio/japanese/2026-10-09/interview-manifest.json": "ecdd0c64bab9f85b579e2180981ae9a5ec8b03e31a747b3bc784b4079c3f7529"
+    },
+    "localVerification": {
+      "newRecordings": 32,
+      "referencedRecordings": 61,
+      "wordCards": 20,
+      "grammarCards": 8,
+      "answers": [
+        {
+          "index": 1,
+          "durationSeconds": 25.541,
+          "status": "ideal"
+        },
+        {
+          "index": 2,
+          "durationSeconds": 24.53,
+          "status": "ideal"
+        },
+        {
+          "index": 3,
+          "durationSeconds": 25.309,
+          "status": "ideal"
+        },
+        {
+          "index": 4,
+          "durationSeconds": 24.301,
+          "status": "ideal"
+        },
+        {
+          "index": 5,
+          "durationSeconds": 26.308,
+          "status": "ideal"
+        }
+      ],
+      "voiceVerified": true,
+      "textMappingsVerified": true,
+      "at": "2026-10-09T01:26:52.170Z"
+    },
+    "error": null,
+    "nextStep": "Push scoped audio-only commit after coordination and source recheck"
+  }
 }
