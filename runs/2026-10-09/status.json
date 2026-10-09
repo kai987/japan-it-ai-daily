@@ -8,7 +8,7 @@
     "to": "2026-10-09T10:00:00+09:00"
   },
   "createdAt": "2026-10-09T01:03:33.128Z",
-  "updatedAt": "2026-10-09T01:27:52.887Z",
+  "updatedAt": "2026-10-09T01:31:48.376Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-09/checks.json",
@@ -72,27 +72,27 @@
   "platformRepairPaths": [],
   "publisherRunId": 37868987155,
   "requestCommit": "9652bf90191532d1515c3acc8ed30d0c10413c08",
-  "nextAction": "Verify R2, exact audio Pages and playback; N1 waiting_source",
-  "releaseCommit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
-  "pagesRunId": 37869152912,
+  "nextAction": "N1 waiting_source; unchanged text/audio require no regeneration",
+  "releaseCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+  "pagesRunId": 37869870102,
   "releaseEvidence": {
-    "label": "text",
-    "runId": 37869152912,
-    "releaseCommit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
-    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/37869152912",
+    "label": "audio",
+    "runId": 37869870102,
+    "releaseCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/37869870102",
     "artifacts": [
       {
-        "id": 11588889375,
+        "id": 11589479613,
         "name": "it-study-snapshot",
-        "digest": "sha256:9eacc2197f0636d028086fb2fffc0312abcda77b15adf0e7d69f0e5e623e92ce"
+        "digest": "sha256:b0c2966d80d05af162469dbbf0871fcdfb888a76e802c6a074157fc1c41041f3"
       },
       {
-        "id": 11588669861,
+        "id": 11589399760,
         "name": "github-pages",
-        "digest": "sha256:b3fbc5ebf136bf8090be9771a23ab438a2062806065c714f24f95c128c87ac66"
+        "digest": "sha256:7a75b21f477f85ff68dec5976a3b750e79a9b000427726c1e8664952cd358a35"
       }
     ],
-    "sourceCommit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
+    "sourceCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
     "targetDate": "2026-10-09",
     "totalDays": 59,
     "issueNumber": 59,
@@ -158,12 +158,12 @@
       "2026-10-09"
     ],
     "fullSnapshotCompared": true,
-    "snapshotHash": "cfa248d52c6127e22682dc82f465f6fd62b64e54c00f2ee5fb4413603791bc8b",
+    "snapshotHash": "c4d851dc863889846dbb1a95463061a35e61aa1da697b61edde68c1afd33f19b",
     "expected": {
       "version": 1,
-      "commit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
+      "commit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
       "date": "2026-10-09",
-      "snapshotHash": "cfa248d52c6127e22682dc82f465f6fd62b64e54c00f2ee5fb4413603791bc8b",
+      "snapshotHash": "c4d851dc863889846dbb1a95463061a35e61aa1da697b61edde68c1afd33f19b",
       "pages": [
         {
           "path": "daily/2026-10-09/",
@@ -176,15 +176,15 @@
       ]
     },
     "live": {
-      "commit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
+      "commit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
       "date": "2026-10-09",
       "attempt": 1
     },
-    "verifiedAt": "2026-10-09T01:21:54.349Z",
-    "site": "/tmp/japan-daily-20261009/text-release-37869152912/site"
+    "verifiedAt": "2026-10-09T01:30:46.242Z",
+    "site": "/tmp/japan-daily-20261009/audio-release-37869870102/site"
   },
   "publishedAt": "2026-10-09T01:21:54.349Z",
-  "audioStatus": "pushed",
+  "audioStatus": "playback_verified",
   "n1Status": "waiting_source",
   "n1Handoff": {
     "targetDate": "2026-10-09",
@@ -261,5 +261,504 @@
     },
     "error": null,
     "nextStep": "Push scoped audio-only commit after coordination and source recheck"
+  },
+  "audioEvidence": {
+    "schemaVersion": 1,
+    "targetDate": "2026-10-09",
+    "textSourceCommit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
+    "sourceHashes": {
+      "src/content/daily/2026-10-09.md": "c392bbd7fcbd6f34949fd5f425e25944c55034d9baea755b79b33bccf5c38159",
+      "src/content/japanese/2026-10-09.md": "68fda6efc5568e5fc9f801d14a8a8e214a324941f117d3aff3d5ceaa65cf0442",
+      "src/content/daily-ja/2026-10-09.md": "e1b547ec24b7507bc618bd830cb98c6250a5fc912c512decaf202a1b149ed1ba",
+      "src/content/japanese-ja/2026-10-09.md": "f378fcb2ab824b9ea0d8c520de953fcddd7d558a3a327368512dd035ab060c2f",
+      "src/content/evidence/2026-10-09.json": "19c49c4052197ad2ea809e726e0b311b0a38e4bf8e251b15dba024bd1cd0bc90",
+      "src/data/interviews/2026-10-09.json": "d584f577f1f5750ad59edbaf199dbcae88a8b03f7cd29d440dbc77012de420f8"
+    },
+    "settings": {
+      "engineUrl": "http://127.0.0.1:10101",
+      "speaker": "morioki",
+      "style": "ノーマル",
+      "styleId": 497929760,
+      "wordSpeed": 1,
+      "exampleSpeed": 1,
+      "interviewSpeed": 1
+    },
+    "createdAt": "2026-10-09T01:22:04.782Z",
+    "stage": "playback_verified",
+    "audioCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+    "workflowRunIds": {
+      "r2": 37869870064,
+      "pages": 37869870102
+    },
+    "manifestHashes": {
+      "public/audio/japanese/2026-10-09/manifest.json": "0b1917fa8b10883e950844c5b5c6a110cd8ad7c375129386946ac7076528e638",
+      "public/audio/japanese/2026-10-09/interview-manifest.json": "ecdd0c64bab9f85b579e2180981ae9a5ec8b03e31a747b3bc784b4079c3f7529"
+    },
+    "verificationEvidence": {
+      "text": {
+        "label": "text",
+        "runId": 37869152912,
+        "releaseCommit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
+        "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/37869152912",
+        "artifacts": [
+          {
+            "id": 11588889375,
+            "name": "it-study-snapshot",
+            "digest": "sha256:9eacc2197f0636d028086fb2fffc0312abcda77b15adf0e7d69f0e5e623e92ce"
+          },
+          {
+            "id": 11588669861,
+            "name": "github-pages",
+            "digest": "sha256:b3fbc5ebf136bf8090be9771a23ab438a2062806065c714f24f95c128c87ac66"
+          }
+        ],
+        "sourceCommit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
+        "targetDate": "2026-10-09",
+        "totalDays": 59,
+        "issueNumber": 59,
+        "grammarLessonDates": [
+          "2026-08-12",
+          "2026-08-13",
+          "2026-08-14",
+          "2026-08-15",
+          "2026-08-16",
+          "2026-08-17",
+          "2026-08-18",
+          "2026-08-19",
+          "2026-08-20",
+          "2026-08-21",
+          "2026-08-22",
+          "2026-08-23",
+          "2026-08-24",
+          "2026-08-25",
+          "2026-08-26",
+          "2026-08-27",
+          "2026-08-28",
+          "2026-08-29",
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-12",
+          "2026-09-13",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18",
+          "2026-09-19",
+          "2026-09-20",
+          "2026-09-21",
+          "2026-09-22",
+          "2026-09-23",
+          "2026-09-24",
+          "2026-09-25",
+          "2026-09-26",
+          "2026-09-27",
+          "2026-09-28",
+          "2026-09-29",
+          "2026-09-30",
+          "2026-10-01",
+          "2026-10-02",
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ],
+        "fullSnapshotCompared": true,
+        "snapshotHash": "cfa248d52c6127e22682dc82f465f6fd62b64e54c00f2ee5fb4413603791bc8b",
+        "expected": {
+          "version": 1,
+          "commit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
+          "date": "2026-10-09",
+          "snapshotHash": "cfa248d52c6127e22682dc82f465f6fd62b64e54c00f2ee5fb4413603791bc8b",
+          "pages": [
+            {
+              "path": "daily/2026-10-09/",
+              "sha256": "60102955f8e9a71e2a3d28c4a334ee369efd43f504c95befe6838f2d8e5256ff"
+            },
+            {
+              "path": "ja/daily/2026-10-09/",
+              "sha256": "c11a4c524b7022b854e8910a714ec8a5ad71966ba268f161150ea3052a660494"
+            }
+          ]
+        },
+        "live": {
+          "commit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
+          "date": "2026-10-09",
+          "attempt": 1
+        },
+        "verifiedAt": "2026-10-09T01:21:54.349Z",
+        "site": "/tmp/japan-daily-20261009/text-release-37869152912/site"
+      },
+      "audioRelease": {
+        "label": "audio",
+        "runId": 37869870102,
+        "releaseCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+        "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/37869870102",
+        "artifacts": [
+          {
+            "id": 11589479613,
+            "name": "it-study-snapshot",
+            "digest": "sha256:b0c2966d80d05af162469dbbf0871fcdfb888a76e802c6a074157fc1c41041f3"
+          },
+          {
+            "id": 11589399760,
+            "name": "github-pages",
+            "digest": "sha256:7a75b21f477f85ff68dec5976a3b750e79a9b000427726c1e8664952cd358a35"
+          }
+        ],
+        "sourceCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+        "targetDate": "2026-10-09",
+        "totalDays": 59,
+        "issueNumber": 59,
+        "grammarLessonDates": [
+          "2026-08-12",
+          "2026-08-13",
+          "2026-08-14",
+          "2026-08-15",
+          "2026-08-16",
+          "2026-08-17",
+          "2026-08-18",
+          "2026-08-19",
+          "2026-08-20",
+          "2026-08-21",
+          "2026-08-22",
+          "2026-08-23",
+          "2026-08-24",
+          "2026-08-25",
+          "2026-08-26",
+          "2026-08-27",
+          "2026-08-28",
+          "2026-08-29",
+          "2026-08-30",
+          "2026-08-31",
+          "2026-09-01",
+          "2026-09-02",
+          "2026-09-03",
+          "2026-09-04",
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-07",
+          "2026-09-08",
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-12",
+          "2026-09-13",
+          "2026-09-14",
+          "2026-09-15",
+          "2026-09-16",
+          "2026-09-17",
+          "2026-09-18",
+          "2026-09-19",
+          "2026-09-20",
+          "2026-09-21",
+          "2026-09-22",
+          "2026-09-23",
+          "2026-09-24",
+          "2026-09-25",
+          "2026-09-26",
+          "2026-09-27",
+          "2026-09-28",
+          "2026-09-29",
+          "2026-09-30",
+          "2026-10-01",
+          "2026-10-02",
+          "2026-10-03",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-08",
+          "2026-10-09"
+        ],
+        "fullSnapshotCompared": true,
+        "snapshotHash": "c4d851dc863889846dbb1a95463061a35e61aa1da697b61edde68c1afd33f19b",
+        "expected": {
+          "version": 1,
+          "commit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+          "date": "2026-10-09",
+          "snapshotHash": "c4d851dc863889846dbb1a95463061a35e61aa1da697b61edde68c1afd33f19b",
+          "pages": [
+            {
+              "path": "daily/2026-10-09/",
+              "sha256": "60102955f8e9a71e2a3d28c4a334ee369efd43f504c95befe6838f2d8e5256ff"
+            },
+            {
+              "path": "ja/daily/2026-10-09/",
+              "sha256": "c11a4c524b7022b854e8910a714ec8a5ad71966ba268f161150ea3052a660494"
+            }
+          ]
+        },
+        "live": {
+          "commit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+          "date": "2026-10-09",
+          "attempt": 1
+        },
+        "verifiedAt": "2026-10-09T01:30:46.242Z",
+        "site": "/tmp/japan-daily-20261009/audio-release-37869870102/site"
+      },
+      "r2": {
+        "commit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+        "baseUrl": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev",
+        "workflowRunId": 37869870064,
+        "referencedRecordings": 61,
+        "workflowScope": {
+          "scope": "changed files and manifest references",
+          "count": 61,
+          "targetReferencedCount": 61
+        },
+        "manifestChecks": [
+          {
+            "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/manifest.json",
+            "sha256": "0b1917fa8b10883e950844c5b5c6a110cd8ad7c375129386946ac7076528e638",
+            "bytes": 15741
+          },
+          {
+            "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/interview-manifest.json",
+            "sha256": "ecdd0c64bab9f85b579e2180981ae9a5ec8b03e31a747b3bc784b4079c3f7529",
+            "bytes": 7911
+          }
+        ],
+        "verifiedAt": "2026-10-09T01:30:46.879Z"
+      },
+      "remoteAudio": {
+        "count": 61,
+        "hashAlgorithm": "SHA-256",
+        "changedFileScope": [
+          "public/audio/japanese/2026-10-09/manifest.json",
+          "public/audio/japanese/2026-10-09/interview-manifest.json"
+        ],
+        "output": "Audio integrity: 59/59 generated dates, bilingual text mappings and 3033 referenced local recordings verified; full local inventory 3252 MP3s; 0 vocabulary cards explicitly use browser Japanese speech (not recordings).\nRemote audio scope: changed files and manifest references; 61 recording(s).\nVerified 61 deployed MP3 SHA-256 hashes.",
+        "verifiedAt": "2026-10-09T01:31:24.844Z"
+      },
+      "playback": [
+        {
+          "locale": "ja",
+          "kind": "interview-answer",
+          "page": "https://kai987.github.io/japan-it-ai-daily/ja/daily/2026-10-09/",
+          "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/interview-answer-01--b264f1ffec764695b71269c387f420bd7ce25d87f30f786dc3cd47e1939b5c12.mp3",
+          "requestedMedia": [
+            "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/interview-answer-01--b264f1ffec764695b71269c387f420bd7ce25d87f30f786dc3cd47e1939b5c12.mp3"
+          ],
+          "duration": 25.541208,
+          "currentTime": 0,
+          "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/interview-answer-01--b264f1ffec764695b71269c387f420bd7ce25d87f30f786dc3cd47e1939b5c12.mp3",
+          "error": null,
+          "ttsFallbacks": 0,
+          "endTime": 0.156427,
+          "verifiedAt": "2026-10-09T01:30:56.466Z",
+          "browser": "Chromium real HTMLAudioElement; no media mocks or request interception"
+        },
+        {
+          "locale": "ja",
+          "kind": "word",
+          "page": "https://kai987.github.io/japan-it-ai-daily/ja/japanese/2026-10-09/",
+          "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/vocab-01--d14d95273a365e777c98c44da037d00af7043cbebbc373b135d1e794c7a613cf.mp3",
+          "requestedMedia": [
+            "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/vocab-01--d14d95273a365e777c98c44da037d00af7043cbebbc373b135d1e794c7a613cf.mp3"
+          ],
+          "duration": 1.219708,
+          "currentTime": 0.032063,
+          "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/vocab-01--d14d95273a365e777c98c44da037d00af7043cbebbc373b135d1e794c7a613cf.mp3",
+          "error": null,
+          "ttsFallbacks": 0,
+          "endTime": 0.191872,
+          "verifiedAt": "2026-10-09T01:30:57.929Z",
+          "browser": "Chromium real HTMLAudioElement; no media mocks or request interception"
+        },
+        {
+          "locale": "ja",
+          "kind": "example",
+          "page": "https://kai987.github.io/japan-it-ai-daily/ja/japanese/2026-10-09/",
+          "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/example-01--611a796f12b4ab21e00521527c1a30e8dddf7393f0c561aa7b51a75d4749b82d.mp3",
+          "requestedMedia": [
+            "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/example-01--611a796f12b4ab21e00521527c1a30e8dddf7393f0c561aa7b51a75d4749b82d.mp3"
+          ],
+          "duration": 3.911875,
+          "currentTime": 0.029715,
+          "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/example-01--611a796f12b4ab21e00521527c1a30e8dddf7393f0c561aa7b51a75d4749b82d.mp3",
+          "error": null,
+          "ttsFallbacks": 0,
+          "endTime": 0.18903,
+          "verifiedAt": "2026-10-09T01:30:59.034Z",
+          "browser": "Chromium real HTMLAudioElement; no media mocks or request interception"
+        },
+        {
+          "locale": "ja",
+          "kind": "new-grammar",
+          "page": "https://kai987.github.io/japan-it-ai-daily/ja/japanese/2026-10-09/",
+          "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/grammar-example-01--51ef240d1896544f11a4303879e9d1ba585e47d1d448106206f4ea4f2ee2a77d.mp3",
+          "requestedMedia": [
+            "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/grammar-example-01--51ef240d1896544f11a4303879e9d1ba585e47d1d448106206f4ea4f2ee2a77d.mp3"
+          ],
+          "duration": 4.398917,
+          "currentTime": 0.027098,
+          "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/grammar-example-01--51ef240d1896544f11a4303879e9d1ba585e47d1d448106206f4ea4f2ee2a77d.mp3",
+          "error": null,
+          "ttsFallbacks": 0,
+          "endTime": 0.185184,
+          "verifiedAt": "2026-10-09T01:31:00.136Z",
+          "browser": "Chromium real HTMLAudioElement; no media mocks or request interception"
+        },
+        {
+          "locale": "ja",
+          "kind": "reused-grammar",
+          "page": "https://kai987.github.io/japan-it-ai-daily/ja/japanese/2026-10-09/",
+          "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-07--c3539e1ac57836054946ffdf28d379ea58f8d696fe4768eec408e4a57f8dedee.mp3",
+          "requestedMedia": [
+            "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-07--c3539e1ac57836054946ffdf28d379ea58f8d696fe4768eec408e4a57f8dedee.mp3"
+          ],
+          "duration": 4.549917,
+          "currentTime": 0,
+          "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-07--c3539e1ac57836054946ffdf28d379ea58f8d696fe4768eec408e4a57f8dedee.mp3",
+          "error": null,
+          "ttsFallbacks": 0,
+          "endTime": 0.170505,
+          "verifiedAt": "2026-10-09T01:31:01.225Z",
+          "browser": "Chromium real HTMLAudioElement; no media mocks or request interception"
+        },
+        {
+          "locale": "zh",
+          "kind": "interview-answer",
+          "page": "https://kai987.github.io/japan-it-ai-daily/daily/2026-10-09/",
+          "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/interview-answer-01--b264f1ffec764695b71269c387f420bd7ce25d87f30f786dc3cd47e1939b5c12.mp3",
+          "requestedMedia": [
+            "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/interview-answer-01--b264f1ffec764695b71269c387f420bd7ce25d87f30f786dc3cd47e1939b5c12.mp3"
+          ],
+          "duration": 25.541208,
+          "currentTime": 0.035993,
+          "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/interview-answer-01--b264f1ffec764695b71269c387f420bd7ce25d87f30f786dc3cd47e1939b5c12.mp3",
+          "error": null,
+          "ttsFallbacks": 0,
+          "endTime": 0.202945,
+          "verifiedAt": "2026-10-09T01:31:02.389Z",
+          "browser": "Chromium real HTMLAudioElement; no media mocks or request interception"
+        },
+        {
+          "locale": "zh",
+          "kind": "word",
+          "page": "https://kai987.github.io/japan-it-ai-daily/japanese/2026-10-09/",
+          "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/vocab-01--d14d95273a365e777c98c44da037d00af7043cbebbc373b135d1e794c7a613cf.mp3",
+          "requestedMedia": [
+            "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/vocab-01--d14d95273a365e777c98c44da037d00af7043cbebbc373b135d1e794c7a613cf.mp3"
+          ],
+          "duration": 1.219708,
+          "currentTime": 0.023393,
+          "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/vocab-01--d14d95273a365e777c98c44da037d00af7043cbebbc373b135d1e794c7a613cf.mp3",
+          "error": null,
+          "ttsFallbacks": 0,
+          "endTime": 0.18501,
+          "verifiedAt": "2026-10-09T01:31:03.715Z",
+          "browser": "Chromium real HTMLAudioElement; no media mocks or request interception"
+        },
+        {
+          "locale": "zh",
+          "kind": "example",
+          "page": "https://kai987.github.io/japan-it-ai-daily/japanese/2026-10-09/",
+          "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/example-01--611a796f12b4ab21e00521527c1a30e8dddf7393f0c561aa7b51a75d4749b82d.mp3",
+          "requestedMedia": [
+            "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/example-01--611a796f12b4ab21e00521527c1a30e8dddf7393f0c561aa7b51a75d4749b82d.mp3"
+          ],
+          "duration": 3.911875,
+          "currentTime": 0.023618,
+          "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/example-01--611a796f12b4ab21e00521527c1a30e8dddf7393f0c561aa7b51a75d4749b82d.mp3",
+          "error": null,
+          "ttsFallbacks": 0,
+          "endTime": 0.182394,
+          "verifiedAt": "2026-10-09T01:31:04.795Z",
+          "browser": "Chromium real HTMLAudioElement; no media mocks or request interception"
+        },
+        {
+          "locale": "zh",
+          "kind": "new-grammar",
+          "page": "https://kai987.github.io/japan-it-ai-daily/japanese/2026-10-09/",
+          "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/grammar-example-01--51ef240d1896544f11a4303879e9d1ba585e47d1d448106206f4ea4f2ee2a77d.mp3",
+          "requestedMedia": [
+            "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/grammar-example-01--51ef240d1896544f11a4303879e9d1ba585e47d1d448106206f4ea4f2ee2a77d.mp3"
+          ],
+          "duration": 4.398917,
+          "currentTime": 0.029878,
+          "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-09/grammar-example-01--51ef240d1896544f11a4303879e9d1ba585e47d1d448106206f4ea4f2ee2a77d.mp3",
+          "error": null,
+          "ttsFallbacks": 0,
+          "endTime": 0.201454,
+          "verifiedAt": "2026-10-09T01:31:05.927Z",
+          "browser": "Chromium real HTMLAudioElement; no media mocks or request interception"
+        },
+        {
+          "locale": "zh",
+          "kind": "reused-grammar",
+          "page": "https://kai987.github.io/japan-it-ai-daily/japanese/2026-10-09/",
+          "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-07--c3539e1ac57836054946ffdf28d379ea58f8d696fe4768eec408e4a57f8dedee.mp3",
+          "requestedMedia": [
+            "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-07--c3539e1ac57836054946ffdf28d379ea58f8d696fe4768eec408e4a57f8dedee.mp3"
+          ],
+          "duration": 4.549917,
+          "currentTime": 0.027665,
+          "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-07--c3539e1ac57836054946ffdf28d379ea58f8d696fe4768eec408e4a57f8dedee.mp3",
+          "error": null,
+          "ttsFallbacks": 0,
+          "endTime": 0.187914,
+          "verifiedAt": "2026-10-09T01:31:07.022Z",
+          "browser": "Chromium real HTMLAudioElement; no media mocks or request interception"
+        }
+      ]
+    },
+    "error": null,
+    "nextStep": "Complete: unchanged source and manifest inputs require no synthesis or upload",
+    "updatedAt": "2026-10-09T01:31:24.882Z",
+    "localVerification": {
+      "newRecordings": 32,
+      "referencedRecordings": 61,
+      "wordCards": 20,
+      "grammarCards": 8,
+      "answers": [
+        {
+          "index": 1,
+          "durationSeconds": 25.541,
+          "status": "ideal"
+        },
+        {
+          "index": 2,
+          "durationSeconds": 24.53,
+          "status": "ideal"
+        },
+        {
+          "index": 3,
+          "durationSeconds": 25.309,
+          "status": "ideal"
+        },
+        {
+          "index": 4,
+          "durationSeconds": 24.301,
+          "status": "ideal"
+        },
+        {
+          "index": 5,
+          "durationSeconds": 26.308,
+          "status": "ideal"
+        }
+      ],
+      "voiceVerified": true,
+      "textMappingsVerified": true,
+      "at": "2026-10-09T01:26:52.170Z"
+    },
+    "remoteReadback": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+    "pushedAt": "2026-10-09T01:27:33.842Z",
+    "completedAt": "2026-10-09T01:31:24.845Z"
   }
 }
