@@ -8,7 +8,7 @@
     "to": "2026-10-09T10:00:00+09:00"
   },
   "createdAt": "2026-10-09T01:03:33.128Z",
-  "updatedAt": "2026-10-09T01:31:48.376Z",
+  "updatedAt": "2026-10-09T02:59:20.495Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-09/checks.json",
@@ -72,7 +72,7 @@
   "platformRepairPaths": [],
   "publisherRunId": 37868987155,
   "requestCommit": "9652bf90191532d1515c3acc8ed30d0c10413c08",
-  "nextAction": "N1 waiting_source; unchanged text/audio require no regeneration",
+  "nextAction": "Complete: verified text, R2/audio playback and N1 publication; unchanged inputs require no regeneration",
   "releaseCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
   "pagesRunId": 37869870102,
   "releaseEvidence": {
@@ -185,36 +185,51 @@
   },
   "publishedAt": "2026-10-09T01:21:54.349Z",
   "audioStatus": "playback_verified",
-  "n1Status": "waiting_source",
+  "n1Status": "published",
   "n1Handoff": {
+    "status": "published",
     "targetDate": "2026-10-09",
-    "day": 41,
-    "status": "waiting_source",
-    "stage": "waiting_source",
-    "sourceCommit": "a9fabec4f8eacaacb23be541f634bc5a1b16cf19",
-    "sourcePagesRunId": 37869152912,
-    "snapshotSha256": "cfa248d52c6127e22682dc82f465f6fd62b64e54c00f2ee5fb4413603791bc8b",
-    "issueNumber": 59,
-    "totalDays": 59,
-    "handoffAttemptedAt": "2026-10-09T01:22:52.864Z",
-    "sourceObservation": {
-      "mainCommit": "95262ad35651ac91cf378bca3ad63fc07c0724d7",
-      "mainFileCount": 133,
-      "completeMainInventory": true,
-      "completeProgressInventory": true,
-      "originalPath": "n1-source/2026-10-09.md",
-      "originalPresent": false,
-      "outboxPath": "runs/2026-10-09/source.json",
-      "outboxPresent": false,
-      "finalDailyPresent": false,
-      "requestDate": "2026-10-08"
+    "releaseEvidence": {
+      "targetDate": "2026-10-09",
+      "sourceCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+      "releaseCommit": "908a3965f2648626e4fb9b1536167cd189fef2e8",
+      "sourceBlobSha": "c695f9dd2bfe082de509aab31b90b69962c74525",
+      "sourceSha256": "44f2ec8959b81fdb0df2ea648f202d604017e17b8a5e4d78cca4ceb5ec2a7915",
+      "snapshotSha256": "c4d851dc863889846dbb1a95463061a35e61aa1da697b61edde68c1afd33f19b",
+      "storedSnapshotSha256": "766cc206f133e55926842a83a44c44a3a51f042cb61f70966fc9e2996ef1b349",
+      "pagesRunId": 37876982534,
+      "syncRunId": 37876867294,
+      "issueNumber": 59,
+      "totalDays": 59,
+      "rawVocabulary": 9,
+      "rawGrammar": 1,
+      "displayVocabulary": 20,
+      "displayGrammar": 8,
+      "checks": {
+        "exactPages": true,
+        "postDeploy": true,
+        "originalUnchanged": true,
+        "snapshotExact": true,
+        "liveArtifactBytes": true,
+        "display": {
+          "date": "2026-10-09",
+          "day": 41,
+          "issue": 59,
+          "titleVisible": true,
+          "vocabularyCount": 20,
+          "vocabularyNew": 9,
+          "vocabularyReview": 11,
+          "grammarNew": 1,
+          "grammarReview": 7,
+          "frequencyDenominator": 59,
+          "immersionParagraphs": 1,
+          "readingParagraphs": 2,
+          "mobileReadingVerified": true
+        }
+      },
+      "verifiedAt": "2026-10-09T02:58:41.206Z"
     },
-    "lastError": {
-      "kind": "source_missing",
-      "message": "Neither target-date original nor full source outbox exists. No lesson or source reconstructed."
-    },
-    "nextStep": "Existing N111:00/12:00 entrypoints resume after exact original/outbox becomes available.",
-    "updatedAt": "2026-10-09T01:22:52.864Z"
+    "lastError": null
   },
   "n1ProgressBlob": "435de4062eadaf5fa4e586f8eac0e7b702162a71",
   "audioCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
@@ -760,5 +775,45 @@
     "remoteReadback": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
     "pushedAt": "2026-10-09T01:27:33.842Z",
     "completedAt": "2026-10-09T01:31:24.845Z"
+  },
+  "n1Release": {
+    "targetDate": "2026-10-09",
+    "sourceCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+    "releaseCommit": "908a3965f2648626e4fb9b1536167cd189fef2e8",
+    "sourceBlobSha": "c695f9dd2bfe082de509aab31b90b69962c74525",
+    "sourceSha256": "44f2ec8959b81fdb0df2ea648f202d604017e17b8a5e4d78cca4ceb5ec2a7915",
+    "snapshotSha256": "c4d851dc863889846dbb1a95463061a35e61aa1da697b61edde68c1afd33f19b",
+    "storedSnapshotSha256": "766cc206f133e55926842a83a44c44a3a51f042cb61f70966fc9e2996ef1b349",
+    "pagesRunId": 37876982534,
+    "syncRunId": 37876867294,
+    "issueNumber": 59,
+    "totalDays": 59,
+    "rawVocabulary": 9,
+    "rawGrammar": 1,
+    "displayVocabulary": 20,
+    "displayGrammar": 8,
+    "checks": {
+      "exactPages": true,
+      "postDeploy": true,
+      "originalUnchanged": true,
+      "snapshotExact": true,
+      "liveArtifactBytes": true,
+      "display": {
+        "date": "2026-10-09",
+        "day": 41,
+        "issue": 59,
+        "titleVisible": true,
+        "vocabularyCount": 20,
+        "vocabularyNew": 9,
+        "vocabularyReview": 11,
+        "grammarNew": 1,
+        "grammarReview": 7,
+        "frequencyDenominator": 59,
+        "immersionParagraphs": 1,
+        "readingParagraphs": 2,
+        "mobileReadingVerified": true
+      }
+    },
+    "verifiedAt": "2026-10-09T02:58:41.206Z"
   }
 }
