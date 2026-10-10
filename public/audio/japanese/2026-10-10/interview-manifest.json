@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-10",
+  "generatedAt": "2026-10-10T01:28:47.096Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIエージェントの安全チェックが失敗したとき、どう扱いますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "7edcb6d8fb38b30bc6bf485ac112754a0a36f44c209862afeece7d386fd22b0f",
+      "audioSha256": "a30e2d472f8765defecb52ca05bb8676ebb6fe6ee79b79f23d5b6e16e4204965",
+      "durationSeconds": 4.748
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "安全チェック自体が失敗した場合も、操作を止める設計にします。記事ではフックに onFailure を block に設定し、終了コード1でもプロンプトを止めています。ただし、止まった場合も本体の終了コードは0でした。終了コードだけで成功とせず、応答や実行結果も確かめます。起動失敗や時間切れは未検証なので、別に試します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "2b5c5b9f36f81bdc859fb7636358f892ef8211858e961f1a6b78516bde4d4361",
+      "audioSha256": "524fc0aab6328142bd0c24d94a7a6a16495947d3431bd1ce54ad1a1bf3ce6817",
+      "durationSeconds": 24.997,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "プロンプトキャッシュの値下げ効果は、どう評価しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "d530dba7338baa2ec2b50df6a62c70fc6d99d913ee91f93b5d603288f749ba94",
+      "audioSha256": "7b31a494b881ab88c149885c7efad03bb55b8fd91862fe1abffcaaf48d6634bc",
+      "durationSeconds": 3.866
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "読み取り単価と、会話全体の費用を分けて見ます。記事では cachePoint を置き、約1万6400トークンの固定文書で20問を続けています。読み取り単価は半額でも、全体の削減は約2割でした。初回の書き込み費用や有効期間、再利用量も含めて計算します。この条件の結果なので、回答品質まで向上したとは言えません。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "015fd7ea98ecb466ec9ffe3480523f07296005cfeace27c7d015d09b029fac26",
+      "audioSha256": "2ac17cedb9445723733b12baf5bbe85b394f9b754c66af0b3f9fc525ebc21f47",
+      "durationSeconds": 26.133,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "非同期処理で、return await を残す理由は何ですか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "7ac59a27daf5b133a3065a5256d3eaa33f9177da5f64ee8558d2420d9df79a8f",
+      "audioSha256": "f94ece40a06882ad7e1f2deb9ee15edbc2d0da9e87fce5a8658c96ac24e11281",
+      "durationSeconds": 4.051
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "関数内で失敗を処理し、完了後に片付けたい場合は残します。記事では return await にすると、失敗をその関数の catch で拾え、finally も処理完了後に動きました。await なしでは、呼び出し元へ失敗が伝わり、片付けが先に走ります。保存中の表示などは成功時だけでなく失敗時の順番も確認します。ただし、スタック表示は処理によって違います。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "e0eecb117036347a99fae2c0a8f1256a2a1b6bda27543d68091d4e28141895d6",
+      "audioSha256": "eb184379935a05fd679f04fa224cb4bb17b60ed1593f3bcb67ff086ca6740c13",
+      "durationSeconds": 26.982,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "ID管理APIのネットワーク制限で、何に注意しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "bd83c33c317570a855660b146fd6340cf1c5c4fd2caf02ddf309a76baa1e794a",
+      "audioSha256": "ddaf51d85233cb67714044617bf47e7d582091ec5917e294cb541cb33ea62453",
+      "durationSeconds": 4.84
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "設定の組み合わせと、管理者が戻せる経路を確認します。記事の ApiAllowSourceIps は、許可したIPならVPC側の制限を通らずに使える例外です。自分のIPを外す変更は、ロックアウト防止で拒否されました。許可元と不許可元の両方で確かめ、外部のID同期は別に確認します。ただし、同期側の実測結果は未確認です。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "e5b3baa6fd88232da64813f603a7f71937deaf4024f4386e2ffb86b51c07da0f",
+      "audioSha256": "baae6fc5be399a6e315d5707649d49d00c6e000a11e21bb88264e2048c869a07",
+      "durationSeconds": 26.272,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "エラーログを出したのに監視へ届かない場合、どう調べますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "afc2f520656ecef090baab2d64ef0c521330a8a068f944b3635a5c1e886f59f7",
+      "audioSha256": "4314af875af043af24c93daff939eedce8578562224c4eb47bac8ef11aa321c7",
+      "durationSeconds": 4.434
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "出力した文字列だけでなく、転送前の判定を調べます。記事では自前のJSONログにRFC 3339の日時がないと、error と書いてもINFO扱いになります。WARN以上の設定なら、そのログは監視先へ届きません。正しい日時と level をそろえ、実際の受信まで確認します。ただし、標準ロガーは扱いが違うので、使用する出力方法も確認します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "354cd4cce6316b7def2dc8a99a56b3f11b42483f235437fa5e2826c63db2e3ed",
+      "audioSha256": "d6aa0b18e22b774d7a4dbea81c6cd540245efce70cb8e3588ebbfcef837b0f90",
+      "durationSeconds": 28.572,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "終了コードやログ出力だけで、処理と監視の成功を判断できないのはなぜですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "02da2df4a825dd49bcc95bb127f0c80cc7f18b0f5b209e25f376c30eca12f122",
+      "audioSha256": "f299827e4594fbeb217383827c28f0b962d54761617c2a357acaa9d7d2b84ac9",
+      "durationSeconds": 6.362
+    },
+    {
+      "index": 2,
+      "text": "キャッシュの読み取り半額、全体20%減、利用有無82%減は、何を比べていますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "5a63357ab3a8626661a0bed7acbe5ee46d4d94c24e2abdb0489709e6319959fb",
+      "audioSha256": "93da75cbafeecc49b8b6ca12c4daf5b9dbcf1d22f72a5326c1cca8d23c0aa1b0",
+      "durationSeconds": 8.205
+    },
+    {
+      "index": 3,
+      "text": "片付けや接続制限を変えるとき、何を先に確かめますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "e426d73fb3832d443c7e674f798bcce6ef935bc14dc06fdc38d3b76a6ac578c8",
+      "audioSha256": "459ae98d7f362650baee47fc34e3a1bac4a87dcef8ebf1320f9a587969b305b7",
+      "durationSeconds": 5.038
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-10T01:28:58.903Z"
+}
