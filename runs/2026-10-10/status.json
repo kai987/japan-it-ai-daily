@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-10",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
   "sourceWindow": {
     "from": "2026-10-09T10:00:00+09:00",
     "to": "2026-10-10T10:00:00+09:00"
   },
   "createdAt": "2026-10-10T01:00:58.134Z",
-  "updatedAt": "2026-10-10T01:20:00.109Z",
+  "updatedAt": "2026-10-10T01:20:23.430Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-10/sources.json",
@@ -53,14 +53,24 @@
     {
       "path": "runs/2026-10-10/drafts/src/data/interviews/2026-10-10.json",
       "blobSha": "898f345ca9540b90077bde1ff7ce866ddc8ddae2"
+    },
+    {
+      "path": "runs/2026-10-10/preflight.json",
+      "blobSha": "cb19795e507a0bc5e5f278c430eb6d4b5559bca7"
+    },
+    {
+      "path": "runs/2026-10-10/request.json",
+      "blobSha": "cb19795e507a0bc5e5f278c430eb6d4b5559bca7"
     }
   ],
   "lastError": null,
   "draftCommit": "088b3b1dab5f6b93406a2a276657f5ec7fe006e9",
   "draftBranch": "draft/daily-2026-10-10",
-  "resumeFrom": "preflight_passed",
-  "nextAction": "Submit complete source-bound request",
+  "resumeFrom": "publisher_queued",
+  "nextAction": "Wait for exact publisher, then final main Pages and live bytes",
   "preflightRunId": 38012523006,
   "preflightCommit": "088b3b1dab5f6b93406a2a276657f5ec7fe006e9",
-  "preflightUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38012523006"
+  "preflightUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38012523006",
+  "requestCommit": "2e147704b0331f6c6dbf0238724bc7d8b1a017ce",
+  "requestId": "codex-2026-10-10-7e144214-f924-48e1-bb8e-6ecd7990f70f"
 }
