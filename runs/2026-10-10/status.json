@@ -1,14 +1,63 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-10",
-  "stage": "locally_verified",
+  "stage": "drafts_ready",
   "sourceCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
   "sourceWindow": {
     "from": "2026-10-09T10:00:00+09:00",
     "to": "2026-10-10T10:00:00+09:00"
   },
   "createdAt": "2026-10-10T01:00:58.134Z",
-  "updatedAt": "2026-10-10T01:15:57.773Z",
-  "completedArtifacts": [],
-  "lastError": null
+  "updatedAt": "2026-10-10T01:19:34.910Z",
+  "completedArtifacts": [
+    {
+      "path": "runs/2026-10-10/sources.json",
+      "blobSha": "31dcc7a8f12993435f90a2a078557bdb7fff93f4"
+    },
+    {
+      "path": "runs/2026-10-10/history.json",
+      "blobSha": "043d399b35ae6715900e761965d5b25a8d2b0a7e"
+    },
+    {
+      "path": "runs/2026-10-10/interviews.json",
+      "blobSha": "898f345ca9540b90077bde1ff7ce866ddc8ddae2"
+    },
+    {
+      "path": "runs/2026-10-10/checks.json",
+      "blobSha": "5b6e24e1e3f57e4cc28963f94eba2b856dd735f2"
+    },
+    {
+      "path": "runs/2026-10-10/draft.json",
+      "blobSha": "9b83319f2440d836f8175ce23177bdaa7facbf53"
+    },
+    {
+      "path": "runs/2026-10-10/drafts/src/content/daily-ja/2026-10-10.md",
+      "blobSha": "4f6a24603ce866e19a03c0bc5abb062e2abb8ff2"
+    },
+    {
+      "path": "runs/2026-10-10/drafts/src/content/daily/2026-10-10.md",
+      "blobSha": "daef2b364f6931e1cc022e4c62c6cc91f8ac5508"
+    },
+    {
+      "path": "runs/2026-10-10/drafts/src/content/evidence/2026-10-10.json",
+      "blobSha": "29c5a803854977aa9f36cde337e63a3a24ab3430"
+    },
+    {
+      "path": "runs/2026-10-10/drafts/src/content/japanese-ja/2026-10-10.md",
+      "blobSha": "f82598df17d160c9ebdf987c423041ff9f6f920f"
+    },
+    {
+      "path": "runs/2026-10-10/drafts/src/content/japanese/2026-10-10.md",
+      "blobSha": "6d7710611842c323d051f50a8f13f3e4f5a34314"
+    },
+    {
+      "path": "runs/2026-10-10/drafts/src/data/interviews/2026-10-10.json",
+      "blobSha": "898f345ca9540b90077bde1ff7ce866ddc8ddae2"
+    }
+  ],
+  "lastError": null,
+  "draftCommit": "088b3b1dab5f6b93406a2a276657f5ec7fe006e9",
+  "draftBranch": "draft/daily-2026-10-10",
+  "resumeFrom": "drafts_ready",
+  "nextAction": "Verify exact draft deploy.yml CI"
 }
