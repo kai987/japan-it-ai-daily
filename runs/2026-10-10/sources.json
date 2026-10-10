@@ -1,0 +1,93 @@
+{
+  "targetDate": "2026-10-10",
+  "sourceCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
+  "sourceWindow": {
+    "from": "2026-10-09T10:00:00+09:00",
+    "to": "2026-10-10T10:00:00+09:00"
+  },
+  "discoveryScope": "Grouped searches considered all 20 preferred source names, plus Qiita homepage/organization and DevelopersIO articles. Results are partial indexed discovery, not complete 20-site crawling. Selected originals fully fetched and read.",
+  "preferredSourceNames": [
+    "Qiita",
+    "Zenn",
+    "Publickey",
+    "ITmedia AI＋",
+    "＠IT",
+    "CodeZine",
+    "gihyo.jp",
+    "DevelopersIO",
+    "TechFeed",
+    "はてなブックマーク・テクノロジー",
+    "ASCII × AI",
+    "AINOW",
+    "Ledge.ai",
+    "CyberAgent Developers Blog",
+    "LINEヤフー Tech Blog",
+    "Mercari Engineering",
+    "SmartHR Tech Blog",
+    "LayerX Engineering Blog",
+    "DeNA Engineering",
+    "Money Forward Developers Blog"
+  ],
+  "observedDiscoveryUrls": [
+    "https://qiita.com/",
+    "https://qiita.com/organizations/jqiit-co",
+    "https://www.itmedia.co.jp/aiplus/subtop/news",
+    "https://gihyo.jp/list/article/2026",
+    "https://ascii.jp/archive/ai/202610/",
+    "https://dev.classmethod.jp/en/"
+  ],
+  "selected": [
+    {
+      "url": "https://dev.classmethod.jp/articles/20261009-cc-updates-v2-1-295/",
+      "publishedAt": "2026-10-09T04:34:59.830Z",
+      "snapshotSha256": "fa2265b8a4aeeeecff45d7a33456940eaafde10171ff9dc74d4a9be52a3a02fa",
+      "capturedAt": "2026-10-10T01:04:43.116406+00:00",
+      "access": "full-text"
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/bedrock-sonnet-5-5-cache-read-price-cut/",
+      "publishedAt": "2026-10-09T10:59:43.431Z",
+      "snapshotSha256": "37ea33dd5a51ff058a3daad9d1b9dafe2f61a54fd3b02c92fa2a6022134bf12b",
+      "capturedAt": "2026-10-10T01:04:43.130056+00:00",
+      "access": "full-text"
+    },
+    {
+      "url": "https://qiita.com/ennagara128/items/6abdd7057d7b50dba194",
+      "publishedAt": "2026-10-09T13:22:32.000+09:00",
+      "snapshotSha256": "84933a3d3598a2d320d7141ef0415a35445403c04729059d5acc3327821a9c62",
+      "capturedAt": "2026-10-10T01:04:43.196898+00:00",
+      "access": "full-text"
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/aws-identity-store-network-controls/",
+      "publishedAt": "2026-10-09T04:37:31.110Z",
+      "snapshotSha256": "fff8ac88397d7ee3db55907d77f3a1fa8f4b872c74e3aa01fc18434e5083f7c5",
+      "capturedAt": "2026-10-10T01:04:43.083573+00:00",
+      "access": "full-text"
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/lambda-log-level-filtering-json-timestamp/",
+      "publishedAt": "2026-10-09T05:53:23.820Z",
+      "snapshotSha256": "05b53b0e4fb86125d61661b20d4b5c41d7713dc3bd1314300207e66d8ece6e69",
+      "capturedAt": "2026-10-10T01:04:43.083699+00:00",
+      "access": "full-text"
+    }
+  ],
+  "supplementalSpecifications": [
+    "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_NetworkConfiguration.html",
+    "https://docs.aws.amazon.com/lambda/latest/dg/monitoring-cloudwatchlogs-log-level.html",
+    "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html",
+    "https://eslint.org/docs/latest/rules/no-return-await"
+  ],
+  "excluded": [
+    {
+      "url": "https://qiita.com/suwa_nobu/items/837c03e66ba03ee636ea",
+      "reason": "JSON-LD datePublished 2026-10-08T09:41:23+09:00; dateModified 2026-10-09T09:33:47+09:00. Both before the frozen 10/9 10:00 window despite search excerpt claiming 10/9."
+    },
+    {
+      "reason": "All previous 10/9 Top 5 URLs excluded."
+    }
+  ],
+  "sourceCapturesDirectory": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-10/originals/",
+  "accessLimitations": "Web fetch errors on some DevelopersIO pages recovered by successful direct HTTP fetch. Search no-result entries are not proof of no updates. Aggregator/news/philosophy excerpts were not used as technical evidence."
+}
