@@ -1,4 +1,4 @@
-import { annotateAudioFileVersions, synchronizeAudioFileVersions } from './audio-file-versions.mjs';
+import { annotateAudioFileVersions, assertAudioFileVersion, audioFileSha256, synchronizeAudioFileVersions } from './audio-file-versions.mjs';
 import { parseInterview, parseReview } from './interview-audio-content.mjs';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -168,6 +168,7 @@ const previousAudioRecords = (manifest) => {
     if (item?.audio) {
       records.set(item.audio, {
         hash: item.audioHash,
+        sha256: item.audioSha256,
         text: item.text || '',
         durationSeconds: item.durationSeconds,
         durationStatus: item.durationStatus,
@@ -178,6 +179,7 @@ const previousAudioRecords = (manifest) => {
     if (item?.audio) {
       records.set(item.audio, {
         hash: item.audioHash,
+        sha256: item.audioSha256,
         text: item.text || '',
         durationSeconds: item.durationSeconds,
       });
@@ -206,6 +208,7 @@ let totalSkipped = 0;
 let totalMigrated = 0;
 let processedDates = 0;
 let previousAudioRecordsCache = new Map();
+const regenerated = new Map();
 
 for (const date of targetDates) {
   const contentPath = join(contentDir, `${date}.md`);
@@ -225,6 +228,12 @@ for (const date of targetDates) {
   const previousRecords = previousAudioRecords(previousManifest);
   previousAudioRecordsCache = previousRecords;
   const legacyConfigMatches = legacyManifestMatchesConfig(previousManifest);
+  if (!force) {
+    for (const [file, previous] of previousRecords) {
+      const path = join(outputDir, file);
+      if (existsSync(path) && previous.sha256 !== undefined) assertAudioFileVersion(path, previous.sha256);
+    }
+  }
 
   let questionIndex = 0;
   let answerIndex = 0;
@@ -252,19 +261,22 @@ for (const date of targetDates) {
       filePath: path,
       expectedHash,
       previousHash: previous?.hash,
+      previousSha256: previous?.sha256,
       legacyMatches,
     })) {
       skipped += 1;
       if (legacyMatches) migrated += 1;
       console.log(`SKIP ${file}${legacyMatches ? '  [cache migrated]' : '  [hash match]'}`);
-      return { audioHash: expectedHash, reused: true };
+      return { audioHash: expectedHash, audioSha256: previous.sha256, reused: true };
     }
 
     console.log(`${existsSync(path) ? 'REGEN' : 'GEN  '} ${file}  ${text}`);
     try {
       encodeMp3(await synthesize(text), path);
+      const audioSha256 = audioFileSha256(path);
+      regenerated.set(`${date}/${file}`, { previousSha256: previous?.sha256, sha256: audioSha256 });
       generated += 1;
-      return { audioHash: expectedHash, reused: false };
+      return { audioHash: expectedHash, audioSha256, reused: false };
     } catch (error) {
       fail(`${date}/${file} 生成失败：${error instanceof Error ? error.message : String(error)}`);
     }
@@ -274,7 +286,7 @@ for (const date of targetDates) {
     const index = item.type === 'question' ? ++questionIndex : ++answerIndex;
     const file = `interview-${item.type}-${pad(index)}.mp3`;
     const path = join(outputDir, file);
-    const { audioHash, reused } = await ensureAudio({
+    const { audioHash, audioSha256, reused } = await ensureAudio({
       file,
       path,
       text: item.text,
@@ -286,6 +298,7 @@ for (const date of targetDates) {
       text: item.text,
       audio: file,
       audioHash,
+      audioSha256,
       ...preservedDurationFields(file, reused, item.type),
     });
   }
@@ -294,7 +307,7 @@ for (const date of targetDates) {
     const index = ++reviewIndex;
     const file = `review-question-${pad(index)}.mp3`;
     const path = join(outputDir, file);
-    const { audioHash, reused } = await ensureAudio({
+    const { audioHash, audioSha256, reused } = await ensureAudio({
       file,
       path,
       text,
@@ -305,6 +318,7 @@ for (const date of targetDates) {
       text,
       audio: file,
       audioHash,
+      audioSha256,
       ...preservedDurationFields(file, reused, 'review'),
     });
   }
@@ -352,4 +366,4 @@ console.log(`Voice: ${speaker.name} / ${style.name} / ${STYLE_ID}`);
 console.log(`Speed: ${INTERVIEW_SPEED.toFixed(2)}`);
 console.log('========================================\n');
 // Refresh later review references if a source recording was regenerated.
-synchronizeAudioFileVersions(join(root, 'public', 'audio', 'japanese'));
+synchronizeAudioFileVersions(join(root, 'public', 'audio', 'japanese'), { regenerated });

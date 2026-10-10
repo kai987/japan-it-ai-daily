@@ -4,6 +4,8 @@ Authorized on 2026-09-29 for the existing local daily task, starting with report
 
 ## Scope and recovery
 
+The [fixed recovery entry](RECOVERY_COMMANDS.md) plans text/audio independently and runs explicit-date local audio through the existing gates, with frozen settings and atomic outside-Git progress. It does not substitute local success for R2, Pages or playback verification.
+
 Read this contract, the README audio section, the two generators, the audio validators, and `.github/workflows/sync-r2-audio.yml` before executing. Use the frozen publication `targetDate`, even after midnight or during recovery; never use `--latest`, `--all` or `--force` for the scheduled run. Generate learning words/examples, grammar examples, five interview questions/answers and three review recordings using the existing scripts. Reuse original-date review recordings and valid cached synthesis.
 
 After text publication is verified, record an audio checkpoint before N1 handoff or audio work. Keep per-date JSON under `/Users/paulasmith/.codex/automations/it-ai-codex/audio-progress/`, outside Git and separate from the publication status schema. Record targetDate, text source commit, hashes of the six source paths, stage, audio commit, workflow run IDs, manifest hashes, verification evidence, error and next step. Write atomically via a temporary file and rename. Stages: pending, generated, validated, pushed, r2_verified, pages_verified, playback_verified. Only completed checks advance stages.
