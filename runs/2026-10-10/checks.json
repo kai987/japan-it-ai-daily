@@ -115,5 +115,233 @@
       "exitCode": 0,
       "log": "/tmp/japan-daily-20261010/logs/15-evidence-check.log"
     }
-  ]
+  ],
+  "checkedDraftCommit": "088b3b1dab5f6b93406a2a276657f5ec7fe006e9",
+  "publicationChecks": [
+    {
+      "repository": "kai987/japan-it-ai-daily",
+      "runId": 38012523006,
+      "commit": "088b3b1dab5f6b93406a2a276657f5ec7fe006e9",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38012523006",
+      "jobs": [
+        {
+          "name": "build",
+          "conclusion": "success",
+          "completedAt": "2026-10-10T01:18:45Z",
+          "postDeploySteps": []
+        },
+        {
+          "name": "deploy",
+          "conclusion": "skipped",
+          "completedAt": "2026-10-10T01:18:45Z",
+          "postDeploySteps": []
+        }
+      ]
+    },
+    {
+      "repository": "kai987/japan-it-ai-daily",
+      "runId": 38012784977,
+      "commit": "2e147704b0331f6c6dbf0238724bc7d8b1a017ce",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38012784977",
+      "jobs": [
+        {
+          "name": "publish",
+          "conclusion": "success",
+          "completedAt": "2026-10-10T01:22:30Z",
+          "postDeploySteps": []
+        }
+      ]
+    },
+    {
+      "repository": "kai987/japan-it-ai-daily",
+      "runId": 38012928325,
+      "commit": "dc4e62c8b8f1eacddb955c17338b3372c0fc9848",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38012928325",
+      "jobs": [
+        {
+          "name": "build",
+          "conclusion": "success",
+          "completedAt": "2026-10-10T01:24:49Z",
+          "postDeploySteps": []
+        },
+        {
+          "name": "deploy",
+          "conclusion": "success",
+          "completedAt": "2026-10-10T01:26:01Z",
+          "postDeploySteps": [
+            {
+              "name": "Verify published snapshot and bilingual report bytes",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "repository": "kai987/japan-it-ai-daily",
+      "runId": 38013639960,
+      "commit": "90b7711085274aa64cd510a7de2e5971d3365750",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38013639960",
+      "jobs": [
+        {
+          "name": "sync",
+          "conclusion": "success",
+          "completedAt": "2026-10-10T01:35:29Z",
+          "postDeploySteps": []
+        }
+      ]
+    },
+    {
+      "repository": "kai987/japan-it-ai-daily",
+      "runId": 38013639951,
+      "commit": "90b7711085274aa64cd510a7de2e5971d3365750",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38013639951",
+      "jobs": [
+        {
+          "name": "build",
+          "conclusion": "success",
+          "completedAt": "2026-10-10T01:36:17Z",
+          "postDeploySteps": []
+        },
+        {
+          "name": "deploy",
+          "conclusion": "success",
+          "completedAt": "2026-10-10T01:36:44Z",
+          "postDeploySteps": [
+            {
+              "name": "Verify published snapshot and bilingual report bytes",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "repository": "kai987/Japanese-N1-Immersive-Sparring-Partner",
+      "runId": 38013585788,
+      "commit": "79252b9599369b3c0e5d6569d289044249739b22",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/kai987/Japanese-N1-Immersive-Sparring-Partner/actions/runs/38013585788",
+      "jobs": [
+        {
+          "name": "sync",
+          "conclusion": "success",
+          "completedAt": "2026-10-10T01:34:13Z",
+          "postDeploySteps": []
+        }
+      ]
+    },
+    {
+      "repository": "kai987/Japanese-N1-Immersive-Sparring-Partner",
+      "runId": 38013678906,
+      "commit": "f0699508b7da2ce3a18c2f3437c4f00031d21492",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/kai987/Japanese-N1-Immersive-Sparring-Partner/actions/runs/38013678906",
+      "jobs": [
+        {
+          "name": "build",
+          "conclusion": "success",
+          "completedAt": "2026-10-10T01:35:18Z",
+          "postDeploySteps": []
+        },
+        {
+          "name": "deploy",
+          "conclusion": "success",
+          "completedAt": "2026-10-10T01:35:34Z",
+          "postDeploySteps": [
+            {
+              "name": "Verify live target date",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "audioLocal": [
+    {
+      "name": "learning",
+      "status": "passed",
+      "completedAt": "2026-10-10T01:27:47.281Z"
+    },
+    {
+      "name": "interview",
+      "status": "passed",
+      "completedAt": "2026-10-10T01:28:47.370Z"
+    },
+    {
+      "name": "duration-write",
+      "status": "passed",
+      "completedAt": "2026-10-10T01:28:58.907Z"
+    },
+    {
+      "name": "audio:check",
+      "status": "passed",
+      "completedAt": "2026-10-10T01:29:10.661Z"
+    },
+    {
+      "name": "audio:integrity:check",
+      "status": "passed",
+      "completedAt": "2026-10-10T01:29:21.937Z"
+    },
+    {
+      "name": "audio:versions:check",
+      "status": "passed",
+      "completedAt": "2026-10-10T01:29:33.137Z"
+    },
+    {
+      "name": "audio:duration:check",
+      "status": "passed",
+      "completedAt": "2026-10-10T01:30:06.381Z"
+    }
+  ],
+  "audioAcceptance": {
+    "audioCommit": "90b7711085274aa64cd510a7de2e5971d3365750",
+    "recordings": 39,
+    "referencedRecordings": 61,
+    "answers": [
+      {
+        "index": 1,
+        "durationSeconds": 24.997,
+        "status": "ideal"
+      },
+      {
+        "index": 2,
+        "durationSeconds": 26.133,
+        "status": "ideal"
+      },
+      {
+        "index": 3,
+        "durationSeconds": 26.982,
+        "status": "ideal"
+      },
+      {
+        "index": 4,
+        "durationSeconds": 26.272,
+        "status": "ideal"
+      },
+      {
+        "index": 5,
+        "durationSeconds": 28.572,
+        "status": "ideal"
+      }
+    ],
+    "playbackTests": 10,
+    "workflowRunIds": {
+      "r2": 38013639960,
+      "pages": 38013639951
+    }
+  }
 }
