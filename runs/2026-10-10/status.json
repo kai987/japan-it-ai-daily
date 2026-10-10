@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-10",
-  "stage": "publisher_queued",
+  "stage": "deploying",
   "sourceCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
   "sourceWindow": {
     "from": "2026-10-09T10:00:00+09:00",
     "to": "2026-10-10T10:00:00+09:00"
   },
   "createdAt": "2026-10-10T01:00:58.134Z",
-  "updatedAt": "2026-10-10T01:20:23.430Z",
+  "updatedAt": "2026-10-10T01:26:46.910Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-10/sources.json",
@@ -72,5 +72,11 @@
   "preflightCommit": "088b3b1dab5f6b93406a2a276657f5ec7fe006e9",
   "preflightUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38012523006",
   "requestCommit": "2e147704b0331f6c6dbf0238724bc7d8b1a017ce",
-  "requestId": "codex-2026-10-10-7e144214-f924-48e1-bb8e-6ecd7990f70f"
+  "requestId": "codex-2026-10-10-7e144214-f924-48e1-bb8e-6ecd7990f70f",
+  "publisherRunId": 38012784977,
+  "releaseCommit": "dc4e62c8b8f1eacddb955c17338b3372c0fc9848",
+  "sixDraftBytesEqual": true,
+  "pagesRunId": 38012928325,
+  "pagesStatus": "in_progress",
+  "verifiedAt": "2026-10-10T01:23:19.288Z"
 }
