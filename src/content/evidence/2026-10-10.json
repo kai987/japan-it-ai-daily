@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-10",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-10T01:13:44.478Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-10-top-1",
+      "url": "https://dev.classmethod.jp/articles/20261009-cc-updates-v2-1-295/",
+      "originalTitle": "Claude Code v2.1.294〜v2.1.295 の主要アップデート - hooks の onFailure: \"block\" 追加と OSC 7501 対応",
+      "source": "DevelopersIO",
+      "topic": "AI Agent／開発ツール",
+      "access": "full",
+      "accessNote": "原文全文を取得・読了。測定値は著者の報告であり、当方による再実験ではありません。",
+      "publishedAt": "2026-10-09T04:34:59.830Z",
+      "capturedAt": "2026-10-10T01:04:43.116406+00:00",
+      "snapshotSha256": "043210c7efb53428861d0b56600047119db6b4192baf5f310a5e4a4979519a7a",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "同じ exit 1 のフックで設定なしは回答あり、block は回答なし。本体終了コードは両方0。",
+          "quote": "onFailure: \"block\"",
+          "locator": "hooks の onFailure を試してみた／Step 2–5",
+          "conditions": "Claude Code 2.1.295、空の作業ディレクトリ、UserPromptSubmit の command=exit 1。起動失敗・タイムアウト・HTTP hooks は未検証。",
+          "usedIn": {
+            "zh": "onFailure",
+            "ja": "onFailure",
+            "interview": "onFailure"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "状態表示には端末のプロトコル対応が必要。",
+          "quote": "OSC 7501",
+          "locator": "注目のアップデート",
+          "conditions": "Claude Code 2.1.295、空の作業ディレクトリ、UserPromptSubmit の command=exit 1。起動失敗・タイムアウト・HTTP hooks は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "安全確認の故障時の扱いと、処理の終了・操作の成立を分ける考え方を学べます。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "同一フックの失敗を「許可」に流さない設計と、実行終了・操作成立を分けて確認する観点を学べる。",
+            "ja": "安全確認の故障時の扱いと、処理の終了・操作の成立を分ける考え方を学べます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-10-top-2",
+      "url": "https://dev.classmethod.jp/articles/bedrock-sonnet-5-5-cache-read-price-cut/",
+      "originalTitle": "Claude Sonnet 5.5 で cache read 価格が半額に改定、値下げ効果を実測してみた",
+      "source": "DevelopersIO",
+      "topic": "AI／クラウド費用",
+      "access": "full",
+      "accessNote": "原文全文を取得・読了。測定値は著者の報告であり、当方による再実験ではありません。",
+      "publishedAt": "2026-10-09T10:59:43.431Z",
+      "capturedAt": "2026-10-10T01:04:43.130056+00:00",
+      "snapshotSha256": "960cfb737a2697a2d4ed08433aff2e5809773e1e301e8cc684338634eb222cc9",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "system と最新ユーザーメッセージの末尾にチェックポイントを置いた。",
+          "quote": "cachePoint",
+          "locator": "Converse API でのキャッシュ利用",
+          "conditions": "us-east-1、Global Sonnet 5.5、約16400トークンの固定文書、履歴付き20問、maxTokens=300、5分TTL。費用は使用量×公開単価の計算。",
+          "usedIn": {
+            "zh": "cachePoint",
+            "ja": "cachePoint",
+            "interview": "cachePoint"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "同じ実測用量を旧新単価で計算し、0.1750ドルから0.1399ドル。",
+          "quote": "20.0%",
+          "locator": "チャットの費用の実測／値下げの効果",
+          "conditions": "us-east-1、Global Sonnet 5.5、約16400トークンの固定文書、履歴付き20問、maxTokens=300、5分TTL。費用は使用量×公開単価の計算。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "別の無キャッシュ実行0.7950ドルと比較した値で、料金改定の20%とは別。",
+          "quote": "82%",
+          "locator": "キャッシュあり・なし",
+          "conditions": "us-east-1、Global Sonnet 5.5、約16400トークンの固定文書、履歴付き20問、maxTokens=300、5分TTL。費用は使用量×公開単価の計算。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "読み取り単価と会話全体の費用を区別し、比較の基準をそろえる練習になります。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "用真实 token 分类与费用公式说明“半价”怎样转换为整个会话的节省，避免混淆两个比较基准。",
+            "ja": "読み取り単価と会話全体の費用を区別し、比較の基準をそろえる練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-10-top-3",
+      "url": "https://qiita.com/ennagara128/items/6abdd7057d7b50dba194",
+      "originalTitle": "return await は付けても付けなくても同じ？ try の中では catch と finally の動きが変わる",
+      "source": "Qiita",
+      "topic": "フロントエンド／JavaScript",
+      "access": "full",
+      "accessNote": "原文全文を取得・読了。測定値は著者の報告であり、当方による再実験ではありません。",
+      "publishedAt": "2026-10-09T13:22:32.000+09:00",
+      "capturedAt": "2026-10-10T01:04:43.196898+00:00",
+      "snapshotSha256": "7152884e8b4016ede039be6aac860094afbdbe1c625de41214affabc3a32ee33",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "try内の拒否をcatchで捕捉し、finallyは処理完了後に実行した。",
+          "quote": "return await",
+          "locator": "Q2／Q3",
+          "conditions": "Node.js 24.14.1、.mjs、10msでreject/resolveするPromise。スタックの差はawait nullやI/O条件に依存。速度ベンチマークではない。",
+          "usedIn": {
+            "zh": "return await",
+            "ja": "return await",
+            "interview": "return await"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "実験版を固定。fetch失敗ではどちらも外側の名前がスタックに出なかった。",
+          "quote": "Node.js v24.14.1",
+          "locator": "導入／Q4",
+          "conditions": "Node.js 24.14.1、.mjs、10msでreject/resolveするPromise。スタックの差はawait nullやI/O条件に依存。速度ベンチマークではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "保存中の表示や例外処理について、書き方と実際の順番を結び付けて説明できます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "直接关联前端保存按钮、加载状态和异常处理，能把语法选择与可观察行为联系起来。",
+            "ja": "保存中の表示や例外処理について、書き方と実際の順番を結び付けて説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-10-top-4",
+      "url": "https://dev.classmethod.jp/articles/aws-identity-store-network-controls/",
+      "originalTitle": "[アップデート] IAM Identity Center の Identity Store API にネットワーク制限をかけられるようになりました",
+      "source": "DevelopersIO",
+      "topic": "クラウド／認証基盤",
+      "access": "full",
+      "accessNote": "原文全文を取得・読了。測定値は著者の報告であり、当方による再実験ではありません。",
+      "publishedAt": "2026-10-09T04:37:31.110Z",
+      "capturedAt": "2026-10-10T01:04:43.083573+00:00",
+      "snapshotSha256": "d43cf1b716f12f58d50519f93ef888af088cafe3d44de871a7eec1003b65bfea",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "許可IPは他のAPIネットワーク制限の例外となる。許可元のListUsers成功、不許可元はAccessDeniedException。",
+          "quote": "ApiAllowSourceIps",
+          "locator": "使い方／実際に設定してみる",
+          "conditions": "Organizations管理アカウント、us-east-1、Identity Store API。IP例示値は実環境の実値ではない。SCIM／VPC endpoint一連試験は未報告。",
+          "usedIn": {
+            "zh": "ApiAllowSourceIps",
+            "ja": "ApiAllowSourceIps",
+            "interview": "ApiAllowSourceIps"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "自分を除外する変更と、falseのままリストを設定する変更が拒否された。",
+          "quote": "ValidationException",
+          "locator": "自分のIPを除外しようとするとロックアウト防止で拒否された",
+          "conditions": "Organizations管理アカウント、us-east-1、Identity Store API。IP例示値は実環境の実値ではない。SCIM／VPC endpoint一連試験は未報告。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "許可リストの組み合わせと、管理経路を失わないためのエラーを具体的に説明できます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "说明允许列表之间并非简单取交集，并有可观察的锁出保护错误，适合解释真实授权边界。",
+            "ja": "許可リストの組み合わせと、管理経路を失わないためのエラーを具体的に説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-10-top-5",
+      "url": "https://dev.classmethod.jp/articles/lambda-log-level-filtering-json-timestamp/",
+      "originalTitle": "AWS Lambdaで自前JSONログがINFO扱いになる仕様と対処法",
+      "source": "DevelopersIO",
+      "topic": "クラウド／運用",
+      "access": "full",
+      "accessNote": "原文全文を取得・読了。測定値は著者の報告であり、当方による再実験ではありません。",
+      "publishedAt": "2026-10-09T05:53:23.820Z",
+      "capturedAt": "2026-10-10T01:04:43.083699+00:00",
+      "snapshotSha256": "30ebc95290bdb16bc4a891e646a79272b0519ad00ecd50bcf77fa321fea7e949",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "日時が無効または欠落なら、level=errorでもINFOにして日時を付与する。",
+          "quote": "RFC 3339",
+          "locator": "自前で JSON を出力する場合は level と timestamp が必須",
+          "conditions": "JSONログ形式、自前stdout/stderr、timestampが無効・欠落。標準サポートロガーとは区別。公式規則と入力例であり、反復試験や費用統計ではない。",
+          "usedIn": {
+            "zh": "RFC 3339",
+            "ja": "RFC 3339",
+            "interview": "RFC 3339"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Unix秒の例ではWARN閾値で転送されず、逆にDEBUGがINFOとなれば転送される場合がある。",
+          "quote": "1790000000",
+          "locator": "INFO 扱いになると何が起きるか",
+          "conditions": "JSONログ形式、自前stdout/stderr、timestampが無効・欠落。標準サポートロガーとは区別。公式規則と入力例であり、反復試験や費用統計ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "出力、解析、転送、監視を分け、なぜエラーが見えなくなるのかを具体的に追えます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "在应用已输出日志与 CloudWatch 已收到之间补上解析和过滤阶段，能解释为什么监控无告警。",
+            "ja": "出力、解析、転送、監視を分け、なぜエラーが見えなくなるのかを具体的に追えます。"
+          }
+        }
+      ]
+    }
+  ]
+}
