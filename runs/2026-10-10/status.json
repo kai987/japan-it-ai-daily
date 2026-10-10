@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-10",
-  "stage": "deploying",
+  "stage": "published",
   "sourceCommit": "797ef71eb815c8c473eb2a6bab2f5e8ad281e557",
   "sourceWindow": {
     "from": "2026-10-09T10:00:00+09:00",
     "to": "2026-10-10T10:00:00+09:00"
   },
   "createdAt": "2026-10-10T01:00:58.134Z",
-  "updatedAt": "2026-10-10T01:26:46.910Z",
+  "updatedAt": "2026-10-10T01:26:55.026Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-10/sources.json",
@@ -61,13 +61,17 @@
     {
       "path": "runs/2026-10-10/request.json",
       "blobSha": "cb19795e507a0bc5e5f278c430eb6d4b5559bca7"
+    },
+    {
+      "path": "runs/2026-10-10/publication-verification.json",
+      "sha256": "b489da873e1ca15290a539c19ff45756bf98997358603132d82655ec7eb29165"
     }
   ],
   "lastError": null,
   "draftCommit": "088b3b1dab5f6b93406a2a276657f5ec7fe006e9",
   "draftBranch": "draft/daily-2026-10-10",
-  "resumeFrom": "publisher_queued",
-  "nextAction": "Wait for exact publisher, then final main Pages and live bytes",
+  "resumeFrom": "published",
+  "nextAction": "Complete independent audio and one-time N1 handoff",
   "preflightRunId": 38012523006,
   "preflightCommit": "088b3b1dab5f6b93406a2a276657f5ec7fe006e9",
   "preflightUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38012523006",
@@ -78,5 +82,116 @@
   "sixDraftBytesEqual": true,
   "pagesRunId": 38012928325,
   "pagesStatus": "in_progress",
-  "verifiedAt": "2026-10-10T01:23:19.288Z"
+  "verifiedAt": "2026-10-10T01:23:19.288Z",
+  "publishedAt": "2026-10-10T01:26:19.707Z",
+  "verification": {
+    "label": "text",
+    "runId": 38012928325,
+    "releaseCommit": "dc4e62c8b8f1eacddb955c17338b3372c0fc9848",
+    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38012928325",
+    "artifacts": [
+      {
+        "id": 11655191240,
+        "name": "github-pages",
+        "digest": "sha256:5086174b3d759f0e5f1caef84ec3c9c9808390549ed6f0994502f1a1e3b13074"
+      },
+      {
+        "id": 11655176231,
+        "name": "it-study-snapshot",
+        "digest": "sha256:cafeb7a022b14961eee88d8e3118a70d19d1adb95a4b8ac0c965c7e78ee3fa03"
+      }
+    ],
+    "sourceCommit": "dc4e62c8b8f1eacddb955c17338b3372c0fc9848",
+    "targetDate": "2026-10-10",
+    "totalDays": 60,
+    "issueNumber": 60,
+    "grammarLessonDates": [
+      "2026-08-12",
+      "2026-08-13",
+      "2026-08-14",
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19",
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-22",
+      "2026-08-23",
+      "2026-08-24",
+      "2026-08-25",
+      "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-08-31",
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03",
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-19",
+      "2026-09-20",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-27",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30",
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-04",
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-07",
+      "2026-10-08",
+      "2026-10-09",
+      "2026-10-10"
+    ],
+    "fullSnapshotCompared": true,
+    "snapshotHash": "b489da873e1ca15290a539c19ff45756bf98997358603132d82655ec7eb29165",
+    "expected": {
+      "version": 1,
+      "commit": "dc4e62c8b8f1eacddb955c17338b3372c0fc9848",
+      "date": "2026-10-10",
+      "snapshotHash": "b489da873e1ca15290a539c19ff45756bf98997358603132d82655ec7eb29165",
+      "pages": [
+        {
+          "path": "daily/2026-10-10/",
+          "sha256": "4e12a013fadf6f62d90f1e0549fe0c6eeb1f66a08d2ad89104f4f33b82720be4"
+        },
+        {
+          "path": "ja/daily/2026-10-10/",
+          "sha256": "63855c3efc3c69bc3cb46695ca4735b969307d72d760c31af2b90a3b88daa1bd"
+        }
+      ]
+    },
+    "live": {
+      "commit": "dc4e62c8b8f1eacddb955c17338b3372c0fc9848",
+      "date": "2026-10-10",
+      "attempt": 1
+    },
+    "verifiedAt": "2026-10-10T01:26:19.707Z",
+    "site": "/tmp/japan-daily-20261010/text-release-38012928325/site"
+  },
+  "sourcePagesRunId": 38012928325
 }
