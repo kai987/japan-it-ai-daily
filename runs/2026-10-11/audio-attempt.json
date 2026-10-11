@@ -1,0 +1,60 @@
+{
+  "targetDate": "2026-10-11",
+  "textSourceCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
+  "stage": "generated",
+  "error": {
+    "stage": "duration-write",
+    "message": "  WARN: answer 1: actual 23.22s is outside ideal range 24–34s\n  WARN: answer 5: actual 22.75s is outside ideal range 24–34s\n  ERROR: answer 2: actual 21.36s is outside hard range 22–40s\n  ERROR: answer 3: actual 19.25s is outside hard range 22–40s\n  ERROR: answer 4: actual 20.63s is outside hard range 22–40s\n",
+    "at": "2026-10-11T01:34:17.008Z",
+    "kind": "deterministic_actual_duration_below_hard_min",
+    "failedAnswers": [
+      {
+        "index": 2,
+        "seconds": 21.362,
+        "status": "fail"
+      },
+      {
+        "index": 3,
+        "seconds": 19.252,
+        "status": "fail"
+      },
+      {
+        "index": 4,
+        "seconds": 20.629,
+        "status": "fail"
+      }
+    ]
+  },
+  "answers": [
+    {
+      "index": 1,
+      "seconds": 23.219,
+      "status": "warn"
+    },
+    {
+      "index": 2,
+      "seconds": 21.362,
+      "status": "fail"
+    },
+    {
+      "index": 3,
+      "seconds": 19.252,
+      "status": "fail"
+    },
+    {
+      "index": 4,
+      "seconds": 20.629,
+      "status": "fail"
+    },
+    {
+      "index": 5,
+      "seconds": 22.755,
+      "status": "warn"
+    }
+  ],
+  "newMP3": 39,
+  "audioCommit": null,
+  "R2Verified": false,
+  "playbackVerified": false,
+  "nextStep": "Await explicit authorization for source-bound three-answer correction and isolated trial; preserve existing source hashes, speed 1.00 and all recordings. Do not upload or repeat unchanged synthesis."
+}
