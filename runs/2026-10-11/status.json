@@ -8,11 +8,15 @@
     "to": "2026-10-11T10:00:00+09:00"
   },
   "createdAt": "2026-10-11T01:06:38.086Z",
-  "updatedAt": "2026-10-11T01:32:03.938Z",
+  "updatedAt": "2026-10-11T01:38:38.789Z",
   "completedArtifacts": [
     {
+      "path": "runs/2026-10-11/audio-attempt.json",
+      "blobSha": "651a2eb67cb6516fc014faea9eb2c1e8641b703f"
+    },
+    {
       "path": "runs/2026-10-11/checks.json",
-      "blobSha": "9a62ebe948fe0e0e37a7240bc492eaaff765b4a1"
+      "blobSha": "a5a84c43f9ea4f52a59c85352731e616367780a2"
     },
     {
       "path": "runs/2026-10-11/draft-commit.json",
@@ -59,13 +63,21 @@
       "blobSha": "baeb79f2258e236321bb3eb4a825685d3c5351db"
     },
     {
+      "path": "runs/2026-10-11/publication-verification.json",
+      "blobSha": "1f99d81fb832cb1354e6d4c50c6f6530fd89d2c5"
+    },
+    {
+      "path": "runs/2026-10-11/request.json",
+      "blobSha": "a6bb3da758b9d639ce8c879eaeda154f740c5e54"
+    },
+    {
       "path": "runs/2026-10-11/sources.json",
       "blobSha": "1ef4620e987c552c5b1ddcbeff3c3063e2f48655"
     }
   ],
   "lastError": null,
   "resumeFrom": "published",
-  "nextAction": "Persist audio pending; release text lease and attempt independent N1/audio followups",
+  "nextAction": "Await explicit authorization for source-bound three-answer correction and isolated trial; preserve existing source hashes, speed 1.00 and all recordings. Do not upload or repeat unchanged synthesis.",
   "baseCommit": "90b7711085274aa64cd510a7de2e5971d3365750",
   "draftCommit": "26e2ebbea50bb0b3193fc79ecfe8089234d6fb9f",
   "draftBranch": "draft/daily-2026-10-11",
@@ -237,5 +249,65 @@
     "nextStep": "Existing N1 11:00/12:00 entrypoints resume after exact original/outbox becomes available.",
     "updatedAt": "2026-10-11T01:32:01.920Z"
   },
-  "n1ProgressBlob": "735a7bfffdf76578efb74ef437ccd362fc277751"
+  "n1ProgressBlob": "735a7bfffdf76578efb74ef437ccd362fc277751",
+  "latestVerifiedMainCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
+  "audioStatus": "generated",
+  "audioCommit": null,
+  "audioError": {
+    "stage": "duration-write",
+    "message": "  WARN: answer 1: actual 23.22s is outside ideal range 24–34s\n  WARN: answer 5: actual 22.75s is outside ideal range 24–34s\n  ERROR: answer 2: actual 21.36s is outside hard range 22–40s\n  ERROR: answer 3: actual 19.25s is outside hard range 22–40s\n  ERROR: answer 4: actual 20.63s is outside hard range 22–40s\n",
+    "at": "2026-10-11T01:34:17.008Z",
+    "kind": "deterministic_actual_duration_below_hard_min",
+    "failedAnswers": [
+      {
+        "index": 2,
+        "seconds": 21.362,
+        "status": "fail"
+      },
+      {
+        "index": 3,
+        "seconds": 19.252,
+        "status": "fail"
+      },
+      {
+        "index": 4,
+        "seconds": 20.629,
+        "status": "fail"
+      }
+    ]
+  },
+  "audioSummary": {
+    "newMP3": 39,
+    "uploaded": false,
+    "R2Verified": false,
+    "playbackVerified": false,
+    "answers": [
+      {
+        "index": 1,
+        "seconds": 23.219,
+        "status": "warn"
+      },
+      {
+        "index": 2,
+        "seconds": 21.362,
+        "status": "fail"
+      },
+      {
+        "index": 3,
+        "seconds": 19.252,
+        "status": "fail"
+      },
+      {
+        "index": 4,
+        "seconds": 20.629,
+        "status": "fail"
+      },
+      {
+        "index": 5,
+        "seconds": 22.755,
+        "status": "warn"
+      }
+    ]
+  },
+  "followupRecordedAt": "2026-10-11T01:38:38.400Z"
 }
