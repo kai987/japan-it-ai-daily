@@ -1,0 +1,95 @@
+{
+  "targetDate": "2026-10-11",
+  "sourceWindow": {
+    "from": "2026-10-10T10:00:00+09:00",
+    "to": "2026-10-11T10:00:00+09:00"
+  },
+  "articles": [
+    {
+      "articleId": "2026-10-11-top-1",
+      "title": "Claude Code v2.1.296 の主要アップデート - サブエージェントの autoCompactWindow と Read の allow_large 追加",
+      "url": "https://dev.classmethod.jp/articles/20261010-cc-updates-v2-1-296/",
+      "publishedAt": "2026-10-10T08:00:13.653Z",
+      "access": "full",
+      "capturedAt": "2026-10-11T01:07:52.079202+00:00",
+      "snapshotSha256": "6caf94d290aa7e1410c556fea4c4c9af6fda70219e1723ca507fd122f3f312b1",
+      "stage": "original_read",
+      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。"
+    },
+    {
+      "articleId": "2026-10-11-top-2",
+      "title": "OpenAI の Decisions API に書類の種類を分類させて Clef と比べてみた",
+      "url": "https://dev.classmethod.jp/articles/openai-decisions-doc-classification/",
+      "publishedAt": "2026-10-10T01:07:41.387Z",
+      "access": "full",
+      "capturedAt": "2026-10-11T01:07:52.079337+00:00",
+      "snapshotSha256": "e36569404ee75bd8cdeaf3e4fe6281bce33ce39dfdb83db3d9fa348a026baf7b",
+      "stage": "original_read",
+      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。"
+    },
+    {
+      "articleId": "2026-10-11-top-3",
+      "title": "WAF でブロックする前に確かめていること",
+      "url": "https://zenn.dev/azunyan/articles/7a105969d7d16c",
+      "publishedAt": "2026-10-10T12:17:20.541+09:00",
+      "access": "full",
+      "capturedAt": "2026-10-11T01:07:52.130166+00:00",
+      "snapshotSha256": "119b71585b9a50f79dd9961710daf9070358c5d7a5e6da5a881fb72077acdda3",
+      "stage": "original_read",
+      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。"
+    },
+    {
+      "articleId": "2026-10-11-top-4",
+      "title": "[アップデート] Route 53 Global Resolver DNS Firewall に 分析タブが追加されたので確認してみた",
+      "url": "https://dev.classmethod.jp/articles/route-53-dns-analytics-insights/",
+      "publishedAt": "2026-10-10T09:07:32.424Z",
+      "access": "full",
+      "capturedAt": "2026-10-11T01:07:52.113265+00:00",
+      "snapshotSha256": "d6dca28b45fa07eced4ce7a3585b8e4f06bec16b32295c91e0649cb265cd8d4c",
+      "stage": "original_read",
+      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。"
+    },
+    {
+      "articleId": "2026-10-11-top-5",
+      "title": "GitHub ActionsのOIDCでAWS認証が通らない時にsubクレームを確認して信頼ポリシーを直してみた",
+      "url": "https://dev.classmethod.jp/articles/try-github-actions-oidc-immutable-subject-claim/",
+      "publishedAt": "2026-10-10T06:43:42.212Z",
+      "access": "full",
+      "capturedAt": "2026-10-11T01:07:52.113298+00:00",
+      "snapshotSha256": "94aef23ff2742aff478fc036ca6d51e112ff5433a554564c84cdbed96041cb9f",
+      "stage": "original_read",
+      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。"
+    }
+  ],
+  "discovery": {
+    "scope": "20 preferred source names considered in grouped indexed queries; not a full crawl of every website.",
+    "sourcesConsidered": [
+      "Qiita",
+      "Zenn",
+      "Publickey",
+      "ITmedia AI＋",
+      "＠IT",
+      "CodeZine",
+      "gihyo.jp",
+      "DevelopersIO",
+      "TechFeed",
+      "はてなブックマーク・テクノロジー",
+      "ASCII × AI",
+      "AINOW",
+      "Ledge.ai",
+      "CyberAgent Developers Blog",
+      "LINEヤフー Tech Blog",
+      "Mercari Engineering",
+      "SmartHR Tech Blog",
+      "LayerX Engineering Blog",
+      "DeNA Engineering",
+      "Money Forward Developers Blog"
+    ],
+    "exclusions": [
+      "Prior report Top 5 excluded.",
+      "Cost Explorer Bedrock product attributes was 2026-10-10 01:28 JST, before source window.",
+      "Next.js AI code security article was 2026-10-10 05:27 JST, before source window."
+    ],
+    "limitations": "Queries returned limited indexed results for several publishers. No assertion of exhaustive scan or site-specific absence."
+  }
+}
