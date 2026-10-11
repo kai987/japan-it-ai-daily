@@ -8,7 +8,7 @@
     "to": "2026-10-11T10:00:00+09:00"
   },
   "createdAt": "2026-10-11T01:06:38.086Z",
-  "updatedAt": "2026-10-11T01:38:38.789Z",
+  "updatedAt": "2026-10-11T05:59:11.067Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-11/audio-attempt.json",
@@ -77,7 +77,7 @@
   ],
   "lastError": null,
   "resumeFrom": "published",
-  "nextAction": "Await explicit authorization for source-bound three-answer correction and isolated trial; preserve existing source hashes, speed 1.00 and all recordings. Do not upload or repeat unchanged synthesis.",
+  "nextAction": "Submit the verified three-answer repair through the unique publisher; preserve prior text release until new Pages verification",
   "baseCommit": "90b7711085274aa64cd510a7de2e5971d3365750",
   "draftCommit": "26e2ebbea50bb0b3193fc79ecfe8089234d6fb9f",
   "draftBranch": "draft/daily-2026-10-11",
@@ -309,5 +309,64 @@
       }
     ]
   },
-  "followupRecordedAt": "2026-10-11T01:38:38.400Z"
+  "followupRecordedAt": "2026-10-11T01:38:38.400Z",
+  "repair": {
+    "stage": "request_ready",
+    "request": {
+      "schemaVersion": 1,
+      "requestId": "codex-2026-10-11-d1acee9f-dbe6-4b88-b02f-f2cb4923340d",
+      "targetDate": "2026-10-11",
+      "baseCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
+      "draftCommit": "267c64fc522c5486a818bb4e0bdfa3a9a559a612",
+      "draftBranch": "draft/daily-2026-10-11",
+      "preflightRunId": 38116379084,
+      "preflightWorkflowPath": ".github/workflows/deploy.yml",
+      "requestedAt": "2026-10-11T05:58:43.025Z",
+      "files": [
+        "src/content/daily/2026-10-11.md",
+        "src/content/japanese/2026-10-11.md",
+        "src/content/daily-ja/2026-10-11.md",
+        "src/content/japanese-ja/2026-10-11.md",
+        "src/content/evidence/2026-10-11.json",
+        "src/data/interviews/2026-10-11.json"
+      ],
+      "platformRepair": false,
+      "platformRepairPaths": []
+    },
+    "draft": {
+      "targetDate": "2026-10-11",
+      "baseCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
+      "draftCommit": "267c64fc522c5486a818bb4e0bdfa3a9a559a612",
+      "draftBranch": "draft/daily-2026-10-11",
+      "changedFiles": [
+        "src/content/daily-ja/2026-10-11.md",
+        "src/content/daily/2026-10-11.md",
+        "src/data/interviews/2026-10-11.json"
+      ],
+      "requiredFiles": [
+        "src/content/daily/2026-10-11.md",
+        "src/content/japanese/2026-10-11.md",
+        "src/content/daily-ja/2026-10-11.md",
+        "src/content/japanese-ja/2026-10-11.md",
+        "src/content/evidence/2026-10-11.json",
+        "src/data/interviews/2026-10-11.json"
+      ],
+      "hashes": {
+        "src/content/daily/2026-10-11.md": "dcd72e2ad157628e3132a5160af52773b3a0f8ccc074610bcd08dd019ca687fe",
+        "src/content/japanese/2026-10-11.md": "a7445a58e098cdf2644bdcde33f1997172baf3672c8b17124741539b6e578a0e",
+        "src/content/daily-ja/2026-10-11.md": "8fb159aad930fdca34faa314cf0546507d38b566a73a079448a92fa8afbaa4ee",
+        "src/content/japanese-ja/2026-10-11.md": "61296e02b96e93d84328f3cbc1556f5c4b0176fc9131e8652bf92d847378b188",
+        "src/content/evidence/2026-10-11.json": "0d0a66380e9078d93928fe9be0dd598d41bf045ba270c0fe0996104c95abf976",
+        "src/data/interviews/2026-10-11.json": "5b6002d1493ccdbd57024515ea09557965358d59d3ece1c56bb54064ae5766e9"
+      },
+      "audioExcluded": true,
+      "completeMainAncestor": true,
+      "normalFastForwardDraftPush": true,
+      "committedAt": "2026-10-11T05:55:42.534Z"
+    },
+    "trialAudioPassed": true,
+    "preflightRunId": 38116379084,
+    "previousVerifiedTextCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
+    "updatedAt": "2026-10-11T05:59:02.798635+00:00"
+  }
 }
