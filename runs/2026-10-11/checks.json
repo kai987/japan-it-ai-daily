@@ -115,5 +115,23 @@
       "exitCode": 0,
       "log": "/tmp/japan-daily-20261011/logs/15-evidence-check.log"
     }
-  ]
+  ],
+  "finalByteChange": {
+    "kind": "trailing blank line at EOF only",
+    "paths": [
+      "src/content/daily/2026-10-11.md",
+      "src/content/daily-ja/2026-10-11.md"
+    ],
+    "allTrimmedBytesEqual": true,
+    "diffCheckPassed": true,
+    "hashes": {
+      "src/content/daily/2026-10-11.md": "e663dcc52e50b01f9f4002f9f908f1609f3b4eba5757cf894ece3c88f6931cb8",
+      "src/content/japanese/2026-10-11.md": "a7445a58e098cdf2644bdcde33f1997172baf3672c8b17124741539b6e578a0e",
+      "src/content/daily-ja/2026-10-11.md": "745e27d0df67e487cc69e4399d261a1a63f17452fc254c84e0e62aec33ef8efa",
+      "src/content/japanese-ja/2026-10-11.md": "61296e02b96e93d84328f3cbc1556f5c4b0176fc9131e8652bf92d847378b188",
+      "src/content/evidence/2026-10-11.json": "0d0a66380e9078d93928fe9be0dd598d41bf045ba270c0fe0996104c95abf976",
+      "src/data/interviews/2026-10-11.json": "47153d1dd858717cda28f9d10e3e9b46e7c44436a831e940584a3457ad2aabc7"
+    },
+    "verifiedAt": "2026-10-11T01:21:16.031Z"
+  }
 }
