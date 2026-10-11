@@ -1,0 +1,44 @@
+{
+  "manifestHashes": {
+    "public/audio/japanese/2026-10-11/manifest.json": "8319622d3c589685cb887fbe30ebfdb58581ef0d2eafbfdcf53f5e04adfc243d",
+    "public/audio/japanese/2026-10-11/interview-manifest.json": "8e37c340e46255edc3d6d104e0be037fa70bcf390b4232e5c6c3037a63649197"
+  },
+  "localVerification": {
+    "newRecordings": 39,
+    "referencedRecordings": 58,
+    "wordCards": 20,
+    "grammarCards": 5,
+    "answers": [
+      {
+        "index": 1,
+        "durationSeconds": 23.219,
+        "status": "warn"
+      },
+      {
+        "index": 2,
+        "durationSeconds": 28.269,
+        "status": "ideal"
+      },
+      {
+        "index": 3,
+        "durationSeconds": 25.587,
+        "status": "ideal"
+      },
+      {
+        "index": 4,
+        "durationSeconds": 27.491,
+        "status": "ideal"
+      },
+      {
+        "index": 5,
+        "durationSeconds": 22.755,
+        "status": "warn"
+      }
+    ],
+    "voiceVerified": true,
+    "textMappingsVerified": true,
+    "at": "2026-10-11T06:07:01.241Z"
+  },
+  "error": null,
+  "nextStep": "Push scoped audio-only commit after coordination and source recheck"
+}
