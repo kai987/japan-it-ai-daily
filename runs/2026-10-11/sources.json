@@ -14,7 +14,56 @@
       "capturedAt": "2026-10-11T01:07:52.079202+00:00",
       "snapshotSha256": "6caf94d290aa7e1410c556fea4c4c9af6fda70219e1723ca507fd122f3f312b1",
       "stage": "original_read",
-      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。"
+      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。",
+      "originalTitle": "Claude Code v2.1.296 の主要アップデート - サブエージェントの autoCompactWindow と Read の allow_large 追加",
+      "source": "DevelopersIO",
+      "topic": "AI Agent／開発ツール",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "通常の取得は732行で打ち切りされた。",
+          "quote": "返ってきたのは 732 行です。",
+          "locator": "Read試験／ステップ4",
+          "conditions": "Claude Code 2.1.296、big.txt 204000 bytes、3000行、max-turns=1。Opus/Haiku各条件一回。理解・反復分布未検証。",
+          "usedIn": {
+            "zh": "allow_large",
+            "ja": "allow_large",
+            "interview": "allow_large"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "allow_large=trueで末尾空行を含む全行が返った。",
+          "quote": "3,001 行すべてが返り、",
+          "locator": "Read試験／ステップ5",
+          "conditions": "Claude Code 2.1.296、big.txt 204000 bytes、3000行、max-turns=1。Opus/Haiku各条件一回。理解・反復分布未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "モデル間で行数・終了理由は同じ、記録費用が異なる。",
+          "quote": "今回取得した項目で違いがあったのはコストだけでした。",
+          "locator": "補足：Opus/Haiku",
+          "conditions": "Claude Code 2.1.296、big.txt 204000 bytes、3000行、max-turns=1。Opus/Haiku各条件一回。理解・反復分布未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "取得量と打ち切りの記録を見て、読み取りと理解を分けられます。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "用返回行数与截断标志判断原文是否读全，区分读取、理解和任务完成。",
+            "ja": "取得量と打ち切りの記録を見て、読み取りと理解を分けられます。"
+          }
+        }
+      ]
     },
     {
       "articleId": "2026-10-11-top-2",
@@ -25,7 +74,56 @@
       "capturedAt": "2026-10-11T01:07:52.079337+00:00",
       "snapshotSha256": "e36569404ee75bd8cdeaf3e4fe6281bce33ce39dfdb83db3d9fa348a026baf7b",
       "stage": "original_read",
-      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。"
+      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。",
+      "originalTitle": "OpenAI の Decisions API に書類の種類を分類させて Clef と比べてみた",
+      "source": "DevelopersIO",
+      "topic": "AI／分類と評価",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Decisionsは28/28、Clef両種27/28。",
+          "quote": "28枚すべてを正しく分類できました。",
+          "locator": "3.1 正解率",
+          "conditions": "PNG1240×1754、架空28枚（日英14枚）、8択choice、一枚一要求一回。日本から往復、USD150円換算。",
+          "usedIn": {
+            "zh": "Decisions API",
+            "ja": "Decisions API",
+            "interview": "Decisions API"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "今回の標本だけでは誤り時の確信度が下がるか未確認。",
+          "quote": "確信度は28件すべて 1.0",
+          "locator": "3.2 確信度",
+          "conditions": "PNG1240×1754、架空28枚（日英14枚）、8択choice、一枚一要求一回。日本から往復、USD150円換算。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "往復中央値は0.517秒。flashは0.3535秒で別の比較対象。",
+          "quote": "0.517秒（517ms）",
+          "locator": "3.3 時間と費用",
+          "conditions": "PNG1240×1754、架空28枚（日英14枚）、8択choice、一枚一要求一回。日本から往復、USD150円換算。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "正解率と、人へ戻す基準としての確信度を分けて説明できます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "把正解率与置信度的运营价值分开，保留同数据比较的条件。",
+            "ja": "正解率と、人へ戻す基準としての確信度を分けて説明できます。"
+          }
+        }
+      ]
     },
     {
       "articleId": "2026-10-11-top-3",
@@ -36,7 +134,56 @@
       "capturedAt": "2026-10-11T01:07:52.130166+00:00",
       "snapshotSha256": "119b71585b9a50f79dd9961710daf9070358c5d7a5e6da5a881fb72077acdda3",
       "stage": "original_read",
-      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。"
+      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。",
+      "originalTitle": "WAF でブロックする前に確かめていること",
+      "source": "Zenn",
+      "topic": "Web／セキュリティ運用",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "実環境のルールや閾値は未公開。",
+          "quote": "実際の値やルールの条件、しきい値は載せていません",
+          "locator": "前提",
+          "conditions": "Cloudflare Enterprise/Bot Management、既存の基本防御あり。運用経験。実際の値・ルール・しきい値・誤検知率未公開。",
+          "usedIn": {
+            "zh": "JA4",
+            "ja": "JA4",
+            "interview": "JA4"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "JA4だけの阻断は正規利用者へ影響し得る。",
+          "quote": "一般的なブラウザの JA4 は、同じブラウザを使う正規の利用者と同じ値になります。",
+          "locator": "一般的なブラウザのJA4",
+          "conditions": "Cloudflare Enterprise/Bot Management、既存の基本防御あり。運用経験。実際の値・ルール・しきい値・誤検知率未公開。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "アカウントレベルの評価が先。",
+          "quote": "サイト側に例外を作っても、アカウントレベルでブロックされたリクエストは通せません。",
+          "locator": "まとめて効くルール",
+          "conditions": "Cloudflare Enterprise/Bot Management、既存の基本防御あり。運用経験。実際の値・ルール・しきい値・誤検知率未公開。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "通信の特徴と利用者の身元を混同せず、誤検知の影響を考えられます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "以请求行为与受影响范围做阻断判断，而不是把 IP、ASN、JA4 当人的身份。",
+            "ja": "通信の特徴と利用者の身元を混同せず、誤検知の影響を考えられます。"
+          }
+        }
+      ]
     },
     {
       "articleId": "2026-10-11-top-4",
@@ -47,7 +194,56 @@
       "capturedAt": "2026-10-11T01:07:52.113265+00:00",
       "snapshotSha256": "d6dca28b45fa07eced4ce7a3585b8e4f06bec16b32295c91e0649cb265cd8d4c",
       "stage": "original_read",
-      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。"
+      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。",
+      "originalTitle": "[アップデート] Route 53 Global Resolver DNS Firewall に 分析タブが追加されたので確認してみた",
+      "source": "DevelopersIO",
+      "topic": "クラウド／DNS観測",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "VPC単位の問い合わせ数が同じ画面に表示された。",
+          "quote": "VpcFirewallQueryVolume",
+          "locator": "分析タブを見てみる",
+          "conditions": "VPC内EC2、ドメインBLOCKリスト、Resolverクエリログ→CloudWatch Logs。Contributor Insights出力未確認、理由未確定。",
+          "usedIn": {
+            "zh": "VpcFirewallQueryVolume",
+            "ja": "VpcFirewallQueryVolume",
+            "interview": "VpcFirewallQueryVolume"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Contributor Insights等の出力は未確認。",
+          "quote": "出力が確認できませんでした。",
+          "locator": "分析タブを見てみる",
+          "conditions": "VPC内EC2、ドメインBLOCKリスト、Resolverクエリログ→CloudWatch Logs。Contributor Insights出力未確認、理由未確定。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "ブロックと通常の名前解決、BLOCKログを確認した。",
+          "quote": "ブロック対象のドメインは名前解決に失敗し、",
+          "locator": "実際に確認してみる",
+          "conditions": "VPC内EC2、ドメインBLOCKリスト、Resolverクエリログ→CloudWatch Logs。Contributor Insights出力未確認、理由未確定。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "設定、記録、表示を順に見て、未確認の機能を分けられます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "从防火墙规则、日志到指标逐层核验，保留没有确认到输出的事实。",
+            "ja": "設定、記録、表示を順に見て、未確認の機能を分けられます。"
+          }
+        }
+      ]
     },
     {
       "articleId": "2026-10-11-top-5",
@@ -58,7 +254,56 @@
       "capturedAt": "2026-10-11T01:07:52.113298+00:00",
       "snapshotSha256": "94aef23ff2742aff478fc036ca6d51e112ff5433a554564c84cdbed96041cb9f",
       "stage": "original_read",
-      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。"
+      "accessNote": "公開原文全文を読了。実験は著者の報告であり再実行していない。",
+      "originalTitle": "GitHub ActionsのOIDCでAWS認証が通らない時にsubクレームを確認して信頼ポリシーを直してみた",
+      "source": "DevelopersIO",
+      "topic": "クラウド／CIの認証",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "名前だけのsubjectに不変owner/repository IDを追加。",
+          "quote": "不変の数値IDが入るようになりました。",
+          "locator": "immutable subject claimとは",
+          "conditions": "GitHub.com新形式対象のrepo、CloudFormation IAM/OIDC、configure-aws-credentials@v6。数値は例示値。業務権限・GHES未検証。",
+          "usedIn": {
+            "zh": "sub",
+            "ja": "sub",
+            "interview": "sub"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "RepositoryId=*は同名再作成を許可。",
+          "quote": "同じ組織で同じ名前のリポジトリを作り直すと、IDが変わっても条件を通過します。",
+          "locator": "信頼ポリシーを新形式に修正する",
+          "conditions": "GitHub.com新形式対象のrepo、CloudFormation IAM/OIDC、configure-aws-credentials@v6。数値は例示値。業務権限・GHES未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "本人確認の成功は業務権限を証明しない。",
+          "quote": "ロールには許可ポリシーを付けていません。",
+          "locator": "IAMロールとOIDCプロバイダを作成する",
+          "conditions": "GitHub.com新形式対象のrepo、CloudFormation IAM/OIDC、configure-aws-credentials@v6。数値は例示値。業務権限・GHES未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "実際の claim と信頼条件の差を追い、ワイルドカードの範囲を説明できます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "以实际OIDC claim解释信任匹配，同时认识通配符可能削弱不变身份保障。",
+            "ja": "実際の claim と信頼条件の差を追い、ワイルドカードの範囲を説明できます。"
+          }
+        }
+      ]
     }
   ],
   "discovery": {
