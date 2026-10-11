@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-11",
+  "baseCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
+  "authorizedBy": "user",
+  "authorization": "重新发布",
+  "scope": "Three prepared canonical answer corrections and bilingual mirrors; trial recordings, publisher and separate audio release",
+  "changes": [
+    {
+      "index": 2,
+      "question": "分類モデルの確信度を、人の確認へ回す基準に使えますか。",
+      "currentAnswer": "正解率と確信度を分けて確認します。記事のDecisions APIは、架空の書類二十八枚を全問正解し、confidenceも全部一でした。ただし、誤ったときに値が下がるかは未確認です。Clefの基準をそのまま移さず、別の紛らわしい書類で誤りと確認漏れを調べます。",
+      "proposedAnswer": "正解率と確信度は分けて確認します。記事のDecisions APIは、同じ画像と質問で架空の書類二十八枚を一度ずつ分類し、全問正解でした。confidenceも全部一です。ただし、誤ったときに値が下がるかは未確認です。Clefの低い値を使う基準はそのまま移せません。別の紛らわしい書類で誤りと確認漏れを調べ、人に戻す境界を決めます。",
+      "estimatedSeconds": 32.74,
+      "actualSeconds": null
+    },
+    {
+      "index": 3,
+      "question": "WAFで怪しい送信元を止めるとき、誤検知をどう抑えますか。",
+      "currentAnswer": "巻き添えになる利用者を先に調べます。JA4は、正規のブラウザや社内ツールでも同じ値になります。Bot Scoreなどと組み合わせ、まず記録で対象を見ます。ただし、一部の機能は契約が前提です。決め手がなければ保留し、止めなかった理由も残します。",
+      "proposedAnswer": "巻き添えになる利用者を先に調べます。JA4は、正規のブラウザや社内ツールでも同じ値になります。共有IPにも別の利用者がいるので、正常な応答や業務上の用途を確認します。Bot Scoreなどと組み合わせ、まず記録で対象を見ます。ただし、一部の機能は契約が前提です。決め手がなければ保留し、止めなかった理由も残します。",
+      "estimatedSeconds": 31.17,
+      "actualSeconds": null
+    },
+    {
+      "index": 4,
+      "question": "DNS Firewallの新しい分析画面で、何を確認すればよいですか。",
+      "currentAnswer": "設定、記録、表示を分けて確認します。記事はBLOCKルールをVPCに付け、CloudWatch Logsで拒否の記録を確認しました。分析タブではVpcFirewallQueryVolumeが見えました。ただし、Contributor Insightsの出力は未確認です。全機能が動いたとは扱いません。",
+      "proposedAnswer": "設定、記録、表示を分けて確認します。記事はBLOCKルールをVPCに付け、CloudWatch Logsで拒否の記録を確認しました。対象と通常のドメインで、名前解決の結果も比べています。分析タブではVpcFirewallQueryVolumeが見えました。ただし、Contributor Insightsの出力は未確認です。必要なログと表示を順に見て、全機能が動いたとは扱いません。",
+      "estimatedSeconds": 33.91,
+      "actualSeconds": null
+    }
+  ],
+  "files": [
+    "src/content/daily-ja/2026-10-11.md",
+    "src/content/daily/2026-10-11.md",
+    "src/data/interviews/2026-10-11.json"
+  ],
+  "appliedAt": "2026-10-11T05:52:06.056Z"
+}
