@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-11",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "90b7711085274aa64cd510a7de2e5971d3365750",
   "sourceWindow": {
     "from": "2026-10-10T10:00:00+09:00",
     "to": "2026-10-11T10:00:00+09:00"
   },
   "createdAt": "2026-10-11T01:06:38.086Z",
-  "updatedAt": "2026-10-11T01:25:01.834Z",
+  "updatedAt": "2026-10-11T01:25:17.101Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-11/checks.json",
@@ -64,8 +64,8 @@
     }
   ],
   "lastError": null,
-  "resumeFrom": "preflight_passed",
-  "nextAction": "Submit complete source-bound publication request",
+  "resumeFrom": "publisher_queued",
+  "nextAction": "Verify exact publisher and final main Pages release",
   "baseCommit": "90b7711085274aa64cd510a7de2e5971d3365750",
   "draftCommit": "26e2ebbea50bb0b3193fc79ecfe8089234d6fb9f",
   "draftBranch": "draft/daily-2026-10-11",
@@ -87,5 +87,7 @@
   ],
   "verifiedAt": "2026-10-11T01:21:32.332Z",
   "preflightRunId": 38101565819,
-  "preflightCommit": "26e2ebbea50bb0b3193fc79ecfe8089234d6fb9f"
+  "preflightCommit": "26e2ebbea50bb0b3193fc79ecfe8089234d6fb9f",
+  "requestCommit": "2e77406d7b10ea61c14f0a8890c063d34e78b7a8",
+  "requestId": "codex-2026-10-11-c8e40615-95b1-4d30-a46e-400893481f2e"
 }
