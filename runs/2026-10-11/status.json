@@ -8,7 +8,7 @@
     "to": "2026-10-11T10:00:00+09:00"
   },
   "createdAt": "2026-10-11T01:06:38.086Z",
-  "updatedAt": "2026-10-11T05:59:11.067Z",
+  "updatedAt": "2026-10-11T06:05:52.378Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-11/audio-attempt.json",
@@ -77,7 +77,7 @@
   ],
   "lastError": null,
   "resumeFrom": "published",
-  "nextAction": "Submit the verified three-answer repair through the unique publisher; preserve prior text release until new Pages verification",
+  "nextAction": "Resume independently trial-verified recordings; validate, upload and verify exact audio commit and real playback",
   "baseCommit": "90b7711085274aa64cd510a7de2e5971d3365750",
   "draftCommit": "26e2ebbea50bb0b3193fc79ecfe8089234d6fb9f",
   "draftBranch": "draft/daily-2026-10-11",
@@ -102,10 +102,10 @@
   "preflightCommit": "26e2ebbea50bb0b3193fc79ecfe8089234d6fb9f",
   "requestCommit": "2e77406d7b10ea61c14f0a8890c063d34e78b7a8",
   "requestId": "codex-2026-10-11-c8e40615-95b1-4d30-a46e-400893481f2e",
-  "publisherRunId": 38101776332,
-  "releaseCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
+  "publisherRunId": 38116569308,
+  "releaseCommit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
   "sixDraftBytesEqual": true,
-  "pagesRunId": 38101902507,
+  "pagesRunId": 38116714639,
   "pagesStatus": "in_progress",
   "publishedAt": "2026-10-11T01:31:38.177Z",
   "verification": {
@@ -218,7 +218,7 @@
     "verifiedAt": "2026-10-11T01:31:34.065Z",
     "site": "/tmp/japan-daily-20261011/text-release-38101902507/site"
   },
-  "n1Status": "waiting_source",
+  "n1Status": "published",
   "n1Handoff": {
     "targetDate": "2026-10-11",
     "day": 43,
@@ -251,31 +251,9 @@
   },
   "n1ProgressBlob": "735a7bfffdf76578efb74ef437ccd362fc277751",
   "latestVerifiedMainCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
-  "audioStatus": "generated",
+  "audioStatus": "pending",
   "audioCommit": null,
-  "audioError": {
-    "stage": "duration-write",
-    "message": "  WARN: answer 1: actual 23.22s is outside ideal range 24–34s\n  WARN: answer 5: actual 22.75s is outside ideal range 24–34s\n  ERROR: answer 2: actual 21.36s is outside hard range 22–40s\n  ERROR: answer 3: actual 19.25s is outside hard range 22–40s\n  ERROR: answer 4: actual 20.63s is outside hard range 22–40s\n",
-    "at": "2026-10-11T01:34:17.008Z",
-    "kind": "deterministic_actual_duration_below_hard_min",
-    "failedAnswers": [
-      {
-        "index": 2,
-        "seconds": 21.362,
-        "status": "fail"
-      },
-      {
-        "index": 3,
-        "seconds": 19.252,
-        "status": "fail"
-      },
-      {
-        "index": 4,
-        "seconds": 20.629,
-        "status": "fail"
-      }
-    ]
-  },
+  "audioError": null,
   "audioSummary": {
     "newMP3": 39,
     "uploaded": false,
@@ -311,62 +289,172 @@
   },
   "followupRecordedAt": "2026-10-11T01:38:38.400Z",
   "repair": {
-    "stage": "request_ready",
-    "request": {
-      "schemaVersion": 1,
-      "requestId": "codex-2026-10-11-d1acee9f-dbe6-4b88-b02f-f2cb4923340d",
-      "targetDate": "2026-10-11",
-      "baseCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
-      "draftCommit": "267c64fc522c5486a818bb4e0bdfa3a9a559a612",
-      "draftBranch": "draft/daily-2026-10-11",
-      "preflightRunId": 38116379084,
-      "preflightWorkflowPath": ".github/workflows/deploy.yml",
-      "requestedAt": "2026-10-11T05:58:43.025Z",
-      "files": [
-        "src/content/daily/2026-10-11.md",
-        "src/content/japanese/2026-10-11.md",
-        "src/content/daily-ja/2026-10-11.md",
-        "src/content/japanese-ja/2026-10-11.md",
-        "src/content/evidence/2026-10-11.json",
-        "src/data/interviews/2026-10-11.json"
-      ],
-      "platformRepair": false,
-      "platformRepairPaths": []
-    },
-    "draft": {
-      "targetDate": "2026-10-11",
-      "baseCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
-      "draftCommit": "267c64fc522c5486a818bb4e0bdfa3a9a559a612",
-      "draftBranch": "draft/daily-2026-10-11",
-      "changedFiles": [
-        "src/content/daily-ja/2026-10-11.md",
-        "src/content/daily/2026-10-11.md",
-        "src/data/interviews/2026-10-11.json"
-      ],
-      "requiredFiles": [
-        "src/content/daily/2026-10-11.md",
-        "src/content/japanese/2026-10-11.md",
-        "src/content/daily-ja/2026-10-11.md",
-        "src/content/japanese-ja/2026-10-11.md",
-        "src/content/evidence/2026-10-11.json",
-        "src/data/interviews/2026-10-11.json"
-      ],
-      "hashes": {
-        "src/content/daily/2026-10-11.md": "dcd72e2ad157628e3132a5160af52773b3a0f8ccc074610bcd08dd019ca687fe",
-        "src/content/japanese/2026-10-11.md": "a7445a58e098cdf2644bdcde33f1997172baf3672c8b17124741539b6e578a0e",
-        "src/content/daily-ja/2026-10-11.md": "8fb159aad930fdca34faa314cf0546507d38b566a73a079448a92fa8afbaa4ee",
-        "src/content/japanese-ja/2026-10-11.md": "61296e02b96e93d84328f3cbc1556f5c4b0176fc9131e8652bf92d847378b188",
-        "src/content/evidence/2026-10-11.json": "0d0a66380e9078d93928fe9be0dd598d41bf045ba270c0fe0996104c95abf976",
-        "src/data/interviews/2026-10-11.json": "5b6002d1493ccdbd57024515ea09557965358d59d3ece1c56bb54064ae5766e9"
-      },
-      "audioExcluded": true,
-      "completeMainAncestor": true,
-      "normalFastForwardDraftPush": true,
-      "committedAt": "2026-10-11T05:55:42.534Z"
-    },
-    "trialAudioPassed": true,
+    "stage": "published",
+    "scope": "Three approved source-grounded answer corrections",
+    "draftCommit": "267c64fc522c5486a818bb4e0bdfa3a9a559a612",
     "preflightRunId": 38116379084,
-    "previousVerifiedTextCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
-    "updatedAt": "2026-10-11T05:59:02.798635+00:00"
+    "publisherRunId": 38116569308,
+    "releaseCommit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
+    "pagesRunId": 38116714639,
+    "previousVerifiedTextCommit": "9b13632a4b6500f24ffb0884926a72c75365c361"
+  },
+  "releaseVerification": {
+    "label": "text",
+    "runId": 38116714639,
+    "releaseCommit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
+    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38116714639",
+    "artifacts": [
+      {
+        "id": 11694380084,
+        "name": "it-study-snapshot",
+        "digest": "sha256:e0403373e14e82d97d1b48ee732741117632df9fa50e4680e36ac1d337c2ec12"
+      },
+      {
+        "id": 11693214986,
+        "name": "github-pages",
+        "digest": "sha256:434a965fbe324e6f5ed9793d5f9fb3f6bfbc3e7d365c94e914b133876406860d"
+      }
+    ],
+    "sourceCommit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
+    "targetDate": "2026-10-11",
+    "totalDays": 61,
+    "issueNumber": 61,
+    "grammarLessonDates": [
+      "2026-08-12",
+      "2026-08-13",
+      "2026-08-14",
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19",
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-22",
+      "2026-08-23",
+      "2026-08-24",
+      "2026-08-25",
+      "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-08-31",
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03",
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-19",
+      "2026-09-20",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-27",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30",
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-04",
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-07",
+      "2026-10-08",
+      "2026-10-09",
+      "2026-10-10",
+      "2026-10-11"
+    ],
+    "fullSnapshotCompared": true,
+    "snapshotHash": "8cc6e3a775b69877bc5b78e524d2f126d738e427aa3637fe998063667b169374",
+    "expected": {
+      "version": 1,
+      "commit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
+      "date": "2026-10-11",
+      "snapshotHash": "8cc6e3a775b69877bc5b78e524d2f126d738e427aa3637fe998063667b169374",
+      "pages": [
+        {
+          "path": "daily/2026-10-11/",
+          "sha256": "c4d28c1968831fbedc58164cd95b1ca18d13195c2e8272680fcf5e440361ca30"
+        },
+        {
+          "path": "ja/daily/2026-10-11/",
+          "sha256": "9f37f87a5e37c49e0d8c37f1e3bbc669819aed957c5022f6ac795934f2d7c8b2"
+        }
+      ]
+    },
+    "live": {
+      "commit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
+      "date": "2026-10-11",
+      "attempt": 1
+    },
+    "verifiedAt": "2026-10-11T06:05:05.074Z",
+    "site": "/tmp/japan-daily-20261011-repair/text-release-38116714639/site"
+  },
+  "publicationRequest": {
+    "schemaVersion": 1,
+    "requestId": "codex-2026-10-11-d1acee9f-dbe6-4b88-b02f-f2cb4923340d",
+    "targetDate": "2026-10-11",
+    "baseCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
+    "draftCommit": "267c64fc522c5486a818bb4e0bdfa3a9a559a612",
+    "draftBranch": "draft/daily-2026-10-11",
+    "preflightRunId": 38116379084,
+    "preflightWorkflowPath": ".github/workflows/deploy.yml",
+    "requestedAt": "2026-10-11T05:58:43.025Z",
+    "files": [
+      "src/content/daily/2026-10-11.md",
+      "src/content/japanese/2026-10-11.md",
+      "src/content/daily-ja/2026-10-11.md",
+      "src/content/japanese-ja/2026-10-11.md",
+      "src/content/evidence/2026-10-11.json",
+      "src/data/interviews/2026-10-11.json"
+    ],
+    "platformRepair": false,
+    "platformRepairPaths": []
+  },
+  "n1CurrentVerification": {
+    "n1Status": "published",
+    "targetDate": "2026-10-11",
+    "day": 43,
+    "releaseCommit": "9c43a53751909a27bf3bfb4e6c5316071ea7859d",
+    "pagesRunId": 38110632572,
+    "originalSha256": "c47c39281f4848dd80574a9770e1183b2de5ec3f7391c15d367eb2601647d1ec",
+    "sourceBlobSha": "2e3ea9b5e3d18b6d487629b580e7145c2e9e1bb8",
+    "sourceBoundRequestVerified": true,
+    "requestSnapshotSha256": "b85e5ba414874c8de822f3464b7f21a86eb5441a993a9ae39899676cdadb9d83",
+    "upstreamSourceCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
+    "upstreamPagesRunId": 38101902507,
+    "snapshotSha256": "d254f5d3ffb69b7df83a3daec3c7a7afaac4c9914e19c946d35d9ab52ebf94a8",
+    "fullSnapshotCompared": true,
+    "issue": 61,
+    "totalDays": 61,
+    "htmlSha256": "889551aca03dbd52539cb2a9d9092f482ef7f448a44e6e13046bed7e7dda0a0f",
+    "bundles": [
+      {
+        "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/assets/index-h5FrCcFl.js",
+        "sha256": "5ad683995e3fd3e50d455ff0e0d5845df205ac1f928c66e48dd855308943a111",
+        "bytes": 3711474
+      }
+    ],
+    "dateFound": true,
+    "verifiedAt": "2026-10-11T06:00:12.242Z",
+    "noRepeatedHandoff": true
   }
 }
