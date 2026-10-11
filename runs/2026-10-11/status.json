@@ -8,7 +8,7 @@
     "to": "2026-10-11T10:00:00+09:00"
   },
   "createdAt": "2026-10-11T01:06:38.086Z",
-  "updatedAt": "2026-10-11T06:05:52.378Z",
+  "updatedAt": "2026-10-11T06:13:34.790Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-11/audio-attempt.json",
@@ -77,7 +77,7 @@
   ],
   "lastError": null,
   "resumeFrom": "published",
-  "nextAction": "Resume independently trial-verified recordings; validate, upload and verify exact audio commit and real playback",
+  "nextAction": "Complete; verified unchanged inputs require no text regeneration, synthesis, upload or repeated N1 handoff",
   "baseCommit": "90b7711085274aa64cd510a7de2e5971d3365750",
   "draftCommit": "26e2ebbea50bb0b3193fc79ecfe8089234d6fb9f",
   "draftBranch": "draft/daily-2026-10-11",
@@ -103,9 +103,9 @@
   "requestCommit": "2e77406d7b10ea61c14f0a8890c063d34e78b7a8",
   "requestId": "codex-2026-10-11-c8e40615-95b1-4d30-a46e-400893481f2e",
   "publisherRunId": 38116569308,
-  "releaseCommit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
+  "releaseCommit": "406e3a9b38a6e981f6e516715c43d2e9e0daa2ac",
   "sixDraftBytesEqual": true,
-  "pagesRunId": 38116714639,
+  "pagesRunId": 38117065152,
   "pagesStatus": "in_progress",
   "publishedAt": "2026-10-11T01:31:38.177Z",
   "verification": {
@@ -251,8 +251,8 @@
   },
   "n1ProgressBlob": "735a7bfffdf76578efb74ef437ccd362fc277751",
   "latestVerifiedMainCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
-  "audioStatus": "pending",
-  "audioCommit": null,
+  "audioStatus": "playback_verified",
+  "audioCommit": "406e3a9b38a6e981f6e516715c43d2e9e0daa2ac",
   "audioError": null,
   "audioSummary": {
     "newMP3": 39,
@@ -290,32 +290,64 @@
   "followupRecordedAt": "2026-10-11T01:38:38.400Z",
   "repair": {
     "stage": "published",
-    "scope": "Three approved source-grounded answer corrections",
+    "scope": "Exactly three prepared source-grounded answer corrections and mirrors",
     "draftCommit": "267c64fc522c5486a818bb4e0bdfa3a9a559a612",
     "preflightRunId": 38116379084,
+    "requestId": "codex-2026-10-11-d1acee9f-dbe6-4b88-b02f-f2cb4923340d",
     "publisherRunId": 38116569308,
-    "releaseCommit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
-    "pagesRunId": 38116714639,
-    "previousVerifiedTextCommit": "9b13632a4b6500f24ffb0884926a72c75365c361"
-  },
-  "releaseVerification": {
-    "label": "text",
-    "runId": 38116714639,
-    "releaseCommit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
-    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38116714639",
-    "artifacts": [
+    "textReleaseCommit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
+    "textPagesRunId": 38116714639,
+    "audioReleaseCommit": "406e3a9b38a6e981f6e516715c43d2e9e0daa2ac",
+    "audioPagesRunId": 38117065152,
+    "r2RunId": 38117065180,
+    "trialAnswers": [
       {
-        "id": 11694380084,
-        "name": "it-study-snapshot",
-        "digest": "sha256:e0403373e14e82d97d1b48ee732741117632df9fa50e4680e36ac1d337c2ec12"
+        "index": 1,
+        "durationSeconds": 23.219,
+        "status": "warn"
       },
       {
-        "id": 11693214986,
-        "name": "github-pages",
-        "digest": "sha256:434a965fbe324e6f5ed9793d5f9fb3f6bfbc3e7d365c94e914b133876406860d"
+        "index": 2,
+        "durationSeconds": 28.269,
+        "status": "ideal"
+      },
+      {
+        "index": 3,
+        "durationSeconds": 25.587,
+        "status": "ideal"
+      },
+      {
+        "index": 4,
+        "durationSeconds": 27.491,
+        "status": "ideal"
+      },
+      {
+        "index": 5,
+        "durationSeconds": 22.755,
+        "status": "warn"
       }
     ],
-    "sourceCommit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
+    "playbackTests": 14,
+    "previousTextReleaseCommit": "9b13632a4b6500f24ffb0884926a72c75365c361"
+  },
+  "releaseVerification": {
+    "label": "audio",
+    "runId": 38117065152,
+    "releaseCommit": "406e3a9b38a6e981f6e516715c43d2e9e0daa2ac",
+    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38117065152",
+    "artifacts": [
+      {
+        "id": 11694480489,
+        "name": "github-pages",
+        "digest": "sha256:c9061f96dc4388e220fb22d1908a467f9d60d9b457acdd7696db74040e805964"
+      },
+      {
+        "id": 11693772060,
+        "name": "it-study-snapshot",
+        "digest": "sha256:59726d66b16184c097960512f8c799f5452fbe59cf0d6f23cff048a6f3a41ee1"
+      }
+    ],
+    "sourceCommit": "406e3a9b38a6e981f6e516715c43d2e9e0daa2ac",
     "targetDate": "2026-10-11",
     "totalDays": 61,
     "issueNumber": 61,
@@ -383,12 +415,12 @@
       "2026-10-11"
     ],
     "fullSnapshotCompared": true,
-    "snapshotHash": "8cc6e3a775b69877bc5b78e524d2f126d738e427aa3637fe998063667b169374",
+    "snapshotHash": "8a129e2704e61da88fbdd8a4a6d6d9057b8185ee1220c8872a979edab87bf9cd",
     "expected": {
       "version": 1,
-      "commit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
+      "commit": "406e3a9b38a6e981f6e516715c43d2e9e0daa2ac",
       "date": "2026-10-11",
-      "snapshotHash": "8cc6e3a775b69877bc5b78e524d2f126d738e427aa3637fe998063667b169374",
+      "snapshotHash": "8a129e2704e61da88fbdd8a4a6d6d9057b8185ee1220c8872a979edab87bf9cd",
       "pages": [
         {
           "path": "daily/2026-10-11/",
@@ -401,12 +433,12 @@
       ]
     },
     "live": {
-      "commit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
+      "commit": "406e3a9b38a6e981f6e516715c43d2e9e0daa2ac",
       "date": "2026-10-11",
       "attempt": 1
     },
-    "verifiedAt": "2026-10-11T06:05:05.074Z",
-    "site": "/tmp/japan-daily-20261011-repair/text-release-38116714639/site"
+    "verifiedAt": "2026-10-11T06:11:33.824Z",
+    "site": "/tmp/japan-daily-20261011-repair/audio-release-38117065152/site"
   },
   "publicationRequest": {
     "schemaVersion": 1,
@@ -456,5 +488,19 @@
     "dateFound": true,
     "verifiedAt": "2026-10-11T06:00:12.242Z",
     "noRepeatedHandoff": true
+  },
+  "textReleaseCommit": "58e573fc6eb67857e68adebd3d60657afce6aeb0",
+  "audioWorkflowRunIds": {
+    "r2": 38117065180,
+    "pages": 38117065152
+  },
+  "audioVerification": {
+    "newRecordings": 39,
+    "referencedRecordings": 58,
+    "manifestHashes": {
+      "public/audio/japanese/2026-10-11/manifest.json": "8319622d3c589685cb887fbe30ebfdb58581ef0d2eafbfdcf53f5e04adfc243d",
+      "public/audio/japanese/2026-10-11/interview-manifest.json": "8e37c340e46255edc3d6d104e0be037fa70bcf390b4232e5c6c3037a63649197"
+    },
+    "playbackTests": 14
   }
 }
