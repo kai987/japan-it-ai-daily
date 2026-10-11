@@ -8,7 +8,7 @@
     "to": "2026-10-11T10:00:00+09:00"
   },
   "createdAt": "2026-10-11T01:06:38.086Z",
-  "updatedAt": "2026-10-11T01:31:38.546Z",
+  "updatedAt": "2026-10-11T01:32:03.938Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-10-11/checks.json",
@@ -205,5 +205,37 @@
     },
     "verifiedAt": "2026-10-11T01:31:34.065Z",
     "site": "/tmp/japan-daily-20261011/text-release-38101902507/site"
-  }
+  },
+  "n1Status": "waiting_source",
+  "n1Handoff": {
+    "targetDate": "2026-10-11",
+    "day": 43,
+    "status": "waiting_source",
+    "stage": "waiting_source",
+    "sourceCommit": "9b13632a4b6500f24ffb0884926a72c75365c361",
+    "sourcePagesRunId": 38101902507,
+    "snapshotSha256": "b85e5ba414874c8de822f3464b7f21a86eb5441a993a9ae39899676cdadb9d83",
+    "issueNumber": 61,
+    "totalDays": 61,
+    "handoffAttemptedAt": "2026-10-11T01:32:01.920Z",
+    "sourceObservation": {
+      "mainCommit": "f0699508b7da2ce3a18c2f3437c4f00031d21492",
+      "mainFileCount": 137,
+      "completeMainInventory": true,
+      "completeProgressInventory": true,
+      "originalPath": "n1-source/2026-10-11.md",
+      "originalPresent": false,
+      "outboxPath": "runs/2026-10-11/source.json",
+      "outboxPresent": false,
+      "finalDailyPresent": false,
+      "requestDate": "2026-10-10"
+    },
+    "lastError": {
+      "kind": "source_missing",
+      "message": "Neither target-date original nor full source outbox exists. No lesson or source reconstructed."
+    },
+    "nextStep": "Existing N1 11:00/12:00 entrypoints resume after exact original/outbox becomes available.",
+    "updatedAt": "2026-10-11T01:32:01.920Z"
+  },
+  "n1ProgressBlob": "735a7bfffdf76578efb74ef437ccd362fc277751"
 }
