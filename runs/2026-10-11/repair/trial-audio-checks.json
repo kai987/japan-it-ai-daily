@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-11",
+  "mode": "authorized_repair_candidate_recording",
+  "settings": {
+    "engineUrl": "http://127.0.0.1:10101",
+    "speaker": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "wordSpeed": 1,
+    "exampleSpeed": 1,
+    "interviewSpeed": 1
+  },
+  "checks": [
+    {
+      "command": "node scripts/generate-japanese-audio.mjs --date 2026-10-11",
+      "stage": "learning",
+      "exitCode": 0,
+      "startedAt": "2026-10-11T05:52:25.132Z",
+      "completedAt": "2026-10-11T05:52:27.144Z"
+    },
+    {
+      "command": "node scripts/generate-interview-audio.mjs --date 2026-10-11",
+      "stage": "interview",
+      "exitCode": 0,
+      "startedAt": "2026-10-11T05:52:28.656Z",
+      "completedAt": "2026-10-11T05:52:55.146Z"
+    },
+    {
+      "command": "node scripts/validate-interview-audio-duration.mjs --date 2026-10-11 --write",
+      "stage": "duration-write",
+      "exitCode": 0,
+      "startedAt": "2026-10-11T05:52:56.877Z",
+      "completedAt": "2026-10-11T05:52:57.401Z"
+    },
+    {
+      "command": "npm run audio:check",
+      "stage": "audio:check",
+      "exitCode": 0,
+      "startedAt": "2026-10-11T05:52:59.299Z",
+      "completedAt": "2026-10-11T05:52:59.949Z"
+    },
+    {
+      "command": "npm run audio:integrity:check",
+      "stage": "audio:integrity:check",
+      "exitCode": 0,
+      "startedAt": "2026-10-11T05:53:01.895Z",
+      "completedAt": "2026-10-11T05:53:02.999Z"
+    },
+    {
+      "command": "npm run audio:versions:check",
+      "stage": "audio:versions:check",
+      "exitCode": 0,
+      "startedAt": "2026-10-11T05:53:04.619Z",
+      "completedAt": "2026-10-11T05:53:05.044Z"
+    },
+    {
+      "command": "npm run audio:duration:check",
+      "stage": "audio:duration:check",
+      "exitCode": 0,
+      "startedAt": "2026-10-11T05:53:06.832Z",
+      "completedAt": "2026-10-11T05:53:33.091Z"
+    }
+  ]
+}
