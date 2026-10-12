@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-12",
+  "generatedAt": "2026-10-12T01:49:06.275Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIエージェントに複数のAWSアカウントを参照させるとき、権限をどう設計しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "645590822322613c267a8ad057d9d4d2345ec35bb0c02d619586cca0a4028c13",
+      "audioSha256": "784149166524fca97343cc8a49bb25625eaa255e38a195cc8810260872345bf3",
+      "durationSeconds": 6.837
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "参照するアカウントと権限を、別々に制限します。記事では読み取り用ロールを各アカウントに用意し、AWS_MCP_PROXY_PROFILESで利用できるプロファイルを列挙しています。呼び出す際はaws_profileを指定し、省略時の接続先も確認します。ただし、この切り替えはSigV4認証の場合です。読み取り専用でも機密情報は取得できるため、対象データと監査記録まで確認します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "efccee52f1981d0ed68c2532c0ef4c39bada83f038ba21e2b5b0870dfc4a5b11",
+      "audioSha256": "83f0babdd4e4d32048b07e623acac0829b7896798b29a415a14e8dba25f2eaea",
+      "durationSeconds": 30.51,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "AIで書類の値を照合するとき、どのように精度を評価しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "9fc818ade1ab0d3dd5b7285859a4253098d7646e271799f2cc20b6da4ee280c2",
+      "audioSha256": "b2295b64e05ac08c3db7436b8bdeea3817b3b5e5a17ff50d4e23064eac2043e3",
+      "durationSeconds": 5.189
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "文字列の一致と、意味としての一致を分けて評価します。記事ではexactとsemanticを用意し、107件の架空ケースを確率0.8で判定しています。ただし、通貨のない金額をドルと同じと判断する誤りもありました。意味の正解が決まるのは106件で、比較サービスの測定日も異なります。私は欠損や通貨の扱いを先に決め、種類別の誤りを確認してから、人が確認する条件を設計します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "89f4bf0df574aeb884e03603a41791299fe9044d4ce608174c6949c5e798cab4",
+      "audioSha256": "cc282bc33d2c2cb76143d5bc747a12d94d0c40078f6e234b6ce69153f51d9d5e",
+      "durationSeconds": 31.116,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "Workerのサイズ制限が緩和されたら、何を確認してから依存ライブラリを追加しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "340207fad648a0d6e88abbfe2450d1f668dbaa25fc7449862becec228d922c5d",
+      "audioSha256": "9999c1d9169d9ba22a3b3efe3113163dcfa0c65dfee14964c8c36a21536fb526",
+      "durationSeconds": 6.494
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "圧縮後の大きさと、配信側が判定する大きさを分けて確認します。記事ではTotal Uploadの非圧縮サイズを見て、Freeプランにランダムな8MiBを配備できました。一方、65MiBはgzipで小さくても10027で拒否されています。ただし、Paidプランや起動時間までは確認されていません。私はサイズだけで採用を決めず、使うライブラリの初期化時間と、上限に近い場合の余裕も別に測ります。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "89301de66f98a1af839d1913a3262505b32fd7d8e3afafbc86111f6f3365348e",
+      "audioSha256": "a87732d7bf3746673cba8ddab1a8949ff85deec491324c25c166469b1917f787",
+      "durationSeconds": 31.288,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "iOSアプリで音声が鳴らない場合、どのように原因を切り分けますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "296278fce6faf75bb1c8cc635519f885fe6caafd721eabe4eb079e8faf37efa3",
+      "audioSha256": "363688d88cadb0d6dcd66b27362821bce9f90d6523e47911a8c4c8115156b4d9",
+      "durationSeconds": 5.246
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "取得、デコード、再生の各段階を分けて調べます。記事のローカルMP3では、fetchのstatusが0でもデコードできたため、okだけで失敗にしない処理が必要でした。また、ロック解除後はAudioContextがrunningでも時計が止まり、次のタップで作り直して復旧しています。ただし、TestFlightでの確認は継続中です。私は実機の状態と時間の進み方を記録し、ネットワークと音声処理の問題を混同しないようにします。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "d79c08342ad9b67a7f17859cd03e4c74f4e072bef5cc96b915a82c322ba0c6c6",
+      "audioSha256": "5b6e8f68e694a385c95d4e0590d800df2d22245acbf1dd6c696cf3daeec77505",
+      "durationSeconds": 31.997,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "JSONLのログを調べるとき、エディタのテーブル表示をどう活用しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "ab79e8755a53221473c13258252909c4e4cd2284795726602310643fdf4d89bb",
+      "audioSha256": "2f94f25713e685d8e6e99d525b12414b08a4925630f52f786d1a752e4562eed8",
+      "durationSeconds": 5.677
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "まず列をそろえて、異なる行の値を見比べるために使います。記事のZedでは、JSONLのキーが列になり、行ごとの欠損は空欄になります。並べ替えは列名ではなく矢印のアイコンで行い、元の行番号も残ります。ただし、入れ子のオブジェクトは展開されず、大量ログの性能までは確認されていません。私は値の絞り込みで調査対象を探し、深い項目の検索や集計は別の処理に分けます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "019e477aee5d67ddb436b5e250a98013c54f3c71f45533bced395731d8f53336",
+      "audioSha256": "08f7c78981722cc95ea8ae50e1061796773a3b0c4d29a9b096cebb8bd8b09204",
+      "durationSeconds": 31.122,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "状態や設定が成功を示しても、実際の結果を確認する必要があるのはなぜですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "816a62a13c2806c74f29713e5e6bbcfc3d0ddd2a6c937223f9925c734ca7a710",
+      "audioSha256": "d202db1e9a275082655a6e9aa49445e97700661bcf977cab63c425373656023b",
+      "durationSeconds": 6.686
+    },
+    {
+      "index": 2,
+      "text": "意味の照合結果を報告するとき、分母や測定条件をどう説明しますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "80294d67c7de88e8c063c209e7232a8039d42e73f3728ffdede5bea5bf4886a2",
+      "audioSha256": "433888bdacefffca1577141d1c9259e24617c608dbbf0e8e3bc8d2c81e431bed",
+      "durationSeconds": 6.059
+    },
+    {
+      "index": 3,
+      "text": "小さな実験の成功を本番規模へ広げる前に、何を追加で測りますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "3014d282aaa4cb433eabd45a12842b70faf0b408eb9b4f478e33b611c2e4a0f4",
+      "audioSha256": "687b48b83cdddc75c34926d941742c689758cbebf453e051756075ff226a1629",
+      "durationSeconds": 5.814
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-12T01:49:12.443Z"
+}
