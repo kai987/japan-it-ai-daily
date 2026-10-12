@@ -8,7 +8,7 @@
     "to": "2026-10-12T10:00:00+09:00"
   },
   "createdAt": "2026-10-12T01:00:48.607Z",
-  "updatedAt": "2026-10-12T01:43:46.172Z",
+  "updatedAt": "2026-10-12T01:50:56.430Z",
   "completedArtifacts": [],
   "lastError": null,
   "baseCommit": "406e3a9b38a6e981f6e516715c43d2e9e0daa2ac",
@@ -186,5 +186,47 @@
     "site": "/tmp/japan-daily-20261012/text-release-38192792880/site"
   },
   "completedAt": "2026-10-12T01:43:45.696Z",
-  "nextStep": "Separate mandatory audio and one-time N1 handoff"
+  "nextStep": "Separate mandatory audio and one-time N1 handoff",
+  "n1": {
+    "status": "published",
+    "newHandoffAttempt": true,
+    "targetDate": "2026-10-12",
+    "sourceCommit": "593900fbfcd71ffe81588a3f4ff9563562db8cf7",
+    "releaseCommit": "d211052f29581b40726069eea331adacc563e805",
+    "sourceBlobSha": "7fd4fc224e96bed4b7b2c5b4d955db0c96c146b4",
+    "sourceSha256": "74362f80c9c3265c069c57f8f4678b827d33c8a1733a67f93c50f5f50f94ce7c",
+    "snapshotSha256": "d01bdb7d15f31c41bf90b5a0f562d745a29621ab9465ac99088abccc1b8c3b9f",
+    "storedSnapshotSha256": "bdc23b68ce9e7e41a1cc50ab094de19bc801ff8cd7f70d06b9baa13694969a05",
+    "pagesRunId": 38193278317,
+    "syncRunId": 38193176476,
+    "issueNumber": 62,
+    "totalDays": 62,
+    "rawVocabulary": 10,
+    "rawGrammar": 0,
+    "displayVocabulary": 20,
+    "displayGrammar": 8,
+    "checks": {
+      "exactPages": true,
+      "postDeploy": true,
+      "originalUnchanged": true,
+      "snapshotExact": true,
+      "liveArtifactBytes": true,
+      "display": {
+        "date": "2026-10-12",
+        "day": 44,
+        "issue": 62,
+        "titleVisible": true,
+        "vocabularyCount": 20,
+        "vocabularyNew": 16,
+        "vocabularyReview": 4,
+        "grammarNew": 0,
+        "grammarReview": 8,
+        "frequencyDenominator": 62,
+        "immersionParagraphs": 2,
+        "readingParagraphs": 2,
+        "mobileReadingVerified": true
+      }
+    },
+    "verifiedAt": "2026-10-12T01:49:50.558Z"
+  }
 }
