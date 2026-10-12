@@ -1,0 +1,116 @@
+{
+  "targetDate": "2026-10-12",
+  "sourceWindow": {
+    "from": "2026-10-11T10:00:00+09:00",
+    "to": "2026-10-12T10:00:00+09:00"
+  },
+  "articles": [
+    {
+      "articleId": "2026-10-12-top-1",
+      "url": "https://dev.classmethod.jp/articles/claude-code-aws-mcp-multi-account/",
+      "originalTitle": "Claude CodeにMCP経由で複数のAWSアカウントを参照させてみる",
+      "publishedAt": "2026-10-11T17:03:36.784Z",
+      "capturedAt": "2026-10-12T01:02:58.095920+00:00",
+      "snapshotSha256": "815d553ce1f995222fdf63330557647f5d6c9303d05d6970e146860a8db05933",
+      "access": "full",
+      "accessNote": "Public article read in full, including its stated measurements/limits; experiments were not rerun.",
+      "verifiedFacts": [
+        "aws_profile routes each SigV4 tool call through an explicitly allowed profile; omitted selection defaults to first profile",
+        "source_profile and sts:AssumeRole chain from hub profile; AWS CLI >=2.32.0 and aws login",
+        "ReadOnlyAccess limits actions but includes sensitive reads; OAuth sessions are role-fixed"
+      ]
+    },
+    {
+      "articleId": "2026-10-12-top-2",
+      "url": "https://dev.classmethod.jp/articles/openai-decisions-cross-match/",
+      "originalTitle": "OpenAI の Decisions API で書類の値の突合を試し、Jev・Clef と比べてみた",
+      "publishedAt": "2026-10-11T23:58:09.749Z",
+      "capturedAt": "2026-10-12T01:02:58.090968+00:00",
+      "snapshotSha256": "444de468587737392f87b172edf9f460cfb28431ed34f61c46b3852e61dba823",
+      "access": "full",
+      "accessNote": "Public article read in full, including its stated measurements/limits; experiments were not rerun.",
+      "verifiedFacts": [
+        "107 fictional input cases and two predicate questions, exact and semantic, threshold0.8",
+        "Semantic totals exclude one undecidable case: EN90/106 and JA91/106; exact both106/107",
+        "Costs/latency are measurements with FX150JPY/USD; missing/OCR cases fail; runtime server load and undisclosed repetition limit comparisons"
+      ]
+    },
+    {
+      "articleId": "2026-10-12-top-3",
+      "url": "https://dev.classmethod.jp/articles/cloudflare-workers-64mib-size-limit/",
+      "originalTitle": "Cloudflare Workersのサイズ上限が全プラン一律・非圧縮64 MBになった件をwranglerで確認する",
+      "publishedAt": "2026-10-11T04:29:13.433Z",
+      "capturedAt": "2026-10-12T01:02:58.225070+00:00",
+      "snapshotSha256": "96bc6e355bfb6256cb943e69c0112d0f9370f354551fa356856b654e3104792a",
+      "access": "full",
+      "accessNote": "Public article read in full, including its stated measurements/limits; experiments were not rerun.",
+      "verifiedFacts": [
+        "Free deployment accepted 8MiB random-string source at8192.21KiB raw/6170.27KiB gzip",
+        "65MiB repeated source was rejected code10027 although gzip64.91KiB",
+        "No Paid measurement, no precise64MiB boundary or startup benchmark; transient1042 only observed just after deploy"
+      ]
+    },
+    {
+      "articleId": "2026-10-12-top-4",
+      "url": "https://zenn.dev/mohhh_ok/articles/2026-10-capacitor-ios-web-audio-silent",
+      "originalTitle": "Capacitor の iOS アプリで音が鳴らない・途中から鳴らなくなる原因 3 つ",
+      "publishedAt": "2026-10-11T23:31:01.267+09:00",
+      "capturedAt": "2026-10-12T01:02:58.778552+00:00",
+      "snapshotSha256": "eb2c6ba2c72a9c3b3cd814b11d9c95f8574c65612d50aff192dedfd31053bfba",
+      "access": "full",
+      "accessNote": "Public article read in full, including its stated measurements/limits; experiments were not rerun.",
+      "verifiedFacts": [
+        "Capacitor local MP3 non-HTTP URLResponse fetched status0/okfalse but4652bytes decoded",
+        "iPhone12/iOS26.6.1 lock1-2minutes frozeAudioContext currentTime48.459 while state remainedrunning",
+        "Debug re-create on next tap recovered; TestFlight confirmation stillongoing and rebuild not logged through lock; Bun missing.env explains separate blankscreen"
+      ]
+    },
+    {
+      "articleId": "2026-10-12-top-5",
+      "url": "https://dev.classmethod.jp/articles/zed-1-23-jsonl-ndjson-table-preview/",
+      "originalTitle": "Zed 1.23.2でJSONL / NDJSONのログをテーブル表示する",
+      "publishedAt": "2026-10-11T18:06:45.453Z",
+      "capturedAt": "2026-10-12T01:02:58.012260+00:00",
+      "snapshotSha256": "0d25bde2e67a90957810d7cfb48931be9bd4e9cdd11473c5bbfca4473ad16db8",
+      "access": "full",
+      "accessNote": "Public article read in full, including its stated measurements/limits; experiments were not rerun.",
+      "verifiedFacts": [
+        "macOS26.6.1 defaultZed1.23.2 preview JSONL via cmd-k v",
+        "Three rows sortedlevel error/info/warn retain source row3/1/2 andfilter error1row",
+        "Union ofkeys, absentcellsblank andnestedJSONnotexpanded; no large-file benchmark or nested-field sorting demonstrated"
+      ]
+    }
+  ],
+  "discovery": {
+    "scope": "20 preferred names considered in grouped indexed queries, DevelopersIO front page and Zenn latest-article API; not an exhaustive crawl",
+    "sourcesConsidered": [
+      "Qiita",
+      "Zenn",
+      "Publickey",
+      "ITmedia AI＋",
+      "＠IT",
+      "CodeZine",
+      "gihyo.jp",
+      "DevelopersIO",
+      "TechFeed",
+      "はてなブックマーク・テクノロジー",
+      "ASCII × AI",
+      "AINOW",
+      "Ledge.ai",
+      "CyberAgent Developers Blog",
+      "LINEヤフー Tech Blog",
+      "Mercari Engineering",
+      "SmartHR Tech Blog",
+      "LayerX Engineering Blog",
+      "DeNA Engineering",
+      "Money Forward Developers Blog"
+    ],
+    "limitations": "Grouped date queries produced limited relevant indexed results. Original article timestamp confirmed from JSON-LD or embedded Zenn article metadata. Web reader failed for several URLs; successful full HTML captures and article text were read directly without treating transport failure as absence.",
+    "excluded": "All Oct11 Top5 URLs excluded; prewindow TransferFamily and Personalize sources excluded.",
+    "supplementalOfficialSources": [
+      "https://docs.aws.amazon.com/agent-toolkit/latest/userguide/multi-account-access.html",
+      "https://developers.cloudflare.com/changelog/post/2026-09-04-increased-worker-size-limit/",
+      "https://zed.dev/releases/stable/1.23.2"
+    ]
+  }
+}
