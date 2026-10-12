@@ -221,10 +221,6 @@
           "firstDate": "2026-08-19"
         },
         {
-          "pattern": "～しかない",
-          "firstDate": "2026-09-01"
-        },
-        {
           "pattern": "～としても",
           "firstDate": "2026-09-05"
         }
@@ -252,6 +248,11 @@
         {
           "item": "弾く",
           "reason": "Actual 弾かれます teaches rejection reading はじく; not musical ひく."
+        },
+        {
+          "item": "～しか～ない",
+          "historyContrast": "動詞＋しかない（N3・2026-09-01）",
+          "reason": "Restrictive-only construction differs from no-other-choice. Not counted as new advanced grammar because this source form is basic restriction."
         }
       ],
       "limitedSupply": "16 new source-grounded lexical items and 0 new advanced constructions. Reused variants excluded; basic conditional forms not counted as new N1/N2. Review layer remains independent and is computed by unchanged shared implementation."
