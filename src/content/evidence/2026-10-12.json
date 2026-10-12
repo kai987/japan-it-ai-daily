@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-12",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-12T01:28:03.262Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-12-top-1",
+      "url": "https://dev.classmethod.jp/articles/claude-code-aws-mcp-multi-account/",
+      "originalTitle": "Claude CodeにMCP経由で複数のAWSアカウントを参照させてみる",
+      "source": "DevelopersIO",
+      "topic": "AI Agent／クラウド権限",
+      "access": "full",
+      "accessNote": "公開原文の本文を最後まで確認。原文にある実験結果の再実行はしていない。",
+      "publishedAt": "2026-10-11T17:03:36.784Z",
+      "capturedAt": "2026-10-12T01:02:58.095920+00:00",
+      "snapshotSha256": "815d553ce1f995222fdf63330557647f5d6c9303d05d6970e146860a8db05933",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "利用可能なプロファイルを列挙し、aws_profileで参照先を選ぶ。",
+          "quote": "AWS_MCP_PROXY_PROFILES",
+          "locator": "MCP Proxy 設定／認証方式",
+          "conditions": "AWS MCP ServerのSigV4、事前作成した対象ロールと双方のAssumeRole設定。原文のCLI確認とS3参照例のみ。",
+          "usedIn": {
+            "zh": "aws_profile",
+            "ja": "aws_profile",
+            "interview": "aws_profile"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "呼び出しごとのプロファイル切り替えはSigV4に限定される。",
+          "quote": "SigV4認証",
+          "locator": "認証方式の制約",
+          "conditions": "AWS MCP ServerのSigV4、事前作成した対象ロールと双方のAssumeRole設定。原文のCLI確認とS3参照例のみ。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "読み取り専用ロールを事前に作り、取得できるデータの範囲を別途確認する。",
+          "quote": "ReadOnlyAccess",
+          "locator": "参照先アカウント側のIAM設定",
+          "conditions": "AWS MCP ServerのSigV4、事前作成した対象ロールと双方のAssumeRole設定。原文のCLI確認とS3参照例のみ。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "アカウントの選択、ロールの権限、読み取りによる情報取得を分けて考えられるため、AIエージェントの権限設計を具体的に説明できる。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "把账户选择、角色权限与只读数据风险拆开，能具体说明企业 AI Agent 的授权边界。",
+            "ja": "アカウントの選択、ロールの権限、読み取りによる情報取得を分けて考えられるため、AIエージェントの権限設計を具体的に説明できる。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-12-top-2",
+      "url": "https://dev.classmethod.jp/articles/openai-decisions-cross-match/",
+      "originalTitle": "OpenAI の Decisions API で書類の値の突合を試し、Jev・Clef と比べてみた",
+      "source": "DevelopersIO",
+      "topic": "AI評価／書類照合",
+      "access": "full",
+      "accessNote": "公開原文の本文を最後まで確認。原文にある実験結果の再実行はしていない。",
+      "publishedAt": "2026-10-11T23:58:09.749Z",
+      "capturedAt": "2026-10-12T01:02:58.090968+00:00",
+      "snapshotSha256": "444de468587737392f87b172edf9f460cfb28431ed34f61c46b3852e61dba823",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "exactとsemanticを分け、semanticは正解の決まる106ケースで評価した。",
+          "quote": "閾値：0.8",
+          "locator": "1.3 判定方法／3.1 結果",
+          "conditions": "架空107ケース、Decisions gpt-6-luna、EN/JA指示、閾値0.8。semanticの正解確定は106件。他サービスは測定日が異なる。",
+          "usedIn": {
+            "zh": "semantic",
+            "ja": "semantic",
+            "interview": "semantic"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "架空のテキスト対で比較し、画像OCR全体や本番分布は検証していない。",
+          "quote": "107ケース",
+          "locator": "2 データ",
+          "conditions": "架空107ケース、Decisions gpt-6-luna、EN/JA指示、閾値0.8。semanticの正解確定は106件。他サービスは測定日が異なる。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "英語中央値0.270秒、日本語0.264秒。費用は著者の入力長と換算条件に依存する。",
+          "quote": "0.270",
+          "locator": "3.3 時間と費用",
+          "conditions": "架空107ケース、Decisions gpt-6-luna、EN/JA指示、閾値0.8。semanticの正解確定は106件。他サービスは測定日が異なる。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "文字列一致と意味の一致を分け、分母や通貨の誤判定まで確認することで、AIの評価を業務ルールと結び付けて話せる。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "保留文本相等与语义相等的任务差异、106/107分母以及币种错误，能把 AI 评估讲成具体业务判断。",
+            "ja": "文字列一致と意味の一致を分け、分母や通貨の誤判定まで確認することで、AIの評価を業務ルールと結び付けて話せる。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-12-top-3",
+      "url": "https://dev.classmethod.jp/articles/cloudflare-workers-64mib-size-limit/",
+      "originalTitle": "Cloudflare Workersのサイズ上限が全プラン一律・非圧縮64 MBになった件をwranglerで確認する",
+      "source": "DevelopersIO",
+      "topic": "エッジ／Web配信",
+      "access": "full",
+      "accessNote": "公開原文の本文を最後まで確認。原文にある実験結果の再実行はしていない。",
+      "publishedAt": "2026-10-11T04:29:13.433Z",
+      "capturedAt": "2026-10-12T01:02:58.225070+00:00",
+      "snapshotSha256": "96bc6e355bfb6256cb943e69c0112d0f9370f354551fa356856b654e3104792a",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "非圧縮値とgzip値を分けて確認する。",
+          "quote": "Total Upload",
+          "locator": "dry-runとサイズ確認",
+          "conditions": "Ubuntu24.04 arm64、Node24.21.0、Wrangler4.149.0、Freeのみ。8MiBランダムと65MiB繰り返し。Paid・起動性能・正確な境界は未検証。",
+          "usedIn": {
+            "zh": "Total Upload",
+            "ja": "Total Upload",
+            "interview": "Total Upload"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "65MiBはgzipが小さくても拒否され、8MiBランダムはFreeへ配備できた。",
+          "quote": "10027",
+          "locator": "65MiBを超過させるテスト",
+          "conditions": "Ubuntu24.04 arm64、Node24.21.0、Wrangler4.149.0、Freeのみ。8MiBランダムと65MiB繰り返し。Paid・起動性能・正確な境界は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Paidや起動時間は実測していない。",
+          "quote": "未検証",
+          "locator": "Paidプランについて",
+          "conditions": "Ubuntu24.04 arm64、Node24.21.0、Wrangler4.149.0、Freeのみ。8MiBランダムと65MiB繰り返し。Paid・起動性能・正確な境界は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "ランダムと繰り返しのデータを比べることで、配備のサイズ判定と未測定の起動性能を切り分けられる。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "通过随机与重复载荷，清楚区分构建体积、部署额度与未测性能，适合前端及边缘部署评审。",
+            "ja": "ランダムと繰り返しのデータを比べることで、配備のサイズ判定と未測定の起動性能を切り分けられる。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-12-top-4",
+      "url": "https://zenn.dev/mohhh_ok/articles/2026-10-capacitor-ios-web-audio-silent",
+      "originalTitle": "Capacitor の iOS アプリで音が鳴らない・途中から鳴らなくなる原因 3 つ",
+      "source": "Zenn",
+      "topic": "フロントエンド／iOS音声",
+      "access": "full",
+      "accessNote": "公開原文の本文を最後まで確認。原文にある実験結果の再実行はしていない。",
+      "publishedAt": "2026-10-11T23:31:01.267+09:00",
+      "capturedAt": "2026-10-12T01:02:58.778552+00:00",
+      "snapshotSha256": "eb2c6ba2c72a9c3b3cd814b11d9c95f8574c65612d50aff192dedfd31053bfba",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "ローカル媒体はstatus 0でも解読できた。AudioContextの問題とは別に切り分ける。",
+          "quote": "fetch mp3 status 0 ok false type basic bytes 4652",
+          "locator": "原因1 fetchレスポンス",
+          "conditions": "iPhone12/iOS26.6.1。取得ログはシミュレーター、ロックはDebug。TestFlight確認は継続中。ローカル媒体の条件を遠隔APIへ拡張しない。",
+          "usedIn": {
+            "zh": "AudioContext",
+            "ja": "AudioContext",
+            "interview": "AudioContext"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "runningでも時計が止まり、次のタップでcontextとノードを再作成した。",
+          "quote": "48.459",
+          "locator": "原因2 ロック解除後のログ",
+          "conditions": "iPhone12/iOS26.6.1。取得ログはシミュレーター、ロックはDebug。TestFlight確認は継続中。ローカル媒体の条件を遠隔APIへ拡張しない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Debugでは復旧したがTestFlightの検証は継続中。",
+          "quote": "TestFlight",
+          "locator": "原因2 対策後の確認",
+          "conditions": "iPhone12/iOS26.6.1。取得ログはシミュレーター、ロックはDebug。TestFlight確認は継続中。ローカル媒体の条件を遠隔APIへ拡張しない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "ローカル媒体のバイト、音声の時計、ビルド設定を別々に観測しており、実機の無音を段階的に調べる手順を学べる。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "该案例同时记录本地媒体字节、音频时钟和构建配置，能形成真机音频排障的具体步骤。",
+            "ja": "ローカル媒体のバイト、音声の時計、ビルド設定を別々に観測しており、実機の無音を段階的に調べる手順を学べる。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-12-top-5",
+      "url": "https://dev.classmethod.jp/articles/zed-1-23-jsonl-ndjson-table-preview/",
+      "originalTitle": "Zed 1.23.2でJSONL / NDJSONのログをテーブル表示する",
+      "source": "DevelopersIO",
+      "topic": "開発ツール／ログ分析",
+      "access": "full",
+      "accessNote": "公開原文の本文を最後まで確認。原文にある実験結果の再実行はしていない。",
+      "publishedAt": "2026-10-11T18:06:45.453Z",
+      "capturedAt": "2026-10-12T01:02:58.012260+00:00",
+      "snapshotSha256": "0d25bde2e67a90957810d7cfb48931be9bd4e9cdd11473c5bbfca4473ad16db8",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "JSONLではキーの和集合を列にし、ないキーは空欄として表示する。",
+          "quote": "キーがない行のセルは空欄です",
+          "locator": "行によってキーが違うJSONL",
+          "conditions": "Zed1.23.2、macOS26.6.1 Apple Silicon、既定設定、三件のログ。Linux/Windows・大量ログ・編集往復は実測していない。",
+          "usedIn": {
+            "zh": "JSONL",
+            "ja": "JSONL",
+            "interview": "JSONL"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "入れ子はJSON文字列のセルに残り、子項目へ展開されない。",
+          "quote": "ネストしたオブジェクトは展開されず",
+          "locator": "ネストしたJSONL",
+          "conditions": "Zed1.23.2、macOS26.6.1 Apple Silicon、既定設定、三件のログ。Linux/Windows・大量ログ・編集往復は実測していない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "並べ替えても元の行番号を保持する。",
+          "quote": "3, 1, 2",
+          "locator": "列ごとのソート",
+          "conditions": "Zed1.23.2、macOS26.6.1 Apple Silicon、既定設定、三件のログ。Linux/Windows・大量ログ・編集往復は実測していない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "並べ替えの入口、元の行番号、欠けたキーの表示を具体的に学び、入れ子と大量ログの限界も説明できる。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "排序图标、原行号和缺键显示都是可马上练习的细节，同时保留嵌套与规模性能的边界。",
+            "ja": "並べ替えの入口、元の行番号、欠けたキーの表示を具体的に学び、入れ子と大量ログの限界も説明できる。"
+          }
+        }
+      ]
+    }
+  ]
+}
