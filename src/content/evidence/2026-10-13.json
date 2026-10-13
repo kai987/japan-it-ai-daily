@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-13",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-13T01:22:42.565Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-13-top-1",
+      "url": "https://zenn.dev/kudan_jp/articles/e4607229e35382",
+      "originalTitle": "AIチューニングエージェントの設計：推論と決定論的探索を組み合わせる",
+      "source": "Zenn / Kudan Tech Blog",
+      "topic": "AI・研究",
+      "access": "full",
+      "accessNote": "公開本文を最後まで読み、条件と未検証項目を区別した。本文取得はGit外で保管。",
+      "publishedAt": "2026-10-13T09:14:41.837+09:00",
+      "capturedAt": "2026-10-13T01:07:05.433293+00:00",
+      "snapshotSha256": "c9c25c041da206e3ade1564d381f5b46c57e6eac3d7c36bd488914d82e627cd0",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "アダプターはdescribe/run/evaluateの三操作を単一実行ファイルで提供する設計。",
+          "quote": "describe",
+          "locator": "3つの操作",
+          "conditions": "Kudanの設計提案。最小実装は次回予定。試験機器・データセット・改善率の実測なし。",
+          "usedIn": {
+            "zh": "describe",
+            "ja": "describe",
+            "interview": "describe"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "最初の試行と改善比較にはデプロイ済みの基準値を使う。",
+          "quote": "デプロイ済みベースライン",
+          "locator": "ソースのデフォルトではなく、現実から始める",
+          "conditions": "Kudanの設計提案。最小実装は次回予定。試験機器・データセット・改善率の実測なし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "数値指標と合否を分け、制約を満たす結果を優先する。",
+          "quote": "測定値と合否制約を分ける",
+          "locator": "信頼できるループのための4つのガードレール",
+          "conditions": "Kudanの設計提案。最小実装は次回予定。試験機器・データセット・改善率の実測なし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "AIの推論と監査可能な実験制御を分け、設計上の期待と実測の証拠を区別する練習になります。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合学习 AI 推理与可审计实验控制如何分工，并练习把架构预期和实测证据分开。",
+            "ja": "AIの推論と監査可能な実験制御を分け、設計上の期待と実測の証拠を区別する練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-13-top-2",
+      "url": "https://zenn.dev/socialplus/articles/f363cdf24340cf",
+      "originalTitle": "Next.js（Pages Router）+ react-i18next で多言語化を実装する",
+      "source": "Zenn / Social PLUS Tech Blog",
+      "topic": "ソフトウェア開発",
+      "access": "full",
+      "accessNote": "公開本文を最後まで読み、条件と未検証項目を区別した。本文取得はGit外で保管。",
+      "publishedAt": "2026-10-13T09:44:01.789+09:00",
+      "capturedAt": "2026-10-13T01:07:38.976784+00:00",
+      "snapshotSha256": "6d1f0fd166f9e0aec3aede018d1201a2dfe3d3632854fa7e7a47a7bdf5170b13",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "言語が変わったときだけインスタンスを複製する。",
+          "quote": "cloneInstance",
+          "locator": "パスパラメータのlocaleをi18nextに反映する",
+          "conditions": "Next.js16.3.8 Pages Router/i18next21.9.2/react-i18next11.18.6。実装紹介、性能比較なし。",
+          "usedIn": {
+            "zh": "cloneInstance",
+            "ja": "cloneInstance",
+            "interview": "cloneInstance"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "辞書の形を型でそろえ、キー追加時の訳の不足を検出する。",
+          "quote": "typeof template",
+          "locator": "翻訳漏れを型で防ぐ",
+          "conditions": "Next.js16.3.8 Pages Router/i18next21.9.2/react-i18next11.18.6。実装紹介、性能比較なし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "ブラウザ言語ではなくURLのlocaleで選ぶため自動検出を無効化する。",
+          "quote": "localeDetection",
+          "locator": "localeをパスパラメータで受け取る",
+          "conditions": "Next.js16.3.8 Pages Router/i18next21.9.2/react-i18next11.18.6。実装紹介、性能比較なし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "React・Next.jsの面接で、ルーティング、インスタンスの寿命、型による確認を具体的に説明できます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "直接服务 React/Next.js 面试：解释路由、实例生命周期与类型约束的分工，并保留版本边界。",
+            "ja": "React・Next.jsの面接で、ルーティング、インスタンスの寿命、型による確認を具体的に説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-13-top-3",
+      "url": "https://dev.classmethod.jp/articles/workers-ml-kem-local-shared-secret/",
+      "originalTitle": "耐量子暗号ML-KEMとは？Cloudflare WorkersのWeb Cryptoで共有秘密を生成・復元してみた",
+      "source": "DevelopersIO",
+      "topic": "クラウド・インフラ",
+      "access": "full",
+      "accessNote": "公開本文を最後まで読み、条件と未検証項目を区別した。本文取得はGit外で保管。",
+      "publishedAt": "2026-10-12T12:42:05.832Z",
+      "capturedAt": "2026-10-13T01:07:05.082688+00:00",
+      "snapshotSha256": "747a839c93334a7ed9c55d61be6e7c600dc0d97dfb3e239055c6cbd23ef9c2ac",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "共有秘密32バイト同士が一致し、暗号文は1088バイトだった。",
+          "quote": "ML-KEM-768",
+          "locator": "ローカル検証",
+          "conditions": "10月11日、Ubuntu24.04.5LTS aarch64 Docker、Node24.21.0、Wrangler4.146.0/4.149.0、compatibility_date2026-10-01。ローカル一リクエスト。",
+          "usedIn": {
+            "zh": "ML-KEM-768",
+            "ja": "ML-KEM-768",
+            "interview": "ML-KEM-768"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "フラグなしでは同じ互換日付でもgenerateKeyが失敗した。",
+          "quote": "webcrypto_modern_algorithms",
+          "locator": "compatibility flagを外すとエラー",
+          "conditions": "10月11日、Ubuntu24.04.5LTS aarch64 Docker、Node24.21.0、Wrangler4.146.0/4.149.0、compatibility_date2026-10-01。ローカル一リクエスト。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "フラグなしのローカルWorkerはHTTP500となった。",
+          "quote": "NotSupportedError",
+          "locator": "compatibility flagを外すとエラー",
+          "conditions": "10月11日、Ubuntu24.04.5LTS aarch64 Docker、Node24.21.0、Wrangler4.146.0/4.149.0、compatibility_date2026-10-01。ローカル一リクエスト。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "暗号の基本操作、プラットフォームの有効化条件、通信全体の検証範囲を分けて話す練習になります。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "练习把密码原语、平台启用条件和端到端安全验收分开，避免用成功响应代替系统验证。",
+            "ja": "暗号の基本操作、プラットフォームの有効化条件、通信全体の検証範囲を分けて話す練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-13-top-4",
+      "url": "https://dev.classmethod.jp/articles/pnpm-12-11-rust-toolchain-management/",
+      "originalTitle": "pnpm 12.11のRust toolchain管理を試す：rust-toolchain.tomlからcargo、pnx、グローバル導入まで",
+      "source": "DevelopersIO",
+      "topic": "ソフトウェア開発",
+      "access": "full",
+      "accessNote": "公開本文を最後まで読み、条件と未検証項目を区別した。本文取得はGit外で保管。",
+      "publishedAt": "2026-10-12T12:23:19.262Z",
+      "capturedAt": "2026-10-13T01:07:05.120842+00:00",
+      "snapshotSha256": "e12bf95a39b880c0599745ee454b54969d122066ebe415e6b2ee794bfd2aa172",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "pnpm installが宣言したRust1.95.0を取得した。",
+          "quote": "rust-toolchain.toml",
+          "locator": "Rust toolchain を用意する",
+          "conditions": "10月11日 Ubuntu24.04.5LTS aarch64 Docker、Node24.21.0、pnpm12.11.1、Rust1.95.0、itoa1.0.18。最初にrustup/cargo/rustc/ccなし。",
+          "usedIn": {
+            "zh": "rust-toolchain.toml",
+            "ja": "rust-toolchain.toml",
+            "interview": "rust-toolchain.toml"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "原生対象はccがなくリンクに失敗。",
+          "quote": "cc",
+          "locator": "ネイティブ向けの cargo build はリンカーで失敗",
+          "conditions": "10月11日 Ubuntu24.04.5LTS aarch64 Docker、Node24.21.0、pnpm12.11.1、Rust1.95.0、itoa1.0.18。最初にrustup/cargo/rustc/ccなし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "その例ではオフライン対象ビルドとNode WASI実行を確認した。",
+          "quote": "wasm32-wasip1",
+          "locator": "WASI 向けにビルドして実行する",
+          "conditions": "10月11日 Ubuntu24.04.5LTS aarch64 Docker、Node24.21.0、pnpm12.11.1、Rust1.95.0、itoa1.0.18。最初にrustup/cargo/rustc/ccなし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "ツールチェーン、キャッシュ、依存のロック、OSのリンカーが別の役割であることを具体例から説明できます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合解释可复现工具链、缓存、依赖锁和系统链接器各自解决什么，保留成功与失败条件。",
+            "ja": "ツールチェーン、キャッシュ、依存のロック、OSのリンカーが別の役割であることを具体例から説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-13-top-5",
+      "url": "https://dev.classmethod.jp/articles/servicenow-voice-amazon-connect-consumer-phone-matching/",
+      "originalTitle": "ServiceNow Voice with Amazon Connect で発信者電話番号から Consumer 情報を自動紐付けできるか試してみた",
+      "source": "DevelopersIO",
+      "topic": "サービス・企業",
+      "access": "full",
+      "accessNote": "公開本文を最後まで読み、条件と未検証項目を区別した。本文取得はGit外で保管。",
+      "publishedAt": "2026-10-13T00:17:19.957Z",
+      "capturedAt": "2026-10-13T01:07:04.947528+00:00",
+      "snapshotSha256": "9378fb79127ec01f203201594aa04830824b38476ad64637b8bd468954012b67",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "既存の三ロールに顧客データ読み取りロールを加えた環境でConsumer関連付けを確認した。",
+          "quote": "sn_customerservice.customer_data_viewer",
+          "locator": "ロールの追加",
+          "conditions": "既存のServiceNow PDI/Amazon Connect標準連携。登録番号と同番号2件の小規模確認。新規環境/本番/性能測定なし。",
+          "usedIn": {
+            "zh": "customer_data_viewer",
+            "ja": "customer_data_viewer",
+            "interview": "customer_data_viewer"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "InteractionのConsumerリンクは通話完了後に確認した。",
+          "quote": "通話完了後",
+          "locator": "動作確認",
+          "conditions": "既存のServiceNow PDI/Amazon Connect標準連携。登録番号と同番号2件の小規模確認。新規環境/本番/性能測定なし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "同番号2件の例では先に作成したConsumerが紐付いた。",
+          "quote": "先に作成した",
+          "locator": "同じ電話番号のConsumer",
+          "conditions": "既存のServiceNow PDI/Amazon Connect標準連携。登録番号と同番号2件の小規模確認。新規環境/本番/性能測定なし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "画面の時点と重複ケースを見て、番号照合・即時表示・本人確認を区別する練習になります。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "用实际界面时点与重复案例理解集成验收，避免把号码匹配等同于实时展示或本人认证。",
+            "ja": "画面の時点と重複ケースを見て、番号照合・即時表示・本人確認を区別する練習になります。"
+          }
+        }
+      ]
+    }
+  ]
+}
