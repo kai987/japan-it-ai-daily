@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-13",
-  "stage": "validating",
+  "stage": "request_ready",
   "sourceCommit": "8e764a65717ce8022c58f21b6b718ce4b63733a2",
   "sourceWindow": {
     "from": "2026-10-12T10:00:00+09:00",
     "to": "2026-10-13T10:00:00+09:00"
   },
   "createdAt": "2026-10-13T01:04:52.964Z",
-  "updatedAt": "2026-10-13T01:25:58.255Z",
+  "updatedAt": "2026-10-13T01:28:39.886Z",
   "completedArtifacts": [],
   "lastError": null,
   "baseCommit": "8e764a65717ce8022c58f21b6b718ce4b63733a2",
@@ -30,5 +30,19 @@
     "A\tsrc/content/japanese/2026-10-13.md",
     "A\tsrc/data/interviews/2026-10-13.json"
   ],
-  "verifiedAt": "2026-10-13T01:25:03.100Z"
+  "verifiedAt": "2026-10-13T01:25:03.100Z",
+  "requestId": "codex-2026-10-13-45b508ba-5dfe-4e68-a97d-5a5711e90b42",
+  "preflightRunId": 38332029637,
+  "preflightWorkflowPath": ".github/workflows/deploy.yml",
+  "requestedAt": "2026-10-13T01:28:35.385Z",
+  "files": [
+    "src/content/daily/2026-10-13.md",
+    "src/content/japanese/2026-10-13.md",
+    "src/content/daily-ja/2026-10-13.md",
+    "src/content/japanese-ja/2026-10-13.md",
+    "src/content/evidence/2026-10-13.json",
+    "src/data/interviews/2026-10-13.json"
+  ],
+  "platformRepair": false,
+  "platformRepairPaths": []
 }
