@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-13",
+  "generatedAt": "2026-10-13T01:56:19.565Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIにパラメータ調整を任せるとき、どの処理を確実なルールとして残しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "b1055228a53a57f9871235076754dc05e9013ca90ca3630b0b32832d9ac89b6c",
+      "audioSha256": "9a2461d50719444fcc54b046b57471c27a8be359f1a4bbc18589228aa0ec2344",
+      "durationSeconds": 6.349
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "候補の有効性、試行の記録、停止条件は、決めたルールで処理します。記事では、エージェントが仮説を立て、エンジンが許容範囲と履歴を管理し、アダプターがdescribe、run、evaluateの三操作を担当します。比較はソースの初期値ではなく、デプロイ済みのベースラインから始めます。ただし設計提案なので、改善率が実証されたとは言えません。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "7169e7559947d6fe416a724eab8790665c7742f5de6e69bf33e02e98f6dfa43c",
+      "audioSha256": "4c2791d62ece1175ea194a0115a83a1ff254356083cab38a80211b4b71b191fe",
+      "durationSeconds": 25.692,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "多言語の画面で、言語の選択と翻訳漏れをどう管理しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "4433b03263b83b81054656b4cc87b4df5570d59ff96c4dab4740d76e330a55a2",
+      "audioSha256": "582aa07a5fa0b409639d29834abff757130ca9bc1ca8a09723a433297ba5c983",
+      "durationSeconds": 5.468
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "言語を決める場所と、翻訳の確認を分けます。記事のPages RouterではlocaleDetectionをfalseにし、URLの言語を使います。辞書はtypeof templateでキーをそろえ、cloneInstanceは言語が変わるときだけ作ります。既存の言語なしURLも日本語で使えます。ただし型で分かるのはキーの漏れで、訳の自然さや表示崩れは別に確認が必要です。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "20e4108f2bd4127f663dfd67bb3fd43b97302e5e0380a2038fb7b9a889fa5582",
+      "audioSha256": "1a14db3d0d2b89e4ed273fa1cb7880163ecfffeae025aacccbffd5641105cc5c",
+      "durationSeconds": 27.398,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "新しい暗号機能を検証するとき、成功したと言える範囲をどう判断しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "ba7703f58a8272a18c2442e8485ca63437866030889eb06191af69d823c883b9",
+      "audioSha256": "18bc5584e044705ce2b58cc7447b676cd4d1dc9595416a8cfcc1e5d7de82b979",
+      "durationSeconds": 5.912
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "何を確認したかを、通信全体の安全性と分けて説明します。記事ではML-KEM-768をローカルのWorkersで動かし、32バイトの共有秘密が生成側と復元側で一致しました。webcrypto_modern_algorithmsの指定を外すと、同じ設定でもエラーになりました。これは鍵を共有する処理の確認で、通信内容の暗号化や本番の動作まで検証した結果ではありません。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "e9d3e4c9a11db9e15a730e338208791e63ab70a1da00e6bdb6e3fb24405c1839",
+      "audioSha256": "e648f86d67de6d38a0320b51d5ed65473950bc9400c9404a936515a91e25c206",
+      "durationSeconds": 29.431,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "開発ツールを一つにまとめれば、ビルド環境の問題も解決できますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "21bddb07d75dbcc0b0dd601fdc7078f7de83aaad73f5b335badc77eaf86346d9",
+      "audioSha256": "b3994a053584595a9fdbb2552f6b603158ae2bd22297ce9d9dfe94167e022fa6",
+      "durationSeconds": 5.711
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "バージョンの管理と、ビルドに必要な環境は分けて考えます。記事ではpnpmがrust-toolchain.tomlを読み、Rustを用意しました。ただしネイティブのビルドはccがなく失敗し、wasm32-wasip1ではオフラインのビルドが通りました。依存はCargo.lockに残ります。この小さなLinuxの例を、そのまま別のOSやすべてのRustプロジェクトへ広げることはできません。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "f5fb3acc8d80aea323fd8ebec8f7da1b8b0fa05c53ddf1addd225fcb3d1984d2",
+      "audioSha256": "6e0836d187ae6008e0669dcda69123954fb343d1ea98afe0fb7e83e7643090dc",
+      "durationSeconds": 27.665,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "電話番号から顧客を自動で見つける機能は、どこまで確認すれば使えますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "d3055ac18e9d7f0f6ba18d5191d02b36edca80ee001d1812ba1c5f136d8b9a47",
+      "audioSha256": "073d9eb9939c71237c2384584b27f472c3ae0cab989c0ba6317b373bde265722",
+      "durationSeconds": 5.978
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "関連付けの成功だけでなく、権限と反映されるタイミングも確認します。記事ではcustomer_data_viewerを追加し、通話終了後のInteractionにConsumerが結び付きました。ただし着信中は番号だけで、顧客のポップアップは確認できませんでした。同じ番号が二件あると先に作った方へ結び付いたため、重複時の扱いを決める必要があり、本人確認の代わりにもなりません。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "40d96b52ea52279a5a0d17020cdb8b1b016b7b94152af386f4c462d0480cbcf8",
+      "audioSha256": "1ed152c75c7e5cf715350fb82ec5e8c8f1b968458e2e3ebdc48d58890b2b34e3",
+      "durationSeconds": 28.072,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "設定の基準を、どの情報から決めますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "91e6b56021df7b9e2eb3de3e39c5df8ed6903a809c4ba6333ab5ef41fee86b60",
+      "audioSha256": "191cbe515f9e1367b8d89d07cf663ddab196d24cdfe6fde4776f3adead1c86ce",
+      "durationSeconds": 3.622
+    },
+    {
+      "index": 2,
+      "text": "小さな実験が通ったとき、どんな条件と失敗を一緒に記録しますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "930ed3e1f774d409c9f779fb80be4708e268227cba08fadcc8da89c7d37d313e",
+      "audioSha256": "20b7d03e0241e3580c254ec7904454d6103ba4c2f1bbc596c459c1bc64da1fc8",
+      "durationSeconds": 5.908
+    },
+    {
+      "index": 3,
+      "text": "顧客の自動照合で、記録の完成と本人確認をどう分けますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "b51c5067bc56aab9a5d8e35b5db758a073496df4c4c5724fce95a0ec4c933426",
+      "audioSha256": "b7be95f617afd94578b16cf3a8490c4a8e57aa0675ae27a9879a85ffc3005075",
+      "durationSeconds": 5.572
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-13T01:56:25.580Z"
+}
