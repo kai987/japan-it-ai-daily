@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-13",
-  "stage": "preflight_passed",
+  "stage": "request_ready",
   "sourceCommit": "d280112570c8f90c777daf7c609837ba5348557f",
   "sourceWindow": {
     "from": "2026-10-12T10:00:00+09:00",
     "to": "2026-10-13T10:00:00+09:00"
   },
   "createdAt": "2026-10-13T01:04:52.964Z",
-  "updatedAt": "2026-10-13T01:43:52.603Z",
+  "updatedAt": "2026-10-13T01:44:01.755Z",
   "completedArtifacts": [],
   "lastError": null,
   "baseCommit": "d280112570c8f90c777daf7c609837ba5348557f",
@@ -27,10 +27,10 @@
     "M\tsrc/content/daily/2026-10-13.md"
   ],
   "verifiedAt": "2026-10-13T01:40:56.792Z",
-  "requestId": "codex-2026-10-13-45b508ba-5dfe-4e68-a97d-5a5711e90b42",
-  "preflightRunId": 38332029637,
+  "requestId": "codex-2026-10-13-2402731f-a3c1-498b-b2d7-178006c871e1",
+  "preflightRunId": 38333291350,
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
-  "requestedAt": "2026-10-13T01:28:35.385Z",
+  "requestedAt": "2026-10-13T01:43:57.589Z",
   "files": [
     "src/content/daily/2026-10-13.md",
     "src/content/japanese/2026-10-13.md",
