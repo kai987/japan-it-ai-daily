@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-13",
-  "stage": "request_ready",
-  "sourceCommit": "8e764a65717ce8022c58f21b6b718ce4b63733a2",
+  "stage": "drafts_ready",
+  "sourceCommit": "d280112570c8f90c777daf7c609837ba5348557f",
   "sourceWindow": {
     "from": "2026-10-12T10:00:00+09:00",
     "to": "2026-10-13T10:00:00+09:00"
   },
   "createdAt": "2026-10-13T01:04:52.964Z",
-  "updatedAt": "2026-10-13T01:28:39.886Z",
+  "updatedAt": "2026-10-13T01:36:43.361Z",
   "completedArtifacts": [],
   "lastError": null,
   "baseCommit": "8e764a65717ce8022c58f21b6b718ce4b63733a2",
@@ -44,5 +44,24 @@
     "src/data/interviews/2026-10-13.json"
   ],
   "platformRepair": false,
-  "platformRepairPaths": []
+  "platformRepairPaths": [],
+  "attempt": 2,
+  "completedArtifactPaths": [
+    "runs/2026-10-13/sources.json",
+    "runs/2026-10-13/history.json",
+    "runs/2026-10-13/interviews.json",
+    "runs/2026-10-13/draft.json"
+  ],
+  "editorialCorrection": {
+    "targetDate": "2026-10-13",
+    "reason": "Final manual runbook review: preserve original Japanese article titles in both report modes; exactly three article keywords.",
+    "affectedSourcePaths": [
+      "src/content/daily/2026-10-13.md",
+      "src/content/daily-ja/2026-10-13.md"
+    ],
+    "factsAndAnswersUnchanged": true,
+    "learningUnchanged": true,
+    "requestOwnership": "Current request retained until publisher and main Pages finish. Correction will receive a new current-main source-bound request."
+  },
+  "nextAction": "Complete revised draft preflight and submit corrected request"
 }
