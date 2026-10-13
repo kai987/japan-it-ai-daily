@@ -8,7 +8,7 @@
     "to": "2026-10-13T10:00:00+09:00"
   },
   "createdAt": "2026-10-13T01:04:52.964Z",
-  "updatedAt": "2026-10-13T01:52:16.524Z",
+  "updatedAt": "2026-10-13T01:54:27.273Z",
   "completedArtifacts": [],
   "lastError": null,
   "baseCommit": "d280112570c8f90c777daf7c609837ba5348557f",
@@ -177,5 +177,32 @@
     "date": "2026-10-13",
     "attempt": 1
   },
-  "site": "/tmp/japan-daily-20261013/text-release-38333748323/site"
+  "site": "/tmp/japan-daily-20261013/text-release-38333748323/site",
+  "n1Handoff": {
+    "schemaVersion": 1,
+    "targetDate": "2026-10-13",
+    "day": 45,
+    "status": "waiting_source",
+    "stage": "waiting_source",
+    "upstreamSourceCommit": "49e4d68910e6ab43524aafad515583465a8a1dc2",
+    "sourcePagesRunId": 38333748323,
+    "snapshotSha256": "d656b0ab8da38a8da27cb03c775e53ef635aca8a9ea725218b4c7a860714197d",
+    "issueNumber": 63,
+    "totalDays": 63,
+    "requestSubmitted": false,
+    "priorRequestDate": "2026-10-12",
+    "lastError": {
+      "kind": "source_missing",
+      "originalPath": "n1-source/2026-10-13.md",
+      "sourceOutboxPath": "runs/2026-10-13/source.json",
+      "originalMainCommit": "d211052f29581b40726069eea331adacc563e805",
+      "outboxHttpStatus": 404,
+      "completeInventoriesVerified": true,
+      "observedAt": "2026-10-13T01:54:04.386Z"
+    },
+    "nextStep": "既存N1の11:00/12:00エントリで完全な09:00原稿を取得・照合し、同日上流の検証済みsnapshotで同期する。原稿を昨日や記憶から再生成しない。",
+    "updatedAt": "2026-10-13T01:54:04.386Z",
+    "progressBlobSha": "89e0f0f494ecc795318ec44a6c3ab7d8d4ceebf2",
+    "progressCommit": "eb79782f12da1e4335147cf9580512cd1acc357a"
+  }
 }
