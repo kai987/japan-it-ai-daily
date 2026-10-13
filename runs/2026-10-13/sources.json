@@ -1,0 +1,155 @@
+{
+  "targetDate": "2026-10-13",
+  "sourceWindow": {
+    "start": "2026-10-12T10:00:00+09:00",
+    "end": "2026-10-13T10:00:00+09:00"
+  },
+  "captureDirectory": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-13/originals",
+  "articles": [
+    {
+      "title": "AIチューニングエージェントの設計：推論と決定論的探索を組み合わせる",
+      "source": "Zenn / Kudan Tech Blog",
+      "topic": "AI・研究",
+      "url": "https://zenn.dev/kudan_jp/articles/e4607229e35382",
+      "publishedAt": "2026-10-13T09:14:41.837+09:00",
+      "capturedAt": "2026-10-13T01:07:05.433293+00:00",
+      "snapshotSha256": "c9c25c041da206e3ade1564d381f5b46c57e6eac3d7c36bd488914d82e627cd0",
+      "access": "full",
+      "accessNote": "公開本文を最後まで読み、条件と未検証項目を区別した。本文取得はGit外で保管。",
+      "conditions": "Kudanの設計提案。最小実装は次回予定。試験機器・データセット・改善率の実測なし。",
+      "facts": [
+        [
+          "describe",
+          "3つの操作",
+          "アダプターはdescribe/run/evaluateの三操作を単一実行ファイルで提供する設計。"
+        ],
+        [
+          "デプロイ済みベースライン",
+          "ソースのデフォルトではなく、現実から始める",
+          "最初の試行と改善比較にはデプロイ済みの基準値を使う。"
+        ],
+        [
+          "測定値と合否制約を分ける",
+          "信頼できるループのための4つのガードレール",
+          "数値指標と合否を分け、制約を満たす結果を優先する。"
+        ]
+      ]
+    },
+    {
+      "title": "Next.js（Pages Router）+ react-i18next で多言語化を実装する",
+      "source": "Zenn / Social PLUS Tech Blog",
+      "topic": "ソフトウェア開発",
+      "url": "https://zenn.dev/socialplus/articles/f363cdf24340cf",
+      "publishedAt": "2026-10-13T09:44:01.789+09:00",
+      "capturedAt": "2026-10-13T01:07:38.976784+00:00",
+      "snapshotSha256": "6d1f0fd166f9e0aec3aede018d1201a2dfe3d3632854fa7e7a47a7bdf5170b13",
+      "access": "full",
+      "accessNote": "公開本文を最後まで読み、条件と未検証項目を区別した。本文取得はGit外で保管。",
+      "conditions": "Next.js16.3.8 Pages Router/i18next21.9.2/react-i18next11.18.6。実装紹介、性能比較なし。",
+      "facts": [
+        [
+          "cloneInstance",
+          "パスパラメータのlocaleをi18nextに反映する",
+          "言語が変わったときだけインスタンスを複製する。"
+        ],
+        [
+          "typeof template",
+          "翻訳漏れを型で防ぐ",
+          "辞書の形を型でそろえ、キー追加時の訳の不足を検出する。"
+        ],
+        [
+          "localeDetection",
+          "localeをパスパラメータで受け取る",
+          "ブラウザ言語ではなくURLのlocaleで選ぶため自動検出を無効化する。"
+        ]
+      ]
+    },
+    {
+      "title": "耐量子暗号ML-KEMとは？Cloudflare WorkersのWeb Cryptoで共有秘密を生成・復元してみた",
+      "source": "DevelopersIO",
+      "topic": "クラウド・インフラ",
+      "url": "https://dev.classmethod.jp/articles/workers-ml-kem-local-shared-secret/",
+      "publishedAt": "2026-10-12T12:42:05.832Z",
+      "capturedAt": "2026-10-13T01:07:05.082688+00:00",
+      "snapshotSha256": "747a839c93334a7ed9c55d61be6e7c600dc0d97dfb3e239055c6cbd23ef9c2ac",
+      "access": "full",
+      "accessNote": "公開本文を最後まで読み、条件と未検証項目を区別した。本文取得はGit外で保管。",
+      "conditions": "10月11日、Ubuntu24.04.5LTS aarch64 Docker、Node24.21.0、Wrangler4.146.0/4.149.0、compatibility_date2026-10-01。ローカル一リクエスト。",
+      "facts": [
+        [
+          "ML-KEM-768",
+          "ローカル検証",
+          "共有秘密32バイト同士が一致し、暗号文は1088バイトだった。"
+        ],
+        [
+          "webcrypto_modern_algorithms",
+          "compatibility flagを外すとエラー",
+          "フラグなしでは同じ互換日付でもgenerateKeyが失敗した。"
+        ],
+        [
+          "NotSupportedError",
+          "compatibility flagを外すとエラー",
+          "フラグなしのローカルWorkerはHTTP500となった。"
+        ]
+      ]
+    },
+    {
+      "title": "pnpm 12.11のRust toolchain管理を試す：rust-toolchain.tomlからcargo、pnx、グローバル導入まで",
+      "source": "DevelopersIO",
+      "topic": "ソフトウェア開発",
+      "url": "https://dev.classmethod.jp/articles/pnpm-12-11-rust-toolchain-management/",
+      "publishedAt": "2026-10-12T12:23:19.262Z",
+      "capturedAt": "2026-10-13T01:07:05.120842+00:00",
+      "snapshotSha256": "e12bf95a39b880c0599745ee454b54969d122066ebe415e6b2ee794bfd2aa172",
+      "access": "full",
+      "accessNote": "公開本文を最後まで読み、条件と未検証項目を区別した。本文取得はGit外で保管。",
+      "conditions": "10月11日 Ubuntu24.04.5LTS aarch64 Docker、Node24.21.0、pnpm12.11.1、Rust1.95.0、itoa1.0.18。最初にrustup/cargo/rustc/ccなし。",
+      "facts": [
+        [
+          "rust-toolchain.toml",
+          "Rust toolchain を用意する",
+          "pnpm installが宣言したRust1.95.0を取得した。"
+        ],
+        [
+          "cc",
+          "ネイティブ向けの cargo build はリンカーで失敗",
+          "原生対象はccがなくリンクに失敗。"
+        ],
+        [
+          "wasm32-wasip1",
+          "WASI 向けにビルドして実行する",
+          "その例ではオフライン対象ビルドとNode WASI実行を確認した。"
+        ]
+      ]
+    },
+    {
+      "title": "ServiceNow Voice with Amazon Connect で発信者電話番号から Consumer 情報を自動紐付けできるか試してみた",
+      "source": "DevelopersIO",
+      "topic": "サービス・企業",
+      "url": "https://dev.classmethod.jp/articles/servicenow-voice-amazon-connect-consumer-phone-matching/",
+      "publishedAt": "2026-10-13T00:17:19.957Z",
+      "capturedAt": "2026-10-13T01:07:04.947528+00:00",
+      "snapshotSha256": "9378fb79127ec01f203201594aa04830824b38476ad64637b8bd468954012b67",
+      "access": "full",
+      "accessNote": "公開本文を最後まで読み、条件と未検証項目を区別した。本文取得はGit外で保管。",
+      "conditions": "既存のServiceNow PDI/Amazon Connect標準連携。登録番号と同番号2件の小規模確認。新規環境/本番/性能測定なし。",
+      "facts": [
+        [
+          "sn_customerservice.customer_data_viewer",
+          "ロールの追加",
+          "既存の三ロールに顧客データ読み取りロールを加えた環境でConsumer関連付けを確認した。"
+        ],
+        [
+          "通話完了後",
+          "動作確認",
+          "InteractionのConsumerリンクは通話完了後に確認した。"
+        ],
+        [
+          "先に作成した",
+          "同じ電話番号のConsumer",
+          "同番号2件の例では先に作成したConsumerが紐付いた。"
+        ]
+      ]
+    }
+  ]
+}
