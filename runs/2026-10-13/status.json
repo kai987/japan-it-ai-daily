@@ -8,7 +8,7 @@
     "to": "2026-10-13T10:00:00+09:00"
   },
   "createdAt": "2026-10-13T01:04:52.964Z",
-  "updatedAt": "2026-10-13T01:54:27.273Z",
+  "updatedAt": "2026-10-13T08:23:27.491Z",
   "completedArtifacts": [],
   "lastError": null,
   "baseCommit": "d280112570c8f90c777daf7c609837ba5348557f",
@@ -59,7 +59,7 @@
     "learningUnchanged": true,
     "requestOwnership": "Current request retained until publisher and main Pages finish. Correction will receive a new current-main source-bound request."
   },
-  "nextAction": "Complete revised draft preflight and submit corrected request",
+  "nextAction": "Text and audio publication verified; N1 Day45 manual resync and live acceptance verified. Resume only if verified inputs change.",
   "correction": {
     "targetDate": "2026-10-13",
     "reason": "Final manual runbook review: preserve original Japanese article titles in both report modes; exactly three article keywords.",
@@ -182,27 +182,135 @@
     "schemaVersion": 1,
     "targetDate": "2026-10-13",
     "day": 45,
-    "status": "waiting_source",
-    "stage": "waiting_source",
+    "status": "published",
+    "stage": "published",
     "upstreamSourceCommit": "49e4d68910e6ab43524aafad515583465a8a1dc2",
     "sourcePagesRunId": 38333748323,
     "snapshotSha256": "d656b0ab8da38a8da27cb03c775e53ef635aca8a9ea725218b4c7a860714197d",
     "issueNumber": 63,
     "totalDays": 63,
-    "requestSubmitted": false,
+    "requestSubmitted": true,
     "priorRequestDate": "2026-10-12",
-    "lastError": {
-      "kind": "source_missing",
-      "originalPath": "n1-source/2026-10-13.md",
-      "sourceOutboxPath": "runs/2026-10-13/source.json",
-      "originalMainCommit": "d211052f29581b40726069eea331adacc563e805",
-      "outboxHttpStatus": 404,
-      "completeInventoriesVerified": true,
-      "observedAt": "2026-10-13T01:54:04.386Z"
+    "lastError": null,
+    "nextStep": "Verified 2026-10-13 Day45. Preserve original, lesson identities and user learning state. Unchanged content does not require another automatic sync.",
+    "updatedAt": "2026-10-13T08:23:25.415Z",
+    "sourceCheckpointCommit": "47faa7e5bcb54ede554e5240cf0657cdbb668242",
+    "sourceCheckpointBlobSha": "6a522e71958f23752ac4ae573864d3279e97340d",
+    "sourceSha256": "ccd9f16588da5c82f2aad1c7ba032210418fe01c59c9014510a62196c91d4de7",
+    "sourceBytes": 19923,
+    "generatedAtJST": "2026-10-13T16:28:10+09:00",
+    "sourceMainCommit": "ff9caf133d810527f1bdf34f6f35a88557fc7adb",
+    "sourceBlobSha": "6af7fafd7881349e777f55268503e9308de19652",
+    "requestCommit": "2d168af277a515765d1a9bec83846bd63350e8e8",
+    "requestBlobSha": "f5d56e801d32ad87d500e3922a6d1070e00e7b59",
+    "requestDraftCommit": "6c0730556e91bd4f3d765a578446414aaa84b44c",
+    "syncRunId": 38368083095,
+    "sourceCommit": "49e4d68910e6ab43524aafad515583465a8a1dc2",
+    "releaseCommit": "22c7190d004e291dfca5f4451d8b05979c9372bf",
+    "releaseRunId": 38368083095,
+    "pagesRunId": 38364663554,
+    "vocabularyCounts": {
+      "focusNew": 10,
+      "fullNewPlusReview": 20
     },
-    "nextStep": "既存N1の11:00/12:00エントリで完全な09:00原稿を取得・照合し、同日上流の検証済みsnapshotで同期する。原稿を昨日や記憶から再生成しない。",
-    "updatedAt": "2026-10-13T01:54:04.386Z",
-    "progressBlobSha": "89e0f0f494ecc795318ec44a6c3ab7d8d4ceebf2",
-    "progressCommit": "eb79782f12da1e4335147cf9580512cd1acc357a"
+    "grammarCounts": {
+      "focusNew": 0,
+      "fullNewPlusReview": 5
+    },
+    "verification": {
+      "sourceCheckpointMatch": true,
+      "exactSourceHash": true,
+      "upstreamExactCommitPages": true,
+      "upstreamSnapshotHash": true,
+      "contentValidation": "success",
+      "unitTests": "success",
+      "build": "success",
+      "browserTests": "success",
+      "pagesBuild": "success",
+      "pagesDeploy": "success",
+      "liveTargetDate": "success",
+      "manualReplay": "success",
+      "exactPublicAssetHashes": true,
+      "liveDetailedLearningCards": true,
+      "liveOriginalImmersionAndReading": true,
+      "liveOriginalFiveReviewQuestions": true
+    },
+    "lastManualResync": {
+      "requestedByUser": true,
+      "syncRunId": 38368083095,
+      "syncUrl": "https://github.com/kai987/Japanese-N1-Immersive-Sparring-Partner/actions/runs/38368083095",
+      "previousSyncRunId": 38364484377,
+      "releaseCommit": "22c7190d004e291dfca5f4451d8b05979c9372bf",
+      "pagesRunId": 38364663554,
+      "unchangedContent": true,
+      "sourceMatchesOutbox": true,
+      "fullSnapshotHashVerified": true,
+      "publicAssetHashes": [
+        {
+          "path": "index.html",
+          "sha256": "07e47052a70895867be1fbc7770729a0e084013ced941fce255c8dcf9be7dbd0",
+          "bytes": 1596
+        },
+        {
+          "path": "assets/LiveReactions-C66BjVVr.js",
+          "sha256": "c8ec1d8b91a111f6043cbb2ec19b2b79099bb52ef28b1a56ff574c758aa399e6",
+          "bytes": 48317
+        },
+        {
+          "path": "assets/index-PKKvPt8C.js",
+          "sha256": "15ea14b2ad0ff1dc8cd5422fc355ae241ee68f4f64e1b55139f44cbffbf808ee",
+          "bytes": 3949307
+        },
+        {
+          "path": "assets/LiveReactions-BsNLJgSR.css",
+          "sha256": "1b3933ecb7c5675b05b217aa76300036378af6d1d907643a42ab6eaf1e9aca52",
+          "bytes": 7155
+        },
+        {
+          "path": "assets/index-Bzo3HEps.css",
+          "sha256": "0faad935774f798fecac3753fbc0a21da0276af998fe14b972677937da7a81ad",
+          "bytes": 34653
+        }
+      ],
+      "liveChecks": {
+        "identity": {
+          "title": "N1 Immersive Sparring Partner",
+          "actualUrl": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/",
+          "date": "2026年10月13日(火)\nDay 45 · 99日N1計画",
+          "titleText": "AIにどこまで任せるか――推論・実験・検証（第63号）"
+        },
+        "vocabulary": {
+          "new": 14,
+          "review": 6,
+          "total": 20,
+          "allDetailedCardsChecked": true,
+          "frequencyDenominator": 63
+        },
+        "grammar": {
+          "new": 0,
+          "review": 5,
+          "total": 5,
+          "allDetailedCardsChecked": true
+        },
+        "reading": {
+          "originalText": true,
+          "fourOriginalOptions": true,
+          "noPrematureAnswer": true
+        },
+        "review": {
+          "fiveOriginalQuestions": true
+        },
+        "renderHealth": {
+          "notBlank": true,
+          "noFrameworkOverlay": true,
+          "pageErrors": [],
+          "consoleErrorsOrWarnings": [],
+          "mobileNoOverflow": true
+        }
+      },
+      "verifiedAt": "2026-10-13T08:23:25.412Z"
+    },
+    "progressBlobSha": "7f8b722505af7d28ec515287177589116383b927",
+    "progressCommit": "3e8e439bb6e95e70ed99c56a241b7d3e2ff37548"
   }
 }
