@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-13",
-  "stage": "request_ready",
-  "sourceCommit": "d280112570c8f90c777daf7c609837ba5348557f",
+  "stage": "published",
+  "sourceCommit": "49e4d68910e6ab43524aafad515583465a8a1dc2",
   "sourceWindow": {
     "from": "2026-10-12T10:00:00+09:00",
     "to": "2026-10-13T10:00:00+09:00"
   },
   "createdAt": "2026-10-13T01:04:52.964Z",
-  "updatedAt": "2026-10-13T01:44:01.755Z",
+  "updatedAt": "2026-10-13T01:52:16.524Z",
   "completedArtifacts": [],
   "lastError": null,
   "baseCommit": "d280112570c8f90c777daf7c609837ba5348557f",
@@ -26,7 +26,7 @@
     "M\tsrc/content/daily-ja/2026-10-13.md",
     "M\tsrc/content/daily/2026-10-13.md"
   ],
-  "verifiedAt": "2026-10-13T01:40:56.792Z",
+  "verifiedAt": "2026-10-13T01:51:24.618Z",
   "requestId": "codex-2026-10-13-2402731f-a3c1-498b-b2d7-178006c871e1",
   "preflightRunId": 38333291350,
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
@@ -70,5 +70,112 @@
     "factsAndAnswersUnchanged": true,
     "learningUnchanged": true,
     "requestOwnership": "Current request retained until publisher and main Pages finish. Correction will receive a new current-main source-bound request."
-  }
+  },
+  "label": "text",
+  "runId": 38333748323,
+  "releaseCommit": "49e4d68910e6ab43524aafad515583465a8a1dc2",
+  "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38333748323",
+  "artifacts": [
+    {
+      "id": 11783568940,
+      "name": "it-study-snapshot",
+      "digest": "sha256:26808d0a06b5e303ac1767387be054732e401b385bf5d20907efa0d1cf67b176"
+    },
+    {
+      "id": 11782894781,
+      "name": "github-pages",
+      "digest": "sha256:e7979786e9d86a5a9ee1aacbaa254e1c6c493db61fb3b2de1bbc47945d7a1313"
+    }
+  ],
+  "totalDays": 63,
+  "issueNumber": 63,
+  "grammarLessonDates": [
+    "2026-08-12",
+    "2026-08-13",
+    "2026-08-14",
+    "2026-08-15",
+    "2026-08-16",
+    "2026-08-17",
+    "2026-08-18",
+    "2026-08-19",
+    "2026-08-20",
+    "2026-08-21",
+    "2026-08-22",
+    "2026-08-23",
+    "2026-08-24",
+    "2026-08-25",
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28",
+    "2026-08-29",
+    "2026-08-30",
+    "2026-08-31",
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03",
+    "2026-09-04",
+    "2026-09-05",
+    "2026-09-06",
+    "2026-09-07",
+    "2026-09-08",
+    "2026-09-09",
+    "2026-09-10",
+    "2026-09-11",
+    "2026-09-12",
+    "2026-09-13",
+    "2026-09-14",
+    "2026-09-15",
+    "2026-09-16",
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-19",
+    "2026-09-20",
+    "2026-09-21",
+    "2026-09-22",
+    "2026-09-23",
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-26",
+    "2026-09-27",
+    "2026-09-28",
+    "2026-09-29",
+    "2026-09-30",
+    "2026-10-01",
+    "2026-10-02",
+    "2026-10-03",
+    "2026-10-04",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-09",
+    "2026-10-10",
+    "2026-10-11",
+    "2026-10-12",
+    "2026-10-13"
+  ],
+  "fullSnapshotCompared": true,
+  "snapshotHash": "d656b0ab8da38a8da27cb03c775e53ef635aca8a9ea725218b4c7a860714197d",
+  "expected": {
+    "version": 1,
+    "commit": "49e4d68910e6ab43524aafad515583465a8a1dc2",
+    "date": "2026-10-13",
+    "snapshotHash": "d656b0ab8da38a8da27cb03c775e53ef635aca8a9ea725218b4c7a860714197d",
+    "pages": [
+      {
+        "path": "daily/2026-10-13/",
+        "sha256": "64a9b1784d4227821a6acd5b48b9d5e3f7e0ac9d47167dec09bda2ffe3090ee2"
+      },
+      {
+        "path": "ja/daily/2026-10-13/",
+        "sha256": "b7d6e173b74514ae4d48e9a47e46c960d1a193278006a68ed954547680ecbbca"
+      }
+    ]
+  },
+  "live": {
+    "commit": "49e4d68910e6ab43524aafad515583465a8a1dc2",
+    "date": "2026-10-13",
+    "attempt": 1
+  },
+  "site": "/tmp/japan-daily-20261013/text-release-38333748323/site"
 }
