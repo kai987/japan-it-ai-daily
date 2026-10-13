@@ -1,0 +1,70 @@
+{
+  "targetDate": "2026-10-13",
+  "sourceWindow": {
+    "start": "2026-10-12T10:00:00+09:00",
+    "end": "2026-10-13T10:00:00+09:00"
+  },
+  "sources": [
+    {
+      "rank": 1,
+      "candidateId": 17,
+      "url": "https://zenn.dev/kudan_jp/articles/e4607229e35382",
+      "title": "AIチューニングエージェントの設計：推論と決定論的探索を組み合わせる",
+      "publishedAt": "2026-10-13T09:14:41.837+09:00",
+      "capturedAt": "2026-10-13T01:07:05.433293+00:00",
+      "snapshotSha256": "c9c25c041da206e3ade1564d381f5b46c57e6eac3d7c36bd488914d82e627cd0",
+      "textChars": 7084,
+      "originalPath": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-13/originals/01.txt",
+      "readInFull": true
+    },
+    {
+      "rank": 2,
+      "candidateId": 21,
+      "url": "https://zenn.dev/socialplus/articles/f363cdf24340cf",
+      "title": "Next.js（Pages Router）+ react-i18next で多言語化を実装する",
+      "publishedAt": "2026-10-13T09:44:01.789+09:00",
+      "capturedAt": "2026-10-13T01:07:38.976784+00:00",
+      "snapshotSha256": "6d1f0fd166f9e0aec3aede018d1201a2dfe3d3632854fa7e7a47a7bdf5170b13",
+      "textChars": 6316,
+      "originalPath": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-13/originals/02.txt",
+      "readInFull": true
+    },
+    {
+      "rank": 3,
+      "candidateId": 7,
+      "url": "https://dev.classmethod.jp/articles/workers-ml-kem-local-shared-secret/",
+      "title": "耐量子暗号ML-KEMとは？Cloudflare WorkersのWeb Cryptoで共有秘密を生成・復元してみた",
+      "publishedAt": "2026-10-12T12:42:05.832Z",
+      "capturedAt": "2026-10-13T01:07:05.082688+00:00",
+      "snapshotSha256": "747a839c93334a7ed9c55d61be6e7c600dc0d97dfb3e239055c6cbd23ef9c2ac",
+      "textChars": 6629,
+      "originalPath": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-13/originals/03.txt",
+      "readInFull": true
+    },
+    {
+      "rank": 4,
+      "candidateId": 8,
+      "url": "https://dev.classmethod.jp/articles/pnpm-12-11-rust-toolchain-management/",
+      "title": "pnpm 12.11のRust toolchain管理を試す：rust-toolchain.tomlからcargo、pnx、グローバル導入まで",
+      "publishedAt": "2026-10-12T12:23:19.262Z",
+      "capturedAt": "2026-10-13T01:07:05.120842+00:00",
+      "snapshotSha256": "e12bf95a39b880c0599745ee454b54969d122066ebe415e6b2ee794bfd2aa172",
+      "textChars": 10511,
+      "originalPath": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-13/originals/04.txt",
+      "readInFull": true
+    },
+    {
+      "rank": 5,
+      "candidateId": 2,
+      "url": "https://dev.classmethod.jp/articles/servicenow-voice-amazon-connect-consumer-phone-matching/",
+      "title": "ServiceNow Voice with Amazon Connect で発信者電話番号から Consumer 情報を自動紐付けできるか試してみた",
+      "publishedAt": "2026-10-13T00:17:19.957Z",
+      "capturedAt": "2026-10-13T01:07:04.947528+00:00",
+      "snapshotSha256": "9378fb79127ec01f203201594aa04830824b38476ad64637b8bd468954012b67",
+      "textChars": 3353,
+      "originalPath": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-13/originals/05.txt",
+      "readInFull": true
+    }
+  ],
+  "discovery": "Grouped searches covered names of all 20 preferred sites; DevelopersIO homepage and Zenn latest API supplied candidates. No assertion of exhaustive per-site crawling. Five eligible full public originals, all distinct from previous Top5. Primary technical docs additionally checked. No article commands executed."
+}
