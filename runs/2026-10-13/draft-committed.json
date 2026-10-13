@@ -1,22 +1,29 @@
 {
-  "baseCommit": "8e764a65717ce8022c58f21b6b718ce4b63733a2",
-  "draftCommit": "f9f536b345e3f7e6820e7cebd7f926fc9c640f24",
+  "baseCommit": "d280112570c8f90c777daf7c609837ba5348557f",
+  "draftCommit": "3f0f59a46e43cd666f9febd1175c4443bf586414",
   "draftBranch": "draft/daily-2026-10-13",
   "paths": [
-    "src/content/daily-ja/2026-10-13.md",
     "src/content/daily/2026-10-13.md",
-    "src/content/evidence/2026-10-13.json",
-    "src/content/japanese-ja/2026-10-13.md",
     "src/content/japanese/2026-10-13.md",
+    "src/content/daily-ja/2026-10-13.md",
+    "src/content/japanese-ja/2026-10-13.md",
+    "src/content/evidence/2026-10-13.json",
     "src/data/interviews/2026-10-13.json"
   ],
   "changedPaths": [
-    "A\tsrc/content/daily-ja/2026-10-13.md",
-    "A\tsrc/content/daily/2026-10-13.md",
-    "A\tsrc/content/evidence/2026-10-13.json",
-    "A\tsrc/content/japanese-ja/2026-10-13.md",
-    "A\tsrc/content/japanese/2026-10-13.md",
-    "A\tsrc/data/interviews/2026-10-13.json"
+    "M\tsrc/content/daily-ja/2026-10-13.md",
+    "M\tsrc/content/daily/2026-10-13.md"
   ],
-  "verifiedAt": "2026-10-13T01:25:03.100Z"
+  "correction": {
+    "targetDate": "2026-10-13",
+    "reason": "Final manual runbook review: preserve original Japanese article titles in both report modes; exactly three article keywords.",
+    "affectedSourcePaths": [
+      "src/content/daily/2026-10-13.md",
+      "src/content/daily-ja/2026-10-13.md"
+    ],
+    "factsAndAnswersUnchanged": true,
+    "learningUnchanged": true,
+    "requestOwnership": "Current request retained until publisher and main Pages finish. Correction will receive a new current-main source-bound request."
+  },
+  "verifiedAt": "2026-10-13T01:40:56.792Z"
 }
