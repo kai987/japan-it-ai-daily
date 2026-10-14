@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-14",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-14T04:53:44.105Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-14-top-1",
+      "url": "https://zenn.dev/ymotongpoo/articles/20261014-bedrock-sagemaker-otel",
+      "originalTitle": "Amazon BedrockとSageMakerのAIエージェントでOpenTelemetryの自動計装が行われる範囲",
+      "source": "Zenn",
+      "topic": "生成AI・分散トレーシング",
+      "access": "full",
+      "accessNote": "公開本文を全文読了。原文に掲載された測定条件・結果・コードを確認。図だけの値を新たな数値根拠に使わない。",
+      "publishedAt": "2026-10-14T09:00:08.407+09:00",
+      "capturedAt": "2026-10-14T01:08:28.139709+00:00",
+      "snapshotSha256": "a611cfbf9bf3738d291cbe1a7cd270900893c194649dfc4f3171886b71e228a9",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "SageMakerはCustomAttributesで明示的にコンテキストを渡す。",
+          "quote": "CustomAttributes",
+          "locator": "SageMakerのコンテキスト伝播",
+          "conditions": "Python boto3。botocore 0.65b0/0.66b1、us-east-1 Nova Microの4API実測。SageMakerはus-east-2 ml.t2.mediumでヘッダーとCustomAttributesを比較。genai-bedrock 1.2b0はソース確認のみ。AgentCoreのCollector制約は公式経路の制限。",
+          "usedIn": {
+            "zh": "CustomAttributes",
+            "ja": "CustomAttributes",
+            "interview": "CustomAttributes"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "botocore実測とgenai-bedrockのソース確認は別の証拠である。",
+          "quote": "0.66b1",
+          "locator": "冒頭の検証環境とBedrock計装",
+          "conditions": "Python boto3。botocore 0.65b0/0.66b1、us-east-1 Nova Microの4API実測。SageMakerはus-east-2 ml.t2.mediumでヘッダーとCustomAttributesを比較。genai-bedrock 1.2b0はソース確認のみ。AgentCoreのCollector制約は公式経路の制限。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "印字可能なUS-ASCIIの長さ制限がある。",
+          "quote": "1024文字",
+          "locator": "CustomAttributesの制約",
+          "conditions": "Python boto3。botocore 0.65b0/0.66b1、us-east-1 Nova Microの4API実測。SageMakerはus-east-2 ml.t2.mediumでヘッダーとCustomAttributesを比較。genai-bedrock 1.2b0はソース確認のみ。AgentCoreのCollector制約は公式経路の制限。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact4",
+          "kind": "source-fact",
+          "statement": "抽出を止めると本文はスパンに残り、収集停止ではない。",
+          "quote": "AWS_GENAI_CONTENT_EXTRACTION_OPT_OUT",
+          "locator": "ADOTの本文抽出",
+          "conditions": "Python boto3。botocore 0.65b0/0.66b1、us-east-1 Nova Microの4API実測。SageMakerはus-east-2 ml.t2.mediumでヘッダーとCustomAttributesを比較。genai-bedrock 1.2b0はソース確認のみ。AgentCoreのCollector制約は公式経路の制限。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "自動計装で分かることと、伝播・本文管理・費用計算で書き足すことを分けて説明する練習になります。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合练习回答“自动计装到底覆盖了什么”：既能解释 SageMaker 的传递断点，也能说明提示词治理和计费为何需要另行验证。",
+            "ja": "自動計装で分かることと、伝播・本文管理・費用計算で書き足すことを分けて説明する練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-14-top-2",
+      "url": "https://techblog.lycorp.co.jp/ja/20261013a",
+      "originalTitle": "LINEスキマニのトップページにおけるパフォーマンス改善（インターンレポート）",
+      "source": "LINE Yahoo Tech Blog",
+      "topic": "フロントエンド・初期表示",
+      "access": "full",
+      "accessNote": "公開本文を全文読了。原文に掲載された測定条件・結果・コードを確認。図だけの値を新たな数値根拠に使わない。",
+      "publishedAt": "2026-10-13T02:00:00Z",
+      "capturedAt": "2026-10-14T01:08:27.469130+00:00",
+      "snapshotSha256": "c2f3df2fb6e99d0a76687a55ff30753ba0e3276329a5daa52544e95d125bcd23",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "検索に影響する条件を検査・正規化してキャッシュキーを作る。",
+          "quote": "queryKey",
+          "locator": "検索パラメータの整理",
+          "conditions": "未ログインの初期表示、開発環境とローカルの例。3,500msは求人初表示でCore Web Vitalsと同一指標ではない。403msはAPI待ち、387msはあるリクエストのLCP。実ユーザー本番検証は未了。",
+          "usedIn": {
+            "zh": "queryKey",
+            "ja": "queryKey",
+            "interview": "queryKey"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "API待ちがローカルSSRの主要な待ち時間だった。",
+          "quote": "403 ms",
+          "locator": "ローカルTTFB内訳",
+          "conditions": "未ログインの初期表示、開発環境とローカルの例。3,500msは求人初表示でCore Web Vitalsと同一指標ではない。403msはAPI待ち、387msはあるリクエストのLCP。実ユーザー本番検証は未了。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "開発環境の一例であり、3500msの求人初表示と同じ指標ではない。",
+          "quote": "387 ms",
+          "locator": "開発環境のLCP内訳",
+          "conditions": "未ログインの初期表示、開発環境とローカルの例。3,500msは求人初表示でCore Web Vitalsと同一指標ではない。403msはAPI待ち、387msはあるリクエストのLCP。実ユーザー本番検証は未了。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "初期表示、queryKey、ユーザー間の隔離を一つの改善事例で説明できます。異なる指標を同一視しない姿勢も面接で示せます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "这是与前端求职直接相关的完整案例：从 queryKey 与 hydration 讲到 TTFB 分解、跨用户隔离和上线前后的证据边界。",
+            "ja": "初期表示、queryKey、ユーザー間の隔離を一つの改善事例で説明できます。異なる指標を同一視しない姿勢も面接で示せます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-14-top-3",
+      "url": "https://dev.classmethod.jp/articles/lambda-web-functions-vs-lwa-nextjs-assets/",
+      "originalTitle": "Lambda Web Functions と Lambda Web Adapter で、アセット数多めの Next.js（SSR）ページの配信性能を比べてみた",
+      "source": "DevelopersIO",
+      "topic": "サーバーレス・SSR配信",
+      "access": "full",
+      "accessNote": "公開本文を全文読了。原文に掲載された測定条件・結果・コードを確認。図だけの値を新たな数値根拠に使わない。",
+      "publishedAt": "2026-10-13T15:57:27.900Z",
+      "capturedAt": "2026-10-14T01:08:27.032518+00:00",
+      "snapshotSha256": "fed86c29b1723e5bc9809b18a5230eff6c7ac9019011acf084b29f4caede0048",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "HTTP/1.1・キャッシュなしで157リクエストを取得する負荷実験。",
+          "quote": "k6",
+          "locator": "計測方法",
+          "conditions": "東京、Next.js16.4.0 React19.3.0 Node24、150widgets、HTML1+JS156、157requests。HTTP/1.1/キャッシュなし/VU10・20/助走5秒＋30秒/各条件1回。CPU・メモリ・配布形式・公開経路は同一でない。",
+          "usedIn": {
+            "zh": "k6",
+            "ja": "k6",
+            "interview": "k6"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "VU10/20の各条件は一回で、配布・リソース条件も完全には同じでない。",
+          "quote": "1 条件 1 回",
+          "locator": "計測方法",
+          "conditions": "東京、Next.js16.4.0 React19.3.0 Node24、150widgets、HTML1+JS156、157requests。HTTP/1.1/キャッシュなし/VU10・20/助走5秒＋30秒/各条件1回。CPU・メモリ・配布形式・公開経路は同一でない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "VU20のページ毎秒は44.9対34.7だった。",
+          "quote": "44.9",
+          "locator": "30秒間のスループット表",
+          "conditions": "東京、Next.js16.4.0 React19.3.0 Node24、150widgets、HTML1+JS156、157requests。HTTP/1.1/キャッシュなし/VU10・20/助走5秒＋30秒/各条件1回。CPU・メモリ・配布形式・公開経路は同一でない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact4",
+          "kind": "source-fact",
+          "statement": "アプリのアクセスログを出さない条件での既定ログ量の比較。",
+          "quote": "約 1/200",
+          "locator": "ログ量",
+          "conditions": "東京、Next.js16.4.0 React19.3.0 Node24、150widgets、HTML1+JS156、157requests。HTTP/1.1/キャッシュなし/VU10・20/助走5秒＋30秒/各条件1回。CPU・メモリ・配布形式・公開経路は同一でない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "同じアプリを載せても条件がそろわない比較をどう読むか、配信時間と描画時間、ログの粒度を分けて説明できます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合把 Next.js 的用户体验、服务器吞吐和逐请求可观测性分开解释，也能练习识别基准测试中的不等价条件。",
+            "ja": "同じアプリを載せても条件がそろわない比較をどう読むか、配信時間と描画時間、ログの粒度を分けて説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-14-top-4",
+      "url": "https://dev.classmethod.jp/articles/20261013-aws-glue-system-managed-iceberg-mv/",
+      "originalTitle": "[アップデート] AWS Glue でシステム管理型の Iceberg マテリアライズドビューが利用可能になったので、通常のマテリアライズドビューと書き込みを比べてみた",
+      "source": "DevelopersIO",
+      "topic": "データ基盤・書き込み境界",
+      "access": "full",
+      "accessNote": "公開本文を全文読了。原文に掲載された測定条件・結果・コードを確認。図だけの値を新たな数値根拠に使わない。",
+      "publishedAt": "2026-10-13T14:55:46.020Z",
+      "capturedAt": "2026-10-14T01:08:27.213193+00:00",
+      "snapshotSha256": "13946b951132ad7bed17423e0c08e3d5daa7bc112c1d0022d55969d2ee9c8f4c",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Glue6.0以降でS3 Tablesの管理型MVを使い、データ・定義の書き込みをGlueに限定する。",
+          "quote": "S3 Tables",
+          "locator": "システム管理型MVの制約",
+          "conditions": "東京、Glue6.0 Spark4.1.1-amzn-0 G.1X×2、Athena3、同一S3 Tables namespaceの通常/管理型MV比較。2IAM主体。5行作成211.9秒、7行刷新456.5秒。DROP SCHEDULEの成功後も設定/タスクが残る観測。未解明の一時SELECT成功あり。",
+          "usedIn": {
+            "zh": "S3 Tables",
+            "ja": "S3 Tables",
+            "interview": "S3 Tables"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "五行のソースの管理型MV作成に211.9秒かかった。",
+          "quote": "211.9 秒",
+          "locator": "作成時間の比較",
+          "conditions": "東京、Glue6.0 Spark4.1.1-amzn-0 G.1X×2、Athena3、同一S3 Tables namespaceの通常/管理型MV比較。2IAM主体。5行作成211.9秒、7行刷新456.5秒。DROP SCHEDULEの成功後も設定/タスクが残る観測。未解明の一時SELECT成功あり。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "七行のFULL REFRESH SQLの待ち時間。非同期タスクの時間とは別。",
+          "quote": "456.5 秒",
+          "locator": "刷新の比較",
+          "conditions": "東京、Glue6.0 Spark4.1.1-amzn-0 G.1X×2、Athena3、同一S3 Tables namespaceの通常/管理型MV比較。2IAM主体。5行作成211.9秒、7行刷新456.5秒。DROP SCHEDULEの成功後も設定/タスクが残る観測。未解明の一時SELECT成功あり。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact4",
+          "kind": "source-fact",
+          "statement": "DROP SCHEDULE成功後も3600が残り、自動タスクが発生した。",
+          "quote": "RefreshSeconds",
+          "locator": "スケジュール追加と削除",
+          "conditions": "東京、Glue6.0 Spark4.1.1-amzn-0 G.1X×2、Athena3、同一S3 Tables namespaceの通常/管理型MV比較。2IAM主体。5行作成211.9秒、7行刷新456.5秒。DROP SCHEDULEの成功後も設定/タスクが残る観測。未解明の一時SELECT成功あり。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "書き込み境界を説明し、成功応答だけで終わらず実際の設定・タスクを確かめる運用判断へつなげられます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合回答共享数据的写入边界，也提供了一个很具体的“命令成功不等于状态成立”的运维案例。",
+            "ja": "書き込み境界を説明し、成功応答だけで終わらず実際の設定・タスクを確かめる運用判断へつなげられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-14-top-5",
+      "url": "https://dev.classmethod.jp/articles/kiro-governance-sign-in-controls/",
+      "originalTitle": "[アップデート] Kiro で管理者がサインイン方法を制限できるようになったので試してみた",
+      "source": "DevelopersIO",
+      "topic": "AI開発・端末ガバナンス",
+      "access": "full",
+      "accessNote": "公開本文を全文読了。原文に掲載された測定条件・結果・コードを確認。図だけの値を新たな数値根拠に使わない。",
+      "publishedAt": "2026-10-13T21:57:20.694Z",
+      "capturedAt": "2026-10-14T01:08:27.031950+00:00",
+      "snapshotSha256": "9e8f6af1660d7020302720206ee15be76258f2428801170f1cb654aa90345541",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "対応するインストール済みクライアントへ端末設定を配布して適用する経路。",
+          "quote": "managed-settings.json",
+          "locator": "実際に確認してみる",
+          "conditions": "Kiro IDE/CLIの端末managed-settings.json経路。IDE1.2以降/CLI2.25.0以降の要件。正常配布＋idcだけ許可、URL編集後のクライアント拒否実測。Web/ファイルなし/旧クライアント非対象。",
+          "usedIn": {
+            "zh": "managed-settings.json",
+            "ja": "managed-settings.json",
+            "interview": "managed-settings.json"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "CLI2.25.0以降、IDE1.2以降が対象。",
+          "quote": "2.25.0",
+          "locator": "対応バージョン",
+          "conditions": "Kiro IDE/CLIの端末managed-settings.json経路。IDE1.2以降/CLI2.25.0以降の要件。正常配布＋idcだけ許可、URL編集後のクライアント拒否実測。Web/ファイルなし/旧クライアント非対象。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "denyルールの除外idcで組織の認証を残す。",
+          "quote": "exclude",
+          "locator": "IAM Identity Centerだけ許可するルール",
+          "conditions": "Kiro IDE/CLIの端末managed-settings.json経路。IDE1.2以降/CLI2.25.0以降の要件。正常配布＋idcだけ許可、URL編集後のクライアント拒否実測。Web/ファイルなし/旧クライアント非対象。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact4",
+          "kind": "source-fact",
+          "statement": "Web・ファイルなし・古いクライアントはこの端末ルールの対象外。",
+          "quote": "Kiro Web",
+          "locator": "さいごにの制約",
+          "conditions": "Kiro IDE/CLIの端末managed-settings.json経路。IDE1.2以降/CLI2.25.0以降の要件。正常配布＋idcだけ許可、URL編集後のクライアント拒否実測。Web/ファイルなし/旧クライアント非対象。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "AI開発ツールのアカウント統制を、端末への配布と認証結果の検証に分けて具体的に説明できます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "能把企业 AI 工具治理讲成可验证的端点控制，区分登录界面、认证回调与实际覆盖范围。",
+            "ja": "AI開発ツールのアカウント統制を、端末への配布と認証結果の検証に分けて具体的に説明できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
