@@ -1,0 +1,261 @@
+{
+  "conclusion": "success",
+  "headSha": "4bde257b11a2a7e10f8863b17f598a5251b1d325",
+  "jobs": [
+    {
+      "completedAt": "2026-10-14T05:00:13Z",
+      "conclusion": "success",
+      "databaseId": 115688844029,
+      "name": "build",
+      "startedAt": "2026-10-14T04:57:31Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-14T04:57:34Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-14T04:57:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:57:50Z",
+          "conclusion": "success",
+          "name": "Checkout",
+          "number": 2,
+          "startedAt": "2026-10-14T04:57:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:57:53Z",
+          "conclusion": "success",
+          "name": "Setup Node",
+          "number": 3,
+          "startedAt": "2026-10-14T04:57:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:57:53Z",
+          "conclusion": "skipped",
+          "name": "Verify main daily publisher ownership",
+          "number": 4,
+          "startedAt": "2026-10-14T04:57:53Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:57:58Z",
+          "conclusion": "success",
+          "name": "Install dependencies",
+          "number": 5,
+          "startedAt": "2026-10-14T04:57:53Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:57:59Z",
+          "conclusion": "success",
+          "name": "Audit dependencies",
+          "number": 6,
+          "startedAt": "2026-10-14T04:57:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:58:01Z",
+          "conclusion": "success",
+          "name": "Verify publication recovery",
+          "number": 7,
+          "startedAt": "2026-10-14T04:57:59Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:58:11Z",
+          "conclusion": "success",
+          "name": "Type check",
+          "number": 8,
+          "startedAt": "2026-10-14T04:58:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:58:15Z",
+          "conclusion": "success",
+          "name": "Verify content integrity",
+          "number": 9,
+          "startedAt": "2026-10-14T04:58:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:58:16Z",
+          "conclusion": "success",
+          "name": "Verify original-source evidence",
+          "number": 10,
+          "startedAt": "2026-10-14T04:58:15Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:58:16Z",
+          "conclusion": "success",
+          "name": "Verify bilingual interview Q&A",
+          "number": 11,
+          "startedAt": "2026-10-14T04:58:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:58:17Z",
+          "conclusion": "success",
+          "name": "Verify daily content quality",
+          "number": 12,
+          "startedAt": "2026-10-14T04:58:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:58:17Z",
+          "conclusion": "success",
+          "name": "Check audio scripts",
+          "number": 13,
+          "startedAt": "2026-10-14T04:58:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:58:18Z",
+          "conclusion": "success",
+          "name": "Verify recorded audio URL versions",
+          "number": 14,
+          "startedAt": "2026-10-14T04:58:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:58:25Z",
+          "conclusion": "success",
+          "name": "Run tests",
+          "number": 15,
+          "startedAt": "2026-10-14T04:58:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:58:33Z",
+          "conclusion": "success",
+          "name": "Build",
+          "number": 16,
+          "startedAt": "2026-10-14T04:58:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:58:54Z",
+          "conclusion": "success",
+          "name": "Install browser for regression checks",
+          "number": 17,
+          "startedAt": "2026-10-14T04:58:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T04:59:00Z",
+          "conclusion": "success",
+          "name": "Verify report speech smoke",
+          "number": 18,
+          "startedAt": "2026-10-14T04:58:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T05:00:02Z",
+          "conclusion": "success",
+          "name": "Verify browser interactions",
+          "number": 19,
+          "startedAt": "2026-10-14T04:59:00Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T05:00:04Z",
+          "conclusion": "success",
+          "name": "Retain learning UI verification",
+          "number": 20,
+          "startedAt": "2026-10-14T05:00:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T05:00:05Z",
+          "conclusion": "success",
+          "name": "Strip CDN-hosted MP3 from artifact",
+          "number": 21,
+          "startedAt": "2026-10-14T05:00:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T05:00:05Z",
+          "conclusion": "success",
+          "name": "Verify CSP",
+          "number": 22,
+          "startedAt": "2026-10-14T05:00:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T05:00:05Z",
+          "conclusion": "success",
+          "name": "Record expected publication from the verified artifact",
+          "number": 23,
+          "startedAt": "2026-10-14T05:00:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T05:00:07Z",
+          "conclusion": "success",
+          "name": "Export verified learning snapshot",
+          "number": 24,
+          "startedAt": "2026-10-14T05:00:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T05:00:07Z",
+          "conclusion": "success",
+          "name": "Setup Pages",
+          "number": 25,
+          "startedAt": "2026-10-14T05:00:07Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T05:00:10Z",
+          "conclusion": "success",
+          "name": "Upload artifact",
+          "number": 26,
+          "startedAt": "2026-10-14T05:00:07Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T05:00:10Z",
+          "conclusion": "success",
+          "name": "Post Setup Node",
+          "number": 51,
+          "startedAt": "2026-10-14T05:00:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T05:00:10Z",
+          "conclusion": "success",
+          "name": "Post Checkout",
+          "number": 52,
+          "startedAt": "2026-10-14T05:00:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-14T05:00:10Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 53,
+          "startedAt": "2026-10-14T05:00:10Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38514085087/job/115688844029"
+    },
+    {
+      "completedAt": "2026-10-14T05:00:14Z",
+      "conclusion": "skipped",
+      "databaseId": 115689563729,
+      "name": "deploy",
+      "startedAt": "2026-10-14T05:00:14Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38514085087/job/115689563729"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/38514085087"
+}
