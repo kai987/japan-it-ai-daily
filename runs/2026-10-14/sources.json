@@ -1,0 +1,342 @@
+{
+  "targetDate": "2026-10-14",
+  "sourceCommit": "28bc713059bb824919176749fcc11142ca9aedaa",
+  "sourceWindow": {
+    "from": "2026-10-13T10:00:00+09:00",
+    "to": "2026-10-14T10:00:00+09:00"
+  },
+  "originalCapturesOutsideGit": true,
+  "previousTop5Excluded": [
+    "https://zenn.dev/kudan_jp/articles/e4607229e35382",
+    "https://zenn.dev/socialplus/articles/f363cdf24340cf",
+    "https://dev.classmethod.jp/articles/workers-ml-kem-local-shared-secret/",
+    "https://dev.classmethod.jp/articles/pnpm-12-11-rust-toolchain-management/",
+    "https://dev.classmethod.jp/articles/servicenow-voice-amazon-connect-consumer-phone-matching/"
+  ],
+  "discovery": {
+    "sitesChecked": 20,
+    "scope": "20 source homepages plus observed article links and Zenn latest API; sample discovery, not exhaustive full-site coverage",
+    "inaccessible": [
+      "CodeZine homepage HTTP403",
+      "Mercari selected original pages HTTP403"
+    ],
+    "recordedIn": "runs/2026-10-14/discovery.json"
+  },
+  "articles": [
+    {
+      "articleId": "2026-10-14-top-1",
+      "url": "https://zenn.dev/ymotongpoo/articles/20261014-bedrock-sagemaker-otel",
+      "title": "Amazon BedrockとSageMakerのAIエージェントでOpenTelemetryの自動計装が行われる範囲",
+      "source": "Zenn",
+      "publishedAt": "2026-10-14T09:00:08.407+09:00",
+      "capturedAt": "2026-10-14T01:08:28.139709+00:00",
+      "snapshotSha256": "a611cfbf9bf3738d291cbe1a7cd270900893c194649dfc4f3171886b71e228a9",
+      "candidateId": 35,
+      "references": [
+        {
+          "url": "https://github.com/open-telemetry/semantic-conventions-genai",
+          "title": "semantic-conventions-genai"
+        },
+        {
+          "url": "https://pypi.org/project/opentelemetry-instrumentation-botocore/",
+          "title": "opentelemetry-instrumentation-botocore"
+        },
+        {
+          "url": "https://github.com/open-telemetry/opentelemetry-python-genai",
+          "title": "opentelemetry-python-genai"
+        },
+        {
+          "url": "https://pypi.org/project/opentelemetry-instrumentation-genai-bedrock/",
+          "title": "opentelemetry-instrumentation-genai-bedrock"
+        },
+        {
+          "url": "https://aws-otel.github.io/",
+          "title": "AWS Distro for OpenTelemetry"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OTLPEndpoint.html",
+          "title": "CloudWatchのOTLPエンドポイント"
+        },
+        {
+          "url": "https://github.com/open-telemetry/opentelemetry-collector-contrib",
+          "title": "OpenTelemetry Collector Contrib"
+        },
+        {
+          "url": "https://aws.amazon.com/jp/bedrock/",
+          "title": "Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/jp/sagemaker/",
+          "title": "Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/",
+          "title": "Amazon Bedrock AgentCore"
+        },
+        {
+          "url": "https://aws.amazon.com/jp/sdk-for-python/",
+          "title": "AWS SDK for Python（boto3）"
+        },
+        {
+          "url": "https://opentelemetry.io/ja/",
+          "title": "OpenTelemetry"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html",
+          "title": "Bedrockのエージェントセッション"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html",
+          "title": "Converse"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html",
+          "title": "ConverseStream"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html",
+          "title": "InvokeModel"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html",
+          "title": "InvokeModelWithResponseStream"
+        },
+        {
+          "url": "https://github.com/open-telemetry/opentelemetry-python-contrib",
+          "title": "opentelemetry-python-contrib"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html",
+          "title": "InvokeEndpointのAPIリファレンス"
+        },
+        {
+          "url": "https://www.w3.org/TR/trace-context/",
+          "title": "W3C Trace Context"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html",
+          "title": "オブザーバビリティのドキュメント"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-configure.html",
+          "title": "設定のドキュメント"
+        },
+        {
+          "url": "https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension/sigv4authextension",
+          "title": "Sigv4 Authエクステンション"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OTLPGettingStarted.html",
+          "title": "OTLPエンドポイントの手引き"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html",
+          "title": "Transaction Search"
+        },
+        {
+          "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/cc07f722069974139dab497d80d145144b19daca/docs/gen-ai/aws-bedrock.md",
+          "title": "Semantic conventions for AWS Bedrock operations"
+        },
+        {
+          "url": "https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/instrumentation/opentelemetry-instrumentation-botocore",
+          "title": "OpenTelemetry Botocore Tracing"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html",
+          "title": "InvokeEndpoint - Amazon SageMaker AI API Reference"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-configure.html",
+          "title": "Add observability to your Amazon Bedrock AgentCore resources"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OTLPEndpoint.html",
+          "title": "OTLP Endpoints - Amazon CloudWatch"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OTLPGettingStarted.html",
+          "title": "Getting started - Amazon CloudWatch"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html",
+          "title": "Transaction Search - Amazon CloudWatch"
+        },
+        {
+          "url": "https://github.com/open-telemetry/semantic-conventions-genai",
+          "title": "semantic-conventions-genai"
+        },
+        {
+          "url": "https://opentelemetry.io/ja/docs/collector/",
+          "title": "OpenTelemetry Collector"
+        },
+        {
+          "url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/374",
+          "title": "#374"
+        },
+        {
+          "url": "https://github.com/open-telemetry/semantic-conventions-genai/pull/521",
+          "title": "#521"
+        }
+      ],
+      "chars": 22342,
+      "topic": "生成AI・分散トレーシング",
+      "readStatus": "full_public_text_read",
+      "access": "full",
+      "accessNote": "公開本文を全文読了。原文に掲載された測定条件・結果・コードを確認。図だけの値を新たな数値根拠に使わない。",
+      "verifiedConditions": "Python boto3。botocore 0.65b0/0.66b1、us-east-1 Nova Microの4API実測。SageMakerはus-east-2 ml.t2.mediumでヘッダーとCustomAttributesを比較。genai-bedrock 1.2b0はソース確認のみ。AgentCoreのCollector制約は公式経路の制限。"
+    },
+    {
+      "articleId": "2026-10-14-top-2",
+      "url": "https://techblog.lycorp.co.jp/ja/20261013a",
+      "title": "LINEスキマニのトップページにおけるパフォーマンス改善（インターンレポート）",
+      "source": "LINE Yahoo Tech Blog",
+      "publishedAt": "2026-10-13T02:00:00Z",
+      "capturedAt": "2026-10-14T01:08:27.469130+00:00",
+      "snapshotSha256": "c2f3df2fb6e99d0a76687a55ff30753ba0e3276329a5daa52544e95d125bcd23",
+      "candidateId": 15,
+      "references": [
+        {
+          "url": "https://www.facebook.com/share.php?u=https://techblog.lycorp.co.jp/ja/20261013a",
+          "title": "Share on Facebook"
+        },
+        {
+          "url": "https://x.com/intent/tweet?text=LINEスキマニのトップページにおけるパフォーマンス改善（インターンレポート）&url=https://techblog.lycorp.co.jp/ja/20261013a",
+          "title": "Share on X"
+        },
+        {
+          "url": "https://social-plugins.line.me/lineit/share?url=https://techblog.lycorp.co.jp/ja/20261013a",
+          "title": "Share on Line"
+        },
+        {
+          "url": "https://techblog.lycorp.co.jp/ja/20261013a",
+          "title": "Copy Link"
+        },
+        {
+          "url": "https://b.hatena.ne.jp/entry/https://techblog.lycorp.co.jp/ja/20261013a#bbutton",
+          "title": "Share on はてなブックマーク"
+        },
+        {
+          "url": "https://sukimani.line.me",
+          "title": "LINEスキマニ"
+        },
+        {
+          "url": "https://web.dev/articles/ttfb?hl=ja",
+          "title": "https://web.dev/articles/ttfb"
+        }
+      ],
+      "chars": 3085,
+      "topic": "フロントエンド・初期表示",
+      "readStatus": "full_public_text_read",
+      "access": "full",
+      "accessNote": "公開本文を全文読了。原文に掲載された測定条件・結果・コードを確認。図だけの値を新たな数値根拠に使わない。",
+      "verifiedConditions": "未ログインの初期表示、開発環境とローカルの例。3,500msは求人初表示でCore Web Vitalsと同一指標ではない。403msはAPI待ち、387msはあるリクエストのLCP。実ユーザー本番検証は未了。"
+    },
+    {
+      "articleId": "2026-10-14-top-3",
+      "url": "https://dev.classmethod.jp/articles/lambda-web-functions-vs-lwa-nextjs-assets/",
+      "title": "Lambda Web Functions と Lambda Web Adapter で、アセット数多めの Next.js（SSR）ページの配信性能を比べてみた",
+      "source": "DevelopersIO",
+      "publishedAt": "2026-10-13T15:57:27.900Z",
+      "capturedAt": "2026-10-14T01:08:27.032518+00:00",
+      "snapshotSha256": "fed86c29b1723e5bc9809b18a5230eff6c7ac9019011acf084b29f4caede0048",
+      "candidateId": 6,
+      "references": [
+        {
+          "url": "https://aws.amazon.com/jp/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/",
+          "title": "https://aws.amazon.com/jp/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/lambda/latest/dg/web-functions-scaling.html",
+          "title": "https://docs.aws.amazon.com/lambda/latest/dg/web-functions-scaling.html"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html",
+          "title": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-concurrency.html",
+          "title": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-concurrency.html"
+        }
+      ],
+      "chars": 22295,
+      "topic": "サーバーレス・SSR配信",
+      "readStatus": "full_public_text_read",
+      "access": "full",
+      "accessNote": "公開本文を全文読了。原文に掲載された測定条件・結果・コードを確認。図だけの値を新たな数値根拠に使わない。",
+      "verifiedConditions": "東京、Next.js16.4.0 React19.3.0 Node24、150widgets、HTML1+JS156、157requests。HTTP/1.1/キャッシュなし/VU10・20/助走5秒＋30秒/各条件1回。CPU・メモリ・配布形式・公開経路は同一でない。"
+    },
+    {
+      "articleId": "2026-10-14-top-4",
+      "url": "https://dev.classmethod.jp/articles/20261013-aws-glue-system-managed-iceberg-mv/",
+      "title": "[アップデート] AWS Glue でシステム管理型の Iceberg マテリアライズドビューが利用可能になったので、通常のマテリアライズドビューと書き込みを比べてみた",
+      "source": "DevelopersIO",
+      "publishedAt": "2026-10-13T14:55:46.020Z",
+      "capturedAt": "2026-10-14T01:08:27.213193+00:00",
+      "snapshotSha256": "13946b951132ad7bed17423e0c08e3d5daa7bc112c1d0022d55969d2ee9c8f4c",
+      "candidateId": 7,
+      "references": [
+        {
+          "url": "https://aws.amazon.com/jp/about-aws/whats-new/2026/10/system-managed-iceberg-materialized-views/",
+          "title": "https://aws.amazon.com/jp/about-aws/whats-new/2026/10/system-managed-iceberg-materialized-views/"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/20251226-aws-glue-iceberg-mv/",
+          "title": "https://dev.classmethod.jp/articles/20251226-aws-glue-iceberg-mv/"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/glue/latest/dg/materialized-views.html#materialized-views-system-managed",
+          "title": "https://docs.aws.amazon.com/glue/latest/dg/materialized-views.html#materialized-views-system-managed"
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-glue-6-0-price-reduction-iceberg-v3/",
+          "title": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-glue-6-0-price-reduction-iceberg-v3/"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/glue/latest/dg/materialized-views.html",
+          "title": "https://docs.aws.amazon.com/glue/latest/dg/materialized-views.html"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-materialized-views.html",
+          "title": "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-materialized-views.html"
+        }
+      ],
+      "chars": 37715,
+      "topic": "データ基盤・書き込み境界",
+      "readStatus": "full_public_text_read",
+      "access": "full",
+      "accessNote": "公開本文を全文読了。原文に掲載された測定条件・結果・コードを確認。図だけの値を新たな数値根拠に使わない。",
+      "verifiedConditions": "東京、Glue6.0 Spark4.1.1-amzn-0 G.1X×2、Athena3、同一S3 Tables namespaceの通常/管理型MV比較。2IAM主体。5行作成211.9秒、7行刷新456.5秒。DROP SCHEDULEの成功後も設定/タスクが残る観測。未解明の一時SELECT成功あり。"
+    },
+    {
+      "articleId": "2026-10-14-top-5",
+      "url": "https://dev.classmethod.jp/articles/kiro-governance-sign-in-controls/",
+      "title": "[アップデート] Kiro で管理者がサインイン方法を制限できるようになったので試してみた",
+      "source": "DevelopersIO",
+      "publishedAt": "2026-10-13T21:57:20.694Z",
+      "capturedAt": "2026-10-14T01:08:27.031950+00:00",
+      "snapshotSha256": "9e8f6af1660d7020302720206ee15be76258f2428801170f1cb654aa90345541",
+      "candidateId": 4,
+      "references": [
+        {
+          "url": "https://kiro.dev/blog/sign-in-controls/",
+          "title": "https://kiro.dev/blog/sign-in-controls/"
+        },
+        {
+          "url": "https://kiro.dev/docs/enterprise/governance/sign-in/",
+          "title": "https://kiro.dev/docs/enterprise/governance/sign-in/"
+        },
+        {
+          "url": "https://kiro.dev/docs/enterprise/governance/sign-in/",
+          "title": "Sign-in controls - Kiro Docs"
+        }
+      ],
+      "chars": 4074,
+      "topic": "AI開発・端末ガバナンス",
+      "readStatus": "full_public_text_read",
+      "access": "full",
+      "accessNote": "公開本文を全文読了。原文に掲載された測定条件・結果・コードを確認。図だけの値を新たな数値根拠に使わない。",
+      "verifiedConditions": "Kiro IDE/CLIの端末managed-settings.json経路。IDE1.2以降/CLI2.25.0以降の要件。正常配布＋idcだけ許可、URL編集後のクライアント拒否実測。Web/ファイルなし/旧クライアント非対象。"
+    }
+  ],
+  "sourceReviewCompletedAt": "2026-10-14T01:13:16.383132+00:00"
+}
