@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-14",
+  "generatedAt": "2026-10-14T05:10:59.425Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIサービスをまたぐ処理を、自動計装だけで追跡できますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "2422ae2fc0ec570f65d56340c934bec5b7d665637a48162df29a295cf8f2ba1e",
+      "audioSha256": "39059a6b27e10b9c0a1cad637aa12be9e58a2b560e85ab0f75f96a2b89205483",
+      "durationSeconds": 5.003
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "自動計装の範囲をサービスごとに確認します。SageMakerではtraceparentのHTTPヘッダーがコンテナに届かないため、CustomAttributesで渡し、受信側で親のコンテキストを復元します。ただし値は1024文字以内です。呼び出し側とコンテナのTrace IDがつながることを確かめ、モデル内部の処理やトークン数は別に記録します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "47e77a6fc02faa09721f80eab786a6bfe2d02542f8887553fc677ff35012c0bf",
+      "audioSha256": "165793d23b8ebe78a260287439ed04a2a4d8f53241b033809083e9e5c4cc843d",
+      "durationSeconds": 26.242,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "SSRで初期表示を速くするとき、どこを測定して改善しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "3e36e44e3ce7419ab4a1452f2f00edcf19ead17cbee950a449d7e53864f6a5b4",
+      "audioSha256": "a01bba351b6bef3dc3665aea2954352a4e6cb7ea927695c63afd2dcaaeb18dad",
+      "durationSeconds": 5.548
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "表示開始だけでなく、サーバーの待ち時間も分けて測ります。LINEスキマニの例ではqueryKeyを正規化してSSRのデータを引き継ぎ、API待ちにはSWRの別キャッシュを加えました。QueryClientはユーザー間で共有しません。開発環境のLCPは387ミリ秒でしたが、求人の初表示とは別の指標で、本番の効果は未検証です。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "0fba42d5627868019fbbc0a1798e8960b919028f00c340a3b6e61578af411221",
+      "audioSha256": "2e515519d208aeeeb84b2b01b87c27c9fe6bc381b28eba76201d96e4b689366f",
+      "durationSeconds": 27.225,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "新しい配信基盤のベンチマークを、採用判断にどう使いますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "7b3e06beea8600492cf92fed3bc94bdd6c7b51660cbec6f85fca955e2ffec470",
+      "audioSha256": "de618b40142101c885e328094b730788be04d3b3f6449cec96ea05a2d7daace7",
+      "durationSeconds": 5.142
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "測った処理と条件を先に確認します。このk6の比較は157リクエストをキャッシュなしで取得し、各条件一回で約1.3倍のスループットでした。ただしCPUや配布形式は同じではなく、多重処理だけが原因とは言えません。ページ取得と描画の時間を分け、自分の構成で繰り返し測り、必要なアクセスログを足した場合も確認します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "1179fdc042c3b97b18e83c5a015831a49b14d582481251ab977080aa7d79bdc9",
+      "audioSha256": "0f905cb5a5089d28edfa62173cbbe00115785d6fe3cc7dc00a6c493a4af5679d",
+      "durationSeconds": 26.702,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "共有する集計結果を、利用者の直接変更からどう守りますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "4a61bda3ff5cf20af69e110d11163d97513efdc04ecce53b46032dbdc7896187",
+      "audioSha256": "0702cb2a6534c207abd1ee2e39e561610a4d57ee86759bb0f4f0bde6ce6a4bfb",
+      "durationSeconds": 5.432
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "データと定義への書き込みを管理する境界を設けます。Glueのシステム管理型ビューはS3 Tables上で利用者の直接書き込みを拒否し、読み取りや刷新は可能です。ただしGlue 6.0が必要です。運用では命令の成功だけで判断せず、DROP SCHEDULE後も残ったRefreshSecondsの例のように、設定と実行中のタスクを読み直して確認します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "ee0cebeaefc5d8a16007f1f9553f4903f262d8a2b711b3f3273870c62989e006",
+      "audioSha256": "cf6bd51ed8e5bd58fa2afad02d88a265471a62f3abff5d88982d1c51f8c39336",
+      "durationSeconds": 26.441,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "企業のAI開発ツールで、許可したアカウントだけを使わせるにはどうしますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "eca9a171c0eb538f490dc0339ac310c06b9fbf918528204f909e0b2c7be284a3",
+      "audioSha256": "b875327899672159f51b9118e96b94728dd774e33ebabba3edb45e449ac9f5c0",
+      "durationSeconds": 5.758
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "設定の配布と、認証結果の拒否を両方確認します。Kiroではmanaged-settings.jsonのdenyルールからidcだけを除外し、組織の認証を残します。URLを編集して個人アカウントで認証しても、戻ったIDEが拒否した例があります。ただしWebやファイルのない端末には効かないので、配布状況と対応バージョンまで管理します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "ecd02ce5a583e2fa1e742b53c462e3d25d513249b27a37e07273375ed0fa4bf2",
+      "audioSha256": "897c2fa60aeb73d2ba7702e6a5f6243329b304e76a03dc3eaef02d71b55c3a4e",
+      "durationSeconds": 24.938,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "SageMakerでtraceparentを渡す際、HTTPヘッダーとCustomAttributesはどう違いますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "beaac8888766ff60246d961495b6d4e4603fae20afb821b1de5d604f6109954e",
+      "audioSha256": "fd26867c85ce16857e9fd7562ca9f69a871b87385e209d5804b1e7a2c753f52a",
+      "durationSeconds": 7.601
+    },
+    {
+      "index": 2,
+      "text": "求人初表示、LCP、全アセット取得時間を、同じ性能指標として扱えますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "a3273b99693f5a816aa93bb495b42925ef85fbbd7f53f7e58ffba50a3d705183",
+      "audioSha256": "d03dde326eab2864f969624c33857c1091f07b8f614ade3c9afdeb02f8110cea",
+      "durationSeconds": 7.302
+    },
+    {
+      "index": 3,
+      "text": "管理コマンドやブラウザー認証が成功した後、何を読み直して確かめますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "a4cf7318274de6de816e58056fefb1b4b9d9363e595eb28276af0a9b7b908950",
+      "audioSha256": "608c14c84cb3b4fb5132e577692bd17c97f0d002825b623db07042ff0b06663d",
+      "durationSeconds": 6.036
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-14T05:11:05.620Z"
+}
