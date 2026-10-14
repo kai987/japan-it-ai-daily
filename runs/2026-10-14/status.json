@@ -1,14 +1,36 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-14",
-  "stage": "drafts_ready",
+  "stage": "preflight_passed",
   "sourceCommit": "28bc713059bb824919176749fcc11142ca9aedaa",
   "sourceWindow": {
     "from": "2026-10-13T10:00:00+09:00",
     "to": "2026-10-14T10:00:00+09:00"
   },
   "createdAt": "2026-10-14T01:04:44.466Z",
-  "updatedAt": "2026-10-14T04:57:12.146Z",
+  "updatedAt": "2026-10-14T05:01:02.603Z",
   "completedArtifacts": [],
-  "lastError": null
+  "lastError": null,
+  "baseCommit": "28bc713059bb824919176749fcc11142ca9aedaa",
+  "draftCommit": "4bde257b11a2a7e10f8863b17f598a5251b1d325",
+  "draftBranch": "draft/daily-2026-10-14",
+  "paths": [
+    "src/content/daily-ja/2026-10-14.md",
+    "src/content/daily/2026-10-14.md",
+    "src/content/evidence/2026-10-14.json",
+    "src/content/japanese-ja/2026-10-14.md",
+    "src/content/japanese/2026-10-14.md",
+    "src/data/interviews/2026-10-14.json"
+  ],
+  "changedPaths": [
+    "A\tsrc/content/daily-ja/2026-10-14.md",
+    "A\tsrc/content/daily/2026-10-14.md",
+    "A\tsrc/content/evidence/2026-10-14.json",
+    "A\tsrc/content/japanese-ja/2026-10-14.md",
+    "A\tsrc/content/japanese/2026-10-14.md",
+    "A\tsrc/data/interviews/2026-10-14.json"
+  ],
+  "verifiedAt": "2026-10-14T04:57:27.967Z",
+  "preflightRunId": 38514085087,
+  "nextAction": "Prepare and submit exact source-bound request to the unique publisher"
 }
