@@ -1,0 +1,265 @@
+{
+  "targetDate": "2026-10-15",
+  "sourceCommit": "3c3094603a17425bd0fb864552b657bb1827fbe1",
+  "sourceWindow": {
+    "to": "2026-10-15T10:00:00+09:00",
+    "from": "2026-10-14T10:00:00+09:00"
+  },
+  "originalCapturesOutsideGit": true,
+  "previousTop5Excluded": [
+    "https://zenn.dev/ymotongpoo/articles/20261014-bedrock-sagemaker-otel",
+    "https://techblog.lycorp.co.jp/ja/20261013a",
+    "https://dev.classmethod.jp/articles/lambda-web-functions-vs-lwa-nextjs-assets/",
+    "https://dev.classmethod.jp/articles/20261013-aws-glue-system-managed-iceberg-mv/",
+    "https://dev.classmethod.jp/articles/kiro-governance-sign-in-controls/"
+  ],
+  "discovery": {
+    "sitesChecked": 20,
+    "scope": "20 source homepages plus observed article links and Zenn latest 100 API; sample discovery, not exhaustive full-site coverage",
+    "inaccessible": [
+      "CodeZine homepage HTTP403",
+      "Mercari three original pages HTTP403"
+    ],
+    "recordedIn": "runs/2026-10-15/discovery.json"
+  },
+  "articles": [
+    {
+      "articleId": "2026-10-15-top-1",
+      "url": "https://dev.classmethod.jp/articles/claude-code-bedrock-account-level-guardrail-prompt-attack/",
+      "title": "Account-level enforcement guardrail で Claude Code on Bedrock のプロンプト攻撃を入力側でブロックできるか検証した",
+      "source": "DevelopersIO",
+      "publishedAt": "2026-10-14T15:51:17.241Z",
+      "capturedAt": "2026-10-15T01:07:23.090532+00:00",
+      "snapshotSha256": "87a46c6c606e319fee3d606848ac12e9915bd06d267db47b52693205f6df93a5",
+      "candidateId": 8,
+      "references": [
+        {
+          "url": "https://classmethod.connpass.com/event/402011/?utm_source=dev.classmethod.jp&utm_medium=author&utm_campaign=comment",
+          "title": "セッションで話します！ 10/24 DevelopersIO 2026 Tokyo"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/bedrock-account-level-enforcement-guardrail-claude-code-verify/",
+          "title": "https://dev.classmethod.jp/articles/bedrock-account-level-enforcement-guardrail-claude-code-verify/"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-prompt-attack.html",
+          "title": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-prompt-attack.html"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-tagging.html",
+          "title": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-tagging.html"
+        },
+        {
+          "url": "https://github.com/anthropics/claude-code/issues/23322",
+          "title": "https://github.com/anthropics/claude-code/issues/23322"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/claude-code-bedrock-guardrails-filtering/",
+          "title": "https://dev.classmethod.jp/articles/claude-code-bedrock-guardrails-filtering/"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/bedrock-account-level-enforcement-guardrail-claude-code-verify/#%25E9%2580%259A%25E5%25B8%25B8-bedrock-guardrails-%25E3%2581%25AE%25E8%25A8%25AD%25E5%25AE%259A",
+          "title": "通常 Bedrock Guardrails の設定"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/guardrails-prompt-attack.html",
+          "title": "Amazon Bedrock ガードレールでプロンプト攻撃を検出する"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/bedrock-account-level-enforcement-guardrail-claude-code/",
+          "title": "https://dev.classmethod.jp/articles/bedrock-account-level-enforcement-guardrail-claude-code/"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/claude-code-bedrock-guardrails-filtering/",
+          "title": "https://dev.classmethod.jp/articles/claude-code-bedrock-guardrails-filtering/"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/claude-code-bedrock-guardrails-filtering/",
+          "title": "https://dev.classmethod.jp/articles/claude-code-bedrock-guardrails-filtering/"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/bedrock-account-level-enforcement-guardrail-claude-code-verify/",
+          "title": "https://dev.classmethod.jp/articles/bedrock-account-level-enforcement-guardrail-claude-code-verify/"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/bedrock-account-level-enforcement-guardrail-claude-code/",
+          "title": "https://dev.classmethod.jp/articles/bedrock-account-level-enforcement-guardrail-claude-code/"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/claude-code-bedrock-jp-region/",
+          "title": "https://dev.classmethod.jp/articles/claude-code-bedrock-jp-region/"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/guardrails-prompt-attack.html",
+          "title": "https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/guardrails-prompt-attack.html"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/guardduty-ai-protection-bedrock-guardrails-tier-verification/",
+          "title": "https://dev.classmethod.jp/articles/guardduty-ai-protection-bedrock-guardrails-tier-verification/"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/amazon-bedrock-guardrails-sensitive-information-filter/",
+          "title": "https://dev.classmethod.jp/articles/amazon-bedrock-guardrails-sensitive-information-filter/"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/guardrails-prompt-attack.html",
+          "title": "https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/guardrails-prompt-attack.html"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/guardrails-tagging.html",
+          "title": "https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/guardrails-tagging.html"
+        }
+      ],
+      "access": "full",
+      "accessNote": "公開原文の本文・コード・結果・注意点を全文確認。実験は著者の報告であり独立再実行ではない。"
+    },
+    {
+      "articleId": "2026-10-15-top-2",
+      "url": "https://zenn.dev/yskms/articles/5b1090cfa1a51e",
+      "title": "React Nativeでタップが1.8秒効かなくなる謎現象を実機計測で追った話（犯人はTextDecoder.decode）",
+      "source": "Zenn",
+      "publishedAt": "2026-10-15T07:21:05.374+09:00",
+      "capturedAt": "2026-10-15T01:07:24.273794+00:00",
+      "snapshotSha256": "728c59908d19ae48ecf2cdefea5b415bae6d77e98290de568d7a74013ecf99e4",
+      "candidateId": 41,
+      "references": [
+        {
+          "url": "https://github.com/yskms/filto-app",
+          "title": "GitHub"
+        },
+        {
+          "url": "https://apps.apple.com/jp/app/filto/id6763070121",
+          "title": "App Store"
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=com.yskms.filto",
+          "title": "Google Play"
+        }
+      ],
+      "access": "full",
+      "accessNote": "公開原文の本文・コード・結果・注意点を全文確認。実験は著者の報告であり独立再実行ではない。"
+    },
+    {
+      "articleId": "2026-10-15-top-3",
+      "url": "https://dev.classmethod.jp/articles/dbt-platform-snowflake-aws-privatelink-network-policy/",
+      "title": "dbt platform から Snowflake へ AWS PrivateLink で接続し、Network Policy で経路を制限してみた",
+      "source": "DevelopersIO",
+      "publishedAt": "2026-10-15T00:43:26.642Z",
+      "capturedAt": "2026-10-15T01:07:23.001276+00:00",
+      "snapshotSha256": "0e03731fc3361fd6db8a13e8b5d5f48dbc5fc561109c56b389e8596116fd1b83",
+      "candidateId": 3,
+      "references": [
+        {
+          "url": "https://docs.getdbt.com/docs/platform/secure/private-connectivity/aws/aws-snowflake",
+          "title": "https://docs.getdbt.com/docs/platform/secure/private-connectivity/aws/aws-snowflake"
+        },
+        {
+          "url": "https://docs.snowflake.com/en/user-guide/admin-security-privatelink",
+          "title": "https://docs.snowflake.com/en/user-guide/admin-security-privatelink"
+        },
+        {
+          "url": "https://community.snowflake.com/s/article/HowtosetupPrivatelinktoSnowflakefromCloudServiceVendors",
+          "title": "https://community.snowflake.com/s/article/HowtosetupPrivatelinktoSnowflakefromCloudServiceVendors"
+        },
+        {
+          "url": "https://docs.getdbt.com/docs/platform/secure/private-connectivity/aws/aws-snowflake?version=2#support-led-setup",
+          "title": "https://docs.getdbt.com/docs/platform/secure/private-connectivity/aws/aws-snowflake?version=2#support-led-setup"
+        },
+        {
+          "url": "https://docs.snowflake.com/en/user-guide/network-policies",
+          "title": "https://docs.snowflake.com/en/user-guide/network-policies"
+        },
+        {
+          "url": "https://docs.getdbt.com/docs/platform/secure/private-connectivity/azure/azure-snowflake",
+          "title": "https://docs.getdbt.com/docs/platform/secure/private-connectivity/azure/azure-snowflake"
+        },
+        {
+          "url": "https://docs.getdbt.com/docs/platform/secure/private-connectivity/gcp/gcp-snowflake",
+          "title": "https://docs.getdbt.com/docs/platform/secure/private-connectivity/gcp/gcp-snowflake"
+        }
+      ],
+      "access": "full",
+      "accessNote": "公開原文の本文・コード・結果・注意点を全文確認。実験は著者の報告であり独立再実行ではない。"
+    },
+    {
+      "articleId": "2026-10-15-top-4",
+      "url": "https://techblog.lycorp.co.jp/ja/20261014b",
+      "title": "プライベートクラウドにおけるVM Live Migrationの通信暗号化の実装と検証（インターンレポート）",
+      "source": "LINE Yahoo Tech Blog",
+      "publishedAt": "2026-10-14T02:00:00Z",
+      "capturedAt": "2026-10-15T01:07:23.387203+00:00",
+      "snapshotSha256": "c62807ccd92c912d2c9bb0e9f8e59c0b0f0619abe4b94ce3f48e947113dbde7f",
+      "candidateId": 19,
+      "references": [
+        {
+          "url": "https://www.facebook.com/share.php?u=https://techblog.lycorp.co.jp/ja/20261014b",
+          "title": "Share on Facebook"
+        },
+        {
+          "url": "https://x.com/intent/tweet?text=プライベートクラウドにおけるVM Live Migrationの通信暗号化の実装と検証（インターンレポート）&url=https://techblog.lycorp.co.jp/ja/20261014b",
+          "title": "Share on X"
+        },
+        {
+          "url": "https://social-plugins.line.me/lineit/share?url=https://techblog.lycorp.co.jp/ja/20261014b",
+          "title": "Share on Line"
+        },
+        {
+          "url": "https://techblog.lycorp.co.jp/ja/20261014b",
+          "title": "Copy Link"
+        },
+        {
+          "url": "https://b.hatena.ne.jp/entry/https://techblog.lycorp.co.jp/ja/20261014b#bbutton",
+          "title": "Share on はてなブックマーク"
+        },
+        {
+          "url": "https://docs.openstack.org/keystone/latest/",
+          "title": "Keystone"
+        },
+        {
+          "url": "https://gitlab.com/gnutls/gnutls/-/merge_requests/1990",
+          "title": "GnuTLSのバグ"
+        },
+        {
+          "url": "https://gitlab.com/qemu-project/qemu/-/work_items/1937",
+          "title": "QEMUサイドのIssue"
+        }
+      ],
+      "access": "full",
+      "accessNote": "公開原文の本文・コード・結果・注意点を全文確認。実験は著者の報告であり独立再実行ではない。"
+    },
+    {
+      "articleId": "2026-10-15-top-5",
+      "url": "https://zenn.dev/nyaomaru/articles/validate-unknown-without-schema-library",
+      "title": "TypeScript の `unknown` を Schema Library なしで安全に Validate する 🛡️",
+      "source": "Zenn",
+      "publishedAt": "2026-10-15T00:36:45.707+09:00",
+      "capturedAt": "2026-10-15T01:07:24.458645+00:00",
+      "snapshotSha256": "600e1bcdf52ef332cd435de5d04ad8258e796340d5b0f2d2dd5a9bc26f28fb40",
+      "candidateId": 45,
+      "references": [
+        {
+          "url": "https://github.com/nyaomaru",
+          "title": ""
+        },
+        {
+          "url": "https://github.com/nyaomaru",
+          "title": "@nyaomaru"
+        },
+        {
+          "url": "https://is-kit.dev/guides/validate-unknown-without-schema-library",
+          "title": "https://is-kit.dev/guides/validate-unknown-without-schema-library"
+        },
+        {
+          "url": "https://is-kit.dev/guides/validate-unknown-without-schema-library",
+          "title": "https://is-kit.dev/guides/validate-unknown-without-schema-library"
+        },
+        {
+          "url": "https://github.com/nyaomaru/is-kit",
+          "title": "https://github.com/nyaomaru/is-kit"
+        }
+      ],
+      "access": "full",
+      "accessNote": "公開原文の本文・コード・結果・注意点を全文確認。実験は著者の報告であり独立再実行ではない。"
+    }
+  ]
+}
