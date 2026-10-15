@@ -1,0 +1,18 @@
+{
+  "targetDate": "2026-10-15",
+  "day": 47,
+  "stage": "waiting_source",
+  "requestSubmitted": false,
+  "statusBlobSha": "da13059a19b0d1b61e75f1d0f293188e68872ce6",
+  "sourceObservation": {
+    "n1Main": "5b20914cae600f46d40ea0c8101c7bda9c7599ee",
+    "mainSourceAbsent": true,
+    "outboxAbsent": true,
+    "completeMainInventory": true,
+    "completeProgressInventory": true,
+    "requestTargetDate": "2026-10-14",
+    "observedAt": "2026-10-15T01:31:26.127Z"
+  },
+  "upstreamSourceCommit": "f45a97756cd3917d2dfcaf5b137f3e9a00c05a5d",
+  "verifiedAt": "2026-10-15T01:31:32.161Z"
+}
