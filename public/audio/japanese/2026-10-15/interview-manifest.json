@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-15",
+  "generatedAt": "2026-10-15T01:34:44.998Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIサービスの安全設定が、実際の入力に効いているかをどう確かめますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "3e9460f30da85fcdf472cbc8a896ed29eab351b26001bc127ed7f1a8565208b3",
+      "audioSha256": "6aa22afb759e843df1d2e8e4ad32ed387e1ae814ce275a60e3018abfcc41e4fa",
+      "durationSeconds": 5.909
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "設定画面だけでなく、実際の呼び出し経路で確かめます。Bedrockの例では、ヘッダー指定とUser promptsのComprehensiveで、入力側の検出結果が違いました。入力用と出力用の拒否文も分け、どこで止まったか確認します。モデル自身の拒否は別に扱い、通常の会話への影響も見ます。三例の成功だけで、防御全体は保証できません。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "ac7ceac6a62ef9afa56940a37293adc0754317b2fbf18ec6666fafa8db0136e4",
+      "audioSha256": "b298d25f77b60ac9b1922795539f78bed3baca4ff9a028b4fa73e7f346efbfaa",
+      "durationSeconds": 26.861,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "React Nativeで操作が止まるとき、どこから調べますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "b3f4ef5b93744310df11f12b000232ba6a0b35ec77a6d684c88d3e9ac0993eb6",
+      "audioSha256": "8790fd36d3557233a4f4ce9aaa3b0d9ac6728ba1f9154e8a8511522cbbb21edf",
+      "durationSeconds": 4.62
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "まず実機でJSスレッドが止まる区間を測ります。今回の例は、巨大なUTF-8の一括デコードが原因でした。64KBに分け、TextDecoderのstreamで文字の境界を保ち、setTimeoutで処理を譲っています。Promiseで区切るだけでは改善しませんでした。操作の応答だけでなく文字列の一致も確かめ、ただし、効果は端末ごとに確かめます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "d6aa9c0e9f07b213da2d8fb2dd37708cbe8fa31ef9b1d20f864c77f074b392ba",
+      "audioSha256": "827d2bd46c8dee78a48fbea71f9c058afa03d64a6da185a6c04ac9423de2363a",
+      "durationSeconds": 27.264,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "私有接続を設定したあと、経路制限をどう検証しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "3f8bac5c85bf527da91ecce382a60ddfb5642500956bc97d5f68c2888b0d4bb2",
+      "audioSha256": "b013315bc50f10698c9cb7caacc62faa0f7d935f03d98e4f9ee7688d92dcc9ef",
+      "durationSeconds": 4.829
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "許可する経路と拒否する経路を両方試します。dbtとSnowflakeの例では、CLIENT_PRIVATE_LINK_IDをdbt側のEndpoint identifierと照合します。さらにNetwork Policyで公開IPv4を拒否し、私有経路のジョブは通り、手元PCからの公開接続は拒否されることを確かめます。この条件はユーザー単位です。アカウント全体やOAuthまでの検証ではありません。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "685c66b1c6b1aa1b4fe6d261ffd34be52823d20637a07cadc4542e098e242ac8",
+      "audioSha256": "be14fdea5752ece4f960ca6aca94d7e82aa022692371281b92f719bd9079e72b",
+      "durationSeconds": 29.036,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "小さい検証は成功したのに、本番に近い大きさで失敗したらどう調べますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "8e5ba8c675a0febc7f1e6aaa53086517d684ecd80544dba67220300ae0081740",
+      "audioSha256": "1ca7b344970d3155e8a3ba046dc3a4f87cfd678cca977c620548e0a59cdce78c",
+      "durationSeconds": 6.187
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "通信の開始だけでなく、長く動いたときの状態変化を調べます。VM移行の例では、小さいVMは通っても、100GiBではQEMUが終了しました。gdbでGnuTLSまで追い、TLS 1.3の鍵更新に関する不具合を特定しています。修正後の再試験に加え、暗号化による速度低下と失敗時の復旧も確認します。本番の移行も、握手の成功だけでは合格にしません。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "b6599dc813b172f329755d6a2433c407dcc8782276c0dc6abef136d1c1c880d4",
+      "audioSha256": "69d2e98f7e3fa4915de4c42b125604d07684fce96036b32f976fca363ce33182",
+      "durationSeconds": 29.339,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "外部APIから届くunknownを、TypeScriptでどう扱いますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "a1682b84093880b511752d7f2fd2142737f106fea2494988aef3eb4d5c1918b5",
+      "audioSha256": "015b26527a0b719808f94d1ec33ef0b75a2ca5b75157744898556c380e0d9396",
+      "durationSeconds": 5.328
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "型アサーションだけでは信用せず、入口で実際の値を検査します。is-kitの例ならstructで形を確認し、optionalKeyとnullableで、キーの省略とnullを分けます。safeParseは変換せず元の値を返すので、補正や不変化の保証とは区別します。項目ごとの詳しいエラーや変換が必要なら、Schema Libraryを選びます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "9146dc315c1925261d8435bdfa696e036fe082c47455210e868351ce37f743a7",
+      "audioSha256": "38d3d4aa52f5454bba5213f7f3edf08f5a79fe7ea2a559159c95e293f2478c59",
+      "durationSeconds": 24.475,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "設定どおりの経路を使った証拠は何ですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "c7e2588034cc458401602baf3f1aeed81e882211902f9618037a8d7c0fcf2bfc",
+      "audioSha256": "3794a601d81e9d8e160f50f436897a6c359fd7d78a99b9acd10ae5c056f9ce68",
+      "durationSeconds": 3.435
+    },
+    {
+      "index": 2,
+      "text": "小さい試験では見えない条件をどう追加しますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "0eb3a9ca3ab4df17177a5f9c1a1a1830c23065414fd693fdbd74b7d00efa3a16",
+      "audioSha256": "42c596a4d7dea4085dae1d42570c239a21b7aef2bfe9dc7d1d68499b3106a453",
+      "durationSeconds": 3.958
+    },
+    {
+      "index": 3,
+      "text": "型の絞り込みができても、まだ保証されないことは何ですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "8f93bbcb5b25748894e61fcfc3f90e302e2e96e0a54526cc9f0d943feba620d0",
+      "audioSha256": "80ae4c30e27579840baf4a4666dc838157ce7358c75cb46a87af04d293923cf6",
+      "durationSeconds": 4.756
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-15T01:34:57.073Z"
+}
