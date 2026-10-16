@@ -207,9 +207,10 @@
   .language-select{min-width:76px;padding-left:10px}
 }
 
-/* Keep the desktop header compact on narrow tablet widths. */
-@media(max-width:900px){
-  .site-search{display:none}
+/* Keep search reachable while the desktop navigation is still visible. */
+@media(min-width:801px) and (max-width:1000px){
+  .site-search{flex-basis:170px;min-width:150px;max-width:220px;margin:0}
+  .site-search-shortcut{display:none}
 }
 
 /*
@@ -218,6 +219,7 @@
  * language selector, theme toggle and hamburger button keep their spacing.
  */
 @media(max-width:800px){
+  .site-search{display:none}
   html.nav-open .site-search{
     display:block;
     position:absolute;

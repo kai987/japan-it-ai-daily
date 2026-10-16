@@ -1,4 +1,4 @@
-import { annotateAudioFileVersions, synchronizeAudioFileVersions } from './audio-file-versions.mjs';
+import { annotateAudioFileVersions, assertAudioFileVersion, audioFileSha256, synchronizeAudioFileVersions, verifiedManifestAudioFileVersion } from './audio-file-versions.mjs';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { basename, join, resolve } from 'node:path';
@@ -197,12 +197,14 @@ const previousAudioRecords = (manifest) => {
     if (item?.word) {
       records.set(item.word, {
         hash: item.wordHash,
+        sha256: item.wordSha256,
         text: item.reading || item.term || '',
       });
     }
     if (item?.example) {
       records.set(item.example, {
         hash: item.exampleHash,
+        sha256: item.exampleSha256,
         text: item.exampleJa || '',
       });
     }
@@ -212,6 +214,7 @@ const previousAudioRecords = (manifest) => {
     if (item?.example) {
       records.set(item.example, {
         hash: item.exampleHash,
+        sha256: item.exampleSha256,
         text: item.exampleJa || '',
       });
     }
@@ -230,6 +233,8 @@ let totalSkipped = 0;
 let totalMigrated = 0;
 let totalPruned = 0;
 let processedDates = 0;
+const regenerated = new Map();
+const audioRoot = join(root, 'public', 'audio', 'japanese');
 
 for (const date of targetDates) {
   const contentPath = join(contentDir, `${date}.md`);
@@ -246,6 +251,43 @@ for (const date of targetDates) {
 
   const outputDir = join(root, 'public', 'audio', 'japanese', date);
   mkdirSync(outputDir, { recursive: true });
+  const manifestPath = join(outputDir, 'manifest.json');
+  const previousManifest = readJsonIfExists(manifestPath);
+  const previousRecords = previousAudioRecords(previousManifest);
+  const legacyConfigMatches = legacyManifestMatchesConfig(previousManifest);
+  if (!force) {
+    for (const [file, previous] of previousRecords) {
+      const path = join(outputDir, file);
+      if (existsSync(path) && previous.sha256 !== undefined) assertAudioFileVersion(path, previous.sha256);
+    }
+  }
+  const sourceManifests = new Map();
+  const reviewSha256 = (item, file) => {
+    if (!sourceManifests.has(item.audioDate)) {
+      const sourcePath = join(audioRoot, item.audioDate, 'manifest.json');
+      const sourceManifest = readJsonIfExists(sourcePath);
+      if (!sourceManifest || sourceManifest.date !== item.audioDate) throw new Error(`${sourcePath}: missing or invalid source audio manifest`);
+      sourceManifests.set(item.audioDate, sourceManifest);
+    }
+    const sha256 = verifiedManifestAudioFileVersion(sourceManifests.get(item.audioDate), audioRoot, item.audioDate, file);
+    // Existing review references also bind the trusted source bytes. Preserve
+    // their evidence even when reconstructing the target manifest from content.
+    const previousReview = {
+      date,
+      items: (previousManifest?.items || []).filter((card) => card.studyKind === 'review'),
+      grammar: (previousManifest?.grammar || []).filter((card) => card.studyKind === 'review'),
+    };
+    const hasPreviousReference = [...previousReview.items, ...previousReview.grammar]
+      .some((card) => card.audioDate === item.audioDate && (card.word === file || card.example === file));
+    if (hasPreviousReference) verifiedManifestAudioFileVersion(previousReview, audioRoot, item.audioDate, file, { regenerated });
+    return sha256;
+  };
+  // Validate every historical dependency before synthesis or pruning.
+  for (const item of reviewVocabulary) {
+    item.wordSha256 = reviewSha256(item, item.word);
+    item.exampleSha256 = reviewSha256(item, item.example);
+  }
+  for (const item of reviewGrammar) item.exampleSha256 = reviewSha256(item, item.example);
   let pruned = 0;
   for (const name of readdirSync(outputDir)) {
     if (!/^review-(?:vocab|example|grammar-example)-\d+\.mp3$/.test(name)) continue;
@@ -253,10 +295,6 @@ for (const date of targetDates) {
     pruned += 1;
     console.log(`PRUNE ${name}  [review now reuses first-introduced audio]`);
   }
-  const manifestPath = join(outputDir, 'manifest.json');
-  const previousManifest = readJsonIfExists(manifestPath);
-  const previousRecords = previousAudioRecords(previousManifest);
-  const legacyConfigMatches = legacyManifestMatchesConfig(previousManifest);
 
   console.log(`\n=== ${date} · new ${vocabulary.length} words / ${grammar.length} grammar · review ${reviewVocabulary.length} words / ${reviewGrammar.length} grammar ===`);
   console.log(`Output: ${outputDir}`);
@@ -282,20 +320,23 @@ for (const date of targetDates) {
       filePath: path,
       expectedHash,
       previousHash: previous?.hash,
+      previousSha256: previous?.sha256,
       legacyMatches,
     })) {
       skipped += 1;
       if (legacyMatches) migrated += 1;
       console.log(`SKIP ${file}${legacyMatches ? '  [cache migrated]' : '  [hash match]'}`);
-      return expectedHash;
+      return { hash: expectedHash, sha256: previous.sha256 };
     }
 
     process.stdout.write(`${existsSync(path) ? 'REGEN' : 'GEN  '} ${file}  ${text}\n`);
     try {
       const wav = await synthesize(text, kind);
       encodeMp3(wav, path);
+      const sha256 = audioFileSha256(path);
+      regenerated.set(`${date}/${file}`, { previousSha256: previous?.sha256, sha256 });
       generated += 1;
-      return expectedHash;
+      return { hash: expectedHash, sha256 };
     } catch (error) {
       fail(`${date}/${file} 生成失败：${error instanceof Error ? error.message : String(error)}`);
     }
@@ -309,14 +350,14 @@ for (const date of targetDates) {
     const examplePath = join(outputDir, exampleFile);
     const wordText = item.reading || item.term;
 
-    const wordHash = await ensureAudio({
+    const { hash: wordHash, sha256: wordSha256 } = await ensureAudio({
       file: wordFile,
       path: wordPath,
       text: wordText,
       kind: 'word',
       scope: 'japanese-vocabulary-word',
     });
-    const exampleHash = await ensureAudio({
+    const { hash: exampleHash, sha256: exampleSha256 } = await ensureAudio({
       file: exampleFile,
       path: examplePath,
       text: item.exampleJa,
@@ -331,8 +372,10 @@ for (const date of targetDates) {
       exampleJa: item.exampleJa,
       word: wordFile,
       wordHash,
+      wordSha256,
       example: exampleFile,
       exampleHash,
+      exampleSha256,
     });
   }
 
@@ -354,7 +397,9 @@ for (const date of targetDates) {
       reading: item.reading,
       exampleJa: item.exampleJa,
       word: item.word,
+      wordSha256: item.wordSha256,
       example: item.example,
+      exampleSha256: item.exampleSha256,
     });
   }
 
@@ -362,7 +407,7 @@ for (const date of targetDates) {
     const index = zeroIndex + 1;
     const exampleFile = `grammar-example-${pad(index)}.mp3`;
     const examplePath = join(outputDir, exampleFile);
-    const exampleHash = await ensureAudio({
+    const { hash: exampleHash, sha256: exampleSha256 } = await ensureAudio({
       file: exampleFile,
       path: examplePath,
       text: item.exampleJa,
@@ -376,6 +421,7 @@ for (const date of targetDates) {
       exampleJa: item.exampleJa,
       example: exampleFile,
       exampleHash,
+      exampleSha256,
     });
   }
 
@@ -395,6 +441,7 @@ for (const date of targetDates) {
       pattern: item.pattern,
       exampleJa: item.exampleJa,
       example: item.example,
+      exampleSha256: item.exampleSha256,
     });
   }
 
@@ -444,4 +491,4 @@ console.log(`Speed: ${WORD_SPEED.toFixed(2)} / ${EXAMPLE_SPEED.toFixed(2)}`);
 console.log('========================================\n');
 
 // Refresh later review references if a source recording was regenerated.
-synchronizeAudioFileVersions(join(root, 'public', 'audio', 'japanese'));
+synchronizeAudioFileVersions(audioRoot, { regenerated });
