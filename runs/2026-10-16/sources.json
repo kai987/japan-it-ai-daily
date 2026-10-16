@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-10-16",
+  "sourceCommit": "406f7292885e505859a520034c3437221bac4185",
+  "sourceWindow": {
+    "from": "2026-10-15T10:00:00+09:00",
+    "to": "2026-10-16T10:00:00+09:00"
+  },
+  "discovery": {
+    "sites": [
+      {
+        "name": "Qiita",
+        "requestedUrl": "https://qiita.com/",
+        "observedAt": "2026-10-16T01:02:39.452774+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://qiita.com/",
+        "pageTitle": "Qiita",
+        "feeds": []
+      },
+      {
+        "name": "Zenn",
+        "requestedUrl": "https://zenn.dev/",
+        "observedAt": "2026-10-16T01:02:39.453377+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://zenn.dev/",
+        "pageTitle": "Zenn｜エンジニアのための情報共有コミュニティ",
+        "feeds": [
+          "https://zenn.dev/feed"
+        ]
+      },
+      {
+        "name": "Publickey",
+        "requestedUrl": "https://www.publickey1.jp/",
+        "observedAt": "2026-10-16T01:02:39.453496+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://www.publickey1.jp/",
+        "pageTitle": "Publickey － Enterprise IT × Cloud Computing × Web Technology / Blog",
+        "feeds": [
+          "https://www.publickey1.jp/atom.xml"
+        ]
+      },
+      {
+        "name": "ITmedia AI+",
+        "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+        "observedAt": "2026-10-16T01:02:39.453622+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+        "pageTitle": "AI活用のいまが分かる - ITmedia AI＋",
+        "feeds": []
+      },
+      {
+        "name": "@IT",
+        "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+        "observedAt": "2026-10-16T01:02:39.453722+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://atmarkit.itmedia.co.jp/",
+        "pageTitle": "ITエキスパートのための問題解決メディア - ＠IT",
+        "feeds": [
+          "https://rss.itmedia.co.jp/rss/0.91/ait.xml",
+          "https://rss.itmedia.co.jp/rss/1.0/ait.xml",
+          "https://rss.itmedia.co.jp/rss/2.0/ait.xml"
+        ]
+      },
+      {
+        "name": "CodeZine",
+        "requestedUrl": "https://codezine.jp/",
+        "observedAt": "2026-10-16T01:02:39.453844+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 403,
+        "actualUrl": "https://codezine.jp/",
+        "error": "403 Client Error: Forbidden for url: https://codezine.jp/"
+      },
+      {
+        "name": "gihyo.jp",
+        "requestedUrl": "https://gihyo.jp/",
+        "observedAt": "2026-10-16T01:02:39.537167+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://gihyo.jp/",
+        "pageTitle": "gihyo.jp | gihyo.jp",
+        "feeds": [
+          "https://gihyo.jp/feed/rss1",
+          "https://gihyo.jp/feed/rss2",
+          "https://gihyo.jp/feed/atom"
+        ]
+      },
+      {
+        "name": "DevelopersIO",
+        "requestedUrl": "https://dev.classmethod.jp/",
+        "observedAt": "2026-10-16T01:02:39.545568+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://dev.classmethod.jp/",
+        "pageTitle": "クラスメソッド発「やってみた」系技術メディア | DevelopersIO",
+        "feeds": []
+      },
+      {
+        "name": "TechFeed",
+        "requestedUrl": "https://techfeed.io/",
+        "observedAt": "2026-10-16T01:02:39.577283+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://techfeed.io/",
+        "pageTitle": "TechFeed - エンジニアのための技術情報収集＆共有プラットフォーム",
+        "feeds": [
+          "https://techfeed.io/feeds/categories/all"
+        ]
+      },
+      {
+        "name": "Hatena Technology",
+        "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "observedAt": "2026-10-16T01:02:39.608591+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "pageTitle": "はてなブックマーク - 人気エントリー - テクノロジー",
+        "feeds": [
+          "https://b.hatena.ne.jp/hotentry/it.rss"
+        ]
+      },
+      {
+        "name": "ASCII AI",
+        "requestedUrl": "https://ascii.jp/",
+        "observedAt": "2026-10-16T01:02:39.632615+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://ascii.jp/",
+        "pageTitle": "ASCII.jp － トップ",
+        "feeds": []
+      },
+      {
+        "name": "AINOW",
+        "requestedUrl": "https://ainow.ai/",
+        "observedAt": "2026-10-16T01:02:39.638447+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://ainow.ai/",
+        "pageTitle": "AINOW｜日本最大級のAI専門メディア",
+        "feeds": []
+      },
+      {
+        "name": "Ledge.ai",
+        "requestedUrl": "https://ledge.ai/",
+        "observedAt": "2026-10-16T01:02:39.703121+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://ledge.ai/",
+        "pageTitle": "Ledge.ai｜日本最大級のAI特化型ニュースメディア",
+        "feeds": []
+      },
+      {
+        "name": "CyberAgent Developers Blog",
+        "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+        "observedAt": "2026-10-16T01:02:39.758826+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+        "pageTitle": "CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ",
+        "feeds": [
+          "https://developers.cyberagent.co.jp/blog/feed/"
+        ]
+      },
+      {
+        "name": "LINE Yahoo Tech Blog",
+        "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+        "observedAt": "2026-10-16T01:02:39.764649+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+        "pageTitle": "LINEヤフー Tech Blog (LY Corporation Tech Blog)",
+        "feeds": [
+          "https://techblog.lycorp.co.jp/ja/feed/index.xml"
+        ]
+      },
+      {
+        "name": "Mercari Engineering",
+        "requestedUrl": "https://engineering.mercari.com/",
+        "observedAt": "2026-10-16T01:02:39.813386+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://engineering.mercari.com/",
+        "pageTitle": "メルカリエンジニアリング",
+        "feeds": [
+          "https://engineering.mercari.com/blog/feed.xml",
+          "https://engineering.mercari.com/en/blog/feed.xml"
+        ]
+      },
+      {
+        "name": "SmartHR Tech Blog",
+        "requestedUrl": "https://tech.smarthr.jp/",
+        "observedAt": "2026-10-16T01:02:39.832339+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://tech.smarthr.jp/",
+        "pageTitle": "SmartHR Tech Blog",
+        "feeds": [
+          "https://tech.smarthr.jp/feed",
+          "https://tech.smarthr.jp/rss"
+        ]
+      },
+      {
+        "name": "LayerX Engineering Blog",
+        "requestedUrl": "https://tech.layerx.co.jp/",
+        "observedAt": "2026-10-16T01:02:39.866891+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://tech.layerx.co.jp/",
+        "pageTitle": "LayerX エンジニアブログ",
+        "feeds": [
+          "https://tech.layerx.co.jp/feed",
+          "https://tech.layerx.co.jp/rss"
+        ]
+      },
+      {
+        "name": "DeNA Engineering",
+        "requestedUrl": "https://engineering.dena.com/blog/",
+        "observedAt": "2026-10-16T01:02:39.920406+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://engineering.dena.com/blog/",
+        "pageTitle": "BLOG - DeNA Engineering",
+        "feeds": [
+          "https://engineering.dena.com/blog/index.xml"
+        ]
+      },
+      {
+        "name": "Money Forward Developers Blog",
+        "requestedUrl": "https://moneyforward-dev.jp/",
+        "observedAt": "2026-10-16T01:02:39.926679+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://moneyforward-dev.jp/",
+        "pageTitle": "Money Forward Developers Blog",
+        "feeds": [
+          "https://moneyforward-dev.jp/feed",
+          "https://moneyforward-dev.jp/rss"
+        ]
+      }
+    ],
+    "scope": "20 homepage reads attempted; linked originals read independently. This does not claim every article on every site was scanned. CodeZine homepage 403; Mercari candidate original 403; excluded. Zenn latest100 discovery is a bounded recent list, not full 24h coverage."
+  },
+  "previousTop5Excluded": [
+    "https://dev.classmethod.jp/articles/claude-code-bedrock-account-level-guardrail-prompt-attack/",
+    "https://zenn.dev/yskms/articles/5b1090cfa1a51e",
+    "https://dev.classmethod.jp/articles/dbt-platform-snowflake-aws-privatelink-network-policy/",
+    "https://techblog.lycorp.co.jp/ja/20261014b",
+    "https://zenn.dev/nyaomaru/articles/validate-unknown-without-schema-library"
+  ],
+  "selectedOriginals": [
+    {
+      "title": "生成しない拡散モデル Nemotron Deciffusion 8B を DGX Spark で試してみた",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/nemotron-deciffusion-8b-decision-model-dgx-spark/",
+      "publishedAt": "2026-10-15T07:55:57.499Z",
+      "capturedAt": "2026-10-16T01:03:59.253271+00:00",
+      "snapshotSha256": "320c4f4f4882ead6436b2327884b6412b4122418a83adb5ed6fab359004d828c",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 14886,
+      "candidateId": 6
+    },
+    {
+      "title": "Chrome 155でJPEG XLを表示する。picture要素のフォールバックとJPEGからの可逆変換を確かめた",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/chrome-jpeg-xl-decode/",
+      "publishedAt": "2026-10-15T16:57:34.260Z",
+      "capturedAt": "2026-10-16T01:03:59.252956+00:00",
+      "snapshotSha256": "705619bce90b0e1440179ae87eaeedc0aec557048df9081151caa827ece6c7c9",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 4422,
+      "candidateId": 3
+    },
+    {
+      "title": "Lambda Web FunctionsのNode.jsでCPUバウンドな処理をすると、ほかのリクエストは待たされるか？",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/shuntaka-lambda-web-functions-nodejs-cpu-bound/",
+      "publishedAt": "2026-10-15T07:40:20.108Z",
+      "capturedAt": "2026-10-16T01:03:59.409190+00:00",
+      "snapshotSha256": "d067f0de1d376023080ac5a4db9de09a0a2715f20af8dde31e2ddd5f83be7283",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 10494,
+      "candidateId": 7
+    },
+    {
+      "title": "アプリとDBの間の往復遅延が応答時間に与える影響を TiDB Cloud Starterで計測した",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/tidb-cloud-network-latency-app-response/",
+      "publishedAt": "2026-10-15T02:46:08.620Z",
+      "capturedAt": "2026-10-16T01:03:59.412231+00:00",
+      "snapshotSha256": "6ed44b2988fa6eb0272aefddc6d0d220663f1803aefd2c78c1a2c4dda05eaa9c",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 18328,
+      "candidateId": 8
+    },
+    {
+      "title": "Amazon Bedrock AgentCore IdentityのOn-Behalf-Of（OBO）トークン交換機能を実際に試して理解を深めてみた",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/agentcore-identity-obo-entra-id/",
+      "publishedAt": "2026-10-15T02:44:23.200Z",
+      "capturedAt": "2026-10-16T01:03:59.426711+00:00",
+      "snapshotSha256": "909a4c9d7a984d50d047405de8772db5cb83715728ba995bfb49c18f92b00dca",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 24911,
+      "candidateId": 9
+    }
+  ],
+  "verifiedAt": "2026-10-16T01:05:54.168202+00:00"
+}
