@@ -8,14 +8,19 @@
     "to": "2026-10-16T10:00:00+09:00"
   },
   "createdAt": "2026-10-16T01:02:40.570Z",
-  "updatedAt": "2026-10-16T01:29:24.101Z",
+  "updatedAt": "2026-10-16T01:43:15.070Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
     "interviews.json",
     "draft.json",
     "checks.json",
-    "preflight.json"
+    "preflight.json",
+    "publication-request.json",
+    "n1-handoff.json",
+    "audio-completion.json",
+    "final-audio-audit.json",
+    "final-resume-plan.json"
   ],
   "lastError": null,
   "baseCommit": "406f7292885e505859a520034c3437221bac4185",
@@ -185,5 +190,45 @@
     "date": "2026-10-16",
     "attempt": 1
   },
-  "site": "/tmp/japan-daily-20261016/text-release-38835080332/site"
+  "site": "/tmp/japan-daily-20261016/text-release-38835080332/site",
+  "publisherRunId": 38834891856,
+  "publisherStatus": "completed",
+  "publisherConclusion": "success",
+  "pagesRunId": 38835080332,
+  "pagesStatus": "completed",
+  "pagesConclusion": "success",
+  "audioCompletion": {
+    "targetDate": "2026-10-16",
+    "stage": "playback_verified",
+    "commit": "c0b55a8fd4f9d72b12dcb58eee17cfb2b391e6f4",
+    "workflowRunIds": {
+      "r2": 38835780848,
+      "pages": 38835781086
+    },
+    "newRecordings": 39,
+    "referencedRecordings": 61,
+    "playbackTests": 14,
+    "completedAt": "2026-10-16T01:41:16.884Z"
+  },
+  "latestVerifiedMainCommit": "c0b55a8fd4f9d72b12dcb58eee17cfb2b391e6f4",
+  "n1Handoff": {
+    "targetDate": "2026-10-16",
+    "day": 48,
+    "stage": "waiting_source",
+    "requestSubmitted": false,
+    "statusBlobSha": "9075a48a35aa2a2e3c796af6728c81b831a1f783",
+    "sourceObservation": {
+      "n1Main": "6e0e4a71a7c2447ccd857eafd45738dba4b5d8c9",
+      "mainSourceAbsent": true,
+      "outboxAbsent": true,
+      "completeMainInventory": true,
+      "completeProgressInventory": true,
+      "requestTargetDate": "2026-10-15",
+      "observedAt": "2026-10-16T01:31:11.634Z"
+    },
+    "upstreamSourceCommit": "c35d6d2e5122beb90b09c68f2655272d41bc839f",
+    "verifiedAt": "2026-10-16T01:31:16.844Z"
+  },
+  "nextAction": "Text and audio verified; unchanged inputs require no work. N1 Day48 waiting_source: exact original absent from the verified main and outbox inventories.",
+  "completedAt": "2026-10-16T01:42:55.767Z"
 }
