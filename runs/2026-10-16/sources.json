@@ -262,7 +262,32 @@
       "access": "full",
       "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
       "sourceCharacters": 14886,
-      "candidateId": 6
+      "candidateId": 6,
+      "topic": "生成AI・判定モデル",
+      "verifiedFacts": [
+        {
+          "quote": "Deciffusion",
+          "locator": "マスクを1つだけ埋める拡散モデル",
+          "statement": "一つのマスク位置で選択肢の確率を読む判定モデルである。"
+        },
+        {
+          "quote": "137.6 ms",
+          "locator": "1判定138ms、同時8本は苦手だった",
+          "statement": "同時1のclient p50は137.6msで、同時8では2728.5msだった。"
+        },
+        {
+          "quote": "14 問中 10 問",
+          "locator": "汎用の決定モデルにSwitchyardの何を任せるか",
+          "statement": "難問14問中10問をweakへ誤送し、現行判定役の採用条件を満たさなかった。"
+        },
+        {
+          "quote": "NVIDIA 公式のリリースではない",
+          "locator": "はじめに",
+          "statement": "NVIDIA社員による個人・専用組織からの公開である。"
+        }
+      ],
+      "conditions": "著者のDGX Spark/GB10、FP8、2026-10-15の一回測定。528件に開発用40件を含む。比較の旧記録と追加Jev 1.14を区別し、GB200/NVFP4公称値と同条件とはしない。",
+      "interpretation": "確率の再現性、難問の誤送、同時実行の性能を別々に説明する面接練習になります。"
     },
     {
       "title": "Chrome 155でJPEG XLを表示する。picture要素のフォールバックとJPEGからの可逆変換を確かめた",
@@ -274,7 +299,27 @@
       "access": "full",
       "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
       "sourceCharacters": 4422,
-      "candidateId": 3
+      "candidateId": 3,
+      "topic": "フロントエンド・画像配信",
+      "verifiedFacts": [
+        {
+          "quote": "picture",
+          "locator": "picture要素で並べておけば非対応版でも壊れない",
+          "statement": "非対応版Chromium153でJPEGへのフォールバックを確認した。"
+        },
+        {
+          "quote": "74,816 bytes",
+          "locator": "既存のJPEGを画質を変えずにJPEG XLへ変換する",
+          "statement": "96,118 bytesのJPEGが74,816 bytesになり、戻したJPEGもバイト一致した。"
+        },
+        {
+          "quote": "今回は画質をそろえていない",
+          "locator": "今回確認していないこと",
+          "statement": "等画質のAVIFとの容量比較は結論にしていない。"
+        }
+      ],
+      "conditions": "macOS Chrome155とLinux Chromium156/153の比較。一枚の768×512写真、quality85 JPEG、libjxl0.12.0。CDN・他ブラウザー・等画質AVIF比較は未確認。",
+      "interpretation": "画像の互換性を、表示結果・選ばれたURL・可逆性から具体的に説明できます。"
     },
     {
       "title": "Lambda Web FunctionsのNode.jsでCPUバウンドな処理をすると、ほかのリクエストは待たされるか？",
@@ -286,7 +331,27 @@
       "access": "full",
       "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
       "sourceCharacters": 10494,
-      "candidateId": 7
+      "candidateId": 7,
+      "topic": "バックエンド・同時実行",
+      "verifiedFacts": [
+        {
+          "quote": "Node.js",
+          "locator": "結論と検証の構成",
+          "statement": "同期ループ中に同じ環境へ入ったNode.jsの要求が待たされた。"
+        },
+        {
+          "quote": "513ms",
+          "locator": "Lambdaで測る・結果のまとめ",
+          "statement": "maxEnvironments=2の実験で処理中環境へ入った16回すべて終了待ちになった。"
+        },
+        {
+          "quote": "どれも今回は試していません",
+          "locator": "Node.jsでできる対策",
+          "statement": "非同期API、worker_threads、並行数調整の効果は今回未測定。"
+        }
+      ],
+      "conditions": "nodejs24.x、maxEnvironments=2、2CPU、500msループ、各20回。CloudFront経由の値はネットワークを含む。GoはNode.js起動のバイナリ。対策の効果は未測定。",
+      "interpretation": "ランタイムの動きとクラウドの振り分けを分け、待ち時間の根拠を説明する材料になります。"
     },
     {
       "title": "アプリとDBの間の往復遅延が応答時間に与える影響を TiDB Cloud Starterで計測した",
@@ -298,7 +363,27 @@
       "access": "full",
       "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
       "sourceCharacters": 18328,
-      "candidateId": 8
+      "candidateId": 8,
+      "topic": "データベース・性能計測",
+      "verifiedFacts": [
+        {
+          "quote": "TiDB Cloud Starter",
+          "locator": "検証環境と検証方法",
+          "statement": "同じ注文画面を六回SQLと二回SQLで返し、結果一致を確認した。"
+        },
+        {
+          "quote": "66.9",
+          "locator": "逐次取得と一括取得",
+          "statement": "追加80msで625.7msから206.8msへ中央値が下がった。"
+        },
+        {
+          "quote": "70.8",
+          "locator": "接続の作り方",
+          "statement": "別の接続比較では追加80msで721.0msから210.4msへ下がった。"
+        }
+      ],
+      "conditions": "東京TiDB Cloud Starter、TiDB8.5.3、軽量読み取り、単一再利用接続、各30回。Toxiproxyで0/20/80msの往復遅延を追加。接続確立の比較は独立実験。",
+      "interpretation": "N+1、接続の再利用、ネットワークの往復を、同じ結果を返す条件で説明できます。"
     },
     {
       "title": "Amazon Bedrock AgentCore IdentityのOn-Behalf-Of（OBO）トークン交換機能を実際に試して理解を深めてみた",
@@ -310,8 +395,33 @@
       "access": "full",
       "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
       "sourceCharacters": 24911,
-      "candidateId": 9
+      "candidateId": 9,
+      "topic": "認証・AIエージェント",
+      "verifiedFacts": [
+        {
+          "quote": "User.Read",
+          "locator": "RuntimeパターンとGatewayパターン",
+          "statement": "RuntimeとGatewayの両方で委任User.Readを使いGraphの本人情報を取得した。"
+        },
+        {
+          "quote": "ON_BEHALF_OF_TOKEN_EXCHANGE",
+          "locator": "AgentCore Identityを使う場合",
+          "statement": "RuntimeのSDKデコレーターでOBO交換を指定する。"
+        },
+        {
+          "quote": "TOKEN_EXCHANGE",
+          "locator": "Gatewayのターゲット設定",
+          "statement": "Gatewayの出力先認証にトークン交換を設定する。"
+        },
+        {
+          "quote": "Cognito",
+          "locator": "おわりに",
+          "statement": "別IdPでサインインする構成には3LOが候補として示されている。"
+        }
+      ],
+      "conditions": "Entra IDの同一テナント構成、委任User.Read、事前同意、AgentCore Runtime/Gateway。Cognito等別IdPは同じOBOの検証範囲に含まれない。交換性能や全Graph権限は未評価。",
+      "interpretation": "AIエージェントが誰の権限で、どのAPIを呼ぶかを、成功例と拒否例から説明できます。"
     }
   ],
-  "verifiedAt": "2026-10-16T01:05:54.168202+00:00"
+  "verifiedAt": "2026-10-16T01:12:13.848Z"
 }
