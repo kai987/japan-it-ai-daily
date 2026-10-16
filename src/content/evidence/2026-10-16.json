@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-16",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-16T01:16:22.903Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-16-top-1",
+      "url": "https://dev.classmethod.jp/articles/nemotron-deciffusion-8b-decision-model-dgx-spark/",
+      "originalTitle": "生成しない拡散モデル Nemotron Deciffusion 8B を DGX Spark で試してみた",
+      "source": "DevelopersIO",
+      "topic": "生成AI・判定モデル",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-15T07:55:57.499Z",
+      "capturedAt": "2026-10-16T01:03:59.253271+00:00",
+      "snapshotSha256": "320c4f4f4882ead6436b2327884b6412b4122418a83adb5ed6fab359004d828c",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "一つのマスク位置で選択肢の確率を読む判定モデルである。",
+          "quote": "Deciffusion",
+          "locator": "マスクを1つだけ埋める拡散モデル",
+          "conditions": "著者のDGX Spark/GB10、FP8、2026-10-15の一回測定。528件に開発用40件を含む。比較の旧記録と追加Jev 1.14を区別し、GB200/NVFP4公称値と同条件とはしない。",
+          "usedIn": {
+            "zh": "Deciffusion",
+            "ja": "Deciffusion",
+            "interview": "Deciffusion"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "同時1のclient p50は137.6msで、同時8では2728.5msだった。",
+          "quote": "137.6 ms",
+          "locator": "1判定138ms、同時8本は苦手だった",
+          "conditions": "著者のDGX Spark/GB10、FP8、2026-10-15の一回測定。528件に開発用40件を含む。比較の旧記録と追加Jev 1.14を区別し、GB200/NVFP4公称値と同条件とはしない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "難問14問中10問をweakへ誤送し、現行判定役の採用条件を満たさなかった。",
+          "quote": "14 問中 10 問",
+          "locator": "汎用の決定モデルにSwitchyardの何を任せるか",
+          "conditions": "著者のDGX Spark/GB10、FP8、2026-10-15の一回測定。528件に開発用40件を含む。比較の旧記録と追加Jev 1.14を区別し、GB200/NVFP4公称値と同条件とはしない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact4",
+          "kind": "source-fact",
+          "statement": "NVIDIA社員による個人・専用組織からの公開である。",
+          "quote": "NVIDIA 公式のリリースではない",
+          "locator": "はじめに",
+          "conditions": "著者のDGX Spark/GB10、FP8、2026-10-15の一回測定。528件に開発用40件を含む。比較の旧記録と追加Jev 1.14を区別し、GB200/NVFP4公称値と同条件とはしない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "確率の再現性、難問の誤送、同時実行の性能を別々に説明する面接練習になります。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合说明“判定概率可重复”与“困难任务可安全路由”的差别，并练习分层评价和阈值取舍。",
+            "ja": "確率の再現性、難問の誤送、同時実行の性能を別々に説明する面接練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-16-top-2",
+      "url": "https://dev.classmethod.jp/articles/chrome-jpeg-xl-decode/",
+      "originalTitle": "Chrome 155でJPEG XLを表示する。picture要素のフォールバックとJPEGからの可逆変換を確かめた",
+      "source": "DevelopersIO",
+      "topic": "フロントエンド・画像配信",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-15T16:57:34.260Z",
+      "capturedAt": "2026-10-16T01:03:59.252956+00:00",
+      "snapshotSha256": "705619bce90b0e1440179ae87eaeedc0aec557048df9081151caa827ece6c7c9",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "非対応版Chromium153でJPEGへのフォールバックを確認した。",
+          "quote": "picture",
+          "locator": "picture要素で並べておけば非対応版でも壊れない",
+          "conditions": "macOS Chrome155とLinux Chromium156/153の比較。一枚の768×512写真、quality85 JPEG、libjxl0.12.0。CDN・他ブラウザー・等画質AVIF比較は未確認。",
+          "usedIn": {
+            "zh": "picture",
+            "ja": "picture",
+            "interview": "picture"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "96,118 bytesのJPEGが74,816 bytesになり、戻したJPEGもバイト一致した。",
+          "quote": "74,816 bytes",
+          "locator": "既存のJPEGを画質を変えずにJPEG XLへ変換する",
+          "conditions": "macOS Chrome155とLinux Chromium156/153の比較。一枚の768×512写真、quality85 JPEG、libjxl0.12.0。CDN・他ブラウザー・等画質AVIF比較は未確認。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "等画質のAVIFとの容量比較は結論にしていない。",
+          "quote": "今回は画質をそろえていない",
+          "locator": "今回確認していないこと",
+          "conditions": "macOS Chrome155とLinux Chromium156/153の比較。一枚の768×512写真、quality85 JPEG、libjxl0.12.0。CDN・他ブラウザー・等画質AVIF比較は未確認。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "画像の互換性を、表示結果・選ばれたURL・可逆性から具体的に説明できます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合前端面试中的兼容性、渐进增强、图片流水线和可回滚验收。",
+            "ja": "画像の互換性を、表示結果・選ばれたURL・可逆性から具体的に説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-16-top-3",
+      "url": "https://dev.classmethod.jp/articles/shuntaka-lambda-web-functions-nodejs-cpu-bound/",
+      "originalTitle": "Lambda Web FunctionsのNode.jsでCPUバウンドな処理をすると、ほかのリクエストは待たされるか？",
+      "source": "DevelopersIO",
+      "topic": "バックエンド・同時実行",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-15T07:40:20.108Z",
+      "capturedAt": "2026-10-16T01:03:59.409190+00:00",
+      "snapshotSha256": "d067f0de1d376023080ac5a4db9de09a0a2715f20af8dde31e2ddd5f83be7283",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "同期ループ中に同じ環境へ入ったNode.jsの要求が待たされた。",
+          "quote": "Node.js",
+          "locator": "結論と検証の構成",
+          "conditions": "nodejs24.x、maxEnvironments=2、2CPU、500msループ、各20回。CloudFront経由の値はネットワークを含む。GoはNode.js起動のバイナリ。対策の効果は未測定。",
+          "usedIn": {
+            "zh": "Node.js",
+            "ja": "Node.js",
+            "interview": "Node.js"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "maxEnvironments=2の実験で処理中環境へ入った16回すべて終了待ちになった。",
+          "quote": "513ms",
+          "locator": "Lambdaで測る・結果のまとめ",
+          "conditions": "nodejs24.x、maxEnvironments=2、2CPU、500msループ、各20回。CloudFront経由の値はネットワークを含む。GoはNode.js起動のバイナリ。対策の効果は未測定。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "非同期API、worker_threads、並行数調整の効果は今回未測定。",
+          "quote": "どれも今回は試していません",
+          "locator": "Node.jsでできる対策",
+          "conditions": "nodejs24.x、maxEnvironments=2、2CPU、500msループ、各20回。CloudFront経由の値はネットワークを含む。GoはNode.js起動のバイナリ。対策の効果は未測定。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "ランタイムの動きとクラウドの振り分けを分け、待ち時間の根拠を説明する材料になります。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合后端面试中区分运行时并发、平台调度、观测口径与尚未实测的优化方案。",
+            "ja": "ランタイムの動きとクラウドの振り分けを分け、待ち時間の根拠を説明する材料になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-16-top-4",
+      "url": "https://dev.classmethod.jp/articles/tidb-cloud-network-latency-app-response/",
+      "originalTitle": "アプリとDBの間の往復遅延が応答時間に与える影響を TiDB Cloud Starterで計測した",
+      "source": "DevelopersIO",
+      "topic": "データベース・性能計測",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-15T02:46:08.620Z",
+      "capturedAt": "2026-10-16T01:03:59.412231+00:00",
+      "snapshotSha256": "6ed44b2988fa6eb0272aefddc6d0d220663f1803aefd2c78c1a2c4dda05eaa9c",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "同じ注文画面を六回SQLと二回SQLで返し、結果一致を確認した。",
+          "quote": "TiDB Cloud Starter",
+          "locator": "検証環境と検証方法",
+          "conditions": "東京TiDB Cloud Starter、TiDB8.5.3、軽量読み取り、単一再利用接続、各30回。Toxiproxyで0/20/80msの往復遅延を追加。接続確立の比較は独立実験。",
+          "usedIn": {
+            "zh": "TiDB",
+            "ja": "TiDB",
+            "interview": "TiDB"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "追加80msで625.7msから206.8msへ中央値が下がった。",
+          "quote": "66.9",
+          "locator": "逐次取得と一括取得",
+          "conditions": "東京TiDB Cloud Starter、TiDB8.5.3、軽量読み取り、単一再利用接続、各30回。Toxiproxyで0/20/80msの往復遅延を追加。接続確立の比較は独立実験。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "別の接続比較では追加80msで721.0msから210.4msへ下がった。",
+          "quote": "70.8",
+          "locator": "接続の作り方",
+          "conditions": "東京TiDB Cloud Starter、TiDB8.5.3、軽量読み取り、単一再利用接続、各30回。Toxiproxyで0/20/80msの往復遅延を追加。接続確立の比較は独立実験。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "N+1、接続の再利用、ネットワークの往復を、同じ結果を返す条件で説明できます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合Web性能面试：把N+1、连接池、网络延迟和计时口径串成可验证的因果链。",
+            "ja": "N+1、接続の再利用、ネットワークの往復を、同じ結果を返す条件で説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-16-top-5",
+      "url": "https://dev.classmethod.jp/articles/agentcore-identity-obo-entra-id/",
+      "originalTitle": "Amazon Bedrock AgentCore IdentityのOn-Behalf-Of（OBO）トークン交換機能を実際に試して理解を深めてみた",
+      "source": "DevelopersIO",
+      "topic": "認証・AIエージェント",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-15T02:44:23.200Z",
+      "capturedAt": "2026-10-16T01:03:59.426711+00:00",
+      "snapshotSha256": "909a4c9d7a984d50d047405de8772db5cb83715728ba995bfb49c18f92b00dca",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "RuntimeとGatewayの両方で委任User.Readを使いGraphの本人情報を取得した。",
+          "quote": "User.Read",
+          "locator": "RuntimeパターンとGatewayパターン",
+          "conditions": "Entra IDの同一テナント構成、委任User.Read、事前同意、AgentCore Runtime/Gateway。Cognito等別IdPは同じOBOの検証範囲に含まれない。交換性能や全Graph権限は未評価。",
+          "usedIn": {
+            "zh": "User.Read",
+            "ja": "User.Read",
+            "interview": "User.Read"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "RuntimeのSDKデコレーターでOBO交換を指定する。",
+          "quote": "ON_BEHALF_OF_TOKEN_EXCHANGE",
+          "locator": "AgentCore Identityを使う場合",
+          "conditions": "Entra IDの同一テナント構成、委任User.Read、事前同意、AgentCore Runtime/Gateway。Cognito等別IdPは同じOBOの検証範囲に含まれない。交換性能や全Graph権限は未評価。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Gatewayの出力先認証にトークン交換を設定する。",
+          "quote": "TOKEN_EXCHANGE",
+          "locator": "Gatewayのターゲット設定",
+          "conditions": "Entra IDの同一テナント構成、委任User.Read、事前同意、AgentCore Runtime/Gateway。Cognito等別IdPは同じOBOの検証範囲に含まれない。交換性能や全Graph権限は未評価。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact4",
+          "kind": "source-fact",
+          "statement": "別IdPでサインインする構成には3LOが候補として示されている。",
+          "quote": "Cognito",
+          "locator": "おわりに",
+          "conditions": "Entra IDの同一テナント構成、委任User.Read、事前同意、AgentCore Runtime/Gateway。Cognito等別IdPは同じOBOの検証範囲に含まれない。交換性能や全Graph権限は未評価。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "AIエージェントが誰の権限で、どのAPIを呼ぶかを、成功例と拒否例から説明できます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合AI Agent架构面试：用真实失败与成功路径解释aud、委任、身份保持和权限边界。",
+            "ja": "AIエージェントが誰の権限で、どのAPIを呼ぶかを、成功例と拒否例から説明できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
