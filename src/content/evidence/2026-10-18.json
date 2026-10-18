@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-18",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-18T04:22:19.106Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-18-top-1",
+      "url": "https://zenn.dev/fusic/articles/a77ba348115364",
+      "originalTitle": "日本語の個人情報を Bedrock Guardrails, SDP, Presidio でマスキングして比較する",
+      "source": "Zenn",
+      "topic": "生成AI・個人情報保護",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-17T23:00:05+00:00",
+      "capturedAt": "2026-10-18T04:12:28.106294+00:00",
+      "snapshotSha256": "38d9bb15ed0696c3a849c17857db7bb07542a35a537c418702a10b10aea5c842",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "300合成文書では初期再現率がSDP63.0%、Guardrails66.8%、Presidio50.9%。NFKCと追加正規表現で86.8%、83.6%、74.7%。",
+          "quote": "NFKC",
+          "locator": "評価について／結果①",
+          "conditions": "著者による合成300文書・1626箇所・9種類の比較。検出は一部重複でも正解。対策を固定後の別の合成100文書でケーススタディ。実データや本日報での再実行ではない。",
+          "usedIn": {
+            "zh": "NFKC",
+            "ja": "NFKC",
+            "interview": "NFKC"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "別の合成100文書で再現率96.6%、適合率91.5%。範囲補完後も16文書に漏れ、残存チェックは12文書を止め、そのうち11が漏れのある文書。",
+          "quote": "96.6%",
+          "locator": "ケーススタディ／結果",
+          "conditions": "著者による合成300文書・1626箇所・9種類の比較。検出は一部重複でも正解。対策を固定後の別の合成100文書でケーススタディ。実データや本日報での再実行ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "残り5件の漏れは自動残存チェックを通過し、人による確認の必要性を著者が示した。",
+          "quote": "最後は人の確認",
+          "locator": "最後の確認について",
+          "conditions": "著者による合成300文書・1626箇所・9種類の比較。検出は一部重複でも正解。対策を固定後の別の合成100文書でケーススタディ。実データや本日報での再実行ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "検出の点数、消す範囲、文書全体の漏れを分けて、外部提供前の判断を説明できます。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "可用于解释脱敏评估为何必须同时检查识别范围、整篇残留与人工复核，而不能只报一个召回率。",
+            "ja": "検出の点数、消す範囲、文書全体の漏れを分けて、外部提供前の判断を説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-18-top-2",
+      "url": "https://dev.classmethod.jp/articles/contentful-app-signed-request/",
+      "originalTitle": "Contentful Appから外部APIを呼ぶと遅い？App Action経由の約3秒を署名付きリクエストで約1秒にした",
+      "source": "DevelopersIO",
+      "topic": "フロントエンド・API設計",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-17T10:51:06.283Z",
+      "capturedAt": "2026-10-18T04:12:26.549505+00:00",
+      "snapshotSha256": "c74e82cc0ea9043594aac6caa0aecd5db1f9d96452723c7a117342dd42f6b49c",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "既定retryIntervalは2000ms。呼び出し作成後に結果を取得し、未完なら待って再取得する。",
+          "quote": "createWithResponse",
+          "locator": "時間がかかる仕組み",
+          "conditions": "ベルリンのChromeから5回測定した中央値。旧経路の残差はブラウザとContentfulの通信を含む。retryInterval短縮は未試行。独立追試や全地域の比較ではない。",
+          "usedIn": {
+            "zh": "App Signed Requests",
+            "ja": "App Signed Requests",
+            "interview": "App Signed Requests"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "ブラウザの署名付き直接呼び出しで中央値3186msから1101ms。5回計測の比較。",
+          "quote": "App Signed Requests",
+          "locator": "解決／結果",
+          "conditions": "ベルリンのChromeから5回測定した中央値。旧経路の残差はブラウザとContentfulの通信を含む。retryInterval短縮は未試行。独立追試や全地域の比較ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "同一本文のHMAC-SHA256検証、有効期限、CORS、署名対象スペース制限を実装。署名は編集者ごとの操作権限を保証しない。",
+          "quote": "x-contentful-space-id",
+          "locator": "外部API側でやること",
+          "conditions": "ベルリンのChromeから5回測定した中央値。旧経路の残差はブラウザとContentfulの通信を含む。retryInterval短縮は未試行。独立追試や全地域の比較ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "画面全体の待ち時間を分解し、署名の検証と利用者の権限を分けて説明できます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "可同时练习前端端到端性能归因、签名字节一致性与认证不能替代细粒度授权的边界。",
+            "ja": "画面全体の待ち時間を分解し、署名の検証と利用者の権限を分けて説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-18-top-3",
+      "url": "https://dev.classmethod.jp/articles/hasuto-js-async-epoll-node-deno-bun/",
+      "originalTitle": "JavaScriptの非同期処理はepollで成り立っているのか、Node.js、Deno、Bunそれぞれで覗いてみた",
+      "source": "DevelopersIO",
+      "topic": "JavaScript・ランタイム",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-17T14:55:39.553Z",
+      "capturedAt": "2026-10-18T04:12:26.349237+00:00",
+      "snapshotSha256": "56ab9f13ba68072aa878d608f8806623ae922a1498c188b70ecf7087acb9e326",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "同一Linux環境でNode/Denoはepoll_pwait、Bunはepoll_pwait2によるネットワーク待機を観測。",
+          "quote": "epoll_pwait2",
+          "locator": "先に結論／検証環境",
+          "conditions": "同じDebian12/Linux6.8 aarch64、Node24.22.0・Deno2.9.7・Bun1.4.3、strace6.1。300msローカルモック。直列とPromise.allはstraceなし各3回。macOS/Windowsは文書・ソース参照のみ。",
+          "usedIn": {
+            "zh": "epoll",
+            "ja": "epoll",
+            "interview": "epoll"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "既に解決済みのPromiseの前後には待機システムコールがなく、続きはエンジンのマイクロタスク。",
+          "quote": "Promise.resolve()",
+          "locator": "1. await Promise.resolve()はOSに届くか",
+          "conditions": "同じDebian12/Linux6.8 aarch64、Node24.22.0・Deno2.9.7・Bun1.4.3、strace6.1。300msローカルモック。直列とPromise.allはstraceなし各3回。macOS/Windowsは文書・ソース参照のみ。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "ファイルのopen/readは別スレッド、メインスレッドはeventfd経由の完了通知をepollで待つ。",
+          "quote": "eventfd",
+          "locator": "4. ファイルの読み込みはepollを通るか",
+          "conditions": "同じDebian12/Linux6.8 aarch64、Node24.22.0・Deno2.9.7・Bun1.4.3、strace6.1。300msローカルモック。直列とPromise.allはstraceなし各3回。macOS/Windowsは文書・ソース参照のみ。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "非同期を一つの仕組みとせず、エンジン、待機、別スレッドを根拠付きで説明できます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合解释事件循环分层及CPU同步任务为何会阻塞后续动作，也能练习用系统调用证据限定跨运行时结论。",
+            "ja": "非同期を一つの仕組みとせず、エンジン、待機、別スレッドを根拠付きで説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-18-top-4",
+      "url": "https://dev.classmethod.jp/articles/snowflake-horizon-context-dbt-connector-preview/",
+      "originalTitle": "【新機能】Snowflake Horizon Context がプレビューとなったので dbt コネクタで dbt platform のモデルを Horizon Catalog に取り込んでみた",
+      "source": "DevelopersIO",
+      "topic": "データ基盤・カタログ",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-17T14:36:32.268Z",
+      "capturedAt": "2026-10-18T04:12:26.443839+00:00",
+      "snapshotSha256": "f6d1b44403ca962a528f182e27aee5d57e6fa5d27ffbfabac4b2196f0a84bfe2",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "manifest.json、catalog.json、run_results.jsonからモデルとリネージ等を取り込み、データ自体を移さない。",
+          "quote": "manifest.json",
+          "locator": "概要／ジョブを作成する",
+          "conditions": "2026-10-17時点Preview。dbt platform Enterprise AWSマルチテナント、Snowflake Enterprise trial AWS東京、jaffle-shop。初回Run nowのみ観測。Coreや継続更新は未実行。",
+          "usedIn": {
+            "zh": "persist_docs",
+            "ja": "persist_docs",
+            "interview": "persist_docs"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "persist_docs未設定でdbtモデル・列のdescriptionは表示、Snowflake側はオブジェクトコメントがなく空。",
+          "quote": "persist_docs",
+          "locator": "descriptionの表示を確認する",
+          "conditions": "2026-10-17時点Preview。dbt platform Enterprise AWSマルチテナント、Snowflake Enterprise trial AWS東京、jaffle-shop。初回Run nowのみ観測。Coreや継続更新は未実行。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "24テスト中意図的に失敗させた1件がFail。コネクタUSAGE前後でdbtデータソースの可視性が変わった。",
+          "quote": "24 件",
+          "locator": "テスト結果／ロール別の可視性",
+          "conditions": "2026-10-17時点Preview。dbt platform Enterprise AWSマルチテナント、Snowflake Enterprise trial AWS東京、jaffle-shop。初回Run nowのみ観測。Coreや継続更新は未実行。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "データの閲覧権限とメタデータの可視性を分け、成果物の完全性も含めて説明できます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "面试中可区分数据、元数据及其可见性，并说明测试失败与编译失败对元数据导入为何不同。",
+            "ja": "データの閲覧権限とメタデータの可視性を分け、成果物の完全性も含めて説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-18-top-5",
+      "url": "https://zenn.dev/tyuya/articles/kv-free-quota-rate-limit-fail-open",
+      "originalTitle": "KVの書き込み枠が尽きると、レート制限は「全部通す」に倒れる——AIの1日上限300回が250で止まった再現",
+      "source": "Zenn",
+      "topic": "クラウド・障害設計",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-18T00:00:24+00:00",
+      "capturedAt": "2026-10-18T04:12:28.060591+00:00",
+      "snapshotSha256": "cc17daf5b21561c21363fe833dbe943253b3b5e32c92a1ca5abcb2ee779db35a",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "通常1通でKVへ4書き込み、仮の1000書き込み枠では250通。偽KV実験は1000通を全許可しカウンタ250、失敗書き込み3000回。",
+          "quote": "250",
+          "locator": "修正前のカウンタ／手元で再現する",
+          "conditions": "著者の事前不具合発見で本番被害なし・問い合わせ0件。旧挙動はmacOS15.1.1/Node25.9.0の偽KV、SQLはSQLite3.43.2、障害分岐はwrangler devローカルD1。実KV枠切れ・D1同時実行は未検証。",
+          "usedIn": {
+            "zh": "RETURNING",
+            "ja": "RETURNING",
+            "interview": "RETURNING"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "D1の条件付きUPSERTで行あり=ok、行なし=limited、例外/3秒時間切れ=unknownとしunknownではAIを使わない。",
+          "quote": "RETURNING",
+          "locator": "直し方",
+          "conditions": "著者の事前不具合発見で本番被害なし・問い合わせ0件。旧挙動はmacOS15.1.1/Node25.9.0の偽KV、SQLはSQLite3.43.2、障害分岐はwrangler devローカルD1。実KV枠切れ・D1同時実行は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "ローカルD1のcounters削除で引き継ぎ理由を確認。Claude未呼び出しはコード分岐も確認するが、テストだけで外部未送信を直接証明していない。",
+          "quote": "counter_unavailable",
+          "locator": "止まる側に倒れることをテストする",
+          "conditions": "著者の事前不具合発見で本番被害なし・問い合わせ0件。旧挙動はmacOS15.1.1/Node25.9.0の偽KV、SQLはSQLite3.43.2、障害分岐はwrangler devローカルD1。実KV枠切れ・D1同時実行は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "無料枠の計算と失敗の扱いを結び付け、模擬試験と本番観測を区別して説明できます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "可具体说明配额耗尽、错误传播、原子条件更新与失败关闭的业务取舍，并区分模拟复现和云端实测。",
+            "ja": "無料枠の計算と失敗の扱いを結び付け、模擬試験と本番観測を区別して説明できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
