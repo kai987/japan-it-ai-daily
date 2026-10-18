@@ -8,7 +8,7 @@
     "to": "2026-10-17T10:00:00+09:00"
   },
   "createdAt": "2026-10-18T01:17:42.023Z",
-  "updatedAt": "2026-10-18T04:00:47.207Z",
+  "updatedAt": "2026-10-18T04:10:33.168Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -16,7 +16,9 @@
     "draft.json",
     "checks.json",
     "preflight.json",
-    "publication-request.json"
+    "publication-request.json",
+    "audio-completion.json",
+    "n1-handoff.json"
   ],
   "lastError": null,
   "baseCommit": "c0b55a8fd4f9d72b12dcb58eee17cfb2b391e6f4",
@@ -193,5 +195,42 @@
   },
   "site": "/tmp/japan-daily-20261017/text-release-39095414405/site",
   "pagesConclusion": "success",
-  "nextAction": "Text verified; persist independent audio pending and attempt one corresponding N1 handoff."
+  "nextAction": "IT text and audio fully verified. N1 exact original is ready, but the canonical queue must finish 2026-10-16 before submitting 2026-10-17. Continue the next due IT date.",
+  "latestVerifiedMainCommit": "8add1bdb14f323f57df15f2e6fe23936f0d1ee75",
+  "audioCompletion": {
+    "stage": "playback_verified",
+    "commit": "8add1bdb14f323f57df15f2e6fe23936f0d1ee75",
+    "workflowRunIds": {
+      "r2": 39095880872,
+      "pages": 39095880862
+    },
+    "newRecordings": 34,
+    "referencedRecordings": 61,
+    "playbackTests": 14,
+    "completedAt": "2026-10-18T04:09:24.259Z"
+  },
+  "n1Handoff": {
+    "targetDate": "2026-10-17",
+    "day": 49,
+    "stage": "waiting_request",
+    "reason": "earlier_pending_n1_date",
+    "sourceReady": true,
+    "sourceBlobSha": "a3514097a34d525d5c1bfb69be3afd57fa8e999c",
+    "sourceSha256": "212a95697b51e4ae8dfce161edcf1f3b344f4a4bed2ed252ec313297ce27da1a",
+    "sourceOutboxBlobSha": "5afe8132c512ed2eceab35ae14ed3cf0ccf5b5fc",
+    "sourceBytes": 22640,
+    "requestSubmitted": false,
+    "sharedRequestUnchanged": true,
+    "observedRequestDate": "2026-10-15",
+    "blockedBy": {
+      "date": "2026-10-16",
+      "stage": "waiting_upstream",
+      "status": "waiting_upstream",
+      "requestSubmitted": false
+    },
+    "upstreamSourceCommit": "8add1bdb14f323f57df15f2e6fe23936f0d1ee75",
+    "snapshotSha256": "ca46796b6053541c355c5ec104b38785201a24670f1f3114cbcf8578173409ea",
+    "progressBlobSha": "14cf25f749bbe353eba5b370c9bcb510a5bf398f",
+    "verifiedAt": "2026-10-18T04:10:24.548Z"
+  }
 }
