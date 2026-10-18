@@ -1,18 +1,26 @@
 {
   "targetDate": "2026-10-16",
   "day": 48,
-  "stage": "waiting_source",
-  "requestSubmitted": false,
-  "statusBlobSha": "9075a48a35aa2a2e3c796af6728c81b831a1f783",
-  "sourceObservation": {
-    "n1Main": "6e0e4a71a7c2447ccd857eafd45738dba4b5d8c9",
-    "mainSourceAbsent": true,
-    "outboxAbsent": true,
-    "completeMainInventory": true,
-    "completeProgressInventory": true,
-    "requestTargetDate": "2026-10-15",
-    "observedAt": "2026-10-16T01:31:11.634Z"
+  "stage": "published",
+  "requestSubmitted": true,
+  "statusBlobSha": "0e84359e59165322d0d6c4fe4f79e74f3475ced2",
+  "sourceBlobSha": "7b2bd9297b57b96d17464d75dad11f1658aa0b2b",
+  "sourceSha256": "8fd4ca1c1b622570aa28013df299dcedd4780f2254080a893a5e6a8c9b31882f",
+  "upstreamSourceCommit": "f06febc371feb92a303e6b6dc8436b267761e9d2",
+  "snapshotSha256": "03d79aea751dc9cba90b37122d96b5e0ed44ca1c62396353235667abb4e35d06",
+  "requestCommit": "dbd5ac4fd390914685a904efba7657203c975493",
+  "releaseCommit": "830582403e52c9829f2e7987f13b0466027b7edd",
+  "syncRunId": 39136511207,
+  "pagesRunId": 39136646093,
+  "rawC4": {
+    "newVocabulary": 10,
+    "newGrammar": 2
   },
-  "upstreamSourceCommit": "c35d6d2e5122beb90b09c68f2655272d41bc839f",
-  "verifiedAt": "2026-10-16T01:31:16.844Z"
+  "display": {
+    "newVocabulary": 12,
+    "reviewVocabulary": 8,
+    "newGrammar": 2,
+    "reviewGrammar": 6
+  },
+  "verifiedAt": "2026-10-18T14:37:45.676Z"
 }
