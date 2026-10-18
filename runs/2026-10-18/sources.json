@@ -1,0 +1,946 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-10-18",
+  "sourceCommit": "8add1bdb14f323f57df15f2e6fe23936f0d1ee75",
+  "sourceWindow": {
+    "from": "2026-10-17T10:00:00+09:00",
+    "to": "2026-10-18T10:00:00+09:00"
+  },
+  "discovery": {
+    "sites": [
+      {
+        "name": "Qiita",
+        "requestedUrl": "https://qiita.com/",
+        "observedAt": "2026-10-18T04:11:42.673605+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://qiita.com/",
+        "pageTitle": "Qiita",
+        "feeds": []
+      },
+      {
+        "name": "Zenn",
+        "requestedUrl": "https://zenn.dev/",
+        "observedAt": "2026-10-18T04:11:42.674194+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://zenn.dev/",
+        "pageTitle": "Zenn｜エンジニアのための情報共有コミュニティ",
+        "feeds": [
+          "https://zenn.dev/feed"
+        ]
+      },
+      {
+        "name": "Publickey",
+        "requestedUrl": "https://www.publickey1.jp/",
+        "observedAt": "2026-10-18T04:11:42.674314+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://www.publickey1.jp/",
+        "pageTitle": "Publickey － Enterprise IT × Cloud Computing × Web Technology / Blog",
+        "feeds": [
+          "https://www.publickey1.jp/atom.xml"
+        ]
+      },
+      {
+        "name": "ITmedia AI+",
+        "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+        "observedAt": "2026-10-18T04:11:42.674405+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+        "pageTitle": "AI活用のいまが分かる - ITmedia AI＋",
+        "feeds": []
+      },
+      {
+        "name": "@IT",
+        "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+        "observedAt": "2026-10-18T04:11:42.674496+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://atmarkit.itmedia.co.jp/",
+        "pageTitle": "ITエキスパートのための問題解決メディア - ＠IT",
+        "feeds": [
+          "https://rss.itmedia.co.jp/rss/0.91/ait.xml",
+          "https://rss.itmedia.co.jp/rss/1.0/ait.xml",
+          "https://rss.itmedia.co.jp/rss/2.0/ait.xml"
+        ]
+      },
+      {
+        "name": "CodeZine",
+        "requestedUrl": "https://codezine.jp/",
+        "observedAt": "2026-10-18T04:11:42.674576+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 403,
+        "actualUrl": "https://codezine.jp/",
+        "error": "403 Client Error: Forbidden for url: https://codezine.jp/"
+      },
+      {
+        "name": "gihyo.jp",
+        "requestedUrl": "https://gihyo.jp/",
+        "observedAt": "2026-10-18T04:11:42.743602+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://gihyo.jp/",
+        "pageTitle": "gihyo.jp | gihyo.jp",
+        "feeds": [
+          "https://gihyo.jp/feed/rss1",
+          "https://gihyo.jp/feed/rss2",
+          "https://gihyo.jp/feed/atom"
+        ]
+      },
+      {
+        "name": "DevelopersIO",
+        "requestedUrl": "https://dev.classmethod.jp/",
+        "observedAt": "2026-10-18T04:11:42.776094+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://dev.classmethod.jp/",
+        "pageTitle": "クラスメソッド発「やってみた」系技術メディア | DevelopersIO",
+        "feeds": []
+      },
+      {
+        "name": "TechFeed",
+        "requestedUrl": "https://techfeed.io/",
+        "observedAt": "2026-10-18T04:11:42.847908+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://techfeed.io/",
+        "pageTitle": "TechFeed - エンジニアのための技術情報収集＆共有プラットフォーム",
+        "feeds": [
+          "https://techfeed.io/feeds/categories/all"
+        ]
+      },
+      {
+        "name": "Hatena Technology",
+        "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "observedAt": "2026-10-18T04:11:42.848451+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "pageTitle": "はてなブックマーク - 人気エントリー - テクノロジー",
+        "feeds": [
+          "https://b.hatena.ne.jp/hotentry/it.rss"
+        ]
+      },
+      {
+        "name": "ASCII AI",
+        "requestedUrl": "https://ascii.jp/",
+        "observedAt": "2026-10-18T04:11:42.872173+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://ascii.jp/",
+        "pageTitle": "ASCII.jp － トップ",
+        "feeds": []
+      },
+      {
+        "name": "AINOW",
+        "requestedUrl": "https://ainow.ai/",
+        "observedAt": "2026-10-18T04:11:42.874382+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://ainow.ai/",
+        "pageTitle": "AINOW｜日本最大級のAI専門メディア",
+        "feeds": []
+      },
+      {
+        "name": "Ledge.ai",
+        "requestedUrl": "https://ledge.ai/",
+        "observedAt": "2026-10-18T04:11:42.963058+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://ledge.ai/",
+        "pageTitle": "Ledge.ai｜日本最大級のAI特化型ニュースメディア",
+        "feeds": []
+      },
+      {
+        "name": "CyberAgent Developers Blog",
+        "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+        "observedAt": "2026-10-18T04:11:42.975981+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+        "pageTitle": "CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ",
+        "feeds": [
+          "https://developers.cyberagent.co.jp/blog/feed/"
+        ]
+      },
+      {
+        "name": "LINE Yahoo Tech Blog",
+        "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+        "observedAt": "2026-10-18T04:11:42.986372+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+        "pageTitle": "LINEヤフー Tech Blog (LY Corporation Tech Blog)",
+        "feeds": [
+          "https://techblog.lycorp.co.jp/ja/feed/index.xml"
+        ]
+      },
+      {
+        "name": "Mercari Engineering",
+        "requestedUrl": "https://engineering.mercari.com/",
+        "observedAt": "2026-10-18T04:11:43.048353+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://engineering.mercari.com/",
+        "pageTitle": "メルカリエンジニアリング",
+        "feeds": [
+          "https://engineering.mercari.com/blog/feed.xml",
+          "https://engineering.mercari.com/en/blog/feed.xml"
+        ]
+      },
+      {
+        "name": "SmartHR Tech Blog",
+        "requestedUrl": "https://tech.smarthr.jp/",
+        "observedAt": "2026-10-18T04:11:43.204877+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://tech.smarthr.jp/",
+        "pageTitle": "SmartHR Tech Blog",
+        "feeds": [
+          "https://tech.smarthr.jp/feed",
+          "https://tech.smarthr.jp/rss"
+        ]
+      },
+      {
+        "name": "LayerX Engineering Blog",
+        "requestedUrl": "https://tech.layerx.co.jp/",
+        "observedAt": "2026-10-18T04:11:43.228871+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://tech.layerx.co.jp/",
+        "pageTitle": "LayerX エンジニアブログ",
+        "feeds": [
+          "https://tech.layerx.co.jp/feed",
+          "https://tech.layerx.co.jp/rss"
+        ]
+      },
+      {
+        "name": "DeNA Engineering",
+        "requestedUrl": "https://engineering.dena.com/blog/",
+        "observedAt": "2026-10-18T04:11:43.249864+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://engineering.dena.com/blog/",
+        "pageTitle": "BLOG - DeNA Engineering",
+        "feeds": [
+          "https://engineering.dena.com/blog/index.xml"
+        ]
+      },
+      {
+        "name": "Money Forward Developers Blog",
+        "requestedUrl": "https://moneyforward-dev.jp/",
+        "observedAt": "2026-10-18T04:11:43.251722+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://moneyforward-dev.jp/",
+        "pageTitle": "Money Forward Developers Blog",
+        "feeds": [
+          "https://moneyforward-dev.jp/feed",
+          "https://moneyforward-dev.jp/rss"
+        ]
+      }
+    ],
+    "scope": "20 homepage reads attempted; linked originals read independently. No claim that every article was scanned. CodeZine homepage and three Mercari originals returned403 and were excluded. Zenn latest100 is a bounded recent list and not full-window coverage; selected originals have independently checked timestamps. Articles published after the window, including two newer DevelopersIO candidates, were excluded."
+  },
+  "previousTop5Excluded": [
+    "https://dev.classmethod.jp/articles/dgx-spark-nemotron-3-5-bolt-74b-a9b-first-touch/",
+    "https://dev.classmethod.jp/articles/github-actions-workflow-lockfiles/",
+    "https://zenn.dev/pythona/articles/css-bundle-order-hamburger",
+    "https://dev.classmethod.jp/articles/tidb-cloud-filesystem-trial/",
+    "https://tech.smarthr.jp/entry/2026/10/16/164423"
+  ],
+  "selectedOriginals": [
+    {
+      "title": "日本語の個人情報を Bedrock Guardrails, SDP, Presidio でマスキングして比較する",
+      "source": "Zenn",
+      "url": "https://zenn.dev/fusic/articles/a77ba348115364",
+      "publishedAt": "2026-10-17T23:00:05+00:00",
+      "capturedAt": "2026-10-18T04:12:28.106294+00:00",
+      "snapshotSha256": "38d9bb15ed0696c3a849c17857db7bb07542a35a537c418702a10b10aea5c842",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 9870,
+      "candidateId": 57
+    },
+    {
+      "title": "Contentful Appから外部APIを呼ぶと遅い？App Action経由の約3秒を署名付きリクエストで約1秒にした",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/contentful-app-signed-request/",
+      "publishedAt": "2026-10-17T10:51:06.283Z",
+      "capturedAt": "2026-10-18T04:12:26.549505+00:00",
+      "snapshotSha256": "c74e82cc0ea9043594aac6caa0aecd5db1f9d96452723c7a117342dd42f6b49c",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 5127,
+      "candidateId": 13
+    },
+    {
+      "title": "JavaScriptの非同期処理はepollで成り立っているのか、Node.js、Deno、Bunそれぞれで覗いてみた",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/hasuto-js-async-epoll-node-deno-bun/",
+      "publishedAt": "2026-10-17T14:55:39.553Z",
+      "capturedAt": "2026-10-18T04:12:26.349237+00:00",
+      "snapshotSha256": "56ab9f13ba68072aa878d608f8806623ae922a1498c188b70ecf7087acb9e326",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 17339,
+      "candidateId": 6
+    },
+    {
+      "title": "【新機能】Snowflake Horizon Context がプレビューとなったので dbt コネクタで dbt platform のモデルを Horizon Catalog に取り込んでみた",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/snowflake-horizon-context-dbt-connector-preview/",
+      "publishedAt": "2026-10-17T14:36:32.268Z",
+      "capturedAt": "2026-10-18T04:12:26.443839+00:00",
+      "snapshotSha256": "f6d1b44403ca962a528f182e27aee5d57e6fa5d27ffbfabac4b2196f0a84bfe2",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 11751,
+      "candidateId": 7
+    },
+    {
+      "title": "KVの書き込み枠が尽きると、レート制限は「全部通す」に倒れる——AIの1日上限300回が250で止まった再現",
+      "source": "Zenn",
+      "url": "https://zenn.dev/tyuya/articles/kv-free-quota-rate-limit-fail-open",
+      "publishedAt": "2026-10-18T00:00:24+00:00",
+      "capturedAt": "2026-10-18T04:12:28.060591+00:00",
+      "snapshotSha256": "cc17daf5b21561c21363fe833dbe943253b3b5e32c92a1ca5abcb2ee779db35a",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 11757,
+      "candidateId": 56
+    }
+  ],
+  "verifiedAt": "2026-10-18T04:13:00.158058+00:00",
+  "articles": [
+    {
+      "title": "日本語の個人情報を Bedrock Guardrails, SDP, Presidio でマスキングして比較する",
+      "source": "Zenn",
+      "url": "https://zenn.dev/fusic/articles/a77ba348115364",
+      "publishedAt": "2026-10-17T23:00:05+00:00",
+      "capturedAt": "2026-10-18T04:12:28.106294+00:00",
+      "snapshotSha256": "38d9bb15ed0696c3a849c17857db7bb07542a35a537c418702a10b10aea5c842",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 9870,
+      "candidateId": 57,
+      "references": [
+        {
+          "url": "https://ja.wikipedia.org/wiki/Unicode%E6%AD%A3%E8%A6%8F%E5%8C%96",
+          "title": "https://ja.wikipedia.org/wiki/Unicode正規化"
+        },
+        {
+          "url": "https://zenn.dev/aws_japan/articles/8d8714fed3e609",
+          "title": "https://zenn.dev/aws_japan/articles/8d8714fed3e609"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/ai/responsible-ai/comprehend-detectpii/overview.html",
+          "title": "Amazon Comprehend Detect PII の AI Service Card"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html",
+          "title": "Bedrock Guardrails の機密情報フィルタ"
+        },
+        {
+          "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/likelihood",
+          "title": "SDP の likelihood"
+        },
+        {
+          "url": "https://zenn.dev/aws_japan/articles/8d8714fed3e609",
+          "title": "Amazon Bedrock Guardrails で日本語 PII をどこまで検知できるか"
+        },
+        {
+          "url": "https://sight-r.sts-inc.co.jp/google_cloud_article/sensitive-data-protection/",
+          "title": "Google Cloud Sensitive Data Protection（SDP）で PII 検出が不完全な理由"
+        },
+        {
+          "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text",
+          "title": "テキストの検査"
+        },
+        {
+          "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference",
+          "title": "infoType の一覧"
+        },
+        {
+          "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-regex",
+          "title": "正規表現のカスタム infoType"
+        },
+        {
+          "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood",
+          "title": "確からしさの調整（ホットワード）"
+        },
+        {
+          "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+          "title": "除外ルール"
+        },
+        {
+          "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/likelihood",
+          "title": "likelihood"
+        },
+        {
+          "url": "https://docs.cloud.google.com/sensitive-data-protection/limits",
+          "title": "上限"
+        },
+        {
+          "url": "https://cloud.google.com/sensitive-data-protection/pricing",
+          "title": "料金"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html",
+          "title": "機密情報フィルタ"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-use-independent-api.html",
+          "title": "ApplyGuardrail"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-supported-languages.html",
+          "title": "対応言語"
+        },
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "料金"
+        },
+        {
+          "url": "https://microsoft.github.io/presidio/",
+          "title": "Presidio"
+        },
+        {
+          "url": "https://github.com/data-privacy-stack/presidio",
+          "title": "GitHub"
+        },
+        {
+          "url": "https://megagonlabs.github.io/ginza/",
+          "title": "GiNZA"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/ai/responsible-ai/comprehend-detectpii/overview.html",
+          "title": "Amazon Comprehend Detect PII の AI Service Card"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/responsible-ai/language-service/transparency-note-personally-identifiable-information",
+          "title": "Azure AI Language の個人情報の検出の説明資料"
+        }
+      ],
+      "topic": "生成AI・個人情報保護",
+      "titleZh": "日语个人信息脱敏：从检测召回率到文档残留率",
+      "titleJa": "日本語の個人情報を消す前に、検出率と文書の漏れを分ける",
+      "evidenceAnchor": "NFKC",
+      "keywords": [
+        "NFKC",
+        "SDP",
+        "残存チェック"
+      ],
+      "whyZh": "可用于解释脱敏评估为何必须同时检查识别范围、整篇残留与人工复核，而不能只报一个召回率。",
+      "whyJa": "検出の点数、消す範囲、文書全体の漏れを分けて、外部提供前の判断を説明できます。",
+      "question": "個人情報のマスキングを導入するとき、どのように品質を確かめますか。",
+      "answer": "検出率だけでなく、文書に何が残るかを確認します。SDPの例ではNFKCで全角をそろえ、正規表現を加えると再現率は96.6％でした。ただし、範囲を広げた後も16％の文書に漏れがありました。残存チェックも万能ではないため、外部提供前の確認手順まで決めて評価します。",
+      "projectZh": "练习方案：用完全虚构的姓名、全角编号和口述数字做小型标注集，分别统计跨度命中与文档残留。尚未实际运行。",
+      "projectJa": "演習案：架空の氏名、全角番号、読み上げ数字を含む小さな正解集で、範囲の検出と文書の漏れを別々に数えます。未実施です。",
+      "conditions": "著者による合成300文書・1626箇所・9種類の比較。検出は一部重複でも正解。対策を固定後の別の合成100文書でケーススタディ。実データや本日報での再実行ではない。",
+      "facts": [
+        [
+          "NFKC",
+          "評価について／結果①",
+          "300合成文書では初期再現率がSDP63.0%、Guardrails66.8%、Presidio50.9%。NFKCと追加正規表現で86.8%、83.6%、74.7%。"
+        ],
+        [
+          "96.6%",
+          "ケーススタディ／結果",
+          "別の合成100文書で再現率96.6%、適合率91.5%。範囲補完後も16文書に漏れ、残存チェックは12文書を止め、そのうち11が漏れのある文書。"
+        ],
+        [
+          "最後は人の確認",
+          "最後の確認について",
+          "残り5件の漏れは自動残存チェックを通過し、人による確認の必要性を著者が示した。"
+        ]
+      ],
+      "zh": [
+        "把日语问询邮件或通话记录交给外部分析前，识别出若干个人信息并不等于整份文本已经匿名化。Fusic作者比较 Google Cloud Sensitive Data Protection（SDP）的 content:inspect、Amazon Bedrock Guardrails 的 ApplyGuardrail，以及在本地运行的 Presidio＋GiNZA。前两者会把文本交给云服务，后者无需外部通信；原文的选型首先考虑数据能否外发、已有云环境及需保护的类别。",
+        "这是一项作者实验：邮件、会议记录、通话记录各100份，共300份合成文档，含9类、1626处虚构个人信息。33种类别与写法组合各至少30处，约两成去掉字段标签，还加入车站名和订单号等干扰项。评估的关键边界是“与正确范围有任何重叠就算检出”，因此姓名只遮住一部分，也能提高召回率，却仍可能泄露身份。",
+        "初始配置下，SDP、Guardrails、Presidio的召回率依次为63.0%、66.8%、50.9%；加入日本编号的正则与NFKC正規化后，变为86.8%、83.6%、74.7%。这些值依赖合成集的写法分布，不能作为普遍产品排名。比如SDP对全角信息的召回率从19.9%升至72.4%，而口述号码、和历生日、单字姓和只命中部分地址依旧棘手。",
+        "后半部分假设资料保存在BigQuery且脱敏完成前不得离开GCP，因而选择SDP。作者先根据前300份结果制定对策，再冻结流程并在新合成的100份文档上测试。流程是NFKC并保留原文位置映射、将连续至少7个数字读音转成数字、补足日式编号及生日正则、用附近关键词和排除项调节判断、扩展不完整的命中范围，最后做残存检查。这是看过旧结果后的改进实验，不是盲测比较。",
+        "新100份中，召回率由60.3%提高到96.6%，适合率到91.5%；但扩展命中范围后仍有16%的整篇文档残留个人信息。残存规则检查长数字、@、疑似出生日期与称呼前的片假名等，拦下12份，其中11份确实有残留；另外5份含残留的文本仍通过。换言之，96.6%召回率不能改写成96.6%的文档安全率。",
+        "限制包括人工合成的数据多样性、按部分重叠计分，以及规则难以识别语境里的单字姓和残缺地址。原文建议不可容忍泄漏的外部提供场景保留人工核查；本日报没有执行该管线，也不据此声称实际客户数据已安全或满足法律要求。面试时可具体说明“跨度指标＋文档残留＋停止与人工确认”的分层验收。"
+      ],
+      "ja": [
+        "日本語の問い合わせを外部の分析先へ渡すとき、個人情報の検出と、消し残しのない文章を作ることは別です。Fusicの記事はSDPのcontent:inspect、Bedrock GuardrailsのApplyGuardrail、ローカルで動くPresidio＋GiNZAを比較しています。クラウド二方式は検査する文章を送信します。外部通信の可否と消したい種類を先に決める、という選び方です。",
+        "著者が用意したのは、メール・議事録・通話記録を各100件、合計300件の合成データです。正解は9種類、延べ1626箇所。33通りの書き方に最低30箇所を割り振り、項目名のない例や紛らわしい注文番号も含めています。ただし採点は正解範囲に一部でも重なれば検出扱いです。名前の一文字が残っても、再現率だけなら成功に数えられます。",
+        "初期設定の再現率はSDPが63.0％、Guardrailsが66.8％、Presidioが50.9％でした。日本の番号用の正規表現とNFKCを加えると86.8％、83.6％、74.7％になります。SDPの全角に対する値は19.9％から72.4％へ改善しました。一方、標準形式だけにそろえれば結果も変わります。この数値から製品全般の優劣は決められません。",
+        "後半は、BigQueryのデータをGCPの外へ出す前に処理するという仮の事例です。既存300件の結果を見て対策を作り、その手順を固定して別の合成100件で測りました。NFKCで元の位置へ戻せるようにし、読み上げ数字の変換、番号と和暦の正規表現、近くの語と除外ルール、範囲の補完を順に加えています。学習用データを見てから考えた対策である点も明記されています。",
+        "別の100件では再現率が60.3％から96.6％、適合率が91.5％になりました。それでも範囲を補完した後の16％の文書に漏れが残ります。最後の残存チェックは12件を止め、そのうち11件で漏れを拾いましたが、漏れのある残り5件は通過しました。検出箇所の再現率と、文書に一つでも漏れがある割合を混同しないことが、この実験の大切な点です。",
+        "合成文書での評価であり、実際の問い合わせや他の書き方での安全性は未検証です。一文字の姓や部分的な住所は単純なルールでは拾いにくく、著者も外部提供では人の確認を残す必要を述べています。日報側で実験を再実行したわけではありません。面接では、範囲の評価、文書の残存検査、止めた後の確認担当まで説明すると、点数だけの話から運用の判断へつなげられます。"
+      ],
+      "pointsZh": [
+        "部分重叠的召回率不代表完全遮蔽，应另外计数有任何残留的文档。",
+        "NFKC要保存回原文的位置映射，数字正则和范围补完解决不同的问题。",
+        "新100份仍有5份漏过残存检查，不能宣称自动匿名化有保证。"
+      ],
+      "pointsJa": [
+        "一部重複の再現率と、消し残しのある文書の割合を別に測ります。",
+        "NFKCの位置対応、番号の正規表現、範囲の補完は役割が異なります。",
+        "別の100件でも5件が残存チェックを通過し、完全な自動匿名化は確認できていません。"
+      ]
+    },
+    {
+      "title": "Contentful Appから外部APIを呼ぶと遅い？App Action経由の約3秒を署名付きリクエストで約1秒にした",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/contentful-app-signed-request/",
+      "publishedAt": "2026-10-17T10:51:06.283Z",
+      "capturedAt": "2026-10-18T04:12:26.549505+00:00",
+      "snapshotSha256": "c74e82cc0ea9043594aac6caa0aecd5db1f9d96452723c7a117342dd42f6b49c",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 5127,
+      "candidateId": 13,
+      "references": [
+        {
+          "url": "https://dev.classmethod.jp/articles/contentful-app/",
+          "title": "https://dev.classmethod.jp/articles/contentful-app/"
+        },
+        {
+          "url": "https://www.contentful.com/developers/docs/extensibility/app-framework/request-verification/",
+          "title": "Request verification | Contentful"
+        },
+        {
+          "url": "https://www.contentful.com/developers/docs/extensibility/app-framework/app-actions/",
+          "title": "App Actions | Contentful"
+        },
+        {
+          "url": "https://app.unpkg.com/contentful-management@12.3.2/files/dist/esm/adapters/REST/endpoints/app-action-call.mjs",
+          "title": "contentful-management: app-action-call(createWithResponse の実装)"
+        },
+        {
+          "url": "https://blog.cloudflare.com/clef-decision-models/",
+          "title": "Introducing Clef: our open-source decision models | The Cloudflare Blog"
+        }
+      ],
+      "topic": "フロントエンド・API設計",
+      "titleZh": "Contentful约3秒等待的根因：结果轮询与签名直连",
+      "titleJa": "Contentfulの待ち時間を、結果の取り直しから見直す",
+      "evidenceAnchor": "App Signed Requests",
+      "keywords": [
+        "createWithResponse",
+        "App Signed Requests",
+        "HMAC-SHA256"
+      ],
+      "whyZh": "可同时练习前端端到端性能归因、签名字节一致性与认证不能替代细粒度授权的边界。",
+      "whyJa": "画面全体の待ち時間を分解し、署名の検証と利用者の権限を分けて説明できます。",
+      "question": "外部APIは速いのに画面が遅い場合、何を調べますか。",
+      "answer": "API単体でなく、画面から結果が出るまでを分けて測ります。ContentfulではcreateWithResponseの既定の2秒間隔が待ち時間を増やしていました。App Signed Requestsで直接呼ぶ方式に変えると、5回の中央値は3186から1101ミリ秒になりました。ただし、署名が正しくても利用者ごとの操作権限は別に判断します。",
+      "projectZh": "练习方案：在自有测试API中对比轮询与签名直连，分别记浏览器、签名取得、后端时间，并测试正文篡改和非允许空间。未实际实施。",
+      "projectJa": "演習案：自分の検証APIで、結果の取り直しと署名付きの直接呼び出しを比較します。本文改変と許可外スペースも確かめる予定で、未実施です。",
+      "conditions": "ベルリンのChromeから5回測定した中央値。旧経路の残差はブラウザとContentfulの通信を含む。retryInterval短縮は未試行。独立追試や全地域の比較ではない。",
+      "facts": [
+        [
+          "createWithResponse",
+          "時間がかかる仕組み",
+          "既定retryIntervalは2000ms。呼び出し作成後に結果を取得し、未完なら待って再取得する。"
+        ],
+        [
+          "App Signed Requests",
+          "解決／結果",
+          "ブラウザの署名付き直接呼び出しで中央値3186msから1101ms。5回計測の比較。"
+        ],
+        [
+          "x-contentful-space-id",
+          "外部API側でやること",
+          "同一本文のHMAC-SHA256検証、有効期限、CORS、署名対象スペース制限を実装。署名は編集者ごとの操作権限を保証しない。"
+        ]
+      ],
+      "zh": [
+        "DevelopersIO在Contentful编辑画面里提供文章标签推荐。后端从Bedrock＋Lambda上的Claude Haiku 4.5换成Cloudflare Worker上的Clef后，API单体从约3秒变成约0.7秒，但画面依旧要等约3秒。作者没有继续只优化模型，而是在浏览器、Contentful Function和外部API三个位置计时，追查差额在哪里产生。",
+        "原路径由前端调用sdk.cma.appActionCall.createWithResponse，Contentful先创建App Action调用、启动Function，Function再请求Worker，浏览器随后取结果。柏林Chrome测5次的中位数为总计3186ms、Function 856ms、Worker内部742ms；差出的2330ms包含浏览器到Contentful的通信，不能全部算成平台执行开销。旧路径的Worker日志显示美国东部IAD，但Function实际地域只是作者据此推测。",
+        "SDK实现解释了等待的阶梯：POST只返回调用ID，接着GET结果，尚未完成就按默认retryInterval=2000ms等待再取。Function约0.9秒完成仍可能错过首轮，于是API再快也要等下一次轮询。一次约5.5秒是否多等了一轮属于作者解释；缩短retryInterval并未试验，不能把它写成已测失败的方案，而且仍会保留创建调用和Function启动的路径。",
+        "新方案App Signed Requests先通过sdk.cma.appSignedRequest.create取得additionalHeaders，再由浏览器直接fetch自有Worker。签名和发送必须使用同一段已序列化requestBody，否则JSON键顺序等变化会破坏校验。每个App定义的64字符signing secret只放在外部后端；Worker用Web Crypto进行HMAC-SHA256、定数时间比较和30秒有效期检查，并配置CORS预检与签名覆盖的x-contentful-space-id限制。",
+        "直连后的5次中位数为1101ms，相对3186ms约降65%；组成约为签名取得312ms、网络109ms、Worker处理700ms。平均值从3606降到1275ms，最大值从5547降到1727ms，但签名取得也出现0.88秒。因此这是特定地点、少量采样和路径组合下的体验改善，不是签名直连在所有地区都快65%的保证。",
+        "授权边界不能省略：正确签名证明请求经该空间的App发出，空间编辑者仍可通过开发者工具发起合法签名调用。是否允许某项操作需另判。普通sdk.parameters.installation在浏览器可读，不能存API令牌；Secret型参数与后端存储另有访问边界。原文仍把App Action用于慢异步任务或无法改外部API的场景，直连则要求自己维护验证和CORS。"
+      ],
+      "ja": [
+        "タグ推薦APIをClefへ置き換え、単体の応答は約3秒から約0.7秒になったのに、Contentfulの編集画面では約3秒待つ。この違いを調べた記事です。著者はブラウザ、Contentful Function、外部のWorkerに計測点を置き、モデルの処理だけでは見えなかった経路の待ちを調べています。",
+        "旧経路はsdk.cma.appActionCall.createWithResponseからApp ActionとFunctionを起動し、FunctionがWorkerを呼ぶ形です。ベルリンのChromeで5回測った中央値は、全体3186ms、Function856ms、外部API内部742msでした。差の2330msにはブラウザとContentful間の通信も含まれます。WorkerがIADで動いたことはログで確認していますが、Functionの実行場所は著者の推定です。",
+        "createWithResponseはPOSTで呼び出しIDを受け取り、GETで結果を取りに行きます。未完了なら既定で2秒待ってから再取得します。約0.9秒の処理でも最初のGETに間に合わなければ待たされ、APIだけ速くしても体感へ届きません。retryIntervalを短くする方法は今回試していません。5.5秒の一例を追加の取り直しと見る説明も、観測値と推定を分けて読みます。",
+        "変更後のApp Signed Requestsでは、sdk.cma.appSignedRequest.createで署名ヘッダーをもらい、その本文をブラウザから直接Workerへ送ります。署名したrequestBodyを作り直さず同じ文字列で使う点が重要です。外部APIはApp定義の秘密鍵でHMAC-SHA256を検証し、定数時間の比較、30秒の期限、CORS、署名対象のx-contentful-space-idによる制限も実装しています。秘密鍵をブラウザへ渡す設計ではありません。",
+        "直接呼ぶ方式の中央値は1101msで、旧経路の3186msから約65％減りました。内訳は署名取得312ms、通信109ms、Worker内部700msです。平均は3606msから1275ms、最大は5547msから1727msでした。ただし5回という小さな測定で、署名取得にも0.88秒の例があります。全地域・全負荷で同じ改善幅が出るという結果ではありません。",
+        "署名で分かるのは、そのスペースのAppを経由したことまでです。編集者なら開発者ツールから正規の署名を取得して呼べるため、利用者ごとの操作権限は別に設計します。通常のインストール設定はブラウザから読める点にも注意が必要です。遅い非同期処理や変更できない外部APIにはApp Actionが合い、署名付き直呼びには自分のAPIで検証とCORSを実装する責任が伴います。"
+      ],
+      "pointsZh": [
+        "总时长减Function时长含网络，不能把残差全当平台CPU耗时。",
+        "默认2秒结果轮询会掩盖0.7秒API的改进；缩短间隔方案没有试测。",
+        "签名校验要求完全相同的正文，但有效签名不等于编辑者有每种业务权限。"
+      ],
+      "pointsJa": [
+        "全体からFunctionを引いた残りには通信が含まれ、実行時間だけではありません。",
+        "既定の2秒間隔がAPIの改善を隠しますが、間隔短縮との比較は未実施です。",
+        "同じ本文で署名を検証し、その後に操作の権限を別に判断します。"
+      ]
+    },
+    {
+      "title": "JavaScriptの非同期処理はepollで成り立っているのか、Node.js、Deno、Bunそれぞれで覗いてみた",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/hasuto-js-async-epoll-node-deno-bun/",
+      "publishedAt": "2026-10-17T14:55:39.553Z",
+      "capturedAt": "2026-10-18T04:12:26.349237+00:00",
+      "snapshotSha256": "56ab9f13ba68072aa878d608f8806623ae922a1498c188b70ecf7087acb9e326",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 17339,
+      "candidateId": 6,
+      "references": [
+        {
+          "url": "https://man7.org/linux/man-pages/man2/epoll_wait.2.html#DESCRIPTION",
+          "title": "epoll_wait(2)"
+        },
+        {
+          "url": "https://github.com/oven-sh/bun/pull/11419",
+          "title": "#11419"
+        },
+        {
+          "url": "https://github.com/oven-sh/bun/pull/12357",
+          "title": "#12357"
+        },
+        {
+          "url": "https://github.com/oven-sh/bun/blob/bun-v1.4.3/packages/bun-usockets/src/eventing/epoll_kqueue.c",
+          "title": "epoll_kqueue.c"
+        },
+        {
+          "url": "https://docs.libuv.org/en/v1.x/design.html",
+          "title": "Design overview"
+        },
+        {
+          "url": "https://github.com/denoland/deno/blob/v2.9.7/Cargo.toml",
+          "title": "Cargo.toml"
+        },
+        {
+          "url": "https://github.com/tokio-rs/mio",
+          "title": "mio"
+        },
+        {
+          "url": "https://github.com/tokio-rs/mio/blob/master/src/sys/unix/selector/epoll.rs",
+          "title": "epoll.rs"
+        },
+        {
+          "url": "https://github.com/bminor/glibc/blob/master/sysdeps/unix/sysv/linux/epoll_wait.c",
+          "title": "epoll_wait.c"
+        },
+        {
+          "url": "https://man7.org/linux/man-pages/man2/epoll_ctl.2.html#ERRORS",
+          "title": "epoll_ctl(2)"
+        },
+        {
+          "url": "https://bun.com/1.4",
+          "title": "Bun v1.4"
+        },
+        {
+          "url": "https://github.com/uNetworking/uSockets",
+          "title": "uSockets"
+        },
+        {
+          "url": "https://github.com/oven-sh/bun/blob/bun-v1.4.3/packages/bun-usockets/src/libusockets.h",
+          "title": "libusockets.h"
+        },
+        {
+          "url": "https://docs.libuv.org/en/v1.x/design.html",
+          "title": "Design overview - libuv"
+        },
+        {
+          "url": "https://github.com/tokio-rs/mio",
+          "title": "tokio-rs/mio - GitHub"
+        },
+        {
+          "url": "https://github.com/denoland/deno/blob/v2.9.7/Cargo.toml",
+          "title": "denoland/deno Cargo.toml (v2.9.7) - GitHub"
+        },
+        {
+          "url": "https://github.com/oven-sh/bun/tree/bun-v1.4.3/packages/bun-usockets",
+          "title": "oven-sh/bun packages/bun-usockets (bun-v1.4.3) - GitHub"
+        },
+        {
+          "url": "https://bun.com/1.4",
+          "title": "Bun v1.4 - Bun"
+        },
+        {
+          "url": "https://github.com/uNetworking/uSockets",
+          "title": "uNetworking/uSockets - GitHub"
+        },
+        {
+          "url": "https://man7.org/linux/man-pages/man2/epoll_wait.2.html",
+          "title": "epoll_wait(2) - Linux manual page"
+        },
+        {
+          "url": "https://man7.org/linux/man-pages/man2/epoll_ctl.2.html",
+          "title": "epoll_ctl(2) - Linux manual page"
+        },
+        {
+          "url": "https://man7.org/linux/man-pages/man2/eventfd.2.html",
+          "title": "eventfd(2) - Linux manual page"
+        }
+      ],
+      "topic": "JavaScript・ランタイム",
+      "titleZh": "Node.js、Deno、Bun：把Promise、网络等待和文件读取分开",
+      "titleJa": "非同期処理を、Promise・通信の待機・ファイル読みに分ける",
+      "evidenceAnchor": "epoll",
+      "keywords": [
+        "epoll",
+        "eventfd",
+        "Promise.resolve"
+      ],
+      "whyZh": "适合解释事件循环分层及CPU同步任务为何会阻塞后续动作，也能练习用系统调用证据限定跨运行时结论。",
+      "whyJa": "非同期を一つの仕組みとせず、エンジン、待機、別スレッドを根拠付きで説明できます。",
+      "question": "JavaScriptの非同期処理は、すべてOSの機能で動くのでしょうか。",
+      "answer": "Promiseの続きと、入出力を待つ仕組みを分けます。Linuxの観測ではNode.jsとDenoはepoll_pwait、Bunはepoll_pwait2で通信を待ちました。一方、Promise.resolveの続きはマイクロタスクで動き、ファイルは別スレッドで読みます。ただし、この結果を他のOSや版へそのまま広げず、必要な環境で確かめます。",
+      "projectZh": "练习方案：固定Linux、版本和300ms本机响应，给Promise、fetch及readFile加标记，用strace区分主线程与工作线程。未运行。",
+      "projectJa": "演習案：Linuxと版、300msの応答を固定し、Promise、fetch、readFileの前後をstraceで比べます。本日報での実行はしていません。",
+      "conditions": "同じDebian12/Linux6.8 aarch64、Node24.22.0・Deno2.9.7・Bun1.4.3、strace6.1。300msローカルモック。直列とPromise.allはstraceなし各3回。macOS/Windowsは文書・ソース参照のみ。",
+      "facts": [
+        [
+          "epoll_pwait2",
+          "先に結論／検証環境",
+          "同一Linux環境でNode/Denoはepoll_pwait、Bunはepoll_pwait2によるネットワーク待機を観測。"
+        ],
+        [
+          "Promise.resolve()",
+          "1. await Promise.resolve()はOSに届くか",
+          "既に解決済みのPromiseの前後には待機システムコールがなく、続きはエンジンのマイクロタスク。"
+        ],
+        [
+          "eventfd",
+          "4. ファイルの読み込みはepollを通るか",
+          "ファイルのopen/readは別スレッド、メインスレッドはeventfd経由の完了通知をepollで待つ。"
+        ]
+      ],
+      "zh": [
+        "作者从“Node.js的fetch最终用epoll等待”出发，追问Deno和Bun是否也如此。实验把Node.js 24.22.0、Deno 2.9.7、Bun 1.4.3放在同一个Debian 12、Linux 6.8 aarch64容器里，用strace 6.1观察系统调用。接收方是300ms后回复的本机模拟服务器。这不是面向真实生产吞吐的性能排行，而是相同内核下的机制比较。",
+        "先用strace -f -c统计全部调用，再收窄跟踪范围，避免只找Node熟悉的调用名而漏掉其他实现。三个运行时都使用epoll：Node和Deno显示epoll_pwait，Bun显示支持更精细超时参数的epoll_pwait2。Deno依赖的mio本来调用epoll_wait，但该aarch64架构由glibc转换为epoll_pwait；作者没有运行x86_64，不能据名字差别直接判断架构优劣。",
+        "await Promise.resolve()的两个MARK之间没有I/O等待调用，后续逻辑由引擎的微任务队列执行，所以Promise与await本身不依赖epoll。300ms fetch的日志则显示Node与Deno主线程等待网络事件；Bun由HTTP Client线程发送和接收，主线程等待另一组epoll，网络线程再写eventfd通知主线程继续。两层等待不能合写成“JavaScript一直在做网络I/O”。",
+        "在fetch后立即运行1秒同步忙循环，Node直到循环结束才创建socket和发送；Deno先connect但循环后才发请求；Bun的HTTP Client线程已在循环期间完成收发。三个观测的Promise解决时刻约为1354ms、1363ms、1009ms，但Bun的JavaScript后续仍需等忙循环结束。另做不带strace、各3次的两请求实验，串行约609～664ms，Promise.all约303～355ms，体现依赖安排而非某个运行时恒快多少。",
+        "文件又是另一条路径：三个实现的openat/read都发生在工作线程，而主线程等待写入eventfd的完成通知。常规文件不能直接注册进epoll，epoll_ctl会返回EPERM；因此“文件I/O也看到epoll”不表示文件内容由epoll读出。Node的libuv、Deno的Tokio及Bun自己的循环在通知组织上有差异，Bun套件里还使用C语言的uSockets派生层。",
+        "观察范围只有上述Linux环境。macOS的kqueue、Windows的IOCP或libuv属于源码和文档确认，并未跑系统级实验；原文的Bun版本迁移说明也不代表所有代码都用同一语言。面试表达应区分引擎微任务、网络可读事件、线程池读文件和主线程恢复，最后明确版本与平台边界。"
+      ],
+      "ja": [
+        "Node.jsのfetchがepollへ行くとして、非同期処理全体もそれで説明できるのか。著者はNode.js 24.22.0、Deno 2.9.7、Bun 1.4.3を同じDebian 12、Linux 6.8 aarch64のコンテナで動かし、strace 6.1で調べています。通信先は300ms後に返すローカルのモックです。生産環境の処理量を競う試験ではありません。",
+        "最初にstrace -f -cで全システムコールを数え、待機候補を選んでいます。Node.jsとDenoではepoll_pwait、Bunではepoll_pwait2が見つかりました。Denoのmioはepoll_waitを呼びますが、このaarch64には同名のシステムコールがなく、glibcが置き換えます。x86_64での表示は今回未検証なので、呼び出し名だけで実装の良し悪しを決められません。",
+        "await Promise.resolve()の前後に置いたMARKの間には、待機のシステムコールがありません。続きはエンジンのマイクロタスクで実行されます。一方、fetchではNode.jsとDenoのメインスレッドがepollで応答を待ち、BunはHTTP Clientスレッドが通信を行います。Bunのメインスレッドは別のepollで待ち、通信側のeventfdへの書き込みで起こされます。",
+        "fetch直後に1秒の同期ビジーループを置くと違いが出ました。Node.jsは終了後にsocketから始まり、Denoは先にconnectまで進んでも送信は後、Bunは別スレッドで送受信を済ませます。解決の観測値は約1354ms、1363ms、1009msです。ただしBunでもJavaScriptの続きは同期処理の終了を待ちます。straceなしで各3回比べた二通信の直列処理は約609〜664ms、Promise.allは約303〜355msでした。独立した通信を先に開始できるかが効いています。",
+        "readFileのopenatとreadは、三つとも別のスレッドで実行されました。通常のファイルはepollへ直接登録できず、主スレッドが待つのはeventfdによる完了通知です。したがってepollが現れたことと、epollがファイルを読むことは同じではありません。Bunのソケット待機層にはCのuSockets由来と見られるコードもあり、ランタイムの実装言語だけでは層の構成は分かりません。",
+        "実際に観測したOSはLinuxだけです。macOSやWindowsの説明はソースと文書による確認であり、このログによる実測ではありません。非同期を説明するときは、Promiseを再開するキュー、ネットワーク待機、ファイルを読むスレッド、その完了通知を分けます。そのうえで対象の版とOSを示せば、一つのNode.jsの経験をすべての環境へ広げずに済みます。"
+      ],
+      "pointsZh": [
+        "Promise微任务与epoll网络等待属于不同层；已解决Promise不必进入OS等待。",
+        "Bun的网络线程能在忙循环时收发，但JavaScript后续仍被同步任务挡住。",
+        "文件由工作线程读取，epoll等待的是eventfd通知；其他OS没有实测。"
+      ],
+      "pointsJa": [
+        "Promiseのマイクロタスクと、epollによる通信待機は別の層です。",
+        "Bunの通信スレッドが動いても、JavaScriptの続きは同期処理の終了を待ちます。",
+        "ファイルは別スレッドで読み、epollは完了通知を待ちます。他OSは実測していません。"
+      ]
+    },
+    {
+      "title": "【新機能】Snowflake Horizon Context がプレビューとなったので dbt コネクタで dbt platform のモデルを Horizon Catalog に取り込んでみた",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/snowflake-horizon-context-dbt-connector-preview/",
+      "publishedAt": "2026-10-17T14:36:32.268Z",
+      "capturedAt": "2026-10-18T04:12:26.443839+00:00",
+      "snapshotSha256": "f6d1b44403ca962a528f182e27aee5d57e6fa5d27ffbfabac4b2196f0a84bfe2",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 11751,
+      "candidateId": 7,
+      "references": [
+        {
+          "url": "https://docs.snowflake.com/en/release-notes/2026/other/2026-10-12-horizon-context-preview",
+          "title": "Horizon Context"
+        },
+        {
+          "url": "https://docs.snowflake.com/en/user-guide/snowflake-horizon/connectors/dbt/dbt-cloud",
+          "title": "https://docs.snowflake.com/en/user-guide/snowflake-horizon/connectors/dbt/dbt-cloud"
+        },
+        {
+          "url": "https://github.com/dbt-labs/jaffle-shop",
+          "title": "https://github.com/dbt-labs/jaffle-shop"
+        },
+        {
+          "url": "https://docs.snowflake.com/en/user-guide/snowflake-horizon/horizon-context",
+          "title": "https://docs.snowflake.com/en/user-guide/snowflake-horizon/horizon-context"
+        },
+        {
+          "url": "https://dev.classmethod.jp/articles/snowflake-trusted-semantic-layer-swttokyo26/",
+          "title": "https://dev.classmethod.jp/articles/snowflake-trusted-semantic-layer-swttokyo26/"
+        },
+        {
+          "url": "https://docs.snowflake.com/en/user-guide/snowflake-horizon/connectors/access-control",
+          "title": "https://docs.snowflake.com/en/user-guide/snowflake-horizon/connectors/access-control"
+        },
+        {
+          "url": "https://docs.snowflake.com/en/user-guide/snowflake-horizon/connectors/dbt/dbt-core",
+          "title": "https://docs.snowflake.com/en/user-guide/snowflake-horizon/connectors/dbt/dbt-core"
+        }
+      ],
+      "topic": "データ基盤・カタログ",
+      "titleZh": "Horizon Context导入dbt元数据：血缘、说明与可见权限",
+      "titleJa": "Horizon Contextへdbtの成果物を取り込み、見える範囲を確かめる",
+      "evidenceAnchor": "persist_docs",
+      "keywords": [
+        "manifest.json",
+        "persist_docs",
+        "USAGE"
+      ],
+      "whyZh": "面试中可区分数据、元数据及其可见性，并说明测试失败与编译失败对元数据导入为何不同。",
+      "whyJa": "データの閲覧権限とメタデータの可視性を分け、成果物の完全性も含めて説明できます。",
+      "question": "データカタログへdbtを接続するとき、何を検証しますか。",
+      "answer": "データ本体と、モデルの情報がどう対応するかを確かめます。Horizon Contextはmanifest.jsonなどを読み、モデルの説明やテスト結果を加えます。persist_docsがなくてもdbt側の説明は見えますが、Snowflake側のコメントは別です。ただしPreviewの検証なので、コネクタのUSAGEを含め、閲覧ロールごとの差も確認します。",
+      "projectZh": "练习方案：用jaffle-shop区分dbt说明与表注释，设置独立只读用户，对照授予连接器USAGE前后的元数据可见性。未实际运行。",
+      "projectJa": "演習案：jaffle-shopで説明とコメントを比べ、独立した閲覧ユーザーでコネクタUSAGEの前後を確認します。本日報での実行ではありません。",
+      "conditions": "2026-10-17時点Preview。dbt platform Enterprise AWSマルチテナント、Snowflake Enterprise trial AWS東京、jaffle-shop。初回Run nowのみ観測。Coreや継続更新は未実行。",
+      "facts": [
+        [
+          "manifest.json",
+          "概要／ジョブを作成する",
+          "manifest.json、catalog.json、run_results.jsonからモデルとリネージ等を取り込み、データ自体を移さない。"
+        ],
+        [
+          "persist_docs",
+          "descriptionの表示を確認する",
+          "persist_docs未設定でdbtモデル・列のdescriptionは表示、Snowflake側はオブジェクトコメントがなく空。"
+        ],
+        [
+          "24 件",
+          "テスト結果／ロール別の可視性",
+          "24テスト中意図的に失敗させた1件がFail。コネクタUSAGE前後でdbtデータソースの可視性が変わった。"
+        ]
+      ],
+      "zh": [
+        "Snowflake Horizon Context于10月12日进入Preview，试图把外部数据库、BI和管线的元数据与血缘纳入Horizon Catalog。原文在10月17日用dbt platform Enterprise的AWS多租户环境、Snowflake Enterprise试用版的AWS东京地域和jaffle-shop样例验证初次导入。不是迁移业务表数据，也不是对全区域及正式版的完成验证。",
+        "dbt连接器读取构建产物manifest.json、catalog.json、run_results.json，再把模型匹配到已连接数仓的表和视图。dbt platform由Cloud API取得定时作业产物，dbt Core则手动上传三文件；后者没在本实验运行。作业需开启Generate docs on run生成catalog，并保留dbt compile --full-refresh，再通过dbt test或dbt build产生测试结果。样例没有增量模型，仍依官方组合保留完整编译步骤。",
+        "作者先导入6张seed表，再把customers模型accepted_values测试中的returning移除，主动制造失败。导入后24项测试里只有这一项显示Fail。测试不通过的作业仍可用于查看测试结果，但编译失败会使manifest不完整，原文引用官方警告说可能让模型从目录消失，不能把“Error都可导入”当成规则。",
+        "血缘本来就不全靠连接器：Snowflake已记录建表和建视图SQL，所以连接前也能看到对象间流向；接入后增加dbt模型对应、description和测试信息。未设置persist_docs时，dbt节点和列仍显示dbt说明，Snowflake对象的Description却为空。要把同一说明写到Snowflake表列注释，才需要persist_docs；两个展示位置的根据信息不同。",
+        "权限验证使用只持有HC_CATALOG_VIEWER的独立用户，授予REFERENCES而不授SELECT，因此可看结构却不读数据。连接器USAGE未给时只能见Snowflake对象，授予数据库、schema和连接器USAGE后才见DBT来源及模型说明。元数据可见性并不公开保存的service token，也不授予dbt平台权限。创建使用当前主角色，浏览却可能汇总全部持有角色，故测试用户不能暗带更广角色。",
+        "限制包括一个连接对应一个作业项目、不支持在单连接合并多个依赖项目的血缘；仅确认Run now初次导入，持续调度需让dbt作业先于采集完成。删除重建不会继承旧USAGE，locations模型一度显示Lineage not available的原因未查清。原文测试用Account Admin token并不等于生产建议，正常应收紧到Job Viewer与Account Viewer。"
+      ],
+      "ja": [
+        "Horizon Contextは、外部のデータベース、BI、パイプラインのメタデータをHorizon Catalogで扱うための層です。10月12日にPreviewとなり、記事は17日時点のdbt platform Enterprise、Snowflake Enterprise trial、AWS東京とjaffle-shopで確認しています。対象は初回の取り込みで、データ本体をコピーする機能の試験ではありません。",
+        "dbtコネクタが読むのはmanifest.json、catalog.json、run_results.jsonです。成果物のモデルを既存のテーブルやビューへ対応付け、リネージや説明を加えます。Generate docs on runでcatalogを作り、dbt compile --full-refreshとdbt buildをジョブへ設定しています。テスト結果にはtestかbuildの実行が必要です。Coreの手動アップロードとplatformのAPI取得は別方式で、今回はplatform側だけを使いました。",
+        "著者はseedの6テーブルを準備し、customersのaccepted_valuesからreturningを外して意図的にテストを失敗させました。取り込み後は24件のうち、その1件だけがFailと表示されます。テスト失敗の実行は使えても、コンパイルに失敗した成果物は使わない、という区別が必要です。不完全なmanifestでモデルが消える可能性を、記事は公式文書から示しています。",
+        "接続前にもSnowflakeのSQL由来のリネージはありました。接続後に増えたのはdbtモデルの対応、説明、テスト結果です。persist_docsなしでもdbt配下のモデルと列にはdescriptionが表示されますが、Snowflakeオブジェクト側はコメントがないので空でした。dbtの説明をSnowflakeのコメントへ書くにはpersist_docsが必要です。表示場所の違いを、説明が失われた不具合と取り違えないことが大切です。",
+        "閲覧用ユーザーには一つのロールだけを付け、SELECTなしのREFERENCESで構造を参照させています。コネクタのUSAGEがない段階ではDBTのデータソースは見えず、付与後にモデルや説明が見えました。これはメタデータの可視性であり、トークンの公開やdbtへのアクセス許可ではありません。作成時のプライマリロールと、閲覧時に合算される保持ロールの違いも検証条件に含まれます。",
+        "一接続は一プロジェクト・一ジョブに対応し、複数プロジェクトのリネージ結合は未対応です。継続更新は今回の実測範囲ではなく、コネクタの再作成で以前のUSAGEは引き継がれません。locationsの一部で出たLineage not availableの原因も未確認です。検証用の強いトークンを本番の推奨とせず、通常はJob ViewerとAccount Viewerに絞る、という注意まで残して読みます。"
+      ],
+      "pointsZh": [
+        "连接器导入的是dbt构建元数据，不复制表数据；测试结果需真正执行test或build。",
+        "dbt节点说明与Snowflake对象注释是两种来源，persist_docs的作用不能混淆。",
+        "测试失败可用于查看结果，编译失败的manifest却可能破坏目录，必须区分。"
+      ],
+      "pointsJa": [
+        "成果物を読み込む接続であり、データ本体の移送ではありません。テストには実行が必要です。",
+        "dbtのdescriptionとSnowflakeのコメントを分け、persist_docsの役割を確認します。",
+        "テスト失敗とコンパイル失敗を区別し、不完全なmanifestを取り込みません。"
+      ]
+    },
+    {
+      "title": "KVの書き込み枠が尽きると、レート制限は「全部通す」に倒れる——AIの1日上限300回が250で止まった再現",
+      "source": "Zenn",
+      "url": "https://zenn.dev/tyuya/articles/kv-free-quota-rate-limit-fail-open",
+      "publishedAt": "2026-10-18T00:00:24+00:00",
+      "capturedAt": "2026-10-18T04:12:28.060591+00:00",
+      "snapshotSha256": "cc17daf5b21561c21363fe833dbe943253b3b5e32c92a1ca5abcb2ee779db35a",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 11757,
+      "candidateId": 56,
+      "references": [
+        {
+          "url": "https://developers.cloudflare.com/kv/platform/limits/",
+          "title": "Limits"
+        },
+        {
+          "url": "https://developers.cloudflare.com/kv/platform/pricing/",
+          "title": "Pricing"
+        },
+        {
+          "url": "https://flaviocopes.com/rate-limiting-cloudflare-kv/",
+          "title": "Rate limiting with Cloudflare KV"
+        },
+        {
+          "url": "https://developers.cloudflare.com/d1/platform/pricing/",
+          "title": "D1 Pricing"
+        },
+        {
+          "url": "https://zenn.dev/tyuya/articles/stripe-local-subscription-test",
+          "title": "Stripeサブスクの課金→解約→再課金、デプロイ前に全部ローカルで通す"
+        },
+        {
+          "url": "https://zenn.dev/tyuya/books/umiyui-unei-jitsuroku",
+          "title": "個人EC「うみゆい」運営実録"
+        },
+        {
+          "url": "https://jidokacho.com/posts/cloudflare-workers-fukugyo/",
+          "title": "じどうか帳"
+        }
+      ],
+      "topic": "クラウド・障害設計",
+      "titleZh": "KV写入失败被吞掉：300次AI额度为何停在250",
+      "titleJa": "カウンタが書けないときに、AIの利用を止められるか",
+      "evidenceAnchor": "RETURNING",
+      "keywords": [
+        "KV",
+        "RETURNING",
+        "counter_unavailable"
+      ],
+      "whyZh": "可具体说明配额耗尽、错误传播、原子条件更新与失败关闭的业务取舍，并区分模拟复现和云端实测。",
+      "whyJa": "無料枠の計算と失敗の扱いを結び付け、模擬試験と本番観測を区別して説明できます。",
+      "question": "AI利用回数の上限は、保存先に障害が起きても守れますか。",
+      "answer": "書き込みに失敗したときの扱いまで決めないと守れません。KVの例は1通4回の書き込みで枠が尽き、失敗を隠したため数が250で止まりました。修正ではD1の条件付き更新とRETURNINGで上限と障害を分け、障害時はAIを使いません。ただし、旧動作は偽物のKVでの再現で、実際の枠切れやD1の同時実行は未検証です。",
+      "projectZh": "练习方案：用模拟KV注入put异常，再在本地SQLite验证条件更新；分别记录额度满、不可写和正常路径。不能当作真实云端耗尽测试。",
+      "projectJa": "演習案：KVのput失敗を模擬し、SQLiteで条件付き更新を確かめます。上限、書き込み不能、正常を分け、本物のクラウド枠を消費した実験とは呼びません。",
+      "conditions": "著者の事前不具合発見で本番被害なし・問い合わせ0件。旧挙動はmacOS15.1.1/Node25.9.0の偽KV、SQLはSQLite3.43.2、障害分岐はwrangler devローカルD1。実KV枠切れ・D1同時実行は未検証。",
+      "facts": [
+        [
+          "250",
+          "修正前のカウンタ／手元で再現する",
+          "通常1通でKVへ4書き込み、仮の1000書き込み枠では250通。偽KV実験は1000通を全許可しカウンタ250、失敗書き込み3000回。"
+        ],
+        [
+          "RETURNING",
+          "直し方",
+          "D1の条件付きUPSERTで行あり=ok、行なし=limited、例外/3秒時間切れ=unknownとしunknownではAIを使わない。"
+        ],
+        [
+          "counter_unavailable",
+          "止まる側に倒れることをテストする",
+          "ローカルD1のcounters削除で引き継ぎ理由を確認。Claude未呼び出しはコード分岐も確認するが、テストだけで外部未送信を直接証明していない。"
+        ]
+      ],
+      "zh": [
+        "一位开发者给LINE问询机器人设了每人每小时20次、全体AI每天300次的上限，却在上线前发现计数器可能失效。文章明确尚无问询、没有生产损失。通常一次AI回复需写KV四次：事件去重、个人次数、全局次数、会话历史。按文章核对的免费写入额度1000次计算，若额度周期内没有其他写入，250通就会先耗尽存储写入额度。",
+        "旧kvPut捕获异常却不通知调用者；consumeCounter读到旧次数，小于上限，调用这个无法返回失败的写函数后照样给ok。读写额度是分开的，作者据官方“超出哪类操作就让哪类操作失败”推断读还可成功，因此计数会停住而AI继续获准。额度按UTC零点、JST上午9点恢复，业务计数按JST零点换日；只有存储先耗尽而业务计数仍低于300时才触发，不能说任意一天250通必定导致失效。",
+        "复现使用macOS 15.1.1、Node.js 25.9.0和内存Map模拟KV，成功写1000次后所有put抛错，没有实际耗尽Cloudflare额度，也没有调用AI。前250通分给50人，后750通来自新用户；1000通全部获准，AI计数停250，失败写入3000次，新用户个人计数键都未创建。它证明旧代码面对该故障的逻辑行为，不是实际云服务持续故障的观测。",
+        "修复先把计数与去重移到D1。计数用INSERT ... ON CONFLICT DO UPDATE ... WHERE count < ? RETURNING count，在单条语句里判断并递增：有行是ok，无行是limited，异常或3秒超时是unknown。unknown不再调用AI，而用定型回复交给人员。时段放入键里换期，expires_at只保存过期时刻，必须另用定时DELETE清理；固定不变的键不会因字段过期而自行重置。",
+        "作者在macOS自带SQLite 3.43.2把上限改为3，确认前三次返回1、2、3，第四次无行，删表后报错；没有测试D1并发。另在wrangler dev里删除本地counters表并发送测试Webhook，确认日志记counter_unavailable，结合代码分支判断不调用Claude；测试日志本身并不是对外部请求零发送的直接网络证明。去重则特意在写失败时继续处理，以费用计数守住预算，这是不同业务风险的取舍。",
+        "仍有局限：D1不可用时所有AI请求都转人工，表必须先于代码部署；实际云端配额耗尽和并发行为未试。会话历史仍写KV，员工通知次数还保留旧式KV计数，故不能宣称所有计数问题都已解决。面试重点是把“达到上限”“无法计数”“允许执行”分成不同状态，再按费用保护的目的决定失败关闭。"
+      ],
+      "ja": [
+        "LINEへの問い合わせに答えるWorkerで、一人一時間20回、AI全体一日300回という上限がありました。しかし通常の一通は、再送の識別、個人の回数、全体の回数、履歴の四回をKVへ書きます。記事が確認した無料枠1000回なら、同じ枠の期間に250通で書き込みが尽きます。著者は本番で発生する前に発見し、問い合わせも0件で、被害の記録ではありません。",
+        "問題はkvPutが例外を記録するだけで、呼び出し元へ失敗を返さないことです。読み取った古い数が上限未満なら、増加を書けなくてもokを返してしまいます。読み書きの枠が別であることから、著者は書けなくても読めると公式文言を解釈していますが、本物のKVを枠切れにした実験はしていません。JST9時に戻るKV枠と、0時で替わる日次カウンタのずれもあり、常に250通で壊れるわけではありません。",
+        "再現ではNode.js 25.9.0と偽物のKVを使い、1000回以降のputだけを失敗させました。前250通を50人、その後750通を新しい一人から送る形です。AIを呼ばず許可数だけを数えると、1000通が通り、保存された全体数は250、失敗書き込みは3000回でした。新しい利用者のキーもできません。結果整合による古い読み取りとは別の、失敗を隠す問題を示しています。",
+        "修正後はD1でINSERT ... ON CONFLICT DO UPDATE ... WHERE count < ? RETURNING countを一文にします。行が返れば加算済み、空なら上限、例外や3秒の時間切れなら不明として、AIを使わずスタッフへ引き継ぎます。期間はキーに含め、expires_atはCronで削除するための値です。このSQLだけが時刻を見て上限をリセットするわけではありません。",
+        "単一文の動作はSQLite 3.43.2で上限を3にして確認し、四回目は返り値なし、表の削除後はエラーになりました。D1での同時実行は未検証です。wrangler devのローカルD1では表を消し、counter_unavailableの引き継ぎ理由を確認しています。Claudeを呼ばない点はコードの分岐と合わせた確認で、ログのテストだけで外部通信の不在を直接測ったわけではありません。",
+        "止める設計なのでD1の障害時はAIが答えず、表を先に作ってからコードを配備する必要があります。重複除けの書き込み失敗は逆に通し、費用の上限で守るという判断です。スタッフ通知の回数は旧式KVのまま残っていることも記事は明かしています。上限に達した状態と数えられない状態を区別し、何を守るために止めるのかを説明できる教材です。"
+      ],
+      "pointsZh": [
+        "额度先耗尽且计数尚未到300才触发，JST9点与零点的周期差不能省略。",
+        "RETURNING行、空与异常分别代表成功计数、已达限和无法确认，后者不授权AI。",
+        "模拟KV、SQLite和本地D1各证明不同层面，实际云端耗尽与并发没有验证。"
+      ],
+      "pointsJa": [
+        "保存先の枠が先に尽きる条件と、日付の区切りの違いを残します。",
+        "RETURNINGの行・空・例外を、加算済み・上限・不明に分けます。",
+        "偽物のKV、SQLite、ローカルD1は別の確認で、本物の枠切れと並行動作は未検証です。"
+      ]
+    }
+  ],
+  "readCompleteAt": "2026-10-18T04:23:00Z",
+  "evidenceScope": "All five original text bodies, code and tables read; screenshots alone are not added facts. Excluded previous Top5 and post-window articles. No experiments independently reproduced."
+}
