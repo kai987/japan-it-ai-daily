@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-17",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-18T03:47:22.551Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-17-top-1",
+      "url": "https://dev.classmethod.jp/articles/dgx-spark-nemotron-3-5-bolt-74b-a9b-first-touch/",
+      "originalTitle": "2 ビット量子化の MoE 「Nemotron 3.5 Bolt 74B-A9B」を DGX Spark で動かしてみた",
+      "source": "DevelopersIO",
+      "topic": "生成AI・ローカル推論",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-16T06:57:22.138Z",
+      "capturedAt": "2026-10-18T01:34:03.818683+00:00",
+      "snapshotSha256": "cd788913030dd42041b85510cdf89b59763ffe02ada3f8d96eadb9f98d1b0759",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "固定256token・3回中央値で39.47から61.61tok/sへ。",
+          "quote": "DFlash",
+          "locator": "速度 / 単発比較表",
+          "conditions": "DGX Spark GB10/128GBの著者実測。単発速度は256token固定、temperature0、3回中央値。品質は別設定。他機・別エンジン・思考強度差を保持。公式値、実測、解釈を区別。",
+          "usedIn": {
+            "zh": "DFlash",
+            "ja": "DFlash",
+            "interview": "DFlash"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "256Kレシピ31.4GiBと128Kの24GB設計条件は異なる。",
+          "quote": "31.4",
+          "locator": "動かすまで / 実測表",
+          "conditions": "DGX Spark GB10/128GBの著者実測。単発速度は256token固定、temperature0、3回中央値。品質は別設定。他機・別エンジン・思考強度差を保持。公式値、実測、解釈を区別。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "5課題49テストで、一般的能力の保証ではない。",
+          "quote": "49 個すべて",
+          "locator": "コードを書かせる",
+          "conditions": "DGX Spark GB10/128GBの著者実測。単発速度は256token固定、temperature0、3回中央値。品質は別設定。他機・別エンジン・思考強度差を保持。公式値、実測、解釈を区別。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact4",
+          "kind": "source-fact",
+          "statement": "40ツールの選択4/6などは能力試験。",
+          "quote": "ハーネス本体を載せた結果ではありません。",
+          "locator": "エージェントの部品としての適性",
+          "conditions": "DGX Spark GB10/128GBの著者実測。単発速度は256token固定、temperature0、3回中央値。品質は別設定。他機・別エンジン・思考強度差を保持。公式値、実測、解釈を区別。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "配布量、常駐、単発速度、並列時の処理量を分け、用途に合う判断を説明できます。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "将权重容量、运行内存、单请求速度、并发吞吐和任务正确性分开，形成有实验边界的本地模型采用判断。",
+            "ja": "配布量、常駐、単発速度、並列時の処理量を分け、用途に合う判断を説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-17-top-2",
+      "url": "https://dev.classmethod.jp/articles/github-actions-workflow-lockfiles/",
+      "originalTitle": "GitHub Actionsのworkflow lockfileを試す。actions.lockで依存をcommitに固定し、ズレたら実行前に止める",
+      "source": "DevelopersIO",
+      "topic": "開発基盤・サプライチェーン",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-16T01:05:50.018Z",
+      "capturedAt": "2026-10-18T01:34:03.848167+00:00",
+      "snapshotSha256": "1257402b9509814f3004e3bf2e624ccd774286fffc88709cc759efc0105e15e8",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "直接/推移依存を記録し、workflowの参照も変わる。",
+          "quote": "推移的依存4つ",
+          "locator": "lockfileを生成する",
+          "conditions": "10/16時点のpublic preview、Free検証リポジトリ、macOS26.6.1、gh2.101.0、拡張v0.2.0、schema v0.0.3。Require lockfile強制設定、Dependabot、reusable workflowのロックは未実測。",
+          "usedIn": {
+            "zh": "actions.lock",
+            "ja": "actions.lock",
+            "interview": "actions.lock"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "未登録依存はjob開始前に停止。",
+          "quote": "startup_failure",
+          "locator": "未更新でアクションを追加する",
+          "conditions": "10/16時点のpublic preview、Free検証リポジトリ、macOS26.6.1、gh2.101.0、拡張v0.2.0、schema v0.0.3。Require lockfile強制設定、Dependabot、reusable workflowのロックは未実測。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "通常生成で固定先は変わらず、追従にはrelockが必要。",
+          "quote": "sticky",
+          "locator": "タグが動いたとき",
+          "conditions": "10/16時点のpublic preview、Free検証リポジトリ、macOS26.6.1、gh2.101.0、拡張v0.2.0、schema v0.0.3。Require lockfile強制設定、Dependabot、reusable workflowのロックは未実測。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "直接参照だけでなく推移的依存と更新手順まで、失敗例から説明できます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "从真实启动失败和标签移动实验解释依赖锁定，并保留预览版本及未测试的组织策略边界。",
+            "ja": "直接参照だけでなく推移的依存と更新手順まで、失敗例から説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-17-top-3",
+      "url": "https://zenn.dev/pythona/articles/css-bundle-order-hamburger",
+      "originalTitle": "押せないハンバーガーボタン、3回直して原因はCSSバンドルの順序だった",
+      "source": "Zenn",
+      "topic": "フロントエンド・CSS",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-16T11:54:20+00:00",
+      "capturedAt": "2026-10-18T01:34:04.920464+00:00",
+      "snapshotSha256": "3a0da1114da4af78c8a7f9e45c459b2dac69a1ea6cb0e8ee0558ada6fbf5c806",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "同じ1クラスの詳細度で後方規則が上書き。",
+          "quote": ".icon-btn{display:inline-flex}",
+          "locator": "真の原因 / 規則位置比較",
+          "conditions": "React/Vite社内システムの経験談。境界900px、16インチMacBookの報告。CSS規則位置と1400px/375pxのcomputed styleを確認。万能なCSS修正ではない。",
+          "usedIn": {
+            "zh": "icon-btn",
+            "ja": "icon-btn",
+            "interview": "icon-btn"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "二つの幅でdisplayを確認し、公開CSSも再取得。",
+          "quote": "1400px幅でcomputed style",
+          "locator": "修正 / 本番相当検証",
+          "conditions": "React/Vite社内システムの経験談。境界900px、16インチMacBookの報告。CSS規則位置と1400px/375pxのcomputed styleを確認。万能なCSS修正ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "聞き取り、本番CSS、計算済みスタイルをつなげて、原因と修正を説明できます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "从设备与真实视口出发，以生产产物解释样式冲突，能直接用于React/Frontend故障分析面试。",
+            "ja": "聞き取り、本番CSS、計算済みスタイルをつなげて、原因と修正を説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-17-top-4",
+      "url": "https://dev.classmethod.jp/articles/tidb-cloud-filesystem-trial/",
+      "originalTitle": "public previewのTiDB Cloud Filesystemを触ってみた",
+      "source": "DevelopersIO",
+      "topic": "データ基盤・エージェント記憶",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-16T01:55:38.461Z",
+      "capturedAt": "2026-10-18T01:34:03.823167+00:00",
+      "snapshotSha256": "3b1a466f7ae39c5dda9e6bb3a775004f1ceb7d36425118415d5ca1a774305b46",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "CLIで保存/検索し、新セッションからメモを読んだ。",
+          "quote": "ti fs",
+          "locator": "マウントなしでの操作",
+          "conditions": "主な操作は10/13のti0.2.9で、10/15の0.2.10追記を区別。同一Macの別ディレクトリ、東京からシンガポール。別機・sandbox未実測。価格表の計算と請求実績を区別。",
+          "usedIn": {
+            "zh": "ti fs",
+            "ja": "ti fs",
+            "interview": "ti fs"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "claude配下の許可とルート一覧拒否を観測。",
+          "quote": "範囲外",
+          "locator": "作業メモの保存",
+          "conditions": "主な操作は10/13のti0.2.9で、10/15の0.2.10追記を区別。同一Macの別ディレクトリ、東京からシンガポール。別機・sandbox未実測。価格表の計算と請求実績を区別。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "APIキーとowner設定のない環境へ分ける必要。",
+          "quote": "APIキーや",
+          "locator": "同一ユーザーの設定の注意",
+          "conditions": "主な操作は10/13のti0.2.9で、10/15の0.2.10追記を区別。同一Macの別ディレクトリ、東京からシンガポール。別機・sandbox未実測。価格表の計算と請求実績を区別。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact4",
+          "kind": "source-fact",
+          "statement": "料金計算は未反映の実請求と異なる。",
+          "quote": "Filesystemの行",
+          "locator": "料金 / 書き込み結果",
+          "conditions": "主な操作は10/13のti0.2.9で、10/15の0.2.10追記を区別。同一Macの別ディレクトリ、東京からシンガポール。別機・sandbox未実測。価格表の計算と請求実績を区別。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "メモの永続化に加え、範囲付きトークンと同居する資格情報まで説明できます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "把代理文件记忆、凭证隔离和小文件请求费用放在同一实验链中，避免只验证成功保存。",
+            "ja": "メモの永続化に加え、範囲付きトークンと同居する資格情報まで説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-17-top-5",
+      "url": "https://tech.smarthr.jp/entry/2026/10/16/164423",
+      "originalTitle": "システムが正常でも、お客さまの業務は止まっているかもしれない。SmartHRのCREが挑む「顧客の可観測性」",
+      "source": "SmartHR Tech Blog",
+      "topic": "企業AI・顧客可観測性",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-16T16:44:23+09:00",
+      "capturedAt": "2026-10-18T01:34:04.423259+00:00",
+      "snapshotSha256": "602535adfb0bb0ba96ecf623ea9fd937e2ccfc7d89900dbb165ca71ea7431a52",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "社内メンバーがSlackで使い、直接顧客へ応答するbotではない。",
+          "quote": "DESK",
+          "locator": "AIに回答させるだけでなく / 仕組み",
+          "conditions": "SmartHRの採用インタビューによる自己報告。約1割の詳細な母数/期間は未掲載。50%は2026年下期目標。業務完了の観測は今後注力する構想で、全自動化済みではない。",
+          "usedIn": {
+            "zh": "DESK",
+            "ja": "DESK",
+            "interview": "DESK"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "約1割は現状、50%は今後の目標。",
+          "quote": "1割くらい",
+          "locator": "成果の回答",
+          "conditions": "SmartHRの採用インタビューによる自己報告。約1割の詳細な母数/期間は未掲載。50%は2026年下期目標。業務完了の観測は今後注力する構想で、全自動化済みではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "提出処理の成功だけでなく業務の完了・離脱を見る構想。",
+          "quote": "ボタンにたどり着けなかった人",
+          "locator": "Customer Observabilityの定義",
+          "conditions": "SmartHRの採用インタビューによる自己報告。約1割の詳細な母数/期間は未掲載。50%は2026年下期目標。業務完了の観測は今後注力する構想で、全自動化済みではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "日本企業の実例から、回答、問い合わせの解決、顧客の業務完了を分けて話せます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "日本SaaS案例明确区分AI答复、问询解决与客户完成业务，可用于真实效果评价和人工交接的面试回答。",
+            "ja": "日本企業の実例から、回答、問い合わせの解決、顧客の業務完了を分けて話せます。"
+          }
+        }
+      ]
+    }
+  ]
+}
