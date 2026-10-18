@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-17",
+  "generatedAt": "2026-10-18T04:04:10.481Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "量子化したローカルモデルを選ぶとき、容量と性能をどう評価しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "f8edca11c76ba33b10c7540ef70897821f59bf9a31e9107d794756c59f35565d",
+      "audioSha256": "d8a5d516a9c93946b72a3ceb39380ba1931da1d702557b06cea590962c3ff1c3",
+      "durationSeconds": 5.433
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "重みの容量だけでなく、実行時のメモリと課題の成績を分けて見ます。BoltはexpertをIQ2_XXSにし、DFlashで単発の生成を速めています。ただし、実測の常駐は約31GiBで、24GBという設計目標とは条件が違います。並列時の速度や、要約で答えが出なかった例も含め、使う仕事に合うか判断します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "a5691b6376501f40a7614c7ee37d36a1196a08fabe92995b7e91fa9d6470b19d",
+      "audioSha256": "91b9ee4486ff5e0678a6df225d61fdd9623e07e2d8738f12100dc99ff967f6d3",
+      "durationSeconds": 27.759,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "CIで使うアクションの依存を、どう再現可能な状態に保ちますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "577ba368b642a5550e3b8a2db7b36b00d65ba6ff7543ba509725a20ab03df3a5",
+      "audioSha256": "92457e375e5edae2b0cc4811c3775ab1cc6b8f571a53d45fe7f059f2061608a7",
+      "durationSeconds": 5.235
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "ワークフローだけでなく、内側の依存も固定して変更をレビューします。actions.lockは推移的依存のcommitやリポジトリIDを記録し、未登録の追加はstartup_failureで止まります。タグが動いても固定先は変わらず、更新はrelockで明示します。ただしpublic previewなので、生成時のワークフロー変更や許可リストへの影響も確認します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "630e3e4f1dfcfcf86cae25f2f9ed7effc2b3abab3fe435ce4252fd9e731916e5",
+      "audioSha256": "d819146ebff642b7b69579ce5c8717c2d2c15a1f6812c285e539b80966839da3",
+      "durationSeconds": 25.276,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "開発環境で再現しない画面の不具合を、どう調べますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "9ef020b3e0685673fce83f30166039482df0714a970e6d761848e5987deb23e6",
+      "audioSha256": "f68a06581e58a6909e71611468ef0993cb6bf77d33c57a446b18f3154d3bd992",
+      "durationSeconds": 4.631
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "まず機種、画面幅、押した後の変化を聞き、配信されたCSSを調べます。この例ではicon-btnが後ろにあり、同じ詳細度の非表示指定を上書きしていました。親のapp-barを加えて詳細度を上げ、本番ビルドの1400pxと375pxで計算済みスタイルを確認しています。ただし一つの構成の事例なので、実際の競合規則を見て修正を選びます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "33388a6ee7aa2a8a2f4ba6a0a7a445d40cb204799f6e9c8248eadaad231f4834",
+      "audioSha256": "607179c90ee59685bf5e8e814c3dc4a8610da336ea134307e3c09481befd453b",
+      "durationSeconds": 28.833,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "エージェントの作業メモを外部へ保存するとき、何を確認しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "eb36e2b18d00b9b1a7135d69e3ac38493b8cedfbfdc33eb001f02fe1cb544b8f",
+      "audioSha256": "b254c5b4943bb44b123f288f157c3d52504d5daba60aefd4a792821bc13d7c39",
+      "durationSeconds": 5.13
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "保存して別セッションから読めることと、権限の分離を両方確かめます。ti fsではclaude配下へ読み書きできる24時間のトークンを使い、ルート一覧は拒否されました。ただし同じMacには広い権限の設定も残っていました。限定トークンだけで安全とせず、APIキーやオーナー設定のない実行環境へ分ける必要があります。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "ebbb3515e30e965b4a6dd253831e901fd8e4aa85b6d53d1967dd841961b6554d",
+      "audioSha256": "ed793e06d3dd9296331468dd0f64e8c266a93ee903649fe67cdaf3c808d5dd16",
+      "durationSeconds": 24.683,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "問い合わせ対応をAIへ任せるとき、何を成果として測りますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "623137f1552f527549635a2fe458d0d0a746ebbbb46bbd47e4369eee4494c416",
+      "audioSha256": "9292511123a31739221e4940dd3eb074bf16a839c7dccb358d2931ed29e53574",
+      "durationSeconds": 5.212
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "回答を返した件数と、問題が解決した件数を分けます。SmartHRのDESKはSlackから過去記録やヘルプを調べ、現時点で約1割の問い合わせを解決しています。ただし、50%の自動クローズは今後の目標で、現状の解決率ではありません。提出処理の成功に加え、提出ボタンにたどり着けなかった利用者も見るのがCustomer Observabilityの構想です。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "da838d68ea8ae66ecca5db7bb0beb2f427a3d62664c7ffa4dd46df4ae1a6bd33",
+      "audioSha256": "798c56d2de52388c2ce55ad2d0f3c7ff22df742867dd437e2c8cafe2e39cb4b3",
+      "durationSeconds": 27.735,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "量子化モデルの24GBという表記は、何と分けて読みますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "9341fd985278d025d958b1e84ed74a7edac7a28070b01c50253b4d4ad70084fc",
+      "audioSha256": "79a78f472c06e6c784c57ee08a6cac98b9ba57c5136a146efb4048685c3e7e87",
+      "durationSeconds": 5.594
+    },
+    {
+      "index": 2,
+      "text": "設定を直した後、実際に使われた内容をどう確かめますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "688f047cbb71b3d9e98d4d09b8488bdd53f06a8f766c62efbb4cfc4e83364a66",
+      "audioSha256": "e78ebfce912cb14524144017895601a68f69088440639d902a388727b11b73f0",
+      "durationSeconds": 5.085
+    },
+    {
+      "index": 3,
+      "text": "エージェントの成功を評価するとき、許可と業務の結果をどう分けますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "0543d801c49473f6a148ec1465309fb574ebb92d0bb6a6fcad20889a4319ccfc",
+      "audioSha256": "a65d5a2388876a60115bb01bde648e37486422e84d47a578a4edceef23fcda8a",
+      "durationSeconds": 5.409
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-18T04:04:16.645Z"
+}
