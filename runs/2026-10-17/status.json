@@ -1,14 +1,42 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-17",
-  "stage": "drafts_ready",
+  "stage": "preflight_passed",
   "sourceCommit": "c0b55a8fd4f9d72b12dcb58eee17cfb2b391e6f4",
   "sourceWindow": {
     "from": "2026-10-16T10:00:00+09:00",
     "to": "2026-10-17T10:00:00+09:00"
   },
   "createdAt": "2026-10-18T01:17:42.023Z",
-  "updatedAt": "2026-10-18T03:47:47.833Z",
-  "completedArtifacts": [],
-  "lastError": null
+  "updatedAt": "2026-10-18T03:54:41.738Z",
+  "completedArtifacts": [
+    "sources.json",
+    "history.json",
+    "interviews.json",
+    "draft.json",
+    "checks.json",
+    "preflight.json"
+  ],
+  "lastError": null,
+  "baseCommit": "c0b55a8fd4f9d72b12dcb58eee17cfb2b391e6f4",
+  "draftCommit": "9ce8fe7cecb4bcbebf6eb666e6a1724e20b44bfd",
+  "draftBranch": "draft/daily-2026-10-17",
+  "paths": [
+    "src/content/daily-ja/2026-10-17.md",
+    "src/content/daily/2026-10-17.md",
+    "src/content/evidence/2026-10-17.json",
+    "src/content/japanese-ja/2026-10-17.md",
+    "src/content/japanese/2026-10-17.md",
+    "src/data/interviews/2026-10-17.json"
+  ],
+  "changedPaths": [
+    "A\tsrc/content/daily-ja/2026-10-17.md",
+    "A\tsrc/content/daily/2026-10-17.md",
+    "A\tsrc/content/evidence/2026-10-17.json",
+    "A\tsrc/content/japanese-ja/2026-10-17.md",
+    "A\tsrc/content/japanese/2026-10-17.md",
+    "A\tsrc/data/interviews/2026-10-17.json"
+  ],
+  "verifiedAt": "2026-10-18T03:54:37.349Z",
+  "preflightRunId": 39095094576
 }
