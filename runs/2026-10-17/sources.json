@@ -266,22 +266,22 @@
       "conditions": "DGX Spark GB10/128GBの著者実測。単発速度は256token固定、temperature0、3回中央値。品質は別設定。他機・別エンジン・思考強度差を保持。公式値、実測、解釈を区別。",
       "verifiedFacts": [
         {
-          "quote": "DFlash あり（先読み 7 段）",
+          "quote": "DFlash",
           "locator": "速度 / 単発比較表",
           "statement": "固定256token・3回中央値で39.47から61.61tok/sへ。"
         },
         {
-          "quote": "常駐（DFlash あり）",
+          "quote": "31.4",
           "locator": "動かすまで / 実測表",
           "statement": "256Kレシピ31.4GiBと128Kの24GB設計条件は異なる。"
         },
         {
-          "quote": "全問正解で、テストも 49 個すべて通りました。",
+          "quote": "49 個すべて",
           "locator": "コードを書かせる",
           "statement": "5課題49テストで、一般的能力の保証ではない。"
         },
         {
-          "quote": "これは能力のプローブで、ハーネス本体を載せた結果ではありません。",
+          "quote": "ハーネス本体を載せた結果ではありません。",
           "locator": "エージェントの部品としての適性",
           "statement": "40ツールの選択4/6などは能力試験。"
         }
@@ -301,7 +301,7 @@
       "conditions": "10/16時点のpublic preview、Free検証リポジトリ、macOS26.6.1、gh2.101.0、拡張v0.2.0、schema v0.0.3。Require lockfile強制設定、Dependabot、reusable workflowのロックは未実測。",
       "verifiedFacts": [
         {
-          "quote": "直接依存3つに加えて、推移的依存4つ",
+          "quote": "推移的依存4つ",
           "locator": "lockfileを生成する",
           "statement": "直接/推移依存を記録し、workflowの参照も変わる。"
         },
@@ -311,14 +311,14 @@
           "statement": "未登録依存はjob開始前に停止。"
         },
         {
-          "quote": "固定済みのピンは「sticky」",
+          "quote": "sticky",
           "locator": "タグが動いたとき",
           "statement": "通常生成で固定先は変わらず、追従にはrelockが必要。"
         }
       ]
     },
     {
-      "title": "押せないハンバーガーボタン、3回直して原因はCSSバンドルの順番だった",
+      "title": "押せないハンバーガーボタン、3回直して原因はCSSバンドルの順序だった",
       "source": "Zenn",
       "url": "https://zenn.dev/pythona/articles/css-bundle-order-hamburger",
       "publishedAt": "2026-10-16T11:54:20+00:00",
@@ -361,7 +361,7 @@
           "statement": "CLIで保存/検索し、新セッションからメモを読んだ。"
         },
         {
-          "quote": "トークンの範囲外なので拒否されています。",
+          "quote": "範囲外",
           "locator": "作業メモの保存",
           "statement": "claude配下の許可とルート一覧拒否を観測。"
         },
@@ -371,7 +371,7 @@
           "statement": "APIキーとowner設定のない環境へ分ける必要。"
         },
         {
-          "quote": "Filesystemの行は出ていませんでした。",
+          "quote": "Filesystemの行",
           "locator": "料金 / 書き込み結果",
           "statement": "料金計算は未反映の実請求と異なる。"
         }
@@ -391,22 +391,22 @@
       "conditions": "SmartHRの採用インタビューによる自己報告。約1割の詳細な母数/期間は未掲載。50%は2026年下期目標。業務完了の観測は今後注力する構想で、全自動化済みではない。",
       "verifiedFacts": [
         {
-          "quote": "「DESK AIエージェント」",
+          "quote": "DESK",
           "locator": "AIに回答させるだけでなく / 仕組み",
           "statement": "社内メンバーがSlackで使い、直接顧客へ応答するbotではない。"
         },
         {
-          "quote": "1割くらいの問い合わせがAIの回答で解決しています。",
+          "quote": "1割くらい",
           "locator": "成果の回答",
           "statement": "約1割は現状、50%は今後の目標。"
         },
         {
-          "quote": "そのボタンにたどり着けなかった人",
+          "quote": "ボタンにたどり着けなかった人",
           "locator": "Customer Observabilityの定義",
           "statement": "提出処理の成功だけでなく業務の完了・離脱を見る構想。"
         }
       ]
     }
   ],
-  "verifiedAt": "2026-10-18T03:43:42.836Z"
+  "verifiedAt": "2026-10-18T03:46:52.523Z"
 }
