@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-18",
+  "generatedAt": "2026-10-18T04:34:47.772Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "個人情報のマスキングを導入するとき、どのように品質を確かめますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "5f0e752d0b01d91cadfaa9215c40a57cefbc9c102c59497b44b920e9265bdc6e",
+      "audioSha256": "df7d9c1cf0150b8959a09a11f986477eba2b41811681712552851bd0d71fbbd7",
+      "durationSeconds": 5.527
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "検出率だけでなく、文書に何が残るかを確認します。SDPの例ではNFKCで全角をそろえ、正規表現を加えると再現率は96.6％でした。ただし、範囲を広げた後も16％の文書に漏れがありました。残存チェックも万能ではないため、外部提供前の確認手順まで決めて評価します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "2b1dcec11fa85a1050e85155c86a7326208aadb95ad703d1f9c45b7efaaa8d1d",
+      "audioSha256": "b55a469f05ffcba77055d45404835bcc80ba74a313d937c54ac52c78cd063c12",
+      "durationSeconds": 24.718,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "外部APIは速いのに画面が遅い場合、何を調べますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "f7f4ee1a1bf5ada65c65d098e4d7a2d920496754bebcaeeb66ffd856f42307ff",
+      "audioSha256": "49458008101be7540996ea98028a6b790174cf3c70178cb5e92f44331888010b",
+      "durationSeconds": 4.899
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "API単体でなく、画面から結果が出るまでを分けて測ります。ContentfulではcreateWithResponseの既定の2秒間隔が待ち時間を増やしていました。App Signed Requestsで直接呼ぶ方式に変えると、5回の中央値は3186から1101ミリ秒になりました。ただし、署名が正しくても利用者ごとの操作権限は別に判断します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "f37ab739d8b482c9c701a5f74d2526cdc1a4bb081a88dfd358eea528e03e5c45",
+      "audioSha256": "af610775fd3ac84b79bab983147d9680819d055438e2067f3bd76817b0faaa3f",
+      "durationSeconds": 26.205,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "JavaScriptの非同期処理は、すべてOSの機能で動くのでしょうか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "79670525685a827b0c13b782dea1c73f5436d1e34c8132e79116ac0d1d712762",
+      "audioSha256": "9dc8db998387a9b0d86f96160e2f16101b685ad7c084f48596e21735ac533ba1",
+      "durationSeconds": 5.235
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "Promiseの続きと、入出力を待つ仕組みを分けます。Linuxの観測ではNode.jsとDenoはepoll_pwait、Bunはepoll_pwait2で通信を待ちました。一方、Promise.resolveの続きはマイクロタスクで動き、ファイルは別スレッドで読みます。ただし、この結果を他のOSや版へそのまま広げず、必要な環境で確かめます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "5e0b2c9012236ec5845af0124a011b672fbc566c25e39e3a8be300174c8f856d",
+      "audioSha256": "9be48ab977c1027b33e1a7f2db3570e26dbac36abc7865cb9265c9f89a827ac5",
+      "durationSeconds": 24.749,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "データカタログへdbtを接続するとき、何を検証しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "3427e813d99a5255ce740d3ade84735a0099eee4dd8721249e2cb4f402ad8911",
+      "audioSha256": "78fa856f2ba22f793fe3c83d3bb4ec8e382cefa36327c04f744964ea90e27a6e",
+      "durationSeconds": 5.177
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "データ本体と、モデルの情報がどう対応するかを確かめます。Horizon Contextはmanifest.jsonなどを読み、モデルの説明やテスト結果を加えます。persist_docsがなくてもdbt側の説明は見えますが、Snowflake側のコメントは別です。ただしPreviewの検証なので、コネクタのUSAGEを含め、閲覧ロールごとの差も確認します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "6d0f5844e6a68cdf5720ec3ca3939d0480c685001f7620c423c6ad68492ab130",
+      "audioSha256": "870831423d9f82a666cc6aa617ee9ebd7a7a04a47c56b6fc9e259d1528b1f816",
+      "durationSeconds": 25.529,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "AI利用回数の上限は、保存先に障害が起きても守れますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "034c08a6bf4263b4edf5b35e5005e20cb01fcda712686af715199f65cd8477d8",
+      "audioSha256": "728519784208b3e42531d5fe99bab95a3cd0d92eef6ec376bd8825eaf065cb35",
+      "durationSeconds": 5.246
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "書き込みに失敗したときの扱いまで決めないと守れません。KVの例は1通4回の書き込みで枠が尽き、失敗を隠したため数が250で止まりました。修正ではD1の条件付き更新とRETURNINGで上限と障害を分け、障害時はAIを使いません。ただし、旧動作は偽物のKVでの再現で、実際の枠切れやD1の同時実行は未検証です。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "5006b3cb9281dfdc4e0b5fa6b3a66143422b421447fb44a9be029d85a1bbb760",
+      "audioSha256": "5f71259f57cf4ebe7d701bc92070cc4014e86f6d24429b331177173118002f48",
+      "durationSeconds": 27.633,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "再現率96.6％なら、文書はすべて安全に渡せますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "2ba640d43d363b1314662a8594102fe62be5319d01bfa52700f8ff48a3fa7c0a",
+      "audioSha256": "881638f1a481ab4694741c286aa25fcaf5183680f8263ebbdbde17ff59610a57",
+      "durationSeconds": 5.932
+    },
+    {
+      "index": 2,
+      "text": "正しい署名やコネクタのUSAGEで、何まで許可されますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "6c91a317fbb693a9b9c53a7eae9c1c28f9acf742cce2ff477defbcfaa1a505e2",
+      "audioSha256": "dcf408fc69952948a0f8bded7afc5ea752a3239e2158c7beaa16caf4db21e2ec",
+      "durationSeconds": 4.98
+    },
+    {
+      "index": 3,
+      "text": "回数が上限に達した場合と、書けない場合はどう分けますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "3f6ae9ec799925d641b102fa6135da6028cd34df99465e021119cb71ebeebac7",
+      "audioSha256": "43f2697e2580b716791cda3132aa9fb3473fcf6ef8b5010c0e95e06286993491",
+      "durationSeconds": 4.771
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-18T04:34:54.090Z"
+}
