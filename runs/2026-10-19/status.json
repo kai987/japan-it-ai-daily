@@ -8,7 +8,7 @@
     "to": "2026-10-19T10:00:00+09:00"
   },
   "createdAt": "2026-10-19T01:04:45.357Z",
-  "updatedAt": "2026-10-19T01:23:57.360Z",
+  "updatedAt": "2026-10-19T01:25:04.734Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -197,5 +197,18 @@
   },
   "site": "/tmp/japan-daily-20261019/text-release-39184917927/site",
   "pagesConclusion": "success",
-  "nextAction": "Text verified; persist independent audio pending and attempt one corresponding N1 handoff."
+  "nextAction": "Complete exact preflight and request-only publisher for the narrow Japanese wording correction before synthesis.",
+  "correctionPending": true,
+  "correction": {
+    "reason": "Replace an unnatural Japanese fallback phrase with source-grounded 障害時のプロンプト; no facts, Q&A or cards changed.",
+    "previousTextCommit": "79847eef95c4f2492e3dc6bb9ce6b04e33a24796",
+    "newDraftCommit": "5c541a88639005c75423871510ed89955cf76a89",
+    "baseCommit": "79847eef95c4f2492e3dc6bb9ce6b04e33a24796",
+    "paths": [
+      "src/content/daily-ja/2026-10-19.md"
+    ],
+    "sourceWindowUnchanged": true,
+    "at": "2026-10-19T01:24:15.649Z"
+  },
+  "resumeFrom": "drafts_ready"
 }
