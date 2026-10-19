@@ -8,7 +8,7 @@
     "to": "2026-10-19T10:00:00+09:00"
   },
   "createdAt": "2026-10-19T01:04:45.357Z",
-  "updatedAt": "2026-10-19T19:19:39.925Z",
+  "updatedAt": "2026-10-19T19:43:43.638Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -234,12 +234,12 @@
     "statusBlobSha": "39e38270170b910665c8d5ccd8a5b87573e692ae",
     "sourceBlobSha": "c6d97967a0e33eeecb175a9c6cc20a14e542c74b",
     "sourceSha256": "038e65792ae6be83e4cf3836992dac5cdced4d17d0fac1c2259f6ef0225058ff",
-    "upstreamSourceCommit": "9f24afc638447a8b18b5a5e89845404fd8f28cda",
-    "snapshotSha256": "df032432db5dfcb1623c24a6b78b71f7d80268da325770af22c310df19b1e2d2",
-    "requestCommit": "d72ee89c77056e62f4bc3d8dedaef0188e065301",
-    "releaseCommit": "32124fff7eca22dd5f4186deeb32401a077ced94",
-    "syncRunId": 39187702696,
-    "pagesRunId": 39189183791,
+    "upstreamSourceCommit": "4697399da64ab1f28db78794d232671db7fad510",
+    "snapshotSha256": "160a6ef58077a004b8fe257a1d8279fad14bcc5269db49677859e7b66abb7e5b",
+    "requestCommit": "92895af9255e54bb0625709d589a7615291e0a0f",
+    "releaseCommit": "9bbab2f6409e78cb076b7d6ab57566eab1da3afa",
+    "syncRunId": 39312468463,
+    "pagesRunId": 39312733499,
     "rawC4": {
       "newVocabulary": 7,
       "newGrammar": 0
@@ -250,30 +250,82 @@
       "newGrammar": 0,
       "reviewGrammar": 8
     },
-    "verifiedAt": "2026-10-19T02:19:45.527Z"
+    "verifiedAt": "2026-10-19T19:43:43.638Z",
+    "sourceCommit": "4697399da64ab1f28db78794d232671db7fad510",
+    "n1Commit": "9bbab2f6409e78cb076b7d6ab57566eab1da3afa",
+    "reason": null,
+    "lastError": null,
+    "editorialCorrection": {
+      "targetDate": "2026-10-19",
+      "day": 51,
+      "stage": "published",
+      "reason": "Corrected Day51 mirrored review evidence from the verified upstream source; preserve source, all learning identities and questions. One corresponding recording added, with every historical hosted clip preserved.",
+      "requestCommit": "92895af9255e54bb0625709d589a7615291e0a0f",
+      "requestBlobSha": "29dda0b9c7f01473e8efc758ef477427bdc32fbe",
+      "releaseCommit": "9bbab2f6409e78cb076b7d6ab57566eab1da3afa",
+      "syncRunId": 39312468463,
+      "pagesRunId": 39312733499,
+      "upstreamSourceCommit": "4697399da64ab1f28db78794d232671db7fad510",
+      "sourcePagesRunId": 39309168605,
+      "snapshotSha256": "160a6ef58077a004b8fe257a1d8279fad14bcc5269db49677859e7b66abb7e5b",
+      "originalUnchanged": true,
+      "readingReviewAndCardIdsUnchanged": true,
+      "display": {
+        "newVocabulary": 7,
+        "reviewVocabulary": 13,
+        "newGrammar": 0,
+        "reviewGrammar": 8
+      },
+      "correctedExcerpt": "プロンプト本文に加えて、TemperatureやThinking Budgetなどのモデル設定も同じ版としてまとめて配布し、本文と設定のバージョンの食い違いを防いでいます。",
+      "newlyGeneratedClips": 1,
+      "priorHostedPreserved": 5406,
+      "verifiedHostedClips": 5407,
+      "finalSharedAudioVerificationRunId": 39313201323,
+      "playbackTests": 3,
+      "scheduleChanged": false,
+      "completedAt": "2026-10-19T19:43:43.638Z"
+    },
+    "updatedAt": "2026-10-19T19:43:43.638Z"
   },
   "n1AudioCompletion": {
     "stage": "playback_verified",
     "targetDate": "2026-10-19",
     "sourceAudioCommit": "9f24afc638447a8b18b5a5e89845404fd8f28cda",
-    "n1Commit": "32124fff7eca22dd5f4186deeb32401a077ced94",
-    "pagesRunId": 39189183791,
+    "n1Commit": "9bbab2f6409e78cb076b7d6ab57566eab1da3afa",
+    "pagesRunId": 39312733499,
     "sharedAudioRunId": 39188084986,
     "addedSharedClips": 17,
     "newlyGeneratedClips": 80,
     "priorHostedPreserved": 5326,
     "pendingClips": 0,
     "fullPublicVerification": {
-      "verifiedClips": 5406,
-      "verifiedBytes": 182294694,
-      "hash": "SHA-256",
-      "published": true
+      "verified": 5407,
+      "bytes": 182384787,
+      "reused": 1288,
+      "uploaded": 4119,
+      "published": true,
+      "verifiedAt": "2026-10-19T19:32:58.133Z",
+      "metadataUnchangedFromAudioCommit": "beac534e068700133c9fb36ce63221ec4fbf8295"
     },
     "actualPlaybackProviders": [
-      "daily",
-      "supabase"
+      "supabase",
+      "daily"
     ],
-    "completedAt": "2026-10-19T02:19:01.403Z"
+    "completedAt": "2026-10-19T19:43:43.638Z",
+    "latestSharedAudioVerification": {
+      "runId": 39313201323,
+      "headSha": "9bbab2f6409e78cb076b7d6ab57566eab1da3afa",
+      "sourceAudioCommit": "9f24afc638447a8b18b5a5e89845404fd8f28cda",
+      "pendingClips": 0
+    },
+    "incrementalEditorialAudio": {
+      "audioCommit": "beac534e068700133c9fb36ce63221ec4fbf8295",
+      "id": "ace462d7b58c8083",
+      "newlyGeneratedClips": 1,
+      "priorHostedPreserved": 5406,
+      "publicByteHashes": 5407,
+      "playbackTests": 3
+    }
   },
   "editorialRules": {
     "path": "docs/DAILY_CONTENT_QUALITY_RULES.md",
