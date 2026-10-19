@@ -8,7 +8,7 @@
     "to": "2026-10-19T10:00:00+09:00"
   },
   "createdAt": "2026-10-19T01:04:45.357Z",
-  "updatedAt": "2026-10-19T02:06:39.204Z",
+  "updatedAt": "2026-10-19T02:19:47.875Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -192,7 +192,7 @@
   },
   "site": "/tmp/japan-daily-20261019/text-release-39186734127/site",
   "pagesConclusion": "success",
-  "nextAction": "Text, audio/R2/Pages/bilingual playback and N1 N1 target date source-bound publication are verified. Preserve unchanged inputs; no duplicate publication or handoff.",
+  "nextAction": "All four stages verified: daily text, daily audio, N1 text and N1 shared/unique audio. Preserve unchanged inputs; do not repeat publication, synthesis or text handoff.",
   "correctionPending": false,
   "correction": {
     "reason": "Replace an unnatural Japanese fallback phrase with source-grounded 障害時のプロンプト; no facts, Q&A or cards changed.",
@@ -225,15 +225,15 @@
     "day": 51,
     "stage": "published",
     "requestSubmitted": true,
-    "statusBlobSha": "32ac238233c19be6ef77d9eb2a3724e6f2919bb2",
+    "statusBlobSha": "39e38270170b910665c8d5ccd8a5b87573e692ae",
     "sourceBlobSha": "c6d97967a0e33eeecb175a9c6cc20a14e542c74b",
     "sourceSha256": "038e65792ae6be83e4cf3836992dac5cdced4d17d0fac1c2259f6ef0225058ff",
     "upstreamSourceCommit": "9f24afc638447a8b18b5a5e89845404fd8f28cda",
     "snapshotSha256": "df032432db5dfcb1623c24a6b78b71f7d80268da325770af22c310df19b1e2d2",
     "requestCommit": "d72ee89c77056e62f4bc3d8dedaef0188e065301",
-    "releaseCommit": "72163e5255e43eddb6333e1b8a875c3311a1edb4",
+    "releaseCommit": "32124fff7eca22dd5f4186deeb32401a077ced94",
     "syncRunId": 39187702696,
-    "pagesRunId": 39188150816,
+    "pagesRunId": 39189183791,
     "rawC4": {
       "newVocabulary": 7,
       "newGrammar": 0
@@ -244,6 +244,29 @@
       "newGrammar": 0,
       "reviewGrammar": 8
     },
-    "verifiedAt": "2026-10-19T02:06:35.635Z"
+    "verifiedAt": "2026-10-19T02:19:45.527Z"
+  },
+  "n1AudioCompletion": {
+    "stage": "playback_verified",
+    "targetDate": "2026-10-19",
+    "sourceAudioCommit": "9f24afc638447a8b18b5a5e89845404fd8f28cda",
+    "n1Commit": "32124fff7eca22dd5f4186deeb32401a077ced94",
+    "pagesRunId": 39189183791,
+    "sharedAudioRunId": 39188084986,
+    "addedSharedClips": 17,
+    "newlyGeneratedClips": 80,
+    "priorHostedPreserved": 5326,
+    "pendingClips": 0,
+    "fullPublicVerification": {
+      "verifiedClips": 5406,
+      "verifiedBytes": 182294694,
+      "hash": "SHA-256",
+      "published": true
+    },
+    "actualPlaybackProviders": [
+      "daily",
+      "supabase"
+    ],
+    "completedAt": "2026-10-19T02:19:01.403Z"
   }
 }
