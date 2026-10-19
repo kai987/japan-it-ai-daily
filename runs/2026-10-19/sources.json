@@ -242,7 +242,7 @@
         ]
       }
     ],
-    "scope": "20 homepage reads attempted; linked originals read independently. No claim that every article was scanned. CodeZine homepage and three Mercari originals returned403 and were excluded. Zenn latest100 is a bounded recent list and not full-window coverage; selected originals have independently checked timestamps. Articles published after the window, including the Playwright CLI article at 09:00:15 UTC (18:00 JST), were excluded."
+    "scope": "All 20 source homepages attempted; 19 HTTP200, CodeZine403. Three Mercari originals403 excluded. Linked candidate originals read separately. Zenn latest100 is bounded recent discovery, not complete-window coverage. The five selected original timestamps independently fall within the frozen window; older candidates and previous Top5 excluded."
   },
   "previousTop5Excluded": [
     "https://zenn.dev/fusic/articles/a77ba348115364",
