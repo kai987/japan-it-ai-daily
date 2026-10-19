@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-19",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "79847eef95c4f2492e3dc6bb9ce6b04e33a24796",
   "sourceWindow": {
     "from": "2026-10-18T10:00:00+09:00",
     "to": "2026-10-19T10:00:00+09:00"
   },
   "createdAt": "2026-10-19T01:04:45.357Z",
-  "updatedAt": "2026-10-19T01:29:34.059Z",
+  "updatedAt": "2026-10-19T01:29:43.772Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -49,14 +49,14 @@
   "platformRepairPaths": [],
   "request": {
     "schemaVersion": 1,
-    "requestId": "codex-2026-10-19-bbed9171-fa05-4c3c-9fc5-f0162365190c",
+    "requestId": "codex-2026-10-19-2eaa346a-7630-4489-bcd6-dba7e52f8f7d",
     "targetDate": "2026-10-19",
-    "baseCommit": "f06febc371feb92a303e6b6dc8436b267761e9d2",
-    "draftCommit": "acc40fc5e4a025e15a5b63b567418360138f2c70",
+    "baseCommit": "79847eef95c4f2492e3dc6bb9ce6b04e33a24796",
+    "draftCommit": "5c541a88639005c75423871510ed89955cf76a89",
     "draftBranch": "draft/daily-2026-10-19",
-    "preflightRunId": 39184503543,
+    "preflightRunId": 39185352107,
     "preflightWorkflowPath": ".github/workflows/deploy.yml",
-    "requestedAt": "2026-10-19T01:17:53.756Z",
+    "requestedAt": "2026-10-19T01:29:29.753Z",
     "files": [
       "src/content/daily/2026-10-19.md",
       "src/content/japanese/2026-10-19.md",
@@ -68,9 +68,9 @@
     "platformRepair": false,
     "platformRepairPaths": []
   },
-  "requestCommit": "6de57b9a03c2bead4a746bab265c1307f787e489",
-  "requestBlob": "9fe22adfce9e891cc9d8e7dd3b83c8ee3d4f27c0",
-  "submittedAt": "2026-10-19T01:18:06Z",
+  "requestCommit": "e7112ee6235196fe1ed5a57f346b52f58d6753b4",
+  "requestBlob": "976e0babc08bd3a92350846c00109c9da9fe1f8f",
+  "submittedAt": "2026-10-19T01:29:43.382Z",
   "recoveredAt": "2026-10-19T01:18:27.294Z",
   "recovery": "Previous PUT succeeded; first immediate readback mismatch. Fresh exact byte and blob readback verified, no repeated PUT.",
   "publisherRunId": 39184734518,
