@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-19",
   "stage": "published",
-  "sourceCommit": "309c23383007bdd2ea4b55d288b9b7076847e2e5",
+  "sourceCommit": "4697399da64ab1f28db78794d232671db7fad510",
   "sourceWindow": {
     "from": "2026-10-18T10:00:00+09:00",
     "to": "2026-10-19T10:00:00+09:00"
   },
   "createdAt": "2026-10-19T01:04:45.357Z",
-  "updatedAt": "2026-10-19T02:19:47.875Z",
+  "updatedAt": "2026-10-19T19:19:39.925Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -19,8 +19,8 @@
     "publication-request.json"
   ],
   "lastError": null,
-  "baseCommit": "c6ba8fca5638e350f4ee1c2b11e6831d6a3ab466",
-  "draftCommit": "364f43ee6471956e4f4e419f47b222a995ad19c7",
+  "baseCommit": "a69719db03f3a61492203de04914623aec0cc6af",
+  "draftCommit": "37ec923a887e0a27aa971d0465a829410e498757",
   "draftBranch": "draft/daily-2026-10-19",
   "paths": [
     "src/content/daily/2026-10-19.md",
@@ -31,13 +31,14 @@
     "src/data/interviews/2026-10-19.json"
   ],
   "changedPaths": [
-    "src/content/daily-ja/2026-10-19.md"
+    "src/content/daily-ja/2026-10-19.md",
+    "src/content/daily/2026-10-19.md"
   ],
-  "verifiedAt": "2026-10-19T01:47:48.884Z",
-  "preflightRunId": 39186326991,
-  "requestId": "codex-2026-10-19-c5c32c05-d69e-49eb-beca-fbf110e7aabe",
+  "verifiedAt": "2026-10-19T19:18:39.851Z",
+  "preflightRunId": 39308362549,
+  "requestId": "codex-2026-10-19-41a89ff8-6334-4b7c-95e6-e34f4c911ce7",
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
-  "requestedAt": "2026-10-19T01:41:47.755Z",
+  "requestedAt": "2026-10-19T19:10:42.404Z",
   "files": [
     "src/content/daily/2026-10-19.md",
     "src/content/japanese/2026-10-19.md",
@@ -50,14 +51,14 @@
   "platformRepairPaths": [],
   "request": {
     "schemaVersion": 1,
-    "requestId": "codex-2026-10-19-c5c32c05-d69e-49eb-beca-fbf110e7aabe",
+    "requestId": "codex-2026-10-19-41a89ff8-6334-4b7c-95e6-e34f4c911ce7",
     "targetDate": "2026-10-19",
-    "baseCommit": "c6ba8fca5638e350f4ee1c2b11e6831d6a3ab466",
-    "draftCommit": "364f43ee6471956e4f4e419f47b222a995ad19c7",
+    "baseCommit": "a69719db03f3a61492203de04914623aec0cc6af",
+    "draftCommit": "37ec923a887e0a27aa971d0465a829410e498757",
     "draftBranch": "draft/daily-2026-10-19",
-    "preflightRunId": 39186326991,
+    "preflightRunId": 39308362549,
     "preflightWorkflowPath": ".github/workflows/deploy.yml",
-    "requestedAt": "2026-10-19T01:41:47.755Z",
+    "requestedAt": "2026-10-19T19:10:42.404Z",
     "files": [
       "src/content/daily/2026-10-19.md",
       "src/content/japanese/2026-10-19.md",
@@ -69,29 +70,29 @@
     "platformRepair": false,
     "platformRepairPaths": []
   },
-  "requestCommit": "8992a88b23b02250e1be997d0c72299d802601b5",
-  "requestBlob": "1d07262c9febdba47fcd70ce3baf4306c93eddff",
-  "submittedAt": "2026-10-19T01:42:00.930Z",
+  "requestCommit": "d0ee13c77f40a24a122be295e8edf5902d5ab3f3",
+  "requestBlob": "b8abc668a5f939b0dfea0d6ed9122e68e34f1438",
+  "submittedAt": "2026-10-19T19:10:57.066Z",
   "recoveredAt": "2026-10-19T01:18:27.294Z",
   "recovery": "Previous PUT succeeded; first immediate readback mismatch. Fresh exact byte and blob readback verified, no repeated PUT.",
-  "publisherRunId": 39186540933,
-  "releaseCommit": "309c23383007bdd2ea4b55d288b9b7076847e2e5",
+  "publisherRunId": 39308810660,
+  "releaseCommit": "4697399da64ab1f28db78794d232671db7fad510",
   "sixDraftBytesEqual": true,
-  "pagesRunId": 39186734127,
+  "pagesRunId": 39309168605,
   "pagesStatus": "completed",
   "label": "text",
-  "runId": 39186734127,
-  "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39186734127",
+  "runId": 39309168605,
+  "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39309168605",
   "artifacts": [
     {
-      "id": 12158661386,
-      "name": "it-study-snapshot",
-      "digest": "sha256:8aa933294b9c556935094008fe3c17f5a6f6509564ccec153387142a77885664"
+      "id": 12215566236,
+      "name": "github-pages",
+      "digest": "sha256:9d9381b299af679015611c55ac311af3d76983e623c4ec88bae6113f3209107d"
     },
     {
-      "id": 12157954473,
-      "name": "github-pages",
-      "digest": "sha256:f82969490b262e066468291c68c1da15d505dae05220fb8b180e551f26152719"
+      "id": 12213789719,
+      "name": "it-study-snapshot",
+      "digest": "sha256:dfd889b5fa463903933d1b5945f9bdf93d22975a399dbbcc05c0ac907822787c"
     }
   ],
   "totalDays": 69,
@@ -168,31 +169,31 @@
     "2026-10-19"
   ],
   "fullSnapshotCompared": true,
-  "snapshotHash": "b00fd30ee17319e38aae2e73ff245aa1a6ec01609535963442cdeeed6ea50a03",
+  "snapshotHash": "160a6ef58077a004b8fe257a1d8279fad14bcc5269db49677859e7b66abb7e5b",
   "expected": {
     "version": 1,
-    "commit": "309c23383007bdd2ea4b55d288b9b7076847e2e5",
+    "commit": "4697399da64ab1f28db78794d232671db7fad510",
     "date": "2026-10-19",
-    "snapshotHash": "b00fd30ee17319e38aae2e73ff245aa1a6ec01609535963442cdeeed6ea50a03",
+    "snapshotHash": "160a6ef58077a004b8fe257a1d8279fad14bcc5269db49677859e7b66abb7e5b",
     "pages": [
       {
         "path": "daily/2026-10-19/",
-        "sha256": "f2bf8de97237e2e023ba6139f9837d8b4d166e2ce08fcb7bac6e9022ea438b99"
+        "sha256": "1f2c94273d6fbf10048843c4fe4a8d76e179673c4342e01df3f5e2f8f46ce74a"
       },
       {
         "path": "ja/daily/2026-10-19/",
-        "sha256": "e4484b59d49391d51ae6946cb276bc6ff46a050e40a1f0ee3228ac2862e71005"
+        "sha256": "a36291364af65731f2956a0ae362e18eb95d721589173aedb541df4f6d412d89"
       }
     ]
   },
   "live": {
-    "commit": "309c23383007bdd2ea4b55d288b9b7076847e2e5",
+    "commit": "4697399da64ab1f28db78794d232671db7fad510",
     "date": "2026-10-19",
     "attempt": 1
   },
-  "site": "/tmp/japan-daily-20261019/text-release-39186734127/site",
+  "site": "/tmp/japan-daily-20261020-editorial/text-release-39309168605/site",
   "pagesConclusion": "success",
-  "nextAction": "All four stages verified: daily text, daily audio, N1 text and N1 shared/unique audio. Preserve unchanged inputs; do not repeat publication, synthesis or text handoff.",
+  "nextAction": "Editorial correction and future authoring rules verified. Existing audio inputs and immutable URLs unchanged and revalidated; preserve completed N1 handoffs.",
   "correctionPending": false,
   "correction": {
     "reason": "Replace an unnatural Japanese fallback phrase with source-grounded 障害時のプロンプト; no facts, Q&A or cards changed.",
@@ -207,7 +208,7 @@
   },
   "resumeFrom": null,
   "editorialCorrection": true,
-  "latestVerifiedMainCommit": "9f24afc638447a8b18b5a5e89845404fd8f28cda",
+  "latestVerifiedMainCommit": "4697399da64ab1f28db78794d232671db7fad510",
   "audioCompletion": {
     "stage": "playback_verified",
     "commit": "9f24afc638447a8b18b5a5e89845404fd8f28cda",
@@ -218,7 +219,12 @@
     "newRecordings": 27,
     "referencedRecordings": 61,
     "playbackTests": 12,
-    "completedAt": "2026-10-19T01:56:10.467Z"
+    "completedAt": "2026-10-19T01:56:10.467Z",
+    "currentTextCommit": "4697399da64ab1f28db78794d232671db7fad510",
+    "currentTextPagesRunId": 39309168605,
+    "unchangedRecordingsReverified": 61,
+    "currentBilingualPlaybackTests": 12,
+    "revalidatedAt": "2026-10-19T19:19:39.925Z"
   },
   "n1Handoff": {
     "targetDate": "2026-10-19",
@@ -268,5 +274,35 @@
       "supabase"
     ],
     "completedAt": "2026-10-19T02:19:01.403Z"
-  }
+  },
+  "editorialRules": {
+    "path": "docs/DAILY_CONTENT_QUALITY_RULES.md",
+    "commit": "a69719db03f3a61492203de04914623aec0cc6af",
+    "published": true
+  },
+  "editorialCorrections": [
+    {
+      "kind": "readable_placeholders",
+      "requestedOnJST": "2026-10-20",
+      "requestId": "codex-2026-10-19-41a89ff8-6334-4b7c-95e6-e34f4c911ce7",
+      "requestCommit": "d0ee13c77f40a24a122be295e8edf5902d5ab3f3",
+      "draftCommit": "37ec923a887e0a27aa971d0465a829410e498757",
+      "baseCommit": "a69719db03f3a61492203de04914623aec0cc6af",
+      "releaseCommit": "4697399da64ab1f28db78794d232671db7fad510",
+      "preflightRunId": 39308362549,
+      "publisherRunId": 39308810660,
+      "pagesRunId": 39309168605,
+      "rulesCommit": "a69719db03f3a61492203de04914623aec0cc6af",
+      "changedPaths": [
+        "src/content/daily-ja/2026-10-19.md",
+        "src/content/daily/2026-10-19.md"
+      ],
+      "liveLocales": [
+        "zh",
+        "ja"
+      ],
+      "audioInputsUnchanged": true,
+      "completedAt": "2026-10-19T19:19:39.925Z"
+    }
+  ]
 }
