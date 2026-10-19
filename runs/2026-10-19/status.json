@@ -1,21 +1,22 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-19",
-  "stage": "publisher_queued",
-  "sourceCommit": "79847eef95c4f2492e3dc6bb9ce6b04e33a24796",
+  "stage": "published",
+  "sourceCommit": "c6ba8fca5638e350f4ee1c2b11e6831d6a3ab466",
   "sourceWindow": {
     "from": "2026-10-18T10:00:00+09:00",
     "to": "2026-10-19T10:00:00+09:00"
   },
   "createdAt": "2026-10-19T01:04:45.357Z",
-  "updatedAt": "2026-10-19T01:29:43.772Z",
+  "updatedAt": "2026-10-19T01:35:37.046Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
     "interviews.json",
     "draft.json",
     "checks.json",
-    "preflight.json"
+    "preflight.json",
+    "publication-request.json"
   ],
   "lastError": null,
   "baseCommit": "79847eef95c4f2492e3dc6bb9ce6b04e33a24796",
@@ -32,7 +33,7 @@
   "changedPaths": [
     "src/content/daily-ja/2026-10-19.md"
   ],
-  "verifiedAt": "2026-10-19T01:29:20.973Z",
+  "verifiedAt": "2026-10-19T01:35:34.337Z",
   "preflightRunId": 39185352107,
   "requestId": "codex-2026-10-19-2eaa346a-7630-4489-bcd6-dba7e52f8f7d",
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
@@ -73,24 +74,24 @@
   "submittedAt": "2026-10-19T01:29:43.382Z",
   "recoveredAt": "2026-10-19T01:18:27.294Z",
   "recovery": "Previous PUT succeeded; first immediate readback mismatch. Fresh exact byte and blob readback verified, no repeated PUT.",
-  "publisherRunId": 39184734518,
-  "releaseCommit": "79847eef95c4f2492e3dc6bb9ce6b04e33a24796",
+  "publisherRunId": 39185604298,
+  "releaseCommit": "c6ba8fca5638e350f4ee1c2b11e6831d6a3ab466",
   "sixDraftBytesEqual": true,
-  "pagesRunId": 39184917927,
+  "pagesRunId": 39185794457,
   "pagesStatus": "completed",
   "label": "text",
-  "runId": 39184917927,
-  "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39184917927",
+  "runId": 39185794457,
+  "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39185794457",
   "artifacts": [
     {
-      "id": 12156679727,
-      "name": "github-pages",
-      "digest": "sha256:30a3f085b9b8927d3c797fdf44eb2cfb401d590d7ecb625ce94498992e4cbbb1"
+      "id": 12157813546,
+      "name": "it-study-snapshot",
+      "digest": "sha256:294146993422db88a0b17d5ce8308fe851c6fe29490ecaaacedf9e80817f921c"
     },
     {
-      "id": 12156634909,
-      "name": "it-study-snapshot",
-      "digest": "sha256:85c74518cd9f996fba67360fe81179a043e96b8186d02f1df01d91f193953d36"
+      "id": 12157719211,
+      "name": "github-pages",
+      "digest": "sha256:918a6e78fc0792e83aaf2a9d94a08f0d136e13f6acbdd5f212ae6fc90158bbb1"
     }
   ],
   "totalDays": 69,
@@ -167,12 +168,12 @@
     "2026-10-19"
   ],
   "fullSnapshotCompared": true,
-  "snapshotHash": "753e32effb9f41a258107bb307e1d7ce5c2dd0f7253e1fb0db1e3dc9dd17a965",
+  "snapshotHash": "a1a96ba9df22599b385d16f00409a29da445ee87e380f294dc7bd2758ac794ab",
   "expected": {
     "version": 1,
-    "commit": "79847eef95c4f2492e3dc6bb9ce6b04e33a24796",
+    "commit": "c6ba8fca5638e350f4ee1c2b11e6831d6a3ab466",
     "date": "2026-10-19",
-    "snapshotHash": "753e32effb9f41a258107bb307e1d7ce5c2dd0f7253e1fb0db1e3dc9dd17a965",
+    "snapshotHash": "a1a96ba9df22599b385d16f00409a29da445ee87e380f294dc7bd2758ac794ab",
     "pages": [
       {
         "path": "daily/2026-10-19/",
@@ -180,18 +181,18 @@
       },
       {
         "path": "ja/daily/2026-10-19/",
-        "sha256": "16611377c22d03ebea098fd18b5245a7878fbdfdada215b80375b17222630922"
+        "sha256": "fb16a593e9df900ee3b609ebac9d7c02dba63ebf78ad91af9ffa0eea4ed70c1e"
       }
     ]
   },
   "live": {
-    "commit": "79847eef95c4f2492e3dc6bb9ce6b04e33a24796",
+    "commit": "c6ba8fca5638e350f4ee1c2b11e6831d6a3ab466",
     "date": "2026-10-19",
     "attempt": 1
   },
-  "site": "/tmp/japan-daily-20261019/text-release-39184917927/site",
+  "site": "/tmp/japan-daily-20261019/text-release-39185794457/site",
   "pagesConclusion": "success",
-  "nextAction": "Complete exact preflight and request-only publisher for the narrow Japanese wording correction before synthesis.",
+  "nextAction": "Text verified; persist independent audio pending and attempt one corresponding N1 handoff.",
   "correctionPending": true,
   "correction": {
     "reason": "Replace an unnatural Japanese fallback phrase with source-grounded 障害時のプロンプト; no facts, Q&A or cards changed.",
