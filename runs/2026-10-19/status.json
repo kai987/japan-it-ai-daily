@@ -1,26 +1,25 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-19",
-  "stage": "published",
+  "stage": "preflight_passed",
   "sourceCommit": "c6ba8fca5638e350f4ee1c2b11e6831d6a3ab466",
   "sourceWindow": {
     "from": "2026-10-18T10:00:00+09:00",
     "to": "2026-10-19T10:00:00+09:00"
   },
   "createdAt": "2026-10-19T01:04:45.357Z",
-  "updatedAt": "2026-10-19T01:35:37.046Z",
+  "updatedAt": "2026-10-19T01:41:43.323Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
     "interviews.json",
     "draft.json",
     "checks.json",
-    "preflight.json",
-    "publication-request.json"
+    "preflight.json"
   ],
   "lastError": null,
-  "baseCommit": "79847eef95c4f2492e3dc6bb9ce6b04e33a24796",
-  "draftCommit": "5c541a88639005c75423871510ed89955cf76a89",
+  "baseCommit": "c6ba8fca5638e350f4ee1c2b11e6831d6a3ab466",
+  "draftCommit": "364f43ee6471956e4f4e419f47b222a995ad19c7",
   "draftBranch": "draft/daily-2026-10-19",
   "paths": [
     "src/content/daily/2026-10-19.md",
@@ -33,8 +32,8 @@
   "changedPaths": [
     "src/content/daily-ja/2026-10-19.md"
   ],
-  "verifiedAt": "2026-10-19T01:35:34.337Z",
-  "preflightRunId": 39185352107,
+  "verifiedAt": "2026-10-19T01:41:39.027Z",
+  "preflightRunId": 39186326991,
   "requestId": "codex-2026-10-19-2eaa346a-7630-4489-bcd6-dba7e52f8f7d",
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
   "requestedAt": "2026-10-19T01:29:29.753Z",
