@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-19",
+  "generatedAt": "2026-10-19T01:50:53.113Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "プロンプト管理サービスが停止しても、応答の品質を保つにはどう設計しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "e2c48cea3b08e0bc55e1fbd6153cc6fe024bb504be54bdb0e250702fac591df5",
+      "audioSha256": "1db5c7e0c68e1a886165576efce25696b48c3dcfc812dded12f5a33d23356e71",
+      "durationSeconds": 6.015
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "起動済みのキャッシュだけでは、増設したインスタンスを守れません。Langfuseの事例では、更新をGCSへミラーし、障害時だけ読みます。productionなど環境別の版に加え、本文と生成パラメータも一緒に配布します。ただし、同期の遅れや失敗は残るため、最新の版が届いたかを別に確認します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "f5f185dcc964a658999cba7e3c600359809d4c65a239f39a5cf0de70c982ef14",
+      "audioSha256": "37311cdb615e09cb05535b1a6144ecf9dcc61f6b6ac106be3a4dee9400939288",
+      "durationSeconds": 22.578,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "Networkタブの304を見たら、画面側でもエラー処理が必要ですか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "ab2c6569718c70bc5893fa5baee2ab0429374e9d2d1cbe43a4f89eda7f5ab8df",
+      "audioSha256": "4a716d24efcff1978a36ab430fc05ca413e5e009de46ef3222005e4cbcd6d0d2",
+      "durationSeconds": 5.481
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "通信の304だけでは判断しません。ブラウザ自身がIf-None-Matchで再検証すると、保存した応答を使い、fetchには200と本文が届きます。一方、手動でヘッダーを付けた例は304と空の本文でした。ただし、HonoのX-Handler-Runsも増えるため、この構成では転送量の削減とサーバー処理の削減を分けて考えます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "73c0ac2f165c4196144d63b9a91d324c842985c1c76f832b818bdfb7f4f46af6",
+      "audioSha256": "47b62a0633faa31e69fd03d545db981268e3fb7dfa0fd349cafc83cbf279a32f",
+      "durationSeconds": 24.8,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "サービスを停止するとき、処理中のHTTPリクエストは必ず完了できますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "97f8aee2334132506fdd395d5795b72580ff7c9b8e270983d2e65a58dfe6a4be",
+      "audioSha256": "572b83677637bd1be0cef68d83a4ff0e0102e865953e2a4672f6fa5ff2199f29",
+      "durationSeconds": 6.629
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "登録解除の猶予は、完了の保証ではありません。ALBの実験では、drainingの遅延120秒より処理が長いと502になりました。比較時はアイドルタイムアウトも300秒へ延ばしています。また、各グループ一台だけなので新規要求は503でした。実際の設計では、処理の残り時間と別の送り先を分けて確認します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "a32d4d55960cbe4c7bfff12e7667667277a449848545a409f77440fceaa5b580",
+      "audioSha256": "e7a3156df74c3861532c121b5cd9199a6d66ad5e15defd586bed3af2172bfdf9",
+      "durationSeconds": 25.552,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "計画と実行でモデルを分ければ、品質を保ったまま安くできますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "f21d503d8e2e1a4e02c24145811f0a13307b1b8f08cbf05c685403886f81abdd",
+      "audioSha256": "0f23738b9c0543c3e2b3b64afe49c2a8aae15218327c22fcf07be0dd099f3b88",
+      "durationSeconds": 5.444
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "作業の種類で変わります。opusplanはSonnetがEnterPlanModeを呼ぶとOpusへ切り替わります。実験では長い一括作業の費用は約0.55倍でしたが、小さな文書は1.6から1.8倍でした。多くが一条件一から三回で、計画承認も自動です。自分の課題でも、合否と費用、待ち時間を分けて確かめます。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "7f4f83645a9ce384301ba577e2a24fb9d9bae1bbcad15b689c64bb4323b79462",
+      "audioSha256": "dc2573c0d752ef0fab93bee9b61138e02025ee508a9f285072f12a25180c3da8",
+      "durationSeconds": 25.109,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "ローカルLLMの応答が遅いとき、最初に何を確認しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "28e8260392938ba070e1cbac1148bfc68b645a0dfc79196cb71c24e66577a96e",
+      "audioSha256": "74b69a7f30a91d5a4e8663f2427c865ed0a83c07e60b72b11963d733fabf783d",
+      "durationSeconds": 5.21
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "ollama psで、計算の速さと読み込み待ちを分けます。PROCESSORはCPUとGPUに載る割合で、CONTEXTは実際に読み込んだ長さです。UNTILが切れると再読み込みが必要です。記事では大きいモデルを先に読むと補完用モデルも残りました。ただし、一台の検証です。自分の構成でも常駐状態を見てから調整します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "1655074593f6cbe6098295db66bbfeeba37695338af884f297acac8df30ff2c6",
+      "audioSha256": "c52335b290b27d97281835aae9c75532a679edfc442e60e40742a3dd8246938b",
+      "durationSeconds": 25.88,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "障害時に応答が返ることと、期待どおりに処理できることは同じですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "b7c2bf613a8a2c3306ee2143ebca35cb7a588a9a0e485664b252de7351a78a55",
+      "audioSha256": "86074983bfc4bd3f6a6c49e97d572c51e19a85d83f22574495bf46ff661d923f",
+      "durationSeconds": 5.677
+    },
+    {
+      "index": 2,
+      "text": "表示された一つの数値を、そのまま性能の結論にしないために何を確かめますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "dfb8905e0d48ea6d6769d0933ab4d9f6e5fb8f8fe6d4a9dde8b497a294c2088f",
+      "audioSha256": "ae19778f5d67035063666cb6e5452ada679354446b85f620793d423e43a96869",
+      "durationSeconds": 6.651
+    },
+    {
+      "index": 3,
+      "text": "モデルを組み合わせる方式を、自分の仕事で採用するならどう比べますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "5263bbf96815418980b18cf4c8cae53e785afc9d8beacd23c60438e4e752e7cb",
+      "audioSha256": "6f42aa0434edaad75a353a4b15e50f8b511d466c0d84d4234814b37ad86dd813",
+      "durationSeconds": 5.721
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-19T01:50:59.481Z"
+}
