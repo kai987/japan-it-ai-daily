@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-19",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "f06febc371feb92a303e6b6dc8436b267761e9d2",
   "sourceWindow": {
     "from": "2026-10-18T10:00:00+09:00",
     "to": "2026-10-19T10:00:00+09:00"
   },
   "createdAt": "2026-10-19T01:04:45.357Z",
-  "updatedAt": "2026-10-19T01:17:58.364Z",
+  "updatedAt": "2026-10-19T01:18:38.891Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -51,5 +51,31 @@
     "src/data/interviews/2026-10-19.json"
   ],
   "platformRepair": false,
-  "platformRepairPaths": []
+  "platformRepairPaths": [],
+  "request": {
+    "schemaVersion": 1,
+    "requestId": "codex-2026-10-19-bbed9171-fa05-4c3c-9fc5-f0162365190c",
+    "targetDate": "2026-10-19",
+    "baseCommit": "f06febc371feb92a303e6b6dc8436b267761e9d2",
+    "draftCommit": "acc40fc5e4a025e15a5b63b567418360138f2c70",
+    "draftBranch": "draft/daily-2026-10-19",
+    "preflightRunId": 39184503543,
+    "preflightWorkflowPath": ".github/workflows/deploy.yml",
+    "requestedAt": "2026-10-19T01:17:53.756Z",
+    "files": [
+      "src/content/daily/2026-10-19.md",
+      "src/content/japanese/2026-10-19.md",
+      "src/content/daily-ja/2026-10-19.md",
+      "src/content/japanese-ja/2026-10-19.md",
+      "src/content/evidence/2026-10-19.json",
+      "src/data/interviews/2026-10-19.json"
+    ],
+    "platformRepair": false,
+    "platformRepairPaths": []
+  },
+  "requestCommit": "6de57b9a03c2bead4a746bab265c1307f787e489",
+  "requestBlob": "9fe22adfce9e891cc9d8e7dd3b83c8ee3d4f27c0",
+  "submittedAt": "2026-10-19T01:18:06Z",
+  "recoveredAt": "2026-10-19T01:18:27.294Z",
+  "recovery": "Previous PUT succeeded; first immediate readback mismatch. Fresh exact byte and blob readback verified, no repeated PUT."
 }
