@@ -1,6 +1,6 @@
 {
-  "baseCommit": "79847eef95c4f2492e3dc6bb9ce6b04e33a24796",
-  "draftCommit": "5c541a88639005c75423871510ed89955cf76a89",
+  "baseCommit": "c6ba8fca5638e350f4ee1c2b11e6831d6a3ab466",
+  "draftCommit": "364f43ee6471956e4f4e419f47b222a995ad19c7",
   "draftBranch": "draft/daily-2026-10-19",
   "paths": [
     "src/content/daily/2026-10-19.md",
@@ -14,268 +14,268 @@
     "src/content/daily-ja/2026-10-19.md"
   ],
   "editorialCorrection": true,
-  "runId": 39185352107,
+  "runId": 39186326991,
   "run": {
     "conclusion": "success",
     "headBranch": "draft/daily-2026-10-19",
-    "headSha": "5c541a88639005c75423871510ed89955cf76a89",
+    "headSha": "364f43ee6471956e4f4e419f47b222a995ad19c7",
     "jobs": [
       {
-        "completedAt": "2026-10-19T01:28:48Z",
+        "completedAt": "2026-10-19T01:41:27Z",
         "conclusion": "success",
-        "databaseId": 117846517590,
+        "databaseId": 117849422653,
         "name": "build",
-        "startedAt": "2026-10-19T01:26:22Z",
+        "startedAt": "2026-10-19T01:39:11Z",
         "status": "completed",
         "steps": [
           {
-            "completedAt": "2026-10-19T01:26:25Z",
+            "completedAt": "2026-10-19T01:39:15Z",
             "conclusion": "success",
             "name": "Set up job",
             "number": 1,
-            "startedAt": "2026-10-19T01:26:23Z",
+            "startedAt": "2026-10-19T01:39:12Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:35Z",
+            "completedAt": "2026-10-19T01:39:22Z",
             "conclusion": "success",
             "name": "Checkout",
             "number": 2,
-            "startedAt": "2026-10-19T01:26:25Z",
+            "startedAt": "2026-10-19T01:39:15Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:37Z",
+            "completedAt": "2026-10-19T01:39:24Z",
             "conclusion": "success",
             "name": "Setup Node",
             "number": 3,
-            "startedAt": "2026-10-19T01:26:35Z",
+            "startedAt": "2026-10-19T01:39:22Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:37Z",
+            "completedAt": "2026-10-19T01:39:24Z",
             "conclusion": "skipped",
             "name": "Verify main daily publisher ownership",
             "number": 4,
-            "startedAt": "2026-10-19T01:26:37Z",
+            "startedAt": "2026-10-19T01:39:24Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:40Z",
+            "completedAt": "2026-10-19T01:39:29Z",
             "conclusion": "success",
             "name": "Install dependencies",
             "number": 5,
-            "startedAt": "2026-10-19T01:26:37Z",
+            "startedAt": "2026-10-19T01:39:24Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:41Z",
+            "completedAt": "2026-10-19T01:39:29Z",
             "conclusion": "success",
             "name": "Audit dependencies",
             "number": 6,
-            "startedAt": "2026-10-19T01:26:40Z",
+            "startedAt": "2026-10-19T01:39:29Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:41Z",
+            "completedAt": "2026-10-19T01:39:29Z",
             "conclusion": "success",
             "name": "Verify publication recovery",
             "number": 7,
-            "startedAt": "2026-10-19T01:26:41Z",
+            "startedAt": "2026-10-19T01:39:29Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:50Z",
+            "completedAt": "2026-10-19T01:39:37Z",
             "conclusion": "success",
             "name": "Type check",
             "number": 8,
-            "startedAt": "2026-10-19T01:26:41Z",
+            "startedAt": "2026-10-19T01:39:29Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:53Z",
+            "completedAt": "2026-10-19T01:39:41Z",
             "conclusion": "success",
             "name": "Verify content integrity",
             "number": 9,
-            "startedAt": "2026-10-19T01:26:50Z",
+            "startedAt": "2026-10-19T01:39:37Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:54Z",
+            "completedAt": "2026-10-19T01:39:41Z",
             "conclusion": "success",
             "name": "Verify original-source evidence",
             "number": 10,
-            "startedAt": "2026-10-19T01:26:53Z",
+            "startedAt": "2026-10-19T01:39:41Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:54Z",
+            "completedAt": "2026-10-19T01:39:42Z",
             "conclusion": "success",
             "name": "Verify bilingual interview Q&A",
             "number": 11,
-            "startedAt": "2026-10-19T01:26:54Z",
+            "startedAt": "2026-10-19T01:39:41Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:54Z",
+            "completedAt": "2026-10-19T01:39:42Z",
             "conclusion": "success",
             "name": "Verify daily content quality",
             "number": 12,
-            "startedAt": "2026-10-19T01:26:54Z",
+            "startedAt": "2026-10-19T01:39:42Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:55Z",
+            "completedAt": "2026-10-19T01:39:42Z",
             "conclusion": "success",
             "name": "Check audio scripts",
             "number": 13,
-            "startedAt": "2026-10-19T01:26:54Z",
+            "startedAt": "2026-10-19T01:39:42Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:26:55Z",
+            "completedAt": "2026-10-19T01:39:43Z",
             "conclusion": "success",
             "name": "Verify recorded audio URL versions",
             "number": 14,
-            "startedAt": "2026-10-19T01:26:55Z",
+            "startedAt": "2026-10-19T01:39:42Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:27:02Z",
+            "completedAt": "2026-10-19T01:39:49Z",
             "conclusion": "success",
             "name": "Run tests",
             "number": 15,
-            "startedAt": "2026-10-19T01:26:55Z",
+            "startedAt": "2026-10-19T01:39:43Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:27:11Z",
+            "completedAt": "2026-10-19T01:39:56Z",
             "conclusion": "success",
             "name": "Build",
             "number": 16,
-            "startedAt": "2026-10-19T01:27:02Z",
+            "startedAt": "2026-10-19T01:39:49Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:27:37Z",
+            "completedAt": "2026-10-19T01:40:22Z",
             "conclusion": "success",
             "name": "Install browser for regression checks",
             "number": 17,
-            "startedAt": "2026-10-19T01:27:11Z",
+            "startedAt": "2026-10-19T01:39:56Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:27:42Z",
+            "completedAt": "2026-10-19T01:40:27Z",
             "conclusion": "success",
             "name": "Verify report speech smoke",
             "number": 18,
-            "startedAt": "2026-10-19T01:27:37Z",
+            "startedAt": "2026-10-19T01:40:22Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:28:39Z",
+            "completedAt": "2026-10-19T01:41:18Z",
             "conclusion": "success",
             "name": "Verify browser interactions",
             "number": 19,
-            "startedAt": "2026-10-19T01:27:42Z",
+            "startedAt": "2026-10-19T01:40:27Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:28:41Z",
+            "completedAt": "2026-10-19T01:41:20Z",
             "conclusion": "success",
             "name": "Retain learning UI verification",
             "number": 20,
-            "startedAt": "2026-10-19T01:28:39Z",
+            "startedAt": "2026-10-19T01:41:18Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:28:42Z",
+            "completedAt": "2026-10-19T01:41:21Z",
             "conclusion": "success",
             "name": "Strip CDN-hosted MP3 from artifact",
             "number": 21,
-            "startedAt": "2026-10-19T01:28:41Z",
+            "startedAt": "2026-10-19T01:41:20Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:28:42Z",
+            "completedAt": "2026-10-19T01:41:21Z",
             "conclusion": "success",
             "name": "Verify CSP",
             "number": 22,
-            "startedAt": "2026-10-19T01:28:42Z",
+            "startedAt": "2026-10-19T01:41:21Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:28:42Z",
+            "completedAt": "2026-10-19T01:41:21Z",
             "conclusion": "success",
             "name": "Record expected publication from the verified artifact",
             "number": 23,
-            "startedAt": "2026-10-19T01:28:42Z",
+            "startedAt": "2026-10-19T01:41:21Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:28:44Z",
+            "completedAt": "2026-10-19T01:41:22Z",
             "conclusion": "success",
             "name": "Export verified learning snapshot",
             "number": 24,
-            "startedAt": "2026-10-19T01:28:42Z",
+            "startedAt": "2026-10-19T01:41:21Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:28:44Z",
+            "completedAt": "2026-10-19T01:41:23Z",
             "conclusion": "success",
             "name": "Setup Pages",
             "number": 25,
-            "startedAt": "2026-10-19T01:28:44Z",
+            "startedAt": "2026-10-19T01:41:22Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:28:46Z",
+            "completedAt": "2026-10-19T01:41:25Z",
             "conclusion": "success",
             "name": "Upload artifact",
             "number": 26,
-            "startedAt": "2026-10-19T01:28:44Z",
+            "startedAt": "2026-10-19T01:41:23Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:28:46Z",
+            "completedAt": "2026-10-19T01:41:25Z",
             "conclusion": "success",
             "name": "Post Setup Node",
             "number": 51,
-            "startedAt": "2026-10-19T01:28:46Z",
+            "startedAt": "2026-10-19T01:41:25Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:28:46Z",
+            "completedAt": "2026-10-19T01:41:25Z",
             "conclusion": "success",
             "name": "Post Checkout",
             "number": 52,
-            "startedAt": "2026-10-19T01:28:46Z",
+            "startedAt": "2026-10-19T01:41:25Z",
             "status": "completed"
           },
           {
-            "completedAt": "2026-10-19T01:28:46Z",
+            "completedAt": "2026-10-19T01:41:25Z",
             "conclusion": "success",
             "name": "Complete job",
             "number": 53,
-            "startedAt": "2026-10-19T01:28:46Z",
+            "startedAt": "2026-10-19T01:41:25Z",
             "status": "completed"
           }
         ],
-        "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39185352107/job/117846517590"
+        "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39186326991/job/117849422653"
       },
       {
-        "completedAt": "2026-10-19T01:28:48Z",
+        "completedAt": "2026-10-19T01:41:28Z",
         "conclusion": "skipped",
-        "databaseId": 117847070529,
+        "databaseId": 117849928210,
         "name": "deploy",
-        "startedAt": "2026-10-19T01:28:49Z",
+        "startedAt": "2026-10-19T01:41:28Z",
         "status": "completed",
         "steps": [],
-        "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39185352107/job/117847070529"
+        "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39186326991/job/117849928210"
       }
     ],
     "status": "completed",
-    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39185352107"
+    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39186326991"
   },
-  "verifiedAt": "2026-10-19T01:29:20.970Z"
+  "verifiedAt": "2026-10-19T01:41:39.025Z"
 }
