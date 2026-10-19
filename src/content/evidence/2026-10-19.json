@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-19",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-19T01:11:59.669Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-19-top-1",
+      "url": "https://developers.cyberagent.co.jp/blog/archives/66782/",
+      "originalTitle": "セルフホスト Langfuse のプロンプト配布と GCS へのミラー",
+      "source": "CyberAgent Developers Blog",
+      "topic": "生成AI・プロンプト配布",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-19T08:00:44+09:00",
+      "capturedAt": "2026-10-19T01:05:04.184164+00:00",
+      "snapshotSha256": "64f9672d156a8762b4bbc8827aae97d6ada51b7caf6e999ff5c6364a255697bf",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Cloud Runの増設時にはメモリキャッシュがなく、Langfuse停止中の起動が失敗する。",
+          "quote": "インスタンス起動の単一障害点",
+          "locator": "起動時の pre-fetch が採用できない理由",
+          "conditions": "CyberAgentのCloud Run上のチャットサービスの運用事例。セルフホスト更新時の継続運用を報告。数値SLA、同期遅延の分布、複合障害の実測値は提示されていない。",
+          "usedIn": {
+            "zh": "Langfuse",
+            "ja": "Langfuse",
+            "interview": "Langfuse"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "latest、staging（なければproduction）、productionの環境別選択をミラー側で行う。",
+          "quote": "環境ごとにバケットを分け",
+          "locator": "環境ごとのバケットに、その環境で使うバージョンを置く",
+          "conditions": "CyberAgentのCloud Run上のチャットサービスの運用事例。セルフホスト更新時の継続運用を報告。数値SLA、同期遅延の分布、複合障害の実測値は提示されていない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "本文とTemperature/Thinking Budgetを同じ版で配布する。",
+          "quote": "{promptId}.config.json",
+          "locator": "プロンプト本文と LLM パラメータを一緒に置く",
+          "conditions": "CyberAgentのCloud Run上のチャットサービスの運用事例。セルフホスト更新時の継続運用を報告。数値SLA、同期遅延の分布、複合障害の実測値は提示されていない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "起動の可否とプロンプトの正しさを分け、障害時に古い振る舞いへ戻さない配布設計を説明できます。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "能把提示词更新、扩容启动和降级时的版本一致性联系起来，说明故障时“有响应”与“使用正确规则”是两项验收。",
+            "ja": "起動の可否とプロンプトの正しさを分け、障害時に古い振る舞いへ戻さない配布設計を説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-19-top-2",
+      "url": "https://zenn.dev/yoshi47/articles/etag-304-hono-devtools",
+      "originalTitle": "ETagと304の仕組みをHonoとDevToolsで追う",
+      "source": "Zenn",
+      "topic": "フロントエンド・HTTPキャッシュ",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-19T00:00:08+00:00",
+      "capturedAt": "2026-10-19T01:05:05.133572+00:00",
+      "snapshotSha256": "b37111c24a6a8a4936613798691ec1f33679cbadfd04de0c1960fd1edc20c968",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "自動再検証のfetchは200と本文、明示ヘッダーの例は304 falseと空本文。",
+          "quote": "手動で If-None-Match 304 false",
+          "locator": "ブラウザが受け取る304／コンソール出力",
+          "conditions": "著者のHono4.13.13、Node24.21.0、Chrome156。Workers wrangler4.151.0と@hono/node-server2.1.5で確認。本文生成後にETagを作る当該ミドルウェアの挙動であり、全サーバー実装を一般化しない。",
+          "usedIn": {
+            "zh": "If-None-Match",
+            "ja": "If-None-Match",
+            "interview": "If-None-Match"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "ハンドラの後で本文をハッシュ化するため、304でも処理回数が増える。",
+          "quote": "await next()",
+          "locator": "304のときのサーバー処理",
+          "conditions": "著者のHono4.13.13、Node24.21.0、Chrome156。Workers wrangler4.151.0と@hono/node-server2.1.5で確認。本文生成後にETagを作る当該ミドルウェアの挙動であり、全サーバー実装を一般化しない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "当該Honoのweak指定はハッシュ生成を変えず接頭辞を付ける。",
+          "quote": "W/",
+          "locator": "304のときのサーバー処理／weak設定",
+          "conditions": "著者のHono4.13.13、Node24.21.0、Chrome156。Workers wrangler4.151.0と@hono/node-server2.1.5で確認。本文生成後にETagを作る当該ミドルウェアの挙動であり、全サーバー実装を一般化しない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "DevToolsの通信結果を、そのままJavaScriptの失敗やサーバー負荷の削減と読み替えない説明ができます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合前端面试中解释Network面板、浏览器缓存与JavaScript Response之间的层次差异，并区分传输量和服务器计算量。",
+            "ja": "DevToolsの通信結果を、そのままJavaScriptの失敗やサーバー負荷の削減と読み替えない説明ができます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-19-top-3",
+      "url": "https://dev.classmethod.jp/articles/202610-mitsuguchi-alb-dereg-delay-kensho/",
+      "originalTitle": "ALBのヘルスチェックと登録解除の遅延（Deregistration Delay）の挙動を検証してみた",
+      "source": "DevelopersIO",
+      "topic": "クラウド・接続排空",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-18T16:33:03.933Z",
+      "capturedAt": "2026-10-19T01:05:03.234217+00:00",
+      "snapshotSha256": "382d86ea9a43b5e0a4977573503b74aa2a4f76a54a0a080eaa726d4534db63ce",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "shortは開始約17秒後に解除確定し、約27.5秒で502。longは90.154664秒で200。",
+          "quote": "short: 502 27.498554s",
+          "locator": "検証1：90秒リクエスト",
+          "conditions": "同じALBに遅延10秒/120秒の2TG、各1EC2、Python ThreadingHTTPServer、idle timeout300秒。curlの単発例でありヘルスチェック切離し時刻や多台数全条件は未検証。",
+          "usedIn": {
+            "zh": "draining",
+            "ja": "draining",
+            "interview": "draining"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "開始約13秒後の解除確定から120秒で切断。",
+          "quote": "long : 502 133.373062s",
+          "locator": "検証2：150秒リクエスト",
+          "conditions": "同じALBに遅延10秒/120秒の2TG、各1EC2、Python ThreadingHTTPServer、idle timeout300秒。curlの単発例でありヘルスチェック切離し時刻や多台数全条件は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "各TG1台のdraining中は新規要求が約0.06秒で503、複数台一般への推定と区別する。",
+          "quote": "ヘルスチェックの切り離しタイミングは今回は検証していません",
+          "locator": "注意点",
+          "conditions": "同じALBに遅延10秒/120秒の2TG、各1EC2、Python ThreadingHTTPServer、idle timeout300秒。curlの単発例でありヘルスチェック切離し時刻や多台数全条件は未検証。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "登録解除の猶予、処理時間、アイドルタイムアウトを分け、終了時のエラーを時刻から説明できます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "能用有明确起算点的实验解释滚动发布为何会截断请求，以及502、503和空闲超时分别说明什么。",
+            "ja": "登録解除の猶予、処理時間、アイドルタイムアウトを分け、終了時のエラーを時刻から説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-19-top-4",
+      "url": "https://zenn.dev/akring/articles/dd53158f8da0a2",
+      "originalTitle": "計画に入る判断はエージェント任せ。測って再認識した opusplan",
+      "source": "Zenn",
+      "topic": "AI開発・モデル切替の評価",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-18T23:00:08+00:00",
+      "capturedAt": "2026-10-19T01:05:05.279790+00:00",
+      "snapshotSha256": "9695fedf7f771ed49fa43a732f23510b06ccdc280f704043d89adcee54c84970",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Sonnetが計画モードへの移行を判断し、その間だけOpusが応答、承認後Sonnetに戻る。",
+          "quote": "EnterPlanMode",
+          "locator": "1. 計画モードには、エージェントが自分で入る",
+          "conditions": "著者のPro/ClaudeCode2.1.295、両モデルmedium、多くは条件1〜3回、空の設定と記事掲載CLAUDE.md、承認自動。時間はAPI時間、費用は公表単価換算、文書判定役Sonnet。",
+          "usedIn": {
+            "zh": "EnterPlanMode",
+            "ja": "EnterPlanMode",
+            "interview": "EnterPlanMode"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Opus単独との比較で一括長作業は3/3合格、費用0.55倍、API時間0.61倍。短い文書は費用1.6〜1.8倍。",
+          "quote": "0.55 倍",
+          "locator": "3. 質・費用・時間／長い作業の比較表",
+          "conditions": "著者のPro/ClaudeCode2.1.295、両モデルmedium、多くは条件1〜3回、空の設定と記事掲載CLAUDE.md、承認自動。時間はAPI時間、費用は公表単価換算、文書判定役Sonnet。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "調整案は提案で、品質・費用改善の実測ではない。",
+          "quote": "調整した結果そのものは測っていません",
+          "locator": "4. CLAUDE.md調整／限界と注記",
+          "conditions": "著者のPro/ClaudeCode2.1.295、両モデルmedium、多くは条件1〜3回、空の設定と記事掲載CLAUDE.md、承認自動。時間はAPI時間、費用は公表単価換算、文書判定役Sonnet。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "計画を高性能モデルへ任せる効果を一律に語らず、作業別の費用と品質の測り方を説明できます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "能具体说明模型组合的成本取决于任务结构，并把小样本、自动审批和评价者偏差作为结论的一部分。",
+            "ja": "計画を高性能モデルへ任せる効果を一律に語らず、作業別の費用と品質の測り方を説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-19-top-5",
+      "url": "https://zenn.dev/shacikku3/articles/ollama-ps-how-to-read",
+      "originalTitle": "ollama ps の読み方 ― ローカルLLMが遅いときに、まず見る1行",
+      "source": "Zenn",
+      "topic": "ローカルAI・推論診断",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "publishedAt": "2026-10-19T00:07:37+00:00",
+      "capturedAt": "2026-10-19T01:05:05.088143+00:00",
+      "snapshotSha256": "f37221a62442e9c7509264308e2f2a2a016dd8ac7ea179722c1849bbd48dd3b3",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "4096 contextの22GBモデルでCPU39%、GPU61%という搭載割合。",
+          "quote": "39%/61% CPU/GPU",
+          "locator": "1. まず打ってみる／3.PROCESSOR",
+          "conditions": "著者PC RTX4080 16GB/RAM32GB、Ollama0.40.3、VSCode/Cline。22GBのqwen3.6:35b-a3b-codingと1.1GB補完モデル。88tok/sは64k時の同PCの実測。全ハードウェア/版本一般の保証ではない。",
+          "usedIn": {
+            "zh": "CONTEXT",
+            "ja": "CONTEXT",
+            "interview": "CONTEXT"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "既定5mを著者は1hにし、再ロード10〜20秒を報告。",
+          "quote": "OLLAMA_KEEP_ALIVE",
+          "locator": "5. UNTIL",
+          "conditions": "著者PC RTX4080 16GB/RAM32GB、Ollama0.40.3、VSCode/Cline。22GBのqwen3.6:35b-a3b-codingと1.1GB補完モデル。88tok/sは64k時の同PCの実測。全ハードウェア/版本一般の保証ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "著者環境ではこの順に二モデルが残り、逆順では小モデルが追い出された。",
+          "quote": "大きいモデルが先、補完モデルが後",
+          "locator": "6. 読み込む順番",
+          "conditions": "著者PC RTX4080 16GB/RAM32GB、Ollama0.40.3、VSCode/Cline。22GBのqwen3.6:35b-a3b-codingと1.1GB補完モデル。88tok/sは64k時の同PCの実測。全ハードウェア/版本一般の保証ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "遅さを一つの数値で決めず、載り方、文脈長、再読み込みを観測して切り分けられます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "可用真实字段解释本地模型加载、上下文和并行常驻问题，避免把GPU占比当成瞬时利用率或统一性能承诺。",
+            "ja": "遅さを一つの数値で決めず、載り方、文脈長、再読み込みを観測して切り分けられます。"
+          }
+        }
+      ]
+    }
+  ]
+}
