@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-10-19",
+  "sourceCommit": "f06febc371feb92a303e6b6dc8436b267761e9d2",
+  "sourceWindow": {
+    "from": "2026-10-18T10:00:00+09:00",
+    "to": "2026-10-19T10:00:00+09:00"
+  },
+  "discovery": {
+    "sites": [
+      {
+        "name": "Qiita",
+        "requestedUrl": "https://qiita.com/",
+        "observedAt": "2026-10-19T01:04:48.678566+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://qiita.com/",
+        "pageTitle": "Qiita",
+        "feeds": []
+      },
+      {
+        "name": "Zenn",
+        "requestedUrl": "https://zenn.dev/",
+        "observedAt": "2026-10-19T01:04:48.679277+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://zenn.dev/",
+        "pageTitle": "Zenn｜エンジニアのための情報共有コミュニティ",
+        "feeds": [
+          "https://zenn.dev/feed"
+        ]
+      },
+      {
+        "name": "Publickey",
+        "requestedUrl": "https://www.publickey1.jp/",
+        "observedAt": "2026-10-19T01:04:48.679428+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://www.publickey1.jp/",
+        "pageTitle": "Publickey － Enterprise IT × Cloud Computing × Web Technology / Blog",
+        "feeds": [
+          "https://www.publickey1.jp/atom.xml"
+        ]
+      },
+      {
+        "name": "ITmedia AI+",
+        "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+        "observedAt": "2026-10-19T01:04:48.679502+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+        "pageTitle": "AI活用のいまが分かる - ITmedia AI＋",
+        "feeds": []
+      },
+      {
+        "name": "@IT",
+        "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+        "observedAt": "2026-10-19T01:04:48.679565+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://atmarkit.itmedia.co.jp/",
+        "pageTitle": "ITエキスパートのための問題解決メディア - ＠IT",
+        "feeds": [
+          "https://rss.itmedia.co.jp/rss/0.91/ait.xml",
+          "https://rss.itmedia.co.jp/rss/1.0/ait.xml",
+          "https://rss.itmedia.co.jp/rss/2.0/ait.xml"
+        ]
+      },
+      {
+        "name": "CodeZine",
+        "requestedUrl": "https://codezine.jp/",
+        "observedAt": "2026-10-19T01:04:48.679632+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 403,
+        "actualUrl": "https://codezine.jp/",
+        "error": "403 Client Error: Forbidden for url: https://codezine.jp/"
+      },
+      {
+        "name": "gihyo.jp",
+        "requestedUrl": "https://gihyo.jp/",
+        "observedAt": "2026-10-19T01:04:48.762640+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://gihyo.jp/",
+        "pageTitle": "gihyo.jp | gihyo.jp",
+        "feeds": [
+          "https://gihyo.jp/feed/rss1",
+          "https://gihyo.jp/feed/rss2",
+          "https://gihyo.jp/feed/atom"
+        ]
+      },
+      {
+        "name": "DevelopersIO",
+        "requestedUrl": "https://dev.classmethod.jp/",
+        "observedAt": "2026-10-19T01:04:48.791993+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://dev.classmethod.jp/",
+        "pageTitle": "クラスメソッド発「やってみた」系技術メディア | DevelopersIO",
+        "feeds": []
+      },
+      {
+        "name": "TechFeed",
+        "requestedUrl": "https://techfeed.io/",
+        "observedAt": "2026-10-19T01:04:48.830686+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://techfeed.io/",
+        "pageTitle": "TechFeed - エンジニアのための技術情報収集＆共有プラットフォーム",
+        "feeds": [
+          "https://techfeed.io/feeds/categories/all"
+        ]
+      },
+      {
+        "name": "Hatena Technology",
+        "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "observedAt": "2026-10-19T01:04:48.872397+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "pageTitle": "はてなブックマーク - 人気エントリー - テクノロジー",
+        "feeds": [
+          "https://b.hatena.ne.jp/hotentry/it.rss"
+        ]
+      },
+      {
+        "name": "ASCII AI",
+        "requestedUrl": "https://ascii.jp/",
+        "observedAt": "2026-10-19T01:04:48.884063+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://ascii.jp/",
+        "pageTitle": "ASCII.jp － トップ",
+        "feeds": []
+      },
+      {
+        "name": "AINOW",
+        "requestedUrl": "https://ainow.ai/",
+        "observedAt": "2026-10-19T01:04:48.911942+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://ainow.ai/",
+        "pageTitle": "AINOW｜日本最大級のAI専門メディア",
+        "feeds": []
+      },
+      {
+        "name": "Ledge.ai",
+        "requestedUrl": "https://ledge.ai/",
+        "observedAt": "2026-10-19T01:04:48.967092+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://ledge.ai/",
+        "pageTitle": "Ledge.ai｜日本最大級のAI特化型ニュースメディア",
+        "feeds": []
+      },
+      {
+        "name": "CyberAgent Developers Blog",
+        "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+        "observedAt": "2026-10-19T01:04:48.983924+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+        "pageTitle": "CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ",
+        "feeds": [
+          "https://developers.cyberagent.co.jp/blog/feed/"
+        ]
+      },
+      {
+        "name": "LINE Yahoo Tech Blog",
+        "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+        "observedAt": "2026-10-19T01:04:49.085382+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+        "pageTitle": "LINEヤフー Tech Blog (LY Corporation Tech Blog)",
+        "feeds": [
+          "https://techblog.lycorp.co.jp/ja/feed/index.xml"
+        ]
+      },
+      {
+        "name": "Mercari Engineering",
+        "requestedUrl": "https://engineering.mercari.com/",
+        "observedAt": "2026-10-19T01:04:49.103452+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://engineering.mercari.com/",
+        "pageTitle": "メルカリエンジニアリング",
+        "feeds": [
+          "https://engineering.mercari.com/blog/feed.xml",
+          "https://engineering.mercari.com/en/blog/feed.xml"
+        ]
+      },
+      {
+        "name": "SmartHR Tech Blog",
+        "requestedUrl": "https://tech.smarthr.jp/",
+        "observedAt": "2026-10-19T01:04:49.235018+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://tech.smarthr.jp/",
+        "pageTitle": "SmartHR Tech Blog",
+        "feeds": [
+          "https://tech.smarthr.jp/feed",
+          "https://tech.smarthr.jp/rss"
+        ]
+      },
+      {
+        "name": "LayerX Engineering Blog",
+        "requestedUrl": "https://tech.layerx.co.jp/",
+        "observedAt": "2026-10-19T01:04:49.266033+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://tech.layerx.co.jp/",
+        "pageTitle": "LayerX エンジニアブログ",
+        "feeds": [
+          "https://tech.layerx.co.jp/feed",
+          "https://tech.layerx.co.jp/rss"
+        ]
+      },
+      {
+        "name": "DeNA Engineering",
+        "requestedUrl": "https://engineering.dena.com/blog/",
+        "observedAt": "2026-10-19T01:04:49.302979+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://engineering.dena.com/blog/",
+        "pageTitle": "BLOG - DeNA Engineering",
+        "feeds": [
+          "https://engineering.dena.com/blog/index.xml"
+        ]
+      },
+      {
+        "name": "Money Forward Developers Blog",
+        "requestedUrl": "https://moneyforward-dev.jp/",
+        "observedAt": "2026-10-19T01:04:49.326857+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "status": 200,
+        "actualUrl": "https://moneyforward-dev.jp/",
+        "pageTitle": "Money Forward Developers Blog",
+        "feeds": [
+          "https://moneyforward-dev.jp/feed",
+          "https://moneyforward-dev.jp/rss"
+        ]
+      }
+    ],
+    "scope": "20 homepage reads attempted; linked originals read independently. No claim that every article was scanned. CodeZine homepage and three Mercari originals returned403 and were excluded. Zenn latest100 is a bounded recent list and not full-window coverage; selected originals have independently checked timestamps. Articles published after the window, including the Playwright CLI article at 09:00:15 UTC (18:00 JST), were excluded."
+  },
+  "previousTop5Excluded": [
+    "https://zenn.dev/fusic/articles/a77ba348115364",
+    "https://dev.classmethod.jp/articles/contentful-app-signed-request/",
+    "https://dev.classmethod.jp/articles/hasuto-js-async-epoll-node-deno-bun/",
+    "https://dev.classmethod.jp/articles/snowflake-horizon-context-dbt-connector-preview/",
+    "https://zenn.dev/tyuya/articles/kv-free-quota-rate-limit-fail-open"
+  ],
+  "selectedOriginals": [
+    {
+      "title": "セルフホスト Langfuse のプロンプト配布と GCS へのミラー",
+      "source": "CyberAgent Developers Blog",
+      "url": "https://developers.cyberagent.co.jp/blog/archives/66782/",
+      "publishedAt": "2026-10-19T08:00:44+09:00",
+      "capturedAt": "2026-10-19T01:05:04.184164+00:00",
+      "snapshotSha256": "64f9672d156a8762b4bbc8827aae97d6ada51b7caf6e999ff5c6364a255697bf",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 6912,
+      "candidateId": 33
+    },
+    {
+      "title": "ETagと304の仕組みをHonoとDevToolsで追う",
+      "source": "Zenn",
+      "url": "https://zenn.dev/yoshi47/articles/etag-304-hono-devtools",
+      "publishedAt": "2026-10-19T00:00:08+00:00",
+      "capturedAt": "2026-10-19T01:05:05.133572+00:00",
+      "snapshotSha256": "b37111c24a6a8a4936613798691ec1f33679cbadfd04de0c1960fd1edc20c968",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 7508,
+      "candidateId": 55
+    },
+    {
+      "title": "ALBのヘルスチェックと登録解除の遅延（Deregistration Delay）の挙動を検証してみた",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/202610-mitsuguchi-alb-dereg-delay-kensho/",
+      "publishedAt": "2026-10-18T16:33:03.933Z",
+      "capturedAt": "2026-10-19T01:05:03.234217+00:00",
+      "snapshotSha256": "382d86ea9a43b5e0a4977573503b74aa2a4f76a54a0a080eaa726d4534db63ce",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 16883,
+      "candidateId": 6
+    },
+    {
+      "title": "計画に入る判断はエージェント任せ。測って再認識した opusplan",
+      "source": "Zenn",
+      "url": "https://zenn.dev/akring/articles/dd53158f8da0a2",
+      "publishedAt": "2026-10-18T23:00:08+00:00",
+      "capturedAt": "2026-10-19T01:05:05.279790+00:00",
+      "snapshotSha256": "9695fedf7f771ed49fa43a732f23510b06ccdc280f704043d89adcee54c84970",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 5481,
+      "candidateId": 56
+    },
+    {
+      "title": "ollama ps の読み方 ― ローカルLLMが遅いときに、まず見る1行",
+      "source": "Zenn",
+      "url": "https://zenn.dev/shacikku3/articles/ollama-ps-how-to-read",
+      "publishedAt": "2026-10-19T00:07:37+00:00",
+      "capturedAt": "2026-10-19T01:05:05.088143+00:00",
+      "snapshotSha256": "f37221a62442e9c7509264308e2f2a2a016dd8ac7ea179722c1849bbd48dd3b3",
+      "access": "full",
+      "accessNote": "公開記事の本文・掲載コード・表を全文確認。画像だけにある情報は事実の追加根拠にしていない。",
+      "sourceCharacters": 3551,
+      "candidateId": 54
+    }
+  ],
+  "verifiedAt": "2026-10-19T01:05:44.137515+00:00"
+}
