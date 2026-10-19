@@ -8,10 +8,10 @@
     "to": "2026-10-19T10:00:00+09:00"
   },
   "reason": "Explain prompt-body/model-configuration version consistency in natural prose instead of raw filename placeholders. Persist the same editorial requirement in the existing content quality rules.",
-  "stage": "publisher_submitted",
-  "rulesCommit": null,
+  "stage": "published",
+  "rulesCommit": "a69719db03f3a61492203de04914623aec0cc6af",
   "requestSubmitted": false,
-  "updatedAt": "2026-10-19T19:10:57.118Z",
+  "updatedAt": "2026-10-19T19:19:45.229Z",
   "baseCommit": "a69719db03f3a61492203de04914623aec0cc6af",
   "draftCommit": "37ec923a887e0a27aa971d0465a829410e498757",
   "draftBranch": "draft/daily-2026-10-19",
@@ -66,5 +66,23 @@
   },
   "requestCommit": "d0ee13c77f40a24a122be295e8edf5902d5ab3f3",
   "requestBlob": "b8abc668a5f939b0dfea0d6ed9122e68e34f1438",
-  "submittedAt": "2026-10-19T19:10:57.066Z"
+  "submittedAt": "2026-10-19T19:10:57.066Z",
+  "releaseCommit": "4697399da64ab1f28db78794d232671db7fad510",
+  "localChecks": 16,
+  "publisherRunId": 39308810660,
+  "pagesRunId": 39309168605,
+  "completeHistoryDates": 69,
+  "liveLocales": [
+    "zh",
+    "ja"
+  ],
+  "desktopMobileReloadChecked": true,
+  "learningReviewUpdated": true,
+  "audioInputsUnchanged": true,
+  "audioRecordingsResynthesized": 0,
+  "existingRecordingsReverified": 61,
+  "actualPlaybackTests": 12,
+  "scheduleChanged": false,
+  "n1RequestsResubmitted": 0,
+  "completedAt": "2026-10-19T19:19:39.925Z"
 }
