@@ -8,8 +8,24 @@
     "to": "2026-10-19T10:00:00+09:00"
   },
   "reason": "Explain prompt-body/model-configuration version consistency in natural prose instead of raw filename placeholders. Persist the same editorial requirement in the existing content quality rules.",
-  "stage": "planned",
+  "stage": "draft_submitted",
   "rulesCommit": null,
   "requestSubmitted": false,
-  "updatedAt": "2026-10-19T19:03:21.330993+00:00"
+  "updatedAt": "2026-10-19T19:08:28.480Z",
+  "baseCommit": "a69719db03f3a61492203de04914623aec0cc6af",
+  "draftCommit": "37ec923a887e0a27aa971d0465a829410e498757",
+  "draftBranch": "draft/daily-2026-10-19",
+  "paths": [
+    "src/content/daily/2026-10-19.md",
+    "src/content/japanese/2026-10-19.md",
+    "src/content/daily-ja/2026-10-19.md",
+    "src/content/japanese-ja/2026-10-19.md",
+    "src/content/evidence/2026-10-19.json",
+    "src/data/interviews/2026-10-19.json"
+  ],
+  "changedPaths": [
+    "src/content/daily-ja/2026-10-19.md",
+    "src/content/daily/2026-10-19.md"
+  ],
+  "editorialCorrection": true
 }
