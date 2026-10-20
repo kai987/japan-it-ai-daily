@@ -1,0 +1,58 @@
+{
+  "targetDate": "2026-10-20",
+  "reviewedAt": "2026-10-20T01:20:19.476931+00:00",
+  "newVocabulary": 12,
+  "reviewVocabulary": 8,
+  "newGrammar": 1,
+  "reviewGrammar": 4,
+  "grammarEvidence": [
+    {
+      "pattern": "～一方で",
+      "evidence": {
+        "form": "一方で",
+        "excerpt": "一方で、状態や失効の管理は増えます。",
+        "sourceKind": "report-body"
+      },
+      "semanticFunctionMatches": true
+    },
+    {
+      "pattern": "～とともに",
+      "evidence": {
+        "form": "とともに",
+        "excerpt": "読む価値: フロントエンドの面接で、待ち時間の内訳、キャッシュの失効、分割後の検査維持を実数とともに説明できます。",
+        "sourceKind": "report-body"
+      },
+      "semanticFunctionMatches": true
+    },
+    {
+      "pattern": "～に伴って",
+      "evidence": {
+        "form": "に伴い",
+        "excerpt": "Vitest4.1を使う私有リポジトリのubuntu-latestは2CPUで、テストの増加に伴い中央値が約15分、長い時は18分を超えていました。",
+        "sourceKind": "report-body"
+      },
+      "semanticFunctionMatches": true
+    },
+    {
+      "pattern": "～によって",
+      "evidence": {
+        "form": "によって",
+        "excerpt": "一方、CPU試験では20件がほぼ一つのNode.jsプロセスに集まり、直列処理によって最大20.6秒となりました。",
+        "sourceKind": "report-body"
+      },
+      "semanticFunctionMatches": true
+    }
+  ],
+  "excludedFalseMatches": [
+    {
+      "surface": "ワーカーを二つにすることから始まります",
+      "reason": "Starting point, not historical causal/basis ～ことから. Same factual sequence rephrased."
+    },
+    {
+      "surface": "テスト数だけでなく / 数値の増減だけでなく",
+      "reason": "Unchanged module also matches shorter ～だけで within additive ～だけでなく. Rephrased same test-quality point and original learning example; no eligibility padding."
+    }
+  ],
+  "unchangedModule": true,
+  "noEligibilityPadding": true
+}
