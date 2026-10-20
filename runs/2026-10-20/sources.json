@@ -313,5 +313,132 @@
       "candidateId": 7
     }
   ],
-  "verifiedAt": "2026-10-20T01:06:52.170947+00:00"
+  "verifiedAt": "2026-10-20T01:24:44.890375+00:00",
+  "verifiedFacts": [
+    {
+      "articleId": "2026-10-20-top-1",
+      "url": "https://zenn.dev/coji/articles/browser-only-data-analyst-agent",
+      "conditions": "pi-durable 1.3.0、Chrome155の個人実装。読み取り専用ツールと再読み込みを検証。ブラウザ強制終了、書き込みツール、会話をまたぐ推論は未検証または対象外。",
+      "evidence": [
+        {
+          "quote": "SQLは実行し直さず",
+          "locator": "冒頭の再開デモ",
+          "statement": "再読み込み後は保存済みのSQL結果を再利用し、中断した要約をやり直す。",
+          "exactCaptureQuoteChecked": true
+        },
+        {
+          "quote": "Web Locks",
+          "locator": "つまずいたところ",
+          "statement": "OPFSファイルの同時利用を避けるためタブを一つに制限する。",
+          "exactCaptureQuoteChecked": true
+        },
+        {
+          "quote": "15〜20秒",
+          "locator": "まだできないこと",
+          "statement": "回答までの時間は記事の環境で15〜20秒。ブラウザ強制終了は未検証。",
+          "exactCaptureQuoteChecked": true
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-20-top-2",
+      "url": "https://zenn.dev/aws_japan/articles/lambda-web-functions-vs-event-functions",
+      "conditions": "東京リージョン、Node.js24 arm64。各条件一回。Web/Eventの測定時刻と直前状態は完全には一致せず、CPU試験は仕事量固定ではない。料金式の一部は著者の観測による推定。",
+      "evidence": [
+        {
+          "quote": "各条件 1 回ずつ",
+          "locator": "はじめに・検証条件",
+          "statement": "負荷試験は条件ごとに一回であり、数値は傾向として読む。",
+          "exactCaptureQuoteChecked": true
+        },
+        {
+          "quote": "最大 20.6 秒",
+          "locator": "まとめ・CPU",
+          "statement": "単一Node.jsプロセスでCPUループ20件が直列となり、最大遅延20.6秒を観測した。",
+          "exactCaptureQuoteChecked": true
+        },
+        {
+          "quote": "これは公式に示された計算式ではありません",
+          "locator": "まとめ・課金",
+          "statement": "最大使用メモリから課金量を近似できたのは一日・一アプリの観測で、公式式ではない。",
+          "exactCaptureQuoteChecked": true
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-20-top-3",
+      "url": "https://techblog.lycorp.co.jp/ja/20261019b",
+      "conditions": "LINEギフトSREチームの2026年8月3日～9月11日のインターン実装報告。「スピード10倍」は企業バリュー・目標であり、効果の十倍計測や安全性の比較指標は示されていない。",
+      "evidence": [
+        {
+          "quote": "コンテナ内部に隔離",
+          "locator": "システム構成と実装",
+          "statement": "調査処理をコンテナへ隔離し、会話履歴とコンテキストをDBに保持する。",
+          "exactCaptureQuoteChecked": true
+        },
+        {
+          "quote": "実行ステップ数やタイムアウト",
+          "locator": "なぜハーネスが必要か",
+          "statement": "停止条件、読取と破壊操作の権限分離を設計する。",
+          "exactCaptureQuoteChecked": true
+        },
+        {
+          "quote": "対応の判断です",
+          "locator": "イベント駆動によるAIの自律運用",
+          "statement": "調査結果をSlackへ返し、実際の対応判断は人が行う。",
+          "exactCaptureQuoteChecked": true
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-20-top-4",
+      "url": "https://zenn.dev/edash_tech_blog/articles/5b90aa33bd8d49",
+      "conditions": "Next.js/TypeScript、Vitest4.1、private repoのubuntu-latest 2CPU。直近20本の中央値約4分45秒。複数施策を積み上げた実運用値であり、単一施策の普遍的な効果ではない。",
+      "evidence": [
+        {
+          "quote": "テスト本体は 57 秒",
+          "locator": "ボトルネックの計測",
+          "statement": "400秒のうち実テストは57秒で、環境起動等が大部分を占める。",
+          "exactCaptureQuoteChecked": true
+        },
+        {
+          "quote": "マイグレーションファイルのハッシュ",
+          "locator": "実施した施策2",
+          "statement": "DBダンプのキャッシュはマイグレーション内容で失効させ、mainの共有スコープを使う。",
+          "exactCaptureQuoteChecked": true
+        },
+        {
+          "quote": "直近 20 本の中央値",
+          "locator": "結果",
+          "statement": "改善後は約4分45秒。比較対象の中央値約15分に対して約69%削減。",
+          "exactCaptureQuoteChecked": true
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-20-top-5",
+      "url": "https://dev.classmethod.jp/articles/cloudflare-cf-docs-search/",
+      "conditions": "Ubuntu24.04.5 LTS ARM64、Node24.21.0、cf1.0.0-beta.18。検索・Markdown取得のみで認証なし。検索順位は時点依存、beta出力は変更可能、画像から追加仕様は推測しない。",
+      "evidence": [
+        {
+          "quote": "Cloudflareへのログインは不要",
+          "locator": "まずは検索結果をJSONで受け取る",
+          "statement": "公開ドキュメント検索はログイン不要だがネット接続が必要。",
+          "exactCaptureQuoteChecked": true
+        },
+        {
+          "quote": "最大5件返されます",
+          "locator": "検索結果のJSON",
+          "statement": "戻り値は本文ではなく、順位付きの候補URL等である。",
+          "exactCaptureQuoteChecked": true
+        },
+        {
+          "quote": "5つの独立したページとは限りません",
+          "locator": "試した環境と注意点",
+          "statement": "同じページ内の別見出しが複数候補になるため、件数を独立した資料数と数えない。",
+          "exactCaptureQuoteChecked": true
+        }
+      ]
+    }
+  ]
 }
