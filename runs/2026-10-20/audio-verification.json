@@ -1,0 +1,721 @@
+{
+  "verificationEvidence": {
+    "text": {
+      "label": "text",
+      "runId": 39353549040,
+      "releaseCommit": "f162396ee895bd3364788a191a5746632e293a2b",
+      "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39353549040",
+      "artifacts": [
+        {
+          "id": 12233898008,
+          "name": "it-study-snapshot",
+          "digest": "sha256:96658e6ac0fd093ee46b2c84c56b9b302b9c8dc14f4f79cad7facf5405cad634"
+        },
+        {
+          "id": 12233808408,
+          "name": "github-pages",
+          "digest": "sha256:843860ab6766cffa2f68fbe94b68219548d6c9f5d9669b39f428d701daae8386"
+        }
+      ],
+      "sourceCommit": "f162396ee895bd3364788a191a5746632e293a2b",
+      "targetDate": "2026-10-20",
+      "totalDays": 70,
+      "issueNumber": 70,
+      "grammarLessonDates": [
+        "2026-08-12",
+        "2026-08-13",
+        "2026-08-14",
+        "2026-08-15",
+        "2026-08-16",
+        "2026-08-17",
+        "2026-08-18",
+        "2026-08-19",
+        "2026-08-20",
+        "2026-08-21",
+        "2026-08-22",
+        "2026-08-23",
+        "2026-08-24",
+        "2026-08-25",
+        "2026-08-26",
+        "2026-08-27",
+        "2026-08-28",
+        "2026-08-29",
+        "2026-08-30",
+        "2026-08-31",
+        "2026-09-01",
+        "2026-09-02",
+        "2026-09-03",
+        "2026-09-04",
+        "2026-09-05",
+        "2026-09-06",
+        "2026-09-07",
+        "2026-09-08",
+        "2026-09-09",
+        "2026-09-10",
+        "2026-09-11",
+        "2026-09-12",
+        "2026-09-13",
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18",
+        "2026-09-19",
+        "2026-09-20",
+        "2026-09-21",
+        "2026-09-22",
+        "2026-09-23",
+        "2026-09-24",
+        "2026-09-25",
+        "2026-09-26",
+        "2026-09-27",
+        "2026-09-28",
+        "2026-09-29",
+        "2026-09-30",
+        "2026-10-01",
+        "2026-10-02",
+        "2026-10-03",
+        "2026-10-04",
+        "2026-10-05",
+        "2026-10-06",
+        "2026-10-07",
+        "2026-10-08",
+        "2026-10-09",
+        "2026-10-10",
+        "2026-10-11",
+        "2026-10-12",
+        "2026-10-13",
+        "2026-10-14",
+        "2026-10-15",
+        "2026-10-16",
+        "2026-10-17",
+        "2026-10-18",
+        "2026-10-19",
+        "2026-10-20"
+      ],
+      "fullSnapshotCompared": true,
+      "snapshotHash": "9ffbf4681257f62b0df5ab293b526f72cc337dd4817ade5b5ea187cbb3de99c4",
+      "expected": {
+        "version": 1,
+        "commit": "f162396ee895bd3364788a191a5746632e293a2b",
+        "date": "2026-10-20",
+        "snapshotHash": "9ffbf4681257f62b0df5ab293b526f72cc337dd4817ade5b5ea187cbb3de99c4",
+        "pages": [
+          {
+            "path": "daily/2026-10-20/",
+            "sha256": "734641b823a3a6ae77c1d5e187c2df71bba846a79734f7a09dae0fa8ca67cad7"
+          },
+          {
+            "path": "ja/daily/2026-10-20/",
+            "sha256": "88ee7cfdd050f251422168af95e6a9ecc8b2e2dc015c7c409efec33906e94ac6"
+          }
+        ]
+      },
+      "live": {
+        "commit": "f162396ee895bd3364788a191a5746632e293a2b",
+        "date": "2026-10-20",
+        "attempt": 1
+      },
+      "verifiedAt": "2026-10-20T01:31:10.794Z",
+      "site": "/tmp/japan-daily-20261020/text-release-39353549040/site"
+    },
+    "r2": {
+      "commit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+      "baseUrl": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev",
+      "workflowRunId": 39354207754,
+      "referencedRecordings": 58,
+      "workflowScope": {
+        "scope": "changed files and manifest references",
+        "count": 58,
+        "targetReferencedCount": 58
+      },
+      "manifestChecks": [
+        {
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/manifest.json",
+          "sha256": "15efce32510f626fc5615ca8415ad7d4605df8ca9f766ea7f7d9e5102c873988",
+          "bytes": 14661
+        },
+        {
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/interview-manifest.json",
+          "sha256": "cf586627a6c4c5fb138f49302234759d1c48787a9cb05e647d379acdfbc5a1ec",
+          "bytes": 8042
+        }
+      ],
+      "verifiedAt": "2026-10-20T01:38:01.984Z"
+    },
+    "remoteAudio": {
+      "count": 58,
+      "hashAlgorithm": "SHA-256",
+      "changedFileScope": [
+        "public/audio/japanese/2026-10-20/manifest.json",
+        "public/audio/japanese/2026-10-20/interview-manifest.json"
+      ],
+      "output": "Audio integrity: 70/70 generated dates, bilingual text mappings and 3464 referenced local recordings verified; full local inventory 3683 MP3s; 0 vocabulary cards explicitly use browser Japanese speech (not recordings).\nRemote audio scope: changed files and manifest references; 58 recording(s).\nVerified 58 deployed MP3 SHA-256 hashes.",
+      "verifiedAt": "2026-10-20T01:41:48.552Z"
+    },
+    "audioRelease": {
+      "label": "audio",
+      "runId": 39354207678,
+      "releaseCommit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+      "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39354207678",
+      "artifacts": [
+        {
+          "id": 12234577930,
+          "name": "github-pages",
+          "digest": "sha256:4fed457777b1a6cdf2823c192aebd828a858ef2d4e1e6524046241386503abd0"
+        },
+        {
+          "id": 12234303209,
+          "name": "it-study-snapshot",
+          "digest": "sha256:29b17dfbccf207ae291c319dea3a60df248ca89ff581bb6cefc217288ac12c6c"
+        }
+      ],
+      "sourceCommit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+      "targetDate": "2026-10-20",
+      "totalDays": 70,
+      "issueNumber": 70,
+      "grammarLessonDates": [
+        "2026-08-12",
+        "2026-08-13",
+        "2026-08-14",
+        "2026-08-15",
+        "2026-08-16",
+        "2026-08-17",
+        "2026-08-18",
+        "2026-08-19",
+        "2026-08-20",
+        "2026-08-21",
+        "2026-08-22",
+        "2026-08-23",
+        "2026-08-24",
+        "2026-08-25",
+        "2026-08-26",
+        "2026-08-27",
+        "2026-08-28",
+        "2026-08-29",
+        "2026-08-30",
+        "2026-08-31",
+        "2026-09-01",
+        "2026-09-02",
+        "2026-09-03",
+        "2026-09-04",
+        "2026-09-05",
+        "2026-09-06",
+        "2026-09-07",
+        "2026-09-08",
+        "2026-09-09",
+        "2026-09-10",
+        "2026-09-11",
+        "2026-09-12",
+        "2026-09-13",
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18",
+        "2026-09-19",
+        "2026-09-20",
+        "2026-09-21",
+        "2026-09-22",
+        "2026-09-23",
+        "2026-09-24",
+        "2026-09-25",
+        "2026-09-26",
+        "2026-09-27",
+        "2026-09-28",
+        "2026-09-29",
+        "2026-09-30",
+        "2026-10-01",
+        "2026-10-02",
+        "2026-10-03",
+        "2026-10-04",
+        "2026-10-05",
+        "2026-10-06",
+        "2026-10-07",
+        "2026-10-08",
+        "2026-10-09",
+        "2026-10-10",
+        "2026-10-11",
+        "2026-10-12",
+        "2026-10-13",
+        "2026-10-14",
+        "2026-10-15",
+        "2026-10-16",
+        "2026-10-17",
+        "2026-10-18",
+        "2026-10-19",
+        "2026-10-20"
+      ],
+      "fullSnapshotCompared": true,
+      "snapshotHash": "296e9712a369736e7201b0cf8013f75c0292fa8f022696775285601543737a05",
+      "expected": {
+        "version": 1,
+        "commit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+        "date": "2026-10-20",
+        "snapshotHash": "296e9712a369736e7201b0cf8013f75c0292fa8f022696775285601543737a05",
+        "pages": [
+          {
+            "path": "daily/2026-10-20/",
+            "sha256": "734641b823a3a6ae77c1d5e187c2df71bba846a79734f7a09dae0fa8ca67cad7"
+          },
+          {
+            "path": "ja/daily/2026-10-20/",
+            "sha256": "88ee7cfdd050f251422168af95e6a9ecc8b2e2dc015c7c409efec33906e94ac6"
+          }
+        ]
+      },
+      "live": {
+        "commit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+        "date": "2026-10-20",
+        "attempt": 1
+      },
+      "verifiedAt": "2026-10-20T01:39:11.294Z",
+      "site": "/tmp/japan-daily-20261020/audio-release-39354207678/site"
+    },
+    "pages": {
+      "commit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+      "baseUrl": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev",
+      "workflowRunId": 39354207678,
+      "referencedRecordings": 58,
+      "workflowScope": null,
+      "manifestChecks": [
+        {
+          "url": "https://kai987.github.io/japan-it-ai-daily/audio/japanese/2026-10-20/manifest.json",
+          "sha256": "15efce32510f626fc5615ca8415ad7d4605df8ca9f766ea7f7d9e5102c873988",
+          "bytes": 14661
+        },
+        {
+          "url": "https://kai987.github.io/japan-it-ai-daily/audio/japanese/2026-10-20/interview-manifest.json",
+          "sha256": "cf586627a6c4c5fb138f49302234759d1c48787a9cb05e647d379acdfbc5a1ec",
+          "bytes": 8042
+        }
+      ],
+      "verifiedAt": "2026-10-20T01:39:13.084Z"
+    },
+    "playback": [
+      {
+        "locale": "ja",
+        "kind": "daily",
+        "role": "interview-answer",
+        "selector": "button[data-speech-kind=\"interview\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/interview-answer-01--71d0cc4f68e66837331f3d6b17988415ceca7e21d4b440fb01a267ef0a83465b.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/interview-answer-01--71d0cc4f68e66837331f3d6b17988415ceca7e21d4b440fb01a267ef0a83465b.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/interview-answer-01--71d0cc4f68e66837331f3d6b17988415ceca7e21d4b440fb01a267ef0a83465b.mp3",
+        "duration": 26.590625,
+        "currentTime": 0.100022,
+        "endTime": 0.180851,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "ja",
+        "page": "https://kai987.github.io/japan-it-ai-daily/ja/daily/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/interview-answer-01--71d0cc4f68e66837331f3d6b17988415ceca7e21d4b440fb01a267ef0a83465b.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:39:40.417Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "ja",
+        "kind": "daily",
+        "role": "review-question",
+        "selector": "button[data-speech-kind=\"review\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/review-question-01--e62a2637e4559d5b91c86377b4ee68a312218997c6102a39795a545a9af607bf.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/review-question-01--e62a2637e4559d5b91c86377b4ee68a312218997c6102a39795a545a9af607bf.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/review-question-01--e62a2637e4559d5b91c86377b4ee68a312218997c6102a39795a545a9af607bf.mp3",
+        "duration": 5.662167,
+        "currentTime": 0.182793,
+        "endTime": 0.208547,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "ja",
+        "page": "https://kai987.github.io/japan-it-ai-daily/ja/daily/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/review-question-01--e62a2637e4559d5b91c86377b4ee68a312218997c6102a39795a545a9af607bf.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:39:41.678Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "ja",
+        "kind": "japanese",
+        "role": "word",
+        "selector": "[data-study-kind=\"new\"] button[data-speech-kind=\"word\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/vocab-01--f8faab0aa098f283f05f7bf46cd6bfaecb3faf607e1c9bb2114cb6519bcf3d29.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/vocab-01--f8faab0aa098f283f05f7bf46cd6bfaecb3faf607e1c9bb2114cb6519bcf3d29.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/vocab-01--f8faab0aa098f283f05f7bf46cd6bfaecb3faf607e1c9bb2114cb6519bcf3d29.mp3",
+        "duration": 1.172792,
+        "currentTime": 0.085898,
+        "endTime": 0.20289,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "ja",
+        "page": "https://kai987.github.io/japan-it-ai-daily/ja/japanese/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/vocab-01--f8faab0aa098f283f05f7bf46cd6bfaecb3faf607e1c9bb2114cb6519bcf3d29.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:39:51.725Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "ja",
+        "kind": "japanese",
+        "role": "example",
+        "selector": "[data-study-kind=\"new\"] button[data-speech-kind=\"example\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/example-01--f5ab5844f30b233e4235638177d72f70c10de38101586bdaeb279621e195af53.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/example-01--f5ab5844f30b233e4235638177d72f70c10de38101586bdaeb279621e195af53.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/example-01--f5ab5844f30b233e4235638177d72f70c10de38101586bdaeb279621e195af53.mp3",
+        "duration": 5.084458,
+        "currentTime": 0.215365,
+        "endTime": 0.477399,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "ja",
+        "page": "https://kai987.github.io/japan-it-ai-daily/ja/japanese/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/example-01--f5ab5844f30b233e4235638177d72f70c10de38101586bdaeb279621e195af53.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:39:53.149Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "ja",
+        "kind": "japanese",
+        "role": "grammar-example",
+        "selector": "[data-study-kind=\"new\"] button[data-speech-kind=\"grammar-example\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/grammar-example-01--911e252701ff1857d546e99d772240297efc64359506c3598317b4ec3664f6ed.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/grammar-example-01--911e252701ff1857d546e99d772240297efc64359506c3598317b4ec3664f6ed.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/grammar-example-01--911e252701ff1857d546e99d772240297efc64359506c3598317b4ec3664f6ed.mp3",
+        "duration": 4.515625,
+        "currentTime": 0.213559,
+        "endTime": 0.463455,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "ja",
+        "page": "https://kai987.github.io/japan-it-ai-daily/ja/japanese/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/grammar-example-01--911e252701ff1857d546e99d772240297efc64359506c3598317b4ec3664f6ed.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:39:54.551Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "ja",
+        "kind": "japanese",
+        "role": "reused-word",
+        "selector": "[data-study-kind=\"review\"] button[data-speech-kind=\"word\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/vocab-07--6879988dfa0086fb52b8a1f25a5b19b8322dc9b7b757911e5a486cf42a8680b8.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/vocab-07--6879988dfa0086fb52b8a1f25a5b19b8322dc9b7b757911e5a486cf42a8680b8.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/vocab-07--6879988dfa0086fb52b8a1f25a5b19b8322dc9b7b757911e5a486cf42a8680b8.mp3",
+        "duration": 1.242875,
+        "currentTime": 0.218277,
+        "endTime": 0.477812,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "ja",
+        "page": "https://kai987.github.io/japan-it-ai-daily/ja/japanese/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/vocab-07--6879988dfa0086fb52b8a1f25a5b19b8322dc9b7b757911e5a486cf42a8680b8.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:39:55.939Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "ja",
+        "kind": "japanese",
+        "role": "reused-grammar",
+        "selector": "[data-study-kind=\"review\"] button[data-speech-kind=\"grammar-example\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-05--4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-05--4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-05--4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950.mp3",
+        "duration": 6.361958,
+        "currentTime": 0.188867,
+        "endTime": 0.202543,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "ja",
+        "page": "https://kai987.github.io/japan-it-ai-daily/ja/japanese/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-05--4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:39:56.990Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "zh",
+        "kind": "daily",
+        "role": "interview-answer",
+        "selector": "button[data-speech-kind=\"interview\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/interview-answer-01--71d0cc4f68e66837331f3d6b17988415ceca7e21d4b440fb01a267ef0a83465b.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/interview-answer-01--71d0cc4f68e66837331f3d6b17988415ceca7e21d4b440fb01a267ef0a83465b.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/interview-answer-01--71d0cc4f68e66837331f3d6b17988415ceca7e21d4b440fb01a267ef0a83465b.mp3",
+        "duration": 26.590625,
+        "currentTime": 0.214085,
+        "endTime": 0.215281,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "zh",
+        "page": "https://kai987.github.io/japan-it-ai-daily/daily/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/interview-answer-01--71d0cc4f68e66837331f3d6b17988415ceca7e21d4b440fb01a267ef0a83465b.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:40:04.044Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "zh",
+        "kind": "daily",
+        "role": "review-question",
+        "selector": "button[data-speech-kind=\"review\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/review-question-01--e62a2637e4559d5b91c86377b4ee68a312218997c6102a39795a545a9af607bf.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/review-question-01--e62a2637e4559d5b91c86377b4ee68a312218997c6102a39795a545a9af607bf.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/review-question-01--e62a2637e4559d5b91c86377b4ee68a312218997c6102a39795a545a9af607bf.mp3",
+        "duration": 5.662167,
+        "currentTime": 0.280562,
+        "endTime": 0.529461,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "zh",
+        "page": "https://kai987.github.io/japan-it-ai-daily/daily/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/review-question-01--e62a2637e4559d5b91c86377b4ee68a312218997c6102a39795a545a9af607bf.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:40:05.436Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "zh",
+        "kind": "japanese",
+        "role": "word",
+        "selector": "[data-study-kind=\"new\"] button[data-speech-kind=\"word\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/vocab-01--f8faab0aa098f283f05f7bf46cd6bfaecb3faf607e1c9bb2114cb6519bcf3d29.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/vocab-01--f8faab0aa098f283f05f7bf46cd6bfaecb3faf607e1c9bb2114cb6519bcf3d29.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/vocab-01--f8faab0aa098f283f05f7bf46cd6bfaecb3faf607e1c9bb2114cb6519bcf3d29.mp3",
+        "duration": 1.172792,
+        "currentTime": 0.255854,
+        "endTime": 0.506893,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "zh",
+        "page": "https://kai987.github.io/japan-it-ai-daily/japanese/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/vocab-01--f8faab0aa098f283f05f7bf46cd6bfaecb3faf607e1c9bb2114cb6519bcf3d29.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:40:07.402Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "zh",
+        "kind": "japanese",
+        "role": "example",
+        "selector": "[data-study-kind=\"new\"] button[data-speech-kind=\"example\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/example-01--f5ab5844f30b233e4235638177d72f70c10de38101586bdaeb279621e195af53.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/example-01--f5ab5844f30b233e4235638177d72f70c10de38101586bdaeb279621e195af53.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/example-01--f5ab5844f30b233e4235638177d72f70c10de38101586bdaeb279621e195af53.mp3",
+        "duration": 5.084458,
+        "currentTime": 0.263361,
+        "endTime": 0.515618,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "zh",
+        "page": "https://kai987.github.io/japan-it-ai-daily/japanese/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/example-01--f5ab5844f30b233e4235638177d72f70c10de38101586bdaeb279621e195af53.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:40:08.876Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "zh",
+        "kind": "japanese",
+        "role": "grammar-example",
+        "selector": "[data-study-kind=\"new\"] button[data-speech-kind=\"grammar-example\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/grammar-example-01--911e252701ff1857d546e99d772240297efc64359506c3598317b4ec3664f6ed.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/grammar-example-01--911e252701ff1857d546e99d772240297efc64359506c3598317b4ec3664f6ed.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/grammar-example-01--911e252701ff1857d546e99d772240297efc64359506c3598317b4ec3664f6ed.mp3",
+        "duration": 4.515625,
+        "currentTime": 0.268219,
+        "endTime": 0.521408,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "zh",
+        "page": "https://kai987.github.io/japan-it-ai-daily/japanese/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-20/grammar-example-01--911e252701ff1857d546e99d772240297efc64359506c3598317b4ec3664f6ed.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:40:10.217Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "zh",
+        "kind": "japanese",
+        "role": "reused-word",
+        "selector": "[data-study-kind=\"review\"] button[data-speech-kind=\"word\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/vocab-07--6879988dfa0086fb52b8a1f25a5b19b8322dc9b7b757911e5a486cf42a8680b8.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/vocab-07--6879988dfa0086fb52b8a1f25a5b19b8322dc9b7b757911e5a486cf42a8680b8.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/vocab-07--6879988dfa0086fb52b8a1f25a5b19b8322dc9b7b757911e5a486cf42a8680b8.mp3",
+        "duration": 1.242875,
+        "currentTime": 0.261214,
+        "endTime": 0.523034,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "zh",
+        "page": "https://kai987.github.io/japan-it-ai-daily/japanese/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/vocab-07--6879988dfa0086fb52b8a1f25a5b19b8322dc9b7b757911e5a486cf42a8680b8.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:40:11.595Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      },
+      {
+        "locale": "zh",
+        "kind": "japanese",
+        "role": "reused-grammar",
+        "selector": "[data-study-kind=\"review\"] button[data-speech-kind=\"grammar-example\"]",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-05--4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-05--4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-05--4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950.mp3",
+        "duration": 6.361958,
+        "currentTime": 0.276563,
+        "endTime": 0.539054,
+        "paused": false,
+        "error": null,
+        "ttsSpeaking": false,
+        "ttsPending": false,
+        "ttsFallbacks": 0,
+        "documentLocale": "zh",
+        "page": "https://kai987.github.io/japan-it-ai-daily/japanese/2026-10-20/",
+        "requestedMedia": [
+          "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-08-12/grammar-example-05--4f70cb7f8a6a0274a58868a48fbcd66db9f65eec9efc3c3fa6efb789ab227950.mp3"
+        ],
+        "responses": [
+          {
+            "status": 206
+          }
+        ],
+        "verifiedAt": "2026-10-20T01:40:13.117Z",
+        "browser": "Cua in-app Chromium; actual HTMLAudioElement through read-only Runtime.queryObjects; observed Network.requestWillBeSent and 206 media response; no mocks, constructor wrappers, request interception or page modifications",
+        "evidenceOrigin": "Exact measurements transcribed from Cua tool output. Every actual currentSrc was asserted equal to this frozen URL before export. Browser speech was neither speaking nor pending while the recorded player advanced."
+      }
+    ]
+  },
+  "error": null,
+  "completedAt": "2026-10-20T01:41:48.555Z",
+  "nextStep": "Complete: unchanged source and manifest inputs require no synthesis or upload"
+}
