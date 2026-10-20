@@ -1,0 +1,27 @@
+{
+  "reviewedAt": "2026-10-20T01:22:09.880887+00:00",
+  "date": "2026-10-20",
+  "evidence": "Five exact private public-original captures, fifteen matched concise evidence quotes and one exact grammar source anchor.",
+  "independentProse": true,
+  "preserveOriginalTitles": true,
+  "noUnexplainedPlaceholders": true,
+  "noIndependentBenchmarkClaim": true,
+  "conditionBoundaries": [
+    "pi-durable 1.3.0、Chrome155の個人実装。読み取り専用ツールと再読み込みを検証。ブラウザ強制終了、書き込みツール、会話をまたぐ推論は未検証または対象外。",
+    "東京リージョン、Node.js24 arm64。各条件一回。Web/Eventの測定時刻と直前状態は完全には一致せず、CPU試験は仕事量固定ではない。料金式の一部は著者の観測による推定。",
+    "LINEギフトSREチームの2026年8月3日～9月11日のインターン実装報告。「スピード10倍」は企業バリュー・目標であり、効果の十倍計測や安全性の比較指標は示されていない。",
+    "Next.js/TypeScript、Vitest4.1、private repoのubuntu-latest 2CPU。直近20本の中央値約4分45秒。複数施策を積み上げた実運用値であり、単一施策の普遍的な効果ではない。",
+    "Ubuntu24.04.5 LTS ARM64、Node24.21.0、cf1.0.0-beta.18。検索・Markdown取得のみで認証なし。検索順位は時点依存、beta出力は変更可能、画像から追加仕様は推測しない。"
+  ],
+  "interview": "Five canonical natural Japanese answers, two or more original-specific technical points and real article boundaries per answer.",
+  "fullHistory": {
+    "priorDates": 69,
+    "representations": 276,
+    "newVocabulary": 12,
+    "reviewVocabulary": 8,
+    "newGrammar": 1,
+    "reviewGrammar": 4
+  },
+  "semanticReview": "review-semantics-verified.json",
+  "sourceLimitations": "19/20 entrypages readable; CodeZine and Mercari candidate403 excluded; latest100 discovery is bounded, not exhaustive."
+}
