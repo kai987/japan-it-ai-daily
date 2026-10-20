@@ -197,7 +197,7 @@
       "levelPolicy": "Retained reference levels for study, not a claim of an official complete JLPT word list. No level adjusted to meet a quota."
     },
     "vocabularyCount": 20,
-    "grammarCount": 8,
+    "grammarCount": 7,
     "reviewVocabulary": [
       {
         "term": "検証する",
@@ -1757,50 +1757,6 @@
         }
       },
       {
-        "pattern": "～ことから",
-        "level": "N2",
-        "meaning": "ある客観的な事実を理由・判断根拠として示す。",
-        "structure": "普通形 + ことから",
-        "usage": "原因や推論の根拠をやや書き言葉的に説明する。",
-        "exampleJa": "GUIでしか実行できないことから、実行処理だけをLocalへ切り出しました。",
-        "exampleMeaning": "GUI限定という事実を根拠に、実行部分をLocalへ分離したという意味です。",
-        "note": "単純な会話の「から」より、分析理由を示す文書で使いやすい。",
-        "sourceUrl": "https://atmarkit.itmedia.co.jp/ait/articles/2609/22/news009.html",
-        "sourceForm": "高度な専門性が必要になることから、汎用的なLLMではシミュレーションモデルのコードを正しく生成するのが難しい",
-        "sourceAnchor": "Top 1のSimTalk専門性が汎用LLMのCode生成を難しくする理由を説明する段落。",
-        "studyKind": "review",
-        "identity": "ことから",
-        "firstIntroducedDate": "2026-09-22",
-        "reviewEvidence": {
-          "form": "ことから",
-          "excerpt": "対策は、DOM不要のテストをnode環境へ、画面描画のテストをjsdomへ分け、低CPU環境ではワーカーを二つにすることから始まります。",
-          "sourceKind": "report-body"
-        },
-        "reportFrequency": {
-          "appearedDays": 7,
-          "totalDays": 70,
-          "percent": 10,
-          "appearedDates": [
-            "2026-09-06",
-            "2026-09-22",
-            "2026-09-23",
-            "2026-10-05",
-            "2026-10-12",
-            "2026-10-18",
-            "2026-10-20"
-          ],
-          "appearanceForms": {
-            "2026-09-06": "ことから",
-            "2026-09-22": "ことから",
-            "2026-09-23": "ことから",
-            "2026-10-05": "ことから",
-            "2026-10-12": "ことから",
-            "2026-10-18": "ことから",
-            "2026-10-20": "ことから"
-          }
-        }
-      },
-      {
         "pattern": "～だけで",
         "level": "N3",
         "meaning": "ある動作だけで結果につながることを表します。",
@@ -1817,8 +1773,8 @@
         "firstIntroducedDate": "2026-10-01",
         "reviewEvidence": {
           "form": "だけで",
-          "excerpt": "さらに、要約はSQL実行の内側から呼ばれるため、外側の再開だけでは集計が重複します。",
-          "sourceKind": "report-body"
+          "excerpt": "数値の増減だけでなく、その理由も掴みたいです。",
+          "sourceKind": "learning-example"
         },
         "reportFrequency": {
           "appearedDays": 70,
@@ -1987,8 +1943,8 @@
         "firstIntroducedDate": "2026-09-25",
         "reviewEvidence": {
           "form": "だけでなく",
-          "excerpt": "要点2: テスト数だけでなく、ミューテーションテストで誤りの検出力を問います。",
-          "sourceKind": "report-body"
+          "excerpt": "数値の増減だけでなく、その理由も掴みたいです。",
+          "sourceKind": "learning-example"
         },
         "reportFrequency": {
           "appearedDays": 69,
