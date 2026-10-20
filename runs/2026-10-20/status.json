@@ -202,20 +202,59 @@
   "n1Continuation": {
     "targetDate": "2026-10-20",
     "day": 52,
-    "stage": "waiting_source",
-    "requestSubmitted": false,
-    "statusBlobSha": "1c3c8f088b3ce3b7d69baf0aa7b4ea9a54892073",
-    "sourceObservation": {
-      "n1Main": "9bbab2f6409e78cb076b7d6ab57566eab1da3afa",
-      "mainSourceAbsent": true,
-      "outboxAbsent": true,
-      "completeMainInventory": true,
-      "completeProgressInventory": true,
-      "requestTargetDate": "2026-10-19",
-      "observedAt": "2026-10-20T01:31:46.316Z"
+    "stage": "published",
+    "published": true,
+    "releaseCommit": "75bc918184bb813078c7b26d8085bdaf883f15a6",
+    "syncRunId": 39366169950,
+    "pagesRunId": 39366350069,
+    "sourceBlobSha": "ea59214991b4e0e7af7dcf0a88b339e3f465dba1",
+    "snapshotSha256": "296e9712a369736e7201b0cf8013f75c0292fa8f022696775285601543737a05",
+    "upstreamSourceCommit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+    "counts": {
+      "newVocabulary": 12,
+      "reviewVocabulary": 8,
+      "newGrammar": 1,
+      "reviewGrammar": 4
     },
-    "upstreamSourceCommit": "f162396ee895bd3364788a191a5746632e293a2b",
-    "verifiedAt": "2026-10-20T01:31:51.692Z"
+    "liveVerified": true,
+    "originalUnchanged": true,
+    "audio": {
+      "targetDate": "2026-10-20",
+      "day": 52,
+      "stage": "validating",
+      "publicationComplete": false,
+      "sourceAudioCommit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+      "targetLessonPublished": true,
+      "n1TextCommit": "75bc918184bb813078c7b26d8085bdaf883f15a6",
+      "sharedAudioWorkflowPending": true,
+      "previousWaitingLessonRunId": 39355016978,
+      "sharedReusedNew": 26,
+      "uniqueNew": 75,
+      "generatedAndUploaded": 75,
+      "workerAttempt": 94,
+      "requiredClips": 5507,
+      "missingClips": 0,
+      "releaseCommit": null,
+      "pagesVerified": false,
+      "playbackVerified": false,
+      "lastError": null,
+      "publicBytes": {
+        "verified": 5508,
+        "bytes": 186454452,
+        "allPassed": true,
+        "proofSha256": "e6b4d758c49f00f093b0a8e91841f81bcf0a3989b4fbef1551069cc1935b2992",
+        "candidateSourcesSha256": "8c90df016f47cc69cf95c5e93291ee953181d53c40f3ad7f93967cc3bbf965fb",
+        "verifiedAt": "2026-10-20T04:00:59.544Z"
+      },
+      "observedInstaller": {
+        "pid": 81035,
+        "active": true,
+        "observation": "Installer sample is blocked in local open/readFileUtf8; no completed installer result yet. Root cause unknown. Existing OS-locked worker retained."
+      },
+      "updatedAt": "2026-10-20T04:05:04.222Z",
+      "nextAction": "Yield to the existing OS-locked worker. Resume its local validation/metadata commit and exact Pages/playback acceptance; after it releases ownership, observe or dispatch the source-bound shared-audio follow-up once. Do not resubmit Day52 text or regenerate hosted recordings."
+    },
+    "updatedAt": "2026-10-20T04:05:06.984Z"
   },
   "latestVerifiedMainCommit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
   "audioCompletion": {
