@@ -8,7 +8,7 @@
     "to": "2026-10-20T10:00:00+09:00"
   },
   "createdAt": "2026-10-20T01:03:23.699Z",
-  "updatedAt": "2026-10-20T01:31:52.074Z",
+  "updatedAt": "2026-10-20T01:46:37.430Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -198,7 +198,7 @@
   "pagesConclusion": "success",
   "correctionPending": false,
   "resumeFrom": null,
-  "nextAction": "Daily text verified; independent daily audio pending. N1 Day52 waits for its exact original.",
+  "nextAction": "Daily text, audio/R2/Pages and bilingual playback complete. N1 Day52 text awaits its original; separate audio follow-up waits for that lesson. Existing published N1 catalog audio worker is healthy.",
   "n1Continuation": {
     "targetDate": "2026-10-20",
     "day": 52,
@@ -216,5 +216,39 @@
     },
     "upstreamSourceCommit": "f162396ee895bd3364788a191a5746632e293a2b",
     "verifiedAt": "2026-10-20T01:31:51.692Z"
+  },
+  "latestVerifiedMainCommit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+  "audioCompletion": {
+    "stage": "playback_verified",
+    "commit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+    "workflowRunIds": {
+      "r2": 39354207754,
+      "pages": 39354207678
+    },
+    "newRecordings": 38,
+    "referencedRecordings": 58,
+    "playbackTests": 14,
+    "completedAt": "2026-10-20T01:41:48.555Z"
+  },
+  "n1AudioContinuation": {
+    "targetDate": "2026-10-20",
+    "day": 52,
+    "stage": "waiting_n1_lesson",
+    "sourceAudioCommit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+    "runId": 39355016978,
+    "workflowConclusion": "success",
+    "n1Commit": "9bbab2f6409e78cb076b7d6ab57566eab1da3afa",
+    "targetLessonPublished": false,
+    "noMetadataChanged": true,
+    "workerPublishedCatalog": {
+      "phase": "complete",
+      "releaseCommit": "9bbab2f6409e78cb076b7d6ab57566eab1da3afa",
+      "pendingClips": 0,
+      "lastError": null,
+      "updatedAt": "2026-10-20T01:36:48.316Z",
+      "coversPublishedLessonsOnly": true
+    },
+    "observedAt": "2026-10-20T01:46:24.714Z",
+    "nextAction": "N1 Day52 original and canonical text sync must finish first; the existing successful N1 Pages event will retry shared audio. No text request replayed."
   }
 }
