@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-21",
+  "generatedAt": "2026-10-21T01:39:39.726Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AIエージェントにGPUでの学習を任せるとき、何を確認しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "b526ac7beb180db85a194601682009f00cadefb645182c58b40a35d816ff74b7",
+      "audioSha256": "5d8d4fe5570ca709c6d9a5ecf2de97e175c5140f465e62c4fb80c91ba18f9309",
+      "durationSeconds": 5.85
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "GPUの起動だけでなく、上限と終了結果を確認します。RuncrateではOAuthで環境を選び、月間予算と最大実行時間で範囲を絞ります。ログはカーソルで続きから読み、最後にジョブの終了コードと費用を確かめます。ただし、これは提供側の手順説明で、学習性能の比較ではありません。チェックポイントの保存も自分の条件で確認します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "6ed91b6a888f742e08ff382569aebe6bdb7fb0fc404fab97b1d28301afae6dbb",
+      "audioSha256": "6a897e9b7b0180913bac767a8893236fdceb216373a6be0b694cf9f29270ccc6",
+      "durationSeconds": 27.828,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "新しいOAuthの保護機能を導入するとき、どう検証しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "b34c63e8f26c2442ce54aac84418d36aa4654d6c81f9f6c20795e1052f3a3137",
+      "audioSha256": "e08de0f9775c5f3e6c44e8107a5b819202dc7ab3026c4f2f253cc34c8aaecf87",
+      "durationSeconds": 4.815
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "まず守る対象と、実際の交換結果を分けて確認します。GoogleのDPoPは記事ではRefresh Tokenを鍵に結び付けますが、Access TokenはBearerのままです。署名もJWSの64バイト形式とDERを区別します。ただし、時刻やnonceの挙動は著者の検証条件です。鍵の保存と再認可の負担まで含め、対象環境で確かめます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "939625c46447198c73b17175464cc42a58796cc5499c553bdc46010e84068a78",
+      "audioSha256": "04406caf61084682182dea392e4fe77db78dea317d99627a2a3218925e0dcd5b",
+      "durationSeconds": 27.264,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "PDFの翻訳画面を、待たせず読みやすくするにはどう設計しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "c4afd5af5c909407323545d795ffa51f347892ab3bc1b3fb2ecf400fc76a65c5",
+      "audioSha256": "c7edcb9fce1e9b27c2cec9b81b6fc36a6ad63eb8144b4517a87279643579f90a",
+      "durationSeconds": 5.572
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "文章の復元と表示の待ち時間を分けて考えます。Taiyakuはpdf.jsの断片を座標や行間から段落へ戻し、見えているページから最大二つずつ翻訳します。SSEの差分は80ミリ秒ごとにReactへまとめて反映します。ただし段落判定は幾何的なルールです。二段組みや長い訳文で、読み順と文字の欠落がないかを確かめます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "82a67d886a3b3e08ff2e17e133498fa18a4bb859170c441839df75863ace1b01",
+      "audioSha256": "8f8be10a2eae5d5c0f4d3a711a4460b64672834894cdf0d3f42c418837cb95e7",
+      "durationSeconds": 26.642,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "LLMのコード評価で、モデルと評価環境の問題をどう区別しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "7166794ed1d325652a1754602800ac9e25bdbd0e31444e7a740c286506687b96",
+      "audioSha256": "7cdd0b6fb0c942462a0589418edc6001da9b0ff7ddca5070c832f7a200479021",
+      "durationSeconds": 5.792
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "先に参照解が通るかを確認します。この記事のgold checkは、一時コピーへ正解のパッチを当て、同じPythonからpytestを動かします。モジュール不足とテスト未収集を、通常の不合格と分けてCIを止めます。ただし参照解の成功は、テストの網羅性まで保証しません。失敗の分類と、評価に含めた課題も残します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "0d09e36c496fdf7c60b286f49d6459123c464af216d73c9de6da32eaeb32442c",
+      "audioSha256": "82b68b5cdcd55ad9f927122e6a7ad4c817123ebce0ddcd33c68f9ced44bfa467",
+      "durationSeconds": 24.751,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "複数リージョンへデータを複製するか、何を基準に判断しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "ba61c97121cfb30757cdd483539d204eca69115157978ea043da9b038535ae2c",
+      "audioSha256": "a537bf3db25f2e7d9f63ec52cb0b826023ec079f39e56e630b3449f719012feb",
+      "durationSeconds": 5.05
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "読取時間だけでなく、更新が届くまでと管理負担も見ます。MRAPの試験では東京の直接取得が中央値173.6ミリ秒から30ミリ秒へ縮みましたが、複製中は古い内容でもHTTP200でした。ただし小さなファイルを逐次読む条件です。約22秒の更新待ちと追加費用を許せるかを確認し、速さだけで採用を決めません。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "4b87a16422b748e3193fbf61721f1eb977ce4ec92dceb845121f8616e6ddd98a",
+      "audioSha256": "5bac32a03b73cc658e383b261ddf42aac3eb54223c5b258546fa30e3107daa0c",
+      "durationSeconds": 27.921,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "処理が最後まで動いたという表示だけで、成功と言えないのはなぜですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "9d5fb991412dc04118132422a5c6c8b036117e79b59db4a58247c253f4cae181",
+      "audioSha256": "31ff75366449fc44deba226d71b60f7acfd1b2048be2be3dcc826769c0d1653c",
+      "durationSeconds": 5.282
+    },
+    {
+      "index": 2,
+      "text": "再試行と重複排除を設計するとき、何を同一とみなしますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "772ee895670b82bdf01bdce54e5e05f06e9ed43c9fc4f8076b7c9002a33881cd",
+      "audioSha256": "443993bb033873f521cedd7f716ed070806e03a618ff18fef535ca729ebfd7b3",
+      "durationSeconds": 5.36
+    },
+    {
+      "index": 3,
+      "text": "MRAPが速くなっても、採用を見送る理由は何ですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "de92e856fb7eacd7efc7398278220f3f6a1ca6fa687d69f69231582ce1cc9fb7",
+      "audioSha256": "db49f36a8d63bd4f4748a67de86489c70d625234eddd74f64106db684b9a8c07",
+      "durationSeconds": 4.434
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-21T01:39:45.641Z"
+}
