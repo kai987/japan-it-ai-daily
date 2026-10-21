@@ -2,13 +2,21 @@
   "schemaVersion": 1,
   "targetDate": "2026-10-21",
   "stage": "drafts_ready",
-  "sourceCommit": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+  "sourceCommit": "9c372aad7ea5ab48ac11cc2d377d56794a1e976c",
   "sourceWindow": {
     "from": "2026-10-20T10:00:00+09:00",
     "to": "2026-10-21T10:00:00+09:00"
   },
   "createdAt": "2026-10-21T01:03:26.971Z",
-  "updatedAt": "2026-10-21T01:17:32.685Z",
-  "completedArtifacts": [],
-  "lastError": null
+  "updatedAt": "2026-10-21T01:21:46.679Z",
+  "completedArtifacts": [
+    "sources.json",
+    "history.json",
+    "interviews.json",
+    "draft.json"
+  ],
+  "lastError": null,
+  "baseCommit": "9c372aad7ea5ab48ac11cc2d377d56794a1e976c",
+  "maintenanceCommit": "9c372aad7ea5ab48ac11cc2d377d56794a1e976c",
+  "nextAction": "Verify separate Vite repair release, then exact six-path draft preflight and request-only publication."
 }
