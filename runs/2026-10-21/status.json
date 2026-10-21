@@ -8,7 +8,7 @@
     "to": "2026-10-21T10:00:00+09:00"
   },
   "createdAt": "2026-10-21T01:03:26.971Z",
-  "updatedAt": "2026-10-21T01:36:48.511Z",
+  "updatedAt": "2026-10-21T01:37:43.354Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -21,7 +21,7 @@
   "lastError": null,
   "baseCommit": "9c372aad7ea5ab48ac11cc2d377d56794a1e976c",
   "maintenanceCommit": "9c372aad7ea5ab48ac11cc2d377d56794a1e976c",
-  "nextAction": "Text verified; persist independent audio pending and attempt one corresponding N1 handoff.",
+  "nextAction": "Daily text verified; independent daily audio pending. N1 Day53 waits for its exact original.",
   "draftCommit": "b2a70429ebcb132e7d750f279d5370f7c67fae91",
   "draftBranch": "draft/daily-2026-10-21",
   "paths": [
@@ -200,5 +200,23 @@
   "site": "/tmp/japan-daily-20261021/text-release-39528017742/site",
   "pagesConclusion": "success",
   "correctionPending": false,
-  "resumeFrom": null
+  "resumeFrom": null,
+  "n1Continuation": {
+    "targetDate": "2026-10-21",
+    "day": 53,
+    "stage": "waiting_source",
+    "requestSubmitted": false,
+    "statusBlobSha": "6c8a376f9ac38115c873f90ea0e804ae0bdffade",
+    "sourceObservation": {
+      "n1Main": "8412e2680761b9d6e836667d5c7776e100de403a",
+      "mainSourceAbsent": true,
+      "outboxAbsent": true,
+      "completeMainInventory": true,
+      "completeProgressInventory": true,
+      "requestTargetDate": "2026-10-20",
+      "observedAt": "2026-10-21T01:37:37.370Z"
+    },
+    "upstreamSourceCommit": "6ac6e17bf1456996a675042f397406abfed80312",
+    "verifiedAt": "2026-10-21T01:37:42.944Z"
+  }
 }
