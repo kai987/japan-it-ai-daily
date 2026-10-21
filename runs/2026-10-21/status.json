@@ -8,7 +8,7 @@
     "to": "2026-10-21T10:00:00+09:00"
   },
   "createdAt": "2026-10-21T01:03:26.971Z",
-  "updatedAt": "2026-10-21T01:51:00.103Z",
+  "updatedAt": "2026-10-21T04:10:16.762Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -204,20 +204,37 @@
   "n1Continuation": {
     "targetDate": "2026-10-21",
     "day": 53,
-    "stage": "waiting_source",
-    "requestSubmitted": false,
-    "statusBlobSha": "6c8a376f9ac38115c873f90ea0e804ae0bdffade",
+    "stage": "published",
+    "requestSubmitted": true,
+    "requestCommit": "bbdefa31b52563459a949fde49ad82db80307d8a",
+    "syncRunId": 39541393799,
+    "releaseCommit": "8be51745b2919dd77235189cacc43eb620bbcb87",
+    "pagesRunId": 39541558129,
+    "sourceBlobSha": "8a99b38d32c12946659aa8c156c8815e2cd76b74",
+    "sourceSha256": "3fa0aa495dd9abf2e42adfd3f25a6b002d5dfbcf19d65ecfbe199921b5f3f35f",
     "sourceObservation": {
-      "n1Main": "8412e2680761b9d6e836667d5c7776e100de403a",
-      "mainSourceAbsent": true,
-      "outboxAbsent": true,
-      "completeMainInventory": true,
-      "completeProgressInventory": true,
-      "requestTargetDate": "2026-10-20",
-      "observedAt": "2026-10-21T01:37:37.370Z"
+      "n1Main": "dbe54f4f88f3184cfb60c987067e500350d03dfc",
+      "mainSourcePresent": true,
+      "outboxVerified": true,
+      "exactSourceBytes": 24265,
+      "sourceSha256": "3fa0aa495dd9abf2e42adfd3f25a6b002d5dfbcf19d65ecfbe199921b5f3f35f",
+      "observedAt": "2026-10-21T03:57:21.798Z"
     },
-    "upstreamSourceCommit": "6ac6e17bf1456996a675042f397406abfed80312",
-    "verifiedAt": "2026-10-21T01:37:42.944Z"
+    "upstreamSourceCommit": "1fb027ba34a87862867be104bc74bd5afd8e74cb",
+    "snapshotSha256": "9cd57f4eb7494c56a5e826ae0c7c728cb0a4b664b631ed0c50603074d195e98d",
+    "issueNumber": 71,
+    "totalDays": 71,
+    "counts": {
+      "newVocabulary": 19,
+      "reviewVocabulary": 1,
+      "newGrammar": 0,
+      "reviewGrammar": 6
+    },
+    "upstreamTargetVerified": true,
+    "exactN1PagesAndLiveVerified": true,
+    "latestVerifiedReleaseCommit": "de2fbb71830fe80f5593017fe22316126d5909f3",
+    "latestVerifiedPagesRunId": 39542144984,
+    "verifiedAt": "2026-10-21T04:10:16.762Z"
   },
   "latestVerifiedMainCommit": "1fb027ba34a87862867be104bc74bd5afd8e74cb",
   "audioCompletion": {
@@ -236,7 +253,7 @@
     "schemaVersion": 1,
     "targetDate": "2026-10-21",
     "day": 53,
-    "stage": "waiting_n1_lesson",
+    "stage": "awaiting_local_audio",
     "sourceAudioCommit": "1fb027ba34a87862867be104bc74bd5afd8e74cb",
     "dailyAudioVerification": {
       "r2RunId": 39528720870,
@@ -247,28 +264,382 @@
     "createdAt": "2026-10-21T01:47:58.597Z",
     "error": null,
     "n1BaseCommit": "8412e2680761b9d6e836667d5c7776e100de403a",
-    "dispatchRequestedAt": "2026-10-21T01:48:01.255Z",
-    "nextAction": "N1 Day53 original and canonical text sync must finish first; the existing successful N1 Pages event will retry shared audio. No text request replayed.",
-    "updatedAt": "2026-10-21T01:49:11.712Z",
-    "sharedAudioRunId": 39529386839,
-    "sharedAudioRunHead": "8412e2680761b9d6e836667d5c7776e100de403a",
+    "dispatchRequestedAt": "2026-10-21T04:04:43.507Z",
+    "nextAction": "Existing background worker resumes its preserved validation/upload proofs and reconciles latest main at the next eligible Tokyo window; do not clear the same-day latch or regenerate hosted recordings.",
+    "updatedAt": "2026-10-21T04:10:11.142Z",
+    "sharedAudioRunId": 39542050729,
+    "sharedAudioRunHead": "8be51745b2919dd77235189cacc43eb620bbcb87",
     "runUrl": "https://github.com/kai987/Japanese-N1-Immersive-Sparring-Partner/actions/runs/39529386839",
-    "n1Commit": "8412e2680761b9d6e836667d5c7776e100de403a",
+    "n1Commit": "de2fbb71830fe80f5593017fe22316126d5909f3",
     "workflowConclusion": "success",
-    "targetLessonPublished": false,
-    "noMetadataChanged": true,
+    "targetLessonPublished": true,
+    "noMetadataChanged": false,
+    "n1TextCommit": "8be51745b2919dd77235189cacc43eb620bbcb87",
+    "n1TextPagesRunId": 39541558129,
+    "previousWaitingRunId": 39529386839,
+    "sharedStage": "playback_verified",
+    "n1PagesRunId": 39542144984,
+    "addedShared": 38,
+    "publicNewClipSha256Verified": 38,
+    "realSharedPlaybackTests": 2,
+    "pendingClips": 160,
+    "pendingTargetClips": 85,
+    "incompleteLessonDates": [
+      "2026-10-21",
+      "2026-10-20"
+    ],
+    "complete": false,
+    "sharedAudioProof": {
+      "targetDate": "2026-10-21",
+      "releaseCommit": "de2fbb71830fe80f5593017fe22316126d5909f3",
+      "pagesRunId": 39542144984,
+      "sharedAudioRunId": 39542050729,
+      "sourceAudioCommit": "1fb027ba34a87862867be104bc74bd5afd8e74cb",
+      "addedShared": 38,
+      "allNewSharedPublicBytesVerified": 38,
+      "existingHostedClipsPreserved": 5433,
+      "pendingTotal": 160,
+      "pendingTarget": 85,
+      "incompleteLessonDates": [
+        "2026-10-21",
+        "2026-10-20"
+      ],
+      "changedPaths": [
+        "public/audio/manifest.json",
+        "src/data/audio-index.json",
+        "src/data/audio-pending.json",
+        "src/data/audio-sources.json"
+      ],
+      "textOriginalSnapshotRequestUnchanged": true,
+      "recordings": [
+        {
+          "id": "003589306f45ea5c",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-01--3372c79b60783810e8a2c14ed1c5cb14fd4ffde64fd6d2b4d2fe4e170daeb9b7.mp3",
+          "bytes": 50733,
+          "sha256": "3372c79b60783810e8a2c14ed1c5cb14fd4ffde64fd6d2b4d2fe4e170daeb9b7",
+          "duration": 4.2
+        },
+        {
+          "id": "2a659c368ad19b8a",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-18--f59b2601a1750f0929af8f2bc15669b2c6676200435a6e9a325752ae49a27dec.mp3",
+          "bytes": 48429,
+          "sha256": "f59b2601a1750f0929af8f2bc15669b2c6676200435a6e9a325752ae49a27dec",
+          "duration": 4.008
+        },
+        {
+          "id": "0dd7c7408593508c",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-09--3d28b141a96b90d37c387fcc0c86cd23bce5da2401db6fa573895374400194ab.mp3",
+          "bytes": 55341,
+          "sha256": "3d28b141a96b90d37c387fcc0c86cd23bce5da2401db6fa573895374400194ab",
+          "duration": 4.584
+        },
+        {
+          "id": "1f5705ef7c16538b",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-14--26c9ede305ebe8f4ceb4e313da95fec9f933ef335cd310ae0f955152377f84cf.mp3",
+          "bytes": 15597,
+          "sha256": "26c9ede305ebe8f4ceb4e313da95fec9f933ef335cd310ae0f955152377f84cf",
+          "duration": 1.272
+        },
+        {
+          "id": "11e56269c89457ad",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-11--d51202d4f8f8b99ff8a14e6c5196c96ac7e23ea304ecc22fd50f5ebc735f9944.mp3",
+          "bytes": 13005,
+          "sha256": "d51202d4f8f8b99ff8a14e6c5196c96ac7e23ea304ecc22fd50f5ebc735f9944",
+          "duration": 1.056
+        },
+        {
+          "id": "1313bcb117a3a1b5",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-03--eb66089b169c8b40cd353b880c4dae9f2e4d61e3395eca603dd178d50a0b2b86.mp3",
+          "bytes": 52173,
+          "sha256": "eb66089b169c8b40cd353b880c4dae9f2e4d61e3395eca603dd178d50a0b2b86",
+          "duration": 4.32
+        },
+        {
+          "id": "3c655ea97930131d",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-19--371a8b77a34521e4f9a5a9d54c55282c2890029ef7ee325bd468d8f73bb1d5ac.mp3",
+          "bytes": 20205,
+          "sha256": "371a8b77a34521e4f9a5a9d54c55282c2890029ef7ee325bd468d8f73bb1d5ac",
+          "duration": 1.656
+        },
+        {
+          "id": "3778bedbb9624b2f",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-07--b486908f9f2875cad7aee172e39f37021305e332122898d832e502c99b42268a.mp3",
+          "bytes": 54477,
+          "sha256": "b486908f9f2875cad7aee172e39f37021305e332122898d832e502c99b42268a",
+          "duration": 4.512
+        },
+        {
+          "id": "406214a3819546d7",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-19--25c6cba4c7bc3f0f7c07c607a33b5be3bf1897a1f199cd4239d7f6d3faca8423.mp3",
+          "bytes": 47853,
+          "sha256": "25c6cba4c7bc3f0f7c07c607a33b5be3bf1897a1f199cd4239d7f6d3faca8423",
+          "duration": 3.96
+        },
+        {
+          "id": "41d6710d9336d6b1",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-18--c09fa8a4ac34d20617e5624e41e28494d84af91860da4e21f15d016fbf95e4e0.mp3",
+          "bytes": 16749,
+          "sha256": "c09fa8a4ac34d20617e5624e41e28494d84af91860da4e21f15d016fbf95e4e0",
+          "duration": 1.368
+        },
+        {
+          "id": "2d521c7e2e262822",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-16--8e008d9977902f40dc3d65a2f8502c35969dc8e0cf1dbfa15581d0a00b9215bf.mp3",
+          "bytes": 63693,
+          "sha256": "8e008d9977902f40dc3d65a2f8502c35969dc8e0cf1dbfa15581d0a00b9215bf",
+          "duration": 5.28
+        },
+        {
+          "id": "31a89847683d3f8b",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-15--a0b6e280e0a3fdf90125eedee2f09f849c3f92e7594886626acd5b932df4bb6c.mp3",
+          "bytes": 15309,
+          "sha256": "a0b6e280e0a3fdf90125eedee2f09f849c3f92e7594886626acd5b932df4bb6c",
+          "duration": 1.248
+        },
+        {
+          "id": "4772b13d504c60c1",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-07--cc86e668d4f93393d97238d26d394201fcfae03d2f596a450b5f7e8a191dd33c.mp3",
+          "bytes": 14157,
+          "sha256": "cc86e668d4f93393d97238d26d394201fcfae03d2f596a450b5f7e8a191dd33c",
+          "duration": 1.152
+        },
+        {
+          "id": "4436e60d59f29ed1",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-13--418d25cfc7f35af1f70c86ebc1a6b09a2120bd1f3ee25264a0c49a046ab4070b.mp3",
+          "bytes": 57357,
+          "sha256": "418d25cfc7f35af1f70c86ebc1a6b09a2120bd1f3ee25264a0c49a046ab4070b",
+          "duration": 4.752
+        },
+        {
+          "id": "4c774c517c2e9ecd",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-05--b8619a5b848cdedb84026e279a2bcbfa62c1b4db9f823ad50f9fcd6673b32422.mp3",
+          "bytes": 44685,
+          "sha256": "b8619a5b848cdedb84026e279a2bcbfa62c1b4db9f823ad50f9fcd6673b32422",
+          "duration": 3.696
+        },
+        {
+          "id": "52800b7123d67155",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-15--d1d1763e1a5f974b1649ab1e07d745f8db52e4fb15d0c143ff16756ef26a0712.mp3",
+          "bytes": 52749,
+          "sha256": "d1d1763e1a5f974b1649ab1e07d745f8db52e4fb15d0c143ff16756ef26a0712",
+          "duration": 4.368
+        },
+        {
+          "id": "59fb80c42dd4e778",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-08--8eaa2cbcb19ce8c6632301587e9d792398ac5e38e06d04f233eb8362f1e0d78f.mp3",
+          "bytes": 14157,
+          "sha256": "8eaa2cbcb19ce8c6632301587e9d792398ac5e38e06d04f233eb8362f1e0d78f",
+          "duration": 1.152
+        },
+        {
+          "id": "584b2d22c92e346e",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-10--559488c4f7d1b2ba50c9d0f48dadbaa60d739f406d612867aa94a3d49fdb4552.mp3",
+          "bytes": 52749,
+          "sha256": "559488c4f7d1b2ba50c9d0f48dadbaa60d739f406d612867aa94a3d49fdb4552",
+          "duration": 4.368
+        },
+        {
+          "id": "5bdbc4db0019ce8f",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-09--770c631789d297c8cc81505019483dc2189e2291a46617f501b28e27e77a6241.mp3",
+          "bytes": 12717,
+          "sha256": "770c631789d297c8cc81505019483dc2189e2291a46617f501b28e27e77a6241",
+          "duration": 1.032
+        },
+        {
+          "id": "65458e2cad6fe010",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-17--d119d238b772e4ab0d56c856c26687d229e3f2eb3603b6ddacc1598d741dae8b.mp3",
+          "bytes": 15885,
+          "sha256": "d119d238b772e4ab0d56c856c26687d229e3f2eb3603b6ddacc1598d741dae8b",
+          "duration": 1.296
+        },
+        {
+          "id": "7b5680f8ff07a37c",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-05--655d872a65032b1008ac5a68ba00c827cca59368d53a2c2452072ffc5286bdc6.mp3",
+          "bytes": 13869,
+          "sha256": "655d872a65032b1008ac5a68ba00c827cca59368d53a2c2452072ffc5286bdc6",
+          "duration": 1.128
+        },
+        {
+          "id": "77cdc80e2d8a826a",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-08--2df5900f5c8462d7d83af5029a9112f1c48f8bc9aab93aaa4bda7709b5dabb9d.mp3",
+          "bytes": 45549,
+          "sha256": "2df5900f5c8462d7d83af5029a9112f1c48f8bc9aab93aaa4bda7709b5dabb9d",
+          "duration": 3.768
+        },
+        {
+          "id": "6ede4d96f4a5438a",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-06--7c8890f92035ea20db42cd58d70648a1e0021caae9bfc8515af094a3f7e77da7.mp3",
+          "bytes": 13293,
+          "sha256": "7c8890f92035ea20db42cd58d70648a1e0021caae9bfc8515af094a3f7e77da7",
+          "duration": 1.08
+        },
+        {
+          "id": "8673fea9a82d6455",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-04--38a18873a71664ca1441db7e9bc7f5d08a1179e56fc7da4b3d48d3c8c9987e1f.mp3",
+          "bytes": 58797,
+          "sha256": "38a18873a71664ca1441db7e9bc7f5d08a1179e56fc7da4b3d48d3c8c9987e1f",
+          "duration": 4.872
+        },
+        {
+          "id": "a603127c19a447d0",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-03--50d436914f09bc282d68951a2706c7aac954051861301911509f2af001400fcb.mp3",
+          "bytes": 13293,
+          "sha256": "50d436914f09bc282d68951a2706c7aac954051861301911509f2af001400fcb",
+          "duration": 1.08
+        },
+        {
+          "id": "9a5f0b30eb33cd9c",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-06--bc84f77785b2413689dab27011124af822c6a8bba2f8caca75a4aec5be1f331f.mp3",
+          "bytes": 48717,
+          "sha256": "bc84f77785b2413689dab27011124af822c6a8bba2f8caca75a4aec5be1f331f",
+          "duration": 4.032
+        },
+        {
+          "id": "a4436762e726c4f6",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-14--ad048aa245ed5395fa99ac6e31a0a5d4042f3601975ff2e45a3981c601afe992.mp3",
+          "bytes": 53037,
+          "sha256": "ad048aa245ed5395fa99ac6e31a0a5d4042f3601975ff2e45a3981c601afe992",
+          "duration": 4.392
+        },
+        {
+          "id": "a8aa4795dfcdf621",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-02--73731ea492f3dda7ca2b8ac2747a9d73cff531e6590309c7b3cf1329bd03a9e9.mp3",
+          "bytes": 17037,
+          "sha256": "73731ea492f3dda7ca2b8ac2747a9d73cff531e6590309c7b3cf1329bd03a9e9",
+          "duration": 1.392
+        },
+        {
+          "id": "89d87d412c0dd8a5",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-11--241bdf280d65e0fbdd5bd863d828fd72dbfa61ab4e2eca3616950ff4ea737e6f.mp3",
+          "bytes": 53901,
+          "sha256": "241bdf280d65e0fbdd5bd863d828fd72dbfa61ab4e2eca3616950ff4ea737e6f",
+          "duration": 4.464
+        },
+        {
+          "id": "ab0bcdc2a1f7abfe",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-04--af6ec1996d0ca7d281582f153b494da3d16491d869078a431a4b816c4ee96aa7.mp3",
+          "bytes": 15021,
+          "sha256": "af6ec1996d0ca7d281582f153b494da3d16491d869078a431a4b816c4ee96aa7",
+          "duration": 1.224
+        },
+        {
+          "id": "8956670f462af67b",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-12--830fbdafc49cd9322f9a7170c9fb0aa3eb02594bc6dc347e948d5f14daa659cb.mp3",
+          "bytes": 40365,
+          "sha256": "830fbdafc49cd9322f9a7170c9fb0aa3eb02594bc6dc347e948d5f14daa659cb",
+          "duration": 3.336
+        },
+        {
+          "id": "ba73f65a8987155e",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-13--46ceb45a4619efd31dd5c682a5c819e2094d892c6829cbe131a80ac77d0fc76e.mp3",
+          "bytes": 14157,
+          "sha256": "46ceb45a4619efd31dd5c682a5c819e2094d892c6829cbe131a80ac77d0fc76e",
+          "duration": 1.152
+        },
+        {
+          "id": "b8b76ca1674844f5",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-10--6c601089e4af7ad761575169483967051ab65ee0a952681bc7099ed7b030332c.mp3",
+          "bytes": 14157,
+          "sha256": "6c601089e4af7ad761575169483967051ab65ee0a952681bc7099ed7b030332c",
+          "duration": 1.152
+        },
+        {
+          "id": "c6896e4ce6c226a8",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-01--b1adfe4c075d1767c96d05e2a4d02d120e054ce37c0e77079e3aa66b5fdd569c.mp3",
+          "bytes": 15021,
+          "sha256": "b1adfe4c075d1767c96d05e2a4d02d120e054ce37c0e77079e3aa66b5fdd569c",
+          "duration": 1.224
+        },
+        {
+          "id": "ca176e111a6893d5",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-17--d2b7d5c5c55e5d1f6242d21f1ead8a81097f652cecb675b07efdbe78889d6221.mp3",
+          "bytes": 48717,
+          "sha256": "d2b7d5c5c55e5d1f6242d21f1ead8a81097f652cecb675b07efdbe78889d6221",
+          "duration": 4.032
+        },
+        {
+          "id": "fdf5cd58702c3584",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-16--9fed9b2e5e276d31d966360e9502a832a5c3419ff2feb5264f7cfb486b9b57f0.mp3",
+          "bytes": 16749,
+          "sha256": "9fed9b2e5e276d31d966360e9502a832a5c3419ff2feb5264f7cfb486b9b57f0",
+          "duration": 1.368
+        },
+        {
+          "id": "c707e88032308e04",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-02--2d5ce2e589b7ea87b8f80e5a3822e7beb37e9a000581f3233d1f77b8e3eecacb.mp3",
+          "bytes": 51309,
+          "sha256": "2d5ce2e589b7ea87b8f80e5a3822e7beb37e9a000581f3233d1f77b8e3eecacb",
+          "duration": 4.248
+        },
+        {
+          "id": "c4921e899e971f7d",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-12--3dc47b5526f1ecd82d9ac479ae177d5d1133be84418981c1551d399f410828d5.mp3",
+          "bytes": 13293,
+          "sha256": "3dc47b5526f1ecd82d9ac479ae177d5d1133be84418981c1551d399f410828d5",
+          "duration": 1.08
+        }
+      ],
+      "verifiedAt": "2026-10-21T04:07:28.836Z",
+      "pagesStatus": "completed",
+      "pagesConclusion": "success",
+      "exactPagesVerified": true,
+      "liveAssetsVerified": true,
+      "pagesVerifiedAt": "2026-10-21T04:08:01.921Z"
+    },
+    "playbackProof": {
+      "releaseCommit": "de2fbb71830fe80f5593017fe22316126d5909f3",
+      "pagesRunId": 39542144984,
+      "engine": "Cua in-app Chromium native HTMLAudioElement; no mocks or altered player",
+      "tests": [
+        {
+          "kind": "vocabulary",
+          "id": "c6896e4ce6c226a8",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/vocab-01--b1adfe4c075d1767c96d05e2a4d02d120e054ce37c0e77079e3aa66b5fdd569c.mp3",
+          "decodedDuration": 1.161583,
+          "manifestDuration": 1.224,
+          "startTime": 0.15758,
+          "endTime": 0.167226,
+          "paused": false,
+          "error": null
+        },
+        {
+          "kind": "example",
+          "id": "003589306f45ea5c",
+          "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-21/example-01--3372c79b60783810e8a2c14ed1c5cb14fd4ffde64fd6d2b4d2fe4e170daeb9b7.mp3",
+          "decodedDuration": 4.144042,
+          "manifestDuration": 4.2,
+          "initialTime": 0,
+          "playingTime": 0.157723,
+          "paused": false,
+          "error": null,
+          "responseStatus": 206
+        }
+      ],
+      "consoleErrors": [],
+      "readingPreferenceRestored": true,
+      "temporaryTabClosed": true,
+      "verifiedAt": "2026-10-21T04:10:11.137Z"
+    },
     "localWorkerObservation": {
-      "scope": "Existing N1 catalog backlog; not a completion claim for Day53",
       "phase": "retry_pending",
+      "attempt": 101,
+      "baseCommit": "8412e2680761b9d6e836667d5c7776e100de403a",
+      "sourceAudioCommit": "1fb027ba34a87862867be104bc74bd5afd8e74cb",
       "failedPhase": "validating",
       "pendingClips": 0,
-      "updatedAt": "2026-10-20T06:25:19.593Z",
       "releaseCommit": null,
-      "observedAt": "2026-10-21T01:50:55.572Z",
-      "schedule": null,
-      "window": "11:10-13:10 Asia/Tokyo; no worker or remote audio check invoked outside its window",
-      "nextEligibleOpening": "2026-10-21T11:10:00+09:00"
-    }
+      "lastError": "npm failed (1): npm notice run japanese-n1-immersive-sparring-partner@0.1.0 test:e2e\nnpm notice run playwright test\n[WebServer] npm notice run japanese-n1-immersive-sparring-partner@0.1.0 preview\n[WebServer] npm notice run vite preview --host 127.0.0.1 --port 59987 --strictPort\n",
+      "updatedAt": "2026-10-21T02:16:49.421Z",
+      "schedule": {
+        "version": 1,
+        "claimedDate": "2026-10-21",
+        "reason": "resume_pending",
+        "startedAt": "2026-10-21T02:10:10.117Z"
+      },
+      "observedAt": "2026-10-21T04:10:11.142Z",
+      "note": "This worker checkpoint is an earlier catalog attempt. It is not completion evidence for the newly published Day53 catalog."
+    },
+    "nextEligibleOpening": "2026-10-22T11:10:00+09:00"
   },
   "maintenanceRepair": {
     "base": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
