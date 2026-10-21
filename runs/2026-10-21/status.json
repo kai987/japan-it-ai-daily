@@ -8,7 +8,7 @@
     "to": "2026-10-21T10:00:00+09:00"
   },
   "createdAt": "2026-10-21T01:03:26.971Z",
-  "updatedAt": "2026-10-21T01:37:43.354Z",
+  "updatedAt": "2026-10-21T01:51:00.103Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -21,7 +21,7 @@
   "lastError": null,
   "baseCommit": "9c372aad7ea5ab48ac11cc2d377d56794a1e976c",
   "maintenanceCommit": "9c372aad7ea5ab48ac11cc2d377d56794a1e976c",
-  "nextAction": "Daily text verified; independent daily audio pending. N1 Day53 waits for its exact original.",
+  "nextAction": "Daily text, audio/R2/Pages and bilingual recorded playback complete. N1 Day53 awaits the exact original; shared audio awaits that lesson. Preserve existing unique-audio worker backlog for the authorized Tokyo window.",
   "draftCommit": "b2a70429ebcb132e7d750f279d5370f7c67fae91",
   "draftBranch": "draft/daily-2026-10-21",
   "paths": [
@@ -218,5 +218,76 @@
     },
     "upstreamSourceCommit": "6ac6e17bf1456996a675042f397406abfed80312",
     "verifiedAt": "2026-10-21T01:37:42.944Z"
-  }
+  },
+  "latestVerifiedMainCommit": "1fb027ba34a87862867be104bc74bd5afd8e74cb",
+  "audioCompletion": {
+    "stage": "playback_verified",
+    "audioCommit": "1fb027ba34a87862867be104bc74bd5afd8e74cb",
+    "workflowRunIds": {
+      "r2": 39528720870,
+      "pages": 39528720774
+    },
+    "newRecordings": 51,
+    "referencedRecordings": 59,
+    "playbackTests": 12,
+    "completedAt": "2026-10-21T01:47:58.463Z"
+  },
+  "n1AudioContinuation": {
+    "schemaVersion": 1,
+    "targetDate": "2026-10-21",
+    "day": 53,
+    "stage": "waiting_n1_lesson",
+    "sourceAudioCommit": "1fb027ba34a87862867be104bc74bd5afd8e74cb",
+    "dailyAudioVerification": {
+      "r2RunId": 39528720870,
+      "pagesRunId": 39528720774,
+      "publicSha256Verified": 59,
+      "realPlaybackTests": 12
+    },
+    "createdAt": "2026-10-21T01:47:58.597Z",
+    "error": null,
+    "n1BaseCommit": "8412e2680761b9d6e836667d5c7776e100de403a",
+    "dispatchRequestedAt": "2026-10-21T01:48:01.255Z",
+    "nextAction": "N1 Day53 original and canonical text sync must finish first; the existing successful N1 Pages event will retry shared audio. No text request replayed.",
+    "updatedAt": "2026-10-21T01:49:11.712Z",
+    "sharedAudioRunId": 39529386839,
+    "sharedAudioRunHead": "8412e2680761b9d6e836667d5c7776e100de403a",
+    "runUrl": "https://github.com/kai987/Japanese-N1-Immersive-Sparring-Partner/actions/runs/39529386839",
+    "n1Commit": "8412e2680761b9d6e836667d5c7776e100de403a",
+    "workflowConclusion": "success",
+    "targetLessonPublished": false,
+    "noMetadataChanged": true,
+    "localWorkerObservation": {
+      "scope": "Existing N1 catalog backlog; not a completion claim for Day53",
+      "phase": "retry_pending",
+      "failedPhase": "validating",
+      "pendingClips": 0,
+      "updatedAt": "2026-10-20T06:25:19.593Z",
+      "releaseCommit": null,
+      "observedAt": "2026-10-21T01:50:55.572Z",
+      "schedule": null,
+      "window": "11:10-13:10 Asia/Tokyo; no worker or remote audio check invoked outside its window",
+      "nextEligibleOpening": "2026-10-21T11:10:00+09:00"
+    }
+  },
+  "maintenanceRepair": {
+    "base": "7578cb37630faaa3ad56eea6ecf75d8e1a3c4320",
+    "commit": "9c372aad7ea5ab48ac11cc2d377d56794a1e976c",
+    "paths": [
+      "package-lock.json",
+      "package.json"
+    ],
+    "advisories": [
+      "GHSA-698v-4r3x-3vcv",
+      "GHSA-r825-w8mm-5pxw",
+      "GHSA-587h-7wmj-h5pm"
+    ],
+    "vite": "8.2.4",
+    "audit": "0 vulnerabilities",
+    "verifiedAt": "2026-10-21T01:19:30.880Z"
+  },
+  "newVocabulary": 19,
+  "reviewVocabulary": 1,
+  "newGrammar": 0,
+  "reviewGrammar": 6
 }
