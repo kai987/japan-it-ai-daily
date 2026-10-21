@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-21T01:15:11.260Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-21-top-1",
+      "url": "https://zenn.dev/runcrate/articles/c9a383739c3856",
+      "originalTitle": "Claude Code から GPU を借りて学習ジョブを回す（Runcrate MCP サーバー）",
+      "source": "Zenn",
+      "topic": "AIエージェント・GPUジョブ",
+      "access": "full",
+      "accessNote": "公開本文を全て読み、数値と条件を確認。独立した再実験はしていません。",
+      "publishedAt": "2026-10-21T09:57:59.136+09:00",
+      "capturedAt": "2026-10-21T01:07:06.309007+00:00",
+      "snapshotSha256": "1fc8f222286523e66944963bd07a0342115e9bdfa6ad5857953bbe53cdcc4658",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "GPUジョブには必須の最大実行時間があり、コマンド終了でマシンと課金を止めると説明。",
+          "quote": "最大実行時間（1 分から 24 時間）は必須",
+          "locator": "ジョブ",
+          "conditions": "Runcrate開発チームによる2026年10月21日時点の製品説明と呼出手順。性能比較、障害試験、費用削減率の実測はない。価格はGPUごとの開始価格で固定見積りではない。",
+          "usedIn": {
+            "zh": "Runcrate",
+            "ja": "Runcrate",
+            "interview": "Runcrate"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "ログ完了後にジョブの最終状態、終了コード、費用を別に取得する手順。",
+          "quote": "最終ステータス、終了コード、費用",
+          "locator": "エージェントに GPU ジョブを頼む",
+          "conditions": "Runcrate開発チームによる2026年10月21日時点の製品説明と呼出手順。性能比較、障害試験、費用削減率の実測はない。価格はGPUごとの開始価格で固定見積りではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "承認環境と月間予算がエージェント利用の境界となる。",
+          "quote": "環境の月間予算",
+          "locator": "MCP サーバーをつなぐ",
+          "conditions": "Runcrate開発チームによる2026年10月21日時点の製品説明と呼出手順。性能比較、障害試験、費用削減率の実測はない。価格はGPUごとの開始価格で固定見積りではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "学習を頼む一言の裏にある認可、保存先、ログの続き、終了確認を分けて説明する練習になります。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合把“让代理跑训练”展开为授权范围、持久卷、日志续读和最终验收四个可解释环节，而不是只展示一次工具调用。",
+            "ja": "学習を頼む一言の裏にある認可、保存先、ログの続き、終了確認を分けて説明する練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-21-top-2",
+      "url": "https://zenn.dev/tanahiro2010/articles/e891ed813641f6",
+      "originalTitle": "Google OAuthがDPoPに対応したらしいので検証してみたら...なんか違った",
+      "source": "Zenn",
+      "topic": "認証・仕様と実装の検証",
+      "access": "full",
+      "accessNote": "公開本文を全て読み、数値と条件を確認。独立した再実験はしていません。",
+      "publishedAt": "2026-10-21T09:36:05.876+09:00",
+      "capturedAt": "2026-10-21T01:07:06.340451+00:00",
+      "snapshotSha256": "c86b7592215bca0ea854e656f5025ced86f574516f6c03082155ab9cb45defc6",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "記事ではGoogleの送信者拘束はRefresh Tokenが対象で、Access TokenはBearerのままと整理。",
+          "quote": "Refresh Token だけ",
+          "locator": "差分①",
+          "conditions": "著者の2026年10月19日検証。Node.js24.22.0、jose6.2.12、hono4.13.13、Apple M4、専用のテストアカウントとConfidential Client。報告値であり本日再実験していない。",
+          "usedIn": {
+            "zh": "DPoP",
+            "ja": "DPoP",
+            "interview": "DPoP"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "ES256のJWS署名形式とDER形式の違いを比較。",
+          "quote": "64 B",
+          "locator": "公式サンプルの proof",
+          "conditions": "著者の2026年10月19日検証。Node.js24.22.0、jose6.2.12、hono4.13.13、Apple M4、専用のテストアカウントとConfidential Client。報告値であり本日再実験していない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "既存トークンの移行と鍵変更に再認可が必要になる負担を指摘。",
+          "quote": "全ユーザーに再同意",
+          "locator": "導入コスト",
+          "conditions": "著者の2026年10月19日検証。Node.js24.22.0、jose6.2.12、hono4.13.13、Apple M4、専用のテストアカウントとConfidential Client。報告値であり本日再実験していない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "認証の追加機能を、戻り値・署名形式・鍵の寿命まで分解して判断する材料になります。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "用真实返回值、签名格式和密钥生命周期解释 OAuth 接入，比泛泛声称“加上 DPoP 就更安全”更能体现工程判断。",
+            "ja": "認証の追加機能を、戻り値・署名形式・鍵の寿命まで分解して判断する材料になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-21-top-3",
+      "url": "https://zenn.dev/taiyakujp/articles/caf0eda23633a0",
+      "originalTitle": "英語論文の PDF をブラウザで「対訳」表示する：pdf.js から段落を復元し、ページ単位でストリーミング翻訳する",
+      "source": "Zenn",
+      "topic": "フロントエンド・PDF翻訳",
+      "access": "full",
+      "accessNote": "公開本文を全て読み、数値と条件を確認。独立した再実験はしていません。",
+      "publishedAt": "2026-10-21T08:00:06.344+09:00",
+      "capturedAt": "2026-10-21T01:07:06.341457+00:00",
+      "snapshotSha256": "ec93c7410dfa76ccdce011b6bd506e04feb117d0850aee973a2c408f446bcc4b",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "可視ページを優先し同時翻訳数を2に制限。",
+          "quote": "同時に走らせるジョブは2つまで",
+          "locator": "ページ単位でストリーミング翻訳する",
+          "conditions": "Taiyaku開発者による実装報告。PDF段落復元のヒューリスティック、最大2ジョブ、80ms更新。Safariのポート初回メッセージ重複は当該実装の観測で、全版共通の不具合とは断定しない。精度率や比較ベンチマークは未掲載。",
+          "usedIn": {
+            "zh": "pdf.js",
+            "ja": "pdf.js",
+            "interview": "pdf.js"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "SSE差分をまとめてReact stateへ反映。",
+          "quote": "80ms ごと",
+          "locator": "ページ単位でストリーミング翻訳する",
+          "conditions": "Taiyaku開発者による実装報告。PDF段落復元のヒューリスティック、最大2ジョブ、80ms更新。Safariのポート初回メッセージ重複は当該実装の観測で、全版共通の不具合とは断定しない。精度率や比較ベンチマークは未掲載。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "訳文を段階的に縮小し、下限でも入らなければ枠を伸ばす。",
+          "quote": "下限（元の 40%）",
+          "locator": "元のレイアウトのまま訳文を重ねる",
+          "conditions": "Taiyaku開発者による実装報告。PDF段落復元のヒューリスティック、最大2ジョブ、80ms更新。Safariのポート初回メッセージ重複は当該実装の観測で、全版共通の不具合とは断定しない。精度率や比較ベンチマークは未掲載。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "抽出データ、Reactの更新、拡張機能の通信を一つの読書体験へ結び付けて説明できます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "把几何文本处理、React 更新频率、浏览器扩展通信和可读性一起解释，非常适合前端工程面试。",
+            "ja": "抽出データ、Reactの更新、拡張機能の通信を一つの読書体験へ結び付けて説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-21-top-4",
+      "url": "https://zenn.dev/koheip/articles/gold-check-eval-env",
+      "originalTitle": "モデルを疑う前に評価環境を疑う：LLMコード評価ハーネスの「gold check」",
+      "source": "Zenn",
+      "topic": "LLM評価・テスト環境",
+      "access": "full",
+      "accessNote": "公開本文を全て読み、数値と条件を確認。独立した再実験はしていません。",
+      "publishedAt": "2026-10-21T04:08:05.494+09:00",
+      "capturedAt": "2026-10-21T01:07:06.380712+00:00",
+      "snapshotSha256": "2923dcca7ae8afd8e1fa28257f5dd6b679fd075a09d0fb6b2d34ad43725f8a86",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "参照解で失敗し、テスト専用の未導入ライブラリが原因と判明。",
+          "quote": "正解（参照解）",
+          "locator": "何が起きたか",
+          "conditions": "個人のローカルLLMコード評価ハーネスと説明用Python例。参照解適用、pytest実行、300秒タイムアウト。タスク総数や正答率の改善値は報告されていない。",
+          "usedIn": {
+            "zh": "gold check",
+            "ja": "gold check",
+            "interview": "gold check"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "sys.executableで同じPythonからpytestを起動する。",
+          "quote": "評価に使うのと同じPython環境",
+          "locator": "コード例のポイント",
+          "conditions": "個人のローカルLLMコード評価ハーネスと説明用Python例。参照解適用、pytest実行、300秒タイムアウト。タスク総数や正答率の改善値は報告されていない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "収集なしを通常のテスト不合格と別分類する。",
+          "quote": "テストが1件も集まらなかった",
+          "locator": "pytest の終了コード",
+          "conditions": "個人のローカルLLMコード評価ハーネスと説明用Python例。参照解適用、pytest実行、300秒タイムアウト。タスク総数や正答率の改善値は報告されていない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "評価器の失敗とモデルの失敗を分け、測定の前提をCIの条件として示す練習になります。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "能解释为什么低分可能来自评价工具，而不是模型能力；也可把依赖完整性和评分有效性落实成 CI 顺序。",
+            "ja": "評価器の失敗とモデルの失敗を分け、測定の前提をCIの条件として示す練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-21-top-5",
+      "url": "https://dev.classmethod.jp/articles/s3-multi-region-access-points-cross-region-latency/",
+      "originalTitle": "S3 の Multi-Region Access Points でクロスリージョン参照性能が改善するか試してみた",
+      "source": "DevelopersIO",
+      "topic": "クラウド・データ配置と整合性",
+      "access": "full",
+      "accessNote": "公開本文を全て読み、数値と条件を確認。独立した再実験はしていません。",
+      "publishedAt": "2026-10-20T21:03:12.374Z",
+      "capturedAt": "2026-10-21T01:07:06.395584+00:00",
+      "snapshotSha256": "2bec0031b73ff8a1a6ba106a5c32333b8538bbf9491f4d515174cbd9c737996c",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "小さい200ファイルを逐次取得し各条件1600件で比較。",
+          "quote": "8ラウンド",
+          "locator": "計測方法",
+          "conditions": "4リージョン、Node.js22、512MBのLambda Event Function。gzip128〜714バイトの200ファイルを逐次取得、8ラウンドで各経路・各リージョン1600件。CloudFrontは各ラウンドでキャッシュなし、Origin Shield不使用。更新試験5回、RTCなし。",
+          "usedIn": {
+            "zh": "MRAP",
+            "ja": "MRAP",
+            "interview": "MRAP"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "5回の更新試験で約22秒の伝播中は古い内容でも成功応答。",
+          "quote": "古い内容が HTTP 200",
+          "locator": "更新が反映されるまでの時間",
+          "conditions": "4リージョン、Node.js22、512MBのLambda Event Function。gzip128〜714バイトの200ファイルを逐次取得、8ラウンドで各経路・各リージョン1600件。CloudFrontは各ラウンドでキャッシュなし、Origin Shield不使用。更新試験5回、RTCなし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "性能改善を観測しても管理と更新負担から当面の採用は見送る。",
+          "quote": "Origin Shield の利用を継続",
+          "locator": "まとめ",
+          "conditions": "4リージョン、Node.js22、512MBのLambda Event Function。gzip128〜714バイトの200ファイルを逐次取得、8ラウンドで各経路・各リージョン1600件。CloudFrontは各ラウンドでキャッシュなし、Origin Shield不使用。更新試験5回、RTCなし。",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "速くなった結果と採用判断を分け、整合性や運用の複雑さを同じ条件で説明できます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "展示“更快却暂不采用”的可解释判断，能同时谈签名和权限、读延迟、复制一致性与费用组成。",
+            "ja": "速くなった結果と採用判断を分け、整合性や運用の複雑さを同じ条件で説明できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
