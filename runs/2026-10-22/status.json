@@ -8,7 +8,7 @@
     "to": "2026-10-22T10:00:00+09:00"
   },
   "createdAt": "2026-10-22T01:02:56.834Z",
-  "updatedAt": "2026-10-22T03:03:03.711Z",
+  "updatedAt": "2026-10-22T03:09:57.263Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -401,88 +401,22 @@
     "completedAt": "2026-10-22T02:32:31.452Z"
   },
   "n1AudioContinuation": {
-    "schemaVersion": 1,
     "targetDate": "2026-10-22",
     "day": 54,
-    "stage": "waiting_n1_lesson",
-    "sourceAudioCommit": "3b091a50386cd5f729c0649d7729aaeb13090385",
-    "dailyAudioVerification": {
-      "r2RunId": 39708370635,
-      "pagesRunId": 39708370619,
-      "publicSha256Verified": 61,
-      "realPlaybackTests": 20
-    },
-    "createdAt": "2026-10-22T02:19:10.992Z",
-    "error": null,
-    "n1BaseCommit": "959b018100ae913d7928ff126948f125f74ec9a1",
-    "dispatchRequestedAt": "2026-10-22T02:19:13.482Z",
-    "nextAction": "N1 Day54 original and canonical text sync must finish first; the existing successful N1 Pages event will retry shared audio. No text request replayed.",
-    "updatedAt": "2026-10-22T02:20:23.890Z",
-    "sharedAudioRunId": 39710723633,
-    "sharedAudioRunHead": "959b018100ae913d7928ff126948f125f74ec9a1",
-    "runUrl": "https://github.com/kai987/Japanese-N1-Immersive-Sparring-Partner/actions/runs/39710723633",
-    "n1Commit": "959b018100ae913d7928ff126948f125f74ec9a1",
-    "workflowConclusion": "success",
-    "targetLessonPublished": false,
-    "noMetadataChanged": true,
-    "priorPerDateStates": [
-      {
-        "targetDate": "2026-10-19",
-        "recordedStage": "playback_verified",
-        "updatedAt": "2026-10-19T19:43:43.638Z",
-        "observation": "Older per-date checkpoint; worker global completion is recorded independently. No repair or remote unique-audio check triggered."
-      },
-      {
-        "targetDate": "2026-10-20",
-        "recordedStage": "validating",
-        "updatedAt": "2026-10-20T04:05:49.610724+00:00",
-        "observation": "Older per-date checkpoint; worker global completion is recorded independently. No repair or remote unique-audio check triggered."
-      },
-      {
-        "targetDate": "2026-10-21",
-        "recordedStage": "awaiting_local_audio",
-        "updatedAt": "2026-10-21T04:10:11.142Z",
-        "observation": "Older per-date checkpoint; worker global completion is recorded independently. No repair or remote unique-audio check triggered."
-      }
-    ],
-    "localWorkerObservation": {
-      "scope": "Prior N1 catalog; not a completion claim for Day54",
-      "phase": "idle",
-      "pendingClips": 0,
-      "requiredClips": 5630,
-      "jobPending": false,
-      "lastError": null,
-      "updatedAt": "2026-10-22T02:25:21.934Z",
-      "releaseCommit": null,
-      "lastVerifiedCommit": "959b018100ae913d7928ff126948f125f74ec9a1",
-      "observedAt": "2026-10-22T02:32:35.103Z",
-      "schedule": {
-        "version": 1,
-        "claimedDate": "2026-10-21",
-        "reason": "resume_pending",
-        "startedAt": "2026-10-21T02:10:10.117Z"
-      },
-      "window": "11:10-13:10 Asia/Tokyo; only local worker files inspected; no worker triggered",
-      "workerNextAttempt": "2026-10-22T02:10:00.000Z",
-      "localLogObservation": {
-        "observedAt": "2026-10-22T02:26:37.865730+00:00",
-        "stdoutTail": [
-          "{\"phase\":\"scheduled_pause\",\"reason\":\"already_checked_today\",\"nextOpening\":\"2026-10-22T02:10:00.000Z\"}",
-          "{\"phase\":\"scheduled_pause\",\"reason\":\"already_checked_today\",\"nextOpening\":\"2026-10-22T02:10:00.000Z\"}",
-          "{\"phase\":\"scheduled_pause\",\"reason\":\"already_checked_today\",\"nextOpening\":\"2026-10-22T02:10:00.000Z\"}",
-          "{\"phase\":\"scheduled_pause\",\"reason\":\"already_checked_today\",\"nextOpening\":\"2026-10-22T02:10:00.000Z\"}",
-          "{\"phase\":\"scheduled_pause\",\"reason\":\"already_checked_today\",\"nextOpening\":\"2026-10-22T02:10:00.000Z\"}",
-          "{\"phase\":\"scheduled_pause\",\"reason\":\"already_checked_today\",\"nextOpening\":\"2026-10-22T02:10:00.000Z\"}",
-          "{\"phase\":\"fetching\",\"lastError\":null,\"attempt\":103}",
-          "{\"phase\":\"catalog\",\"baseCommit\":\"959b018100ae913d7928ff126948f125f74ec9a1\",\"releaseCommit\":null}",
-          "{\"phase\":\"idle\",\"jobPending\":false}",
-          "{\"phase\":\"fetching\",\"lastError\":null,\"attempt\":104}",
-          "{\"phase\":\"catalog\",\"baseCommit\":\"959b018100ae913d7928ff126948f125f74ec9a1\",\"releaseCommit\":null}",
-          "{\"phase\":\"idle\",\"jobPending\":false}"
-        ],
-        "scope": "Local read-only log; latest checks idle. Historical stderr is not a current failure."
-      }
-    }
+    "stage": "generating",
+    "n1TextCommit": "9b0c9b18b28f32e07641ffdca4d9fdf6e060e0b6",
+    "sourceAudioCommit": "439cd781ebe7f0e0e75af87eebb1af9c542895de",
+    "sharedAudioRunId": 39714665037,
+    "sharedAudioCommit": "f6eb5629a501f84c9c0110c97ac7c0809d3473d5",
+    "sharedPagesRunId": 39714763884,
+    "sharedAdded": 27,
+    "sharedPlaybackVerified": true,
+    "uniqueAudioStage": "generating",
+    "pendingClips": 89,
+    "requiredClips": 5746,
+    "workerReleaseCommit": null,
+    "lastError": null,
+    "updatedAt": "2026-10-22T03:09:57.263Z"
   },
   "newVocabulary": 13,
   "reviewVocabulary": 7,
