@@ -1,6 +1,6 @@
 {
   "date": "2026-10-22",
-  "generatedAt": "2026-10-22T01:31:45.606Z",
+  "generatedAt": "2026-10-22T01:52:03.503Z",
   "audioCache": {
     "version": 1,
     "algorithm": "sha256"
@@ -23,129 +23,6 @@
     "speed": 1,
     "intonationScale": 1
   },
-  "interview": [
-    {
-      "index": 1,
-      "type": "question",
-      "text": "既存のキーワード検索に意味検索を加えるとき、精度と速度をどう確かめますか。",
-      "audio": "interview-question-01.mp3",
-      "audioHash": "92ea15fb7d8532eaccb71c26283d4f23574408ae60d7c002870c45b5bce6f26c",
-      "audioSha256": "55bffab9e8ed1892c4acdc17c957c5858cf19a38ab0ec8e687f30fe6ca09a32e",
-      "durationSeconds": 6.593
-    },
-    {
-      "index": 1,
-      "type": "answer",
-      "text": "まず利用者の言い方で正解を決め、検索結果を比較します。この記事ではOllamaで埋め込みを作り、SQLiteのベクトルをGoで総当たりしています。約1万8千本のベクトル、768次元で66ミリ秒という値は指定環境の中央値です。25件の架空データでの高い再現率を一般化せず、長い文書の分割や実データでも確かめます。",
-      "audio": "interview-answer-01.mp3",
-      "audioHash": "3993ececff163ebd1383455f4ac79a0fd546d3016ee7537462a95216cd3ba32a",
-      "audioSha256": "ebfee73e934620f6487f4c7a59606c4f146a5343a33ee3913b952ab08941ead8",
-      "durationSeconds": 27.382,
-      "durationStatus": "ideal"
-    },
-    {
-      "index": 2,
-      "type": "question",
-      "text": "地図画面をWebとモバイルで共通化するとき、どこを分けますか。",
-      "audio": "interview-question-02.mp3",
-      "audioHash": "7927ee1983d8bddb5cf183142fac10b0e86d26c67c617cbb2c221806dd8a0cbf",
-      "audioSha256": "357e7754fd7b3c18de37bf9072d2d248ece7fc80dc903fe38dca4f5cbaaeb064",
-      "durationSeconds": 5.131
-    },
-    {
-      "index": 2,
-      "type": "answer",
-      "text": "GeoJSONとスタイルは共有し、描画処理と後片付けは端末ごとに分けます。MapLibreのfitBoundsは型がvoidでも実装がPromiseを返すため、useEffectからそのまま返しません。移動イベントもユーザー操作だけを拾い、カメラの移動が循環しないようにします。ただし、記事は実機未確認なので、実際の端末やタイル接続は別に検証します。",
-      "audio": "interview-answer-02.mp3",
-      "audioHash": "9df928476c153645d9e340d3a8b860360003cfaa934a7d99777f125cfd240ff7",
-      "audioSha256": "bac39e806ebb5577f6c34f941761b85ee2d915e751909d8c296eb2f37501ee76",
-      "durationSeconds": 26.704,
-      "durationStatus": "ideal"
-    },
-    {
-      "index": 3,
-      "type": "question",
-      "text": "ファイルをBlobとして扱えば、作成後の変更からも内容を保護できますか。",
-      "audio": "interview-question-03.mp3",
-      "audioHash": "0fb8c3a4612b4e3c23a6b1f33a3eeaad1055f234b1b7ac4d5993b6618aa3c300",
-      "audioSha256": "f686924400f152f820741843a2d933e3d28c0ed3865429642debf3f619acffb9",
-      "durationSeconds": 5.711
-    },
-    {
-      "index": 3,
-      "type": "answer",
-      "text": "ファイルを基にしたBlobは、作成時の内容をメモリへコピーしたものではありません。この記事ではfs.openAsBlobで開いた後、5バイトを14バイトへ上書きすると、元のBlobはNotReadableErrorになりました。ただし、開き直すと読めますが、その後の変更競合までは防げません。同じ長さの上書きや読み取り中の変更は未検証として扱います。",
-      "audio": "interview-answer-03.mp3",
-      "audioHash": "dd4daf226ea7a8cfd31436768b52ea8ebb0936226a61a6af576cd1a5b55ad0e8",
-      "audioSha256": "5f5bc0e89e57458480eccdc86aa4dcde1e565deb435dfdf8e94b7b4d745af187",
-      "durationSeconds": 26.69,
-      "durationStatus": "ideal"
-    },
-    {
-      "index": 4,
-      "type": "question",
-      "text": "大きなデータベースの設計変更を、長期間安全に進めるには何をしますか。",
-      "audio": "interview-question-04.mp3",
-      "audioHash": "0bf05c43353cf645956c33bd8266f2459d819c48a6ca172a23ec703596404365",
-      "audioSha256": "3ea94881cb33737cf06e3f4ebbfc1f6d023d8dc8eb262f9bf9f33f9edd7253d1",
-      "durationSeconds": 5.92
-    },
-    {
-      "index": 4,
-      "type": "answer",
-      "text": "新旧のデータと実装を残し、切り戻せる状態で少しずつ進めます。SmartHRの例ではダブルライトとバックフィルを併用し、共通の抽象とフラグで利用する実装を切り替えています。移行ロジックを日次チェックと全件確認のCLIでも共有し、判断のずれを防ぎます。ただし記事は移行途中で、最終切り替えの成功まで示したものではありません。",
-      "audio": "interview-answer-04.mp3",
-      "audioHash": "2dfb31e99e5ff8bf31bb16dd0c1a2b377d12d156d2f2ea0ec938ab466f12ed86",
-      "audioSha256": "80c719bc147adf61a978fd1b6518d4f7206738777b2871b628826ab5a16e0321",
-      "durationSeconds": 26.342,
-      "durationStatus": "ideal"
-    },
-    {
-      "index": 5,
-      "type": "question",
-      "text": "暗号の検証に成功すれば、監査ログの内容まで正しいといえますか。",
-      "audio": "interview-question-05.mp3",
-      "audioHash": "f6112671340de701d05eed9b75815e68b78a5424cd6a1871c26c4b32c4af3d5d",
-      "audioSha256": "16554111f1231b263be16461541cbedf116d34d5ee954a3c190764ce20c9b80d",
-      "durationSeconds": 5.479
-    },
-    {
-      "index": 5,
-      "type": "answer",
-      "text": "検証が通る範囲と、入力そのものの正しさは分けます。AuditGuardではMerkleのハッシュで保存後の改ざんを確かめ、一つの鍵を秘密分散で五つの分散片に分け、三つを集めて復元します。ただし、保存前にログが抜けていれば、その事実までは証明できません。小さなパラメータと単一プロセスの教育用デモなので、本番の安全性を示した結果とも区別します。",
-      "audio": "interview-answer-05.mp3",
-      "audioHash": "e31c45b09befbd2aa166bfddcb0cefe7235d20a9415f70133ad5cd0335be1bb7",
-      "audioSha256": "026cf9fe57948da7b1672279f4f82fd3e53397647c9e6c7d19bfba4a52b3ab6c",
-      "durationSeconds": 27.979,
-      "durationStatus": "ideal"
-    }
-  ],
-  "review": [
-    {
-      "index": 1,
-      "text": "高い検索順位や地図のモックテストだけで、本番の品質を判断できないのはなぜですか。",
-      "audio": "review-question-01.mp3",
-      "audioHash": "fa6ffce2149193f68f631d8882fa21cc4e08e5ad65e63f235f348e08be7e02c5",
-      "audioSha256": "aa2e026b7e5dd984f4684427e9bec3f96f8a05027ff044ff4ad6381bc8ceef26",
-      "durationSeconds": 6.86
-    },
-    {
-      "index": 2,
-      "text": "変更中の外部データを扱うとき、読み直すことと切り戻せることはどう違いますか。",
-      "audio": "review-question-02.mp3",
-      "audioHash": "048643fefd39431adbba2c0baa7e212e958c0999a04c5ad26464fa529c45612b",
-      "audioSha256": "37cd6a313578e42bcb9e298be7520dcd573071be241815b03fa9ca1c76a46346",
-      "durationSeconds": 6.591
-    },
-    {
-      "index": 3,
-      "text": "AuditGuardのデモで確かめたことと、まだ保証できないことを説明してください。",
-      "audio": "review-question-03.mp3",
-      "audioHash": "5591f360c01ddc7efe10f693d89adeb9207f27727a51cdcfa58bfa832b7e4ba4",
-      "audioSha256": "545846dfa19d2c87989401a2566b081db6037e1f09a2f85a729d99076a549210",
-      "durationSeconds": 5.991
-    }
-  ],
   "durationPolicy": {
     "source": "ffprobe",
     "enforceFrom": "2026-08-12",
@@ -159,5 +36,128 @@
     ],
     "maxStoredDriftSeconds": 0.08
   },
-  "durationMeasuredAt": "2026-10-22T01:31:53.014Z"
+  "durationMeasuredAt": "2026-10-22T01:52:10.343Z",
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "既存のキーワード検索に意味検索を加えるとき、精度と速度をどう確かめますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "92ea15fb7d8532eaccb71c26283d4f23574408ae60d7c002870c45b5bce6f26c",
+      "durationSeconds": 6.593,
+      "audioSha256": "55bffab9e8ed1892c4acdc17c957c5858cf19a38ab0ec8e687f30fe6ca09a32e"
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "まず利用者の言い方で正解を決め、検索結果を比較します。この記事ではOllamaで埋め込みを作り、SQLiteのベクトルをGoで総当たりしています。約1万8千本のベクトル、768次元で66ミリ秒という値は指定環境の中央値です。25件の架空データでの高い再現率を一般化せず、長い文書の分割や実データでも確かめます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "3993ececff163ebd1383455f4ac79a0fd546d3016ee7537462a95216cd3ba32a",
+      "durationSeconds": 27.382,
+      "durationStatus": "ideal",
+      "audioSha256": "ebfee73e934620f6487f4c7a59606c4f146a5343a33ee3913b952ab08941ead8"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "地図画面をWebとモバイルで共通化するとき、どこを分けますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "7927ee1983d8bddb5cf183142fac10b0e86d26c67c617cbb2c221806dd8a0cbf",
+      "durationSeconds": 5.131,
+      "audioSha256": "357e7754fd7b3c18de37bf9072d2d248ece7fc80dc903fe38dca4f5cbaaeb064"
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "GeoJSONとスタイルは共有し、描画処理と後片付けは端末ごとに分けます。MapLibreのfitBoundsは型がvoidでも実装がPromiseを返すため、useEffectからそのまま返しません。移動イベントもユーザー操作だけを拾い、カメラの移動が循環しないようにします。ただし、記事は実機未確認なので、実際の端末やタイル接続は別に検証します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "9df928476c153645d9e340d3a8b860360003cfaa934a7d99777f125cfd240ff7",
+      "durationSeconds": 26.704,
+      "durationStatus": "ideal",
+      "audioSha256": "bac39e806ebb5577f6c34f941761b85ee2d915e751909d8c296eb2f37501ee76"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "ファイルをBlobとして扱えば、作成後の変更からも内容を保護できますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "0fb8c3a4612b4e3c23a6b1f33a3eeaad1055f234b1b7ac4d5993b6618aa3c300",
+      "durationSeconds": 5.711,
+      "audioSha256": "f686924400f152f820741843a2d933e3d28c0ed3865429642debf3f619acffb9"
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "ファイルを基にしたBlobは、作成時の内容をメモリへコピーしたものではありません。この記事ではfs.openAsBlobで開いた後、5バイトを14バイトへ上書きすると、元のBlobはNotReadableErrorになりました。ただし、開き直すと読めますが、その後の変更競合までは防げません。同じ長さの上書きや読み取り中の変更は未検証として扱います。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "dd4daf226ea7a8cfd31436768b52ea8ebb0936226a61a6af576cd1a5b55ad0e8",
+      "durationSeconds": 26.69,
+      "durationStatus": "ideal",
+      "audioSha256": "5f5bc0e89e57458480eccdc86aa4dcde1e565deb435dfdf8e94b7b4d745af187"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "大きなデータベースの設計変更を、長期間安全に進めるには何をしますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "0bf05c43353cf645956c33bd8266f2459d819c48a6ca172a23ec703596404365",
+      "durationSeconds": 5.92,
+      "audioSha256": "3ea94881cb33737cf06e3f4ebbfc1f6d023d8dc8eb262f9bf9f33f9edd7253d1"
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "新旧のデータと実装を残し、切り戻せる状態で少しずつ進めます。SmartHRの例ではダブルライトとバックフィルを併用し、共通の抽象とフラグで利用する実装を切り替えています。移行ロジックを日次チェックと全件確認のCLIでも共有し、判断のずれを防ぎます。ただし記事は移行途中で、最終切り替えの成功まで示したものではありません。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "2dfb31e99e5ff8bf31bb16dd0c1a2b377d12d156d2f2ea0ec938ab466f12ed86",
+      "durationSeconds": 26.342,
+      "durationStatus": "ideal",
+      "audioSha256": "80c719bc147adf61a978fd1b6518d4f7206738777b2871b628826ab5a16e0321"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "暗号の検証に成功すれば、監査ログの内容まで正しいといえますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "f6112671340de701d05eed9b75815e68b78a5424cd6a1871c26c4b32c4af3d5d",
+      "durationSeconds": 5.479,
+      "audioSha256": "16554111f1231b263be16461541cbedf116d34d5ee954a3c190764ce20c9b80d"
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "検証が通る範囲と、入力自体の正しさは分けます。AuditGuardではMerkleのハッシュで保存後の改ざんを確かめ、一つの鍵を秘密分散で五つの分散片に分け、三つを集めて復元します。ただし、保存前にログが抜けていれば、その事実までは証明できません。小さなパラメータと単一プロセスの教育用デモなので、本番の安全性を示した結果とも区別します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "7c681cb07c20a56fa23395f3fa46f08d74ff1ce5866410cfaf8d0036abb06010",
+      "audioSha256": "0fa67ee7fa546e60bf803bb1902fb685c904c10a71c147a5547df49bc5fa5fc5",
+      "durationSeconds": 27.602,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "高い検索順位や地図のモックテストだけで、本番の品質を判断できないのはなぜですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "fa6ffce2149193f68f631d8882fa21cc4e08e5ad65e63f235f348e08be7e02c5",
+      "durationSeconds": 6.86,
+      "audioSha256": "aa2e026b7e5dd984f4684427e9bec3f96f8a05027ff044ff4ad6381bc8ceef26"
+    },
+    {
+      "index": 2,
+      "text": "変更中の外部データを扱うとき、読み直すことと切り戻せることはどう違いますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "048643fefd39431adbba2c0baa7e212e958c0999a04c5ad26464fa529c45612b",
+      "durationSeconds": 6.591,
+      "audioSha256": "37cd6a313578e42bcb9e298be7520dcd573071be241815b03fa9ca1c76a46346"
+    },
+    {
+      "index": 3,
+      "text": "AuditGuardのデモで確かめたことと、まだ保証できないことを説明してください。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "5591f360c01ddc7efe10f693d89adeb9207f27727a51cdcfa58bfa832b7e4ba4",
+      "durationSeconds": 5.991,
+      "audioSha256": "545846dfa19d2c87989401a2566b081db6037e1f09a2f85a729d99076a549210"
+    }
+  ]
 }
