@@ -8,7 +8,7 @@
     "to": "2026-10-22T10:00:00+09:00"
   },
   "createdAt": "2026-10-22T01:02:56.834Z",
-  "updatedAt": "2026-10-22T03:09:57.263Z",
+  "updatedAt": "2026-10-22T03:15:39.953Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -403,7 +403,7 @@
   "n1AudioContinuation": {
     "targetDate": "2026-10-22",
     "day": 54,
-    "stage": "generating",
+    "stage": "playback_verified",
     "n1TextCommit": "9b0c9b18b28f32e07641ffdca4d9fdf6e060e0b6",
     "sourceAudioCommit": "439cd781ebe7f0e0e75af87eebb1af9c542895de",
     "sharedAudioRunId": 39714665037,
@@ -411,12 +411,12 @@
     "sharedPagesRunId": 39714763884,
     "sharedAdded": 27,
     "sharedPlaybackVerified": true,
-    "uniqueAudioStage": "generating",
-    "pendingClips": 89,
+    "uniqueAudioStage": "playback_verified",
+    "pendingClips": 0,
     "requiredClips": 5746,
-    "workerReleaseCommit": null,
+    "workerReleaseCommit": "fdadc14fc10cbde377688df51f288070992a300c",
     "lastError": null,
-    "updatedAt": "2026-10-22T03:09:57.263Z"
+    "updatedAt": "2026-10-22T03:15:39.953Z"
   },
   "newVocabulary": 13,
   "reviewVocabulary": 7,
