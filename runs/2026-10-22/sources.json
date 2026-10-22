@@ -1,0 +1,348 @@
+{
+  "targetDate": "2026-10-22",
+  "sourceCommit": "1fb027ba34a87862867be104bc74bd5afd8e74cb",
+  "sourceWindow": {
+    "from": "2026-10-21T10:00:00+09:00",
+    "to": "2026-10-22T10:00:00+09:00"
+  },
+  "discovery": {
+    "sites": [
+      {
+        "name": "Qiita",
+        "requestedUrl": "https://qiita.com/",
+        "actualUrl": "https://qiita.com/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.051818+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "Zenn",
+        "requestedUrl": "https://zenn.dev/",
+        "actualUrl": "https://zenn.dev/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.052472+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "Publickey",
+        "requestedUrl": "https://www.publickey1.jp/",
+        "actualUrl": "https://www.publickey1.jp/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.052561+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "ITmedia AI+",
+        "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+        "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.052622+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "@IT",
+        "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+        "actualUrl": "https://atmarkit.itmedia.co.jp/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.052694+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "CodeZine",
+        "requestedUrl": "https://codezine.jp/",
+        "actualUrl": "https://codezine.jp/",
+        "status": 403,
+        "error": "403 Client Error: Forbidden for url: https://codezine.jp/",
+        "observedAt": "2026-10-22T01:03:16.052803+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "gihyo.jp",
+        "requestedUrl": "https://gihyo.jp/",
+        "actualUrl": "https://gihyo.jp/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.125813+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "DevelopersIO",
+        "requestedUrl": "https://dev.classmethod.jp/",
+        "actualUrl": "https://dev.classmethod.jp/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.146592+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "TechFeed",
+        "requestedUrl": "https://techfeed.io/",
+        "actualUrl": "https://techfeed.io/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.234639+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "Hatena Technology",
+        "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.235124+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "ASCII AI",
+        "requestedUrl": "https://ascii.jp/",
+        "actualUrl": "https://ascii.jp/",
+        "status": 503,
+        "error": "503 Server Error: Service Temporarily Unavailable for url: https://ascii.jp/",
+        "observedAt": "2026-10-22T01:03:16.245357+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "AINOW",
+        "requestedUrl": "https://ainow.ai/",
+        "actualUrl": "https://ainow.ai/",
+        "status": 503,
+        "error": "503 Server Error: Service Unavailable for url: https://ainow.ai/",
+        "observedAt": "2026-10-22T01:03:16.261244+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "Ledge.ai",
+        "requestedUrl": "https://ledge.ai/",
+        "actualUrl": "https://ledge.ai/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.275425+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "CyberAgent Developers Blog",
+        "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+        "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.346928+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "LINE Yahoo Tech Blog",
+        "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+        "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.354993+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "Mercari Engineering",
+        "requestedUrl": "https://engineering.mercari.com/",
+        "actualUrl": "https://engineering.mercari.com/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.369429+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "SmartHR Tech Blog",
+        "requestedUrl": "https://tech.smarthr.jp/",
+        "actualUrl": "https://tech.smarthr.jp/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.427122+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "LayerX Engineering Blog",
+        "requestedUrl": "https://tech.layerx.co.jp/",
+        "actualUrl": "https://tech.layerx.co.jp/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.427423+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "DeNA Engineering",
+        "requestedUrl": "https://engineering.dena.com/blog/",
+        "actualUrl": "https://engineering.dena.com/blog/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.453043+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "Money Forward Developers Blog",
+        "requestedUrl": "https://moneyforward-dev.jp/",
+        "actualUrl": "https://moneyforward-dev.jp/",
+        "status": 200,
+        "error": null,
+        "observedAt": "2026-10-22T01:03:16.502531+00:00",
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      }
+    ],
+    "coverage": "20 preferred entrypoints considered;17accessible,CodeZine403,ASCII/AINOW503. Selected in-window originals read in full;not exhaustive all-article crawling."
+  },
+  "excludedPreviousTop5": [
+    "https://zenn.dev/runcrate/articles/c9a383739c3856",
+    "https://zenn.dev/tanahiro2010/articles/e891ed813641f6",
+    "https://zenn.dev/taiyakujp/articles/caf0eda23633a0",
+    "https://zenn.dev/koheip/articles/gold-check-eval-env",
+    "https://dev.classmethod.jp/articles/s3-multi-region-access-points-cross-region-latency/"
+  ],
+  "articles": [
+    {
+      "topic": "ローカルAI・検索評価",
+      "title": "Nulab Backlogの検索をローカルAIで拡張した — Ollama・SQLiteで意味検索を実装する",
+      "source": "Zenn",
+      "url": "https://zenn.dev/hidetzu/articles/backlog-fzf-semantic-search-ollama",
+      "publishedAt": "2026-10-22T07:30:05.147+09:00",
+      "capturedAt": "2026-10-22T01:04:02.781238+00:00",
+      "snapshotSha256": "0766ac26f16d9540efd92bf6a8e7175f2c8e4777580adabce6c5919133611917",
+      "access": "full",
+      "accessNote": "公開本文を全文確認。図は本文とキャプションの範囲で参照し、独立した再実験はしていない。",
+      "conditions": "実データ・embedding速度・評価はAppleM2Max。検索ベンチはM2MaxのRosetta上GoおよびArchLinux Ryzen7 5700X native amd64。数値取得10/13〜21。 ランダムvector DBを新プロセスで開いてtop50返却まで、3回中央値。実データ同規模17949x768、Linux Go総当たり66ms vs sqlite-vec28ms。 実データ2500課題＋300文書への6言換えクエリ目視、当時chunkなし。架空25候補=19課題+6文書に22言換えクエリ、英日混在。 候補25件しかなくtop5は20%、著者が正解を知って質問を作った評価。一般検索精度ではなく設定回帰の目安。 長い架空文書がなくchunk分割＋最大scoreの品質未評価。hybridも実規模評価不足。 M2RosettaとLinuxnativeの数値をCPU性能差へ一般化不可。初回ロードは数百ms〜数秒増える。 5万超でsqlite-vecへの切替を再検討、int8品質未評価。",
+      "facts": [
+        [
+          "Ollama",
+          "ローカル埋め込み・索引構成",
+          "Ollamaで作ったベクトルをSQLiteに保存し、Goで内積を計算する。"
+        ],
+        [
+          "66ms",
+          "検索ベンチマーク表",
+          "17949本・768次元のGo検索はLinux指定条件で66ms、3回中央値。"
+        ],
+        [
+          "候補が25件しかなく",
+          "評価の限界",
+          "架空25候補・22質問の評価は小規模で、一般化しない。"
+        ]
+      ]
+    },
+    {
+      "topic": "フロントエンド・地図と実行時の境界",
+      "title": "MapLibre React Native v11 入門：Expo で iOS / Android / Web に同じ地図を出す",
+      "source": "Zenn",
+      "url": "https://zenn.dev/sun_asterisk/articles/60d48ec339a739",
+      "publishedAt": "2026-10-21T14:03:07.825+09:00",
+      "capturedAt": "2026-10-22T01:04:41.667829+00:00",
+      "snapshotSha256": "f7679a0beab3cdc830e6466eaf0041dfabda1573cf4b489f4fb648a79244927a",
+      "access": "full",
+      "accessNote": "公開本文を全文確認。図は本文とキャプションの範囲で参照し、独立した再実験はしていない。",
+      "conditions": "動作確認2026-10-07。Expo SDK57.0.26 / RN0.86.3 New Architecture / React19.2.3 / maplibre-react-native11.5.0 / maplibre-gl5.22.0。 Android emulator API36、iOS simulator iOS27、Chromium ExpoWeb。Development Build必須、ExpoGo不可。 実機は未確認。パフォーマンス比較や本番大規模地図の結果はない。 Playwrightの背景style mockで操作・ピン表示は確認できるが、実タイル、APIキー、出典表示は実サービスで別検証が必要。 Geoapify料金・GooglePlaces/Nominatim規約は原文の2026-10-15時点。本文に料金優劣断定を持込まない。 公開環境変数は秘密ではなく、nativeアプリをWebのorigin制限だけでは守れない。",
+      "facts": [
+        [
+          "GeoJSON",
+          "共通データとプラットフォーム分離",
+          "GeoJSONとstyleを共有し、描画実装はプラットフォーム別にする。"
+        ],
+        [
+          "実機では確認していません。",
+          "動作確認の範囲",
+          "検証はemulator/simulator/Webで、実機は未確認。"
+        ],
+        [
+          "Promise",
+          "fitBoundsとuseEffectの実行時",
+          "型voidの呼び出しが実装上Promiseを返すため、effectの戻り値と分離する。"
+        ]
+      ]
+    },
+    {
+      "topic": "Node.js・ファイルの寿命と読み取り",
+      "title": "Node.jsのfs.openAsBlob()で作成後にファイルを変更するとどうなるか",
+      "source": "Zenn",
+      "url": "https://zenn.dev/yukke_dev/articles/20261022-open-as-blob-file-change",
+      "publishedAt": "2026-10-22T09:53:17.996+09:00",
+      "capturedAt": "2026-10-22T01:04:02.390006+00:00",
+      "snapshotSha256": "a3e9db14ac81960bd5d1a09b91b78b17dda75faad7e8fcee9622134b67744182",
+      "access": "full",
+      "accessNote": "公開本文を全文確認。図は本文とキャプションの範囲で参照し、独立した再実験はしていない。",
+      "conditions": "macOS arm64 Node.js v26.0.0の小規模テスト。tmpdir内の架空ファイル、assertでsize/type/本文/error.name確認。 Node26.10.0 releaseには同期版openAsBlobSyncの記載があるが筆者環境26.0.0では非同期版のみ実行。 同じ長さへの上書き、rename、読み取り中の変更、他OS未検証。 状態変更検出の全条件は未調査。全失敗でNotReadableErrorになるとは主張しない。 再openは示した順序での成功であり、読取中変更を防ぐ保証ではない。",
+      "facts": [
+        [
+          "NotReadableError",
+          "結論・実行結果",
+          "5バイトから14バイトに上書き後、既存のfile-backed Blobの読み取りが失敗。"
+        ],
+        [
+          "macOS arm64上のNode.js v26.0.0",
+          "検証環境",
+          "筆者の実測はmacOS arm64 Node26.0.0の非同期APIに限定。"
+        ],
+        [
+          "同じ長さへの上書き",
+          "未検証条件",
+          "等長書込・rename・読取中変更・他OSは未検証。"
+        ]
+      ]
+    },
+    {
+      "topic": "データ基盤・長期リファクタリング",
+      "title": "データベースとコードの長期的なリファクタリングを安全に進めるための取り組み —— 従業員データの複雑さを解きほぐす",
+      "source": "SmartHR Tech Blog",
+      "url": "https://tech.smarthr.jp/entry/2026/10/21/123725",
+      "publishedAt": "2026-10-21T12:37:25+09:00",
+      "capturedAt": "2026-10-22T01:04:20.918194+00:00",
+      "snapshotSha256": "6c3c00c2ae55e3236a3c78247509271676d96619ad604ac41fc8480421e824ac",
+      "access": "full",
+      "accessNote": "公開本文を全文確認。図は本文とキャプションの範囲で参照し、独立した再実験はしていない。",
+      "conditions": "Rails / PostgreSQL-compatible employee database; ten-plus years history; table has order-of-ten-million records. Migration began late2025/early2026; conservative work estimated beyond sixmonths. Still migration preparation after roughly sixmonths; final switch and legacy removal not complete. No numeric performance benchmark, zero-downtime result or idempotence guarantee stated.",
+      "facts": [
+        [
+          "ダブルライト",
+          "安全な切り替えのために変更前後のデータを維持する",
+          "新旧両方のデータを維持するためダブルライトとバックフィルを併用。"
+        ],
+        [
+          "Branch by Abstraction",
+          "インクリメンタルな開発",
+          "共通抽象の内側で新旧実装をフラグ選択する。"
+        ],
+        [
+          "まだ新実装への移行に向けての作業途中",
+          "長期リファクタリングの進行状況",
+          "約半年の準備経過であり、最終移行完了ではない。"
+        ]
+      ]
+    },
+    {
+      "topic": "セキュリティ・暗号の保証範囲",
+      "title": "ZKP・MPC・FHEを「学ぶ」から「作る」へ ――Advanced Cryptography Program 2026に参加して見えた、高機能暗号実装の難しさ",
+      "source": "gihyo.jp",
+      "url": "https://gihyo.jp/article/2026/10/advanced-crypto-program-recap",
+      "publishedAt": "2026-10-22T09:34:00+09:00",
+      "capturedAt": "2026-10-22T01:04:21.187625+00:00",
+      "snapshotSha256": "f548453d0a9add0507ac257c884bdf96d5e92a2717798fd592a2779ab00b29bc",
+      "access": "full",
+      "accessNote": "公開本文を全文確認。図は本文とキャプションの範囲で参照し、独立した再実験はしていない。",
+      "conditions": "DemoDay educational prototype; simulated P1/P3/P5 approvals gathered shares within onePython process. Cryptographic primitives use smallparameters and custom simplified encryption. Not enterprise-ready; no latency/securitybenchmark or real multiparty deployment. Proof cannot establish that input logs accurately reflect reality or were complete; needs signed origin, tamperresistant storage/timestamps/accesscontrol.",
+      "facts": [
+        [
+          "秘密分散",
+          "AuditGuardの試作",
+          "Shamirで一つの開示鍵を五つに分け、三つで復元する。"
+        ],
+        [
+          "Python",
+          "PoCの限界",
+          "三者の承認は単一プロセス内の模擬である。"
+        ],
+        [
+          "完成した製品ではありません",
+          "PoCの注意",
+          "小さいパラメータと簡易暗号化を使う教育用PoC、企業データ保護の完成品ではない。"
+        ]
+      ]
+    }
+  ],
+  "verifiedAt": "2026-10-22T01:13:30.048633+00:00"
+}
