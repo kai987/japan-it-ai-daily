@@ -17,7 +17,7 @@ const base = import.meta.env.BASE_URL;
 const root = localeRoot(base, locale);
 const hasStructuredCards = data.vocabulary.length > 0 || data.grammar.length > 0;
 const legacyTocHeadings = headings.filter((heading:any) => heading.depth < 4);
-const jlptOrder = ['N5/N4', 'N3', 'N2', 'N1'];
+const jlptOrder = ['N5/N4', 'N3', 'N2', 'N1', 'IT/AI'];
 const vocabGroups = jlptOrder
   .map((level) => ({ level, items: data.vocabulary.map((item: any, index: number) => ({ item, index })).filter(({ item }: any) => item.level === level) }))
   .filter((group) => group.items.length > 0);
