@@ -8,7 +8,7 @@
     "to": "2026-10-22T10:00:00+09:00"
   },
   "createdAt": "2026-10-22T01:02:56.834Z",
-  "updatedAt": "2026-10-22T02:32:44.094Z",
+  "updatedAt": "2026-10-22T03:03:03.711Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -201,27 +201,19 @@
   "n1Continuation": {
     "targetDate": "2026-10-22",
     "day": 54,
-    "stage": "waiting_source",
-    "requestSubmitted": false,
-    "statusBlobSha": "5b454b1270d54a4dbb586dd9ea5dd58c1912e3d6",
-    "sourceObservation": {
-      "n1Main": "959b018100ae913d7928ff126948f125f74ec9a1",
-      "mainSourceAbsent": true,
-      "outboxAbsent": true,
-      "completeMainInventory": true,
-      "completeProgressInventory": true,
-      "requestTargetDate": "2026-10-21",
-      "observedAt": "2026-10-22T02:32:35.098Z"
-    },
+    "stage": "published",
+    "requestSubmitted": true,
     "upstreamSourceCommit": "49d3587dd173fcdb1278435bb8b5bf960020bcee",
-    "verifiedAt": "2026-10-22T01:29:45.785Z",
-    "initialUpstreamSourceCommit": "14b2885c0c034ab5a0cebf12a59a7ca4daf66d47",
-    "sourcePagesRunId": 39710967473,
-    "snapshotSha256": "8c2abdf89a47336ca604ff1be94b0fbd33232476bca40fdf2953ff3fb297d71a",
-    "issueNumber": 72,
-    "totalDays": 72,
-    "updatedAt": "2026-10-22T02:32:35.099Z",
-    "reboundAfterEditorialCorrection": true
+    "sourceBlobSha": "db48eb27643652a52332546c72d829c827082bff",
+    "requestCommit": "7c8ac5fc8a89b204581cba199b042d67f12cbb99",
+    "syncRunId": 39713870876,
+    "n1ReleaseCommit": "9b0c9b18b28f32e07641ffdca4d9fdf6e060e0b6",
+    "n1PagesRunId": 39714034683,
+    "sourceUnchanged": true,
+    "originalParagraphs": 5,
+    "vocabulary": 20,
+    "grammar": 8,
+    "verifiedAt": "2026-10-22T03:03:03.711Z"
   },
   "correction": true,
   "latestVerifiedMainCommit": "49d3587dd173fcdb1278435bb8b5bf960020bcee",
