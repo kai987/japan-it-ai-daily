@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-22",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-22T01:17:12.912Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-22-top-1",
+      "url": "https://zenn.dev/hidetzu/articles/backlog-fzf-semantic-search-ollama",
+      "originalTitle": "Nulab Backlogの検索をローカルAIで拡張した — Ollama・SQLiteで意味検索を実装する",
+      "source": "Zenn",
+      "topic": "ローカルAI・検索評価",
+      "access": "full",
+      "accessNote": "公開本文を全文確認。図は本文とキャプションの範囲で参照し、独立した再実験はしていない。",
+      "publishedAt": "2026-10-22T07:30:05.147+09:00",
+      "capturedAt": "2026-10-22T01:04:02.781238+00:00",
+      "snapshotSha256": "0766ac26f16d9540efd92bf6a8e7175f2c8e4777580adabce6c5919133611917",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Ollamaで作ったベクトルをSQLiteに保存し、Goで内積を計算する。",
+          "quote": "Ollama",
+          "locator": "ローカル埋め込み・索引構成",
+          "conditions": "実データ・embedding速度・評価はAppleM2Max。検索ベンチはM2MaxのRosetta上GoおよびArchLinux Ryzen7 5700X native amd64。数値取得10/13〜21。 ランダムvector DBを新プロセスで開いてtop50返却まで、3回中央値。実データ同規模17949x768、Linux Go総当たり66ms vs sqlite-vec28ms。 実データ2500課題＋300文書への6言換えクエリ目視、当時chunkなし。架空25候補=19課題+6文書に22言換えクエリ、英日混在。 候補25件しかなくtop5は20%、著者が正解を知って質問を作った評価。一般検索精度ではなく設定回帰の目安。 長い架空文書がなくchunk分割＋最大scoreの品質未評価。hybridも実規模評価不足。 M2RosettaとLinuxnativeの数値をCPU性能差へ一般化不可。初回ロードは数百ms〜数秒増える。 5万超でsqlite-vecへの切替を再検討、int8品質未評価。",
+          "usedIn": {
+            "zh": "SQLite",
+            "ja": "SQLite",
+            "interview": "SQLite"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "17949本・768次元のGo検索はLinux指定条件で66ms、3回中央値。",
+          "quote": "66ms",
+          "locator": "検索ベンチマーク表",
+          "conditions": "実データ・embedding速度・評価はAppleM2Max。検索ベンチはM2MaxのRosetta上GoおよびArchLinux Ryzen7 5700X native amd64。数値取得10/13〜21。 ランダムvector DBを新プロセスで開いてtop50返却まで、3回中央値。実データ同規模17949x768、Linux Go総当たり66ms vs sqlite-vec28ms。 実データ2500課題＋300文書への6言換えクエリ目視、当時chunkなし。架空25候補=19課題+6文書に22言換えクエリ、英日混在。 候補25件しかなくtop5は20%、著者が正解を知って質問を作った評価。一般検索精度ではなく設定回帰の目安。 長い架空文書がなくchunk分割＋最大scoreの品質未評価。hybridも実規模評価不足。 M2RosettaとLinuxnativeの数値をCPU性能差へ一般化不可。初回ロードは数百ms〜数秒増える。 5万超でsqlite-vecへの切替を再検討、int8品質未評価。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "架空25候補・22質問の評価は小規模で、一般化しない。",
+          "quote": "候補が25件しかなく",
+          "locator": "評価の限界",
+          "conditions": "実データ・embedding速度・評価はAppleM2Max。検索ベンチはM2MaxのRosetta上GoおよびArchLinux Ryzen7 5700X native amd64。数値取得10/13〜21。 ランダムvector DBを新プロセスで開いてtop50返却まで、3回中央値。実データ同規模17949x768、Linux Go総当たり66ms vs sqlite-vec28ms。 実データ2500課題＋300文書への6言換えクエリ目視、当時chunkなし。架空25候補=19課題+6文書に22言換えクエリ、英日混在。 候補25件しかなくtop5は20%、著者が正解を知って質問を作った評価。一般検索精度ではなく設定回帰の目安。 長い架空文書がなくchunk分割＋最大scoreの品質未評価。hybridも実規模評価不足。 M2RosettaとLinuxnativeの数値をCPU性能差へ一般化不可。初回ロードは数百ms〜数秒増える。 5万超でsqlite-vecへの切替を再検討、int8品質未評価。",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "意味検索を導入するだけでなく、既存の操作を保つ方法、測定から構成を選ぶ理由、小さな評価の限界を具体的に説明できます。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "把索引更新、显式触发、速度测量和有偏的小样本评估放在同一实现里，适合练习解释为什么暂时采用简单架构。",
+            "ja": "意味検索を導入するだけでなく、既存の操作を保つ方法、測定から構成を選ぶ理由、小さな評価の限界を具体的に説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-22-top-2",
+      "url": "https://zenn.dev/sun_asterisk/articles/60d48ec339a739",
+      "originalTitle": "MapLibre React Native v11 入門：Expo で iOS / Android / Web に同じ地図を出す",
+      "source": "Zenn",
+      "topic": "フロントエンド・地図と実行時の境界",
+      "access": "full",
+      "accessNote": "公開本文を全文確認。図は本文とキャプションの範囲で参照し、独立した再実験はしていない。",
+      "publishedAt": "2026-10-21T14:03:07.825+09:00",
+      "capturedAt": "2026-10-22T01:04:41.667829+00:00",
+      "snapshotSha256": "f7679a0beab3cdc830e6466eaf0041dfabda1573cf4b489f4fb648a79244927a",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "GeoJSONとstyleを共有し、描画実装はプラットフォーム別にする。",
+          "quote": "GeoJSON",
+          "locator": "共通データとプラットフォーム分離",
+          "conditions": "動作確認2026-10-07。Expo SDK57.0.26 / RN0.86.3 New Architecture / React19.2.3 / maplibre-react-native11.5.0 / maplibre-gl5.22.0。 Android emulator API36、iOS simulator iOS27、Chromium ExpoWeb。Development Build必須、ExpoGo不可。 実機は未確認。パフォーマンス比較や本番大規模地図の結果はない。 Playwrightの背景style mockで操作・ピン表示は確認できるが、実タイル、APIキー、出典表示は実サービスで別検証が必要。 Geoapify料金・GooglePlaces/Nominatim規約は原文の2026-10-15時点。本文に料金優劣断定を持込まない。 公開環境変数は秘密ではなく、nativeアプリをWebのorigin制限だけでは守れない。",
+          "usedIn": {
+            "zh": "GeoJSON",
+            "ja": "GeoJSON",
+            "interview": "GeoJSON"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "検証はemulator/simulator/Webで、実機は未確認。",
+          "quote": "実機では確認していません。",
+          "locator": "動作確認の範囲",
+          "conditions": "動作確認2026-10-07。Expo SDK57.0.26 / RN0.86.3 New Architecture / React19.2.3 / maplibre-react-native11.5.0 / maplibre-gl5.22.0。 Android emulator API36、iOS simulator iOS27、Chromium ExpoWeb。Development Build必須、ExpoGo不可。 実機は未確認。パフォーマンス比較や本番大規模地図の結果はない。 Playwrightの背景style mockで操作・ピン表示は確認できるが、実タイル、APIキー、出典表示は実サービスで別検証が必要。 Geoapify料金・GooglePlaces/Nominatim規約は原文の2026-10-15時点。本文に料金優劣断定を持込まない。 公開環境変数は秘密ではなく、nativeアプリをWebのorigin制限だけでは守れない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "型voidの呼び出しが実装上Promiseを返すため、effectの戻り値と分離する。",
+          "quote": "Promise",
+          "locator": "fitBoundsとuseEffectの実行時",
+          "conditions": "動作確認2026-10-07。Expo SDK57.0.26 / RN0.86.3 New Architecture / React19.2.3 / maplibre-react-native11.5.0 / maplibre-gl5.22.0。 Android emulator API36、iOS simulator iOS27、Chromium ExpoWeb。Development Build必須、ExpoGo不可。 実機は未確認。パフォーマンス比較や本番大規模地図の結果はない。 Playwrightの背景style mockで操作・ピン表示は確認できるが、実タイル、APIキー、出典表示は実サービスで別検証が必要。 Geoapify料金・GooglePlaces/Nominatim規約は原文の2026-10-15時点。本文に料金優劣断定を持込まない。 公開環境変数は秘密ではなく、nativeアプリをWebのorigin制限だけでは守れない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "Reactの型と実装のずれ、地図イベントの循環、実サービスと自動テストの確認範囲を、具体的な不具合から学べます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "把 React 生命周期、声明与运行时的差异、事件循环和地理坐标单位串起来，对前端及 React Native 面试有直接价值。",
+            "ja": "Reactの型と実装のずれ、地図イベントの循環、実サービスと自動テストの確認範囲を、具体的な不具合から学べます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-22-top-3",
+      "url": "https://zenn.dev/yukke_dev/articles/20261022-open-as-blob-file-change",
+      "originalTitle": "Node.jsのfs.openAsBlob()で作成後にファイルを変更するとどうなるか",
+      "source": "Zenn",
+      "topic": "Node.js・ファイルの寿命と読み取り",
+      "access": "full",
+      "accessNote": "公開本文を全文確認。図は本文とキャプションの範囲で参照し、独立した再実験はしていない。",
+      "publishedAt": "2026-10-22T09:53:17.996+09:00",
+      "capturedAt": "2026-10-22T01:04:02.390006+00:00",
+      "snapshotSha256": "a3e9db14ac81960bd5d1a09b91b78b17dda75faad7e8fcee9622134b67744182",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "5バイトから14バイトに上書き後、既存のfile-backed Blobの読み取りが失敗。",
+          "quote": "NotReadableError",
+          "locator": "結論・実行結果",
+          "conditions": "macOS arm64 Node.js v26.0.0の小規模テスト。tmpdir内の架空ファイル、assertでsize/type/本文/error.name確認。 Node26.10.0 releaseには同期版openAsBlobSyncの記載があるが筆者環境26.0.0では非同期版のみ実行。 同じ長さへの上書き、rename、読み取り中の変更、他OS未検証。 状態変更検出の全条件は未調査。全失敗でNotReadableErrorになるとは主張しない。 再openは示した順序での成功であり、読取中変更を防ぐ保証ではない。",
+          "usedIn": {
+            "zh": "NotReadableError",
+            "ja": "NotReadableError",
+            "interview": "NotReadableError"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "筆者の実測はmacOS arm64 Node26.0.0の非同期APIに限定。",
+          "quote": "macOS arm64上のNode.js v26.0.0",
+          "locator": "検証環境",
+          "conditions": "macOS arm64 Node.js v26.0.0の小規模テスト。tmpdir内の架空ファイル、assertでsize/type/本文/error.name確認。 Node26.10.0 releaseには同期版openAsBlobSyncの記載があるが筆者環境26.0.0では非同期版のみ実行。 同じ長さへの上書き、rename、読み取り中の変更、他OS未検証。 状態変更検出の全条件は未調査。全失敗でNotReadableErrorになるとは主張しない。 再openは示した順序での成功であり、読取中変更を防ぐ保証ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "等長書込・rename・読取中変更・他OSは未検証。",
+          "quote": "同じ長さへの上書き",
+          "locator": "未検証条件",
+          "conditions": "macOS arm64 Node.js v26.0.0の小規模テスト。tmpdir内の架空ファイル、assertでsize/type/本文/error.name確認。 Node26.10.0 releaseには同期版openAsBlobSyncの記載があるが筆者環境26.0.0では非同期版のみ実行。 同じ長さへの上書き、rename、読み取り中の変更、他OS未検証。 状態変更検出の全条件は未調査。全失敗でNotReadableErrorになるとは主張しない。 再openは示した順序での成功であり、読取中変更を防ぐ保証ではない。",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "短いコードから、APIの名前だけでは分からないデータの寿命と更新競合を、観測条件を添えて説明できます。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "以可复现的5字节到14字节实验，区分 JavaScript 对象语义、外部文件状态和读取时机。",
+            "ja": "短いコードから、APIの名前だけでは分からないデータの寿命と更新競合を、観測条件を添えて説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-22-top-4",
+      "url": "https://tech.smarthr.jp/entry/2026/10/21/123725",
+      "originalTitle": "データベースとコードの長期的なリファクタリングを安全に進めるための取り組み —— 従業員データの複雑さを解きほぐす",
+      "source": "SmartHR Tech Blog",
+      "topic": "データ基盤・長期リファクタリング",
+      "access": "full",
+      "accessNote": "公開本文を全文確認。図は本文とキャプションの範囲で参照し、独立した再実験はしていない。",
+      "publishedAt": "2026-10-21T12:37:25+09:00",
+      "capturedAt": "2026-10-22T01:04:20.918194+00:00",
+      "snapshotSha256": "6c3c00c2ae55e3236a3c78247509271676d96619ad604ac41fc8480421e824ac",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "新旧両方のデータを維持するためダブルライトとバックフィルを併用。",
+          "quote": "ダブルライト",
+          "locator": "安全な切り替えのために変更前後のデータを維持する",
+          "conditions": "Rails / PostgreSQL-compatible employee database; ten-plus years history; table has order-of-ten-million records. Migration began late2025/early2026; conservative work estimated beyond sixmonths. Still migration preparation after roughly sixmonths; final switch and legacy removal not complete. No numeric performance benchmark, zero-downtime result or idempotence guarantee stated.",
+          "usedIn": {
+            "zh": "ダブルライト",
+            "ja": "ダブルライト",
+            "interview": "ダブルライト"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "共通抽象の内側で新旧実装をフラグ選択する。",
+          "quote": "Branch by Abstraction",
+          "locator": "インクリメンタルな開発",
+          "conditions": "Rails / PostgreSQL-compatible employee database; ten-plus years history; table has order-of-ten-million records. Migration began late2025/early2026; conservative work estimated beyond sixmonths. Still migration preparation after roughly sixmonths; final switch and legacy removal not complete. No numeric performance benchmark, zero-downtime result or idempotence guarantee stated.",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "約半年の準備経過であり、最終移行完了ではない。",
+          "quote": "まだ新実装への移行に向けての作業途中",
+          "locator": "長期リファクタリングの進行状況",
+          "conditions": "Rails / PostgreSQL-compatible employee database; ten-plus years history; table has order-of-ten-million records. Migration began late2025/early2026; conservative work estimated beyond sixmonths. Still migration preparation after roughly sixmonths; final switch and legacy removal not complete. No numeric performance benchmark, zero-downtime result or idempotence guarantee stated.",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "履歴を持つ大規模データの変更で、互換性、切り戻し、移行検証をどう両立するかを具体的に説明できます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "用真实的千万级历史数据说明双写、回填、抽象化切换和整合性检查如何配合，适合回答长期系统改造问题。",
+            "ja": "履歴を持つ大規模データの変更で、互換性、切り戻し、移行検証をどう両立するかを具体的に説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-22-top-5",
+      "url": "https://gihyo.jp/article/2026/10/advanced-crypto-program-recap",
+      "originalTitle": "ZKP・MPC・FHEを「学ぶ」から「作る」へ ――Advanced Cryptography Program 2026に参加して見えた、高機能暗号実装の難しさ",
+      "source": "gihyo.jp",
+      "topic": "セキュリティ・暗号の保証範囲",
+      "access": "full",
+      "accessNote": "公開本文を全文確認。図は本文とキャプションの範囲で参照し、独立した再実験はしていない。",
+      "publishedAt": "2026-10-22T09:34:00+09:00",
+      "capturedAt": "2026-10-22T01:04:21.187625+00:00",
+      "snapshotSha256": "f548453d0a9add0507ac257c884bdf96d5e92a2717798fd592a2779ab00b29bc",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Shamirで一つの開示鍵を五つに分け、三つで復元する。",
+          "quote": "秘密分散",
+          "locator": "AuditGuardの試作",
+          "conditions": "DemoDay educational prototype; simulated P1/P3/P5 approvals gathered shares within onePython process. Cryptographic primitives use smallparameters and custom simplified encryption. Not enterprise-ready; no latency/securitybenchmark or real multiparty deployment. Proof cannot establish that input logs accurately reflect reality or were complete; needs signed origin, tamperresistant storage/timestamps/accesscontrol.",
+          "usedIn": {
+            "zh": "秘密分散",
+            "ja": "秘密分散",
+            "interview": "秘密分散"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "三者の承認は単一プロセス内の模擬である。",
+          "quote": "Python",
+          "locator": "PoCの限界",
+          "conditions": "DemoDay educational prototype; simulated P1/P3/P5 approvals gathered shares within onePython process. Cryptographic primitives use smallparameters and custom simplified encryption. Not enterprise-ready; no latency/securitybenchmark or real multiparty deployment. Proof cannot establish that input logs accurately reflect reality or were complete; needs signed origin, tamperresistant storage/timestamps/accesscontrol.",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "小さいパラメータと簡易暗号化を使う教育用PoC、企業データ保護の完成品ではない。",
+          "quote": "完成した製品ではありません",
+          "locator": "PoCの注意",
+          "conditions": "DemoDay educational prototype; simulated P1/P3/P5 approvals gathered shares within onePython process. Cryptographic primitives use smallparameters and custom simplified encryption. Not enterprise-ready; no latency/securitybenchmark or real multiparty deployment. Proof cannot establish that input logs accurately reflect reality or were complete; needs signed origin, tamperresistant storage/timestamps/accesscontrol.",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "暗号化、改ざん検出、複数者による鍵管理、入力の信頼性を切り分け、各技術が保証する範囲と残る課題を説明できます。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "用一个明确标记为教育 PoC 的作品，练习区分加密、篡改检测、密钥分权和输入真实性。",
+            "ja": "暗号化、改ざん検出、複数者による鍵管理、入力の信頼性を切り分け、各技術が保証する範囲と残る課題を説明できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
