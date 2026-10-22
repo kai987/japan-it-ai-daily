@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-22",
-  "stage": "published",
+  "stage": "correcting",
   "sourceCommit": "14b2885c0c034ab5a0cebf12a59a7ca4daf66d47",
   "sourceWindow": {
     "from": "2026-10-21T10:00:00+09:00",
     "to": "2026-10-22T10:00:00+09:00"
   },
   "createdAt": "2026-10-22T01:02:56.834Z",
-  "updatedAt": "2026-10-22T01:29:46.201Z",
+  "updatedAt": "2026-10-22T01:38:38.343Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -198,9 +198,9 @@
   },
   "site": "/tmp/japan-daily-20261022/text-release-39705695604/site",
   "pagesConclusion": "success",
-  "correctionPending": false,
+  "correctionPending": true,
   "resumeFrom": null,
-  "nextAction": "Daily text verified; independent daily audio pending. N1 Day54 waits for its exact original.",
+  "nextAction": "Correct current-date keyword rendering and false grammar match; preserve validated audio inputs except truly changed canonical text.",
   "n1Continuation": {
     "targetDate": "2026-10-22",
     "day": 54,
@@ -218,5 +218,21 @@
     },
     "upstreamSourceCommit": "14b2885c0c034ab5a0cebf12a59a7ca4daf66d47",
     "verifiedAt": "2026-10-22T01:29:45.785Z"
+  },
+  "correction": {
+    "targetDate": "2026-10-22",
+    "baseCommit": "cf569f605264cf9edce159792f7632452bb06dbb",
+    "reason": "Live review found object-valued keyword coercion and a noun-plus-particle grammar false positive. Only current date is corrected.",
+    "changes": [
+      "Render the same three source technical keyword terms as text for Top1-3",
+      "Rephrase QA5 input itself as 入力自体 to prevent false concessive ものの selection; preserve technical meaning"
+    ],
+    "unchanged": [
+      "All historical content",
+      "All source facts and evidence captures",
+      "All learning identity rules and validators",
+      "All voice/speed/duration thresholds"
+    ],
+    "createdAt": "2026-10-22T01:35:55.659830+00:00"
   }
 }
