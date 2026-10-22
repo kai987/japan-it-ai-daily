@@ -1,21 +1,22 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-22",
-  "stage": "publisher_queued",
-  "sourceCommit": "14b2885c0c034ab5a0cebf12a59a7ca4daf66d47",
+  "stage": "published",
+  "sourceCommit": "c30fa3730afef4504c2fe71930688aadc3e3d947",
   "sourceWindow": {
     "from": "2026-10-21T10:00:00+09:00",
     "to": "2026-10-22T10:00:00+09:00"
   },
   "createdAt": "2026-10-22T01:02:56.834Z",
-  "updatedAt": "2026-10-22T01:44:38.518Z",
+  "updatedAt": "2026-10-22T01:50:59.018Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
     "interviews.json",
     "draft.json",
     "checks.json",
-    "preflight.json"
+    "preflight.json",
+    "publication-request.json"
   ],
   "lastError": null,
   "baseCommit": "cf569f605264cf9edce159792f7632452bb06dbb",
@@ -34,7 +35,7 @@
     "M\tsrc/content/daily/2026-10-22.md",
     "M\tsrc/data/interviews/2026-10-22.json"
   ],
-  "verifiedAt": "2026-10-22T01:44:15.421Z",
+  "verifiedAt": "2026-10-22T01:50:56.785Z",
   "preflightRunId": 39707113887,
   "requestId": "codex-2026-10-22-234b350d-e88f-46cb-ad15-8e102bf92aac",
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
@@ -73,24 +74,24 @@
   "requestCommit": "48c527b3e2d0f4f3ca338d1c9f5fa0781f8cced8",
   "requestBlob": "5b49e84932884822b3bb6ccfab96621edac15069",
   "submittedAt": "2026-10-22T01:44:38.153Z",
-  "publisherRunId": 39705457640,
-  "releaseCommit": "14b2885c0c034ab5a0cebf12a59a7ca4daf66d47",
+  "publisherRunId": 39707490273,
+  "releaseCommit": "c30fa3730afef4504c2fe71930688aadc3e3d947",
   "sixDraftBytesEqual": true,
-  "pagesRunId": 39705695604,
+  "pagesRunId": 39707705592,
   "pagesStatus": "completed",
   "label": "text",
-  "runId": 39705695604,
-  "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39705695604",
+  "runId": 39707705592,
+  "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/39707705592",
   "artifacts": [
     {
-      "id": 12394821487,
+      "id": 12396160593,
       "name": "github-pages",
-      "digest": "sha256:8b1e36e49d8fdf7fbf178645dc75eb8f41b84b1cf0e8ef52eafeaf75bae9127e"
+      "digest": "sha256:ed7272085513063d27c2e603d7478ee2bd7a72251893a49d0d4228ad1fffb589"
     },
     {
-      "id": 12394243881,
+      "id": 12396070748,
       "name": "it-study-snapshot",
-      "digest": "sha256:3988a3e52ddd0c3833fa9a03450a703a826047122ea223443ae5b5a6787e527e"
+      "digest": "sha256:4bf15bb6506b39e7c18d46fa7559fb08366b5178fce2a09d3d01dcf9b87bc39e"
     }
   ],
   "totalDays": 72,
@@ -170,33 +171,33 @@
     "2026-10-22"
   ],
   "fullSnapshotCompared": true,
-  "snapshotHash": "afade52a9dda11d3e360e50eff9bc57ac11a6474043e4d68699ede33e657efba",
+  "snapshotHash": "cad8dc396bf17c0e0db0b689a00a5eb8fe2b962ed4100aba1ef017cda98cae04",
   "expected": {
     "version": 1,
-    "commit": "14b2885c0c034ab5a0cebf12a59a7ca4daf66d47",
+    "commit": "c30fa3730afef4504c2fe71930688aadc3e3d947",
     "date": "2026-10-22",
-    "snapshotHash": "afade52a9dda11d3e360e50eff9bc57ac11a6474043e4d68699ede33e657efba",
+    "snapshotHash": "cad8dc396bf17c0e0db0b689a00a5eb8fe2b962ed4100aba1ef017cda98cae04",
     "pages": [
       {
         "path": "daily/2026-10-22/",
-        "sha256": "85f157ba73aad8dcaa2ae2fb6bcfab6b4a1da48877b1f3e181910036e91d6c96"
+        "sha256": "b4e6b669535182b673867602411350989fe1397b2e53de34114181fc5f5168ae"
       },
       {
         "path": "ja/daily/2026-10-22/",
-        "sha256": "962e5750043fb48d59555a2e43438eac0f20efa211b2d6c66c494e139cdd624d"
+        "sha256": "961c0cba66874246be00dd51b42f869da35aac5ff7b8df4194ab86eb6ee7e1b9"
       }
     ]
   },
   "live": {
-    "commit": "14b2885c0c034ab5a0cebf12a59a7ca4daf66d47",
+    "commit": "c30fa3730afef4504c2fe71930688aadc3e3d947",
     "date": "2026-10-22",
     "attempt": 1
   },
-  "site": "/tmp/japan-daily-20261022/text-release-39705695604/site",
+  "site": "/tmp/japan-daily-20261022-correction/text-release-39707705592/site",
   "pagesConclusion": "success",
-  "correctionPending": true,
+  "correctionPending": false,
   "resumeFrom": null,
-  "nextAction": "Correct current-date keyword rendering and false grammar match; preserve validated audio inputs except truly changed canonical text.",
+  "nextAction": "Text verified; persist independent audio pending and attempt one corresponding N1 handoff.",
   "n1Continuation": {
     "targetDate": "2026-10-22",
     "day": 54,
