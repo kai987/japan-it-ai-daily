@@ -239,10 +239,10 @@ const grammarGroups = [
               <div class="entry-kicker">C-4 · Review</div>
               <h2>{copy.remember}</h2>
               {data.mustRememberWords.length > 0 && (
-                <div class="remember-row"><strong>{copy.words}</strong><div class="remember-chips">{data.mustRememberWords.map((item: string) => <span>{item}</span>)}</div></div>
+                <div class="remember-row"><strong>{locale === 'ja' ? `${data.mustRememberWords.length}語` : `${data.mustRememberWords.length}词`}</strong><div class="remember-chips">{data.mustRememberWords.map((item: string) => <span>{item}</span>)}</div></div>
               )}
               {data.mustRememberGrammar.length > 0 && (
-                <div class="remember-row"><strong>{copy.patterns}</strong><div class="remember-chips">{data.mustRememberGrammar.map((item: string) => <span>{item}</span>)}</div></div>
+                <div class="remember-row"><strong>{locale === 'ja' ? `文法${data.mustRememberGrammar.length}項目` : `${data.mustRememberGrammar.length}项语法`}</strong><div class="remember-chips">{data.mustRememberGrammar.map((item: string) => <span>{item}</span>)}</div></div>
               )}
             </section>
           )}
