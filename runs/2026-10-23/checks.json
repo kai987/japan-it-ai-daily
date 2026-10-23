@@ -1,129 +1,128 @@
 {
   "date": "2026-10-23",
-  "checkedBaseCommit": "49d3587dd173fcdb1278435bb8b5bf960020bcee",
-  "worktree": "six uncommitted target files",
+  "checkedBaseCommit": "763b6f2f6840dcd8308f82b68eb3cdc79d0dc0d4",
+  "worktree": "authorized correction to three answers and evidence",
   "checks": [
     {
       "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
-      "startedAt": "2026-10-23T01:23:54.925Z",
-      "completedAt": "2026-10-23T01:23:55.223Z",
+      "startedAt": "2026-10-23T03:23:39.761Z",
+      "completedAt": "2026-10-23T03:23:40.073Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/00-tests-publication-recovery-node-mjs.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/00-tests-publication-recovery-node-mjs.log"
     },
     {
       "command": "npm audit --audit-level=high",
-      "startedAt": "2026-10-23T01:23:57.259Z",
-      "completedAt": "2026-10-23T01:23:58.074Z",
+      "startedAt": "2026-10-23T03:23:41.984Z",
+      "completedAt": "2026-10-23T03:23:42.932Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/01---audit-level-high.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/01---audit-level-high.log"
     },
     {
       "command": "npm run check",
-      "startedAt": "2026-10-23T01:23:59.916Z",
-      "completedAt": "2026-10-23T01:24:07.877Z",
+      "startedAt": "2026-10-23T03:23:44.684Z",
+      "completedAt": "2026-10-23T03:23:51.881Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/02-check.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/02-check.log"
     },
     {
       "command": "npm run content:integrity:check",
-      "startedAt": "2026-10-23T01:24:09.987Z",
-      "completedAt": "2026-10-23T01:24:13.193Z",
+      "startedAt": "2026-10-23T03:23:53.952Z",
+      "completedAt": "2026-10-23T03:23:57.273Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/03-content-integrity-check.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/03-content-integrity-check.log"
     },
     {
       "command": "npm run evidence:check",
-      "startedAt": "2026-10-23T01:24:15.413Z",
-      "completedAt": "2026-10-23T01:24:15.700Z",
+      "startedAt": "2026-10-23T03:23:59.616Z",
+      "completedAt": "2026-10-23T03:23:59.902Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/04-evidence-check.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/04-evidence-check.log"
     },
     {
       "command": "npm run evidence:pilot",
-      "startedAt": "2026-10-23T01:24:17.464Z",
-      "completedAt": "2026-10-23T01:24:17.643Z",
+      "startedAt": "2026-10-23T03:24:02.030Z",
+      "completedAt": "2026-10-23T03:24:02.210Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/05-evidence-pilot.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/05-evidence-pilot.log"
     },
     {
       "command": "npm run bilingual:check-interview",
-      "startedAt": "2026-10-23T01:24:19.786Z",
-      "completedAt": "2026-10-23T01:24:19.971Z",
+      "startedAt": "2026-10-23T03:24:04.140Z",
+      "completedAt": "2026-10-23T03:24:04.336Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/06-bilingual-check-interview.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/06-bilingual-check-interview.log"
     },
     {
       "command": "npm run quality:check",
-      "startedAt": "2026-10-23T01:24:22.031Z",
-      "completedAt": "2026-10-23T01:24:22.407Z",
+      "startedAt": "2026-10-23T03:24:06.146Z",
+      "completedAt": "2026-10-23T03:24:06.549Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/07-quality-check.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/07-quality-check.log"
     },
     {
       "command": "npm run audio:check",
-      "startedAt": "2026-10-23T01:24:24.424Z",
-      "completedAt": "2026-10-23T01:24:24.989Z",
+      "startedAt": "2026-10-23T03:24:08.490Z",
+      "completedAt": "2026-10-23T03:24:09.085Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/08-audio-check.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/08-audio-check.log"
     },
     {
       "command": "npm run audio:versions:check",
-      "startedAt": "2026-10-23T01:24:26.872Z",
-      "completedAt": "2026-10-23T01:24:27.798Z",
+      "startedAt": "2026-10-23T03:24:10.868Z",
+      "completedAt": "2026-10-23T03:24:11.846Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/09-audio-versions-check.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/09-audio-versions-check.log"
     },
     {
       "command": "npm run test",
-      "startedAt": "2026-10-23T01:24:29.790Z",
-      "completedAt": "2026-10-23T01:24:32.986Z",
+      "startedAt": "2026-10-23T03:24:14.124Z",
+      "completedAt": "2026-10-23T03:24:17.398Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/10-test.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/10-test.log"
     },
     {
       "command": "npm run build",
-      "startedAt": "2026-10-23T01:24:34.861Z",
-      "completedAt": "2026-10-23T01:24:41.175Z",
+      "startedAt": "2026-10-23T03:24:19.571Z",
+      "completedAt": "2026-10-23T03:24:25.887Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/11-build.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/11-build.log"
     },
     {
       "command": "npm run test:browser:speech-smoke",
-      "startedAt": "2026-10-23T01:24:42.855Z",
-      "completedAt": "2026-10-23T01:24:47.000Z",
+      "startedAt": "2026-10-23T03:24:28.027Z",
+      "completedAt": "2026-10-23T03:24:31.057Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/12-test-browser-speech-smoke.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/12-test-browser-speech-smoke.log"
     },
     {
       "command": "npm run test:browser",
-      "startedAt": "2026-10-23T01:24:48.761Z",
-      "completedAt": "2026-10-23T01:25:25.489Z",
+      "startedAt": "2026-10-23T03:24:33.129Z",
+      "completedAt": "2026-10-23T03:25:10.319Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/13-test-browser.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/13-test-browser.log"
     },
     {
       "command": "npm run security:check",
-      "startedAt": "2026-10-23T01:25:27.488Z",
-      "completedAt": "2026-10-23T01:25:27.892Z",
+      "startedAt": "2026-10-23T03:25:12.281Z",
+      "completedAt": "2026-10-23T03:25:12.695Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/14-security-check.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/14-security-check.log"
     },
     {
-      "command": "npm run evidence:check -- --date 2026-10-23 --source-dir /tmp/japan-daily-20261023/originals",
-      "startedAt": "2026-10-23T01:25:29.973Z",
-      "completedAt": "2026-10-23T01:25:30.160Z",
+      "command": "npm run evidence:check -- --date 2026-10-23 --source-dir /tmp/japan-daily-20261023-repair/originals",
+      "startedAt": "2026-10-23T03:25:14.389Z",
+      "completedAt": "2026-10-23T03:25:14.586Z",
       "exitCode": 0,
-      "log": "/tmp/japan-daily-20261023/logs/15-evidence-check.log"
+      "log": "/tmp/japan-daily-20261023-repair/logs/15-evidence-check.log"
     }
   ],
   "fileHashes": {
-    "src/content/daily/2026-10-23.md": "2b23a40469aae8c86c55b2ec494abb986bc89c7903a4697540a5b84773f559f0",
+    "src/content/daily/2026-10-23.md": "2afa4bcd321f7cfb13dbf6330dd4aa6dcf8eef87a856c9944eecc3e90f5f3b56",
     "src/content/japanese/2026-10-23.md": "e35285537c4a4c165181c4280bcaed621ecd20b1ca677b4fe6d9f5d1d532c9b9",
-    "src/content/daily-ja/2026-10-23.md": "7d87fb00f5d3c25d2857d3fc7002f0a949139ed02e563ce3f5e6e711e32a1049",
+    "src/content/daily-ja/2026-10-23.md": "3b6e6768046bf256e58c194a7237e86e578384e2e944e68c34df3a1b5316887a",
     "src/content/japanese-ja/2026-10-23.md": "204fcda2c306d15d5fe0c9c91bfda8ca5c07d4a63abb181614f3b7a979040434",
-    "src/content/evidence/2026-10-23.json": "5585eeed43b0b68143b87833228abc76d30312f2463b6968b2eebbb860c1cbce",
-    "src/data/interviews/2026-10-23.json": "1fc6af6461519f76c99f3b0a4785118b111191075166ad5ce956e3ee8f84dfc4"
+    "src/content/evidence/2026-10-23.json": "2f745dbe0fdb36f5415f133d1bba973eb884b9d3c607eb25f0e909e58384f84d",
+    "src/data/interviews/2026-10-23.json": "072ef5fdbae30cbc1dab2d9d5f987f5c43f35d890a10e3d146b977533cabb616"
   },
-  "targetDate": "2026-10-23",
   "exactDraftFilesVerified": true
 }
