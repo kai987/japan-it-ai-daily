@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-10-23",
+  "sourceCommit": "49d3587dd173fcdb1278435bb8b5bf960020bcee",
+  "sourceWindow": {
+    "from": "2026-10-22T10:00:00+09:00",
+    "to": "2026-10-23T10:00:00+09:00"
+  },
+  "articles": [
+    {
+      "articleId": "2026-10-23-top-1",
+      "title": "内製 Background Coding Agent “haro” で拓く未来の開発体験",
+      "source": "LayerX Engineering Blog",
+      "url": "https://tech.layerx.co.jp/entry/why-we-built-our-background-agent",
+      "publishedAt": "2026-10-22T11:27:42+09:00",
+      "capturedAt": "2026-10-23T01:02:21.804049+00:00",
+      "snapshotSha256": "0f8356f49080b8f00d218bf8814f5863ba0312845ec0304cd91e8997334dbab6",
+      "access": "full",
+      "accessNote": "Full publicly available article text read, including code/results/limitations; diagrams considered only via accompanying captions and text. No independent execution of author experiments.",
+      "factsToPreserve": "TypeScript/Temporal controls agent flow; Go CRD/controller manages EKS environments. PR-created adoption metrics, not merged PRs or quality causality; self-improvement loop remains an aim.",
+      "shortEvidenceAnchors": [
+        "Temporal Workflow",
+        "55〜60%程度",
+        "58名"
+      ]
+    },
+    {
+      "articleId": "2026-10-23-top-2",
+      "title": "[アップデート] Amazon Bedrock Guardrailsのコンテキストグラウンディングチェックに Standard ティアが追加されたので試してみた",
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/articles/bedrock-guardrails-grounding-standard-tier/",
+      "publishedAt": "2026-10-22T04:19:07.542Z",
+      "capturedAt": "2026-10-23T01:02:21.804767+00:00",
+      "snapshotSha256": "44712899a1c699283a75c060527050513935b597ac2d0a908ade0f085821b968",
+      "access": "full",
+      "accessNote": "Full publicly available article text read, including code/results/limitations; diagrams considered only via accompanying captions and text. No independent execution of author experiments.",
+      "factsToPreserve": "Tokyo, Python3.12.12, boto3 1.43.116; both thresholds0.7, four synthetic answers; cross-region profile apac.guardrail.v1:0 is not Japan-only inference. A tiny example is not language-wide accuracy.",
+      "shortEvidenceAnchors": [
+        "しきい値はどちらも0.7",
+        "query1000字",
+        "1,001文字"
+      ]
+    },
+    {
+      "articleId": "2026-10-23-top-3",
+      "title": "Viteで.tsxを直しても反映されない原因は、tscが吐いた.jsだった",
+      "source": "Zenn",
+      "url": "https://zenn.dev/haruto_miyakawa/articles/vite-tsc-emitted-js-shadows-tsx",
+      "publishedAt": "2026-10-23T08:00:05.845+09:00",
+      "capturedAt": "2026-10-23T01:02:21.804997+00:00",
+      "snapshotSha256": "060a73025c02e69c7db7718cc3d0d5601e010d1eba2412a9d18a8d16b760a4bf",
+      "access": "full",
+      "accessNote": "Full publicly available article text read, including code/results/limitations; diagrams considered only via accompanying captions and text. No independent execution of author experiments.",
+      "factsToPreserve": "Author environment Vite6/TypeScript5.6.3. Explicit emit flag defeats noEmit; JS precedes TSX. Build after error is author inference, not independently reproduced; handwritten JS and declarations must be preserved.",
+      "shortEvidenceAnchors": [
+        "--noEmit false",
+        "TS5096",
+        ".js"
+      ]
+    },
+    {
+      "articleId": "2026-10-23-top-4",
+      "title": "Riveのデータバインディングを、エディタを開かずに.rivへ書き込めるようにした",
+      "source": "Zenn",
+      "url": "https://zenn.dev/udos/articles/rive-mcp-databinding-create",
+      "publishedAt": "2026-10-23T09:52:16.031+09:00",
+      "capturedAt": "2026-10-23T01:02:21.805504+00:00",
+      "snapshotSha256": "0b6bf84dca16458be1cee4dc76a508a42c8f6ddb6c862b09fc8104bb7fb77c7b",
+      "access": "full",
+      "accessNote": "Full publicly available article text read, including code/results/limitations; diagrams considered only via accompanying captions and text. No independent execution of author experiments.",
+      "factsToPreserve": "Author-created MCP tooling, officialruntime/browser visual check; types/mapping/parent indexes and glyph subset. Enum-to-text/list rendering incomplete; static preview uses first instance.",
+      "shortEvidenceAnchors": [
+        "DataBindContext",
+        "rangeMapper",
+        "fonts[].subset"
+      ]
+    },
+    {
+      "articleId": "2026-10-23-top-5",
+      "title": "Claude Codeが書いたSwiftのテスト、本当にバグを検出できる？ Mutation Testingで穴を埋める",
+      "source": "Zenn",
+      "url": "https://zenn.dev/juntaki/articles/f1dd276860f4e9",
+      "publishedAt": "2026-10-23T09:10:51.247+09:00",
+      "capturedAt": "2026-10-23T01:02:21.940947+00:00",
+      "snapshotSha256": "7555f1c5048490e0512c450c857995227e1bca8ea12ff48f6d753dbd645eb858",
+      "access": "full",
+      "accessNote": "Full publicly available article text read, including code/results/limitations; diagrams considered only via accompanying captions and text. No independent execution of author experiments.",
+      "factsToPreserve": "MutantKit1.3.1, budget50, selectCoveringTests enabled. Two measured projects differ. Exclude infrastructure/application/materialization failures; equivalent mutants are not forced test targets; shared specification misunderstandings remain.",
+      "shortEvidenceAnchors": [
+        "selectCoveringTests",
+        "noCoverage",
+        "31 / 48"
+      ]
+    }
+  ],
+  "discovery": {
+    "scope": "All20 designated homepages considered; discovery pages and selected originals are distinct. Not a claim of exhaustive full-site searches.",
+    "sites": [
+      {
+        "name": "Qiita",
+        "url": "https://qiita.com/",
+        "observedAt": "2026-10-23T01:01:17.369601+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 90
+      },
+      {
+        "name": "Zenn",
+        "url": "https://zenn.dev/",
+        "observedAt": "2026-10-23T01:01:17.370164+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 6
+      },
+      {
+        "name": "Publickey",
+        "url": "https://www.publickey1.jp/",
+        "observedAt": "2026-10-23T01:01:17.370253+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 22
+      },
+      {
+        "name": "ITmedia AI+",
+        "url": "https://www.itmedia.co.jp/aiplus/",
+        "observedAt": "2026-10-23T01:01:17.370352+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 70
+      },
+      {
+        "name": "@IT",
+        "url": "https://atmarkit.itmedia.co.jp/",
+        "observedAt": "2026-10-23T01:01:17.370431+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 38
+      },
+      {
+        "name": "CodeZine",
+        "url": "https://codezine.jp/",
+        "observedAt": "2026-10-23T01:01:17.370485+00:00",
+        "status": 403,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 0,
+        "error": "403 Client Error: Forbidden for url: https://codezine.jp/"
+      },
+      {
+        "name": "gihyo.jp",
+        "url": "https://gihyo.jp/",
+        "observedAt": "2026-10-23T01:01:17.440707+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 40
+      },
+      {
+        "name": "DevelopersIO",
+        "url": "https://dev.classmethod.jp/",
+        "observedAt": "2026-10-23T01:01:17.464721+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 67
+      },
+      {
+        "name": "TechFeed",
+        "url": "https://techfeed.io/",
+        "observedAt": "2026-10-23T01:01:17.543110+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 2
+      },
+      {
+        "name": "Hatena Technology",
+        "url": "https://b.hatena.ne.jp/hotentry/it",
+        "observedAt": "2026-10-23T01:01:17.553164+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 90
+      },
+      {
+        "name": "ASCII AI",
+        "url": "https://ascii.jp/",
+        "observedAt": "2026-10-23T01:01:17.575926+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 90
+      },
+      {
+        "name": "AINOW",
+        "url": "https://ainow.ai/",
+        "observedAt": "2026-10-23T01:01:17.630457+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 12
+      },
+      {
+        "name": "Ledge.ai",
+        "url": "https://ledge.ai/",
+        "observedAt": "2026-10-23T01:01:17.684546+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 36
+      },
+      {
+        "name": "CyberAgent Developers Blog",
+        "url": "https://developers.cyberagent.co.jp/blog/",
+        "observedAt": "2026-10-23T01:01:17.689734+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 36
+      },
+      {
+        "name": "LINE Yahoo Tech Blog",
+        "url": "https://techblog.lycorp.co.jp/ja/",
+        "observedAt": "2026-10-23T01:01:17.715884+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 29
+      },
+      {
+        "name": "Mercari Engineering",
+        "url": "https://engineering.mercari.com/",
+        "observedAt": "2026-10-23T01:01:17.765122+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 21
+      },
+      {
+        "name": "SmartHR Tech Blog",
+        "url": "https://tech.smarthr.jp/",
+        "observedAt": "2026-10-23T01:01:17.779261+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 27
+      },
+      {
+        "name": "LayerX Engineering Blog",
+        "url": "https://tech.layerx.co.jp/",
+        "observedAt": "2026-10-23T01:01:17.832841+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 82
+      },
+      {
+        "name": "DeNA Engineering",
+        "url": "https://engineering.dena.com/blog/",
+        "observedAt": "2026-10-23T01:01:17.882529+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 53
+      },
+      {
+        "name": "Money Forward Developers Blog",
+        "url": "https://moneyforward-dev.jp/",
+        "observedAt": "2026-10-23T01:01:17.950362+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 22
+      }
+    ]
+  },
+  "rejected": [
+    {
+      "url": "https://engineering.dena.com/blog/2026/10/intern-sirus-knowledge-tracing/",
+      "reason": "Publisher RSS timestamp 2026-10-22T00:00:00+09:00 predates frozen10:00 window. Read but not selected or used as report/learning prose source."
+    },
+    {
+      "source": "CodeZine",
+      "reason": "Homepage HTTP403, no alternate transport or fingerprint retry."
+    }
+  ],
+  "verifiedAt": "2026-10-23T01:09:08.163278+00:00"
+}
