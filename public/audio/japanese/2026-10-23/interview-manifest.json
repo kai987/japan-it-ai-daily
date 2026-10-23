@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-23",
+  "generatedAt": "2026-10-23T03:37:50.828Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-23T03:38:01.723Z",
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "大きなリポジトリでAIエージェントの並列開発を支えるには、何を設計しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "2d8157fe4ab560e9b400fdb81346a8f130ab0f4ab8db24817a4551441850ccb1",
+      "durationSeconds": 6.479,
+      "audioSha256": "fdf905dad24841a216a973143c168d377d0ea00d0af67aec0a91f35e06c5d72a"
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "大きなコードベースでは、並列開発を支える実行環境も設計します。haroはTemporalで処理の流れを管理し、EKS上の環境を専用コントローラーで運用しています。社内MCPは利用者のアカウントで接続します。ただしPR作成割合は普及の指標であり、品質向上の証明とは分けて考えます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "4d537f44e5a9b390815417ae5656c5581bca4b0f179610f99fc0266e5457da5e",
+      "durationSeconds": 23.345,
+      "durationStatus": "warn",
+      "audioSha256": "3ffc3b56194df7c0407c0af428095020021c685c6d04ccfd35f6532a90c2cd67"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "日本語のRAG回答に評価機構を導入するとき、何を確かめますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "f20e247d127674cc3f50d5bf2fc6efb3565e726ee36152ce58eff57879bea3b4",
+      "durationSeconds": 5.491,
+      "audioSha256": "345775a0d00aa347b9ddfbb03d0b08add3001e0289c9cfaab5dc626b28d16177"
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "回答の根拠と質問への関連性を別々に確かめます。記事では両方のしきい値を0.7にそろえ、ClassicとStandardを同じ四つの回答で比較しました。ただし少数例の結果なので、日本語対応だけで正確さを保証せず、誤った金額や答えていない回答も評価します。更新後もStandardの設定が残っているか確認します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "4505858ee44e1eacc06af25742a6e8d21353d6ad796b0d76b910483bf246d20d",
+      "audioSha256": "dd900e4f509ce6b265f76438e75eb895bcb850e8c07b623ca4faeacaa5bafd4e",
+      "durationSeconds": 25.66,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "Reactの変更がビルド結果へ反映されない場合、どう調べますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "39d601cbf9d0ebf59bffe01551e7e5452a7f8691f5018b7b928262619f3421b5",
+      "durationSeconds": 5.072,
+      "audioSha256": "68a07ead760dcb1c049ac54d268dfb28dfa1680427498741f30b36cc14e657d3"
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "まず、変更したファイルが実際に読み込まれているかを調べます。記事ではtscの出力した古いJavaScriptが、ViteでTSXより先に選ばれていました。noEmitの指定と同名ファイルを確認し、不要な生成物だけを片付けます。ビルド成功だけでは反映された保証になりません。最後に、期待した文字列が成果物に入ったことまで確かめます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "97ec30ed2eb0d3a68b8286c02015b47ba91b4885717bd64a996e4e397f492e2f",
+      "audioSha256": "56bc2e093d695b5c26c7235ee135f38ff229002dbf56c85c1c4cf2f323844d5a",
+      "durationSeconds": 26.17,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "アニメーションに外部データを結び付けるとき、どこを検証しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "ef742c64e978774c2f3cae828cfa082b8395fe8da0423bcc2b4a8302d6dd1da0",
+      "durationSeconds": 5.061,
+      "audioSha256": "558fd354ab443449f8051473d281e99ffa84755351621ec2680ebf49d3daf7a2"
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "値の型だけでなく、変換と描画結果も確認します。RiveではViewModelを定義し、rangeMapperでHPの0から100を拡大率の0から1へ変換しています。ただしファイルが作れても、別の値で正しく描けるとは限りません。文字の差し替えには、フォントへ残す文字の確認も必要です。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "07a961bb40348755de3c82afdd3c3414a5985608be169cda394cd60a1f1c851f",
+      "durationSeconds": 22.896,
+      "durationStatus": "warn",
+      "audioSha256": "0dab8bc0aa9629f5a318ebce7137e505bcff4b1d2c639f50e9c38ba117d982f3"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "AIが書いたテストが通った後、検出力をどう確かめますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "f0582650dea4d55a271abe43c80b62879a34cef26a513ece33a78e090a660869",
+      "durationSeconds": 4.98,
+      "audioSha256": "a5efef10e6823e78261cfc70ba3486291a704c4d32cb650284a0f594ebf61dae"
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "意図的に小さな変更を入れ、テストが気付くかを見ます。MutantKitではselectCoveringTestsを有効にし、実行したのに検出しなかった結果と、実行していないnoCoverageを分けます。ただし等価な変更はテストを増やしても検出できません。仕様に必要な振る舞いから追加を判断します。実行上限50件の結果を、全体の品質保証とは区別します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "1969ea773fe519e45176cb3c0e7102fe225970f79d4a4b69a7fea9d1a9ae2274",
+      "audioSha256": "67497d5ab2437ea0072315e7bfe95f41269bd19354670bbc6c799fd6b8e9f241",
+      "durationSeconds": 26.934,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "PR作成割合やgreenなテストだけで品質向上を判断できますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "d78826b95cef08870ed1204c0ee513948cae52beee9486731850b66b3ea91ac9",
+      "durationSeconds": 5.572,
+      "audioSha256": "1b37eb2213114336e2ef28a4e625dfbcac022ed56e4e6658206e49e7d630adcc"
+    },
+    {
+      "index": 2,
+      "text": "複数ターンの回答評価で、過去の会話をそのまま根拠にしてよいですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "cb9072baf3f2963e60f735fd413bbc7a0391738d2a305bff834630fade816f87",
+      "durationSeconds": 5.572,
+      "audioSha256": "e2014996550c5499c30122c3b29e14f60fee55cf2cd1500b0e76078fee0d34f1"
+    },
+    {
+      "index": 3,
+      "text": "作成した成果物に意図した変更が入ったことを、どう確かめますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "36d42552d7f91e4912fb3c10d6b0ce02160e13238895c1fe1309fe5ffa5e649e",
+      "durationSeconds": 5.421,
+      "audioSha256": "94bb93b17f7c831de21dc98942f870b7022746a15bc3ee4bb9434161c7e33caf"
+    }
+  ]
+}
