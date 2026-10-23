@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-10-23",
+  "sourceCommit": "49d3587dd173fcdb1278435bb8b5bf960020bcee",
+  "completeHistoryDates": [
+    "2026-08-12",
+    "2026-08-13",
+    "2026-08-14",
+    "2026-08-15",
+    "2026-08-16",
+    "2026-08-17",
+    "2026-08-18",
+    "2026-08-19",
+    "2026-08-20",
+    "2026-08-21",
+    "2026-08-22",
+    "2026-08-23",
+    "2026-08-24",
+    "2026-08-25",
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28",
+    "2026-08-29",
+    "2026-08-30",
+    "2026-08-31",
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03",
+    "2026-09-04",
+    "2026-09-05",
+    "2026-09-06",
+    "2026-09-07",
+    "2026-09-08",
+    "2026-09-09",
+    "2026-09-10",
+    "2026-09-11",
+    "2026-09-12",
+    "2026-09-13",
+    "2026-09-14",
+    "2026-09-15",
+    "2026-09-16",
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-19",
+    "2026-09-20",
+    "2026-09-21",
+    "2026-09-22",
+    "2026-09-23",
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-26",
+    "2026-09-27",
+    "2026-09-28",
+    "2026-09-29",
+    "2026-09-30",
+    "2026-10-01",
+    "2026-10-02",
+    "2026-10-03",
+    "2026-10-04",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-09",
+    "2026-10-10",
+    "2026-10-11",
+    "2026-10-12",
+    "2026-10-13",
+    "2026-10-14",
+    "2026-10-15",
+    "2026-10-16",
+    "2026-10-17",
+    "2026-10-18",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22"
+  ],
+  "coverage": {
+    "complete": true,
+    "dateCount": 72,
+    "fourRepresentations": 288
+  },
+  "vocabulary": [
+    {
+      "term": "わざわざ",
+      "reading": "わざわざ",
+      "level": "N1",
+      "sourceUrl": "https://tech.layerx.co.jp/entry/why-we-built-our-background-agent",
+      "sourceForm": "わざわざ内製",
+      "sourceExcerpt": "ション\nクラウド型の Coding Agent をわざわざ内製したモチベーションですが、大きくは「ローカル開発の限界」と「自社コードベースを動かすには既製品だと足りない」の",
+      "sourceCaptureSha256": "0f8356f49080b8f00d218bf8814f5863ba0312845ec0304cd91e8997334dbab6",
+      "reference": "https://jisho.org/api/v1/search/words?keyword=わざわざ",
+      "referenceScope": "JMdict-backed dictionary JLPT reference tag; not an official exhaustive modern JLPT list.",
+      "decision": "Dictionary/spelling/reading identity absent from all72 earlier dates; source meaning reviewed separately."
+    },
+    {
+      "term": "きっかけ",
+      "reading": "きっかけ",
+      "level": "N2",
+      "sourceUrl": "https://zenn.dev/haruto_miyakawa/articles/vite-tsc-emitted-js-shadows-tsx",
+      "sourceForm": "きっかけ",
+      "sourceExcerpt": "きにくかった理由\n振り返ると、「おかしい」と気づくきっかけがことごとく消されていました。\nビルドが成功する\n: Vite から見れば、\nFoo.js\nは正しい Java",
+      "sourceCaptureSha256": "060a73025c02e69c7db7718cc3d0d5601e010d1eba2412a9d18a8d16b760a4bf",
+      "reference": "https://jisho.org/api/v1/search/words?keyword=きっかけ",
+      "referenceScope": "JMdict-backed dictionary JLPT reference tag; not an official exhaustive modern JLPT list.",
+      "decision": "Dictionary/spelling/reading identity absent from all72 earlier dates; source meaning reviewed separately."
+    },
+    {
+      "term": "引っかかる",
+      "reading": "ひっかかる",
+      "level": "N2",
+      "sourceUrl": "https://zenn.dev/haruto_miyakawa/articles/vite-tsc-emitted-js-shadows-tsx",
+      "sourceForm": "引っかかった",
+      "sourceExcerpt": "false\nで書き出しを有効にしたので、この条件に引っかかったわけです。\nエラーが出ているのに、\n.js\nは書き出されていました。\ntsc -b\nは以前はエラーがあると書き",
+      "sourceCaptureSha256": "060a73025c02e69c7db7718cc3d0d5601e010d1eba2412a9d18a8d16b760a4bf",
+      "reference": "https://jisho.org/api/v1/search/words?keyword=引っかかる",
+      "referenceScope": "JMdict-backed dictionary JLPT reference tag; not an official exhaustive modern JLPT list.",
+      "decision": "Dictionary/spelling/reading identity absent from all72 earlier dates; source meaning reviewed separately."
+    },
+    {
+      "term": "含める",
+      "reading": "ふくめる",
+      "level": "N2",
+      "sourceUrl": "https://zenn.dev/juntaki/articles/f1dd276860f4e9",
+      "sourceForm": "含めます",
+      "sourceExcerpt": "age\nはテストの穴なので、Effectiveには含めます。\nselectCoveringTests\nが無効だと\nnoCoverage\nは0件になるので、Testedと",
+      "sourceCaptureSha256": "7555f1c5048490e0512c450c857995227e1bca8ea12ff48f6d753dbd645eb858",
+      "reference": "https://jisho.org/api/v1/search/words?keyword=含める",
+      "referenceScope": "JMdict-backed dictionary JLPT reference tag; not an official exhaustive modern JLPT list.",
+      "decision": "Dictionary/spelling/reading identity absent from all72 earlier dates; source meaning reviewed separately."
+    },
+    {
+      "term": "目指す",
+      "reading": "めざす",
+      "level": "N2",
+      "sourceUrl": "https://tech.layerx.co.jp/entry/why-we-built-our-background-agent",
+      "sourceForm": "目指しています",
+      "sourceExcerpt": "tion Loop が勝手に閉じていくような世界を目指しています。\nharo のこれから - Software Factory のその先へ\n最近は世の中で “Software",
+      "sourceCaptureSha256": "0f8356f49080b8f00d218bf8814f5863ba0312845ec0304cd91e8997334dbab6",
+      "reference": "https://jisho.org/api/v1/search/words?keyword=目指す",
+      "referenceScope": "JMdict-backed dictionary JLPT reference tag; not an official exhaustive modern JLPT list.",
+      "decision": "Dictionary/spelling/reading identity absent from all72 earlier dates; source meaning reviewed separately."
+    },
+    {
+      "term": "盾",
+      "reading": "たて",
+      "level": "N1",
+      "sourceUrl": "https://zenn.dev/udos/articles/rive-mcp-databinding-create",
+      "sourceForm": "盾アイコン",
+      "sourceExcerpt": "り\n緑 / 黄 / 赤\nshielded\n真偽値\n盾アイコンの表示\ntrue のときだけ盾が出る\nアプリ側は値を入れるだけでよく、「HPが減ったらバーを縮める」「色を変え",
+      "sourceCaptureSha256": "0b6bf84dca16458be1cee4dc76a508a42c8f6ddb6c862b09fc8104bb7fb77c7b",
+      "reference": "https://jisho.org/api/v1/search/words?keyword=盾",
+      "referenceScope": "JMdict-backed dictionary JLPT reference tag; not an official exhaustive modern JLPT list.",
+      "decision": "Dictionary/spelling/reading identity absent from all72 earlier dates; source meaning reviewed separately."
+    },
+    {
+      "term": "幸い",
+      "reading": "さいわい",
+      "level": "N3",
+      "sourceUrl": "https://tech.layerx.co.jp/entry/why-we-built-our-background-agent",
+      "sourceForm": "幸いにして",
+      "sourceExcerpt": "、仕組み側で負荷を軽減できる価値は高いでしょう。 幸いにして、 現代では Coding Agent によってこのような仕組みを作る負担は劇的に小さくなっています。\n構成\n",
+      "sourceCaptureSha256": "0f8356f49080b8f00d218bf8814f5863ba0312845ec0304cd91e8997334dbab6",
+      "reference": "https://jisho.org/api/v1/search/words?keyword=幸い",
+      "referenceScope": "JMdict-backed dictionary JLPT reference tag; not an official exhaustive modern JLPT list.",
+      "decision": "Dictionary/spelling/reading identity absent from all72 earlier dates; source meaning reviewed separately."
+    },
+    {
+      "term": "快適",
+      "reading": "かいてき",
+      "level": "N3",
+      "sourceUrl": "https://tech.layerx.co.jp/entry/why-we-built-our-background-agent",
+      "sourceForm": "快適に",
+      "sourceExcerpt": "\nまた、この規模の monorepo をリモートで快適に動かすであるとか、従来のローカルでのプロダクト開発と同じように内製ツールや環境をリモートで利用しようとすると、",
+      "sourceCaptureSha256": "0f8356f49080b8f00d218bf8814f5863ba0312845ec0304cd91e8997334dbab6",
+      "reference": "https://jisho.org/api/v1/search/words?keyword=快適",
+      "referenceScope": "JMdict-backed dictionary JLPT reference tag; not an official exhaustive modern JLPT list.",
+      "decision": "Dictionary/spelling/reading identity absent from all72 earlier dates; source meaning reviewed separately."
+    },
+    {
+      "term": "数える",
+      "reading": "かぞえる",
+      "level": "N3",
+      "sourceUrl": "https://zenn.dev/udos/articles/rive-mcp-databinding-create",
+      "sourceForm": "数えて",
+      "sourceExcerpt": "）は部品として数えられないのに、書き出し側はそれも数えて番号を進めていた。そのため、配線より後に書いたオブジェクトの親の番号が1つずれていた。色と文字では、たまたま配",
+      "sourceCaptureSha256": "0b6bf84dca16458be1cee4dc76a508a42c8f6ddb6c862b09fc8104bb7fb77c7b",
+      "reference": "https://jisho.org/api/v1/search/words?keyword=数える",
+      "referenceScope": "JMdict-backed dictionary JLPT reference tag; not an official exhaustive modern JLPT list.",
+      "decision": "Dictionary/spelling/reading identity absent from all72 earlier dates; source meaning reviewed separately."
+    }
+  ],
+  "grammar": [
+    {
+      "pattern": "～からこそ",
+      "level": "N3",
+      "sourceUrl": "https://zenn.dev/juntaki/articles/f1dd276860f4e9",
+      "sourceForm": "だからこそ",
+      "exactSourceExcerpt": "だからこそ、次に重要になるのは、",
+      "levelReference": "https://bunpro.jp/grammar_points/からこそ",
+      "levelNote": "Primary teaching materials differ between N2 and N3; retain N3 conservatively.",
+      "decision": "Causal emphasis differs from prior nominalized-action focus ことこそ; no prior causal-emphasis card."
+    }
+  ],
+  "rejected": [
+    {
+      "term": "掘る",
+      "reason": "Same figurative delve-into meaning already taught via 掘り下げる; excluded conservatively."
+    },
+    {
+      "term": "まぎらわしい",
+      "reason": "Kana spelling of prior 紛らわしい, not new."
+    },
+    {
+      "term": "なおさら",
+      "reason": "Prior card; current reference-tag difference does not authorize reclassifying history."
+    },
+    {
+      "term": "ことごとく",
+      "reason": "Already introduced2026-08-27."
+    },
+    {
+      "term": "たまたま",
+      "reason": "Already introduced2026-08-29; later dictionary429 not retried because no new card needed."
+    },
+    {
+      "term": "～かどうか",
+      "reason": "Embedded yes/no function already learned with か否か; not counted as novelty."
+    },
+    {
+      "term": "自明・足場・流し込む・読み替える",
+      "reason": "No reliable JLPT reference tag confirmed; not promoted to N1 or kept to fill20."
+    }
+  ],
+  "vocabularyCount": 9,
+  "grammarCount": 1,
+  "levelsPreserved": true,
+  "historicalFilesChanged": false,
+  "examples": "Independent teaching examples, not quotations from author experiments."
+}
