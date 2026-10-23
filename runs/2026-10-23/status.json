@@ -8,7 +8,7 @@
     "to": "2026-10-23T10:00:00+09:00"
   },
   "createdAt": "2026-10-23T01:00:35.489Z",
-  "updatedAt": "2026-10-23T03:36:06.610Z",
+  "updatedAt": "2026-10-23T03:59:51.410Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -168,20 +168,19 @@
   "n1Continuation": {
     "targetDate": "2026-10-23",
     "day": 55,
-    "stage": "waiting_source",
-    "requestSubmitted": false,
-    "statusBlobSha": "d3a11aef89322b59e5a3fe60186215cbb4bb5529",
-    "sourceObservation": {
-      "n1Main": "fdadc14fc10cbde377688df51f288070992a300c",
-      "mainSourceAbsent": true,
-      "outboxAbsent": true,
-      "completeMainInventory": true,
-      "completeProgressInventory": true,
-      "requestTargetDate": "2026-10-22",
-      "observedAt": "2026-10-23T01:38:26.207Z"
-    },
-    "upstreamSourceCommit": "763b6f2f6840dcd8308f82b68eb3cdc79d0dc0d4",
-    "verifiedAt": "2026-10-23T01:38:31.419Z"
+    "stage": "published",
+    "requestSubmitted": true,
+    "upstreamSourceCommit": "f870ab9a5554a6988b81806221bfadd298a651c9",
+    "sourceBlobSha": "740fc10023f75468678a90087824957f4d463ec8",
+    "requestCommit": "9d7d0099b0ea7df7d4fe179cbd2f15ad1119eb0d",
+    "syncRunId": 39897308778,
+    "n1ReleaseCommit": "d016e0a2d4f408cd1554f2f69f64b2e779c471ce",
+    "n1PagesRunId": 39897485827,
+    "sourceUnchanged": true,
+    "originalParagraphs": 5,
+    "vocabulary": 20,
+    "grammar": 8,
+    "verifiedAt": "2026-10-23T03:59:51.410Z"
   },
   "latestVerifiedMainCommit": "763b6f2f6840dcd8308f82b68eb3cdc79d0dc0d4",
   "audioCompletion": {
