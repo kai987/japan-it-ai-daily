@@ -8,7 +8,7 @@
     "to": "2026-10-23T10:00:00+09:00"
   },
   "createdAt": "2026-10-23T01:00:35.489Z",
-  "updatedAt": "2026-10-23T03:59:51.410Z",
+  "updatedAt": "2026-10-23T04:39:31.500Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -164,7 +164,7 @@
   "pagesConclusion": "success",
   "correctionPending": false,
   "resumeFrom": null,
-  "nextAction": "Corrected text verified; reviewed audio source rebaseline and three-clip recovery, N1 source-bound continuation.",
+  "nextAction": "Daily text and audio verified; Day55 text verified. N1 audio retains candidates and uploads, resumes validation in next eligible scheduled window. No text replay or audio regeneration.",
   "n1Continuation": {
     "targetDate": "2026-10-23",
     "day": 55,
@@ -184,105 +184,82 @@
   },
   "latestVerifiedMainCommit": "763b6f2f6840dcd8308f82b68eb3cdc79d0dc0d4",
   "audioCompletion": {
-    "stage": "generated",
-    "error": {
-      "stage": "duration-write",
-      "message": "  WARN: answer 1: actual 23.34s is outside ideal range 24–34s\n  WARN: answer 4: actual 22.90s is outside ideal range 24–34s\n  ERROR: answer 2: actual 21.41s is outside hard range 22–40s\n  ERROR: answer 3: actual 21.30s is outside hard range 22–40s\n  ERROR: answer 5: actual 21.70s is outside hard range 22–40s\n",
-      "at": "2026-10-23T01:40:20.264Z",
-      "kind": "deterministic_duration_gate",
-      "attempts": 1,
-      "retryable": false,
-      "details": [
-        {
-          "index": 2,
-          "durationSeconds": 21.408,
-          "durationStatus": "fail"
-        },
-        {
-          "index": 3,
-          "durationSeconds": 21.3,
-          "durationStatus": "fail"
-        },
-        {
-          "index": 5,
-          "durationSeconds": 21.696,
-          "durationStatus": "fail"
-        }
-      ]
-    },
-    "audioCommit": null,
-    "newRecordings": 32,
-    "r2Verified": false,
-    "pagesVerified": false,
-    "playbackVerified": false,
-    "recordingsPreserved": "/Users/paulasmith/.codex/automations/it-ai-codex/audio-candidates/2026-10-23",
-    "engineShutdown": {
-      "normalQuit": true,
-      "method": "Native AivisSpeech menu > Quit AivisSpeech; no unsaved project dialog present",
-      "appRunning": false,
-      "engineRunning": false,
-      "matchingProcesses": [],
-      "otherRecordingTasksBeforeQuit": false,
-      "verifiedAt": "2026-10-23T01:41:52.421174+00:00"
-    }
-  },
-  "n1AudioContinuation": {
-    "schemaVersion": 1,
     "targetDate": "2026-10-23",
-    "day": 55,
-    "stage": "waiting_daily_audio",
-    "sourceAudioCommit": null,
-    "sharedAudioDispatched": false,
-    "n1TextStage": "waiting_source",
-    "upstreamAudioStage": "generated",
-    "upstreamAudioError": {
-      "stage": "duration-write",
-      "message": "  WARN: answer 1: actual 23.34s is outside ideal range 24–34s\n  WARN: answer 4: actual 22.90s is outside ideal range 24–34s\n  ERROR: answer 2: actual 21.41s is outside hard range 22–40s\n  ERROR: answer 3: actual 21.30s is outside hard range 22–40s\n  ERROR: answer 5: actual 21.70s is outside hard range 22–40s\n",
-      "at": "2026-10-23T01:40:20.264Z",
-      "kind": "deterministic_duration_gate",
-      "attempts": 1,
-      "retryable": false,
-      "details": [
-        {
-          "index": 2,
-          "durationSeconds": 21.408,
-          "durationStatus": "fail"
-        },
-        {
-          "index": 3,
-          "durationSeconds": 21.3,
-          "durationStatus": "fail"
-        },
-        {
-          "index": 5,
-          "durationSeconds": 21.696,
-          "durationStatus": "fail"
-        }
-      ]
+    "stage": "playback_verified",
+    "audioCommit": "f870ab9a5554a6988b81806221bfadd298a651c9",
+    "textSourceCommit": "68b3292da3f3930d6c1462125d9054aef68ee4db",
+    "r2RunId": 39896146163,
+    "pagesRunId": 39896146200,
+    "manifestHashes": {
+      "public/audio/japanese/2026-10-23/manifest.json": "8d39430fd0136dcf489394507501ceef71c534d2f2d50b9a9dd5af405a51a4aa",
+      "public/audio/japanese/2026-10-23/interview-manifest.json": "3b89c9b5612bc15842198b527599270a027e1b6ea05065f0791c57f88ef5dfaa"
     },
-    "localWorkerObservation": {
-      "scope": "Previous catalog only; not Day55 completion",
-      "phase": "complete",
-      "pendingClips": 0,
-      "requiredClips": 5746,
-      "jobPending": false,
-      "updatedAt": "2026-10-22T03:14:02.909Z",
-      "releaseCommit": "fdadc14fc10cbde377688df51f288070992a300c",
-      "lastVerifiedCommit": "fdadc14fc10cbde377688df51f288070992a300c",
-      "schedule": {
-        "version": 1,
-        "claimedDate": "2026-10-22",
-        "reason": "missing_audio",
-        "startedAt": "2026-10-22T03:07:46.496Z"
+    "newDateRecordings": 32,
+    "repairedRecordings": 3,
+    "reusedRecordings": 29,
+    "referencedRecordingsVerified": 61,
+    "actualPlaybackTests": 18,
+    "answerDurations": [
+      {
+        "index": 1,
+        "durationSeconds": 23.345,
+        "status": "warn"
       },
-      "observedAt": "2026-10-23T01:43:55.205Z",
-      "uniqueWorkerTriggered": false,
-      "remoteUniqueAudioChecked": false,
-      "window": "11:10-13:10 Asia/Tokyo; local state read only outside window"
+      {
+        "index": 2,
+        "durationSeconds": 25.66,
+        "status": "ideal"
+      },
+      {
+        "index": 3,
+        "durationSeconds": 26.17,
+        "status": "ideal"
+      },
+      {
+        "index": 4,
+        "durationSeconds": 22.896,
+        "status": "warn"
+      },
+      {
+        "index": 5,
+        "durationSeconds": 26.934,
+        "status": "ideal"
+      }
+    ],
+    "allPublishedDatesAudioAudit": {
+      "from": "2026-09-30",
+      "through": "2026-10-23",
+      "dates": 24,
+      "referencedRecordings": 1450,
+      "unchangedAndVerified": true
     },
     "error": null,
-    "nextAction": "Wait for exact successful daily R2/Pages/playback before shared follow-up; Day55 text also waits for its original. Preserve worker schedule and latch.",
-    "updatedAt": "2026-10-23T01:43:55.205Z"
+    "verifiedAt": "2026-10-23T03:50:53.726Z"
+  },
+  "n1AudioContinuation": {
+    "targetDate": "2026-10-23",
+    "day": 55,
+    "stage": "retry_pending",
+    "failedPhase": "validating",
+    "sourceAudioCommit": "f870ab9a5554a6988b81806221bfadd298a651c9",
+    "n1TextCommit": "d016e0a2d4f408cd1554f2f69f64b2e779c471ce",
+    "newUniqueGenerated": 76,
+    "newUniqueUploaded": 76,
+    "audioMetadataPublished": false,
+    "actualPlaybackVerified": false,
+    "browserTests": {
+      "passed": 29,
+      "failed": 21
+    },
+    "nextAttempt": "2026-10-24T02:10:00.000Z",
+    "error": {
+      "stage": "validating",
+      "kind": "browser_validation_failed",
+      "passed": 29,
+      "failed": 21,
+      "rootCause": "Unconfirmed; browser actions timed out. Mac lock was observed but causation has not been established.",
+      "at": "2026-10-23T04:06:08.209Z"
+    }
   },
   "newVocabulary": 9,
   "reviewVocabulary": 11,
