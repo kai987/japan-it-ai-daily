@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-23",
-  "stage": "published",
+  "stage": "drafts_ready",
   "sourceCommit": "763b6f2f6840dcd8308f82b68eb3cdc79d0dc0d4",
   "sourceWindow": {
     "from": "2026-10-22T10:00:00+09:00",
     "to": "2026-10-23T10:00:00+09:00"
   },
   "createdAt": "2026-10-23T01:00:35.489Z",
-  "updatedAt": "2026-10-23T01:43:59.298Z",
+  "updatedAt": "2026-10-23T03:26:36.942Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -19,7 +19,7 @@
     "publication-request.json"
   ],
   "lastError": null,
-  "baseCommit": "49d3587dd173fcdb1278435bb8b5bf960020bcee",
+  "baseCommit": "763b6f2f6840dcd8308f82b68eb3cdc79d0dc0d4",
   "draftCommit": "cf447b17401afa4837c05a3faa4d55d9c6dd1119",
   "draftBranch": "draft/daily-2026-10-23",
   "paths": [
@@ -165,9 +165,9 @@
   },
   "site": "/tmp/japan-daily-20261023/text-release-39884560731/site",
   "pagesConclusion": "success",
-  "correctionPending": false,
+  "correctionPending": true,
   "resumeFrom": null,
-  "nextAction": "Text published and verified. Audio blocked by deterministic duration gate; preserve candidates without upload. N1 Day55 original is absent; shared audio waits for verified daily audio. Schedules unchanged.",
+  "nextAction": "Authorized correction: exact draft preflight then request-only publisher.",
   "n1Continuation": {
     "targetDate": "2026-10-23",
     "day": 55,
@@ -291,5 +291,10 @@
   "newVocabulary": 9,
   "reviewVocabulary": 11,
   "newGrammar": 1,
-  "reviewGrammar": 7
+  "reviewGrammar": 7,
+  "manualRepair": {
+    "scope": "Oct23 answers 2/3/5 and exact mirrors/evidence",
+    "priorReleaseCommit": "763b6f2f6840dcd8308f82b68eb3cdc79d0dc0d4",
+    "approvalAt": "2026-10-23T03:14:42Z"
+  }
 }
