@@ -8,7 +8,7 @@
     "to": "2026-10-23T10:00:00+09:00"
   },
   "createdAt": "2026-10-23T01:00:35.489Z",
-  "updatedAt": "2026-10-23T04:39:31.500Z",
+  "updatedAt": "2026-10-23T05:00:34.028Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -164,7 +164,7 @@
   "pagesConclusion": "success",
   "correctionPending": false,
   "resumeFrom": null,
-  "nextAction": "Daily text and audio verified; Day55 text verified. N1 audio retains candidates and uploads, resumes validation in next eligible scheduled window. No text replay or audio regeneration.",
+  "nextAction": "Daily text/audio and Day55 text/audio verified. No action for unchanged inputs.",
   "n1Continuation": {
     "targetDate": "2026-10-23",
     "day": 55,
@@ -237,29 +237,52 @@
     "verifiedAt": "2026-10-23T03:50:53.726Z"
   },
   "n1AudioContinuation": {
+    "schemaVersion": 1,
     "targetDate": "2026-10-23",
     "day": 55,
-    "stage": "retry_pending",
-    "failedPhase": "validating",
-    "sourceAudioCommit": "f870ab9a5554a6988b81806221bfadd298a651c9",
+    "stage": "complete",
+    "n1TextStage": "published",
     "n1TextCommit": "d016e0a2d4f408cd1554f2f69f64b2e779c471ce",
-    "newUniqueGenerated": 76,
-    "newUniqueUploaded": 76,
-    "audioMetadataPublished": false,
-    "actualPlaybackVerified": false,
-    "browserTests": {
-      "passed": 29,
-      "failed": 21
+    "sourceBlobSha": "740fc10023f75468678a90087824957f4d463ec8",
+    "sourceUnchanged": true,
+    "sourceAudioCommit": "f870ab9a5554a6988b81806221bfadd298a651c9",
+    "n1AudioCommit": "b9eb258baa4d806b159f42411b6c8433e3703f00",
+    "n1PagesRunId": 39902407056,
+    "sharedAudioStage": "playback_verified",
+    "uniqueAudioStage": "playback_verified",
+    "coveragePublished": true,
+    "candidateMp3Reused": 76,
+    "newSynthesis": 0,
+    "newUploadPosts": 0,
+    "targetReferencesVerified": 165,
+    "targetProviders": {
+      "daily": 47,
+      "supabase": 118
     },
-    "nextAttempt": "2026-10-24T02:10:00.000Z",
-    "error": {
-      "stage": "validating",
-      "kind": "browser_validation_failed",
-      "passed": 29,
-      "failed": 21,
-      "rootCause": "Unconfirmed; browser actions timed out. Mac lock was observed but causation has not been established.",
-      "at": "2026-10-23T04:06:08.209Z"
-    }
+    "publicBytesVerified": true,
+    "actualPlaybackVerified": true,
+    "actualPlaybackTests": 9,
+    "browserGates": {
+      "unchangedFullSuite": 50,
+      "allPreviousFailuresReplayed": 21,
+      "repairTargetSuite": 49,
+      "cloudPagesBrowserGate": true
+    },
+    "localWorkerObservation": {
+      "phase": "complete",
+      "releaseCommit": "b9eb258baa4d806b159f42411b6c8433e3703f00",
+      "lastVerifiedCommit": "b9eb258baa4d806b159f42411b6c8433e3703f00",
+      "pendingClips": 0,
+      "jobPending": false,
+      "attempt": 117
+    },
+    "appAndEngineExited": true,
+    "scheduleUnchanged": true,
+    "recordingsAndRecoveryPreserved": true,
+    "error": null,
+    "updatedAt": "2026-10-23T05:00:34.028Z",
+    "completedAt": "2026-10-23T05:00:34.028Z",
+    "nextAction": "No action for unchanged Day55. Preserve independent daily schedules and immutable historical recordings."
   },
   "newVocabulary": 9,
   "reviewVocabulary": 11,
