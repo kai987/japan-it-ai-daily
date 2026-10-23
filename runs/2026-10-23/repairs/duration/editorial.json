@@ -1,0 +1,54 @@
+{
+  "targetDate": "2026-10-23",
+  "baseCommit": "763b6f2f6840dcd8308f82b68eb3cdc79d0dc0d4",
+  "scope": "Answers 2/3/5 only, canonical and exact bilingual mirrors, concise source evidence",
+  "authorization": "User approved Oct23 repair and publication at 2026-10-23T03:14:42Z; delegated to the existing sole production writer.",
+  "rootCause": "Measured speech was shorter than weighted textual estimates. No evidence of truncation or voice/config mismatch. Unchanged reruns reuse the same short recordings.",
+  "settingsUnchanged": {
+    "styleId": 497929760,
+    "speed": 1
+  },
+  "changes": [
+    {
+      "index": 2,
+      "before": "回答の根拠と質問への関連性を別々に確かめます。記事では両方のしきい値を0.7にそろえ、ClassicとStandardを同じ四つの回答で比較しました。ただし少数例の結果なので、日本語対応だけで正確さを保証せず、誤った金額や答えていない回答も評価します。",
+      "after": "回答の根拠と質問への関連性を別々に確かめます。記事では両方のしきい値を0.7にそろえ、ClassicとStandardを同じ四つの回答で比較しました。ただし少数例の結果なので、日本語対応だけで正確さを保証せず、誤った金額や答えていない回答も評価します。更新後もStandardの設定が残っているか確認します。",
+      "reason": "Original explicitly warns that omitting tier config on update reverts to Classic."
+    },
+    {
+      "index": 3,
+      "before": "まず、変更したファイルが実際に読み込まれているかを調べます。記事ではtscの出力した古いJavaScriptが、ViteでTSXより先に選ばれていました。noEmitの指定と同名ファイルを確認し、不要な生成物だけを片付けます。ビルド成功だけでは反映された保証になりません。",
+      "after": "まず、変更したファイルが実際に読み込まれているかを調べます。記事ではtscの出力した古いJavaScriptが、ViteでTSXより先に選ばれていました。noEmitの指定と同名ファイルを確認し、不要な生成物だけを片付けます。ビルド成功だけでは反映された保証になりません。最後に、期待した文字列が成果物に入ったことまで確かめます。",
+      "reason": "Original checks expected new text in the actual bundle after cleanup."
+    },
+    {
+      "index": 5,
+      "before": "意図的に小さな変更を入れ、テストが気付くかを見ます。MutantKitではselectCoveringTestsを有効にし、実行したのに検出しなかった結果と、実行していないnoCoverageを分けます。ただし等価な変更はテストを増やしても検出できません。仕様に必要な振る舞いから追加を判断します。",
+      "after": "意図的に小さな変更を入れ、テストが気付くかを見ます。MutantKitではselectCoveringTestsを有効にし、実行したのに検出しなかった結果と、実行していないnoCoverageを分けます。ただし等価な変更はテストを増やしても検出できません。仕様に必要な振る舞いから追加を判断します。実行上限50件の結果を、全体の品質保証とは区別します。",
+      "reason": "Original measures a budget of 50 mutants and excludes generalizing it to whole-project quality."
+    }
+  ],
+  "proofs": [
+    {
+      "path": "src/data/interviews/2026-10-23.json",
+      "beforeSha256": "1fc6af6461519f76c99f3b0a4785118b111191075166ad5ce956e3ee8f84dfc4",
+      "afterSha256": "072ef5fdbae30cbc1dab2d9d5f987f5c43f35d890a10e3d146b977533cabb616"
+    },
+    {
+      "path": "src/content/daily/2026-10-23.md",
+      "beforeSha256": "2b23a40469aae8c86c55b2ec494abb986bc89c7903a4697540a5b84773f559f0",
+      "afterSha256": "2afa4bcd321f7cfb13dbf6330dd4aa6dcf8eef87a856c9944eecc3e90f5f3b56"
+    },
+    {
+      "path": "src/content/daily-ja/2026-10-23.md",
+      "beforeSha256": "7d87fb00f5d3c25d2857d3fc7002f0a949139ed02e563ce3f5e6e711e32a1049",
+      "afterSha256": "3b6e6768046bf256e58c194a7237e86e578384e2e944e68c34df3a1b5316887a"
+    },
+    {
+      "path": "src/content/evidence/2026-10-23.json",
+      "beforeSha256": "5585eeed43b0b68143b87833228abc76d30312f2463b6968b2eebbb860c1cbce",
+      "afterSha256": "2f745dbe0fdb36f5415f133d1bba973eb884b9d3c607eb25f0e909e58384f84d"
+    }
+  ],
+  "reviewedAt": "2026-10-23T03:23:29.432Z"
+}
