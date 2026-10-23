@@ -8,7 +8,7 @@
     "to": "2026-10-23T10:00:00+09:00"
   },
   "createdAt": "2026-10-23T01:00:35.489Z",
-  "updatedAt": "2026-10-23T01:38:31.819Z",
+  "updatedAt": "2026-10-23T01:43:59.298Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -167,7 +167,7 @@
   "pagesConclusion": "success",
   "correctionPending": false,
   "resumeFrom": null,
-  "nextAction": "Daily text verified; independent daily audio pending. N1 Day55 waits for its exact original.",
+  "nextAction": "Text published and verified. Audio blocked by deterministic duration gate; preserve candidates without upload. N1 Day55 original is absent; shared audio waits for verified daily audio. Schedules unchanged.",
   "n1Continuation": {
     "targetDate": "2026-10-23",
     "day": 55,
@@ -185,5 +185,111 @@
     },
     "upstreamSourceCommit": "763b6f2f6840dcd8308f82b68eb3cdc79d0dc0d4",
     "verifiedAt": "2026-10-23T01:38:31.419Z"
-  }
+  },
+  "latestVerifiedMainCommit": "763b6f2f6840dcd8308f82b68eb3cdc79d0dc0d4",
+  "audioCompletion": {
+    "stage": "generated",
+    "error": {
+      "stage": "duration-write",
+      "message": "  WARN: answer 1: actual 23.34s is outside ideal range 24–34s\n  WARN: answer 4: actual 22.90s is outside ideal range 24–34s\n  ERROR: answer 2: actual 21.41s is outside hard range 22–40s\n  ERROR: answer 3: actual 21.30s is outside hard range 22–40s\n  ERROR: answer 5: actual 21.70s is outside hard range 22–40s\n",
+      "at": "2026-10-23T01:40:20.264Z",
+      "kind": "deterministic_duration_gate",
+      "attempts": 1,
+      "retryable": false,
+      "details": [
+        {
+          "index": 2,
+          "durationSeconds": 21.408,
+          "durationStatus": "fail"
+        },
+        {
+          "index": 3,
+          "durationSeconds": 21.3,
+          "durationStatus": "fail"
+        },
+        {
+          "index": 5,
+          "durationSeconds": 21.696,
+          "durationStatus": "fail"
+        }
+      ]
+    },
+    "audioCommit": null,
+    "newRecordings": 32,
+    "r2Verified": false,
+    "pagesVerified": false,
+    "playbackVerified": false,
+    "recordingsPreserved": "/Users/paulasmith/.codex/automations/it-ai-codex/audio-candidates/2026-10-23",
+    "engineShutdown": {
+      "normalQuit": true,
+      "method": "Native AivisSpeech menu > Quit AivisSpeech; no unsaved project dialog present",
+      "appRunning": false,
+      "engineRunning": false,
+      "matchingProcesses": [],
+      "otherRecordingTasksBeforeQuit": false,
+      "verifiedAt": "2026-10-23T01:41:52.421174+00:00"
+    }
+  },
+  "n1AudioContinuation": {
+    "schemaVersion": 1,
+    "targetDate": "2026-10-23",
+    "day": 55,
+    "stage": "waiting_daily_audio",
+    "sourceAudioCommit": null,
+    "sharedAudioDispatched": false,
+    "n1TextStage": "waiting_source",
+    "upstreamAudioStage": "generated",
+    "upstreamAudioError": {
+      "stage": "duration-write",
+      "message": "  WARN: answer 1: actual 23.34s is outside ideal range 24–34s\n  WARN: answer 4: actual 22.90s is outside ideal range 24–34s\n  ERROR: answer 2: actual 21.41s is outside hard range 22–40s\n  ERROR: answer 3: actual 21.30s is outside hard range 22–40s\n  ERROR: answer 5: actual 21.70s is outside hard range 22–40s\n",
+      "at": "2026-10-23T01:40:20.264Z",
+      "kind": "deterministic_duration_gate",
+      "attempts": 1,
+      "retryable": false,
+      "details": [
+        {
+          "index": 2,
+          "durationSeconds": 21.408,
+          "durationStatus": "fail"
+        },
+        {
+          "index": 3,
+          "durationSeconds": 21.3,
+          "durationStatus": "fail"
+        },
+        {
+          "index": 5,
+          "durationSeconds": 21.696,
+          "durationStatus": "fail"
+        }
+      ]
+    },
+    "localWorkerObservation": {
+      "scope": "Previous catalog only; not Day55 completion",
+      "phase": "complete",
+      "pendingClips": 0,
+      "requiredClips": 5746,
+      "jobPending": false,
+      "updatedAt": "2026-10-22T03:14:02.909Z",
+      "releaseCommit": "fdadc14fc10cbde377688df51f288070992a300c",
+      "lastVerifiedCommit": "fdadc14fc10cbde377688df51f288070992a300c",
+      "schedule": {
+        "version": 1,
+        "claimedDate": "2026-10-22",
+        "reason": "missing_audio",
+        "startedAt": "2026-10-22T03:07:46.496Z"
+      },
+      "observedAt": "2026-10-23T01:43:55.205Z",
+      "uniqueWorkerTriggered": false,
+      "remoteUniqueAudioChecked": false,
+      "window": "11:10-13:10 Asia/Tokyo; local state read only outside window"
+    },
+    "error": null,
+    "nextAction": "Wait for exact successful daily R2/Pages/playback before shared follow-up; Day55 text also waits for its original. Preserve worker schedule and latch.",
+    "updatedAt": "2026-10-23T01:43:55.205Z"
+  },
+  "newVocabulary": 9,
+  "reviewVocabulary": 11,
+  "newGrammar": 1,
+  "reviewGrammar": 7
 }
