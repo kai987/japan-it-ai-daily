@@ -3,7 +3,7 @@
   "date": "2026-10-23",
   "status": "reviewed",
   "reviewedBy": "Codex original-source editorial review",
-  "reviewedAt": "2026-10-23T01:21:16.656Z",
+  "reviewedAt": "2026-10-23T03:23:21.951Z",
   "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
   "articles": [
     {
@@ -108,6 +108,17 @@
           "usedIn": {}
         },
         {
+          "id": "top2-fact4",
+          "kind": "source-fact",
+          "statement": "更新時にティアの指定を省くとClassicに戻るため、更新後の設定を確認する。",
+          "quote": "を省略するとCLASSICに戻ってしまうのでご注意ください。",
+          "locator": "ガードレール更新時の注意",
+          "conditions": "Tokyo, Python3.12.12, boto3 1.43.116; both thresholds0.7, four synthetic answers; cross-region profile apac.guardrail.v1:0 is not Japan-only inference. A tiny example is not language-wide accuracy.",
+          "usedIn": {
+            "interview": "更新後もStandardの設定が残っているか確認します"
+          }
+        },
+        {
           "id": "top2-interpretation1",
           "kind": "author-interpretation",
           "statement": "RAGの評価を、根拠・関連性・会話の切り出し・リージョン要件という別の論点で説明できます。",
@@ -164,6 +175,17 @@
           "locator": "TypeScript5.6の説明",
           "conditions": "Author environment Vite6/TypeScript5.6.3. Explicit emit flag defeats noEmit; JS precedes TSX. Build after error is author inference, not independently reproduced; handwritten JS and declarations must be preserved.",
           "usedIn": {}
+        },
+        {
+          "id": "top3-fact4",
+          "kind": "source-fact",
+          "statement": "クリーンビルド後、期待する新しい文字列が成果物に入ったことを確認した。",
+          "quote": "クリーンビルドして、文字列で確かめる",
+          "locator": "直し方",
+          "conditions": "Author environment Vite6/TypeScript5.6.3. Explicit emit flag defeats noEmit; JS precedes TSX. Build after error is author inference, not independently reproduced; handwritten JS and declarations must be preserved.",
+          "usedIn": {
+            "interview": "期待した文字列が成果物に入ったことまで確かめます"
+          }
         },
         {
           "id": "top3-interpretation1",
@@ -270,7 +292,9 @@
           "quote": "31 / 48",
           "locator": "swift-argument-parserでの実測",
           "conditions": "MutantKit1.3.1, budget50, selectCoveringTests enabled. Two measured projects differ. Exclude infrastructure/application/materialization failures; equivalent mutants are not forced test targets; shared specification misunderstandings remain.",
-          "usedIn": {}
+          "usedIn": {
+            "interview": "実行上限50件の結果"
+          }
         },
         {
           "id": "top5-fact3",
