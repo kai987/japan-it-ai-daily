@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-23T01:21:16.656Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-23-top-1",
+      "url": "https://tech.layerx.co.jp/entry/why-we-built-our-background-agent",
+      "originalTitle": "内製 Background Coding Agent “haro” で拓く未来の開発体験",
+      "source": "LayerX Engineering Blog",
+      "topic": "AIエージェントと開発基盤",
+      "access": "full",
+      "accessNote": "Full publicly available article text read, including code/results/limitations; diagrams considered only via accompanying captions and text. No independent execution of author experiments.",
+      "publishedAt": "2026-10-22T11:27:42+09:00",
+      "capturedAt": "2026-10-23T01:02:21.804049+00:00",
+      "snapshotSha256": "0f8356f49080b8f00d218bf8814f5863ba0312845ec0304cd91e8997334dbab6",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "TypeScriptのTemporal Workflowで処理を管理し、EKS環境はGoの専用コントローラーで管理する。",
+          "quote": "Temporal Workflow",
+          "locator": "構成",
+          "conditions": "TypeScript/Temporal controls agent flow; Go CRD/controller manages EKS environments. PR-created adoption metrics, not merged PRs or quality causality; self-improvement loop remains an aim.",
+          "usedIn": {
+            "zh": "由 Temporal Workflow 管理处理流程",
+            "ja": "TypeScriptのTemporal Workflowが処理の流れを管理",
+            "interview": "haroはTemporalで処理の流れを管理"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "社内のPR作成経路の割合であり、品質やマージ率の指標ではない。",
+          "quote": "55〜60%程度",
+          "locator": "利用状況",
+          "conditions": "TypeScript/Temporal controls agent flow; Go CRD/controller manages EKS environments. PR-created adoption metrics, not merged PRs or quality causality; self-improvement loop remains an aim.",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "10月時点の利用者数であり、全国の採用率ではない。",
+          "quote": "58名",
+          "locator": "利用状況",
+          "conditions": "TypeScript/Temporal controls agent flow; Go CRD/controller manages EKS environments. PR-created adoption metrics, not merged PRs or quality causality; self-improvement loop remains an aim.",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "エージェントの性能と、並列実行を支える環境・権限・普及指標を分けて説明できる事例です。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合讨论大型仓库下的 Agent 平台建设：运行环境、任务控制、组织采用率与产出质量需要分别设计和验证。",
+            "ja": "エージェントの性能と、並列実行を支える環境・権限・普及指標を分けて説明できる事例です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-23-top-2",
+      "url": "https://dev.classmethod.jp/articles/bedrock-guardrails-grounding-standard-tier/",
+      "originalTitle": "[アップデート] Amazon Bedrock Guardrailsのコンテキストグラウンディングチェックに Standard ティアが追加されたので試してみた",
+      "source": "DevelopersIO",
+      "topic": "日本語RAGの回答評価",
+      "access": "full",
+      "accessNote": "Full publicly available article text read, including code/results/limitations; diagrams considered only via accompanying captions and text. No independent execution of author experiments.",
+      "publishedAt": "2026-10-22T04:19:07.542Z",
+      "capturedAt": "2026-10-23T01:02:21.804767+00:00",
+      "snapshotSha256": "44712899a1c699283a75c060527050513935b597ac2d0a908ade0f085821b968",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "根拠・関連性の両方を0.7に固定した四回答比較。",
+          "quote": "しきい値はどちらも0.7",
+          "locator": "ClassicとStandardのガードレールを作る",
+          "conditions": "Tokyo, Python3.12.12, boto3 1.43.116; both thresholds0.7, four synthetic answers; cross-region profile apac.guardrail.v1:0 is not Japan-only inference. A tiny example is not language-wide accuracy.",
+          "usedIn": {
+            "zh": "两条阈值都固定为 0.7",
+            "ja": "二つの判定のしきい値をともに0.7",
+            "interview": "両方のしきい値を0.7にそろえ"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Classicで正しい言い換えが関連性0.53によりブロック。",
+          "quote": "RELEVANCE=0.53",
+          "locator": "比較の実行結果",
+          "conditions": "Tokyo, Python3.12.12, boto3 1.43.116; both thresholds0.7, four synthetic answers; cross-region profile apac.guardrail.v1:0 is not Japan-only inference. A tiny example is not language-wide accuracy.",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "1,000文字通過、1,001文字ではAPI呼び出しが失敗。",
+          "quote": "1,001文字",
+          "locator": "複数ターンの注意",
+          "conditions": "Tokyo, Python3.12.12, boto3 1.43.116; both thresholds0.7, four synthetic answers; cross-region profile apac.guardrail.v1:0 is not Japan-only inference. A tiny example is not language-wide accuracy.",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "RAGの評価を、根拠・関連性・会話の切り出し・リージョン要件という別の論点で説明できます。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "可以把模型回答评估讲成可重复的输入设计，而不是仅凭“支持日语”或高分决定上线。",
+            "ja": "RAGの評価を、根拠・関連性・会話の切り出し・リージョン要件という別の論点で説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-23-top-3",
+      "url": "https://zenn.dev/haruto_miyakawa/articles/vite-tsc-emitted-js-shadows-tsx",
+      "originalTitle": "Viteで.tsxを直しても反映されない原因は、tscが吐いた.jsだった",
+      "source": "Zenn",
+      "topic": "Reactとビルドの入力解決",
+      "access": "full",
+      "accessNote": "Full publicly available article text read, including code/results/limitations; diagrams considered only via accompanying captions and text. No independent execution of author experiments.",
+      "publishedAt": "2026-10-23T08:00:05.845+09:00",
+      "capturedAt": "2026-10-23T01:02:21.804997+00:00",
+      "snapshotSha256": "060a73025c02e69c7db7718cc3d0d5601e010d1eba2412a9d18a8d16b760a4bf",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "同名JavaScriptがTSXより先に解決され、古い内容を読んだ。",
+          "quote": ".js\nは\n.tsx\nより前です。",
+          "locator": "Viteの拡張子解決",
+          "conditions": "Author environment Vite6/TypeScript5.6.3. Explicit emit flag defeats noEmit; JS precedes TSX. Build after error is author inference, not independently reproduced; handwritten JS and declarations must be preserved.",
+          "usedIn": {
+            "zh": "会先尝试 .js，再尝试 .tsx",
+            "ja": ".jsが.tsxより先",
+            "interview": "ViteでTSXより先に選ばれていました"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "出力を有効にする指定がソース横への生成物を作った。",
+          "quote": "--noEmit false",
+          "locator": "型チェックの出力",
+          "conditions": "Author environment Vite6/TypeScript5.6.3. Explicit emit flag defeats noEmit; JS precedes TSX. Build after error is author inference, not independently reproduced; handwritten JS and declarations must be preserved.",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "エラー後にも出力された内部原因は筆者の推測として残す。",
+          "quote": "推測",
+          "locator": "TypeScript5.6の説明",
+          "conditions": "Author environment Vite6/TypeScript5.6.3. Explicit emit flag defeats noEmit; JS precedes TSX. Build after error is author inference, not independently reproduced; handwritten JS and declarations must be preserved.",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "Reactの反映不良を、キャッシュ・入力の解決・型チェックの副作用に分けて調べる面接事例になります。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "与 React/TypeScript 求职直接相关：能够解释模块解析优先级，且不会把所有反映不良都归因于缓存。",
+            "ja": "Reactの反映不良を、キャッシュ・入力の解決・型チェックの副作用に分けて調べる面接事例になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-23-top-4",
+      "url": "https://zenn.dev/udos/articles/rive-mcp-databinding-create",
+      "originalTitle": "Riveのデータバインディングを、エディタを開かずに.rivへ書き込めるようにした",
+      "source": "Zenn",
+      "topic": "Riveとデータバインディング",
+      "access": "full",
+      "accessNote": "Full publicly available article text read, including code/results/limitations; diagrams considered only via accompanying captions and text. No independent execution of author experiments.",
+      "publishedAt": "2026-10-23T09:52:16.031+09:00",
+      "capturedAt": "2026-10-23T01:02:21.805504+00:00",
+      "snapshotSha256": "0b6bf84dca16458be1cee4dc76a508a42c8f6ddb6c862b09fc8104bb7fb77c7b",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "HP0〜100を拡大率0〜1へ変換する。",
+          "quote": "rangeMapper",
+          "locator": "HPの範囲変換",
+          "conditions": "Author-created MCP tooling, officialruntime/browser visual check; types/mapping/parent indexes and glyph subset. Enum-to-text/list rendering incomplete; static preview uses first instance.",
+          "usedIn": {
+            "zh": "需要 rangeMapper 做范围转换",
+            "ja": "rangeMapperという数値の範囲を変換",
+            "interview": "rangeMapperでHPの0から100"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "配線オブジェクトを部品として数えた不具合で親参照がずれた。",
+          "quote": "DataBindContext",
+          "locator": "実装でつまずいたところ",
+          "conditions": "Author-created MCP tooling, officialruntime/browser visual check; types/mapping/parent indexes and glyph subset. Enum-to-text/list rendering incomplete; static preview uses first instance.",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "静的プレビューだけで全状態の描画を検証したことにはならない。",
+          "quote": "最初のインスタンス",
+          "locator": "できないこと・注意点",
+          "conditions": "Author-created MCP tooling, officialruntime/browser visual check; types/mapping/parent indexes and glyph subset. Enum-to-text/list rendering incomplete; static preview uses first instance.",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "型の正しさ、値の変換、バイナリ構造、実際の描画という複数の確認面を持つフロントエンド事例です。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合把 UI 数据绑定从抽象概念讲到类型、数值范围、二进制父子结构和实际画面验收。",
+            "ja": "型の正しさ、値の変換、バイナリ構造、実際の描画という複数の確認面を持つフロントエンド事例です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-23-top-5",
+      "url": "https://zenn.dev/juntaki/articles/f1dd276860f4e9",
+      "originalTitle": "Claude Codeが書いたSwiftのテスト、本当にバグを検出できる？ Mutation Testingで穴を埋める",
+      "source": "Zenn",
+      "topic": "Swiftと変異テスト",
+      "access": "full",
+      "accessNote": "Full publicly available article text read, including code/results/limitations; diagrams considered only via accompanying captions and text. No independent execution of author experiments.",
+      "publishedAt": "2026-10-23T09:10:51.247+09:00",
+      "capturedAt": "2026-10-23T01:02:21.940947+00:00",
+      "snapshotSha256": "7555f1c5048490e0512c450c857995227e1bca8ea12ff48f6d753dbd645eb858",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "有効時に未実行の変異をnoCoverageとして分離する。",
+          "quote": "selectCoveringTests",
+          "locator": "実行範囲と判定",
+          "conditions": "MutantKit1.3.1, budget50, selectCoveringTests enabled. Two measured projects differ. Exclude infrastructure/application/materialization failures; equivalent mutants are not forced test targets; shared specification misunderstandings remain.",
+          "usedIn": {
+            "zh": "后者需要开启 selectCoveringTests",
+            "ja": "selectCoveringTestsを有効にした場合",
+            "interview": "selectCoveringTestsを有効にし"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "v1.3.1、上限50、有効なカバレッジ選択でEffective約65%。",
+          "quote": "31 / 48",
+          "locator": "swift-argument-parserでの実測",
+          "conditions": "MutantKit1.3.1, budget50, selectCoveringTests enabled. Two measured projects differ. Exclude infrastructure/application/materialization failures; equivalent mutants are not forced test targets; shared specification misunderstandings remain.",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "自身の50変異の所要時間。Xcode連携に偏った対象であり全体品質ではない。",
+          "quote": "約76分",
+          "locator": "MutantKit自身での実測",
+          "conditions": "MutantKit1.3.1, budget50, selectCoveringTests enabled. Two measured projects differ. Exclude infrastructure/application/materialization failures; equivalent mutants are not forced test targets; shared specification misunderstandings remain.",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "CIの成功を過信せず、変更の適用・実行範囲・検出率・等価な変更を分けて説明する実践例です。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "能够在面试中区分覆盖率、检测能力、无效试验与规格正确性，避免把 CI 绿色当作完整质量保证。",
+            "ja": "CIの成功を過信せず、変更の適用・実行範囲・検出率・等価な変更を分けて説明する実践例です。"
+          }
+        }
+      ]
+    }
+  ]
+}
