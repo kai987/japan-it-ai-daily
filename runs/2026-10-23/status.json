@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-23",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "763b6f2f6840dcd8308f82b68eb3cdc79d0dc0d4",
   "sourceWindow": {
     "from": "2026-10-22T10:00:00+09:00",
     "to": "2026-10-23T10:00:00+09:00"
   },
   "createdAt": "2026-10-23T01:00:35.489Z",
-  "updatedAt": "2026-10-23T03:30:09.190Z",
+  "updatedAt": "2026-10-23T03:30:20.497Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -37,10 +37,10 @@
   ],
   "verifiedAt": "2026-10-23T03:29:54.324Z",
   "preflightRunId": 39895063717,
-  "preflightStage": "in_progress",
+  "preflightStage": "completed",
   "publisherRunId": 39884352036,
-  "requestCommit": "79ddfc5cb057f329eb785afead9cc8f8389ad841",
-  "requestId": "codex-2026-10-23-abfdf64a-a4aa-4565-a62b-eef69918ee95",
+  "requestCommit": "c18667e0749bc108c20d70d7cc09187deac9f812",
+  "requestId": "codex-2026-10-23-beaff1b1-0ae3-4803-9493-e97df4d020e1",
   "releaseCommit": "763b6f2f6840dcd8308f82b68eb3cdc79d0dc0d4",
   "sixDraftBytesEqual": true,
   "pagesRunId": 39884560731,
@@ -164,7 +164,7 @@
   "pagesConclusion": "success",
   "correctionPending": true,
   "resumeFrom": null,
-  "nextAction": "Authorized correction: exact draft preflight then request-only publisher.",
+  "nextAction": "Unique publisher owns the submitted correction request; verify resulting main Pages.",
   "n1Continuation": {
     "targetDate": "2026-10-23",
     "day": 55,
