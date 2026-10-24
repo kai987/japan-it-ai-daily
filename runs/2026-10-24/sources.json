@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-10-24",
+  "sourceCommit": "f870ab9a5554a6988b81806221bfadd298a651c9",
+  "sourceWindow": {
+    "from": "2026-10-23T10:00:00+09:00",
+    "to": "2026-10-24T10:00:00+09:00",
+    "endInclusive": true
+  },
+  "articles": [
+    {
+      "articleId": "2026-10-24-top-1",
+      "id": "vercel-region",
+      "title": "TTFBは速いのに表示が遅いVercelのページ、関数リージョンが既定のままだった",
+      "source": "DevelopersIO",
+      "topic": "Next.jsとSSRの性能診断",
+      "url": "https://dev.classmethod.jp/articles/vercel-slow-function-region-iad1/",
+      "author": "石井悠汰@製造BT部",
+      "publishedAt": "2026-10-23T19:30:14.803+09:00",
+      "capturedAt": "2026-10-24T01:08:12.085919+00:00",
+      "snapshotSha256": "83531c47e4988132d7820334d5558535784c2cfccd1fbfce1bbed48f41f6fc57",
+      "access": "full",
+      "accessNote": "Complete public article main text read, including code/tables/conditions/results/limitations; images considered through accompanying captions/text only. No independent execution or replication.",
+      "factsToPreserve": "Next.js 15 App Router on Vercel; API Gateway/Lambda Hono and DynamoDB in AWS Tokyo; rankings show 20 rows. loading.tsx creates a Suspense boundary: shell responds before data retrieval; TTFB covers shell start while response connection remains open for server API fetches. Browser Network does not show the RSC server internal 41 calls. x-vercel-id MISS response had Tokyo edge hnd1 but function iad1 in US East; configured hnd1 at Vercel Root Directory vercel.json and dashboard for older/reverted builds. Inspect both index and index.rsc functions. Rank fetch1 +20rows*2details =41 API calls; concurrency10 still each row has serial daily-aggregate then raw-data lookup. 798KB loaded for20 sparklines. Precompute daily downsampled series max60points, BatchGetItem endpoint fetches daily aggregates/profile together; frontend replaces perrow fetch with1 batched fetch, so total2 calls. Rejected embedding data in148604 ranking items because 10periods*4axes replicate series up to40 places; estimated extra39.7MB/day vs0.38MB/day for daily aggregates, but1call vs2call costs around150ms. Existing WCU rounding remains1 for250to530B items. Baseline TTFB0.45–0.69s, unvisited total1.79–2.74s, revisit0.63–0.83s. Region fix TTFB0.12–0.19s, unvisited0.74–1.53s, revisit0.27–0.58s. After N+1 fix TTFB0.12–0.20s, unvisited0.30–0.77s, revisit0.17–0.45s. Rough2.2to0.5s reception, not measured visible paint. No live site identity or full public experiment code; author deliberately obscures application subject. Do not equate TTFB with response completion, or HTML reception with LCP. Do not generalize numerical speedup to all Vercel apps. Article claims plan region counts; avoid carrying current commercial plan limits without separately verifying official docs.",
+      "shortEvidenceAnchors": [
+        "Suspense境界",
+        "41コールから2コール",
+        "ブラウザの描画までは含みません。"
+      ]
+    },
+    {
+      "articleId": "2026-10-24-top-2",
+      "id": "parallel-e2e",
+      "title": "AIに並行開発させたら、ブラウザテストのデータが衝突した話",
+      "source": "Zenn",
+      "topic": "AI並行開発とテスト環境",
+      "url": "https://zenn.dev/3su3/articles/aaabea6298ca53",
+      "author": "SieR.",
+      "publishedAt": "2026-10-23T22:27:13.456+09:00",
+      "capturedAt": "2026-10-24T01:08:12.184070+00:00",
+      "snapshotSha256": "18d1b602da604c8aac970ac5a9192256764ad71a032e775a43005d19d45b2f89",
+      "access": "full",
+      "accessNote": "Complete public article main text read, including code/tables/conditions/results/limitations; images considered through accompanying captions/text only. No independent execution or replication.",
+      "factsToPreserve": "PersonalWaymarkNext.js/TypeScript+Supabase+Playwright+GitHub; up to3AIlanes/worktrees. Worktrees isolate source directories, notshared localDB/authusers/report paths. Fixedauthfixture cleanup coulddeleteotherexecutionssharedtestuser. Use dedicatedJourney fixture and compareRecordIDsetsbefore/aftersave toassertnewrecordmembership. ConsiderOS/processlockingforstate-changingtests, separateSupabaseperworktree, anduniquePlaywrightresult/reportpaths; identifycostofenvironmentlifecycle. Some tests passafterfixturedependencyfix; multiworkerfailuresremain. Threeoperationalremediationdirectionsareproposals, explicitlynotallimplementedandverified. Do not claim actualdeletionculpritestablished, alltestsrepaired, completeDBisolationimplemented, or AIitselfdeleteduser. Correct fixture assertions and globalsharedresource isolation are separate problems.",
+      "shortEvidenceAnchors": [
+        "同じローカルSupabase環境",
+        "Record IDの集合",
+        "実際にどの実行がユーザーを削除したのかまでは特定できていません。"
+      ]
+    },
+    {
+      "articleId": "2026-10-24-top-3",
+      "id": "prompt-cache",
+      "title": "AIレビュー1回 $2.43 を $0.77 に　最初のリクエストがキャッシュを読んでいなかった",
+      "source": "Zenn",
+      "topic": "AIコードレビューの費用と品質",
+      "url": "https://zenn.dev/tariki_yashiro/articles/na-20261020-193000",
+      "author": "たりき社",
+      "publishedAt": "2026-10-23T21:46:09.196+09:00",
+      "capturedAt": "2026-10-24T01:08:12.194195+00:00",
+      "snapshotSha256": "f47137f5789462dee9513181014d33a723f1d6bdecb20eeb5268b8b9f1b9bbf0",
+      "access": "full",
+      "accessNote": "Complete public article main text read, including code/tables/conditions/results/limitations; images considered through accompanying captions/text only. No independent execution or replication.",
+      "factsToPreserve": "Zennarticleattributesallresults toCloudflare; staticpromptprefixshared across reposwasmixedwithcwd/dateinoneblock,sobreakpointonlyatendpreventedcrossrepo reuse. Logfirstrequesttokensandactualsystemblockhash; splitcommonprefixandvariableenvironment into2blocks; dropjobvaryingtool/skilldescriptionfromprefix. Bound parallel initialreads150KB; hideforbiddentools; skipirrelevant rereviewers; stoppastpostfinalcomment; prewarm3reviewerscommonprefix, waitstreamstartupto20s. ZennreportsCloudflare$2.43to$0.77(~68%), mediantime4m9sto1m32s; peak2weekbaseline, multiplechangescumulative. Importantqualitylimits: mediumlostrealcodequalityfindings, movehigh; performanceimportantfindings~64%down; group35–66findingsandcurrentperiod1day. Cloudflare primary original fully read and matched reported mechanism/results, but results remain vendor self-reported single-workload evidence; original is outside the locked date window. Do notpresent68%assinglecachefixeffect ormodeluniversals; codechanges$0.65andmodel/effort$1.06areweekday before/afterestimatesnotcontrolledexperiment.",
+      "shortEvidenceAnchors": [
+        "$2.43 から $0.77",
+        "ブロックを2つに分けました。",
+        "medium は本当の指摘を失っていた"
+      ],
+      "supplementalPrimary": {
+        "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+        "actualUrl": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+        "status": 200,
+        "accessedAt": "2026-10-24T01:10:29.560397+00:00",
+        "title": "Cutting our inference bill by 68% by being obsessive about optimization | Cloudflare Blog",
+        "textPath": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-24/community/prompt-cache-cloudflare-original.txt",
+        "textSha256": "27860bba295ed53be982cac9c6f075f66c59ff60820e5517fe235fbcc82b13a4",
+        "bodyCharacters": 27063,
+        "times": [
+          {
+            "class": [
+              "date",
+              "mb-5",
+              "pt-10"
+            ],
+            "data-astro-cid-qjtkll3n": "",
+            "text": "October 19, 2026"
+          }
+        ],
+        "publishedDate": "2026-10-19",
+        "windowRelation": "out-of-window supplemental primary verification; selected original remains in-window Zenn article",
+        "readScope": "Entire original article, from introduction through quality/limitations/conclusion, fully read; capture also includes navigation text."
+      }
+    },
+    {
+      "articleId": "2026-10-24-top-4",
+      "id": "sph-worker",
+      "title": "地球を指でちぎる: 1.6万個の粒の SPH を Web Worker で動かす",
+      "source": "Zenn",
+      "topic": "Web Workerと粒子法シミュレーション",
+      "url": "https://zenn.dev/sishiya/articles/godview-tear-earth-sph-worker",
+      "author": "しし屋 まなびラボ",
+      "publishedAt": "2026-10-24T09:51:01.707+09:00",
+      "capturedAt": "2026-10-24T01:08:12.160929+00:00",
+      "snapshotSha256": "46f6ad4974491b8ac7a82dc02bae0a13657853c1d0e48ebfbd90c51fe86cff25",
+      "access": "full",
+      "accessNote": "Complete public article main text read, including code/tables/conditions/results/limitations; images considered through accompanying captions/text only. No independent execution or replication.",
+      "factsToPreserve": "CesiumJS educational globe renders earthquake-like tearing with about16000 SPH earth particles; spacing408km, smoothing length1.1spacing, roughly45 neighbors within2h. PREM layer boundaries inner core1221km/coremantle3480km; layer-specific Murnaghan EOS solves gravity-pressure equilibrium; initializes300 damped steps at0.9velocity factor. Track density by continuity equation; direct mass-sum density underestimated free-surface density. Clamp pressure >=0, no tensile force; artificial viscosity alpha1 beta2 converts work to heat. Approximate gravity spherically perfragment,256 radial shells counting enclosed mass instead of allparticle pairs; physicalstep~10s set by11km/s sound speed andspacing. One Web Worker computes physics; main thread draws point shaders. Shared namespace moves from browser window to worker-compatible self. Grabber critical-damping spring; bounded approach8km/s pulling and15km/s moving, first lift to14000km radius then arc, instead of direct chord scraping. Crack detection uses up to6 original neighbor-distance changes >=35%, not absolute displacement which falsely flags global wobble. Ocean separate3600 particles from7000 Blue Marble samples; only exposed hot rock boils water. Calculated centerpressure340GPa, mass5.66e24kg ~5%lighterthanactual. Unbounded grabber originally yielded44km/s and+350000C; capped3km/s healedhole beforevisible; tuned8/15km/s and arclift reducesartefacts. Simplified educational model: nonnegative pressure/no tension makes tearing easy; small rocks really retain shapes. Sphericalgravity andcoarse408km particles are approximations; do not call physically validated geophysics or real-world disaster prediction. 30ms on16corePC is not16thread execution; there is exactly1WebWorker.",
+      "shortEvidenceAnchors": [
+        "計算は Web Worker 1つで回しています。",
+        "となりの粒との間隔",
+        "本物より 5% 軽い"
+      ]
+    },
+    {
+      "articleId": "2026-10-24-top-5",
+      "id": "lcp-font",
+      "title": "render-blocking を消しても LCP は変わらなかった：日本語の Web フォントをやめてスマホの LCP が安定した記録",
+      "source": "Zenn",
+      "topic": "LCPと日本語Webフォント",
+      "url": "https://zenn.dev/outsidernotes/articles/30921cc50fd3a6",
+      "author": "Takuma",
+      "publishedAt": "2026-10-23T21:30:59.053+09:00",
+      "capturedAt": "2026-10-24T01:08:12.203294+00:00",
+      "snapshotSha256": "934ad43a22ced632e7e249ea862c465e2f4b2ed3f290f213af589a76cada408f",
+      "access": "full",
+      "accessNote": "Complete public article main text read, including code/tables/conditions/results/limitations; images considered through accompanying captions/text only. No independent execution or replication.",
+      "factsToPreserve": "Astro static site onVercel, NotoSansJP GoogleFonts includes unicode-range subset splitting;3weights372fontfaces plusInter total386, CSS~349KB. Async preloading GoogleFontsCSS removes render-blocking diagnostic but LCP stays6.2–7.1s; CLS0.02–0.07 rises. LCP top thumbnail was lazy; set onlypriorityimage eager+fetchpriorityhigh.16runs then7fast2.0–3.9s and9slow6.2–7.1s. Network revealed38woff2files~880KB allVeryHigh onarticlepage. Remove JapaneseWebFont, useOSJapanesefonts; retainInter forLatinheadings. Afterremoval4pages*3runs all93score/LCP2.6s/CLS0. InlineAstro~30KBCSS perpage, HTML~70KB/~20KBgzip. Baseline score59–70, LCP6.2–7.1s,CLS0–0.07; after4cumulativechanges score92–99,LCP1.7–2.7s,CLS0. Japanesefontremovalstage12/12 were93/2.6s/0. FinalCSSstage5/12 were99/1.7s and7/12 were92–96/2.6–2.7s. Sequentialcumulativechanges, noindependentisolationoffontremovaleffect. InternalLighthousebimodalreasonunverified. No fielddata or actualmobiledevicevisualverification, no declared exactthrottlingconfiguration. 404page can receiveperformance73; inspect runWarnings/networkresponse toconfirmvalidpage. UnkeyedAPI returned429forauthor; noAPIbypassrecommended.",
+      "shortEvidenceAnchors": [
+        "38個（約880KB）",
+        "12回とも、93点・LCP 2.6秒・CLS 0",
+        "修正ごとの効果の切り分け。"
+      ]
+    }
+  ],
+  "discovery": {
+    "scope": "All 20 designated homepages actually requested for discovery; 19 returned HTTP 200 and CodeZine HTTP 403. Homepage access is distinct from the complete reads of the five selected originals. Not an exhaustive crawl of every source or article.",
+    "sites": [
+      {
+        "name": "Qiita",
+        "url": "https://qiita.com/",
+        "actualUrl": "https://qiita.com/",
+        "observedAt": "2026-10-24T01:07:44.525284+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 90
+      },
+      {
+        "name": "Zenn",
+        "url": "https://zenn.dev/",
+        "actualUrl": "https://zenn.dev/",
+        "observedAt": "2026-10-24T01:07:44.525862+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 6
+      },
+      {
+        "name": "Publickey",
+        "url": "https://www.publickey1.jp/",
+        "actualUrl": "https://www.publickey1.jp/",
+        "observedAt": "2026-10-24T01:07:44.525964+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 22
+      },
+      {
+        "name": "ITmedia AI+",
+        "url": "https://www.itmedia.co.jp/aiplus/",
+        "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+        "observedAt": "2026-10-24T01:07:44.526068+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 72
+      },
+      {
+        "name": "@IT",
+        "url": "https://atmarkit.itmedia.co.jp/",
+        "actualUrl": "https://atmarkit.itmedia.co.jp/",
+        "observedAt": "2026-10-24T01:07:44.526204+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 38
+      },
+      {
+        "name": "CodeZine",
+        "url": "https://codezine.jp/",
+        "actualUrl": "https://codezine.jp/",
+        "observedAt": "2026-10-24T01:07:44.526304+00:00",
+        "status": 403,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 0,
+        "error": "403 Client Error: Forbidden for url: https://codezine.jp/"
+      },
+      {
+        "name": "gihyo.jp",
+        "url": "https://gihyo.jp/",
+        "actualUrl": "https://gihyo.jp/",
+        "observedAt": "2026-10-24T01:07:44.595189+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 40
+      },
+      {
+        "name": "DevelopersIO",
+        "url": "https://dev.classmethod.jp/",
+        "actualUrl": "https://dev.classmethod.jp/",
+        "observedAt": "2026-10-24T01:07:44.720861+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 71
+      },
+      {
+        "name": "TechFeed",
+        "url": "https://techfeed.io/",
+        "actualUrl": "https://techfeed.io/",
+        "observedAt": "2026-10-24T01:07:44.720980+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 2
+      },
+      {
+        "name": "Hatena Technology",
+        "url": "https://b.hatena.ne.jp/hotentry/it",
+        "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "observedAt": "2026-10-24T01:07:44.721465+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 90
+      },
+      {
+        "name": "ASCII AI",
+        "url": "https://ascii.jp/",
+        "actualUrl": "https://ascii.jp/",
+        "observedAt": "2026-10-24T01:07:44.782550+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 90
+      },
+      {
+        "name": "AINOW",
+        "url": "https://ainow.ai/",
+        "actualUrl": "https://ainow.ai/",
+        "observedAt": "2026-10-24T01:07:44.851674+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 12
+      },
+      {
+        "name": "Ledge.ai",
+        "url": "https://ledge.ai/",
+        "actualUrl": "https://ledge.ai/",
+        "observedAt": "2026-10-24T01:07:44.865651+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 37
+      },
+      {
+        "name": "CyberAgent Developers Blog",
+        "url": "https://developers.cyberagent.co.jp/blog/",
+        "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+        "observedAt": "2026-10-24T01:07:44.892372+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 36
+      },
+      {
+        "name": "LINE Yahoo Tech Blog",
+        "url": "https://techblog.lycorp.co.jp/ja/",
+        "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+        "observedAt": "2026-10-24T01:07:44.920383+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 29
+      },
+      {
+        "name": "Mercari Engineering",
+        "url": "https://engineering.mercari.com/",
+        "actualUrl": "https://engineering.mercari.com/",
+        "observedAt": "2026-10-24T01:07:44.967133+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 21
+      },
+      {
+        "name": "SmartHR Tech Blog",
+        "url": "https://tech.smarthr.jp/",
+        "actualUrl": "https://tech.smarthr.jp/",
+        "observedAt": "2026-10-24T01:07:44.999570+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 28
+      },
+      {
+        "name": "LayerX Engineering Blog",
+        "url": "https://tech.layerx.co.jp/",
+        "actualUrl": "https://tech.layerx.co.jp/",
+        "observedAt": "2026-10-24T01:07:45.015959+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 82
+      },
+      {
+        "name": "DeNA Engineering",
+        "url": "https://engineering.dena.com/blog/",
+        "actualUrl": "https://engineering.dena.com/blog/",
+        "observedAt": "2026-10-24T01:07:45.038546+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 52
+      },
+      {
+        "name": "Money Forward Developers Blog",
+        "url": "https://moneyforward-dev.jp/",
+        "actualUrl": "https://moneyforward-dev.jp/",
+        "observedAt": "2026-10-24T01:07:45.115802+00:00",
+        "status": 200,
+        "scope": "homepage discovery only; linked originals require separate full reads",
+        "linksObserved": 22
+      }
+    ],
+    "communityLatestApi": {
+      "url": "https://zenn.dev/api/articles?order=latest&count=100",
+      "returnedItems": 100,
+      "inWindowItems": 96,
+      "earliestInWindowReturned": "2026-10-23T21:28:35.277+09:00",
+      "scope": "Actual public Zenn latest API discovery; not full coverage of the entire locked window."
+    }
+  },
+  "previousReportExclusion": {
+    "date": "2026-10-23",
+    "sourcePath": "src/content/daily-ja/2026-10-23.md",
+    "sourceCommit": "f870ab9a5554a6988b81806221bfadd298a651c9",
+    "urls": [
+      "https://tech.layerx.co.jp/entry/why-we-built-our-background-agent",
+      "https://dev.classmethod.jp/articles/bedrock-guardrails-grounding-standard-tier/",
+      "https://zenn.dev/haruto_miyakawa/articles/vite-tsc-emitted-js-shadows-tsx",
+      "https://zenn.dev/udos/articles/rive-mcp-databinding-create",
+      "https://zenn.dev/juntaki/articles/f1dd276860f4e9"
+    ],
+    "selectedOverlap": []
+  },
+  "supplementalSources": [
+    {
+      "url": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+      "actualUrl": "https://blog.cloudflare.com/obsessive-inference-optimization/",
+      "status": 200,
+      "accessedAt": "2026-10-24T01:10:29.560397+00:00",
+      "title": "Cutting our inference bill by 68% by being obsessive about optimization | Cloudflare Blog",
+      "textPath": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-10-24/community/prompt-cache-cloudflare-original.txt",
+      "textSha256": "27860bba295ed53be982cac9c6f075f66c59ff60820e5517fe235fbcc82b13a4",
+      "bodyCharacters": 27063,
+      "times": [
+        {
+          "class": [
+            "date",
+            "mb-5",
+            "pt-10"
+          ],
+          "data-astro-cid-qjtkll3n": "",
+          "text": "October 19, 2026"
+        }
+      ],
+      "publishedDate": "2026-10-19",
+      "windowRelation": "out-of-window supplemental primary verification; selected original remains in-window Zenn article",
+      "readScope": "Entire original article, from introduction through quality/limitations/conclusion, fully read; capture also includes navigation text."
+    }
+  ],
+  "rejected": [
+    {
+      "source": "CodeZine",
+      "url": "https://codezine.jp/",
+      "reason": "Homepage HTTP 403, no alternate transport/header retry or access bypass."
+    }
+  ],
+  "scopeNotes": [
+    "The five selected originals are public complete article reads, with all five publication timestamps inside the frozen window.",
+    "Cloudflare original dated 2026-10-19 is outside the frozen window and used only to corroborate the selected in-window Zenn explanation; its identity/date is never substituted for the selected article.",
+    "Article-reported measurements were not independently reproduced. Full captures remain private, outside Git.",
+    "Chinese prose was not consulted to generate Japanese prose."
+  ],
+  "verifiedAt": "2026-10-24T01:17:24.981391+00:00",
+  "captureVerification": [
+    {
+      "articleId": "2026-10-24-top-1",
+      "snapshotSha256": "83531c47e4988132d7820334d5558535784c2cfccd1fbfce1bbed48f41f6fc57",
+      "externalCaptureMatches": true,
+      "privateCopyMatches": true,
+      "threeExactQuotesPresent": true
+    },
+    {
+      "articleId": "2026-10-24-top-2",
+      "snapshotSha256": "18d1b602da604c8aac970ac5a9192256764ad71a032e775a43005d19d45b2f89",
+      "externalCaptureMatches": true,
+      "privateCopyMatches": true,
+      "threeExactQuotesPresent": true
+    },
+    {
+      "articleId": "2026-10-24-top-3",
+      "snapshotSha256": "f47137f5789462dee9513181014d33a723f1d6bdecb20eeb5268b8b9f1b9bbf0",
+      "externalCaptureMatches": true,
+      "privateCopyMatches": true,
+      "threeExactQuotesPresent": true
+    },
+    {
+      "articleId": "2026-10-24-top-4",
+      "snapshotSha256": "46f6ad4974491b8ac7a82dc02bae0a13657853c1d0e48ebfbd90c51fe86cff25",
+      "externalCaptureMatches": true,
+      "privateCopyMatches": true,
+      "threeExactQuotesPresent": true
+    },
+    {
+      "articleId": "2026-10-24-top-5",
+      "snapshotSha256": "934ad43a22ced632e7e249ea862c465e2f4b2ed3f290f213af589a76cada408f",
+      "externalCaptureMatches": true,
+      "privateCopyMatches": true,
+      "threeExactQuotesPresent": true
+    }
+  ]
+}
