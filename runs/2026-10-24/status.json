@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-24",
-  "stage": "local_checks_passed",
+  "stage": "waiting_workflow",
   "sourceCommit": "f870ab9a5554a6988b81806221bfadd298a651c9",
   "sourceWindow": {
     "from": "2026-10-23T10:00:00+09:00",
     "to": "2026-10-24T10:00:00+09:00"
   },
   "createdAt": "2026-10-24T01:07:06.691Z",
-  "updatedAt": "2026-10-24T01:23:54.776Z",
+  "updatedAt": "2026-10-24T01:28:23.532Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -17,7 +17,7 @@
     "checks.json"
   ],
   "lastError": null,
-  "nextAction": "Wait for isolated dependency-repair main Pages before pushing six-path draft",
+  "nextAction": "Yield until existing maintenance main R2 run finishes; then push already-committed six-path draft without a new commit",
   "publicationBaseCommit": "00d76b18f334bb136c4df3412007b0ac3fd2d8ed",
   "dependencyRepair": {
     "commit": "00d76b18f334bb136c4df3412007b0ac3fd2d8ed",
@@ -31,5 +31,7 @@
     },
     "localGatesPassed": 16,
     "remotePages": "pending"
-  }
+  },
+  "draftCommit": "12bd067107b5ac9899e77605c904dd39162f9857",
+  "waitingRunId": 40049556901
 }
