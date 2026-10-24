@@ -17,3 +17,6 @@ Use this prompt in the repository's Codex chat:
 > 遇到失败读取准确日志并保存实际结果；不得绕过权限、不强推、不隐瞒不足。从 2026-09-30 起，文字发布验证后必须按 docs/automation/CODEX_AUDIO.md 执行：启动 AivisSpeech → 按冻结 targetDate 生成录音 → 校验 → 音频独立提交并触发现有 R2 上传 → 核验同一提交的 Pages、R2 字节及线上真实播放。固定 morioki / ノーマル（497929760），使用显式 --date；新日期默认 1.00 语速，恢复已有日期保留已验证 manifest 的参数并冻结到进度记录；禁止 --all/--force、修改正文或改用付费 API。音频进度单独持久化，文字 idle 也要恢复未完成音频；失败保留文字上线结果并准确报告，不跳过 N1、不重复生成已验证录音。输出简短的日期、执行分支、检查结果、修改文件和剩余限制。
 
 For an explicitly requested validation-only rehearsal, use trial mode instead: read remote state and validate locally without remote writes, pushes, deployment or schedule changes. The 2026-09-29 trial remains a historical validation-only record, not proof of a fresh Codex-authored release.
+
+
+录音批次从 `node scripts/generate-daily-audio.mjs --date 冻结日期` 进入；该入口在日常与 N1 共用的 OS 锁内按顺序调用两个原有生成脚本，均显式传入同一日期。录音结束优先使用已入库的 `aivis-session.py` / `quit-aivisspeech.swift` 后台正常退出机制，并保留 `appCleanup` 证据。锁屏本身不应再转成要求用户解锁后点击菜单；仅在正常退出被应用拒绝、未保存确认或活跃录音阻挡时如实保留 deferred，不强退、不丢弃项目、不改定时频率。

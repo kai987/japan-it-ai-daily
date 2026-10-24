@@ -17,8 +17,7 @@ Check `http://127.0.0.1:10101/version` and `/speakers` with request timeouts. If
 Run from a complete checkout of the verified published content. Before synthesis, read any existing committed manifests and checkpoint settings. Preserve their validated settings when resuming the same date (for example, 2026-09-29 interview speed is 0.86); do not overwrite them with defaults or trust ambient shell overrides. For a new date without prior settings, set `AIVIS_ENGINE_URL=http://127.0.0.1:10101`, `AIVIS_STYLE_ID=497929760`, `AIVIS_WORD_SPEED=1.00`, `AIVIS_EXAMPLE_SPEED=1.00`, `AIVIS_INTERVIEW_SPEED=1.00` for synthesis and freeze those settings in the checkpoint. For a resumed date, explicitly export the preserved learning word/example speeds and interview speed instead. Replace `DATE` with the frozen target date:
 
 ```sh
-node scripts/generate-japanese-audio.mjs --date DATE
-node scripts/generate-interview-audio.mjs --date DATE
+node scripts/generate-daily-audio.mjs --date DATE
 node scripts/validate-interview-audio-duration.mjs --date DATE --write
 npm run audio:check
 npm run audio:integrity:check
@@ -27,6 +26,8 @@ npm run audio:duration:check
 ```
 
 Stop on the first failed command. Explicitly require both target-date manifests, the expected voice and frozen per-date settings, complete text mappings and referenced nonempty MP3s; integrity checks alone allow dates with no recordings. Keep current duration gates (ideal 24–34 seconds, hard 22–40); never change prose, timing thresholds, speed or manifest text just to pass. If a referenced historical recording is missing, record the exact dependency instead of following the generator's generic `--all` recovery suggestion.
+
+The explicit-date batch runs both existing generators, in order, inside `scripts/aivis-session.py`. This shares an OS recording lock with N1. On completion it uses the ordinary macOS `NSRunningApplication.terminate()` API, without desktop clicks or Accessibility, and verifies that both app and engine have exited. Screen locking alone does not require a manual unlock. Busy recording processes/connections, refused termination or a save confirmation are recorded as deferred; never force quit or discard a project. Cleanup proof is printed as `AIVIS_LIFECYCLE_JSON=...` and saved outside Git in `~/Library/Application Support/AivisSpeech Automation/last-shutdown.json`. Preserve this proof in the audio checkpoint's `appCleanup`, independently of publication success. A safe cleanup-only retry is `python3 scripts/aivis-session.py --quit-only`; it starts no recording and changes no schedule.
 
 ## Publish audio through the existing workflow
 
