@@ -1,20 +1,21 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-24",
-  "stage": "preflight_running",
+  "stage": "request_ready",
   "sourceCommit": "f870ab9a5554a6988b81806221bfadd298a651c9",
   "sourceWindow": {
     "from": "2026-10-23T10:00:00+09:00",
     "to": "2026-10-24T10:00:00+09:00"
   },
   "createdAt": "2026-10-24T01:07:06.691Z",
-  "updatedAt": "2026-10-24T01:34:01.272Z",
+  "updatedAt": "2026-10-24T01:37:37.856Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
     "interviews.json",
     "draft.json",
-    "checks.json"
+    "checks.json",
+    "preflight.json"
   ],
   "lastError": null,
   "nextAction": "Wait for exact six-path draft deploy.yml preflight",
@@ -28,6 +29,26 @@
     "remainingModerate": 3
   },
   "draftCommit": "12bd067107b5ac9899e77605c904dd39162f9857",
-  "waitingRunId": null,
-  "preflightRunId": 40050304414
+  "waitingRunId": 40049556901,
+  "preflightRunId": 40050304414,
+  "baseCommit": "00d76b18f334bb136c4df3412007b0ac3fd2d8ed",
+  "draftBranch": "draft/daily-2026-10-24",
+  "paths": [
+    "src/content/daily-ja/2026-10-24.md",
+    "src/content/daily/2026-10-24.md",
+    "src/content/evidence/2026-10-24.json",
+    "src/content/japanese-ja/2026-10-24.md",
+    "src/content/japanese/2026-10-24.md",
+    "src/data/interviews/2026-10-24.json"
+  ],
+  "changedPaths": [
+    "A\tsrc/content/daily-ja/2026-10-24.md",
+    "A\tsrc/content/daily/2026-10-24.md",
+    "A\tsrc/content/evidence/2026-10-24.json",
+    "A\tsrc/content/japanese-ja/2026-10-24.md",
+    "A\tsrc/content/japanese/2026-10-24.md",
+    "A\tsrc/data/interviews/2026-10-24.json"
+  ],
+  "localOnly": false,
+  "verifiedAt": "2026-10-24T01:37:28.905Z"
 }
