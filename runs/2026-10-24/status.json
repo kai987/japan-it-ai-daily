@@ -8,7 +8,7 @@
     "to": "2026-10-24T10:00:00+09:00"
   },
   "createdAt": "2026-10-24T01:07:06.691Z",
-  "updatedAt": "2026-10-24T01:45:38.695Z",
+  "updatedAt": "2026-10-24T02:23:46.843Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -203,9 +203,454 @@
   "n1Continuation": {
     "targetDate": "2026-10-24",
     "day": 56,
-    "stage": "preparing_source_bound_request",
-    "sourceExistsObserved": true,
-    "n1Main": "5a152d5eed597748756488f45bc2b466be9176a1",
-    "requestSubmitted": false
+    "stage": "published",
+    "requestSubmitted": true,
+    "requestCommit": "8e5bba4fc7f055b1c7712e7518c7a9f7b4c01da5",
+    "releaseCommit": "6b1c9350585563620abf5f68f5c1e4f47186d04d",
+    "pagesRunId": 40052678371,
+    "originalUnchanged": true,
+    "visibleBrowserDateVerified": true,
+    "verificationEvidence": {
+      "label": "text",
+      "targetDate": "2026-10-24",
+      "day": 56,
+      "releaseCommit": "6b1c9350585563620abf5f68f5c1e4f47186d04d",
+      "pagesRunId": 40052678371,
+      "sourceCommit": "39401c4946538f9da9e604c877553d1d6916bd33",
+      "sourceBlobSha": "977a483ea206dcdaeb167f84c5ff106d10f6dcf4",
+      "snapshotSha256": "c550f112d31b8cc4b7952a0655bf7bd882a9ab10d638497a8571762e0f4497f8",
+      "totalDays": 74,
+      "issueNumber": 74,
+      "fullGrammarLessonDates": 74,
+      "artifact": {
+        "id": 12544037885,
+        "name": "github-pages",
+        "digest": "sha256:e2a28e537fdf219e36dba42f57e23c7f88cb0283cace3fae2230606d086719f4",
+        "downloadedZipSha256": "e2a28e537fdf219e36dba42f57e23c7f88cb0283cace3fae2230606d086719f4",
+        "digestVerified": true
+      },
+      "site": "/tmp/japan-daily-20261024/n1/text-release-40052678371/site",
+      "checks": [
+        {
+          "path": "index.html",
+          "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/?acceptance=6b1c9350585563620abf5f68f5c1e4f47186d04d",
+          "status": 200,
+          "sha256": "3da432f318f403f53435c6a930f4784f633f3a79710a2a3a35d569470ca2d1fa",
+          "bytes": 1596,
+          "attempt": 1
+        },
+        {
+          "path": "assets/index-CLA7BiI1.js",
+          "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/assets/index-CLA7BiI1.js?acceptance=6b1c9350585563620abf5f68f5c1e4f47186d04d",
+          "status": 200,
+          "sha256": "ec71e12fb008d46024eeb0094dbfeaee0fe799d6cf242d11dcaf53762b4ac4d7",
+          "bytes": 7206736,
+          "attempt": 1
+        },
+        {
+          "path": "assets/index-BpdupM-0.css",
+          "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/assets/index-BpdupM-0.css?acceptance=6b1c9350585563620abf5f68f5c1e4f47186d04d",
+          "status": 200,
+          "sha256": "ae591cc4f64aac982210bb9f9a30a84e9aab4eb1a7a4aa290611892d99ac1d4e",
+          "bytes": 46788,
+          "attempt": 1
+        }
+      ],
+      "fullPublicAssetBytes": true,
+      "allOriginalParagraphsPresent": true,
+      "originalOptionsPresent": true,
+      "contentVerification": {
+        "observedAt": "2026-10-24T02:09:11.108361+00:00",
+        "commit": "6b1c9350585563620abf5f68f5c1e4f47186d04d",
+        "parent": "8e5bba4fc7f055b1c7712e7518c7a9f7b4c01da5",
+        "changedPaths": [
+          "src/data/daily/2026-10-24.json",
+          "src/data/it-study-snapshot.json"
+        ],
+        "onlyTwoPaths": true,
+        "sourceBlobUnchanged": true,
+        "sourceBlobSha": "977a483ea206dcdaeb167f84c5ff106d10f6dcf4",
+        "sourceBytes": 25271,
+        "sourceSha256": "b443a634b2abe20a9f340ac8ce4afb6021475f17828d0eb13e155a2309a89ea7",
+        "dailyCandidateBytesExact": true,
+        "dailyBytes": 24435,
+        "dailySha256": "fcbac3262d3fc3af55494f5235de441f67e827b01818bc816368df969f7f39a6",
+        "snapshotSourceCommit": "39401c4946538f9da9e604c877553d1d6916bd33",
+        "snapshotInputSha256": "c550f112d31b8cc4b7952a0655bf7bd882a9ab10d638497a8571762e0f4497f8",
+        "snapshotCommittedSha256": "67e481ef94d563be898f2708d9d954506dc05f48f2ac84124c91e917e3843eb8",
+        "snapshotGitBlobSha": "5d85e9de7dfe9e11ceacaf5d31bff31a1a25f63b",
+        "snapshotDataExact": true,
+        "snapshotCommittedBytesEqualInput": false,
+        "snapshotSerializationDifference": "Exactly one trailing LF added by unchanged scripts/import-study-snapshot.ts JSON.stringify(snapshot)+newline; full JSON and input locked hash checked independently. No other difference ignored.",
+        "snapshotInputBytes": 4420490,
+        "snapshotCommittedBytes": 4420491,
+        "totalDays": 74,
+        "issueNumber": 74,
+        "fullGrammarDates": 74,
+        "requestSha256": "27cc7c5bcf748773f6e20b9bd8b6014a233fd42a40f981560d4eb4711633a1e0",
+        "usesExactTextCommitNotNewMetadataMain": true,
+        "snapshotReadBoundary": "Contents API reports encoding none for4.4MB snapshot; exact Git Blob API used with returnedSHA and complete bytes/hash verification. No denial or alternate credential/transport."
+      },
+      "staticPublicationVerified": true,
+      "visibleBrowserDateVerified": true,
+      "visibleBrowserBoundary": "Root performs independent Cua actual Day56 UI date acceptance; static source inclusion alone does not establish current visible route or audio playback.",
+      "observedCurrentMain": "6b1c9350585563620abf5f68f5c1e4f47186d04d",
+      "sharedAudioFollowups": [],
+      "sharedAudioBoundary": "Shared audio workflow or later metadata commit is distinct from this verified text commit; not a unique-audio completion result.",
+      "verifiedAt": "2026-10-24T02:09:14.839Z",
+      "syncRunId": 40052536512,
+      "requestCommit": "8e5bba4fc7f055b1c7712e7518c7a9f7b4c01da5",
+      "exactSyncGateStepsVerified": [
+        "Verify successful upstream Pages run and post-deployment check",
+        "Rebuild and verify published study snapshot",
+        "Verify locked 09:00 N1 source blob",
+        "Validate content",
+        "Unit tests",
+        "Build",
+        "Browser tests",
+        "Commit verified content with fast-forward protection",
+        "Ensure verified content has a Pages deployment"
+      ],
+      "browserObservation": {
+        "observedAt": "2026-10-24T02:13:48.031Z",
+        "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/",
+        "date": "2026年10月24日(土)",
+        "day": "Day 56 · 99日N1計画",
+        "title": "答えが速いだけでは、仕事は進まない（第74号）",
+        "vocabularyItems": 20,
+        "grammarItems": 8,
+        "audioAtObservation": "title playback disabled before pending audio publication",
+        "tool": "Cua live DOM snapshot"
+      }
+    }
+  },
+  "audioContinuation": {
+    "targetDate": "2026-10-24",
+    "stage": "playback_verified",
+    "audioCommit": "fbc577d75f67a3bab52963b2b6f3b123240c5941",
+    "r2RunId": 40051450390,
+    "pagesRunId": 40051450447,
+    "referencedRecordings": 61,
+    "realPlaybackTests": 18,
+    "error": null,
+    "appCleanup": {
+      "stage": "awaiting_unlock",
+      "recordingBatchFinished": true,
+      "activeOtherRecordingTasksObserved": false,
+      "n1WorkerPhase": "retry_pending",
+      "normalQuitAttemptedAt": "2026-10-24T02:16:07.417413+00:00",
+      "normalQuitBlockedBy": "Mac remains locked; Cua native app access unavailable",
+      "userUnlockRequested": true,
+      "appQuitVerified": false,
+      "engineExitVerified": false,
+      "noAlternateQuitUsed": true
+    }
+  },
+  "n1AudioContinuation": {
+    "shared": {
+      "schemaVersion": 1,
+      "targetDate": "2026-10-24",
+      "day": 56,
+      "stage": "shared_verified_unique_pending",
+      "sourceAudioCommit": "fbc577d75f67a3bab52963b2b6f3b123240c5941",
+      "dailyAudioVerification": {
+        "r2RunId": 40051450390,
+        "pagesRunId": 40051450447,
+        "publicSha256Verified": 61,
+        "realPlaybackTests": 18
+      },
+      "createdAt": "2026-10-24T02:15:36.432Z",
+      "error": null,
+      "n1BaseCommit": "6b1c9350585563620abf5f68f5c1e4f47186d04d",
+      "dispatchRequestedAt": "2026-10-24T02:15:39.477Z",
+      "nextAction": "Shared audio is verified. Preserve the 81 unique uploaded recordings and diagnostics; resume only in the next eligible normal worker window. No N1 text replay, cache deletion or latch override.",
+      "updatedAt": "2026-10-24T02:23:35.169097+00:00",
+      "sharedAudioRunId": 40053425449,
+      "sharedAudioRunHead": "6b1c9350585563620abf5f68f5c1e4f47186d04d",
+      "runUrl": "https://github.com/kai987/Japanese-N1-Immersive-Sparring-Partner/actions/runs/40053425449",
+      "n1Commit": "4d502e9f313f1da31bb685c0428d63e1da431929",
+      "workflowConclusion": "success",
+      "targetLessonPublished": true,
+      "sharedAddedClips": 19,
+      "publishedPendingUniqueClips": 81,
+      "sharedReleaseVerification": {
+        "targetDate": "2026-10-24",
+        "day": 56,
+        "label": "shared-audio-only",
+        "releaseCommit": "4d502e9f313f1da31bb685c0428d63e1da431929",
+        "previousN1Commit": "6b1c9350585563620abf5f68f5c1e4f47186d04d",
+        "sourceAudioCommit": "fbc577d75f67a3bab52963b2b6f3b123240c5941",
+        "sharedWorkflowRunId": 40053425449,
+        "sharedWorkflowResult": "success",
+        "pagesRunId": 40053514595,
+        "pagesRunResult": "full build/deploy/live-target success",
+        "changedPaths": [
+          "public/audio/manifest.json",
+          "src/data/audio-index.json",
+          "src/data/audio-pending.json",
+          "src/data/audio-sources.json"
+        ],
+        "fourPathAllowlistVerified": true,
+        "textSourceAndSnapshotUnchangedBySharedCommit": true,
+        "metadata": [
+          {
+            "path": "public/audio/manifest.json",
+            "blob": "476f99164b0fc4fb899ab735ba6edc49d5b5e2c2",
+            "bytes": 2895634,
+            "sha256": "7381751a44eae05278e22302b840b7c75f0e631fe7a7a72651f26fab04a65f6d",
+            "type": "dict",
+            "keys": [
+              "version",
+              "voice",
+              "engineVersion",
+              "modelVersion",
+              "generatedAt",
+              "lessonDates",
+              "expectedClips",
+              "complete",
+              "clips"
+            ],
+            "length": 9
+          },
+          {
+            "path": "src/data/audio-index.json",
+            "blob": "309c6f336fa848e546fb6b802b8eb59680db6368",
+            "bytes": 181483,
+            "sha256": "58868ea9fc2643a5d6d4421a481e0a7f6283cc53c48ea4c3a9d325af20daf661",
+            "type": "dict",
+            "keys": [
+              "version",
+              "voice",
+              "clips"
+            ],
+            "length": 3
+          },
+          {
+            "path": "src/data/audio-sources.json",
+            "blob": "4b13a27b00db30da3438648bd12c599d20ac7bcc",
+            "bytes": 1823014,
+            "sha256": "e2355b24e3bbb1014cf0f8fe3d32c323ab4127605d185dc193331538c47f1416",
+            "type": "dict",
+            "keys": [
+              "version",
+              "complete",
+              "voice",
+              "modelVersion",
+              "sharedSource",
+              "providers",
+              "summary",
+              "clips",
+              "verifiedAt"
+            ],
+            "length": 9
+          },
+          {
+            "path": "src/data/audio-pending.json",
+            "blob": "1e3082b3b4fd6a1da114ea241c3bfbc6e5072682",
+            "bytes": 30100,
+            "sha256": "b8eb932a9b4f55fea71d08462e89c0b12dcadf0868620c8e2794d2d749c2df01",
+            "type": "dict",
+            "keys": [
+              "version",
+              "voice",
+              "requiredClips",
+              "pendingClips",
+              "incompleteLessonDates",
+              "entries"
+            ],
+            "length": 6
+          },
+          {
+            "path": "src/data/daily/2026-10-24.json",
+            "blob": "65aca7273e60031064022270506ac246989896ad",
+            "bytes": 24435,
+            "sha256": "fcbac3262d3fc3af55494f5235de441f67e827b01818bc816368df969f7f39a6",
+            "type": "dict",
+            "keys": [
+              "lesson",
+              "reviewFocus",
+              "merged"
+            ],
+            "length": 3
+          },
+          {
+            "path": ".github/workflows/deploy-pages.yml",
+            "blob": "b5a9d1a23e4d8338c45178372627558c8c9f4cb9",
+            "bytes": 3950,
+            "sha256": "c04184bc83863abee6f7e7825766c6b68db159f06ec66e6ecfae8bfea41e5d57"
+          },
+          {
+            "path": "docs/automation/README.md",
+            "blob": "b60685180e33ace3d7771f1d41a56060e1a8a625",
+            "bytes": 19758,
+            "sha256": "dbb059011a867c4ace6cf32ca81cd57661d8849ba7eaffeef9496a3b3a07b226"
+          }
+        ],
+        "newSharedClips": 19,
+        "allNewClipsProvider": "daily",
+        "historicalPublishedSourcesPreserved": 5843,
+        "historicalSourceMappingsChanged": [],
+        "newSharedFullPublicGETChecks": 19,
+        "newSharedFullByteHashDurationRmsVerified": true,
+        "newSharedByteProof": "/tmp/japan-daily-20261024/n1/shared-audio-independent/new-shared-byte-verification.json",
+        "newSharedProofSha256": "e1ae553853e400776388135ad6939ec17e43e16da404d839fddafb2bcb2e98b5",
+        "artifact": {
+          "id": 12544670998,
+          "name": "github-pages",
+          "digest": "sha256:08a7fca958b2d48699b8efc0f43db993a0ee324cf1d73d2f963f9fd348547957",
+          "downloadedZipSha256": "08a7fca958b2d48699b8efc0f43db993a0ee324cf1d73d2f963f9fd348547957",
+          "digestVerified": true
+        },
+        "publicAssets": [
+          {
+            "path": "index.html",
+            "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/?acceptance=4d502e9f313f1da31bb685c0428d63e1da431929",
+            "status": 200,
+            "bytes": 1596,
+            "sha256": "8c0163533b6cdd21428157ec1f7ab5a74fc89ee802c8435d71a1ed56a5525c08",
+            "equalsExactArtifact": true
+          },
+          {
+            "path": "assets/index-BTQPOHiO.js",
+            "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/assets/index-BTQPOHiO.js?acceptance=4d502e9f313f1da31bb685c0428d63e1da431929",
+            "status": 200,
+            "bytes": 7212080,
+            "sha256": "5d64955a4adebe78f6c033c71c08505ffff22c89f72314239370490105606266",
+            "equalsExactArtifact": true
+          },
+          {
+            "path": "assets/index-BpdupM-0.css",
+            "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/assets/index-BpdupM-0.css?acceptance=4d502e9f313f1da31bb685c0428d63e1da431929",
+            "status": 200,
+            "bytes": 46788,
+            "sha256": "ae591cc4f64aac982210bb9f9a30a84e9aab4eb1a7a4aa290611892d99ac1d4e",
+            "equalsExactArtifact": true
+          },
+          {
+            "path": "audio/manifest.json",
+            "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/audio/manifest.json?acceptance=4d502e9f313f1da31bb685c0428d63e1da431929",
+            "status": 200,
+            "bytes": 2895634,
+            "sha256": "7381751a44eae05278e22302b840b7c75f0e631fe7a7a72651f26fab04a65f6d",
+            "equalsExactArtifact": true
+          }
+        ],
+        "exactPublicManifestMatchesCommittedAndArtifact": true,
+        "fullPublicAssetBytes": true,
+        "playback": {
+          "evidence": "/tmp/japan-daily-20261024/n1/shared-playback-verified.json",
+          "sha256": "cfe08da2f6f8c39262fba50f47b1a230559105dacf2274de5d9e5127e6d0f541",
+          "observer": "root Cua observation reviewed for exactcommit, exactR2URL, sameAudioObject, positive finite duration, advancing time, no native error or WebSpeech",
+          "sampleCount": 2,
+          "roles": [
+            "n1-shared-word",
+            "n1-shared-example"
+          ],
+          "passed": true
+        },
+        "pendingUniqueClips": 81,
+        "pendingEntries": 81,
+        "incompleteLessonDates": [
+          "2026-10-24"
+        ],
+        "uniqueAudioComplete": false,
+        "uniqueTitlePlaybackDisabled": true,
+        "newSupabaseUniqueMetadataPublished": false,
+        "fullN1AudioComplete": false,
+        "sharedPublicationVerified": true,
+        "observedMainCommit": "4d502e9f313f1da31bb685c0428d63e1da431929",
+        "publicSupabaseUniqueRequestsMade": 0,
+        "workerOrScheduleTouched": false,
+        "reviewerRepoOrRemoteMutations": false,
+        "boundary": "Only the19shared R2 mappings and their exact Pages publication are complete.81N1-unique clips remain pending public metadata and full acceptance; preserved uploaded candidates do not imply a unique-audio release.",
+        "verifiedAt": "2026-10-24T02:23:07.826027+00:00"
+      },
+      "sharedPlaybackVerification": {
+        "targetDate": "2026-10-24",
+        "day": 56,
+        "n1Commit": "4d502e9f313f1da31bb685c0428d63e1da431929",
+        "sourceAudioCommit": "fbc577d75f67a3bab52963b2b6f3b123240c5941",
+        "samples": [
+          {
+            "locale": "ja",
+            "role": "n1-shared-word",
+            "page": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/",
+            "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-24/vocab-01--773eaba007d979d6c70028d263451b4dd5741f59cc3e08c7939ef9fbf08e9187.mp3",
+            "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-24/vocab-01--773eaba007d979d6c70028d263451b4dd5741f59cc3e08c7939ef9fbf08e9187.mp3",
+            "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-24/vocab-01--773eaba007d979d6c70028d263451b4dd5741f59cc3e08c7939ef9fbf08e9187.mp3",
+            "duration": 0.999083,
+            "currentTime": 0.352099,
+            "endTime": 0.356695,
+            "paused": false,
+            "ended": false,
+            "error": null,
+            "sameAudioObjectObserved": true,
+            "ttsFallbacks": 0,
+            "webSpeechSpeaking": false,
+            "webSpeechPending": false,
+            "audioId": "aad97e4aea27d9ee",
+            "provider": "daily",
+            "selector": "button[data-audio-id=\"aad97e4aea27d9ee\"]",
+            "verifiedAt": "2026-10-24T02:20:20.338Z"
+          },
+          {
+            "locale": "ja",
+            "role": "n1-shared-example",
+            "page": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/",
+            "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-24/example-01--b9a2f9c40e1b79cb6cde6dc72341542e53d859bc0b832a04bda75c2577d2191e.mp3",
+            "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-24/example-01--b9a2f9c40e1b79cb6cde6dc72341542e53d859bc0b832a04bda75c2577d2191e.mp3",
+            "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-24/example-01--b9a2f9c40e1b79cb6cde6dc72341542e53d859bc0b832a04bda75c2577d2191e.mp3",
+            "duration": 4.816875,
+            "currentTime": 0.342778,
+            "endTime": 0.348095,
+            "paused": false,
+            "ended": false,
+            "error": null,
+            "sameAudioObjectObserved": true,
+            "ttsFallbacks": 0,
+            "webSpeechSpeaking": false,
+            "webSpeechPending": false,
+            "audioId": "6eebdb267c4c2df2",
+            "provider": "daily",
+            "selector": "button[data-audio-id=\"6eebdb267c4c2df2\"]",
+            "verifiedAt": "2026-10-24T02:20:21.108Z"
+          }
+        ],
+        "uniqueAudioComplete": false,
+        "pendingUniqueClips": 81,
+        "uniqueTitlePlaybackDisabled": true,
+        "note": "Only shared R2 recording playback verified. Initial word sampling used a changing accessible name and missed the short playback; stable actual data-audio-id selectors resolved the observation issue without code or page instrumentation."
+      },
+      "uniqueAudio": {
+        "stage": "validation_failed_after_upload",
+        "attempt": 118,
+        "generatedAndUploadedClips": 81,
+        "localPendingClips": 0,
+        "publishedPendingClips": 81,
+        "releaseCommit": null,
+        "failedPhase": "validating",
+        "lastErrorSummary": "tests/audio-validation.test.ts:82 expected stderr before-abort marker; actual empty. Likely fixture readiness race, not proven loss of written output. All assertions remain unchanged.",
+        "evidence": "n1/attempt118-unit-failure-audit.json",
+        "candidateBytesAndUploadProofsPreserved": true,
+        "normalNextOpeningJST": "2026-10-25T11:10:00+09:00",
+        "scheduleLatchPreserved": true,
+        "workerRetriggered": false,
+        "audioRepairNotInvoked": true
+      },
+      "complete": false
+    },
+    "uniqueWorker": {
+      "attempt": 118,
+      "phase": "retry_pending",
+      "failedPhase": "validating",
+      "localPendingClips": 0,
+      "publishedPendingClips": 81,
+      "uploadedButUnpublishedClips": 81,
+      "jobPending": true,
+      "lastError": "npm validation failed (exit 1). Diagnostics: /Users/paulasmith/Library/Application Support/N1 Audio/logs/validation/run-1792807811045-98678/unit\nstdout (last 8192 bytes):\nponses and no unrelated operations (196.460917ms)\n✔ failed validation retains full stdout despite npm stderr notices, with both error tails (2113.097625ms)\n✔ successful validation returns stdout and preserves both complete streams and its exit (1665.060625ms)\n✖ abort terminates the owned validation and keeps its pre-abort output (1382.0625ms)\n✔ a pre-aborted validation is recorded without starting a child (245.458375ms)\n✔ timeout terminates validation and records the timeout separately from abort (466.584709ms)\n✔ a missing validation executable retains a completed diagnostic record (24.44925ms)\n✔ an existing diagnostic directory is never overwritten by another run (708.065208ms)\n✔ nine Japan time checks include both endpoints, independently of the host time zone (486.602292ms)\n✔ detection suppresses all later checks that day, including failures; tomorrow automatically unlocks (27.561209ms)\n✔ empty checks do not claim the day; interrupted and failed jobs resume even with zero pending clips (1.09925ms)\n✔ a corrupt daily checkpoint fails closed instead of enabling a second job (12.161875ms)\n✔ manual and installed entrypoints exit before Git/network and leave progress untouched outside the window or after detection (10830.781083ms)\n✔ a detected failed job retains its latch and recordings, skips later checks, and resumes next day (5979.117417ms)\n✔ an active job stops at the window deadline and checkpoints for tomorrow (2129.300042ms)\n✔ audio worker merges a complete verified upload batch and recomputes counts and covered dates (169.78625ms)\n✔ audio worker retries do not create timestamp-only metadata changes (10.095584ms)\n✔ audio worker preserves historical clips, R2 providers and all existing recording metadata (43.927333ms)\n✔ audio worker rejects incomplete or unverified upload batches without publishing partial state (50.326917ms)\n✔ audio worker rejects different voices, models, identities and invalid synthesis measurements (46.721333ms)\n✔ checkpoints replace complete JSON, and an interrupted temporary write does not corrupt prior state (184.8135ms)\n✔ a failed older deployment cannot pin recovery after main advances (10.972917ms)\n✔ cleanup removes only byte-verified published cache and retains unpublished candidates (45.786ms)\n✔ search highlights full-width Latin text and ignores case without changing source offsets (47.737708ms)\n✔ search maps composed half-width and combining kana back to their complete original spans (22.043125ms)\n✔ search offsets use UTF-16 indices so emoji adjacent to Japanese text remain intact (18.262875ms)\n✔ search ignores source whitespace and construction waves while preserving the full matched span (4.442708ms)\n✔ search highlights each query term and merges overlapping matches into one safe span (1.412292ms)\n✔ regex and HTML-like search terms are interpreted as literal text (0.632375ms)\n✔ series matches come from displayed fields instead of concatenating unrelated fields (345.355459ms)\n✔ compound series have complete bilingual examples and valid cross references (48.655333ms)\n✔ 間に合う links to both expression structure and time topics while unrelated vocabulary stays untagged (32.733083ms)\n✔ 間に合う is distinguished from reciprocal verb plus 合う compounds (1.241584ms)\n✔ series search finds Japanese words, readings and Chinese meanings without matching arbitrary text (11.024333ms)\n✔ grammar aliases normalize without merging distinct functions (47.051667ms)\n✔ all generated historical grammar mirrors remain unique (436.316667ms)\n✔ distant and same-day duplicates are rejected (347.1815ms)\n✔ zero new grammar is valid only with an explicit explanation (232.125167ms)\n✔ a missing grammar array remains invalid (176.819792ms)\n✔ legacy progress keeps answers and valid statuses, and discards invented streak (101.007458ms)\n✔ damaged storage is repaired without losing valid entries (45.958209ms)\n✔ Tokyo midnight, duplicate actions, missed days and yesterday grace (350.764041ms)\n✔ all eleven lessons distribute answers while retaining canonical indexes and notes (21.508917ms)\n✔ valid daily file is merged once and overrides the same date (54.376458ms)\n✔ raw daily vocabulary preserves every supported source level and rejects unknown levels (7.42925ms)\n✔ invalid daily archives fail with the file and field in the error (21.809ms)\n✔ duplicate IDs across days and duplicate generated dates fail (41.038958ms)\n✔ import command updates one file and rejects invalid replacements without damaging it (424.365375ms)\n✔ second unit contains 25 core and three supplemental groups, with all four categories (31.474375ms)\n✔ legacy card payloads and IDs are preserved; new groups cannot collide (25.509834ms)\n✔ source provenance separates phone notes from manga lines (0.674458ms)\n✔ unit URL resolution preserves a known unit and safely defaults invalid IDs (11.613125ms)\n✔ live notes contain all 15 groups and 64 unique screenshot expressions (34.894041ms)\n✔ transcription and grammar corrections retain the original context (1.566875ms)\n✔ search matches Japanese, readings, Chinese and explanatory notes (50.974458ms)\n✔ live progress uses its own key and safely recovers invalid data (2.727333ms)\n✔ project search gives lessons and compound series independent result budgets (749.779417ms)\n✔ global compound results use the same literal normalized matching as the series page (1748.462208ms)\n✔ live results span units and source quotes and carry valid unit and group destinations (777.671541ms)\n✔ derived vocabulary retains source context and nuance without changing learner IDs (1455.110375ms)\n✔ source snapshot uses the complete report denominator and distinguishes issue #38 from N1 Day20 (1314.957167ms)\n✔ independent reading, immersion and same-card progress keys stay unchanged (487.1545ms)\n✔ tampered frequencies, duplicate cards, and falsely new reviews fail validation (731.102ms)\n✔ reference levels are preserved instead of promoting N3 to N1 (163.784875ms)\n✔ IT/AI reference levels are preserved while unknown levels remain invalid (850.658ms)\n✔ five, six and seven grammar cards are valid without padding to eight (1382.624917ms)\n✔ historical IT grammar overlays preserve vocabulary, source text, questions and stable IDs (497.092125ms)\n✔ historical snapshot rejects missing dates, false-new cards and absent evidence (641.11675ms)\n✔ new-date request starts import without first deploying a missing lesson (28.455292ms)\n✔ source pinning, snapshot import, all validation gates and CAS remain before commit (8.045833ms)\n✔ deployment recovery is gated by verified request and exact current commit, not changed data (0.429083ms)\n✔ real deployment decision: successful exact commit (739.810417ms)\n✔ real deployment decision: running exact commit (549.462958ms)\n✔ real deployment decision: failed exact commit even without changed data (646.935667ms)\n✔ real deployment decision: missing deployment even without changed data (806.39125ms)\n✔ real deployment decision: unrelated successful commit (571.325834ms)\n✔ identical snapshot does not block a daily-only content commit (23.323ms)\n✔ content commit rejects history, source, UI, control and empty changes (7.015542ms)\nℹ tests 113\nℹ suites 0\nℹ pass 112\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 22048.276042\n\n✖ failing tests:\n\ntest at tests/audio-validation.test.ts:68:1\n✖ abort terminates the owned validation and keeps its pre-abort output (1382.0625ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  + actual - expected\n  \n  + ''\n  - 'before abort\\n'\n  \n      at TestContext.<anonymous> (file:///Users/paulasmith/Library/Application%20Support/N1%20Audio/attempts/run-1792807811045-98678/tests/audio-validation.test.ts:82:10)\n      at async Test.run (node:internal/test_runner/test:1332:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: '',\n    expected: 'before abort\\n',\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\nstderr (last 8192 bytes):\nnpm notice run japanese-n1-immersive-sparring-partner@0.1.0 test\nnpm notice run node --test tests/*.test.ts && python3 -m unittest discover -s tests -p '*_test.py'",
+      "releaseCommit": null,
+      "sourceAudioCommit": "fbc577d75f67a3bab52963b2b6f3b123240c5941"
+    },
+    "complete": false
   }
 }
