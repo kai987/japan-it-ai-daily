@@ -8,7 +8,7 @@
     "to": "2026-10-24T10:00:00+09:00"
   },
   "createdAt": "2026-10-24T01:07:06.691Z",
-  "updatedAt": "2026-10-24T01:44:33.079Z",
+  "updatedAt": "2026-10-24T01:45:38.695Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -19,7 +19,7 @@
     "publication-request.json"
   ],
   "lastError": null,
-  "nextAction": "Text verified; independent daily audio pending. Attempt one corresponding N1 handoff.",
+  "nextAction": "Daily text verified; prepare N1 request from actual original independently while daily audio runs",
   "publicationBaseCommit": "00d76b18f334bb136c4df3412007b0ac3fd2d8ed",
   "dependencyRepair": {
     "commit": "00d76b18f334bb136c4df3412007b0ac3fd2d8ed",
@@ -199,5 +199,13 @@
     "attempt": 1
   },
   "site": "/tmp/japan-daily-20261024/text-release-40050806258/site",
-  "pagesConclusion": "success"
+  "pagesConclusion": "success",
+  "n1Continuation": {
+    "targetDate": "2026-10-24",
+    "day": 56,
+    "stage": "preparing_source_bound_request",
+    "sourceExistsObserved": true,
+    "n1Main": "5a152d5eed597748756488f45bc2b466be9176a1",
+    "requestSubmitted": false
+  }
 }
