@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-24",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source editorial review",
+  "reviewedAt": "2026-10-24T01:18:16.405Z",
+  "scope": "Five public originals read in full. Concise declared facts, experiment conditions and interpretations only. No independent execution of the reported experiments.",
+  "articles": [
+    {
+      "articleId": "2026-10-24-top-1",
+      "url": "https://dev.classmethod.jp/articles/vercel-slow-function-region-iad1/",
+      "originalTitle": "TTFBは速いのに表示が遅いVercelのページ、関数リージョンが既定のままだった",
+      "source": "DevelopersIO",
+      "topic": "Next.jsとSSRの性能診断",
+      "access": "full",
+      "accessNote": "Complete public article main text read, including code/tables/conditions/results/limitations; images considered through accompanying captions/text only. No independent execution or replication.",
+      "publishedAt": "2026-10-23T19:30:14.803+09:00",
+      "capturedAt": "2026-10-24T01:08:12.085919+00:00",
+      "snapshotSha256": "83531c47e4988132d7820334d5558535784c2cfccd1fbfce1bbed48f41f6fc57",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "loading.tsxが作る境界でシェルを先に送り、TTFBの後にもサーバーのデータ取得が続く。",
+          "quote": "Suspense境界",
+          "locator": "TTFBは速いのに表示が遅い／Next.jsのストリーミング",
+          "conditions": "Personal single-site case, Tokyo home curl approximately10 runs perstage; reports min/max, not median or controlled crossservice benchmark. time_total is full HTML reception; it explicitly excludes browser rendering. Unvisited and revisited server-cache-hit pages are separated. No live site identity or full public experiment code; author deliberately obscures application subject. Do not equate TTFB with response completion, or HTML reception with LCP. Do not generalize numerical speedup to all Vercel apps. Article claims plan region counts; avoid carrying current commercial plan limits without separately verifying official docs.",
+          "usedIn": {
+            "zh": "这篇排障记录先区分“开始响应”和“页面数据处理完成”。作者的个人网站使用 Next.js 15 App Router，部署在 Vercel；",
+            "ja": "石井悠汰氏は、Next.js 15のApp RouterをVercelで動かし、東京のAWS上にAPI Gateway、LambdaとHono、DynamoDB",
+            "interview": "まず、最初の応答と、内容を受け取り終える時間を分けます。記事ではSuspenseで画面の枠を先に返すため、TTFBだけでは待ち時間を捉え切れませんでし"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "20行の行別取得をやめ、日次集計に最大60点の値列を持たせ、BatchGetItemによるまとめ取りで41回を2回にした。",
+          "quote": "41コールから2コール",
+          "locator": "残りの1秒は一覧のN+1だった／対処は定石どおり",
+          "conditions": "Personal single-site case, Tokyo home curl approximately10 runs perstage; reports min/max, not median or controlled crossservice benchmark. time_total is full HTML reception; it explicitly excludes browser rendering. Unvisited and revisited server-cache-hit pages are separated. No live site identity or full public experiment code; author deliberately obscures application subject. Do not equate TTFB with response completion, or HTML reception with LCP. Do not generalize numerical speedup to all Vercel apps. Article claims plan region counts; avoid carrying current commercial plan limits without separately verifying official docs.",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "東京の自宅からcurlで各段階10回前後の最小〜最大を測ったHTML受信時間であり、LCPや描画速度の実測ではない。",
+          "quote": "ブラウザの描画までは含みません。",
+          "locator": "結果／計測条件",
+          "conditions": "Personal single-site case, Tokyo home curl approximately10 runs perstage; reports min/max, not median or controlled crossservice benchmark. time_total is full HTML reception; it explicitly excludes browser rendering. Unvisited and revisited server-cache-hit pages are separated. No live site identity or full public experiment code; author deliberately obscures application subject. Do not equate TTFB with response completion, or HTML reception with LCP. Do not generalize numerical speedup to all Vercel apps. Article claims plan region counts; avoid carrying current commercial plan limits without separately verifying official docs.",
+          "usedIn": {}
+        },
+        {
+          "id": "top1-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "Next.jsの見かけ上速い初期応答から、関数の配置とN+1を別々に切り分ける、フロントエンド面接にも結び付く実例です。",
+          "basedOn": [
+            "top1-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合把 React／Next.js 性能面试讲到流式响应、函数位置、服务器调用链和数据建模，并能准确说明每个测量指标的边界。",
+            "ja": "Next.jsの見かけ上速い初期応答から、関数の配置とN+1を別々に切り分ける、フロントエンド面接にも結び付く実例です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-24-top-2",
+      "url": "https://zenn.dev/3su3/articles/aaabea6298ca53",
+      "originalTitle": "AIに並行開発させたら、ブラウザテストのデータが衝突した話",
+      "source": "Zenn",
+      "topic": "AI並行開発とテスト環境",
+      "access": "full",
+      "accessNote": "Complete public article main text read, including code/tables/conditions/results/limitations; images considered through accompanying captions/text only. No independent execution or replication.",
+      "publishedAt": "2026-10-23T22:27:13.456+09:00",
+      "capturedAt": "2026-10-24T01:08:12.184070+00:00",
+      "snapshotSha256": "18d1b602da604c8aac970ac5a9192256764ad71a032e775a43005d19d45b2f89",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "worktreeを分けても認証ユーザーやDBは共有され、固定ユーザーを削除し得るfixtureが干渉を起こせる状態だった。",
+          "quote": "同じローカルSupabase環境",
+          "locator": "ブラウザテストが突然失敗する",
+          "conditions": "Singlepersonalapp, qualitativeincident; no controlledcount/timingbenchmark. Observedmissingauthuser andsharedDB; destructivefixturestructureconfirmed, deletingexecutionnotidentified. Do not claim actualdeletionculpritestablished, alltestsrepaired, completeDBisolationimplemented, or AIitselfdeleteduser. Correct fixture assertions and globalsharedresource isolation are separate problems.",
+          "usedIn": {
+            "zh": "作者在个人旅行记录应用 Waymark 中使用 Next.js、TypeScript、Supabase、Playwright 和 GitHu",
+            "ja": "SieR.氏は、家族の旅行や思い出を残す個人アプリWaymarkで、AIに最大3つの作業を並行して任せた際のテスト障害を振り返っています。構成はNext.js、",
+            "interview": "作業フォルダーと、テストが使う共有資源を分けて考えます。記事ではworktreeを分けても同じSupabaseを使い、固定の認証ユーザーが消え得る状態"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "専用Journeyなどfixture依存を見直し、保存前後のID集合で追加を確認したが、複数workerの失敗は残った。",
+          "quote": "Record IDの集合",
+          "locator": "まずはテスト自体を見直した",
+          "conditions": "Singlepersonalapp, qualitativeincident; no controlledcount/timingbenchmark. Observedmissingauthuser andsharedDB; destructivefixturestructureconfirmed, deletingexecutionnotidentified. Do not claim actualdeletionculpritestablished, alltestsrepaired, completeDBisolationimplemented, or AIitselfdeleteduser. Correct fixture assertions and globalsharedresource isolation are separate problems.",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "削除できる構造を確認したことと、今回の削除元を特定したことは別で、排他や環境分離の全対策も未検証である。",
+          "quote": "実際にどの実行がユーザーを削除したのかまでは特定できていません。",
+          "locator": "原因は「コードの競合」ではなかった",
+          "conditions": "Singlepersonalapp, qualitativeincident; no controlledcount/timingbenchmark. Observedmissingauthuser andsharedDB; destructivefixturestructureconfirmed, deletingexecutionnotidentified. Do not claim actualdeletionculpritestablished, alltestsrepaired, completeDBisolationimplemented, or AIitselfdeleteduser. Correct fixture assertions and globalsharedresource isolation are separate problems.",
+          "usedIn": {}
+        },
+        {
+          "id": "top2-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "AIに並行して仕事を任せる際、ソース管理だけでなく、認証データや後片付けの競合を説明する具体例になります。",
+          "basedOn": [
+            "top2-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合解释 AI 并行开发中代码隔离与运行状态隔离的区别，也能练习在故障报告里清楚区分已观察事实、可疑机制和待实施措施。",
+            "ja": "AIに並行して仕事を任せる際、ソース管理だけでなく、認証データや後片付けの競合を説明する具体例になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-24-top-3",
+      "url": "https://zenn.dev/tariki_yashiro/articles/na-20261020-193000",
+      "originalTitle": "AIレビュー1回 $2.43 を $0.77 に　最初のリクエストがキャッシュを読んでいなかった",
+      "source": "Zenn",
+      "topic": "AIコードレビューの費用と品質",
+      "access": "full",
+      "accessNote": "Complete public article main text read, including code/tables/conditions/results/limitations; images considered through accompanying captions/text only. No independent execution or replication.",
+      "publishedAt": "2026-10-23T21:46:09.196+09:00",
+      "capturedAt": "2026-10-24T01:08:12.194195+00:00",
+      "snapshotSha256": "f47137f5789462dee9513181014d33a723f1d6bdecb20eeb5268b8b9f1b9bbf0",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Cloudflareの最も高かった2週間の平均との比較で、68％減は実装・モデル・思考設定を累積した結果である。",
+          "quote": "$2.43 から $0.77",
+          "locator": "冒頭／費用削減の基準",
+          "conditions": "Cloudflare self-reported internal code review workload; Zenn explanation and complete linked primary read. Most release-step attribution compares before/after weekday hours and is not a controlled experiment; quality judging has 35–66 findings per group and a one-day latest period. Cloudflare primary original fully read and matched reported mechanism/results, but results remain vendor self-reported single-workload evidence; original is outside the locked date window. Do notpresent68%assinglecachefixeffect ormodeluniversals; codechanges$0.65andmodel/effort$1.06areweekday before/afterestimatesnotcontrolledexperiment.",
+          "usedIn": {
+            "zh": "这篇 Zenn 文章解说 Cloudflare 的内部 AI 代码审查优化，本期也复核了它链接的 Cloudflare 原始报告。原报告称，",
+            "ja": "たりき社のZenn記事は、Cloudflareが社内のAIコードレビューを安く速くした記録を、キャッシュと品質の両面から読み解いています。原文の日付表示が10月",
+            "interview": "まず、最初の呼び出しで、共通の文脈が本当にキャッシュから読まれるか調べます。記事ではOpenCodeが日付や作業場所を共通部分に混ぜていたため、ブロッ"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "共通指示と作業ディレクトリ・日付を分離し、共通部分が独立して再利用されるキャッシュの区切りを置いた。",
+          "quote": "ブロックを2つに分けました。",
+          "locator": "最初のリクエストの命中率は14〜26％だった",
+          "conditions": "Cloudflare self-reported internal code review workload; Zenn explanation and complete linked primary read. Most release-step attribution compares before/after weekday hours and is not a controlled experiment; quality judging has 35–66 findings per group and a one-day latest period. Cloudflare primary original fully read and matched reported mechanism/results, but results remain vendor self-reported single-workload evidence; original is outside the locked date window. Do notpresent68%assinglecachefixeffect ormodeluniversals; codechanges$0.65andmodel/effort$1.06areweekday before/afterestimatesnotcontrolledexperiment.",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "コード品質の中程度設定では本当の指摘が減り、強い設定へ変更した。費用だけでは品質維持を判断できず、評価役もモデルで、改善後の評価窓は1日である。",
+          "quote": "medium は本当の指摘を失っていた",
+          "locator": "安くなったぶん、見落としは増えたのか",
+          "conditions": "Cloudflare self-reported internal code review workload; Zenn explanation and complete linked primary read. Most release-step attribution compares before/after weekday hours and is not a controlled experiment; quality judging has 35–66 findings per group and a one-day latest period. Cloudflare primary original fully read and matched reported mechanism/results, but results remain vendor self-reported single-workload evidence; original is outside the locked date window. Do notpresent68%assinglecachefixeffect ormodeluniversals; codechanges$0.65andmodel/effort$1.06areweekday before/afterestimatesnotcontrolledexperiment.",
+          "usedIn": {}
+        },
+        {
+          "id": "top3-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "AIレビューの費用をトークン単価だけで説明せず、要求の構造と重要な指摘の取りこぼしまで含めて判断する材料になります。",
+          "basedOn": [
+            "top3-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合把企业 Agent 成本问题讲到请求实际结构与审查有效性，避免只谈 Token 单价或把高缓存命中率当成已经优化完成。",
+            "ja": "AIレビューの費用をトークン単価だけで説明せず、要求の構造と重要な指摘の取りこぼしまで含めて判断する材料になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-24-top-4",
+      "url": "https://zenn.dev/sishiya/articles/godview-tear-earth-sph-worker",
+      "originalTitle": "地球を指でちぎる: 1.6万個の粒の SPH を Web Worker で動かす",
+      "source": "Zenn",
+      "topic": "Web Workerと粒子法シミュレーション",
+      "access": "full",
+      "accessNote": "Complete public article main text read, including code/tables/conditions/results/limitations; images considered through accompanying captions/text only. No independent execution or replication.",
+      "publishedAt": "2026-10-24T09:51:01.707+09:00",
+      "capturedAt": "2026-10-24T01:08:12.160929+00:00",
+      "snapshotSha256": "46f6ad4974491b8ac7a82dc02bae0a13657853c1d0e48ebfbd90c51fe86cff25",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "約1.6万粒の物理計算を1つのWorkerへ移し、メインで描画する。16コアPCで約30ms／ステップという報告で、16並列ではない。",
+          "quote": "計算は Web Worker 1つで回しています。",
+          "locator": "Web Worker で回す",
+          "conditions": "Author reports one simulation step~30ms on a16corePC with1WebWorker; CPU/model/browser details,variance and independent reproduction are not provided. Code and article coauthored withClaude, author explicitly labels visualization estimated. Simplified educational model: nonnegative pressure/no tension makes tearing easy; small rocks really retain shapes. Sphericalgravity andcoarse408km particles are approximations; do not call physically validated geophysics or real-world disaster prediction. 30ms on16corePC is not16thread execution; there is exactly1WebWorker.",
+          "usedIn": {
+            "zh": "作者在 CesiumJS 地球页面中加入“把地球撕开”的交互，用 SPH，也就是平滑粒子流体方法，让约1.6万个粒子表现地球材料的形变。粒距",
+            "ja": "しし屋 まなびラボの記事は、CesiumJSで地球を表示する学習ページに、地球の一部をつまんで引き離す粒子シミュレーションを加えた実装記録です。地球を約1万6千",
+            "interview": "計算と描画を分けたうえで、近似の精度と実測した処理時間を確認します。記事では約1万6千粒のSPHを一つのWeb Workerで計算し、重力は256個の"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "絶対変位では全体の揺れを誤認したため、元の隣接粒との距離が35％以上変わったかで割れを判定する。",
+          "quote": "となりの粒との間隔",
+          "locator": "はまりどころ: 「割れた」の判定",
+          "conditions": "Author reports one simulation step~30ms on a16corePC with1WebWorker; CPU/model/browser details,variance and independent reproduction are not provided. Code and article coauthored withClaude, author explicitly labels visualization estimated. Simplified educational model: nonnegative pressure/no tension makes tearing easy; small rocks really retain shapes. Sphericalgravity andcoarse408km particles are approximations; do not call physically validated geophysics or real-world disaster prediction. 30ms on16corePC is not16thread execution; there is exactly1WebWorker.",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "質量5.66×10の24乗kgの教育用近似で、球対称重力や負圧を使わないモデルにも限界がある。",
+          "quote": "本物より 5% 軽い",
+          "locator": "粒の地球をつくる／初期条件",
+          "conditions": "Author reports one simulation step~30ms on a16corePC with1WebWorker; CPU/model/browser details,variance and independent reproduction are not provided. Code and article coauthored withClaude, author explicitly labels visualization estimated. Simplified educational model: nonnegative pressure/no tension makes tearing easy; small rocks really retain shapes. Sphericalgravity andcoarse408km particles are approximations; do not call physically validated geophysics or real-world disaster prediction. 30ms on16corePC is not16thread execution; there is exactly1WebWorker.",
+          "usedIn": {}
+        },
+        {
+          "id": "top4-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "重いブラウザ計算を描画から分ける設計と、見た目の不具合をモデル・入力・判定基準へ切り分ける過程を学べます。",
+          "basedOn": [
+            "top4-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合浏览器三维开发与计算型前端面试：能同时说明线程职责、性能口径、物理近似，以及交互输入为何会改变模拟结果。",
+            "ja": "重いブラウザ計算を描画から分ける設計と、見た目の不具合をモデル・入力・判定基準へ切り分ける過程を学べます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-24-top-5",
+      "url": "https://zenn.dev/outsidernotes/articles/30921cc50fd3a6",
+      "originalTitle": "render-blocking を消しても LCP は変わらなかった：日本語の Web フォントをやめてスマホの LCP が安定した記録",
+      "source": "Zenn",
+      "topic": "LCPと日本語Webフォント",
+      "access": "full",
+      "accessNote": "Complete public article main text read, including code/tables/conditions/results/limitations; images considered through accompanying captions/text only. No independent execution or replication.",
+      "publishedAt": "2026-10-23T21:30:59.053+09:00",
+      "capturedAt": "2026-10-24T01:08:12.203294+00:00",
+      "snapshotSha256": "934ad43a22ced632e7e249ea862c465e2f4b2ed3f290f213af589a76cada408f",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "記事ページが読み込む日本語フォントの分割ファイル数と転送量を確認し、画像優先読み込み後も残る遅さを追った。",
+          "quote": "38個（約880KB）",
+          "locator": "2回目：LCP要素がlazyの画像だった",
+          "conditions": "Fourpages(top,article,operator,pricing article); PSIAPIv5 strategy mobile/categoryperformance; Lighthouse13.5.0; n8n sequentialmeasurements >=1minute apart. Lab only, noCrUX field data. Articledefines repeatedsameURLwithinsecondsreturnedidenticalfetchTime, so spacerequests. Visualcheck onlyWindowsChrome; Mac/iPhone/Android appearance unverified. Sequentialcumulativechanges, noindependentisolationoffontremovaleffect. InternalLighthousebimodalreasonunverified. No fielddata or actualmobiledevicevisualverification, no declared exactthrottlingconfiguration. 404page can receiveperformance73; inspect runWarnings/networkresponse toconfirmvalidpage. UnkeyedAPI returned429forauthor; noAPIbypassrecommended.",
+          "usedIn": {
+            "zh": "这篇 Astro 静态站点的优化记录提醒读者：诊断项消失，不等于用户关心的指标变好。站点部署在 Vercel，作者使用 PageSpeed ",
+            "ja": "Takuma氏は、Astroの静的サイトをVercelで公開した環境で、スマートフォン向けのPageSpeed Insights評価を段階的に改善しています。最",
+            "interview": "診断の警告が消えたかと、実際の指標が変わったかを分けます。記事ではフォントのCSSを非同期にしてもLCPは変わらず、日本語のWebフォントを外した後、"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "日本語をOSフォントへ替えた段階で4ページ×3回は同値となったが、特定のラボ条件での報告である。",
+          "quote": "12回とも、93点・LCP 2.6秒・CLS 0",
+          "locator": "3回目：日本語のWebフォントをやめた",
+          "conditions": "Fourpages(top,article,operator,pricing article); PSIAPIv5 strategy mobile/categoryperformance; Lighthouse13.5.0; n8n sequentialmeasurements >=1minute apart. Lab only, noCrUX field data. Articledefines repeatedsameURLwithinsecondsreturnedidenticalfetchTime, so spacerequests. Visualcheck onlyWindowsChrome; Mac/iPhone/Android appearance unverified. Sequentialcumulativechanges, noindependentisolationoffontremovaleffect. InternalLighthousebimodalreasonunverified. No fielddata or actualmobiledevicevisualverification, no declared exactthrottlingconfiguration. 404page can receiveperformance73; inspect runWarnings/networkresponse toconfirmvalidpage. UnkeyedAPI returned429forauthor; noAPIbypassrecommended.",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "修正を順に重ねたためフォント除去だけの効果は分離しておらず、CrUXやMac・iPhone・Androidの見た目も未確認である。",
+          "quote": "修正ごとの効果の切り分け。",
+          "locator": "確認していないこと",
+          "conditions": "Fourpages(top,article,operator,pricing article); PSIAPIv5 strategy mobile/categoryperformance; Lighthouse13.5.0; n8n sequentialmeasurements >=1minute apart. Lab only, noCrUX field data. Articledefines repeatedsameURLwithinsecondsreturnedidenticalfetchTime, so spacerequests. Visualcheck onlyWindowsChrome; Mac/iPhone/Android appearance unverified. Sequentialcumulativechanges, noindependentisolationoffontremovaleffect. InternalLighthousebimodalreasonunverified. No fielddata or actualmobiledevicevisualverification, no declared exactthrottlingconfiguration. 404page can receiveperformance73; inspect runWarnings/networkresponse toconfirmvalidpage. UnkeyedAPI returned429forauthor; noAPIbypassrecommended.",
+          "usedIn": {}
+        },
+        {
+          "id": "top5-interpretation1",
+          "kind": "author-interpretation",
+          "statement": "Lighthouseの点数だけを目標にせず、取得資源と最大表示要素の経路を追い、再測定と検証の範囲を説明する練習になります。",
+          "basedOn": [
+            "top5-fact1"
+          ],
+          "conditions": "原文に基づく学習・設計の整理。新たな実測や保証ではない。",
+          "usedIn": {
+            "zh": "适合前端性能面试：既能谈 LCP 元素、资源优先级和日文字体拆包，也能解释重复实验、无效页面和跨设备验证的限制。",
+            "ja": "Lighthouseの点数だけを目標にせず、取得資源と最大表示要素の経路を追い、再測定と検証の範囲を説明する練習になります。"
+          }
+        }
+      ]
+    }
+  ]
+}
