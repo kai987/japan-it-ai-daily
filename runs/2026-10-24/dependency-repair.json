@@ -1,0 +1,267 @@
+{
+  "reviewedAt": "2026-10-24T01:23:41.211158+00:00",
+  "scope": "Read-only lock dependency path and upstream advisory/registry analysis. No project install, edit, remote mutation or tests were performed by this reviewer.",
+  "baselineCommit": "f870ab9a5554a6988b81806221bfadd298a651c9",
+  "baselineLockSha256": "f44e63c099055d2b958ad887b50a167567fb0c81e67e67c2bb6ad7590e64ad82",
+  "observedCurrentLockSha256": "d3b50ab742fb7016090f4f2ef9997c72cf5f25071111c749829b5f33774418dc",
+  "packageJsonByteIdenticalToBaseline": true,
+  "observedChangedLockNodes": [
+    "node_modules/fast-uri",
+    "node_modules/undici",
+    "node_modules/zod"
+  ],
+  "allCurrentUpdatesWithinExistingParentRanges": true,
+  "patches": [
+    {
+      "package": "undici",
+      "oldVersion": "8.10.2",
+      "minimumFixedWithinCurrentMajor": "8.12.2",
+      "currentLockVersion": "8.12.3",
+      "parentConstraint": "unifont0.7.5 dependencies.undici=^8.0.0",
+      "directRootUnchanged": "astro7.2.9",
+      "newVersionSatisfiesExistingRange": true,
+      "advisories": [
+        {
+          "id": "GHSA-4qv8-2p9j-2685",
+          "severity": "moderate",
+          "affected8x": ">=8.0.0 <8.12.2",
+          "primary": "https://github.com/nodejs/undici/security/advisories/GHSA-4qv8-2p9j-2685",
+          "impact": "EventSource parser state can exhaust process memory from a malicious SSE peer."
+        },
+        {
+          "id": "GHSA-f72v-6w45-q472",
+          "severity": "moderate",
+          "affected8x": ">=8.0.0 <8.12.2",
+          "primary": "https://github.com/nodejs/undici/security/advisories/GHSA-f72v-6w45-q472",
+          "impact": "Mixed-case SRI algorithm tokens can be skipped, accepting a body that differs from its intended integrity digest."
+        },
+        {
+          "id": "GHSA-xjj6-f33q-929c",
+          "severity": "high",
+          "affected8x": ">=8.0.0 <8.12.2",
+          "primary": "https://github.com/nodejs/undici/security/advisories/GHSA-xjj6-f33q-929c",
+          "impact": "A malicious peer can combine excessive content encodings and early close to leave an orphaned response stream with an unhandled error, terminating Node."
+        }
+      ],
+      "compatibilityRisk": [
+        "8.10.2→8.12.2 is same-major minor update; selected8.12.3 is a subsequent same-major patch. Both registry metadata say Node>=22.19.0, same as the old locked8.10.2.",
+        "8.12.3 official release additionally changes HTTP/2 replacement after stream timeout and preservation of async context for queued requests. These are intended fixes but can change connection lifecycle or tracing behavior.",
+        "Dependency presence alone does not establish reachability through the public static site. It is imported through Astro font tooling, not a directly declared application network service. Keep the gate fix even without a proved public exploit."
+      ],
+      "primaryRelease": "https://github.com/nodejs/undici/releases/tag/v8.12.3",
+      "registry": "https://registry.npmjs.org/undici/8.12.3",
+      "shortestDependencyPath": [
+        {
+          "name": "astro",
+          "version": "7.2.9",
+          "requestedRange": "7.2.9",
+          "parent": "<root>",
+          "edge": "dependencies",
+          "lockPath": "node_modules/astro"
+        },
+        {
+          "name": "unifont",
+          "version": "0.7.5",
+          "requestedRange": "~0.7.5",
+          "parent": "node_modules/astro",
+          "edge": "dependencies",
+          "lockPath": "node_modules/unifont"
+        },
+        {
+          "name": "undici",
+          "version": "8.12.3",
+          "requestedRange": "^8.0.0",
+          "parent": "node_modules/unifont",
+          "edge": "dependencies",
+          "lockPath": "node_modules/undici"
+        }
+      ]
+    },
+    {
+      "package": "zod",
+      "oldVersion": "4.4.3",
+      "minimumFixedWithinCurrentMajor": "4.6.6",
+      "currentLockVersion": "4.6.7",
+      "parentConstraint": "astro7.2.9 and @astrojs/rss4.0.19 dependencies.zod=^4.3.6",
+      "directRootUnchanged": "astro7.2.9/@astrojs/rss4.0.19",
+      "newVersionSatisfiesExistingRange": true,
+      "advisories": [
+        {
+          "id": "GHSA-mrhx-c7xc-m3w5",
+          "severity": "high",
+          "affected": "<4.6.6",
+          "advisory": "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5",
+          "upstreamFix": "https://github.com/colinhacks/zod/pull/6652",
+          "impact": "Oversized collections could accumulate element issues before size constraints ran, exhausting memory."
+        }
+      ],
+      "compatibilityRisk": [
+        "4.4.3→4.6.6/selected4.6.7 remains under both existing^4.3.6 parent ranges; current registry has no new dependencies or engine declaration.",
+        "Upstream fix moves eligible upper-bound checks (.max/.length/.size on arrays, sets, maps) before element parsing; an oversized input emits only too_big and later refine callbacks do not run. Error count/order can change intentionally.",
+        "Unbounded containers remain unchanged according to upstream PR; do not claim this update supplies limits for every arbitrary large input.",
+        "src/content.config.ts has top:z.array(topItem).length(5). Valid five-entry content should keep its accepted shape; invalid oversized content now rejects earlier. Content/type/build gates are the relevant regression coverage."
+      ],
+      "primaryRelease": "https://github.com/colinhacks/zod/releases/tag/v4.6.7",
+      "registry": "https://registry.npmjs.org/zod/4.6.7",
+      "shortestDependencyPath": [
+        {
+          "name": "@astrojs/rss",
+          "version": "4.0.19",
+          "requestedRange": "4.0.19",
+          "parent": "<root>",
+          "edge": "dependencies",
+          "lockPath": "node_modules/@astrojs/rss"
+        },
+        {
+          "name": "zod",
+          "version": "4.6.7",
+          "requestedRange": "^4.3.6",
+          "parent": "node_modules/@astrojs/rss",
+          "edge": "dependencies",
+          "lockPath": "node_modules/zod"
+        }
+      ]
+    },
+    {
+      "package": "fast-uri",
+      "oldVersion": "3.1.8",
+      "minimumFixedWithinCurrentMajor": "3.1.9",
+      "currentLockVersion": "3.1.9",
+      "parentConstraint": "ajv8.20.0 dependencies.fast-uri=^3.0.1",
+      "directRootUnchanged": "@astrojs/check0.9.10 via language-server chain",
+      "newVersionSatisfiesExistingRange": true,
+      "advisories": [
+        {
+          "id": "GHSA-w74x-v6f9-j3xg",
+          "primary": "https://github.com/fastify/fast-uri/security/advisories/GHSA-w74x-v6f9-j3xg",
+          "affected3x": "<3.1.9 within3.x",
+          "firstPatched3x": "3.1.9"
+        },
+        {
+          "id": "GHSA-xhq7-xmqj-769h",
+          "primary": "https://github.com/fastify/fast-uri/security/advisories/GHSA-xhq7-xmqj-769h",
+          "affected3x": "<3.1.9 within3.x",
+          "firstPatched3x": "3.1.9"
+        },
+        {
+          "id": "GHSA-wjr9-j795-jxcr",
+          "primary": "https://github.com/fastify/fast-uri/security/advisories/GHSA-wjr9-j795-jxcr",
+          "affected3x": "<3.1.9 within3.x",
+          "firstPatched3x": "3.1.9"
+        },
+        {
+          "id": "GHSA-333x-w4r6-6crp",
+          "primary": "https://github.com/fastify/fast-uri/security/advisories/GHSA-333x-w4r6-6crp",
+          "affected3x": "<3.1.9 within3.x",
+          "firstPatched3x": "3.1.9"
+        }
+      ],
+      "compatibilityRisk": [
+        "3.1.8→3.1.9 is a patch within^3.0.1; no new dependencies/engine declaration in the registry.",
+        "Security changes deliberately alter normalization/equality of encoded schemes, relative dot segments, malformed hosts and suffix references. Schema-reference handling is the relevant compatibility surface through Ajv/YAML language tooling.",
+        "npm latest is4.2.3 but is outside Ajv^3.0.1 and unnecessary. Stay3.1.9."
+      ],
+      "registry": "https://registry.npmjs.org/fast-uri/3.1.9",
+      "shortestDependencyPath": [
+        {
+          "name": "@astrojs/check",
+          "version": "0.9.10",
+          "requestedRange": "0.9.10",
+          "parent": "<root>",
+          "edge": "devDependencies",
+          "lockPath": "node_modules/@astrojs/check"
+        },
+        {
+          "name": "@astrojs/language-server",
+          "version": "2.16.15",
+          "requestedRange": "^2.16.7",
+          "parent": "node_modules/@astrojs/check",
+          "edge": "dependencies",
+          "lockPath": "node_modules/@astrojs/language-server"
+        },
+        {
+          "name": "volar-service-yaml",
+          "version": "0.0.71",
+          "requestedRange": "0.0.71",
+          "parent": "node_modules/@astrojs/language-server",
+          "edge": "dependencies",
+          "lockPath": "node_modules/volar-service-yaml"
+        },
+        {
+          "name": "yaml-language-server",
+          "version": "1.23.0",
+          "requestedRange": "~1.23.0",
+          "parent": "node_modules/volar-service-yaml",
+          "edge": "dependencies",
+          "lockPath": "node_modules/yaml-language-server"
+        },
+        {
+          "name": "ajv",
+          "version": "8.20.0",
+          "requestedRange": "^8.17.1",
+          "parent": "node_modules/yaml-language-server",
+          "edge": "dependencies",
+          "lockPath": "node_modules/ajv"
+        },
+        {
+          "name": "fast-uri",
+          "version": "3.1.9",
+          "requestedRange": "^3.0.1",
+          "parent": "node_modules/ajv",
+          "edge": "dependencies",
+          "lockPath": "node_modules/fast-uri"
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "minimumHighOnlyLockUpdates": {
+      "undici": "8.12.2",
+      "zod": "4.6.6"
+    },
+    "parentSelectedUpdatesAccepted": {
+      "undici": "8.12.3",
+      "zod": "4.6.7",
+      "fast-uri": "3.1.9"
+    },
+    "notes": [
+      "The selected3nodes are within existing parent ranges and remove the high audit blockers without changing direct dependency versions/ranges.",
+      "fast-uri is moderate but its same-major patch is a narrowly scoped extra fix.",
+      "Astro7.2.9 and Vitest4.1.11 remain directly pinned and have separate moderate advisories. Their broader update is not required to make audit --audit-level=high pass; do not use --force or claim the full audit is clean.",
+      "Commit dependency lock maintenance separately from the six daily content paths and preserve unrelated primary checkout documentation."
+    ],
+    "requiredValidation": [
+      "Clean npm ci from the resulting lock",
+      "npm audit --audit-level=high (expected no high/critical; retain moderate report)",
+      "Astro check/build and complete existing unit/content/browser gates",
+      "git diff --check and inspect only intended lock nodes/no package.json drift"
+    ],
+    "inferenceLimit": "Semver and registry compatibility are checked statically; success of project regression checks belongs to the actual maintainer run, not this report."
+  },
+  "primaryCapturesDirectory": "/tmp/japan-daily-20261024/dependency-primary",
+  "finalQaReview": {
+    "file": "/tmp/japan-daily-20261024/qa.json",
+    "sha256": "d0ec52351c90a4acade0a5874a15965644fde09f2b3269b15404b2fcc43e1856",
+    "reviewedAt": "2026-10-24T01:23:41.210650+00:00",
+    "questions": 5,
+    "pass": true,
+    "sourceAnchorCounts": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "placeholderFindings": [],
+    "newRequiredEdits": [],
+    "observations": [
+      "Q1 now explicitly says curl measured HTML reception, not rendering; Suspense/Tokyo/41→2 anchors retained.",
+      "Q2 now explicitly preserves remaining multiworker failures and unknown deletion source; sharedSupabase/RecordID anchors retained.",
+      "Q3 now explicitly usesただし for68％multi-change result; static/dynamic block and quality checks retained.",
+      "Q4 now says one16corePC for30ms, retaining oneWebWorker/16000SPH/256shells and differing-device validation. It makes no16-parallel claim.",
+      "Q5 retains4pages×3runs/2.6s and cumulative-change/field-data limits.",
+      "No actual duration measurement is claimed; recording gate22–40s must still run."
+    ]
+  },
+  "projectModifiedByReviewer": false
+}
