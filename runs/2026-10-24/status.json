@@ -8,17 +8,18 @@
     "to": "2026-10-24T10:00:00+09:00"
   },
   "createdAt": "2026-10-24T01:07:06.691Z",
-  "updatedAt": "2026-10-24T01:37:46.903Z",
+  "updatedAt": "2026-10-24T01:38:03.300Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
     "interviews.json",
     "draft.json",
     "checks.json",
-    "preflight.json"
+    "preflight.json",
+    "publication-request.json"
   ],
   "lastError": null,
-  "nextAction": "Wait for exact six-path draft deploy.yml preflight",
+  "nextAction": "Unique publisher owns the submitted request; await exact publisher and main Pages before recording text as published",
   "publicationBaseCommit": "00d76b18f334bb136c4df3412007b0ac3fd2d8ed",
   "dependencyRepair": {
     "commit": "00d76b18f334bb136c4df3412007b0ac3fd2d8ed",
