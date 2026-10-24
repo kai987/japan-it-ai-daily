@@ -3,6 +3,40 @@ import { test, expect } from '@playwright/test';
 for (const locale of ['zh', 'ja']) {
   const root = `/japan-it-ai-daily/${locale === 'ja' ? 'ja/' : ''}`;
 
+  test(`${locale}: search remains reachable at the menu and tablet breakpoints`, async ({ page }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    await page.addInitScript((language) => localStorage.setItem('site-language', language), locale);
+    for (const width of [390, 800, 801, 850, 900, 1000]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto(`${root}archive/`);
+      const input = page.locator('.site-search-input');
+      if (width <= 800) await page.locator('.mobile-menu-toggle').click();
+      await expect(input, `${width}px search`).toBeVisible();
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${width}px header fits`).toBe(true);
+      if (width > 800) {
+        const brand = await page.locator('.brand').boundingBox();
+        const search = await page.locator('.site-search').boundingBox();
+        const actions = await page.locator('.nav-actions').boundingBox();
+        expect(brand!.x + brand!.width, `${width}px brand/search gap`).toBeLessThanOrEqual(search!.x);
+        expect(search!.x + search!.width, `${width}px search/navigation gap`).toBeLessThanOrEqual(actions!.x);
+      }
+      await input.focus();
+      await input.fill('Sandbox');
+      const report = page.locator(`.site-search-result[href^="${root}daily/"]`).first();
+      await expect(report).toHaveAttribute('href', /search=Sandbox/);
+      const optionId = await report.getAttribute('id');
+      const optionIndex = Number(optionId!.split('-').at(-1));
+      for (let index = 0; index <= optionIndex; index++) await input.press('ArrowDown');
+      await expect(input).toHaveAttribute('aria-activedescendant', optionId!);
+      const href = await report.getAttribute('href');
+      await input.press('Enter');
+      await expect(page).toHaveURL(new RegExp(`${root}daily/`));
+      expect(new URL(page.url()).pathname + new URL(page.url()).search).toBe(href);
+    }
+    expect(errors).toEqual([]);
+  });
+
   test(`${locale}: recent suggestions are lightweight, and full-text queries search every month`, async ({ page, request }) => {
     await page.addInitScript((language) => localStorage.setItem('site-language', language), locale);
     const manifest = await (await request.get(`${root}search-index.json`)).json();
