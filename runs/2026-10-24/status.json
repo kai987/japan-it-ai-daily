@@ -1,14 +1,35 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-24",
-  "stage": "draft_ready",
+  "stage": "local_checks_passed",
   "sourceCommit": "f870ab9a5554a6988b81806221bfadd298a651c9",
   "sourceWindow": {
     "from": "2026-10-23T10:00:00+09:00",
     "to": "2026-10-24T10:00:00+09:00"
   },
   "createdAt": "2026-10-24T01:07:06.691Z",
-  "updatedAt": "2026-10-24T01:18:40.094Z",
-  "completedArtifacts": [],
-  "lastError": null
+  "updatedAt": "2026-10-24T01:23:54.776Z",
+  "completedArtifacts": [
+    "sources.json",
+    "history.json",
+    "interviews.json",
+    "draft.json",
+    "checks.json"
+  ],
+  "lastError": null,
+  "nextAction": "Wait for isolated dependency-repair main Pages before pushing six-path draft",
+  "publicationBaseCommit": "00d76b18f334bb136c4df3412007b0ac3fd2d8ed",
+  "dependencyRepair": {
+    "commit": "00d76b18f334bb136c4df3412007b0ac3fd2d8ed",
+    "paths": [
+      "package-lock.json"
+    ],
+    "newVersions": {
+      "undici": "8.12.3",
+      "zod": "4.6.7",
+      "fast-uri": "3.1.9"
+    },
+    "localGatesPassed": 16,
+    "remotePages": "pending"
+  }
 }
