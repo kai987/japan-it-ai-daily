@@ -1,14 +1,42 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-25",
-  "stage": "drafts_ready",
+  "stage": "preflight_passed",
   "sourceCommit": "ecbe65fa767679aee4950ed081402164c4f08ffe",
   "sourceWindow": {
     "from": "2026-10-24T10:00:00+09:00",
     "to": "2026-10-25T10:00:00+09:00"
   },
   "createdAt": "2026-10-25T01:06:33.755Z",
-  "updatedAt": "2026-10-25T01:26:58.204Z",
-  "completedArtifacts": [],
-  "lastError": null
+  "updatedAt": "2026-10-25T01:31:57.743Z",
+  "completedArtifacts": [
+    "sources.json",
+    "history.json",
+    "interviews.json",
+    "draft.json",
+    "checks.json",
+    "preflight.json"
+  ],
+  "lastError": null,
+  "baseCommit": "ecbe65fa767679aee4950ed081402164c4f08ffe",
+  "draftBranch": "draft/daily-2026-10-25",
+  "draftCommit": "89787a52993262500b5dd430cc08060f923c4750",
+  "fileHashes": {
+    "src/content/daily/2026-10-25.md": "abb0bf4164227d701d458ec2d2262125c24807f75f21406a8168c66716bf260b",
+    "src/content/japanese/2026-10-25.md": "8d2b5c63ef8bfbdae821bb961c2878f36bee08a2d8fa3536c0d4c928941ad4a2",
+    "src/content/daily-ja/2026-10-25.md": "de8c273d0215ce75a059518b4735079c66bae25ba462c65eab0c271249465a32",
+    "src/content/japanese-ja/2026-10-25.md": "76dd0ed4ade2e54b90d4a520137cefe2b9d894b5dcf2af506e6ad55fc0b25ee7",
+    "src/content/evidence/2026-10-25.json": "b0889d23bfe8613ad0752065d1720e58e74b3ddc48160287164782474f63833b",
+    "src/data/interviews/2026-10-25.json": "f4ff660420119bc77c7f17a52373623c87dc4f7b59b549803331cdcc0da287d2"
+  },
+  "paths": [
+    "src/content/daily-ja/2026-10-25.md",
+    "src/content/daily/2026-10-25.md",
+    "src/content/evidence/2026-10-25.json",
+    "src/content/japanese-ja/2026-10-25.md",
+    "src/content/japanese/2026-10-25.md",
+    "src/data/interviews/2026-10-25.json"
+  ],
+  "verifiedAt": "2026-10-25T01:31:57.376Z",
+  "preflightRunId": 40150745472
 }
