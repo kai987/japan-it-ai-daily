@@ -380,7 +380,76 @@
     "vocabulary": "614de8204cb9d25205daa15a9f27c502002548de9e5364a1a818db0c99f266ef",
     "grammar": "7105ca61642e2e9cf190a929fa6af2635e87789760906484a84950fa2e1b7679"
   },
+  "targetDate": "2026-10-25",
+  "verifiedAt": "2026-10-25T01:18:34.501650+00:00",
   "vocabularyIdentities": 1272,
   "grammarIdentities": 115,
-  "semanticReviewStatus": "Original-source candidate selection in progress; lexical and grammar identities loaded across every earlier date and all four representations."
+  "selectedNewVocabulary": [
+    {
+      "term": "台本",
+      "reading": "だいほん",
+      "level": "N1",
+      "sourceUrl": "https://zenn.dev/chitoku/articles/d02d7611901d1f",
+      "sourceAnchor": "台本と生成された音声を突き合わせる",
+      "sourceCaptureSha256": "680de4bd2ef2d30827937e46d103b60d210eb43319094a4bf2348be6151c7199",
+      "levelReference": "https://jisho.org/api/v1/search/words?keyword=台本",
+      "referenceMeaningReviewed": true,
+      "fullHistoryIdentityAbsent": true,
+      "semanticDecision": "プログラムのスクリプトや、認識結果を書き起こした文とは区別します。"
+    },
+    {
+      "term": "誤魔化す",
+      "reading": "ごまかす",
+      "level": "N1",
+      "sourceUrl": "https://zenn.dev/chitoku/articles/d02d7611901d1f",
+      "sourceAnchor": "発音を不明瞭にして誤魔化す",
+      "sourceCaptureSha256": "680de4bd2ef2d30827937e46d103b60d210eb43319094a4bf2348be6151c7199",
+      "levelReference": "https://jisho.org/api/v1/search/words?keyword=誤魔化す",
+      "referenceMeaningReviewed": true,
+      "fullHistoryIdentityAbsent": true,
+      "semanticDecision": "仮名の「ごまかす」と同じ語です。今回は、誤りの存在を取り繕う意味を学びます。"
+    },
+    {
+      "term": "埋める",
+      "reading": "うめる",
+      "level": "N2",
+      "sourceUrl": "https://zenn.dev/kyrenzk/articles/transactional-outbox-event-consistency",
+      "sourceAnchor": "を埋めます",
+      "sourceCaptureSha256": "4f836305b82e2bc0dc572b3466b3a7a974917491ab1053235581fc1378dc46ab",
+      "levelReference": "https://jisho.org/api/v1/search/words?keyword=埋める",
+      "referenceMeaningReviewed": true,
+      "fullHistoryIdentityAbsent": true,
+      "semanticDecision": "「うめる」と読みます。既習の「埋め込む」は内部へ組み込むこと。ここでは空欄へ値を入れる意味に限定します。"
+    },
+    {
+      "term": "黙る",
+      "reading": "だまる",
+      "level": "N3",
+      "sourceUrl": "https://zenn.dev/c_a_p_engineer/articles/localstorage-multitab-guard-20261025",
+      "sourceAnchor": "黙って上書きしない",
+      "sourceCaptureSha256": "3d9e3351b110d4803491ea3f9ad6ee8bd9f9a9809078a72c53f371f75f7401d6",
+      "levelReference": "https://jisho.org/api/v1/search/words?keyword=黙る",
+      "referenceMeaningReviewed": true,
+      "fullHistoryIdentityAbsent": true,
+      "semanticDecision": "参考レベルはN3のままです。発言せずにいる動詞であり、既習の名詞「暗黙」を別表記にしたものではありません。"
+    }
+  ],
+  "newVocabularyCount": 4,
+  "newGrammarCount": 0,
+  "grammarDecision": "All115 prior identities and all5 originals reviewed. Forms such as とは限らない, わけではない, だけでなく, 以上(は), に対して, ことなく are already taught. No distinct new advanced form verified; review kept separate.",
+  "rejectedCandidates": [
+    {
+      "terms": "投函・肥大・計上・団塊・糾弾・戦慄・聴取・聞き流す・取り合う・聞き取る・奇抜・不可分・ふんわり・ぼそぼそ",
+      "reason": "Source meanings/readings checked, but returned public dictionary entry has no JLPT reference tag; no invented N1/N2 assignment to fill20."
+    },
+    {
+      "terms": "割り込む・退避・差し引く・引き上げる・照合・引っ張る・重複・省略・振り分ける・追従",
+      "reason": "Earlier full-history identities; do not recount inflection or spelling variants."
+    }
+  ],
+  "semanticReviewComplete": true,
+  "historicalFilesChanged": false,
+  "unchangedLearningReviewModule": true,
+  "examples": "Original teaching examples, not source quotations or replicated experiments.",
+  "dictionaryRetry": "Three429 responses retried once after other authoring work/backoff; returned200. No alternate transport or endpoint to bypass a denial."
 }
