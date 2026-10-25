@@ -451,5 +451,228 @@
   "historicalFilesChanged": false,
   "unchangedLearningReviewModule": true,
   "examples": "Original teaching examples, not source quotations or replicated experiments.",
-  "dictionaryRetry": "Three429 responses retried once after other authoring work/backoff; returned200. No alternate transport or endpoint to bypass a denial."
+  "dictionaryRetry": "Three429 responses retried once after other authoring work/backoff; returned200. No alternate transport or endpoint to bypass a denial.",
+  "actualReview": {
+    "vocabulary": [
+      {
+        "identity": "検証",
+        "firstIntroducedDate": "2026-08-12",
+        "evidence": {
+          "form": "検証",
+          "excerpt": "検証は米国東部のus-east-1で行い、主系には正常応答、503、10秒の待機を切り替えられるLambdaを置いています。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "判断",
+        "firstIntroducedDate": "2026-08-13",
+        "evidence": {
+          "form": "判断",
+          "excerpt": "これは人の確認をなくす仕組みではなく、確認する場所と、その判断を保持する仕組みです。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "ただし",
+        "firstIntroducedDate": "2026-09-07",
+        "evidence": {
+          "form": "ただし",
+          "excerpt": "ただし、トークン倍率を費用の順位へそのまま置き換えることはできません。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "実行",
+        "firstIntroducedDate": "2026-08-15",
+        "evidence": {
+          "form": "実行",
+          "excerpt": "原文のロック検査は模擬実行で、Reactとの接続にはソースの条件や文字列を調べるテストも含まれます。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "評価",
+        "firstIntroducedDate": "2026-08-15",
+        "evidence": {
+          "form": "評価",
+          "excerpt": "ただし、試用版の実音声確認はApple Silicon Macで行われ、検出率や適合率はまだ数値で評価されていません。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "運用",
+        "firstIntroducedDate": "2026-08-12",
+        "evidence": {
+          "form": "運用",
+          "excerpt": "DBの変更ログを読むCDCはその負荷を分けられますが、権限やコネクターの運用が必要です。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "保証",
+        "firstIntroducedDate": "2026-08-16",
+        "evidence": {
+          "form": "保証",
+          "excerpt": "Outboxは重複しないことまで保証する仕組みではありません。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "区別",
+        "firstIntroducedDate": "2026-09-30",
+        "evidence": {
+          "form": "区別",
+          "excerpt": "診断用の退避ファイルには学習履歴が入るので、通常のバックアップとは区別します。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "構成",
+        "firstIntroducedDate": "2026-08-12",
+        "evidence": {
+          "form": "構成",
+          "excerpt": "比較の直後に別タブが書ける隙間が残るため、Web Locksの同じ排他ロックの中で、再読込、比較、保存を一続きに行う構成です。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "仕組み",
+        "firstIntroducedDate": "2026-09-03",
+        "evidence": {
+          "form": "仕組み",
+          "excerpt": "この仕組みが保護するのは、同一オリジンで同じロックを守る書き込み同士です。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "導入",
+        "firstIntroducedDate": "2026-08-13",
+        "evidence": {
+          "form": "導入",
+          "excerpt": "送信待ちの行を定期的に読む方式は導入しやすい一方、待ち時間と走査負荷が生じます。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "接続",
+        "firstIntroducedDate": "2026-08-28",
+        "evidence": {
+          "form": "接続",
+          "excerpt": "DevelopersIOの神野雄大氏は、Amazon Bedrock AgentCore Gatewayに追加されたBedrock Runtimeへの接続と、ルールによるフォールバックを試しています。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "権限",
+        "firstIntroducedDate": "2026-08-13",
+        "evidence": {
+          "form": "権限",
+          "excerpt": "DBの変更ログを読むCDCはその負荷を分けられますが、権限やコネクターの運用が必要です。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "依存",
+        "firstIntroducedDate": "2026-08-26",
+        "evidence": {
+          "form": "依存",
+          "excerpt": "版番号だけに依存しない。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "生成",
+        "firstIntroducedDate": "2026-08-27",
+        "evidence": {
+          "form": "生成",
+          "excerpt": "Chitoku氏は、台本と生成済み音声の読みを突き合わせ、読み間違いの候補を人が聴いて確認する日本語TTS点検ツールを公開しています。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "前提",
+        "firstIntroducedDate": "2026-08-31",
+        "evidence": {
+          "form": "前提",
+          "excerpt": "切り替え先のモデル名もルールで置き換えられますが、別モデルなら何でもよいわけではなく、同じ要求本文を受け取れる形式が前提です。",
+          "sourceKind": "report-body"
+        }
+      }
+    ],
+    "grammar": [
+      {
+        "identity": "とは限らない",
+        "firstIntroducedDate": "2026-08-12",
+        "evidence": {
+          "form": "とは限らない",
+          "excerpt": "日本語の文章が英語より短く見えても、APIへ送るトークン数が少ないとは限らない点に注意が必要です。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "に加えて",
+        "firstIntroducedDate": "2026-09-12",
+        "evidence": {
+          "form": "に加え",
+          "excerpt": "読む価値: 切り替えの成功例に加え、ストリーミング、認可、呼び出し費用の境界まで説明でき、AIアプリの障害設計に使えます。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "に応じて",
+        "firstIntroducedDate": "2026-08-12",
+        "evidence": {
+          "form": "に応じて",
+          "excerpt": "状態に応じて停止・再読込・再送のどれを選ぶかを決め、同じ処理を二度行った時の結果も検討します。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "を通じて",
+        "firstIntroducedDate": "2026-08-15",
+        "evidence": {
+          "form": "を通して",
+          "excerpt": "五つの記事を通して考えられるのは、成功を一つの真偽値だけで持たない設計です。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "とともに",
+        "firstIntroducedDate": "2026-09-25",
+        "evidence": {
+          "form": "とともに",
+          "excerpt": "差がある場所は、台本、波形、認識された読みとともに確認画面へ並びます。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "からといって",
+        "firstIntroducedDate": "2026-08-18",
+        "evidence": {
+          "form": "からといって",
+          "excerpt": "Gateway自身のレート制限による429やPolicyの拒否による403も、設定したからといって別経路へ回るものではありません。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "だけで",
+        "firstIntroducedDate": "2026-10-01",
+        "evidence": {
+          "form": "だけで",
+          "excerpt": "推論に使った分が含まれるため、見えている文字数だけでは費用を説明できません。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "identity": "ために",
+        "firstIntroducedDate": "2026-08-31",
+        "evidence": {
+          "form": "ために",
+          "excerpt": "別タブの更新を早く知るためにstorageイベントも使います。",
+          "sourceKind": "report-body"
+        }
+      }
+    ]
+  },
+  "reviewSemanticChecks": "Selected grammar evidence manually checked by function. Disambiguated polite とは限りません without altering shared matcher or adding review-only prose."
 }
