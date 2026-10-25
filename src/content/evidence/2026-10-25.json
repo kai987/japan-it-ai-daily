@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-10-25T01:25:46.689686+00:00",
+  "scope": "Declared central claims, interviewanchors, experimental conditions and limitations checked against complete public originals. Not an independent rerun or verification of every sentence. Chinese and Japanese explanatory prose authored independently.",
+  "articles": [
+    {
+      "articleId": "2026-10-25-top-1",
+      "url": "https://dev.classmethod.jp/articles/agentcore-gateway-model-fallback/",
+      "source": "DevelopersIO",
+      "topic": "推論ゲートウェイと障害時の切り替え",
+      "access": "full",
+      "accessNote": "Complete public article body including code, tables, test conditions, results and stated limitations read. Linked images or source repositories are not independently tested. Full snapshots remain outside Git.",
+      "capturedAt": "2026-10-25T01:07:57.571130+00:00",
+      "snapshotSha256": "5d0c3c6cfd1da65e9bebc9d349991ca0b92fe92d941670c5c113f83c8f29ed6c",
+      "originalTitle": "[アップデート] AgentCore GatewayがBedrockのInvokeModel APIとモデルのフォールバックに対応したので試してみた",
+      "claims": [
+        {
+          "id": "runtime-api",
+          "kind": "source-fact",
+          "statement": "Runtime connector adds ordinary and streaming InvokeModel entry points.",
+          "quote": "InvokeModel・InvokeModelWithResponseStream API",
+          "locator": "はじめに／Bedrock Runtimeのコネクタ対応",
+          "conditions": "Author tested us-east-1, Runtime Haiku4.5, Python3.14 and boto3 API-model overlay; no independent cloud reproduction.",
+          "usedIn": {
+            "zh": "普通调用使用 InvokeModel，流式调用使用 InvokeModelWithResponseStream",
+            "ja": "InvokeModelとInvokeModelWithResponseStreamを呼ぶ入口をGatewayへ集め"
+          }
+        },
+        {
+          "id": "fallback-boundary",
+          "kind": "source-fact",
+          "statement": "Pre-response fallback is different from a midstream break.",
+          "quote": "ストリーミングで応答が返り始めた後は切り替えない",
+          "locator": "フォールバック／注意点",
+          "conditions": "Compatible request formats required. Gateway429/Policy403 do not authorize alternate routing.",
+          "usedIn": {
+            "zh": "开始返回正文后再中断，则不会由另一模型续接未完的句子",
+            "ja": "本文を返し始めた後の切断を別モデルが途中から引き継ぐわけではありません",
+            "interview": "ストリーミング開始後の中断は引き継げません"
+          }
+        },
+        {
+          "id": "breaker-measurement",
+          "kind": "source-fact",
+          "statement": "20 sequential calls compare93.5sec/20primary calls against70.1sec/12primary calls.",
+          "quote": "93.5秒",
+          "locator": "サーキットブレーカーの有無を比べる／結果表",
+          "conditions": "One author-reported delayed-primary environment,3sec first-byte timeout. Opening threshold unconfirmed and not configurable.",
+          "usedIn": {
+            "zh": "关闭熔断器时累计93.5秒",
+            "ja": "無効時は合計93.5秒",
+            "interview": "サーキットブレーカーの結果も20回の試験"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-25-top-2",
+      "url": "https://zenn.dev/runcrate/articles/0ce2f3c0b25a38",
+      "source": "Zenn",
+      "topic": "多言語LLMの計測と費用",
+      "access": "full",
+      "accessNote": "Complete public article body including code, tables, test conditions, results and stated limitations read. Linked images or source repositories are not independently tested. Full snapshots remain outside Git.",
+      "capturedAt": "2026-10-25T01:07:57.686044+00:00",
+      "snapshotSha256": "25edb36496dd8eacc918f17de9a6e9a03baaaec509139f574ebf6a7ccd19cb2f",
+      "originalTitle": "同じ段落を10言語で送ってみた: 日本語は英語の何倍トークンを払っているのか（オープンモデル4種で実測）",
+      "claims": [
+        {
+          "id": "input-measurement",
+          "kind": "source-fact",
+          "statement": "Japanese input differs bymodel under measured API accounting.",
+          "quote": "最少は Qwen3.8-Flash の 165 トークン",
+          "locator": "結果／日本語について読み取れること",
+          "conditions": "One630-character Englishparagraph translated once into9languages; baseline chat-format subtraction; modelinput versus visiblecharacters.",
+          "usedIn": {
+            "zh": "在 Qwen3.8-Flash 上为165 Token",
+            "ja": "Qwen3.8-Flashで165トークン",
+            "interview": "Qwen3.8-Flashは165トークン"
+          }
+        },
+        {
+          "id": "cost-boundary",
+          "kind": "source-fact",
+          "statement": "Token multiplier alone doesnot rank money; price is provider/time specific.",
+          "quote": "課金は「トークン数 × 単価」です。",
+          "locator": "倍率ではなく金額で見る",
+          "conditions": "Runcrate prices at2026-10-24 22:13UTC,not universal modelprovider pricing or future guarantee.",
+          "usedIn": {
+            "zh": "费用排名还需再乘单位价格",
+            "ja": "トークン倍率を費用の順位へそのまま置き換えることはできません",
+            "interview": "実際の入力使用量に単価を掛けます"
+          }
+        },
+        {
+          "id": "single-paragraph",
+          "kind": "source-fact",
+          "statement": "Only one paragraph and one machine translation per language; no quality ranking.",
+          "quote": "段落は 1 本、翻訳は機械翻訳（GLM-5.3）を 1 回だけです。",
+          "locator": "注意点",
+          "conditions": "Information content and style uncontrolled; GLM output decomposition uncertain,0reportedreasoningtokens not proof ofnone.",
+          "usedIn": {
+            "zh": "实验只有一个段落、每种语言一次机器翻译",
+            "ja": "段落は一つで、翻訳も機械翻訳一回です",
+            "interview": "ただし段落は一つです"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-25-top-3",
+      "url": "https://zenn.dev/c_a_p_engineer/articles/localstorage-multitab-guard-20261025",
+      "source": "Zenn",
+      "topic": "ブラウザ保存と複数タブの整合性",
+      "access": "full",
+      "accessNote": "Complete public article body including code, tables, test conditions, results and stated limitations read. Linked images or source repositories are not independently tested. Full snapshots remain outside Git.",
+      "capturedAt": "2026-10-25T01:07:57.773333+00:00",
+      "snapshotSha256": "3d9e3351b110d4803491ea3f9ad6ee8bd9f9a9809078a72c53f371f75f7401d6",
+      "originalTitle": "localStorageの複数タブ競合で学習記録を消さない――Web Locksと更新検知で古いタブを止める",
+      "claims": [
+        {
+          "id": "cooperative-lock",
+          "kind": "source-fact",
+          "statement": "RawJSON reread/compare/save within shared WebLock prevents stale cooperating writes.",
+          "quote": "ロックの取得後に読み直して比較し、そのまま保存する",
+          "locator": "2.Web Locksで協調する保存処理を直列化する",
+          "conditions": "Same-origin cooperating clients only; versionmetadata alone noatomicity; unsupported environment best effort.",
+          "usedIn": {
+            "zh": "用 Web Locks 的同名独占锁包住",
+            "ja": "Web Locksの同じ排他ロックの中で",
+            "interview": "Web Locksの同じ排他ロックの中で保存値を読み直し"
+          }
+        },
+        {
+          "id": "notification",
+          "kind": "source-fact",
+          "statement": "Storage event isnotification,notlock andnotdeliveredtothewriter.",
+          "quote": "変更を行ったタブ自身には届きません",
+          "locator": "3.storageイベント",
+          "conditions": "Conflict pauses operations; diagnostics are distinct from normalbackup;no automaticmerge.",
+          "usedIn": {
+            "zh": "不会通知发出写入的那个页面",
+            "ja": "書き込んだタブ自身には届かず",
+            "interview": "storageイベントは通知用です"
+          }
+        },
+        {
+          "id": "test-scope",
+          "kind": "source-fact",
+          "statement": "Simulated lock/source checks arenot actual simultaneous browser or device verification.",
+          "quote": "Android/Braveの実機検証は未実施です。",
+          "locator": "5.テストが確認していること、まだ確認していないこと",
+          "conditions": "Author also states two-tab E2E unperformed and no freshCI atwriting.",
+          "usedIn": {
+            "zh": "测试使用模拟锁",
+            "ja": "原文のロック検査は模擬実行",
+            "interview": "非対応ブラウザには原子的な保証がない"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-25-top-4",
+      "url": "https://zenn.dev/kyrenzk/articles/transactional-outbox-event-consistency",
+      "source": "Zenn",
+      "topic": "業務DBと非同期イベントの整合性",
+      "access": "full",
+      "accessNote": "Complete public article body including code, tables, test conditions, results and stated limitations read. Linked images or source repositories are not independently tested. Full snapshots remain outside Git.",
+      "capturedAt": "2026-10-25T01:07:57.860106+00:00",
+      "snapshotSha256": "4f836305b82e2bc0dc572b3466b3a7a974917491ab1053235581fc1378dc46ab",
+      "originalTitle": "DB更新とメッセージ送信の不可逆性 — Transactional Outbox で「消えるイベント」を直す",
+      "claims": [
+        {
+          "id": "outbox-mechanism",
+          "kind": "source-fact",
+          "statement": "Businessrow and send-intent inoneDBtransaction,externalpublish byrelay.",
+          "quote": "投函すべきイベントという事実を、業務データと同じ DB トランザクションで永続化",
+          "locator": "何が起きるか／Outboxの発想",
+          "conditions": "LinuxGo1.26 memorySQLite singleconnection+stubbroker; doesnot atomicize DBandexternalqueue.",
+          "usedIn": {
+            "zh": "业务行和待发事件行一起放进同一数据库事务",
+            "ja": "業務データと、後で送るイベントを同じDBトランザクションへ記録",
+            "interview": "業務データと未送信イベントを同じトランザクションで残し"
+          }
+        },
+        {
+          "id": "duplicate-delivery",
+          "kind": "source-fact",
+          "statement": "Afterpublish-beforemark crash causes2receives/1uniqueevent.",
+          "quote": "received=2 unique=1",
+          "locator": "実行結果／CaseC",
+          "conditions": "Toy dedup notproductiondurableconsumer; businessresult/receipt atomicity separate.",
+          "usedIn": {
+            "zh": "收到2次、按事件标识去重后只有1件",
+            "ja": "実験でも受信は2回、一意なイベントは1件",
+            "interview": "送信後の完了記録に失敗すると重複します"
+          }
+        },
+        {
+          "id": "demo-limit",
+          "kind": "source-fact",
+          "statement": "Broker isstub,notactualSQS/Kafka;CDC/multiprocessnotrun.",
+          "quote": "実際の SQS / Kafka の挙動の検証ではありません",
+          "locator": "前提・環境／つまずきどころ",
+          "conditions": "MemoryDBcannotproverestartdurability; rollbackdemo failsonordersfirst,notisolatedoutboxinsertfailure.",
+          "usedIn": {
+            "zh": "并非实际SQS或Kafka",
+            "ja": "キューも実際のSQSやKafkaではなく",
+            "interview": "原文はSQLiteと模擬キューの実験"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-25-top-5",
+      "url": "https://zenn.dev/chitoku/articles/d02d7611901d1f",
+      "source": "Zenn",
+      "topic": "日本語音声の品質確認と版管理",
+      "access": "full",
+      "accessNote": "Complete public article body including code, tables, test conditions, results and stated limitations read. Linked images or source repositories are not independently tested. Full snapshots remain outside Git.",
+      "capturedAt": "2026-10-25T01:07:57.676015+00:00",
+      "snapshotSha256": "680de4bd2ef2d30827937e46d103b60d210eb43319094a4bf2348be6151c7199",
+      "originalTitle": "「AI音声の読みが間違ってる」を公開前に見つけたい。日本語TTS点検Skillを作りました",
+      "claims": [
+        {
+          "id": "blind-asr",
+          "kind": "source-fact",
+          "statement": "Compare scriptkana with independent audio recognition without expectedanswer prompt.",
+          "quote": "認識モデルには台本や期待する読みを渡していません。",
+          "locator": "台本の読みと、音声から得た読みを比べる",
+          "conditions": "kana-whisper fromWhisperlarge-v3-turbo;dictionary/ASR canerr, requirehumanlisten.",
+          "usedIn": {
+            "zh": "台本和期待读音不会作为识别输入",
+            "ja": "台本や指定の読みを認識モデルへ渡していません",
+            "interview": "台本を認識へ渡さない"
+          }
+        },
+        {
+          "id": "sentence-version",
+          "kind": "source-fact",
+          "statement": "Onlyone VOICEVOXsentence changed,other2recordings/decisions/adoptedversionsretained.",
+          "quote": "他の2文の音声・判定・採用版が変わらないことを確認しました。",
+          "locator": "修正するときは、使っているサービスでその文だけ",
+          "conditions": "Originalscriptkept;ASRdiffzero adoption separatefromhumanrelisten;importnotautomaticadoption.",
+          "usedIn": {
+            "zh": "其余两句的录音、审阅判断和采用版本均未变化",
+            "ja": "他の二文の音声、判定、採用版を変えていない",
+            "interview": "修正した一文だけを再点検してから採用します"
+          }
+        },
+        {
+          "id": "detection-limit",
+          "kind": "source-fact",
+          "statement": "Precision/recall notmeasured,diffzero doesnotholdguaranteedcorrectreadings.",
+          "quote": "検出率・適合率はまだ数値で評価していません。",
+          "locator": "試用版の範囲と通信について",
+          "conditions": "AppleSiliconMac tested; timestampsestimated; actualaudiofirstuse3.24GBdownload; no local rerun here.",
+          "usedIn": {
+            "zh": "检出率、准确率尚未量化",
+            "ja": "検出率や適合率はまだ数値で評価されていません",
+            "interview": "一致しても正読の証明にはなりません"
+          }
+        }
+      ]
+    }
+  ]
+}
