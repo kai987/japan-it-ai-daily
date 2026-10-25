@@ -8,7 +8,7 @@
     "to": "2026-10-25T10:00:00+09:00"
   },
   "createdAt": "2026-10-25T01:06:33.755Z",
-  "updatedAt": "2026-10-25T01:38:45.923Z",
+  "updatedAt": "2026-10-25T01:48:56.254Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -165,5 +165,82 @@
   "pagesRunId": 40151189910,
   "pagesStatus": "completed",
   "pagesConclusion": "success",
-  "nextAction": "Text verified; audio pending persisted. Continue independent audio and one N1 handoff."
+  "nextAction": "Text and N1 Day57 text are published and verified. Preserve all recordings and private recovery evidence. Resolve the nontransient duration gate without changing frozen prose/speed/thresholds merely to pass; only then push and verify audio and resume N1 shared audio.",
+  "textBrowserVerification": {
+    "targetDate": "2026-10-25",
+    "issueNumber": 75,
+    "locales": [
+      "zh",
+      "ja"
+    ],
+    "sectionsABCVisible": true,
+    "learningNewVocabulary": 4,
+    "learningReviewVocabulary": 16,
+    "learningNewGrammar": 0,
+    "learningReviewGrammar": 8,
+    "badObjectString": false,
+    "unexplainedCodePlaceholder": false,
+    "audioPlaybackVerified": false,
+    "observedAt": "2026-10-25T01:47:50.406618+00:00",
+    "method": "Cua browser read-only DOM text and headings"
+  },
+  "audio": {
+    "stage": "generated",
+    "status": "failed_duration_validation",
+    "retainedMp3": 21,
+    "settings": {
+      "engineUrl": "http://127.0.0.1:10101",
+      "speaker": "morioki",
+      "style": "ノーマル",
+      "styleId": 497929760,
+      "wordSpeed": 1,
+      "exampleSpeed": 1,
+      "interviewSpeed": 1
+    },
+    "error": {
+      "stage": "duration-write",
+      "message": "Command failed: node scripts/validate-interview-audio-duration.mjs --date 2026-10-25 --write\n  WARN: answer 2: actual 23.82s is outside ideal range 24–34s\n  WARN: answer 4: actual 23.46s is outside ideal range 24–34s\n  ERROR: answer 1: actual 20.25s is outside hard range 22–40s\n  ERROR: answer 3: actual 19.92s is outside hard range 22–40s\n  ERROR: answer 5: actual 20.83s is outside hard range 22–40s\n",
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/audio-progress/logs/2026-10-25/duration-write-failed.log",
+      "at": "2026-10-25T01:44:28.642Z"
+    },
+    "appCleanup": {
+      "status": "closed",
+      "appExited": true,
+      "engineExited": true,
+      "screenLocked": false,
+      "forced": false,
+      "nativeResult": "quit_requested_and_exited",
+      "verifiedAt": "2026-10-25T01:44:16.846283+00:00"
+    },
+    "audioCommit": null,
+    "r2Verified": false,
+    "playbackVerified": false
+  },
+  "n1Handoff": {
+    "targetDate": "2026-10-25",
+    "day": 57,
+    "status": "published",
+    "requestCommit": "c4202715f0257d069115b4bf838279d84dadecb9",
+    "requestSha256": "fc517ea7689835ba4bb18bdba4f957cd50a5580b327660d08a82442f43168258",
+    "upstreamSourceCommit": "d3c98532e3622a23c36b08c0885630f1e53a4b5f",
+    "sourceBlobSha": "9ff907ca094cce942e02ea6d70069bca254c12f3",
+    "sourceSha256": "fa29a81ff5a52bb7c12fe1e2cab3d3cd85d22910c0f0767c862f11b8e1f853b9",
+    "releaseCommit": "3aa677d258d213e32890fe62d1ec8835fe673aea",
+    "syncRunId": 40151679425,
+    "pagesRunId": 40151809197,
+    "fullPublicAssetBytes": true,
+    "visibleBrowserDateVerified": true,
+    "totalDays": 75,
+    "issueNumber": 75,
+    "audio": {
+      "stage": "waiting_daily_audio",
+      "dispatched": false
+    },
+    "verifiedAt": "2026-10-25T01:48:51.789Z"
+  },
+  "n1Audio": {
+    "status": "waiting_daily_audio",
+    "sourceAudioCommit": null,
+    "scheduleUnchanged": true
+  }
 }
