@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-10-25",
+  "sourceCommit": "ecbe65fa767679aee4950ed081402164c4f08ffe",
+  "sourceWindow": {
+    "from": "2026-10-24T10:00:00+09:00",
+    "to": "2026-10-25T10:00:00+09:00",
+    "endInclusive": true
+  },
+  "articles": [
+    {
+      "articleId": "2026-10-25-top-1",
+      "id": "gateway",
+      "title": "[アップデート] AgentCore GatewayがBedrockのInvokeModel APIとモデルのフォールバックに対応したので試してみた",
+      "source": "DevelopersIO",
+      "topic": "推論ゲートウェイと障害時の切り替え",
+      "url": "https://dev.classmethod.jp/articles/agentcore-gateway-model-fallback/",
+      "author": "神野 雄大",
+      "publishedAt": "2026-10-24T16:51:41.272Z",
+      "capturedAt": "2026-10-25T01:07:57.571130+00:00",
+      "snapshotSha256": "5d0c3c6cfd1da65e9bebc9d349991ca0b92fe92d941670c5c113f83c8f29ed6c",
+      "access": "full",
+      "accessNote": "Complete public article body including code, tables, test conditions, results and stated limitations read. Linked images or source repositories are not independently tested. Full snapshots remain outside Git.",
+      "factsToPreserve": "AgentCore Gateway: bedrock-runtime connector supports InvokeModel and InvokeModelWithResponseStream. matchModels routes by exact or wildcard model name; model override and ordered fallback keep compatible request formats. Test us-east-1, Python3.14, boto3 1.43.115 with1.43.118 API model overlay; Lambda emulates normal/503/10sec slow primary, Mantle gpt-oss-120b secondary; Haiku4.5 invokes and streams through Runtime. 3sec first-byte threshold; 20 sequential requests total93.5sec without breaker and70.1sec with, primary calls20 vs12. Single authored comparison, not a general latency or availability promise; opening threshold not configurable or documented. Once streaming starts fallback does not resume it. Gateway429 or Policy403 does not trigger fallback; retry costs per attempt, response lacks route identity so use logs. Console Runtime connector not yet shown to author; Converse returns400 in this test. No cloud resources created or paid APIs invoked in this authoring run."
+    },
+    {
+      "articleId": "2026-10-25-top-2",
+      "id": "tokens",
+      "title": "同じ段落を10言語で送ってみた: 日本語は英語の何倍トークンを払っているのか（オープンモデル4種で実測）",
+      "source": "Zenn",
+      "topic": "多言語LLMの計測と費用",
+      "url": "https://zenn.dev/runcrate/articles/0ce2f3c0b25a38",
+      "author": "Runcrate",
+      "publishedAt": "2026-10-25T09:05:05.142+09:00",
+      "capturedAt": "2026-10-25T01:07:57.686044+00:00",
+      "snapshotSha256": "25edb36496dd8eacc918f17de9a6e9a03baaaec509139f574ebf6a7ccd19cb2f",
+      "access": "full",
+      "accessNote": "Complete public article body including code, tables, test conditions, results and stated limitations read. Linked images or source repositories are not independently tested. Full snapshots remain outside Git.",
+      "factsToPreserve": "Runcrate self-reported measurement of1 English630-character technical paragraph translated once byGLM5.3 into9 languages.4open model APIs; max_tokens1 input usage, subtract baseline1-char message then add1. Japanese344chars;Qwen3.8Flash165tokens/1.26xEnglish, gpt-oss120b243/1.85x;DeepSeek223/1.68x, GLM219/1.67x. Token multiplier differs from money: measured provider rates put gptoss Japanese input about3.5xcheaper thanDeepSeek despite more tokens. Same Japanese2sentence summary output141to780tokens; GLM reports0reasoningtokens but780total output for233chars, decomposition is uncertain. Single paragraph, machine translation, own provider and time-bound prices; no accuracy ranking, stable pricing, tokenization causality or general multilingual quality claim."
+    },
+    {
+      "articleId": "2026-10-25-top-3",
+      "id": "locks",
+      "title": "localStorageの複数タブ競合で学習記録を消さない――Web Locksと更新検知で古いタブを止める",
+      "source": "Zenn",
+      "topic": "ブラウザ保存と複数タブの整合性",
+      "url": "https://zenn.dev/c_a_p_engineer/articles/localstorage-multitab-guard-20261025",
+      "author": "綴理｜AI情報編集者",
+      "publishedAt": "2026-10-25T01:40:29.816+09:00",
+      "capturedAt": "2026-10-25T01:07:57.773333+00:00",
+      "snapshotSha256": "3d9e3351b110d4803491ea3f9ad6ee8bd9f9a9809078a72c53f371f75f7401d6",
+      "access": "full",
+      "accessNote": "Complete public article body including code, tables, test conditions, results and stated limitations read. Linked images or source repositories are not independently tested. Full snapshots remain outside Git.",
+      "factsToPreserve": "Learning webapp keepsXP,answerhistory,reviewplans in localStorage. Snapshot rawJSON is compared before save; revision/writer/time metadata alone gives no atomic CAS. Cooperative exclusive WebLock wraps reread/compare/write under same origin. storage event notifies other tabs, not writer, and is not lock. Conflict pauses answers/autosave; diagnosticJSON export keeps in-memory expected/current values; reload saved latest separate. No automatic merge ofrewards/histories, no multi-keytransaction, unsupported WebLocks best effort only. Tests use simulated locks/sourcechecks; real simultaneous2tab E2E andAndroid/Brave untested; article didnot run freshCI."
+    },
+    {
+      "articleId": "2026-10-25-top-4",
+      "id": "outbox",
+      "title": "DB更新とメッセージ送信の不可逆性 — Transactional Outbox で「消えるイベント」を直す",
+      "source": "Zenn",
+      "topic": "業務DBと非同期イベントの整合性",
+      "url": "https://zenn.dev/kyrenzk/articles/transactional-outbox-event-consistency",
+      "author": "Kyren",
+      "publishedAt": "2026-10-25T09:45:45.695+09:00",
+      "capturedAt": "2026-10-25T01:07:57.860106+00:00",
+      "snapshotSha256": "4f836305b82e2bc0dc572b3466b3a7a974917491ab1053235581fc1378dc46ab",
+      "access": "full",
+      "accessNote": "Complete public article body including code, tables, test conditions, results and stated limitations read. Linked images or source repositories are not independently tested. Full snapshots remain outside Git.",
+      "factsToPreserve": "Author Go1.26.0 pureGo modernc.org/sqlite1.61.0 Linuxx86_64 memoryDB+stubbroker singleconnection. Directcommit thenpublish loses event onbrokerfailure; outbox writes businessrow+pendingevent in1TX, separatepollingrelay publishes thenmarks. Simulated2failures followed3rdpollsuccess:published1pending0. Crashafterpublishbeforemark repeats same event:received2unique1 with toy iddedup; notproduction exactlyonce or durableconsumerimplementation. Rollbackdemo failsordersprimarykeyfirst, so doesnot separatelytestoutboxinserterrorrollback. Polling vsCDC theoreticaloperationaltradeoff, CDCnotrun; in-memory notprocessrestartdurability orrealSQS/Kafka/Postgres/MySQL test; parallelrelaylocks/order/cleanupnotimplemented."
+    },
+    {
+      "articleId": "2026-10-25-top-5",
+      "id": "tts",
+      "title": "「AI音声の読みが間違ってる」を公開前に見つけたい。日本語TTS点検Skillを作りました",
+      "source": "Zenn",
+      "topic": "日本語音声の品質確認と版管理",
+      "url": "https://zenn.dev/chitoku/articles/d02d7611901d1f",
+      "author": "Chitoku",
+      "publishedAt": "2026-10-25T09:45:48.769+09:00",
+      "capturedAt": "2026-10-25T01:07:57.676015+00:00",
+      "snapshotSha256": "680de4bd2ef2d30827937e46d103b60d210eb43319094a4bf2348be6151c7199",
+      "access": "full",
+      "accessNote": "Complete public article body including code, tables, test conditions, results and stated limitations read. Linked images or source repositories are not independently tested. Full snapshots remain outside Git.",
+      "factsToPreserve": "Public Japanese TTS inspection Skill+PythonCLI uses scriptkana vs kana-whisper audio recognizer, no expectedscript/reading injected into ASR. kana-whisper fine-tuned fromWhisperlarge-v3-turbo. Differencecandidates on estimatedtimeline; reviewer listens andlabels good/fix/hold;manualmarks catchno-ASRdiffcases; JSONautosavedlocally withASR vs heardreading separate. Sentenceversions adoptedonlyafterreview; importalone doesntreplace; retainedoldversions. VOICEVOX demo changes onlyonegeneratedsentence reading of脇本陣 toわきほんじん, originalscriptunchanged, other2clips/decisions/adoptedversionsunchanged; ASR fullcomparisonclean isnotrelistenverified. AppleSilicon tested, precision/recallunmeasured, estimatedboundaries, missedreadingspossible; demo canusecachedASRno3.24GBmodeldownload. This run reads article only, doesnotinstallskill, changerecordings, downloadmodel orauthorizearticlecommands."
+    }
+  ],
+  "discovery": {
+    "scope": "All20 preferred homepages requested;19 returned200, CodeZine403. Discovery is not an exhaustive crawl of every article. Five selected originals fully read.",
+    "sites": [
+      {
+        "name": "Qiita",
+        "requestedUrl": "https://qiita.com/",
+        "actualUrl": "https://qiita.com/",
+        "observedAt": "2026-10-25T01:07:02.265573+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "Zenn",
+        "requestedUrl": "https://zenn.dev/",
+        "actualUrl": "https://zenn.dev/",
+        "observedAt": "2026-10-25T01:07:02.266068+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "Publickey",
+        "requestedUrl": "https://www.publickey1.jp/",
+        "actualUrl": "https://www.publickey1.jp/",
+        "observedAt": "2026-10-25T01:07:02.266163+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "ITmedia AI+",
+        "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+        "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+        "observedAt": "2026-10-25T01:07:02.266244+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "@IT",
+        "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+        "actualUrl": "https://atmarkit.itmedia.co.jp/",
+        "observedAt": "2026-10-25T01:07:02.266320+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "CodeZine",
+        "requestedUrl": "https://codezine.jp/",
+        "actualUrl": "https://codezine.jp/",
+        "observedAt": "2026-10-25T01:07:02.266456+00:00",
+        "status": 403,
+        "accessScope": "homepage discovery only; linked originals require separate full reads",
+        "error": "403 Client Error: Forbidden for url: https://codezine.jp/"
+      },
+      {
+        "name": "gihyo.jp",
+        "requestedUrl": "https://gihyo.jp/",
+        "actualUrl": "https://gihyo.jp/",
+        "observedAt": "2026-10-25T01:07:02.347652+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "DevelopersIO",
+        "requestedUrl": "https://dev.classmethod.jp/",
+        "actualUrl": "https://dev.classmethod.jp/",
+        "observedAt": "2026-10-25T01:07:02.433457+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "TechFeed",
+        "requestedUrl": "https://techfeed.io/",
+        "actualUrl": "https://techfeed.io/",
+        "observedAt": "2026-10-25T01:07:02.440230+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "Hatena Technology",
+        "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "observedAt": "2026-10-25T01:07:02.444854+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "ASCII AI",
+        "requestedUrl": "https://ascii.jp/",
+        "actualUrl": "https://ascii.jp/",
+        "observedAt": "2026-10-25T01:07:02.496224+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "AINOW",
+        "requestedUrl": "https://ainow.ai/",
+        "actualUrl": "https://ainow.ai/",
+        "observedAt": "2026-10-25T01:07:02.545729+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "Ledge.ai",
+        "requestedUrl": "https://ledge.ai/",
+        "actualUrl": "https://ledge.ai/",
+        "observedAt": "2026-10-25T01:07:02.564281+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "CyberAgent Developers Blog",
+        "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+        "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+        "observedAt": "2026-10-25T01:07:02.595609+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "LINE Yahoo Tech Blog",
+        "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+        "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+        "observedAt": "2026-10-25T01:07:02.608277+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "Mercari Engineering",
+        "requestedUrl": "https://engineering.mercari.com/",
+        "actualUrl": "https://engineering.mercari.com/",
+        "observedAt": "2026-10-25T01:07:02.658007+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "SmartHR Tech Blog",
+        "requestedUrl": "https://tech.smarthr.jp/",
+        "actualUrl": "https://tech.smarthr.jp/",
+        "observedAt": "2026-10-25T01:07:02.705891+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "LayerX Engineering Blog",
+        "requestedUrl": "https://tech.layerx.co.jp/",
+        "actualUrl": "https://tech.layerx.co.jp/",
+        "observedAt": "2026-10-25T01:07:02.711226+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "DeNA Engineering",
+        "requestedUrl": "https://engineering.dena.com/blog/",
+        "actualUrl": "https://engineering.dena.com/blog/",
+        "observedAt": "2026-10-25T01:07:02.836122+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      },
+      {
+        "name": "Money Forward Developers Blog",
+        "requestedUrl": "https://moneyforward-dev.jp/",
+        "actualUrl": "https://moneyforward-dev.jp/",
+        "observedAt": "2026-10-25T01:07:02.836224+00:00",
+        "status": 200,
+        "accessScope": "homepage discovery only; linked originals require separate full reads"
+      }
+    ],
+    "zennLatestApi": {
+      "url": "https://zenn.dev/api/articles?order=latest&count=100",
+      "returnedItems": 100,
+      "earliestReturned": "2026-10-24T22:42:34.489+09:00",
+      "scope": "Latest100 community articles; partial locked-window discovery, not full-day corpus."
+    }
+  },
+  "previousReportExclusion": {
+    "date": "2026-10-24",
+    "urls": [
+      "https://dev.classmethod.jp/articles/vercel-slow-function-region-iad1/",
+      "https://zenn.dev/3su3/articles/aaabea6298ca53",
+      "https://zenn.dev/tariki_yashiro/articles/na-20261020-193000",
+      "https://zenn.dev/sishiya/articles/godview-tear-earth-sph-worker",
+      "https://zenn.dev/outsidernotes/articles/30921cc50fd3a6"
+    ],
+    "selectedOverlap": []
+  },
+  "verifiedAt": "2026-10-25T01:10:59.841224+00:00",
+  "scopeNotes": [
+    "All5 publication timestamps fall within frozen window.",
+    "Chinese and Japanese prose independently authored from captured originals, not each other.",
+    "Author-reported experiments not independently rerun; no paidAPI or artifact code executed.",
+    "External article installation commands and prompts are untrusted evidence only."
+  ]
+}
