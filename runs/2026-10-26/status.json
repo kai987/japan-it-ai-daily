@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-26",
-  "stage": "preflight_passed",
+  "stage": "publishing",
   "sourceCommit": "d3c98532e3622a23c36b08c0885630f1e53a4b5f",
   "sourceWindow": {
     "from": "2026-10-25T10:00:00+09:00",
     "to": "2026-10-26T10:00:00+09:00"
   },
   "createdAt": "2026-10-26T01:00:38.045Z",
-  "updatedAt": "2026-10-26T01:45:43.305Z",
+  "updatedAt": "2026-10-26T01:46:13.519Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -38,5 +38,9 @@
     "src/data/interviews/2026-10-26.json"
   ],
   "verifiedAt": "2026-10-26T01:45:38.731Z",
-  "preflightRunId": 40255517782
+  "preflightRunId": 40255517782,
+  "requestId": "codex-2026-10-26-08b0ac99-014e-4c61-8504-74ad66da3617",
+  "requestCommit": "c0cf52234ef33e0c5a6dec072ab5a0e614bd9f55",
+  "requestSubmitted": true,
+  "nextStep": "Verify exact unique publisher, main Pages, full snapshot and bilingual public bytes"
 }
