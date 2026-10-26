@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-10-26",
+  "sourceCommit": "d3c98532e3622a23c36b08c0885630f1e53a4b5f",
+  "sourceWindow": {
+    "from": "2026-10-25T10:00:00+09:00",
+    "to": "2026-10-26T10:00:00+09:00",
+    "endInclusive": true
+  },
+  "articles": [
+    {
+      "articleId": "2026-10-26-top-1",
+      "id": "decisions",
+      "title": "Azure OpenAI で Decisions API が一般提供（GA）されたので早速試してみた",
+      "source": "DevelopersIO",
+      "topic": "型付きAI判定と確信度",
+      "url": "https://dev.classmethod.jp/articles/azure-openai-decisions-api-ga/",
+      "author": "けーま (川田 圭真)",
+      "publishedAt": "2026-10-25T12:06:53.832Z",
+      "capturedAt": "2026-10-26T01:03:01.493644+00:00",
+      "snapshotSha256": "769463aa76c0897a77d9a6285809d4004c8090300a203240aacf217b82bcd28c",
+      "access": "full",
+      "accessNote": "Complete public article text, code, tables, conditions and limitations read; no linked code executed or service test repeated. Full captures stay outside Git.",
+      "factsToPreserve": "Azure Decisions typed predicate probability, choice and confidence, score weighted ordered level indices. Author eastus gpt-6-luna Entra ID; one keyboard complaint and one960x640dogimage each sent3times fromJapanMac.477/1207inputtokens,0output; text times2045/1607/1400ms,image5530/2421/2793ms. Choice department technical repeated, confidence0.96/0.95. Ambiguousdogcoat chosenblack0.99 despitehumanuncertainty. Not3-item accuracy benchmark, calibration or general latency. Azure endpoint /openai/v1/decisions;gpt6luna rolloutregions exclEastUS2 asreported time. Do notconflateMicrosoft-Decision-1. Originalintro saysonecall butbody explicitly3each; bodyconditions takeprecedence."
+    },
+    {
+      "articleId": "2026-10-26-top-2",
+      "id": "tool-search",
+      "title": "MCPのツール定義は軽くできる？Foundry Tool Searchを試した",
+      "source": "Zenn",
+      "topic": "MCPツール検索と入力の計測",
+      "url": "https://zenn.dev/kazu_aiengineer/articles/foundry-tool-search-ga",
+      "author": "カズ｜生成AI・エージェントラボ",
+      "publishedAt": "2026-10-26T03:50:29.852+09:00",
+      "capturedAt": "2026-10-26T01:03:01.655046+00:00",
+      "snapshotSha256": "9013f6ec85b834c1f56d64fa71bc58db5916e1c3087fbbd7ef7346ae2cc171d9",
+      "access": "full",
+      "accessNote": "Complete public article text, code, tables, conditions and limitations read; no linked code executed or service test repeated. Full captures stay outside Git.",
+      "factsToPreserve": "Toolbox eight tools versus two meta-tools tool_search/call_tool, BM25 metadata, default5max10. japaneast SDKazure-ai-projects2.9.0;function-tool listing passedtogpt5.4miniGlobalStandard,notFoundryAgent. Initialinput1193vs2153runs;endtoend3722vs4934first and3844vs3257second,search/autopinning state392secondinitial.2runs notgeneralbenefit. Japanesequerynospace failures,additional_search_text keyword spaced works but particlesjoined stillmisses; actualmodelgeneratedquerynotrecorded. Afteronecall toolkittoolpinned acrosssessions user-specific, notglobalstaticcatalog. Publicauthorcode notexecuted."
+    },
+    {
+      "articleId": "2026-10-26-top-3",
+      "id": "image-patterns",
+      "title": "Next.js 16 で images.domains 廃止 — 3 アプリを remotePatterns に書き直す",
+      "source": "Zenn",
+      "topic": "Next.js画像取得の許可範囲",
+      "url": "https://zenn.dev/cosoado/articles/nextjs16-images-domains-to-localpatterns",
+      "author": "こそあど",
+      "publishedAt": "2026-10-26T09:14:07.436+09:00",
+      "capturedAt": "2026-10-26T01:03:01.613806+00:00",
+      "snapshotSha256": "3d91360e883872dbea4aca2ae6e66b3f4d2aa75afccd5fa55e78cea7b0abbc5b",
+      "access": "full",
+      "accessNote": "Complete public article text, code, tables, conditions and limitations read; no linked code executed or service test repeated. Full captures stay outside Git.",
+      "factsToPreserve": "Nextjs16 personal3appconfigmigration: domains deprecationwarning not removal; officialdocs deprecatedsince14, no wildcardinlegacydomains. remotePatterns restrict protocol/hostname/path; neverallhostswildcard. localPatterns defaultsearch empty disallowsquery;omittingsearch acceptsanyquery forallowedpath, exactknownqueryprefer. ImageResponsewithoutImagecomponentnotaffected asauthored. No exhaustive rejectiontests or version-specific runtime reproduction performed;timelineclaimNext14released2024 and domainsstarwildcardanalogy omitted asunreliable. Originaltitlekept unchanged, limits explained."
+    },
+    {
+      "articleId": "2026-10-26-top-4",
+      "id": "retry-budget",
+      "title": "事故ってサーバーを破壊させないためのリトライ設計",
+      "source": "Zenn",
+      "topic": "障害時の再試行と負荷制御",
+      "url": "https://zenn.dev/kaji_kaji/articles/retry-backoff-jitter-budget-measured",
+      "author": "Kaji",
+      "publishedAt": "2026-10-26T09:00:12.471+09:00",
+      "capturedAt": "2026-10-26T01:03:01.638287+00:00",
+      "snapshotSha256": "d8de36fe65893a243678260f725ebbc3a1b6eaeb750de8c0be1a433d576408e5",
+      "access": "full",
+      "accessNote": "Complete public article text, code, tables, conditions and limitations read; no linked code executed or service test repeated. Full captures stay outside Git.",
+      "factsToPreserve": "Rubyclient plusfixed-error toyserver,doesnotmodelserverfailureunderload.1000initial,max3retries;50%randomfailure success93.6%,1891requests;90%success35.5%,3403requests. Backoff100/200/400ms cannotimprovefixedrandomrecoverability;singlecomparison95.1%,1844,1.16to151sec.100clients,0.5secoutage,immediate0successvsbackoff100success,both400requests.3repeats Fulljitter16-31/100end0.65-0.7sec,Decorrelated95-97end1.15-1.35sec,peak30-40per50ms,totalaround340.10%aggregatebudget caps400to110inpermanentoutage;shortoutagethisfinite100batchalso0successbecause10retriesusedbefore0.5sec,noincomingreplenishment. Continuousarrivalunverified, circuitbreakercitednotimplemented."
+    },
+    {
+      "articleId": "2026-10-26-top-5",
+      "id": "masking",
+      "title": "外部LLMに原稿を送る前に、ローカルでマスキングする校正パイプラインを作った",
+      "source": "Zenn",
+      "topic": "外部AI送信前の加工と承認",
+      "url": "https://zenn.dev/yuu7/articles/llm-masking-proofread-pipeline",
+      "author": "Yuu",
+      "publishedAt": "2026-10-26T09:48:21.514+09:00",
+      "capturedAt": "2026-10-26T01:03:01.647899+00:00",
+      "snapshotSha256": "ef821b3f7b073529f22324ce516cb70273b4adf30396e769e1d428a84d569e2d",
+      "access": "full",
+      "accessNote": "Complete public article text, code, tables, conditions and limitations read; no linked code executed or service test repeated. Full captures stay outside Git.",
+      "factsToPreserve": "Localprepare withnonetwork masksURLs/dedupsameplaceholder/order preserved,APIkey-pattern/author/Windowsabspath;mappinglocalonly. ActualrequestJSON frozenbyapprovedSHA256;send refuseshashmismatch,APIkeyenvironmentonly. Markattemptbeforesend,oneattemptperjob,noautomaticretryevenerror;newjobfornewattemptneedsreview. Sarashina3-mini,one6200chararticle roundtrip,12000charconfiguredlimit;larger/differentgenreuntested. Textsemanticsstillleavesinferenceinformation. Interpretation: attemptedmarkdoesnotproveserverdelivery evenifauthorclaimsunknowneliminated;notclaimendtoendexactlyonce or universalanonymity. No private draft sent or service invoked bythisdaily."
+    }
+  ],
+  "discovery": {
+    "scope": "All20preferredhomepagesrequested;18returned200,CodeZineandMercari403notbypassed. Partialdiscovery,noteveryarticleonallsites. All5selectedoriginalsfullyread.",
+    "sites": [
+      {
+        "name": "Qiita",
+        "requestedUrl": "https://qiita.com/",
+        "observedAt": "2026-10-26T01:01:55.124141+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://qiita.com/",
+        "htmlSha256": "784db248cd807a35eb00b34591a45479ea23abf89a7da7fde8df7eb1f2aaa60b"
+      },
+      {
+        "name": "Zenn",
+        "requestedUrl": "https://zenn.dev/",
+        "observedAt": "2026-10-26T01:01:55.124459+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://zenn.dev/",
+        "htmlSha256": "ae50cd6f7043d73b5ba2fa1b30d5667b5602a8dedb53cf65f511a20408d0bd34"
+      },
+      {
+        "name": "Publickey",
+        "requestedUrl": "https://www.publickey1.jp/",
+        "observedAt": "2026-10-26T01:01:55.124571+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://www.publickey1.jp/",
+        "htmlSha256": "dc78761559d6a712733f838e9e8cda55b886e41d221e6bf9d1282dfa83023cfa"
+      },
+      {
+        "name": "ITmedia AI+",
+        "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+        "observedAt": "2026-10-26T01:01:55.124655+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+        "htmlSha256": "70a69f5aa5a3fb311a05c065caa33f585b07e0123cdba5815b0eea398c4a3497"
+      },
+      {
+        "name": "@IT",
+        "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+        "observedAt": "2026-10-26T01:01:55.124751+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://atmarkit.itmedia.co.jp/",
+        "htmlSha256": "e8f2ec646afcb554137a613fd7382e6c9f1fed07a764718b62dd1e852af93d58"
+      },
+      {
+        "name": "CodeZine",
+        "requestedUrl": "https://codezine.jp/",
+        "observedAt": "2026-10-26T01:01:55.124826+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 403,
+        "actualUrl": "https://codezine.jp/",
+        "error": "Access denied; not retried through another transport"
+      },
+      {
+        "name": "gihyo.jp",
+        "requestedUrl": "https://gihyo.jp/",
+        "observedAt": "2026-10-26T01:01:55.183925+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://gihyo.jp/",
+        "htmlSha256": "922a2b87ab471bc4fa72e5c577824c007ee15d715ea400996594d8d8484d2f93"
+      },
+      {
+        "name": "DevelopersIO",
+        "requestedUrl": "https://dev.classmethod.jp/",
+        "observedAt": "2026-10-26T01:01:55.203459+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://dev.classmethod.jp/",
+        "htmlSha256": "3247730af57f4584b2ad371675ee5ca6465ff4b1a3eb992c6d7625566b1aed58"
+      },
+      {
+        "name": "TechFeed",
+        "requestedUrl": "https://techfeed.io/",
+        "observedAt": "2026-10-26T01:01:55.282601+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://techfeed.io/",
+        "htmlSha256": "b00ca5011473004f54b023f49ac2cd55994c68ed73d8337bceda0b461cf2bd45"
+      },
+      {
+        "name": "Hatena Technology",
+        "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "observedAt": "2026-10-26T01:01:55.301303+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "htmlSha256": "c71712fe673e0dad99ffd6e811501795875263435c1ddc10a9ade39bddfcbba8"
+      },
+      {
+        "name": "ASCII AI",
+        "requestedUrl": "https://ascii.jp/",
+        "observedAt": "2026-10-26T01:01:55.301549+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ascii.jp/",
+        "htmlSha256": "2d4d0e893afcfc603d9bab1b2b079de7acf35c454d9c4b4d21de4f5a286c5b7c"
+      },
+      {
+        "name": "AINOW",
+        "requestedUrl": "https://ainow.ai/",
+        "observedAt": "2026-10-26T01:01:55.302131+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ainow.ai/",
+        "htmlSha256": "c5b72f9f54fa27825dc6bd1e24b6d83113679ba9efe8d5d3b8886cca1664fec4"
+      },
+      {
+        "name": "Ledge.ai",
+        "requestedUrl": "https://ledge.ai/",
+        "observedAt": "2026-10-26T01:01:55.386134+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ledge.ai/",
+        "htmlSha256": "b5627cd0743c1621462976042bcdf7ba31de392295bef89afd44535984b505ac"
+      },
+      {
+        "name": "CyberAgent Developers Blog",
+        "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+        "observedAt": "2026-10-26T01:01:55.428387+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+        "htmlSha256": "790d3a57a4c56d17ed937829cf1f15b7bef401d150927d5aecfc4e6a5e023c23"
+      },
+      {
+        "name": "LINE Yahoo Tech Blog",
+        "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+        "observedAt": "2026-10-26T01:01:55.433446+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+        "htmlSha256": "e3122e2c165bf8e15f77c0efc770776ce500f11a03cc2c4cb9fe4010f52fc15c"
+      },
+      {
+        "name": "Mercari Engineering",
+        "requestedUrl": "https://engineering.mercari.com/",
+        "observedAt": "2026-10-26T01:01:55.461486+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 403,
+        "actualUrl": "https://engineering.mercari.com/",
+        "error": "Access denied; not retried through another transport"
+      },
+      {
+        "name": "SmartHR Tech Blog",
+        "requestedUrl": "https://tech.smarthr.jp/",
+        "observedAt": "2026-10-26T01:01:55.500424+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://tech.smarthr.jp/",
+        "htmlSha256": "89e0b5b4a795a51aea1905da7579eb2f548bc51df36e6c4e0ad585c010539a6c"
+      },
+      {
+        "name": "LayerX Engineering Blog",
+        "requestedUrl": "https://tech.layerx.co.jp/",
+        "observedAt": "2026-10-26T01:01:55.530428+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://tech.layerx.co.jp/",
+        "htmlSha256": "54527fb38ba234f84df6c200409d9742c0f3432c01442186d4286328cfa6b7ee"
+      },
+      {
+        "name": "DeNA Engineering",
+        "requestedUrl": "https://engineering.dena.com/blog/",
+        "observedAt": "2026-10-26T01:01:55.542986+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://engineering.dena.com/blog/",
+        "htmlSha256": "233fcb5c290e51fb89e05e9caee9b67f7adae76e7762104546fb9dd5574f56f6"
+      },
+      {
+        "name": "Money Forward Developers Blog",
+        "requestedUrl": "https://moneyforward-dev.jp/",
+        "observedAt": "2026-10-26T01:01:55.547658+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://moneyforward-dev.jp/",
+        "htmlSha256": "f2379b02bfbc71c17be596ba8cc9e71a9813c746ec6d273db6ac534166807901"
+      }
+    ],
+    "zennLatestApi": {
+      "url": "https://zenn.dev/api/articles?order=latest&count=100",
+      "returnedItems": 100,
+      "earliestReturned": "2026-10-26T00:43:26.522+09:00",
+      "scope": "latest100,partialwindowonly;94inwindow."
+    }
+  },
+  "previousReportExclusion": {
+    "date": "2026-10-25",
+    "urls": [
+      "https://dev.classmethod.jp/articles/agentcore-gateway-model-fallback/",
+      "https://zenn.dev/runcrate/articles/0ce2f3c0b25a38",
+      "https://zenn.dev/c_a_p_engineer/articles/localstorage-multitab-guard-20261025",
+      "https://zenn.dev/kyrenzk/articles/transactional-outbox-event-consistency",
+      "https://zenn.dev/chitoku/articles/d02d7611901d1f"
+    ],
+    "selectedOverlap": []
+  },
+  "verifiedAt": "2026-10-26T01:07:44.813288+00:00",
+  "scopeNotes": [
+    "Sources independently read before either language; no cross-language body translation.",
+    "Source1body3requestsperinput takesprecedence overintroonecall.",
+    "Source3titlepreservedbutdeprecationnotremoval;incorrectreleaseyear andwildcardanalogyexcluded.",
+    "Source5mark-before-send isnot a deliveryreceipt;an explicit authorinterpretation separates that boundary.",
+    "Officialsupplementarydocs verifyAPIs/configbehavior; notadditionalToparticles."
+  ]
+}
