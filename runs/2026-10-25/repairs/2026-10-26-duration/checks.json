@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-25",
+  "checkedBaseCommit": "5809b72e32a7d6e92efa8484c122fcbb5703f7ad",
+  "worktree": "six uncommitted target files",
+  "checks": [
+    {
+      "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
+      "startedAt": "2026-10-26T02:37:51.206Z",
+      "completedAt": "2026-10-26T02:37:51.510Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/00-tests-publication-recovery-node-mjs.log"
+    },
+    {
+      "command": "npm audit --audit-level=high",
+      "startedAt": "2026-10-26T02:37:53.402Z",
+      "completedAt": "2026-10-26T02:37:54.143Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/01---audit-level-high.log"
+    },
+    {
+      "command": "npm run check",
+      "startedAt": "2026-10-26T02:37:55.921Z",
+      "completedAt": "2026-10-26T02:38:02.907Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/02-check.log"
+    },
+    {
+      "command": "npm run content:integrity:check",
+      "startedAt": "2026-10-26T02:38:05.073Z",
+      "completedAt": "2026-10-26T02:38:11.556Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/03-content-integrity-check.log"
+    },
+    {
+      "command": "npm run evidence:check",
+      "startedAt": "2026-10-26T02:38:13.550Z",
+      "completedAt": "2026-10-26T02:38:14.064Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/04-evidence-check.log"
+    },
+    {
+      "command": "npm run evidence:pilot",
+      "startedAt": "2026-10-26T02:38:15.843Z",
+      "completedAt": "2026-10-26T02:38:16.199Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/05-evidence-pilot.log"
+    },
+    {
+      "command": "npm run bilingual:check-interview",
+      "startedAt": "2026-10-26T02:38:18.230Z",
+      "completedAt": "2026-10-26T02:38:18.565Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/06-bilingual-check-interview.log"
+    },
+    {
+      "command": "npm run quality:check",
+      "startedAt": "2026-10-26T02:38:20.869Z",
+      "completedAt": "2026-10-26T02:38:21.967Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/07-quality-check.log"
+    },
+    {
+      "command": "npm run audio:check",
+      "startedAt": "2026-10-26T02:38:23.787Z",
+      "completedAt": "2026-10-26T02:38:24.382Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/08-audio-check.log"
+    },
+    {
+      "command": "npm run audio:versions:check",
+      "startedAt": "2026-10-26T02:38:26.167Z",
+      "completedAt": "2026-10-26T02:38:27.167Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/09-audio-versions-check.log"
+    },
+    {
+      "command": "npm run test",
+      "startedAt": "2026-10-26T02:38:29.313Z",
+      "completedAt": "2026-10-26T02:38:32.665Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/10-test.log"
+    },
+    {
+      "command": "npm run build",
+      "startedAt": "2026-10-26T02:38:34.481Z",
+      "completedAt": "2026-10-26T02:38:41.028Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/11-build.log"
+    },
+    {
+      "command": "npm run test:browser:speech-smoke",
+      "startedAt": "2026-10-26T02:38:43.119Z",
+      "completedAt": "2026-10-26T02:38:46.310Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/12-test-browser-speech-smoke.log"
+    },
+    {
+      "command": "npm run test:browser",
+      "startedAt": "2026-10-26T02:38:48.123Z",
+      "completedAt": "2026-10-26T02:39:25.221Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/13-test-browser.log"
+    },
+    {
+      "command": "npm run security:check",
+      "startedAt": "2026-10-26T02:39:26.877Z",
+      "completedAt": "2026-10-26T02:39:27.243Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/14-security-check.log"
+    },
+    {
+      "command": "npm run evidence:check -- --date 2026-10-25 --source-dir /tmp/audio-repair-20261026/daily25/originals",
+      "startedAt": "2026-10-26T02:39:29.099Z",
+      "completedAt": "2026-10-26T02:39:29.289Z",
+      "exitCode": 0,
+      "log": "/tmp/audio-repair-20261026/daily25/logs-final/15-evidence-check.log"
+    }
+  ]
+}
