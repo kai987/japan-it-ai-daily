@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-25",
+  "generatedAt": "2026-10-26T04:00:55.601Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-26T04:01:08.211Z",
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "生成AIの応答先を自動で切り替える場合、どこまで継続できるかをどう考えますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "db22e1abe2112631d7165c504d5f0c4507f5071a7aa985ab9a19ac9a8ba91093",
+      "durationSeconds": 6.675,
+      "audioSha256": "22ccaafd5d1707d316fb56e344ff6bd39fb72c824749e6d52ea912e05844a5fe"
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "障害の種類と切り替えられる時点を分けます。AgentCore Gatewayでは503や応答待ちで別モデルへ送れます。切り替え先は同じ要求形式にそろえ、実際の応答先をログで確かめます。ただし、ストリーミング開始後の中断は引き継げません。サーキットブレーカーの結果も20回の試験なので、追加費用と途中で切れた画面の扱いを確認します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "52dfe6f3ec83ea8decb3ecfb1d06af59f22f14c4316d68b7624b5978e15cd67c",
+      "audioSha256": "2dd0a3d052a3c45dbdeeeba4b6592f2fa38cf0fa88be3bd38123aaeb2181a49c",
+      "durationSeconds": 25.922,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "日本語を扱うAIサービスの費用を、どう見積もりますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "f379c53927e28c52533a0b9ce4597a5bef533b8bae0c4990f8d3262ab1b20414",
+      "durationSeconds": 4.271,
+      "audioSha256": "3234c9487e90777dfb2ebfcc56882bcfafeb814e898c1850197992b39335029d"
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "文字数と料金を分け、実際の入力使用量に単価を掛けます。今回、Qwen3.8-Flashは165トークンでしたが、243トークンの別モデルの方が安い結果でした。ただし段落は一つです。自社文書でもテンプレート分を分け、推論を含む出力使用量と回答品質を別々に確認します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "2d25c003172326bfe172548707eb69d400f21d477df23a3dcbefb3e827aaf74e",
+      "durationSeconds": 23.82,
+      "durationStatus": "warn",
+      "audioSha256": "580e148b076f53b48215d44e6ccc2b80116425c9eefc6793c30db5040a25c238"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "複数のタブで学習記録を編集するとき、古いデータの上書きをどう防ぎますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "a77217e2e8eda8f7ae7c77b3f9dcf80511f68bf7b4d64ea8c00e8bec7b8021c9",
+      "durationSeconds": 6.266,
+      "audioSha256": "54f589a55b5aec0e869d54d8798118840d68d762765a79bd81ecfd6b261f7938"
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "版番号を増やすだけでは防げません。Web Locksの同じ排他ロックの中で保存値を読み直し、読み込んだ時のJSONと違えば止めます。storageイベントは通知用です。競合時は回答と自動保存を止め、未保存の記録を診断用JSONへ退避します。非対応ブラウザには原子的な保証がないため、記録の退避と最新状態の再読込を用意します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "1f0ef8e7f89ba9761d74d9b4822e768fa3408cda877cf52bce498fd974bcf896",
+      "audioSha256": "43f21fd21f9f783108984673347d76054158fce3e1cd79263f0c8aa40212bc6d",
+      "durationSeconds": 25.692,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "DB更新後の通知を失わないために、どのような設計を選びますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "94154a7ebebcfdd29dea3d05c66070fa08793bbf3bf34857765b6b6c2f5863cf",
+      "durationSeconds": 5.398,
+      "audioSha256": "47e3592a012b35f2401e83f1a137b86fdc896442814273b3e82d075dab34ac5f"
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "業務データと未送信イベントを同じトランザクションで残し、別のリレーが送ります。ただしOutboxでも、送信後の完了記録に失敗すると重複します。受信側はイベントIDで二重処理を防ぎます。原文はSQLiteと模擬キューの実験なので、実環境の永続性や並列実行は別に確かめます。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "aa1ac65c89147d66a63066f551b2ecf21e58e6a7928f6efdcbac661be8c585e5",
+      "durationSeconds": 23.456,
+      "durationStatus": "warn",
+      "audioSha256": "894f60836916e787b0de8e0fca0e60531a1b48e7afd5f247891cc9ea442582ed"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "日本語の合成音声で、読み間違いをどう確認して修正しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "cf437d050740c2c46e7ae5c39ff1ef94d6fa775b9ef7b5a7fd7fc11d5040a1f8",
+      "durationSeconds": 5.235,
+      "audioSha256": "5c56f6550e9807cdae6dc9145cefc119b016f50389a521550a888cb384b3c5f1"
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "台本の読みと、kana-whisperが音声から認識した読みを比べ、人が聴いて判断します。台本を認識へ渡さないのは、期待した答えに引っ張られないためです。ただし一致しても正読の証明にはなりません。認識が一致していても、耳で気になった箇所は手動で指摘できます。文ごとに版を残し、修正した一文だけを再点検してから採用します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "f4788e921b22cbb70fab5c32ce80d3322af73edb1b0b42febf96c2fcf751b39a",
+      "audioSha256": "f784d275270698706fdb100425f01bfc745f78e16c0f63369482075de2423dd0",
+      "durationSeconds": 25.423,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "フォールバックが成功しても、何を別に確認する必要がありますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "8b60e5d1d3ab49ab380a6b44b514eb16eb04d2e30fc0c2bfc50cbb609bc256ae",
+      "durationSeconds": 5.246,
+      "audioSha256": "dd8c09bd012f2ebceb0e365994c8ec9bbdc37beb3f739f45a66ca7d7955f8f5b"
+    },
+    {
+      "index": 2,
+      "text": "ブラウザの排他ロックとOutboxは、それぞれ何を守りますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "1790f30781422cb9d9dceef628c2656274bee28d841a0835c63c30ef94569f56",
+      "durationSeconds": 4.98,
+      "audioSha256": "cefb5683a6133632c321fa1e685cab1793b1bde63b823596d8c3a1e0a2ea8c28"
+    },
+    {
+      "index": 3,
+      "text": "少ないトークン数や音声認識の一致だけで、品質を判断できますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "9beb79d97c6b9bb944eebefbf97fcfecb20e419485f36b113b283dfbdfe39296",
+      "durationSeconds": 5.731,
+      "audioSha256": "1a15c3f1d610bb62a699246bf915aa5c20e878abb3a75f6b66070f0be8463a08"
+    }
+  ]
+}
