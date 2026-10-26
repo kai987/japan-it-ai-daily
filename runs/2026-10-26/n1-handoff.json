@@ -1,0 +1,245 @@
+{
+  "targetDate": "2026-10-26",
+  "day": 58,
+  "text": {
+    "label": "text",
+    "targetDate": "2026-10-26",
+    "day": 58,
+    "releaseCommit": "759c28201fc84c63b16f89a84ae982df759cc597",
+    "pagesRunId": 40257469925,
+    "sourceCommit": "536e1d547682b9a87813af7b1970373140533698",
+    "sourceBlobSha": "83469588de12ad3616864c74fdd58b202ba6f096",
+    "snapshotSha256": "4410890bf6145561d096d67e13b0de604ed9eb59fa27c5207a01b3818d267fab",
+    "totalDays": 76,
+    "issueNumber": 76,
+    "fullGrammarLessonDates": 76,
+    "artifact": {
+      "id": 12623287043,
+      "name": "github-pages",
+      "digest": "sha256:6e000c3522bb23a8020d7979b52fe1d16685ec4ecb4b90e8719a70da92f7ec2d",
+      "downloadedZipSha256": "6e000c3522bb23a8020d7979b52fe1d16685ec4ecb4b90e8719a70da92f7ec2d",
+      "digestVerified": true
+    },
+    "site": "/tmp/japan-daily-20261026/n1/text-release-40257469925/site",
+    "checks": [
+      {
+        "path": "index.html",
+        "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/?acceptance=759c28201fc84c63b16f89a84ae982df759cc597",
+        "status": 200,
+        "sha256": "db11024b281add197d19f7966e13c52f212f7b00ed575a270c800f8c4792f949",
+        "bytes": 1596,
+        "attempt": 1
+      },
+      {
+        "path": "assets/index-DmVKPh0a.js",
+        "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/assets/index-DmVKPh0a.js?acceptance=759c28201fc84c63b16f89a84ae982df759cc597",
+        "status": 200,
+        "sha256": "1a540cf1561bad0911a4e5a633475c5a8aabedf477878534046e3543e5987ebc",
+        "bytes": 7578141,
+        "attempt": 1
+      },
+      {
+        "path": "assets/index-BpdupM-0.css",
+        "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/assets/index-BpdupM-0.css?acceptance=759c28201fc84c63b16f89a84ae982df759cc597",
+        "status": 200,
+        "sha256": "ae591cc4f64aac982210bb9f9a30a84e9aab4eb1a7a4aa290611892d99ac1d4e",
+        "bytes": 46788,
+        "attempt": 1
+      }
+    ],
+    "fullPublicAssetBytes": true,
+    "allOriginalParagraphsPresent": true,
+    "derivedReadingOptionsPresent": true,
+    "contentVerification": {
+      "observedAt": "2026-10-26T02:07:15.385Z",
+      "commit": "759c28201fc84c63b16f89a84ae982df759cc597",
+      "parent": "f920d3b7c360878293acf40e1027a15dbedce190",
+      "changedPaths": [
+        "src/data/daily/2026-10-26.json",
+        "src/data/it-study-snapshot.json"
+      ],
+      "onlyTwoPaths": true,
+      "sourceBlobUnchanged": true,
+      "sourceBlobSha": "83469588de12ad3616864c74fdd58b202ba6f096",
+      "sourceSha256": "185fa25cf2d0ccb907b9f9896a2a8498da3dd20cce333b21b8e472f8bdb6d642",
+      "sourceBytes": 25600,
+      "dailyCandidateBytesExact": true,
+      "dailySha256": "1c20bfb7777f66bce03a7cb108f94127160300995693fa1fd1a92b97899938cc",
+      "snapshotSourceCommit": "536e1d547682b9a87813af7b1970373140533698",
+      "snapshotInputSha256": "4410890bf6145561d096d67e13b0de604ed9eb59fa27c5207a01b3818d267fab",
+      "snapshotCommittedSha256": "7b442978ea5b41583ed101c121ddeaa1c5747b4d0338201ca0dd9c2a661e399c",
+      "snapshotDataExact": true,
+      "snapshotSerializationDifference": "Exactly one importer trailing LF; no other difference ignored",
+      "totalDays": 76,
+      "issueNumber": 76,
+      "fullGrammarDates": 76,
+      "requestSha256": "ad86625bcda217561982fc976327d66b32f2dff662475391f5d0d52e0a9a4e19"
+    },
+    "staticPublicationVerified": true,
+    "visibleBrowserDateVerified": true,
+    "visibleBrowserBoundary": "Root performs independent Cua actual Day58 UI date acceptance; static source inclusion alone does not establish current visible route or audio playback.",
+    "observedCurrentMain": "759c28201fc84c63b16f89a84ae982df759cc597",
+    "sharedAudioFollowups": [],
+    "sharedAudioBoundary": "Shared audio workflow or later metadata commit is distinct from this verified text commit; not a unique-audio completion result.",
+    "verifiedAt": "2026-10-26T02:09:00.605Z",
+    "browserEvidence": {
+      "targetDate": "2026-10-26",
+      "day": 58,
+      "issueNumber": 76,
+      "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/",
+      "title": "防災情報の意味と限界を伝えるWeb UI（第76号）",
+      "dateButton": "2026年10月26日(月) Day 58 · 99日N1計画",
+      "displayedVocabulary": 20,
+      "displayedGrammar": 8,
+      "immersionTitle": "見える危険と、伝わる危険",
+      "originalParagraphsVisible": 5,
+      "allOriginalSentencesVisible": true,
+      "noPlaceholders": true,
+      "consoleErrors": [],
+      "noLearningGradesOrCompletionWritten": true,
+      "recordedAt": "2026-10-26T02:10:35.401657+00:00"
+    }
+  },
+  "sharedAudio": {
+    "targetDate": "2026-10-26",
+    "day": 58,
+    "commit": "eff39892f1a21bcba93efdd8f329baa5412af314",
+    "parent": "759c28201fc84c63b16f89a84ae982df759cc597",
+    "runId": 40257795946,
+    "sourceAudioCommit": "5809b72e32a7d6e92efa8484c122fcbb5703f7ad",
+    "changedPaths": [
+      "public/audio/manifest.json",
+      "src/data/audio-index.json",
+      "src/data/audio-pending.json",
+      "src/data/audio-sources.json"
+    ],
+    "onlyAudioMetadata": true,
+    "protectedOriginalLessonSnapshotUnchanged": true,
+    "newSharedRecordings": 8,
+    "checks": [
+      {
+        "id": "25158f32fd79dca6",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/example-01--5939b41d1a63d3bf6096adbd8e448d7f860bca522c8d94e4101123e81fbf4b08.mp3",
+        "sha256": "5939b41d1a63d3bf6096adbd8e448d7f860bca522c8d94e4101123e81fbf4b08",
+        "bytes": 70605,
+        "duration": 5.856
+      },
+      {
+        "id": "2c8e1dc47c3af8b0",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/example-02--bf1747de90bff9cecda22dde080704f6039e925a70aba81a326b81dc41a63deb.mp3",
+        "sha256": "bf1747de90bff9cecda22dde080704f6039e925a70aba81a326b81dc41a63deb",
+        "bytes": 63981,
+        "duration": 5.304
+      },
+      {
+        "id": "577bc4bc8e8e4f58",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/example-04--ff3c14f800e1eb5e49d994a05f9c893da5f2fa989d6e86a97f452e500287c78d.mp3",
+        "sha256": "ff3c14f800e1eb5e49d994a05f9c893da5f2fa989d6e86a97f452e500287c78d",
+        "bytes": 63117,
+        "duration": 5.232
+      },
+      {
+        "id": "78f37d7c610695c8",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/example-03--8351b5f9430605a1ca0b4eb69ba3860a7c5dd1e2629197b7b32abea47486a893.mp3",
+        "sha256": "8351b5f9430605a1ca0b4eb69ba3860a7c5dd1e2629197b7b32abea47486a893",
+        "bytes": 63405,
+        "duration": 5.256
+      },
+      {
+        "id": "9589f250581dce5c",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/vocab-04--3413147234365e58d7b83b654e9d10da495fdfcce5a5e5ba5099a92440e9db43.mp3",
+        "sha256": "3413147234365e58d7b83b654e9d10da495fdfcce5a5e5ba5099a92440e9db43",
+        "bytes": 13005,
+        "duration": 1.056
+      },
+      {
+        "id": "a03c494af73cd5de",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/vocab-02--aad214d3536e11d4450bb8159aa3861d483620b723106719b2e24d4a261555b9.mp3",
+        "sha256": "aad214d3536e11d4450bb8159aa3861d483620b723106719b2e24d4a261555b9",
+        "bytes": 16461,
+        "duration": 1.344
+      },
+      {
+        "id": "d5408bb25bdf8466",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/vocab-03--b735934ff8d85d0ee90bc565fc13adf2d60405e0cd2e44f2f51c8b1eb84ae7fb.mp3",
+        "sha256": "b735934ff8d85d0ee90bc565fc13adf2d60405e0cd2e44f2f51c8b1eb84ae7fb",
+        "bytes": 14733,
+        "duration": 1.2
+      },
+      {
+        "id": "ef47c2936ea378d7",
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/vocab-01--cf490dbeba925c6ef21a56b2531c4c7ab45b0cd646a698c049ac4d6eece1feaf.mp3",
+        "sha256": "cf490dbeba925c6ef21a56b2531c4c7ab45b0cd646a698c049ac4d6eece1feaf",
+        "bytes": 15885,
+        "duration": 1.296
+      }
+    ],
+    "pendingClips": 202,
+    "requiredClips": 6164,
+    "incompleteLessonDates": [
+      "2026-10-26",
+      "2026-10-25"
+    ],
+    "targetPending": 97,
+    "uniqueAudioComplete": false,
+    "verifiedAt": "2026-10-26T02:13:13.303Z",
+    "pagesRunId": 40257901848,
+    "publicManifest": {
+      "commit": "eff39892f1a21bcba93efdd8f329baa5412af314",
+      "pagesRunId": 40257901848,
+      "url": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/audio/manifest.json",
+      "sha256": "20994d1eb9552e4556d5d0c98c6301e32621c9b0cd37a0cb718f9fbc5ce64b75",
+      "bytes": 2961628,
+      "exactCommittedBytes": true,
+      "verifiedAt": "2026-10-26T02:14:52.998Z"
+    },
+    "playback": [
+      {
+        "label": "回復するを再生",
+        "id": "a03c494af73cd5de",
+        "role": "word",
+        "selector": "button[data-audio-id=\"a03c494af73cd5de\"]",
+        "page": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/",
+        "currentTime": 0.382561,
+        "endTime": 0.616047,
+        "duration": 1.277667,
+        "error": null,
+        "paused": false,
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/vocab-02--aad214d3536e11d4450bb8159aa3861d483620b723106719b2e24d4a261555b9.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/vocab-02--aad214d3536e11d4450bb8159aa3861d483620b723106719b2e24d4a261555b9.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/vocab-02--aad214d3536e11d4450bb8159aa3861d483620b723106719b2e24d4a261555b9.mp3",
+        "observedAt": "2026-10-26T02:15:47.872Z"
+      },
+      {
+        "label": "サービスが回復した後に送れるよう、再試行の枠を残しておきます。を再生",
+        "id": "2c8e1dc47c3af8b0",
+        "role": "example",
+        "selector": "button[data-audio-id=\"2c8e1dc47c3af8b0\"]",
+        "page": "https://kai987.github.io/Japanese-N1-Immersive-Sparring-Partner/",
+        "currentTime": 0.412028,
+        "endTime": 0.631584,
+        "duration": 5.235292,
+        "error": null,
+        "paused": false,
+        "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/example-02--bf1747de90bff9cecda22dde080704f6039e925a70aba81a326b81dc41a63deb.mp3",
+        "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/example-02--bf1747de90bff9cecda22dde080704f6039e925a70aba81a326b81dc41a63deb.mp3",
+        "expectedR2Url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-26/example-02--bf1747de90bff9cecda22dde080704f6039e925a70aba81a326b81dc41a63deb.mp3",
+        "observedAt": "2026-10-26T02:15:48.854Z"
+      }
+    ],
+    "verified": true
+  },
+  "uniqueAudio": {
+    "complete": false,
+    "pendingForTarget": 97,
+    "pendingAll": 202,
+    "workerPhase": "waiting_daily_audio",
+    "waitingDates": [
+      "2026-10-25"
+    ],
+    "claimedDate": "2026-10-26",
+    "localOnlyObservation": true,
+    "workerInvokedByThisRun": false
+  },
+  "verifiedAt": "2026-10-26T02:17:09.809Z"
+}
