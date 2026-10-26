@@ -1,0 +1,67 @@
+{
+  "targetDate": "2026-10-25",
+  "day": 57,
+  "stage": "playback_verified",
+  "sourceAudioCommit": "89c157d193d0a8cf5a349dd00eb350403ef4cc1f",
+  "releaseCommit": "f1b6a47126bc1ed00783b0cbd2c3fe47b62b561e",
+  "pagesRunId": 40302459216,
+  "newRecordings": 97,
+  "reusedExistingHosted": 6068,
+  "fullCloudRecordingsVerified": 6165,
+  "pendingForTarget": 0,
+  "pendingAll": 0,
+  "playbackTests": [
+    {
+      "id": "72350a9433248000",
+      "provider": "supabase",
+      "url": "https://flpmblfscgcbrprwwckz.supabase.co/storage/v1/object/public/n1-audio/morioki-normal/72350a9433248000--c145c56d579179e151f3e9a61f1d76e961f1dbb70aafc48c26d22c045fad8aa2.mp3",
+      "src": "https://flpmblfscgcbrprwwckz.supabase.co/storage/v1/object/public/n1-audio/morioki-normal/72350a9433248000--c145c56d579179e151f3e9a61f1d76e961f1dbb70aafc48c26d22c045fad8aa2.mp3",
+      "expectedUrl": "https://flpmblfscgcbrprwwckz.supabase.co/storage/v1/object/public/n1-audio/morioki-normal/72350a9433248000--c145c56d579179e151f3e9a61f1d76e961f1dbb70aafc48c26d22c045fad8aa2.mp3",
+      "currentTime": 0.101327,
+      "endTime": 0.11325,
+      "duration": 3.625958,
+      "paused": false,
+      "error": null,
+      "readyState": 4,
+      "observedAt": "2026-10-26T09:52:23.613Z"
+    },
+    {
+      "id": "16621d3d5ae7d0d9",
+      "provider": "daily",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/example-01--6fbddbda5d8458cd015b809208939e66b44f820ef062ffa343098c0f906d2dde.mp3",
+      "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/example-01--6fbddbda5d8458cd015b809208939e66b44f820ef062ffa343098c0f906d2dde.mp3",
+      "expectedUrl": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/example-01--6fbddbda5d8458cd015b809208939e66b44f820ef062ffa343098c0f906d2dde.mp3",
+      "currentTime": 0.43922,
+      "endTime": 0.454424,
+      "duration": 5.49025,
+      "paused": false,
+      "error": null,
+      "readyState": 4,
+      "observedAt": "2026-10-26T09:52:24.909Z"
+    },
+    {
+      "id": "851abfe3f461f027",
+      "provider": "supabase",
+      "url": "https://flpmblfscgcbrprwwckz.supabase.co/storage/v1/object/public/n1-audio/morioki-normal/851abfe3f461f027--4454aade945f8746f7141536ef63ae8d2de2a3a5647918628b10d34112f1d680.mp3",
+      "src": "https://flpmblfscgcbrprwwckz.supabase.co/storage/v1/object/public/n1-audio/morioki-normal/851abfe3f461f027--4454aade945f8746f7141536ef63ae8d2de2a3a5647918628b10d34112f1d680.mp3",
+      "expectedUrl": "https://flpmblfscgcbrprwwckz.supabase.co/storage/v1/object/public/n1-audio/morioki-normal/851abfe3f461f027--4454aade945f8746f7141536ef63ae8d2de2a3a5647918628b10d34112f1d680.mp3",
+      "currentTime": 0.067325,
+      "endTime": 0.080527,
+      "duration": 7.572083,
+      "paused": false,
+      "error": null,
+      "readyState": 4,
+      "observedAt": "2026-10-26T09:52:57.511Z"
+    }
+  ],
+  "appCleanup": {
+    "status": "closed",
+    "appExited": true,
+    "engineExited": true,
+    "screenLocked": false,
+    "forced": false,
+    "nativeResult": "quit_requested_and_exited",
+    "verifiedAt": "2026-10-26T09:46:26.639653+00:00"
+  },
+  "verifiedAt": "2026-10-26T09:54:33.387Z"
+}
