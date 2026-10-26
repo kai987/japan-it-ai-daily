@@ -3,8 +3,8 @@
   "date": "2026-10-25",
   "status": "reviewed",
   "reviewedBy": "Codex original-source review",
-  "reviewedAt": "2026-10-25T01:25:46.689686+00:00",
-  "scope": "Declared central claims, interviewanchors, experimental conditions and limitations checked against complete public originals. Not an independent rerun or verification of every sentence. Chinese and Japanese explanatory prose authored independently.",
+  "reviewedAt": "2026-10-26T02:36:31.013Z",
+  "scope": "Declared central claims, interviewanchors, experimental conditions and limitations checked against complete public originals. Not an independent rerun or verification of every sentence. Chinese and Japanese explanatory prose authored independently. Reviewed duration repair: expanded only answers 1,3,5 with original-backed details; 1.00 synthesis speed and duration gates unchanged.",
   "articles": [
     {
       "articleId": "2026-10-25-top-1",
@@ -53,6 +53,17 @@
             "zh": "关闭熔断器时累计93.5秒",
             "ja": "無効時は合計93.5秒",
             "interview": "サーキットブレーカーの結果も20回の試験"
+          }
+        },
+        {
+          "kind": "source-fact",
+          "id": "repair-fallback-route-observation",
+          "statement": "Compatible request formats and routing logs are needed to identify the responding fallback target.",
+          "quote": "Gatewayが出力するルーティングのログには記録される",
+          "locator": "フォールバック／注意点",
+          "conditions": "Author-reported Gateway behavior. Routing identity is not returned to the caller.",
+          "usedIn": {
+            "interview": "切り替え先は同じ要求形式にそろえ、実際の応答先をログで確かめます"
           }
         }
       ]
@@ -158,6 +169,28 @@
             "ja": "原文のロック検査は模擬実行",
             "interview": "非対応ブラウザには原子的な保証がない"
           }
+        },
+        {
+          "kind": "source-fact",
+          "id": "repair-conflict-stop",
+          "statement": "Conflict suspends answering and autosave rather than silently overwriting.",
+          "quote": "このアプリでは競合時に通常の操作と自動保存を停止し、復旧画面へ切り替えます。",
+          "locator": "4. 競合したら自動マージせず、保存を止める",
+          "conditions": "Cooperating Web Locks writers only; not an atomic guarantee on unsupported browsers.",
+          "usedIn": {
+            "interview": "競合時は回答と自動保存を止め"
+          }
+        },
+        {
+          "kind": "source-fact",
+          "id": "repair-diagnostic-export",
+          "statement": "Unsaved progress and expected/current JSON can be exported for diagnosis.",
+          "quote": "まだ保存できていないタブ内の進捗、期待していた保存値、現在の保存値を診断用ファイルに残す。",
+          "locator": "4. 復旧画面のJSON退避",
+          "conditions": "Diagnostic export is distinct from ordinary importable learning backup.",
+          "usedIn": {
+            "interview": "未保存の記録を診断用JSONへ退避します"
+          }
         }
       ]
     },
@@ -261,6 +294,17 @@
             "zh": "检出率、准确率尚未量化",
             "ja": "検出率や適合率はまだ数値で評価されていません",
             "interview": "一致しても正読の証明にはなりません"
+          }
+        },
+        {
+          "kind": "source-fact",
+          "id": "repair-manual-unflagged-audio",
+          "statement": "A listener can flag an unreported issue even when ASR comparison shows no difference.",
+          "quote": "ASRの認識結果に差がなくても、耳で聴いて気になる箇所は手動で指摘できます。",
+          "locator": "聴く場所が分かる手動確認画面",
+          "conditions": "Machine agreement alone does not establish correct pronunciation; manual listening remains distinct.",
+          "usedIn": {
+            "interview": "認識が一致していても、耳で気になった箇所は手動で指摘できます"
           }
         }
       ]
