@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-26",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-10-26T01:25:37.699062+00:00",
+  "scope": "Declared coremechanisms,centralnumbers,conditions,limits and article-specific interview anchors;fulloriginalsread,notindependentreproduction.",
+  "articles": [
+    {
+      "articleId": "2026-10-26-top-1",
+      "url": "https://dev.classmethod.jp/articles/azure-openai-decisions-api-ga/",
+      "source": "DevelopersIO",
+      "topic": "型付きAI判定と確信度",
+      "access": "full",
+      "accessNote": "Complete public article text, code, tables, conditions and limitations read; no linked code executed or service test repeated. Full captures stay outside Git.",
+      "capturedAt": "2026-10-26T01:03:01.493644+00:00",
+      "snapshotSha256": "769463aa76c0897a77d9a6285809d4004c8090300a203240aacf217b82bcd28c",
+      "originalTitle": "Azure OpenAI で Decisions API が一般提供（GA）されたので早速試してみた",
+      "claims": [
+        {
+          "id": "typed",
+          "kind": "source-fact",
+          "statement": "Three typed questions distinguish probability, categorical choice and probability-weighted ordered score.",
+          "quote": "質問の型は3つです。",
+          "locator": "1.Decisions APIとは／型の表",
+          "conditions": "Azure API asdescribedtimeofarticle; score isweightedindex,notsingleclass.",
+          "usedIn": {
+            "zh": "score则计算有顺序的等级编号的概率加权平均",
+            "ja": "scoreは一つの段階名ではなく",
+            "interview": "scoreは順序付き段階の確率加重平均"
+          }
+        },
+        {
+          "id": "measurement",
+          "kind": "source-fact",
+          "statement": "One text and one image repeated3times;477and1207inputtokens;JapanMac to eastus timings are notSLA.",
+          "quote": "それぞれ同じリクエストを3回送っています。",
+          "locator": "3.叩いてみた／3.1と3.2",
+          "conditions": "gpt6luna eastus Entra ID,curl;960x640dogimage,twodistinctinputs notlargeeval.",
+          "usedIn": {
+            "zh": "文本使用477个输入Token",
+            "ja": "テキストは477入力トークン",
+            "interview": "三回同じ結果"
+          }
+        },
+        {
+          "id": "ambiguous",
+          "kind": "source-fact",
+          "statement": "Author questions a near-certain coat-color decision on ambiguous dog image.",
+          "quote": "黒にも茶色にも見える",
+          "locator": "3.2画像を判定する",
+          "conditions": "Black0.99 despitehumanambiguity;notcalibrationorevaluatedaccuracy.",
+          "usedIn": {
+            "zh": "以0.99选了黑色",
+            "ja": "黒と0.99で選んだ",
+            "interview": "犬の毛色には迷う入力でも高い確信度"
+          }
+        },
+        {
+          "id": "confidence-boundary",
+          "kind": "author-interpretation",
+          "statement": "Repeatedstableanswersandhighconfidence donotestablishmeasuredaccuracy;definedfallbackisateachingdesign.",
+          "basedOn": [
+            "measurement",
+            "ambiguous"
+          ],
+          "conditions": "Inferencefromtestscope;nohumanfallbackimplementedorevaluatedbythisdaily.",
+          "usedIn": {
+            "zh": "重复稳定和高confidence都不能替代准确率",
+            "ja": "高い確信度や同じ結果の再現は、多数の正解付きデータで確かめた正解率とは別です。",
+            "interview": "人へ戻す条件も設けます"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-26-top-2",
+      "url": "https://zenn.dev/kazu_aiengineer/articles/foundry-tool-search-ga",
+      "source": "Zenn",
+      "topic": "MCPツール検索と入力の計測",
+      "access": "full",
+      "accessNote": "Complete public article text, code, tables, conditions and limitations read; no linked code executed or service test repeated. Full captures stay outside Git.",
+      "capturedAt": "2026-10-26T01:03:01.655046+00:00",
+      "snapshotSha256": "9013f6ec85b834c1f56d64fa71bc58db5916e1c3087fbbd7ef7346ae2cc171d9",
+      "originalTitle": "MCPのツール定義は軽くできる？Foundry Tool Searchを試した",
+      "claims": [
+        {
+          "id": "discovery",
+          "kind": "source-fact",
+          "statement": "Tool Search defers whole catalog behind search and invoke meta-tools.",
+          "quote": "ツールは一覧に並べず、モデルが必要になったときに検索して取り出します。",
+          "locator": "冒頭／Tool Searchはツール一覧を2個にする機能",
+          "conditions": "BM25metadata,default5max10; eighttoolsto2meta,gpt5.4minifunctiontooltest notFoundryAgent.",
+          "usedIn": {
+            "zh": "模型最初只看见tool_search和call_tool",
+            "ja": "モデルに見せる入口はtool_searchとcall_toolの二つ",
+            "interview": "一覧をtool_searchとcall_toolに置き換え"
+          }
+        },
+        {
+          "id": "accounting",
+          "kind": "source-fact",
+          "statement": "Initial1193to215 differs from first total3722to4934 and second3844to3257.",
+          "quote": "1,193トークンから215トークンに減りました。",
+          "locator": "4.入力トークンは1193から215へ／比較表と測定注記",
+          "conditions": "Initial3runs,total2runs;auto-pinning changessecondinitial392;notendtoendcostguarantee.",
+          "usedIn": {
+            "zh": "初次输入重复三次，均从1193降到215 Token",
+            "ja": "初回入力は1,193から215トークンへ減り",
+            "interview": "検索の往復で合計が増えた回もあります"
+          }
+        },
+        {
+          "id": "japanese",
+          "kind": "source-fact",
+          "statement": "Spaced Japanese keyword augmentation works but particle-joined query stillmisses.",
+          "quote": "「ドキュメントを検索」（助詞でつなぐ）: 2版目でも見つからなかった",
+          "locator": "5.試して分かったこと／日本語の語はキーワード追加で補える",
+          "conditions": "additional_search_text onlymetadata;actualmodelquerynotrecorded,notfullAgentJapaneseproof.",
+          "usedIn": {
+            "zh": "带助词连写的形式仍失败",
+            "ja": "助詞でつないだ表現は拾えませんでした",
+            "interview": "日本語の検索漏れと自動ピン留め"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-26-top-3",
+      "url": "https://zenn.dev/cosoado/articles/nextjs16-images-domains-to-localpatterns",
+      "source": "Zenn",
+      "topic": "Next.js画像取得の許可範囲",
+      "access": "full",
+      "accessNote": "Complete public article text, code, tables, conditions and limitations read; no linked code executed or service test repeated. Full captures stay outside Git.",
+      "capturedAt": "2026-10-26T01:03:01.613806+00:00",
+      "snapshotSha256": "3d91360e883872dbea4aca2ae6e66b3f4d2aa75afccd5fa55e78cea7b0abbc5b",
+      "originalTitle": "Next.js 16 で images.domains 廃止 — 3 アプリを remotePatterns に書き直す",
+      "claims": [
+        {
+          "id": "warning",
+          "kind": "source-fact",
+          "statement": "Observed next16 warning triggers migration, not demonstrated removal.",
+          "quote": "Next.js 16 で deprecation warning。",
+          "locator": "TL;DR",
+          "conditions": "Threepersonalapps experience;officialdoc deprecatedsince14;releaseyearclaimnotadopted.",
+          "usedIn": {
+            "zh": "正文实际上描述images.domains的deprecation warning",
+            "ja": "本文で報告しているのはNext.js 16での非推奨警告",
+            "interview": "警告を消すために全ホストを許可"
+          }
+        },
+        {
+          "id": "remote",
+          "kind": "source-fact",
+          "statement": "Remote patterns restrictprotocolhostpath;all-hostwildcard defeatsrestriction.",
+          "quote": "プロトコル・ホスト名・パスをそれぞれ絞れる。",
+          "locator": "images.domainsがdeprecatedになった理由／remotePatternsへの移行",
+          "conditions": "Officialdoclegacydomainsnowildcard;articleanalogyomitted,noruntimeattacktesthere.",
+          "usedIn": {
+            "zh": "remotePatterns可把HTTPS、实际主机和业务所需路径组合起来",
+            "ja": "remotePatternsならHTTPS、ホスト名、パスなどを指定できます",
+            "interview": "remotePatternsでホスト、HTTPS、パスを絞り"
+          }
+        },
+        {
+          "id": "local",
+          "kind": "source-fact",
+          "statement": "Empty search differs from omitted search permitting arbitrary query withinallowedpath.",
+          "quote": "search を省略すると任意の query を許可",
+          "locator": "localPatternsの新要件／修正例",
+          "conditions": "AppliesImagecomponentlocalquery;notImageResponse. Noexhaustivenegativetestlog.",
+          "usedIn": {
+            "zh": "省略search则允许该路径下任意查询参数",
+            "ja": "search自体を省くと、その許可したパスの任意のクエリを通します",
+            "interview": "localPatternsのクエリ文字列も点検"
+          }
+        },
+        {
+          "id": "config-review",
+          "kind": "author-interpretation",
+          "statement": "Validateacceptandrejectcases independently;supportdocsclarifydeprecationandlegacywildcardanalogy.",
+          "basedOn": [
+            "warning",
+            "remote",
+            "local"
+          ],
+          "conditions": "SupplementalNextofficialImage docsread;noappmigrationreproduced. Originalreleaseyear/legacy-star-analogyexcludedbecauseunreliable.",
+          "usedIn": {
+            "zh": "合法图像和不应通过的主机、路径、查询参数分别测试",
+            "ja": "正常系と、想定外のホスト・パス・クエリを拒否する例を、別々に確認",
+            "interview": "正常系と拒否される例を両方試します"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-26-top-4",
+      "url": "https://zenn.dev/kaji_kaji/articles/retry-backoff-jitter-budget-measured",
+      "source": "Zenn",
+      "topic": "障害時の再試行と負荷制御",
+      "access": "full",
+      "accessNote": "Complete public article text, code, tables, conditions and limitations read; no linked code executed or service test repeated. Full captures stay outside Git.",
+      "capturedAt": "2026-10-26T01:03:01.638287+00:00",
+      "snapshotSha256": "d8de36fe65893a243678260f725ebbc3a1b6eaeb750de8c0be1a433d576408e5",
+      "originalTitle": "事故ってサーバーを破壊させないためのリトライ設計",
+      "claims": [
+        {
+          "id": "toy",
+          "kind": "source-fact",
+          "statement": "Fixed-error toy server measuresamplification notactualoverloadcollapse.",
+          "quote": "練習用のサーバーは負荷で弱るわけではないので、落ちるところまでは再現していません。",
+          "locator": "はじめに／実験の準備",
+          "conditions": "Ruby,500or503,max3retries;1000initialrequests.",
+          "usedIn": {
+            "zh": "不能说已复现生产服务被压垮的过程",
+            "ja": "実際の過負荷崩壊を再現した実験ではありません",
+            "interview": "障害が続く時間と待ち方も一緒に考えます"
+          }
+        },
+        {
+          "id": "jitter",
+          "kind": "source-fact",
+          "statement": "Full jitter16-31 success;decorrelated95-97,latencytradeoff in three repeats.",
+          "quote": "実際は 16〜31件です。",
+          "locator": "待ち時間をばらつかせる／表と考察",
+          "conditions": "100clients,0.5sec outage;3measurements each,notuniversaljitterranking.",
+          "usedIn": {
+            "zh": "成功只有100件中的16～31件",
+            "ja": "成功が100件中16〜31件でした",
+            "interview": "成功は百件中十六から三十一件"
+          }
+        },
+        {
+          "id": "budget",
+          "kind": "source-fact",
+          "statement": "10% budget caps400to110 but finite batch loses postrecovery successes.",
+          "quote": "今回は100件を送って打ち止めにしたので",
+          "locator": "リトライの回数に全体で上限をかける",
+          "conditions": "Budget10retries spent0.1-0.3sec before0.5sec recovery;continuousarrivalnotverified.",
+          "usedIn": {
+            "zh": "后续没有新请求补充预算",
+            "ja": "新規要求が来て枠が増える継続的な流入は未検証",
+            "interview": "ただし百件で打ち止めの実験です"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-26-top-5",
+      "url": "https://zenn.dev/yuu7/articles/llm-masking-proofread-pipeline",
+      "source": "Zenn",
+      "topic": "外部AI送信前の加工と承認",
+      "access": "full",
+      "accessNote": "Complete public article text, code, tables, conditions and limitations read; no linked code executed or service test repeated. Full captures stay outside Git.",
+      "capturedAt": "2026-10-26T01:03:01.647899+00:00",
+      "snapshotSha256": "ef821b3f7b073529f22324ce516cb70273b4adf30396e769e1d428a84d569e2d",
+      "originalTitle": "外部LLMに原稿を送る前に、ローカルでマスキングする校正パイプラインを作った",
+      "claims": [
+        {
+          "id": "approval",
+          "kind": "source-fact",
+          "statement": "Offline prepare retains mapping locally;sendchecksapprovalSHAagainstactualpayload.",
+          "quote": "実際に送ろうとしている内容のハッシュが完全に一致しない限り、送信しません。",
+          "locator": "全体の設計／send承認した内容しか送らない",
+          "conditions": "Approvedbytesconsistency,notsemanticprivacy;noactualprivatepayloadsenthere.",
+          "usedIn": {
+            "zh": "send只有在当前内容哈希与批准值一致时才请求外部服务",
+            "ja": "sendは内容と承認したハッシュが一致しなければ送りません",
+            "interview": "sendでSHA-256の一致を確かめます"
+          }
+        },
+        {
+          "id": "attempt",
+          "kind": "source-fact",
+          "statement": "Local attempt marker precedes networkrequest andsamejobdoesnotautoretry.",
+          "quote": "送信を試みたという記録は、リクエストを送る前に書きます。",
+          "locator": "send承認した内容しか送らない",
+          "conditions": "Attemptrecord isnotserverreceipt;donotclaimexactlyonce delivery.",
+          "usedIn": {
+            "zh": "程序在请求之前先写入试行记录",
+            "ja": "試行記録を要求より先に書く設計",
+            "interview": "送信前の試行記録は受領証明ではない"
+          }
+        },
+        {
+          "id": "privacy",
+          "kind": "source-fact",
+          "statement": "One6200characterroundtrip; semanticinference remains after masking.",
+          "quote": "文面から推測できる情報までは消せません",
+          "locator": "実際に使った結果／確認できていることできていないこと",
+          "conditions": "Configured12000limit;othergenres/largerinputsnotvalidated,notanonymitybenchmark.",
+          "usedIn": {
+            "zh": "剩余上下文仍可能泄露或使人推断敏感信息",
+            "ja": "文面から推測できる情報までは消せません",
+            "interview": "文面から推測できる情報は残ります"
+          }
+        },
+        {
+          "id": "receipt-boundary",
+          "kind": "author-interpretation",
+          "statement": "Writinglocallybeforesendcannotprove serverreceipt oreliminateallunknownoutcomes.",
+          "basedOn": [
+            "attempt",
+            "approval"
+          ],
+          "conditions": "Logicalboundaryfromsequence,notsource-networkguarantee. Noautomaticreplayorprivateupload.",
+          "usedIn": {
+            "zh": "本地标记无法证明服务器已收件",
+            "ja": "送信前のローカル記録はサーバーの受領確認にはなりません",
+            "interview": "送信前の試行記録は受領証明ではない"
+          }
+        }
+      ]
+    }
+  ]
+}
