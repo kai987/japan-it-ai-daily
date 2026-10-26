@@ -8,7 +8,7 @@
     "to": "2026-10-25T10:00:00+09:00"
   },
   "createdAt": "2026-10-25T01:06:33.755Z",
-  "updatedAt": "2026-10-26T04:18:02.853Z",
+  "updatedAt": "2026-10-26T04:19:08.403Z",
   "completedArtifacts": [
     "sources.json",
     "history.json",
@@ -18,7 +18,7 @@
     "preflight.json"
   ],
   "lastError": null,
-  "baseCommit": "ecbe65fa767679aee4950ed081402164c4f08ffe",
+  "baseCommit": "5809b72e32a7d6e92efa8484c122fcbb5703f7ad",
   "draftBranch": "draft/daily-2026-10-25",
   "draftCommit": "1577ac0d5c1d65e5dea025752f78214a2cd5b325",
   "fileHashes": {
@@ -37,25 +37,25 @@
     "src/content/japanese/2026-10-25.md",
     "src/data/interviews/2026-10-25.json"
   ],
-  "verifiedAt": "2026-10-26T04:18:02.853Z",
+  "verifiedAt": "2026-10-26T03:58:59.493Z",
   "preflightRunId": 40260262619,
   "label": "text",
   "runId": 40261213341,
   "releaseCommit": "72bddc26e571d1fa64b6b8cbb0418faf17231f48",
-  "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/40151189910",
+  "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/40261213341",
   "artifacts": [
     {
-      "id": 12583250105,
+      "id": 12624840183,
       "name": "github-pages",
-      "digest": "sha256:7c634e947ad7a986149b46ee9ec3d3019c41705b83f3ea4af72104b254ff34ed"
+      "digest": "sha256:f87a158d90a3401fd0c32ed5b81c1fb6bf0176505eb34b54f761a0d40830ee38"
     },
     {
-      "id": 12582980721,
+      "id": 12624588810,
       "name": "it-study-snapshot",
-      "digest": "sha256:0c6d42eff67dddc75c98dbc1dc7ad59a20b12bf205ed44738eb56110067772fb"
+      "digest": "sha256:32cb56111f3f622a92dad29613b86b17f7182061b01bfff7414ac1bbb76af1f1"
     }
   ],
-  "totalDays": 75,
+  "totalDays": 76,
   "issueNumber": 75,
   "grammarLessonDates": [
     "2026-08-12",
@@ -132,32 +132,33 @@
     "2026-10-22",
     "2026-10-23",
     "2026-10-24",
-    "2026-10-25"
+    "2026-10-25",
+    "2026-10-26"
   ],
   "fullSnapshotCompared": true,
-  "snapshotHash": "4190a054028ba509977b530491ac60295f17605fd78b431c102c9573d9f6049e",
+  "snapshotHash": "4f85e6176b2f26f55761cf6e67271dade68eca2a58b04e91b170414f2238954e",
   "expected": {
     "version": 1,
-    "commit": "d3c98532e3622a23c36b08c0885630f1e53a4b5f",
-    "date": "2026-10-25",
-    "snapshotHash": "4190a054028ba509977b530491ac60295f17605fd78b431c102c9573d9f6049e",
+    "commit": "72bddc26e571d1fa64b6b8cbb0418faf17231f48",
+    "date": "2026-10-26",
+    "snapshotHash": "4f85e6176b2f26f55761cf6e67271dade68eca2a58b04e91b170414f2238954e",
     "pages": [
       {
-        "path": "daily/2026-10-25/",
-        "sha256": "06eec00e212b0f05db9e43cffdae1a7c31b1caf17ba6433e9e2f580be8abc4c9"
+        "path": "daily/2026-10-26/",
+        "sha256": "1327fd7650d55f84ea30118068f63ce6f0fda7e23cd0d57965a86e93ee324482"
       },
       {
-        "path": "ja/daily/2026-10-25/",
-        "sha256": "d8ef21eea3150092fc73a9fc963418308ba85e7792a9e3edd38c7cdfea8816eb"
+        "path": "ja/daily/2026-10-26/",
+        "sha256": "22dc9daadd1578ac74923fa500614b623201af9dc06f78598dfa7fb00fb65cc7"
       }
     ]
   },
   "live": {
-    "commit": "d3c98532e3622a23c36b08c0885630f1e53a4b5f",
-    "date": "2026-10-25",
+    "commit": "72bddc26e571d1fa64b6b8cbb0418faf17231f48",
+    "date": "2026-10-26",
     "attempt": 1
   },
-  "site": "/tmp/japan-daily-20261025/text-release-40151189910/site",
+  "site": "/tmp/audio-repair-20261026/daily25/text-release-40261213341/site",
   "publisherRunId": 40151018966,
   "requestCommit": "abb402f9b52cb74ca1e0108805a4e8379bda8090",
   "requestId": "codex-2026-10-25-f6d70d9e-f98b-44a6-baa1-941032d96f78",
@@ -560,7 +561,8 @@
     "audioStage": "playback_verified",
     "reusedUnchanged": 18,
     "regenerated": 3,
-    "priorSourceCommit": "d3c98532e3622a23c36b08c0885630f1e53a4b5f"
+    "priorSourceCommit": "d3c98532e3622a23c36b08c0885630f1e53a4b5f",
+    "artifactPrefix": "runs/2026-10-25/repairs/2026-10-26-duration/"
   },
   "latestAudioRelease": {
     "label": "audio",
@@ -700,5 +702,21 @@
       }
     ],
     "repairVerifiedAt": "2026-10-26T04:09:30.693Z"
-  }
+  },
+  "repairTargetDate": "2026-10-25",
+  "repairTargetPages": [
+    {
+      "url": "https://kai987.github.io/japan-it-ai-daily/daily/2026-10-25/?acceptance=72bddc26e571d1fa64b6b8cbb0418faf17231f48",
+      "sha256": "6b1dba9b56427ca3c83514985540147f5dabccf2b458062e700a005efdbbe075",
+      "bytes": 602226
+    },
+    {
+      "url": "https://kai987.github.io/japan-it-ai-daily/ja/daily/2026-10-25/?acceptance=72bddc26e571d1fa64b6b8cbb0418faf17231f48",
+      "sha256": "0bc95cd3cbb806f504efa98af3d7c2299a64f8442ced105c86da4888990403af",
+      "bytes": 601343
+    }
+  ],
+  "repairVerifiedAt": "2026-10-26T03:59:00.245Z",
+  "latestIssueNumber": 76,
+  "latestSnapshotDate": "2026-10-26"
 }
