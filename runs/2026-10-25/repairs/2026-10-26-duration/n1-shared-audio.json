@@ -1,0 +1,104 @@
+{
+  "targetDate": "2026-10-25",
+  "day": 57,
+  "commit": "321efddadb43ec85b9f94f1a34a5e628adcfad53",
+  "parent": "dc6ab92067a311699473bc5a193f0ef22d10cec7",
+  "runId": 40267881406,
+  "sourceAudioCommit": "89c157d193d0a8cf5a349dd00eb350403ef4cc1f",
+  "changedPaths": [
+    "public/audio/manifest.json",
+    "src/data/audio-index.json",
+    "src/data/audio-pending.json",
+    "src/data/audio-sources.json"
+  ],
+  "onlyAudioMetadata": true,
+  "protectedOriginalLessonSnapshotUnchanged": true,
+  "newSharedRecordings": 8,
+  "checks": [
+    {
+      "id": "16621d3d5ae7d0d9",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/example-01--6fbddbda5d8458cd015b809208939e66b44f820ef062ffa343098c0f906d2dde.mp3",
+      "sha256": "6fbddbda5d8458cd015b809208939e66b44f820ef062ffa343098c0f906d2dde",
+      "bytes": 66861,
+      "duration": 5.544
+    },
+    {
+      "id": "3c104139f960118d",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/example-03--8b0919b9378640b71efd567209b35998ca90f04180ce5cb5374daffa699dcf04.mp3",
+      "sha256": "8b0919b9378640b71efd567209b35998ca90f04180ce5cb5374daffa699dcf04",
+      "bytes": 50733,
+      "duration": 4.2
+    },
+    {
+      "id": "3d57a0e373a5c6d7",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/example-02--aabf5dccb4b1d2fe1eb0d59aebad9cf7114f524627e462ed70fa20ad98534d66.mp3",
+      "sha256": "aabf5dccb4b1d2fe1eb0d59aebad9cf7114f524627e462ed70fa20ad98534d66",
+      "bytes": 50733,
+      "duration": 4.2
+    },
+    {
+      "id": "5b653110995be67c",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/vocab-04--4ff33b92662c77ec4631917d0ba4b658f8fc640647ee4135c4751e5177d43a71.mp3",
+      "sha256": "4ff33b92662c77ec4631917d0ba4b658f8fc640647ee4135c4751e5177d43a71",
+      "bytes": 13005,
+      "duration": 1.056
+    },
+    {
+      "id": "92b0442fb1ff8c4b",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/vocab-01--900e989c0bb8bb25cd1b36084da16c0101a1edeba0490b7d7472444cec69bfd9.mp3",
+      "sha256": "900e989c0bb8bb25cd1b36084da16c0101a1edeba0490b7d7472444cec69bfd9",
+      "bytes": 13581,
+      "duration": 1.104
+    },
+    {
+      "id": "b6a64d95a62f0a39",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/example-04--6dceac08d8c6d76709cd2ba0b4e9cf30e2d03c3b034fdc3f1735a247e402fc8b.mp3",
+      "sha256": "6dceac08d8c6d76709cd2ba0b4e9cf30e2d03c3b034fdc3f1735a247e402fc8b",
+      "bytes": 60525,
+      "duration": 5.016
+    },
+    {
+      "id": "b6d1cf91c45fc56d",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/vocab-03--05fed29ecfed551f0aba5b29f65be29f0b3ea0b01b932c08b94082cad5ddb694.mp3",
+      "sha256": "05fed29ecfed551f0aba5b29f65be29f0b3ea0b01b932c08b94082cad5ddb694",
+      "bytes": 13005,
+      "duration": 1.056
+    },
+    {
+      "id": "ebfa084f6dd24ed3",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/vocab-02--81db33785c32fe9984c1372ffe5bf78e13ccd9380b4055007a00b5f0e1ba9a88.mp3",
+      "sha256": "81db33785c32fe9984c1372ffe5bf78e13ccd9380b4055007a00b5f0e1ba9a88",
+      "bytes": 14445,
+      "duration": 1.176
+    }
+  ],
+  "pendingClips": 97,
+  "requiredClips": 6164,
+  "incompleteLessonDates": [
+    "2026-10-25"
+  ],
+  "targetPending": 97,
+  "uniqueAudioComplete": false,
+  "verifiedAt": "2026-10-26T04:14:01.602Z",
+  "pagesRunId": 40267945971,
+  "playback": [
+    {
+      "id": "16621d3d5ae7d0d9",
+      "url": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/example-01--6fbddbda5d8458cd015b809208939e66b44f820ef062ffa343098c0f906d2dde.mp3",
+      "src": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/example-01--6fbddbda5d8458cd015b809208939e66b44f820ef062ffa343098c0f906d2dde.mp3",
+      "currentTime": 0.329017,
+      "endTime": 0.33935,
+      "duration": 5.49025,
+      "error": null,
+      "paused": false,
+      "expectedUrl": "https://pub-7561025e67be4103ac4bafb331864381.r2.dev/japanese/2026-10-25/example-01--6fbddbda5d8458cd015b809208939e66b44f820ef062ffa343098c0f906d2dde.mp3",
+      "observedAt": "2026-10-26T04:17:22.922Z"
+    }
+  ],
+  "verified": true,
+  "publicManifest": {
+    "sha256": "0522a555973fc463a777e860dd1ac40f4a18cb6e77537a0be5c3d05c44285b5c",
+    "bytes": 3017644,
+    "exactCommittedBytes": true
+  }
+}
