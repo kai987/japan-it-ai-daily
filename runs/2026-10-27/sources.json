@@ -1,0 +1,270 @@
+{
+  "targetDate": "2026-10-27",
+  "sourceWindow": {
+    "from": "2026-10-26T10:00:00+09:00",
+    "to": "2026-10-27T10:00:00+09:00"
+  },
+  "articles": [
+    {
+      "articleId": "2026-10-27-top-1",
+      "id": "mcp-transport",
+      "title": "Cloudflareの製品別MCPサーバーで/sseが410 Goneになった：/mcpへの切り替えとClaude Codeでの見え方を確かめる",
+      "source": "DevelopersIO",
+      "topic": "MCP接続移行と認可の境界",
+      "url": "https://dev.classmethod.jp/articles/cloudflare-mcp-sse-retired-mcp-migration/",
+      "author": "",
+      "publishedAt": "2026-10-26T14:52:04.091Z",
+      "capturedAt": "2026-10-27T01:02:40.485015+00:00",
+      "snapshotSha256": "33b81c713cb509ab67ae271370f5b3c7cbb71c4cae23e489334c2eaec5b682fd",
+      "access": "full",
+      "accessNote": "Complete public article including code, tables, test conditions and limitations read. No linked source command executed; full captures remain outside Git.",
+      "factsToPreserve": "17 product-specific endpoints returned410 on /sse; /mcp unauthinitialize3HTTP200 and14HTTP401. ClaudeCode2.1.300 macOS26.6.1 arm64, measuredOct25. SSEtransportonlyshowscode,HTTPtransportprintsproblemjson; bothurlandtransportmustchange. NoOAuthlogin/re-auth/previoussessions/project-scopedfileconnectionactuallytested; unifiedAPI MCPnotaffected. PRresource1.xsingle protectedresource /mcp; no arbitrary 401 workaround."
+    },
+    {
+      "articleId": "2026-10-27-top-2",
+      "id": "typed-dict",
+      "title": "Python 3.15のTypedDictはどこまで閉じるべきか",
+      "source": "Zenn",
+      "topic": "Pythonの型契約と実行時検証",
+      "url": "https://zenn.dev/techstudiolab/articles/python-315-typeddict-closed-api-boundaries",
+      "author": "",
+      "publishedAt": "2026-10-27T09:14:01.643+09:00",
+      "capturedAt": "2026-10-27T01:02:40.587832+00:00",
+      "snapshotSha256": "dca07624066d75df2aa28b6dd5e1ce8be46b65950081e5b398d0c7daa7aaf0e9",
+      "access": "full",
+      "accessNote": "Complete public article including code, tables, test conditions and limitations read. No linked source command executed; full captures remain outside Git.",
+      "factsToPreserve": "PEP728 closed=True forbids undeclaredkeys statically, extra_items commonextra-value type, exclusive options; directliteraldetection differs structuralassignability. Python3.15sample usingRCcontextOct7; mypy/pyrightversions absent and expecteddiagnostics notrecordedruns. Runtimeplain dict unaffected. Explicitparse checks exactkeys,type int vs bool; external open response thenextractownedclosedinternalcommand. Do not describeRCascurrentrelease or demoasbenchmark."
+    },
+    {
+      "articleId": "2026-10-27-top-3",
+      "id": "pdf-editing",
+      "title": "PDFページ並び替えツールをpdf.jsとpdf-libの二刀流で作った話 — プレビューと編集でライブラリを分ける",
+      "source": "Zenn",
+      "topic": "PDF編集とReactの状態管理",
+      "url": "https://zenn.dev/sktt_panda/articles/pdf-reorder-pdfjs-preview-pdf-lib-rebuild",
+      "author": "",
+      "publishedAt": "2026-10-27T09:57:26.312+09:00",
+      "capturedAt": "2026-10-27T01:02:40.624085+00:00",
+      "snapshotSha256": "4d0b9f3055067157842d5db0979c99fcbc4e38921cd7716b39b3396547e24d3c",
+      "access": "full",
+      "accessNote": "Complete public article including code, tables, test conditions and limitations read. No linked source command executed; full captures remain outside Git.",
+      "factsToPreserve": "pdfjs-dist renders preview scale0.4 JPEGquality0.7; pdf-lib copyPages rebuilds enabledoriginalpageindexes without image/font reencoding. ref for dragposition untildrop stateupdate; latestpageref+revokeObjectURL onreplaceandunmount. Implementationexperience no measuredmemory/speed benchmark. No proof signatures/forms/allPDFfeaturespreserved."
+    },
+    {
+      "articleId": "2026-10-27-top-4",
+      "id": "build-traces",
+      "title": "Dockerのビルドを遅くしたコミットをGrafana Tempoのトレースで見つける",
+      "source": "Zenn",
+      "topic": "ビルドのトレースと回帰の調査",
+      "url": "https://zenn.dev/ymotongpoo/articles/20261027-buildkit-traces-tempo",
+      "author": "",
+      "publishedAt": "2026-10-27T09:00:08.533+09:00",
+      "capturedAt": "2026-10-27T01:02:40.637629+00:00",
+      "snapshotSha256": "6dd8866faaefa07e62499a2b5fb34d2fe247d8d6ed1f46d83e86f1943645afb2",
+      "access": "full",
+      "accessNote": "Complete public article including code, tables, test conditions and limitations read. No linked source command executed; full captures remain outside Git.",
+      "factsToPreserve": "BuildKit0.33.1/buildx0.29.1 Docker29 Ubuntu26.04.1 measuredOct20. Dockerfile steps spans, OTLP toTempo, gitrevisionresourceattributeonlybuildx. Defaulthistory48h/50entries. ArtificialGoHTTPserver regression removescachemounts andmovesCOPY beforedependencydownload:1.9-2.5s to20.3-21.7s. agentrestoresboth retainslabels andnewtrace2.31s;~3min includes~1.5min indexingwait.20builds+oneprobeCloud21traces. Assistant17queries132s foundbadcommit buttemporal firstnotGitancestry;CI TRACEPARENT futureproposal notverified. Rootspan forcrossDockerfilecompare,stepnameschange;devcontainerpersistence notproductionstorage."
+    },
+    {
+      "articleId": "2026-10-27-top-5",
+      "id": "japanese-asr",
+      "title": "日本語の文字起こしモデル11個を無料GPUで比べたら、読み上げ1位が放送音声で8位だった",
+      "source": "Zenn",
+      "topic": "日本語音声認識の評価条件",
+      "url": "https://zenn.dev/yukobayashi500/articles/849115a7c596f7",
+      "author": "",
+      "publishedAt": "2026-10-27T08:44:11.277+09:00",
+      "capturedAt": "2026-10-27T01:02:40.648887+00:00",
+      "snapshotSha256": "971ebe19bcba89a08f07e41bd10d1e1780d4811bad43c13e25622ff834e48f95",
+      "access": "full",
+      "accessNote": "Complete public article including code, tables, test conditions and limitations read. No linked source command executed; full captures remain outside Git.",
+      "factsToPreserve": "11publicASRmodels onfreeColabT4 fp16 Japanese noinitialprompt;greedyexceptReazondefaultbeam;FLEURS650utterances~2.4h vsReazonfirst1000broadcast. Qwen1.7B5.36%CERreading vs25.98%broadcast8th;parakeet6.37/11.21;reazonspeech11.00broadcastsamecorpus training advantagednotprovenidenticaltestleak. Rankcorr.24. NFKC stripspacepunct no numericnormalization. SingleWhisperlarge88charreference506charoutput contributes22-25%totalerrors;removeoneposthoc4.58%notpreregisteredmainresult. CIoverlap2nd-5thnotstrongrankevidence. Separate runtime dependencygroups~2.5h total;notgeneralproductionlatency or ownreproduction."
+    }
+  ],
+  "previousTopExcluded": "2026-10-26",
+  "discovery": {
+    "scope": "Twenty preferred-source homepages; Zenn latest100 API discovery,97 in window. Not an exhaustive crawl. Five selected originals fully read.",
+    "sites": [
+      {
+        "name": "Qiita",
+        "requestedUrl": "https://qiita.com/",
+        "observedAt": "2026-10-27T01:01:47.845912+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://qiita.com/",
+        "htmlSha256": "e82f57f96791449f06fc6da93a54e70d37334f6a3e1a83b65db752afe3bcf233"
+      },
+      {
+        "name": "Zenn",
+        "requestedUrl": "https://zenn.dev/",
+        "observedAt": "2026-10-27T01:01:47.846347+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://zenn.dev/",
+        "htmlSha256": "ff1df40922548c625c71c1556ac3ac7e1a99f250cf8c392999543ac017b53db9"
+      },
+      {
+        "name": "Publickey",
+        "requestedUrl": "https://www.publickey1.jp/",
+        "observedAt": "2026-10-27T01:01:47.846446+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://www.publickey1.jp/",
+        "htmlSha256": "f32aae5a7a8ffd08dbb9189a1fbefefc1760d9521aaa6f0b4d3462cc48896e8b"
+      },
+      {
+        "name": "ITmedia AI+",
+        "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+        "observedAt": "2026-10-27T01:01:47.846533+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+        "htmlSha256": "259cba3c7747778ee861a77c065e0b688af069a651162c13b4df3ab3d504633c"
+      },
+      {
+        "name": "@IT",
+        "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+        "observedAt": "2026-10-27T01:01:47.846614+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://atmarkit.itmedia.co.jp/",
+        "htmlSha256": "15e64c5737d7f6c661178e3e517b8dda7c8f6f9665325552d692cfd8e005b827"
+      },
+      {
+        "name": "CodeZine",
+        "requestedUrl": "https://codezine.jp/",
+        "observedAt": "2026-10-27T01:01:47.846712+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 403,
+        "actualUrl": "https://codezine.jp/",
+        "error": "Access denied; not retried through another transport"
+      },
+      {
+        "name": "gihyo.jp",
+        "requestedUrl": "https://gihyo.jp/",
+        "observedAt": "2026-10-27T01:01:47.918961+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://gihyo.jp/",
+        "htmlSha256": "3061707afd6de4977f6279b17db9474715927464a9cd220737ece7a8064d0a7b"
+      },
+      {
+        "name": "DevelopersIO",
+        "requestedUrl": "https://dev.classmethod.jp/",
+        "observedAt": "2026-10-27T01:01:47.992226+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://dev.classmethod.jp/",
+        "htmlSha256": "00f31455810fe222ac9167e2d1f83f86b462aaa6b7cfc9a980ec2968616674ae"
+      },
+      {
+        "name": "TechFeed",
+        "requestedUrl": "https://techfeed.io/",
+        "observedAt": "2026-10-27T01:01:48.012085+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://techfeed.io/",
+        "htmlSha256": "b00ca5011473004f54b023f49ac2cd55994c68ed73d8337bceda0b461cf2bd45"
+      },
+      {
+        "name": "Hatena Technology",
+        "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "observedAt": "2026-10-27T01:01:48.012423+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "htmlSha256": "1d160c7f82ecc247eed6bd9916f9a6aed77e3fe7dabfbc4a6d8d2e7085d2d2c0"
+      },
+      {
+        "name": "ASCII AI",
+        "requestedUrl": "https://ascii.jp/",
+        "observedAt": "2026-10-27T01:01:48.022994+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ascii.jp/",
+        "htmlSha256": "c0c067ee34bf7ff184bd32b1225a2a3a541c00da97e96588747a09c7c091bfcb"
+      },
+      {
+        "name": "AINOW",
+        "requestedUrl": "https://ainow.ai/",
+        "observedAt": "2026-10-27T01:01:48.037414+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ainow.ai/",
+        "htmlSha256": "9d6aadd761825364e8991d57da2cb258b765be3dce7ab33354cb70d9841c4a0c"
+      },
+      {
+        "name": "Ledge.ai",
+        "requestedUrl": "https://ledge.ai/",
+        "observedAt": "2026-10-27T01:01:48.074481+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ledge.ai/",
+        "htmlSha256": "f0b34df959b61cdc049937525f6f81622428736d8a1f21434fd328fc29519ccc"
+      },
+      {
+        "name": "CyberAgent Developers Blog",
+        "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+        "observedAt": "2026-10-27T01:01:48.118457+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+        "htmlSha256": "81f886ca8bde47937fbf6cac22c42e546f4e95d38860450d7dddc09f0a50961c"
+      },
+      {
+        "name": "LINE Yahoo Tech Blog",
+        "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+        "observedAt": "2026-10-27T01:01:48.146048+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+        "htmlSha256": "5c0509907add5ac5e9e2d3520b635d895be139e7bac03793beff4071b1673d5e"
+      },
+      {
+        "name": "Mercari Engineering",
+        "requestedUrl": "https://engineering.mercari.com/",
+        "observedAt": "2026-10-27T01:01:48.150617+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 403,
+        "actualUrl": "https://engineering.mercari.com/",
+        "error": "Access denied; not retried through another transport"
+      },
+      {
+        "name": "SmartHR Tech Blog",
+        "requestedUrl": "https://tech.smarthr.jp/",
+        "observedAt": "2026-10-27T01:01:48.188665+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://tech.smarthr.jp/",
+        "htmlSha256": "94e2d40f7739656a1d8311bd42661661bc51eaf37769ef02ab0373e14b0e13ed"
+      },
+      {
+        "name": "LayerX Engineering Blog",
+        "requestedUrl": "https://tech.layerx.co.jp/",
+        "observedAt": "2026-10-27T01:01:48.208128+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://tech.layerx.co.jp/",
+        "htmlSha256": "c41b42dadf78cc39b862ad79806addf4f1b4c21fa92488d5f3844b44f20063e8"
+      },
+      {
+        "name": "DeNA Engineering",
+        "requestedUrl": "https://engineering.dena.com/blog/",
+        "observedAt": "2026-10-27T01:01:48.215064+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://engineering.dena.com/blog/",
+        "htmlSha256": "7f4b872fb1d68cca98febf0e4115f114f0d15e05da35813ebab8986a8f618a92"
+      },
+      {
+        "name": "Money Forward Developers Blog",
+        "requestedUrl": "https://moneyforward-dev.jp/",
+        "observedAt": "2026-10-27T01:01:48.295533+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://moneyforward-dev.jp/",
+        "htmlSha256": "2fb6c7ebebc4d3fd4f3ad7a1fc9c6d6beaef920e0a9a050d905d2e613694d698"
+      }
+    ]
+  }
+}
