@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-10-27T01:20:58.260727+00:00",
+  "scope": "Read all five public originals; declared mechanisms,central figures,conditions,limitations and article-specific interview anchors. Source reading is not independent reproduction.",
+  "articles": [
+    {
+      "articleId": "2026-10-27-top-1",
+      "url": "https://dev.classmethod.jp/articles/cloudflare-mcp-sse-retired-mcp-migration/",
+      "source": "DevelopersIO",
+      "topic": "MCP接続移行と認可の境界",
+      "access": "full",
+      "accessNote": "Complete public article including code, tables, test conditions and limitations read. No linked source command executed; full captures remain outside Git.",
+      "capturedAt": "2026-10-27T01:02:40.485015+00:00",
+      "snapshotSha256": "33b81c713cb509ab67ae271370f5b3c7cbb71c4cae23e489334c2eaec5b682fd",
+      "originalTitle": "Cloudflareの製品別MCPサーバーで/sseが410 Goneになった：/mcpへの切り替えとClaude Codeでの見え方を確かめる",
+      "claims": [
+        {
+          "id": "retired",
+          "kind": "source-fact",
+          "statement": "All17 product endpoints returned410 at old SSE URLs.",
+          "quote": "/sse はすべて410でした。",
+          "locator": "2.17個のサーバー／応答表",
+          "conditions": "macOS26.6.1/ClaudeCode2.1.300,Oct25, unauth requests;3new200,14new401.",
+          "usedIn": {
+            "zh": "全部收到410",
+            "ja": "旧接続先がすべて410",
+            "interview": "旧SSEの接続先が410を返します"
+          }
+        },
+        {
+          "id": "auth-boundary",
+          "kind": "source-fact",
+          "statement": "No account login or OAuth consent was tested.",
+          "quote": "認証情報は使っていません。",
+          "locator": "試してみる／環境",
+          "conditions": "No reauthorization UI, previous sessions or changedprojectconfig connection tested.",
+          "usedIn": {
+            "zh": "作者没有登录Cloudflare",
+            "ja": "ログインもOAuthの認可も実行しておらず",
+            "interview": "記事は未認証の検証です"
+          }
+        },
+        {
+          "id": "client-settings",
+          "kind": "source-fact",
+          "statement": "Migration changes both endpoint and transport; client display depends on transport.",
+          "quote": "URLとtransportの両方",
+          "locator": "検証結果の考察／運用上の注意",
+          "conditions": "CLI local-scope checks, SSE hides migration body; HTTP prints it;nototherMCPclients.",
+          "usedIn": {
+            "zh": "实际迁移要同时修改URL与通信方式",
+            "ja": "接続先だけでなく通信方式も変更",
+            "interview": "クライアントもStreamable HTTPへそろえます"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-27-top-2",
+      "url": "https://zenn.dev/techstudiolab/articles/python-315-typeddict-closed-api-boundaries",
+      "source": "Zenn",
+      "topic": "Pythonの型契約と実行時検証",
+      "access": "full",
+      "accessNote": "Complete public article including code, tables, test conditions and limitations read. No linked source command executed; full captures remain outside Git.",
+      "capturedAt": "2026-10-27T01:02:40.587832+00:00",
+      "snapshotSha256": "dca07624066d75df2aa28b6dd5e1ce8be46b65950081e5b398d0c7daa7aaf0e9",
+      "originalTitle": "Python 3.15のTypedDictはどこまで閉じるべきか",
+      "claims": [
+        {
+          "id": "static",
+          "kind": "source-fact",
+          "statement": "closed forbids undeclaredkeys statically; extra_items adds commonvaluetype.",
+          "quote": "closed=True",
+          "locator": "Python3.15で3方式／境界表",
+          "conditions": "PEP728; options exclusive; directliteral andstructuralassignment distinct;notarbitraryJSONschema.",
+          "usedIn": {
+            "zh": "closed=True用于在静态类型层面禁止未声明的键",
+            "ja": "宣言していないキーを型として許さない指定",
+            "interview": "PEP 728の閉じたTypedDict"
+          }
+        },
+        {
+          "id": "runtime",
+          "kind": "source-fact",
+          "statement": "TypedDict does not automatically validate runtimevalues.",
+          "quote": "値を自動検証しません。",
+          "locator": "静的な閉鎖性と実行時検証",
+          "conditions": "Explicit key/value checks required; bool/int distinction.",
+          "usedIn": {
+            "zh": "TypedDict不会让不合规字典在执行时自动抛异常",
+            "ja": "TypedDictは実行時の検証器ではありません",
+            "interview": "型注釈は実行時に検証しません"
+          }
+        },
+        {
+          "id": "version-boundary",
+          "kind": "source-fact",
+          "statement": "Example expects supporting typecheckers; no concrete diagnostics benchmark supplied.",
+          "quote": "バージョンと対応状況に依存します。",
+          "locator": "Python3.15で3方式を比較する",
+          "conditions": "Article references Oct7 RC context; notcurrentreleaseassertion, notmeasured checker comparison.",
+          "usedIn": {
+            "zh": "没有给出具体检查器版本和逐项运行日志",
+            "ja": "型チェッカーの具体的な版や実行ログを並べた測定結果ではありません",
+            "interview": "必要な項目と値を受信時に確かめ"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-27-top-3",
+      "url": "https://zenn.dev/sktt_panda/articles/pdf-reorder-pdfjs-preview-pdf-lib-rebuild",
+      "source": "Zenn",
+      "topic": "PDF編集とReactの状態管理",
+      "access": "full",
+      "accessNote": "Complete public article including code, tables, test conditions and limitations read. No linked source command executed; full captures remain outside Git.",
+      "capturedAt": "2026-10-27T01:02:40.624085+00:00",
+      "snapshotSha256": "4d0b9f3055067157842d5db0979c99fcbc4e38921cd7716b39b3396547e24d3c",
+      "originalTitle": "PDFページ並び替えツールをpdf.jsとpdf-libの二刀流で作った話 — プレビューと編集でライブラリを分ける",
+      "claims": [
+        {
+          "id": "structural-copy",
+          "kind": "source-fact",
+          "statement": "Preview render and copying originalpage objects are separate.",
+          "quote": "画像やフォントを再エンコードしない",
+          "locator": "プレビューはpdf.js、実編集はpdf-lib",
+          "conditions": "pdfjs-dist preview .4/JPEG.7; copyPages preserves originalpage structure;notimage-basedPDFexport.",
+          "usedIn": {
+            "zh": "不重新编码图片与字体",
+            "ja": "画像やフォントを再エンコードしない",
+            "interview": "copyPagesで新しい文書へ移します"
+          }
+        },
+        {
+          "id": "order",
+          "kind": "source-fact",
+          "statement": "Deletion is exclusion from ordered originalpageindex list.",
+          "quote": "1つの配列を作る操作",
+          "locator": "削除を並び替えの一部にする",
+          "conditions": "Enabledfilter plusoriginalindexes; sourcePDF preserved untilnewoutput.",
+          "usedIn": {
+            "zh": "排序和排除共享一个输出顺序列表",
+            "ja": "並び替えと除外を同じ順序リストへ",
+            "interview": "削除も同じ順序リストで扱えます"
+          }
+        },
+        {
+          "id": "lifecycle",
+          "kind": "source-fact",
+          "statement": "Drag refs and explicit BlobURL cleanup manage UI work and lifetimes.",
+          "quote": "revokeObjectURL",
+          "locator": "ドラッグ中の位置／BlobURLの破棄",
+          "conditions": "UseRef until drop; latestpagesref forunmount; replace/unmount cleanup; notmeasuredmemorybenchmark.",
+          "usedIn": {
+            "zh": "临时图片引用也有生命周期",
+            "ja": "Blob URLも解放が必要",
+            "interview": "表示と編集をどう分担"
+          }
+        },
+        {
+          "id": "output-boundary",
+          "kind": "author-interpretation",
+          "statement": "Noimage/font reencoding doesnotprovepreservation ofallPDFfeatures.",
+          "basedOn": [
+            "structural-copy",
+            "order"
+          ],
+          "conditions": "Verification question,notclaimofmeasuredlossorunsupportedPDFcapability.",
+          "usedIn": {
+            "zh": "不能证明签名、表单等所有能力都会保留",
+            "ja": "全PDF機能の保持まで保証したとは言えません",
+            "interview": "すべてのPDF機能の保持までは保証できません"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-27-top-4",
+      "url": "https://zenn.dev/ymotongpoo/articles/20261027-buildkit-traces-tempo",
+      "source": "Zenn",
+      "topic": "ビルドのトレースと回帰の調査",
+      "access": "full",
+      "accessNote": "Complete public article including code, tables, test conditions and limitations read. No linked source command executed; full captures remain outside Git.",
+      "capturedAt": "2026-10-27T01:02:40.637629+00:00",
+      "snapshotSha256": "6dd8866faaefa07e62499a2b5fb34d2fe247d8d6ed1f46d83e86f1943645afb2",
+      "originalTitle": "Dockerのビルドを遅くしたコミットをGrafana Tempoのトレースで見つける",
+      "claims": [
+        {
+          "id": "measurement",
+          "kind": "source-fact",
+          "statement": "Artificial Go build regression changes cachemounts andCOPYorder.",
+          "quote": "1.9〜2.5秒",
+          "locator": "ビルドを遅くしてみる／所要時間",
+          "conditions": "Ubuntu/Docker29/buildx.29.1/BuildKit.33.1; slow20.3-21.7s; firstcold38.1excluded;notuniversal speedup.",
+          "usedIn": {
+            "zh": "原来1.9～2.5秒",
+            "ja": "元のビルドは1.9〜2.5秒",
+            "interview": "約2秒のビルドが約21秒"
+          }
+        },
+        {
+          "id": "verified-fix",
+          "kind": "source-fact",
+          "statement": "After restoring cacheandCOPYsequence,newtrace measured2.31seconds.",
+          "quote": "2.31秒",
+          "locator": "エージェントに修正させる",
+          "conditions": "Go demo,labelsretained,~3min includes~1.5mintraceindexingwait.",
+          "usedIn": {
+            "zh": "确认恢复至2.31秒",
+            "ja": "2.31秒への回復",
+            "interview": "新しいトレースで2.31秒への回復"
+          }
+        },
+        {
+          "id": "history-limits",
+          "kind": "source-fact",
+          "statement": "Local tracehistory and deployment environment limit retained evidence.",
+          "quote": "48時間",
+          "locator": "ビルドを遅くしてみる／既定履歴、脚注",
+          "conditions": "Default50entries/48h; Linux only;localotel-lgtm ephemeral; futureCItraceparent notdemonstrated.",
+          "usedIn": {
+            "zh": "默认历史只有48小时或50次",
+            "ja": "既定の履歴は48時間か50回分",
+            "interview": "一つのデモの結果です"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-27-top-5",
+      "url": "https://zenn.dev/yukobayashi500/articles/849115a7c596f7",
+      "source": "Zenn",
+      "topic": "日本語音声認識の評価条件",
+      "access": "full",
+      "accessNote": "Complete public article including code, tables, test conditions and limitations read. No linked source command executed; full captures remain outside Git.",
+      "capturedAt": "2026-10-27T01:02:40.648887+00:00",
+      "snapshotSha256": "971ebe19bcba89a08f07e41bd10d1e1780d4811bad43c13e25622ff834e48f95",
+      "originalTitle": "日本語の文字起こしモデル11個を無料GPUで比べたら、読み上げ1位が放送音声で8位だった",
+      "claims": [
+        {
+          "id": "dataset",
+          "kind": "source-fact",
+          "statement": "Eleven models assessed on650read andfirst1000broadcast utterances.",
+          "quote": "先頭1,000発話",
+          "locator": "結果／測り方の要点",
+          "conditions": "ColabT4fp16 Japanese noinitialprompt; greedyexceptReazonbeam; NFKCstripspacepunct; numericformsnotnormalized.",
+          "usedIn": {
+            "zh": "650段朗读",
+            "ja": "FLEURSの日本語650発話",
+            "interview": "FLEURSの朗読とReazonSpeechの放送"
+          }
+        },
+        {
+          "id": "domain",
+          "kind": "source-fact",
+          "statement": "Rankcorrelation low; samecorpus training is marked as a favorablecondition.",
+          "quote": "相関は 0.24",
+          "locator": "読み上げで強いモデルが／結果表",
+          "conditions": "Qwen1.7B5.36/25.98%; samecorpus notproofsameutterancetestleak.",
+          "usedIn": {
+            "zh": "相关系数只有0.24",
+            "ja": "順位の相関は0.24",
+            "interview": "同じコーパスで学んだモデルに有利"
+          }
+        },
+        {
+          "id": "outlier",
+          "kind": "source-fact",
+          "statement": "Whisper repetition can dominate totalerrors; excluding it wasposthoc.",
+          "quote": "22〜25%",
+          "locator": "Whisperはたまに暴走／予想が外れたところ",
+          "conditions": "88charreference506charoutput; posthocexclusion4.58% notreplacementmainresult.",
+          "usedIn": {
+            "zh": "单个异常贡献了总错误的22～25%",
+            "ja": "総誤りの22〜25%",
+            "interview": "一件だけ長く繰り返す出力"
+          }
+        }
+      ]
+    }
+  ]
+}
