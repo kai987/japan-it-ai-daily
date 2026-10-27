@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-27",
+  "generatedAt": "2026-10-27T01:55:31.345Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "MCPサーバーへの接続が急に失敗したとき、どのように移行を進めますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "2c4e898768d2923ba4f9d8cbb4551bc97f155864851160e7478442585fa11731",
+      "audioSha256": "a5c362536379c053cd721d1311915329a48a12b18cf314bc26506df3bf4bebbb",
+      "durationSeconds": 6.127
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "接続方式の廃止と認可不足を分けて調べます。Cloudflareの製品別サーバーでは、旧SSEの接続先が410を返します。移行先へURLを変えるだけでなく、クライアントもStreamable HTTPへそろえます。ただし記事は未認証の検証です。新しい接続先の401を移行完了とは扱わず、認可をやり直した後に必要な道具が使えるかまで確かめます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "941dd95ed1dcfd66d3d8de7007a2b29619c3230e4963458ee712ca5706522400",
+      "audioSha256": "9aec6d1cd007552778cd4c414c76766147c95fe91180606b061c89b93660195c",
+      "durationSeconds": 29.186,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "外部APIのデータ型を定義するとき、未知のキーはすべて拒否すべきですか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "60f419edc2f1aacdbe51fedcf1d7c6c82ea799e2a8a591be7a0f360d9ab55bf1",
+      "audioSha256": "8ae02c76f93ce57410a73596c7458c2dc06bd3150fbed41cac18abcc185e6100",
+      "durationSeconds": 6.06
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "こちらが管理できる契約と、外部から受け取るデータを分けます。PEP 728の閉じたTypedDictは内部コマンドに使い、共通の追加値だけ許すならextra_itemsで型を指定します。一方、外部APIの項目追加を受け入れる型も必要です。ただし型注釈は実行時に検証しません。必要な項目と値を受信時に確かめ、内部で使うデータへ変換します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "f52006929295b2669220d0c506f958d0c1ef7b12c6a42bc15ebc49add8bdb9cb",
+      "audioSha256": "0487e252282f360fe84888336209b5702b3eed7ebb134a3899aaae9cdf6670df",
+      "durationSeconds": 28.919,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "ブラウザでPDFの並び替えを作るとき、表示と編集をどう分担しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "0c1fc447973c95d4c51b6b57564d923fdf9267303c40f8c022170892f9b1568d",
+      "audioSha256": "d25a472c16c8dcd374d5e8671264895bafa415b800ea825b61b785df2d8cbe8c",
+      "durationSeconds": 5.99
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "描画はpdf.js、出力する文書の編集はpdf-libに分けます。サムネイルを保存し直すのではなく、残す元ページの番号を希望する順に並べ、copyPagesで新しい文書へ移します。これなら削除も同じ順序リストで扱えます。ただし画像やフォントを再圧縮しないことだけで、すべてのPDF機能の保持までは保証できません。実際に扱う文書で出力を確認します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "fa4104432cdf3cbcb5b56efa17d29b44daaa11ee0f261f8f7001712f91b8fa25",
+      "audioSha256": "e668bf4f8e1e9cb4b7d5b53636f25dbc7c5691621e9325ef8a74ebc2f18742d8",
+      "durationSeconds": 29.149,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "コンテナのビルドが遅くなった原因を、どのように調べますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "1a4675b85b6517872d9907283dd18c239f05b21d74701d2cdae2f06b8b543bb3",
+      "audioSha256": "2a0b48de71fcfe76b497177047c2edafc4fe9eeb218ceee6e6c60232141464b6",
+      "durationSeconds": 4.562
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "BuildKitのトレースをTempoへ集め、Gitのコミットと結び付けます。記事のGoアプリでは、キャッシュの利用とコピー順を変えたコミットから、約2秒のビルドが約21秒に延びました。修正後も新しいトレースで2.31秒への回復を確認しています。ただし一つのデモの結果です。自分の環境でも、ビルド全体と各手順の時間を比べ、原因を絞ります。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "ad5321fc042c261e04b1dbfe1aafdcfac71290fd3852f82a272253682d5c1684",
+      "audioSha256": "379514f50cb4e24eeac39c8585fa6c5e32dcce0e028345f5194f2fad824cd69f",
+      "durationSeconds": 27.19,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "日本語の音声認識モデルは、どのような基準で選びますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "bd7e265d643b1605e4b88b4b1f5e808e6af18020692ebe357ceee63ee17315a9",
+      "audioSha256": "27b108fe6077dc907bb3f6dc65dbc06ef77444f3f42a7c60f9ccda9535b6f22c",
+      "durationSeconds": 4.594
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "用途に近い音声で文字誤り率を比べます。今回の11モデル比較では、FLEURSの朗読とReazonSpeechの放送で順位が変わりました。同じコーパスで学んだモデルに有利な条件も区別します。またWhisperは、一件だけ長く繰り返す出力が全体の誤りを増やしました。平均CERだけで採用を決めず、異常件数と正規化の条件も残し、自社の音声で候補を確かめます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "805808e94c7f3098ca6e3845bb528092233ffb434bd10e1231e2f4da8bfff828",
+      "audioSha256": "a960e2461bae398931b7ef346e90b3e2d7d997e099e90d080718b84f7144bedb",
+      "durationSeconds": 28.999,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "設定や型の定義を変えれば、実際の処理まで正しいと言えますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "d8c53b0830d997b5491661306e32a3d030744b589fdfc7b51f6cedd745c7ed75",
+      "audioSha256": "536c4334b811e828b7b63474215d66fab13d04cf81232145b95b30db03c897f3",
+      "durationSeconds": 5.259
+    },
+    {
+      "index": 2,
+      "text": "見えている画面や合計時間だけで、内部の処理を判断できますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "19e19c4c21c9d77030cc853af0a914aaafd53726e1fba00b351e429e7ad63c2a",
+      "audioSha256": "6c879e2a143a33fbd828ad824b87a147aea3c8d8ca8153b1736a5043d186c121",
+      "durationSeconds": 5.465
+    },
+    {
+      "index": 3,
+      "text": "改善した数値を、別の利用環境へそのまま使えますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "7c437bcdf06c00e59781814d6af85e74f2f43ada9586435350ae485c1229b346",
+      "audioSha256": "d3e8a836b96921d98ed6454db14da83fd3b73c6a515ba7162620a883964d75e2",
+      "durationSeconds": 4.689
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-27T01:55:43.698Z"
+}
