@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-28",
+  "generatedAt": "2026-10-28T01:42:18.866Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "分類の確信度が高ければ、ファイルの移動まで自動化してよいですか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "35784c4676e2ae53f710551d5cac38bf4506ad7af8e32ef6418a8cec59470ccd",
+      "audioSha256": "dc0ad787180e074351ca546253ce2ae01b7029e1d28fbb5d4f2f9733e0a01e5d",
+      "durationSeconds": 5.2
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "得点と誤分類の影響を分けます。記事では、得票の一位と二位の差を使うと、弱い候補が一つでも確信度が満点になりました。重み付きの占有率に変えても、候補が一つなら一になる点は残ります。ただし、しきい値0.9の的中率91.9%も、その職場での結果です。時系列で評価し、誤分類の影響を確認したうえで、まず提案一覧から運用します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "bee2c3a13966b05cc0328938e10c43b70acb6aa6a5114dcac20f7ac868a73f9e",
+      "audioSha256": "29993db41995f372dab32fbad5e070d6d9c74c1c138df3f95c654d5ba435d8f8",
+      "durationSeconds": 29.12,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "ブラウザの演出を動画で保存するとき、どこを確認しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "253ef18c6e4f523dbb0b37b8ded6b76ec168c442e3c31179be3ef1a4d7ffc871",
+      "audioSha256": "b9506d74220c7adda05b7cf3a94ead558134896333990b750d5e4609de1a502f",
+      "durationSeconds": 4.991
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "表示中の部品をそのまま録るのではなく、時刻を指定して同じ絵を描けるcanvasを用意します。最初の一枚を描いてからcaptureStreamを始め、MediaRecorderの終了通知を待って動画にまとめます。フォントは実際に使う文字も指定して読み込みます。ただし記事の実装は、裏に回したタブで描画が止まります。対応形式とファイル共有の可否も、端末で確認します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "8f86f06d723ebd107a7ecda1bf60c2806cd7a1a65ed0d8a35e267f757f79ad0b",
+      "audioSha256": "3e36c37443a2012b30cfbcfe1f973760624fe7f22ddb00834028b03af18912fe",
+      "durationSeconds": 27.317,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "RDSのCPU使用率が低ければ、データベースは余裕があると言えますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "bc57844b47eaf416941c47caa84d9f97aa5824a67004c56e25aa55a70698ade2",
+      "audioSha256": "895b33f35c946129c3beb7c88243b3583b600b5cb99ca24aee4dac59bdc5e6ca",
+      "durationSeconds": 5.793
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "CPU使用率だけでは判断できません。記事の2 vCPU環境では、一つのCPU処理でも平均は約50%です。ロックを持つ一つと待機する20セッションでは、DBLoadが約21でもDBLoadCPUはほぼゼロでした。そこでCPU待ちと、それ以外の待ちを分けます。ただし並列クエリのワーカーやCPUクレジットで条件は変わるため、実際の待機イベントまで確認します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "6141d28816721323254beca5ee88c63256a405d25914065e66b04258505450cf",
+      "audioSha256": "8495a81c9f54fc14f4416028aa677e3f95d2754312feb818a7de6ec2c462e965",
+      "durationSeconds": 29.871,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "依存ライブラリのパッチ更新は、自動で取り込んでも安全ですか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "d493d4d9a9a797fb2d9a0583b59940038e13d78ac122e14de815dc8fc457cf4d",
+      "audioSha256": "9381fd437785c0cc015eec66df8acfb005c5f8a3ff74b31828dd42c6a3fcd044",
+      "durationSeconds": 4.746
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "版の番号だけでは決めません。記事のzenn-cliを0.5.4から0.5.10へ更新した比較では、依存パッケージが90から371へ増えました。実行はコミットしたlockfileとnpm ciで再現し、更新は別のPRで確認します。記事一覧の出力比較に加え、直接依存の増減も見ます。ただし六つ分の更新をまとめた結果で、どの版が原因かや安全性までは分かりません。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "cbd5e2fb96b83ee4b15ad56fa161d77bfc5c7f1b0c1b6dfe7b3abe69630b9b25",
+      "audioSha256": "87c5f71f9496380fa2c14b1d2aa3277a6a6d12bf37ffdb296581a2973d6e53fe",
+      "durationSeconds": 30.164,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "AIクローラーを名乗るアクセスを、名前だけで許可してよいですか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "07a2ef68e7d137b1c77e410cf9207affea02e7b550366b7f64618df46216b4ed",
+      "audioSha256": "4a74898d46e89ad0c4e339b0f52a0d2f2cc31fecdc1c4710443f2a0674d53601",
+      "durationSeconds": 4.875
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "名乗りは自由に変えられるため、要求の中身も調べます。記事の観測では、28種類のUser-Agentを回し、すべてのGETにミドルウェア回避を狙う形のヘッダが付きました。robots.txtを取らず、秘密ファイルを探す要求も多くありました。ただし公式IPとの照合はしていません。企業の関与やAIの自律性とは断定せず、許可条件と行動の記録を分けます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "3e75e331628cf34da94cb3477dcd34ffed9c035b5315b7f60dbb1715cc5b1a70",
+      "audioSha256": "09ffca4ec422520e2afcf5fab15d9524cbf9e6f077a185e065346cf80211b0a5",
+      "durationSeconds": 28.42,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "高い得点や低い使用率から、何を言えて何を言えませんか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "923db201de7c876a1ef9895ec42d7566f40e26bde93b413188a499fb0f639c58",
+      "audioSha256": "d468323cda7f825e1b7a25df30611dc982b6783e5e57896b7bf833a76bc30b92",
+      "durationSeconds": 5.061
+    },
+    {
+      "index": 2,
+      "text": "同じ結果を再現するために、どの条件を固定しますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "b2c9dbfddfb737219976cddc1633ff7192a208abe23edbb66b713365d162cfc5",
+      "audioSha256": "ac297e8dac82f2ff6d09de14dc320e714dba72332d11d391f279d58a4f151cdb",
+      "durationSeconds": 4.562
+    },
+    {
+      "index": 3,
+      "text": "変化に気付いたことと、原因を特定したことは同じですか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "dd8253f4812a756b5a4d4e77859421d6d4e4c1c88a653c773a0757aba80ae916",
+      "audioSha256": "75a3adc88675772cecfb3a56a3018de269117c632e43e65a90719c2cc811d003",
+      "durationSeconds": 4.806
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-28T01:42:31.497Z"
+}
