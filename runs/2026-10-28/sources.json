@@ -1,0 +1,271 @@
+{
+  "targetDate": "2026-10-28",
+  "sourceWindow": {
+    "from": "2026-10-27T10:00:00+09:00",
+    "to": "2026-10-28T10:00:00+09:00"
+  },
+  "articles": [
+    {
+      "articleId": "2026-10-28-top-1",
+      "id": "confidence-calibration",
+      "title": "「確信度が高い」は「正しい」ではなかった — 2位との差で測ると、根拠が1件のとき最大になる",
+      "source": "Zenn",
+      "topic": "分類の確信度と評価の境界",
+      "url": "https://zenn.dev/shinsei99/articles/confidence-score-was-not-accuracy",
+      "publishedAt": "2026-10-28T08:55:47.421+09:00",
+      "capturedAt": "2026-10-28T01:13:31.850791+00:00",
+      "snapshotSha256": "45d7afadbedac0a38f941134c21c398a8273d6cbfe541cb1e9d131f05cacd7eb",
+      "access": "full",
+      "accessNote": "Full public original including code, conditions, tables and stated limits read. Source captures remain private. Article1 formula contradiction explicitly retained as editorial analysis; no source commands executed.",
+      "factsToPreserve": "841 active destinations, filenames30.3% exact/79.7% first category; adding beginning43.4%. Margin(top-second)/top gives1 with onlyweak0.08candidate. Weighted top/total STILL gives1 for a single nonzero bucket; do NOT repeat unsupported claim that this structurally solves sparse evidence. Author reported threshold .5 coverage47/accuracy70.1, .8 22.6/86.5, .9 15.6/91.9; chronological index update afterprediction andIDFpreperiod;20neighbors38.7 vs5neighbors43.4. One workplace evaluation,nosamplesize/CI/rawlabels supplied; humanplacementproxygroundtruth. No actual filemoves; proposalonly."
+    },
+    {
+      "articleId": "2026-10-28-top-2",
+      "id": "canvas-video",
+      "title": "サーバーなしで canvas を mp4 に。詰まった10の点",
+      "source": "Zenn",
+      "topic": "ブラウザ内動画の生成と共有",
+      "url": "https://zenn.dev/choushinsei/articles/e89f9e6c2c5ddb",
+      "publishedAt": "2026-10-28T09:40:07.553+09:00",
+      "capturedAt": "2026-10-28T01:13:31.837936+00:00",
+      "snapshotSha256": "9ce0cfae04cf6294f83b396c76fe8e1166d14b07d363574326a4cbb4a884611a",
+      "access": "full",
+      "accessNote": "Full public original including code, conditions, tables and stated limits read. Source captures remain private. Article1 formula contradiction explicitly retained as editorial analysis; no source commands executed.",
+      "factsToPreserve": "Canvas720x900,captureStream30fps,4Mbit target, MediaRecorder real elapsedtime fromperformance.now;22chains7s~1.1MB authorreportnotbenchmark. Deterministic time-based drawing sharesgameengineconstants;prepaintfirstframe;fonts.load mustincludeactualglyphstounicode-range;MP4 capabilitytestedbeforeWebMfallback. stopthenwaitonstop finaldataavailable thenBlob,tracksstop,BlobURLrevoke. canShare actualfiles then share/download. HiddenrAF pausesNOTFIXED, codecs/browsermatrixabsent; WebCodecsnotimplemented. Do notcopycodeplaceholdernamesinto unexplainedprose."
+    },
+    {
+      "articleId": "2026-10-28-top-3",
+      "id": "rds-load",
+      "title": "RDSのCPUUtilization・DBLoad・DBLoadCPUの違いを負荷をかけて比べてみた",
+      "source": "DevelopersIO",
+      "topic": "RDSのCPU使用率と待機負荷",
+      "url": "https://dev.classmethod.jp/articles/rds-metrics-comparison/",
+      "publishedAt": "2026-10-28T00:56:23.730Z",
+      "capturedAt": "2026-10-28T01:13:31.743339+00:00",
+      "snapshotSha256": "76496012e9edac02c42764712db39e62cec605f6fa9b4c36e86c677212085133",
+      "access": "full",
+      "accessNote": "Full public original including code, conditions, tables and stated limits read. Source captures remain private. Article1 formula contradiction explicitly retained as editorial analysis; no source commands executed.",
+      "factsToPreserve": "Postgres16x,m6g.large2vCPU8GiB,gp350GiB,ap-northeast-1,EC2t3.medium,pgbench. max_parallel_workers_per_gather=0; CPU-only generated3MMD5,1/2/8sessions300s,CPU50/100/100;AAS1/2/8 DBLoadCPU~same. Oneheldrowlockpg_sleep300+20waiters290:CPU4%,DBLoad21,DBLoadCPU0. Numericfiguresauthorsingleenvironment,notours;DBLoadCPUincludesCPUwait,CPUUtilizationwholeinstancepercent. DifferenceindicatesnonCPUwaitbutmustinspectwaitevent;db.tCPUcredits/parallelworkers/minutegranularityboundaries."
+    },
+    {
+      "articleId": "2026-10-28-top-4",
+      "id": "dependency-review",
+      "title": "zenn-cli の「パッチ更新」で依存が 90 → 371 パッケージに膨らんだ — Dependabot 方針を実測で決める",
+      "source": "Zenn",
+      "topic": "依存関係の再現性と更新審査",
+      "url": "https://zenn.dev/kyrenzk/articles/zenn-cli-dependabot-update-policy",
+      "publishedAt": "2026-10-28T08:16:19.034+09:00",
+      "capturedAt": "2026-10-28T01:13:31.915832+00:00",
+      "snapshotSha256": "e5fd19d380bff28d17e7dfa353855e756b79ed148cfdabfd8ac5b72c0e579352",
+      "access": "full",
+      "accessNote": "Full public original including code, conditions, tables and stated limits read. Source captures remain private. Article1 formula contradiction explicitly retained as editorial analysis; no source commands executed.",
+      "factsToPreserve": "Linux6.18x86,Node22.22/npm10.9.4,copyofZennrepo,cli0.5.4->0.5.10 combinedsixpatchrange. caret^0.5.4 >=.5.4<.6,committedlock+npmci stays.5.4. Dependencyentries90->371 adds287 removes6 changes35;direct8->28,size59M->183M. Articleslistmd5identicaldoesnotproveallfeatures/security. WeeklyPR intendedbutDependabotYAMLnotrun,0.xminorclassificationunverified,noeachpatchattribution,noinstalltimebenchmark. Do notsayasinglepatchcausedallgrowth orcountprovesvulnerability."
+    },
+    {
+      "articleId": "2026-10-28-top-5",
+      "id": "crawler-attribution",
+      "title": "AI クローラーを名乗るアクセスは、何を探していたのか ― 名乗りと行動を照らしてみた",
+      "source": "Zenn",
+      "topic": "クローラーの名乗りと行動分析",
+      "url": "https://zenn.dev/t4n4bot4/articles/50b508a3630ea1",
+      "publishedAt": "2026-10-28T09:30:14.925+09:00",
+      "capturedAt": "2026-10-28T01:13:31.825362+00:00",
+      "snapshotSha256": "15bf0621b3890c3cf40f21f545ac0bc919f5d52b85886295aae462d2a7755d55",
+      "access": "full",
+      "accessNote": "Full public original including code, conditions, tables and stated limits read. Source captures remain private. Article1 formula contradiction explicitly retained as editorial analysis; no source commands executed.",
+      "factsToPreserve": "OwnH0neytr4p/Tpotoneobservationsite,10/11 03:49:56->10/12 00:05:48 JSToneIP25943requestsGET25568POST375,28UArotated,robotszero,allGETx-middleware-subrequest knownCVEshape. ~125hosts×200paths,562pathkinds;73%config8%credentials heuristicfirstmatchclassification. Broader8/30->10/20 headerpresence103015/robots52(.05%) vsnoheader12502/557(4.5%),notauthenticityproof. First8/30notnew10/11,rate~2200->6500/day,UTCdailycounts vsJSTrequesttimes. NoofficialIPverification,attackerconnectionorrealexfiltration,AIautonomy/operatoridentitynotknown. ExplainheaderrolewithoutcopypayloadorIP list."
+    }
+  ],
+  "previousTopExcluded": [
+    "https://dev.classmethod.jp/articles/cloudflare-mcp-sse-retired-mcp-migration/",
+    "https://zenn.dev/techstudiolab/articles/python-315-typeddict-closed-api-boundaries",
+    "https://zenn.dev/sktt_panda/articles/pdf-reorder-pdfjs-preview-pdf-lib-rebuild",
+    "https://zenn.dev/ymotongpoo/articles/20261027-buildkit-traces-tempo",
+    "https://zenn.dev/yukobayashi500/articles/849115a7c596f7"
+  ],
+  "discovery": {
+    "scope": "All20 preferred-source homepage entrances checked;18 accessible,2HTTP403 notbypassed. Zenn latest100requested API returned current partial candidates (49inwindow),not an exhaustive24h crawl. Five full originals selected; no outofwindow source. Web lookup tool couldnotrender originals; publicHTTP200 captures were read directly.",
+    "sites": [
+      {
+        "name": "Qiita",
+        "requestedUrl": "https://qiita.com/",
+        "observedAt": "2026-10-28T01:12:49.568171+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://qiita.com/",
+        "htmlSha256": "80a6a8890f78457def3c454971d4839057509ee54efe85375467a0cf66467788"
+      },
+      {
+        "name": "Zenn",
+        "requestedUrl": "https://zenn.dev/",
+        "observedAt": "2026-10-28T01:12:49.568512+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://zenn.dev/",
+        "htmlSha256": "09db1b4d53e59c9cf05db15541612dd6431350550185b46f6ec85b99b2f4f5dc"
+      },
+      {
+        "name": "Publickey",
+        "requestedUrl": "https://www.publickey1.jp/",
+        "observedAt": "2026-10-28T01:12:49.568600+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://www.publickey1.jp/",
+        "htmlSha256": "4b455ba9b0fc48e237f23dbe5ff76dd893040f0bf5e52cb8a87990250a9a2e0b"
+      },
+      {
+        "name": "ITmedia AI+",
+        "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+        "observedAt": "2026-10-28T01:12:49.568704+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+        "htmlSha256": "945ff4831c313986ea7f0fa0c39942b5aaae3d6f2bac314e58bd2d332f74b69e"
+      },
+      {
+        "name": "@IT",
+        "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+        "observedAt": "2026-10-28T01:12:49.568792+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://atmarkit.itmedia.co.jp/",
+        "htmlSha256": "73a4cf08bc62f24d19d10aa51d3c8efe5611bd6aa5b993df7fbeede745a1d5b9"
+      },
+      {
+        "name": "CodeZine",
+        "requestedUrl": "https://codezine.jp/",
+        "observedAt": "2026-10-28T01:12:49.568898+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 403,
+        "actualUrl": "https://codezine.jp/",
+        "error": "Access denied; not retried through another transport"
+      },
+      {
+        "name": "gihyo.jp",
+        "requestedUrl": "https://gihyo.jp/",
+        "observedAt": "2026-10-28T01:12:49.651111+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://gihyo.jp/",
+        "htmlSha256": "16bff70d0532a890c6fd8dfe8df72c759d965cf385a3a31c3b3ce5b3ee8d5dac"
+      },
+      {
+        "name": "DevelopersIO",
+        "requestedUrl": "https://dev.classmethod.jp/",
+        "observedAt": "2026-10-28T01:12:49.667094+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://dev.classmethod.jp/",
+        "htmlSha256": "90005515cf625512aa2df58f1be512b6964ca73d3df85a65e1f8db5a363162ff"
+      },
+      {
+        "name": "TechFeed",
+        "requestedUrl": "https://techfeed.io/",
+        "observedAt": "2026-10-28T01:12:49.734834+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://techfeed.io/",
+        "htmlSha256": "b00ca5011473004f54b023f49ac2cd55994c68ed73d8337bceda0b461cf2bd45"
+      },
+      {
+        "name": "Hatena Technology",
+        "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "observedAt": "2026-10-28T01:12:49.735784+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "htmlSha256": "7c8cbb16d40a4ab04a4b4f6acfc105f0288c40730d45e4a8720bbbcc45333276"
+      },
+      {
+        "name": "ASCII AI",
+        "requestedUrl": "https://ascii.jp/",
+        "observedAt": "2026-10-28T01:12:49.752329+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ascii.jp/",
+        "htmlSha256": "384ac88510bf68c2a291ba1911903e5a847a1d7b487b2ded6134657fe380f175"
+      },
+      {
+        "name": "AINOW",
+        "requestedUrl": "https://ainow.ai/",
+        "observedAt": "2026-10-28T01:12:49.784171+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ainow.ai/",
+        "htmlSha256": "03b7dd7686e15361032948b66b89593e98d2f9e1574456bba78dd7f6db19e2ef"
+      },
+      {
+        "name": "Ledge.ai",
+        "requestedUrl": "https://ledge.ai/",
+        "observedAt": "2026-10-28T01:12:49.795374+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ledge.ai/",
+        "htmlSha256": "8c7ef043289f2209854c9ccee994764c15ed0ffa4b56998a74985cebc47e6fa6"
+      },
+      {
+        "name": "CyberAgent Developers Blog",
+        "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+        "observedAt": "2026-10-28T01:12:49.839815+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+        "htmlSha256": "5d5839366f8aab9e75473553ac136cc3abea7e78fbed4f558ca3a02230ee5722"
+      },
+      {
+        "name": "LINE Yahoo Tech Blog",
+        "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+        "observedAt": "2026-10-28T01:12:49.867481+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+        "htmlSha256": "bf46df858f73a325758707f91c952fbef856f6c411a2e993e34f84c50fd01ba5"
+      },
+      {
+        "name": "Mercari Engineering",
+        "requestedUrl": "https://engineering.mercari.com/",
+        "observedAt": "2026-10-28T01:12:49.871780+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 403,
+        "actualUrl": "https://engineering.mercari.com/",
+        "error": "Access denied; not retried through another transport"
+      },
+      {
+        "name": "SmartHR Tech Blog",
+        "requestedUrl": "https://tech.smarthr.jp/",
+        "observedAt": "2026-10-28T01:12:49.947786+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://tech.smarthr.jp/",
+        "htmlSha256": "de66f8af897a324a7fa27bc4a8bbcc54f89c649aca6ee7c4c2c2909116efa2ba"
+      },
+      {
+        "name": "LayerX Engineering Blog",
+        "requestedUrl": "https://tech.layerx.co.jp/",
+        "observedAt": "2026-10-28T01:12:49.954624+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://tech.layerx.co.jp/",
+        "htmlSha256": "31a04ce866e2278fc4eebea2c4deca8acd3d4df152064c54570271ee45e4960d"
+      },
+      {
+        "name": "DeNA Engineering",
+        "requestedUrl": "https://engineering.dena.com/blog/",
+        "observedAt": "2026-10-28T01:12:49.991793+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://engineering.dena.com/blog/",
+        "htmlSha256": "7f4b872fb1d68cca98febf0e4115f114f0d15e05da35813ebab8986a8f618a92"
+      },
+      {
+        "name": "Money Forward Developers Blog",
+        "requestedUrl": "https://moneyforward-dev.jp/",
+        "observedAt": "2026-10-28T01:12:50.050238+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://moneyforward-dev.jp/",
+        "htmlSha256": "adb303d851e93c4af522ae197e9f18eb2a337d38b11f7a9397ff10698b0851e0"
+      }
+    ]
+  }
+}
