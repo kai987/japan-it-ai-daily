@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-28",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-10-28T01:26:21.548816+00:00",
+  "scope": "Allfiveoriginals read in full with code/tables/conditions. Coreclaims and QA anchors checked. Article1 mathematical contradiction explicitly explained; authorreported results notourreproduction.",
+  "articles": [
+    {
+      "articleId": "2026-10-28-top-1",
+      "url": "https://zenn.dev/shinsei99/articles/confidence-score-was-not-accuracy",
+      "source": "Zenn",
+      "topic": "分類の確信度と評価の境界",
+      "access": "full",
+      "accessNote": "Full public original including code, conditions, tables and stated limits read. Source captures remain private. Article1 formula contradiction explicitly retained as editorial analysis; no source commands executed.",
+      "capturedAt": "2026-10-28T01:13:31.850791+00:00",
+      "snapshotSha256": "45d7afadbedac0a38f941134c21c398a8273d6cbfe541cb1e9d131f05cacd7eb",
+      "originalTitle": "「確信度が高い」は「正しい」ではなかった — 2位との差で測ると、根拠が1件のとき最大になる",
+      "claims": [
+        {
+          "id": "evaluation",
+          "kind": "source-fact",
+          "statement": "Chronological workplace evaluation reports exactfolder accuracy43.4% with filename+beginning; threshold.9 covers15.6% with91.9% accuracy.",
+          "quote": "91.9%",
+          "locator": "しきい値と的中率／測り方",
+          "conditions": "841active destinations; placementproxylabels, samplesize/CI absent; notgeneralcorrectnessprobability.",
+          "usedIn": {
+            "zh": "全体命中率升至43.4%",
+            "ja": "全体の的中率は30.3%から43.4%",
+            "interview": "しきい値0.9の的中率91.9%"
+          }
+        },
+        {
+          "id": "margin",
+          "kind": "source-fact",
+          "statement": "Initial normalized topsecond margin scores1 for a singleweak .08 candidate.",
+          "quote": "0.08",
+          "locator": "原因／掲載式",
+          "conditions": "Topnonzero, secondzero; describesformula notcalibrationguarantee.",
+          "usedIn": {
+            "zh": "第一名只有0.08",
+            "ja": "弱い類似度0.08",
+            "interview": "弱い候補が一つでも確信度が満点"
+          }
+        },
+        {
+          "id": "share",
+          "kind": "source-fact",
+          "statement": "Replacement divides winning weight by total weight; code doesnot add a minimumsupport condition.",
+          "quote": "重みつき占有率",
+          "locator": "直し方／掲載式",
+          "conditions": "Mathematical check: onlynonzerobucketx yieldsx/x=1; do notrepeatunsupportedclaim singleevidencehole disappears.",
+          "usedIn": {
+            "zh": "第一名得票占全部投票权重的比例",
+            "ja": "一位の得票を投票の総量で割る",
+            "interview": "候補が一つなら一になる点は残ります"
+          }
+        },
+        {
+          "id": "proposal",
+          "kind": "source-fact",
+          "statement": "Author keeps a nightly suggestionlist ratherthanmoving files.",
+          "quote": "提案一覧を出すだけ",
+          "locator": "それでも、まだ黙って動かさない",
+          "conditions": "Highthresholdstillmissesandlowcoverage; readingonlyevaluation,noproofsactualmoves.",
+          "usedIn": {
+            "zh": "最终没有启用自动搬移",
+            "ja": "自動移動せず毎晩の提案一覧",
+            "interview": "まず提案一覧から運用します"
+          }
+        },
+        {
+          "id": "single-vote-boundary",
+          "kind": "author-interpretation",
+          "statement": "Withone nonzero bucket,weightedshare x/x remains1; the article claimthatone-evidenceholeisremovedisnotverified bylistedcode. No inventedminimumevidencecondition retained.",
+          "basedOn": [
+            "margin",
+            "share"
+          ],
+          "conditions": "Directarithmeticcheck0.08/0.08=1; notunreportedsourcebehavior ornewbenchmark.",
+          "usedIn": {
+            "zh": "修正式如果只有一个非零投票目录",
+            "ja": "修正後も1になります",
+            "interview": "候補が一つなら一になる点は残ります"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-28-top-2",
+      "url": "https://zenn.dev/choushinsei/articles/e89f9e6c2c5ddb",
+      "source": "Zenn",
+      "topic": "ブラウザ内動画の生成と共有",
+      "access": "full",
+      "accessNote": "Full public original including code, conditions, tables and stated limits read. Source captures remain private. Article1 formula contradiction explicitly retained as editorial analysis; no source commands executed.",
+      "capturedAt": "2026-10-28T01:13:31.837936+00:00",
+      "snapshotSha256": "9ce0cfae04cf6294f83b396c76fe8e1166d14b07d363574326a4cbb4a884611a",
+      "originalTitle": "サーバーなしで canvas を mp4 に。詰まった10の点",
+      "claims": [
+        {
+          "id": "frame",
+          "kind": "source-fact",
+          "statement": "Canvas frame is determined by recordingandtime; prepaintfirstframe before captureStream.",
+          "quote": "最初のコマが真っ黒",
+          "locator": "仕組み／2／5",
+          "conditions": "720x900 30fps,4Mbps target; timefromperformance.now,notofflineacceleratedencoding.",
+          "usedIn": {
+            "zh": "开始捕获前先画第一帧",
+            "ja": "録画前に最初の一枚",
+            "interview": "最初の一枚を描いてからcaptureStream"
+          }
+        },
+        {
+          "id": "font",
+          "kind": "source-fact",
+          "statement": "Font preparation includes actualglyphs because Japanese font deliveryuses unicode-range.",
+          "quote": "使う字そのもの",
+          "locator": "3.フォント",
+          "conditions": "Implementationexperience, nofullcrossbrowsermatrix.",
+          "usedIn": {
+            "zh": "需要带上实际绘制的文字",
+            "ja": "実際に描く文字も渡します",
+            "interview": "実際に使う文字も指定して読み込みます"
+          }
+        },
+        {
+          "id": "stop",
+          "kind": "source-fact",
+          "statement": "Wait for stop event beforeBlob; hiddenrAFpause remainsunhandled.",
+          "quote": "今の実装では対策していません。",
+          "locator": "7／8／9",
+          "conditions": "Finishnotification andcanShareareseparaterequirements;22chains7s1.1MB singleappreport,notbenchmark.",
+          "usedIn": {
+            "zh": "后台标签页的requestAnimationFrame会停止",
+            "ja": "裏に回ったタブではrequestAnimationFrameが止まる",
+            "interview": "終了通知を待って動画にまとめます"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-28-top-3",
+      "url": "https://dev.classmethod.jp/articles/rds-metrics-comparison/",
+      "source": "DevelopersIO",
+      "topic": "RDSのCPU使用率と待機負荷",
+      "access": "full",
+      "accessNote": "Full public original including code, conditions, tables and stated limits read. Source captures remain private. Article1 formula contradiction explicitly retained as editorial analysis; no source commands executed.",
+      "capturedAt": "2026-10-28T01:13:31.743339+00:00",
+      "snapshotSha256": "76496012e9edac02c42764712db39e62cec605f6fa9b4c36e86c677212085133",
+      "originalTitle": "RDSのCPUUtilization・DBLoad・DBLoadCPUの違いを負荷をかけて比べてみた",
+      "claims": [
+        {
+          "id": "conditions",
+          "kind": "source-fact",
+          "statement": "CPUonlyandlockwait experiments on2vCPU Postgres16,parallelquerydisabled.",
+          "quote": "db.m6g.large",
+          "locator": "検証環境／シナリオ",
+          "conditions": "8GiB,gp350GiB,Tokyo,pgbenchEC2t3medium; CPU1/2/8sessions300s; lockholder300s+20waiters290s.",
+          "usedIn": {
+            "zh": "2 vCPU与8 GiB",
+            "ja": "2 vCPU・8 GiB",
+            "interview": "記事の2 vCPU環境"
+          }
+        },
+        {
+          "id": "results",
+          "kind": "source-fact",
+          "statement": "CPU50/100/100 and DBLoadCPU1/2/8; lockwait CPU4%,AAS21,CPUAAS0.",
+          "quote": "DBLoadが21",
+          "locator": "検証結果／表",
+          "conditions": "Singlecontrolledsetup,asreportednotreproduced;holdercountincluded,notuniversalalert21.",
+          "usedIn": {
+            "zh": "DBLoad约21",
+            "ja": "DBLoad約21",
+            "interview": "DBLoadが約21でもDBLoadCPUはほぼゼロ"
+          }
+        },
+        {
+          "id": "limits",
+          "kind": "source-fact",
+          "statement": "CPUcredits,parallelworkers andwholeinstanceCPU changeinterpretation.",
+          "quote": "CPUクレジット",
+          "locator": "注意点",
+          "conditions": "DBLoad-minusCPUnarrowsnonCPUwait,actualwaiteventsneedinspection;CloudWatch1minute.",
+          "usedIn": {
+            "zh": "再看锁或I/O等等待事件",
+            "ja": "実際の待機イベントまで調べます",
+            "interview": "実際の待機イベントまで確認します"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-28-top-4",
+      "url": "https://zenn.dev/kyrenzk/articles/zenn-cli-dependabot-update-policy",
+      "source": "Zenn",
+      "topic": "依存関係の再現性と更新審査",
+      "access": "full",
+      "accessNote": "Full public original including code, conditions, tables and stated limits read. Source captures remain private. Article1 formula contradiction explicitly retained as editorial analysis; no source commands executed.",
+      "capturedAt": "2026-10-28T01:13:31.915832+00:00",
+      "snapshotSha256": "e5fd19d380bff28d17e7dfa353855e756b79ed148cfdabfd8ac5b72c0e579352",
+      "originalTitle": "zenn-cli の「パッチ更新」で依存が 90 → 371 パッケージに膨らんだ — Dependabot 方針を実測で決める",
+      "claims": [
+        {
+          "id": "graph",
+          "kind": "source-fact",
+          "statement": "Combined CLI .5.4->.5.10 comparison grows dependencyentries90to371,direct8to28.",
+          "quote": "90 → 371",
+          "locator": "3.実測",
+          "conditions": "Linux6.18 Node22.22/npm10.9.4;workcopy;59M->183M;adds287 removes6 changes35;notasinglepatchcausattribution.",
+          "usedIn": {
+            "zh": "锁文件包数90变371",
+            "ja": "90から371",
+            "interview": "依存パッケージが90から371"
+          }
+        },
+        {
+          "id": "repro",
+          "kind": "source-fact",
+          "statement": "npmci installs committedlockgraph evenwhilecaretnewestadvances;articleslistMD5same.",
+          "quote": "0.5.4 のまま再現",
+          "locator": "2／3",
+          "conditions": "SpecificCLIoutput equalitynotallfeature/securityproof;noinstalltimemeasurement.",
+          "usedIn": {
+            "zh": "安装锁定的0.5.4",
+            "ja": "0.5.4が再現されます",
+            "interview": "コミットしたlockfileとnpm ci"
+          }
+        },
+        {
+          "id": "unverified",
+          "kind": "source-fact",
+          "statement": "Dependabot configuration is a proposal,unexecuted;0.xminorhandlingunknown.",
+          "quote": "動作は未検証",
+          "locator": "5.設定例",
+          "conditions": "WeeklyPRintendednotactuallyverifiedautomationsystem.",
+          "usedIn": {
+            "zh": "所附Dependabot设置没有提交到GitHub实跑",
+            "ja": "GitHubで未実行",
+            "interview": "どの版が原因かや安全性までは分かりません"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-28-top-5",
+      "url": "https://zenn.dev/t4n4bot4/articles/50b508a3630ea1",
+      "source": "Zenn",
+      "topic": "クローラーの名乗りと行動分析",
+      "access": "full",
+      "accessNote": "Full public original including code, conditions, tables and stated limits read. Source captures remain private. Article1 formula contradiction explicitly retained as editorial analysis; no source commands executed.",
+      "capturedAt": "2026-10-28T01:13:31.825362+00:00",
+      "snapshotSha256": "15bf0621b3890c3cf40f21f545ac0bc919f5d52b85886295aae462d2a7755d55",
+      "originalTitle": "AI クローラーを名乗るアクセスは、何を探していたのか ― 名乗りと行動を照らしてみた",
+      "claims": [
+        {
+          "id": "behavior",
+          "kind": "source-fact",
+          "statement": "OneIP25943requests over20h,28UA,allGETsfeatureheader,robotszero.",
+          "quote": "25,943",
+          "locator": "何が来ていたか／すべてのGET",
+          "conditions": "JSTOct11->12;25568GET375POST;knownbypassshapereportednotownreproduction.",
+          "usedIn": {
+            "zh": "28种UA",
+            "ja": "28種類のUser-Agent",
+            "interview": "28種類のUser-Agentを回し"
+          }
+        },
+        {
+          "id": "history",
+          "kind": "source-fact",
+          "statement": "BroaderretainedlogsidentifyfirstAugust30 andcorrectnewnessclaim;dailyaggregatesUTC.",
+          "quote": "最初の 1 件は 8/30",
+          "locator": "今週新しく／どうして",
+          "conditions": "Approx2200->6500perday differentwindows;notstartofnewattacker, UTC/JSTdifferent.",
+          "usedIn": {
+            "zh": "首条记录定位到8月30日",
+            "ja": "初出を8月30日",
+            "interview": "行動の記録を分けます"
+          }
+        },
+        {
+          "id": "attribution",
+          "kind": "source-fact",
+          "statement": "NoofficialIPmatch,norealsecrets andunknownactor/AIautonomy.",
+          "quote": "今回はしていません",
+          "locator": "帰属：言えること・言えないこと",
+          "conditions": "Onehoneypot;robotsbehaviornotidentityproof;pathheuristic73%config8%credentials notverifiedbreach.",
+          "usedIn": {
+            "zh": "尚未核对官方IP范围",
+            "ja": "公式IPの範囲との照合は今回はしていません",
+            "interview": "公式IPとの照合はしていません"
+          }
+        }
+      ]
+    }
+  ]
+}
