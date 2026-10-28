@@ -3,7 +3,7 @@
   "date": "2026-10-28",
   "status": "reviewed",
   "reviewedBy": "Codex original-source review",
-  "reviewedAt": "2026-10-28T01:24:15.022410+00:00",
+  "reviewedAt": "2026-10-28T01:26:21.548816+00:00",
   "scope": "Allfiveoriginals read in full with code/tables/conditions. Coreclaims and QA anchors checked. Article1 mathematical contradiction explicitly explained; authorreported results notourreproduction.",
   "articles": [
     {
@@ -183,7 +183,7 @@
           "locator": "注意点",
           "conditions": "DBLoad-minusCPUnarrowsnonCPUwait,actualwaiteventsneedinspection;CloudWatch1minute.",
           "usedIn": {
-            "zh": "具体原因需看事件",
+            "zh": "再看锁或I/O等等待事件",
             "ja": "実際の待機イベントまで調べます",
             "interview": "実際の待機イベントまで確認します"
           }
