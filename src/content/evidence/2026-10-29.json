@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-29",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-10-29T01:58:16.396634+00:00",
+  "scope": "Fivefullprimaryengineeringaccounts read including code, tables, evaluationconditions andlimits. DeclaredfactsandQAanchorschecked; ourprojectideas/byte-limitseparation are teaching/inference, notreportedmeasurements.",
+  "articles": [
+    {
+      "articleId": "2026-10-29-top-1",
+      "url": "https://zenn.dev/asahi_terass/articles/7266e919b4648a",
+      "source": "Zenn",
+      "topic": "業務AIの確認順序と評価",
+      "access": "full",
+      "accessNote": "Full public original, including implementation snippets, reported conditions and limits, read. Original captures kept outside Git. No source-provided commands executed.",
+      "capturedAt": "2026-10-29T01:43:33.120748+00:00",
+      "snapshotSha256": "37055518686cad5a27f07851419944e16e401efabd89e396628420e07693d297",
+      "originalTitle": "自社AIエージェントの「教育ロジック」をOSSにした - AIに「何年住みますか？」と聞き返させるまで",
+      "claims": [
+        {
+          "id": "order",
+          "kind": "source-fact",
+          "statement": "Confirm residence duration and equivalent-rent comparison before conclusion.",
+          "quote": "何年住むのか",
+          "locator": "AIは計算を間違えない／失敗その2",
+          "conditions": "Business-rule design from author, not individual financial advice or universal economic model.",
+          "usedIn": {
+            "zh": "先问居住年限",
+            "ja": "何年住む予定かを聞き返す",
+            "interview": "居住年数を先に聞く手順"
+          }
+        },
+        {
+          "id": "evaluation",
+          "kind": "source-fact",
+          "statement": "11questions x3models x3repeats:33answers/model/condition;aggregateNGpass24->84->90afterfeedback.",
+          "quote": "各条件33回の回答",
+          "locator": "採点役のAIを信用できるようにする",
+          "conditions": "Modeljudgeblinded;exactcitedtextchecknotcorrectnessproof;31/32negativecontrols; repeatedsamecasesnotindependentholdout.",
+          "usedIn": {
+            "zh": "每模型每条件33个回答",
+            "ja": "一モデル・一条件33回答",
+            "interview": "十一問を三モデルで各三回"
+          }
+        },
+        {
+          "id": "state",
+          "kind": "source-fact",
+          "statement": "Stateless compressed consultation data require size/decompression validation.",
+          "quote": "長さと展開後のサイズに上限",
+          "locator": "MCPサーバー",
+          "conditions": "No server DB doesnotproveallclient/logprivacy;60requests/min/source; inputvalidationretained.",
+          "usedIn": {
+            "zh": "检查长度、解压后大小和字段",
+            "ja": "長さと展開後の大きさを制限",
+            "interview": "未使用の相談でも確認"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-29-top-2",
+      "url": "https://zenn.dev/ushi_osushi/articles/intl-segmenter-grapheme-count",
+      "source": "Zenn",
+      "topic": "Unicodeと画面の文字数",
+      "access": "full",
+      "accessNote": "Full public original, including implementation snippets, reported conditions and limits, read. Original captures kept outside Git. No source-provided commands executed.",
+      "capturedAt": "2026-10-29T01:43:32.808052+00:00",
+      "snapshotSha256": "5fd17ad8812d775c5f849bdc258fdd48757c014ba46f7fd1667e4aeae3d97ac9",
+      "originalTitle": "Intl.Segmenterで見た目通りの文字数を正確にカウントする",
+      "claims": [
+        {
+          "id": "units",
+          "kind": "source-fact",
+          "statement": "UTF16units/codepoints/graphemes differ;family11/7/1.",
+          "quote": "書記素クラスタ",
+          "locator": "lengthの限界／スプレッド構文／Intl.Segmenter",
+          "conditions": "IllustrativeUnicodeexamples,notaperformancebenchmark; graphemeisnotbytes.",
+          "usedIn": {
+            "zh": "length为11，展开后为7",
+            "ja": "家族の絵文字は11",
+            "interview": "Intl.Segmenterのgrapheme"
+          }
+        },
+        {
+          "id": "reuse",
+          "kind": "source-fact",
+          "statement": "Reuse segmenter instance anddistinguish runtime supportfromTStypes.",
+          "quote": "インスタンスは使い回す",
+          "locator": "インスタンスは使い回す／TypeScript注意",
+          "conditions": "No numeric latency claim; old browserdevicesneedseparatecheck.",
+          "usedIn": {
+            "zh": "在函数外创建分段器并复用实例",
+            "ja": "インスタンスを作り置きして使い回します",
+            "interview": "旧ブラウザと型定義も確認"
+          }
+        },
+        {
+          "id": "storage-contract",
+          "kind": "author-interpretation",
+          "basedOn": [
+            "units"
+          ],
+          "statement": "Visiblegrapheme count and backend byte-storagebudgetmustbevalidated separately; no claim the articlemeasuredthatbackend.",
+          "conditions": "Engineeringapplicationofdistinctunits; notsourcebenchmark.",
+          "usedIn": {
+            "zh": "显示字数与服务端存储字节上限分别验证",
+            "ja": "表示の制限、サーバー側の制限、保存容量を別の契約",
+            "interview": "保存容量のバイト上限は別に検証"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-29-top-3",
+      "url": "https://dev.classmethod.jp/articles/lambda-recursive-loop-detection-eventbridge-custom-bus/",
+      "source": "DevelopersIO",
+      "topic": "イベント駆動の再帰防止",
+      "access": "full",
+      "accessNote": "Full public original, including implementation snippets, reported conditions and limits, read. Original captures kept outside Git. No source-provided commands executed.",
+      "capturedAt": "2026-10-29T01:43:32.652505+00:00",
+      "snapshotSha256": "2982049c7295efc9ad4f3a13f3ff27c5b492906be6523f01285971a85a28b8aa",
+      "originalTitle": "Lambda の再帰ループ検出が EventBridge の新しい Custom Event Bus に対応したので試してみた",
+      "claims": [
+        {
+          "id": "scope",
+          "kind": "source-fact",
+          "statement": "Newsubscriberbus isdistinctfromClassicrulesandtargets.",
+          "quote": "AWS::EventsV2::EventBus",
+          "locator": "対象は新しいCustomEventBus／検証環境",
+          "conditions": "TokyoPython3.13boto3layer1.43.118; included1.42.97lacksnewclient;MaxBatchSize1;30hopguard.",
+          "usedIn": {
+            "zh": "资源代际",
+            "ja": "イベントバスの世代",
+            "interview": "新しいCustom Event Bus"
+          }
+        },
+        {
+          "id": "counts",
+          "kind": "source-fact",
+          "statement": "Lastcodehop16,nextrejected;asyncdropped1, syncwith2retriesdropped3.",
+          "quote": "ホップ数 16",
+          "locator": "非同期呼び出し／同期呼び出し",
+          "conditions": "Authorsexperimentnotours;asyncSQScontainspayload, syncfailuremetadataonly;retryduplicatesnotdistinctbusinessitems.",
+          "usedIn": {
+            "zh": "第17次在函数执行前被挡住",
+            "ja": "十七回目は実行前に拒否",
+            "interview": "再試行二回により、遮断件数は三件"
+          }
+        },
+        {
+          "id": "excluded",
+          "kind": "source-fact",
+          "statement": "Classic/defaultdidnotstopbeforeown30cap;delayedHealthnotimmediatealarm.",
+          "quote": "ホップ数 30 の安全策",
+          "locator": "Classicとデフォルト／HealthDashboard",
+          "conditions": "Do not generalize all event sources;Allowsettingdisables;tracepropagationcausalexplanationisauthorhypothesis.",
+          "usedIn": {
+            "zh": "运行到作者的30跳上限",
+            "ja": "独自の三十ホップ上限まで",
+            "interview": "Classicは三十回の独自上限"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-29-top-4",
+      "url": "https://tech.smarthr.jp/entry/2026/10/28/112702",
+      "source": "SmartHR Tech Blog",
+      "topic": "不具合知見の段階的な参照",
+      "access": "full",
+      "accessNote": "Full public original, including implementation snippets, reported conditions and limits, read. Original captures kept outside Git. No source-provided commands executed.",
+      "capturedAt": "2026-10-29T01:43:32.683383+00:00",
+      "snapshotSha256": "51efda3be7bf33fb4dc24f9928cc71ea163e6ee6729881466aa5dcc25a66e2ad",
+      "originalTitle": "不具合の知見を、次のレビューへ —— レビュー観点を蓄積・活用する3層構造の運用",
+      "claims": [
+        {
+          "id": "layers",
+          "kind": "source-fact",
+          "statement": "Universalall, Bug-drivenrelevant, Archivedhistory;filtermetadatafirst.",
+          "quote": "軽量なメタデータ表と観点本文",
+          "locator": "3層構造／観点の参照方法",
+          "conditions": "Two tags=featurearea andaspect; neverloadwholebodytofirstfilter; qualitativeearlyexperience.",
+          "usedIn": {
+            "zh": "先按“功能领域”和“检查视角”两个标签筛选",
+            "ja": "機能領域タグと観点タグ",
+            "interview": "タグで絞ってから本文を読みます"
+          }
+        },
+        {
+          "id": "archive",
+          "kind": "source-fact",
+          "statement": "Three recurrencespromotion/sixmonthsarchive islocalruleunderreview.",
+          "quote": "その観点があるおかげで不具合が起きていない",
+          "locator": "運用フロー／アーカイブ基準の見直し",
+          "conditions": "No recurrence maymeanpreventionworks;usage-effectmeasurementplanned,notimplementedprovenmetric.",
+          "usedIn": {
+            "zh": "不再发生可能恰恰是检查有效",
+            "ja": "観点が効いているからかもしれず",
+            "interview": "六か月再発しない理由が対策の効果"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-29-top-5",
+      "url": "https://zenn.dev/openedfile/articles/dxf-viewer-work-budget",
+      "source": "Zenn",
+      "topic": "図面展開と描画の資源予算",
+      "access": "full",
+      "accessNote": "Full public original, including implementation snippets, reported conditions and limits, read. Original captures kept outside Git. No source-provided commands executed.",
+      "capturedAt": "2026-10-29T01:43:32.792983+00:00",
+      "snapshotSha256": "45a5bf4b60cd085cda0068f307b7247bbdf32b3b8e3a3b0bd8e083e13e28def4",
+      "originalTitle": "5.5 KB の DXF が 1 億本の線に展開される：ブラウザの DXF ビューアを固まらせない上限の数え方",
+      "claims": [
+        {
+          "id": "budget",
+          "kind": "source-fact",
+          "statement": "SmallDXF expands100millionlines;chargebeforecreation, norefunddiscardedwork.",
+          "quote": "作った時点と、払う時点がずれている。",
+          "locator": "小さなファイル／最初の作り",
+          "conditions": "5.5KB syntheticsample,8millionworkbudget;Node2.48millionlines1.6secisauthorconditions, notuniversalbound.",
+          "usedIn": {
+            "zh": "统一扣除工作预算，丢弃也不退还",
+            "ja": "作る前に予算を消費し、捨てた分も戻さない",
+            "interview": "作る前に予算を消費し"
+          }
+        },
+        {
+          "id": "canvas",
+          "kind": "source-fact",
+          "statement": "Queueingdoesnotmeasurefinishedraster;pixelreadusedperstep.",
+          "quote": "読み出しに 1.7 秒",
+          "locator": "測り方の罠",
+          "conditions": "44万queuedlines and1pixelread1.7s;getImageDataflushhascost, notgenericfreeoptimization.",
+          "usedIn": {
+            "zh": "读一个像素就用了1.7秒",
+            "ja": "一画素の読み出しに1.7秒",
+            "interview": "一画素の読み出しまで測ります"
+          }
+        },
+        {
+          "id": "limits",
+          "kind": "source-fact",
+          "statement": "Chromiumonlycalibration,34real44synthetic;partial/outlineand57sredrawremain.",
+          "quote": "Firefox と Safari では測っていない",
+          "locator": "試験／残っている限界",
+          "conditions": "Responsivenessnotcompletenessorspeed; empiricalmemory400MBcapnotcrossbrowsersafetyproof.",
+          "usedIn": {
+            "zh": "Firefox和Safari未测",
+            "ja": "FirefoxとSafariは未測定",
+            "interview": "較正はChromiumだけ"
+          }
+        }
+      ]
+    }
+  ]
+}
