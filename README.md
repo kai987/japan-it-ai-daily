@@ -101,15 +101,17 @@ These checks do not replace original-source review or judgment of natural spoken
 
 MP3s and manifests are versioned under `public/audio/japanese/YYYY-MM-DD/`. R2 is the production delivery copy; manifests are also served with the site when present. Existing local MP3s allow development without R2. Production playback uses an immutable `name--<file-sha256>.mp3` object path, so a new manifest cannot accidentally cache older bytes while R2 is still publishing. Legacy object names remain available for existing pages. Hash-named delivery copies are derived during publication and are not duplicated in Git; local development uses the original files with a version query.
 
-To regenerate audio, start AivisSpeech (default `http://127.0.0.1:10101`) and install ffmpeg:
+Install ffmpeg before generating audio. The managed manual entry starts AivisSpeech when needed (default `http://127.0.0.1:10101`), then runs generation and duration writing inside one shared recording session:
 
 ```sh
 npm run audio:generate:latest
-# Or a specific date:
-node scripts/generate-japanese-audio.mjs --date YYYY-MM-DD
-node scripts/generate-interview-audio.mjs --date YYYY-MM-DD
-node scripts/validate-interview-audio-duration.mjs --date YYYY-MM-DD --write
+# Or a specific date, including duration writing:
+npm run audio:generate -- --date YYYY-MM-DD
 ```
+
+The existing `audio:generate:all`, `audio:generate:all:force` and `audio:generate:interview:*` commands use this same session while keeping their original scopes. Historical/all/force generation remains manual maintenance; scheduled publication continues to use the strict `node scripts/generate-daily-audio.mjs --date YYYY-MM-DD` entry and the checks in [CODEX_AUDIO.md](docs/automation/CODEX_AUDIO.md).
+
+The session shares an OS lock with N1 and requests ordinary background app termination after a completed batch, including when the Mac is locked. It verifies app and engine exit and records `AIVIS_LIFECYCLE_JSON` cleanup evidence. Another active recorder, an unsaved-project confirmation or a refused quit remains deferred; it never force-quits or discards work. This changes no schedule.
 
 Before committing audio, run:
 
