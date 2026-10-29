@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-29",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "55851864a70a17f563fd4844988e80f772e9f2f8",
   "sourceWindow": {
     "from": "2026-10-28T10:00:00+09:00",
     "to": "2026-10-29T10:00:00+09:00"
   },
   "createdAt": "2026-10-29T01:42:09.531Z",
-  "updatedAt": "2026-10-29T02:08:56.920Z",
+  "updatedAt": "2026-10-29T02:09:06.023Z",
   "completedArtifacts": [
     {
       "path": "src/content/daily/2026-10-29.md",
@@ -37,7 +37,7 @@
   ],
   "lastError": null,
   "baseCommit": "55851864a70a17f563fd4844988e80f772e9f2f8",
-  "nextAction": "Run exact draft commit CI; source-bound request only after all preflight gates pass.",
+  "nextAction": "Unique publisher owns the request slot; wait exact publisher/main Pages and verify full public snapshot.",
   "draftCommit": "c2e3f56c641d704b9b8d4a07b29f4cacebb4c837",
   "preflightRunId": 40804350361,
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
@@ -159,5 +159,7 @@
         "log": "/tmp/japan-daily-20261029/logs-final/15-evidence-check.log"
       }
     ]
-  }
+  },
+  "requestCommit": "4cd589e947574ea368f48f29aabd9b1d3389a4a6",
+  "requestBlob": "bfceaf0cd8a5d44078eef4db5eadb9d335c16786"
 }
