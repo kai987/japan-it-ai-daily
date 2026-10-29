@@ -67,7 +67,7 @@ const root = localeRoot(base, locale);
         <div class="interview-filters" role="group" aria-label={copy.filterAria}>
           <button class="interview-filter" type="button" data-filter="all" aria-pressed="true">{copy.all}</button>
           {availableCategories.map((category) => (
-            <button class="interview-filter" type="button" data-filter={category} aria-pressed="false">{category}</button>
+            <button class="interview-filter" type="button" data-filter={category} data-filter-key={category === (locale === 'ja' ? '企業AI' : '企业 AI') ? 'enterprise-ai' : category} aria-pressed="false">{category}</button>
           ))}
         </div>
       </div>
@@ -143,14 +143,41 @@ const root = localeRoot(base, locale);
       const listStart = document.querySelector('#interview-list-start');
       if (!buttons.length || !days.length) return;
 
-      let currentFilter = 'all';
-      let currentPage = 1;
+      const stateFromUrl = () => {
+        const url = new URL(window.location.href);
+        const requestedFilter = url.searchParams.get('filter') || 'all';
+        const filterButton = buttons.find((button) => button instanceof HTMLButtonElement && (
+          (button.dataset.filterKey || button.dataset.filter) === requestedFilter ||
+          button.dataset.filter === requestedFilter ||
+          (button.dataset.filterKey === 'enterprise-ai' && ['企業AI', '企业 AI'].includes(requestedFilter))
+        ));
+        const requestedPage = Number.parseInt(url.searchParams.get('page') || '1', 10);
+        return {
+          filter: filterButton instanceof HTMLButtonElement ? filterButton.dataset.filter || 'all' : 'all',
+          page: Number.isFinite(requestedPage) && requestedPage > 0 ? requestedPage : 1,
+        };
+      };
+      const initialState = stateFromUrl();
+      let currentFilter = initialState.filter;
+      let currentPage = initialState.page;
       const getFilteredDays = () => days.filter((day) => {
         const categories = (day.dataset.categories || '').split('|');
         return currentFilter === 'all' || categories.includes(currentFilter);
       });
       const scrollToList = () => {
-        if (listStart instanceof HTMLElement) listStart.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (listStart instanceof HTMLElement) listStart.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+      };
+      const syncUrl = (mode: 'replace' | 'push' | 'none') => {
+        if (mode === 'none') return;
+        const url = new URL(window.location.href);
+        const filterButton = buttons.find((button) => button instanceof HTMLButtonElement && button.dataset.filter === currentFilter);
+        if (currentFilter === 'all') url.searchParams.delete('filter');
+        else url.searchParams.set('filter', filterButton instanceof HTMLButtonElement ? filterButton.dataset.filterKey || currentFilter : currentFilter);
+        if (currentPage <= 1) url.searchParams.delete('page');
+        else url.searchParams.set('page', String(currentPage));
+        const nextUrl = `${url.pathname}${url.search}${url.hash}`;
+        if (mode === 'push') history.pushState(null, '', nextUrl);
+        else history.replaceState(null, '', nextUrl);
       };
       const pageNumbers = (totalPages: number, page: number) => {
         if (totalPages <= 7) return Array.from({ length: totalPages }, (_, index) => index + 1);
@@ -160,11 +187,12 @@ const root = localeRoot(base, locale);
       const renderPagination = (filteredDays: HTMLElement[]) => {
         const totalItems = filteredDays.length;
         const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
-        currentPage = Math.min(currentPage, totalPages);
+        currentPage = Math.min(Math.max(1, currentPage), totalPages);
         if (pagination instanceof HTMLElement) pagination.hidden = totalItems <= PAGE_SIZE;
         if (prev instanceof HTMLButtonElement) prev.disabled = currentPage <= 1;
         if (next instanceof HTMLButtonElement) next.disabled = currentPage >= totalPages;
         if (pageContainer instanceof HTMLElement) {
+          const restoreFocus = pageContainer.contains(document.activeElement);
           pageContainer.replaceChildren();
           const pages = pageNumbers(totalPages, currentPage);
           let previousPage = 0;
@@ -185,11 +213,12 @@ const root = localeRoot(base, locale);
             pageButton.addEventListener('click', () => {
               if (page === currentPage) return;
               currentPage = page;
-              render(true);
+              render({ scroll: true, historyMode: 'push' });
             });
             pageContainer.appendChild(pageButton);
             previousPage = page;
           });
+          if (restoreFocus) pageContainer.querySelector<HTMLButtonElement>('[aria-current="page"]')?.focus({ preventScroll: true });
         }
         if (status instanceof HTMLElement) {
           if (!totalItems) status.textContent = '';
@@ -200,8 +229,10 @@ const root = localeRoot(base, locale);
           }
         }
       };
-      const render = (shouldScroll = false) => {
+      const render = (options: { scroll?: boolean; historyMode?: 'replace' | 'push' | 'none' } = {}) => {
         const filteredDays = getFilteredDays();
+        const totalPages = Math.max(1, Math.ceil(filteredDays.length / PAGE_SIZE));
+        currentPage = Math.min(Math.max(1, currentPage), totalPages);
         const pageStart = (currentPage - 1) * PAGE_SIZE;
         const visibleSet = new Set(filteredDays.slice(pageStart, pageStart + PAGE_SIZE));
         days.forEach((day) => { day.hidden = !visibleSet.has(day); });
@@ -211,26 +242,34 @@ const root = localeRoot(base, locale);
           button.setAttribute('aria-pressed', String(button.dataset.filter === currentFilter));
         });
         renderPagination(filteredDays);
-        if (shouldScroll) scrollToList();
+        syncUrl(options.historyMode || 'replace');
+        if (options.scroll) scrollToList();
       };
       buttons.forEach((button) => button.addEventListener('click', () => {
         if (!(button instanceof HTMLButtonElement)) return;
+        if (button.dataset.filter === currentFilter && currentPage === 1) return;
         currentFilter = button.dataset.filter || 'all';
         currentPage = 1;
-        render(false);
+        render({ historyMode: 'push' });
       }));
       if (prev instanceof HTMLButtonElement) prev.addEventListener('click', () => {
         if (currentPage <= 1) return;
         currentPage -= 1;
-        render(true);
+        render({ scroll: true, historyMode: 'push' });
       });
       if (next instanceof HTMLButtonElement) next.addEventListener('click', () => {
         const totalPages = Math.ceil(getFilteredDays().length / PAGE_SIZE);
         if (currentPage >= totalPages) return;
         currentPage += 1;
-        render(true);
+        render({ scroll: true, historyMode: 'push' });
       });
-      render(false);
+      window.addEventListener('popstate', () => {
+        const state = stateFromUrl();
+        currentFilter = state.filter;
+        currentPage = state.page;
+        render({ historyMode: 'none' });
+      });
+      render({ historyMode: 'replace' });
     })();
   </script>
 
