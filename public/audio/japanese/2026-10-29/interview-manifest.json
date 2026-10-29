@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-29",
+  "generatedAt": "2026-10-29T03:24:20.204Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "業務AIに判断手順を教えた効果を、どう確かめますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "2882402481a078bf9b3bd974368e2f5e8c3d75bca3ed91077df42489a80a28fb",
+      "audioSha256": "c0f66af056c2a90a29c66b67195718091407c862f9dd4cf849f7b9389403bf42",
+      "durationSeconds": 4.434
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "業務で誤る判断を先にケース化します。TERASSの住宅相談では、居住年数を先に聞く手順と、同等物件の家賃を使う条件を明示しました。評価は十一問を三モデルで各三回試し、採点根拠の引用も照合しています。ただし同じ問題で直した結果なので、未使用の相談でも確認し、合格率を相談全体の正しさとは扱いません。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "12a49da7173b623e856cb442b8b4c736a524a7f8c083f2b1dd37492fcfc62b00",
+      "audioSha256": "f79e433ac554f4313919dc3bb499985ea06a5fbfe5e3b67e7aa1760ba7aec477",
+      "durationSeconds": 26.486,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "入力フォームの文字数を、利用者の見た目に合わせるにはどうしますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "30724efa9661c44d6367be25d1aecc96ae902969bc7321500626290437dc3204",
+      "audioSha256": "d79dc345c11d1a3d4515b587a9636d73ef1d8ade500d072ce9f64241eef531da",
+      "durationSeconds": 5.107
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "画面で一文字と数える単位を、仕様として決めます。lengthはUTF-16のコード単位なので、家族の絵文字は十一になります。スプレッド構文でも七ですが、Intl.Segmenterのgraphemeなら一です。入力欄では分割器を使い回し、旧ブラウザと型定義も確認します。ただし、保存容量のバイト上限は別に検証します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "1846df6ffd79c19799fa80a79a4ceac9627be7b8f13d14d1007012e559f85b6a",
+      "audioSha256": "9d4df5ae6e4029300c884ebe26f0fddbdb5ad02168e57a264e2df0dcd4540fe3",
+      "durationSeconds": 26.049,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "イベント連携の再帰防止を、サービス名だけで判断してよいですか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "7fff0897e774adfffa1c0b375088d25b146caaa4b99089dfbcfc283c02e98b60",
+      "audioSha256": "80fbba6781c10e171ae5d20bb9c80a0c3619c6c48319406ff8845071882edbce",
+      "durationSeconds": 5.166
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "EventBridgeという名前だけで、検出対象とは判断しません。記事の東京リージョンでは、新しいCustom Event Busは十六ホップで止まり、Classicは三十回の独自上限まで続きました。同期では再試行二回により、遮断件数は三件です。ただし一つの検証なので、SDKと失敗先を自分の構成でも確かめます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "c5a5714d660bc56ad8bd5ba3fdd84f1a72d465dbe2d6c0f74241fd0962bb3cb9",
+      "audioSha256": "900de2facd0c23c99902f8a2c93379f3d745a51160b909130b89e83ca5f47b06",
+      "durationSeconds": 25.158,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "不具合の知見をAIレビューへ渡すとき、何を工夫しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "10bd1b7390ef774bd6c8696bcb4c68744ced3340873c6a0efa653ca6ede1633d",
+      "audioSha256": "8b0bd39b4edcbf1a7ebdfe3c52fffdc52f63a4934e45610222a9441c923b3d6d",
+      "durationSeconds": 4.805
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "観点の蓄積と、毎回読ませる範囲を分けます。SmartHRはUniversal層を常時参照し、Bug-driven層は機能領域と観点のタグで絞ってから本文を読みます。Archived層には履歴を残します。ただし、六か月再発しない理由が対策の効果かもしれません。参照から外す前に有効性を確かめ、再発時に戻せる運用にします。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "6eadf0fbb1505bb51efb6cd2ec699f9ae560aabc7a902dd9a45665a872869598",
+      "audioSha256": "fbde89438a33a99d0a842727ca0682860e53db005ab29112f84285dacba89166",
+      "durationSeconds": 25.995,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "ブラウザで外部の図面を開く際、どの上限を設けますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "44288a5cfaa276199ccfd526c7ba10a5ff2ca9dae4741854bfac5b758915c459",
+      "audioSha256": "d1cbd8d583867caca1f5ef7c5c134962304c1de2bd0b78f8480c81b990bc01fc",
+      "durationSeconds": 4.782
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "ファイル容量ではなく、展開と描画の仕事量を制限します。DXFの入れ子は五・五キロバイトでも一億本に増えます。記事では作る前に予算を消費し、捨てた写しの分も戻しません。canvasは後で描くため、一画素の読み出しまで測ります。ただし較正はChromiumだけなので、他のブラウザでの時間や部分描画も確認します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "6385141b79eafe89dd5120784dde54ede18fb4c30d3838ef4300a97d18c37599",
+      "audioSha256": "0fab5f65fb6667e634d3edeec50a51c63bcf1b2aa4a5794dc40b243824e744ec",
+      "durationSeconds": 25.485,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "数値を改善する前に、その数値が何を表すか説明してください。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "46590f7790e3747fb55fde7862b088021c6903e0fefd5ac976adaae7a9a27692",
+      "audioSha256": "6035d4db39ee3cdfc34ef93958708698b16306f157a29b764ff1bce06fa3557f",
+      "durationSeconds": 5.317
+    },
+    {
+      "index": 2,
+      "text": "処理を始める前に、どこで入力や作業量を絞りますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "8a3895c487f6c9f8db2f829b0198a3e22498ef966b4cef9f6a8600725f098b39",
+      "audioSha256": "77d1579daa1f25fc92f5b3ee08c3e357fffe2f72f398514954781ba1dae025cd",
+      "durationSeconds": 4.678
+    },
+    {
+      "index": 3,
+      "text": "一つの実験や運用規則を、自社へ適用するとき何を残しますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "50776da9b4b4d686a47cd9644452d3d6eb9bad13a6ec5b6cdc98a3f0526c6da0",
+      "audioSha256": "e204ccd623b22bcf048452039e3bcca663c972ba8c198b7ff671d1ba085c0f95",
+      "durationSeconds": 5.642
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-29T03:24:34.199Z"
+}
