@@ -173,6 +173,9 @@ technicalTerms:
 mustRememberWords:
 - 寄せる
 - 固まる
+- 触れる
+- 囲む
+- 詰める
 - 再発
 - 復活
 - 見本
