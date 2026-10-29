@@ -1,14 +1,41 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-29",
-  "stage": "learning_verified",
+  "stage": "drafts_ready",
   "sourceCommit": "55851864a70a17f563fd4844988e80f772e9f2f8",
   "sourceWindow": {
     "from": "2026-10-28T10:00:00+09:00",
     "to": "2026-10-29T10:00:00+09:00"
   },
   "createdAt": "2026-10-29T01:42:09.531Z",
-  "updatedAt": "2026-10-29T01:57:04.973Z",
-  "completedArtifacts": [],
-  "lastError": null
+  "updatedAt": "2026-10-29T02:05:47.591Z",
+  "completedArtifacts": [
+    {
+      "path": "src/content/daily/2026-10-29.md",
+      "sha256": "1e96d269b65577170ed3e6dab2e846595648b21a58208438fb2243af6b48c7aa"
+    },
+    {
+      "path": "src/content/daily-ja/2026-10-29.md",
+      "sha256": "7549e1673ec03ad0ac5ef2b4ea574be4c89ce7140d554b234904d4a16828fcce"
+    },
+    {
+      "path": "src/content/japanese/2026-10-29.md",
+      "sha256": "90667fb1e4c2ab6682a2959651ae1210b3cbbdfe2e76961670a6cc2275b17642"
+    },
+    {
+      "path": "src/content/japanese-ja/2026-10-29.md",
+      "sha256": "378f065707391b19443f4773b984f96a79624611f871e57b19c5475870a58312"
+    },
+    {
+      "path": "src/content/evidence/2026-10-29.json",
+      "sha256": "69a49af5ecd1b39ecee131185248f92b32bb85f3919872bab4a242b5b4284ea1"
+    },
+    {
+      "path": "src/data/interviews/2026-10-29.json",
+      "sha256": "0a4ad5ed4673f2c79e6b821ca459fa8362af75cc5d5bda50daebffa9fbde1ed0"
+    }
+  ],
+  "lastError": null,
+  "baseCommit": "55851864a70a17f563fd4844988e80f772e9f2f8",
+  "nextAction": "Run exact draft commit CI; source-bound request only after all preflight gates pass."
 }
