@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-30",
+  "generatedAt": "2026-10-30T01:33:23.340Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "自前のLLM推論を、通常のWeb APIと同じ指標で増減させますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "d87324e9d71b43532cc2ff9b1dbac2370140500ae1bbb383fb68a87a4f08f3bb",
+      "audioSha256": "df7c5f95b45b4a57ca9c3bfb5cda9c1af74e10b9842698c64d83910badc1c2fe",
+      "durationSeconds": 6.026
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "GPU使用率だけではなく、推論の待ち件数と処理中の状態を見ます。記事では、EPPがKVキャッシュの再利用先を選び、待ち行列をKEDAの起動条件にしています。ゼロ台では処理中件数が増えないからです。ただし起動には数分かかるため、対話用途では一台を残すか、待ち時間を利用者に示すかを決めます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "045ee28a037858f4ad8d68b956f80db7baf8ca28743ad02eb2fb59e00920e45f",
+      "audioSha256": "7713519ff5d3942ce6260d307f6c76951647f9a4b1b953d4a210c68f506c58f3",
+      "durationSeconds": 24.784,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "GPUを複数のコンテナで共有する際、何を確認しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "bbbfd8d9fc7802bc3d7f8484fa358d0bb3cdde708b380fb90566f6b8cb128045",
+      "audioSha256": "abdbb7f72ef9cb7f48e6e433b3fbed853aa881dafe15d61f205da2932aac3914",
+      "durationSeconds": 5.108
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "資源の割当と、信頼できない処理の隔離を分けます。ECSのMPSでは、演算割合を半分ずつにした二タスクの性能は、単独の半分設定とほぼ同じでした。ただし上限は環境変数で渡され、内部コードが変えると外れています。予約残量と実使用量を区別し、別の顧客の処理はクラスターなどの境界も分けます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "ac9e793e581fb90a61fb27e9096c3cb9f5494a74301f067233979756d51a4d83",
+      "audioSha256": "4b89d1599977016f68eb3cdc1eff5523387c9a59d451b617e1938eb1d59bcd01",
+      "durationSeconds": 25.169,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "近くの人だけが聞ける通話で、ブラウザの購読制御だけで十分ですか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "786101b610b3b2517cbda7bd5a9b0ee45fc71905db209ac9a2c515b190ec9e05",
+      "audioSha256": "2053835ecbb9719bf7dd97ba44d19724263822ca6064508b386d35059c5a6d6b",
+      "durationSeconds": 5.653
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "聞く側の購読切り替えだけでは十分ではありません。Hotoriでは、近接関係を裏返して話す側の許可を作り、LiveKitのSFUで配送を止めます。許可が届く前とWebSocket切断時は、誰にも許さない状態に戻します。ただし話す人が自分の声を公開することは防げず、これだけで機密性や暗号化まで保証するわけではありません。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "32d5a9efbda81dae37196bce597575fcc9e623de928b6dee55b1288cf801bea2",
+      "audioSha256": "2db1551449b945486ba70ab9acadcd9cdb37d151ec631885fe54d16676f84880",
+      "durationSeconds": 25.632,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "Next.jsサイトの実行地域を増やす際、何を根拠に判断しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "7d98a97e6b0ce4f1fff930f7fb4b885cb71a71db3fad6d1f52652c5d36805414",
+      "audioSha256": "2d512d3f7b7e5b50479a14841d4c2dd3271a4a2502c63d78a0c18ac7f6cccf3b",
+      "durationSeconds": 5.781
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "地域別のオリジン負荷と、変更できない設定を先に確認します。記事では、五地域の新しいエンドポイントを作り、CloudFrontの向き先を切り替えました。オハイオの比率も、Lambdaに届いた分の集計です。UAだけで人間の数とは判断せず、費用が数パーセント増で済んだ条件に、地域データベースが不要だった点も残します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "6bb08bba4d43c2a94d5f9f89ef9dc6821f7c5e7f38112f78cbc79316b376e0a5",
+      "audioSha256": "2e92d3e4265a8e5233c34a800848a3f83518ebf34fc3abfbf45e5a4ca83ff218",
+      "durationSeconds": 23.555,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "既存のLinuxソフトをWebAssemblyへ移すとき、何を調べますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "48933eb7098a6edcd73b6973f8ab40ea170a307a37b7ed7042e06417fd450b38",
+      "audioSha256": "0f96b4dcf79cfc8d4788a268ec8cd16c7ab90af0f9da994ba9afdfe2e3de3a60",
+      "durationSeconds": 5.235
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "必要なOS機能とABIを確認します。WALIはLinuxのシステムコールを名前で取り込み、既存のライブラリを生かします。ただしポインタは三十二ビットでも、longは六十四ビットなので、普通のWASIのライブラリとは混ぜられません。対応するLinux側の実行環境が必要で、メモリの隔離とファイルへの権限も別に設計します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "32ffec14524914c449aca7db300cf88a683b8a6ca717940c5c86e224d7072893",
+      "audioSha256": "dcbd9c46487387135d22df11c34c09ef21b7093143bcfdd11f1de71224463a83",
+      "durationSeconds": 25.658,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "使用率、予約残量、リクエスト数は、それぞれ何を表していますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "c75f5b7ebb5d7176a9566489a2d45243082db61a652d12f28f3d7ef4a7a3ea46",
+      "audioSha256": "924696f9c38649c41632cf0888ae97aeca9a8146d9ab97d6f7fe54e6350c0408",
+      "durationSeconds": 6.037
+    },
+    {
+      "index": 2,
+      "text": "クライアントや実行コードが変更されても、どの層で条件を守れますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "780a2a841d8a3d701840454065033974968f7a9f9fcd6933ba43921201278912",
+      "audioSha256": "097f0875e8920642575863f757088ae069eb04138fea4fea22784ad5b7ed8614",
+      "durationSeconds": 5.583
+    },
+    {
+      "index": 3,
+      "text": "準備や切り替えが終わる前の扱いを、どう決めますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "dc60fbc1a61c40de5518639be5ffc558fbd6dbb17e81bb99202770c1c30b0751",
+      "audioSha256": "fe684afc6fc98b20fbece8184bd06955f862a0c3739e1dae6c05e03d87e0d081",
+      "durationSeconds": 4.146
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-30T01:33:55.851Z"
+}
