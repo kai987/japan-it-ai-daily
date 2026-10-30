@@ -1,14 +1,136 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-10-30",
-  "stage": "checks_passed",
+  "stage": "preflight_passed",
   "sourceCommit": "f329c612dd57e3ab1b6fa8a03538728fd5254711",
   "sourceWindow": {
     "from": "2026-10-29T10:00:00+09:00",
     "to": "2026-10-30T10:00:00+09:00"
   },
   "createdAt": "2026-10-30T01:02:27.049Z",
-  "updatedAt": "2026-10-30T01:20:08.868Z",
+  "updatedAt": "2026-10-30T01:23:56.855Z",
   "completedArtifacts": [],
-  "lastError": null
+  "lastError": null,
+  "draftCommit": "c79fd0a9b4a6d47e3f45f8e1105ee95edc10c4d2",
+  "preflightRunId": 40985256835,
+  "preflightWorkflowPath": ".github/workflows/deploy.yml",
+  "localChecks": {
+    "date": "2026-10-30",
+    "checkedBaseCommit": "f329c612dd57e3ab1b6fa8a03538728fd5254711",
+    "worktree": "six uncommitted target files",
+    "checks": [
+      {
+        "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
+        "startedAt": "2026-10-30T01:18:04.047Z",
+        "completedAt": "2026-10-30T01:18:04.346Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/00-tests-publication-recovery-node-mjs.log"
+      },
+      {
+        "command": "npm audit --audit-level=high",
+        "startedAt": "2026-10-30T01:18:06.155Z",
+        "completedAt": "2026-10-30T01:18:07.487Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/01---audit-level-high.log"
+      },
+      {
+        "command": "npm run check",
+        "startedAt": "2026-10-30T01:18:09.183Z",
+        "completedAt": "2026-10-30T01:18:16.483Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/02-check.log"
+      },
+      {
+        "command": "npm run content:integrity:check",
+        "startedAt": "2026-10-30T01:18:18.181Z",
+        "completedAt": "2026-10-30T01:18:21.539Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/03-content-integrity-check.log"
+      },
+      {
+        "command": "npm run evidence:check",
+        "startedAt": "2026-10-30T01:18:23.308Z",
+        "completedAt": "2026-10-30T01:18:23.588Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/04-evidence-check.log"
+      },
+      {
+        "command": "npm run evidence:pilot",
+        "startedAt": "2026-10-30T01:18:25.226Z",
+        "completedAt": "2026-10-30T01:18:25.405Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/05-evidence-pilot.log"
+      },
+      {
+        "command": "npm run bilingual:check-interview",
+        "startedAt": "2026-10-30T01:18:27.063Z",
+        "completedAt": "2026-10-30T01:18:27.241Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/06-bilingual-check-interview.log"
+      },
+      {
+        "command": "npm run quality:check",
+        "startedAt": "2026-10-30T01:18:29.011Z",
+        "completedAt": "2026-10-30T01:18:29.404Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/07-quality-check.log"
+      },
+      {
+        "command": "npm run audio:check",
+        "startedAt": "2026-10-30T01:18:31.076Z",
+        "completedAt": "2026-10-30T01:18:31.706Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/08-audio-check.log"
+      },
+      {
+        "command": "npm run audio:versions:check",
+        "startedAt": "2026-10-30T01:18:33.446Z",
+        "completedAt": "2026-10-30T01:18:34.457Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/09-audio-versions-check.log"
+      },
+      {
+        "command": "npm run test",
+        "startedAt": "2026-10-30T01:18:36.157Z",
+        "completedAt": "2026-10-30T01:18:43.010Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/10-test.log"
+      },
+      {
+        "command": "npm run build",
+        "startedAt": "2026-10-30T01:18:44.807Z",
+        "completedAt": "2026-10-30T01:18:52.452Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/11-build.log"
+      },
+      {
+        "command": "npm run test:browser:speech-smoke",
+        "startedAt": "2026-10-30T01:18:54.139Z",
+        "completedAt": "2026-10-30T01:18:57.150Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/12-test-browser-speech-smoke.log"
+      },
+      {
+        "command": "npm run test:browser",
+        "startedAt": "2026-10-30T01:18:58.970Z",
+        "completedAt": "2026-10-30T01:19:35.847Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/13-test-browser.log"
+      },
+      {
+        "command": "npm run security:check",
+        "startedAt": "2026-10-30T01:19:37.798Z",
+        "completedAt": "2026-10-30T01:19:38.275Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/14-security-check.log"
+      },
+      {
+        "command": "npm run evidence:check -- --date 2026-10-30 --source-dir /tmp/japan-daily-20261030/originals",
+        "startedAt": "2026-10-30T01:19:40.086Z",
+        "completedAt": "2026-10-30T01:19:40.273Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261030/logs-final/15-evidence-check.log"
+      }
+    ]
+  }
 }
