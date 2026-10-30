@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-30",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-10-30T01:17:20.263443+00:00",
+  "scope": "Five full originals: author PoC, GPU experiments, media permission implementation, Next.js production observations and WALI binary inspection. Relevant mechanisms, tables, conditions, limits and interview anchors checked; no source commands executed or experiments claimed as ours. Project examples are teaching suggestions. Rust official target page additionally checked for ABI and support maturity.",
+  "articles": [
+    {
+      "articleId": "2026-10-30-top-1",
+      "url": "https://dev.classmethod.jp/articles/scalable-llm-inference-eks/",
+      "source": "DevelopersIO",
+      "topic": "LLM推論の状態とゼロ台からの起動",
+      "access": "full",
+      "accessNote": "Public original narrative, relevant implementation snippets, tables, author observations and limits read; no source code executed. Full captures outside Git.",
+      "capturedAt": "2026-10-30T01:08:14.621171+00:00",
+      "snapshotSha256": "d3d8607141426ef579c4522c56bffa79d059a8ffaffd4125b0fd288ffef445c7",
+      "originalTitle": "EKS でスケーラブルな LLM 推論基盤を作る",
+      "claims": [
+        {
+          "id": "state",
+          "kind": "source-fact",
+          "statement": "Prefill/Decode and KV cache explain why engine state matters.",
+          "quote": "件数を数えるだけでは負荷を測れません。",
+          "locator": "LLMの1リクエスト／3つの違い",
+          "conditions": "PoC Qwen3-4B-Instruct-2507, onePod/GPU/node; no measuredperformanceorcostcomparison. GPUbusypercentagealoneinsufficient.",
+          "usedIn": {
+            "zh": "GPU处于工作状态的时间比例",
+            "ja": "使用率だけでは混雑を捉えられません",
+            "interview": "推論の待ち件数と処理中の状態"
+          }
+        },
+        {
+          "id": "zero",
+          "kind": "source-fact",
+          "statement": "Flow Control queue triggers first replica because runningrequests stayzero withnobackend.",
+          "quote": "キューに入ったリクエストの数",
+          "locator": "KEDA／0台から応答が返るまで",
+          "conditions": "EPPprefixindexLRUinferred; Prometheus+KEDA0-1/HPA1-N+KarpenterPending. CPUcomponentsremain.",
+          "usedIn": {
+            "zh": "Flow Control等待队列",
+            "ja": "EPPのFlow Controlの待ち行列",
+            "interview": "待ち行列をKEDAの起動条件"
+          }
+        },
+        {
+          "id": "wait",
+          "kind": "source-fact",
+          "statement": "Startup minutes and timeoutcoordination limit interactiveapplicability.",
+          "quote": "数分かかります",
+          "locator": "0台から応答が返るまで",
+          "conditions": "OpenWebUIHTTPRouteTTL andstartupProbe; no exactbenchmark; interactive min1suggestion.",
+          "usedIn": {
+            "zh": "作者观察到需要数分钟",
+            "ja": "作者は応答まで数分かかる",
+            "interview": "起動には数分かかる"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-30-top-2",
+      "url": "https://dev.classmethod.jp/articles/amazon-ecs-gpu-sharing-nvidia-mps/",
+      "source": "DevelopersIO",
+      "topic": "GPU共有の性能と信頼の境界",
+      "access": "full",
+      "accessNote": "Public original narrative, relevant implementation snippets, tables, author observations and limits read; no source code executed. Full captures outside Git.",
+      "capturedAt": "2026-10-30T01:08:14.583400+00:00",
+      "snapshotSha256": "77f185bf5fda9f803c2ef1c40a13bcfffd400f8e16734fed653875b66aa95ca6",
+      "originalTitle": "[アップデート] Amazon ECS の GPU 共有でコンテナごとのメモリ・演算の上限が守られるか試してみた",
+      "claims": [
+        {
+          "id": "bench",
+          "kind": "source-fact",
+          "statement": "GPUquotas reflected inusablememory/SM andmatrixthroughput underdefinedenvironment.",
+          "quote": "FP16 の 8192×8192",
+          "locator": "検証環境／メモリの上限／複数のタスク",
+          "conditions": "g5.xlargeA10G80SM22587MiB; ECSagent1.108.1 driver580.178.04PyTorch2.14.1cuda12.6;single3repeat/concurrent60sec;50two34.16eachvs34.21single50. NotLLMlatency.",
+          "usedIn": {
+            "zh": "FP16的8192×8192矩阵乘法",
+            "ja": "FP16の8192×8192行列積",
+            "interview": "単独の半分設定とほぼ同じ"
+          }
+        },
+        {
+          "id": "trust",
+          "kind": "source-fact",
+          "statement": "EnvvarlimitscanbebypassedbyinternalcodebeforeCUDAinitialization;accountingnotphysicalusage.",
+          "quote": "どちらの方法でも上限が外れました",
+          "locator": "コンテナの中で環境変数を書き換えた場合／他タスクへの影響",
+          "conditions": "20224MiBscriptcapnotphysicalmax; other4096taskOOM1792ledger14395. Do notexecuteorprovidebypassrecipe; isolateuntrustedcustomers.",
+          "usedIn": {
+            "zh": "20,224 MiB是作者脚本主动停止",
+            "ja": "20,224 MiBは実験スクリプトの停止上限",
+            "interview": "内部コードが変えると外れています"
+          }
+        },
+        {
+          "id": "placement",
+          "kind": "source-fact",
+          "statement": "ECSplacementchecksmemorynotcomputepercent.",
+          "quote": "演算の上限は配置の判断に使いません",
+          "locator": "GPU共有の設定／GPUメモリが足りない場合",
+          "conditions": "RESOURCE:GPU_MEMORY testsnormalreservation, nottrustedboundary;totalpercent<=100 findingsspecifictomatrix.",
+          "usedIn": {
+            "zh": "不按计算比例合计判断",
+            "ja": "演算割合の合計は配置条件にしません",
+            "interview": "予約残量と実使用量を区別"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-30-top-3",
+      "url": "https://zenn.dev/hotori/articles/5e2cd643a77ae6",
+      "source": "Zenn",
+      "topic": "仮想オフィスの音声購読権限",
+      "access": "full",
+      "accessNote": "Public original narrative, relevant implementation snippets, tables, author observations and limits read; no source code executed. Full captures outside Git.",
+      "capturedAt": "2026-10-30T01:08:14.738395+00:00",
+      "snapshotSha256": "75213990a43d951dab132e6205cd64ad0b93b5c821c58330f73a6a1889f1c4dd",
+      "originalTitle": "仮想オフィスの「近くの人にだけ声が届く」を、LiveKit の購読の許可で SFU に守らせる",
+      "claims": [
+        {
+          "id": "permission",
+          "kind": "source-fact",
+          "statement": "Servertransposesreceivernearrelationtopublisherallow; SFUenforcesdelivery.",
+          "quote": "話す側の許可を SFU に強制させる",
+          "locator": "直した作り／サーバーnearを裏返す",
+          "conditions": "SelfhostReactPhaserPythonFastAPI;Chebyshev3 nearest8/openfloor,allmeeting,focusnone;servermax2move/no walls.",
+          "usedIn": {
+            "zh": "把“自己能听见谁”的关系反向计算",
+            "ja": "それを裏返して",
+            "interview": "近接関係を裏返して"
+          }
+        },
+        {
+          "id": "deny",
+          "kind": "source-fact",
+          "statement": "BeforeallowandWSdisconnect deny;allowbefore nearandlatestwrites preventstaleness.",
+          "quote": "誰にも許さない",
+          "locator": "つまずいたところ1〜5",
+          "conditions": "await-freecalcwrite/sendlatest;600msmax5retries; notreconnectionguarantee.",
+          "usedIn": {
+            "zh": "控制用WebSocket断开时",
+            "ja": "WebSocket切断時も古い許可を捨て",
+            "interview": "WebSocket切断時は"
+          }
+        },
+        {
+          "id": "limits",
+          "kind": "source-fact",
+          "statement": "Authorlocalforcedsubscription0bytes,12personmeeting;notE2EEorprotectionagainstpublisherssharingownvoice.",
+          "quote": "エンドツーエンド暗号化ではありません。",
+          "locator": "確かめたこと／この作りでも守れないこと",
+          "conditions": "Authorlocalobservationnotourtest; adversarialreceiverblocked,modifiedpublishercanshareownvoice.",
+          "usedIn": {
+            "zh": "远处浏览器强制订阅仍接收零字节",
+            "ja": "受信バイトがゼロ",
+            "interview": "自分の声を公開することは防げず"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-30-top-4",
+      "url": "https://dev.classmethod.jp/articles/lambda-web-functions-multiregion-add-ohio/",
+      "source": "DevelopersIO",
+      "topic": "Next.js基盤の複数リージョン運用",
+      "access": "full",
+      "accessNote": "Public original narrative, relevant implementation snippets, tables, author observations and limits read; no source code executed. Full captures outside Git.",
+      "capturedAt": "2026-10-30T01:08:14.571248+00:00",
+      "snapshotSha256": "ec24d320d251d89f39e0196cfec9643f85d55b85f766a4419667f09c215ce923",
+      "originalTitle": "Lambda Web Functions のリージョンを 4 つから 5 つに入れ替えてみた（オハイオ追加）",
+      "claims": [
+        {
+          "id": "migration",
+          "kind": "source-fact",
+          "statement": "Regionlistimmutable;newendpointthenCloudFrontoriginswitch.",
+          "quote": "リージョンの追加・削除もできない",
+          "locator": "5リージョンへの入れ替え",
+          "conditions": "DevelopersIO Next.js ownbackend; actual4to5 includingOhio; thisisnotnewmultiregiondatabasearchitecture.",
+          "usedIn": {
+            "zh": "新建五区域端点",
+            "ja": "新しい五地域のエンドポイント",
+            "interview": "五地域の新しいエンドポイント"
+          }
+        },
+        {
+          "id": "counts",
+          "kind": "source-fact",
+          "statement": "Ohiofractionusual5-9.8except22spike22.5,29partial10.4; originonlycounts.",
+          "quote": "Lambda へ到達したリクエスト",
+          "locator": "日別の件数と比率／アクセス元",
+          "conditions": "JSTdaily21-29(partial16h);UTC24-28UAseparate;UAclaimnotidentity/personcount;no latencygainmeasurement.",
+          "usedIn": {
+            "zh": "到达Lambda的请求",
+            "ja": "Lambdaに到達したリクエスト",
+            "interview": "Lambdaに届いた分の集計"
+          }
+        },
+        {
+          "id": "cost",
+          "kind": "source-fact",
+          "statement": "FewpercentLambdacostincreaseunderexternalContentfulCDN/noRDSorELB.",
+          "quote": "リージョナルリソースを必要としません",
+          "locator": "まとめ",
+          "conditions": "Authorarchitecturecostobservation; noallcompanycostoravailabilityguarantee; quotasregionalbutstate/SCPmustcheck.",
+          "usedIn": {
+            "zh": "无须每区部署RDS或ELB",
+            "ja": "RDSやELBなどの地域資源が不要",
+            "interview": "地域データベースが不要"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-30-top-5",
+      "url": "https://zenn.dev/progate/articles/wali-webassembly-linux-interface",
+      "source": "Zenn",
+      "topic": "WebAssemblyとLinuxの接点",
+      "access": "full",
+      "accessNote": "Public original narrative, relevant implementation snippets, tables, author observations and limits read; no source code executed. Full captures outside Git.",
+      "capturedAt": "2026-10-30T01:08:14.543800+00:00",
+      "snapshotSha256": "792c1584870604d26122a72ccd6981fb88f99111dac4dc47b2898398baed4b68",
+      "originalTitle": "WASIじゃない、もう一つのインターフェース「WALI」という提案",
+      "claims": [
+        {
+          "id": "syscall",
+          "kind": "source-fact",
+          "statement": "ThinLinuxsyscallimports,namebasedCPUadaptationinsteadnumericcalls.",
+          "quote": "システムコールの番号ではなく名前",
+          "locator": "WALIのアイデア／実物／名前でimport",
+          "conditions": "Authorinspectedprebuiltbinariesandpaper, notnewWALIrelease; requiresWALIengineLinux; notbrowserdropin.",
+          "usedIn": {
+            "zh": "二进制按名称绑定",
+            "ja": "名前で結び",
+            "interview": "システムコールを名前で取り込み"
+          }
+        },
+        {
+          "id": "abi",
+          "kind": "source-fact",
+          "statement": "Wasm32WALIpointer32/long64 isdifferentABI.",
+          "quote": "long\nが64ビット",
+          "locator": "wasm32なのにlongが64ビット",
+          "conditions": "ArticleplusofficialRustsupportpage verified30Oct;Tier3experimental/noofficialprebuilt. Do not mixordinaryWASIABI;noactualnewbenchmark.",
+          "usedIn": {
+            "zh": "long采用64位",
+            "ja": "longは64ビット",
+            "interview": "longは六十四ビット"
+          }
+        },
+        {
+          "id": "scope",
+          "kind": "source-fact",
+          "statement": "MemorysandboxdoesnotautomaticallyrestrictOSresources;WASIcanlayerabove.",
+          "quote": "ホストがLinux前提",
+          "locator": "WASIはWALIの上に／気になるところ／Progate",
+          "conditions": "Linuxhost,compatibleengine;browserProgatenotusingWALIdirect; noourperf/securityreproduction.",
+          "usedIn": {
+            "zh": "内存隔离与文件、网络权限是两件事",
+            "ja": "ファイルやネットワークの権限まで自動で最小になるわけではありません",
+            "interview": "メモリの隔離とファイルへの権限も別"
+          }
+        }
+      ]
+    }
+  ]
+}
