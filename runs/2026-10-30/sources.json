@@ -1,0 +1,266 @@
+{
+  "targetDate": "2026-10-30",
+  "sourceWindow": {
+    "from": "2026-10-29T10:00:00+09:00",
+    "to": "2026-10-30T10:00:00+09:00"
+  },
+  "articles": [
+    {
+      "articleId": "2026-10-30-top-1",
+      "title": "EKS でスケーラブルな LLM 推論基盤を作る",
+      "source": "DevelopersIO",
+      "topic": "LLM推論の状態とゼロ台からの起動",
+      "url": "https://dev.classmethod.jp/articles/scalable-llm-inference-eks/",
+      "publishedAt": "2026-10-29T03:45:29.765Z",
+      "capturedAt": "2026-10-30T01:08:14.621171+00:00",
+      "snapshotSha256": "d3d8607141426ef579c4522c56bffa79d059a8ffaffd4125b0fd288ffef445c7",
+      "access": "full",
+      "accessNote": "Public original narrative, relevant implementation snippets, tables, author observations and limits read; no source code executed. Full captures outside Git.",
+      "factsToPreserve": "Author EKS Auto Mode PoC: Qwen3-4B-Instruct-2507, one vLLM Pod/GPU/node. Prefill compute vs Decode memory bandwidth, KV cache and prefix locality; engine/routing state rather than GPU busy percent alone. Envoy Gateway+Agent Router/ext-proc EPP; EPP LRU prefix estimate not actual cache index. KEDA running+FlowControlqueue via Prometheus; queue needed at0 as running0; HPA1-N/KEDA0-1, KarpenterPending->GPU. S3weights/ECRcache; CPU components remainatGPUzero. Three timeouts+startup probe; model-list fixed response avoids incidentalstartup. Zero->answer minutes not measured numericbenchmark; batch/devvsinteractive min1. No performance/costgainclaim."
+    },
+    {
+      "articleId": "2026-10-30-top-2",
+      "title": "[アップデート] Amazon ECS の GPU 共有でコンテナごとのメモリ・演算の上限が守られるか試してみた",
+      "source": "DevelopersIO",
+      "topic": "GPU共有の性能と信頼の境界",
+      "url": "https://dev.classmethod.jp/articles/amazon-ecs-gpu-sharing-nvidia-mps/",
+      "publishedAt": "2026-10-29T03:54:27.721Z",
+      "capturedAt": "2026-10-30T01:08:14.583400+00:00",
+      "snapshotSha256": "77f185bf5fda9f803c2ef1c40a13bcfffd400f8e16734fed653875b66aa95ca6",
+      "access": "full",
+      "accessNote": "Public original narrative, relevant implementation snippets, tables, author observations and limits read; no source code executed. Full captures outside Git.",
+      "factsToPreserve": "Author g5.xlarge A10G80SM22587MiB, AL2023GPUAMI2023.0.20261022 ECSagent1.108.1 Docker25.0.16 driver580.178.04 PyTorch2.14.1cuda12.6. GPUmemorystep256MiB (32MiBfine), FP16 8192squarematmul3singlemeasurements60secconcurrent. 4096limit usable3840/3936 CUDAfree3960vsdedicated22272. limits25/50/75 SM20/40/60, throughput26.9/53.2/79%of64.3TFLOPS; two50 each34.16vsone34.21; totals150contend. Envlimitscooperative, beforeCUDAremove/changebypasses,20,224isSCRIPTcapnotphysicalcapacity. Another taskOOM1792evenledger14395free; memreserve insufficientResourceGPU_MEMORY. Isolateuntrustedtenantsbycapacityprovider/cluster. MatrixspecificnotLLMlatencyguarantee; no exploitcommandsneeded."
+    },
+    {
+      "articleId": "2026-10-30-top-3",
+      "title": "仮想オフィスの「近くの人にだけ声が届く」を、LiveKit の購読の許可で SFU に守らせる",
+      "source": "Zenn",
+      "topic": "仮想オフィスの音声購読権限",
+      "url": "https://zenn.dev/hotori/articles/5e2cd643a77ae6",
+      "publishedAt": "2026-10-30T01:01:03.826+09:00",
+      "capturedAt": "2026-10-30T01:08:14.738395+00:00",
+      "snapshotSha256": "75213990a43d951dab132e6205cd64ad0b93b5c821c58330f73a6a1889f1c4dd",
+      "access": "full",
+      "accessNote": "Public original narrative, relevant implementation snippets, tables, author observations and limits read; no source code executed. Full captures outside Git.",
+      "factsToPreserve": "Hotori firsthandReactPhaser/livekitclient selfhostSFU+PythonFastAPIWebSocket authoritativepositions max2cells/no walls. Chebyshev<=3 nearest8 openfloor;meetingall/concentrationnone. ReceiveronlyautoSubfalse isnotauth; servertransposesnear->publisherallow, SFUenforces setTrackSubscriptionPermissions. Defaultdenybeforepublish/disconnectclearsallow;allowbeforenear, calcwritewithoutawait andreadlatestatsend, permissionretry600msmax5. Tests12meeting/focus/order/oldallow; distantforcedsubscribe0receivedbytes authorlocaltestnotours. ModifiedpublishercanbroadcastOWNspeech, notothers; proximitynotconfidentiality; SFUnotE2EE."
+    },
+    {
+      "articleId": "2026-10-30-top-4",
+      "title": "Lambda Web Functions のリージョンを 4 つから 5 つに入れ替えてみた（オハイオ追加）",
+      "source": "DevelopersIO",
+      "topic": "Next.js基盤の複数リージョン運用",
+      "url": "https://dev.classmethod.jp/articles/lambda-web-functions-multiregion-add-ohio/",
+      "publishedAt": "2026-10-29T09:47:07.077Z",
+      "capturedAt": "2026-10-30T01:08:14.571248+00:00",
+      "snapshotSha256": "ec24d320d251d89f39e0196cfec9643f85d55b85f766a4419667f09c215ce923",
+      "access": "full",
+      "accessNote": "Public original narrative, relevant implementation snippets, tables, author observations and limits read; no source code executed. Full captures outside Git.",
+      "factsToPreserve": "FirsthandDevelopersIO Next.js backend 4regions TokyoVirginiaOregonFrankfurt ->5withOhio; endpointregions/replicationimmutable soNEWendpointthenCloudFrontoriginswitch. CountsONLYreachingLambda,cachemiss/originnotallpageviews. JST10/21-28Ohio5-9.8except10/22 22.5%;partial29until16h10.4%, do nothide. spikeUAclaimedShapBotnotverifiedidentity, cloudASNnotpersongeolocation. UTC24-28UA37%browserclaim63%other, notproofhumans37. Regionalquotas helpconstrainimpactbutnolaten/speedguarantee. ContentfulCDNAPI noRDS/ELBcostfewpercentownworkloadnotallarchitectures."
+    },
+    {
+      "articleId": "2026-10-30-top-5",
+      "title": "WASIじゃない、もう一つのインターフェース「WALI」という提案",
+      "source": "Zenn",
+      "topic": "WebAssemblyとLinuxの接点",
+      "url": "https://zenn.dev/progate/articles/wali-webassembly-linux-interface",
+      "publishedAt": "2026-10-30T09:45:50.306+09:00",
+      "capturedAt": "2026-10-30T01:08:14.543800+00:00",
+      "snapshotSha256": "792c1584870604d26122a72ccd6981fb88f99111dac4dc47b2898398baed4b68",
+      "access": "full",
+      "accessNote": "Public original narrative, relevant implementation snippets, tables, author observations and limits read; no source code executed. Full captures outside Git.",
+      "factsToPreserve": "Progatefirsthandbinaryinspection pluspaper:WALIthinLinuxsyscallimports via musl, SYSnames maphostCPU notnumbers, offset->hostpointerconvert, wasi/languageportingtradeoff. wasm32pointer32 long64ABI vsusualwasm32long32; incompatibleWASIlibs, needWALIengineLinuxhostnotbrowserdropin. RustTier3experimental(noofficialprebuilt/currenttests perofficialverification); LLVMtargetdistinctspelling. WALIcanlayerWASIcapabilityabove, wasm memoryisolationnotfilesystem/networkleastprivilege. Articleinspectedprebuiltimportsnotcrossplatformperformancereproduction; no comparativebenchmarkclaimed."
+    }
+  ],
+  "previousTopExcluded": [
+    "https://zenn.dev/asahi_terass/articles/7266e919b4648a",
+    "https://zenn.dev/ushi_osushi/articles/intl-segmenter-grapheme-count",
+    "https://dev.classmethod.jp/articles/lambda-recursive-loop-detection-eventbridge-custom-bus/",
+    "https://tech.smarthr.jp/entry/2026/10/28/112702",
+    "https://zenn.dev/openedfile/articles/dxf-viewer-work-budget"
+  ],
+  "discovery": {
+    "scope": "20 designated homepage entrances freshly checked:18 HTTP200,CodeZine/Mercari403 not bypassed. Also public Zenn latest100 and targeted date searches. Not exhaustive. Rejected approval-design article published07:41 before window and thin idempotency explanation. Five full originals selected in window, including three independent hands-on reports from DevelopersIO and two Zenn accounts.",
+    "sites": [
+      {
+        "name": "Qiita",
+        "requestedUrl": "https://qiita.com/",
+        "observedAt": "2026-10-30T01:05:19.118239+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://qiita.com/",
+        "htmlSha256": "7c36ae5c19d6dab1a3300a8618679e2484b3d88819318bca9bc4c1d15e5d2024"
+      },
+      {
+        "name": "Zenn",
+        "requestedUrl": "https://zenn.dev/",
+        "observedAt": "2026-10-30T01:05:19.118619+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://zenn.dev/",
+        "htmlSha256": "75fd84e9fca94816bbcc9bc438f4d67a541cb2b012c4e0e2480bd3268e1e75e3"
+      },
+      {
+        "name": "Publickey",
+        "requestedUrl": "https://www.publickey1.jp/",
+        "observedAt": "2026-10-30T01:05:19.118745+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://www.publickey1.jp/",
+        "htmlSha256": "f8888922eb804b7c2e03521d4082f22eb34dd368376888e317fb391d15cbc6e6"
+      },
+      {
+        "name": "ITmedia AI+",
+        "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+        "observedAt": "2026-10-30T01:05:19.118853+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+        "htmlSha256": "15ea405818659d6dd1ffee2e0ae0956945613a5e29e4d52e620373e00b0fb986"
+      },
+      {
+        "name": "@IT",
+        "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+        "observedAt": "2026-10-30T01:05:19.118923+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://atmarkit.itmedia.co.jp/",
+        "htmlSha256": "8c818ee506697318704e2ff387f7abc38e669671f958e02228d8a78f5d6bf5cf"
+      },
+      {
+        "name": "CodeZine",
+        "requestedUrl": "https://codezine.jp/",
+        "observedAt": "2026-10-30T01:05:19.118992+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 403,
+        "actualUrl": "https://codezine.jp/",
+        "error": "Access denied; not retried through another transport"
+      },
+      {
+        "name": "gihyo.jp",
+        "requestedUrl": "https://gihyo.jp/",
+        "observedAt": "2026-10-30T01:05:19.206899+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://gihyo.jp/",
+        "htmlSha256": "5c8f23301c04f823b725bff6077038a3dcd1f7a976e839c48750adf8a52897d0"
+      },
+      {
+        "name": "DevelopersIO",
+        "requestedUrl": "https://dev.classmethod.jp/",
+        "observedAt": "2026-10-30T01:05:19.216481+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://dev.classmethod.jp/",
+        "htmlSha256": "5fa7d85cb026cf5dbdb7704b3cfd1703610c799dd873e66f5d1d7c1381271f8b"
+      },
+      {
+        "name": "TechFeed",
+        "requestedUrl": "https://techfeed.io/",
+        "observedAt": "2026-10-30T01:05:19.241233+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://techfeed.io/",
+        "htmlSha256": "b00ca5011473004f54b023f49ac2cd55994c68ed73d8337bceda0b461cf2bd45"
+      },
+      {
+        "name": "Hatena Technology",
+        "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "observedAt": "2026-10-30T01:05:19.272397+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "htmlSha256": "ba57a781104a1cd559d101d594697534b23f70ac72723b463badf1cff14a1221"
+      },
+      {
+        "name": "ASCII AI",
+        "requestedUrl": "https://ascii.jp/",
+        "observedAt": "2026-10-30T01:05:19.283694+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ascii.jp/",
+        "htmlSha256": "4e2b5429e105df9e85a9f6c14275877c7b1d1d15cdd8699d14d45121ba7f3c4b"
+      },
+      {
+        "name": "AINOW",
+        "requestedUrl": "https://ainow.ai/",
+        "observedAt": "2026-10-30T01:05:19.295535+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ainow.ai/",
+        "htmlSha256": "a2ad73b1a0a858fc471f7f5fdbff8b3a637285263eadfdd2512a108ac8fe8ebf"
+      },
+      {
+        "name": "Ledge.ai",
+        "requestedUrl": "https://ledge.ai/",
+        "observedAt": "2026-10-30T01:05:19.317591+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ledge.ai/",
+        "htmlSha256": "d0eb57ea95abd290935dcb7e43308dc24e1a98286e4635173539ac4afdc85aae"
+      },
+      {
+        "name": "CyberAgent Developers Blog",
+        "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+        "observedAt": "2026-10-30T01:05:19.381240+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+        "htmlSha256": "c7610ea3ac9f91a22af56523e8ea11b21e6806e8381f6886adcab20d50c4009a"
+      },
+      {
+        "name": "LINE Yahoo Tech Blog",
+        "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+        "observedAt": "2026-10-30T01:05:19.408224+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+        "htmlSha256": "1d8922e6773d51c02cba10ccb137e300dc21619b108f59747630e851fbeead6f"
+      },
+      {
+        "name": "Mercari Engineering",
+        "requestedUrl": "https://engineering.mercari.com/",
+        "observedAt": "2026-10-30T01:05:19.412721+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 403,
+        "actualUrl": "https://engineering.mercari.com/",
+        "error": "Access denied; not retried through another transport"
+      },
+      {
+        "name": "SmartHR Tech Blog",
+        "requestedUrl": "https://tech.smarthr.jp/",
+        "observedAt": "2026-10-30T01:05:19.447267+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://tech.smarthr.jp/",
+        "htmlSha256": "f4be9b0f76cc253a46f994d81ae4eb645f2ccd2147fd5a0eb6a2944f940e6ddd"
+      },
+      {
+        "name": "LayerX Engineering Blog",
+        "requestedUrl": "https://tech.layerx.co.jp/",
+        "observedAt": "2026-10-30T01:05:19.470701+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://tech.layerx.co.jp/",
+        "htmlSha256": "37f2c66b0131b4be68b4357f294feefe87b0560eeec1b7fa010ed3b8537b7ee7"
+      },
+      {
+        "name": "DeNA Engineering",
+        "requestedUrl": "https://engineering.dena.com/blog/",
+        "observedAt": "2026-10-30T01:05:19.509578+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://engineering.dena.com/blog/",
+        "htmlSha256": "910fa3b4166c8b0dbf0776fceb76d470648c7b9a9d822d040c52be638afdbfb3"
+      },
+      {
+        "name": "Money Forward Developers Blog",
+        "requestedUrl": "https://moneyforward-dev.jp/",
+        "observedAt": "2026-10-30T01:05:19.538558+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://moneyforward-dev.jp/",
+        "htmlSha256": "25d92de12b27d4e896fc2ac6b7ea8af13ad6aff0d57c3e338c9baab15f39a074"
+      }
+    ]
+  }
+}
