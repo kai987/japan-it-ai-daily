@@ -1,6 +1,6 @@
 {
   "targetDate": "2026-10-31",
-  "status": "open",
+  "status": "resolved",
   "area": "existing_shared_review_matcher",
   "observedPattern": "～限り",
   "storedFunction": "Positive-state continuation condition: as long as",
@@ -13,5 +13,37 @@
   "impact": "Automatic review overlay can present a different grammar function as a review of the earlier condition pattern. New vocabulary/grammar source cards, original articles and recordings are unchanged.",
   "recommendedRepair": "Separate ～限り from ～に限り／～限りでは／～ない限り in the shared matcher with positive/negative semantic regression tests, then validate content history and regenerate source-bound snapshots through the existing publisher. Do not change factual prose merely to manufacture review eligibility.",
   "releaseNote": "Publication/byte/playback acceptance does not prove this semantic review classification correct.",
-  "at": "2026-10-31T01:55:55.292Z"
+  "at": "2026-10-31T01:55:55.292Z",
+  "repairCommit": "62af019713c86dfd78167501f096c7b61d47d544",
+  "acceptance": {
+    "targetDate": "2026-10-31",
+    "stage": "published",
+    "kind": "grammar_review_boundary_repair",
+    "commit": "62af019713c86dfd78167501f096c7b61d47d544",
+    "affectedDates": [
+      "2026-10-23",
+      "2026-10-24",
+      "2026-10-27",
+      "2026-10-29",
+      "2026-10-30",
+      "2026-10-31"
+    ],
+    "localChecksPassed": 17,
+    "unitTests": 312,
+    "browserTests": 75,
+    "pagesRunId": 41168784202,
+    "r2RunId": 41168784213,
+    "fullSnapshotDates": 81,
+    "publicHtmlByteChecks": 24,
+    "publicManifestByteChecks": 24,
+    "r2FullObjectSHA256Checks": 8012,
+    "r2RepairedObjects": 0,
+    "affectedReferenceSHA256Checks": 230,
+    "actualReplacementPlaybackChecks": 12,
+    "all4006ExistingMp3BytesUnchanged": true,
+    "allOriginalContentAndInterviewBytesUnchanged": true,
+    "n1Status": "four new recordings uploaded; metadata and corrected snapshot publication in preparation",
+    "updatedAt": "2026-10-31T04:50:03.938Z"
+  },
+  "resolvedAt": "2026-10-31T04:50:03.938Z"
 }
