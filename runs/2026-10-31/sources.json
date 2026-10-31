@@ -1,0 +1,292 @@
+{
+  "targetDate": "2026-10-31",
+  "sourceWindow": {
+    "from": "2026-10-30T10:00:00+09:00",
+    "to": "2026-10-31T10:00:00+09:00"
+  },
+  "articles": [
+    {
+      "url": "https://zenn.dev/wisteriacorp/articles/wisteria-a9236a633d6c",
+      "capturedAt": "2026-10-31T01:01:57.650114+00:00",
+      "snapshotSha256": "d079fe121ff8cebff824cc9973e869e049a9c2f2f3a438d9b36ca1e36b20bdbb",
+      "articleId": "2026-10-31-top-1",
+      "title": "temperature 0 なのに出力が変わる — MoE/dense 3モデルで KV キャッシュ状態の決定性を実測する",
+      "source": "Zenn",
+      "topic": "LLM評価とKVキャッシュ状態",
+      "publishedAt": "2026-10-31T09:55:23.236+09:00",
+      "access": "full",
+      "accessNote": "Public original narrative, implementation excerpts, tables, stated observations and limits read in full; no code executed. Captures retained outside Git.",
+      "factsToPreserve": "Ollama native /api/chat on GB10 ThinkStationPGX128GB ARM64; temperature0 seed42 num_predict512 num_ctx8192 sequential singleJA prompt. gpt-oss120b MoE firstcontentdifferentthen7same; qwen3MoE+gemma4dense thinkingcompared ascontentempty tokenlimit. Statecontrolledgpt-oss unload/AA andB/AA cold/warmhashprefix12digitsrepeat; notproofofuniversalbitdeterminism. afterB12.1sec vsunload~30 nohardwarereloadexplanationneeded; prefill/cachepathrounding hypothesis not traced, prompt_eval_count139unchanged. measuredSep7 publishedOct31. authorreportsrequesttotal34 inconsistentnotes andshowncalls: do not certify total. Onehardware/version/prompt no concurrency. No claimours reproduced."
+    },
+    {
+      "url": "https://zenn.dev/tappers/articles/ai-labo-e16-cli-token-killer",
+      "capturedAt": "2026-10-31T01:01:57.601360+00:00",
+      "snapshotSha256": "99053a3e67a9b4dd222fb4561a2559125fe0f98741f36e4b1aeea83742369e32",
+      "articleId": "2026-10-31-top-2",
+      "title": "テスト出力の垂れ流しでコンテキストが汚染される！「生ターミナル出力」vs「構造化JSON差分フィルタ」で入力94.1%削減",
+      "source": "Zenn",
+      "topic": "AIエージェントのテスト出力圧縮",
+      "publishedAt": "2026-10-31T09:10:48.275+09:00",
+      "access": "full",
+      "accessNote": "Public original narrative, implementation excerpts, tables, stated observations and limits read in full; no code executed. Captures retained outside Git.",
+      "factsToPreserve": "Author E16offlineisolatedVM220, namedgemini3.8flash model, payment3modules80visiblecases76PASS4FAIL and20independenttests; rawvsdeterministicfilter JSON failuretest/file/line/assertion/message. Initial60749->1506chars; cum117391->1604 (inclothertoolmsgs), input92385->5445 (-94.1%), calls3->2, both20/20; elapsed25.9439->16.8762 authorreported, APIcostestimatednotactualbilling. Rawpartialfixvsfilteredwholefix meansworkflowdiffcontributes, singlepublishedcomparisonnorepeatedstatistics/publicgraderreproduction; notRTKbinarybenchmark. FulloriginalarchivepreservedoutsideGit, no commandexecuted."
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/202610-aws-login-test/",
+      "capturedAt": "2026-10-31T01:01:57.489548+00:00",
+      "snapshotSha256": "3d9ee455aeda675b99909610d2dfe088454a0e7d4697f0bbe707a212ca176ae3",
+      "articleId": "2026-10-31-top-3",
+      "title": "aws loginで使用するIAM権限と、権限不足時の挙動を確認してみた",
+      "source": "DevelopersIO",
+      "topic": "AWS CLI認証と権限の切り分け",
+      "publishedAt": "2026-10-30T11:22:53.134Z",
+      "access": "full",
+      "accessNote": "Public original narrative, implementation excerpts, tables, stated observations and limits read in full; no code executed. Captures retained outside Git.",
+      "factsToPreserve": "Hands-on IAMMFAuser fivepatterns: no policy browserauthfails incl400 ifexistingconsole; bothsigninAuthorizeOAuth2Access andCreateOAuth2Token successfulCLI; AuthorizeonlybrowserpassesCLIexchangefails; Createonlybrowserfails; removeCreateafterlogin laterrefreshfails19:32to19:59 notexact15minmeasurement. SignInLocalDevelopmentAccessAWSmanagedpolicy resource publicclient wildcard. credentialrefresh15min upto12hsessionofficial; logoutdeletesdiskcachebutalreadyloadedtokenvaliduntil expiry. Authn vsserviceauthorization separate. No tokens/accountIDsneeded. DatePublishedfullJSONLD confirmswindow."
+    },
+    {
+      "url": "https://zenn.dev/kipcop/articles/f35-vue-25-accessibility",
+      "capturedAt": "2026-10-31T01:01:57.583950+00:00",
+      "snapshotSha256": "e84b0b35ab7b5cc887506bbea8433bbe1a3b59a395233f7e266af565ee4f801f",
+      "articleId": "2026-10-31-top-4",
+      "title": "35日でフロントエンドの基礎を完全に理解する #25 - アクセシビリティ",
+      "source": "Zenn",
+      "topic": "フロントエンドのアクセシビリティ",
+      "publishedAt": "2026-10-31T08:20:52.403+09:00",
+      "access": "full",
+      "accessNote": "Public original narrative, implementation excerpts, tables, stated observations and limits read in full; no code executed. Captures retained outside Git.",
+      "factsToPreserve": "Vue3.5 Node20 Playwright1.64Chromium tutorialreport: divclick lacksbuttonrole/tabfocus; nativebutton semantic+keys, label/id, focus-visible. testinglibrarygetByRole matchesDOMroles+accessiblename, doNOTrepeatmisclaimreadsactualbrowserAXtree orguaranteesSRoperation; HTML/CSSneitherabsoluteonly-semantic sinceARIA/CSSinfluence. KeyboardTab/ShiftTabEnterSpace testsaddingitem; #777777white4.48fail #7676764.54pass normalAA4.5 large3 thresholdsnotroundup; toolsfindsubsetnotcomplianceproof. ExamplecomputednotcompleteSRaudit, noallusers/passedWCAGclaim."
+    },
+    {
+      "url": "https://zenn.dev/warrobotsxyz/articles/sqlite-wal-safe-backup",
+      "capturedAt": "2026-10-31T01:01:57.574491+00:00",
+      "snapshotSha256": "c2c8bd4038628ad3cb7ed2cc7bf35e888d00e857bf5886e6fe79f40520101364",
+      "articleId": "2026-10-31-top-5",
+      "title": "SQLiteのバックアップはファイルコピーでは壊れる：WALモードで実測した安全な方法",
+      "source": "Zenn",
+      "topic": "SQLiteのWALと復元可能なバックアップ",
+      "publishedAt": "2026-10-31T09:00:24.280+09:00",
+      "access": "full",
+      "accessNote": "Public original narrative, implementation excerpts, tables, stated observations and limits read in full; no code executed. Captures retained outside Git.",
+      "factsToPreserve": "Windows11build10.0.26200 Python3.11 SQLite3.42.0, WALautocheckpoint0forrepro, schema+2commitsstillWALmaincopytablemissing. Connection.backup andVACUUMINTO return2rows authorreported. Livecopydb/wal/shm notatomic consistency, notgeneralallfilecopiescorrupt. Restoreopen/count+integrity_check needed notmerelyfileexists, integritydoesnotguaranteelatest. Article saysanyexistingoutputfails butofficial allowsnonexistentOREMPTYtarget;nonemptyfails, usefreshdest no deleteapprovedbackup. No throughputbenchmark/concurrentwritingcoverage promised."
+    }
+  ],
+  "previousTopExcluded": [
+    "https://dev.classmethod.jp/articles/scalable-llm-inference-eks/",
+    "https://dev.classmethod.jp/articles/amazon-ecs-gpu-sharing-nvidia-mps/",
+    "https://zenn.dev/hotori/articles/5e2cd643a77ae6",
+    "https://dev.classmethod.jp/articles/lambda-web-functions-multiregion-add-ohio/",
+    "https://zenn.dev/progate/articles/wali-webassembly-linux-interface"
+  ],
+  "supplemental": [
+    {
+      "url": "https://www.sqlite.org/lang_vacuum.html",
+      "purpose": "Official boundary clarification only; not a new Top5 item or in-window news claim",
+      "capturedAt": "2026-10-31T01:04:20.444585+00:00",
+      "sha256": "c70e57b68a7e5f5c449fea8d3619c9bab04a0d36692b4f1c28267df96bf3c99a"
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "purpose": "Official boundary clarification only; not a new Top5 item or in-window news claim",
+      "capturedAt": "2026-10-31T01:04:20.541916+00:00",
+      "sha256": "68ea87fc3c08e144b578cd2df0c38dc61f19c2e0c40eb3e40f3958ee505d21b6"
+    },
+    {
+      "url": "https://testing-library.com/docs/queries/byrole/",
+      "purpose": "Official boundary clarification only; not a new Top5 item or in-window news claim",
+      "capturedAt": "2026-10-31T01:04:21.369038+00:00",
+      "sha256": "c90ba3509ec18b72a6a1b7162b1856bb3b73b07d88b65e1fcde52e64c5bb2baf"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sign-in.html",
+      "purpose": "Official boundary clarification only; not a new Top5 item or in-window news claim",
+      "capturedAt": "2026-10-31T01:04:21.672147+00:00",
+      "sha256": "05e7d76d472f0e5e6d6cdb66898fe8cebe5a32ef8b326d84ff436c4ecd1a07b8"
+    }
+  ],
+  "discovery": {
+    "scope": "Fresh20homepageentrances18HTTP200,CodeZine/Mercari403notbypassed; Zennlatest100,98inwindow. Notexhaustive. Candidatechoice retains evaluation/agent/cloud/frontend/data variety.",
+    "sites": [
+      {
+        "name": "Qiita",
+        "requestedUrl": "https://qiita.com/",
+        "observedAt": "2026-10-31T01:01:30.474176+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://qiita.com/",
+        "htmlSha256": "b3eacab2ec3d8529534c1e4e0e4ec2a9c73956696cb7408481775dd08842b081"
+      },
+      {
+        "name": "Zenn",
+        "requestedUrl": "https://zenn.dev/",
+        "observedAt": "2026-10-31T01:01:30.474547+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://zenn.dev/",
+        "htmlSha256": "a9f945c540eaa9a844c86ea95a8b7ab6d670dd0580b0de6b859eac7c34946f4d"
+      },
+      {
+        "name": "Publickey",
+        "requestedUrl": "https://www.publickey1.jp/",
+        "observedAt": "2026-10-31T01:01:30.474647+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://www.publickey1.jp/",
+        "htmlSha256": "d690247797b63c44230fe48164faff62f593fcb735057674df6ba7283e041594"
+      },
+      {
+        "name": "ITmedia AI+",
+        "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+        "observedAt": "2026-10-31T01:01:30.474726+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+        "htmlSha256": "ea091aae42839ead2703e445837e3effa3662a6053259052fd486d4e18bdd767"
+      },
+      {
+        "name": "@IT",
+        "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+        "observedAt": "2026-10-31T01:01:30.474806+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://atmarkit.itmedia.co.jp/",
+        "htmlSha256": "7e55608cba46859281b307716f194aa9c60c877d15d8ae6be4fc05837fe559d3"
+      },
+      {
+        "name": "CodeZine",
+        "requestedUrl": "https://codezine.jp/",
+        "observedAt": "2026-10-31T01:01:30.474906+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 403,
+        "actualUrl": "https://codezine.jp/",
+        "error": "Access denied; not retried through another transport"
+      },
+      {
+        "name": "gihyo.jp",
+        "requestedUrl": "https://gihyo.jp/",
+        "observedAt": "2026-10-31T01:01:30.562143+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://gihyo.jp/",
+        "htmlSha256": "63f0ef0d444c72b9d6122aed4a6a5a17e4ca5d85f1f652bf84b83a471d0688a5"
+      },
+      {
+        "name": "DevelopersIO",
+        "requestedUrl": "https://dev.classmethod.jp/",
+        "observedAt": "2026-10-31T01:01:30.646058+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://dev.classmethod.jp/",
+        "htmlSha256": "066d96e6085210088bf7a64615c0ca01a9715a9ebab038107143e5eb51a656cb"
+      },
+      {
+        "name": "TechFeed",
+        "requestedUrl": "https://techfeed.io/",
+        "observedAt": "2026-10-31T01:01:30.663809+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://techfeed.io/",
+        "htmlSha256": "b00ca5011473004f54b023f49ac2cd55994c68ed73d8337bceda0b461cf2bd45"
+      },
+      {
+        "name": "Hatena Technology",
+        "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "observedAt": "2026-10-31T01:01:30.664000+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+        "htmlSha256": "7481fe00f9d05088d629044b69a5339ea26e10f9662ba3fdec23b03423ed22d0"
+      },
+      {
+        "name": "ASCII AI",
+        "requestedUrl": "https://ascii.jp/",
+        "observedAt": "2026-10-31T01:01:30.706268+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ascii.jp/",
+        "htmlSha256": "ae3ac083d34acbb11fd20a43de29dd1f19fa2ae1cccc43648cfff71b3c12f49b"
+      },
+      {
+        "name": "AINOW",
+        "requestedUrl": "https://ainow.ai/",
+        "observedAt": "2026-10-31T01:01:30.787291+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ainow.ai/",
+        "htmlSha256": "dd4da7ee9fbbe8066386253cfff23c56b1f9b2912d37e7233b10b3913c4b1036"
+      },
+      {
+        "name": "Ledge.ai",
+        "requestedUrl": "https://ledge.ai/",
+        "observedAt": "2026-10-31T01:01:30.795469+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://ledge.ai/",
+        "htmlSha256": "a66163ad8a8a6a971694e7d1eed8fc9dc1819e3b363e6b0d358757ea39191e1b"
+      },
+      {
+        "name": "CyberAgent Developers Blog",
+        "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+        "observedAt": "2026-10-31T01:01:30.814527+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+        "htmlSha256": "cfcd366ec69091e3af97bc5dd3862ed1379d9c72f90dd438274f6d28a4e4cdd2"
+      },
+      {
+        "name": "LINE Yahoo Tech Blog",
+        "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+        "observedAt": "2026-10-31T01:01:30.841070+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+        "htmlSha256": "1d8922e6773d51c02cba10ccb137e300dc21619b108f59747630e851fbeead6f"
+      },
+      {
+        "name": "Mercari Engineering",
+        "requestedUrl": "https://engineering.mercari.com/",
+        "observedAt": "2026-10-31T01:01:30.888517+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 403,
+        "actualUrl": "https://engineering.mercari.com/",
+        "error": "Access denied; not retried through another transport"
+      },
+      {
+        "name": "SmartHR Tech Blog",
+        "requestedUrl": "https://tech.smarthr.jp/",
+        "observedAt": "2026-10-31T01:01:30.907512+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://tech.smarthr.jp/",
+        "htmlSha256": "f4be9b0f76cc253a46f994d81ae4eb645f2ccd2147fd5a0eb6a2944f940e6ddd"
+      },
+      {
+        "name": "LayerX Engineering Blog",
+        "requestedUrl": "https://tech.layerx.co.jp/",
+        "observedAt": "2026-10-31T01:01:30.926090+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://tech.layerx.co.jp/",
+        "htmlSha256": "2a01f3d33fbba8ed7dc011167d8d043ddc065bd667f2c56228a9ee67f991d1d9"
+      },
+      {
+        "name": "DeNA Engineering",
+        "requestedUrl": "https://engineering.dena.com/blog/",
+        "observedAt": "2026-10-31T01:01:30.958185+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://engineering.dena.com/blog/",
+        "htmlSha256": "910fa3b4166c8b0dbf0776fceb76d470648c7b9a9d822d040c52be638afdbfb3"
+      },
+      {
+        "name": "Money Forward Developers Blog",
+        "requestedUrl": "https://moneyforward-dev.jp/",
+        "observedAt": "2026-10-31T01:01:31.055437+00:00",
+        "accessScope": "homepage discovery only; not an exhaustive crawl",
+        "status": 200,
+        "actualUrl": "https://moneyforward-dev.jp/",
+        "htmlSha256": "99dc83b4811812a62fc2ceb6559c58d771a12da35bc32c15c215f7bd6fa3da50"
+      }
+    ]
+  }
+}
