@@ -138,6 +138,25 @@ for (const locale of ['zh','ja']) {
 }
 for (const locale of ['zh','ja']) {
   const prefix=`/japan-it-ai-daily/${locale==='ja'?'ja/':''}`;
+  test(`${locale}: restriction and continuing-condition grammar stay separate on report and learning pages`,async({page})=>{
+    await page.addInitScript(lang=>localStorage.setItem('site-language',lang),locale);
+    await page.goto(`${prefix}japanese/2026-10-31/`);
+    const reviews=page.locator('.grammar-card[data-study-kind="review"]');
+    await expect(reviews).toHaveCount(7);
+    await expect(reviews.getByRole('heading',{name:'～限り',exact:true})).toHaveCount(0);
+    const actual=reviews.filter({has:page.getByRole('heading',{name:'～に従って',exact:true})});
+    await expect(actual).toHaveCount(1);
+    await expect(actual.locator('[data-review-evidence]')).toContainText('主体の設定に従い');
+    await expect(actual.locator('button[data-speech-kind="grammar-example"]')).toHaveAttribute('data-speech','権限ポリシーに従って、実行前に利用者の承認を得ます。');
+    await page.goto(`${prefix}daily/2026-10-31/`);
+    const supplement=page.locator('[data-review-supplement="grammar"]');
+    await expect(supplement.getByRole('heading',{name:'～限り',exact:true})).toHaveCount(0);
+    await expect(supplement.getByRole('heading',{name:'～に従って',exact:true})).toHaveCount(1);
+    await page.goto(`${prefix}japanese/2026-10-20/`);
+    const introduction=page.locator('.grammar-card[data-study-kind="new"]').filter({has:page.getByRole('heading',{name:'～限り',exact:true})});
+    await expect(introduction).toHaveCount(1);
+    await expect(introduction).toContainText('接続が続いている限り');
+  });
   test(`${locale}: historical grammar range and legitimate shortfall render`,async({page},testInfo)=>{
     const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
     await page.addInitScript(lang=>localStorage.setItem('site-language',lang),locale);

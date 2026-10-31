@@ -60,6 +60,11 @@ export function matcherFor(card, kind, rules, key) {
       // Similar-looking, different-function grammar must not be merged.
       if (kind === 'grammar' && id === 'つつ') pattern += '(?!も|ある|あり|あっ)';
       if (kind === 'grammar' && id === 'わけではない') pattern = '(?<!ない)' + pattern;
+      if (kind === 'grammar' && id === '限り') {
+        // The positive continuing condition is distinct from に限り (restriction),
+        // ない限り (unless), 限りでは (scope), and inflected 限る in とは限りません.
+        pattern = '(?<!に|ない)' + pattern + '(?!で|ま[すせし]|な[いく])';
+      }
       if (kind === 'grammar' && id === '上で') {
         // This registry identity is V-dictionary + 上で, not a location
         // (エディター上で / 300人以上で) or the separate V-past + 上で.
