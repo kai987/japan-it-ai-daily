@@ -1,0 +1,155 @@
+{
+  "targetDate": "2026-10-31",
+  "stage": "local_verified",
+  "baseCommit": "752f6bc2c2a31087127ad14b968f24cbcb5b33d6",
+  "commit": "62af019713c86dfd78167501f096c7b61d47d544",
+  "changedPaths": [
+    "docs/learning-review/README.md",
+    "public/audio/japanese/2026-10-23/manifest.json",
+    "public/audio/japanese/2026-10-24/manifest.json",
+    "public/audio/japanese/2026-10-27/manifest.json",
+    "public/audio/japanese/2026-10-29/manifest.json",
+    "public/audio/japanese/2026-10-30/manifest.json",
+    "public/audio/japanese/2026-10-31/manifest.json",
+    "scripts/grammar-review-boundaries.test.mjs",
+    "scripts/learning-review.mjs",
+    "tests/browser/study-review.spec.ts"
+  ],
+  "localChecks": [
+    {
+      "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
+      "startedAt": "2026-10-31T04:26:26.871Z",
+      "completedAt": "2026-10-31T04:26:27.174Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/00-tests-publication-publisher-origin.node.mjs.log"
+    },
+    {
+      "command": "npm audit --audit-level=high",
+      "startedAt": "2026-10-31T04:26:27.175Z",
+      "completedAt": "2026-10-31T04:26:27.795Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/01---audit-level-high.log"
+    },
+    {
+      "command": "npm run check",
+      "startedAt": "2026-10-31T04:26:27.795Z",
+      "completedAt": "2026-10-31T04:26:35.532Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/02-check.log"
+    },
+    {
+      "command": "npm run content:integrity:check",
+      "startedAt": "2026-10-31T04:26:35.532Z",
+      "completedAt": "2026-10-31T04:26:38.926Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/03-content-integrity-check.log"
+    },
+    {
+      "command": "npm run evidence:check",
+      "startedAt": "2026-10-31T04:26:38.926Z",
+      "completedAt": "2026-10-31T04:26:39.187Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/04-evidence-check.log"
+    },
+    {
+      "command": "npm run evidence:pilot",
+      "startedAt": "2026-10-31T04:26:39.187Z",
+      "completedAt": "2026-10-31T04:26:39.351Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/05-evidence-pilot.log"
+    },
+    {
+      "command": "npm run bilingual:check-interview",
+      "startedAt": "2026-10-31T04:26:39.351Z",
+      "completedAt": "2026-10-31T04:26:39.518Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/06-bilingual-check-interview.log"
+    },
+    {
+      "command": "npm run quality:check",
+      "startedAt": "2026-10-31T04:26:39.518Z",
+      "completedAt": "2026-10-31T04:26:39.912Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/07-quality-check.log"
+    },
+    {
+      "command": "npm run audio:check",
+      "startedAt": "2026-10-31T04:26:39.912Z",
+      "completedAt": "2026-10-31T04:26:40.522Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/08-audio-check.log"
+    },
+    {
+      "command": "npm run audio:integrity:check",
+      "startedAt": "2026-10-31T04:26:40.522Z",
+      "completedAt": "2026-10-31T04:26:41.606Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/09-audio-integrity-check.log"
+    },
+    {
+      "command": "npm run audio:versions:check",
+      "startedAt": "2026-10-31T04:26:41.606Z",
+      "completedAt": "2026-10-31T04:26:42.052Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/10-audio-versions-check.log"
+    },
+    {
+      "command": "npm run audio:duration:check",
+      "startedAt": "2026-10-31T04:26:42.052Z",
+      "completedAt": "2026-10-31T04:27:13.650Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/11-audio-duration-check.log"
+    },
+    {
+      "command": "npm run test",
+      "startedAt": "2026-10-31T04:27:13.650Z",
+      "completedAt": "2026-10-31T04:27:19.692Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/12-test.log"
+    },
+    {
+      "command": "npm run build",
+      "startedAt": "2026-10-31T04:27:19.692Z",
+      "completedAt": "2026-10-31T04:27:26.021Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/13-build.log"
+    },
+    {
+      "command": "npm run test:browser:speech-smoke",
+      "startedAt": "2026-10-31T04:27:26.021Z",
+      "completedAt": "2026-10-31T04:27:28.990Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/14-test-browser-speech-smoke.log"
+    },
+    {
+      "command": "npm run test:browser",
+      "startedAt": "2026-10-31T04:27:28.990Z",
+      "completedAt": "2026-10-31T04:28:06.955Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/15-test-browser.log"
+    },
+    {
+      "command": "npm run security:check",
+      "startedAt": "2026-10-31T04:28:06.955Z",
+      "completedAt": "2026-10-31T04:28:07.353Z",
+      "exitCode": 0,
+      "log": "/tmp/fix-kagiri-review-20261031/logs/16-security-check.log"
+    }
+  ],
+  "protectedFiles": {
+    "contentAndInterviewsByteIdentical": true,
+    "allExistingMp3ByteIdentical": true,
+    "existingMp3Files": 4006,
+    "onlyChangedProtectedPaths": [
+      "public/audio/japanese/2026-10-23/manifest.json",
+      "public/audio/japanese/2026-10-24/manifest.json",
+      "public/audio/japanese/2026-10-27/manifest.json",
+      "public/audio/japanese/2026-10-29/manifest.json",
+      "public/audio/japanese/2026-10-30/manifest.json",
+      "public/audio/japanese/2026-10-31/manifest.json"
+    ]
+  },
+  "sourceProseUnchanged": true,
+  "recordingsReused": true,
+  "at": "2026-10-31T04:29:31.898Z"
+}
