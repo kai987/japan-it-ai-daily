@@ -1,0 +1,17 @@
+{
+  "targetDate": "2026-10-31",
+  "status": "open",
+  "area": "existing_shared_review_matcher",
+  "observedPattern": "～限り",
+  "storedFunction": "Positive-state continuation condition: as long as",
+  "actualUse": "～に限り: restriction to a purpose or scope",
+  "text": "公式資料は仕様の境界確認に限り補足します。",
+  "matcherResult": {
+    "form": "限り",
+    "excerpt": "公式資料は仕様の境界確認に限り補足します。"
+  },
+  "impact": "Automatic review overlay can present a different grammar function as a review of the earlier condition pattern. New vocabulary/grammar source cards, original articles and recordings are unchanged.",
+  "recommendedRepair": "Separate ～限り from ～に限り／～限りでは／～ない限り in the shared matcher with positive/negative semantic regression tests, then validate content history and regenerate source-bound snapshots through the existing publisher. Do not change factual prose merely to manufacture review eligibility.",
+  "releaseNote": "Publication/byte/playback acceptance does not prove this semantic review classification correct.",
+  "at": "2026-10-31T01:55:55.292Z"
+}
