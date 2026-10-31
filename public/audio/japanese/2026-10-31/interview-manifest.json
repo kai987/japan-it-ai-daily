@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-31",
+  "generatedAt": "2026-10-31T01:31:14.246Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "同じ設定のLLMを比較するとき、再現性をどう確かめますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "7419dd927ca0960c2981e3ca74f52adb3ac63fda686c7b841f55525f25cdfcea",
+      "audioSha256": "acc2d5c1f97c81071f6ab5bc8ddd7fabc48646eddfbbe48fcbda60c48a61f90a",
+      "durationSeconds": 5.479
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "生成設定に加え、直前の実行状態も揃えます。Ollamaの記事では、KVキャッシュの状態を変えると回答の変種も切り替わりました。比較前に一度流して状態を記録し、本文と推論過程を別に照合します。ただし本文が空なら一致しても成功とは言えず、一つの機械での観察を全環境の決定性へ広げません。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "d89aeb9b249ef4f6e791731eb9779388427b82cecc7ad565d521ac8a1977a11f",
+      "audioSha256": "87aa403ab4b19506996c846f7ba2f75439aa52994047879221a0a9a4d44fce0c",
+      "durationSeconds": 24.871,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "AIエージェントへテスト結果を返す際、何を残しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "01a957c36cff558ae50b1ba6f7fc3be7d43e08a39e7992f1f45969e509e3fe31",
+      "audioSha256": "d555294b4b4b0790d0fc6f32ff6c477bcbfbc9bbfe1da85776daaa0b21b6b019",
+      "durationSeconds": 4.514
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "失敗したテスト名、ファイルと行番号、アサーション差分を残します。記事の構造化JSONは成功行や色指定を除き、同じ独立テストを通しながら累積入力を減らしました。ただし94.1%は一つの課題で修正回数も変わった結果です。必要なログまで落とさないよう、原ログを保管して参照できる形にします。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "84f2d3bfcc48ac591fa326b1e8f0a377037f09de800c3d0b45822d3a1c8ab168",
+      "audioSha256": "2fd90c0b7b60ca240b6ec3c40e15032913c9a2c7b3e7f7856e8009415f5b0cb3",
+      "durationSeconds": 26.015,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "コンソールへ入れるのにAWS CLIのログインが失敗したら、どう調べますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "f7ddea16dd8008ef03a677a311faf5e5f4dd83a81f784f73e620be7bb1104d68",
+      "audioSha256": "b015c60c803fc407c36324d582373c37a9fb62748d0914930016e8e755f0a34d",
+      "durationSeconds": 5.999
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "ブラウザー認可と、認可コードを交換してトークンを更新する段階を分けます。aws loginの記事では、認可だけの権限だと画面は通っても端末側で失敗しました。成功後に更新権限を外す実験もあるため、最初の成功だけで終えません。ただしサービスの操作権限は別なので、本人情報と実際に許可された操作を分けて確認します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "50bc8c6512f4f9c194bdab580578ae9b2f1cea3568b3aae082a31fcac20b3bb5",
+      "audioSha256": "49efa78fb1d4c705cee953df6b8c366419cde603a03250bc9563c77b48139fe2",
+      "durationSeconds": 26.435,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "クリックでは動く画面のアクセシビリティを、どう検証しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "d006a60af64d179495bf8b6c1437b1493aaf23f5fe4b30f1ee651cc46189eaeb",
+      "audioSha256": "b90f2ed7a68cdde3257c51e1f8192260d06e6ba33853f5902c3d17e9c6bd407d",
+      "durationSeconds": 4.538
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "まずbuttonとlabelで操作の意味を伝え、Tabで到達してEnterやSpaceで実行できるか確かめます。記事ではdivへ変えると、文字が見えてもフォーカスされませんでした。toBeFocusedで現在地を調べ、通常文字のコントラスト比も測ります。ただし自動検査の成功だけで十分とはせず、実際の支援技術での操作も確認します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "c622f7fedfe34fd990310342a6fc8abc6cb7bb99f52bc47de16d747ee24ded25",
+      "audioSha256": "cc80e442f2a1a481a19bf73a190bdffd692e3fda32aea561b199746e8c25811e",
+      "durationSeconds": 24.867,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "SQLiteのバックアップが使えることを、どう確かめますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "c9fbca52cb529a2425978ca347fbbe1580f2be3aa5069b97871a56aa67b66c52",
+      "audioSha256": "6c755beb3d79229d1733376055eac827968c29c42e4cfae3f9c126962f323ecf",
+      "durationSeconds": 4.376
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "WALモードでは、コミット済みの変更が本体にまだない場合があるので、Connection.backupなどで整合したコピーを作ります。記事では本体だけのコピーで表が見つからず、専用APIでは二行を確認できました。ただし整合性と最新性は別です。コピー先を開いて必要な内容を調べ、復元できるところまでを確認します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "a8489d7ae7918eb6704064b24448de8c7a6bf3e0932cd1fc844fda92e7031c9b",
+      "audioSha256": "796e630f5057f0996cbe614e1512e24462d2d5ee50474413968d6a9d85bc4012",
+      "durationSeconds": 24.345,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "同じ出力や正常な検査結果だけでは、何を判断できませんか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "b91a0995b323741e1f61ff1f7d58f1ae50f0126270be9283f8215135eabbc6ff",
+      "audioSha256": "b405a0da3e3f41b65d8cf5ced7cb499dad5f1685ca90d089b920c7968f1e43f9",
+      "durationSeconds": 5.56
+    },
+    {
+      "index": 2,
+      "text": "削減率や合格という言葉には、どの条件を添えますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "bd7fa9a6f678d56b2f74a87e5801d84e0f441bb11f3248d8c62d0b34e8718cc9",
+      "audioSha256": "244a41de881e9e7ac0e71881c5bdb3f6090d34f19efff44fa2a1e3e3c48d0753",
+      "durationSeconds": 4.783
+    },
+    {
+      "index": 3,
+      "text": "利用者が操作できたように見えても、どの段階を別に確認しますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "ace6ba09543198a02cd84d782c3b1f51b9b10c7fa4734c3eb75498ff0550ba51",
+      "audioSha256": "a67aa6608bc8c0b8911e31657aa1f3805eae337c00a761604eecd341dd19341a",
+      "durationSeconds": 5.386
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-10-31T01:31:16.590Z"
+}
