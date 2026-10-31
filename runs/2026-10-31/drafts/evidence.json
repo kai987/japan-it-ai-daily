@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-31",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-10-31T01:11:07.343156+00:00",
+  "scope": "Five full public originals reviewed: state-controlled inference observations, author terminal-filter experiment, IAM permission tests, frontend tutorial and SQLite backup repro. Facts, conditions, limitations and canonical interview anchors checked. No source commands executed or author experiments claimed as ours. Official AWS/TestingLibrary/WCAG/SQLite sources clarify boundaries; captures remain private. Project examples are teaching suggestions.",
+  "articles": [
+    {
+      "articleId": "2026-10-31-top-1",
+      "url": "https://zenn.dev/wisteriacorp/articles/wisteria-a9236a633d6c",
+      "source": "Zenn",
+      "topic": "LLM評価とKVキャッシュ状態",
+      "access": "full",
+      "accessNote": "Public original narrative, implementation excerpts, tables, stated observations and limits read in full; no code executed. Captures retained outside Git.",
+      "capturedAt": "2026-10-31T01:01:57.650114+00:00",
+      "snapshotSha256": "d079fe121ff8cebff824cc9973e869e049a9c2f2f3a438d9b36ca1e36b20bdbb",
+      "originalTitle": "temperature 0 なのに出力が変わる — MoE/dense 3モデルで KV キャッシュ状態の決定性を実測する",
+      "claims": [
+        {
+          "id": "state",
+          "kind": "source-fact",
+          "statement": "Author observed state-linked output variants under serial fixed-setting Ollama runs.",
+          "quote": "同一状態なら全 run でハッシュ一致",
+          "locator": "この記事の結論／実験条件／Phase2",
+          "conditions": "GB10 128GB, one Japanese prompt; temperature0 seed42 generation512 context8192; gpt-oss MoE controlled-state follow-up; printedSHA256prefix12, not universalbitproof. MeasurementSep7 vsOct31publication.",
+          "usedIn": {
+            "zh": "随后7轮的已记录哈希一致",
+            "ja": "後の7回は記録されたハッシュが一致",
+            "interview": "KVキャッシュの状態を変えると回答の変種も切り替わりました"
+          }
+        },
+        {
+          "id": "empty",
+          "kind": "source-fact",
+          "statement": "Two models exhausted generation budget in thinking; empty content cannot establish answer reproducibility.",
+          "quote": "空文字列の SHA-256",
+          "locator": "自分で踏んだ罠／注意点",
+          "conditions": "qwen3 and densegemma4 comparethinkingonly. done_reason length; do not certify successfulanswerfromemptyhash.",
+          "usedIn": {
+            "zh": "正文为空",
+            "ja": "回答本文が空",
+            "interview": "本文が空なら一致しても成功とは言えず"
+          }
+        },
+        {
+          "id": "scope",
+          "kind": "source-fact",
+          "statement": "Mechanism is an interpretation and experimental scope is narrow.",
+          "quote": "機構（prefill 経路の差）は状況証拠です",
+          "locator": "機構の解釈／限界",
+          "conditions": "Nointernalpathtrace; count139unchanged; no concurrency. Author requesttotal discrepancy notresolved, so34notcertified.",
+          "usedIn": {
+            "zh": "并未跟踪内部执行路径",
+            "ja": "内部経路は追跡しておらず",
+            "interview": "一つの機械での観察を全環境の決定性へ広げません"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-31-top-2",
+      "url": "https://zenn.dev/tappers/articles/ai-labo-e16-cli-token-killer",
+      "source": "Zenn",
+      "topic": "AIエージェントのテスト出力圧縮",
+      "access": "full",
+      "accessNote": "Public original narrative, implementation excerpts, tables, stated observations and limits read in full; no code executed. Captures retained outside Git.",
+      "capturedAt": "2026-10-31T01:01:57.601360+00:00",
+      "snapshotSha256": "99053a3e67a9b4dd222fb4561a2559125fe0f98741f36e4b1aeea83742369e32",
+      "originalTitle": "テスト出力の垂れ流しでコンテキストが汚染される！「生ターミナル出力」vs「構造化JSON差分フィルタ」で入力94.1%削減",
+      "claims": [
+        {
+          "id": "filter",
+          "kind": "source-fact",
+          "statement": "Deterministic filter keeps repair-relevant fields rather than all terminal output.",
+          "quote": "(test, file, line, assertion, message)",
+          "locator": "実験の背景／ModeB",
+          "conditions": "80visible tests76pass4fail; three payment modules inisolatedVM; first60749to1506chars; RTK-inspired ownharnessnotRTKbinarybenchmark.",
+          "usedIn": {
+            "zh": "失败测试名、文件、行号、断言和消息",
+            "ja": "失敗テスト名、ファイル、行番号、アサーション、メッセージ",
+            "interview": "失敗したテスト名、ファイルと行番号、アサーション差分"
+          }
+        },
+        {
+          "id": "result",
+          "kind": "source-fact",
+          "statement": "Author reports94.1percent cumulativeinput reduction and both20independenttests pass.",
+          "quote": "92,385",
+          "locator": "実機検証結果／独立評価スイート",
+          "conditions": "Input92385to5445; calls3to2anddifferentpartialfixpath; notsame-roundcompressiononly. Onepublishedcomparison/no distribution; costsestimatednotbill.",
+          "usedIn": {
+            "zh": "累计输入为92,385与5,445",
+            "ja": "累積入力は92,385から5,445",
+            "interview": "94.1%は一つの課題で修正回数も変わった結果"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-31-top-3",
+      "url": "https://dev.classmethod.jp/articles/202610-aws-login-test/",
+      "source": "DevelopersIO",
+      "topic": "AWS CLI認証と権限の切り分け",
+      "access": "full",
+      "accessNote": "Public original narrative, implementation excerpts, tables, stated observations and limits read in full; no code executed. Captures retained outside Git.",
+      "capturedAt": "2026-10-31T01:01:57.489548+00:00",
+      "snapshotSha256": "3d9ee455aeda675b99909610d2dfe088454a0e7d4697f0bbe707a212ca176ae3",
+      "originalTitle": "aws loginで使用するIAM権限と、権限不足時の挙動を確認してみた",
+      "claims": [
+        {
+          "id": "auth",
+          "kind": "source-fact",
+          "statement": "Browserauthorization andtokenexchange/refresh requireseparateIAMactions.",
+          "quote": "signin:AuthorizeOAuth2Access",
+          "locator": "結論の先取り／確認2-A,2-B",
+          "conditions": "MFAIAMtestuserfivepatterns; AuthorizeonlybrowserpassesCLIexchangefails; Createonlybrowserfails. Managedpolicy notserviceauthorization.",
+          "usedIn": {
+            "zh": "浏览器授权码环节",
+            "ja": "ブラウザーで認可コードを得る",
+            "interview": "ブラウザー認可と、認可コードを交換してトークンを更新する段階"
+          }
+        },
+        {
+          "id": "refresh",
+          "kind": "source-fact",
+          "statement": "Revoking refresh permission afterlogin leads to laterCLI failure.",
+          "quote": "19:59",
+          "locator": "確認2-C／補足",
+          "conditions": "19:32success19:59failure notprecision15minboundarymeasurement. Official15minasneededrefresh/up12h; logoutdiskcache notloadedtokeninstantrevoke. OfficialminCLI2.32 andIdentityCenterdifferentconfiguration.",
+          "usedIn": {
+            "zh": "19:59再次调用时遇到刷新错误",
+            "ja": "19時59分には更新エラー",
+            "interview": "成功後に更新権限を外す実験"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-31-top-4",
+      "url": "https://zenn.dev/kipcop/articles/f35-vue-25-accessibility",
+      "source": "Zenn",
+      "topic": "フロントエンドのアクセシビリティ",
+      "access": "full",
+      "accessNote": "Public original narrative, implementation excerpts, tables, stated observations and limits read in full; no code executed. Captures retained outside Git.",
+      "capturedAt": "2026-10-31T01:01:57.583950+00:00",
+      "snapshotSha256": "e84b0b35ab7b5cc887506bbea8433bbe1a3b59a395233f7e266af565ee4f801f",
+      "originalTitle": "35日でフロントエンドの基礎を完全に理解する #25 - アクセシビリティ",
+      "claims": [
+        {
+          "id": "keyboard",
+          "kind": "source-fact",
+          "statement": "Nativebutton supportskeyboardfocus whereclickablediv didnot.",
+          "quote": "Tab キーは div を素通りします。",
+          "locator": "セマンティクス／キーボードだけで一周する",
+          "conditions": "Node20 Vue3.5 Playwright1.64Chromiumtutorial; toBeFocused example. RolequeryDOMsemantics perofficialTestingLibrary, notdirectAXtreeproof; nofullSRcomplianceclaim.",
+          "usedIn": {
+            "zh": "但焦点并未到达",
+            "ja": "フォーカスされません",
+            "interview": "divへ変えると、文字が見えてもフォーカスされませんでした"
+          }
+        },
+        {
+          "id": "contrast",
+          "kind": "source-fact",
+          "statement": "Authorcomputedgray-on-whitecontrast distinguishes4.48from4.54.",
+          "quote": "4.48:1",
+          "locator": "コントラスト",
+          "conditions": "777777white4.48vs7676764.54; normalAA4.5large3 official no roundup. Colorpaircomputationsnotfullpagecompliance; automatedtools partial.",
+          "usedIn": {
+            "zh": "4.48比1",
+            "ja": "4.48対1",
+            "interview": "通常文字のコントラスト比も測ります"
+          }
+        },
+        {
+          "id": "grammar",
+          "kind": "source-fact",
+          "statement": "Article recommendsusing availableautomaticchecks withoutcallingthemsufficient.",
+          "quote": "拾っておくに越したことはありません。",
+          "locator": "道具に守らせる。そしてARIAの第一規則",
+          "conditions": "OnegenuinenewN2grammar afterall115historysemanticreview; originalformpolite, teachingexampleoriginalnotquote.",
+          "usedIn": {
+            "zh": "自动检查",
+            "ja": "自動検出だけで十分とせず",
+            "interview": "自動検査の成功だけで十分とはせず"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-10-31-top-5",
+      "url": "https://zenn.dev/warrobotsxyz/articles/sqlite-wal-safe-backup",
+      "source": "Zenn",
+      "topic": "SQLiteのWALと復元可能なバックアップ",
+      "access": "full",
+      "accessNote": "Public original narrative, implementation excerpts, tables, stated observations and limits read in full; no code executed. Captures retained outside Git.",
+      "capturedAt": "2026-10-31T01:01:57.574491+00:00",
+      "snapshotSha256": "c2c8bd4038628ad3cb7ed2cc7bf35e888d00e857bf5886e6fe79f40520101364",
+      "originalTitle": "SQLiteのバックアップはファイルコピーでは壊れる：WALモードで実測した安全な方法",
+      "claims": [
+        {
+          "id": "wal",
+          "kind": "source-fact",
+          "statement": "Underdisabledautocheckpointmain-filecopyomittedWALschema/data.",
+          "quote": "PRAGMA wal_autocheckpoint=0",
+          "locator": "環境／やったこと1-2",
+          "conditions": "Windows11 Python3.11 SQLite3.42.0; schemaand2commitsWAL. Notallfilecopiesalwayscorrupt orconcurrencybenchmark.",
+          "usedIn": {
+            "zh": "关闭自动检查点",
+            "ja": "自動チェックポイントを止めて",
+            "interview": "コミット済みの変更が本体にまだない場合"
+          }
+        },
+        {
+          "id": "backup",
+          "kind": "source-fact",
+          "statement": "Dedicatedbackup methodsreturned2rows inauthorrepro.",
+          "quote": "backup APIの行数: 2",
+          "locator": "安全な方法1-2／コピーの健全性チェック",
+          "conditions": "Connection.backup andVACUUMINTO; verifyactualcopyandcontent, integritynotfreshness. OfficialVACUUMallowsnonexistentOREMPTYfile; rejectarticleovergeneralizationanyexistingfilefails.",
+          "usedIn": {
+            "zh": "两者均读到2行",
+            "ja": "どちらも2行を確認",
+            "interview": "専用APIでは二行を確認できました"
+          }
+        }
+      ]
+    }
+  ]
+}
