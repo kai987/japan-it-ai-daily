@@ -25,6 +25,18 @@
   "actualReplacementPlaybackChecks": 12,
   "all4006ExistingMp3BytesUnchanged": true,
   "allOriginalContentAndInterviewBytesUnchanged": true,
-  "n1Status": "four new recordings uploaded; metadata and corrected snapshot publication in preparation",
-  "updatedAt": "2026-10-31T04:50:03.938Z"
+  "n1Status": {
+    "text": "published_verified",
+    "audioRepair": "playback_verified",
+    "releaseCommit": "56419ab076c771fd1bba00a0977575b036b6d5d0",
+    "pagesRunId": 41171343662,
+    "newRecordings": 4,
+    "allOldRecordingsPreserved": true,
+    "actualNewPlaybackChecks": 4,
+    "pendingClips": 0
+  },
+  "updatedAt": "2026-10-31T05:12:50.070235+00:00",
+  "schedulesUnchanged": true,
+  "appCleanup": "normal_exit_verified",
+  "status": "verified_complete"
 }
