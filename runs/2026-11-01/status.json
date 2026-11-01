@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-01",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "62af019713c86dfd78167501f096c7b61d47d544",
   "sourceWindow": {
     "from": "2026-10-31T10:00:00+09:00",
@@ -12,8 +12,8 @@
     "runs/2026-11-01/sources.json"
   ],
   "lastError": null,
-  "updatedAt": "2026-11-01T01:24:35.273Z",
-  "nextAction": "Await exact draft deploy.yml preflight, then submit complete source-bound request",
+  "updatedAt": "2026-11-01T01:24:44.279Z",
+  "nextAction": "Unique publisher owns the request slot; wait exact publisher/main Pages and verify full public snapshot.",
   "draftCommit": "cf32472e42574961dba3b75fb96daecaa04698af",
   "draftBranch": "draft/daily-2026-11-01",
   "localChecks": {
@@ -225,5 +225,7 @@
     "totalDays": 82
   },
   "preflightRunId": 41260662909,
-  "preflightWorkflowPath": ".github/workflows/deploy.yml"
+  "preflightWorkflowPath": ".github/workflows/deploy.yml",
+  "requestCommit": "c7a681e5c18237a5d8a7b7880e0bd7f7bb0e87d7",
+  "requestBlob": "58bb24b968aa3f8692bb509c92ec11884981d2e2"
 }
