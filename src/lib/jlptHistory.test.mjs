@@ -11,7 +11,7 @@ const reviewedPairs = [
   ['偏る', '偏り'], ['抜け', '抜ける'], ['一気通貫で', '一気通貫'], ['誤り', '誤って'],
 ];
 const day = (date, terms, must = terms) => ({ date, vocabulary: terms.map((term) => ({ term })), mustRememberWords: must });
-const reviewedDays = () => {
+const reviewedOriginalDays = (() => {
   const originals = policy.groups.flatMap((group) => group.occurrences);
   return [...new Set(originals.map((item) => item.date))].sort().map((date) => {
     const terms = new Set(originals.filter((item) => item.date === date).map((item) => item.term));
@@ -19,7 +19,10 @@ const reviewedDays = () => {
     const japaneseVocabulary = readContent(process.cwd(), 'japanese-ja', date).data.vocabulary.filter((item) => terms.has(item.term));
     return { date, vocabulary, japaneseVocabulary, mustRememberWords: vocabulary.map((item) => item.term) };
   });
-};
+})();
+// Parse the immutable source fixture once; mutation cases receive independent
+// copies, so exhaustive bilingual checks do not repeat YAML I/O in every loop.
+const reviewedDays = () => structuredClone(reviewedOriginalDays);
 const findOriginal = (days, occurrence) => days.find((item) => item.date === occurrence.date);
 describe('full-history JLPT vocabulary gate', () => {
   it('normalizes the reviewed lexical variants without comparing only yesterday', () => {
