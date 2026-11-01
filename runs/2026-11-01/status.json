@@ -12,6 +12,216 @@
     "runs/2026-11-01/sources.json"
   ],
   "lastError": null,
-  "updatedAt": "2026-11-01T01:16:55.979Z",
-  "nextAction": "Complete all-history semantic learning checks and independently author full Chinese and Japanese A+B+C"
+  "updatedAt": "2026-11-01T01:20:23.957Z",
+  "nextAction": "Await exact draft deploy.yml preflight, then submit complete source-bound request",
+  "draftCommit": "cf32472e42574961dba3b75fb96daecaa04698af",
+  "draftBranch": "draft/daily-2026-11-01",
+  "localChecks": {
+    "date": "2026-11-01",
+    "checkedBaseCommit": "62af019713c86dfd78167501f096c7b61d47d544",
+    "worktree": "six uncommitted target files",
+    "checks": [
+      {
+        "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
+        "startedAt": "2026-11-01T01:17:01.715Z",
+        "completedAt": "2026-11-01T01:17:02.020Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/00-tests-publication-recovery-node-mjs.log"
+      },
+      {
+        "command": "npm audit --audit-level=high",
+        "startedAt": "2026-11-01T01:17:03.809Z",
+        "completedAt": "2026-11-01T01:17:04.633Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/01---audit-level-high.log"
+      },
+      {
+        "command": "npm run check",
+        "startedAt": "2026-11-01T01:17:06.317Z",
+        "completedAt": "2026-11-01T01:17:13.408Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/02-check.log"
+      },
+      {
+        "command": "npm run content:integrity:check",
+        "startedAt": "2026-11-01T01:17:15.134Z",
+        "completedAt": "2026-11-01T01:17:18.545Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/03-content-integrity-check.log"
+      },
+      {
+        "command": "npm run evidence:check",
+        "startedAt": "2026-11-01T01:17:20.359Z",
+        "completedAt": "2026-11-01T01:17:20.636Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/04-evidence-check.log"
+      },
+      {
+        "command": "npm run evidence:pilot",
+        "startedAt": "2026-11-01T01:17:22.378Z",
+        "completedAt": "2026-11-01T01:17:22.554Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/05-evidence-pilot.log"
+      },
+      {
+        "command": "npm run bilingual:check-interview",
+        "startedAt": "2026-11-01T01:17:24.481Z",
+        "completedAt": "2026-11-01T01:17:24.662Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/06-bilingual-check-interview.log"
+      },
+      {
+        "command": "npm run quality:check",
+        "startedAt": "2026-11-01T01:17:26.402Z",
+        "completedAt": "2026-11-01T01:17:26.799Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/07-quality-check.log"
+      },
+      {
+        "command": "npm run audio:check",
+        "startedAt": "2026-11-01T01:17:28.493Z",
+        "completedAt": "2026-11-01T01:17:29.118Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/08-audio-check.log"
+      },
+      {
+        "command": "npm run audio:integrity:check",
+        "startedAt": "2026-11-01T01:17:30.817Z",
+        "completedAt": "2026-11-01T01:17:32.472Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/09-audio-integrity-check.log"
+      },
+      {
+        "command": "npm run audio:duration:check",
+        "startedAt": "2026-11-01T01:17:34.103Z",
+        "completedAt": "2026-11-01T01:18:05.203Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/10-audio-duration-check.log"
+      },
+      {
+        "command": "npm run audio:versions:check",
+        "startedAt": "2026-11-01T01:18:06.917Z",
+        "completedAt": "2026-11-01T01:18:07.800Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/11-audio-versions-check.log"
+      },
+      {
+        "command": "npm run test",
+        "startedAt": "2026-11-01T01:18:09.638Z",
+        "completedAt": "2026-11-01T01:18:15.827Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/12-test.log"
+      },
+      {
+        "command": "npm run build",
+        "startedAt": "2026-11-01T01:18:17.529Z",
+        "completedAt": "2026-11-01T01:18:25.235Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/13-build.log"
+      },
+      {
+        "command": "npm run test:browser:speech-smoke",
+        "startedAt": "2026-11-01T01:18:27.304Z",
+        "completedAt": "2026-11-01T01:18:30.317Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/14-test-browser-speech-smoke.log"
+      },
+      {
+        "command": "npm run test:browser",
+        "startedAt": "2026-11-01T01:18:32.145Z",
+        "completedAt": "2026-11-01T01:19:10.862Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/15-test-browser.log"
+      },
+      {
+        "command": "npm run security:check",
+        "startedAt": "2026-11-01T01:19:12.624Z",
+        "completedAt": "2026-11-01T01:19:13.127Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/16-security-check.log"
+      },
+      {
+        "command": "npm run evidence:check -- --date 2026-11-01 --source-dir /tmp/japan-daily-20261101/originals",
+        "startedAt": "2026-11-01T01:19:14.876Z",
+        "completedAt": "2026-11-01T01:19:15.071Z",
+        "exitCode": 0,
+        "log": "/tmp/japan-daily-20261101/logs-final/17-evidence-check.log"
+      }
+    ]
+  },
+  "learning": {
+    "date": "2026-11-01",
+    "issueNumber": 82,
+    "newVocabulary": 5,
+    "reviewVocabulary": 15,
+    "newGrammar": 0,
+    "reviewGrammar": 8,
+    "grammar": [
+      {
+        "pattern": "～たうえで",
+        "evidence": {
+          "form": "したうえで",
+          "excerpt": "面接では、日々の計画を短くする目的と、ドリフトを検出する目的を分け、対象範囲を把握したうえで使う、と説明できます。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "pattern": "～わけではない",
+        "evidence": {
+          "form": "わけではない",
+          "excerpt": "記事は、安定版1.0でも機能が完成しきったわけではないという公式告知を紹介しています。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "pattern": "～といった",
+        "evidence": {
+          "form": "といった",
+          "excerpt": "親を高い推論量にしたまま、単純な確認だけを子へ任せる、といった設計を考える材料になります。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "pattern": "～を踏まえて",
+        "evidence": {
+          "form": "を踏まえ",
+          "excerpt": "これは記事を踏まえた提案であり、五人の著者が同じ統一システムを作ったという意味ではありません。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "pattern": "～に限って",
+        "evidence": {
+          "form": "に限り",
+          "excerpt": "公式資料は仕様の境界確認に限り補足します。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "pattern": "～だけで",
+        "evidence": {
+          "form": "だけで",
+          "excerpt": "速さや品質の改善を、設定の変更だけで断定しない読み方も学べます。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "pattern": "～だけでなく",
+        "evidence": {
+          "form": "だけでなく",
+          "excerpt": "単にコマンド数を減らすだけでなく、実際に何の版が動いているかを説明しやすくする仕組みです。",
+          "sourceKind": "report-body"
+        }
+      },
+      {
+        "pattern": "～べきだ",
+        "evidence": {
+          "form": "べき",
+          "excerpt": "利点は、変えるべき場所を絞れることです。",
+          "sourceKind": "report-body"
+        }
+      }
+    ],
+    "totalDays": 82
+  }
 }
