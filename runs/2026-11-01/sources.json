@@ -1,0 +1,87 @@
+{
+  "targetDate": "2026-11-01",
+  "sourceCommit": "62af019713c86dfd78167501f096c7b61d47d544",
+  "sourceWindow": {
+    "from": "2026-10-31T10:00:00+09:00",
+    "to": "2026-11-01T10:00:00+09:00"
+  },
+  "discovery": {
+    "preferredSitesChecked": 20,
+    "homepageRead": 18,
+    "denied": [
+      "CodeZine",
+      "Mercari Engineering"
+    ],
+    "scope": "Homepage discovery and latest100Zenn articles, not exhaustive full-site crawl",
+    "evidenceDirectory": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-11-01"
+  },
+  "previousTop5Excluded": true,
+  "articles": [
+    {
+      "url": "https://dev.classmethod.jp/articles/20261031-cc-updates-v2-1-316/",
+      "capturedAt": "2026-11-01T01:06:45.053374+00:00",
+      "snapshotSha256": "278dd5f6b4bf5eddd72b87feb96167ae5404319e2152b059970c7010000e8770",
+      "articleId": "2026-11-01-top-1",
+      "title": "Claude Code v2.1.316 の主要アップデート - サブエージェントの effort 指定と Opus 4.8 fast mode の非推奨",
+      "source": "DevelopersIO",
+      "topic": "AIエージェントの推論設定と継承",
+      "publishedAt": "2026-10-31T09:53:16.003Z",
+      "access": "full",
+      "accessNote": "Full public original including narrative, shown commands, measurements and stated limits read; commands not executed. Publication time parsed from original page JSON-LD or Zenn article data; previous Top5 excluded.",
+      "factsToPreserve": "v2.1.316 published2026-10-31. Author single minimal Agent task main --effort high, no invocation/definition effort, strict MCP; no SUBAGENT env:main2high sub2high; envlow:main2high sub2low. JSONL counts are records not performance tests. Prioritytable explicitlyinferred and top-levelenv vs subagentenv combination UNTESTED. fastOpus4.8deprecatedOct30 removalNov30errornotfallback; article summaries securityfixes notindependent exploit retest. Avoid pricing and accountplan claims outside focus."
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/vite-plus-v1-new-features-tried/",
+      "capturedAt": "2026-11-01T01:06:45.004941+00:00",
+      "snapshotSha256": "3085c3788994d391b9492f49b1642e316367347157c0247380aa6085765def83",
+      "articleId": "2026-11-01-top-2",
+      "title": "Vite+ 1.0がリリースされたので、アルファ版から増えた機能を試してみた",
+      "source": "DevelopersIO",
+      "topic": "フロントエンドの統合ツールチェーン",
+      "publishedAt": "2026-10-31T13:52:21.983Z",
+      "access": "full",
+      "accessNote": "Full public original including narrative, shown commands, measurements and stated limits read; commands not executed. Publication time parsed from original page JSON-LD or Zenn article data; previous Top5 excluded.",
+      "factsToPreserve": "Oct31 experience report comparingalpha0.2.1to1.4.0; 1.0 releasedSep28,1.4Oct23,notnewtodayrelease. macOS26.7.1 Node24.22.1 pnpm12.15 Git2.52. vpx enumworkswhereNode24strip-onlyfails; vpxnoTypeCheck. vp check --deny-warnings debuggerexit0normal/1deny. vp upgradeglobal vs vp migrateproject separate. Hookstagedresultsformatre-staged. vp toolchain bundledvsregular deps. current shell env may beoverridden by pnpm projectdevEngines. No universal speedbenchmark; 24percent devstartup isrelease-noteclaimnotauthorbenchmark."
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/terraform-minimal-refresh/",
+      "capturedAt": "2026-11-01T01:06:45.068633+00:00",
+      "snapshotSha256": "7ea68d53fa261a874180598881f3fecb47b9a37d05f37c8af7ce2f333c268066",
+      "articleId": "2026-11-01-top-3",
+      "title": "Terraform の -minimal-refresh で plan 時間を短縮できるか検証してみた",
+      "source": "DevelopersIO",
+      "topic": "IaCの差分計画とドリフト検出",
+      "publishedAt": "2026-10-31T11:20:52.582Z",
+      "access": "full",
+      "accessNote": "Full public original including narrative, shown commands, measurements and stated limits read; commands not executed. Publication time parsed from original page JSON-LD or Zenn article data; previous Top5 excluded.",
+      "factsToPreserve": "Terraform1.17.1 AWSprovider6.71.0 macOS26.7.2 Tokyo region33stateobjects31managed, minimal3tier VPCALBASG1t3micro NAT RDSMySQL8.4dbt4gmicro singleAZ. ALBtagone change warmup2runs:standard2.81/2.96, minimal2.11/2.38,refresh31to1. nochange31to0 times2.97to2.05once. CountsRefreshingstate lines, walltime time-p. unchanged resources skipexternaldrift, schema upgradesmayrefresh, dependencies do not cascade. incompatible-refresh=false/refresh-only. No largefleetlatencyguarantee. destroyedafter."
+    },
+    {
+      "url": "https://zenn.dev/kas_blog/articles/20260911-pytorch-cuda-out-of-memory",
+      "capturedAt": "2026-11-01T01:06:45.257520+00:00",
+      "snapshotSha256": "9e8ceddcb53c789c7b8c9301433e42d4b163877dbf27337d2e53aafe007bf850",
+      "articleId": "2026-11-01-top-4",
+      "title": "PyTorchのOOMを読む：allocated・reserved・Tensorの参照寿命",
+      "source": "Zenn",
+      "topic": "PyTorchのGPUメモリ診断",
+      "publishedAt": "2026-11-01T00:45:42.914+09:00",
+      "access": "full",
+      "accessNote": "Full public original including narrative, shown commands, measurements and stated limits read; commands not executed. Publication time parsed from original page JSON-LD or Zenn article data; previous Top5 excluded.",
+      "factsToPreserve": "PublicationNov1,article referencesPyTorch2.14 docs readSep11, CPU snippetsPython3.12.3 torch2.6.0+cpu. NO GPUOOMrepro/nomeasuredMiBsavings. allocatedinside reserved do not add; reserved-allocatednotallfragmentation/freeable. sameprocess/device/stage, GPUglobalfree via mem_get_info vsTensorAPI. detachbreaksautogradhistorysharesstorage, deletesnamebut saved remains. evalbehaviornotgradmode; inference_mode no implicit eval. empty_cacheunusedonlynotliveTensor. resetpeak resetsstatnotfree. AMP/checkpoint alternativestradeoffs notmeasured."
+    },
+    {
+      "url": "https://zenn.dev/kensaurus/articles/594292467837c7",
+      "capturedAt": "2026-11-01T01:06:45.147586+00:00",
+      "snapshotSha256": "ca5c948c5db984e86ac886a14c18a5c7340c9d526a1580c21a9a347f9d276b1d",
+      "articleId": "2026-11-01-top-5",
+      "title": "受付のない入口に置いたタブレットの設計：全画面ウェブアプリと、触っていないときだけの更新",
+      "source": "Zenn",
+      "topic": "古いタブレットの更新経路と操作継続",
+      "publishedAt": "2026-11-01T08:39:16.530+09:00",
+      "access": "full",
+      "accessNote": "Full public original including narrative, shown commands, measurements and stated limits read; commands not executed. Publication time parsed from original page JSON-LD or Zenn article data; previous Top5 excluded.",
+      "factsToPreserve": "Nov1 published real unstaffedlounge tabletAndroid8.1RK3288 2GB WebView61 Firefox158,plannedPixelactualdifferent. idlehomepoll5minoffline no reload,3minidle/night18-06/lite stopdecorreportedCPU40to3ononeolddevice. staleHTML initiallyadoptsnewversion bug; 34secondS3versionfirstHTMLlater; guestSWrootNetworkFirst3s/14daycache captureskiosk. embedownbuild duringbuild, versionmarkeruploadlast, exclude/kioskSW, no newpageversionreloadfirst4min, E2Enewreloadsameunchanged. preservevoicebusy,20sreturncountdown/reading3min. No kioskSWyet andnewartnotrealdeviceverified. Ignoremerchant/legalclaimscannotverify; publicpersonalcontactsnotinreport."
+    }
+  ],
+  "reviewedAt": "2026-11-01T01:09:00.705459+00:00"
+}
