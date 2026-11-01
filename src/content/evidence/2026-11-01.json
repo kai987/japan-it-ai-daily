@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-01",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-11-01T01:15:09.610273+00:00",
+  "scope": "Five complete public originals read, publication timestamps confirmed in locked window, previous Top5 excluded. Source facts, experiment conditions and explicit unverified boundaries checked against preserved private captures. Independent Chinese/Japanese prose; shared original-grounded canonical Japanese Q&A. No source code executed; CPU results, GPU measurements, release descriptions and design suggestions distinguished.",
+  "articles": [
+    {
+      "articleId": "2026-11-01-top-1",
+      "url": "https://dev.classmethod.jp/articles/20261031-cc-updates-v2-1-316/",
+      "source": "DevelopersIO",
+      "topic": "AIエージェントの推論設定と継承",
+      "access": "full",
+      "accessNote": "Full public original including narrative, shown commands, measurements and stated limits read; commands not executed. Publication time parsed from original page JSON-LD or Zenn article data; previous Top5 excluded.",
+      "capturedAt": "2026-11-01T01:06:45.053374+00:00",
+      "snapshotSha256": "278dd5f6b4bf5eddd72b87feb96167ae5404319e2152b059970c7010000e8770",
+      "originalTitle": "Claude Code v2.1.316 の主要アップデート - サブエージェントの effort 指定と Opus 4.8 fast mode の非推奨",
+      "claims": [
+        {
+          "id": "applied",
+          "kind": "source-fact",
+          "statement": "The author observed parent high and child low under a minimal controlled task.",
+          "quote": "subagent: 2 low",
+          "locator": "CLAUDE_CODE_SUBAGENT_EFFORTを試してみた／結果の確認",
+          "conditions": "One short Agent task, no call/definition effort, no MCP. Counts assistant records, not repetitions, quality or performance.",
+          "usedIn": {
+            "zh": "父仍为high，子为low",
+            "ja": "親がhigh、子だけlow",
+            "interview": "親high・子lowを確認できました"
+          }
+        },
+        {
+          "id": "scope",
+          "kind": "source-fact",
+          "statement": "Priority ordering is partially inferred and simultaneous top-level/child environment settings were not tested.",
+          "quote": "今回は確認していません。",
+          "locator": "effort優先順位の表の注記",
+          "conditions": "Only the documented two configurations tested; do not certify complete precedence or throughput/cost improvements.",
+          "usedIn": {
+            "zh": "本次并未验证",
+            "ja": "未確認だと説明",
+            "interview": "短い一課題の適用確認"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-01-top-2",
+      "url": "https://dev.classmethod.jp/articles/vite-plus-v1-new-features-tried/",
+      "source": "DevelopersIO",
+      "topic": "フロントエンドの統合ツールチェーン",
+      "access": "full",
+      "accessNote": "Full public original including narrative, shown commands, measurements and stated limits read; commands not executed. Publication time parsed from original page JSON-LD or Zenn article data; previous Top5 excluded.",
+      "capturedAt": "2026-11-01T01:06:45.004941+00:00",
+      "snapshotSha256": "3085c3788994d391b9492f49b1642e316367347157c0247380aa6085765def83",
+      "originalTitle": "Vite+ 1.0がリリースされたので、アルファ版から増えた機能を試してみた",
+      "claims": [
+        {
+          "id": "execute",
+          "kind": "source-fact",
+          "statement": "vpx executed the enum example; execution is separate from type checking.",
+          "quote": "vpx は型チェックをしない",
+          "locator": "vpxでTypeScriptのファイルを直接実行する",
+          "conditions": "macOS26.7.1 Node24.22.1 pnpm12.15.0 Vite+1.4.0. No overall app performance benchmark.",
+          "usedIn": {
+            "zh": "vpx并不检查类型",
+            "ja": "vpxは型チェックを行いません",
+            "interview": "型チェックは行いません"
+          }
+        },
+        {
+          "id": "gate",
+          "kind": "source-fact",
+          "statement": "The same debugger warning changed process exit status under deny-warnings.",
+          "quote": "同じ警告で終了コードが1になりました。",
+          "locator": "vp check --deny-warningsで警告もCIを止める",
+          "conditions": "Normal check exit0 vs strictwarnings exit1, not error-count reduction or allwarnings eliminated.",
+          "usedIn": {
+            "zh": "退出码变为1",
+            "ja": "終了コード0",
+            "interview": "終了コードがゼロから一へ変わりました"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-01-top-3",
+      "url": "https://dev.classmethod.jp/articles/terraform-minimal-refresh/",
+      "source": "DevelopersIO",
+      "topic": "IaCの差分計画とドリフト検出",
+      "access": "full",
+      "accessNote": "Full public original including narrative, shown commands, measurements and stated limits read; commands not executed. Publication time parsed from original page JSON-LD or Zenn article data; previous Top5 excluded.",
+      "capturedAt": "2026-11-01T01:06:45.068633+00:00",
+      "snapshotSha256": "7ea68d53fa261a874180598881f3fecb47b9a37d05f37c8af7ce2f333c268066",
+      "originalTitle": "Terraform の -minimal-refresh で plan 時間を短縮できるか検証してみた",
+      "claims": [
+        {
+          "id": "measured",
+          "kind": "source-fact",
+          "statement": "A single ALB tag change reduced refresh lines 31 to1 and slightly shortened wall time.",
+          "quote": "2.81 / 2.96 秒",
+          "locator": "結論の比較表／Step2",
+          "conditions": "Terraform1.17.1 AWSprovider6.71.0 Tokyo,31managed. Warmup2samples2.81/2.96vs2.11/2.38sec. Not generic31xspeedup.",
+          "usedIn": {
+            "zh": "刷新日志行数从31降为1",
+            "ja": "Refreshing state行が31から1",
+            "interview": "三十一回から一回"
+          }
+        },
+        {
+          "id": "scope",
+          "kind": "source-fact",
+          "statement": "Unchanged resources skip external change checks.",
+          "quote": "変更予定が無いリソースの外部変更を無視します。",
+          "locator": "注意点・制約",
+          "conditions": "Small SingleAZ3tier setup; incompatible with refresh=false/refresh-only; schema upgrade exceptions.",
+          "usedIn": {
+            "zh": "可能跳过控制台等外部途径造成的配置漂移",
+            "ja": "外部変更を調べる機会",
+            "interview": "外部変更は見逃す可能性"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-01-top-4",
+      "url": "https://zenn.dev/kas_blog/articles/20260911-pytorch-cuda-out-of-memory",
+      "source": "Zenn",
+      "topic": "PyTorchのGPUメモリ診断",
+      "access": "full",
+      "accessNote": "Full public original including narrative, shown commands, measurements and stated limits read; commands not executed. Publication time parsed from original page JSON-LD or Zenn article data; previous Top5 excluded.",
+      "capturedAt": "2026-11-01T01:06:45.257520+00:00",
+      "snapshotSha256": "9e8ceddcb53c789c7b8c9301433e42d4b163877dbf27337d2e53aafe007bf850",
+      "originalTitle": "PyTorchのOOMを読む：allocated・reserved・Tensorの参照寿命",
+      "claims": [
+        {
+          "id": "memory",
+          "kind": "source-fact",
+          "statement": "Allocated Tensor memory is inside allocator reserved memory, and detach shares storage.",
+          "quote": "allocated は reserved の内側",
+          "locator": "allocatedとreservedを足さない／detachは履歴を切る",
+          "conditions": "Sameprocess/devicemeasurements,nototherprocess. CPU demo torch2.6.0+cpu Python3.12.3. GPUOOMnotreproduced.",
+          "usedIn": {
+            "zh": "前者包含在后者中",
+            "ja": "allocatedはreservedに含まれる",
+            "interview": "allocatedはreservedの内側"
+          }
+        },
+        {
+          "id": "scope",
+          "kind": "source-fact",
+          "statement": "CPU reference and grad-mode examples are not a CUDA savings experiment.",
+          "quote": "CUDA上で何MiB減るかを測った結果ではありません。",
+          "locator": "evalだけでは勾配記録は止まらない",
+          "conditions": "Referencedofficialdocs2.14 vs CPUruntime2.6.0+cpu different; no GPU reduction numbers.",
+          "usedIn": {
+            "zh": "没有测量节约了多少MiB",
+            "ja": "削減量を測った実験ではありません",
+            "interview": "GPUの削減量は未測定"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-01-top-5",
+      "url": "https://zenn.dev/kensaurus/articles/594292467837c7",
+      "source": "Zenn",
+      "topic": "古いタブレットの更新経路と操作継続",
+      "access": "full",
+      "accessNote": "Full public original including narrative, shown commands, measurements and stated limits read; commands not executed. Publication time parsed from original page JSON-LD or Zenn article data; previous Top5 excluded.",
+      "capturedAt": "2026-11-01T01:06:45.147586+00:00",
+      "snapshotSha256": "ca5c948c5db984e86ac886a14c18a5c7340c9d526a1580c21a9a347f9d276b1d",
+      "originalTitle": "受付のない入口に置いたタブレットの設計：全画面ウェブアプリと、触っていないときだけの更新",
+      "claims": [
+        {
+          "id": "race",
+          "kind": "source-fact",
+          "statement": "Early version marker and stale HTML interacted with broad navigation cache.",
+          "quote": "約34秒の差",
+          "locator": "それでも、更新は届いていなかった",
+          "conditions": "One real kiosk,Oct29deploymentS3timestamps. DifferentOS/browser/device notbenchmarked.",
+          "usedIn": {
+            "zh": "版本文件比HTML早约34秒上传",
+            "ja": "更新番号をHTMLより約34秒早く",
+            "interview": "HTMLより約三十四秒先に配られ"
+          }
+        },
+        {
+          "id": "identity",
+          "kind": "source-fact",
+          "statement": "The fix compares embedded page build identity and updates only when idle.",
+          "quote": "その焼き込んだビルド",
+          "locator": "それでも、更新は届いていなかった／直したこと",
+          "conditions": "MarkeruploadedafterHTML,guestSWexcludeskiosk,first4minno versionreload,offline/busywait. DedicatedofflineSWnotyetdone.",
+          "usedIn": {
+            "zh": "在构建时嵌入HTML",
+            "ja": "ビルド時に自分自身の版をページへ埋め込み",
+            "interview": "ビルド番号を埋め込み"
+          }
+        }
+      ]
+    }
+  ]
+}
