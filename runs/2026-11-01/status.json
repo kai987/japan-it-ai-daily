@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-01",
-  "stage": "preflight_passed",
+  "stage": "request_ready",
   "sourceCommit": "62af019713c86dfd78167501f096c7b61d47d544",
   "sourceWindow": {
     "from": "2026-10-31T10:00:00+09:00",
@@ -12,7 +12,7 @@
     "runs/2026-11-01/sources.json"
   ],
   "lastError": null,
-  "updatedAt": "2026-11-01T01:24:26.819Z",
+  "updatedAt": "2026-11-01T01:24:35.273Z",
   "nextAction": "Await exact draft deploy.yml preflight, then submit complete source-bound request",
   "draftCommit": "cf32472e42574961dba3b75fb96daecaa04698af",
   "draftBranch": "draft/daily-2026-11-01",
