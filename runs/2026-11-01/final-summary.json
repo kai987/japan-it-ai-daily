@@ -1,0 +1,56 @@
+{
+  "targetDate": "2026-11-01",
+  "issueNumber": 82,
+  "sourceWindow": {
+    "from": "2026-10-31T10:00:00+09:00",
+    "to": "2026-11-01T10:00:00+09:00"
+  },
+  "text": {
+    "stage": "published",
+    "commit": "a68bfe00780ac3fd037224b6f5ebb06a7ca7d569",
+    "pagesRunId": 41261118506
+  },
+  "audio": {
+    "stage": "playback_verified",
+    "commit": "80d78fe360af92f7efb691f3c20bedbb501a035e",
+    "workflowRunIds": {
+      "r2": 41261605446,
+      "pages": 41261605461
+    },
+    "newRecordings": 23,
+    "reusedRecordings": 38,
+    "referencedRecordings": 61,
+    "realBrowserTests": 14,
+    "appCleanup": {
+      "status": "closed",
+      "appExited": true,
+      "engineExited": true,
+      "screenLocked": false,
+      "forced": false,
+      "nativeResult": "quit_requested_and_exited",
+      "verifiedAt": "2026-11-01T01:32:54.888575+00:00"
+    }
+  },
+  "n1Text": {
+    "stage": "published",
+    "day": 64,
+    "commit": "a166450efc3946f2048ae262732eddcb6c37bdd2",
+    "pagesRunId": 41261688210,
+    "upstreamSourceCommit": "a68bfe00780ac3fd037224b6f5ebb06a7ca7d569"
+  },
+  "n1Audio": {
+    "stage": "awaiting_local_audio",
+    "sharedAudioCommit": "71bfb7970353b7533938af1686957118c95af074",
+    "sharedAudioPagesRunId": 41262312697,
+    "sharedSourceAudioCommit": "80d78fe360af92f7efb691f3c20bedbb501a035e",
+    "sharedNewRecordings": 10,
+    "targetPendingClips": 84,
+    "finalAudioComplete": false,
+    "nextWorkerResumeJst": "2026-11-01 11:10",
+    "nextAuditJst": "2026-11-01 13:40"
+  },
+  "schedulesUnchanged": true,
+  "appExited": true,
+  "engineExited": true,
+  "at": "2026-11-01T01:48:54.986Z"
+}
