@@ -1,8 +1,14 @@
 import { getStudyArchive } from './learning-review.mjs';
 export function exportStudySnapshot(archive=getStudyArchive(),sourceCommit=process.env.GITHUB_SHA || '') {
-  const vocabularyFrequency={},grammarFrequency={},firstVocabulary={},firstGrammar={},lessons={},grammarLessons={};
+  const vocabularyFrequency={},grammarFrequency={},firstVocabulary={},firstLexicalVocabulary={},firstGrammar={},lessons={},grammarLessons={};
   for(const [date,day] of Object.entries(archive.lessons)) {
-    for(const item of day.zh.vocabulary) {vocabularyFrequency[item.identity]=item.reportFrequency;vocabularyFrequency[item.term]=item.reportFrequency;firstVocabulary[item.identity]=item.firstIntroducedDate;}
+    for(const item of day.zh.vocabulary) {
+      vocabularyFrequency[item.identity]=item.reportFrequency;vocabularyFrequency[item.term]=item.reportFrequency;
+      firstVocabulary[item.identity]=item.firstIntroducedDate;
+      const lexicalIdentity=item.lexicalIdentity ?? item.identity;
+      vocabularyFrequency[lexicalIdentity]=item.reportFrequency;
+      firstLexicalVocabulary[lexicalIdentity]=item.lexicalFirstIntroducedDate ?? item.firstIntroducedDate;
+    }
     for(const item of day.zh.grammar) {grammarFrequency[item.identity]=item.reportFrequency;firstGrammar[item.identity]=item.firstIntroducedDate;}
     if(date>=archive.policy.grammarEffectiveFrom) grammarLessons[date]={issueNumber:day.issueNumber,
       grammar:[...day.zh.grammar,...day.zh.reviewGrammar],reviewGrammarNote:day.zh.reviewGrammarNote,
@@ -14,5 +20,5 @@ export function exportStudySnapshot(archive=getStudyArchive(),sourceCommit=proce
   }
   return {schemaVersion:1,sourceCommit,frequencyScope:archive.frequencyScope,policy:archive.policy,
     totalDays:archive.totalDays,firstDate:archive.firstDate,lastDate:archive.lastDate,issueNumbers:archive.issueNumbers,
-    vocabularyFrequency,grammarFrequency,firstVocabulary,firstGrammar,lessons,grammarLessons};
+    vocabularyFrequency,grammarFrequency,firstVocabulary,firstLexicalVocabulary,firstGrammar,lessons,grammarLessons};
 }

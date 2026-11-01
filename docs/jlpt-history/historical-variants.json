@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "effectiveFrom": "2026-11-02",
+  "notes": "Closed migration for seven reviewed historical pairs. Preserve all original card payloads and recordings. Only these seven later occurrences are accepted; every future or unlisted duplicate NEW identity fails. SHA-256 covers each complete parsed card serialized with recursively sorted object keys; array ordering and all values are retained.",
+  "aliasAdditions": {
+    "一律に": "一律",
+    "まかなう": "賄う",
+    "据え置き": "据え置く",
+    "偏り": "偏る",
+    "抜け": "抜ける",
+    "一気通貫で": "一気通貫",
+    "誤り": "誤る",
+    "誤って": "誤る"
+  },
+  "groups": [
+    {
+      "lexicalIdentity": "一律",
+      "firstIntroducedDate": "2026-08-13",
+      "occurrences": [
+        {
+          "date": "2026-08-13",
+          "term": "一律に",
+          "legacyIdentity": "一律に",
+          "cardSha256": {
+            "zh": "0f001d7f54af738eada0d1efe490f9be55e6cb496db48de7296763452b585a4e",
+            "ja": "91574f275e92f0e770be7bb13874c2f2348a9dbd98577f08cc89bb8d4b466421"
+          }
+        },
+        {
+          "date": "2026-11-01",
+          "term": "一律",
+          "legacyIdentity": "一律",
+          "cardSha256": {
+            "zh": "da95ef15988caa417c5ed8955ac5c3a852aac5f944f4649df91b4f4caf786c87",
+            "ja": "c5290245dbed978677d9f25b6ef93ccddc38d2e0f1531ad71edee37e45d2f805"
+          }
+        }
+      ]
+    },
+    {
+      "lexicalIdentity": "賄う",
+      "firstIntroducedDate": "2026-09-18",
+      "occurrences": [
+        {
+          "date": "2026-09-18",
+          "term": "まかなう",
+          "legacyIdentity": "まかなう",
+          "cardSha256": {
+            "zh": "26a2cf3568e38569032426069aded7be48f9370ff9cab117826a21c7f326aa10",
+            "ja": "7d890eb1ff36281d2d2f3449d04021b237704446fbcdd1e96fcf8963c16c2d39"
+          }
+        },
+        {
+          "date": "2026-10-30",
+          "term": "賄う",
+          "legacyIdentity": "賄う",
+          "cardSha256": {
+            "zh": "925678c69dd97634ddc7cba0bf70f0fc36f5433d9466010db48b53ad9eab3149",
+            "ja": "d1805f76425264160e6a8548bf1dfc6f149d96d728a7a72753eb7a8bd70037fb"
+          }
+        }
+      ]
+    },
+    {
+      "lexicalIdentity": "据え置く",
+      "firstIntroducedDate": "2026-09-03",
+      "occurrences": [
+        {
+          "date": "2026-09-03",
+          "term": "据え置く",
+          "legacyIdentity": "据え置く",
+          "cardSha256": {
+            "zh": "69656f79a30c6c7103debeab602fecfb6ee184f0359322b09535dd4d18f5ed24",
+            "ja": "7d452498a53a6d54a0022ddd445ceb8e0d64464c8a1433860da6a6d51659b728"
+          }
+        },
+        {
+          "date": "2026-09-22",
+          "term": "据え置き",
+          "legacyIdentity": "据え置き",
+          "cardSha256": {
+            "zh": "c7eb21845e9cd67cee33e0a441767919a161c6c404c7659c7939c751e4491523",
+            "ja": "788276571366cee5ebdf72aa52ec798cf5baac05c1ec23d16d2d436e03c987a7"
+          }
+        }
+      ]
+    },
+    {
+      "lexicalIdentity": "偏る",
+      "firstIntroducedDate": "2026-09-06",
+      "occurrences": [
+        {
+          "date": "2026-09-06",
+          "term": "偏る",
+          "legacyIdentity": "偏る",
+          "cardSha256": {
+            "zh": "076803711298fa8bd0c17ee23b58713f6568bc6a46ebdd11ed885d5627b57a66",
+            "ja": "953c5ae780bfaa7849b8751c30b8d8ddeff618da62df1d87744dcb6ea1db8c36"
+          }
+        },
+        {
+          "date": "2026-09-19",
+          "term": "偏り",
+          "legacyIdentity": "偏り",
+          "cardSha256": {
+            "zh": "3be7dabd5f6c326044ff5e6af5c086bdf68fbdb2a706645cf427b00408a95afe",
+            "ja": "c2efb821f7ed8ab7b1f20608087941e8d2774a04bc251137180b3eb1be32bcef"
+          }
+        }
+      ]
+    },
+    {
+      "lexicalIdentity": "抜ける",
+      "firstIntroducedDate": "2026-08-21",
+      "occurrences": [
+        {
+          "date": "2026-08-21",
+          "term": "抜け",
+          "legacyIdentity": "抜け",
+          "cardSha256": {
+            "zh": "00b428e162793ea0c4c783eb85334ce2c1c93f8ce9443106788c751f8bded331",
+            "ja": "6b7ef30acdb65710ec5cc64fb25eb4cbbd6fd7327abdb07c5f426bd4fe81148d"
+          }
+        },
+        {
+          "date": "2026-10-12",
+          "term": "抜ける",
+          "legacyIdentity": "抜ける",
+          "cardSha256": {
+            "zh": "7a2c4c6609ff56362ad3f4f95628eee85f8218b9017a8a84a74808fa82db3612",
+            "ja": "e175023c282eedff1e74b067c67e53b1801a6f869966c1f1805bd1edcd3ddcf5"
+          }
+        }
+      ]
+    },
+    {
+      "lexicalIdentity": "一気通貫",
+      "firstIntroducedDate": "2026-09-10",
+      "occurrences": [
+        {
+          "date": "2026-09-10",
+          "term": "一気通貫で",
+          "legacyIdentity": "一気通貫で",
+          "cardSha256": {
+            "zh": "a6149d72568e53ab3da80c6921dab7108efb5e2ecbd9a52d17b0737f669c5640",
+            "ja": "257b9c9c298c7678e463149d0993b3cb622bbd185d794947d8347443c96ad1c6"
+          }
+        },
+        {
+          "date": "2026-09-22",
+          "term": "一気通貫",
+          "legacyIdentity": "一気通貫",
+          "cardSha256": {
+            "zh": "36c08c261312a2e9d78accd73f0b1f7d89d3ca33fdb27a1a6c2acde204568845",
+            "ja": "320f7255fdbf8799e19475ca12daf0721fb92baf9d4e49947ab087d54c6094ba"
+          }
+        }
+      ]
+    },
+    {
+      "lexicalIdentity": "誤る",
+      "firstIntroducedDate": "2026-09-02",
+      "occurrences": [
+        {
+          "date": "2026-09-02",
+          "term": "誤り",
+          "legacyIdentity": "誤り",
+          "cardSha256": {
+            "zh": "16fed31c0d1888aeb78e8c8d23d438e7711e08b220439a4d4ae98e643553d363",
+            "ja": "3dd3e9e5d2fa468bc558ce94b661244df0fb36496b5bd60bbe6a71a88b6c0fc9"
+          }
+        },
+        {
+          "date": "2026-09-05",
+          "term": "誤って",
+          "legacyIdentity": "誤って",
+          "cardSha256": {
+            "zh": "eadc7604dd8700d247f80b97fa19050f1b8717fb04b736db4064357baa5858fc",
+            "ja": "905891c3cf0c1a81bd2c01d9ea391d4566ad516c98343f2deb2725a4e3f47d9e"
+          }
+        }
+      ]
+    }
+  ]
+}

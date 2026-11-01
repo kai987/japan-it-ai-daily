@@ -15,6 +15,14 @@ BASELINE = '28d10dd08b3c70cb6c4773f6b290c344114e6113'
 START, END = '2026-08-12', '2026-09-17'
 RULES = json.loads((DOC/'identity-rules.json').read_text())
 ALIASES, NA = RULES['aliases'], set(RULES['naStems'])
+# This completed one-time migration is verified against its original card
+# identities. New authoring uses the stricter canonical history gate instead.
+variant_policy = DOC/'historical-variants.json'
+if variant_policy.exists():
+    additions = json.loads(variant_policy.read_text())['aliasAdditions']
+    if any(ALIASES.get(form) != target for form, target in additions.items()):
+        raise ValueError('Historical vocabulary alias additions changed')
+    ALIASES = {form: target for form, target in ALIASES.items() if form not in additions}
 def key(term):
     term = re.sub(r'[\s\u200b\ufeff]+', '', unicodedata.normalize('NFKC', term))
     term = ALIASES.get(term, term)

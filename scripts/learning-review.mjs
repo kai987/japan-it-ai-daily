@@ -2,7 +2,8 @@ import { readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { contentDates, contentDirs, readContent } from './content-files.mjs';
-import { makeLexicalKey } from './check-jlpt-history.mjs';
+import { checkDays, makeLexicalKey } from './check-jlpt-history.mjs';
+import { historicalVocabularyRules, loadLexicalIdentityPolicy } from './lexical-identity-policy.mjs';
 import { makeGrammarKey } from './check-grammar-history.mjs';
 
 export const REVIEW_POLICY = {
@@ -122,34 +123,60 @@ export function buildStudyArchive(root = process.cwd()) {
     vocabulary: JSON.parse(readFileSync(join(root,'docs/jlpt-history/identity-rules.json'),'utf8')),
     grammar: JSON.parse(readFileSync(join(root,'docs/grammar-history/identity-rules.json'),'utf8')),
   };
+  const lexicalPolicy = loadLexicalIdentityPolicy(root, rules.vocabulary);
+  const historicalRules = historicalVocabularyRules(rules.vocabulary, lexicalPolicy);
+  const historicalKey = makeLexicalKey(historicalRules);
   const keys = {vocabulary:makeLexicalKey(rules.vocabulary), grammar:makeGrammarKey(rules.grammar)};
+  // Teaching-card identities are recording/progress references. A lexical merge
+  // must not rename those references or retroactively change original lessons.
+  const originalKey = (kind, label, date) => kind === 'vocabulary' && date < lexicalPolicy.effectiveFrom
+    ? historicalKey(label) : keys[kind](label);
   const days = dates.map(date => {
     const files = Object.fromEntries(contentDirs.map(dir => [dir,readContent(root,dir,date)]));
     const corpus=corpusFor(files);
     const cardCorpus=[...(files['japanese-ja'].data.vocabulary||[]),...(files['japanese-ja'].data.grammar||[])].flatMap(cardTexts).join('\n');
     return {date,files,corpus,corpusBlock:corpus.map(x=>x.text).join('\n'),cardCorpus};
   });
+  checkDays(days.map(day => ({date:day.date,vocabulary:day.files.japanese.data.vocabulary,
+    japaneseVocabulary:day.files['japanese-ja'].data.vocabulary,mustRememberWords:day.files.japanese.data.mustRememberWords})), keys.vocabulary, lexicalPolicy);
   const registries = {vocabulary:new Map(),grammar:new Map()};
   for (const day of days) for (const kind of ['vocabulary','grammar']) {
     const zh = day.files.japanese.data[kind], ja = day.files['japanese-ja'].data[kind];
     if (!Array.isArray(zh) || !Array.isArray(ja) || zh.length !== ja.length) throw new Error(`${day.date}: missing bilingual ${kind}`);
     zh.forEach((card,i) => {
-      const id = keys[kind](card[kind==='vocabulary'?'term':'pattern']);
-      if (id !== keys[kind](ja[i][kind==='vocabulary'?'term':'pattern'])) throw new Error(`${day.date}: mismatched identity`);
+      const field = kind==='vocabulary'?'term':'pattern';
+      const id = originalKey(kind,card[field],day.date);
+      if (id !== originalKey(kind,ja[i][field],day.date)) throw new Error(`${day.date}: mismatched identity`);
       if (registries[kind].has(id)) throw new Error(`${day.date}: repeated NEW ${kind}: ${id}`);
-      registries[kind].set(id, {id,firstDate:day.date,zh:card,ja:ja[i],match:matcherFor(card,kind,rules[kind],keys[kind]),appearedDates:[],appearanceForms:new Map(),evidence:new Map()});
+      const oldVocabulary = kind === 'vocabulary' && day.date < lexicalPolicy.effectiveFrom;
+      registries[kind].set(id, {id,firstDate:day.date,zh:card,ja:ja[i],
+        lexicalIdentity:kind === 'vocabulary' ? keys.vocabulary(card.term) : undefined,
+        match:matcherFor(card,kind,oldVocabulary ? historicalRules : rules[kind],oldVocabulary ? historicalKey : keys[kind]),
+        appearedDates:[],appearanceForms:new Map(),evidence:new Map()});
     });
   }
+  const lexicalGroups = new Map();
+  for (const entry of registries.vocabulary.values()) {
+    let group = lexicalGroups.get(entry.lexicalIdentity);
+    if (!group) {
+      group = {firstDate:entry.firstDate,members:[],match:matcherFor(entry.zh,'vocabulary',rules.vocabulary,keys.vocabulary),
+        appearedDates:[],appearanceForms:new Map()};
+      lexicalGroups.set(entry.lexicalIdentity,group);
+    }
+    group.members.push(entry);
+    entry.lexicalGroup = group;
+  }
   for (const day of days) for (const kind of ['vocabulary','grammar']) {
-    const introduced = new Set(day.files.japanese.data[kind].map(card => keys[kind](card[kind==='vocabulary'?'term':'pattern'])));
+    const introduced = new Set(day.files.japanese.data[kind].map(card => originalKey(kind,card[kind==='vocabulary'?'term':'pattern'],day.date)));
     for (const entry of registries[kind].values()) {
+      const matchEntry = kind === 'vocabulary' && day.date >= lexicalPolicy.effectiveFrom ? entry.lexicalGroup.match : entry.match;
       let evidence;
-      if (entry.match(day.corpusBlock)) for (const chunk of day.corpus) {
-        const match = entry.match(chunk.text);
+      if (matchEntry(day.corpusBlock)) for (const chunk of day.corpus) {
+        const match = matchEntry(chunk.text);
         if (match) { evidence = {...match, sourceKind:chunk.sourceKind}; break; }
       }
       if (evidence) entry.evidence.set(day.date,evidence);
-      const cardOccurrence = entry.match(day.cardCorpus);
+      const cardOccurrence = matchEntry(day.cardCorpus);
       if (introduced.has(entry.id) || evidence || cardOccurrence) {
         entry.appearedDates.push(day.date);
         entry.appearanceForms.set(day.date, evidence?.form || cardOccurrence?.form || clean(entry.ja[kind === 'vocabulary' ? 'term' : 'pattern']).replace(/[~～〜…]/gu, ''));
@@ -157,27 +184,53 @@ export function buildStudyArchive(root = process.cwd()) {
     }
   }
   const result = {schemaVersion:1,policy:REVIEW_POLICY,frequencyScope:FREQUENCY_SCOPE,totalDays:dates.length,firstDate:dates[0],lastDate:dates.at(-1),issueNumbers:numbers,lessons:{}};
+  // Historical selection below still ranks with the old per-card statistics.
+  // Only future selection uses the merged lexical family and its earliest card.
+  const mergeLexicalFrequency = (includeReviews = false) => {
+    for (const group of lexicalGroups.values()) {
+      if (group.members.length === 1) {
+        group.appearedDates = group.members[0].appearedDates;
+        group.appearanceForms = group.members[0].appearanceForms;
+        continue;
+      }
+      group.appearedDates = []; group.appearanceForms = new Map();
+      for (const day of days) {
+        const evidence = group.match(day.corpusBlock), card = group.match(day.cardCorpus);
+        const review = includeReviews ? group.match([...result.lessons[day.date].ja.reviewVocabulary,...result.lessons[day.date].ja.reviewGrammar].flatMap(cardTexts).join('\n')) : null;
+        const occurrence = evidence || card || review;
+        if (occurrence) {group.appearedDates.push(day.date);group.appearanceForms.set(day.date,occurrence.form);}
+      }
+    }
+  };
+  mergeLexicalFrequency();
   for (const day of days) {
     const views = {zh:{},ja:{}};
     for (const kind of ['vocabulary','grammar']) {
       const field = kind==='vocabulary'?'term':'pattern';
       const original = day.files.japanese.data[kind];
-      const currentIds = new Set(original.map(card => keys[kind](card[field])));
+      const currentIds = new Set(original.map(card => originalKey(kind,card[field],day.date)));
+      const futureVocabulary = kind === 'vocabulary' && day.date >= lexicalPolicy.effectiveFrom;
+      const currentLexicalIds = new Set(original.map(card => keys[kind](card[field])));
       const limits = reviewLimits(kind);
       const target = limits.minimum;
-      const candidates = [...registries[kind].values()].filter(entry => entry.firstDate < day.date && !currentIds.has(entry.id) && entry.evidence.has(day.date));
+      let candidates = [...registries[kind].values()].filter(entry => entry.firstDate < day.date &&
+        !(futureVocabulary ? currentLexicalIds.has(entry.lexicalIdentity) : currentIds.has(entry.id)) && entry.evidence.has(day.date));
+      if (futureVocabulary) candidates = candidates.filter(entry => entry.lexicalGroup.members[0] === entry);
       const priority = entry => ['N1','N2'].includes(entry.zh.level)?0:1;
-      const countAtDate = entry => entry.appearedDates.filter(date=>date<=day.date).length;
+      const countAtDate = entry => (futureVocabulary ? entry.lexicalGroup.appearedDates : entry.appearedDates).filter(date=>date<=day.date).length;
       candidates.sort((a,b)=>priority(a)-priority(b) || countAtDate(b)-countAtDate(a) || a.firstDate.localeCompare(b.firstDate) || a.id.localeCompare(b.id,'ja'));
       const selected = candidates.slice(0,reviewCount(kind,original.length,candidates.length,day.date));
       for (const locale of ['zh','ja']) {
         views[locale][kind] = original.map((_,i) => {
-          const card=day.files[locale==='zh'?'japanese':'japanese-ja'].data[kind][i],entry=registries[kind].get(keys[kind](card[field]));
-          return normalizedCard(card,locale,{studyKind:'new',identity:entry.id,firstIntroducedDate:entry.firstDate,reportFrequency:frequencyFor(entry.appearedDates,dates.length,entry.appearanceForms)});
+          const card=day.files[locale==='zh'?'japanese':'japanese-ja'].data[kind][i],entry=registries[kind].get(originalKey(kind,card[field],day.date));
+          return normalizedCard(card,locale,{studyKind:'new',identity:entry.id,firstIntroducedDate:entry.firstDate,
+            ...(kind === 'vocabulary' ? {lexicalIdentity:entry.lexicalIdentity,lexicalFirstIntroducedDate:entry.lexicalGroup.firstDate} : {}),
+            reportFrequency:frequencyFor(entry.appearedDates,dates.length,entry.appearanceForms)});
         });
         const reviewField = kind==='vocabulary'?'reviewVocabulary':'reviewGrammar';
         views[locale][reviewField] = selected.map(entry=>normalizedCard(entry[locale],locale,{
           studyKind:'review',identity:entry.id,firstIntroducedDate:entry.firstDate,
+          ...(kind === 'vocabulary' ? {lexicalIdentity:entry.lexicalIdentity,lexicalFirstIntroducedDate:entry.lexicalGroup.firstDate} : {}),
           reviewEvidence:entry.evidence.get(day.date),reportFrequency:frequencyFor(entry.appearedDates,dates.length,entry.appearanceForms),
         }));
         views[locale][kind==='vocabulary'?'studyVocabularyCount':'studyGrammarCount'] = original.length+selected.length;
@@ -202,9 +255,12 @@ export function buildStudyArchive(root = process.cwd()) {
       }
     }
   }
+  mergeLexicalFrequency(true);
   for (const day of Object.values(result.lessons)) for (const locale of ['zh','ja']) for (const kind of ['vocabulary','grammar'])
-    for (const card of [...day[locale][kind],...day[locale][kind==='vocabulary'?'reviewVocabulary':'reviewGrammar']])
-      card.reportFrequency = frequencyFor(registries[kind].get(card.identity).appearedDates,dates.length,registries[kind].get(card.identity).appearanceForms);
+    for (const card of [...day[locale][kind],...day[locale][kind==='vocabulary'?'reviewVocabulary':'reviewGrammar']]) {
+      const frequency = kind === 'vocabulary' ? lexicalGroups.get(card.lexicalIdentity) : registries.grammar.get(card.identity);
+      card.reportFrequency = frequencyFor(frequency.appearedDates,dates.length,frequency.appearanceForms);
+    }
   return result;
 }
 let cached;
