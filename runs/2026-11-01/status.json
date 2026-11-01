@@ -12,8 +12,8 @@
     "runs/2026-11-01/sources.json"
   ],
   "lastError": null,
-  "updatedAt": "2026-11-01T01:31:11.353Z",
-  "nextAction": "Text and live snapshot verified. Persist audio pending before independent audio and one N1 handoff.",
+  "updatedAt": "2026-11-01T01:49:01.044Z",
+  "nextAction": "Daily text and audio verified, N1 text published. Existing N1 worker handles 84 unique clips at unchanged 11:10–13:10 Tokyo checkpoints; final batch completion belongs to the unchanged 13:40 verifier.",
   "draftCommit": "cf32472e42574961dba3b75fb96daecaa04698af",
   "draftBranch": "draft/daily-2026-11-01",
   "localChecks": {
@@ -360,5 +360,47 @@
   "sixDraftBytesEqual": true,
   "pagesRunId": 41261118506,
   "pagesStatus": "completed",
-  "pagesConclusion": "success"
+  "pagesConclusion": "success",
+  "audioStatus": {
+    "stage": "playback_verified",
+    "commit": "80d78fe360af92f7efb691f3c20bedbb501a035e",
+    "workflowRunIds": {
+      "r2": 41261605446,
+      "pages": 41261605461
+    },
+    "newRecordings": 23,
+    "reusedRecordings": 38,
+    "referencedRecordings": 61,
+    "realBrowserTests": 14,
+    "appCleanup": {
+      "status": "closed",
+      "appExited": true,
+      "engineExited": true,
+      "screenLocked": false,
+      "forced": false,
+      "nativeResult": "quit_requested_and_exited",
+      "verifiedAt": "2026-11-01T01:32:54.888575+00:00"
+    }
+  },
+  "n1Handoff": {
+    "text": {
+      "stage": "published",
+      "day": 64,
+      "commit": "a166450efc3946f2048ae262732eddcb6c37bdd2",
+      "pagesRunId": 41261688210,
+      "upstreamSourceCommit": "a68bfe00780ac3fd037224b6f5ebb06a7ca7d569"
+    },
+    "audio": {
+      "stage": "awaiting_local_audio",
+      "sharedAudioCommit": "71bfb7970353b7533938af1686957118c95af074",
+      "sharedAudioPagesRunId": 41262312697,
+      "sharedSourceAudioCommit": "80d78fe360af92f7efb691f3c20bedbb501a035e",
+      "sharedNewRecordings": 10,
+      "targetPendingClips": 84,
+      "finalAudioComplete": false,
+      "nextWorkerResumeJst": "2026-11-01 11:10",
+      "nextAuditJst": "2026-11-01 13:40"
+    }
+  },
+  "evidenceDirectory": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-01"
 }
