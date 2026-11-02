@@ -1,0 +1,192 @@
+{
+  "targetDate": "2026-11-02",
+  "sourceCommit": "15859451d7373e7fdd9820a23172f3768a534955",
+  "historyDates": 82,
+  "historyFiles": 328,
+  "priorLexicalIdentities": 1307,
+  "priorGrammar": 116,
+  "rulesHashes": {
+    "vocabulary": "caf125f68b80d337d5a9426ac1ede0ba0cb38ce3b96d6beaaa4e090df8446d58",
+    "grammar": "7105ca61642e2e9cf190a929fa6af2635e87789760906484a84950fa2e1b7679",
+    "historicalVariants": "a4ac57bb5c53a95ac19dcc972cd689dd1e11912286900a5f76c3ea2e6628ac6c"
+  },
+  "canonicalNewDuplicates": 0,
+  "semanticReview": {
+    "excluded": [
+      {
+        "form": "のぞく",
+        "existing": "覗く",
+        "reason": "Same reading/meaning kana-kanji variant"
+      },
+      {
+        "form": "稀に",
+        "existing": "まれ",
+        "reason": "Same stem with adverbialに"
+      },
+      {
+        "form": "後片付け",
+        "existing": "片付ける",
+        "reason": "Cleanup nominal form not counted again in same context"
+      },
+      {
+        "form": "密に",
+        "existing": "緊密",
+        "reason": "Avoid a near-stem expansion solely to fill quota"
+      }
+    ],
+    "keptDistinct": [
+      {
+        "form": "握る",
+        "from": "把握する",
+        "reason": "Control authority vs understand information"
+      },
+      {
+        "form": "早々に",
+        "from": "早速",
+        "reason": "Early stage vs prompt eagerness; separate lexical forms"
+      }
+    ]
+  },
+  "vocabularyNew": 14,
+  "vocabularyReview": 6,
+  "grammarNew": 0,
+  "grammarReview": 8,
+  "reviewVocabulary": [
+    {
+      "term": "検証する",
+      "lexicalIdentity": "検証",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "検証",
+        "excerpt": "ただし接続先は業務データを含まない検証用のSlack、Notion、GitHub、Figma、Jiraです。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "判断する",
+      "lexicalIdentity": "判断",
+      "firstIntroducedDate": "2026-08-13",
+      "reviewEvidence": {
+        "form": "判断",
+        "excerpt": "調査Q&Aは約10秒〜5分を待てる用途で合格と判断し、受信時の反応と計画のチェックリストで動作中だと伝えています。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "ただし",
+      "lexicalIdentity": "ただし",
+      "firstIntroducedDate": "2026-09-07",
+      "reviewEvidence": {
+        "form": "ただし",
+        "excerpt": "ただし接続先は業務データを含まない検証用のSlack、Notion、GitHub、Figma、Jiraです。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "実行する",
+      "lexicalIdentity": "実行",
+      "firstIntroducedDate": "2026-08-15",
+      "reviewEvidence": {
+        "form": "実行",
+        "excerpt": "通常のruntime endpointがエージェントの版を選ぶのに対し、こちらはその実行中の会話・作業環境へ接続します。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "評価する",
+      "lexicalIdentity": "評価",
+      "firstIntroducedDate": "2026-08-15",
+      "reviewEvidence": {
+        "form": "評価",
+        "excerpt": "評価では期待動作を先に定義し、同じテストセットを二回以上確認しています。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "運用",
+      "lexicalIdentity": "運用",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "運用",
+        "excerpt": "クラウドとの同条件比較や総費用評価、本番業務データでの運用は未実施であり、量子化が不安定さの原因だという見方も仮説です。",
+        "sourceKind": "report-body"
+      }
+    }
+  ],
+  "reviewGrammar": [
+    {
+      "pattern": "～とは限らない",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "とは限りません",
+        "excerpt": "AgentCoreでエージェントを呼べても、そのセッション内で起動したWebサーバーを利用者が直接見られるとは限りません。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～たうえで",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "したうえで",
+        "excerpt": "記事はAWSの発表を紹介したうえで、生成した画面をブラウザーで操作する実装を試しています。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～といった",
+      "firstIntroducedDate": "2026-08-28",
+      "reviewEvidence": {
+        "form": "といった",
+        "excerpt": "許可外なら拒否する、許可内でも待ち受けがなければ別のエラーになる、対応ページのHTMLには必要なメタデータがある、といった肯定・否定の経路を対にできます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～を踏まえて",
+      "firstIntroducedDate": "2026-08-30",
+      "reviewEvidence": {
+        "form": "を踏まえ",
+        "excerpt": "これは五記事を踏まえた設計上の整理であり、著者たちが共通の方式を実装したという意味ではありません。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～とともに",
+      "firstIntroducedDate": "2026-09-25",
+      "reviewEvidence": {
+        "form": "とともに",
+        "excerpt": "トークン量と請求額の違いを、実験条件とともに話す練習になります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～だけで",
+      "firstIntroducedDate": "2026-10-01",
+      "reviewEvidence": {
+        "form": "だけで",
+        "excerpt": "使える範囲は8000〜12000番で最大5件であり、URLを知るだけでは利用できません。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～だけでなく",
+      "firstIntroducedDate": "2026-09-25",
+      "reviewEvidence": {
+        "form": "だけでなく",
+        "excerpt": "待ち時間の数字だけでなく、許容した業務と待たせ方を読む必要があります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～ために",
+      "firstIntroducedDate": "2026-08-31",
+      "reviewEvidence": {
+        "form": "ための",
+        "excerpt": "目的は閲覧のためのウェアハウス起動を避けることで、データ準備を含めた全計算をなくすことではありません。",
+        "sourceKind": "report-body"
+      }
+    }
+  ],
+  "newPlusReviewCanonicalUnique": true,
+  "createdAt": "2026-11-02T01:19:51.189Z"
+}
