@@ -1,0 +1,296 @@
+{
+  "date": "2026-11-02",
+  "topics": [
+    "AIエージェント",
+    "実験設計",
+    "ローカルLLM",
+    "Next.js",
+    "Iceberg"
+  ],
+  "levels": [
+    "N1",
+    "N2",
+    "N3"
+  ],
+  "vocabularyCount": 14,
+  "grammarCount": 0,
+  "grammar": [],
+  "mustRememberWords": [
+    "待ち受ける",
+    "ざっと",
+    "温まる",
+    "頭を悩ませる",
+    "消し込む",
+    "握る",
+    "馴染む",
+    "手堅い",
+    "早々に",
+    "浮き彫りになる"
+  ],
+  "mustRememberGrammar": [],
+  "title": "日本語学习｜2026年11月2日（第83号）",
+  "description": "从会话入口、代理费用、本地推理、多语言页面和外部查询学习技术日语。",
+  "grammarSelectionNote": "新语法为0项。对照全部82日报的116个既习文型后，原文中可自然确认的「一方で」「にあたって」「たうえで」等均已收录，不把普通语尾或异写包装成新语法；本文复习由共享模块另行生成。",
+  "vocabulary": [
+    {
+      "term": "待ち受ける",
+      "reading": "まちうける",
+      "partOfSpeech": "五段動詞・他動詞",
+      "level": "N2",
+      "collocations": [
+        "要求を待ち受ける",
+        "指定ポートで待ち受ける"
+      ],
+      "exampleJa": "許可したポートでも、サーバーが待ち受けていなければ画面は開けません。",
+      "meaningZh": "等待并接收；服务器语境指监听请求。",
+      "noteZh": "Top 1区分代理监听端口与会话内网站端口，避免把入口存在当成服务已经运行。",
+      "exampleZh": "即使端口已获准，没有服务器监听也打不开页面。",
+      "nuanceZh": "「待つ」只表示等待；这里还包含接收外部请求的准备状态。"
+    },
+    {
+      "term": "ざっと",
+      "reading": "ざっと",
+      "partOfSpeech": "副詞",
+      "level": "N2",
+      "collocations": [
+        "仕様をざっと読む",
+        "全体をざっと確認する"
+      ],
+      "exampleJa": "仕様をざっと読んだあとで、認証と保存期間の条件を確認します。",
+      "meaningZh": "大致地、粗略地查看整体。",
+      "noteZh": "Top 1补充说明先粗览官方文档的细节；正式设计仍要核对适用条件。",
+      "exampleZh": "粗读规格后，再核对认证和保存期条件。",
+      "nuanceZh": "说明概览的粒度，不能用来声称已经逐条验证。"
+    },
+    {
+      "term": "温まる",
+      "reading": "あたたまる",
+      "partOfSpeech": "五段動詞・自動詞",
+      "level": "N2",
+      "collocations": [
+        "キャッシュが温まる",
+        "環境が温まる"
+      ],
+      "exampleJa": "初回はキャッシュが温まっていなかった可能性がありますが、原因は未確認です。",
+      "meaningZh": "变暖；缓存语境比喻可复用数据逐渐具备。",
+      "noteZh": "Top 2作者猜测单独执行首轮较贵是缓存尚未变热，但明确没有确认。",
+      "exampleZh": "首轮可能尚未形成缓存，但原因没有得到确认。",
+      "nuanceZh": "这里不是设备温度，也不能把推测改写成实测结论。"
+    },
+    {
+      "term": "なんとなく",
+      "reading": "なんとなく",
+      "partOfSpeech": "副詞",
+      "level": "N3",
+      "collocations": [
+        "なんとなく決める",
+        "なんとなく不安になる"
+      ],
+      "exampleJa": "なんとなく分割するのではなく、同じ作業で費用を比べます。",
+      "meaningZh": "没有明确理由地；凭模糊感觉。",
+      "noteZh": "Top 2用对照测量减少凭感觉选择单独或分工的判断。",
+      "exampleZh": "不凭感觉拆分，而是针对相同任务比较费用。",
+      "nuanceZh": "保留N3参考级别；适合口头说明判断依据不足。"
+    },
+    {
+      "term": "頭を悩ませる",
+      "reading": "あたまをなやませる",
+      "partOfSpeech": "慣用句",
+      "level": "N2",
+      "collocations": [
+        "遅延に頭を悩ませる",
+        "設計に頭を悩ませる"
+      ],
+      "exampleJa": "応答の遅さに頭を悩ませ、入力の読み込み時間から調べました。",
+      "meaningZh": "为难题苦恼，花心思寻找解决方法。",
+      "noteZh": "Top 3作者把响应慢与空回答列为开发中的主要困扰，再追查输入和输出预算。",
+      "exampleZh": "为响应迟缓苦恼，于是从输入读取耗时开始调查。",
+      "nuanceZh": "是整体惯用表达，面试时后接具体调查行动比只说困难更有内容。"
+    },
+    {
+      "term": "消し込む",
+      "reading": "けしこむ",
+      "partOfSpeech": "五段動詞・他動詞",
+      "level": "N1",
+      "collocations": [
+        "項目を消し込む",
+        "作業計画を消し込む"
+      ],
+      "exampleJa": "完了した項目を消し込み、利用者が処理の進み具合を見られるようにします。",
+      "meaningZh": "逐项核销、勾去已完成事项。",
+      "noteZh": "Top 3的Slack界面把计划列成清单，执行中逐项标记完成。",
+      "exampleZh": "逐项勾去完成项目，让使用者看到处理进展。",
+      "nuanceZh": "不等于删除执行日志；这里是清单上的完成状态。"
+    },
+    {
+      "term": "握る",
+      "reading": "にぎる",
+      "partOfSpeech": "五段動詞・他動詞",
+      "level": "N2",
+      "collocations": [
+        "制御を握る",
+        "主導権を握る"
+      ],
+      "exampleJa": "承認処理の制御を自分たちで握り、書き込み前に停止できるようにします。",
+      "meaningZh": "握住；引申为掌握并控制关键环节。",
+      "noteZh": "Top 3自建系统是为了自行控制等待界面与审批后跨进程恢复的机制。",
+      "exampleZh": "自行控制审批流程，使其能在写入前停止。",
+      "nuanceZh": "此处是控制权，不是既习「把握する」所强调的了解信息。"
+    },
+    {
+      "term": "馴染む",
+      "reading": "なじむ",
+      "partOfSpeech": "五段動詞・自動詞",
+      "level": "N2",
+      "collocations": [
+        "組織に馴染む",
+        "運用に馴染む"
+      ],
+      "exampleJa": "便利な機能でも、社内の承認手順に馴染むかを確認します。",
+      "meaningZh": "逐渐适应；与环境、制度相协调。",
+      "noteZh": "Top 3把自我修改型工具与公司治理要求是否相容，作为选型理由之一。",
+      "exampleZh": "即使功能便利，也要确认是否适合公司的审批流程。",
+      "nuanceZh": "不只是上手操作，也可评价制度与工具是否协调。"
+    },
+    {
+      "term": "手堅い",
+      "reading": "てがたい",
+      "partOfSpeech": "い形容詞",
+      "level": "N1",
+      "collocations": [
+        "手堅い構成",
+        "手堅い方法"
+      ],
+      "exampleJa": "調査と実装を分けるのが、この検証では手堅い構成でした。",
+      "meaningZh": "稳妥可靠，不轻易冒进。",
+      "noteZh": "Top 3在本次评测范围内认为本地调查、云端编程的分工具有稳妥性。",
+      "exampleZh": "在这次验证中，将调查与实现分开是稳妥的架构。",
+      "nuanceZh": "是有条件的判断，不是保证所有场景都最优。"
+    },
+    {
+      "term": "早々に",
+      "reading": "そうそうに",
+      "partOfSpeech": "副詞",
+      "level": "N1",
+      "collocations": [
+        "早々に切り分ける",
+        "早々に判断する"
+      ],
+      "exampleJa": "評価で問題が分かったため、コード生成は早々に別の経路へ分けました。",
+      "meaningZh": "很早就；尽早采取行动。",
+      "noteZh": "Top 3在早期评测后就把代码生成交给Claude Code，而非继续让本地模型承担全部任务。",
+      "exampleZh": "评测发现问题后，很早便把代码生成分配到另一条路径。",
+      "nuanceZh": "既习「早速」更常表示积极着手；这里突出阶段很早。"
+    },
+    {
+      "term": "浮き彫りになる",
+      "reading": "うきぼりになる",
+      "partOfSpeech": "慣用句",
+      "level": "N1",
+      "collocations": [
+        "課題が浮き彫りになる",
+        "違いが浮き彫りになる"
+      ],
+      "exampleJa": "今回の測定で、入力の組み立て方という課題が浮き彫りになりました。",
+      "meaningZh": "问题或特征清晰地显现出来。",
+      "noteZh": "Top 3由本地模型实验凸显输入组织与缓存设计的重要性。",
+      "exampleZh": "这次测量让输入组织方式的问题变得清晰。",
+      "nuanceZh": "强调特征显著化；不能据此声称已证明唯一原因。"
+    },
+    {
+      "term": "手配",
+      "reading": "てはい",
+      "partOfSpeech": "名詞・サ変動詞",
+      "level": "N2",
+      "collocations": [
+        "機器を手配する",
+        "検証環境を手配する"
+      ],
+      "exampleJa": "検証機器を手配するときは、購入費と運用費を分けて見積もります。",
+      "meaningZh": "为某个目的安排所需设备或资源。",
+      "noteZh": "Top 3验证条件包括已经为试验安排到手的DGX Spark；不能忽略设备成本。",
+      "exampleZh": "安排验证设备时，分别估算购置与运营成本。",
+      "nuanceZh": "例句是学习用建议；原文没有完成云端与本地的总成本对照。"
+    },
+    {
+      "term": "見守る",
+      "reading": "みまもる",
+      "partOfSpeech": "五段動詞・他動詞",
+      "level": "N2",
+      "collocations": [
+        "進捗を見守る",
+        "作業を見守る"
+      ],
+      "exampleJa": "botが進捗を見守り、人の判断が必要になったときに知らせます。",
+      "meaningZh": "关注进展，必要时准备介入。",
+      "noteZh": "Top 3的机器人跟踪Claude Code进展，只通知完成、等待判断和异常三类状态。",
+      "exampleZh": "机器人跟踪进展，在需要人判断时通知。",
+      "nuanceZh": "不等于放任或自动批准；代码合并仍由人完成。"
+    },
+    {
+      "term": "漏れ出る",
+      "reading": "もれでる",
+      "partOfSpeech": "一段動詞・自動詞",
+      "level": "N2",
+      "collocations": [
+        "内容が漏れ出る",
+        "思考過程が漏れ出る"
+      ],
+      "exampleJa": "内部の思考過程が回答へ漏れ出ていないか、投稿前に確認します。",
+      "meaningZh": "本应留在内部的内容泄漏到外部。",
+      "noteZh": "Top 3曾出现推理过程混入回答正文，发布Slack消息前需要过滤。",
+      "exampleZh": "发布前确认内部推理过程是否混入回答。",
+      "nuanceZh": "此处是输出边界问题；原文没有测定量化是否就是唯一原因。"
+    }
+  ],
+  "technicalTerms": [
+    {
+      "term": "sessionEndpointUrl",
+      "japanese": "セッション専用URL",
+      "meaningZh": "返回指向特定运行会话的认证HTTPS入口。",
+      "contextZh": "Top 1仍需签名和端口许可，不是公开免认证预览。"
+    },
+    {
+      "term": "allowedPorts",
+      "japanese": "接続を許可するポート",
+      "meaningZh": "列出允许从会话入口到达的容器端口。",
+      "contextZh": "Top 1把允许但无人监听的502与未允许的403分开。"
+    },
+    {
+      "term": "modelUsage",
+      "japanese": "モデル利用量の記録",
+      "meaningZh": "按输入、输出、缓存读取及缓存创建统计使用量的记录。",
+      "contextZh": "Top 2合计四类token，费用另用价格字段核对。"
+    },
+    {
+      "term": "prefill",
+      "japanese": "入力の事前処理",
+      "meaningZh": "模型在生成前处理输入序列的阶段。",
+      "contextZh": "Top 3发现长输入读取比逐字生成更影响响应。"
+    },
+    {
+      "term": "dynamicParams",
+      "japanese": "未列挙パスの扱い",
+      "meaningZh": "控制未预生成动态路径是否可在请求时处理的设置。",
+      "contextZh": "Top 4限定Next.js 16.1.6且未启用Cache Components。"
+    },
+    {
+      "term": "shallow merge",
+      "japanese": "浅いマージ",
+      "meaningZh": "顶层字段合并时，不会递归保留所有嵌套对象属性。",
+      "contextZh": "Top 4页面openGraph可替换父级对象，导致公共字段消失。"
+    },
+    {
+      "term": "Iceberg REST catalog",
+      "japanese": "IcebergのRESTカタログ",
+      "meaningZh": "通过REST接口提供表元数据等信息的目录。",
+      "contextZh": "Top 5由Horizon提供目录，不让DuckDB通过Snowflake SQL执行读取。"
+    },
+    {
+      "term": "vended credentials",
+      "japanese": "委任された一時認証情報",
+      "meaningZh": "目录服务为外部查询引擎提供受限的临时存储访问凭据。",
+      "contextZh": "Top 5的DuckDB从Horizon取得S3访问权，Lambda自身未持有gold桶的直接读取权限。"
+    }
+  ]
+}
