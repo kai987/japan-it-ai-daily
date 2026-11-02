@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-02",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-11-02T01:18:15.709204+00:00",
+  "scope": "Declared mechanism, experiment and boundary claims reviewed against five captured public originals. Chinese and Japanese prose authored independently; canonical Japanese interviews shared. All learning examples are teaching creations; no original commands executed. Offline gates do not recheck source availability.",
+  "articles": [
+    {
+      "articleId": "2026-11-02-top-1",
+      "url": "https://dev.classmethod.jp/articles/bedrock-agentcore-runtime-session-endpoints/",
+      "originalTitle": "[アップデート] Amazon Bedrock AgentCore Runtimeのセッション内で動くサーバーに直接アクセスできる機能Session endpointsが追加されました！",
+      "source": "DevelopersIO",
+      "topic": "セッション内アプリのプレビューと認証",
+      "access": "full",
+      "accessNote": "Public original narrative, API examples, reported conditions and limits reviewed; source commands not executed. Exact publication time read from original JSON-LD or Zenn article metadata.",
+      "capturedAt": "2026-11-02T01:02:38.370946+00:00",
+      "snapshotSha256": "c02388c897b05a8c4ba0138365259a2a65e97e4cde64797f33a006e8cbb521c4",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Session endpoints forwards authenticated requests to explicitly allowed session ports.",
+          "quote": "allowedPorts",
+          "locator": "Original narrative: [アップデート] Amazon Bedrock AgentCore Runtimeのセッション内で動くサーバーに直接アクセスできる機能Session endpointsが追加されました！; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "API changes and session URL mechanism; 8000–12000/max5; IAM needs signed requests and proxy permission; a browser relay is used.",
+          "usedIn": {
+            "zh": "端口许可由allowedPorts指定，范围为8000～12000，最多五项。调用返回的sessionEndp",
+            "ja": "接続先は、許可ポート一覧のallowedPortsで明示します。使える範囲は8000〜12000番で最大5件で",
+            "interview": "接続の許可と、サーバーの応答を分けます。Session endpointsではallowedPortsを設定し"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "An allowed unused port returned502 in the author test.",
+          "quote": "何も動いていないので502",
+          "locator": "Original narrative: [アップデート] Amazon Bedrock AgentCore Runtimeのセッション内で動くサーバーに直接アクセスできる機能Session endpointsが追加されました！; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "Tokyo Python3.14/boto3 1.43.123;8082 allowed but no listener; not an availability SLA.",
+          "usedIn": {
+            "zh": "实验采用东京区域、Python 3.14、boto3 1.43.123、bedrock-agentcore 1",
+            "ja": "著者の構成は東京リージョン、Python 3.14、boto3 1.43.123、bedrock-agentc",
+            "interview": "接続の許可と、サーバーの応答を分けます。Session endpointsではallowedPortsを設定し"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "A port outside allowedPorts returned403.",
+          "quote": "許可していないので403",
+          "locator": "Original narrative: [アップデート] Amazon Bedrock AgentCore Runtimeのセッション内で動くサーバーに直接アクセスできる機能Session endpointsが追加されました！; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "8090 deliberately outside list; this differs from an authorized port without a responding server.",
+          "usedIn": {
+            "zh": "浏览器请求同样需要签名，所以作者使用open_local_endpoint在本机8088端口中转到会话内808",
+            "ja": "ブラウザーの要求にも署名が要るため、著者はopen_local_endpointによるローカル中継を使いました",
+            "interview": "接続の許可と、サーバーの応答を分けます。Session endpointsではallowedPortsを設定し"
+          }
+        },
+        {
+          "id": "top1-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview and learning-project guidance derives from the mechanism and the stated limitations, not a completed deployment or a new benchmark.",
+          "conditions": "Suggested learning exercise only; not a claim that the article author or this task implemented the exercise.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact2",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "适合把云端代理的执行、作品预览和访问授权讲成三件可以分别验收的事情。502与403的对照也能用于解释排障顺序。",
+            "ja": "AIの生成が終わることと、利用者が画面を触って確かめられることを分けて説明できます。ポート許可、認証、アプリの待ち受けを対応付けて障害を切り分ける題材です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-02-top-2",
+      "url": "https://zenn.dev/maximus/articles/0df875d14e7ea0",
+      "originalTitle": "サブエージェントはトークンを何倍使うのか:同じ作業を単独 vs 4分割で実測した方法と生データ",
+      "source": "Zenn",
+      "topic": "サブエージェントの費用と測定条件",
+      "access": "full",
+      "accessNote": "Public original narrative, API examples, reported conditions and limits reviewed; source commands not executed. Exact publication time read from original JSON-LD or Zenn article metadata.",
+      "capturedAt": "2026-11-02T01:02:38.526268+00:00",
+      "snapshotSha256": "f3dca588d7b2678c62ce222c3cc5608bd32136b5944653eb7f827684121fe159",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "The author measured about3.6 times total tokens and2.9 times list-price cost.",
+          "quote": "約 3.6 倍、費用は約 2.9 倍",
+          "locator": "Original narrative: サブエージェントはトークンを何倍使うのか:同じ作業を単独 vs 4分割で実測した方法と生データ; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "One read-only four-file task,ClaudeCode2.1.303/Sonnet5.5,three runs each; no statistical/general task claim.",
+          "usedIn": {
+            "zh": "计量口径包括modelUsage中的输入、输出、缓存读取和缓存创建四类token，并涵盖子代理的消耗。作者还确",
+            "ja": "数えたのはmodelUsageにある入力、出力、キャッシュ読み取り、キャッシュ作成の四種類で、子の利用分も含め",
+            "interview": "同じ作業で、成果と利用量を比べます。記事は四ファイルを読む課題を、単独と四分割で三回ずつ測りました。model"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Usage includes normal input/output and both cache categories, with subagent completion checked.",
+          "quote": "cache read / cache creation",
+          "locator": "Original narrative: サブエージェントはトークンを何倍使うのか:同じ作業を単独 vs 4分割で実測した方法と生データ; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "Cache pricing differs; token count is not a billing amount; cold-cache explanation remains a hypothesis.",
+          "usedIn": {
+            "zh": "单独执行三次为105,879～106,129 token，分工执行为291,886～466,718 token",
+            "ja": "生データでは、単独は105,879〜106,129トークン、分割は291,886〜466,718トークンでした",
+            "interview": "同じ作業で、成果と利用量を比べます。記事は四ファイルを読む課題を、単独と四分割で三回ずつ測りました。model"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Elapsed time was not compared.",
+          "quote": "時間の比較はしていません",
+          "locator": "Original narrative: サブエージェントはトークンを何倍使うのか:同じ作業を単独 vs 4分割で実測した方法と生データ; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "An inconsistent recorded time field prevented that comparison; do not infer speed from cost data.",
+          "usedIn": {
+            "zh": "另一条关键边界是时间。分工组有一轮的耗时字段与其他记录不一致，文章因此没有比较完成时间。我们也不能从费用较高推",
+            "ja": "単独の初回だけ費用が高い理由について、著者はキャッシュがまだ温まっていなかった可能性を挙げていますが、確認はし",
+            "interview": "同じ作業で、成果と利用量を比べます。記事は四ファイルを読む課題を、単独と四分割で三回ずつ測りました。model"
+          }
+        },
+        {
+          "id": "top2-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview and learning-project guidance derives from the mechanism and the stated limitations, not a completed deployment or a new benchmark.",
+          "conditions": "Suggested learning exercise only; not a claim that the article author or this task implemented the exercise.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact2",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "有助于用同一任务、同一计量范围讨论代理分工，而不是用一次体验给多代理下普遍结论。它也提供了区分token量、缓存和费用的面试材料。",
+            "ja": "「分ければ速い・安い」という印象を、集計対象と少数回の生データへ戻して検討できます。トークン量と請求額の違いを、実験条件とともに話す練習になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-02-top-3",
+      "url": "https://zenn.dev/sompojapan_dx/articles/05f34316118943",
+      "originalTitle": "ローカルLLMはどんな業務で使えるのか？ DGX Spark + DeepSeek V4-FlashのSlackチャットボットを評価した",
+      "source": "Zenn",
+      "topic": "ローカルLLMの評価と待ち時間",
+      "access": "full",
+      "accessNote": "Public original narrative, API examples, reported conditions and limits reviewed; source commands not executed. Exact publication time read from original JSON-LD or Zenn article metadata.",
+      "capturedAt": "2026-11-02T01:02:38.371522+00:00",
+      "snapshotSha256": "d5212eaab3832d9ed6cd2baeda5a5496019536e49fc88341eea2997eb163e7aa",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Large input loading was investigated as a major latency contributor.",
+          "quote": "約4万トークン",
+          "locator": "Original narrative: ローカルLLMはどんな業務で使えるのか？ DGX Spark + DeepSeek V4-FlashのSlackチャットボットを評価した; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "DGXSpark128GB,quantized DeepSeekV4Flash,test connections only; input and generation throughput are author-observed,not independent benchmark.",
+          "usedIn": {
+            "zh": "硬件共享内存为128GB，加载约104GB的3比特级量化模型。作者给出的速度量级是输入处理约300 token",
+            "ja": "機器は共有メモリ128GBで、約104GBの3ビット級量子化モデルを載せています。著者が示す処理速度の目安は入",
+            "interview": "入力の読み込みと文章生成を分けます。DGX Sparkの検証では、ツール定義を絞り、動的な時刻を入力の後ろへ移"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Combined prompt/schema/layout changes reduced input from about40000to6000tokens and response from5to2minutes for the same question.",
+          "quote": "約6千トークン",
+          "locator": "Original narrative: ローカルLLMはどんな業務で使えるのか？ DGX Spark + DeepSeek V4-FlashのSlackチャットボットを評価した; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "Several changes were combined; not an isolated cache-prefix experiment or universal acceleration ratio.",
+          "usedIn": {
+            "zh": "模型评价先定义预期行为，并把同一测试集至少跑两次。代码生成包括11种课题、四种条件、共44次生成；八个功能课题",
+            "ja": "評価では期待動作を先に定義し、同じテストセットを二回以上確認しています。コード生成は11種類の課題を四条件で計",
+            "interview": "入力の読み込みと文章生成を分けます。DGX Sparkの検証では、ツール定義を絞り、動的な時刻を入力の後ろへ移"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Production business-data use and controlled cloud comparison are outside the experiment.",
+          "quote": "本番運用に関する話はスコープ外",
+          "locator": "Original narrative: ローカルLLMはどんな業務で使えるのか？ DGX Spark + DeepSeek V4-FlashのSlackチャットボットを評価した; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "Investigation tasks accepted only when users can wait; code generation failed the stated evaluation; approval and manual merge remain.",
+          "usedIn": {
+            "zh": "响应迟缓的调查追到了输入组织：过大的工具定义、不停变化却放在输入前部的时间、逐步累积的工具返回值。缩小工具定义",
+            "ja": "遅延の調査では、巨大なツール定義、入力先頭に置いた毎分変わる時刻、大きなツール応答の蓄積が問題になりました。ツ",
+            "interview": "入力の読み込みと文章生成を分けます。DGX Sparkの検証では、ツール定義を絞り、動的な時刻を入力の後ろへ移"
+          }
+        },
+        {
+          "id": "top3-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview and learning-project guidance derives from the mechanism and the stated limitations, not a completed deployment or a new benchmark.",
+          "conditions": "Suggested learning exercise only; not a claim that the article author or this task implemented the exercise.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact2",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "日本企业技术人员的试作提供了模型、输入组织、等待界面与审批机制的连贯实例。它也能训练“测试数据上的结果”与“生产落地”之间的措辞边界。",
+            "ja": "日本企業の技術者による試作を通じ、モデルの大きさだけでなく入力、待機UI、承認と評価の設計を整理できます。本番導入例と検証環境を混同しないことも学べます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-02-top-4",
+      "url": "https://zenn.dev/nu0044/articles/jaehong-nextjs-dynamicparams-og-hardening",
+      "originalTitle": "Next.jsの多言語OGPで見直した、未対応パスとメタデータの継承",
+      "source": "Zenn",
+      "topic": "多言語ルートとOpen Graphの継承",
+      "access": "full",
+      "accessNote": "Public original narrative, API examples, reported conditions and limits reviewed; source commands not executed. Exact publication time read from original JSON-LD or Zenn article metadata.",
+      "capturedAt": "2026-11-02T01:02:38.530544+00:00",
+      "snapshotSha256": "be74dbe0bd03bc705be8eb3906db87d1dae8d459f07fdbb1f7720205957568a3",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Enumerating generation paths is distinct from rejecting unlisted dynamic segments.",
+          "quote": "許可リストではなかった",
+          "locator": "Original narrative: Next.jsの多言語OGPで見直した、未対応パスとメタデータの継承; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "Next.js16.1.6 without CacheComponents; page/OG/Twitter image configurations each checked; three tested unknown paths404 only.",
+          "usedIn": {
+            "zh": "dynamicParams默认是true，未列入预生成清单的动态段仍可能在请求时处理。作者在页面、Open G",
+            "ja": "dynamicParamsの既定値はtrueです。対象ではページとOpen Graph画像、Twitter画像",
+            "interview": "生成パスの列挙と、未対応パスの拒否は分けます。記事ではdynamicParamsをfalseにし、ページと画像"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "openGraph nested metadata is shallow merged and shared fields needed explicit preservation.",
+          "quote": "浅くマージ",
+          "locator": "Original narrative: Next.jsの多言語OGPで見直した、未対応パスとメタデータの継承; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "Final public HTML checked in three languages; noSNS cache or rebuilt historical build-log verification.",
+          "usedIn": {
+            "zh": "11月2日的公开GET确认了三种已支持语言页面返回200；把xx明确作为未支持的测试语言代码时，页面、OG图片",
+            "ja": "著者は11月2日、対応する三言語のページが200、試験用の未対応言語コードxxについてページ・OG画像・Twi",
+            "interview": "生成パスの列挙と、未対応パスの拒否は分けます。記事ではdynamicParamsをfalseにし、ページと画像"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "No cost-reduction effect was measured.",
+          "quote": "コスト削減の効果は測定していません",
+          "locator": "Original narrative: Next.jsの多言語OGPで見直した、未対応パスとメタデータの継承; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "No authentication/DDoS substitute, no handler-invocation proof from404, no arbitrary-path benchmark.",
+          "usedIn": {
+            "zh": "第二个问题发生在openGraph继承。页面返回语言专用的嵌套对象时，父级siteName、locale和ty",
+            "ja": "もう一つの問題はopenGraphの浅いマージです。子ページが言語別のopenGraphを返すと、親にあった共",
+            "interview": "生成パスの列挙と、未対応パスの拒否は分けます。記事ではdynamicParamsをfalseにし、ページと画像"
+          }
+        },
+        {
+          "id": "top4-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview and learning-project guidance derives from the mechanism and the stated limitations, not a completed deployment or a new benchmark.",
+          "conditions": "Suggested learning exercise only; not a claim that the article author or this task implemented the exercise.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact2",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "非常适合React/Next.js求职：可以从默认路由行为讲到图片端点与元数据继承，再说明如何用线上GET与最终HTML进行验证。",
+            "ja": "Next.jsの既定値、画像ルート、入れ子のメタデータを、最終的なHTTP応答とHTMLで確かめる練習になります。フロントエンド面接で「設定した」と「公開結果を検証した」を具体的に分けられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-02-top-5",
+      "url": "https://dev.classmethod.jp/articles/snowflake-iceberg-duckdb-without-warehouse/",
+      "originalTitle": "【Snowflake】ウェアハウスを起動せずにIcebergテーブルをDuckDBで読んでみた",
+      "source": "DevelopersIO",
+      "topic": "Icebergの外部読み取りと静的BI",
+      "access": "full",
+      "accessNote": "Public original narrative, API examples, reported conditions and limits reviewed; source commands not executed. Exact publication time read from original JSON-LD or Zenn article metadata.",
+      "capturedAt": "2026-11-02T01:03:47.952430+00:00",
+      "snapshotSha256": "8d72075fb70b0b7bb163ab4cc0808736f99900db597822958e1f18911abb5a33",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "DuckDB reads Parquet from S3 with metadata and temporary credentials from Horizon rather than a Snowflake SQL warehouse.",
+          "quote": "S3 から直接読みます",
+          "locator": "Original narrative: 【Snowflake】ウェアハウスを起動せずにIcebergテーブルをDuckDBで読んでみた; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "dbt preparation remains; Lambda manually renders staticHTML, not per-viewer live queries.",
+          "usedIn": {
+            "zh": "DuckDB通过Horizon的Iceberg REST目录取得表元数据以及临时S3访问凭据，直接读取Parq",
+            "ja": "DuckDBはHorizonのIceberg RESTカタログからメタデータとS3の一時認証情報を受け取り、P",
+            "interview": "静的HTMLなら、閲覧ごとにウェアハウスを起こさない構成にできます。記事ではHorizonからメタデータと一時"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "The service user recorded10logins and0SQLqueries.",
+          "quote": "クエリの実行は 0 件でした",
+          "locator": "Original narrative: 【Snowflake】ウェアハウスを起動せずにIcebergテーブルをDuckDBで読んでみた; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "Sample20orders/10customers/23payments; account-history lag up to2hours; not total cost or scale benchmark.",
+          "usedIn": {
+            "zh": "验证使用20条订单、10名顾客、23条付款和三个gold模型，工具包括DuckDB 2.0.0、dbt Cha",
+            "ja": "試作のデータは注文20件、顧客10人、支払い23件で、三つの集計モデルを用意しました。DuckDB 2.0.0",
+            "interview": "静的HTMLなら、閲覧ごとにウェアハウスを起こさない構成にできます。記事ではHorizonからメタデータと一時"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "All permitted-IP viewers receive the same service-user-authorized static result.",
+          "quote": "全員が同じ内容を見ます",
+          "locator": "Original narrative: 【Snowflake】ウェアハウスを起動せずにIcebergテーブルをDuckDBで読んでみた; mechanism/measurement/limits paragraph containing the exact short anchor.",
+          "conditions": "No per-viewer row authorization; rerender needed for fresh data; external compute/catalog/storage/distribution costs remain.",
+          "usedIn": {
+            "zh": "认证采用把Lambda执行角色对应到Snowflake服务用户的工作负载身份联合。此次环境通过签名的GetCa",
+            "ja": "認証はLambdaの実行ロールをSnowflakeのservice userへ対応付けるWIFを使い、今回の環",
+            "interview": "静的HTMLなら、閲覧ごとにウェアハウスを起こさない構成にできます。記事ではHorizonからメタデータと一時"
+          }
+        },
+        {
+          "id": "top5-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview and learning-project guidance derives from the mechanism and the stated limitations, not a completed deployment or a new benchmark.",
+          "conditions": "Suggested learning exercise only; not a claim that the article author or this task implemented the exercise.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact2",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "能把数据准备、读取计算与静态分发拆开，说明减少某个计费环节时仍需检查更新周期、总体成本和阅览权限。",
+            "ja": "データを作る計算と読む計算を分離し、費用・更新頻度・閲覧権限を一緒に説明できます。SQLクエリ零件という観測を、無料化や利用者別認可の保証へ広げない点も重要です。"
+          }
+        }
+      ]
+    }
+  ]
+}
