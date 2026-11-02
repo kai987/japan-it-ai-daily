@@ -1,0 +1,94 @@
+{
+  "targetDate": "2026-11-02",
+  "sourceCommit": "15859451d7373e7fdd9820a23172f3768a534955",
+  "sourceWindow": {
+    "from": "2026-11-01T10:00:00+09:00",
+    "to": "2026-11-02T10:00:00+09:00"
+  },
+  "discovery": {
+    "preferredSitesChecked": 20,
+    "homepageRead": 18,
+    "denied": [
+      "CodeZine",
+      "Mercari Engineering"
+    ],
+    "scope": "20 homepage discoveries and 100 latest Zenn records, 92 in window, not exhaustive site search",
+    "excludedOutOfWindow": [
+      {
+        "url": "https://dev.classmethod.jp/articles/waf-cloudfront-automatic-sdk-integration/",
+        "publishedAt": "2026-10-31T17:55:11.050Z",
+        "reason": "Original JSON-LD predates frozen window despite Nov1 visible date"
+      }
+    ],
+    "evidenceDirectory": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-11-02"
+  },
+  "previousTop5Excluded": true,
+  "articles": [
+    {
+      "url": "https://dev.classmethod.jp/articles/bedrock-agentcore-runtime-session-endpoints/",
+      "capturedAt": "2026-11-02T01:02:38.370946+00:00",
+      "snapshotSha256": "c02388c897b05a8c4ba0138365259a2a65e97e4cde64797f33a006e8cbb521c4",
+      "articleId": "2026-11-02-top-1",
+      "title": "[アップデート] Amazon Bedrock AgentCore Runtimeのセッション内で動くサーバーに直接アクセスできる機能Session endpointsが追加されました！",
+      "source": "DevelopersIO",
+      "topic": "セッション内アプリのプレビューと認証",
+      "publishedAt": "2026-11-01T10:04:24.530Z",
+      "access": "full",
+      "accessNote": "Public original narrative, API examples, reported conditions and limits reviewed; source commands not executed. Exact publication time read from original JSON-LD or Zenn article metadata.",
+      "factsToPreserve": "Experiment in Tokyo: Python3.14,boto3 1.43.123,bedrock-agentcore1.25.2,Strands-harness0.3.2,Haiku5.5. allowedPorts accepts8000–12000 max5; response sessionEndpointUrl routes methods/paths and requires SigV4/JWT plus InvokeAgentRuntimeProxy. 9090agent and8081site; allowed8082no listener502, disallowed8090=403. open_local_endpoint signs browser requests; same-session URL preview updated after refresh. microVM only, notInstances/PrivateLink. Idledefault15min,max8h; restart loses in-memory/files absent sessionstorage. CPU/memory/runtime andCloudTrail costs remain; nofree/productionready/performancebenchmark claim. Do not reproduce raw URL placeholders or allow-all-host config."
+    },
+    {
+      "url": "https://zenn.dev/maximus/articles/0df875d14e7ea0",
+      "capturedAt": "2026-11-02T01:02:38.526268+00:00",
+      "snapshotSha256": "f3dca588d7b2678c62ce222c3cc5608bd32136b5944653eb7f827684121fe159",
+      "articleId": "2026-11-02-top-2",
+      "title": "サブエージェントはトークンを何倍使うのか:同じ作業を単独 vs 4分割で実測した方法と生データ",
+      "source": "Zenn",
+      "topic": "サブエージェントの費用と測定条件",
+      "publishedAt": "2026-11-02T09:41:33.916+09:00",
+      "access": "full",
+      "accessNote": "Public original narrative, API examples, reported conditions and limits reviewed; source commands not executed. Exact publication time read from original JSON-LD or Zenn article metadata.",
+      "factsToPreserve": "Primary author n=3 each,one read-only task/fourfiles,ClaudeCode2.1.303 Sonnet5.5. Single aggregate token105879/106129/105999 andUSD.214/.103/.102;4subagent291886/390903/466718 and.441/.458/.336;means106002.33 vs383169,USD.139667 vs.411667. modelUsage input/output/cache read/cache creation totals include subagent use; verify spawned/completed4. Ratiosapprox3.6tokens2.9listpriceUSD; cache dominates. No statistical generalization or elapsedtime comparison due conflicting time field. Cold-cache explanation for firstsingle is UNVERIFIED hypothesis. No reproduction of bypassPermissions example. No universalmultiagent verdict; quality/completion anddifferenttask remain futurechecks."
+    },
+    {
+      "url": "https://zenn.dev/sompojapan_dx/articles/05f34316118943",
+      "capturedAt": "2026-11-02T01:02:38.371522+00:00",
+      "snapshotSha256": "d5212eaab3832d9ed6cd2baeda5a5496019536e49fc88341eea2997eb163e7aa",
+      "articleId": "2026-11-02-top-3",
+      "title": "ローカルLLMはどんな業務で使えるのか？ DGX Spark + DeepSeek V4-FlashのSlackチャットボットを評価した",
+      "source": "Zenn",
+      "topic": "ローカルLLMの評価と待ち時間",
+      "publishedAt": "2026-11-02T09:06:09.499+09:00",
+      "access": "full",
+      "accessNote": "Public original narrative, API examples, reported conditions and limits reviewed; source commands not executed. Exact publication time read from original JSON-LD or Zenn article metadata.",
+      "factsToPreserve": "SOMPO engineer prototype in testSlack/Notion/GitHub/Figma/Jira,no businessdata/no production. DGXSpark128GB,DeepSeekV4Flash3-bit~104GB,MoE284Btotal13Bactive token perauthor. Reading~300tok/s,decoding~30tok/s,oneconversation atime,queue>5busyreply. Investigation10s–5min acceptedunderwaitingUX;code11tasks4conditions44generations,8functionaltasks6/8 and5/8,3dependencytasks2/3,oneforbiddenidentifier. Promptinput~40000to6000 viareducedtool schema andmovingdynamicdatetimeafterstaticprefix,response~5mto2m; combinedchange notisolatedcausalbenchmark. Mastra suspend/resume gate; allwrites inclmemorydelete requirehumanapproval,PRmanualmerge; codeimplementation cloudClaudeCode soNOTfullyoffline. Reasoning consumes outputlimit,emptybodyguard,retryloop issue;quantizationcausationUNPROVEN, nocontrolledcloudcomparison/TCO."
+    },
+    {
+      "url": "https://zenn.dev/nu0044/articles/jaehong-nextjs-dynamicparams-og-hardening",
+      "capturedAt": "2026-11-02T01:02:38.530544+00:00",
+      "snapshotSha256": "be74dbe0bd03bc705be8eb3906db87d1dae8d459f07fdbb1f7720205957568a3",
+      "articleId": "2026-11-02-top-4",
+      "title": "Next.jsの多言語OGPで見直した、未対応パスとメタデータの継承",
+      "source": "Zenn",
+      "topic": "多言語ルートとOpen Graphの継承",
+      "publishedAt": "2026-11-02T00:59:14.615+09:00",
+      "access": "full",
+      "accessNote": "Public original narrative, API examples, reported conditions and limits reviewed; source commands not executed. Exact publication time read from original JSON-LD or Zenn article metadata.",
+      "factsToPreserve": "OriginalNext.js16.1.6 project,cacheComponents notenabled. generateStaticParams enumeratesko/en/ja, defaultdynamicParamstrue notallowlist. SetdynamicParams=false separatelypage/opengraph-image/twitter-image; preserve appnotFound guard. PublicGETsupported3pages200 andunknownxx three routes404 onNov2; notproofnohandlerinvocation orarbitraryunknownroutes, nobaseline load/costbenchmark. openGraph shallowmerge replacesparentnestedobject; explicitsiteName,locale,type inper-languagemetadata restored,finalHTML correctko_KR/en_US/ja_JP andogimage. NoSNS cacheverification;buildmanifestprocedureillustrative, notnewlyretrievedbuildlogs. CacheComponentsenabled v16incompatible;notauth/DDoSreplacement. Literal/xxexample concrete notunexplainedcodeplaceholder."
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/snowflake-iceberg-duckdb-without-warehouse/",
+      "capturedAt": "2026-11-02T01:03:47.952430+00:00",
+      "snapshotSha256": "8d72075fb70b0b7bb163ab4cc0808736f99900db597822958e1f18911abb5a33",
+      "articleId": "2026-11-02-top-5",
+      "title": "【Snowflake】ウェアハウスを起動せずにIcebergテーブルをDuckDBで読んでみた",
+      "source": "DevelopersIO",
+      "topic": "Icebergの外部読み取りと静的BI",
+      "publishedAt": "2026-11-01T22:57:20.073Z",
+      "access": "full",
+      "accessNote": "Public original narrative, API examples, reported conditions and limits reviewed; source commands not executed. Exact publication time read from original JSON-LD or Zenn article metadata.",
+      "factsToPreserve": "Snowflake-managed Iceberggold preparedwithdbt, Lambda manuallyrendersstaticdbtChartsHTML storedS3 servedCloudFrontOACwithWAFIPallowlist. DuckDB2.0.0 getsmetadata andvendedtemporaryS3credentials viaHorizonRESTcatalog,readsParquetdirectly;notSnowflakeSQLwarehouseforread. SourceSnowflakewarehousemin60screditperstartup,Horizon.5credit/millionAPIcalls;preparationdbt,CPU,S3,CloudFrontcostremain. WIF GetCallerIdentitysignedroleARN perauthorprototype, docsrecommendoutboundJWT notenabledhere. ReaderUSAGE andfutureSELECT only, LambdaroleonlyHTMLPutObject,notgoldS3directIAM. Sample20orders10customers23payments,3goldmodels;observedserviceuser10logins0SQLqueries withLOGIN_HISTORYlagup to2h. NotTCOzero/predictablepercentbenchmark. StaticHTML notperviewerqueries/noend-userrowlevelpermission;allallowedIPviewersseesame serviceuserauthorizeddata,refreshrequiresrerender;BIextract comparisonmayreducepotentialbenefit."
+    }
+  ],
+  "reviewedAt": "2026-11-02T01:07:24.407812+00:00"
+}
