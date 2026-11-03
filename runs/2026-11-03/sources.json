@@ -1,0 +1,87 @@
+{
+  "targetDate": "2026-11-03",
+  "sourceCommit": "da34860b8d25833add3639307cf2d7938d00ea95",
+  "sourceWindow": {
+    "from": "2026-11-02T10:00:00+09:00",
+    "to": "2026-11-03T10:00:00+09:00"
+  },
+  "discovery": {
+    "preferredSitesChecked": 20,
+    "homepageRead": 18,
+    "denied": [
+      "CodeZine",
+      "Mercari Engineering"
+    ],
+    "scope": "20 homepage discovery attempts and100 latest Zenn records,45withinwindow;not exhaustive coverage of all site articles or 24hour window",
+    "evidenceDirectory": "/Users/paulasmith/.codex/automations/it-ai-codex/source-evidence/2026-11-03"
+  },
+  "previousTop5Excluded": true,
+  "articles": [
+    {
+      "url": "https://zenn.dev/akaringo1109/articles/figma-agent-skill-external-library",
+      "capturedAt": "2026-11-03T04:08:03.260488+00:00",
+      "snapshotSha256": "1f3d69d1f67d7d886aab78c32f3321bc0880b12eff5b367f3b8296374dd20bb4",
+      "articleId": "2026-11-03-top-1",
+      "title": "Claude Code のスキルを、Figma エージェントの中で動かせるか試した",
+      "source": "Zenn",
+      "topic": "Figma内のスキル配布と再開可能な実行",
+      "publishedAt": "2026-11-03T09:01:42.788+09:00",
+      "access": "full",
+      "accessNote": "Public original narrative, reported experiments and limitations read; source commands and code were not executed. Publication timestamp verified from original article metadata or JSON-LD.",
+      "factsToPreserve": "Author Oct23–25 Web Figma experiment: single Markdown skill; observed65536chars registration vs~51000byte initialdelivery,notuniversalAPIlimits. Canvas library388textnodes270000chars,43cards2tables7frames;50万char roundtripsha256. ~6500char bootstrap reads canvas viaPluginAPI andreconstructsfiles;FNV1a count/contentdetects transferloss,notauthentication/freshness. Pythonreadsfulltooloutputfilesratherthanagenttranscription; sequentialsteps verifiedbyfiles. microVM replacedafteridleness(observed5.5same/11minnew,notSLA),13m46resume succeeded. Observed11–27minvs6compressed;notisolatedlatencybenchmark. Internaloutputpaths undocumented andsamechat staleoutput risk noted;layerpath traversal risk/editorscontrol executablecode;restrictlibraryeditors. Actualdomaincheckingprecision unpublished, productionownershipundecided. No Figmaaccount/repositorysettings changed bythisreport."
+    },
+    {
+      "url": "https://zenn.dev/okzaq/articles/claude-code-model-effort-bench",
+      "capturedAt": "2026-11-03T04:08:03.260810+00:00",
+      "snapshotSha256": "e8db62e7645f53130db88299284bafdd69ae71981f19c02f8bff30a03b3e11a5",
+      "articleId": "2026-11-03-top-2",
+      "title": "Claude Code で Haiku・Sonnet・Opus とエフォートを変えて22課題を解かせたら、差が出たのは実装より上流だった",
+      "source": "Zenn",
+      "topic": "工程別のモデル・エフォート評価",
+      "publishedAt": "2026-11-03T07:30:05.078+09:00",
+      "access": "full",
+      "accessNote": "Public original narrative, reported experiments and limitations read; source commands and code were not executed. Publication timestamp verified from original article metadata or JSON-LD.",
+      "factsToPreserve": "Author22selfauthoredfictionaltasks,October2026,ClaudeCode2.1.308 Windows Max5x,Haiku/Sonnet/Opus5.5×fiveefforts. CostCLIAPI-equivalent notsubscriptionpayment. Hiddenexternaltests/mutationtests,documentjudgeOpus5.5high;cleareduserconfig/plugins/MCP,notperfectsandbox:sharedPythonpackagesleakedbetweenruns. Small9impl oneeach15settings,medium+all100%. Larger1.3k? CORRECTION actual1.3万lines=13000,282existingtests,16hiddenbusinessrules2outdateddocs. Documents3replicates,eachstagegivenauthorfixedinput notpreviousmodeloutput. Impl1run152hiddentests42mutants,all152pass,Opushigh39/42mutantscaught vs42others. Haikumedium72/83/85 andSonnetHigh91/96/99 document scores. xhighnotmeasuredlarge4stage;18tasks23runs/settings,maxdidnotimproveSonnet/Opusfullscorerate vsxhigh,time2.5–2.9x—notproofinferiority. 45documents rescored96.0/99.5/99.6agreement,planmax8ptdrift. No universalmodelranking."
+    },
+    {
+      "url": "https://zenn.dev/rdlabo/articles/webview-native-ui-projection",
+      "capturedAt": "2026-11-03T04:08:03.260912+00:00",
+      "snapshotSha256": "6b5db1160daaf7eee416d8beaded81ac8e0e918ec775edb2da36264f51057d60",
+      "articleId": "2026-11-03-top-3",
+      "title": "Projectionという発想。WebViewの中にNative UIを投影して共存させる方法にたどり着いた",
+      "source": "Zenn",
+      "topic": "WebViewとネイティブUIの描画協調",
+      "publishedAt": "2026-11-03T08:58:35.502+09:00",
+      "access": "full",
+      "accessNote": "Public original narrative, reported experiments and limitations read; source commands and code were not executed. Publication timestamp verified from original article metadata or JSON-LD.",
+      "factsToPreserve": "AuthornativeUIprojectionengineeringdemo iOSUIKitTabBar/WebModal andiOS/Androidadscroll. CSSz-index cannotoutranknativeviewlayer. Three modes LiveNativeUI/WebProjection/WebFallback;imageprojectioncannotreceiveinteraction. Pre-capture+decode;observeiOSposition/size for3stableframesat60fpsapproxthen snapshot. TemporarysameimageonNativebridgesDOMimagehandoff;hideactualnativeanddisplaybridgeatomicallyNative;DOMrequestAnimationFrame notifyreleasebridge. Preventblank/doubledtranslucency,scrolltracking/clipping. MITsharedWebViewNativeUIEngine forCapacitor/Cordovaplugins,alreadyintegrationin2namedplugins. Author demonstration,notcomparativeperformance/allOS/accessibilitybenchmark;do not claim zero UXlossuniversally or actualnativecomponent becomesDOM."
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/202611-mitsuguchi-firehose-to-lambda-kensho/",
+      "capturedAt": "2026-11-03T04:08:03.261010+00:00",
+      "snapshotSha256": "fd453d32a68237a771e9dde1be71a854347f83957f19aa654caf06f6a6fc8674",
+      "articleId": "2026-11-03-top-4",
+      "title": "Amazon Data FirehoseのLambda変換で、失敗・破棄したレコードがどこへ行くのか確かめてみた",
+      "source": "DevelopersIO",
+      "topic": "ストリーム変換の失敗と保存先",
+      "publishedAt": "2026-11-02T09:20:43.970Z",
+      "access": "full",
+      "accessNote": "Public original narrative, reported experiments and limitations read; source commands and code were not executed. Publication timestamp verified from original article metadata or JSON-LD.",
+      "factsToPreserve": "AuthorTokyoCloudFormationDirectPUTFirehose→Python3.12Lambda128MB60sectimeout→S3;two1MB/60sec buffers,NumberOfRetries3,sourcebackupENABLED. Threecontrolledbatchesonceeach. OkJSONLines normal destination;sourcebackupconcatenatednotJSONL. Droppedabsentnormal/errorsbutretainedsourcebackup;disabledbackupNOTtested. ProcessingFailed2rawDataBase64errorLambda.ProcessingFailedStatusattemptsMade1 inclmalformedJSON,codealonecannotdistinguishcause. Lambdaexceptiononein3affectsall3 batch,normalnone,allerrorsLambda.FunctionErrorattempts4 (initial+3),logsconfirm,exceptiondetailsinCWnoterrorrecord. Observed80/126/139sec send→S3,notSLAorloadbenchmark,buffer/workloaddependent. rawData isencodingnotencryption;bothbackup/errorstorageholdoriginaldata,restrictretention/access;replay/alarmsneededforproduction."
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/github-actions-require-sha-pinning/",
+      "capturedAt": "2026-11-03T04:08:03.554125+00:00",
+      "snapshotSha256": "b3428af61c3d3d06e5fbbf182ef7e4e737b2f2db158c0c0436648121e12d7731",
+      "articleId": "2026-11-03-top-5",
+      "title": "GitHub ActionsのSHAピン留めを設定で強制する。何が止まるか、lockfileならタグのまま通せるかを試す",
+      "source": "DevelopersIO",
+      "topic": "Actions依存の固定とポリシー境界",
+      "publishedAt": "2026-11-02T13:20:23.903Z",
+      "access": "full",
+      "accessNote": "Public original narrative, reported experiments and limitations read; source commands and code were not executed. Publication timestamp verified from original article metadata or JSON-LD.",
+      "factsToPreserve": "AuthorNov2FreeprivateGithubrepo,ubuntu-latest,pushevents,14workflowcases. sha_pinning_requiredblocks tags/branches,shortSHAalreadyunsupportedwithoutpolicy. Full40hexpasses. Local./and$/anddockerstepandcallto reusableworkflowtargetwereoutsidecheck;tagsINSIDEreusableorSHApinnedcompositestillblocked. gh-actions-lock0.4.0 onboardingrecordstransitivedependencies&allowsnestedtagcaseunchanged;onlyonboardedworkflowpasses,othersstillblocked. v0.2.0partialtagrewrite recordedwrongnestedref andfailedruntime;0.4verifydetectsincomplete-lockfile,relockrestores. Policyblocksnotupgradesdependencies;Dependabotonlyupdatesalreadyonboardedworkflows. Org/enterprise/allowlist/requirelockfilecombination/crossreporeusable/thirdpartycomposite/container-services/selfhosted/other-eventsNOTtested. Do not claimstrongerpolicyallcodepinned;noactionexecutedbythisreport."
+    }
+  ],
+  "reviewedAt": "2026-11-03T04:46:07.221652+00:00"
+}
