@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-03",
+  "generatedAt": "2026-11-03T05:13:39.606Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "大きなAIスキルを、非エンジニアが使う画面へ移すとき、何を設計しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "b68270e6e5e22bf707c10112494b1f66c0e74140b1dba1844a3f274578af3226",
+      "audioSha256": "1ab1595b59cfe6881dd11c7639473212d0c38c4bd9dcea66ebd6177f6bca2e26",
+      "durationSeconds": 5.848
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "大きなスキルは起動部分とライブラリに分け、Figmaのテキストノードから元のファイルを復元します。長い戻り値をAIに書き写させず、Pythonが保存された全文を直接読み、件数とハッシュを照合する点が大切です。ただし、実行環境の入れ替わりや古い読み取りは別の問題なので、実行単位の確認と再開手順を用意し、ライブラリの編集権限も絞ります。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "a2884abd45e75408053fb6c82491077bf5a16a74c0f4f951a424bbcbc288c12e",
+      "audioSha256": "3a0e6fcd054981d8dea014f255702c772b2b5e9aaf8b992f30ecee2869657e7b",
+      "durationSeconds": 27.226,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "開発工程ごとにAIモデルを選ぶなら、どのように比較しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "e9ee793a15f5785d78260a17f2058fbb03c988c8ae96380490ebf71f8955c4d5",
+      "audioSha256": "339440c78594afaac3e5c31912807fb0a579c38f4c44b6e29e71eb1895767d60",
+      "durationSeconds": 5.107
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "実装と上流の文書作成を分けて比べます。記事では、小さな実装9題はmedium以上で満点でしたが、大きな既存コードの計画や仕様では差が出ました。隠しテストと変異テストを使い、文書は採点表で複数回確認しています。ただし、各工程の入力は著者の確定版なので、AIが書いた仕様の漏れが実装へ及ぼす影響までは測れていません。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "bf2c7b2bad778719a01af082479a4844bae62a9f2316bfb1e3324571173d1f08",
+      "audioSha256": "fcd9c0ce671c366c7832cfa118d7e0a9e4bddfb0ae14d04ddfee18aff72d3b90",
+      "durationSeconds": 26.723,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "WebViewのモーダルとネイティブUIが重なる問題を、どう解決しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "7c62e0751fc3c3e6497efc94c8daf2302f90ee1b370a8b58b9a4c2b6000f17c2",
+      "audioSha256": "a36415a1a249c23cd1caa44becc24e147b368b51aa79209a33c8938de3886567",
+      "durationSeconds": 5.502
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "CSSの重なり順だけでは、別レイヤーのUIKitのタブバーを覆えません。記事のProjectionは、操作できない間だけネイティブUIの画像をDOMへ置き、操作可能になったら本物へ戻します。撮影とデコードを先に済ませ、つなぎ画像を使って空白や二重表示を防ぎます。ただし画像の間は操作できないので、切り替え条件とタップの復帰を実機で確認します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "ce6f14b976d58e05eb2585f6e4dfddfa9b39c44b45fef147226c258fea69b30a",
+      "audioSha256": "bef5178436bfa6f21b0d5f50262b79b951d5da01fc55bd453f6d59c08a7a2b4c",
+      "durationSeconds": 26.98,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "ストリーム変換の失敗を、どの単位で扱うか説明してください。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "0a8bbabaa4af8f6fa0b0cf85f9d651c1d08b41cd27115c7be75e8e4cef6ff5d6",
+      "audioSha256": "298c5d058129337727005a6771e921ecbd3fa2443805e5cd3ff6c9615f009813",
+      "durationSeconds": 4.91
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "レコードごとの失敗と、関数全体の例外を分けます。Firehoseの検証では、ProcessingFailedは該当データをエラー側へ残しましたが、Lambdaが例外で落ちると同じバッチの正常データも巻き込まれ、初回と再試行で4回呼ばれました。Droppedは今回の有効なバックアップにだけ残っています。ただし各条件一回の結果なので、保存設定と再処理の単位を自分の構成でも確かめます。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "875828d901d8057470918db414b15b70f718b0295f3461fc69eba7d100869f65",
+      "audioSha256": "9f8564c06780affb41c5778a0d9c0948c25a120d9175c35027522cee383281f2",
+      "durationSeconds": 29.295,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "CIで依存アクションのSHA固定を強制すれば、十分でしょうか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "21580a1e2d93ad3abe3245eacb0b38b24bb653a9a846cb3054fa8f24efd3020f",
+      "audioSha256": "f3396c25f7917a506dcecd183fe0bfceda4717a17cb83f6b0d8786c132ce5dbd",
+      "durationSeconds": 5.328
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "強制が届く範囲と、依存を更新する仕組みを分けて考えます。記事では、外側をSHA固定したcomposite actionでも、内部のタグ参照で止まりました。actions.lockへ依存を登録したワークフローは内部も通りましたが、未登録のものは失敗したままです。ただし組織や外部の再利用ワークフローは未検証なので、自分の依存関係で確認し、新規登録と更新のレビューも続けます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "40bc35104904832e6345b7c5b9747999dcadaf2983c4e29ec9ae1e43aa7ba345",
+      "audioSha256": "57a7c7fc4946408a9ae19e0dfc9427ef8f07053c73d581894dfd46b9cc2ca122",
+      "durationSeconds": 28.941,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "文字やコミットが一致していれば、更新と実行の安全性も保証できますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "5dd9c61846a196743b26d8ea6185da94eac20b5a5eddbed251eef1875ef8c7ff",
+      "audioSha256": "3418a093397c352a19bc55951c4a15ad3e5638bf46b08eb4d2974a6cce175896",
+      "durationSeconds": 5.827
+    },
+    {
+      "index": 2,
+      "text": "一回の成功や平均値だけで、運用の判断をしてよいでしょうか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "80371355b163850ee0276b7436d5198c6023d234b6f039e4b3c759ea4b4e7b25",
+      "audioSha256": "6aa40ff98f4d7124b9a3730b18a815e4d1e2e3f4cf6908c91ee84ccb3043607a",
+      "durationSeconds": 4.938
+    },
+    {
+      "index": 3,
+      "text": "Projectionで画像を使う間、何を確認しますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "e587fd3ba12c2e890561c92581e4fc2b78944526ab775248dc6337be591e9828",
+      "audioSha256": "960923d023b21f64d5dbb3583e113250a02d3912852262653c17f2d6cec68230",
+      "durationSeconds": 4.074
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-03T05:13:41.823Z"
+}
