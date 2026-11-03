@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-03",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "da34860b8d25833add3639307cf2d7938d00ea95",
   "sourceWindow": {
     "from": "2026-11-02T10:00:00+09:00",
     "to": "2026-11-03T10:00:00+09:00"
   },
   "createdAt": "2026-11-03T02:26:01.994Z",
-  "updatedAt": "2026-11-03T05:04:06.917Z",
+  "updatedAt": "2026-11-03T05:04:16.475Z",
   "completedArtifacts": [],
   "lastError": null,
   "draftCommit": "dd61d6b9a7f7fa4fcb5d38d5fc4271cd4bfaae9f",
@@ -146,5 +146,8 @@
         "log": "/tmp/japan-daily-20261103/logs-final/17-evidence-check.log"
       }
     ]
-  }
+  },
+  "requestCommit": "ce5a05aba7ba0dd18c98691063c47ad5e9f82568",
+  "requestBlob": "9ce3b7952b614fb1e257f4b535a2a09141bd3760",
+  "nextAction": "Unique publisher owns the request slot; wait exact publisher/main Pages and verify full public snapshot."
 }
