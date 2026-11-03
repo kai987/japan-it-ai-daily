@@ -1,0 +1,46 @@
+{
+  "sourceCommit": "da34860b8d25833add3639307cf2d7938d00ea95",
+  "dateCount": 83,
+  "files": 332,
+  "lexicalIdentities": 1321,
+  "grammarIdentities": 116,
+  "newWords": [
+    "映す",
+    "書き分ける",
+    "受け持つ",
+    "ひいきする",
+    "透ける",
+    "覆い隠す",
+    "損じる",
+    "名札",
+    "置き場",
+    "模範",
+    "日割り",
+    "うるう年",
+    "早生まれ",
+    "屈折"
+  ],
+  "newGrammar": [
+    "～さえ～ば"
+  ],
+  "semanticExclusions": [
+    {
+      "term": "鵜呑みにする",
+      "existing": "鵜呑み",
+      "reason": "Same lexical use; excluded despite suffix difference"
+    },
+    {
+      "term": "書き写す",
+      "reason": "Already introduced 2026-09-20"
+    },
+    {
+      "term": "追随する",
+      "reason": "Already introduced 2026-09-12"
+    },
+    {
+      "term": "投影",
+      "reason": "Technical term covered separately; not added to fill vocabulary quota"
+    }
+  ],
+  "newUnreviewedDuplicates": 0
+}
