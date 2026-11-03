@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-11-03T04:55:27.545754+00:00",
+  "scope": "Declared mechanisms, measurements and limitations reviewed against five captured public originals. Chinese and Japanese prose independently authored; only canonical Japanese interviews shared. Source code was not executed; learning examples and project proposals are teaching creations.",
+  "articles": [
+    {
+      "articleId": "2026-11-03-top-1",
+      "url": "https://zenn.dev/akaringo1109/articles/figma-agent-skill-external-library",
+      "originalTitle": "Claude Code のスキルを、Figma エージェントの中で動かせるか試した",
+      "source": "Zenn",
+      "topic": "Figma内のスキル配布と再開可能な実行",
+      "access": "full",
+      "accessNote": "Public original narrative, reported experiments and limitations read; source commands and code were not executed. Publication timestamp verified from original article metadata or JSON-LD.",
+      "capturedAt": "2026-11-03T04:08:03.260488+00:00",
+      "snapshotSha256": "1f3d69d1f67d7d886aab78c32f3321bc0880b12eff5b367f3b8296374dd20bb4",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "The author separated registration characters from initially delivered bytes and moved a large skill into canvas text nodes.",
+          "quote": "65,536",
+          "locator": "字数とバイト数の2つの上限",
+          "conditions": "Observed Web Figma Oct23–25; limits and environment behavior are author observations, not guaranteed public API contracts.",
+          "usedIn": {
+            "zh": "第一道障碍是载入单位。Figma技能以单个Markdown注册，作者观察到65,536字符的注册限制，以及初始",
+            "ja": "大きなスキルを単一Markdownへ詰めると、登録できる文字数と、最初にエージェントへ届くバイト数が別の制約に",
+            "interview": "大きなスキルは起動部分とライブラリに分け、Figmaのテキストノードから元のファイルを復元します。長い戻り値を"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Text count and a lightweight hash compare the returned content before reconstructing files.",
+          "quote": "FNV-1a",
+          "locator": "ライブラリを1回で読むJS",
+          "conditions": "Content-transfer check, not provenance authentication or fresh-read proof; the current chat can still contain an older result.",
+          "usedIn": {
+            "zh": "启动过程通过Plugin API读取节点名称、文本和排列顺序，在执行环境中恢复出原来的文件，再启动Python",
+            "ja": "起動役はPlugin APIでノードの名前・文字・順序を読み、実行環境で元のファイルを組み直してPythonを",
+            "interview": "大きなスキルは起動部分とライブラリに分け、Figmaのテキストノードから元のファイルを復元します。長い戻り値を"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Author reported11–27minutes for the library version and about6minutes for the compressed version.",
+          "quote": "11〜27",
+          "locator": "まだ残っている限界と次に決めること",
+          "conditions": "No per-step timing or controlled causal comparison; business-check precision unpublished; production placement and editors undecided.",
+          "usedIn": {
+            "zh": "这种方案的运行时间为11～27分钟，压缩成单技能的旧版约6分钟；文章没有按步骤隔离测量，不能断言资料库方式本身",
+            "ja": "実行時間は1回11〜27分で、圧縮して一つのスキルへ収めた版は約6分でした。ただし処理別の測定はなく、方式だけ",
+            "interview": "大きなスキルは起動部分とライブラリに分け、Figmaのテキストノードから元のファイルを復元します。長い戻り値を"
+          }
+        },
+        {
+          "id": "top1-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact2",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "把代理功能移进使用者的日常工具时，如何同时处理资料分发、恢复执行与可执行内容的编辑权限。",
+            "ja": "スキルの移植を、入口の使いやすさだけでなく、読み取りの完全性・再開・保守権限まで含めて考えられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-03-top-2",
+      "url": "https://zenn.dev/okzaq/articles/claude-code-model-effort-bench",
+      "originalTitle": "Claude Code で Haiku・Sonnet・Opus とエフォートを変えて22課題を解かせたら、差が出たのは実装より上流だった",
+      "source": "Zenn",
+      "topic": "工程別のモデル・エフォート評価",
+      "access": "full",
+      "accessNote": "Public original narrative, reported experiments and limitations read; source commands and code were not executed. Publication timestamp verified from original article metadata or JSON-LD.",
+      "capturedAt": "2026-11-03T04:08:03.260810+00:00",
+      "snapshotSha256": "e8db62e7645f53130db88299284bafdd69ae71981f19c02f8bff30a03b3e11a5",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Small implementation tasks achieved full marks for medium and above under the tested conditions.",
+          "quote": "小さな実装9題",
+          "locator": "実装では精度の差が出ない",
+          "conditions": "Nine fictional tasks;one run per setting;hidden tests and mutation tests;API-equivalent cost,not subscription payment.",
+          "usedIn": {
+            "zh": "在9道小型实现题中，medium及以上的所有模型均取得满分；Haiku medium的平均换算费用为0.10美",
+            "ja": "小さな実装9題では、medium以上の全モデルが満点でした。Haiku mediumの費用平均は0.10ドル、",
+            "interview": "実装と上流の文書作成を分けて比べます。記事では、小さな実装9題はmedium以上で満点でしたが、大きな既存コー"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Each stage receives author-finalized input, so inter-stage error propagation is not measured.",
+          "quote": "確定版の入力",
+          "locator": "差が出るのは上流工程",
+          "conditions": "13000-line fictional system;document stages three repetitions,implementation once;do not infer full pipeline equality.",
+          "usedIn": {
+            "zh": "大型题材是含既有测试约1.3万行的会员管理系统，要求故意写得含糊，代码中藏有16项未写入要求书的业务规则，两项",
+            "ja": "大きい題材は、既存テストを含め約1.3万行の会員管理システムです。曖昧な要求と、要求書にない16個の業務規則を",
+            "interview": "実装と上流の文書作成を分けて比べます。記事では、小さな実装9題はmedium以上で満点でしたが、大きな既存コー"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "The repeated document judging has high item agreement but single planning scores can move substantially.",
+          "quote": "96.0%",
+          "locator": "採点はどこまで信用できるか",
+          "conditions": "45 documents rescored;planning item agreement96.0%;up to8point single score change;judge and rubric remain potential bias.",
+          "usedIn": {
+            "zh": "当实现阶段拿到详细规格和220项测试规格时，五种组合全部通过152项隐藏测试。42个变异体中，Opus hig",
+            "ja": "詳しい仕様と220項目の試験仕様を渡した実装では、全設定が隠しテスト152件に合格しました。ただし変異体42個",
+            "interview": "実装と上流の文書作成を分けて比べます。記事では、小さな実装9題はmedium以上で満点でしたが、大きな既存コー"
+          }
+        },
+        {
+          "id": "top2-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact2",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "展示如何把模型比较转成工程阶段的验收问题，而不是只用一次编码成功决定全流程选型。",
+            "ja": "実装のテスト合格と、上流の仕様漏れを分けて評価するための具体的な比較条件を学べます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-03-top-3",
+      "url": "https://zenn.dev/rdlabo/articles/webview-native-ui-projection",
+      "originalTitle": "Projectionという発想。WebViewの中にNative UIを投影して共存させる方法にたどり着いた",
+      "source": "Zenn",
+      "topic": "WebViewとネイティブUIの描画協調",
+      "access": "full",
+      "accessNote": "Public original narrative, reported experiments and limitations read; source commands and code were not executed. Publication timestamp verified from original article metadata or JSON-LD.",
+      "capturedAt": "2026-11-03T04:08:03.260912+00:00",
+      "snapshotSha256": "6b5db1160daaf7eee416d8beaded81ac8e0e918ec775edb2da36264f51057d60",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "The UI switches between actual native interaction,image projection,and fallback.",
+          "quote": "Web Projection",
+          "locator": "Native UIをDOMに入れられないなら",
+          "conditions": "Projected images are noninteractive;native view itself does not enter DOM;switching is state dependent.",
+          "usedIn": {
+            "zh": "Projection利用“暂时不能操作”这一状态：可交互时显示Live Native UI；在模态窗后方或特定",
+            "ja": "操作できるときはLive Native UIとして本物を表示し、モーダルの背後など操作できないときには、その画",
+            "interview": "CSSの重なり順だけでは、別レイヤーのUIKitのタブバーを覆えません。記事のProjectionは、操作でき"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "iOS waits for three stable position/size observations before capture and bridges the image handoff.",
+          "quote": "3回続けて",
+          "locator": "まるで魔法のよう",
+          "conditions": "Roughly60fps frame interval;author implementation demonstration,not measured all-device performance or accessibility guarantee.",
+          "usedIn": {
+            "zh": "为避免先隐藏后显示出现空白，以及反过来操作造成半透明图层双重叠加，作者在切换前完成截图与Web图片解码。iOS",
+            "ja": "切り替え前に撮影とWeb側の画像デコードを済ませます。iOSでは約60fpsの一フレーム間隔を目安に位置とサイ",
+            "interview": "CSSの重なり順だけでは、別レイヤーのUIKitのタブバーを覆えません。記事のProjectionは、操作でき"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "A common engine is published for Capacitor/Cordova plugin integration.",
+          "quote": "MIT",
+          "locator": "そして、これはみんなが使えます",
+          "conditions": "Existing plugin API/business logic preservation is a design goal;no universal zero-cost or zero-UX-loss proof.",
+          "usedIn": {
+            "zh": "文章展示了iOS与Android中的滚动追随、广告被页头遮挡的裁切，并把公共部分提取为MIT许可的WebVie",
+            "ja": "記事はiOS・Androidの広告追随やヘッダー下のクリッピングも示し、共通部分をMITライセンスのWebVi",
+            "interview": "CSSの重なり順だけでは、別レイヤーのUIKitのタブバーを覆えません。記事のProjectionは、操作でき"
+          }
+        },
+        {
+          "id": "top3-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact2",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "有助于说明混合应用中CSS、系统视图、图片状态与可交互性之间的边界，适合前端面试。",
+            "ja": "CSSで解ける範囲と、OSの描画・操作レイヤーを調整すべき範囲を説明できるフロントエンドの題材です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-03-top-4",
+      "url": "https://dev.classmethod.jp/articles/202611-mitsuguchi-firehose-to-lambda-kensho/",
+      "originalTitle": "Amazon Data FirehoseのLambda変換で、失敗・破棄したレコードがどこへ行くのか確かめてみた",
+      "source": "DevelopersIO",
+      "topic": "ストリーム変換の失敗と保存先",
+      "access": "full",
+      "accessNote": "Public original narrative, reported experiments and limitations read; source commands and code were not executed. Publication timestamp verified from original article metadata or JSON-LD.",
+      "capturedAt": "2026-11-03T04:08:03.261010+00:00",
+      "snapshotSha256": "fd453d32a68237a771e9dde1be71a854347f83957f19aa654caf06f6a6fc8674",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Record-level conversion failures preserve raw data and differ from intentional Dropped results.",
+          "quote": "Lambda.ProcessingFailedStatus",
+          "locator": "検証2",
+          "conditions": "Tokyo DirectPUT,sourcebackupenabled,Python3.12,Lambda128MB/60sec,two1MB/60sec buffers,retries3;backupdisablednot tested.",
+          "usedIn": {
+            "zh": "Ok记录以变换后的JSON Lines进入正常保存区。Dropped不进入正常区或错误区，但在这次已启用的原始",
+            "ja": "正常なOkは変換後の保存先へJSON Linesで届きました。Droppedは正常先にもエラー先にも出ず、今回",
+            "interview": "レコードごとの失敗と、関数全体の例外を分けます。Firehoseの検証では、ProcessingFailedは"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "An exception on one record affected all three records in that batch and triggered four calls.",
+          "quote": "Lambda.FunctionError",
+          "locator": "検証3",
+          "conditions": "Initialplus3retries;CloudWatch logs confirm;errorfile lacks exception details;not same as per-record failure.",
+          "usedIn": {
+            "zh": "当三个记录中的一个让Lambda抛出函数异常时，同批两个正常记录也被一起送往错误区，正常区没有输出。错误码改为",
+            "ja": "一件だけ関数例外を起こしたバッチでは、正常な二件も含む三件すべてがエラー側へ入りました。エラーコードはLamb",
+            "interview": "レコードごとの失敗と、関数全体の例外を分けます。Firehoseの検証では、ProcessingFailedは"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Delivery timing varied across the three one-shot controlled batches.",
+          "quote": "約80秒",
+          "locator": "結果のまとめ・注意点",
+          "conditions": "80/126/139seconds,buffer-dependent notSLA;sourcebackup concatenated versus transformedJSONLines;rawDataBase64not encryption.",
+          "usedIn": {
+            "zh": "三次单独验证从发送到S3分别约80秒、126秒和139秒，属于各条件一次的观察，受缓冲、批量和当时情况影响，不",
+            "ja": "送信からS3への配信は、三回の検証で約80秒、126秒、139秒でした。各条件一回ずつの実測であり、バッファや",
+            "interview": "レコードごとの失敗と、関数全体の例外を分けます。Firehoseの検証では、ProcessingFailedは"
+          }
+        },
+        {
+          "id": "top4-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact2",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "用故障注入区分记录级失败、整批失败和最终保存，比只看入口成功响应更适合解释可靠性。",
+            "ja": "レコード単位の失敗とバッチ全体の例外、受け付け成功と最終保存を分ける説明を練習できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-03-top-5",
+      "url": "https://dev.classmethod.jp/articles/github-actions-require-sha-pinning/",
+      "originalTitle": "GitHub ActionsのSHAピン留めを設定で強制する。何が止まるか、lockfileならタグのまま通せるかを試す",
+      "source": "DevelopersIO",
+      "topic": "Actions依存の固定とポリシー境界",
+      "access": "full",
+      "accessNote": "Public original narrative, reported experiments and limitations read; source commands and code were not executed. Publication timestamp verified from original article metadata or JSON-LD.",
+      "capturedAt": "2026-11-03T04:08:03.554125+00:00",
+      "snapshotSha256": "b3428af61c3d3d06e5fbbf182ef7e4e737b2f2db158c0c0436648121e12d7731",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Full-length SHA enforcement blocks tags/branches while some reference types remain outside its scope.",
+          "quote": "40桁",
+          "locator": "先に結論",
+          "conditions": "Freeprivate repository,ubuntu-latest,pushevents onNov2;shortSHAunsupported evenwithout enforcement.",
+          "usedIn": {
+            "zh": "作者在11月2日以Free账户的私有仓库、GitHub托管ubuntu-latest和push事件验证SHA固",
+            "ja": "レビューだけでアクションの参照漏れを防ぐのは難しいため、著者はGitHubのSHA固定を強制する設定を実験しま",
+            "interview": "強制が届く範囲と、依存を更新する仕組みを分けて考えます。記事では、外側をSHA固定したcomposite ac"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Pinning an outer composite action does not pin its inner tagged action.",
+          "quote": "composite actionの中のタグ参照",
+          "locator": "composite actionは中のタグ参照で止まる",
+          "conditions": "Owncomposite and same-repo reusable workflow tested;cross-repo/thirdparty/org/selfhosted nottested.",
+          "usedIn": {
+            "zh": "最容易遗漏的是内层依赖：即使外层composite action已经固定SHA，内部的标签引用仍会让作业失败；",
+            "ja": "外側のcomposite actionをフルSHAで指定しても、その内部のタグ参照は止まりました。再利用ワーク",
+            "interview": "強制が届く範囲と、依存を更新する仕組みを分けて考えます。記事では、外側をSHA固定したcomposite ac"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Onboarded lockfiles record nested dependencies and allow the tested tagged workflow;old incomplete locks require repair.",
+          "quote": "v0.4.0",
+          "locator": "lockfileでタグのまま通す",
+          "conditions": "Onlyonboarded workflows benefit;0.2.0 mismatch vs0.4.0 verification/relock;enforcement does not perform dependency updates.",
+          "usedIn": {
+            "zh": "将工作流通过gh actions-lock 0.4.0注册后，actions.lock记录直接及内层依赖的提交",
+            "ja": "gh actions-lock 0.4.0で対象ワークフローの依存をactions.lockへ登録すると、タグ",
+            "interview": "強制が届く範囲と、依存を更新する仕組みを分けて考えます。記事では、外側をSHA固定したcomposite ac"
+          }
+        },
+        {
+          "id": "top5-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact2",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "能够具体解释供应链依赖固定的覆盖边界，以及强制、注册和升级为何是三个不同环节。",
+            "ja": "依存固定の宣言、入れ子の実行依存、ポリシーの適用範囲を分けて説明できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
