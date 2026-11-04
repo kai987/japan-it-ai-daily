@@ -1,0 +1,272 @@
+{
+  "targetDate": "2026-11-04",
+  "sourceWindow": {
+    "from": "2026-11-03T10:00:00+09:00",
+    "to": "2026-11-04T10:00:00+09:00"
+  },
+  "sources": [
+    {
+      "url": "https://zenn.dev/kaji_kaji/articles/diarization-ground-truth-before-model-swap",
+      "title": "話者分離がうまくいかず、モデルを 7 つ替えても直らなかった",
+      "source": "Zenn",
+      "topic": "話者分離の誤り分析",
+      "articleId": "2026-11-04-top-1",
+      "publishedAt": "2026-11-04T00:00:07+00:00",
+      "capturedAt": "2026-11-04T02:42:54.118432+00:00",
+      "snapshotSha256": "3738e8e0676d7d1b5830c7be4be65111ad4744a3c944d85c8d7e9d3c0543c145",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed."
+    },
+    {
+      "url": "https://zenn.dev/yukina200/articles/nextjs-cache-components-errors-12",
+      "title": "`cacheComponents: true` にしたら出たエラー12件 — 1件ずつしか見えないエラーを全部潰した記録",
+      "source": "Zenn",
+      "topic": "Cache Componentsの段階移行",
+      "articleId": "2026-11-04-top-2",
+      "publishedAt": "2026-11-04T00:45:18+00:00",
+      "capturedAt": "2026-11-04T02:42:54.118842+00:00",
+      "snapshotSha256": "e4427ec36f870c11a7030b1233252b1dd87c4c3d4a38e4142fba2a73e081bc89",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed."
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/cloudfront-vpc-origin-http-origin-shield-latency/",
+      "title": "CloudFront から東京リージョンの ALB への応答時間を VPC オリジン・HTTP/HTTPS・Origin Shield で比べてみた",
+      "source": "DevelopersIO",
+      "topic": "オリジンの経路と応答時間",
+      "articleId": "2026-11-04-top-3",
+      "publishedAt": "2026-11-03T10:14:39.436000+00:00",
+      "capturedAt": "2026-11-04T02:42:54.119210+00:00",
+      "snapshotSha256": "a5e6e87deeee75bad9783b98747c3543bf1512adb6a4f58c49e4c5960f296c60",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed."
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/guardduty-s3-malware-scan-100gb-file-limit-time-cost/",
+      "title": "[Amazon GuardDuty] 100 GB のファイルを S3 マルウェアスキャンに通して、上限の境界・所要時間・料金を実測してみました",
+      "source": "DevelopersIO",
+      "topic": "大容量スキャンの判定と計測",
+      "articleId": "2026-11-04-top-4",
+      "publishedAt": "2026-11-03T09:50:55.907000+00:00",
+      "capturedAt": "2026-11-04T02:42:54.118979+00:00",
+      "snapshotSha256": "2eadeffc5a6b13fde9d6c9128ed241454df662a3a41d38b896bb9e26048f2ebe",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed."
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/aurora-mysql-314-pq-tls/",
+      "title": "Aurora MySQL 3.14 がリリースされたので、変更点を確認して PQ 鍵交換を試してみた",
+      "source": "DevelopersIO",
+      "topic": "TLSのハイブリッド鍵交換",
+      "articleId": "2026-11-04-top-5",
+      "publishedAt": "2026-11-03T15:49:52.275000+00:00",
+      "capturedAt": "2026-11-04T02:42:54.279277+00:00",
+      "snapshotSha256": "408bb6cdde8cdf26151dfb88ea3dacf70c0685fb35ce7da8a3b270a1ca6e2a82",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed."
+    }
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "observedAt": "2026-11-04T02:42:25.639385+00:00",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "d9bc4b32e58d9fbb296782f3aec4dccd16886786d31c8e0fe5ff96ba6fa83958",
+      "error": null
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-04T02:42:25.639723+00:00",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "bed6a0d67c7373c179e42f49769e9f5d73ed9ecde94ebf82b8fff6914f8055a5",
+      "error": null
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-04T02:42:25.639832+00:00",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "d269f94d8d3c1ee9eb0cfb077ec40f757cfed552f1c0fbc64ede348a138a003f",
+      "error": null
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-04T02:42:25.639932+00:00",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "5ecbcc39a6e62b958d93bff6e855fc87d82bd54789def6b6881bf602ebde941a",
+      "error": null
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-04T02:42:25.640012+00:00",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "6298abfee2d19edaf80fa1274a6ad1676289a5f9e7842b1b1b569c4319e6bdc4",
+      "error": null
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-04T02:42:25.640084+00:00",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": null,
+      "error": "Access denied; not retried through another transport"
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-04T02:42:25.819519+00:00",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "2abdeb3740795809a85b17875fa9fb1e42c98d70fc63c70bb32fbed4a6bb9e4e",
+      "error": null
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-04T02:42:25.833045+00:00",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "d7f7a0672855dc2f1a22809e5dd67c1876b6516135a1a03a8267c2d228c3fb09",
+      "error": null
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-04T02:42:25.842249+00:00",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "b00ca5011473004f54b023f49ac2cd55994c68ed73d8337bceda0b461cf2bd45",
+      "error": null
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-04T02:42:25.858789+00:00",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "18c39b78acac227ef41be769707eaa064ca4a6e548670d4640286b320563982b",
+      "error": null
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-04T02:42:25.881219+00:00",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "f25e29b427e6bf49516ef0fb4cfe667755479dd9376425c2db56da91b2ab8ba2",
+      "error": null
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-04T02:42:25.952683+00:00",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "64e93cae8f2f38275a770d9bab0f6bf1a19ced5e8a320718ef4bfe7f7d287341",
+      "error": null
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-04T02:42:26.063173+00:00",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "af399d35c55975d3d9f9a72e36d19dfa9ecda57d8689fba9e1ca796133e4bf9d",
+      "error": null
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-04T02:42:26.094703+00:00",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "110e348a07f6ca8a4fd04730b79d4b2d4a6c00eda075354f234c4974654054e6",
+      "error": null
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-04T02:42:26.100636+00:00",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "551bdffe7c3198acb2cbe4084622248e1ab0ccef6290aac21c6a2863f73583e3",
+      "error": null
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-04T02:42:26.135854+00:00",
+      "status": 403,
+      "actualUrl": "https://engineering.mercari.com/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": null,
+      "error": "Access denied; not retried through another transport"
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-04T02:42:26.187438+00:00",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "9f106ed5b178445eadc6874e6538345b6553558ce00d62d3e5a50040eafd4ecb",
+      "error": null
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-04T02:42:26.263015+00:00",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "21db0c75241a56fc649de744dd76d9719067425d3b644dadc7fbbbe7f0d074a7",
+      "error": null
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-04T02:42:26.302248+00:00",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "910fa3b4166c8b0dbf0776fceb76d470648c7b9a9d822d040c52be638afdbfb3",
+      "error": null
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-04T02:42:26.308451+00:00",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "82fdb846c8f68745e2b0f0b9399f0f25ee8266ef41c5375607dba5d5bce46247",
+      "error": null
+    }
+  ],
+  "candidateCountZenn": 71
+}
