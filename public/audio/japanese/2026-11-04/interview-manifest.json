@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-04",
+  "generatedAt": "2026-11-04T03:05:13.448Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "話者分離で二人の発言が一人にまとまったとき、どこから調べますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "70bbf16d0474b3d4c39e9990b25eabef0440d895c7435779413b0ce966a87c2b",
+      "audioSha256": "773aca169ba8572fe7a73d603057a8f10d985cafb8c02099f8a8e55a8ab1f3f6",
+      "durationSeconds": 5.606
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "まず録音を聞いて二人の声が入っているか確かめ、話者が明確な区間に印を付けます。記事では十区間から作った三十断片のうち、二十九は埋め込みだけで区別できました。そこで平均リンク法に替え、発話時間の長い二群を採用すると、問題の録音で正解区間の成績が上がりました。ただし、最初から二人と分かる条件なので、人数が未知なら別の正解データで確かめます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "8616f36b230a65df5edce9367fc031a801403e37d6385a693a46a7f5f3ee4db1",
+      "audioSha256": "153e89b2357a4d741eb0c15874296cd4e39fc1d1885ffd3ae0b01c29087a3b8f",
+      "durationSeconds": 28.73,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "Cache Componentsへの移行でビルドエラーが続いたら、どの順に直しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "ca2bece3daf17e50ee54f51e1c23ff40e0ba3c67ce3b159f4d35dbe797192fee",
+      "audioSha256": "89918f7fc9473390c3ee2639384221e49f1b36a01f62c7ab818f1a2ddd0c17e4",
+      "durationSeconds": 5.56
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "まず機能を有効にする前に、バージョン更新だけで出る型エラーを直します。次に古いルート設定を外し、プリレンダリングで止まったルートを一つずつ見ます。記事では現在時刻を読む部分やセッションを読む部分をサスペンスの内側へ移しました。ただしタグの再検証では古い値が残る場合もあるので、投稿後にいつ表示が変わるかも確認します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "9ca4a1c799d08f85f38e267e82a68485464470202d39229776bcda9161c86b9b",
+      "audioSha256": "d003fea65ab29992f970d6d062a21549ba768a230dfd4035998c6c51177b03be",
+      "durationSeconds": 25.856,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "CloudFrontのVPCオリジンを検討するとき、遅延はどう比較しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "a6fdf8e97f0ca3fb95d737f441fe73fe1e861204f99f642843a2736835f7aa1e",
+      "audioSha256": "e29b495d533041c9c7759bc33551fcde4c7b5f9f5fa96134a4791c6a5532d338",
+      "durationSeconds": 5.781
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "公開と内部のロードバランサーを用意し、オリジン側のプロトコルとオリジンシールドの有無を別々に変えます。記事ではキャッシュを止め、固定応答の成功ログを地域別に集計しました。東京と遠方ではシールドの効果に差がありました。ただし計測はクラウドフロントの応答キューまでなので、利用者側の体感やエラー率も必要なら自分の環境で調べます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "9763e524044b8b0ab3bb9f18f8ac1f91b6b86e3a106bb35522032c8452f6d2e0",
+      "audioSha256": "56ccf802434819954bf7854d426d0762ef9a4506bce2e1ff9a56b177db4eff3f",
+      "durationSeconds": 26.528,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "S3の大きなファイルがGuardDutyの上限を超えた場合、どう処理を分けますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "2a5da1ebb9e014ba7bbd4dbab8249b87e4dfdb25fef299c5f26c550a73c3c397",
+      "audioSha256": "0452c3e70df3f0889be9a503f9b1b41f07d41c881b957b0b70ed236530c8974e",
+      "durationSeconds": 5.601
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "記事の検証では、百ギビバイトちょうどは処理され、一バイト超えるとスキャンが飛ばされました。タグだけでは理由を区別できないので、イベントブリッジの結果からサイズ超過を読み取り、別の処理へ送ります。時間を測るなら分割アップロードの終了時刻を起点にします。ただし、記事の所要時間は数回の検証値なので、運用の待ち時間をそのまま決めず、自分の条件でも計測します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "c3b61b13e8f8fe412d18cd1c79fb5d91df08fe52ee518936efa4f18ff7e60be9",
+      "audioSha256": "73911ec37902ff3d5064e1b298e9d16c0a9e1a71649db1fae75b0aa04a0b7172",
+      "durationSeconds": 28.107,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "Aurora MySQLとの接続で耐量子の鍵交換が使われたか、どう確かめますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "90388df5f081298d8e4a2a299094ff003d537c216096fa74c03857ce0617990d",
+      "audioSha256": "c98bdf7c059f01c0e19da296cf4d38571aa57cfee052632852aede9114616c02",
+      "durationSeconds": 6.777
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "記事のように、まずクライアントの提示グループをハンドシェイクログで見ます。そのうえでサーバーが選んだグループを、応答と接続後のオーロラの状態値の両方で確かめます。コレット二十七からの検証では、既定のパラメータで混合方式が選ばれました。ただし検証の接続設定は暗号化を要求するだけで証明書を確認しないので、実運用の相手確認は別に試験します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "5faa2e8df71a6131024d7d2a3a07d9db4036f387e995f76fd7950156761781e9",
+      "audioSha256": "c19baf3681d1042f07c03598775afc72a201c400214a94c9fa15b7ea7f1c7341",
+      "durationSeconds": 27.874,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "症状を見たあと、どの工程を先に確認しますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "268caf4ae44f1a2d310e822e1a4e76ff4ff28fc3979e1f8b0c679567cc39d45c",
+      "audioSha256": "6d6be7dfab9d4b670e4ee10fa4ac6b52e8e5abf96860d743751b699c017118da",
+      "durationSeconds": 4.118
+    },
+    {
+      "index": 2,
+      "text": "測定の数値を運用へ持ち込む前に、何を確かめますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "0498b5256674908414a1abaa5c52d9f7d8b5e7d6a53eb3ebf1922686bcf6814c",
+      "audioSha256": "ba232ea25c6cc9d1df6cc5695e07379b752c4b7cec0db9c6fb896639152fb891",
+      "durationSeconds": 4.759
+    },
+    {
+      "index": 3,
+      "text": "クライアントの対応一覧に方式があれば、実際に使われたと言えますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "5d3e41a22c9622cc74d4f1047ef20be8e2fe5e984d765a5a5698806727e7ae5a",
+      "audioSha256": "662f24804d4c28433f7b4fc5cae880cb7b6097f8dae798372e6259db0fa8743b",
+      "durationSeconds": 5.525
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-04T03:05:15.690Z"
+}
