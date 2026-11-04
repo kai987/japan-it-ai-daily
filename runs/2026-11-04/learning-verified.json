@@ -1,0 +1,37 @@
+{
+  "sourceCommit": "7dc3be770fffb928c3152235a19f276df9ee8c61",
+  "dateCount": 84,
+  "files": 336,
+  "lexicalIdentities": 1335,
+  "grammarIdentities": 117,
+  "newWords": [
+    "聞き分ける",
+    "立ち戻る",
+    "見誤る",
+    "狭める",
+    "境目",
+    "ばらつき",
+    "取り払う",
+    "ぎりぎり",
+    "丸める",
+    "端数"
+  ],
+  "newGrammar": [],
+  "semanticExclusions": [
+    {
+      "term": "偏り",
+      "existing": "偏る",
+      "reason": "same data distribution use"
+    },
+    {
+      "term": "一律",
+      "existing": "一律に",
+      "reason": "same lexical identity"
+    },
+    {
+      "term": "切り出す",
+      "reason": "already taught"
+    }
+  ],
+  "newUnreviewedDuplicates": 0
+}
