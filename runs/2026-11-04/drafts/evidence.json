@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-04",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-11-04T02:48:20.340216+00:00",
+  "scope": "Declared mechanisms, measurements and limitations reviewed against five captured public originals. Chinese and Japanese prose independently authored; only canonical Japanese interviews shared. Source code was not executed; learning examples and project proposals are teaching creations.",
+  "articles": [
+    {
+      "articleId": "2026-11-04-top-1",
+      "url": "https://zenn.dev/kaji_kaji/articles/diarization-ground-truth-before-model-swap",
+      "originalTitle": "話者分離がうまくいかず、モデルを 7 つ替えても直らなかった",
+      "source": "Zenn",
+      "topic": "話者分離の誤り分析",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "capturedAt": "2026-11-04T02:42:54.118432+00:00",
+      "snapshotSha256": "3738e8e0676d7d1b5830c7be4be65111ad4744a3c944d85c8d7e9d3c0543c145",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "One speaker received 1580 transcribed words and the other zero.",
+          "quote": "1580 語",
+          "locator": "話者が 1 人しか出てこない",
+          "conditions": "23-minute iPhone recording; teacher through PC speaker and learner recorded directly.",
+          "usedIn": {
+            "zh": "作者要把口语课的录音变成能按发言者回顾的文字。识别内容用Whisper，发言者划分用sherpa-onnx。i",
+            "ja": "英会話を復習するためのローカルアプリで、Whisperの文字起こしに話者ラベルを付けます。講師の声はPCのスピ",
+            "interview": "まず録音を聞いて二人の声が入っているか確かめ、話者が明確な区間に印を付けます。記事では十区間から作った三十断片"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "The same-speaker versus different-speaker similarities were 0.56 versus 0.26; embeddings separated 29 of 30 fragments.",
+          "quote": "0.56",
+          "locator": "声の特徴は 2 人を区別できていた",
+          "conditions": "Ten selected intervals, five per known speaker. Model comparison used two 8-minute excerpts.",
+          "usedIn": {
+            "zh": "单看两组累计发言时间可能误判。作者以两条录音各八分钟测试七种说话人嵌入模型。其中两种在第一条上分到约132与1",
+            "ja": "話者を聞き分ける根拠が明確な区間を二人から五つずつ取り、合計30断片へ分けました。埋め込みのコサイン類似度は同",
+            "interview": "まず録音を聞いて二人の声が入っているか確かめ、話者が明確な区間に印を付けます。記事では十区間から作った三十断片"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Average-link clustering selected the two groups with the longest summed speaking time and assigned smaller groups by proximity.",
+          "quote": "78% から 98%",
+          "locator": "クラスタリングだけを自前のものに替える",
+          "conditions": "Reported accuracy on selected labeled intervals; fixed two speakers and mixed speaker/direct recording.",
+          "usedIn": {
+            "zh": "作者保留分段结果并重新提取向量，仅更换分组策略。平均链接从近到远逐步合并，选累计发言时间最长的两组代表两人，其",
+            "ja": "切り出し結果を使い、埋め込みを計算し直し、平均リンク法で似た区間から結合します。発話時間の合計が長い二群を採用",
+            "interview": "まず録音を聞いて二人の声が入っているか確かめ、話者が明確な区間に印を付けます。記事では十区間から作った三十断片"
+          }
+        },
+        {
+          "id": "top1-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact2",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "建立少量带标签的真值后，才能区分模型表示能力与后续分组错误。",
+            "ja": "話者別の時間だけで良し悪しを決めず、正解区間から原因を段階別に確かめる方法が分かります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-04-top-2",
+      "url": "https://zenn.dev/yukina200/articles/nextjs-cache-components-errors-12",
+      "originalTitle": "`cacheComponents: true` にしたら出たエラー12件 — 1件ずつしか見えないエラーを全部潰した記録",
+      "source": "Zenn",
+      "topic": "Cache Componentsの段階移行",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "capturedAt": "2026-11-04T02:42:54.118842+00:00",
+      "snapshotSha256": "e4427ec36f870c11a7030b1233252b1dd87c4c3d4a38e4142fba2a73e081bc89",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Version-only type errors preceded route configuration and prerender errors.",
+          "quote": "12件＋警告1件",
+          "locator": "はじめに",
+          "conditions": "Next 15.5.28 to 16.4.4, small SQLite storefront, four browser baseline operations.",
+          "usedIn": {
+            "zh": "演示应用有SQLite中的200件商品、80条评价，以及依赖请求的搜索和假登录。项目从Next.js 15.5",
+            "ja": "題材はSQLiteの商品200件・レビュー80件を使うEC風アプリです。著者はNext.js 15.5.28か",
+            "interview": "まず機能を有効にする前に、バージョン更新だけで出る型エラーを直します。次に古いルート設定を外し、プリレンダリン"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Request-time values were moved behind Suspense; connection made the request dependency explicit for deals.",
+          "quote": "await connection()",
+          "locator": "プリレンダリングエラー",
+          "conditions": "Runtime cookie/search reads were deferred; the existing data cache still operated.",
+          "usedIn": {
+            "zh": "打开功能后的第一类问题是分散在四个文件的旧路由段设置，六条错误可以按同一类型处理。清理后构建只显示碰到的第一项",
+            "ja": "有効化後は、旧ルート設定との競合が6件と事前取得に関する警告が1件出ました。旧設定の削除後、プリレンダリングで",
+            "interview": "まず機能を有効にする前に、バージョン更新だけで出る型エラーを直します。次に古いルート設定を外し、プリレンダリン"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "The controlled comparison attributed the main build reduction to the default bundler; enabling Cache Components added build time.",
+          "quote": "1.5〜4.3秒",
+          "locator": "切り分けの型",
+          "conditions": "Clean builds, same version, three runs per condition. Earlier cross-version timings were not comparable.",
+          "usedIn": {
+            "zh": "作者提醒，跨版本的27.9秒和16.7秒采样口径不一致。后来在16.4.4下每组做三次清洁构建，主要提速对应默",
+            "ja": "著者は最初にビルド27.9秒対16.7秒を観測しましたが、初回の一測定と温まった三測定の中央値が混ざっています",
+            "interview": "まず機能を有効にする前に、バージョン更新だけで出る型エラーを直します。次に古いルート設定を外し、プリレンダリン"
+          }
+        },
+        {
+          "id": "top2-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact2",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "把版本升级、渲染边界、缓存失效和速度测量拆开，迁移过程可以复查。",
+            "ja": "ビルドで次のエラーが出る順序を手掛かりに、変更の意味を一つずつ確かめられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-04-top-3",
+      "url": "https://dev.classmethod.jp/articles/cloudfront-vpc-origin-http-origin-shield-latency/",
+      "originalTitle": "CloudFront から東京リージョンの ALB への応答時間を VPC オリジン・HTTP/HTTPS・Origin Shield で比べてみた",
+      "source": "DevelopersIO",
+      "topic": "オリジンの経路と応答時間",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "capturedAt": "2026-11-04T02:42:54.119210+00:00",
+      "snapshotSha256": "a5e6e87deeee75bad9783b98747c3543bf1512adb6a4f58c49e4c5960f296c60",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Eight origin type, protocol and Shield combinations were tested.",
+          "quote": "8 本のディストリビューション",
+          "locator": "検証環境",
+          "conditions": "Tokyo ALB fixed response; managed caching disabled.",
+          "usedIn": {
+            "zh": "实验将东京的公开ALB与经VPC访问的内部ALB，分别搭配源站侧HTTP或HTTPS，再叠加东京Origin ",
+            "ja": "CloudFrontのVPCオリジンでは、プライベート側のALBを配信元にできます。著者は東京の公開ALBとV",
+            "interview": "公開と内部のロードバランサーを用意し、オリジン側のプロトコルとオリジンシールドの有無を別々に変えます。記事では"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "VPC origin regional mean differences were at most about 10 ms, while HTTPS Shield improvement in São Paulo was around 500 ms.",
+          "quote": "5 万件強",
+          "locator": "計測結果",
+          "conditions": "About four hours of 30-second probes; only HTTP 200 and time-taken through output queue.",
+          "usedIn": {
+            "zh": "区域均值对比中，有无VPC源站最大的差约10毫秒。公开ALB的HTTPS请求在圣保罗使用Shield前后分别为",
+            "ja": "VPCオリジン有無の地域別平均差は最大約10ミリ秒でした。HTTPSのサンパウロでは、公開ALBの平均がShi",
+            "interview": "公開と内部のロードバランサーを用意し、オリジン側のプロトコルとオリジンシールドの有無を別々に変えます。記事では"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "AAAA-only and A-only origin names produced similar observed response times.",
+          "quote": "AAAA レコードだけ",
+          "locator": "IPv6 用のオリジンドメイン",
+          "conditions": "HTTP without Shield, fixed response. Actual underlying route was not visible.",
+          "usedIn": {
+            "zh": "作者还用AAAA专用域名和仅用A记录的对照，比较向同一ALB发起IPv6与IPv4请求。追加实验限定HTTP且",
+            "ja": "追加比較では同じALBをAレコードとAAAA専用の名前で指定し、HTTPかつShieldなしでIPv4とIPv",
+            "interview": "公開と内部のロードバランサーを用意し、オリジン側のプロトコルとオリジンシールドの有無を別々に変えます。記事では"
+          }
+        },
+        {
+          "id": "top3-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact2",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "按地域与协议核对日志，可以看清缩短的是哪段响应时间。",
+            "ja": "公開経路を減らす判断と、遅延を短縮する判断を、同じ測定で混同しない材料になります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-04-top-4",
+      "url": "https://dev.classmethod.jp/articles/guardduty-s3-malware-scan-100gb-file-limit-time-cost/",
+      "originalTitle": "[Amazon GuardDuty] 100 GB のファイルを S3 マルウェアスキャンに通して、上限の境界・所要時間・料金を実測してみました",
+      "source": "DevelopersIO",
+      "topic": "大容量スキャンの判定と計測",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "capturedAt": "2026-11-04T02:42:54.118979+00:00",
+      "snapshotSha256": "2eadeffc5a6b13fde9d6c9128ed241454df662a3a41d38b896bb9e26048f2ebe",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "The maximum observed size was exactly 100 GiB; one more byte was skipped.",
+          "quote": "107,374,182,400 バイト",
+          "locator": "上限の境界",
+          "conditions": "Random objects uploaded from same-region EC2 to one protected prefix.",
+          "usedIn": {
+            "zh": "实验先从同区域EC2向受保护的S3前缀上传随机数据。作者逐个核对结果以控制成本，在十进制100 GB、超过该值",
+            "ja": "10進100 GBとその1バイト上、100 GiBちょうどは処理されました。100 GiBは107,374,1",
+            "interview": "記事の検証では、百ギビバイトちょうどは処理され、一バイト超えるとスキャンが飛ばされました。タグだけでは理由を区"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Specific size-limit reason is in the result event; the UNSUPPORTED tag is coarse.",
+          "quote": "OBJECT_SIZE_LIMIT_EXCEEDED",
+          "locator": "上限超え",
+          "conditions": "Observed skip had no scanned bytes and still counted as a request.",
+          "usedIn": {
+            "zh": "超限对象收到SKIPPED结果，标签值为UNSUPPORTED。结果事件才带具体的大小超限原因，所以如果业务要",
+            "ja": "10進100 GBとその1バイト上、100 GiBちょうどは処理されました。100 GiBは107,374,1",
+            "interview": "記事の検証では、百ギビバイトちょうどは処理され、一バイト超えるとスキャンが飛ばされました。タグだけでは理由を区"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "The large objects took 397–467 seconds after completed multipart upload.",
+          "quote": "397〜467 秒",
+          "locator": "スキャン所要時間",
+          "conditions": "Three large cases; EC2 timestamp used. CUR amount matched bytes per GiB, not a universal price or SLA.",
+          "usedIn": {
+            "zh": "大对象的三次观测从上传完成开始，耗时397至467秒。作者用EC2日志的上传结束时刻校准计时，因为单是分段上传",
+            "ja": "大容量の3回はアップロード完了から397〜467秒でした。マルチパート送信自体にも約4.5〜5分かかり、著者は",
+            "interview": "記事の検証では、百ギビバイトちょうどは処理され、一バイト超えるとスキャンが飛ばされました。タグだけでは理由を区"
+          }
+        },
+        {
+          "id": "top4-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact2",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "一个字节的边界差异会改变扫描状态，标签和事件承担不同的信息。",
+            "ja": "スキャンの境目、結果通知、測定の起点、課金単位を分けて実装する具体例です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-04-top-5",
+      "url": "https://dev.classmethod.jp/articles/aurora-mysql-314-pq-tls/",
+      "originalTitle": "Aurora MySQL 3.14 がリリースされたので、変更点を確認して PQ 鍵交換を試してみた",
+      "source": "DevelopersIO",
+      "topic": "TLSのハイブリッド鍵交換",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "capturedAt": "2026-11-04T02:42:54.279277+00:00",
+      "snapshotSha256": "408bb6cdde8cdf26151dfb88ea3dacf70c0685fb35ce7da8a3b270a1ca6e2a82",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Aurora MySQL 3.14.0 adds two hybrid TLS 1.3 key exchange groups.",
+          "quote": "X25519MLKEM768",
+          "locator": "3.14.0 の更新内容",
+          "conditions": "MySQL 8.0.46 compatible; client support is needed for negotiation.",
+          "usedIn": {
+            "zh": "这次验证针对兼容MySQL 8.0.46的Aurora MySQL 3.14.0。作者在东京新建集群，使用默认",
+            "ja": "著者はMySQL 8.0.46互換のAurora MySQL 3.14.0で、TLS 1.3のハイブリッド鍵交",
+            "interview": "記事のように、まずクライアントの提示グループをハンドシェイクログで見ます。そのうえでサーバーが選んだグループを"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Client offer, ServerHello choice and Aurora connection status confirmed the same hybrid group.",
+          "quote": "server_share",
+          "locator": "検証結果",
+          "conditions": "Corretto 27.0.1.0.11, Connector/J 26.10.0, default parameter group, Tokyo.",
+          "usedIn": {
+            "zh": "服务器侧的会话状态分别给出TLS 1.3、加密套件和选中的交换组。X25519MLKEM768既出现在客户端C",
+            "ja": "接続後のAuroraの状態値はTLS 1.3とX25519MLKEM768を示しました。クライアントのハンドシ",
+            "interview": "記事のように、まずクライアントの提示グループをハンドシェイクログで見ます。そのうえでサーバーが選んだグループを"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "The JDBC test required encryption and did not verify the server certificate.",
+          "quote": "サーバー証明書は検証しません",
+          "locator": "接続とログの取得",
+          "conditions": "A handshake observation for this client, not an identity-verification or latency benchmark.",
+          "usedIn": {
+            "zh": "演示采用要求加密的REQUIRED模式，未校验服务端证书。它回答了默认参数下该客户端选到哪个组的问题。推广前还",
+            "ja": "JDBCの設定は暗号化を要求するREQUIREDで、サーバー証明書を検証していません。試験の目的は鍵交換の観察",
+            "interview": "記事のように、まずクライアントの提示グループをハンドシェイクログで見ます。そのうえでサーバーが選んだグループを"
+          }
+        },
+        {
+          "id": "top5-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact2",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "从客户端提议到服务端选择都留下证据，便于验证耐量子迁移。",
+            "ja": "暗号化、鍵交換グループの選択、接続先の認証を別々に説明できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
