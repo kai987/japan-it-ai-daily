@@ -1,0 +1,35 @@
+{
+  "sourceCommit": "ffcbfbe616dacdb470c76cb6b15bcde8637d25df",
+  "dateCount": 85,
+  "files": 340,
+  "lexicalIdentities": 1345,
+  "grammarIdentities": 117,
+  "newWords": [
+    "手作業",
+    "引っ越す",
+    "撮り直す",
+    "目視",
+    "決め打ち",
+    "読み戻す",
+    "小刻み",
+    "送り直す",
+    "欠ける",
+    "空欄"
+  ],
+  "newGrammar": [],
+  "semanticExclusions": [
+    {
+      "term": "伏せる",
+      "reason": "already taught"
+    },
+    {
+      "term": "取り消し",
+      "reason": "same use as 取り消す"
+    },
+    {
+      "term": "入れ子",
+      "reason": "already taught"
+    }
+  ],
+  "newUnreviewedDuplicates": 0
+}
