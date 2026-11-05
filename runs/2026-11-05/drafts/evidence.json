@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-05",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-11-05T01:09:18.154553+00:00",
+  "scope": "Declared mechanisms, measurements and limitations reviewed against five captured public originals. Chinese and Japanese prose independently authored; only canonical Japanese interviews shared. Source code was not executed; learning examples and project proposals are teaching creations.",
+  "articles": [
+    {
+      "articleId": "2026-11-05-top-1",
+      "url": "https://zenn.dev/bpf/articles/ca75c3bd9356b9",
+      "originalTitle": "クラウドAIに貼るログから機密を自動で伏せる仕組みをPythonで作った話（ユーザー名はwhoamiで）",
+      "source": "Zenn",
+      "topic": "送信前のログのマスキング",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "capturedAt": "2026-11-05T01:04:29.023769+00:00",
+      "snapshotSha256": "052884c3b7910f40763a3337e5d6d8b42be93302e7f24f741e940265d24ca995",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Typed stand-ins keep log context, and a short hash links repeated endpoints.",
+          "quote": "ハッシュの先頭8桁",
+          "locator": "方針",
+          "conditions": "A local redaction example. The linkable short hash is not an anonymity guarantee.",
+          "usedIn": {
+            "zh": "作者把终端输出贴到云端助手询问故障，发现其中带有用户名、主机名及其他标识。后来加了一层本地转换，正则匹配可识别",
+            "ja": "クラウドAIへの相談に端末ログを貼っていた著者は、ユーザー名などが混ざったまま送られたことをきっかけに、Pyt",
+            "interview": "ログを手元で変換し、キーは種類の分かるダミーにします。接続先には同じ値を追える短い印を付け、元のログは外へ出し"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "The author inspected actual Suna log diffs and retained raw and redacted streams separately.",
+          "quote": "伏せ漏れ",
+          "locator": "確かめ方",
+          "conditions": "Manual inspection in a copy-and-paste workflow. No automated leakage suite.",
+          "usedIn": {
+            "zh": "工具将运行命令和输出写入原始日志，使用已处理行数定位增量，再把转换结果追加到可分享的日志。作者在 Suna 的",
+            "ja": "シェルの補助処理は、コマンドと標準出力・標準エラーを生ログへ記録し、前回から増えた行だけを変換済みログに追記し",
+            "interview": "ログを手元で変換し、キーは種類の分かるダミーにします。接続先には同じ値を追える短い印を付け、元のログは外へ出し"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Runtime identity replaced a fixed old name after migration.",
+          "quote": "re.escape(current_user)",
+          "locator": "落とし穴",
+          "conditions": "Uses current account only and matching patterns for home paths, prompts and names.",
+          "usedIn": {
+            "zh": "账号更换后，硬编码旧用户名的规则悄悄失效。修改后从 whoami 获取当前账号并转义，再处理主目录、提示符和单",
+            "ja": "アカウントを移すと、古い名前を直書きした規則は新しい名前を拾えませんでした。そこでwhoamiの出力を正規表現",
+            "interview": "ログを手元で変換し、キーは種類の分かるダミーにします。接続先には同じ値を追える短い印を付け、元のログは外へ出し"
+          }
+        },
+        {
+          "id": "top1-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact2",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "这一案例适合说明日志脱敏如何兼顾排错线索与传输前检查。",
+            "ja": "伏せ字の導入と、外に出すログが安全かどうかの判定を分けて説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-05-top-2",
+      "url": "https://zenn.dev/miyanaga/articles/zenn-2026-11-05",
+      "originalTitle": "AIエージェントの試行錯誤に「見た目が崩れていないか」の検査を組み込む 判定をLLMに任せない理由",
+      "source": "Zenn",
+      "topic": "AI改変の見た目を機械検査",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "capturedAt": "2026-11-05T01:04:28.842740+00:00",
+      "snapshotSha256": "f687b6a0c49617094b589e0275b55b9f6dc9a1aae2c8850fe0e22d624e4e3080",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "The tool compares captures before and after agent edits.",
+          "quote": "page-regression-tester",
+          "locator": "検査の基本形",
+          "conditions": "Team case study with an EC demo, no quantitative comparison of LLM judgment accuracy.",
+          "usedIn": {
+            "zh": "在优化网页速度时，作者的团队用 Playwright Chromium 分别捕获改动前后的页面，再比较结果。此",
+            "ja": "表示速度を改善するチームでは、AIがHTMLやCSSを何度も変更すると、手作業の目視が追いつかなくなりました。",
+            "interview": "まず同じ条件で変更の前と後を撮ります。記事の方法では、アニメーションを止めて乱数と時刻を固定し、遅延読み込みも"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Capture stabilizes CSS motion, time, randomness and deferred loads.",
+          "quote": "IntersectionObserver",
+          "locator": "工夫1",
+          "conditions": "Motion suppression is incomplete and covers only sampled UI state.",
+          "usedIn": {
+            "zh": "同一个演示电商页面在两个时点也会产生差异。工具先控制截图条件，例如关闭 CSS 动画和过渡，固定时间与随机数，",
+            "ja": "同じECのデモを撮り直すだけでも、アニメーションや輪郭の描画で差が出ます。撮影時はCSSの動きを止め、時刻と乱",
+            "interview": "まず同じ条件で変更の前と後を撮ります。記事の方法では、アニメーションを止めて乱数と時刻を固定し、遅延読み込みも"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Pixel difference locates changes while SSIM estimates structural similarity.",
+          "quote": "ヒートマップ",
+          "locator": "工夫2",
+          "conditions": "No universal threshold or reported false positive rate. Interaction needs other tests.",
+          "usedIn": {
+            "zh": "然后用像素热图定位发生变化的位置，再用 SSIM 判断整体结构相似程度。字体边缘的细小变化与布局错位可以结合两",
+            "ja": "ピクセル比較のヒートマップは位置を示し、SSIMは画像の構造がどれほど似ているかをスコアにします。撮影の条件と",
+            "interview": "まず同じ条件で変更の前と後を撮ります。記事の方法では、アニメーションを止めて乱数と時刻を固定し、遅延読み込みも"
+          }
+        },
+        {
+          "id": "top2-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact2",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "可把截图条件、差异定位和结构评分拆成可复验的工程步骤。",
+            "ja": "画面を撮る条件の統一と、差分をどう評価するかを別工程にできます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-05-top-3",
+      "url": "https://zenn.dev/a1221/articles/ddl-builder-real-db-failures",
+      "originalTitle": "生成したCREATE TABLEを3つのDBに流したら、25パターン中16で失敗した",
+      "source": "Zenn",
+      "topic": "生成DDLの方言別検証",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "capturedAt": "2026-11-05T01:04:28.842843+00:00",
+      "snapshotSha256": "a2d7e4d3a8af2b31b9b97d4c2681e6409c9eee6f8b8f167f9903790bd0e13f58",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Sixteen of twenty-five DDL cases failed at least one engine before fixes.",
+          "quote": "16パターンが少なくとも1つの方言で失敗した",
+          "locator": "はじめに",
+          "conditions": "MariaDB 10.11, PGlite and Node.js 22 SQLite with foreign key checks.",
+          "usedIn": {
+            "zh": "这个 DDL 工具原先只确认输出包含主键字样。作者将生成结果送入 MariaDB 10.11、WASM 版 P",
+            "ja": "GUIやJSONからテーブルを組み立てるツールは、以前は出力に主キーの文字があるかを試すだけでした。著者が25",
+            "interview": "生成したテーブル定義を、方言ごとのデータベースで実際に流します。記事では、子が親より先に作られたうえ、外部キー"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Child-first creation and hard-coded integer foreign keys caused distinct failures.",
+          "quote": "UUID",
+          "locator": "順番を直しても、まだ通らない",
+          "conditions": "Reorder dependencies and match parent key types. SQLite differs in DDL behavior.",
+          "usedIn": {
+            "zh": "JSON 数组被推成子表，递归却让子表先于父表生成，已有的外键列还可能重名或沿用固定整数类型。修改同时处理标识",
+            "ja": "入れ子配列を再帰で読む途中に子を先に出力したため、参照先をまだ作っていないDBで失敗しました。子の外部キー型を",
+            "interview": "生成したテーブル定義を、方言ごとのデータベースで実際に流します。記事では、子が親より先に作られたうえ、外部キー"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "After changes twenty-four patterns passed all three test engines.",
+          "quote": "24パターン",
+          "locator": "まとめ",
+          "conditions": "PostgreSQL-specific function remains incompatible in the MySQL dialect. MariaDB was not MySQL itself.",
+          "usedIn": {
+            "zh": "其他问题包括用保留词命名、把复合主键错误地声明成多个主键，以及把默认函数当字符串。修复后有 24 种在三套环境",
+            "ja": "予約語は必要に応じて方言に合う引用符で囲み、複合主キーは一つのテーブル制約へまとめました。修正後は24パターン",
+            "interview": "生成したテーブル定義を、方言ごとのデータベースで実際に流します。記事では、子が親より先に作られたうえ、外部キー"
+          }
+        },
+        {
+          "id": "top3-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact2",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "三种数据库的实际执行结果，能帮助解释静态字符串断言漏掉了哪些错误。",
+            "ja": "生成文字列の検査では見えない依存順序、型、DBごとの違いを具体的に説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-05-top-4",
+      "url": "https://dev.classmethod.jp/articles/hasuto-iot-jobs-100-devices-failures/",
+      "originalTitle": "AWS IoT Jobsで100台にファームウェア更新を配り、失敗・拒否・応答なしを混ぜたときの動きを確かめてみた",
+      "source": "DevelopersIO",
+      "topic": "デバイス更新の中止と再試行",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "capturedAt": "2026-11-05T01:04:28.842929+00:00",
+      "snapshotSha256": "f3a060fe32bebe98a2c36ebd8197fd16d79643572b3090538caddad379192c97",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "A Node.js program held one certificate and MQTT connection per simulated device.",
+          "quote": "100本",
+          "locator": "検証の構成",
+          "conditions": "Tokyo, one hundred virtual devices, no actual firmware download or flash.",
+          "usedIn": {
+            "zh": "实验在东京区域模拟 100 个设备，每台使用独立证书和 MQTT 连接接收 Jobs 通知。作者模拟从 1.0",
+            "ja": "東京リージョンで、Node.jsのプログラムが証明書別に百本のMQTT接続を作ります。百台の仮想端末へ更新先を",
+            "interview": "失敗率の条件と、端末へ配る速さを一緒に決めます。記事では毎分十台に絞ると、未開始の十件を取り消せました。制限を"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Rate-limited distribution allowed ten queued executions to be canceled. The unrestricted test canceled none.",
+          "quote": "1分に10台",
+          "locator": "途中で中止させてみる",
+          "conditions": "Threshold at thirty or more executions and twenty percent failures. Only queued executions are canceled.",
+          "usedIn": {
+            "zh": "作者设置了至少 30 台完成后达到 20% 失败才中止的条件。配合每分钟十台的限制时，有十个未开始的执行被取消",
+            "ja": "著者は三十台以上の結果で失敗率が二割以上になる条件を設け、毎分十台の小刻みな配信と速度制限なしを比較しました。",
+            "interview": "失敗率の条件と、端末へ配る速さを一緒に決めます。記事では毎分十台に絞ると、未開始の十件を取り消せました。制限を"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Retries produced new execution numbers, so executions exceed the device count.",
+          "quote": "合計は133件",
+          "locator": "再試行の結果",
+          "conditions": "Failed and timed out may retry; offline queued devices did not enter the execution timeout.",
+          "usedIn": {
+            "zh": "重试试验报告了 133 个执行记录，原因是每次重试为同一台设备创建新的执行编号。已进入执行中的设备才能开始计算",
+            "ja": "時間切れは実行中になってから数えるので、未接続の七台は待機のままでした。失敗二回、時間切れ一回の再試行を設定し",
+            "interview": "失敗率の条件と、端末へ配る速さを一緒に決めます。記事では毎分十台に絞ると、未開始の十件を取り消せました。制限を"
+          }
+        },
+        {
+          "id": "top4-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact2",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "可以用同一个设备模拟实验解释取消策略、限速与设备状态的关系。",
+            "ja": "中止の設定と、実際に止められた台数を分けて監視する例です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-05-top-5",
+      "url": "https://dev.classmethod.jp/articles/athena-iceberg-update-commit-error-exponential-backoff/",
+      "originalTitle": "Amazon Athena の Iceberg テーブルへの同時 UPDATE で ICEBERG_COMMIT_ERROR になったクエリを再試行してみた",
+      "source": "DevelopersIO",
+      "topic": "Icebergの更新競合と再試行",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "capturedAt": "2026-11-05T01:04:29.032445+00:00",
+      "snapshotSha256": "4054e9e3e2d9f159f44e3f27782d1b7f4564aeb178ea0e4dd3cd5872af8f815c",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Without retry the five runs updated only six hundred of one thousand rows.",
+          "quote": "600 行",
+          "locator": "再試行なしで 5 ラウンド実行する",
+          "conditions": "Two concurrent overlapping UPDATE statements on one Tokyo Iceberg table.",
+          "usedIn": {
+            "zh": "作者在东京用 Athena 建了 1000 行 Iceberg 表，两个线程几乎同时将待处理订单改为已打包，查",
+            "ja": "著者は東京のAthenaで千行のIcebergテーブルを作り、Pythonの二スレッドから重なる範囲を更新しま",
+            "interview": "まず実行結果を取り、アイスバーグの確定時の競合かを確認します。記事ではエラーの欄が空なら、状態が変わった理由も"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Empty error text prompted fallback to the recorded state change reason.",
+          "quote": "StateChangeReason",
+          "locator": "スクリプトを直して",
+          "conditions": "Nine of ten retry trials updated all rows; the first script missed one unclassified failure.",
+          "usedIn": {
+            "zh": "脚本只对识别出的提交冲突重新送出失败语句，采用带随机抖动的指数退避，并让 WHERE 只匹配仍待处理的订单。两",
+            "ja": "再試行なしの五回は毎回片方が競合で失敗し、六百行で止まりました。失敗したSQLだけをフルジッター付き指数バック",
+            "interview": "まず実行結果を取り、アイスバーグの確定時の競合かを確認します。記事ではエラーの欄が空なら、状態が変わった理由も"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "The final five captured conflicts had Retryable false yet succeeded when resubmitted.",
+          "quote": "Retryable",
+          "locator": "失敗したクエリの AthenaError",
+          "conditions": "Only recognized commit conflicts with a pending-state predicate were retried. Other updates require separate idempotency analysis.",
+          "usedIn": {
+            "zh": "后五轮的五条冲突都标记为 Retryable=false，但在该实验的条件下重新送出仍成功。因此重试应按明确错",
+            "ja": "後半五回の記録ではRetryableがfalseでも、特定の競合を再実行できました。条件付きの更新なので、変更",
+            "interview": "まず実行結果を取り、アイスバーグの確定時の競合かを確認します。記事ではエラーの欄が空なら、状態が変わった理由も"
+          }
+        },
+        {
+          "id": "top5-teaching",
+          "kind": "author-interpretation",
+          "statement": "Interview judgments and suggested projects apply the mechanisms within the stated limits;not a new measurement or completed deployment.",
+          "conditions": "Learning proposal only;retain original test conditions and uncertainty.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact2",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "使用最终写入行数作为验收，能防止把查询已接收当成更新完成。",
+            "ja": "受付、実行結果、データの反映を照合し、再試行の条件を設計できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
