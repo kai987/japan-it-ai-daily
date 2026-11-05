@@ -1,0 +1,280 @@
+{
+  "targetDate": "2026-11-05",
+  "sourceCommit": "ffcbfbe616dacdb470c76cb6b15bcde8637d25df",
+  "sourceWindow": {
+    "from": "2026-11-04T10:00:00+09:00",
+    "to": "2026-11-05T10:00:00+09:00"
+  },
+  "articles": [
+    {
+      "url": "https://zenn.dev/bpf/articles/ca75c3bd9356b9",
+      "title": "クラウドAIに貼るログから機密を自動で伏せる仕組みをPythonで作った話（ユーザー名はwhoamiで）",
+      "source": "Zenn",
+      "topic": "送信前のログのマスキング",
+      "articleId": "2026-11-05-top-1",
+      "publishedAt": "2026-11-04T22:54:02+00:00",
+      "capturedAt": "2026-11-05T01:04:29.023769+00:00",
+      "snapshotSha256": "052884c3b7910f40763a3337e5d6d8b42be93302e7f24f741e940265d24ca995",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed."
+    },
+    {
+      "url": "https://zenn.dev/miyanaga/articles/zenn-2026-11-05",
+      "title": "AIエージェントの試行錯誤に「見た目が崩れていないか」の検査を組み込む 判定をLLMに任せない理由",
+      "source": "Zenn",
+      "topic": "AI改変の見た目を機械検査",
+      "articleId": "2026-11-05-top-2",
+      "publishedAt": "2026-11-04T22:02:11+00:00",
+      "capturedAt": "2026-11-05T01:04:28.842740+00:00",
+      "snapshotSha256": "f687b6a0c49617094b589e0275b55b9f6dc9a1aae2c8850fe0e22d624e4e3080",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed."
+    },
+    {
+      "url": "https://zenn.dev/a1221/articles/ddl-builder-real-db-failures",
+      "title": "生成したCREATE TABLEを3つのDBに流したら、25パターン中16で失敗した",
+      "source": "Zenn",
+      "topic": "生成DDLの方言別検証",
+      "articleId": "2026-11-05-top-3",
+      "publishedAt": "2026-11-04T23:01:58+00:00",
+      "capturedAt": "2026-11-05T01:04:28.842843+00:00",
+      "snapshotSha256": "a2d7e4d3a8af2b31b9b97d4c2681e6409c9eee6f8b8f167f9903790bd0e13f58",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed."
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/hasuto-iot-jobs-100-devices-failures/",
+      "title": "AWS IoT Jobsで100台にファームウェア更新を配り、失敗・拒否・応答なしを混ぜたときの動きを確かめてみた",
+      "source": "DevelopersIO",
+      "topic": "デバイス更新の中止と再試行",
+      "articleId": "2026-11-05-top-4",
+      "publishedAt": "2026-11-04T13:42:14.344000+00:00",
+      "capturedAt": "2026-11-05T01:04:28.842929+00:00",
+      "snapshotSha256": "f3a060fe32bebe98a2c36ebd8197fd16d79643572b3090538caddad379192c97",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed."
+    },
+    {
+      "url": "https://dev.classmethod.jp/articles/athena-iceberg-update-commit-error-exponential-backoff/",
+      "title": "Amazon Athena の Iceberg テーブルへの同時 UPDATE で ICEBERG_COMMIT_ERROR になったクエリを再試行してみた",
+      "source": "DevelopersIO",
+      "topic": "Icebergの更新競合と再試行",
+      "articleId": "2026-11-05-top-5",
+      "publishedAt": "2026-11-04T07:30:11.072000+00:00",
+      "capturedAt": "2026-11-05T01:04:29.032445+00:00",
+      "snapshotSha256": "4054e9e3e2d9f159f44e3f27782d1b7f4564aeb178ea0e4dd3cd5872af8f815c",
+      "access": "full",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed."
+    }
+  ],
+  "previousTop5Excluded": [
+    "https://zenn.dev/kaji_kaji/articles/diarization-ground-truth-before-model-swap",
+    "https://zenn.dev/yukina200/articles/nextjs-cache-components-errors-12",
+    "https://dev.classmethod.jp/articles/cloudfront-vpc-origin-http-origin-shield-latency/",
+    "https://dev.classmethod.jp/articles/guardduty-s3-malware-scan-100gb-file-limit-time-cost/",
+    "https://dev.classmethod.jp/articles/aurora-mysql-314-pq-tls/"
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "observedAt": "2026-11-05T01:03:57.174597+00:00",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "6ad6aed386291b28fac2721c5fb8d464e6c83405b089fe8c45828d32c88d77c2",
+      "error": null
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-05T01:03:57.174917+00:00",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "1a022a81c09068d936718fdd9fd85897ae8cd13341787ccdfc9e692cf06eba6f",
+      "error": null
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-05T01:03:57.175027+00:00",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "8688a2137697c88d5c977bd0091e1724c5cd16a793270018c63166c6c881f511",
+      "error": null
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-05T01:03:57.175113+00:00",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "825aa5a96e09216354ae3574326017495f5674b399c03cfd4cc65b0e26669de1",
+      "error": null
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-05T01:03:57.175202+00:00",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "50c04e6c4609f0ff2106bf03a206b0b79ecd13c18a5c24a4d117fb41f459028e",
+      "error": null
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-05T01:03:57.175273+00:00",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": null,
+      "error": "Access denied; not retried through another transport"
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-05T01:03:57.326250+00:00",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "b18e30dde4046db1ebf9bfda6f851a05e6c78213e27072467975db699caba498",
+      "error": null
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-05T01:03:57.351262+00:00",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "7d6b6c33f06ac2dcfc06793d9f79694c3a99aaaaf051b1ccad117e6646c08497",
+      "error": null
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-05T01:03:57.351649+00:00",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "b00ca5011473004f54b023f49ac2cd55994c68ed73d8337bceda0b461cf2bd45",
+      "error": null
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-05T01:03:57.352215+00:00",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "932e110f4c0a53dbf93b0f90af13f86cd8f22593c7c22717ee0001101cdd4194",
+      "error": null
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-05T01:03:57.404289+00:00",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "18ec6058a8d8733e6739b46b5aae1b4535635a7b4a627deed1dadac6b1bdecd9",
+      "error": null
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-05T01:03:57.450172+00:00",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "3a9bd44df7c70c7f6e9fdb25e6b70cfe16212985af9e6e82fc3b738b23989b4d",
+      "error": null
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-05T01:03:57.465861+00:00",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "7995c96373ab4d11e91aa065f948e68e0d477b583b9259975bcba7e60b245c5a",
+      "error": null
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-05T01:03:57.477371+00:00",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "e32870032c7830de9e82e1084f61c841a32681caf417e8775e92e4699f1794a0",
+      "error": null
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-05T01:03:57.482104+00:00",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "551bdffe7c3198acb2cbe4084622248e1ab0ccef6290aac21c6a2863f73583e3",
+      "error": null
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-05T01:03:57.561196+00:00",
+      "status": 403,
+      "actualUrl": "https://engineering.mercari.com/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": null,
+      "error": "Access denied; not retried through another transport"
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-05T01:03:57.567010+00:00",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "8f86b23c14dcf47440c5263e09339229796706483de4592ce6c6c69378182bb6",
+      "error": null
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-05T01:03:57.657355+00:00",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "75107a3e20c3ef6904d941861d574116b48e6f10145bbac5c40e58080d195077",
+      "error": null
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-05T01:03:57.670099+00:00",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "910fa3b4166c8b0dbf0776fceb76d470648c7b9a9d822d040c52be638afdbfb3",
+      "error": null
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-05T01:03:57.696228+00:00",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "htmlSha256": "670cb87dc03783faa6a9ee540b841e0749732bd83a8cb0b93b8bbc7d0400874a",
+      "error": null
+    }
+  ],
+  "candidateCountZenn": 94
+}
