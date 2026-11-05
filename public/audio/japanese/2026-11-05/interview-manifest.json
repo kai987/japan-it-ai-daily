@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-05",
+  "generatedAt": "2026-11-05T01:24:59.032Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "クラウドAIにログを渡す前に、どのように機密を伏せますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "e99b36a04e5c289aaf1eda9bb1322d73ec826968f84f4cff069e359bebb1683b",
+      "audioSha256": "cb4e9196cdc0d20f191c7383550e6af6e70d1e258c657a954ab36f1cfcdb0483",
+      "durationSeconds": 4.734
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "ログを手元で変換し、キーは種類の分かるダミーにします。接続先には同じ値を追える短い印を付け、元のログは外へ出しません。記事では利用者名を固定していたため、名前が変わると漏れました。そこで今の名前をコマンドで取得し、パスや端末の表示を置換します。ただし別の利用者や未知の形式は対象外なので、送る前に差分も確認します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "49cc3024fa3d66bc5e3584f8751f19263ba4ac1b93e41ac12ef313ab11d7417e",
+      "audioSha256": "daeb921baec46f53711986b2c3520aec706294e72500337e3c56e3ad33a2cad0",
+      "durationSeconds": 27.818,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "AIが画面を変更したとき、表示が崩れていないかをどう確かめますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "6dfd808ef48c00e7010c603f188cc660203579512503d7646692bb0c90c2b9f1",
+      "audioSha256": "6bb9641238077170df1bd750759f58640d201721bdd60138b50144cb8363bcc7",
+      "durationSeconds": 5.572
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "まず同じ条件で変更の前と後を撮ります。記事の方法では、アニメーションを止めて乱数と時刻を固定し、遅延読み込みも撮影前に発火させます。そのうえで、ピクセルの差分で場所を探し、画像の構造がどれだけ似ているかをスコアで見ます。ただし静止画では操作できるかまでは分からないので、入力や画面遷移は別のテストで確認します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "bb4ca6e980d98243411ff01194f8e2e2322cd432ad43a5a9f52595d7908b26e6",
+      "audioSha256": "978129a6e938bdb071a09a22d36b9c44fb7febdcb68e62318be1cbc5b6abc55d",
+      "durationSeconds": 25.61,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "生成したテーブル定義を複数のデータベースで検査するなら、何を見ますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "dcc312fa63d499daeb7e3c0e7e97cb5e14f888bf74bc9035bf27f72556f43a26",
+      "audioSha256": "ac6621dc6c7ca6b2927c4493bb990b283ad7c104d9f5b6d7a58d16a3d5f74a27",
+      "durationSeconds": 5.851
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "生成したテーブル定義を、方言ごとのデータベースで実際に流します。記事では、子が親より先に作られたうえ、外部キーも親と型が合っていませんでした。参照先から作り、循環する場合は対応するデータベースで制約を後から追加します。ただしマリアディービーで通っても本番のマイエスキューエルで同じとは限らないので、対象の版でも確かめます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "93960660c12362a7530b176ac82accb20f4b97c8412a9f745eda5305fbde3097",
+      "audioSha256": "2272529cb38244ce714e9f447102f27140a787b93af76aea60ab5f0739193f1f",
+      "durationSeconds": 26.029,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "端末への更新を途中で止めたいとき、どんな設定を組み合わせますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "a127c32c1ca1ddddbfe94d3144b9336791dd3523d94b429a8e93ad7045f0d5cb",
+      "audioSha256": "4ad4fff1b8594db968a3af2764346db20f81990907afa4152c5755a82feca35e",
+      "durationSeconds": 5.409
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "失敗率の条件と、端末へ配る速さを一緒に決めます。記事では毎分十台に絞ると、未開始の十件を取り消せました。制限を外すと判定より先に百台へ届き、止まった端末はありませんでした。また、タイムアウトは実行を始めてから数えます。ただし仮想端末の試験なので、実機で開始後に止める方法や、接続しない端末の扱いは別に設計します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "b097cb52a0c8d9f90177c5757d4f76cdb5e393f65099f0c4aba843ee3d869f6e",
+      "audioSha256": "26ee370302adbc8052ab247f3849b3f2e62c1c6c69b7d6a19b37a04488378ef2",
+      "durationSeconds": 28.05,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "Athenaで並列の更新が失敗したとき、どのように再試行しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "1ac5c5e7a8947fd084a9890b9d008954e7767b40cfe2519d56fb79662493651a",
+      "audioSha256": "737c75747e07b79aaeadfe1ee084acf591c7b00c16658fbb10827b42ad8e232f",
+      "durationSeconds": 5.247
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "まず実行結果を取り、アイスバーグの確定時の競合かを確認します。記事ではエラーの欄が空なら、状態が変わった理由も調べました。競合と分かれば、待ち時間にばらつきを入れ、失敗した更新だけを送り直します。すでに変えた行を条件から外して、最後は反映された行数を数えます。ただし、同じ処理を繰り返せない更新には、そのまま使えません。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "4c21546337293956a768bccd91f0ecf1f7dfa69c76a403f2fbfc4a5af933efef",
+      "audioSha256": "bdd8c58d9043c2ef508f87c4682e5fe7bee89843f846ad50a4a1c87ae9bf1408",
+      "durationSeconds": 26.841,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "変化の前後を比較するとき、何をそろえますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "dadffc5444c37ee8e4b1b338ea93f44a7f307aefc59ff73c4d55297291bd9b03",
+      "audioSha256": "50b7472d12596f7dc525c3f5e23e80366d0aed81f5ca718f4afc59ae18134452",
+      "durationSeconds": 4.016
+    },
+    {
+      "index": 2,
+      "text": "出力や受付を確認したあと、何を確かめますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "79aba15a0da657db99ee3e44da6d77203dc6497e0559a0e37f6bc1c935298bc5",
+      "audioSha256": "8b3ada21a0e7033ee21816da343899559469314ca3ff393a38f2499eafc7125e",
+      "durationSeconds": 4.469
+    },
+    {
+      "index": 3,
+      "text": "再試行や中止の範囲は、何を基準に決めますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "b6b42c7000189da98ccb0a848c7047a08429e1ca5bba096eb33fe94a843b73d0",
+      "audioSha256": "2b7791068c60d5b149d2ca9aa12fc38cf05886f90f14c6a838d7f864e27835c2",
+      "durationSeconds": 4.12
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-05T01:25:00.726Z"
+}
