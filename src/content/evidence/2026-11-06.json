@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-06",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-11-06T01:12:27.364122+00:00",
+  "scope": "Five complete original articles captured outside Git and independently used to author both languages. Only canonical Japanese interviews are shared verbatim. No source code was executed; examples and project proposals are teaching creations.",
+  "articles": [
+    {
+      "articleId": "2026-11-06-top-1",
+      "url": "https://dev.classmethod.jp/articles/cloudflare-ai-search-cjk-keyword-tokenizer/",
+      "source": "DevelopersIO",
+      "topic": "日本語検索のトークナイザと再インデックス",
+      "capturedAt": "2026-11-06T01:01:26.219916+00:00",
+      "snapshotSha256": "5dd1ade239dbcd70c553804139e5e5fbbf8523850ca3062b327abf2fcc6b30a5",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "originalTitle": "Cloudflare AI Searchで日本語のキーワード検索を使うなら、trigramトークナイザを作成時に選ぼう",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Compare keyword search alone, with AND and 0.4 default, in two document trial.",
+          "quote": "キーワード検索だけにしました。",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "日本語の検索で該当する文書が返らないとき、生成モデルを替える前に、検索語をどう区切っているかを見る必要がありま",
+            "zh": "日文检索没有返回本来存在的文档时，问题可能出在查询词怎样被切分，而不在生成模型。原文比较了 Cloudflar",
+            "interview": "私はキーワード検索だけで比べます。記事では作成時にトライグラムを選ぶと日本語の質問がヒットし、ポーターはゼロ件"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Three-character query matches while two-character expense query does not even at threshold zero.",
+          "quote": "0件（一致しきい値0でも0件）",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "検証は Workers Free のアカウントと、経費精算・有給休暇を説明する二つの文書で行われました。一致モ",
+            "zh": "实验使用 Workers Free 账户、两篇关于报销和休假的文档，保持 AND 模式与默认0.4阈值。创建时",
+            "interview": "私はキーワード検索だけで比べます。記事では作成時にトライグラムを選ぶと日本語の質問がヒットし、ポーターはゼロ件"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Existing tokenizer setting change completed re-index but behavior remained unchanged for about nine minutes; cause unresolved.",
+          "quote": "約9分待っても検索結果は変わりませんでした。",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "既存インスタンスを切り替えると、設定表示と再インデックスのジョブは更新されても、約9分の観察では検索結果が変わ",
+            "zh": "更换已有实例的分词器后，设置与重建索引任务都更新了，但约9分钟内的查询仍表现为原先的分词方式，反向切换也出现类",
+            "interview": "私はキーワード検索だけで比べます。記事では作成時にトライグラムを選ぶと日本語の質問がヒットし、ポーターはゼロ件"
+          }
+        },
+        {
+          "id": "top1-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact2",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "ja": "日本語の取りこぼしと設定変更の反映を、検索方式を分離した実験で考えられます。",
+            "zh": "能把日文召回问题缩小到关键词通道，并检查配置变更是否真正反映到查询。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-06-top-2",
+      "url": "https://zenn.dev/rrioh/articles/c0d66deddddafe",
+      "source": "Zenn",
+      "topic": "エージェントスキルの版管理と対応付き評価",
+      "capturedAt": "2026-11-06T01:01:26.393722+00:00",
+      "snapshotSha256": "4cb803e1343713103fe2cb2f9b879f62763bb0cf364173ae8036a3b04e6f6d11",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "originalTitle": "【MLflow 3.18】Skill Registryでスキル管理してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Experimental registry versions skill text and auxiliary files, supports draft/active and aliases.",
+          "quote": "と補助ファイルをまとめて登録し、バージョンを管理する機能です。",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "エージェントへ配る指示を単なるファイル共有にすると、何を直した版が動いているのか追いにくくなります。記事は M",
+            "zh": "团队把代理指令复制到不同项目后，常常难以确认究竟哪一版在生效。原文实践了 MLflow 3.18.0 的实验性",
+            "interview": "私は配る指示の版と、評価に使う入力をそろえます。記事ではスキルレジストリに本文と補助資料を登録し、草稿を確認し"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Pinned version and production alias restore different versions; existing nonempty destinations fail.",
+          "quote": "番号指定では変更前の",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "取得では固定した版とエイリアスを使い分けられます。著者は変更前後の指示と補助ファイルが取得先にそろうことを確認",
+            "zh": "作者分别用固定版本和别名取回文件，并确认辅助检查清单与原文件一致。固定版本适合复现实验，别名适合分配当前采用的",
+            "interview": "私は配る指示の版と、評価に使う入力をそろえます。記事ではスキルレジストリに本文と補助資料を登録し、草稿を確認し"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Paired twelve integer dummy evaluations improve exact match .5 to1 and error .5 to0; p=.03125 is demonstration only.",
+          "quote": "candidateは12件とも正解しており",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "後半では compare_evaluations() を使い、同じ12件の整数入力で二つの実行を比べています。",
+            "zh": "第二个实验使用 compare_evaluations()，对相同12个整数样本比较两个函数。正解率从0.5到",
+            "interview": "私は配る指示の版と、評価に使う入力をそろえます。記事ではスキルレジストリに本文と補助資料を登録し、草稿を確認し"
+          }
+        },
+        {
+          "id": "top2-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact2",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "ja": "指示の版を配布する工程と、同じ入力で結果を比較する工程をつなげて説明できます。",
+            "zh": "把代理技能的版本分配和相同样本的结果比较联系起来，适合说明可复现的发布判断。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-06-top-3",
+      "url": "https://zenn.dev/carecraft/articles/react-action-queue-lost-update",
+      "source": "Zenn",
+      "topic": "非同期操作の順序と実行主体",
+      "capturedAt": "2026-11-06T01:01:26.374256+00:00",
+      "snapshotSha256": "75e7201b051524d0c26cd94d25b265e21839d70518661f9bb0ea628be1428e11",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "originalTitle": "非同期の操作が競合して更新が消える問題を、小さなキューで直す",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Sending concurrent client states to a stateless Worker loses prior changes.",
+          "quote": "非同期の操作が同じ状態から始まると、更新が消えます。",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "経費精算のデモで、処理直後に操作する人を切り替えると、更新や表示が消える問題が起きました。構成はブラウザの W",
+            "zh": "一个报销演示在操作后马上切换使用者时出现更新丢失和画面回退。它用浏览器 Web Worker 模拟API，由客",
+            "interview": "私は値ごとに確定する時点を分けます。記事ではウェブワーカーへ送る操作をプロミスのキューで直列化し、状態は実行時"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Read business state when executing, capture actor on click to preserve attribution.",
+          "quote": "状態は「実行時の最新」が正しいのですが、操作した人は「押した時点の人」が正解です。",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "著者は useActionQueue で Promise（プロミス）をつなぎ、前の操作が終わってから次を実行す",
+            "zh": "作者用 useActionQueue 把 Promise 连接成顺序执行的队列，前一操作失败后仍允许后续操作执",
+            "interview": "私は値ごとに確定する時点を分けます。記事ではウェブワーカーへ送る操作をプロミスのキューで直列化し、状態は実行時"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Promise queue serializes actions, views and reset; caller still receives errors; not cross-client concurrency control.",
+          "quote": "前の操作が終わってから次を始めます。",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "人の切り替えに伴う画面取得とリセットも同じキューに入れ、削除後に古い処理が保存データを戻す競合を防ぎました。検",
+            "zh": "切换使用者时取得画面的动作和清空保存数据的动作也进入同一队列，避免旧任务在重置后又把数据写回。作者通过 Pla",
+            "interview": "私は値ごとに確定する時点を分けます。記事ではウェブワーカーへ送る操作をプロミスのキューで直列化し、状態は実行時"
+          }
+        },
+        {
+          "id": "top3-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact2",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "ja": "最新状態を読む時点と、操作者を確定する時点が異なるという実装上の判断を学べます。",
+            "zh": "展示了最新业务状态与点击时操作者这两类时间语义不同的数据。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-06-top-4",
+      "url": "https://dev.classmethod.jp/articles/rds-postgresql-lock-wait-database-insights-standard-mode/",
+      "source": "DevelopersIO",
+      "topic": "ロック待ちの可視化とブロック元の追跡",
+      "capturedAt": "2026-11-06T01:01:26.220715+00:00",
+      "snapshotSha256": "4fac5d08d7b988b0399e65a584351e72875883889d875e4585c19dbcfd7c84b8",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "originalTitle": "Database Insights のスタンダードモードで、Amazon RDS for PostgreSQL のロック待ちとブロック元を確かめてみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "An idle uncommitted holder is absent from active query load although it blocks four updates.",
+          "quote": "ブロックしている側のセッションは、「データベース負荷」には出ません。",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "ダッシュボードには Lock:transactionid と Lock:tuple が現れましたが、原因の接続",
+            "zh": "标准模式图表出现 Lock:transactionid 和 Lock:tuple。持锁者却处于 idle in",
+            "interview": "私は負荷の図と接続の状態を照合します。記事では四つの更新が待っていても、原因の接続はアイドルのトランザクション"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Transaction and tuple wait events form a chain, traced through PostgreSQL activity and blocking functions.",
+          "quote": "残りの 3 セッション",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "ダッシュボードには Lock:transactionid と Lock:tuple が現れましたが、原因の接続",
+            "zh": "标准模式图表出现 Lock:transactionid 和 Lock:tuple。持锁者却处于 idle in",
+            "interview": "私は負荷の図と接続の状態を照合します。記事では四つの更新が待っていても、原因の接続はアイドルのトランザクション"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Release measured725.5-725.7 seconds includes5sec offset and60sec polling; rollback preserves inventory; standard is not Advanced SQL lock analysis.",
+          "quote": "725.5〜725.7 秒",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "原因側をロールバックした後、待機中の更新は725.5～725.7秒で返り、検証では後続もロールバックして在庫値",
+            "zh": "释放原因会话后，等待中的更新在725.5～725.7秒返回，随后所有实验更新均回滚，在库数量保持原值。实测时长",
+            "interview": "私は負荷の図と接続の状態を照合します。記事では四つの更新が待っていても、原因の接続はアイドルのトランザクション"
+          }
+        },
+        {
+          "id": "top4-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact2",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "ja": "待機を起こした側と待たされた側を分けて追う、障害調査の手順が具体的です。",
+            "zh": "提供了从等待事件走到阻塞关系和根因会话的具体调查路径。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-06-top-5",
+      "url": "https://dev.classmethod.jp/articles/hasuto-vite-plus-1-5-migrate-ts-node/",
+      "source": "DevelopersIO",
+      "topic": "TypeScript移行で型検査を保つ",
+      "capturedAt": "2026-11-06T01:01:26.220931+00:00",
+      "snapshotSha256": "efdfb2509f87f3787bca3221f1d6a5e47a3fc82713b4263836105c41fb5b4ff5",
+      "accessNote": "Public original narrative, tables and conditions read. Published timestamp from the original time element or JSON-LD. The author’s experiments were not independently executed.",
+      "originalTitle": "Vite+ 1.5 がリリースされたので、vp migrate は ts-node をどこまで移行してくれるのか試してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Only safely transformable non-typechecked ts-node scripts are automatically migrated.",
+          "quote": "自動で移るのは型チェックをしない ts-node だけ",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "TypeScript の移行では、スクリプトが動くことと、型の誤りを実行前に止めることを分けて確認します。記事",
+            "zh": "升级 TypeScript 执行工具时，脚本输出没变不等于原有检查也被保留下来。原文在 Node.js 26.",
+            "interview": "私は正常な出力と、型の誤りで止まることを両方見ます。記事ではブイピーマイグレートが型検査をしない処理を移しまし"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Explicit config and named assert import permit trial ESM script migration.",
+          "quote": "TS_NODE_PROJECT を付けたら seed が移行された",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "最初は三つのスクリプトが残りましたが、設定ファイルを明示する TS_NODE_PROJECT を付けると、型検",
+            "zh": "首次迁移保留了三条脚本。补上明确配置文件的 TS_NODE_PROJECT 后，不做类型检查的运行脚本才被改写",
+            "interview": "私は正常な出力と、型の誤りで止まることを両方見ます。記事ではブイピーマイグレートが型検査をしない処理を移しまし"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Typechecking is separate and must fail before execution; CommonJS interop and runtime versions limit migration.",
+          "quote": "CommonJS のプロジェクトでは書き換わらなかった",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "わざと価格を文字列にすると、移行先の実行処理は数値へ変換して同じ結果を返しましたが、型検査は誤りを検出しました",
+            "zh": "作者故意把价格写成字符串，发现新的执行路径仍会算出相同的结果，因为乘法发生了数字转换，而类型检查能够指出错误。",
+            "interview": "私は正常な出力と、型の誤りで止まることを両方見ます。記事ではブイピーマイグレートが型検査をしない処理を移しまし"
+          }
+        },
+        {
+          "id": "top5-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact2",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "ja": "移行後の正常出力に隠れた型検査の欠落を、わざと誤りを入れて検証できます。",
+            "zh": "用类型错误的反例揭示工具升级中可能丢失的质量保证。"
+          }
+        }
+      ]
+    }
+  ]
+}
