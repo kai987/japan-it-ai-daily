@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-06",
-  "stage": "publisher_queued",
-  "sourceCommit": "a62a00fe62e509d765b14c4c3fd70b4a28a4ad5b",
+  "stage": "correcting_reference_level",
+  "sourceCommit": "0d434c17fb676427e45ab551852e70890fe21df0",
   "sourceWindow": {
     "from": "2026-11-05T10:00:00+09:00",
     "to": "2026-11-06T10:00:00+09:00"
   },
   "createdAt": "2026-11-06T01:00:22.503Z",
-  "updatedAt": "2026-11-06T01:28:02.252Z",
+  "updatedAt": "2026-11-06T01:44:15.990Z",
   "completedArtifacts": [
     "sources.json",
     "source-review.json",
@@ -42,7 +42,7 @@
   "verifiedAt": "2026-11-06T01:16:05.935Z",
   "preflightRunId": 42142668544,
   "preflightStatus": "in_progress",
-  "nextAction": "Unique publisher owns the request slot; wait exact publisher/main Pages and verify full public snapshot.",
+  "nextAction": "Correct only current-date vocabulary reference level in four mirrors; rerun full local and exact draft gates before the same unique publisher.",
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
   "localChecks": {
     "date": "2026-11-06",
@@ -178,5 +178,17 @@
     ]
   },
   "requestCommit": "284254ce722af9903b78fd10faab88e63bb87952",
-  "requestBlob": "172662c78d4e389158f1f1b8a77881bc3be678af"
+  "requestBlob": "172662c78d4e389158f1f1b8a77881bc3be678af",
+  "correction": {
+    "targetDate": "2026-11-06",
+    "term": "並べる",
+    "from": "N3",
+    "to": "N5/N4",
+    "reason": "Reference vocabulary N4, not N3; do not promote level",
+    "reference": "https://bunpro.jp/vocabs/%E4%B8%A6%E3%81%B9%E3%82%8B?deck_id=753",
+    "discoveredAt": "2026-11-06T01:41:38.911762+00:00"
+  },
+  "initialPublisherRunId": 42144024224,
+  "initialPagesRunId": 42145242392,
+  "initialReleaseCommit": "0d434c17fb676427e45ab551852e70890fe21df0"
 }
