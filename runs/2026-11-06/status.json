@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-06",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "a62a00fe62e509d765b14c4c3fd70b4a28a4ad5b",
   "sourceWindow": {
     "from": "2026-11-05T10:00:00+09:00",
     "to": "2026-11-06T10:00:00+09:00"
   },
   "createdAt": "2026-11-06T01:00:22.503Z",
-  "updatedAt": "2026-11-06T01:27:53.383Z",
+  "updatedAt": "2026-11-06T01:28:02.252Z",
   "completedArtifacts": [
     "sources.json",
     "source-review.json",
@@ -42,7 +42,7 @@
   "verifiedAt": "2026-11-06T01:16:05.935Z",
   "preflightRunId": 42142668544,
   "preflightStatus": "in_progress",
-  "nextAction": "Wait for the exact draft deploy.yml preflight; publish only after complete success.",
+  "nextAction": "Unique publisher owns the request slot; wait exact publisher/main Pages and verify full public snapshot.",
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
   "localChecks": {
     "date": "2026-11-06",
@@ -176,5 +176,7 @@
         "log": "/tmp/japan-daily-20261106/logs-final/17-evidence-check.log"
       }
     ]
-  }
+  },
+  "requestCommit": "284254ce722af9903b78fd10faab88e63bb87952",
+  "requestBlob": "172662c78d4e389158f1f1b8a77881bc3be678af"
 }
