@@ -1,0 +1,49 @@
+{
+  "sourceCommit": "a62a00fe62e509d765b14c4c3fd70b4a28a4ad5b",
+  "dateCount": 86,
+  "files": 344,
+  "lexicalIdentities": 1355,
+  "grammarIdentities": 117,
+  "newWords": [
+    "見立てる",
+    "現れる",
+    "吐く",
+    "分ける",
+    "並べる",
+    "外す",
+    "いずれ",
+    "所要時間",
+    "読点",
+    "直後"
+  ],
+  "newGrammar": [],
+  "semanticExclusions": [
+    {
+      "term": "閉じ込める",
+      "reason": "already taught 2026-09-09"
+    },
+    {
+      "term": "書き戻す",
+      "reason": "already taught 2026-09-17"
+    },
+    {
+      "term": "取り除く",
+      "reason": "already taught 2026-08-29"
+    },
+    {
+      "term": "たどり着く",
+      "reason": "already taught 2026-09-18"
+    }
+  ],
+  "semanticBoundaries": [
+    {
+      "term": "外す",
+      "reason": "transitive dependency removal distinct from prior intransitive 外れる prediction outside scope"
+    },
+    {
+      "term": "いずれ",
+      "reason": "future sense only; do not teach enumerative sense here"
+    }
+  ],
+  "newUnreviewedDuplicates": 0
+}
