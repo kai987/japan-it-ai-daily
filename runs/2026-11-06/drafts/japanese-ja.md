@@ -12,6 +12,7 @@ levels:
 - N1
 - N2
 - N3
+- N5/N4
 - IT/AI
 vocabularyCount: 10
 grammarCount: 0
@@ -71,13 +72,13 @@ vocabulary:
 - term: 並べる
   reading: ならべる
   partOfSpeech: 動詞・下一段
-  level: N3
+  level: N5/N4
   collocations:
   - 結果を並べる
   - 同じ入力を並べる
   - 指標を並べる
   meaning: 複数のものを、比較したり確認したりできるように置くこと。
-  note: 同じ入力に対する二つの実行結果を、比較画面で見比べる場面です。
+  note: 同じ入力に対する二つの実行結果を、比較画面で見比べる場面です。 学習参考レベルはN4です。
   exampleJa: 同じ入力に対する結果を並べて、差を確認します。
   exampleMeaning: 入力をそろえたうえで、二つの結果を見比べるという意味です。
   nuance: 見比べやすくする動作であり、並べるだけで改善を証明するものではありません。
