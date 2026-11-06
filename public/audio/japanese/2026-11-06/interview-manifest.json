@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-06",
+  "generatedAt": "2026-11-06T02:10:05.715Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "日本語の検索が0件になる場合、トークナイザの変更をどう確かめますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "bba9bcc0bdae3df71c3f530b2e599812716adfd3d3d7b52c5496cd292e61537c",
+      "audioSha256": "e5e0660110f7e9a8e36ff5b978ff44208771cc0aa6fb639c16626af6c9989620",
+      "durationSeconds": 5.804
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "私はキーワード検索だけで比べます。記事では作成時にトライグラムを選ぶと日本語の質問がヒットし、ポーターはゼロ件でした。ただし二文字の語は拾えず、既存設定を変えた後も約九分は挙動が変わりませんでした。設定やジョブの成功だけで終えず、代表的な質問で結果を確かめ、反映の遅れか不具合かは別に調べます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "0610250861804dfba98ab83e251dc3ca86ed207a35dfef67037ce8516814a00b",
+      "audioSha256": "49f5c0bfd9011b160c4f96bbdba4b7e4f987879ddc6131c64dced6a1a863e119",
+      "durationSeconds": 24.826,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "エージェントのスキル更新と、その評価をどのように管理しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "339f344f94468437b27f1ad14f3bba8a1a80694027e2688b6fb2df1f09ecc500",
+      "audioSha256": "0321c4a5b09fb19565f51dfe6a99499fb6c7234b7f4d68a979ff53d857d72673",
+      "durationSeconds": 4.908
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "私は配る指示の版と、評価に使う入力をそろえます。記事ではスキルレジストリに本文と補助資料を登録し、草稿を確認してから有効化と別名の設定をしました。また比較APIで同じ十二件の結果を対応させ、正解率と誤差を見ています。ただしダミー関数の実験なので、実際のモデル改善は業務の評価集合で確かめます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "e13d62fa820fa6f7b777f892110f53bbbf6b64ba9963926e331e54e92fb8672e",
+      "audioSha256": "330eea4458a66c0a4a1921c91134fa8e790a6cabd7424f725d7c14d79c6d6a1c",
+      "durationSeconds": 26.539,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "非同期操作の更新消失を防ぐとき、最新の値だけを読めばよいのでしょうか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "5d2306599f567ac797b1d8cb5cd05866fd82cb430e83644be9e32c5ba0bd477a",
+      "audioSha256": "5d1d1703c62b4f493163729b86042f08b7b2aae03f2e544ccc4f68370055df41",
+      "durationSeconds": 6.245
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "私は値ごとに確定する時点を分けます。記事ではウェブワーカーへ送る操作をプロミスのキューで直列化し、状態は実行時のレフから読みました。一方、操作者はクリック時に確保し、待機中に人が変わっても帰属を保ちます。リセットも同じ順序に入れます。ただし複数の利用者による競合には、サーバー側の対策も必要です。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "aa5ddeb8d4ca54d5dfe5ae33a8217c2b1b735b1d0f1b2ee3a9b1cb75c3473ad8",
+      "audioSha256": "08dd5163c1cae3f78aff1612d2b75b9e5316762461c9db666c2e497c80eb6d01",
+      "durationSeconds": 25.17,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "Database Insightsの標準モードで、ロックを持つ接続をどう調べますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "f991c11b6224673e983b1067256dbdeff28c9cef41c553f9d248783b152868ee",
+      "audioSha256": "0db545fab74c15424b9c8fdb734eff164abfab6c75a120a10bf00b49706e87b7",
+      "durationSeconds": 5.572
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "私は負荷の図と接続の状態を照合します。記事では四つの更新が待っていても、原因の接続はアイドルのトランザクションなので負荷に出ませんでした。待機イベントを見た後、ブロック元を返す関数で関係をたどり、原因側の未完了トランザクションを確かめます。ただし標準モードで高度なロック分析が使えるわけではありません。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "a4f14fd55fdd4f8491897efeab7013751101813cae8cf471a908711b42036b96",
+      "audioSha256": "4d4aa0e2313cd19a2270bee31c31bc8f2be2fa28f2b4028c2d9bd803f5502b1b",
+      "durationSeconds": 24.198,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "TypeScriptの実行ツールを移行した後、何をもって完了と判断しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "b048031f81243926e4fce9c62f4b6bdebe3c29a80ca52140fcc61ddd0280f8ca",
+      "audioSha256": "3925da6b0da7f49683ed5c7f5ac76c1cd90ce2352fd1901754f4116f00a73636",
+      "durationSeconds": 5.897
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "私は正常な出力と、型の誤りで止まることを両方見ます。記事ではブイピーマイグレートが型検査をしない処理を移しましたが、型検査ありの処理は残しました。価格を文字列にしても実行結果が同じだったため、ブイピーチェックを先に置いて停止を確かめています。ただしコモンジェイエスの相互運用は別に検証します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "a966fd2b1ff344ca6819deb42dcb59115b1d330a1ea5a3550046f10db8b07c15",
+      "audioSha256": "3772b86e5df1eb0dc5684e6833f2fcdae07effdd261889d0fd221399efbc8ad2",
+      "durationSeconds": 23.495,
+      "durationStatus": "warn"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "設定変更のジョブが成功しても、検索結果の確認が必要なのはなぜですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "e805578d8a1650d51ba18381cf3345fe68d723f63dd00a4c0fa2d4798e3b95a0",
+      "audioSha256": "1013a3d229a86e50853af68b7c46bb16621a59f7be512ea036fb3ccd6583f163",
+      "durationSeconds": 6.083
+    },
+    {
+      "index": 2,
+      "text": "状態と操作者を、異なる時点で確定する理由を説明してください。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "3f148e2ad6afe7c77ad6092ee794189f7d1bda4a401d632e9db15fb5b3f716bd",
+      "audioSha256": "08d8ac21a6d5fc80d7cdacb3e0ad262fb4a5030feba6e69e229c1d7b1a77ba54",
+      "durationSeconds": 5.306
+    },
+    {
+      "index": 3,
+      "text": "正常な出力や負荷グラフだけでは、何を見落とす可能性がありますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "a9b0b41a40b6528d828aab0900cd16a3211c9e6af66ef7af0a985b636a87a5ae",
+      "audioSha256": "13e404e13090b288024338f190149e6db99b243b0817a4a4a278cb02a3184e49",
+      "durationSeconds": 5.502
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-06T02:10:07.728Z"
+}
