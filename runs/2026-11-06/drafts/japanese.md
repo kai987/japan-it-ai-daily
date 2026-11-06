@@ -12,6 +12,7 @@ levels:
 - N1
 - N2
 - N3
+- N5/N4
 - IT/AI
 vocabularyCount: 10
 grammarCount: 0
@@ -71,13 +72,13 @@ vocabulary:
 - term: 並べる
   reading: ならべる
   partOfSpeech: 動詞・下一段
-  level: N3
+  level: N5/N4
   collocations:
   - 結果を並べる
   - 同じ入力を並べる
   - 指標を並べる
   meaningZh: 把对象排列起来，使其便于比较或查看。
-  noteZh: MLflow把同一数据的两次评价结果并列显示，进一步计算差值。
+  noteZh: MLflow把同一数据的两次评价结果并列显示，进一步计算差值。 学习参考等级为N4。
   exampleJa: 同じ入力に対する結果を並べて、差を確認します。
   exampleZh: 把相同输入对应的结果并排比较，确认差异。
   nuanceZh: 排列只是观察方式，不能单凭并列就证明改进。
