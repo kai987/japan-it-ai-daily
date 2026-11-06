@@ -5,18 +5,28 @@
   "lexicalIdentities": 1355,
   "grammarIdentities": 117,
   "newWords": [
-    "見立てる",
     "現れる",
     "吐く",
     "分ける",
     "並べる",
     "外す",
     "いずれ",
-    "所要時間",
-    "読点",
     "直後"
   ],
   "newGrammar": [],
+  "levelVerification": {
+    "excludedUnverifiedReferenceLevels": [
+      "見立てる",
+      "所要時間",
+      "読点"
+    ],
+    "corrected": {
+      "term": "並べる",
+      "referenceLevel": "N4",
+      "schemaLevel": "N5/N4",
+      "source": "https://bunpro.jp/vocabs/%E4%B8%A6%E3%81%B9%E3%82%8B?deck_id=753"
+    }
+  },
   "semanticExclusions": [
     {
       "term": "閉じ込める",
