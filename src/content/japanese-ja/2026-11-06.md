@@ -9,27 +9,13 @@ topics:
 - ロック待ちの可視化とブロック元の追跡
 - TypeScript移行で型検査を保つ
 levels:
-- N1
 - N2
 - N3
 - N5/N4
 - IT/AI
-vocabularyCount: 10
+vocabularyCount: 7
 grammarCount: 0
 vocabulary:
-- term: 見立てる
-  reading: みたてる
-  partOfSpeech: 動詞・下一段
-  level: N1
-  collocations:
-  - APIに見立てる
-  - 実環境に見立てる
-  - 処理系に見立てる
-  meaning: 別のものになぞらえ、その役割を持つものとして扱うこと。
-  note: Web WorkerをAPIとして扱うデモで、状態競合を再現しています。
-  exampleJa: ブラウザのワーカーをAPIに見立てて、応答の競合を再現します。
-  exampleMeaning: ブラウザ内の処理にAPIの役割を持たせ、応答が競う場面を試すという意味です。
-  nuance: 同じ役割として扱う表現で、実サーバーとすべての性質が同じという意味ではありません。
 - term: 現れる
   reading: あらわれる
   partOfSpeech: 動詞・下一段
@@ -108,32 +94,6 @@ vocabulary:
   exampleJa: 今は動いていても、いずれ移行が必要になります。
   exampleMeaning: 現時点で動くことと、将来もそのままでよいことは別だという意味です。
   nuance: ここでは将来の時点を表します。「いずれも」の全部を指す用法とは分けます。
-- term: 所要時間
-  reading: しょようじかん
-  partOfSpeech: 名詞
-  level: N2
-  collocations:
-  - 所要時間を測る
-  - 所要時間を比べる
-  - 再処理の所要時間
-  meaning: 一つの作業や処理を終えるまでにかかる時間。
-  note: 小さな索引の再処理時間と、大量データを扱う時間を分けて考える場面です。
-  exampleJa: 少量の文書で測った所要時間を、大規模な索引へそのまま当てはめません。
-  exampleMeaning: 小さな実験でかかった時間から、大きな環境の時間を決めつけないという意味です。
-  nuance: 処理にかかる長さを表し、特定の瞬間を表す「時刻」と区別します。
-- term: 読点
-  reading: とうてん
-  partOfSpeech: 名詞
-  level: N2
-  collocations:
-  - 読点で区切る
-  - 読点の手前
-  - 読点を打つ
-  meaning: 日本語の文の途中に置き、区切りを示す「、」のこと。
-  note: porterの区切り方と、日本語の文の途中までの一致を説明する語です。
-  exampleJa: 読点の前までを一つのまとまりとして扱う結果が観測されました。
-  exampleMeaning: 文章の途中の区切りまでが、一つの検索単位に見える結果だったという意味です。
-  nuance: 文を終える「。」の句点とは別です。
 - term: 直後
   reading: ちょくご
   partOfSpeech: 名詞・副詞的用法
@@ -149,15 +109,12 @@ vocabulary:
   nuance: 後というだけでなく、時間をほとんど置かない点を強調します。
 grammar: []
 mustRememberWords:
-- 見立てる
 - 現れる
 - 吐く
 - 分ける
 - 並べる
 - 外す
 - いずれ
-- 所要時間
-- 読点
 - 直後
 mustRememberGrammar: []
 grammarSelectionNote: 全86日・117の既習文型と五本の原文を照合しました。新規文法は0項目です。既習文型と区別して新たに収録する根拠を確認できなかったため、当日の本文に現れた文型は復習として別枠で扱います。
