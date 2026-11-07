@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-11-07",
+  "sourceCommit": "e5792cabd0d61fb10c26b97727e0f383c57adcb4",
+  "sourceWindow": {
+    "from": "2026-11-06T10:00:00+09:00",
+    "to": "2026-11-07T10:00:00+09:00"
+  },
+  "previousTopExcluded": true,
+  "sourceScope": "All20 preferred homepages inspected;18 accessible,CodeZine/Mercari denied403 and not bypassed. Discovery is not an exhaustive external full-text crawl. Zenn latest100 contained98 window candidates.",
+  "excludedCandidate": {
+    "key": "lambda",
+    "reason": "Published2026-11-06 02:29JST, outside frozen window"
+  },
+  "articles": [
+    {
+      "key": "catalog",
+      "articleId": "2026-11-07-top-1",
+      "url": "https://developers.cyberagent.co.jp/blog/archives/67259/",
+      "title": "Knowledge Catalog で AI エージェントに社内の知識を渡す基盤づくり – ミッション型インターン体験記",
+      "source": "CyberAgent Developers Blog",
+      "topic": "AIエージェントの知識と権限境界",
+      "publishedAt": "2026-11-06T10:00:25+09:00",
+      "capturedAt": "2026-11-07T01:02:35.900345+00:00",
+      "snapshotSha256": "058c41253ea335693303a6c237213c1ebacd035fbd58b7a703578e6e96ee2b9f",
+      "access": "full",
+      "accessNote": "Read the public original narrative, tables and relevant implementation examples. Publication time checked against its time element or JSON-LD; experiments not independently executed.",
+      "verifiedFacts": [
+        "AI POS uses Cloud Run worker tools rather than direct agent database access; knowledge is represented as OKF Markdown with YAML frontmatter.",
+        "Custom-entry catalogViewer visibility is project scoped, not an entry-group tenant boundary; the worker fixes retrieval scope and only exposes search terms/count.",
+        "Author observed Japanese keyword variants missing matches and semantic results including irrelevant entries; no exhaustive retrieval guarantee or benchmark accuracy was established."
+      ]
+    },
+    {
+      "key": "transcription",
+      "articleId": "2026-11-07-top-2",
+      "url": "https://zenn.dev/kaji_kaji/articles/speaking-log-parallel-measured-three-times",
+      "title": "22 分の録音文字起こしを 25 分 → 33 秒にした",
+      "source": "Zenn",
+      "topic": "音声処理の計測とCPU・GPU資源配分",
+      "publishedAt": "2026-11-07T00:00:06+00:00",
+      "capturedAt": "2026-11-07T01:02:35.900845+00:00",
+      "snapshotSha256": "e40dc687cc0a0400c34ccaf287350e7e33c0e98f76252d74d2272271b6b8d09b",
+      "access": "full",
+      "accessNote": "Read the public original narrative, tables and relevant implementation examples. Publication time checked against its time element or JSON-LD; experiments not independently executed.",
+      "verifiedFacts": [
+        "On the author's Mac high-speed path, a 22-minute recording changed from 10–25 minutes to 33 seconds; this is a local application measurement, not a universal ASR speed ratio.",
+        "CPU diarization and GPU mlx-whisper transcription used separate processes; reserving two CPU cores avoided CPU starvation of GPU orchestration.",
+        "Bypassing unused sherpa-onnx embedding work reduced diarization; short audio quantization gains did not carry to the 22-minute input."
+      ]
+    },
+    {
+      "key": "isolation",
+      "articleId": "2026-11-07-top-3",
+      "url": "https://dev.classmethod.jp/articles/playwright-cli-isolated-context-multi-user/",
+      "title": "Playwright CLI 0.1.23の--isolated-contextで、1つのセッションに2人分のログイン状態を持たせる",
+      "source": "DevelopersIO",
+      "topic": "複数ユーザーのブラウザテスト",
+      "publishedAt": "2026-11-07T00:40:52.082000+00:00",
+      "capturedAt": "2026-11-07T01:02:35.900942+00:00",
+      "snapshotSha256": "21b634ff4d4200941876c8c7c00b1eeb2344a4214541937543a1b5f5bdfe2883",
+      "access": "full",
+      "accessNote": "Read the public original narrative, tables and relevant implementation examples. Publication time checked against its time element or JSON-LD; experiments not independently executed.",
+      "verifiedFacts": [
+        "CLI 0.1.23 named contexts separate cookies/localStorage; repeated context names reuse login state within one session.",
+        "Named contexts survived closing their tabs but did not survive closing the session, including the tested persistent profile; state-save/load restored authentication explicitly.",
+        "Network routes and device emulation remained session wide; different accounts do not imply independent mocks or device settings. MCP and trace content/video were not tested."
+      ]
+    },
+    {
+      "key": "emr",
+      "articleId": "2026-11-07-top-4",
+      "url": "https://dev.classmethod.jp/articles/emr-serverless-pre-initialized-capacity-job-interval-startup/",
+      "title": "Amazon EMR Serverless の事前初期化容量で、ジョブが開始されるまでの時間をジョブの間隔ごとに測ってみた",
+      "source": "DevelopersIO",
+      "topic": "事前初期化容量とジョブ開始時間",
+      "publishedAt": "2026-11-06T11:34:52.057000+00:00",
+      "capturedAt": "2026-11-07T01:02:36.001931+00:00",
+      "snapshotSha256": "c5c7d7727c307bcf98b8648fde238fe9319bc995579c77275fd08e5b74a9fc89",
+      "access": "full",
+      "accessNote": "Read the public original narrative, tables and relevant implementation examples. Publication time checked against its time element or JSON-LD; experiments not independently executed.",
+      "verifiedFacts": [
+        "Tokyo emr-7.9.0 ARM64 used one driver and one executor, each 1 vCPU/2GB, with maximum capacity equal to preinitialized capacity.",
+        "With STARTED application and at least 120 seconds after the preceding job, startup was 4.2–7.6 seconds versus 77.6–80.0 without preinitialization. Immediate reuse remained 74.2–77.6 seconds.",
+        "CloudWatch PendingCreation supported the worker recreation interpretation; metrics were one-minute granularity, request polling roughly 1.2-second uncertainty; tiny condition counts and no full cost comparison."
+      ]
+    },
+    {
+      "key": "glue",
+      "articleId": "2026-11-07-top-5",
+      "url": "https://dev.classmethod.jp/articles/20261106-aws-glue-auto-upgread-version/",
+      "title": "[アップデート] AWS Glue ETL ジョブで Glue バージョンに Auto を指定できるようになったので、5.1 から 6.0 への自動アップグレードを試してみた",
+      "source": "DevelopersIO",
+      "topic": "ETLの自動移行と検証の副作用",
+      "publishedAt": "2026-11-06T14:53:47.139000+00:00",
+      "capturedAt": "2026-11-07T01:02:35.999799+00:00",
+      "snapshotSha256": "b253e4a35ef4ed07b4c2990d0d350e2f5e05eb9654cb68a1bca3e9221bb71a8e",
+      "access": "full",
+      "accessNote": "Read the public original narrative, tables and relevant implementation examples. Publication time checked against its time element or JSON-LD; experiments not independently executed.",
+      "verifiedFacts": [
+        "Existing Glue5.1 Spark ETL job changed to Auto, observed three old-version runs, waited for consent, then tested three Glue6.0 production-path executions before completion.",
+        "Tokyo test aggregated twenty CSV rows into five Parquet rows with two G.1X workers; output matched this baseline. Auto did not rewrite the script.",
+        "Approval precedes new-version runs; fallback can append duplicate output, so Write Paths and downstream idempotency matter. The failure/fallback branch was not exercised.",
+        "GlueVersion remains auto; actual runtime must be read per JobRun/AutoUpgradeMetadata; this example is not evidence that every job is compatible."
+      ]
+    }
+  ],
+  "reviewedAt": "2026-11-07T01:05:12.860867+00:00"
+}
