@@ -1,0 +1,69 @@
+{
+  "sourceCommit": "e5792cabd0d61fb10c26b97727e0f383c57adcb4",
+  "dateCount": 87,
+  "files": 348,
+  "lexicalIdentities": 1362,
+  "grammarIdentities": 117,
+  "newWords": [
+    "重なる",
+    "閉じる"
+  ],
+  "newGrammar": [],
+  "levelVerification": {
+    "verifiedAt": "2026-11-07T01:12:00Z",
+    "references": [
+      {
+        "term": "重なる",
+        "reading": "かさなる",
+        "level": "N2",
+        "url": "https://www.japandict.com/%E9%87%8D%E3%81%AA%E3%82%8B",
+        "evidence": "Direct entry: popular JLPT N2, godan, intransitive; not separate おもなる reading."
+      },
+      {
+        "term": "閉じる",
+        "reading": "とじる",
+        "level": "N3",
+        "url": "https://www.japandict.com/%E9%96%89%E3%81%98%E3%82%8B",
+        "evidence": "Direct entry: popular JLPT N3, Ichidan; transitive use in this lesson."
+      }
+    ],
+    "scope": "Learning reference levels, not an official JLPT vocabulary list."
+  },
+  "semanticExclusions": [
+    {
+      "term": "気づく",
+      "reason": "same as 気付く 2026-09-21"
+    },
+    {
+      "term": "つかむ",
+      "reason": "same as 掴む 2026-10-20"
+    },
+    {
+      "term": "凡そ",
+      "reason": "same as おおよそ 2026-09-04"
+    },
+    {
+      "term": "移し替える",
+      "reason": "reference JLPT level unconfirmed"
+    },
+    {
+      "term": "取り合う",
+      "reason": "reference JLPT level unconfirmed"
+    },
+    {
+      "term": "言い淀む",
+      "reason": "reference JLPT level unconfirmed"
+    }
+  ],
+  "semanticBoundaries": [
+    {
+      "term": "重なる",
+      "reason": "intransitive lexical headword distinct from transitive 重ねる 2026-10-02"
+    },
+    {
+      "term": "閉じる",
+      "reason": "distinct verb from confinement compound 閉じ込める 2026-09-09"
+    }
+  ],
+  "newUnreviewedDuplicates": 0
+}
