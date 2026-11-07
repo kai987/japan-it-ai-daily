@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-07",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-11-07T01:16:46.307630+00:00",
+  "scope": "Five complete original articles captured outside Git and independently used to author both languages. Only canonical Japanese interviews are shared verbatim. No source code was executed; examples and project proposals are teaching creations.",
+  "articles": [
+    {
+      "articleId": "2026-11-07-top-1",
+      "url": "https://developers.cyberagent.co.jp/blog/archives/67259/",
+      "source": "CyberAgent Developers Blog",
+      "topic": "AIエージェントの知識と権限境界",
+      "capturedAt": "2026-11-07T01:02:35.900345+00:00",
+      "snapshotSha256": "058c41253ea335693303a6c237213c1ebacd035fbd58b7a703578e6e96ee2b9f",
+      "accessNote": "Read the public original narrative, tables and relevant implementation examples. Publication time checked against its time element or JSON-LD; experiments not independently executed.",
+      "originalTitle": "Knowledge Catalog で AI エージェントに社内の知識を渡す基盤づくり – ミッション型インターン体験記",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "A query filter is not the authorization boundary; custom catalog entries use project-level viewer access.",
+          "quote": "検索クエリの条件は境界になりません。",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "重要なのは、知識のまとまりを分けることと、読める人を分けることが同じではない点です。記事で扱うカスタムエントリ",
+            "zh": "真正的权限边界比目录结构更重要。在本例的自定义知识条目中，catalogViewer所覆盖的读取权限以GCP项",
+            "interview": "私は検索条件と閲覧権限を分けます。記事ではカタログの閲覧権限がプロジェクト単位なので、知識を渡す相手ごとにプロ"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Worker fixes scope; agent supplies only query and count.",
+          "quote": "検索範囲はワーカー側で固定する",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "重要なのは、知識のまとまりを分けることと、読める人を分けることが同じではない点です。記事で扱うカスタムエントリ",
+            "zh": "真正的权限边界比目录结构更重要。在本例的自定义知识条目中，catalogViewer所覆盖的读取权限以GCP项",
+            "interview": "私は検索条件と閲覧権限を分けます。記事ではカタログの閲覧権限がプロジェクト単位なので、知識を渡す相手ごとにプロ"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Entry body fetched through lookupEntry; Japanese lexical and semantic search remain separately limited.",
+          "quote": "lookupEntry",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "取得した候補から本文を取り直す処理にはlookupEntryを使います。一方、検索の品質は権限と別の課題でした",
+            "zh": "检索到条目后，正文通过lookupEntry另行取得。作者还观察到日文异写和活用变化会使关键词检索得到零条，而",
+            "interview": "私は検索条件と閲覧権限を分けます。記事ではカタログの閲覧権限がプロジェクト単位なので、知識を渡す相手ごとにプロ"
+          }
+        },
+        {
+          "id": "top1-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact2",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "ja": "検索ツールの入力を制限する実装と、クラウド権限が効く単位の両方から知識の境界を検討できます。",
+            "zh": "把知识编辑、读取权限和搜索质量拆成可分别验证的工程问题。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-07-top-2",
+      "url": "https://zenn.dev/kaji_kaji/articles/speaking-log-parallel-measured-three-times",
+      "source": "Zenn",
+      "topic": "音声処理の計測とCPU・GPU資源配分",
+      "capturedAt": "2026-11-07T01:02:35.900845+00:00",
+      "snapshotSha256": "e40dc687cc0a0400c34ccaf287350e7e33c0e98f76252d74d2272271b6b8d09b",
+      "accessNote": "Read the public original narrative, tables and relevant implementation examples. Publication time checked against its time element or JSON-LD; experiments not independently executed.",
+      "originalTitle": "22 分の録音文字起こしを 25 分 → 33 秒にした",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "ASR GPU and diarization CPU still contend for CPU orchestration.",
+          "quote": "話者分離は CPU を、文字起こしは GPU を使います。",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "GPUを使うmlx-whisperへ替えた後、話者分離をCPU、文字起こしをGPUで並べても、両方に約2分35",
+            "zh": "把说话人分离放到CPU、把识别放到GPU，并不自动消除竞争。两边一度都耗时约2分35秒，原因分析指向CPU占满",
+            "interview": "私は処理ごとの時間と、共有する資源を測ります。記事では話者分離をCPU、文字起こしをGPUへ分けても、CPUを"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Reserving two CPU cores improves overlap; unused embeddings removed with direct ONNX segmentation.",
+          "quote": "文字起こし用に CPU を 2 コア空けておくと",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "GPUを使うmlx-whisperへ替えた後、話者分離をCPU、文字起こしをGPUで並べても、両方に約2分35",
+            "zh": "把说话人分离放到CPU、把识别放到GPU，并不自动消除竞争。两边一度都耗时约2分35秒，原因分析指向CPU占满",
+            "interview": "私は処理ごとの時間と、共有する資源を測ります。記事では話者分離をCPU、文字起こしをGPUへ分けても、CPUを"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Mac local22minute input reaches33seconds, not a hardware-independent benchmark or general ASR accuracy claim.",
+          "quote": "全体で 33 秒になりました。",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "短い音声で効いた設定が、長い録音でも効くとは限りません。3分の入力で改善した量子化や再試行の削減は、22分の入",
+            "zh": "作者还反复用短录音和完整录音比较，发现3分钟输入上有效的量化和减少重试，在22分钟录音上没有明显收益。调整说话",
+            "interview": "私は処理ごとの時間と、共有する資源を測ります。記事では話者分離をCPU、文字起こしをGPUへ分けても、CPUを"
+          }
+        },
+        {
+          "id": "top2-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact2",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "ja": "並列化で残るCPUの競合と、使っていない中間計算を、段階別の計測から見つける過程を読めます。",
+            "zh": "呈现了并行后仍有资源争用，以及性能优化必须回到真实输入的过程。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-07-top-3",
+      "url": "https://dev.classmethod.jp/articles/playwright-cli-isolated-context-multi-user/",
+      "source": "DevelopersIO",
+      "topic": "複数ユーザーのブラウザテスト",
+      "capturedAt": "2026-11-07T01:02:35.900942+00:00",
+      "snapshotSha256": "21b634ff4d4200941876c8c7c00b1eeb2344a4214541937543a1b5f5bdfe2883",
+      "accessNote": "Read the public original narrative, tables and relevant implementation examples. Publication time checked against its time element or JSON-LD; experiments not independently executed.",
+      "originalTitle": "Playwright CLI 0.1.23の--isolated-contextで、1つのセッションに2人分のログイン状態を持たせる",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Named contexts isolate authentication storage.",
+          "quote": "cookie と localStorage が分かれる",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "Playwright CLI 0.1.23で、一つのブラウザセッションに二人分のログイン状態を持たせる検証です",
+            "zh": "Playwright CLI 0.1.23加入了按名称隔离浏览器上下文的能力，作者用本地双账户应用验证其行为。",
+            "interview": "私はログイン情報と、操作設定の共有範囲を別に確かめます。記事の名前付きコンテキストではクッキーとローカルストレ"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Same-name tabs share identity, even after all named tabs close until session ends.",
+          "quote": "同じ名前のタブはログイン状態を共有し",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "ただし、タブを閉じることと、その保存領域を破棄することは別です。名前付きコンテキストのタブを全部閉じても、同じ",
+            "zh": "但“关闭标签页”不意味着“清除登录状态”。即使命名上下文的标签页全部关闭，再以同名打开时仍能继续登录，结束整个",
+            "interview": "私はログイン情報と、操作設定の共有範囲を別に確かめます。記事の名前付きコンテキストではクッキーとローカルストレ"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Route mocks and device emulation are session-wide; CLI experiment does not prove MCP or trace contents.",
+          "quote": "端末のエミュレーションはセッションで共通でした。",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "通信を置き換えるrouteの設定は、分離したログイン領域を越えてセッション全体で共有されました。端末設定を変え",
+            "zh": "另一个容易误判的范围是网络mock。route和unroute的规则在整个会话中共享，并不会随账户上下文独立；",
+            "interview": "私はログイン情報と、操作設定の共有範囲を別に確かめます。記事の名前付きコンテキストではクッキーとローカルストレ"
+          }
+        },
+        {
+          "id": "top3-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact2",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "ja": "認証の分離、設定の共有、状態が残る寿命を別々に試し、複数利用者のテストを設計できます。",
+            "zh": "指出账户隔离只是部分保证，测试配置与状态生命周期仍需要单独检查。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-07-top-4",
+      "url": "https://dev.classmethod.jp/articles/emr-serverless-pre-initialized-capacity-job-interval-startup/",
+      "source": "DevelopersIO",
+      "topic": "事前初期化容量とジョブ開始時間",
+      "capturedAt": "2026-11-07T01:02:36.001931+00:00",
+      "snapshotSha256": "c5c7d7727c307bcf98b8648fde238fe9319bc995579c77275fd08e5b74a9fc89",
+      "accessNote": "Read the public original narrative, tables and relevant implementation examples. Publication time checked against its time element or JSON-LD; experiments not independently executed.",
+      "originalTitle": "Amazon EMR Serverless の事前初期化容量で、ジョブが開始されるまでの時間をジョブの間隔ごとに測ってみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "STARTED app after120second gaps has4.2-7.6sec warm vs77.6-80cold startup.",
+          "quote": "事前初期化なしは 77.6〜80.0 秒でした。",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "アプリがSTARTEDで、前のジョブ終了から120秒以上空けると、事前初期化ありは4.2～7.6秒、なしは77",
+            "zh": "应用保持STARTED且上一个作业结束至少120秒后，有预初始化容量的等待为4.2～7.6秒，没有则为77.6",
+            "interview": "私はアプリの状態と、前のジョブからの間隔を確認します。記事では最大容量と事前初期化容量を同じにし、二分空けると"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Immediate resubmit warm74.2-77.6secs with maximum capacity equal pre-initialized capacity.",
+          "quote": "前のジョブの直後に送ると 74.2〜77.6 秒",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "アプリがSTARTEDで、前のジョブ終了から120秒以上空けると、事前初期化ありは4.2～7.6秒、なしは77",
+            "zh": "应用保持STARTED且上一个作业结束至少120秒后，有预初始化容量的等待为4.2～7.6秒，没有则为77.6",
+            "interview": "私はアプリの状態と、前のジョブからの間隔を確認します。記事では最大容量と事前初期化容量を同じにし、二分空けると"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "One-minute maximum metrics do not align exactly with second-level polling; STOPPED and idle fees require separate assessment.",
+          "quote": "1 分",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "この説明はCloudWatchの容量指標とも照合していますが、指標は一分単位の最大値で、秒単位のログと正確に重",
+            "zh": "CloudWatch的一分钟最大值只能帮助判断先后关系，不能与秒级日志严丝合缝对应；每秒查询状态也带来约一个轮",
+            "interview": "私はアプリの状態と、前のジョブからの間隔を確認します。記事では最大容量と事前初期化容量を同じにし、二分空けると"
+          }
+        },
+        {
+          "id": "top4-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact2",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "ja": "ウォーム状態という呼び方を、アプリ状態と前回終了後の間隔へ分解して評価できます。",
+            "zh": "把预热容量的效果还原为可重复的状态、间隔和容量条件。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-07-top-5",
+      "url": "https://dev.classmethod.jp/articles/20261106-aws-glue-auto-upgread-version/",
+      "source": "DevelopersIO",
+      "topic": "ETLの自動移行と検証の副作用",
+      "capturedAt": "2026-11-07T01:02:35.999799+00:00",
+      "snapshotSha256": "b253e4a35ef4ed07b4c2990d0d350e2f5e05eb9654cb68a1bca3e9221bb71a8e",
+      "accessNote": "Read the public original narrative, tables and relevant implementation examples. Publication time checked against its time element or JSON-LD; experiments not independently executed.",
+      "originalTitle": "[アップデート] AWS Glue ETL ジョブで Glue バージョンに Auto を指定できるようになったので、5.1 から 6.0 への自動アップグレードを試してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Old-version three runs then user consent is observed for this existing small Glue job.",
+          "quote": "分析を完了するには、ジョブを 3 回以上実行する必要があります。",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "AWS Glue ETLジョブのバージョンをAutoにし、5.1から6.0へ移す手順を検証しています。東京リー",
+            "zh": "AWS Glue允许把ETL作业版本设成Auto，原文测试了一个现有作业从5.1到6.0的升级。东京区域中，两",
+            "interview": "私は互換性と、書き込みの影響を確認します。記事では旧版で三回確認してから承認し、新版でも三回動かして移行しまし"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Three new-version regular executions write normal destination; inspect JobRun actual version.",
+          "quote": "承認後、コンソールの［Run］でジョブを 3 回実行しました。",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "AWS Glue ETLジョブのバージョンをAutoにし、5.1から6.0へ移す手順を検証しています。東京リー",
+            "zh": "AWS Glue允许把ETL作业版本设成Auto，原文测试了一个现有作业从5.1到6.0的升级。东京区域中，两",
+            "interview": "私は互換性と、書き込みの影響を確認します。記事では旧版で三回確認してから承認し、新版でも三回動かして移行しまし"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Append plus fallback may duplicate output; failure fallback not tested, five-row example does not establish universal compatibility.",
+          "quote": "append モードのジョブでは出力が重複する可能性があり",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "承認後の検証は隔離した試験用の書き込みではなく、通常の出力先へ書きます。レポートのWrite Pathsでは場",
+            "zh": "升级报告中的Write Paths需要检查实际S3位置、数据格式和写入方式，因为批准后的新版验证会使用正常输出",
+            "interview": "私は互換性と、書き込みの影響を確認します。記事では旧版で三回確認してから承認し、新版でも三回動かして移行しまし"
+          }
+        },
+        {
+          "id": "top5-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact2",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "ja": "自動移行の確認回数だけでなく、検証自体が本番の出力を変える点まで確認できます。",
+            "zh": "揭示自动升级的试运行会改变真实输出，必须同时检查兼容性与副作用。"
+          }
+        }
+      ]
+    }
+  ]
+}
