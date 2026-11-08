@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T01:29:57.821Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "メールのログインリンクが有効なのに、確認操作が失敗したらどう切り分けますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "e983965cc133bdf9487152d70375c77cfdb5c95d3a8bb65455b3bb784efa3752",
+      "audioSha256": "4549a74ee2d2c9326cc1d90d53bc27fd82b876247a14a5b7707f747cab1ea5c1",
+      "durationSeconds": 5.966
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "まず、トークンの確認まで処理が届いたかを見ます。この事例では、Originがヌルになり、転送先のホストとの照合でServer Actionsが止まりました。確認画面の参照元ポリシーをstrict-originにすると、パスやクエリを送らずにログインが通りました。ただし、フォームとfetchでは挙動が違うので、同じ送信方法で再現して確かめます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "948592a958ceadf37e37dc0d509b6ca7c292f6c192378db98ac286811f40ddd6",
+      "audioSha256": "62a7951e401a6eb4ba16a03b1c03b4d2597b85672293d5f11c7c4399e1dde893",
+      "durationSeconds": 24.176,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "ダイヤモンドの価格予測では、どの条件なら二つのモデルを公平に比較できますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "e04f233c5527747ef02a64cf431988574978cd169d3e7946cdf01c8e9a171806",
+      "audioSha256": "31c2638acd71741bd481f7ac8e3884fb42577911f284719bc431f6dece92b7a7",
+      "durationSeconds": 6.408
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "まず学習行数と分割をそろえます。記事の一万行では、TabFMの誤差が四・八パーセントで、LightGBMが勝ったのは五回中二回です。また、1.51カラット以上を学習から外すと、別の強みが見えました。ただし、学習例を二万行に増やすとメモリで失敗した回もあるので、誤差と一緒に完走回数も報告します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "ec1b3010a1461812d90c3cde6b2f88673cb776f895728d73885f08661265dbb9",
+      "audioSha256": "d48113488d913cc66d82020971eaef8f55f084b065193153d4704a49c38c91c1",
+      "durationSeconds": 24.986,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "性能改善をエージェントに任せるとき、どのような観測と引き継ぎを用意しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "af332ea9632db8c8791244fb7120ddf9bff04a1e4b9a23d3f2255b3d343c96dd",
+      "audioSha256": "251a2c77114db5d9a457e50e8b19d2070b6c3a89ccde0eb076f977341ef00520",
+      "durationSeconds": 6.152
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "一手ごとに状態と計測結果を残します。この競技では、ログに受信サイズを足して、巨大な不正画像が受信量の三分の二近くを占めると分かりました。初期画像も個別ファイルで書くとIOPSの上限に当たり、一つのファイルと索引に変えました。同じ構成でも得点が揺れるので、計測を繰り返す必要があります。再起動で復元できることも別に確かめます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "f8cd280564a95a5af00eb4792c417e40efd904965b49afb9c291f8826e1566ac",
+      "audioSha256": "0abae014247bbc6a5ddb52bfbbe395b211109075e93cc92b9ae8bf24213e4d39",
+      "durationSeconds": 27.213,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "障害通知を受けて自動で調査を始める場合、何を記録しておきますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "a80c642445132cbfb2ed16d0bf984609c7082944c2002e77d53f8402ac713ac0",
+      "audioSha256": "211892c3f97741bc3296cb1d76683a1a9c2a9ad8b1282478ad5c6e347f43754c",
+      "durationSeconds": 5.757
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "通知と調査をあとから結び付けられるようにします。記事ではSentryからWebhookで通知し、課題番号をCodexのタスク名に入れています。調べた結果と修正が必要かどうかの判定は、人が読める形で残します。重複通知を抑える条件も必要ですが、記事からはその運用実績までは分からないので、導入時に別途試します。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "62ac7918a898ce227893f053714ffe7d15c747979c76f5e8dd9a79b36f3b9889",
+      "audioSha256": "de6f1c08e02949e0e29d88620d32b7a20b832834adc6841c4d91702587f4e109",
+      "durationSeconds": 25.251,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "共有のIBM i環境で、端末接続とデータベースの動作をどう確認しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "d7a0d1f3f129bec7a7ab2dd54e9f9b38a3cf36d712938706f80b75e3d75c567e",
+      "audioSha256": "4dd36ca178fa601f31deee7ebad1625f4739b5a55797c184b929fb9967cdc9b2",
+      "durationSeconds": 6.756
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "まず5250端末を992番のポートにつなぎ、通信が暗号化される設定を確認します。接続したらSTRSQLを起動し、ドットで区切る命名方式でダミー表のSYSDUMMY1を読みます。IBMREQDがYの一行を返せば、問い合わせまで通ったと分かります。共有の学習環境なので、自分の領域か公開の練習用データに絞る必要があります。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "81b95223191ca4be4a26da125e3cc1ed1edbc245a11af67f644b429992b22857",
+      "audioSha256": "3764e218b1a5a0a4b2b0cccd568bf268473c1e067f195639c1bc9ba616d5e0cf",
+      "durationSeconds": 28.316,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "メール認証のエラー表示を見たとき、どのログから調べますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "6f91582f0b1ccf4720304fc86237a557b6150869e658190bdfa3127cea837e05",
+      "audioSha256": "5668ca0141983cf503ba4c85a83bb108f3cdb391a97d551497ac192a43d2b7b0",
+      "durationSeconds": 4.887
+    },
+    {
+      "index": 2,
+      "text": "通常のデータ分割と外挿の評価では、結果をどう読み分けますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "cc08c88ce8671e7dead60b360746d73c07174790f2d81a799f8ef662265a9b30",
+      "audioSha256": "caaa96b637897d3c9676358dc87a877aafc69b38dca2838b582f525f25aa7513",
+      "durationSeconds": 5.398
+    },
+    {
+      "index": 3,
+      "text": "調査の自動実行を繰り返すとき、次の人へ何を残しますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "06b65d981e8fa6e8278f9e402ef6386e2bce21b806aef0a26015483fed46b0f3",
+      "audioSha256": "8108486a6766534d383dc59d34c7cd895cf8eed6c5f0bce73dcd9d6ac01aa230",
+      "durationSeconds": 5.119
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-08T01:29:59.633Z"
+}
