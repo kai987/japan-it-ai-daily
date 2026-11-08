@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-08",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-11-08T01:14:46.161870+00:00",
+  "scope": "Five complete original articles captured outside Git and independently used to author both languages. Only canonical Japanese interviews are shared verbatim. No source code was executed; examples and project proposals are teaching creations.",
+  "articles": [
+    {
+      "articleId": "2026-11-08-top-1",
+      "url": "https://zenn.dev/snape_works/articles/nextjs-no-referrer-origin-null",
+      "source": "Zenn",
+      "topic": "Web認証とHTTPヘッダー",
+      "capturedAt": "2026-11-08T01:05:30.549981+00:00",
+      "snapshotSha256": "5ba8ffad0844ca20fb0504f3efba2077b142aabcaca38dcc3bf8d69840d1f419",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "originalTitle": "Referrer-Policy: no-referrer を付けたら、Next.jsのServer Actionsが500になった",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Production log reports null Origin versus forwarded host before token validation.",
+          "quote": "does not match `origin` header with value `null`",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "Vercelに置いたNext.js 16.3.8のログイン画面で、メールのリンクを踏んだ後の確認操作が500に",
+            "zh": "一次保护邮件登录链接的改动导致确认按钮返回500。作者在Vercel上运行Next.js 16.3.8，把包含",
+            "interview": "まず、トークンの確認まで処理が届いたかを見ます。この事例では、Originがヌルになり、転送先のホストとの照合"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Non-CORS POST can get null from no-referrer; actual path was not isolated.",
+          "quote": "CORSモードではないPOST",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "きっかけは、確認ページのURLに含まれるトークンをRefererへ載せないために加えたno-referrerで",
+            "zh": "参照地址策略也可能影响来源标头。常见表单产生的非CORS POST，在no-referrer下可能送出null",
+            "interview": "まず、トークンの確認まで処理が届いたかを見ます。この事例では、Originがヌルになり、転送先のホストとの照合"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "strict-origin removes path and query in referrer and restored tested Chrome login.",
+          "quote": "(パスやクエリを含まない)",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "きっかけは、確認ページのURLに含まれるトークンをRefererへ載せないために加えたno-referrerで",
+            "zh": "参照地址策略也可能影响来源标头。常见表单产生的非CORS POST，在no-referrer下可能送出null",
+            "interview": "まず、トークンの確認まで処理が届いたかを見ます。この事例では、Originがヌルになり、転送先のホストとの照合"
+          }
+        },
+        {
+          "id": "top1-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact2",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "ja": "認証画面の表示と、サーバーが拒否した処理段階を切り分ける手掛かりになります。",
+            "zh": "同一项隐私设置可能改变防伪校验的输入，这个案例给出了如何沿请求找到拒绝点的线索。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-08-top-2",
+      "url": "https://zenn.dev/ttomo_tommy/articles/tabfm-vs-lightgbm-diamonds",
+      "source": "Zenn",
+      "topic": "表データ予測と外挿",
+      "capturedAt": "2026-11-08T01:05:30.550619+00:00",
+      "snapshotSha256": "87594a928450103171db253928f08e58357353cbf4c4ea1251ba95a1d8702e12",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "originalTitle": "BigQuery の TabFM と LightGBM を Diamonds で比較",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Whole dataset LightGBM 4.22% versus 10k-row TabFM 4.80%, unequal training counts.",
+          "quote": "全量の LightGBM（51,794 行、4.22%）",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "250行ではTabFMが7.99%、調整済みLightGBMが15.78%でした。1万行になると4.80%対4",
+            "zh": "训练样例只有250行时，TabFM的误差是7.99%，LightGBM为15.78%。各用1万行时两者是4.8",
+            "interview": "まず学習行数と分割をそろえます。記事の一万行では、TabFMの誤差が四・八パーセントで、LightGBMが勝っ"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "1.51-carat boundary defines separate extrapolation test.",
+          "quote": "1.51 カラット以上、約 5,400 行",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "1.51カラット以上を学習から外す検証では、2千行のTabFMが9.87%、同じ行数のLightGBMが20.",
+            "zh": "作者另做了按克拉切分的外推评估。训练集只放小于1.51克拉的记录，测试从被留出的大颗粒钻石中抽样。各取2千训练",
+            "interview": "まず学習行数と分割をそろえます。記事の一万行では、TabFMの誤差が四・八パーセントで、LightGBMが勝っ"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "At 20k training rows, 500-row batches did not avoid memory failures for four seeds.",
+          "quote": "5 シード中 4 シードでメモリ超過",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "250行ではTabFMが7.99%、調整済みLightGBMが15.78%でした。1万行になると4.80%対4",
+            "zh": "训练样例只有250行时，TabFM的误差是7.99%，LightGBM为15.78%。各用1万行时两者是4.8",
+            "interview": "まず学習行数と分割をそろえます。記事の一万行では、TabFMの誤差が四・八パーセントで、LightGBMが勝っ"
+          }
+        },
+        {
+          "id": "top2-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact2",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "ja": "学習量をそろえた比較、容量が足りない場合の比較、未観測範囲での評価を分けて読めます。",
+            "zh": "模型选择除了看误差，还要看两方拿到了多少数据、能否跑完以及将来会遇到怎样的输入。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-08-top-3",
+      "url": "https://zenn.dev/5alt_nacl/articles/isucon2026-solo-ai-agent",
+      "source": "Zenn",
+      "topic": "計測とエージェント運用",
+      "capturedAt": "2026-11-08T01:05:30.551157+00:00",
+      "snapshotSha256": "163c67153ab65795b239d0374a0ea9fe8499887a79f54e3a400f64b0222da053",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "originalTitle": "ISUCON2026 ソロ参加記：自作ハーネスで Claude Code をほぼ無人運転した",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "The loop reads persisted state before acting and records the next wake.",
+          "quote": "STATE.md を読む",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "ISUCON2026の個人参加者は、手元のWindowsでClaude Codeの作業を回し、競技用サーバーで",
+            "zh": "这次ISUCON独自参赛记录把工程操作拆成短循环。Windows端启动代理，读取磁盘上的状态，完成一步后保存操",
+            "interview": "一手ごとに状態と計測結果を残します。この競技では、ログに受信サイズを足して、巨大な不正画像が受信量の三分の二近"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Bundling 1.82 million initial images with an index avoided issuing millions of individual file operations.",
+          "quote": "初期画像182万件は1ファイルと索引にまとめた",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "改善は作業の自動化だけで説明できません。採点条件を読み直して通知を直接届ける方式に変え、画像署名を事前計算しま",
+            "zh": "涨分对应若干具体瓶颈。重新看计分规则后，作者改为直接投递通知。计算图像签名消耗大量区域节点CPU，预计算能省掉",
+            "interview": "一手ごとに状態と計測結果を残します。この競技では、ログに受信サイズを足して、巨大な不正画像が受信量の三分の二近"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Scores vary under identical configuration, so avoid small-effect attribution to a single run.",
+          "quote": "195,198〜206,400",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "同じ構成でも195,198〜206,400点の幅があり、僅かな点差から一つの変更の効果は判断しにくい状況です。",
+            "zh": "同一套配置的基准分数也会在195,198到206,400间波动，单跑一次很难归因。两次重启检查都通过，补充了分",
+            "interview": "一手ごとに状態と計測結果を残します。この競技では、ログに受信サイズを足して、巨大な不正画像が受信量の三分の二近"
+          }
+        },
+        {
+          "id": "top3-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact2",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "ja": "実行を続ける仕掛けと、計測から施策を選ぶ判断の両方が見えます。",
+            "zh": "可跟着每一次观测找到性能工作从何开始，以及代理交接时需要留下什么。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-08-top-4",
+      "url": "https://zenn.dev/tmiyachi/articles/outer-loop-sentry-webhook-codex",
+      "source": "Zenn",
+      "topic": "イベント駆動の障害調査",
+      "capturedAt": "2026-11-08T01:06:54.800481+00:00",
+      "snapshotSha256": "c8235300f68e9a230bbd95545060b3de5590f1d87c67a3fc6eed726210cf1222",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "originalTitle": "外ループは「いつ動かし、いつ止め、何を引き継ぐか」で設計する ― Sentry→Webhook→Codexの実例から",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Webhook creates a task identified with the Sentry issue number.",
+          "quote": "SentryのIssue IDが入ります",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "著者のSaaSでは、SentryがまとめたエラーをWebhookで受け取り、課題を識別できる名前を付けてCod",
+            "zh": "文章里的故障调查从Sentry的事件归组开始。Webhook把通知交给接收端，后者以Sentry的课题编号标识",
+            "interview": "通知と調査をあとから結び付けられるようにします。記事ではSentryからWebhookで通知し、課題番号をCo"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "The reported automation investigates and decides if a fix is needed.",
+          "quote": "原因の調査と、直す必要があるかどうかの判定までです",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "著者のSaaSでは、SentryがまとめたエラーをWebhookで受け取り、課題を識別できる名前を付けてCod",
+            "zh": "文章里的故障调查从Sentry的事件归组开始。Webhook把通知交给接收端，后者以Sentry的课题编号标识",
+            "interview": "通知と調査をあとから結び付けられるようにします。記事ではSentryからWebhookで通知し、課題番号をCo"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Humans can later open the task for the decision; dedup and approval are proposed designs.",
+          "quote": "人があとから開いて、調査の内容と判定を読むための記録です",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "運用例から分かるのは、検知から調査と判定までの接続です。重複抑止や承認の運用実績、具体的な障害の調査精度、対応",
+            "zh": "这套记录展示的是检测、发起调查、保留判断的连接方式。没有公开具体故障样本，也没有调查准确率或耗时。可分别用重发",
+            "interview": "通知と調査をあとから結び付けられるようにします。記事ではSentryからWebhookで通知し、課題番号をCo"
+          }
+        },
+        {
+          "id": "top4-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact2",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "ja": "エージェントの判断と、チームがその仕事を受け渡す仕組みを別に設計できます。",
+            "zh": "为把人工调查接到事件通知上提供了一个可审计的最小流程。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-08-top-5",
+      "url": "https://dev.classmethod.jp/articles/pub400-db2-for-i-5250/",
+      "source": "DevelopersIO",
+      "topic": "IBM iの端末とSQL",
+      "capturedAt": "2026-11-08T01:05:30.964474+00:00",
+      "snapshotSha256": "a3688b7ad134f576ca24a82640f9052b5c03ff493bbcbb6fcde71468460a00a7",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "originalTitle": "AS/400環境のPUB400.COMで、5250端末からDb2 for iでSQLを実行してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Interactive SQL uses SQL naming to qualify objects by schema dot table.",
+          "quote": "STRSQL NAMING(*SQL)",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "対話型SQLの入口はSTRSQLです。SQLの命名方式を選ぶと、ライブラリーとテーブルの指定を、SQLで見慣れ",
+            "zh": "接下来在IBM i启动STRSQL并选择SQL命名方式，库名与表名就能用点号连接。查询SYSIBM下的SYSD",
+            "interview": "まず5250端末を992番のポートにつなぎ、通信が暗号化される設定を確認します。接続したらSTRSQLを起動し"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "The author issues a read of a one-row dummy table over the remote terminal.",
+          "quote": "SYSIBM.SYSDUMMY1",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "対話型SQLの入口はSTRSQLです。SQLの命名方式を選ぶと、ライブラリーとテーブルの指定を、SQLで見慣れ",
+            "zh": "接下来在IBM i启动STRSQL并选择SQL命名方式，库名与表名就能用点号连接。查询SYSIBM下的SYSD",
+            "interview": "まず5250端末を992番のポートにつなぎ、通信が暗号化される設定を確認します。接続したらSTRSQLを起動し"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "IBMREQD Y was returned; this establishes query execution only.",
+          "quote": "IBMREQD と値 Y の1行",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "対話型SQLの入口はSTRSQLです。SQLの命名方式を選ぶと、ライブラリーとテーブルの指定を、SQLで見慣れ",
+            "zh": "接下来在IBM i启动STRSQL并选择SQL命名方式，库名与表名就能用点号连接。查询SYSIBM下的SYSD",
+            "interview": "まず5250端末を992番のポートにつなぎ、通信が暗号化される設定を確認します。接続したらSTRSQLを起動し"
+          }
+        },
+        {
+          "id": "top5-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact2",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "ja": "端末接続とSQL実行を、小さな確認で一段ずつ観察できます。",
+            "zh": "可以把一次主机上手练习拆成网络、终端与数据库三个可检查的阶段。"
+          }
+        }
+      ]
+    }
+  ]
+}
