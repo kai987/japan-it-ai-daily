@@ -1,0 +1,272 @@
+{
+  "targetDate": "2026-11-08",
+  "sourceWindow": {
+    "to": "2026-11-08T10:00:00+09:00",
+    "from": "2026-11-07T10:00:00+09:00"
+  },
+  "excludedPreviousTop": [
+    "https://developers.cyberagent.co.jp/blog/archives/67259/",
+    "https://zenn.dev/kaji_kaji/articles/speaking-log-parallel-measured-three-times",
+    "https://dev.classmethod.jp/articles/playwright-cli-isolated-context-multi-user/",
+    "https://dev.classmethod.jp/articles/emr-serverless-pre-initialized-capacity-job-interval-startup/",
+    "https://dev.classmethod.jp/articles/20261106-aws-glue-auto-upgread-version/"
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "observedAt": "2026-11-08T01:05:02.413035+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "htmlSha256": "95259f5b1390900eaa89bfabf28702248560ff48270764293dfb377795cf80ac"
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-08T01:05:02.413388+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "htmlSha256": "fdec46c575897a46c1554099124501fb370d34c045d58ff8107ee10cd12cfa06"
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-08T01:05:02.413486+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "htmlSha256": "4653f25504b1621c3705020c869ca188be4f127885e2b9f5b1afc2370f2a1953"
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-08T01:05:02.413572+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "htmlSha256": "f43f88aa7e8c044c1e130ae54a9e78cb67f0b0e52804d3b3e0512936d4660afd"
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-08T01:05:02.413656+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "htmlSha256": "775bf47d781d659bb4778176f23db6c889a04c328f1c4d4eadd4b73b25115079"
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-08T01:05:02.413749+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "error": "Access denied; not retried through another transport"
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-08T01:05:02.495098+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "htmlSha256": "45c7a7f68cb38902504d8b14f793bd7e76b11d3062573080fa4352a142694caf"
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-08T01:05:02.512410+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "htmlSha256": "ff18ffe39a1d4de10253457e7a239c6204e49b770121170d6c60d4ff740be843"
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-08T01:05:02.568462+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533"
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-08T01:05:02.569230+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "htmlSha256": "f96c56a8f5b76b086ba457f000d56de9ff77ae794484803a0845bf950e6bf524"
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-08T01:05:02.656461+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "htmlSha256": "6301aaaa87db15ac9fb92dfddcff5d98bab21962bb7d49de068be3ff025f4c56"
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-08T01:05:02.664496+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "htmlSha256": "bc3af5c63e15f44215bb269e84738df82ee308fccb96e025f7c598efe503cfae"
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-08T01:05:02.685010+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "htmlSha256": "195da3a7d2f3b978267a41ae12932cc77d0f4817318146908fd1e6600bd14864"
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-08T01:05:02.695918+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "htmlSha256": "fc7dc97424bc57ef418c386849fdbd62f9862325bbe286bcecbf5917e290d871"
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-08T01:05:02.726594+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "htmlSha256": "19edc18db3c20cbdc5d0c19f25e2a3c701d31eea98a510b381979b1935dd6a42"
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-08T01:05:02.760236+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 403,
+      "actualUrl": "https://engineering.mercari.com/",
+      "error": "Access denied; not retried through another transport"
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-08T01:05:02.828631+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "htmlSha256": "9ff5a4181ce8932312dc89998615ec4d44e65f88c368cfaf29b2b6926d845d73"
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-08T01:05:02.846760+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "htmlSha256": "861740bb2ec983870f3fea6877c45996572adfea3416c92035c1702e3b9fcc43"
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-08T01:05:02.909290+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "htmlSha256": "320be58d4bedff7e3763b585098cd7158678f1b0fb89e1b5cc1e8a6a2a0647ee"
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-08T01:05:02.938282+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "htmlSha256": "165a146266197640c9bacb92d3cb04111aed7730b596365c7e7c89f6716aaf4d"
+    }
+  ],
+  "zennLatest": {
+    "total": 100,
+    "inWindow": 97
+  },
+  "excluded": [
+    {
+      "url": "https://forge.workstyle.tech/blog/ns-migration-dropped-dkim/",
+      "reason": "Original published 2026-11-03; later crosspost excluded"
+    },
+    {
+      "url": "https://fullstack-notes.dev/blog/bigframes-ai-if-cost/",
+      "reason": "Canonical date shown as November 7; precise in-window original time not established"
+    }
+  ],
+  "articles": [
+    {
+      "title": "Referrer-Policy: no-referrer を付けたら、Next.jsのServer Actionsが500になった",
+      "source": "Zenn",
+      "topic": "Web認証とHTTPヘッダー",
+      "url": "https://zenn.dev/snape_works/articles/nextjs-no-referrer-origin-null",
+      "articleId": "2026-11-08-top-1",
+      "publishedAt": "2026-11-08T09:35:17.432+09:00",
+      "capturedAt": "2026-11-08T01:05:30.549981+00:00",
+      "snapshotSha256": "5ba8ffad0844ca20fb0504f3efba2077b142aabcaca38dcc3bf8d69840d1f419",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "facts": "Observed null Origin and host mismatch on Next.js 16.3.8/Vercel. strict-origin restored the tested Chrome login. CORS fetch and non-CORS submissions differ. Actual failing transport and difference between browser environments were not isolated."
+    },
+    {
+      "title": "BigQuery の TabFM と LightGBM を Diamonds で比較",
+      "source": "Zenn",
+      "topic": "表データ予測と外挿",
+      "url": "https://zenn.dev/ttomo_tommy/articles/tabfm-vs-lightgbm-diamonds",
+      "articleId": "2026-11-08-top-2",
+      "publishedAt": "2026-11-08T00:36:09.240+09:00",
+      "capturedAt": "2026-11-08T01:05:30.550619+00:00",
+      "snapshotSha256": "87594a928450103171db253928f08e58357353cbf4c4ea1251ba95a1d8702e12",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "facts": "Diamonds nine features, log price transformed back, five seeds, median absolute relative error. At 10,000 rows 4.80% versus 4.97%. At 20,000 rows TabFM ran in one of five seeds with 500-row batches. High-carat split at 1.51 differs from ordinary split. Cost not measured."
+    },
+    {
+      "title": "ISUCON2026 ソロ参加記：自作ハーネスで Claude Code をほぼ無人運転した",
+      "source": "Zenn",
+      "topic": "計測とエージェント運用",
+      "url": "https://zenn.dev/5alt_nacl/articles/isucon2026-solo-ai-agent",
+      "articleId": "2026-11-08-top-3",
+      "publishedAt": "2026-11-08T08:35:44.288+09:00",
+      "capturedAt": "2026-11-08T01:05:30.551157+00:00",
+      "snapshotSha256": "163c67153ab65795b239d0374a0ea9fe8499887a79f54e3a400f64b0222da053",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "facts": "Entrant reports 2,139 to 208,983 over 70 benchmarks, 38 of 579, two successful reboot checks. Notification push, image I/O and regional routing changed. Same-configuration score variability and manual interventions limit attribution."
+    },
+    {
+      "title": "外ループは「いつ動かし、いつ止め、何を引き継ぐか」で設計する ― Sentry→Webhook→Codexの実例から",
+      "source": "Zenn",
+      "topic": "イベント駆動の障害調査",
+      "url": "https://zenn.dev/tmiyachi/articles/outer-loop-sentry-webhook-codex",
+      "articleId": "2026-11-08-top-4",
+      "publishedAt": "2026-11-08T09:51:28.969+09:00",
+      "capturedAt": "2026-11-08T01:06:54.800481+00:00",
+      "snapshotSha256": "c8235300f68e9a230bbd95545060b3de5590f1d87c67a3fc6eed726210cf1222",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "facts": "Firsthand implementation description: Sentry detection, webhook, task identified by issue ID, investigation and verdict. Rate limits and deduplication are recommendations, not documented deployed controls. No incident samples or outcome measurements."
+    },
+    {
+      "title": "AS/400環境のPUB400.COMで、5250端末からDb2 for iでSQLを実行してみた",
+      "source": "DevelopersIO",
+      "topic": "IBM iの端末とSQL",
+      "url": "https://dev.classmethod.jp/articles/pub400-db2-for-i-5250/",
+      "articleId": "2026-11-08-top-5",
+      "publishedAt": "2026-11-07T19:30:37.876Z",
+      "capturedAt": "2026-11-08T01:05:30.964474+00:00",
+      "snapshotSha256": "a3688b7ad134f576ca24a82640f9052b5c03ff493bbcbb6fcde71468460a00a7",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "facts": "Hands-on IBM i 7.5 via tn5250j 0.8.0-beta2 on macOS, TLS port 992, STRSQL NAMING(*SQL), single dummy row IBMREQD=Y. Shared noncommercial training environment. No production migration or performance evidence."
+    }
+  ]
+}
