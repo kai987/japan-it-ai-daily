@@ -1,0 +1,49 @@
+{
+  "sourceCommit": "de83ac955a9bd05298cd9d5ee93a60dd4ec0cfff",
+  "dateCount": 88,
+  "files": 352,
+  "lexicalIdentities": 1364,
+  "grammarIdentities": 117,
+  "newWords": [
+    "占める",
+    "試す"
+  ],
+  "newGrammar": [],
+  "levelVerification": [
+    {
+      "term": "占める",
+      "reading": "しめる",
+      "level": "N3",
+      "url": "https://www.japandict.com/占める",
+      "source": "JapanDict JLPT reference level"
+    },
+    {
+      "term": "試す",
+      "reading": "ためす",
+      "level": "N3",
+      "url": "https://www.japandict.com/試す",
+      "source": "JapanDict JLPT reference level"
+    }
+  ],
+  "semanticExclusions": [
+    {
+      "term": "に加えて",
+      "reason": "existing grammar identity"
+    },
+    {
+      "term": "試す",
+      "reason": "also checked kana ためす and orthographic 験す; neither is a collected identity"
+    }
+  ],
+  "semanticBoundaries": [
+    {
+      "term": "占める",
+      "reason": "share-of-total meaning, distinct from same-sound 閉める and 締める; historical collocation does not establish a standalone card"
+    },
+    {
+      "term": "試す",
+      "reason": "checking properties of the tested object, distinct from attempt-to-act use of existing 試みる"
+    }
+  ],
+  "newUnreviewedDuplicates": 0
+}
