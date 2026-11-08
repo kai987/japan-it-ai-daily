@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-08",
-  "stage": "local_checks_passed",
+  "stage": "drafts_ready",
   "sourceCommit": "de83ac955a9bd05298cd9d5ee93a60dd4ec0cfff",
   "sourceWindow": {
     "from": "2026-11-07T10:00:00+09:00",
     "to": "2026-11-08T10:00:00+09:00"
   },
   "createdAt": "2026-11-08T01:04:54.842Z",
-  "updatedAt": "2026-11-08T01:19:11.474Z",
+  "updatedAt": "2026-11-08T01:19:58.844Z",
   "completedArtifacts": [],
   "lastError": null,
   "dateCount": 88,
@@ -56,5 +56,29 @@
       "reason": "checking properties of the tested object, distinct from attempt-to-act use of existing 試みる"
     }
   ],
-  "newUnreviewedDuplicates": 0
+  "newUnreviewedDuplicates": 0,
+  "baseCommit": "de83ac955a9bd05298cd9d5ee93a60dd4ec0cfff",
+  "draftBranch": "draft/daily-2026-11-08",
+  "draftCommit": "54536242f74eae1e7c3c4bb34a20b60a384a27f6",
+  "fileHashes": {
+    "src/content/daily/2026-11-08.md": "36386dc7cc99b0e9b3e467978955790d35e577302e46cd7e308f831300a942af",
+    "src/content/daily-ja/2026-11-08.md": "b7eb68e25b1db740ea5c501a47131132c1ef5dc5855c6236cd2c2d855e69a98a",
+    "src/content/japanese/2026-11-08.md": "33dc91b47c6a5575565eba001af4be9329488efebdb9aaa556eced493b0c2611",
+    "src/content/japanese-ja/2026-11-08.md": "0cba6d4a652378e48ccd69f85fc1846960105a4b0f7569fbc266d48645883e47",
+    "src/content/evidence/2026-11-08.json": "0d6cf9f9c575964011ce819e57bac4e0ff742eada2712b23cd33ae77a4387c96",
+    "src/data/interviews/2026-11-08.json": "abe6173b19ebcf58599bf0976a626895d02c2d4e12617b94adc47b76962a685b"
+  },
+  "paths": [
+    "src/content/daily-ja/2026-11-08.md",
+    "src/content/daily/2026-11-08.md",
+    "src/content/evidence/2026-11-08.json",
+    "src/content/japanese-ja/2026-11-08.md",
+    "src/content/japanese/2026-11-08.md",
+    "src/data/interviews/2026-11-08.json"
+  ],
+  "verifiedAt": "2026-11-08T01:19:31.173Z",
+  "draftPreflightRunId": 42433752090,
+  "localChecksPassed": 18,
+  "resumeFrom": "drafts_ready",
+  "nextAction": "Wait for the exact draft deploy.yml preflight; submit the source-bound request only after success."
 }
