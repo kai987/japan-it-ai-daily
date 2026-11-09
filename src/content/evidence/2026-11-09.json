@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-09",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-11-09T01:07:50.414612+00:00",
+  "scope": "Five complete original articles captured outside Git and independently used to author both languages. Only canonical Japanese interviews are shared verbatim. No source code was executed; examples and project proposals are teaching creations.",
+  "articles": [
+    {
+      "articleId": "2026-11-09-top-1",
+      "url": "https://dev.classmethod.jp/articles/bedrock-agentcore-web-answer-try-harness/",
+      "source": "DevelopersIO",
+      "topic": "根拠付きウェブ調査",
+      "capturedAt": "2026-11-09T01:00:32.600195+00:00",
+      "snapshotSha256": "f74e2740350a7b4fa6bb6f04b65bffcb54c1d9fcf8e4438d956166d0e6989bd7",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "originalTitle": "[アップデート] Web Answer on Amazon Bedrock AgentCore がリリースされました！",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "One tool call returns a sourced answer after managed search and synthesis.",
+          "quote": "出典付きの回答を1回のツール呼び出し",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "Bedrock AgentCoreのWeb Answerは、自然文の質問から検索を計画し、複数の検索とページの",
+            "zh": "做资料核查时，可以把检索、读网页和写带引文的答案交给同一个工具。作者在 AgentCore Gateway 上",
+            "interview": "まずWeb Answerの出典と、Harnessが書いた最終回答を分けて見ます。ただし最新記事の質問では、呼び"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Latest-article test: one call and 2,185 input tokens vs five calls and 39,195; both missed the actual latest.",
+          "quote": "2,185",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "著者はClaude Haiku 5.5を使うHarnessを組み、会社情報やイベント、記事の新しさを確かめまし",
+            "zh": "作者用同一批五个问题各跑一次。查作者最新文章时，两套配置都没找到 11 月 3 日那篇。Web Answer ",
+            "interview": "まずWeb Answerの出典と、Harnessが書いた最終回答を分けて見ます。ただし最新記事の質問では、呼び"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "The tool identified a book review correctly; outer Harness assigned it to the wrong author.",
+          "quote": "Harness側のモデルの判断",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "出典付きのツール出力をもとに書き直すとき、出典が最終回答に残るとは限りません。書評を著者本人の記事に数えた誤り",
+            "zh": "读工具轨迹还发现，一个书评的作者身份在工具输出里写对了，外层模型汇总时却算进被评论作者的文章。引用在这一层也可",
+            "interview": "まずWeb Answerの出典と、Harnessが書いた最終回答を分けて見ます。ただし最新記事の質問では、呼び"
+          }
+        },
+        {
+          "id": "top1-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact2",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "ja": "検索結果の欠落と、回答をまとめる段階の誤りを、同じ実例から別々に見られます。",
+            "zh": "可以沿工具调用和最终回答两层，分别核查覆盖率、归属和链接。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-09-top-2",
+      "url": "https://zenn.dev/dooly6276/articles/9863fac3b3e3c2",
+      "source": "Zenn",
+      "topic": "並列開発の資源競合",
+      "capturedAt": "2026-11-09T01:00:48.965509+00:00",
+      "snapshotSha256": "e33110218b9b790d81969801d8a176976f1dd3a5be99b137ebbd6e65b9d8d338",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "originalTitle": "並列 Claude Code セッションは何回ぶつかったか：2週間のログを hook に再生して数えた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Read-only replay feeds shell commands through guards.",
+          "quote": "ガードに通し直します",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "Gitのworktreeを分けても、同じマシンにあるポートやプロセスは共有されます。著者のclaude-bul",
+            "zh": "并行开几个 Claude Code 会话后，工作树隔开了文件，却没有隔开开发服务器和系统资源。作者的 Node",
+            "interview": "worktreeを分けても、ポートやプロセスは同じマシンで使います。そこでPreToolUseのフックで、命令"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "507 would have been blocked in two weeks of personal logs; 25 involved staging another session’s edits.",
+          "quote": "止められていたはずのコマンドは507件",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "著者のMacの二週間分のログは7.0GBで、シェル命令は約10万件ありました。読み取り専用のbulkhead ",
+            "zh": "实测取作者个人 Mac 上两周日志，总量 7.0 GB，约十万条 shell 命令。只读扫描花了 39 秒，重",
+            "interview": "worktreeを分けても、ポートやプロセスは同じマシンで使います。そこでPreToolUseのフックで、命令"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Historic port and memory states were absent and were excluded.",
+          "quote": "ポートとメモリの状態はログに残らない",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "ただし、同じ分に同じツリーで作業していたかはログから組み立て直せても、実行当時のポートとメモリの状態は残りませ",
+            "zh": "但日志不含过去的端口占用和内存信息，因此这两个守卫没有参加重放。结果给出这台机器、这份历史和相应规则下的拦截候",
+            "interview": "worktreeを分けても、ポートやプロセスは同じマシンで使います。そこでPreToolUseのフックで、命令"
+          }
+        },
+        {
+          "id": "top2-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact2",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "ja": "ブランチを分けるだけでは見えない共有資源を列挙し、履歴から検証できる範囲を決められます。",
+            "zh": "明确工作树边界与系统资源边界，有助于复盘并发开发事故。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-09-top-3",
+      "url": "https://dev.classmethod.jp/articles/network-firewall-domain-list-reject-alert-rule-order/",
+      "source": "DevelopersIO",
+      "topic": "ファイアウォールの評価順序",
+      "capturedAt": "2026-11-09T01:00:32.429101+00:00",
+      "snapshotSha256": "466688984e7f716237f6d73e0f6767347351f4c8855f63c4c0983fcb84839b46",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "originalTitle": "AWS Network Firewall の Reject と Alert のドメインリストを Allow と組み合わせ、ルールの評価順序ごとに確かめてみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Strict order does not inherit Allow list implicit denial; the test sets Drop established.",
+          "quote": "Allow のドメインリストによる拒否が効きません",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "東京リージョンの一台のEC2から、HTTPとHTTPSの八つのURLをcurlでたたきました。ドメインはHTT",
+            "zh": "作者在东京区域用一台 EC2，对配置相同的 Allow、Reject 和 Alert 域名组，分别测试动作顺序",
+            "interview": "まずcurlの結果とログを接続ごとに照合します。記事ではRejectでTCPリセットが返る点は同じでしたが、ア"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Default order logs overlapped for the same flow despite equivalent curl outcomes in this configuration.",
+          "quote": "同じ接続・同じ時刻で記録され",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "今回のcurlの結果は、順序を変えても同じです。許可したドメインは200を返し、RejectのドメインはTCP",
+            "zh": "从 curl 看，两套配置均让获准域名返回 200，让 Reject 域名立即重置连接，并让监视域名和未列入的",
+            "interview": "まずcurlの結果とログを接続ごとに照合します。記事ではRejectでTCPリセットが返る点は同じでしたが、ア"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "One read at around 75 seconds does not establish permanent absence; delivery can take 3–6 minutes on average.",
+          "quote": "約 75 秒後の 1 回だけ",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "最後のアクセスから約75秒後の取得で、最初のアクション順序は7件、厳格な順序は34件でした。後者では確立した接",
+            "zh": "部分 HTTP 事件在第一次读取中没有出现。读取在最后一次请求约 75 秒之后，而作者引用的 CloudWat",
+            "interview": "まずcurlの結果とログを接続ごとに照合します。記事ではRejectでTCPリセットが返る点は同じでしたが、ア"
+          }
+        },
+        {
+          "id": "top3-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact2",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "ja": "同じ接続結果でも、ルール評価とログの見え方は変わります。観測時刻を含めて比較できます。",
+            "zh": "区分网络结果与遥测覆盖，可避免把日志条数直接当成被拦连接数。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-09-top-4",
+      "url": "https://dev.classmethod.jp/articles/cloudwatch-promql-endpoint-amazon-managed-grafana/",
+      "source": "DevelopersIO",
+      "topic": "メトリクスのクエリ互換",
+      "capturedAt": "2026-11-09T01:00:32.426558+00:00",
+      "snapshotSha256": "e42aeedd7965df2332ba2e6fe46e230799f58c9c2787019cf35e40d4a53d1d25",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "originalTitle": "CloudWatch が PromQL 対応したので、Amazon Managed Grafana から接続してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "EKS 1.37 custom counters sent via OTLP and queried using Managed Grafana 13.2.",
+          "quote": "OTLP で転送",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "EKSのアプリがリクエストごとに加算するカウンターを、CloudWatchエージェント経由のOTLPで送りまし",
+            "zh": "这次接线把采集与查询拆成了两端。EKS 1.37 上的应用每收到请求就递增计数器，CloudWatch 代理用",
+            "interview": "まずGrafanaのバージョンと接続先を確認します。記事の十三・二では、CloudWatchデータソースでOT"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Manually setting the metrics endpoint caused the Logs query to return 404 in that setup.",
+          "quote": "DescribeLogGroups, https response error StatusCode: 404",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "CloudWatch用データソースをメトリクスの監視エンドポイントに固定すると、記事の環境ではログのDescr",
+            "zh": "Grafana 插件兼容性会改变连法。支持 PromQL 的 CloudWatch 数据源沿用工作区 IAM ",
+            "interview": "まずGrafanaのバージョンと接続先を確認します。記事の十三・二では、CloudWatchデータソースでOT"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "The cited maximum query window is 7 days for CloudWatch and 95 days for AMP; this is not a performance comparison.",
+          "quote": "AMP が 95 日間のクエリ期間",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "接続が通ることに加えて、必要な期間を一回の問い合わせで見られるかも確かめます。記事が比較した仕様では、Clou",
+            "zh": "选型还要查查询时间跨度。文章列出 CloudWatch 单次最多七天，与 AMP 可查 95 天的规格对照。它",
+            "interview": "まずGrafanaのバージョンと接続先を確認します。記事の十三・二では、CloudWatchデータソースでOT"
+          }
+        },
+        {
+          "id": "top4-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact2",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "ja": "同じPromQLを使う場合も、保存先、プラグインの互換性、クエリ範囲で運用が変わります。",
+            "zh": "展示从应用计数到面板的完整路径，特别适合定位“指标可用、日志报错”这类不一致。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-09-top-5",
+      "url": "https://zenn.dev/recdnd/articles/kiln-dedupe-cjk-threshold-bug",
+      "source": "Zenn",
+      "topic": "多言語のテキスト処理",
+      "capturedAt": "2026-11-09T01:00:48.966078+00:00",
+      "snapshotSha256": "142c65587596fe08675f33b757a6d7680c12eca67cc29a13ff1fc9f3aaf23f19",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "originalTitle": "「文字数 < 6 はスキップ」という英語前提の閾値が、和文の重複削除を壊していた話",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Short inputs bypassed duplicate detection before key generation.",
+          "quote": "重複判定すらせず、無条件に残す",
+          "locator": "Original article body, anchor 1",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "テキスト整形ツールkilnで、同じ中国語の短い行が何度入力されても残ることを、著者が六行の入力例で示しました。",
+            "zh": "作者在 kiln 去重工具里输入几种重复的短中文购物清单，发现六行原样通过。放入对应的较长英文，重复行能删除。",
+            "interview": "まず三文字の行を二つ入れて、どこで重複判定を外れるか調べます。kilnでは六文字未満の行がそのまま残り、階層と"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "For evaluated lines the key includes outline level and normalized text.",
+          "quote": "normalizeKey",
+          "locator": "Original article body, anchor 2",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "重複判定に届いた行では、階層を表すlevelと正規化した文字列の組がキーになり、既出のキーをSetで確認します",
+            "zh": "普通行需要先提取层级和归一化文本，再用组合键查 Set。短行绕开整段逻辑，所以只改归一化函数不能解决这一例。降",
+            "interview": "まず三文字の行を二つ入れて、どこで重複判定を外れるか調べます。kilnでは六文字未満の行がそのまま残り、階層と"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Author constrained demo inputs to length at least six; the implementation remained unchanged.",
+          "quote": "CJK 行はすべて 6 文字以上",
+          "locator": "Original article body, anchor 3",
+          "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
+          "usedIn": {
+            "ja": "著者は処理を変更せず、デモのCJK行を六文字以上にそろえて回避し、既知の問題を記録しました。この入力制約でデモ",
+            "zh": "目前实际采用的是限制演示语料，让 CJK 行至少有六个字符，同时把原始问题写入审计与决策记录。演示能通过，并未",
+            "interview": "まず三文字の行を二つ入れて、どこで重複判定を外れるか調べます。kilnでは六文字未満の行がそのまま残り、階層と"
+          }
+        },
+        {
+          "id": "top5-teaching",
+          "kind": "author-interpretation",
+          "statement": "Suggested project and interview judgment derive from the original mechanisms, not a new benchmark.",
+          "conditions": "Teaching proposal within the documented limitations.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact2",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "ja": "実装の入口、例外の意図、回避策の範囲を小さな失敗例から追えます。",
+            "zh": "一个可复现的跨语言故障，能说明输入约束为何不能替代实现修复。"
+          }
+        }
+      ]
+    }
+  ]
+}
