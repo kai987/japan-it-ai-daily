@@ -1,0 +1,268 @@
+{
+  "targetDate": "2026-11-09",
+  "sourceWindow": {
+    "to": "2026-11-09T10:00:00+09:00",
+    "from": "2026-11-08T10:00:00+09:00"
+  },
+  "excludedPreviousTop": [
+    "https://zenn.dev/snape_works/articles/nextjs-no-referrer-origin-null",
+    "https://zenn.dev/ttomo_tommy/articles/tabfm-vs-lightgbm-diamonds",
+    "https://zenn.dev/5alt_nacl/articles/isucon2026-solo-ai-agent",
+    "https://zenn.dev/tmiyachi/articles/outer-loop-sentry-webhook-codex",
+    "https://dev.classmethod.jp/articles/pub400-db2-for-i-5250/"
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "observedAt": "2026-11-09T01:00:22.298686+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "htmlSha256": "843bbb75aa3203290afc8ecec9e3697366511276e96b10a5da6d7e08174f4d81"
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-09T01:00:22.299028+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "htmlSha256": "711ddd44cd6c652404440b1d4a27d32fbfbdf840596b50f947b1eb7934c65de5"
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-09T01:00:22.299113+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "htmlSha256": "7845fce48cf9a5770c6f7deb6877d2b4d3612988986d9f5a9c29461c38eb9039"
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-09T01:00:22.299174+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "htmlSha256": "ed75538f0ce09784878d0a13ab78a35b82279cb39eaf2f89860b8d09baa71b1c"
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-09T01:00:22.299227+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "htmlSha256": "95e837606537030dd54472269ffaf3071478fee877ab4138a5fb10fb780e7c2b"
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-09T01:00:22.299280+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "error": "Access denied; not retried through another transport"
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-09T01:00:22.399702+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "htmlSha256": "415f217d0f212130986c847660ff4e2ad7d1d3f723ed3f389cbc32cb18b0df38"
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-09T01:00:22.430059+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "htmlSha256": "f1f34cff275823e449619f716dafefae18fc2ed84679c7f60ebed4b736a1bae3"
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-09T01:00:22.565671+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533"
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-09T01:00:22.574182+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "htmlSha256": "afcd64a2ec6b0b0ad77568c84b0c3ef25581c442cabbdb803bc56e883159ecae"
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-09T01:00:22.574821+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "htmlSha256": "fbcd226bac277e3d5c6567c4af9b77c9539ff0770b4b9bc5f2af5bfca16d2842"
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-09T01:00:22.626509+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "htmlSha256": "70bc08b6c171c549b8c77b11c9e6a9b9e11dc419146d96b7493d434d635c3244"
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-09T01:00:22.638072+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "htmlSha256": "e068dc125e27dd96038b38f2fda62bb058bab19fdf76deb778e9961da07ce56b"
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-09T01:00:22.707911+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "htmlSha256": "d9686ccaf655454218653de7892546cc6fe2a0a1ef13a8492c66535f15812e1b"
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-09T01:00:22.737435+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "htmlSha256": "19edc18db3c20cbdc5d0c19f25e2a3c701d31eea98a510b381979b1935dd6a42"
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-09T01:00:22.764297+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 403,
+      "actualUrl": "https://engineering.mercari.com/",
+      "error": "Access denied; not retried through another transport"
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-09T01:00:22.817040+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "htmlSha256": "9ff5a4181ce8932312dc89998615ec4d44e65f88c368cfaf29b2b6926d845d73"
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-09T01:00:22.832525+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "htmlSha256": "861740bb2ec983870f3fea6877c45996572adfea3416c92035c1702e3b9fcc43"
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-09T01:00:22.952133+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "htmlSha256": "320be58d4bedff7e3763b585098cd7158678f1b0fb89e1b5cc1e8a6a2a0647ee"
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-09T01:00:22.952385+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "htmlSha256": "81d3cfb35351acb5d9bfacc53772edc93716e75e6cf00986d083ba6716faf3a6"
+    }
+  ],
+  "zennLatest": {
+    "total": 100,
+    "inWindow": 100
+  },
+  "excluded": [
+    {
+      "url": "https://dev.classmethod.jp/articles/20261108-cc-updates-v2-1-319/",
+      "reason": "Original metadata 02:15 JST Nov 8 precedes frozen window"
+    }
+  ],
+  "articles": [
+    {
+      "title": "[アップデート] Web Answer on Amazon Bedrock AgentCore がリリースされました！",
+      "source": "DevelopersIO",
+      "topic": "根拠付きウェブ調査",
+      "url": "https://dev.classmethod.jp/articles/bedrock-agentcore-web-answer-try-harness/",
+      "articleId": "2026-11-09-top-1",
+      "publishedAt": "2026-11-08T07:53:36.466Z",
+      "capturedAt": "2026-11-09T01:00:32.600195+00:00",
+      "snapshotSha256": "f74e2740350a7b4fa6bb6f04b65bffcb54c1d9fcf8e4438d956166d0e6989bd7",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "facts": "Five prompts once per configuration, Claude Haiku 5.5 default prompt. On latest-article prompt Web Answer used one call and 2,185 model input tokens versus five and 39,195, but neither found November 3. Citation retention and incorrect book review attribution concern the outer model."
+    },
+    {
+      "title": "並列 Claude Code セッションは何回ぶつかったか：2週間のログを hook に再生して数えた",
+      "source": "Zenn",
+      "topic": "並列開発の資源競合",
+      "url": "https://zenn.dev/dooly6276/articles/9863fac3b3e3c2",
+      "articleId": "2026-11-09-top-2",
+      "publishedAt": "2026-11-09T09:59:44.268+09:00",
+      "capturedAt": "2026-11-09T01:00:48.965509+00:00",
+      "snapshotSha256": "e33110218b9b790d81969801d8a176976f1dd3a5be99b137ebbd6e65b9d8d338",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "facts": "Author replayed about 100,000 shell commands in 7.0 GB of personal Mac logs over two weeks in 39 seconds. 507 would have been blocked; 25 git add -A in trees another session edited. Port and memory guards were not replayed. Command-level hook is not sandbox isolation."
+    },
+    {
+      "title": "AWS Network Firewall の Reject と Alert のドメインリストを Allow と組み合わせ、ルールの評価順序ごとに確かめてみた",
+      "source": "DevelopersIO",
+      "topic": "ファイアウォールの評価順序",
+      "url": "https://dev.classmethod.jp/articles/network-firewall-domain-list-reject-alert-rule-order/",
+      "articleId": "2026-11-09-top-3",
+      "publishedAt": "2026-11-08T05:33:38.837Z",
+      "capturedAt": "2026-11-09T01:00:32.429101+00:00",
+      "snapshotSha256": "466688984e7f716237f6d73e0f6767347351f4c8855f63c4c0983fcb84839b46",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "facts": "Tokyo EC2 test of three domain groups, TLS_SNI and HTTP_HOST. Same curl outcomes; after about 75 seconds, default-order drop and alert could coexist, strict had 34 records vs 7 in first default run. No inference of absent events from incomplete log window."
+    },
+    {
+      "title": "CloudWatch が PromQL 対応したので、Amazon Managed Grafana から接続してみた",
+      "source": "DevelopersIO",
+      "topic": "メトリクスのクエリ互換",
+      "url": "https://dev.classmethod.jp/articles/cloudwatch-promql-endpoint-amazon-managed-grafana/",
+      "articleId": "2026-11-09-top-4",
+      "publishedAt": "2026-11-08T05:42:05.824Z",
+      "capturedAt": "2026-11-09T01:00:32.426558+00:00",
+      "snapshotSha256": "e42aeedd7965df2332ba2e6fe46e230799f58c9c2787019cf35e40d4a53d1d25",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "facts": "AMG v13.2 EKS v1.37 author config: OTLP counter to CloudWatch, PromQL works, Logs Insights and Application Signals separate. Fixed monitoring endpoint caused Logs 404. Workspace v12.4 fallback uses AMP plugin against CloudWatch. Seven-day maximum compared with AMP 95 days, not throughput benchmark."
+    },
+    {
+      "title": "「文字数 < 6 はスキップ」という英語前提の閾値が、和文の重複削除を壊していた話",
+      "source": "Zenn",
+      "topic": "多言語のテキスト処理",
+      "url": "https://zenn.dev/recdnd/articles/kiln-dedupe-cjk-threshold-bug",
+      "articleId": "2026-11-09-top-5",
+      "publishedAt": "2026-11-09T09:00:12.560+09:00",
+      "capturedAt": "2026-11-09T01:00:48.966078+00:00",
+      "snapshotSha256": "142c65587596fe08675f33b757a6d7680c12eca67cc29a13ff1fc9f3aaf23f19",
+      "accessNote": "Full public original article body. Measurements are author-reported. No source code or commands executed.",
+      "facts": "Author reproduced duplicate three-character Chinese lines surviving kiln because length under six bypassed Set. Keys otherwise combine outline level and normalized text. Long demo corpus workaround, no actual fix."
+    }
+  ]
+}
