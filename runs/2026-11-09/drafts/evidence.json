@@ -3,7 +3,7 @@
   "date": "2026-11-09",
   "status": "reviewed",
   "reviewedBy": "Codex original-source review",
-  "reviewedAt": "2026-11-09T01:05:45.532888+00:00",
+  "reviewedAt": "2026-11-09T01:07:50.414612+00:00",
   "scope": "Five complete original articles captured outside Git and independently used to author both languages. Only canonical Japanese interviews are shared verbatim. No source code was executed; examples and project proposals are teaching creations.",
   "articles": [
     {
@@ -118,8 +118,8 @@
           "locator": "Original article body, anchor 3",
           "conditions": "Author-reported experiment only; retain configuration, small test scope and unresolved behavior described in the report.",
           "usedIn": {
-            "ja": "同じ分に同じツリーで作業していたかはログから組み立て直せますが、実行当時のポートとメモリの状態は残りません。そ",
-            "zh": "日志不含过去的端口占用和内存信息，因此这两个守卫没有参加重放。结果给出这台机器、这份历史和相应规则下的拦截候选",
+            "ja": "ただし、同じ分に同じツリーで作業していたかはログから組み立て直せても、実行当時のポートとメモリの状態は残りませ",
+            "zh": "但日志不含过去的端口占用和内存信息，因此这两个守卫没有参加重放。结果给出这台机器、这份历史和相应规则下的拦截候",
             "interview": "worktreeを分けても、ポートやプロセスは同じマシンで使います。そこでPreToolUseのフックで、命令"
           }
         },
