@@ -8,9 +8,15 @@
     "to": "2026-11-09T10:00:00+09:00"
   },
   "createdAt": "2026-11-09T01:00:18.042Z",
-  "updatedAt": "2026-11-09T01:08:13.425Z",
+  "updatedAt": "2026-11-09T01:10:19.968Z",
   "completedArtifacts": [],
-  "lastError": null,
+  "lastError": {
+    "phase": "local_tests",
+    "command": "npm run test",
+    "message": "1/325 test exceeded 5000ms; the whole-history regression ran 5145ms",
+    "test": "grammar-review-boundaries.test.mjs:48",
+    "attempt": 1
+  },
   "dateCount": 89,
   "files": 356,
   "lexicalIdentities": 1366,
@@ -65,5 +71,7 @@
       "reason": "intransitive persistence of a source link, distinct from leaving something intentionally; checked 残る, 殘る, のこる, 残り and earlier compounds"
     }
   ],
-  "newUnreviewedDuplicates": 0
+  "newUnreviewedDuplicates": 0,
+  "resumeFrom": "drafts_ready",
+  "nextAction": "Repeat unchanged full checks after reading the exact timed-out test log"
 }
