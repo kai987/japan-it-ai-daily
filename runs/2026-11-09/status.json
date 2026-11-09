@@ -1,14 +1,69 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-09",
-  "stage": "sources_verified",
+  "stage": "learning_verified",
   "sourceCommit": "c4de29f0e7108aa9813505994d490f3b028ee8a7",
   "sourceWindow": {
     "from": "2026-11-08T10:00:00+09:00",
     "to": "2026-11-09T10:00:00+09:00"
   },
   "createdAt": "2026-11-09T01:00:18.042Z",
-  "updatedAt": "2026-11-09T01:02:15.605Z",
+  "updatedAt": "2026-11-09T01:05:59.219Z",
   "completedArtifacts": [],
-  "lastError": null
+  "lastError": null,
+  "dateCount": 89,
+  "files": 356,
+  "lexicalIdentities": 1366,
+  "grammarIdentities": 117,
+  "newWords": [
+    "空く",
+    "残る"
+  ],
+  "newGrammar": [],
+  "levelVerification": [
+    {
+      "term": "空く",
+      "reading": "あく",
+      "level": "N3",
+      "source": "JapanDict vacant or less crowded sense, first entry",
+      "url": "https://jpdct.com/GDRZ"
+    },
+    {
+      "term": "残る",
+      "reading": "のこる",
+      "level": "N4",
+      "siteLevel": "N5/N4",
+      "source": "JapanDict to remain or be left",
+      "url": "https://www.japandict.com/残る"
+    }
+  ],
+  "semanticExclusions": [
+    {
+      "term": "固まる",
+      "reason": "earlier lexical identity"
+    },
+    {
+      "term": "取りこぼす",
+      "reason": "earlier lexical identity"
+    },
+    {
+      "term": "混ざる",
+      "reason": "excluded conservatively because 混じる is earlier and has overlapping meaning in this context"
+    },
+    {
+      "term": "をもとに",
+      "reason": "earlier grammar identity"
+    }
+  ],
+  "semanticBoundaries": [
+    {
+      "term": "空く",
+      "reason": "state of vacant port, not opening an object; checked 空き and reading あく across historical cards"
+    },
+    {
+      "term": "残る",
+      "reason": "intransitive persistence of a source link, distinct from leaving something intentionally; checked 残る, 殘る, のこる, 残り and earlier compounds"
+    }
+  ],
+  "newUnreviewedDuplicates": 0
 }
