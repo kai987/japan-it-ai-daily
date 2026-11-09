@@ -1,22 +1,16 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-09",
-  "stage": "local_checks_passed",
+  "stage": "drafts_ready",
   "sourceCommit": "c4de29f0e7108aa9813505994d490f3b028ee8a7",
   "sourceWindow": {
     "from": "2026-11-08T10:00:00+09:00",
     "to": "2026-11-09T10:00:00+09:00"
   },
   "createdAt": "2026-11-09T01:00:18.042Z",
-  "updatedAt": "2026-11-09T01:13:20.854Z",
+  "updatedAt": "2026-11-09T01:14:16.160Z",
   "completedArtifacts": [],
-  "lastError": {
-    "phase": "local_tests",
-    "command": "npm run test",
-    "message": "1/325 test exceeded 5000ms; the whole-history regression ran 5145ms",
-    "test": "grammar-review-boundaries.test.mjs:48",
-    "attempt": 1
-  },
+  "lastError": null,
   "dateCount": 89,
   "files": 356,
   "lexicalIdentities": 1366,
@@ -73,5 +67,27 @@
   ],
   "newUnreviewedDuplicates": 0,
   "resumeFrom": "drafts_ready",
-  "nextAction": "Repeat unchanged full checks after reading the exact timed-out test log"
+  "nextAction": "Wait for the exact draft deploy.yml preflight; submit the source-bound request only after success.",
+  "baseCommit": "c4de29f0e7108aa9813505994d490f3b028ee8a7",
+  "draftBranch": "draft/daily-2026-11-09",
+  "draftCommit": "76f8b77488628fc066b7c6141ae62408c66409b9",
+  "fileHashes": {
+    "src/content/daily/2026-11-09.md": "538b0bfb4008e9f8992f00dfd4c9c9fb30214f3726ccc8bc84a38c8df922d3ff",
+    "src/content/daily-ja/2026-11-09.md": "120f943e08ade33be37fcbf7da836c64c1be5f00b1870f6befd6929367f8e810",
+    "src/content/japanese/2026-11-09.md": "5b39dee06352b9ebf277e6fefd5b0fdc8b4145615197256f3a5c0567ca1bdfec",
+    "src/content/japanese-ja/2026-11-09.md": "eeadc9fd148a15ce3d96109e88eb6c06b02789a56aef54bfe17f7ca6dc0f35ce",
+    "src/content/evidence/2026-11-09.json": "c74cfe209ef4a7ada7557e8ac710061a50df17275bfd3e0787b14467aa0d6872",
+    "src/data/interviews/2026-11-09.json": "20e0450286aa4b8d3fd71c83cc4a9fec0fd6779095c615f3bf353c5000cec021"
+  },
+  "paths": [
+    "src/content/daily-ja/2026-11-09.md",
+    "src/content/daily/2026-11-09.md",
+    "src/content/evidence/2026-11-09.json",
+    "src/content/japanese-ja/2026-11-09.md",
+    "src/content/japanese/2026-11-09.md",
+    "src/data/interviews/2026-11-09.json"
+  ],
+  "verifiedAt": "2026-11-09T01:13:42.612Z",
+  "draftPreflightRunId": 42544430947,
+  "localChecksPassed": 18
 }
