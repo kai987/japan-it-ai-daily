@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-10",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "721d40fa4642e3498b155284c55005d8b3d69cdc",
   "sourceWindow": {
     "from": "2026-11-09T10:00:00+09:00",
     "to": "2026-11-10T10:00:00+09:00"
   },
   "createdAt": "2026-11-10T01:00:10.423Z",
-  "updatedAt": "2026-11-10T01:16:26.738Z",
+  "updatedAt": "2026-11-10T01:16:36.186Z",
   "completedArtifacts": [],
   "lastError": null,
   "resumeFrom": "drafts_ready",
-  "nextAction": "Keep the original measurement conditions and state the limitation explicitly, then rerun full local gates.",
+  "nextAction": "Unique publisher owns the request slot; wait exact publisher/main Pages and verify full public snapshot.",
   "draftCommit": "5d37c1117d2829bb4ba19253243dd214e2434de8",
   "preflightRunId": 42734233593,
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
@@ -148,5 +148,7 @@
         "log": "/tmp/japan-daily-20261110/logs-final/17-evidence-check.log"
       }
     ]
-  }
+  },
+  "requestCommit": "da7a4a72cce090654bcc78f39148ff7f256b44d6",
+  "requestBlob": "7b947dbc7e17e281ce2e7f70d2b617ff80505813"
 }
