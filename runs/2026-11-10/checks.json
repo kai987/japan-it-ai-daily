@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-10",
+  "checkedBaseCommit": "721d40fa4642e3498b155284c55005d8b3d69cdc",
+  "worktree": "four corrected target files; all six publication paths verified",
+  "checks": [
+    {
+      "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
+      "startedAt": "2026-11-10T01:08:16.288Z",
+      "completedAt": "2026-11-10T01:08:16.596Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261110/logs-final/00-tests-publication-recovery-node-mjs.log"
+    },
+    {
+      "command": "npm audit --audit-level=high",
+      "startedAt": "2026-11-10T01:08:18.197Z",
+      "completedAt": "2026-11-10T01:08:19.030Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261110/logs-final/01---audit-level-high.log"
+    },
+    {
+      "command": "npm run check",
+      "startedAt": "2026-11-10T01:08:20.739Z",
+      "completedAt": "2026-11-10T01:08:28.010Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261110/logs-final/02-check.log"
+    },
+    {
+      "command": "npm run content:integrity:check",
+      "startedAt": "2026-11-10T01:08:29.682Z",
+      "completedAt": "2026-11-10T01:08:33.443Z",
+      "exitCode": 1,
+      "log": "/tmp/japan-daily-20261110/logs-final/03-content-integrity-check.log"
+    }
+  ]
+}
