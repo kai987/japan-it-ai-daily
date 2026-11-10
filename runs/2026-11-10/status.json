@@ -8,9 +8,9 @@
     "to": "2026-11-10T10:00:00+09:00"
   },
   "createdAt": "2026-11-10T01:00:10.423Z",
-  "updatedAt": "2026-11-10T01:09:04.625Z",
+  "updatedAt": "2026-11-10T01:10:26.588Z",
   "completedArtifacts": [],
-  "lastError": "Local content integrity: structured interview identifiers must start with a lowercase letter. Target quality check also requested explicit boundaries in Chinese Top 4 and Japanese Q&A 1 and 4.",
+  "lastError": "Daily quality gate did not recognize the Chinese Top 4 boundary phrasing.",
   "resumeFrom": "drafts_ready",
-  "nextAction": "Retain original sources and correct target metadata and boundary wording, then rerun the complete local gates."
+  "nextAction": "Keep the original measurement conditions and state the limitation explicitly, then rerun full local gates."
 }
