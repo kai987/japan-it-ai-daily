@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-10",
+  "generatedAt": "2026-11-10T01:26:39.665Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "日本語の問い合わせを判定モデルで振り分けるとき、公開評価の点数をどう使いますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "a3b03ba3b698bd4fb0b68dd10c27c971ae8a590d87c83113e9c1832679032975",
+      "audioSha256": "79158bf644a4812cae3779cfd0e0da5c20b4915892beb56b13c0220573ff733c",
+      "durationSeconds": 6.582
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "まずS1MBで候補を絞り、処理できなかった件数も見ます。温度スケーリングでS1MBのECEは下がりましたが、同じ温度をbench_jaに使って悪化した例もあります。選択肢を並べ替えたときのflip rateも別に測ります。ただし業務データは対象外なので、自社の問い合わせで確かめてから、人に回す基準を決めます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "f5b844b61d247b077a49ef75a6e0f8038a5034bebb1989bb6da8994e1cecd98c",
+      "audioSha256": "ed566996a10dfac6fa7fc461b41514e5f0ad15cbd785f3aff87dad8ab50b58ec",
+      "durationSeconds": 24.482,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "既存テストがすべて通る場合、境界の検証が十分かどうかをどう確かめますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "23f1a3f3ba5bd83324ef441b76e869c143bcc6b070223cb16a1cad26a0e4c688",
+      "audioSha256": "86c0a3232000a05a8721b1ddee156e8893b9c60e780a0a432421d6eedeff1252",
+      "durationSeconds": 6.266
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "StrykerJSで比較演算を少し変え、Vitestの断言が違いに気づくかを見ます。記事のkstRelativeTimeでは十一個のテストがあっても、六つの境界変更が残りました。そこで、ちょうど四十八時間前のように、結果が分かれる入力を足します。ただし等価な変異もあるので、期待する表示は仕様に照らして決めます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "141a1ec44094be11e3bc232cbfe7b6a6570ae4a461d35453cc8591a5974ea0e7",
+      "audioSha256": "434b6d2aa2fde0fb3296db213d8440a360fed9829b560fc8ecd428c46c14ac6e",
+      "durationSeconds": 24.093,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "App Routerでリンクを押してから画面が切り替わらないとき、何を比較しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "89041c2f7d23ae23cd9858b98c562b3a550531aad9f3dd4f1636e0cdf45b0e8e",
+      "audioSha256": "be77474ba1f29e097e52b3985be130b815fbc38fa270530239cc3332e9a3522c",
+      "durationSeconds": 5.804
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "まず本番ビルドで、クリック時にRSCペイロードが届いているかを見ます。Suspenseの代替表示も、応答に含まれたまま未取得ならすぐには出せません。Cache ComponentsでApp Shellを先に出せるか試します。ただし記事ではCloudflareとOpenNextの組み合わせで移行に手間がかかったので、認証の読み取りも確かめます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "759b3d74ccc8516d53f9e633542e388b2b00aa8e06c9c3d80a00f59cae5fcf08",
+      "audioSha256": "ab2ded46871f7943eeee3cf5f043bf68cd0c3859173035f98afe7ac800ee6924",
+      "durationSeconds": 23.855,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "候補を全件評価する関連記事APIで、順位を維持して処理を軽くするにはどうしますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "f4e69aa5960159fb0affb6b71920276d847e6c89eda2cf72b0607b507112f8a8",
+      "audioSha256": "7727bcc86a55ce26da9114837b3294b5b8b7793dcd68fdec31d7a5fc7fa69000",
+      "durationSeconds": 6.86
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "SQLAlchemyで判定に使う列だけをRowとして読み、選んだIDだけモデルにします。INで取り直した行は、最初に選んだ順に戻します。記事ではInstanceEvents.loadで生成数を数え、後ろにある正規の要約が選ばれることも確かめました。ただし応答時間はデプロイ直後の実測なので、負荷が続いた場合は別に測ります。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "acb5dbefdb4f809856eece9317e0ddc01ebca00bd62ce0e6e966800642118e8a",
+      "audioSha256": "3c185c643dff6964f40019cddf4b67ed749d531bc2ab5eb7ccbdf80a603fb20d",
+      "durationSeconds": 24.956,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "CADからWeb表示に取り込んだ穴の寸法が正しいか、どこを調べますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "297d1c8886e327cdaac552d7fa9c70a23aedd1119c807c92ac6ae00697d75f82",
+      "audioSha256": "93177784869fcfa79c5bdcbbccab3b77d09ef5e7d6f5404f928ecfc1fb4c2274",
+      "durationSeconds": 5.606
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "外寸の分かる板をcascadioで変換して、STEPの座標がメートルになるかを確かめます。記事ではtol_linearが元モデルのミリ単位で効き、円筒の半径はTM_brep_facesから取れました。ただし検証は使われた版の限られた形状です。別形式を受け付けるときも、外寸と出力された属性を実物に照らします。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "d830c96309672ef5acccdc65570172b3338c71871c7f2cf3a80761e6b81891f2",
+      "audioSha256": "c616f04ea5b5963a983295cabcc692800a47baa8bf2371f8fa3008220b1f097e",
+      "durationSeconds": 24.368,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "評価の数字がよく見えても、分母や対象を確かめたいのはなぜですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "36a5a72ce71470ed0c786524b71312ba5f1dddf0ba28e830bf4398edd140b983",
+      "audioSha256": "128711ee738b7827f154824b669bb2b0212937f65bbda17a7014e25e179df1f8",
+      "durationSeconds": 5.49
+    },
+    {
+      "index": 2,
+      "text": "画面遷移と関連記事APIでは、必要な情報をどの段階で取得しますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "83f55ed947bb5dcd0f5ba50e3ce126c5d05c15bc545c2fa5b99807eb1e4dd2d9",
+      "audioSha256": "6552413475cdd7d3aa941506d6fade6dbd897c8efe62b1bc7d4178b1b98c547f",
+      "durationSeconds": 6.176
+    },
+    {
+      "index": 3,
+      "text": "変換したモデルが正しいかを、表示以外の何で判断しますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "9b93c06dbd79f297b75a12abfb93d21213d7a22580f0e3dab746d18e4c35bbde",
+      "audioSha256": "7e565edeedc5cf65630474aa9aa2e7274c9376cf9149f1b6f6c3731da9ebdb77",
+      "durationSeconds": 4.875
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-10T01:26:42.152Z"
+}
