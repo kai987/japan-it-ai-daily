@@ -5,31 +5,59 @@
   "checks": [
     {
       "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
-      "startedAt": "2026-11-10T01:08:16.288Z",
-      "completedAt": "2026-11-10T01:08:16.596Z",
+      "startedAt": "2026-11-10T01:09:41.275Z",
+      "completedAt": "2026-11-10T01:09:41.558Z",
       "exitCode": 0,
       "log": "/tmp/japan-daily-20261110/logs-final/00-tests-publication-recovery-node-mjs.log"
     },
     {
       "command": "npm audit --audit-level=high",
-      "startedAt": "2026-11-10T01:08:18.197Z",
-      "completedAt": "2026-11-10T01:08:19.030Z",
+      "startedAt": "2026-11-10T01:09:43.428Z",
+      "completedAt": "2026-11-10T01:09:43.919Z",
       "exitCode": 0,
       "log": "/tmp/japan-daily-20261110/logs-final/01---audit-level-high.log"
     },
     {
       "command": "npm run check",
-      "startedAt": "2026-11-10T01:08:20.739Z",
-      "completedAt": "2026-11-10T01:08:28.010Z",
+      "startedAt": "2026-11-10T01:09:47.093Z",
+      "completedAt": "2026-11-10T01:09:53.430Z",
       "exitCode": 0,
       "log": "/tmp/japan-daily-20261110/logs-final/02-check.log"
     },
     {
       "command": "npm run content:integrity:check",
-      "startedAt": "2026-11-10T01:08:29.682Z",
-      "completedAt": "2026-11-10T01:08:33.443Z",
-      "exitCode": 1,
+      "startedAt": "2026-11-10T01:09:55.297Z",
+      "completedAt": "2026-11-10T01:09:59.038Z",
+      "exitCode": 0,
       "log": "/tmp/japan-daily-20261110/logs-final/03-content-integrity-check.log"
+    },
+    {
+      "command": "npm run evidence:check",
+      "startedAt": "2026-11-10T01:10:00.781Z",
+      "completedAt": "2026-11-10T01:10:01.078Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261110/logs-final/04-evidence-check.log"
+    },
+    {
+      "command": "npm run evidence:pilot",
+      "startedAt": "2026-11-10T01:10:02.918Z",
+      "completedAt": "2026-11-10T01:10:03.094Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261110/logs-final/05-evidence-pilot.log"
+    },
+    {
+      "command": "npm run bilingual:check-interview",
+      "startedAt": "2026-11-10T01:10:04.917Z",
+      "completedAt": "2026-11-10T01:10:05.100Z",
+      "exitCode": 0,
+      "log": "/tmp/japan-daily-20261110/logs-final/06-bilingual-check-interview.log"
+    },
+    {
+      "command": "npm run quality:check",
+      "startedAt": "2026-11-10T01:10:06.806Z",
+      "completedAt": "2026-11-10T01:10:07.219Z",
+      "exitCode": 1,
+      "log": "/tmp/japan-daily-20261110/logs-final/07-quality-check.log"
     }
   ]
 }
