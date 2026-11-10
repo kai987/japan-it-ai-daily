@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-10",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-11-10T01:10:30.725362+00:00",
+  "scope": "Five public original article bodies read directly and captured outside Git. Measurements are source-author results; the CAD article describes AI-assisted authorship and testing. Two articles are Japanese adaptations by their original author. Canonical Japanese interview mirrors share strings; projects are teaching proposals.",
+  "articles": [
+    {
+      "articleId": "2026-11-10-top-1",
+      "url": "https://zenn.dev/tatsuyaaaaaaa/articles/74ec715380cf61",
+      "source": "Zenn",
+      "topic": "日本語判定モデルの評価",
+      "capturedAt": "2026-11-10T01:00:41.755931+00:00",
+      "snapshotSha256": "fb372ff029c660e8460fc753ec94cc375e4a0a9c6c4fbf43902d4321ccbebf7e",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "約9Bまでの日本語 Decision Model 13種を公開データで比べた（精度・較正・順序頑健性）",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Author compared 13 models on two public Japanese datasets.",
+          "quote": "13種",
+          "locator": "はじめに",
+          "conditions": "Fixed revisions, zero-shot; business data and runtime metrics excluded.",
+          "usedIn": {
+            "ja": "問い合わせの振り分けに小型の判定モデルを使うなら、選択が合うか、確率を業務判断に使え",
+            "zh": "把日本语工单交给判定模型，常见设计是只自动处理置信度足够高的请求。上线前需要分别知道",
+            "interview": "まずS1MBで候補を絞り、処理できなかった件数も見ます。温度スケーリングでS1MBのECE"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Official Task Avg was available for eight models in the main S1MB comparison.",
+          "quote": "公式の Task Avg が出た8モデル",
+          "locator": "結果1",
+          "conditions": "The 17 tasks exclude ten known training overlaps for saihai; other models may have unknown overlap. Five models could not finish all tasks.",
+          "usedIn": {
+            "ja": "S1MBの公式Task Avgを出せたのは8モデルだった。d3-flashは0.47",
+            "zh": "官方平均成绩的覆盖面本身就是一项结果。13种模型里仅8种有正式 Task Avg，其"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "With the transferred temperature, sokudan ECE increased from 0.060 to 0.480 on bench_ja urgency.",
+          "quote": "0.060 → 0.480",
+          "locator": "結果3",
+          "conditions": "S1MB temperature fitted on grouped 30 percent and evaluated on 70 percent; bench_ja is a different distribution.",
+          "usedIn": {
+            "ja": "温度スケーリングでは、同じgroup_idのデータを30％側と70％側にまたがらせず",
+            "zh": "概率校准使用 S1MB 的分组切分，30%拟合温度，70%检验，避免同组样本跨集合。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "ja": "正答、較正、順序の揺れを切り分けると、人へ回す条件を設計しやすい。",
+            "zh": "先用公开结果筛候选，再用业务数据确定置信度阈值和转人工范围。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-10-top-2",
+      "url": "https://zenn.dev/meursyphus/articles/5c2641c2bade16",
+      "source": "Zenn",
+      "topic": "ミューテーションテスト",
+      "capturedAt": "2026-11-10T01:00:41.659118+00:00",
+      "snapshotSha256": "eb235f1e9bdebbe7caf2c44cdd74bceabd4bf8949ede07ca71b2e5271dae7e17",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "AIが書いたテストでは変異の半分を検出できなかった",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "273 of 550 mutants were detected; 161 survived and 116 had no coverage.",
+          "quote": "テストが検出したのは49.6%",
+          "locator": "冒頭",
+          "conditions": "Ten already-tested src/lib files in one project, not bug prevalence.",
+          "usedIn": {
+            "ja": "テストが通ったという知らせを受けたら、次は境界を少し変えても通るかを調べる。筆者はC",
+            "zh": "要判断一条测试能不能发现故障，可以先把实现改坏一个小地方，再重跑与之相关的断言。作者",
+            "interview": "StrykerJSで比較演算を少し変え、Vitestの断言が違いに気づくかを見ます。記事の"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Six boundary mutations survived despite 11 tests of the date-display helper.",
+          "quote": "6個の変異体が、すべて生き残りました",
+          "locator": "11個のテストが6個の境界変更を見逃した",
+          "conditions": "StrykerJS with Vitest; equality at the boundary was not tested.",
+          "usedIn": {
+            "ja": "初回実測は1分5秒で、550個中273個を検出した。161個はテストが通り、116個",
+            "zh": "最直观的例子来自相对日期格式化函数 kstRelativeTime。已有11个测试调"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Equivalent mutants can survive tests of the same externally observed behavior.",
+          "quote": "等価な変異体",
+          "locator": "スコアを見たあとに何を調べるか",
+          "conditions": "Survival alone does not establish a missing requirement.",
+          "usedIn": {
+            "ja": "一方、ソースを文字列として読む検査は計測コードの挿入だけで失敗することがあるため、筆",
+            "zh": "变异测试能把代码评审从增加测试数量，推进到逐条讨论预期行为。它的局限包括外部可观察行"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "ja": "件数や行の通過率から一歩進み、具体的にどの期待値を検証するかを決められる。",
+            "zh": "用能区分两种行为的具体输入讨论断言价值，避免只展示覆盖率。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-10-top-3",
+      "url": "https://zenn.dev/meursyphus/articles/aea1056a619236",
+      "source": "Zenn",
+      "topic": "RSC と画面遷移",
+      "capturedAt": "2026-11-10T01:00:41.659739+00:00",
+      "snapshotSha256": "24a6562501ebaa64ae861c5f8de00ff5cf53922654de6062a17231e9d1a6d4ff",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "サーバーが速くても Next.js の画面遷移が遅く感じる理由",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "RSC output includes references to client components and their props.",
+          "quote": "RSC ペイロード",
+          "locator": "ブラウザーには JavaScript だけでは足りない",
+          "conditions": "Browser navigation in the App Router; different from an HTML document.",
+          "usedIn": {
+            "ja": "画面が切り替わるまでの待ち時間を測るときは、クリック時にブラウザーが何を持っていたか",
+            "zh": "用户点击链接后界面停顿，先应判断浏览器在等哪一类资源。App Router 的 Ja",
+            "interview": "まず本番ビルドで、クリック時にRSCペイロードが届いているかを見ます。Suspenseの代"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Automatic viewport prefetch is a production behavior.",
+          "quote": "自動プリフェッチは開発環境では無効",
+          "locator": "Link のプリフェッチは何を先に取得するのか",
+          "conditions": "Traditional default differs for static routes and dynamic routes with a loading boundary.",
+          "usedIn": {
+            "ja": "従来の本番プリフェッチは、表示領域に入ったLinkから始まり、静的ルートは全体、動的",
+            "zh": "文章把旧式路由预取与共享壳分开讲。常规生产环境中，Link 进入视口时可预取；静态路"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Partial Prefetching can reuse the App Shell across a route pattern.",
+          "quote": "同じルートパターンへのリンクで App Shell を再利用",
+          "locator": "Partial Prefetching で複数の URL がシェルを共有する",
+          "conditions": "Article discusses the Next.js 16.3 option; migration observations do not give general timings.",
+          "usedIn": {
+            "ja": "記事が扱うNext.js 16.3のpartialPrefetchingは、同じルー",
+            "zh": "启用 Cache Components 后，可以让可预渲染的 App Shell 与"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "ja": "クリック前に届く部品とクリック後に待つ応答を見分け、サーバーの処理時間以外も調査できる。",
+            "zh": "把点击前可复用的界面与点击后才请求的数据分开测量，才能找到停顿位置。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-10-top-4",
+      "url": "https://qiita.com/itaraiguma/items/6d0c1720f5abb09e8cbc",
+      "source": "Qiita",
+      "topic": "SQLAlchemy の候補投影",
+      "capturedAt": "2026-11-10T01:01:08.451048+00:00",
+      "snapshotSha256": "d74158140532fbfb2e973ec160a02cb14c6d8a0a7aaf741c56bdddc42e26195a",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "候補を全件Pythonで判定するAPIは、判定に使う列だけ読み、返す行だけORMで取り直す",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "The service determines eligibility from summary JSON, beyond a Boolean database field.",
+          "quote": "要約のJSONを解析",
+          "locator": "症状",
+          "conditions": "Related-article API for a single service, at most ten items returned.",
+          "usedIn": {
+            "ja": "返す件数が少ないAPIでも、選出のために読む行は多い。DevPickでは正規の要約を",
+            "zh": "相关文章接口最多返回10篇，不意味着数据库只会读10条。DevPick 要从同主题与",
+            "interview": "SQLAlchemyで判定に使う列だけをRowとして読み、選んだIDだけモデルにします。I"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "The selected IDs are queried again, and the result is reordered.",
+          "quote": "結果は選んだ順に返らない",
+          "locator": "手順3",
+          "conditions": "Read decision columns as SQLAlchemy Row first; skip vanished IDs and avoid query for empty selection.",
+          "usedIn": {
+            "ja": "SQLAlchemyのselectでID、話題ID、公開日時、要約など判定に使う列を",
+            "zh": "作者用 SQLAlchemy 的列选择先取 ID、主题、日期和摘要等判定字段，结果是"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "InstanceEvents.load counted up to three model loads with 31 candidates and limit two.",
+          "quote": "計3件以下",
+          "locator": "テストで確かめる",
+          "conditions": "Regression also tests ranking in Japanese and English; around 0.12s was a separate immediate post-deploy observation.",
+          "usedIn": {
+            "ja": "筆者の実測では、関連記事の応答が1.0〜1.9秒からデプロイ直後の約0.12秒になっ",
+            "zh": "部署后的暖态观测中，响应由每次1.0至1.9秒降到约0.12秒。31个候选、最多返回"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "ja": "候補を減らす案と、一候補あたりの取得コストを下げる案を、順位を守りながら比較できる。",
+            "zh": "从候选行的读取成本着手，既保住原来的选出规则，也能写出可执行的回归断言。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-10-top-5",
+      "url": "https://zenn.dev/grok_prtex/articles/cascadio-step-to-gltf",
+      "source": "Zenn",
+      "topic": "CAD メッシュ変換",
+      "capturedAt": "2026-11-10T01:00:41.757952+00:00",
+      "snapshotSha256": "9db64975e6909f0717c58f6b1dd010d86144450539cf5c80dafda6c0f717aa18",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "cascadio で STEP を glTF にするときの単位・許容差・B-rep 情報（0.1.1 で確認）",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "The 100 × 50 × 20 mm plate produced STEP conversion extents of 0.1 × 0.05 × 0.02.",
+          "quote": "出力はメートル",
+          "locator": "基本の変換",
+          "conditions": "cascadio 0.1.1, Debian 13, Python 3.13.5; tested IGES retained source-scale coordinates.",
+          "usedIn": {
+            "ja": "図面で作った穴の大きさがWeb表示でも保たれるかを考えるには、座標とメッシュ化の許容",
+            "zh": "把机械设计文件放到网页预览时，先用已知尺寸的零件做验证。文章在 Debian 13、",
+            "interview": "外寸の分かる板をcascadioで変換して、STEPの座標がメートルになるかを確かめます。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "The tested hole had 32 segments and 0.0482 mm maximum chord deviation at linear tolerance 0.1.",
+          "quote": "0.0482 mm",
+          "locator": "許容差の単位と効き方",
+          "conditions": "Fixed test geometry; author inferred tolerance uses source units in the absolute configuration.",
+          "usedIn": {
+            "ja": "絶対許容差の比較では、tol_linearを0.01から0.1に変えると穴の分割数は",
+            "zh": "输出坐标的单位也不等于网格化阈值的单位。作者调整 tol_linear，取0.01时"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Actual B-rep data was in the primitive extension TM_brep_faces.",
+          "quote": "TM_brep_faces",
+          "locator": "B-rep 情報の実際の格納場所",
+          "conditions": "Observed in tested version; check conversion return values and output bytes independently.",
+          "usedIn": {
+            "ja": "include_brepを有効にすると、面の情報は実出力ではプリミティブのTM_br",
+            "zh": "圆孔还可以从拓扑属性核验。开启 include_brep 后，这一版将三角形对应的原"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "ja": "図面単位、許容差、形状属性の三つを実際に出力されたデータで確かめられる。",
+            "zh": "用同一试件把缩放、离散误差和形状属性分开验证，定位看起来相似的三种异常。"
+          }
+        }
+      ]
+    }
+  ]
+}
