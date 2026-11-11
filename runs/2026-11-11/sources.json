@@ -1,0 +1,266 @@
+{
+  "targetDate": "2026-11-11",
+  "sourceWindow": {
+    "from": "2026-11-10T10:00:00+09:00",
+    "to": "2026-11-11T10:00:00+09:00"
+  },
+  "excludedPreviousTop": [
+    "https://zenn.dev/tatsuyaaaaaaa/articles/74ec715380cf61",
+    "https://zenn.dev/meursyphus/articles/5c2641c2bade16",
+    "https://zenn.dev/meursyphus/articles/aea1056a619236",
+    "https://qiita.com/itaraiguma/items/6d0c1720f5abb09e8cbc",
+    "https://zenn.dev/grok_prtex/articles/cascadio-step-to-gltf"
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "observedAt": "2026-11-11T01:03:39.003528+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "htmlSha256": "c0f443d666f9bbfe98e633a4daaeae05966797a06a6baaee2c499f411135855e"
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-11T01:03:39.003883+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "htmlSha256": "a24e17c1321bd232f5fd96f706336b092d49e510c67aff2786d298e4a2d6cbc7"
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-11T01:03:39.003967+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "htmlSha256": "d4261895edc3d1d5dc5ff759ebc08e1135bcb3c7fb6118a0ee4b7a62ea521005"
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-11T01:03:39.004027+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "htmlSha256": "63d3d558d6c262f773adca4153276f230f8852e73338d625664553426f4d0091"
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-11T01:03:39.004085+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "htmlSha256": "daad408fa3ff26223db0caac1873fbb6c951c45ce636e331567e055f77a4fd61"
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-11T01:03:39.004168+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "error": "Access denied; not retried through another transport"
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-11T01:03:39.085942+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "htmlSha256": "038c02d3fb98765681f5cc0a87570d371aee8f9c37203994e23d6aa66ed086a0"
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-11T01:03:39.104573+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "htmlSha256": "a01a10e5ff6920759f39c40cf1bb5177268c78116a89ff20e78b56ae630fac2b"
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-11T01:03:39.149804+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533"
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-11T01:03:39.171595+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "htmlSha256": "43bdcaa85c25f77c868f7b6f1d2b879f7a1fafe6bd1af13c22e53fd257da9286"
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-11T01:03:39.172006+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "htmlSha256": "98de7851b30740fdf3a3c6db0be8869dedfbf2a1753f25280c7e601576895d21"
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-11T01:03:39.199595+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "htmlSha256": "ca2c02c3d12ab0d170e7260c10c121e7867effeabd2d62ac9c2f6811ea09ea18"
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-11T01:03:39.238724+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "htmlSha256": "f446d39171fbafba52f43fae96fad905a39005ab1f1ef189677c070259753cb7"
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-11T01:03:39.296673+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "htmlSha256": "fa4408dc4166fcee59ba83d347ae773af3b07cfaf7185ad4117f84444cea2af4"
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-11T01:03:39.325095+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "htmlSha256": "f1928a568345b96bb116ce82baa4b4e861c8960d433c2f96350146fe395f8ed8"
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-11T01:03:39.329479+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 403,
+      "actualUrl": "https://engineering.mercari.com/",
+      "error": "Access denied; not retried through another transport"
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-11T01:03:39.389100+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "htmlSha256": "4c3c759695f0e28dca53fd6b600d02ef02e3f69106de7808f825050eb8617157"
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-11T01:03:39.415692+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "htmlSha256": "f6c3eee51c6ba225819ff3a3e6992ab0e53077284bf61dcc00c7d840890ab147"
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-11T01:03:39.527948+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "htmlSha256": "320be58d4bedff7e3763b585098cd7158678f1b0fb89e1b5cc1e8a6a2a0647ee"
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-11T01:03:39.558685+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "htmlSha256": "79b51e5eaa1d9d0e6177b30ddfbec18505120370e48837e6f8d4853acae3ce52"
+    }
+  ],
+  "zennLatest": {
+    "inWindow": 98
+  },
+  "supportingSpecifications": [
+    "https://sqlite.org/lang_expr.html",
+    "https://github.com/neilpa/yajsv",
+    "https://docs.snowflake.com/en/user-guide/snowflake-dashboards"
+  ],
+  "articles": [
+    {
+      "title": "ローカルLLMのRAGが『資料からはわかりません』ばかり返す原因は、検索ではなかった（M1 Mac・25問で実測）",
+      "source": "Zenn",
+      "topic": "RAGの検索・回答の分離評価",
+      "url": "https://zenn.dev/hoshihoshi/articles/5f07aa9a13f042",
+      "articleId": "2026-11-11-top-1",
+      "publishedAt": "2026-11-11T08:44:11.446+09:00",
+      "capturedAt": "2026-11-11T01:04:00.404217+00:00",
+      "snapshotSha256": "7f066c6ae47dfc68f829ae06974a1881df04499098a913bdbc84271f2889e389",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "facts": "Author used qwen3:8b on M1 16 GB with 25 questions about a three-page fictional document. Of 12 errors across three initial settings, 11 already had evidence. At 500 characters and k=4, relaxed wording matching yielded 24 versus 21, thinking mode yielded 25 with 22 seconds median versus 1.4 seconds baseline. One run per setting, keyword plus manual scoring."
+    },
+    {
+      "title": "Cloudflare D1で読み取り上限超過！NOT INの罠と99.8%削減・オフラインキャッシュ戦略",
+      "source": "Zenn",
+      "topic": "D1の実行計画と読み取り量",
+      "url": "https://zenn.dev/feedge/articles/cloudflare-d1-query-optimization-and-offline-cache",
+      "articleId": "2026-11-11-top-2",
+      "publishedAt": "2026-11-11T09:01:26.829+09:00",
+      "capturedAt": "2026-11-11T01:04:00.404769+00:00",
+      "snapshotSha256": "4edbfe09cbef52fff0ef004013bb77a15842b8bc789e9f8fd0a34b496433af04",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "facts": "Feedge report: 47 list requests read 3.34 million rows. Correlated EXISTS and NOT EXISTS using composite keys restored descending published-time index early stop. Reported 71,000 versus 20–30 rows and 110 versus 2 ms; headline percentage does not match those numbers directly. Plan and results are specific to the observed workload."
+    },
+    {
+      "title": "テストが通っても YAML フィクスチャは壊れている — JSON Schema と yajsv で実行前に検出する",
+      "source": "Zenn",
+      "topic": "YAMLフィクスチャの事前検査",
+      "url": "https://zenn.dev/kyrenzk/articles/yaml-testdata-json-schema-yajsv",
+      "articleId": "2026-11-11-top-3",
+      "publishedAt": "2026-11-11T09:08:11.764+09:00",
+      "capturedAt": "2026-11-11T01:04:00.404872+00:00",
+      "snapshotSha256": "32b9286f3440864377c15cf56c161db2a53b6d0d393f28509c5f5994b7f3af3a",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "facts": "Go 1.24.7, yaml.v3 v3.0.1, two fixtures. go test passed both because Valid ignored empty currency and the decoder dropped the unknown key. draft-07 JSON Schema via yajsv rejected both problems in the same file. Single-document YAML only; application rules and schema maintenance remain."
+    },
+    {
+      "title": "縦動画の文字のはみ出しを、ffmpeg と Python の標準ライブラリだけで落とす",
+      "source": "Zenn",
+      "topic": "縦動画の余白・字幕帯の検品",
+      "url": "https://zenn.dev/tarowhitey/articles/ffmpeg-vertical-video-frame-check",
+      "articleId": "2026-11-11-top-4",
+      "publishedAt": "2026-11-11T08:24:53.944+09:00",
+      "capturedAt": "2026-11-11T01:04:00.605530+00:00",
+      "snapshotSha256": "c615b310691bf12b66bba31ac6624e4708c6504ae952d097c30d437cc5f6ff54",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "facts": "ffmpeg at 4 fps and 270 by 480 grayscale; fixed bands and luminance rules, minimum two consecutive samples for persistent violations. Margin and centering are distinct. Fourteen synthetic/invalid fixtures passed; 9.4–9.5 seconds on four cores, three runs. No detection of overlapping letters or bad line breaks."
+    },
+    {
+      "title": "Snowflake Dashboards 2.0が最高な理由と、これからBIに求められること",
+      "source": "Zenn",
+      "topic": "Snowflakeのダッシュボード定義と権限",
+      "url": "https://zenn.dev/dataheroes/articles/snowflake-dashboards-2-and-future-of-bi",
+      "articleId": "2026-11-11-top-5",
+      "publishedAt": "2026-11-11T09:21:10.472+09:00",
+      "capturedAt": "2026-11-11T01:04:00.404963+00:00",
+      "snapshotSha256": "e257b1bb8f2f2c7ec064f74b0de471d0076884b091505ddbb245005045542244",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "facts": "Practitioner report plus official docs: Workspaces .dash, SQL-backed tiles and Vega-Lite charts, input filters before aggregation, read-only artifact shared by role, caller-rights query execution and CoWork conversation. Product behavior, not a workload cost comparison. Current docs describe prior snapshots scoped to a viewer."
+    }
+  ]
+}
