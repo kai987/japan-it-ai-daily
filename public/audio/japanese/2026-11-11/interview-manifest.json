@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-11",
+  "generatedAt": "2026-11-11T01:28:52.248Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "RAGが分からないと答え続ける場合、どこから調べますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "d8521f5651c0cd1a41ece3cc1273f38d5cca1997f3fdcf083e1db86ff5480fd7",
+      "audioSha256": "92e8b3c34b841a04002607395bc3ef2fc056e09772908e6d27282180eb3b4f3e",
+      "durationSeconds": 4.481
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "根拠が検索で取れたかと、答えに使われたかを分けます。記事ではqwen3:8bに25問を試し、初期設定の誤答12件中11件には根拠が届いていました。言い換えを許すと正解は21問から24問に増えました。ただし三ページの資料を各設定で一度試した結果なので、実務では長い文書と根拠のない質問も加えて確かめます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "f9eeaa5c82b1ff04efdbdd4af6d2c5877ab1f97173cb6a0b795d84c023527c8b",
+      "audioSha256": "57d7951e8a24c88678762c5deec80acb50d5d15868c6d77acae9cee3981325e7",
+      "durationSeconds": 27.749,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "D1の一覧取得で、返す件数より読み取りが多い場合はどうしますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "6ccb0a14ab52bbcd43d90e3238e0519bce5b2abbbf3366679ed2caa6188e49a2",
+      "audioSha256": "3766bd05cf2ff0c4e127cf760950221e8d2d03beef0116350176447b8101fb51",
+      "durationSeconds": 5.432
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "実行計画で、表示前にどれだけ読んで並べ替えているかを確かめます。feedgeではNOT EXISTSで除外条件を照合し、公開日時インデックスの降順走査で二十件そろえば止まる形にしました。ただし同じ計画になるかはデータ次第です。購読に偏りがある例やNULLも用意し、読み取り行数と記事の順序を変更前後で比べます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "ddf537c2591b001e1846ced41a5473152c6eb043c7b9790edde47bb2662857b8",
+      "audioSha256": "758e067c7cfee2dbc2b30f2767258394b278aaebb0e191b95d18baa39735aad2",
+      "durationSeconds": 24.902,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "Goのテストが通るYAMLに、構造検査を足す理由は何ですか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "eb45b027e1eba7e97d1c7a293a226bf0c23cf6520a2adfd412131d7c869a6d7d",
+      "audioSha256": "3dd4a063a8b95e38918312afbf92694dc848803dae65347e0171ef7e6b7fcf5d",
+      "durationSeconds": 4.91
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "デコード後の値だけを調べると、必須項目の欠落が空文字のまま通るためです。記事のJSON Schemaは通貨を必須にし、yajsvで未知キーも検出しました。ファイル名付きのエラーをテスト実行前に出せます。ただし構造が正しくても注文の意味まで正しいとは限らないので、金額と通貨の関係は業務テストで引き続き確かめます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "151abf34ada41c6a4b852669664a11d346041789f2ffe79d9d666e28962ea044",
+      "audioSha256": "7199ac94e97d40f35202a6108a903cda42269cd7b2f40191ce52e8d2629b6de7",
+      "durationSeconds": 25.285,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "縦動画の余白検査で、左右の差だけを見ると何を見逃しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "b6cb324b433086b50b3e139fc643d87558cfa1ca5e7c5c6def38b96a9a44e943",
+      "audioSha256": "f6cb5b444803fe71d509c715a272874abc4e0086ddf9984bc2016d23c48c4139",
+      "durationSeconds": 5.653
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "両側が同じように狭い見出しを見逃します。記事ではMARGINで片側の最低余白を調べ、ffmpegで毎秒四枚の画素を取り出して、連続二枚の違反を区間として報告しました。ただし文字同士の重なりは拾えません。合格すべき合成動画と空ファイルも入れ、映像を読めないときはUNMEASUREDで止まることを確かめます。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "8f1e44f268e1d1429912a3390e6f11db7e300507934d56ba31a512c05968225d",
+      "audioSha256": "96c03dc9e163faca098360a25e2334c5ba98f588c3c572e04fddedbbccd454b7",
+      "durationSeconds": 24.637,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "Snowflakeの定型ダッシュボードを共有する際、何を検証しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "8de0f57bf886359e75365eae0b57a2023146e57baddfd4afd3b94f4b967a183e",
+      "audioSha256": "c3f451f2c90781b61013aff6c4f4c6163124893ff799e6b6154a22798d44f33b",
+      "durationSeconds": 5.293
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "共有先のロールと、元の表を参照できる権限をそれぞれ試します。Dashboards 2.0のタイルは閲覧者の権限で動き、Vega-Liteで図を描きます。CoWorkで質問した場合も、違うロールで見え方を確認します。ただし記事は費用の比較実験ではないので、利用人数と更新間隔を決め、実際のクエリ費用も測って採用を判断します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "d4b26bf074597fffc7c8b502fda5f0a7c715fffd0eeda606146aa37c8949285b",
+      "audioSha256": "1651afa9d11af2a723025003a7c5e7f834631ac69c499ece7b44aa33ed4148c6",
+      "durationSeconds": 26.123,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "RAGの検索成功だけで、回答の正しさを保証できないのはなぜですか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "175daf9df572de96b2d509c9311badbcc553d4b674df4de2da20ba6e84e9529b",
+      "audioSha256": "8d9d02ca84099d5481ef3933b326f3016b2b9953d2195fa66cdd57e14bc2497b",
+      "durationSeconds": 5.548
+    },
+    {
+      "index": 2,
+      "text": "YAMLと動画の検査で、合格例と測れない例を用意する理由は何ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "c7936d8aea36037abd6efdf606699a35ccb4770eb98ce4d26f354e25eed98f92",
+      "audioSha256": "2fca797688a20f3ea88657274f6bffd1d3b58113525e7318dd2108d8b20d9a55",
+      "durationSeconds": 5.885
+    },
+    {
+      "index": 3,
+      "text": "D1のキャッシュとSnowflakeの閲覧権限で、それぞれ何を確かめますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "3c750038c4c9e382fa61f076711188a97a3b4de131c5fc66ce0692a202dfb599",
+      "audioSha256": "14c0518094dca09b9fa88f17932c6649816ef336428cb951678f13bfada04fd4",
+      "durationSeconds": 5.966
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-11T01:28:54.800Z"
+}
