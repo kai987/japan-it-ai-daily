@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-11",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-11-11T01:09:51.056821+00:00",
+  "scope": "Five public original article bodies read directly and captured outside Git. Measurements are source-author results; RAG article explicitly discloses AI-assisted experiment design and author confirmation. D1 headline percentage differs from raw rows and is not generalized. Official documentation used only for supplemental semantics. Canonical Japanese interview mirrors share strings; projects are teaching proposals.",
+  "articles": [
+    {
+      "articleId": "2026-11-11-top-1",
+      "url": "https://zenn.dev/hoshihoshi/articles/5f07aa9a13f042",
+      "source": "Zenn",
+      "topic": "RAGの検索・回答の分離評価",
+      "capturedAt": "2026-11-11T01:04:00.404217+00:00",
+      "snapshotSha256": "7f066c6ae47dfc68f829ae06974a1881df04499098a913bdbc84271f2889e389",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "ローカルLLMのRAGが『資料からはわかりません』ばかり返す原因は、検索ではなかった（M1 Mac・25問で実測）",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Local qwen3:8b evaluation uses a fictional three-page rulebook and 25 questions.",
+          "quote": "M1 / メモリ 16GB",
+          "locator": "実験の条件",
+          "conditions": "Twenty answerable and five unanswerable questions; keyword scoring plus manual review.",
+          "usedIn": {
+            "ja": "社内規程を検索して回答するRAGでは、根拠が取れていても「分かりません」と返ることが",
+            "zh": "本地规章问答给出「资料中找不到」，排查时要先看实际送进模型的内容。作者在配有16 G",
+            "interview": "根拠が検索で取れたかと、答えに使われたかを分けます。記事ではqwen3:8bに25問を試し"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Across three initial settings, 11 of 12 errors had evidence in supplied context.",
+          "quote": "11",
+          "locator": "結果2",
+          "conditions": "At 500-character chunks there are only three chunks; k=4 gives the entire document.",
+          "usedIn": {
+            "ja": "検索は最大4件を渡した設定で、根拠のある20問すべてに命中しました。500文字区切り",
+            "zh": "初始提示词的三种配置一共答错12次，其中11次对应的依据已经进入上下文。将规章按50"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Wording allowance increased 21 to 24 correct; thinking mode reached 25 with median 22 seconds.",
+          "quote": "各設定 1 回ずつの実行",
+          "locator": "この実験の限界",
+          "conditions": "Same 500-character/k=4 setup, small test, one run each; initial median 1.4 seconds.",
+          "usedIn": {
+            "ja": "500文字区切りで最大4件を渡す条件で、根拠があれば言い換えを許す指示に変えると、正",
+            "zh": "同为500字切分、最多4段，允许在依据明确时处理同义表达，正确数由21升至24，无依"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "ja": "根拠の未取得と回答側の過度な慎重さを分けて説明でき、改善対象の見当違いを防げます。",
+            "zh": "面试中可以展示如何先定位检索、上下文与回答三个环节，再决定改提示词还是检索。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-11-top-2",
+      "url": "https://zenn.dev/feedge/articles/cloudflare-d1-query-optimization-and-offline-cache",
+      "source": "Zenn",
+      "topic": "D1の実行計画と読み取り量",
+      "capturedAt": "2026-11-11T01:04:00.404769+00:00",
+      "snapshotSha256": "4edbfe09cbef52fff0ef004013bb77a15842b8bc789e9f8fd0a34b496433af04",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "Cloudflare D1で読み取り上限超過！NOT INの罠と99.8%削減・オフラインキャッシュ戦略",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Forty-seven article-list requests read 3.34 million rows.",
+          "quote": "47 回",
+          "locator": "はじめに",
+          "conditions": "Feedge report from D1 analytics on its existing subscription workload.",
+          "usedIn": {
+            "ja": "RSSリーダーfeedgeの開発チームは、Cloudflare D1の日次読み取り上",
+            "zh": "feedge 的文章把一次数据库配额耗尽追溯到文章列表。D1 统计中，47次列表请求",
+            "interview": "実行計画で、表示前にどれだけ読んで並べ替えているかを確かめます。feedgeではNOT E"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Correlated EXISTS/NOT EXISTS conditions use subscriber-feed and user-article composite keys.",
+          "quote": "複合主キー",
+          "locator": "なぜこれで劇的に改善するのか",
+          "conditions": "Selected descending published-time index can stop at 20 eligible articles; not all workloads do so.",
+          "usedIn": {
+            "ja": "チームは購読の条件をEXISTS、後で読むために一時的に隠した記事の除外をNOT E",
+            "zh": "改动同时处理了订阅判断与排除判断。查询以 EXISTS 确认用户订阅相应 Feed，"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Reported rows declined from 71,000 to 20–30 and execution time from 110 to 2 ms.",
+          "quote": "71,000 行 → 20〜30 行",
+          "locator": "なぜこれで劇的に改善するのか",
+          "conditions": "Reported headline percentage is not arithmetically equivalent; retain raw author numbers without independently verified performance.",
+          "usedIn": {
+            "ja": "記事は変更前後を約7万1000行から20〜30行、110ミリ秒から2ミリ秒と報告して",
+            "zh": "文章列出的单次行数从约7.1万变为20至30，时间从110毫秒变为2毫秒。标题的99"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "ja": "戻り件数、読み取り行数、停止中に提供できる範囲を分けて説明できます。",
+            "zh": "把执行计划、读取预算与页面在故障时的能力联系起来，能说清优化发生在哪一层。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-11-top-3",
+      "url": "https://zenn.dev/kyrenzk/articles/yaml-testdata-json-schema-yajsv",
+      "source": "Zenn",
+      "topic": "YAMLフィクスチャの事前検査",
+      "capturedAt": "2026-11-11T01:04:00.404872+00:00",
+      "snapshotSha256": "32b9286f3440864377c15cf56c161db2a53b6d0d393f28509c5f5994b7f3af3a",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "テストが通っても YAML フィクスチャは壊れている — JSON Schema と yajsv で実行前に検出する",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Two fixtures pass Go tests even when one lacks currency and contains a misspelled unknown key.",
+          "quote": "Go 1.24.7",
+          "locator": "前提・環境",
+          "conditions": "yaml.v3 v3.0.1; Valid checks ID and amount only, unknown keys are ignored by default.",
+          "usedIn": {
+            "ja": "Goの構造体に通貨を追加しても、以前のテスト用YAMLがそのまま通ることがあります。",
+            "zh": "订单测试全部通过，但其中一份 YAML 缺少通货，还多了一个拼错的金额字段。作者用 ",
+            "interview": "デコード後の値だけを調べると、必須項目の欠落が空文字のまま通るためです。記事のJSON S"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "JSON Schema/yajsv reports both missing currency and the unexpected typo.",
+          "quote": "currency is required",
+          "locator": "スキーマを足して実行前に検証する",
+          "conditions": "draft-07 schema has required fields and additionalProperties false.",
+          "usedIn": {
+            "ja": "記事はdraft-07のJSON Schemaに通貨を含む必須キー、型、値の範囲、通",
+            "zh": "要在进入业务测试前看见缺陷，作者用 draft-07 JSON Schema 声明必"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "The experiment covers only one YAML document per file.",
+          "quote": "1 ドキュメント / 1 ファイル",
+          "locator": "つまずきどころ",
+          "conditions": "Multiple documents, split schemas and large-file-set timing unverified; schema/type coordination and business rules remain.",
+          "usedIn": {
+            "ja": "この方法は、挙動を試す前に入力の形が仕様に合うか確かめるものです。金額と通貨の関係な",
+            "zh": "这个检查放在 CI 的测试之前，可以直接把失败定位到夹具文件。业务关系仍应由业务测试"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "ja": "テストが緑でも、入力の必須条件が検査されたとは限らない理由を示せます。",
+            "zh": "可用于说明同一次 CI 中为什么需要输入契约检查和行为测试各自提供证据。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-11-top-4",
+      "url": "https://zenn.dev/tarowhitey/articles/ffmpeg-vertical-video-frame-check",
+      "source": "Zenn",
+      "topic": "縦動画の余白・字幕帯の検品",
+      "capturedAt": "2026-11-11T01:04:00.605530+00:00",
+      "snapshotSha256": "c615b310691bf12b66bba31ac6624e4708c6504ae952d097c30d437cc5f6ff54",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "縦動画の文字のはみ出しを、ffmpeg と Python の標準ライブラリだけで落とす",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "ffmpeg samples four 270 by 480 grayscale frames per second.",
+          "quote": "270×480",
+          "locator": "静止画を灰色の生の画素で取り出す",
+          "conditions": "Deterministic fixed-area image checks with Python standard library.",
+          "usedIn": {
+            "ja": "短い縦動画では、後から重ねる字幕が正しくても、映像に焼き込まれた見出しが切れることが",
+            "zh": "原有视频检查覆盖画幅、时长、音频和后来叠加的字幕，却让嵌在画面里的标题越过右边界。作",
+            "interview": "両側が同じように狭い見出しを見逃します。記事ではMARGINで片側の最低余白を調べ、ffm"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "MARGIN complements centering by checking minimum per-side margin.",
+          "quote": "140px 未満",
+          "locator": "左右とも狭いと、差では拾えない",
+          "conditions": "1080-width equivalent; persistent checks require two consecutive sampled frames.",
+          "usedIn": {
+            "ja": "一瞬の切り替えを拾いすぎないよう、条件を満たすフレームが2枚以上続いたときに区間とし",
+            "zh": "作者把画框边缘、右侧按钮区、左右偏移和最小留白分开检验。只看左右差值会放过两边都很窄"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Fourteen synthetic/invalid fixtures matched expected results in 9.4–9.5 seconds.",
+          "quote": "14 例",
+          "locator": "合成動画で自己テストする",
+          "conditions": "Four-core environment, three self-test runs; zero frames means UNMEASURED, internal overlap and line-break readability excluded.",
+          "usedIn": {
+            "ja": "合成した正常・異常例と読めないファイルを合わせた14例は期待どおりで、4コア環境の3",
+            "zh": "作者用合成的合格和失败视频，以及无法解码的空文件组成14例。4核环境重复3次，整套自"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "ja": "片寄りと余白不足を区別し、未計測を通過にしない検査を考えられます。",
+            "zh": "可以讲清区域检查各自保护什么，以及缺少观测值时为什么不能放行。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-11-top-5",
+      "url": "https://zenn.dev/dataheroes/articles/snowflake-dashboards-2-and-future-of-bi",
+      "source": "Zenn",
+      "topic": "Snowflakeのダッシュボード定義と権限",
+      "capturedAt": "2026-11-11T01:04:00.404963+00:00",
+      "snapshotSha256": "e257b1bb8f2f2c7ec064f74b0de471d0076884b091505ddbb245005045542244",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "Snowflake Dashboards 2.0が最高な理由と、これからBIに求められること",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Dashboards definitions use .dash in Workspaces and SQL-backed tiles with Vega-Lite charts.",
+          "quote": "Snowsight Workspaces",
+          "locator": "宣言的に書ける",
+          "conditions": "Practitioner description supplemented by official docs, no independent feature implementation.",
+          "usedIn": {
+            "ja": "Snowflake上の定型指標をチームで見ながら質問したい、という利用者の視点からD",
+            "zh": "作者从团队例行看数的流程出发，介绍 Snowflake Dashboards 2.0",
+            "interview": "共有先のロールと、元の表を参照できる権限をそれぞれ試します。Dashboards 2.0の"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Shared artifacts execute tile queries with viewer privileges and open in CoWork.",
+          "quote": "閲覧者自身の権限",
+          "locator": "権限はSnowflakeのものがそのまま効く",
+          "conditions": "Official docs also allow same-viewer earlier snapshot; sharing permission and underlying data privilege are separate checks.",
+          "usedIn": {
+            "ja": "完成した画面は読み取り専用のアーティファクトとしてロールに共有し、CoWorkで見な",
+            "zh": "报表可以只读副本的形式按角色共享，用户在 CoWork 打开后可围绕某个瓦片继续提问"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Author evaluates the fit for routine reporting without a cross-product cost benchmark.",
+          "quote": "仕様は変わる可能性があります",
+          "locator": "この記事について",
+          "conditions": "Warehouse cost, audience size and refresh interval still require evaluation.",
+          "usedIn": {
+            "ja": "記事は定型レポート用のアプリを個別に動かさなくてよい点を評価しています。ただし、閲覧",
+            "zh": "文章主要记录作者的使用体验，没有跨 BI 产品的成本或时延实测。对只需要固定指标、筛"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "ja": "共有リンクの閲覧とデータの参照を別々に試し、導入時の確認項目を具体化できます。",
+            "zh": "面试可以用两种角色、一个筛选和一个不可加指标，设计可复查的报表验收。"
+          }
+        }
+      ]
+    }
+  ]
+}
