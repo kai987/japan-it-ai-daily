@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-11",
-  "stage": "preflight_passed",
+  "stage": "request_ready",
   "sourceCommit": "de764617a5965502aabf7381ed46352185697564",
   "sourceWindow": {
     "from": "2026-11-10T10:00:00+09:00",
     "to": "2026-11-11T10:00:00+09:00"
   },
   "createdAt": "2026-11-11T01:03:21.964Z",
-  "updatedAt": "2026-11-11T01:21:04.304Z",
+  "updatedAt": "2026-11-11T01:21:13.483Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-11-11/checks.json",
@@ -41,6 +41,10 @@
     {
       "path": "runs/2026-11-11/history.json",
       "blobSha": "d50fcc47708be9922f41bdcc012c1205d4928a4a"
+    },
+    {
+      "path": "runs/2026-11-11/request.json",
+      "blobSha": "9058dd6ac6c52df27fb92a5156d4ac20f6089dcf"
     },
     {
       "path": "runs/2026-11-11/sources.json",
