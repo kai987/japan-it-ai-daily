@@ -1,15 +1,19 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-12",
-  "stage": "sources_verified",
+  "stage": "learning_verified",
   "sourceCommit": "72d99f258cb95117e422ff19a135251959372a62",
   "sourceWindow": {
     "from": "2026-11-11T10:00:00+09:00",
     "to": "2026-11-12T10:00:00+09:00"
   },
   "createdAt": "2026-11-12T03:08:27.592Z",
-  "updatedAt": "2026-11-12T03:11:07.481Z",
+  "updatedAt": "2026-11-12T03:16:09.532Z",
   "completedArtifacts": [
+    {
+      "path": "runs/2026-11-12/history.json",
+      "blobSha": "f3c003c753342308dca66e99f7cb77e4dee748bd"
+    },
     {
       "path": "runs/2026-11-12/sources.json",
       "blobSha": "51076ddfa558aa139e73d9c33cf86d78ea0bf288"
