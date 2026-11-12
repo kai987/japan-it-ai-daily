@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-12",
+  "status": "reviewed",
+  "reviewedBy": "Codex original-source review",
+  "reviewedAt": "2026-11-12T03:16:03.336922+00:00",
+  "scope": "Five public originals in the frozen window, captured outside Git. Source-author observations and illustrative measurements; no independent reproduction. Projects are teaching proposals",
+  "articles": [
+    {
+      "articleId": "2026-11-12-top-1",
+      "url": "https://zenn.dev/murooka_az/articles/claude-reply-switches-to-english",
+      "source": "Zenn",
+      "topic": "対話AIの応答言語の比較",
+      "capturedAt": "2026-11-12T03:09:16.187407+00:00",
+      "snapshotSha256": "3b4eeb2cb285a9aff7aeaafdc4cef086c92e9aaa2d686a6526f03e09a903a2c2",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "AIの望まない動作を減らしたのは、禁止でも依頼でもなく「していい範囲」を決める1文だった。Claude Codeの返事が英語になる問題で検証",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "A single real conversation checkpoint was replayed with Claude Code 2.1.318 and Opus 5.5 medium.",
+          "quote": "Claude Code 2.1.318",
+          "locator": "測定の条件",
+          "conditions": "Copies of the original conversation, condition comparisons used 100 trials per variant.",
+          "usedIn": {
+            "ja": "利用者には日本語で返す設定でも、作業ログや担当への指示が英語の会話では、短い進捗や長",
+            "zh": "作者关注的是开发助手在日语会话中突然用英语回复。排查时把一份真实对话截在异常回复之前",
+            "interview": "利用者が読む文章をまず対象にします。記事ではClaude Codeの同じ会話を再生し、CL"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Audience-defined English allowance reduced English replies from 15/100 to 1/100 in the main scene.",
+          "quote": "100 回中 15 回が 1 回",
+          "locator": "すぐ試せる形",
+          "conditions": "Adding a warning gave 19/100 and deleting the allowance gave 7/100. The rule applies to human-facing progress and final reports.",
+          "usedIn": {
+            "ja": "元の文は英語を許す項目を列挙しており、100回のうち15回が英語でした。英語に引きず",
+            "zh": "原有配置逐项列出允许英语的内容，100 次重放有 15 次用英语回复。追加一条提醒后"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "The second actual scene did not reproduce the behavior in ten replays.",
+          "quote": "10 回中 0 回で、再現しませんでした",
+          "locator": "英語になった返事の直前で切って再生する",
+          "conditions": "Main comparison is one scene/model with altered tool availability and no carried-over thinking in the tested scene.",
+          "usedIn": {
+            "ja": "著者は両側のFisherの正確検定でも差を調べました。ただし、測定は主に一つの会話の",
+            "zh": "作者使用双侧 Fisher 精确检验比较频数，结论限于主实验的单个会话断点。重放也没"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "ja": "出力先を仕様に落とし込み、同じ失敗場面を反復して指示の差を測る手順が分かります。",
+            "zh": "适合用来解释如何把输出语言写成可观察的要求，并通过多次重放区分偶发行为与稳定变化。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-12-top-2",
+      "url": "https://zenn.dev/openedfile/articles/worker-transfer-small-buffers",
+      "source": "Zenn",
+      "topic": "Workerのバッファ受け渡し",
+      "capturedAt": "2026-11-12T03:09:16.186418+00:00",
+      "snapshotSha256": "af152b4e7f57694cc39f53945d906c8bfd30458e920d5b2db6b454b027567842",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "Worker の結果を transfer で返したら写すより遅かった（Chromium で小さな配列 30 万個）",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "The 6.4 MB DXF yielded 300,000 small typed arrays with 2.4 MB aggregate payload.",
+          "quote": "合わせて 30 万個",
+          "locator": "何が起きたか",
+          "conditions": "100,000 layers, three typed arrays per drawing group; author measurements.",
+          "usedIn": {
+            "ja": "DXFビューアーは図面をWeb Workerで組み立て、座標などの型付き配列をpos",
+            "zh": "浏览器内的 DXF 查看器用 Web Worker 组装几何数据，再让主页面绘制。原",
+            "interview": "postMessageでは総量と一緒に、転送リストの個数も見ます。記事のDXFは小さなAr"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Chromium drawing completion median was 13.6 seconds all-transfer and 2.8 seconds with transfers only at least 64 KB.",
+          "quote": "13.6 秒",
+          "locator": "何が起きたか",
+          "conditions": "Three runs, compiled site. Separate test of 300,000 64-byte arrays: 10653 ms vs 406.7 ms.",
+          "usedIn": {
+            "ja": "Chromium 151で開いて描き終わるまでを測ると、すべてを転送リストに入れる方",
+            "zh": "在 Chromium 151 的 Linux 环境，作者以三次中位数对比打开到绘完的"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "The threshold bounds object count rather than optimizing every payload distribution.",
+          "quote": "いちばん良い分け目は、ブラウザ・機械・結果の形で変わる",
+          "locator": "測っていないこと",
+          "conditions": "WebKit 26.5 ran on different hardware; internal Chromium cause was not identified.",
+          "usedIn": {
+            "ja": "64 KBの分け目は、転送するオブジェクト数を上限付きにする判断です。64 MBを1",
+            "zh": "阈值的作用是限制大列表中的可转移对象数，仍要付出小数组复制的代价。64 MB 总量、"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "ja": "転送リストの費用を総バイト数だけで見積もると外れる例として説明できます。",
+            "zh": "可用总字节、对象数和交接时延三项观测，把优化判断落实到数据形状。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-12-top-3",
+      "url": "https://zenn.dev/h_aso/articles/css-scroll-driven-animations-baseline",
+      "source": "Zenn",
+      "topic": "スクロール連動アニメーション",
+      "capturedAt": "2026-11-12T03:09:16.187132+00:00",
+      "snapshotSha256": "4a8a53893a3bb1a5664e39dd8bc47d3d6e78b80ba1f8a37472d0a0c9a6564d14",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "【CSSだけ】スクロールでふわっと表示するアニメーションを作る",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Chrome 157 measured changing opacity as the card entered the scroll viewport.",
+          "quote": "0 → 0.14 → 0.48 → 0.82 → 1",
+          "locator": "AOSのfade-upをCSSで書く",
+          "conditions": "CodePen example on macOS, view() and animation-range.",
+          "usedIn": {
+            "ja": "カフェのサンプルページでは、要素が画面に入るとカードが見える演出や、ページの進捗を示",
+            "zh": "文章用一个咖啡馆示例，把卡片渐现、阅读进度条和页头变色绑定到滚动。CSS 的 vie",
+            "interview": "animationの一括指定がanimation-timelineを上書きしていないか見ま"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "A later animation shorthand resets the scroll timeline; overflow hidden can also change the nearest scroller.",
+          "quote": "DocumentTimeline",
+          "locator": "animation-timelineを書く順番",
+          "conditions": "Chrome inspection; overflow clip used for clipping while keeping the page as scroller in the example.",
+          "usedIn": {
+            "ja": "記事では、animationの一括指定より先にanimation-timelineを",
+            "zh": "有两处样式细节会改变执行结果。animation 简写若写在 animation-t"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Static readable content was tested on Firefox 149 and reduced motion in Chrome.",
+          "quote": "未対応のFirefox 149",
+          "locator": "対応していないブラウザと、視差効果を減らす設定",
+          "conditions": "Demo and specific browser settings only; no broad performance or compatibility guarantee.",
+          "usedIn": {
+            "ja": "著者は通常の見た目を読みやすい白背景や表示済みのカードにして、@supportsと動",
+            "zh": "作者还复现了旧 Firefox 149 中页头文字难读的情况。修正后的基础样式直接给"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "ja": "演出の成立条件をCSSの宣言順とスクロール領域まで追い、見えない状態が残る失敗を説明できます。",
+            "zh": "从可读的基础样式出发，再检查简写顺序、时间轴与最近滚动容器，便于定位前端展示差异。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-12-top-4",
+      "url": "https://gihyo.jp/article/2026/11/monthly-python-2611",
+      "source": "gihyo.jp",
+      "topic": "Tachyonのサンプリング計測",
+      "capturedAt": "2026-11-12T03:09:16.381697+00:00",
+      "snapshotSha256": "930124b99f2ac5518013b67d0c0c7667e07e3bed80f29094b17b0751c4d8f209",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "Python 3.15の新プロファイラーTachyonの紹介",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Python 3.15 Tachyon periodically samples stacks from outside the profiled process.",
+          "quote": "プロセスの外側からコールスタックを読み取ります",
+          "locator": "はじめに／Tachyonとは",
+          "conditions": "run launches a program; attach requires matching interpreter and platform permissions.",
+          "usedIn": {
+            "ja": "Python 3.15のTachyonは、実行中のコールスタックを外部から一定の間隔",
+            "zh": "Tachyon 随 Python 3.15 提供，通过外部定期采集调用栈估计运行时间",
+            "interview": "Tachyonのwallでは待ち時間も記録し、cpuでは実際に計算している箇所を見ます。記"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "The two-second sleep accounts for about 61% of wall samples in the example, and is absent in CPU mode.",
+          "quote": "約61％",
+          "locator": "テキスト出力（pstats）",
+          "conditions": "Illustrative prime-plus-sleep script, counts vary with execution.",
+          "usedIn": {
+            "ja": "記事は素数判定と2秒の待機を同じスクリプトに置いて比較しました。ウォールクロックでは",
+            "zh": "示例脚本先做质数计算，再等待两秒。按墙钟时间采样时，等待所在行约占 61％，切换到 "
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Short workloads can lack samples, and binary recordings can be replayed to other forms.",
+          "quote": "短い処理ではサンプルが不足",
+          "locator": "利用時の注意点",
+          "conditions": "Use matching Python minor/build for attach and appropriate OS permissions; no overhead benchmark claimed.",
+          "usedIn": {
+            "ja": "出力にはフレームグラフや行単位のヒートマップがあり、バイナリで保存した計測結果をre",
+            "zh": "需要给别人复查时，可把一次采样保存成二进制，再用 replay 生成火焰图或逐行热图"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "ja": "遅い処理が待ち時間かCPU負荷かを、同じプログラムを二通りに観測して説明できます。",
+            "zh": "可以用同一段程序解释等待为什么在墙钟指标中明显，却不占用 CPU 样本。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-12-top-5",
+      "url": "https://zenn.dev/stagea_tech/articles/20261112-pj8-devlog",
+      "source": "Zenn",
+      "topic": "履歴データ訂正の丸め契約",
+      "capturedAt": "2026-11-12T03:09:16.187274+00:00",
+      "snapshotSha256": "298da00d5cfa7cf806ce7d096420571b9deee0920677c3106cf4f915e63c26cc",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "originalTitle": "【日本株分析プラットフォーム】過去の株価の自動修正が、出来高の1株の違いで止まった話(前半): 四捨五入と切り捨て(2026-11-12)",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Seven one-share volume mismatches stopped a 2643-row plan before writes.",
+          "quote": "7行が合わず、止まった",
+          "locator": "先に要点",
+          "conditions": "2026-11-09, one issuer; 147 companies in plan, OHLC columns matched for those seven rows.",
+          "usedIn": {
+            "ja": "過去の株価を保守する自動処理では、訂正計画を反映する前に、参照データから期待値を計算",
+            "zh": "一个行情历史维护程序先生成更正计划，再用保存的参考值独立复算。11 月 9 日批次涉",
+            "interview": "点検で止めたまま、出来高の換算式を比べます。記事では十で割った後、計画側だけ四捨五入し、点"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Rounding half-up versus truncation after division by ten explains the discrepancy.",
+          "quote": "23,113.5",
+          "locator": "合わなかった7行",
+          "conditions": "Observed historical split/consolidation data; seven rows with fractional parts at least 0.5 differed.",
+          "usedIn": {
+            "ja": "株式併合と分割を考慮した当該銘柄の履歴では、参照値の出来高を10で割って今の基準へそ",
+            "zh": "该证券发生过股份合并和拆分，系统用 10 作为净倍率换算旧成交量。规划端在换算后四舍"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "110 rule tests and 53 whole-system tests passed; reprocessing kept the change bounded.",
+          "quote": "判定の試験110項目",
+          "locator": "試験を7項目足した",
+          "conditions": "Reused saved inputs, no fresh reference requests. Convention was confirmed for this history, not all sources.",
+          "usedIn": {
+            "ja": "チームは計画側の規則をそろえ、点検の許容は広げませんでした。保存済みの入力で再実行し",
+            "zh": "作者修正计划生成方式，保持原有拦截，使用已存输入重建计划，没有重新请求参考站。新旧计"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "The study and interview use the source result to motivate a bounded local evaluation.",
+          "conditions": "Editorial interpretation, not an independent benchmark.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "ja": "差が小さくても止める設計と、入力を固定して訂正後の影響範囲を調べる手順が具体的です。",
+            "zh": "适合说明数据修正要验证规则、重放范围与外部数据稳定性，即使差异只有最小计量单位。"
+          }
+        }
+      ]
+    }
+  ]
+}
