@@ -1,14 +1,19 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-12",
-  "stage": "registered",
+  "stage": "sources_verified",
   "sourceCommit": "72d99f258cb95117e422ff19a135251959372a62",
   "sourceWindow": {
     "from": "2026-11-11T10:00:00+09:00",
     "to": "2026-11-12T10:00:00+09:00"
   },
   "createdAt": "2026-11-12T03:08:27.592Z",
-  "updatedAt": "2026-11-12T03:08:27.592Z",
-  "completedArtifacts": [],
+  "updatedAt": "2026-11-12T03:11:07.481Z",
+  "completedArtifacts": [
+    {
+      "path": "runs/2026-11-12/sources.json",
+      "blobSha": "51076ddfa558aa139e73d9c33cf86d78ea0bf288"
+    }
+  ],
   "lastError": null
 }
