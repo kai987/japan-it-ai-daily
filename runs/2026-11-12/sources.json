@@ -1,0 +1,265 @@
+{
+  "targetDate": "2026-11-12",
+  "sourceWindow": {
+    "from": "2026-11-11T10:00:00+09:00",
+    "to": "2026-11-12T10:00:00+09:00"
+  },
+  "excludedPreviousTop": [
+    "https://zenn.dev/hoshihoshi/articles/5f07aa9a13f042",
+    "https://zenn.dev/feedge/articles/cloudflare-d1-query-optimization-and-offline-cache",
+    "https://zenn.dev/kyrenzk/articles/yaml-testdata-json-schema-yajsv",
+    "https://zenn.dev/tarowhitey/articles/ffmpeg-vertical-video-frame-check",
+    "https://zenn.dev/dataheroes/articles/snowflake-dashboards-2-and-future-of-bi"
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "observedAt": "2026-11-12T03:08:55.475643+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "htmlSha256": "228d349574219850df067d063c27cb714412e03f2c15faf9f8488101d1446a18"
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-12T03:08:55.476009+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "htmlSha256": "0a29254b7f3be0ae9222c35df394f3fc47d80d83422333e095a6243b2c288803"
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-12T03:08:55.476202+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "htmlSha256": "c0746ffd35d552b2c1e5a5b02265578be6ca0766fca3ad06af0fffcafde68e2b"
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-12T03:08:55.476388+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "htmlSha256": "e20acf6d57574ae88d820dc0cd6cefdf5dea0a05ec141f3a94f1ef8bf2c539bd"
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-12T03:08:55.476488+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "htmlSha256": "581ce836d934e4607a692ac378f64f4478d320c161c67d595c1e5384cd25cd72"
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-12T03:08:55.476587+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "error": "Access denied; not retried through another transport"
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-12T03:08:55.642313+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "htmlSha256": "6fe0c99b284e899c7e9b47f228667168bbf2a80910b63c2675082d4cad8305e9"
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-12T03:08:55.686718+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "htmlSha256": "fab79ed78132e4d24350710cd935f430af9fe6e453dea77e201ee0dfd6561e94"
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-12T03:08:55.729675+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533"
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-12T03:08:55.730802+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "htmlSha256": "068c908731e90e625d4dc846804a85acca73490cf81f990578c81bbed0e9066e"
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-12T03:08:55.753263+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "htmlSha256": "64d16d67aad9143b153914337613f35b5cdb944dbe0bf7c9232bea825d81f3a4"
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-12T03:08:55.753549+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "htmlSha256": "2f823f2d5ae03fb1c3ff0eed0cc5a74785470d03900e0ed904c1440f3f79161c"
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-12T03:08:55.797440+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "htmlSha256": "f5497732eb873b68aa2747a07f2b672333852f4a7888fc57d7eac4f8dd002987"
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-12T03:08:55.845366+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "htmlSha256": "f908a541fb4c3d973a6daee8678b0f1805dddd2c5cc1499da59d6790e97f4bcf"
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-12T03:08:55.875940+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "htmlSha256": "d023e1ca83fd4a723f93673eee03244aca4a08a99f5f254422a90209c575dade"
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-12T03:08:55.880924+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 403,
+      "actualUrl": "https://engineering.mercari.com/",
+      "error": "Access denied; not retried through another transport"
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-12T03:08:55.896904+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "htmlSha256": "6bb4f65a2682743a9bdb10bce611d14313421e77e969617589cdfba242ada724"
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-12T03:08:55.946310+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "htmlSha256": "204baf69a93263aacaab0fd4f24b4a71406b580da10952a1e9f78edada13669c"
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-12T03:08:55.966229+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "htmlSha256": "320be58d4bedff7e3763b585098cd7158678f1b0fb89e1b5cc1e8a6a2a0647ee"
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-12T03:08:56.000025+00:00",
+      "accessScope": "homepage discovery only; not an exhaustive crawl",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "htmlSha256": "178bfb01d41e00b22c7a183e67c0e08e9e5898caf952d3e612c1cc637811ff43"
+    }
+  ],
+  "zennLatest": {
+    "inWindow": 56
+  },
+  "supportingSpecifications": [
+    "https://docs.python.org/3.15/library/profiling.sampling.html",
+    "https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/159"
+  ],
+  "articles": [
+    {
+      "title": "AIの望まない動作を減らしたのは、禁止でも依頼でもなく「していい範囲」を決める1文だった。Claude Codeの返事が英語になる問題で検証",
+      "source": "Zenn",
+      "topic": "対話AIの応答言語の比較",
+      "url": "https://zenn.dev/murooka_az/articles/claude-reply-switches-to-english",
+      "articleId": "2026-11-12-top-1",
+      "publishedAt": "2026-11-12T09:13:04.425+09:00",
+      "capturedAt": "2026-11-12T03:09:16.187407+00:00",
+      "snapshotSha256": "3b4eeb2cb285a9aff7aeaafdc4cef086c92e9aaa2d686a6526f03e09a903a2c2",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "facts": "Claude Code 2.1.318, Opus 5.5 medium. Replayed one actual scene 100 times each. Replacing list of allowed English items with audience-defined scope changed 15/100 to 1/100, added warning 19/100, deletion 7/100. No generalization to other models or situations."
+    },
+    {
+      "title": "Worker の結果を transfer で返したら写すより遅かった（Chromium で小さな配列 30 万個）",
+      "source": "Zenn",
+      "topic": "Workerのバッファ受け渡し",
+      "url": "https://zenn.dev/openedfile/articles/worker-transfer-small-buffers",
+      "articleId": "2026-11-12-top-2",
+      "publishedAt": "2026-11-12T08:00:06.559+09:00",
+      "capturedAt": "2026-11-12T03:09:16.186418+00:00",
+      "snapshotSha256": "af152b4e7f57694cc39f53945d906c8bfd30458e920d5b2db6b454b027567842",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "facts": "6.4 MB DXF with 100,000 layers and 300,000 arrays, 2.4 MB arrays in total. Chromium 151/Linux median 13.6 to 2.8 s using transfer only above 64 KB, WebKit 26.5/macOS 1.7 s both, separate hardware. 64-byte x 300,000 test transfer 10653 ms, copy 406.7 ms. No established internal cause."
+    },
+    {
+      "title": "【CSSだけ】スクロールでふわっと表示するアニメーションを作る",
+      "source": "Zenn",
+      "topic": "スクロール連動アニメーション",
+      "url": "https://zenn.dev/h_aso/articles/css-scroll-driven-animations-baseline",
+      "articleId": "2026-11-12-top-3",
+      "publishedAt": "2026-11-12T08:00:06.498+09:00",
+      "capturedAt": "2026-11-12T03:09:16.187132+00:00",
+      "snapshotSha256": "4a8a53893a3bb1a5664e39dd8bc47d3d6e78b80ba1f8a37472d0a0c9a6564d14",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "facts": "view()/scroll(), shorthand resets timeline, nearest scroller changes with hidden versus clip. Chrome 157 opacity 0 to 1 along scroll, Firefox 149 fallback and Chrome reduced-motion emulation. Demo, not broad device benchmark."
+    },
+    {
+      "title": "Python 3.15の新プロファイラーTachyonの紹介",
+      "source": "gihyo.jp",
+      "topic": "Tachyonのサンプリング計測",
+      "url": "https://gihyo.jp/article/2026/11/monthly-python-2611",
+      "articleId": "2026-11-12-top-4",
+      "publishedAt": "2026-11-12T09:00:00+09:00",
+      "capturedAt": "2026-11-12T03:09:16.381697+00:00",
+      "snapshotSha256": "930124b99f2ac5518013b67d0c0c7667e07e3bed80f29094b17b0751c4d8f209",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "facts": "Python 3.15 sampling reads stacks externally; wall versus CPU direct samples in prime and two-second sleep demo; pstats and binary replay. Attach needs same minor version/build and platform permission, short samples can be noisy."
+    },
+    {
+      "title": "【日本株分析プラットフォーム】過去の株価の自動修正が、出来高の1株の違いで止まった話(前半): 四捨五入と切り捨て(2026-11-12)",
+      "source": "Zenn",
+      "topic": "履歴データ訂正の丸め契約",
+      "url": "https://zenn.dev/stagea_tech/articles/20261112-pj8-devlog",
+      "articleId": "2026-11-12-top-5",
+      "publishedAt": "2026-11-12T09:21:24.709+09:00",
+      "capturedAt": "2026-11-12T03:09:16.187274+00:00",
+      "snapshotSha256": "298da00d5cfa7cf806ce7d096420571b9deee0920677c3106cf4f915e63c26cc",
+      "accessNote": "Complete public article body captured as text. Author-reported measurements, not independently rerun. Code excerpts were read without executing them.",
+      "facts": "Nov 9 incident, seven one-share differences stopped 2643-row plan, one issuer, prices matched. Planner used half-up while checker/history used truncation; changed planner, 110+53 tests passed, reprocessed exact 2643 rows from retained inputs with no external queries. Cannot generalize convention to other sources."
+    }
+  ]
+}
