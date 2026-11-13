@@ -49,26 +49,26 @@ grammarSelectionNote: 五篇原文与全93期、117个已学语法身份逐项�
 technicalTerms:
 - term: KV cache
   japanese: ケーブイキャッシュ
-  meaning: 重用前缀相关的键和值以减少重复计算。
-  context: AgentX 用预热构造可重用前缀。
+  meaningZh: 重用前缀相关的键和值以减少重复计算。
+  contextZh: AgentX 用预热构造可重用前缀。
 - term: ANALYZE VERBOSE
   japanese: アナライズ・バーボーズ
-  meaning: 更新表统计并输出处理详情。
-  context: RDS 主版本升级后重建统计。
+  meaningZh: 更新表统计并输出处理详情。
+  contextZh: RDS 主版本升级后重建统计。
 - term: atempo
   japanese: アテンポ
-  meaning: 调整语音节奏并维持音高的滤镜。
-  context: 为不同音色应用听选速度。
+  meaningZh: 调整语音节奏并维持音高的滤镜。
+  contextZh: 为不同音色应用听选速度。
 - term: ffprobe
   japanese: エフエフプローブ
-  meaning: 检查媒体文件元信息的工具。
-  context: 用最终 AAC 的时长驱动字幕。
+  meaningZh: 检查媒体文件元信息的工具。
+  contextZh: 用最终 AAC 的时长驱动字幕。
 - term: 復元抽出
   japanese: ふくげんちゅうしゅつ
-  meaning: 抽中后仍可再次选取同一观察值。
-  context: 对 14 个值重抽 2000 次估计均值的波动。
+  meaningZh: 抽中后仍可再次选取同一观察值。
+  contextZh: 对 14 个值重抽 2000 次估计均值的波动。
 - term: tests/scope-shrunk
   japanese: テストスコープ縮小
-  meaning: 静态测试目标集合缩小的规则名。
-  context: 删掉唯一覆盖某函数的测试时触发。
+  meaningZh: 静态测试目标集合缩小的规则名。
+  contextZh: 删掉唯一覆盖某函数的测试时触发。
 ---
