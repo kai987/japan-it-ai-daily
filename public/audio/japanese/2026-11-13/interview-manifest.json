@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-13",
+  "generatedAt": "2026-11-13T01:59:39.447Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "長い入力が多い推論サーバーの性能は、どう比較しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "d8953ad95e52f8028c7a6a6d6a5b9b3a3c3d1df784abcd5a0a798b4881b52767",
+      "audioSha256": "a238cde99d6aa0db902cf32805221753be1bd8e0f098f1561ffcff6d35199f22",
+      "durationSeconds": 4.771
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "AgentXのように最初にウォームアップを行い、KVキャッシュが使われる条件で測ります。記事では並列度六十四のとき、新モデルは一人あたり毎秒六十四点四トークンでした。ただし、並列度を上げると全体の出力が増えても、一人あたりの速度は落ちます。自分のサービスでは入力の長さと同時利用者数をそろえ、初回応答の時間も一緒に記録します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "f8f410756d9b3fb485530fea5904e90cbd387faea524e6c84bd0906fc14de054",
+      "audioSha256": "04bfabbfdd45ce78205860e9c9a28eadafa1456fd427c0f34de5b47cd9d7e4ca",
+      "durationSeconds": 27.781,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "RDSのメジャーアップグレード後にANALYZE VERBOSEを実行するのはなぜですか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "962bfa8ef38ed6645e1dd32a37b8674fa0335282c745812d3ec1031ffdd39829",
+      "audioSha256": "99dd458b5edf52f3c192e8e1ed80b06b2b957de26bb0697342165f0b57594be1",
+      "durationSeconds": 5.642
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "RDSのメジャー更新では、オプティマイザ統計が引き継がれないためです。ANALYZEで表をサンプリングし、結果をpg_statisticに保存します。pg_statsを見れば頻出値などを確認でき、VERBOSEでは処理の進み具合が分かります。ただし、採った統計は近似値です。よく使うクエリを選び、実行計画の見積もりと実際の行数も比べます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "f298b85e3d627116c22dc86fe9d8dc2cc086b7b89cde0c9e1975a5ea232cbad6",
+      "audioSha256": "d6323e203f3a9a7ac2d4e710c69e91ffa9ec899002266e31fd50db34aebbdd55",
+      "durationSeconds": 25.843,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "短い案内音声のタイミングと音量は、どうそろえますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "cfd84f43cb6dda06990c5fb143c5512173b6321f26d1dfc61c799c5a59a1640c",
+      "audioSha256": "9ae859b6fb4714c1a38076756b33edaf600ab14f24411b8699d95beda56f6176",
+      "durationSeconds": 4.364
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "短い案内音声なら、まずatempoで話す速さを決めます。silenceremoveで頭を切り、areverseで裏返して末尾も整えます。ラウドネスを測ってから、音量をそろえ、ピークだけを抑えます。ただし、小さな語頭まで消えると意味が変わるので、加工後の音を聞きます。最後にffprobeで完成ファイルの長さを測り、字幕の同期に使います。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "6bf258f189ea1d78e1608fd2a48042e498da41ad2c706e4c15465a8857f16263",
+      "audioSha256": "04d314e8f3e805dba4c3a5d21e415713ae111b5163992a166c1c70216000dd19",
+      "durationSeconds": 26.121,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "少ない作業時間の記録から、平均のばらつきをどう説明しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "69f81d355030acaba86dbf019eb567dfe19ff10f033e550bee5fdbc3dbab868b",
+      "audioSha256": "815f9d8360c83f393c0957bc9ff4b85cc5012c5f69322539aa1ab4ba14214b8c",
+      "durationSeconds": 5.419
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "記事では十四件の記録から復元抽出で同じ数を取り直し、平均を二千回求めています。平均のパーセンタイル区間は約十九点七分から二十七点九分でした。ただし、これは個々の作業時間の範囲ではありません。観測の偏りは残るので、元のデータを保存し、長い一件を変えた別の計算では中央値と平均がどう動くかも見ます。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "1420f57b3ff50061dcf01cac9c5f209f34072f6b774374642c873f450935affd",
+      "audioSha256": "977e7f5f3aef2fb558651cc59719ad256fe7a05a0d25e3096eaddf042582b999",
+      "durationSeconds": 26.609,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "テストを整理したとき、検査の範囲が狭まったかどうかはどう見ますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "8de780c8deb7a6c58a50b0c4ff163c0a0c86500a5383bcd5e388e022727fceac",
+      "audioSha256": "3e37858c87d0a0bf31f2d57ca54fe908fa660202fe2f1736b049d63cf236e8e0",
+      "durationSeconds": 5.142
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "hadomeの例では、baseとheadでテストから呼ばれる対象の集合を比べます。store.Appendの唯一のテストを消すと、tests/scope-shrunkで止まります。対象の機能ごと消した場合は整理として扱います。ただし、呼び出す関数が残っていても、断言の強さは分かりません。残すべき振る舞いを先に決めて、実際のテストも走らせます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "99a0f482edba48e007b6c8100b63ce64188269c626e01e3f4251a62e32ddfb09",
+      "audioSha256": "44621f41d74fbf5d7eca192c230ea3fb7d219b322511b808f7fee70255892bbb",
+      "durationSeconds": 24.768,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "推論の速度と標本平均のばらつきを報告するとき、何を添えますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "afaceb9dd70237c3bbad3217f37b43c381afc02e494f99fe20c47836e8f7b8ea",
+      "audioSha256": "10e26b034d31bafd25d7973d22efe4f88693608ede6883183b1ab1a9027bb236",
+      "durationSeconds": 5.815
+    },
+    {
+      "index": 2,
+      "text": "更新後の確認で、統計とテスト対象はどう記録しますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "36d94b529ee35a88574bd06b4b4b23b7a2024e49d563e04f0801da3c6c7fbb9e",
+      "audioSha256": "4cd252e45c07dbd68b364cb12ab4e697cf48c74a92fefa96e05b2a9f204e5c8e",
+      "durationSeconds": 5.038
+    },
+    {
+      "index": 3,
+      "text": "加工した音声と再計算した図は、何を確認して渡しますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "f5a28a99277e6b2956893e0a60e21cc69a6a8438d1aa31750ada5ffb908accb7",
+      "audioSha256": "d80c475ca858a9917dc79b4605f976d567cbab97a71f939c7c2d5f012d26907e",
+      "durationSeconds": 5.175
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-13T01:59:41.552Z"
+}
