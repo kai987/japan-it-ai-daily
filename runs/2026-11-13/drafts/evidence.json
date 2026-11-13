@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "scope": "Five public originals in the frozen window, captured outside Git. Source-author observations and illustrative measurements; no independent reproduction. Projects are teaching proposals.",
+  "status": "reviewed",
+  "reviewedAt": "2026-11-13T01:40:42.746922+00:00",
+  "reviewedBy": "Codex original-source review",
+  "articles": [
+    {
+      "articleId": "2026-11-13-top-1",
+      "url": "https://zenn.dev/fixstars/articles/kimi-k31-pro-benchmark",
+      "source": "Zenn",
+      "topic": "LLM推論の負荷試験",
+      "capturedAt": "2026-11-13T01:34:02.837063+00:00",
+      "snapshotSha256": "5bf2ef90254359c7f71a867c7ae05f8d7eca6f772006b87ebb590fa9feee3dfb",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "最強オープンウェイトモデル Kimi-K3.1-Pro をセルフホストして独自ベンチで比べてみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "AgentX seeds prefix reuse before measuring.",
+          "quote": "warmup",
+          "locator": "AgentX",
+          "conditions": "Measured simulated agent traffic after prefill.",
+          "usedIn": {
+            "zh": "Fixstars 把 Kimi-K3.1-Pro 和 Kimi-K3 放到接近编码代理会话的负载下比较。AgentX 先发送预热请求，让长前",
+            "ja": "長い入力を繰り返すコーディングエージェントでは、推論サーバーの評価にキャッシュの効き方が入ります。FixstarsはB300を8基載せた単一"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "64.4 versus 38.7 decoded tokens per second per user.",
+          "quote": "64.4",
+          "locator": "Kimi-K3.1-Pro と Kimi-K3",
+          "conditions": "B300 x8 and the article's concurrency-64 case.",
+          "usedIn": {
+            "zh": "在并发设为 64 的测试中，两者的平均每用户解码速率为 64.4 和 38.7 token/s，整个服务的输出吞吐量为 578.7 和 35",
+            "ja": "並列度64では、Kimi-K3.1-Proの利用者一人あたりの平均デコード速度が64.4トークン毎秒で、Kimi-K3は38.7でした。一方",
+            "interview": "AgentXのように最初にウォームアップを行い、KVキャッシュが使われる条件で測ります。記事では並列度六十四のとき、新モデルは一人あたり"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Custom assembly optimization used up to 30 minutes per run.",
+          "quote": "1 試行あたり 30 分",
+          "locator": "賢さの検証",
+          "conditions": "Twelve tasks, with best of three attempts.",
+          "usedIn": {
+            "zh": "另一项自制任务要求优化 12 个模拟汇编程序，单次限时 30 分钟，三个试次取最佳。新版综合 0.9494 排第一，领先幅度小。该结果只反映",
+            "ja": "著者は別に、自作の命令で12種類のプログラムの実行サイクル数を減らす課題も比較しました。各30分の3試行から最良値を採り、新モデルは0.94"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "同一服务同时报告单用户速度与总吞吐量，可帮助解释容量规划中的取舍。",
+            "ja": "並列度を変えたときの利用者側とサーバー側の指標を、一つの測定表から読めます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-13-top-2",
+      "url": "https://zenn.dev/fusic/articles/e05247d244838e",
+      "source": "Zenn",
+      "topic": "RDS更新後の統計情報",
+      "capturedAt": "2026-11-13T01:34:02.741699+00:00",
+      "snapshotSha256": "989d5b35dfed97adb8d4d546d4156318a3740e5f91aeee31f68af443dbf307be",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "PostgreSQLのバージョンアップ後に ANALYZE VERBOSE を実行する理由",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "The planner estimates matches from summarized column distributions.",
+          "quote": "ヒストグラム",
+          "locator": "データベースにおける統計情報とは",
+          "conditions": "Illustrative explanation, no performance timings.",
+          "usedIn": {
+            "zh": "Fusic 的工程师从一次 RDS for PostgreSQL 升级后的维护操作出发，说明规划器怎样使用数据分布。它根据常见值、不同值数量",
+            "ja": "Fusicの記事は、RDSのメジャーバージョン更新後に手動で統計を採り直した経験から始まります。オプティマイザは頻出値やNULLの割合、ヒス"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "ANALYZE stores sampled statistics in a system catalog.",
+          "quote": "pg_statistic",
+          "locator": "データベースにおける統計情報とは",
+          "conditions": "pg_stats presents the information in a more readable form.",
+          "usedIn": {
+            "zh": "ANALYZE 会从表中采样，并把统计写到系统目录 pg_statistic。阅读时通常查看结构更易读的 pg_stats 视图。VERBO",
+            "ja": "ANALYZEは大きなテーブルの一部をサンプリングし、推定値をpg_statisticに保存します。列の値の分布はpg_statsで読みやす",
+            "interview": "RDSのメジャー更新では、オプティマイザ統計が引き継がれないためです。ANALYZEで表をサンプリングし、結果をpg_statistic"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "AWS says to regenerate planner statistics after a major RDS upgrade.",
+          "quote": "統計情報はメジャーバージョンのアップグレード中には転送されない",
+          "locator": "なぜバージョンアップ後に実行したのか",
+          "conditions": "This applies to the major upgrade procedure discussed.",
+          "usedIn": {
+            "zh": "文中引用的 AWS 指引具体针对 RDS 的主版本升级，提醒规划器统计在该过程中不会传递。官方步骤要求在每个数据库重新生成统计。文章没有比较",
+            "ja": "AWSの手順ではRDSのメジャー更新中にオプティマイザ統計が引き継がれないため、データベースごとに再収集します。ただし記事に更新前後の性能計"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "明确区分表数据、规划器统计和进度输出，便于把升级后检查写进运维手册。",
+            "ja": "更新作業に必要な統計とその確認方法を、計画の行数推定から説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-13-top-3",
+      "url": "https://zenn.dev/atsushi_apps/articles/tts-voice-clips-ffmpeg-normalize",
+      "source": "Zenn",
+      "topic": "短い音声の仕上げ",
+      "capturedAt": "2026-11-13T01:34:02.651202+00:00",
+      "snapshotSha256": "d61d0d8c3356a12f93a5622b7ec6f4f38cdffaf8c3652a38acc6114087267045",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "AIで作った短い音声を、アプリに入れる前にffmpegでそろえる（速さ・無音・音量）",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "The generated PCM input is 16-bit, mono and 24 kHz.",
+          "quote": "16bit・24kHz・モノラル",
+          "locator": "全体の流れ",
+          "conditions": "Four voice choices in Japanese and English.",
+          "usedIn": {
+            "zh": "一款呼吸引导应用为四种音色准备日语和英语短语。原始音频是 24 kHz、16 位单声道 PCM。作者把采样率统一到 48 kHz，听过原速和",
+            "ja": "呼吸の合図を短い音声で出すアプリでは、声によって開始時刻や終わり方が変わると、画面の案内とずれます。著者は四人の声を日英で用意し、受け取った"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "The reverse operation allows leading-silence trimming to handle the tail.",
+          "quote": "areverse",
+          "locator": "前後の無音を削る",
+          "conditions": "Keeps 0.03 s and 0.06 s at the start and end.",
+          "usedIn": {
+            "zh": "前端静音以 −45 dB 为阈值剪裁，头部留 0.03 秒。将波形反转、裁切并反转回来，尾部留下 0.06 秒。随后先用 loudnorm ",
+            "ja": "無音はsilenceremoveで先頭を処理し、areverseで反転して末尾側も同じ向きで削ります。頭を0.03秒、末尾を0.06秒残す設",
+            "interview": "短い案内音声なら、まずatempoで話す速さを決めます。silenceremoveで頭を切り、areverseで裏返して末尾も整えます。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "The post-encode duration is recorded in a manifest.",
+          "quote": "ffprobe",
+          "locator": "長さを記録しておく",
+          "conditions": "Short AAC prompts used in the author's app.",
+          "usedIn": {
+            "zh": "输出是单声道 96 kbps AAC。作者用 ffprobe 对最终文件测时，写入清单供呼吸提示和字幕使用。速度档、静音阈值和限幅余量来自这",
+            "ja": "アプリにはAACの音声と、ffprobeで測った加工後の長さを渡します。ただし、無音のしきい値と目標の音量は呼吸案内用に決めた値です。語頭の"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "展示如何把语音的内容质量和实际可播放时长纳入同一条交付链。",
+            "ja": "短い音声の前後を整え、画面が実際の長さで動くようにする工程が分かります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-13-top-4",
+      "url": "https://zenn.dev/wenlo/articles/95775424328181",
+      "source": "Zenn",
+      "topic": "標本平均の不確実性",
+      "capturedAt": "2026-11-13T01:34:02.849718+00:00",
+      "snapshotSha256": "fe76d8641e315de43f0e013c065802c5ed1453fa8660198980c85718a0932adb",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "平均値はどれくらい安定している？iPhoneのPython Notebookでブートストラップを試す",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "The data consist of 14 fictitious durations from 17 to 52 minutes.",
+          "quote": "14件の架空の作業時間",
+          "locator": "元のデータを残す",
+          "conditions": "Reported in the author's PythonIDE example.",
+          "usedIn": {
+            "zh": "作者在 iPhone 的 Python Notebook 里演示如何看均值的不确定性。输入是 14 条虚构任务用时，范围 17 至 52 分",
+            "ja": "作業時間が14件しかないとき、平均の小数点以下よりも、データの取り方で値がどう動くかが気になります。記事は架空の17分から52分までの記録を"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "The approximate percentile interval is 19.71–27.93 minutes.",
+          "quote": "19.71〜27.93分",
+          "locator": "復元抽出で平均を2,000回計算する",
+          "conditions": "Two thousand resamples using the same sample size.",
+          "usedIn": {
+            "zh": "演示每次从 14 条记录有放回地抽取 14 条，做 2000 次，分别计算均值。用独立 Random 实例设定种子后，以排序后分布的 2.5",
+            "ja": "復元抽出は同じ観測値を重ねて選ぶことを許す手続きです。元と同じ個数を選び直して平均を出し、これを二千回繰り返しました。独立した乱数インスタン",
+            "interview": "記事では十四件の記録から復元抽出で同じ数を取り直し、平均を二千回求めています。平均のパーセンタイル区間は約十九点七分から二十七点九分でし"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Replacing 52 with 22 in a copy changed the mean to 20.71.",
+          "quote": "20.71分",
+          "locator": "元データを変えずに、1つの値の影響を調べる",
+          "conditions": "The median stayed 20.5 and the original value remained.",
+          "usedIn": {
+            "zh": "把 52 换成 22 的对照仅在副本进行，均值降到 20.71，中位数仍为 20.5。此对照解释敏感性。样本偏差、观测间关联和未观测事件仍会",
+            "ja": "長い52分を22分に変える感度分析は別のリストで行い、元の値を残しました。小標本を何度取り直しても、観測していない事象や選択の偏りは扱えませ"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "把原始观测、重抽均值和副本敏感性对照分开，方便回答区间究竟描述什么。",
+            "ja": "観測値の分布と平均のばらつきが、違う図になることを小さな例で確かめられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-13-top-5",
+      "url": "https://zenn.dev/rets/articles/50284cf0e8668d",
+      "source": "Zenn",
+      "topic": "テスト範囲の後退検知",
+      "capturedAt": "2026-11-13T01:34:02.851916+00:00",
+      "snapshotSha256": "1aa4f1e6949491e9aa8d83e5bc42da261f18daef8c9def4cf998b2789957d49e",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "AIエージェントに任せても、テストを弱めさせないチェッカー「hadome」を作りました",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "The checker compares sets of functions and methods reached by effective tests.",
+          "quote": "守っている範囲",
+          "locator": "整理と後退を見分ける",
+          "conditions": "Static comparison, without running tests.",
+          "usedIn": {
+            "zh": "hadome 的作者希望在减少重复测试时及时发现覆盖对象变少。检查器静态识别有效测试调用的函数或方法，在 base 和 head 分别形成集",
+            "ja": "テストの本数が減る変更でも、同じ振る舞いを確認し続ける整理と、確認範囲が狭まる後退があります。hadomeは有効なテストから呼ばれる関数やメ"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Deleting the only store.Append test exits 1.",
+          "quote": "tests/scope-shrunk",
+          "locator": "整理と後退を見分ける",
+          "conditions": "The demonstrated removal of the production method itself exits 0.",
+          "usedIn": {
+            "zh": "作者展示了两个删改：只删 store.Append 的唯一测试会触发 tests/scope-shrunk，退出码为 1。若连同已经移除的行",
+            "ja": "記事の例でstore.Appendを呼ぶ唯一のテストを削除すると、tests/scope-shrunkが出て終了コードは1です。対象のApp",
+            "interview": "hadomeの例では、baseとheadでテストから呼ばれる対象の集合を比べます。store.Appendの唯一のテストを消すと、tes"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "The checker reads called functions rather than measured execution lines.",
+          "quote": "テストを動かさず",
+          "locator": "他の道具との違い",
+          "conditions": "Method limits are inferred from this static design.",
+          "usedIn": {
+            "zh": "目标集合能够揭示调用对象是否失去测试，但难以说明断言充分程度、数据边界或运行时路径。文章的例子给出了检查器如何判定指定变更，没有证明它能覆盖",
+            "ja": "ただし、呼び出し先が同じでも、一つの関数の異常系を検査しているかは別に確認が要ります。静的な対象集合は断言の内容や実行時に通る行を測りません"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "用两个可对照的删除操作解释自动门禁能发现什么，以及仍需测什么。",
+            "ja": "重複テストの整理と、現役の関数を守るテストの消失を分けて考えられます。"
+          }
+        }
+      ]
+    }
+  ]
+}
