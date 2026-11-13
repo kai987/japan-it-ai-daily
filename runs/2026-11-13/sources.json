@@ -1,0 +1,258 @@
+{
+  "targetDate": "2026-11-13",
+  "sourceWindow": {
+    "from": "2026-11-12T10:00:00+09:00",
+    "to": "2026-11-13T10:00:00+09:00"
+  },
+  "previousTop5": [
+    "https://zenn.dev/murooka_az/articles/claude-reply-switches-to-english",
+    "https://zenn.dev/openedfile/articles/worker-transfer-small-buffers",
+    "https://zenn.dev/h_aso/articles/css-scroll-driven-animations-baseline",
+    "https://gihyo.jp/article/2026/11/monthly-python-2611",
+    "https://zenn.dev/stagea_tech/articles/20261112-pj8-devlog"
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "observedAt": "2026-11-13T01:34:02.815870+00:00",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "htmlSha256": "184cd3fbc21ee2f9069ae27ee03e72aefd4b6be7f54eb50dc56f7d78825d5425",
+      "linkCount": 45
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-13T01:34:02.235500+00:00",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "htmlSha256": "9d5c55eeb061e2169f6d4612d338beb9da960da1f38973048aaae8cb24f9eef5",
+      "linkCount": 2
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-13T01:34:02.457758+00:00",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "htmlSha256": "c159a5418bb2a01486b0486ae9d9f33e1f660e1508c6288731a6aee8cc15d4df",
+      "linkCount": 0
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-13T01:34:02.344214+00:00",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "htmlSha256": "5ae1a2902d857db31029afb0b40fc0ed34d1894e1f387fc6be75a2851ad01e6e",
+      "linkCount": 75
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-13T01:34:02.436261+00:00",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "htmlSha256": "bcbd389a6ff8eefccb156c5e971896e79ee76b5023a29019f74ab0e1cc1e6696",
+      "linkCount": 5
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-13T01:34:02.286859+00:00",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "htmlSha256": null,
+      "linkCount": 0
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-13T01:34:02.431382+00:00",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "htmlSha256": "3af01249e010686df88994a754a82372911a1d7c363c9a0651657ad00bac8a6c",
+      "linkCount": 0
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-13T01:34:02.535426+00:00",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "htmlSha256": "1509d80d3e4336070ebf096ec87d742b2cfe7ec821083e60686a7ebd17ba2af7",
+      "linkCount": 41
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-13T01:34:02.455203+00:00",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533",
+      "linkCount": 0
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-13T01:34:02.335189+00:00",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "htmlSha256": "edee33838edf95f10d30713e909f6acc08efe6ea54b0d63617b8dccb88b61739",
+      "linkCount": 53
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-13T01:34:02.543486+00:00",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "htmlSha256": "1fafc7c096119044b05227cdc7a3b4d9f725763aa26e6a92b0baa5f1b8555537",
+      "linkCount": 140
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-13T01:34:02.553125+00:00",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "htmlSha256": "cc45eeb3d2274692b75472bc6d6975d353a2e0b08ba6271c722c4938745f603a",
+      "linkCount": 0
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-13T01:34:02.368876+00:00",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "htmlSha256": "fcf64ef3604dfe82537bfc1636319accd73ee1328b58d0d08d91af7fd8d44322",
+      "linkCount": 47
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-13T01:34:04.451617+00:00",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "htmlSha256": "8d36f2f2eae371311e49a0eb2a68ef598a74a901485bc02557311180e6d25bf0",
+      "linkCount": 16
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-13T01:34:02.590865+00:00",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "htmlSha256": "d023e1ca83fd4a723f93673eee03244aca4a08a99f5f254422a90209c575dade",
+      "linkCount": 17
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-13T01:34:02.575433+00:00",
+      "status": 200,
+      "actualUrl": "https://engineering.mercari.com/",
+      "htmlSha256": "1e14427ff3b944598afce79b447db564387585b09e74854462cbf0aadec8d3e9",
+      "linkCount": 10
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-13T01:34:02.585449+00:00",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "htmlSha256": "1602823adf8115f96efacafcd155502bd8a59dbd13d6a1db86ced7a9646428f6",
+      "linkCount": 0
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-13T01:34:02.663926+00:00",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "htmlSha256": "5a6237f1f4cd4f0483dbde4acb3053ce97aed3884cfe72c7fc1bf3567708849f",
+      "linkCount": 0
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-13T01:34:02.696663+00:00",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "htmlSha256": "320be58d4bedff7e3763b585098cd7158678f1b0fb89e1b5cc1e8a6a2a0647ee",
+      "linkCount": 40
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-13T01:34:02.735671+00:00",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "htmlSha256": "25fde10fba7757e328079609113abd394ca133f6db2bdedf6b53be125baab447",
+      "linkCount": 0
+    }
+  ],
+  "articles": [
+    {
+      "status": 200,
+      "url": "https://zenn.dev/fixstars/articles/kimi-k31-pro-benchmark",
+      "title": "最強オープンウェイトモデル Kimi-K3.1-Pro をセルフホストして独自ベンチで比べてみた",
+      "publishedAt": "2026-11-13T08:50:35.650+09:00",
+      "sha256": "5eb8961cc788872225bd3f23a71fb8781dcc99cb131a784cc00f6f57a708df43",
+      "bodySha256": "5bf2ef90254359c7f71a867c7ae05f8d7eca6f772006b87ebb590fa9feee3dfb",
+      "length": 11692,
+      "topic": "LLM推論の負荷試験",
+      "articleId": "2026-11-13-top-1",
+      "capturedAt": 1794533642.837063
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/fusic/articles/e05247d244838e",
+      "title": "PostgreSQLのバージョンアップ後に ANALYZE VERBOSE を実行する理由",
+      "publishedAt": "2026-11-13T09:32:26.631+09:00",
+      "sha256": "57e111adc4610eff7b732bba9eb624fa0a1fb3408e492dcc6c657931a2f0ac2c",
+      "bodySha256": "989d5b35dfed97adb8d4d546d4156318a3740e5f91aeee31f68af443dbf307be",
+      "length": 2454,
+      "topic": "RDS更新後の統計情報",
+      "articleId": "2026-11-13-top-2",
+      "capturedAt": 1794533642.7416985
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/atsushi_apps/articles/tts-voice-clips-ffmpeg-normalize",
+      "title": "AIで作った短い音声を、アプリに入れる前にffmpegでそろえる（速さ・無音・音量）",
+      "publishedAt": "2026-11-13T09:51:35.814+09:00",
+      "sha256": "bf034174e2c143c9a1fbbbaee7d73002127bf0ffd253461a8899440fcae9c742",
+      "bodySha256": "d61d0d8c3356a12f93a5622b7ec6f4f38cdffaf8c3652a38acc6114087267045",
+      "length": 5429,
+      "topic": "短い音声の仕上げ",
+      "articleId": "2026-11-13-top-3",
+      "capturedAt": 1794533642.6512022
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/wenlo/articles/95775424328181",
+      "title": "平均値はどれくらい安定している？iPhoneのPython Notebookでブートストラップを試す",
+      "publishedAt": "2026-11-13T08:48:39.103+09:00",
+      "sha256": "da0d453092757e8c73e99ff7790a38ca7ace66d6bf08697344b039a395e870f0",
+      "bodySha256": "fe76d8641e315de43f0e013c065802c5ed1453fa8660198980c85718a0932adb",
+      "length": 3203,
+      "topic": "標本平均の不確実性",
+      "articleId": "2026-11-13-top-4",
+      "capturedAt": 1794533642.8497179
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/rets/articles/50284cf0e8668d",
+      "title": "AIエージェントに任せても、テストを弱めさせないチェッカー「hadome」を作りました",
+      "publishedAt": "2026-11-13T08:12:05.052+09:00",
+      "sha256": "8433860bc11d1d0f5056a8f6dab6b6f689904ea51c8ab6ca7bcfe8fcffcd18d8",
+      "bodySha256": "1aa4f1e6949491e9aa8d83e5bc42da261f18daef8c9def4cf998b2789957d49e",
+      "length": 3212,
+      "topic": "テスト範囲の後退検知",
+      "articleId": "2026-11-13-top-5",
+      "capturedAt": 1794533642.8519158
+    }
+  ]
+}
