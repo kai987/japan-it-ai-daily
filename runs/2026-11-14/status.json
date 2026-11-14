@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-14",
-  "stage": "publisher_queued",
-  "sourceCommit": "56071b80ac308782e15a7a652bc1dc7a38c37c5b",
+  "stage": "published",
+  "sourceCommit": "b7ef903c8d53d0abbca63b4cbb3e49b3ec1eac96",
   "sourceWindow": {
     "from": "2026-11-13T10:00:00+09:00",
     "to": "2026-11-14T10:00:00+09:00"
   },
   "createdAt": "2026-11-14T04:11:24.711Z",
-  "updatedAt": "2026-11-14T04:33:57.355Z",
+  "updatedAt": "2026-11-14T04:40:55.367Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-11-14/checks.json",
@@ -51,15 +51,173 @@
       "blobSha": "c27d67307b04abefc01a1c1d205693c33f8700a7"
     },
     {
+      "path": "runs/2026-11-14/publisher.json",
+      "blobSha": "9a305c1b255a19381cb6f2701ecd70f78a7ee6a8"
+    },
+    {
+      "path": "runs/2026-11-14/release.json",
+      "blobSha": "ff6e794e41fa399f646c572f3b2e0f3900258ac4"
+    },
+    {
+      "path": "runs/2026-11-14/request.json",
+      "blobSha": "8a8b06a9141e5fea9a4c52f15f53faf68d4066ca"
+    },
+    {
       "path": "runs/2026-11-14/sources.json",
       "blobSha": "92e5f70d3c07a9262d1d5c6e7881c70b32d8f56e"
     }
   ],
   "lastError": null,
-  "nextAction": "Wait exact publisher and main Pages, then verify public snapshot and report bytes",
+  "nextAction": "Text and live snapshot verified. Persist audio pending before independent audio and one N1 handoff.",
   "draftCommit": "5c9e3513172b6f9370ae39ef2282e1270cee862f",
   "preflightRunId": 43556969036,
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
   "requestCommit": "8b0195b29fd6e579a36626cbccc609e36b761127",
-  "requestBlob": "8a8b06a9141e5fea9a4c52f15f53faf68d4066ca"
+  "requestBlob": "8a8b06a9141e5fea9a4c52f15f53faf68d4066ca",
+  "label": "text",
+  "runId": 43557534108,
+  "releaseCommit": "b7ef903c8d53d0abbca63b4cbb3e49b3ec1eac96",
+  "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/43557534108",
+  "artifacts": [
+    {
+      "id": 14098873546,
+      "name": "github-pages",
+      "digest": "sha256:90df57f300d3ba99c4bcde12105fcc656986a6a6bb54f13187d4158315985c6c"
+    },
+    {
+      "id": 14098743899,
+      "name": "it-study-snapshot",
+      "digest": "sha256:0f1531df27b77eeb9e97520e4f4be1b0d68b8c7f70df7bf25cf501a4b5cd5151"
+    }
+  ],
+  "totalDays": 95,
+  "issueNumber": 95,
+  "grammarLessonDates": [
+    "2026-08-12",
+    "2026-08-13",
+    "2026-08-14",
+    "2026-08-15",
+    "2026-08-16",
+    "2026-08-17",
+    "2026-08-18",
+    "2026-08-19",
+    "2026-08-20",
+    "2026-08-21",
+    "2026-08-22",
+    "2026-08-23",
+    "2026-08-24",
+    "2026-08-25",
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28",
+    "2026-08-29",
+    "2026-08-30",
+    "2026-08-31",
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03",
+    "2026-09-04",
+    "2026-09-05",
+    "2026-09-06",
+    "2026-09-07",
+    "2026-09-08",
+    "2026-09-09",
+    "2026-09-10",
+    "2026-09-11",
+    "2026-09-12",
+    "2026-09-13",
+    "2026-09-14",
+    "2026-09-15",
+    "2026-09-16",
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-19",
+    "2026-09-20",
+    "2026-09-21",
+    "2026-09-22",
+    "2026-09-23",
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-26",
+    "2026-09-27",
+    "2026-09-28",
+    "2026-09-29",
+    "2026-09-30",
+    "2026-10-01",
+    "2026-10-02",
+    "2026-10-03",
+    "2026-10-04",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-09",
+    "2026-10-10",
+    "2026-10-11",
+    "2026-10-12",
+    "2026-10-13",
+    "2026-10-14",
+    "2026-10-15",
+    "2026-10-16",
+    "2026-10-17",
+    "2026-10-18",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24",
+    "2026-10-25",
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30",
+    "2026-10-31",
+    "2026-11-01",
+    "2026-11-02",
+    "2026-11-03",
+    "2026-11-04",
+    "2026-11-05",
+    "2026-11-06",
+    "2026-11-07",
+    "2026-11-08",
+    "2026-11-09",
+    "2026-11-10",
+    "2026-11-11",
+    "2026-11-12",
+    "2026-11-13",
+    "2026-11-14"
+  ],
+  "fullSnapshotCompared": true,
+  "snapshotHash": "845b2cd47c5e9f4ddfd97109b26aed1edc17f187c282f6d05b4df40e7a916687",
+  "expected": {
+    "version": 1,
+    "commit": "b7ef903c8d53d0abbca63b4cbb3e49b3ec1eac96",
+    "date": "2026-11-14",
+    "snapshotHash": "845b2cd47c5e9f4ddfd97109b26aed1edc17f187c282f6d05b4df40e7a916687",
+    "pages": [
+      {
+        "path": "daily/2026-11-14/",
+        "sha256": "15cea57a52cae9039c82c98fd22077d5656c8649f7c4a082a272aa93649ae145"
+      },
+      {
+        "path": "ja/daily/2026-11-14/",
+        "sha256": "136012b3d3e04addc8d70f7c5c8bd44ec809d4cf118abb2a62ac26c809a43a62"
+      }
+    ]
+  },
+  "live": {
+    "commit": "b7ef903c8d53d0abbca63b4cbb3e49b3ec1eac96",
+    "date": "2026-11-14",
+    "attempt": 1
+  },
+  "verifiedAt": "2026-11-14T04:37:19.993Z",
+  "site": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-14/text-release-43557534108/site",
+  "publisherRunId": 43557281033,
+  "requestId": "codex-2026-11-14-8d678cfb-d9d4-4be6-9f0c-73f452b63213",
+  "sixDraftBytesEqual": true,
+  "pagesRunId": 43557534108,
+  "pagesStatus": "completed",
+  "pagesConclusion": "success"
 }
