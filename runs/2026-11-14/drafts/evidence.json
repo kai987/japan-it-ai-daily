@@ -3,7 +3,7 @@
   "date": "2026-11-14",
   "scope": "Five public originals in the frozen window, captured outside Git. Source-author observations and illustrative measurements; no independent reproduction. Projects are teaching proposals.",
   "status": "reviewed",
-  "reviewedAt": "2026-11-14T04:19:55.770456+00:00",
+  "reviewedAt": "2026-11-14T04:21:30.873508+00:00",
   "reviewedBy": "Codex original-source review",
   "articles": [
     {
@@ -51,7 +51,7 @@
           "conditions": "No measured improvement for the proposed checkpoint scheme.",
           "usedIn": {
             "zh": "该项目实际采用的是全量重跑，文中的恢复方案是事后设计。实现时可给旧主键加唯一约束，并在数据库里原子地执行更新或插入；分开检查和写入时，并发执",
-            "ja": "当時の運用では途中再開まで導入しておらず、効果の測定値はありません。実装するなら、書き込みが確定してから進捗を進める順番と、同時実行時にもキ"
+            "ja": "ただし、当時の運用では途中再開まで導入しておらず、効果の測定値はありません。実装するなら、書き込みが確定してから進捗を進める順番と、同時実行"
           }
         },
         {
@@ -307,7 +307,7 @@
           "conditions": "The check depends on weekdays printed in the original; missing rows remain ambiguous.",
           "usedIn": {
             "zh": "日期和星期若同时被模型改得自洽，仍可能通过；原表不印星期时也无法使用这条校验。可以按作者建议抽对月末原件，并在缺行时提示可能漏读。七张表的观",
-            "ja": "二つの欄をモデルが一緒にずらすと、整合性だけは取れる場合があります。曜日が印刷されていない文書にも使えません。筆者は月末の日付を原本で見比べ"
+            "ja": "この検算には限界があります。二つの欄をモデルが一緒にずらすと、整合性だけは取れる場合があります。曜日が印刷されていない文書にも使えません。筆"
           }
         },
         {
