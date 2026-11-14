@@ -79,7 +79,7 @@ top:
 
 Weston 选择 DRM 后端，把输出接到 Linux DRM/KMS，不经过 X 服务器。内核提供显示输出和模式设置，Weston 负责合成各应用的画面及处理输入。原文展示了启动终端、同时打开多个 GUI 程序和移动窗口。
 
-weston.ini 里的 keyboard 段改变 Weston 管理的键盘布局，terminal 段只影响附带的 weston-terminal。作者验证了日文键位和终端字体。日语假名汉字转换需要输入法，本次未实现；这个最小环境也省略了供 X11 程序使用的 XWayland。
+weston.ini 里的 keyboard 段改变 Weston 管理的键盘布局，terminal 段只影响附带的 weston-terminal。作者验证了日文键位和终端字体。不过，日语假名汉字转换需要输入法，本次未实现；这个最小环境也省略了供 X11 程序使用的 XWayland。
 
 **阅读价值：** 用实机实验区分显示内核、窗口合成器、单个应用和输入法各自负责的功能。
 
