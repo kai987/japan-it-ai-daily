@@ -3,7 +3,7 @@
   "date": "2026-11-14",
   "scope": "Five public originals in the frozen window, captured outside Git. Source-author observations and illustrative measurements; no independent reproduction. Projects are teaching proposals.",
   "status": "reviewed",
-  "reviewedAt": "2026-11-14T04:21:30.873508+00:00",
+  "reviewedAt": "2026-11-14T04:25:13.357032+00:00",
   "reviewedBy": "Codex original-source review",
   "articles": [
     {
@@ -72,50 +72,50 @@
     },
     {
       "articleId": "2026-11-14-top-2",
-      "url": "https://zenn.dev/orca_forge/articles/busy-main-thread-wheel-settles-back",
+      "url": "https://zenn.dev/catatsumuri/articles/903bcb16def75b",
       "source": "Zenn",
-      "topic": "ブラウザ入力と3D描画",
-      "capturedAt": "2026-11-14T04:10:20.840072+00:00",
-      "snapshotSha256": "436599c595ead1b055dcf2ddd1abb9b2e263df4e51feb5aac125ae3dcae79f96",
+      "topic": "Waylandの画面出力と入力",
+      "capturedAt": "2026-11-14T04:10:20.858502+00:00",
+      "snapshotSha256": "0064be143479e9b1955b75d4c02041780cf733c7488d5946e13ac8f7fc3b2125",
       "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
-      "originalTitle": "headless Chromiumの3D描画中にページが戻る症状をwheelイベント遅延から直す",
+      "originalTitle": "モダンLinuxデスクトップをゼロから学ぶ（1）― Westonで最小限のWayland環境を動かす",
       "access": "full",
       "claims": [
         {
           "id": "top2-fact1",
           "kind": "source-fact",
-          "statement": "Delayed wheel processing can leave the page fraction below one half when the original timer fires.",
-          "quote": "ページの位置が0.5未満",
-          "locator": "なぜwheelを回してもページが戻ったのか",
-          "conditions": "Headless Chromium without GPU; three models on the cover.",
+          "statement": "The experiment starts on a physical Debian 13 laptop using a local seat and no full desktop environment.",
+          "quote": "Debian 13をインストールしたSurface Laptop 4",
+          "locator": "検証環境について",
+          "conditions": "Surface Laptop 4, Weston 14.0.2, with the local console used for display.",
           "usedIn": {
-            "zh": "一套展示页在不使用GPU的无头 Chromium 中加载了三个3D模型。主线程繁忙时，滚轮事件可能晚于160毫秒的停手计时器；当时页间位移尚",
-            "ja": "表紙に3体のモデルがあるスライドを、GPUを使わない headless Chromium で確認した事例です。描画でメインスレッドが詰まると"
+            "zh": "作者用一台装有 Debian 13 的 Surface Laptop 4 搭建最小图形环境。机器原来可以通过 SSH 登录，未安装 GNOM",
+            "ja": "Debian 13を入れたSurface Laptop 4に、Waylandの参照コンポジタである Weston 14.0.2 を入れた検証"
           }
         },
         {
           "id": "top2-fact2",
           "kind": "source-fact",
-          "statement": "The author skipped drawing during page swaps and extended the timer from 160 ms to 220 ms.",
-          "quote": "160msから220ms",
-          "locator": "ページ入れ替え中の描画をどう止めたか",
-          "conditions": "The two changes were made together, with no isolated effect measurement.",
+          "statement": "Weston directly controls display output through DRM/KMS and handles composition itself.",
+          "quote": "LinuxのDRM/KMSを利用して画面を表示するための指定",
+          "locator": "Westonを起動する",
+          "conditions": "The author reports moving and overlapping native Wayland windows.",
           "usedIn": {
-            "zh": "作者在换页阶段设置 deck-swapping 类，让3D和其他动画循环跳过绘制，并把吸附等待时间从160毫秒延到220毫秒。这两处修改一起",
-            "ja": "ページの入れ替えに合わせてルートに deck-swapping を付け、3Dやほかのアニメーションのループはその間の描画を飛ばします。同じ変",
-            "interview": "描画でメインスレッドが詰まると、次の wheel より先に160ミリ秒のタイマーが切れます。位置が0.5未満なら元のページへ戻ります。そ"
+            "zh": "Weston 选择 DRM 后端，把输出接到 Linux DRM/KMS，不经过 X 服务器。内核提供显示输出和模式设置，Weston 负责",
+            "ja": "DRMバックエンドで Weston を起動すると、DRM/KMSを通じて画面に直接出力できます。アプリが描いた内容を合成し、どこにウィンドウ",
+            "interview": "DRM/KMS は画面への出力を受け持ち、ウィンドウを重ねるのは Weston です。実機のコンソールから起動して、複数のアプリを動かせ"
           }
         },
         {
           "id": "top2-fact3",
           "kind": "source-fact",
-          "statement": "The author reported one page per wheel input and checked 38 tests.",
-          "quote": "テストは38件でした",
-          "locator": "修正後、3Dを描いたまま1ページずつ進んだ",
-          "conditions": "Same verification environment; no GPU-device reproduction or measured event delay.",
+          "statement": "Japanese keyboard layout does not add Japanese text conversion; this setup also omits XWayland.",
+          "quote": "ひらがなや漢字の入力・変換ができるようになったわけではありません",
+          "locator": "次回は日本語入力",
+          "conditions": "The terminal section is specific to weston-terminal.",
           "usedIn": {
-            "zh": "在同一个无头环境中，作者报告一次滚动前进一页，并核对了38项测试。此次没有分别测量暂停绘制与延长等待的贡献，也没有验证有GPU的设备能否重现",
-            "ja": "修正後は同じ環境で、3Dを表示したまま wheel 一回で一ページずつ進みました。筆者が確認したテストは38件です。二つの対策の寄与は分けて"
+            "zh": "weston.ini 里的 keyboard 段改变 Weston 管理的键盘布局，terminal 段只影响附带的 weston-term",
+            "ja": "weston.ini の keyboard 節はコンポジタが扱う配列を設定します。terminal 節で変えた文字サイズは weston-t"
           }
         },
         {
@@ -128,8 +128,8 @@
             "top2-fact3"
           ],
           "usedIn": {
-            "zh": "吸附失败的原因可以从事件处理的先后顺序定位，避免只盯加载耗时。",
-            "ja": "遅れて届く入力と、先に切れるタイマーの関係を追えます。"
+            "zh": "用实机实验区分显示内核、窗口合成器、单个应用和输入法各自负责的功能。",
+            "ja": "画面を出す仕組みとウィンドウ管理、それに端末固有の設定を実機で区別できます。"
           }
         }
       ]
