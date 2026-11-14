@@ -1,20 +1,28 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-14",
-  "stage": "sources_verified",
+  "stage": "learning_verified",
   "sourceCommit": "56071b80ac308782e15a7a652bc1dc7a38c37c5b",
   "sourceWindow": {
     "from": "2026-11-13T10:00:00+09:00",
     "to": "2026-11-14T10:00:00+09:00"
   },
   "createdAt": "2026-11-14T04:11:24.711Z",
-  "updatedAt": "2026-11-14T04:18:48.836Z",
+  "updatedAt": "2026-11-14T04:20:24.114Z",
   "completedArtifacts": [
+    {
+      "path": "runs/2026-11-14/history.json",
+      "blobSha": "54daefc4bb96fab9b177f62722bd09d39d7ee98a"
+    },
+    {
+      "path": "runs/2026-11-14/learning.json",
+      "blobSha": "98c9d51ab4e7e90f722813116c767aabce8c855b"
+    },
     {
       "path": "runs/2026-11-14/sources.json",
       "blobSha": "2649ff4dd5c2ad7f9973592e4d432831b84d7952"
     }
   ],
   "lastError": null,
-  "nextAction": "Verify all prior identities and study mapping"
+  "nextAction": "Checkpoint six files and run local gates"
 }
