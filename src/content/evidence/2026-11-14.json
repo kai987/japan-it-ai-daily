@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-14",
+  "scope": "Five public originals in the frozen window, captured outside Git. Source-author observations and illustrative measurements; no independent reproduction. Projects are teaching proposals.",
+  "status": "reviewed",
+  "reviewedAt": "2026-11-14T04:26:11.137919+00:00",
+  "reviewedBy": "Codex original-source review",
+  "articles": [
+    {
+      "articleId": "2026-11-14-top-1",
+      "url": "https://zenn.dev/yutaka8484/articles/kobayashi-20261114-resumable-erp-migration",
+      "source": "Zenn",
+      "topic": "ERPデータ移行の再開設計",
+      "capturedAt": "2026-11-14T04:10:20.813571+00:00",
+      "snapshotSha256": "3d2065e33ee5df36614a8324fa1948b02d7c89ed9e7fc25221870892d543ab81",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "止まったら最初からやり直すERP移行バッチを再開可能にするまで",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "The original ERP migration restarted from the beginning after a record caused a failure.",
+          "quote": "最初から流し直す",
+          "locator": "止まったら最初からやり直す移行バッチの重さ",
+          "conditions": "PM/PL retrospective on an ERP rollout from July 2022 through January 2025.",
+          "usedIn": {
+            "zh": "作者回顾了2022年7月至2025年1月负责的一次ERP更新。受注、生产、采购、库存和会计等业务要迁移多年数据。原流程按顺序读取全量记录、转",
+            "ja": "製造業の基幹システムを刷新した現場では、受注や生産、購買などのデータをまとめて移しました。旧データを順に変換して新しい表へ入れるバッチが、終"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "The proposed pseudocode records the legacy key after each successful destination write.",
+          "quote": "checkpoint.save(record.legacy_id)",
+          "locator": "再実行時に重複登録を防ぐ冪等性の設計",
+          "conditions": "Illustrative pseudocode; business-table progress and per-record resume serve different audiences.",
+          "usedIn": {
+            "zh": "文章提出两层进度：用业务表向各部门报告完成范围，用逐条保存的旧系统主键记录表内位置。写入按旧主键选择更新或创建。数据库写入成功后再推进检查点",
+            "ja": "筆者は、業務テーブル単位を関係者への報告に使い、表の中では一件書くごとに legacy_id を保存する方法を挙げています。書き込みには旧シ",
+            "interview": "まず受注と生産のように業務テーブル単位で完了を伝えます。表の中では一件ずつ書き込み、成功してから legacy_id を保存します。再開"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "The production migration described in the article did not implement this recovery design.",
+          "quote": "当時はここまで踏み込めず",
+          "locator": "再実行時に重複登録を防ぐ冪等性の設計",
+          "conditions": "No measured improvement for the proposed checkpoint scheme.",
+          "usedIn": {
+            "zh": "该项目实际采用的是全量重跑，文中的恢复方案是事后设计。实现时可给旧主键加唯一约束，并在数据库里原子地执行更新或插入；分开检查和写入时，并发执",
+            "ja": "ただし、当時の運用では途中再開まで導入しておらず、効果の測定値はありません。実装するなら、書き込みが確定してから進捗を進める順番と、同時実行"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "复盘把重跑范围和跨部门交接放进同一设计，便于讨论恢复点应该给谁用。",
+            "ja": "部門が知りたい完了範囲と、バッチが読み直す位置の両方を考えられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-14-top-2",
+      "url": "https://zenn.dev/catatsumuri/articles/903bcb16def75b",
+      "source": "Zenn",
+      "topic": "Waylandの画面出力と入力",
+      "capturedAt": "2026-11-14T04:10:20.858502+00:00",
+      "snapshotSha256": "0064be143479e9b1955b75d4c02041780cf733c7488d5946e13ac8f7fc3b2125",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "モダンLinuxデスクトップをゼロから学ぶ（1）― Westonで最小限のWayland環境を動かす",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "The experiment starts on a physical Debian 13 laptop using a local seat and no full desktop environment.",
+          "quote": "Debian 13をインストールしたSurface Laptop 4",
+          "locator": "検証環境について",
+          "conditions": "Surface Laptop 4, Weston 14.0.2, with the local console used for display.",
+          "usedIn": {
+            "zh": "作者用一台装有 Debian 13 的 Surface Laptop 4 搭建最小图形环境。机器原来可以通过 SSH 登录，未安装 GNOM",
+            "ja": "Debian 13を入れたSurface Laptop 4に、Waylandの参照コンポジタである Weston 14.0.2 を入れた検証"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Weston directly controls display output through DRM/KMS and handles composition itself.",
+          "quote": "LinuxのDRM/KMSを利用して画面を表示するための指定",
+          "locator": "Westonを起動する",
+          "conditions": "The author reports moving and overlapping native Wayland windows.",
+          "usedIn": {
+            "zh": "Weston 选择 DRM 后端，把输出接到 Linux DRM/KMS，不经过 X 服务器。内核提供显示输出和模式设置，Weston 负责",
+            "ja": "DRMバックエンドで Weston を起動すると、DRM/KMSを通じて画面に直接出力できます。アプリが描いた内容を合成し、どこにウィンドウ",
+            "interview": "DRM/KMS は画面への出力を受け持ち、ウィンドウを重ねるのは Weston です。実機のコンソールから起動して、複数のアプリを動かせ"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Japanese keyboard layout does not add Japanese text conversion; this setup also omits XWayland.",
+          "quote": "ひらがなや漢字の入力・変換ができるようになったわけではありません",
+          "locator": "次回は日本語入力",
+          "conditions": "The terminal section is specific to weston-terminal.",
+          "usedIn": {
+            "zh": "weston.ini 里的 keyboard 段改变 Weston 管理的键盘布局，terminal 段只影响附带的 weston-term",
+            "ja": "weston.ini の keyboard 節はコンポジタが扱う配列を設定します。terminal 節で変えた文字サイズは weston-t"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "用实机实验区分显示内核、窗口合成器、单个应用和输入法各自负责的功能。",
+            "ja": "画面を出す仕組みとウィンドウ管理、それに端末固有の設定を実機で区別できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-14-top-3",
+      "url": "https://zenn.dev/kkoch5t2/articles/firehose-direct-put-cost",
+      "source": "Zenn",
+      "topic": "ログ配信のレコード境界",
+      "capturedAt": "2026-11-14T04:10:20.766430+00:00",
+      "snapshotSha256": "0e5729a73cbbbad6e40f0fbd6a0dd3c5c134245ee715dbb798c3bcb8b82bb012",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "Amazon Data Firehoseのコスト節約を検証",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Synthetic 200-byte JSON logs were sent with identical Firehose delivery buffer settings.",
+          "quote": "200バイト",
+          "locator": "実験条件",
+          "conditions": "Direct PUT, Boto3, 60 seconds or 5 MiB buffering, no compression.",
+          "usedIn": {
+            "zh": "作者用 Windows 上的 Python 和 Boto3，把合成日志经 Direct PUT 送入两个 Firehose 流。两边都向同一",
+            "ja": "Direct PUT を使う二つの Firehose ストリームに、PythonとBoto3から同じ疑似ログを流した比較です。200バイトの"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Rounding changes from 307,200 bytes for 60 records to 15,360 bytes for one aggregate record.",
+          "quote": "5 KB（5,120バイト）単位",
+          "locator": "Firehoseの課金単位",
+          "conditions": "60 lines and 12,000 bytes of actual data in both cases.",
+          "usedIn": {
+            "zh": "逐行发时 Firehose 收到60个记录，每个记录向上取整到5 KiB，共计307,200计费字节。把60行拼成一个12,000字节记录时",
+            "ja": "両方とも実データは12,000バイトで、配信先からは60行ずつ読み戻せました。違いが出るのは5 KiB単位の切り上げです。60レコードの方は",
+            "interview": "PutRecordBatch は呼び出しをまとめても、切り上げの単位はレコードのままです。200バイトのJSONが60件なら、各件に5キ"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "The roughly 95 percent reduction depends on the tested line size and aggregation count.",
+          "quote": "ログの長さやまとめる行数が変われば",
+          "locator": "まとめ",
+          "conditions": "Sender-side aggregation also adds waiting time; the sample buffer is in memory.",
+          "usedIn": {
+            "zh": "约95%的减少对应这组小日志和批次大小；日志尺寸变化后取整阶梯也会变。发送端等待凑满可以额外增加约60秒延迟，还要考虑 Firehose 交",
+            "ja": "この条件では課金対象バイトが約95%減りました。送信側でまとめると、最初の行には最大で約60秒の待ちが増え、そこから配信の待ちも発生します。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "同时观察 API 调用、摄取记录与交付行数，可以明确优化究竟改变了哪一层。",
+            "ja": "同じログでも、送信APIの呼び方と課金上のレコードの作り方で違いが出ると分かります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-14-top-4",
+      "url": "https://zenn.dev/jtechjapan_pub/articles/decider-validation-csharp-fsharp",
+      "source": "Zenn",
+      "topic": "型による履修条件の表現",
+      "capturedAt": "2026-11-14T04:10:20.813590+00:00",
+      "snapshotSha256": "4ed7f915dd463c5f29de39246571876cdce8df7c0b47c1f48b5b9d9cd27c7e9a",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "nullに頼らずドメインの意味を型で表す ─ 7言語の履修モデルとC#・F#の比較",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Invalid input does not start reading, and rejected commands do not append events.",
+          "quote": "読み取りも始まらない",
+          "locator": "値・判断・保存のどこで拒否されるかをテストする",
+          "conditions": "The author's domain tests on the sample enrollment model.",
+          "usedIn": {
+            "zh": "作者用七种语言建模课程选修，本文展开 C# 和 F# 的比较。输入先由值对象检查；随后 Decider 根据已有事件形成的状态，判断前置课程",
+            "ja": "履修登録を題材にした七言語の実装から、C#とF#のモデルを取り上げた記事です。入力の形を値オブジェクトで確かめた後、過去イベントから戻した状"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "An explicit no-prerequisite case models absence as a member of a closed set.",
+          "quote": "NoPrerequisite",
+          "locator": "履修の前提条件のモデル",
+          "conditions": "C# and F# implementations represent the same sample domain with different type features.",
+          "usedIn": {
+            "zh": "前置条件用 NoPrerequisite 或 PassedCourse 等分支明确表示。C# 以 closed record 限定可用分支，",
+            "ja": "履修の前提は NoPrerequisite や PassedCourse で区別します。C#では closed record、F#では DU",
+            "interview": "前提がない場合を NoPrerequisite にすると、履修済み科目が必要な場合と型で分けられます。まず値オブジェクトで入力を確かめ、"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "The C# example uses generated JSON and validation code; the F# example reconstructs DUs under JIT.",
+          "quote": "JSONと検証の生成コードを利用",
+          "locator": "JSONとAOTの比較",
+          "conditions": "Some build targets were excluded and this is not a speed benchmark.",
+          "usedIn": {
+            "zh": "持久化是另一处差异：示例的 F# 用 JIT 路径复原 DU，C# 配合生成的 JSON 和校验代码。Native AOT 的支持边界要按作",
+            "ja": "保存した型の復元方法まで見ると、F#の例はJITでDUを扱い、C#の例ではJSONと検証に生成コードを使っています。本文の対象から外れた実行"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "同一业务规则下可以分开比较领域表达、失败位置与部署适配。",
+            "ja": "値が通る条件と、履歴を見て初めて決まる条件を分けて読めます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-14-top-5",
+      "url": "https://zenn.dev/hiroyamayu/articles/ai-date-weekday-check",
+      "source": "Zenn",
+      "topic": "文書抽出の日付検算",
+      "capturedAt": "2026-11-14T04:10:20.786628+00:00",
+      "snapshotSha256": "ba0df3fa1223d988b1be3eeceb9b15c318727fe784549a7d953d8ddbf41b8655",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "AI が読んだ日付は、印刷された曜日で検算する（給食の献立が 1 日ずれた話）",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "After a blank September 8, the next meal was assigned to that slot and the remainder shifted a day earlier.",
+          "quote": "1 日ずつ前にずれました",
+          "locator": "ずれた原因",
+          "conditions": "The author describes the model's row-counting mechanism as an inference.",
+          "usedIn": {
+            "zh": "在把纸质午餐表转成数据时，Gemini 似乎跳过了9月8日空白栏，然后按顺序补日期。结果9日菜单进了8日的位置，此后一直提前一天。因为缺行此",
+            "ja": "紙の給食表を Gemini に読ませたところ、給食のない9月8日の欄が詰められ、翌日の献立に一日前の日付が付いたようです。月末までそのずれが"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "The parser rejects mismatched rows and fails the document above a 20 percent mismatch threshold or on duplicate dates.",
+          "quote": "2 割を超えたら",
+          "locator": "合わなかったときの扱い",
+          "conditions": "The reported scan checked seven previously imported menus and found one affected sheet.",
+          "usedIn": {
+            "zh": "修订后，提示词要求返回印刷的 day 和 weekday，再用 Python 的日期运算核对。单行不符时记录并丢弃；不符超过两成或出现重复日",
+            "ja": "そこで紙に印刷された day と weekday を別々に取り、Pythonで計算した曜日と照合します。一致しない行は保存せず、全体の二割を",
+            "interview": "紙に印刷された day と weekday を別々に返してもらい、Pythonで日付の曜日を計算します。合わない行は保存せず、二割を超え"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "A coherently wrong date and weekday can pass the deterministic check.",
+          "quote": "検算は通ってしまいます",
+          "locator": "合わなかったときの扱い",
+          "conditions": "The check depends on weekdays printed in the original; missing rows remain ambiguous.",
+          "usedIn": {
+            "zh": "日期和星期若同时被模型改得自洽，仍可能通过；原表不印星期时也无法使用这条校验。可以按作者建议抽对月末原件，并在缺行时提示可能漏读。七张表的观",
+            "ja": "この検算には限界があります。二つの欄をモデルが一緒にずらすと、整合性だけは取れる場合があります。曜日が印刷されていない文書にも使えません。筆"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "这是一次可复核的输入校验案例，可以区分内部一致和原件一致。",
+            "ja": "印刷された二つの情報を使い、読み取った値の矛盾を機械で拾う例です。"
+          }
+        }
+      ]
+    }
+  ]
+}
