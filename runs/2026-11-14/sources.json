@@ -208,20 +208,15 @@
     },
     {
       "status": 200,
-      "url": "https://zenn.dev/orca_forge/articles/busy-main-thread-wheel-settles-back",
-      "title": "headless Chromiumの3D描画中にページが戻る症状をwheelイベント遅延から直す",
-      "publishedAt": "2026-11-14T08:22:42.713+09:00",
-      "capturedAt": 1794629420.8400724,
-      "bodySha256": "436599c595ead1b055dcf2ddd1abb9b2e263df4e51feb5aac125ae3dcae79f96",
-      "htmlSha256": "a2f271856b170140dddbfc49c3d4562f43f6214a2048a3f0a1395b4f87564143",
-      "length": 2204,
-      "topic": "ブラウザ入力と3D描画",
-      "articleId": "2026-11-14-top-2",
-      "authorOriginal": {
-        "url": "https://forge.workstyle.tech/blog/busy-main-thread-wheel-settles-back/",
-        "status": 200,
-        "htmlSha256": "fdb108a9b456145ac4f3e2c847f7383aa69fe11b81e621607cd027fbcf99aa1f"
-      }
+      "url": "https://zenn.dev/catatsumuri/articles/903bcb16def75b",
+      "title": "モダンLinuxデスクトップをゼロから学ぶ（1）― Westonで最小限のWayland環境を動かす",
+      "publishedAt": "2026-11-14T09:51:29.551+09:00",
+      "capturedAt": 1794629420.858502,
+      "bodySha256": "0064be143479e9b1955b75d4c02041780cf733c7488d5946e13ac8f7fc3b2125",
+      "htmlSha256": "1be3b8b0996804b27f7c42ec61d442a99cf218d1daf87109ff30285881960aef",
+      "length": 13122,
+      "topic": "Waylandの画面出力と入力",
+      "articleId": "2026-11-14-top-2"
     },
     {
       "status": 200,
@@ -258,6 +253,26 @@
       "length": 3525,
       "topic": "文書抽出の日付検算",
       "articleId": "2026-11-14-top-5"
+    }
+  ],
+  "excludedArticles": [
+    {
+      "status": 200,
+      "url": "https://zenn.dev/orca_forge/articles/busy-main-thread-wheel-settles-back",
+      "title": "headless Chromiumの3D描画中にページが戻る症状をwheelイベント遅延から直す",
+      "publishedAt": "2026-11-14T08:22:42.713+09:00",
+      "capturedAt": 1794629420.8400724,
+      "bodySha256": "436599c595ead1b055dcf2ddd1abb9b2e263df4e51feb5aac125ae3dcae79f96",
+      "htmlSha256": "a2f271856b170140dddbfc49c3d4562f43f6214a2048a3f0a1395b4f87564143",
+      "length": 2204,
+      "topic": "ブラウザ入力と3D描画",
+      "articleId": "2026-11-14-top-2",
+      "authorOriginal": {
+        "url": "https://forge.workstyle.tech/blog/busy-main-thread-wheel-settles-back/",
+        "status": 200,
+        "htmlSha256": "fdb108a9b456145ac4f3e2c847f7383aa69fe11b81e621607cd027fbcf99aa1f"
+      },
+      "exclusionReason": "Author original was first published 2026-11-11T23:18:56+09:00, before the window; the Zenn posting is an author repost."
     }
   ]
 }
