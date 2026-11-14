@@ -4,7 +4,7 @@ date: '2026-11-14'
 description: 値や事例を条件に当てはめるときの表現を学びます。
 topics:
 - ERPデータ移行の再開設計
-- ブラウザ入力と3D描画
+- Waylandの画面出力と入力
 - ログ配信のレコード境界
 - 型による履修条件の表現
 - 文書抽出の日付検算
@@ -41,10 +41,10 @@ technicalTerms:
   japanese: 冪等性
   meaning: 同じ処理を繰り返しても結果が同じになる性質。
   context: 移行で再試行した行を二重に作らないようにします。
-- term: wheel event
-  japanese: ホイールイベント
-  meaning: ホイール入力をページに知らせるイベント。
-  context: 処理が遅れると、ページを寄せる判定が先に進みます。
+- term: DRM/KMS
+  japanese: ディーアールエム／ケーエムエス
+  meaning: Linuxの画面出力や表示モードを扱う仕組み。
+  context: Westonが実機のディスプレイへ直接出力するために使います。
 - term: Direct PUT
   japanese: ダイレクトプット
   meaning: 送信側が Firehose に直接レコードを渡す方式。
