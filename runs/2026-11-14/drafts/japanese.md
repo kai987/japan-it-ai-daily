@@ -4,7 +4,7 @@ date: '2026-11-14'
 description: 学习怎样表达将数值或事例代入现有条件。
 topics:
 - ERPデータ移行の再開設計
-- ブラウザ入力と3D描画
+- Waylandの画面出力と入力
 - ログ配信のレコード境界
 - 型による履修条件の表現
 - 文書抽出の日付検算
@@ -41,10 +41,10 @@ technicalTerms:
   japanese: 冪等性
   meaningZh: 相同操作重试后仍取得相同状态。
   contextZh: 用固定旧主键更新或创建对应记录。
-- term: wheel event
-  japanese: ホイールイベント
-  meaningZh: 浏览器交付的滚轮输入事件。
-  contextZh: 主线程繁忙时，事件可晚于吸附计时器。
+- term: DRM/KMS
+  japanese: ディーアールエム／ケーエムエス
+  meaningZh: Linux 内核的显示设备管理与显示模式设置接口。
+  contextZh: Weston 通过它直接使用本机显示器。
 - term: Direct PUT
   japanese: ダイレクトプット
   meaningZh: 生产者直接向 Firehose 投递记录的方式。
