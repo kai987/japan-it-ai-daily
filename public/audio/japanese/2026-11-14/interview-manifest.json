@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-14",
+  "generatedAt": "2026-11-14T04:42:17.531Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "業務テーブル単位の進捗と、legacy_id を使った再実行はどう組み合わせますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "b6a810f7455888ffea4c1e93d20a4617201e8c4ac65f272aa030dc961db7ed35",
+      "audioSha256": "385d7494ba3322ea43ef7c196add0b88d859c6fc39ef688cc5897d78815bfcc9",
+      "durationSeconds": 6.407
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "まず受注と生産のように業務テーブル単位で完了を伝えます。表の中では一件ずつ書き込み、成功してから legacy_id を保存します。再開時は同じキーがあれば更新し、なければ作成します。書いた直後に落ちても同じ行を処理し直せます。ただし、これは当時の実績ではなく提案なので、同時に動いた場合の一意性も別に確認します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "cd2ada757653e6c7a4b8d38ac59d109d4436548f0816ffc206b590be3e03fa83",
+      "audioSha256": "f51591fcc66ebfb3052ac9e23158f1b015a2ab811239a504ef45e4de9c9cd522",
+      "durationSeconds": 26.402,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "Weston の DRM/KMS と、weston.ini の keyboard、terminal の役割を説明してください。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "1d9ee4ff32308155ef755f03f4db7c4c1f2b3f1b4177a281b2c430fc8d28121f",
+      "audioSha256": "3b9983585b0fedb3b49ae6458d4a63d28ea49148765131363458a1af033c1deb",
+      "durationSeconds": 8.252
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "DRM/KMS は画面への出力を受け持ち、ウィンドウを重ねるのは Weston です。実機のコンソールから起動して、複数のアプリを動かせました。weston.ini では keyboard が配列を、terminal は付属端末の文字サイズを変えます。ただし、配列を日本語にしても、仮名漢字変換には別の仕組みが要ります。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "9500d56019bdff4d4fbbdcc253a56cb13bd7a554b1f044b7f278a9a5cf90b561",
+      "audioSha256": "59f72ccb1326a8951401e1d354f6fa7d52e7b170158d956f2166efb15ff9762c",
+      "durationSeconds": 23.542,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "PutRecordBatch と、Firehose に送る前に60行を一つにする方法では、何が変わりますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "541c96bd543c9385e950818ca807a07f438f48710dec2c0bcb3841919532ec17",
+      "audioSha256": "2188133a3f159968d926bcbf26c7be46f31bea769f2309b72ef88255c3e5419f",
+      "durationSeconds": 7.639
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "PutRecordBatch は呼び出しをまとめても、切り上げの単位はレコードのままです。200バイトのJSONが60件なら、各件に5キビバイトがかかります。送る前に60行を一つにすれば、切り上げは三単位分です。ただし、効果は行の長さと件数次第です。送信待ちが増えるので、失ってはいけない行は保存方法も考えます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "8f9c1e5d916897f978840642ddb6cb88666c857508cc21d2e8770db94712186a",
+      "audioSha256": "0865e2fff7e8e178fba33ea97a27e9357060ab03f4be602e6ff2bc2b4e6067c9",
+      "durationSeconds": 24.907,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "履修の NoPrerequisite を型にして、入力チェックと Decider の判定を分ける利点は何ですか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "56f0a506e6cb02e3cad35b97bbbd2ff25df0d537ac7161cdc64c3fe8df5d8e26",
+      "audioSha256": "26d0f6350bc362223f3e9daa5d9835bedc5c25e5513cc392d43eed5d5ae3de81",
+      "durationSeconds": 7.082
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "前提がない場合を NoPrerequisite にすると、履修済み科目が必要な場合と型で分けられます。まず値オブジェクトで入力を確かめ、Decider は過去のイベントから残席や履修状況を見ます。拒否なら追記しません。ただし、closed record と DU で表現が似ていても、JSONの復元や配布方法は別に確かめます。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "d7d64cbaf8a4719174151f593a27db14b69fb32ce32e09170d66170fc3e257fc",
+      "audioSha256": "75c74bb8fcf80c37c8ea88a7a60e1ca8f77561f6733a630d4c5f21fe75021ca1",
+      "durationSeconds": 23.126,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "day と weekday を別々に読むと、献立表の一日ずれはどう見つけられますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "205d81919d732219980dca8df0240e244f20e14736f8934829abc00de196c554",
+      "audioSha256": "cf874a4e27b19f47ad0cce4fbb5936c81d1431f1f9266aefc934a9b2649a50ae",
+      "durationSeconds": 6.117
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "紙に印刷された day と weekday を別々に返してもらい、Pythonで日付の曜日を計算します。合わない行は保存せず、二割を超えるか同じ日付があれば、表全体を読み直します。ただし、モデルが日付に合わせて曜日までずらすと通ります。月末を原本と見比べ、行がない日は読み取り漏れも考えます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "13c9cf804c245629cf75de9de61d7fa77872bd58a76c1fa4f56f669c7b441006",
+      "audioSha256": "73a762d0ebd5d96fd531310c59b0688bbfa701524c2698c3f2ce738ff421eee5",
+      "durationSeconds": 22.408,
+      "durationStatus": "warn"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "移行や履修登録をやり直す前に、何を確かめますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "dddbe2fe9fb04b24ccc4f63e1b0f804d62f431cd6089c802225131aafbde53b4",
+      "audioSha256": "ad3fe6b24779c89c5324c611e32daeeb2865976425ae392ae60f2b9ea602605a",
+      "durationSeconds": 4.562
+    },
+    {
+      "index": 2,
+      "text": "画面表示やログ配信で、どこまで動いたことを確かめますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "f95894dddeba54e04c092ecde47c3d23e356525863652ac70d9bc9b59cb0a06f",
+      "audioSha256": "0fce7aaa731168c47be5391c8c359e189aae8a5bc4299677eb9c0e206c7da44a",
+      "durationSeconds": 4.946
+    },
+    {
+      "index": 3,
+      "text": "まとめたログや読み取った献立表の件数は、どう確認しますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "e47edf08923d06ddee1c499eafdf078ed1a390273d3ccc9f7f1a7ced456a1913",
+      "audioSha256": "1618d95f86eade287cb9662ad3c0bd1517e19a27bedbcee8d68f9c852441df04",
+      "durationSeconds": 5.2
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-14T04:42:20.267Z"
+}
