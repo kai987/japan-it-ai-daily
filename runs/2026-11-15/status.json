@@ -1,18 +1,50 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-15",
-  "stage": "learning_verified",
+  "stage": "drafts_ready",
   "sourceCommit": "f8becd93de21e197ec29abd785c9c5f567571a32",
   "sourceWindow": {
     "from": "2026-11-14T10:00:00+09:00",
     "to": "2026-11-15T10:00:00+09:00"
   },
   "createdAt": "2026-11-15T03:07:43.227Z",
-  "updatedAt": "2026-11-15T03:17:30.880Z",
+  "updatedAt": "2026-11-15T05:12:51.621Z",
   "completedArtifacts": [
+    {
+      "path": "runs/2026-11-15/checks.json",
+      "blobSha": "6c3a1c74e0aa5f0e676a50b47119228fa8bbbe99"
+    },
+    {
+      "path": "runs/2026-11-15/drafts/daily-ja.md",
+      "blobSha": "ea7083353592e94f00101e4f405e82d3caf8b754"
+    },
+    {
+      "path": "runs/2026-11-15/drafts/daily.md",
+      "blobSha": "808b9d1f7438b548bac222dbf620eadd4d9e02b9"
+    },
+    {
+      "path": "runs/2026-11-15/drafts/evidence.json",
+      "blobSha": "29299ecfcba9eb0640c38795fb4cdfedb2251166"
+    },
+    {
+      "path": "runs/2026-11-15/drafts/interviews.json",
+      "blobSha": "5ab4e1152ace026ae49cc0e32567d6ec1c22bf81"
+    },
+    {
+      "path": "runs/2026-11-15/drafts/japanese-ja.md",
+      "blobSha": "fa0c8ac809c4faa54edaa9498f292bac1f8eb172"
+    },
+    {
+      "path": "runs/2026-11-15/drafts/japanese.md",
+      "blobSha": "3586f3a2c1084d1506aa5c3dd5e45bf510b3a33b"
+    },
     {
       "path": "runs/2026-11-15/history.json",
       "blobSha": "4edca9f7965f085a1d81b60fdaa26a5e1d84f70d"
+    },
+    {
+      "path": "runs/2026-11-15/interviews.json",
+      "blobSha": "5ab4e1152ace026ae49cc0e32567d6ec1c22bf81"
     },
     {
       "path": "runs/2026-11-15/learning.json",
@@ -24,5 +56,5 @@
     }
   ],
   "lastError": null,
-  "nextAction": "Checkpoint six files and run local gates"
+  "nextAction": "Push exact six-file draft and wait for successful preflight"
 }
