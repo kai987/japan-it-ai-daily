@@ -3,7 +3,7 @@
   "date": "2026-11-15",
   "scope": "Five public originals in the frozen window, captured outside Git. Source-author observations and illustrative measurements; no independent reproduction. Projects are teaching proposals.",
   "status": "reviewed",
-  "reviewedAt": "2026-11-15T03:12:13.360714+00:00",
+  "reviewedAt": "2026-11-15T03:13:49.468568+00:00",
   "reviewedBy": "Codex original-source review",
   "articles": [
     {
@@ -101,7 +101,7 @@
           "locator": "実測結果",
           "conditions": "One limiter rate and burst size; baseline fixed interval amplified requests by 45.95.",
           "usedIn": {
-            "zh": "固定间隔共发出 45,950 次请求，实际完成耗时为虚拟 9.01 秒。只按 Retry-After 等待共发出 1,450 次；每秒放行 ",
+            "zh": "固定间隔共发出 45,950 次请求，按虚拟时钟计算，9.01 秒送完。只按 Retry-After 等待共发出 1,450 次；每秒放行 ",
             "ja": "固定間隔では一件当たりの要求が45.95回になりました。Retry-After のみなら1.45回で9秒、毎秒90件を通す共有トークンバケッ",
             "interview": "Retry-After は拒否された後に待つ方法です。実験では再試行が四百五十回残りました。毎秒九十件の共有トークンバケットは先に流量を"
           }
@@ -114,7 +114,7 @@
           "locator": "つまずきどころ",
           "conditions": "No real provider, sliding window or multi-instance deployment measured.",
           "usedIn": {
-            "zh": "该模型只有一组工作单元和速率参数，固定随机种子能复现输出。模拟没有触达真实供应商。滑动窗口、多进程配额和不同突发容量均未测量；真实应用还应测",
+            "zh": "实验条件只有一组工作单元和速率参数，固定随机种子能复现输出。模拟没有触达真实供应商。滑动窗口、多进程配额和不同突发容量均未测量；真实应用还应",
             "ja": "同じ乱数シードで結果は再現しています。ただし、これは Go 1.24.7 の固定ウィンドウ実験で、共有バケットの burst も5だけです。"
           }
         },
@@ -178,7 +178,7 @@
           "locator": "導入の判断",
           "conditions": "The inventory sample uses one process.",
           "usedIn": {
-            "zh": "显式声明的必填属性仍维持其类型。选项提供编译期提示，无法替代请求输入校验或数据库并发控制。原文展示的是单进程库存样例；对价格不明的商品补成零",
+            "zh": "显式声明的必填属性仍维持其类型。但选项提供的是编译期提示，无法替代请求输入校验或数据库并发控制。原文展示的是单进程库存样例；对价格不明的商品",
             "ja": "型に存在が明記された apiUrl には同じ変化は起きません。ただし、型検査だけでは実行時の入力や在庫の同時更新までは守れません。単一プロセ"
           }
         },
@@ -242,7 +242,7 @@
           "locator": "言えないこと",
           "conditions": "Cross-sectional comparison is not causal.",
           "usedIn": {
-            "zh": "原始资料中缺失地区的真值未知，部分填补得到超过 100% 的比例，可作为模型外推的诊断信号。模拟以原本完整的地区作为参照，不能验证真正缺失的",
+            "zh": "比较的局限是，原始资料中缺失地区的真值未知，部分填补得到超过 100% 的比例，可作为模型外推的诊断信号。模拟以原本完整的地区作为参照，不能",
             "ja": "ただし、欠損している自治体の値は観測されていないため、実データの係数の正誤は決められません。補完値には百分率の範囲を超えたものがあり、モデル"
           }
         },
