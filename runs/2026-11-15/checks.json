@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-15",
+  "checkedBaseCommit": "f8becd93de21e197ec29abd785c9c5f567571a32",
+  "worktree": "six uncommitted target files",
+  "checks": [
+    {
+      "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
+      "startedAt": "2026-11-15T03:17:37.529Z",
+      "completedAt": "2026-11-15T03:17:37.836Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/00-tests-publication-recovery-node-mjs.log"
+    },
+    {
+      "command": "npm audit --audit-level=high",
+      "startedAt": "2026-11-15T03:17:39.543Z",
+      "completedAt": "2026-11-15T03:17:40.211Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/01---audit-level-high.log"
+    },
+    {
+      "command": "npm run check",
+      "startedAt": "2026-11-15T03:17:41.954Z",
+      "completedAt": "2026-11-15T03:17:48.740Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/02-check.log"
+    },
+    {
+      "command": "npm run content:integrity:check",
+      "startedAt": "2026-11-15T03:17:50.605Z",
+      "completedAt": "2026-11-15T03:17:54.612Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/03-content-integrity-check.log"
+    },
+    {
+      "command": "npm run evidence:check",
+      "startedAt": "2026-11-15T03:17:56.972Z",
+      "completedAt": "2026-11-15T03:17:57.352Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/04-evidence-check.log"
+    },
+    {
+      "command": "npm run evidence:pilot",
+      "startedAt": "2026-11-15T03:17:59.308Z",
+      "completedAt": "2026-11-15T03:17:59.488Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/05-evidence-pilot.log"
+    },
+    {
+      "command": "npm run bilingual:check-interview",
+      "startedAt": "2026-11-15T03:18:01.362Z",
+      "completedAt": "2026-11-15T03:18:01.564Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/06-bilingual-check-interview.log"
+    },
+    {
+      "command": "npm run quality:check",
+      "startedAt": "2026-11-15T03:18:03.672Z",
+      "completedAt": "2026-11-15T03:18:04.140Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/07-quality-check.log"
+    },
+    {
+      "command": "npm run audio:check",
+      "startedAt": "2026-11-15T03:18:06.257Z",
+      "completedAt": "2026-11-15T03:18:06.905Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/08-audio-check.log"
+    },
+    {
+      "command": "npm run audio:integrity:check",
+      "startedAt": "2026-11-15T03:18:09.016Z",
+      "completedAt": "2026-11-15T03:18:10.957Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/09-audio-integrity-check.log"
+    },
+    {
+      "command": "npm run audio:duration:check",
+      "startedAt": "2026-11-15T03:18:12.820Z",
+      "completedAt": "2026-11-15T03:18:51.153Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/10-audio-duration-check.log"
+    },
+    {
+      "command": "npm run audio:versions:check",
+      "startedAt": "2026-11-15T03:18:53.081Z",
+      "completedAt": "2026-11-15T03:18:53.647Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/11-audio-versions-check.log"
+    },
+    {
+      "command": "npm run test",
+      "startedAt": "2026-11-15T03:18:55.316Z",
+      "completedAt": "2026-11-15T03:19:01.931Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/12-test.log"
+    },
+    {
+      "command": "npm run build",
+      "startedAt": "2026-11-15T03:19:03.753Z",
+      "completedAt": "2026-11-15T03:19:12.042Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/13-build.log"
+    },
+    {
+      "command": "npm run test:browser:speech-smoke",
+      "startedAt": "2026-11-15T03:19:13.935Z",
+      "completedAt": "2026-11-15T03:19:16.982Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/14-test-browser-speech-smoke.log"
+    },
+    {
+      "command": "npm run test:browser",
+      "startedAt": "2026-11-15T05:12:00.738Z",
+      "completedAt": "2026-11-15T05:12:41.817Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/15-test-browser.log"
+    },
+    {
+      "command": "npm run security:check",
+      "startedAt": "2026-11-15T05:12:43.543Z",
+      "completedAt": "2026-11-15T05:12:44.318Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/16-security-check.log"
+    },
+    {
+      "command": "npm run evidence:check -- --date 2026-11-15 --source-dir /Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/originals",
+      "startedAt": "2026-11-15T05:12:45.975Z",
+      "completedAt": "2026-11-15T05:12:46.170Z",
+      "exitCode": 0,
+      "log": "/Users/paulasmith/.codex/automations/it-ai-codex/run-evidence/2026-11-15/logs-final/17-evidence-check.log"
+    }
+  ]
+}
