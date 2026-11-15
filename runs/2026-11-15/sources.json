@@ -1,0 +1,258 @@
+{
+  "targetDate": "2026-11-15",
+  "sourceWindow": {
+    "from": "2026-11-14T10:00:00+09:00",
+    "to": "2026-11-15T10:00:00+09:00"
+  },
+  "previousTop5": [
+    "https://zenn.dev/yutaka8484/articles/kobayashi-20261114-resumable-erp-migration",
+    "https://zenn.dev/catatsumuri/articles/903bcb16def75b",
+    "https://zenn.dev/kkoch5t2/articles/firehose-direct-put-cost",
+    "https://zenn.dev/jtechjapan_pub/articles/decider-validation-csharp-fsharp",
+    "https://zenn.dev/hiroyamayu/articles/ai-date-weekday-check"
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "observedAt": "2026-11-15T03:07:07.347999+00:00",
+      "htmlSha256": "75eb02fba120b5d9eeebf1dd16f6088db574d879d5d1dff37c2a277b79838d94",
+      "linkCount": 70
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-15T03:07:07.069975+00:00",
+      "htmlSha256": "9b3a8b4278dd8e80c8010e037804768457baae93e5275aca5d11dbadf3c71bf8",
+      "linkCount": 3
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-15T03:07:07.216738+00:00",
+      "htmlSha256": "0a7a01037402920c4339dd7ff59f3565c4c682e1737f663e7a64378663b3ce16",
+      "linkCount": 20
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-15T03:07:07.132629+00:00",
+      "htmlSha256": "da66c6a94ef1198d22c426cac579e5fb6d6294baa340192f8ab251a2b674e081",
+      "linkCount": 75
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-15T03:07:07.263323+00:00",
+      "htmlSha256": "6b63607a04e0d9afe38b5b402ff205bca0bc2366902ae4f9fd82df19af6dca6f",
+      "linkCount": 30
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-15T03:07:07.133137+00:00",
+      "htmlSha256": null,
+      "linkCount": 0
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-15T03:07:07.284255+00:00",
+      "htmlSha256": "416325d66c6e57808bd5c50be45b536587d9902b33ddd1fdd8a52925983024ff",
+      "linkCount": 38
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-15T03:07:07.120674+00:00",
+      "htmlSha256": "09557858b5bcf67e9e2aa83b8fb0e368f1759ea45d6fdd44dee667067fdc0c45",
+      "linkCount": 48
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-15T03:07:07.205791+00:00",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533",
+      "linkCount": 10
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-15T03:07:07.208014+00:00",
+      "htmlSha256": "bcc0b7dc30057b983f762087c29b03500127bc1011821818850bb1cb8a9cbc4c",
+      "linkCount": 33
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-15T03:07:07.100654+00:00",
+      "htmlSha256": "2587d8abf5bcadfb08bf3425a1a32531dbaea4f4e5f5827fe953f5add9572824",
+      "linkCount": 116
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-15T03:07:07.301013+00:00",
+      "htmlSha256": "86fd443829f8f01c1bd048009ef2bb9851e86135b66952a53a6bbe47cd50f8ee",
+      "linkCount": 14
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-15T03:07:07.172195+00:00",
+      "htmlSha256": "0a8a5cbca79e7a37ade05bd7020e1bda47fe374941fe7d5d08c6a5be43e8c80c",
+      "linkCount": 50
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-15T03:07:08.968816+00:00",
+      "htmlSha256": "ff51ce99f9629a5138c86b6d49be6eacf554712402e90d84347ed26d98ded09b",
+      "linkCount": 20
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-15T03:07:07.194990+00:00",
+      "htmlSha256": "d023e1ca83fd4a723f93673eee03244aca4a08a99f5f254422a90209c575dade",
+      "linkCount": 20
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "status": 200,
+      "actualUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-15T03:07:07.323480+00:00",
+      "htmlSha256": "f7926c7876e0cd7ba441663e06f831e3f2bd7c80f65f21b3bfdabdc0a313ef79",
+      "linkCount": 12
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-15T03:07:07.268959+00:00",
+      "htmlSha256": "a1c59c761160ca2a71b056d08cca081293eabe14be13234b6fa519f99c08e5f7",
+      "linkCount": 17
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-15T03:07:07.370499+00:00",
+      "htmlSha256": "da9711bb164deaf165af4340c2467ea1bb5bf6b2a44cb732a3aab5b63bd0614f",
+      "linkCount": 30
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-15T03:07:07.318099+00:00",
+      "htmlSha256": "320be58d4bedff7e3763b585098cd7158678f1b0fb89e1b5cc1e8a6a2a0647ee",
+      "linkCount": 27
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-15T03:07:07.431895+00:00",
+      "htmlSha256": "77af00110ca54e4ab4846d3f054bf60ede4e625ccf655dd55eae38279f836c2a",
+      "linkCount": 19
+    }
+  ],
+  "articles": [
+    {
+      "status": 200,
+      "url": "https://zenn.dev/honabochi/articles/family-newspaper-shared-week-undo",
+      "title": "Undoした「水曜は出社」が、共有予定に残る理由",
+      "publishedAt": "2026-11-15T09:45:32.592+09:00",
+      "capturedAt": 1794712027.417244,
+      "bodySha256": "a371b2ed4417a936f52658d1ca6ee5e959974db26f5b409eb236eb19e09004e9",
+      "htmlSha256": "0139b76673cce41c580df507e0d2f3f5c175123a6987c43e923b79874d5620e2",
+      "length": 7431,
+      "topic": "共有予定のUndo",
+      "articleId": "2026-11-15-top-1"
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/kyrenzk/articles/messaging-send-rate-control-design",
+      "title": "429 を受けてからでは遅い — 外部プロバイダへの送信レート制御を再試行の増幅率で比較する",
+      "publishedAt": "2026-11-15T08:57:42.675+09:00",
+      "capturedAt": 1794712027.4041836,
+      "bodySha256": "5d48727ef3ee826b6c1200b9ab9be98a5a942576f883254c99ae0c69fed821b8",
+      "htmlSha256": "957d4ebb41476a80cb061cafbcef20996c19c6443a3a14de1a90944377699520",
+      "length": 5987,
+      "topic": "送信レートの制御",
+      "articleId": "2026-11-15-top-2"
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/sponge841841/articles/2026-11-06-typescript-no-unchecked-indexed-access",
+      "title": "TypeScriptのnoUncheckedIndexedAccessで配列・辞書のundefined事故を防ぐ",
+      "publishedAt": "2026-11-15T09:01:51.446+09:00",
+      "capturedAt": 1794712027.539326,
+      "bodySha256": "04aa0a8cf008430c8ce3bbe5cb18d255692ea9cab75a2b3593076fbc613ea2a0",
+      "htmlSha256": "f507ad76557259d22daea7df51af2a409b8f731ec935633f474c9d45a80a2bd2",
+      "length": 5336,
+      "topic": "TypeScriptの添字アクセス",
+      "articleId": "2026-11-15-top-3"
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/takayuki0127/articles/7ee036279243fc",
+      "title": "欠けている値は「捨てる」か「埋める」か：小さい町村だけ値がない持ち家率で、扱い方を比べたときに何を決めて何を確かめたか",
+      "publishedAt": "2026-11-15T07:31:56.131+09:00",
+      "capturedAt": 1794712027.44466,
+      "bodySha256": "6fe98ca07b08d5f8767dc417e904beffc68d909c789533dc60481f6dbf14d24b",
+      "htmlSha256": "f25b021634c4d73c39eff9bfa80a86a8857edd6c23ebff4721bceec0db38823b",
+      "length": 3455,
+      "topic": "欠損値の多重代入",
+      "articleId": "2026-11-15-top-4"
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/tomnotelog/articles/design-intent-guesses-missed-retrospective",
+      "title": "AI にコードを読ませて設計意図を推測させたら、3つ外れた",
+      "publishedAt": "2026-11-15T09:00:05.379+09:00",
+      "capturedAt": 1794712027.4445658,
+      "bodySha256": "bfbc127b545d76609dc370266a1cee7d225acdfd57d04e9e6557f64c3372c541",
+      "htmlSha256": "decf440da2fd0477226651e98afe2a3a2dedd12a52def4e7465779a0775b2e59",
+      "length": 2200,
+      "topic": "AIによる設計意図の仮説",
+      "articleId": "2026-11-15-top-5"
+    }
+  ]
+}
