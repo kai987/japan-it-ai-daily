@@ -1,14 +1,20 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-15",
-  "stage": "registered",
+  "stage": "sources_verified",
   "sourceCommit": "f8becd93de21e197ec29abd785c9c5f567571a32",
   "sourceWindow": {
     "from": "2026-11-14T10:00:00+09:00",
     "to": "2026-11-15T10:00:00+09:00"
   },
   "createdAt": "2026-11-15T03:07:43.227Z",
-  "updatedAt": "2026-11-15T03:07:43.227Z",
-  "completedArtifacts": [],
-  "lastError": null
+  "updatedAt": "2026-11-15T03:12:19.465Z",
+  "completedArtifacts": [
+    {
+      "path": "runs/2026-11-15/sources.json",
+      "blobSha": "7f2391f829606576dbcf64c7211e8583bb6468f9"
+    }
+  ],
+  "lastError": null,
+  "nextAction": "Verify all prior identities and study mapping"
 }
