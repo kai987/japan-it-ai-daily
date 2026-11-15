@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-15",
+  "scope": "Five public originals in the frozen window, captured outside Git. Source-author observations and illustrative measurements; no independent reproduction. Projects are teaching proposals.",
+  "status": "reviewed",
+  "reviewedAt": "2026-11-15T03:12:13.360714+00:00",
+  "reviewedBy": "Codex original-source review",
+  "articles": [
+    {
+      "articleId": "2026-11-15-top-1",
+      "url": "https://zenn.dev/honabochi/articles/family-newspaper-shared-week-undo",
+      "source": "Zenn",
+      "topic": "共有予定のUndo",
+      "capturedAt": "2026-11-15T03:07:07.417244+00:00",
+      "snapshotSha256": "a371b2ed4417a936f52658d1ca6ee5e959974db26f5b409eb236eb19e09004e9",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "Undoした「水曜は出社」が、共有予定に残る理由",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "A new issue copies the shared weekly plan.",
+          "quote": "新しい号を作るときにコピーします",
+          "locator": "号はコピーを持ち、共有予定へも書き戻す",
+          "conditions": "Existing saved issues keep their own prior data.",
+          "usedIn": {
+            "zh": "家庭报纸的编辑器保存两套状态：每期拥有一份周计划副本，新一期从共享计划复制初始值，日别编辑保存时也能改写共享计划。场景中周一把星期三改为出社",
+            "ja": "家族新聞は日ごとの号と、次の号に引き継ぐ共有予定を持っています。新しい号には共有の週表をコピーしますが、号から週間予定を保存すると、共有側に"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Undo restores the shared plan only when content and approval still match the post-save state.",
+          "quote": "現在の共有予定と採用フラグ",
+          "locator": "共有側は、内容と採用フラグの両方で判定する",
+          "conditions": "The example includes a later Tuesday edit and approval.",
+          "usedIn": {
+            "zh": "撤销先把周一期恢复到原先版本。共享侧只有当前周表和采纳标志都等于这笔操作写入后的 sharedAfter 时，才会回到 sharedBefo",
+            "ja": "月曜号の Undo は、まずその号の保存前の版を復元します。共有側を戻す条件は、現在の週表と採用フラグが、取り消す保存の直後を表す shar",
+            "interview": "月曜号は保存前に戻しますが、共有側は週表と採用フラグの両方を sharedAfter と比べます。火曜号が木曜の休みを追加して採用した後"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Showing the retained shared state and approving a revised result are proposals.",
+          "quote": "どちらも、ここでは未実装の案です",
+          "locator": "水曜だけ戻すと、未採用の組合せができる",
+          "conditions": "Toy example with two fictional work fields; existing behavior is documented separately.",
+          "usedIn": {
+            "zh": "作者用公开 JavaScript 模型演示，条件是两个虚构的排班字段，周一没有插入别的保存。把周三单独改回去会产生一个未取得采纳的新组合，可",
+            "ja": "勤務欄二つに絞った公開モデルでの説明で、月曜号に別の保存を挟まない条件です。水曜だけを共有側から取り除けば、火曜に採用したことのない週表がで"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "把撤销的影响范围落实到状态比较，可以判断是否会误删另一个用户随后确认的操作。",
+            "ja": "後の操作を残す条件を、実際に比較する二つの値から説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-15-top-2",
+      "url": "https://zenn.dev/kyrenzk/articles/messaging-send-rate-control-design",
+      "source": "Zenn",
+      "topic": "送信レートの制御",
+      "capturedAt": "2026-11-15T03:07:07.404184+00:00",
+      "snapshotSha256": "5d48727ef3ee826b6c1200b9ab9be98a5a942576f883254c99ae0c69fed821b8",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "429 を受けてからでは遅い — 外部プロバイダへの送信レート制御を再試行の増幅率で比較する",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "The provider is a 100-request fixed window in virtual time.",
+          "quote": "1 秒の固定ウィンドウあたり 100 リクエスト",
+          "locator": "前提・環境",
+          "conditions": "50 workers, 1,000 messages, Go 1.24.7 and a fixed random seed.",
+          "usedIn": {
+            "zh": "作者用 Go 1.24.7 和 Linux x86_64 上的虚拟时钟模拟并发发送。50 个串行处理各自任务的工作单元合计送 1,000 件",
+            "ja": "毎秒百リクエストの固定ウィンドウを持つプロバイダをモデル化し、五十の Worker で千件を送り切る実験です。Go の仮想時間で、十ミリ秒ご"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "The shared bucket completes with zero rejected requests and one request per message.",
+          "quote": "amplification= 1.00x  elapsed= 11.06s",
+          "locator": "実測結果",
+          "conditions": "One limiter rate and burst size; baseline fixed interval amplified requests by 45.95.",
+          "usedIn": {
+            "zh": "固定间隔共发出 45,950 次请求，实际完成耗时为虚拟 9.01 秒。只按 Retry-After 等待共发出 1,450 次；每秒放行 ",
+            "ja": "固定間隔では一件当たりの要求が45.95回になりました。Retry-After のみなら1.45回で9秒、毎秒90件を通す共有トークンバケッ",
+            "interview": "Retry-After は拒否された後に待つ方法です。実験では再試行が四百五十回残りました。毎秒九十件の共有トークンバケットは先に流量を"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Only one bucket burst size was tested.",
+          "quote": "感度は測っていません",
+          "locator": "つまずきどころ",
+          "conditions": "No real provider, sliding window or multi-instance deployment measured.",
+          "usedIn": {
+            "zh": "该模型只有一组工作单元和速率参数，固定随机种子能复现输出。模拟没有触达真实供应商。滑动窗口、多进程配额和不同突发容量均未测量；真实应用还应测",
+            "ja": "同じ乱数シードで結果は再現しています。ただし、これは Go 1.24.7 の固定ウィンドウ実験で、共有バケットの burst も5だけです。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "把 429 数量与完成时间并列，显示发送前节流能换来多少请求量的减少。",
+            "ja": "再試行の多さと配信完了までの時間を、同じ負荷条件で見比べられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-15-top-3",
+      "url": "https://zenn.dev/sponge841841/articles/2026-11-06-typescript-no-unchecked-indexed-access",
+      "source": "Zenn",
+      "topic": "TypeScriptの添字アクセス",
+      "capturedAt": "2026-11-15T03:07:07.539326+00:00",
+      "snapshotSha256": "04aa0a8cf008430c8ce3bbe5cb18d255692ea9cab75a2b3593076fbc613ea2a0",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "TypeScriptのnoUncheckedIndexedAccessで配列・辞書のundefined事故を防ぐ",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "An absent JavaScript property produces undefined even if an index signature suggests a number.",
+          "quote": "存在しないキーを読むと",
+          "locator": "1. strictだけでは検出できないケース",
+          "conditions": "TypeScript 5.8.3 and Node.js 22.16.0 sample.",
+          "usedIn": {
+            "zh": "在 TypeScript 里，库存若声明成 Record<string, number>，任意字符串下标看起来都能返回数字。JavaScri",
+            "ja": "未登録の商品コードを Record<string, number> で引いても、通常の strict 設定では number と扱われる例が"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "The compiler option widens indexed reads where existence is not guaranteed.",
+          "quote": "number | undefined",
+          "locator": "1. strictだけでは検出できないケース",
+          "conditions": "An explicit missing branch can preserve valid zero values.",
+          "usedIn": {
+            "zh": "给 strict 配置加上 noUncheckedIndexedAccess，字典任意键的读取就会带上 undefined。先检查缺失，再处",
+            "ja": "noUncheckedIndexedAccess を追加すると、任意キーで読み出した値に undefined が加わります。商品が見つからな",
+            "interview": "Record で任意のキーを引くと、未登録でも number と扱われる場合があります。noUncheckedIndexedAccess"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "The option does not provide runtime input validation or concurrency control.",
+          "quote": "実行時の入力検証や同時更新制御の代わりにはなりません",
+          "locator": "導入の判断",
+          "conditions": "The inventory sample uses one process.",
+          "usedIn": {
+            "zh": "显式声明的必填属性仍维持其类型。选项提供编译期提示，无法替代请求输入校验或数据库并发控制。原文展示的是单进程库存样例；对价格不明的商品补成零",
+            "ja": "型に存在が明記された apiUrl には同じ変化は起きません。ただし、型検査だけでは実行時の入力や在庫の同時更新までは守れません。単一プロセ"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "从字典类型提示追到业务分支，能说清楚“缺失”和“有值为零”的区别。",
+            "ja": "値が見つからない場合の扱いを、型検査からAPIの応答まで考えられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-15-top-4",
+      "url": "https://zenn.dev/takayuki0127/articles/7ee036279243fc",
+      "source": "Zenn",
+      "topic": "欠損値の多重代入",
+      "capturedAt": "2026-11-15T03:07:07.444660+00:00",
+      "snapshotSha256": "6fe98ca07b08d5f8767dc417e904beffc68d909c789533dc60481f6dbf14d24b",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "欠けている値は「捨てる」か「埋める」か：小さい町村だけ値がない持ち家率で、扱い方を比べたときに何を決めて何を確かめたか",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Missing homeownership rates were concentrated in small municipalities.",
+          "quote": "欠けているのは1,734市区町村のうち619町",
+          "locator": "最初に決めたこと",
+          "conditions": "The missingness mechanism was inferred from observed data.",
+          "usedIn": {
+            "zh": "作者比较市区町村的住房自有率和儿童妇女比。1,734 个地区中有 619 个缺失住房自有率，集中在小人口地区。以人口的对数帮助插补，作者生成",
+            "ja": "市区町村の持ち家率は、集計した千七百三十四自治体のうち小規模な六百十九町村で欠けていました。筆者は人口の対数を補助に補完を二十組作り、推定を"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Bias was larger with the tested outcome-inclusive imputation when smaller towns were more likely missing.",
+          "quote": "多重代入のほうが真の値から大きくずれました",
+          "locator": "シミュレーションで、結果がどう動いたか",
+          "conditions": "100 repeats with roughly 35% masked in the originally complete population.",
+          "usedIn": {
+            "zh": "模拟用 1,115 个记录完整的地区作参照，按四种机制删除约 35% 的记录，重复 100 次。小地区更容易缺失时，完整案例偏差为 −2.8",
+            "ja": "値のそろう千百十五自治体を基準に、四通りの欠け方で約三十五パーセントを消し、百回の推定を比べています。小さい町ほど消す設定では、偏りは完全ケ",
+            "interview": "記録のある町では、持ち家率との関係が町の規模で違っていました。一つのモデルで多重代入すると、大きい町の関係を小さい町に外挿します。この条"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "The real missing values do not reveal which real-data coefficient is correct.",
+          "quote": "どちらが正しいかは決められません",
+          "locator": "言えないこと",
+          "conditions": "Cross-sectional comparison is not causal.",
+          "usedIn": {
+            "zh": "原始资料中缺失地区的真值未知，部分填补得到超过 100% 的比例，可作为模型外推的诊断信号。模拟以原本完整的地区作为参照，不能验证真正缺失的",
+            "ja": "ただし、欠損している自治体の値は観測されていないため、実データの係数の正誤は決められません。補完値には百分率の範囲を超えたものがあり、モデル"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "用参照真值的模拟拆解模型偏差，并说明为何真实缺失样本无法给出同样的证明。",
+            "ja": "欠け方と補完モデルの両方が推定に影響する場面を数字で追えます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-15-top-5",
+      "url": "https://zenn.dev/tomnotelog/articles/design-intent-guesses-missed-retrospective",
+      "source": "Zenn",
+      "topic": "AIによる設計意図の仮説",
+      "capturedAt": "2026-11-15T03:07:07.444566+00:00",
+      "snapshotSha256": "bfbc127b545d76609dc370266a1cee7d225acdfd57d04e9e6557f64c3372c541",
+      "accessNote": "Complete public article body captured as text. Author results or examples; code was not executed as part of this source review.",
+      "originalTitle": "AI にコードを読ませて設計意図を推測させたら、3つ外れた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "The author records observations, inferred intent and follow-up answers together.",
+          "quote": "そこに「仮説修正」と書き足されます",
+          "locator": "仮説と答えを、並べて残す形で振り返った",
+          "conditions": "A single teaching-note repository reviewed with Claude Code and Git history.",
+          "usedIn": {
+            "zh": "一个课程笔记项目的作者让 Claude Code 根据代码和 Git 历史猜设计动机，再逐条向作者确认。记录区分看到的事实、假设和要问的问题",
+            "ja": "授業ノートを整理するリポジトリで、Claude Code がコードと git log を読み、設計理由を推測しました。筆者は記録を、見た事実"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "The three layers preserved separate versions with and without asides.",
+          "quote": "穴埋めだけの版が存在しなくなります",
+          "locator": "外れた1つ目: 3層に分けた理由",
+          "conditions": "The author's stated motivation differed from the assistant's overwrite-prevention explanation.",
+          "usedIn": {
+            "zh": "模型认为三层目录是为避免重新转换时覆盖人工编辑。实际目的是分别保留忠实填空版与加入课堂补充的版本。模型也把公开用仓库解释成隐私边界设计，作者",
+            "ja": "原本と変換版と編集版を三層にした理由を、AIは編集の消失防止だと推測しました。筆者の都合は、穴を埋めた資料と余談まで加えた資料を両方残すこと",
+            "interview": "まず git log などで見た事実と、Claude が考えた仮説を分けて書きます。三層構成は編集の事故防止だと推測しましたが、筆者は教"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "The case does not measure model accuracy.",
+          "quote": "仮説の精度は計っていないからです",
+          "locator": "この方法の弱いところ",
+          "conditions": "Small anecdotal sample and reasons recalled after the fact.",
+          "usedIn": {
+            "zh": "三项是当时记下的案例，后来回看还能再多算一项；没有总假设数和独立评估，因此不能得出模型准确率。作者的解释同样依赖回忆。可复用的是把结构证据、",
+            "ja": "ただし、一つのリポジトリの振り返りです。報告した三件は後で数え直せる性質の話で、すべての推測の正答率は測っていません。筆者の記憶にも後から整"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "The reading note draws an engineering lesson from the reported evidence.",
+          "conditions": "Editorial interpretation with no additional measured result.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "三个例子展示结构能支持多个相容的解释，记录原始依据能让后续读者检验动机。",
+            "ja": "コードから読み取れる事実と、担当者に聞いて初めて分かる理由を区別できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
