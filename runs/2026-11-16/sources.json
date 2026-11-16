@@ -1,0 +1,280 @@
+{
+  "targetDate": "2026-11-16",
+  "sourceWindow": {
+    "from": "2026-11-15T10:00:00+09:00",
+    "to": "2026-11-16T10:00:00+09:00"
+  },
+  "previousTop5": [
+    "https://zenn.dev/honabochi/articles/family-newspaper-shared-week-undo",
+    "https://zenn.dev/kyrenzk/articles/messaging-send-rate-control-design",
+    "https://zenn.dev/sponge841841/articles/2026-11-06-typescript-no-unchecked-indexed-access",
+    "https://zenn.dev/takayuki0127/articles/7ee036279243fc",
+    "https://zenn.dev/tomnotelog/articles/design-intent-guesses-missed-retrospective"
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "observedAt": "2026-11-16T01:05:16.010713+00:00",
+      "htmlSha256": "5cedb317f10fcc464bc6a6658b54c7b001443b1bb9419f80c154bc305d3775df",
+      "linkCount": 78
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-16T01:05:15.402681+00:00",
+      "htmlSha256": "8bfa5667b0a467299fcb540dbbe8341404364f6fb330a2ee61f8c36b7b579208",
+      "linkCount": 3
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-16T01:05:15.488027+00:00",
+      "htmlSha256": "d25224c29239a7c7f78bc064680600d2a69c80a7f46bbddc598d35cbc641ae11",
+      "linkCount": 20
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-16T01:05:15.369069+00:00",
+      "htmlSha256": "7622e01c8a4533179804884a53bd0f7e2e5d9a141237d7ab492565bdb61f4632",
+      "linkCount": 75
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-16T01:05:15.527743+00:00",
+      "htmlSha256": "6e5a5e433fcf93fadc6788a8a202255c86c40bc3416a027df22af7129633f56c",
+      "linkCount": 30
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-16T01:05:15.426079+00:00",
+      "htmlSha256": null,
+      "linkCount": 0
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-16T01:05:15.398301+00:00",
+      "htmlSha256": "34f543eb57c7ab0f88826646b30a1f04219f394f783029f00809bdd53ec56026",
+      "linkCount": 38
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-16T01:05:15.592594+00:00",
+      "htmlSha256": "313f987d452afcb074afd424bdd0b6966f9039649c8a4878be59fd1963edacba",
+      "linkCount": 46
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-16T01:05:15.459894+00:00",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533",
+      "linkCount": 10
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-16T01:05:15.666226+00:00",
+      "htmlSha256": "3406a6ab8d8d4d07644fd9c0cfd77a4fac3df6c29fcff65325e2110455dd52f8",
+      "linkCount": 33
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-16T01:05:15.432349+00:00",
+      "htmlSha256": "b9953089a945a4cb22f5d25e9029fa4d26b016f903cc90317ff2d094c69ebfba",
+      "linkCount": 117
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-16T01:05:15.475879+00:00",
+      "htmlSha256": "0bdf0ca9312970b21926e4bccf6aba32107db705b78b1300bee0b568697d1a47",
+      "linkCount": 14
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-16T01:05:15.571757+00:00",
+      "htmlSha256": "5b380e21d6d37322cd81306afc3fa931925c8c5827bc7a1f36781bef1e380059",
+      "linkCount": 50
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-16T01:05:16.266106+00:00",
+      "htmlSha256": "434c0321b7f90b24470f8e6bd104d2ed1ff7f9558e0c5be5f809718d68d2e409",
+      "linkCount": 20
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-16T01:05:15.479832+00:00",
+      "htmlSha256": "d023e1ca83fd4a723f93673eee03244aca4a08a99f5f254422a90209c575dade",
+      "linkCount": 20
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "status": 200,
+      "actualUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-16T01:05:15.601267+00:00",
+      "htmlSha256": "f7926c7876e0cd7ba441663e06f831e3f2bd7c80f65f21b3bfdabdc0a313ef79",
+      "linkCount": 12
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-16T01:05:15.541313+00:00",
+      "htmlSha256": "a1c59c761160ca2a71b056d08cca081293eabe14be13234b6fa519f99c08e5f7",
+      "linkCount": 17
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-16T01:05:15.454729+00:00",
+      "htmlSha256": "1cd4bcc97cc9b27c97b80e0f110d9c4d1ac31deee9b13454001d442ad308530f",
+      "linkCount": 32
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-16T01:05:15.580261+00:00",
+      "htmlSha256": "320be58d4bedff7e3763b585098cd7158678f1b0fb89e1b5cc1e8a6a2a0647ee",
+      "linkCount": 27
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-16T01:05:15.553105+00:00",
+      "htmlSha256": "db795bea7da354ce8c9e0858dc0da3c208e10998b1feed5d9694566aa214e7f0",
+      "linkCount": 19
+    }
+  ],
+  "linkedVerification": {
+    "aws": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-attribute-creationpolicy.html",
+    "workers": "https://developers.cloudflare.com/workers/testing/",
+    "benchmark": "https://github.com/ai-nexus-jp/dirty-jp-data-extraction-benchmark",
+    "relatedQiita": "https://qiita.com/itaraiguma/items/55394e1ba98e222b44b2",
+    "relatedQiitaPublishedAt": "2026-11-15T22:08:57Z"
+  },
+  "articles": [
+    {
+      "status": 200,
+      "url": "https://zenn.dev/miyakona/articles/ec2-replacement-waits-for-user-data",
+      "title": "起動スクリプトが落ちても、デプロイは成功する",
+      "publishedAt": "2026-11-16T09:01:46.681+09:00",
+      "capturedAt": "2026-11-16T01:05:47.745933+00:00",
+      "bodySha256": "aca293cd09b5768daa7c3a9afcba935da59f2644e5a1b407990d2faf192340d5",
+      "htmlSha256": "a1d14543c82f54a2277001f73016deeac0cf44d0d18a5c4bf3c47ad5d6956474",
+      "length": 13822,
+      "captureKey": "startup",
+      "topic": "EC2の起動完了通知",
+      "articleId": "2026-11-16-top-1",
+      "access": "full",
+      "review": "dnf was killed by OOM on both replacements; stack succeeded without readiness signals. CreationPolicy waits for one SignalResource response per replacement for up to PT15M; EIP references the new instance. The successful replacement was observed, but forced rollback was not tested on real instances."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/sakidori/articles/20261030-workers-test-d1-r2-fake-node",
+      "title": "Cloudflare Workers のテスト40項目を Node で動かす構成：D1 と R2 の代替",
+      "publishedAt": "2026-11-16T06:14:48.992+09:00",
+      "capturedAt": "2026-11-16T01:05:47.721274+00:00",
+      "bodySha256": "874d140e0f280adc7736c507da35c1450fdc754ddec85a2596cf023398bc7662",
+      "htmlSha256": "272d9b90e6278ed9e875358461d6d47069f7a6c4389d22687cda819b690450ab",
+      "length": 7410,
+      "captureKey": "workers",
+      "topic": "Workersのテスト代替",
+      "articleId": "2026-11-16-top-2",
+      "access": "full",
+      "review": "Node uses D1 query-pattern fixtures plus argument capture and R2 multipart substitutes. 30 integration and 10 browser tests cover behavior in the author project, not real SQL, indexing, deployment binding configuration, or browser variance."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/a1221/articles/astro-7-upgrade-build-failures",
+      "title": "Astro 5から7へ上げたら、Tailwindの1行でビルドが落ちた",
+      "publishedAt": "2026-11-16T08:36:39.643+09:00",
+      "capturedAt": "2026-11-16T01:05:47.706669+00:00",
+      "bodySha256": "f1ccaaf2fce493add6d7bcf6fbe5d91dbf247c14da3bb775a9298a8912ef390d",
+      "htmlSha256": "918eea5c39f7ca7755c97d92edf5c82ad905a4edf04a3378e3e88ce504a8f45d",
+      "length": 6947,
+      "captureKey": "astro",
+      "topic": "Astro移行の出力差分",
+      "articleId": "2026-11-16-top-3",
+      "access": "full",
+      "review": "Astro 5.16 to 7.4.12; Tailwind v3 expands .border in @layer, yielding an invalid pseudo-class after a pseudo-element. Compare normalized HTML for 506 pages and 24 visual conditions on six key pages. Same-day order changed; one dark mobile discrepancy was not explained."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/ai_nexus_jp/articles/dirty-jp-data-extraction-benchmark",
+      "title": "【100本ノック実測】和暦・漢数字・結合セル…日本の泥臭い業務データを最新LLM 3モデルに構造化させて見えた「現場の壁」",
+      "publishedAt": "2026-11-16T08:35:42.834+09:00",
+      "capturedAt": "2026-11-16T01:05:47.706515+00:00",
+      "bodySha256": "ef6bf48959bbb451d608cbcf9125c835cc5bf6927ab78320d5bfb20425092649",
+      "htmlSha256": "048ea226cf9b8ec27983a815f249681c87b6d0db9ad3f78517be42d146563db7",
+      "length": 5573,
+      "captureKey": "benchmark",
+      "topic": "日本語帳票の抽出評価",
+      "articleId": "2026-11-16-top-4",
+      "access": "full",
+      "review": "Author reports same 100 synthetic business records for three models; strict validation passed all 300 outputs and exact-match was 93/90/89 percent. An interval example exposes implicit start-date policy; a requested budget is not a confirmed subtotal. Not a production or model-wide result."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/itaraiguma/articles/faulthandler-stall-watchdog-segfault",
+      "title": "「止まっても書き出せる」から選んだ停止検知が、高負荷の夜にワーカーを落としていた話",
+      "publishedAt": "2026-11-16T07:09:42.393+09:00",
+      "capturedAt": "2026-11-16T01:05:47.603767+00:00",
+      "bodySha256": "4f25a1317f7af079cc157872165cdb14d2bfc30603652d1d2369eb0f1fe753fb",
+      "htmlSha256": "8ea4ee7afdbba0c247698cca6eab29f789824d4c57d8ce9bf63e603d5a370bdd",
+      "length": 3188,
+      "captureKey": "watchdog",
+      "topic": "Pythonの停止診断",
+      "articleId": "2026-11-16-top-5",
+      "access": "full",
+      "review": "On a VPS below 1 GB with two uvicorn workers, rearming a 3-second faulthandler timer each second leaves traces but can encounter concurrent frame changes. 5 SIGSEGV in 50 minutes, 3 dumps showed the watchdog thread. GIL-taking replacement has blind spots; same-load recovery remains unverified."
+    }
+  ]
+}
