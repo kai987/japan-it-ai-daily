@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-16",
+  "status": "reviewed",
+  "reviewedBy": "Codex local daily author",
+  "reviewedAt": "2026-11-16T01:17:06.704409+00:00",
+  "scope": "Five published original accounts in the frozen Tokyo window. Source claims and separately identified editorial interpretation.",
+  "articles": [
+    {
+      "articleId": "2026-11-16-top-1",
+      "url": "https://zenn.dev/miyakona/articles/ec2-replacement-waits-for-user-data",
+      "source": "Zenn",
+      "topic": "EC2の起動完了通知",
+      "capturedAt": "2026-11-16T01:05:47.745933+00:00",
+      "snapshotSha256": "aca293cd09b5768daa7c3a9afcba935da59f2644e5a1b407990d2faf192340d5",
+      "accessNote": "Full public body read and captured. Measurements and implementation outcomes are reported by the author; not independently rerun.",
+      "originalTitle": "起動スクリプトが落ちても、デプロイは成功する",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Both replacements lost dnf to memory pressure, and CloudFormation advanced the EIP without application readiness.",
+          "quote": "UPDATE_COMPLETE",
+          "locator": "EC2は起動した。WireGuardは入っていなかった",
+          "conditions": "Specific two-instance EC2 VPN replacement; public code example was checked with synthesis and stubs. No injected real rollback.",
+          "usedIn": {
+            "zh": "一次 VPN 镜像升级更换了两台 EC2。",
+            "ja": "VPNのAMIを更新した筆者は、CloudFormationの成功を見た後、接続できないことに気付きました。"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Each instance waits for one successful initialization signal with a fifteen-minute ResourceSignal timeout.",
+          "quote": "PT15M",
+          "locator": "通知が来ない時間を、どう区切ったか",
+          "conditions": "Specific two-instance EC2 VPN replacement; public code example was checked with synthesis and stubs. No injected real rollback.",
+          "usedIn": {
+            "zh": "作者在每台替换实例上配置 CreationPolicy，要求一次成功信号，等待设置为 PT15M。",
+            "ja": "対策では、CreationPolicy で一台につき一件の成功通知を待ちます。",
+            "interview": "今回は dnf がメモリ不足で落ちたのに、固定 IP が新しい台に移りました。"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "The article observed the successful replacement path, and the intentionally failed real deployment was not observed.",
+          "quote": "実機の故障注入は未実施",
+          "locator": "ロールバックしても、通信断がゼロとは限らない",
+          "conditions": "Specific two-instance EC2 VPN replacement; public code example was checked with synthesis and stubs. No injected real rollback.",
+          "usedIn": {
+            "zh": "改造后的实际部署中，两台就绪信号先到，随后分别迁移了 EIP，作者也核对了连接配置。",
+            "ja": "修正後の更新では、二台から通知が届いた後にEIPが移り、接続先の設定も確認できました。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "用栈事件和应用状态对照，解释何时才可迁移固定 IP。",
+            "ja": "新しい台への切り替えを、起動処理の結果に結び付ける方法が分かります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-16-top-2",
+      "url": "https://zenn.dev/sakidori/articles/20261030-workers-test-d1-r2-fake-node",
+      "source": "Zenn",
+      "topic": "Workersのテスト代替",
+      "capturedAt": "2026-11-16T01:05:47.721274+00:00",
+      "snapshotSha256": "874d140e0f280adc7736c507da35c1450fdc754ddec85a2596cf023398bc7662",
+      "accessNote": "Full public body read and captured. Measurements and implementation outcomes are reported by the author; not independently rerun.",
+      "originalTitle": "Cloudflare Workers のテスト40項目を Node で動かす構成：D1 と R2 の代替",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Thirty integration and ten browser interactions are tested using the project setup.",
+          "quote": "結合テスト30項目",
+          "locator": "結論",
+          "conditions": "Reported practice for this TypeScript Worker and a selected Edge installation; real D1 and cloud binding settings are outside the replacements.",
+          "usedIn": {
+            "zh": "一个 Worker 承载多项小服务，共用提醒规则和视频模块。",
+            "ja": "一つのWorkerにサービスを相乗りさせ、通知や動画の処理を共用すると、変更が別の入口にも届きます。"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "The substitute exercises multipart calls, with D1 SQL fixtures and argument capture for database routines.",
+          "quote": "createMultipartUpload",
+          "locator": "R2 の代替と、動画の投稿で必要になった3つの操作",
+          "conditions": "Reported practice for this TypeScript Worker and a selected Edge installation; real D1 and cloud binding settings are outside the replacements.",
+          "usedIn": {
+            "zh": "D1 替代件提供 prepare 和 bind，对预先登记的 SQL 正则匹配返回行，保存实际调用的参数。",
+            "ja": "D1は prepare と bind を持つ代替へ差し替え、登録した正規表現で行を返しながらSQLと引数を記録します。",
+            "interview": "D1 の代替は、prepare と bind を受けて、登録した正規表現に合う行を返します。"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Real SQL, its indexes and binding activation remain outside the Node substitute tests.",
+          "quote": "実行計画",
+          "locator": "代替では落とせない3つの失敗と、ブラウザ操作テスト10項目",
+          "conditions": "Reported practice for this TypeScript Worker and a selected Edge installation; real D1 and cloud binding settings are outside the replacements.",
+          "usedIn": {
+            "zh": "这个测试集无法执行真正的 SQL，也看不到部署端绑定生效的时序。",
+            "ja": "代替はSQLを実行しないため、検索条件の意味や索引を使うかどうかは本物のD1で調べます。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "从 D1 的实参和 R2 的分片列表出发，为测试指定可观测的结果。",
+            "ja": "代替の効く範囲がはっきりすると、デプロイ前に何を自動化するかを決めやすくなります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-16-top-3",
+      "url": "https://zenn.dev/a1221/articles/astro-7-upgrade-build-failures",
+      "source": "Zenn",
+      "topic": "Astro移行の出力差分",
+      "capturedAt": "2026-11-16T01:05:47.706669+00:00",
+      "snapshotSha256": "f1ccaaf2fce493add6d7bcf6fbe5d91dbf247c14da3bb775a9298a8912ef390d",
+      "accessNote": "Full public body read and captured. Measurements and implementation outcomes are reported by the author; not independently rerun.",
+      "originalTitle": "Astro 5から7へ上げたら、Tailwindの1行でビルドが落ちた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "The migration replaces legacy content collections and keeps the existing Markdown processor via an explicit package.",
+          "quote": "旧コンテンツコレクション",
+          "locator": "2. 旧コンテンツコレクションが廃止されていた",
+          "conditions": "Astro 5.16 to 7.4.12 in one site, with normalized HTML for 506 pages and visual checks under 24 conditions.",
+          "usedIn": {
+            "zh": "作者把一个静态工具站从 Astro 5.16 升到 7.4.12。",
+            "ja": "Astro製の静的ツール集を5.16から7.4.12へ上げる作業です。"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "The generated Tailwind selector put a structural pseudo-class after a pseudo-element and the compressor refused it.",
+          "quote": "file-selector-button",
+          "locator": "4. Vite 8 の CSS 圧縮が落ちる。場所は教えてくれない",
+          "conditions": "Astro 5.16 to 7.4.12 in one site, with normalized HTML for 506 pages and visual checks under 24 conditions.",
+          "usedIn": {
+            "zh": "样式故障发生在 Vite 8 的 lightningcss 压缩阶段，报错指向拼接后的 CSS。",
+            "ja": "ビルドでは lightningcss が、ソースの場所を示さずに圧縮を止めました。",
+            "interview": "lightningcss のエラーが指したのは、元のファイルではなく連結後の CSS です。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "The comparison inspected normalized HTML for all pages and selected screenshots, with residual ordering and visual differences.",
+          "quote": "全506ページ",
+          "locator": "6. 旧版と新版を突き合わせる",
+          "conditions": "Astro 5.16 to 7.4.12 in one site, with normalized HTML for 506 pages and visual checks under 24 conditions.",
+          "usedIn": {
+            "zh": "迁移验收比较了全部 506 页的归一化 HTML，发现同日文章的排列变化，最终用条目 id 固定同日内容的顺序。",
+            "ja": "検証では506ページを正規化して、ハッシュつきの名前などを除いたHTMLを突き合わせました。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "沿生成后的 CSS 反查输入规则，再用构建产物和界面两条证据验收迁移。",
+            "ja": "移行で表示順が揺れる理由や、圧縮前の出力からエラーを絞る手順が読めます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-16-top-4",
+      "url": "https://zenn.dev/ai_nexus_jp/articles/dirty-jp-data-extraction-benchmark",
+      "source": "Zenn",
+      "topic": "日本語帳票の抽出評価",
+      "capturedAt": "2026-11-16T01:05:47.706515+00:00",
+      "snapshotSha256": "ef6bf48959bbb451d608cbcf9125c835cc5bf6927ab78320d5bfb20425092649",
+      "accessNote": "Full public body read and captured. Measurements and implementation outcomes are reported by the author; not independently rerun.",
+      "originalTitle": "【100本ノック実測】和暦・漢数字・結合セル…日本の泥臭い業務データを最新LLM 3モデルに構造化させて見えた「現場の壁」",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Three models were evaluated against the authors’ one hundred synthetic Japanese records using a strict output schema.",
+          "quote": "Pydantic Strict",
+          "locator": "3. 実験設計",
+          "conditions": "Same 100 author-written records per model, exact match relative to evaluation labels; no validation on real population of invoices.",
+          "usedIn": {
+            "zh": "这项个人基准用 100 道自制日语业务题，覆盖和历、混合汉数字金额、收件公司、错位表格和口语改量。",
+            "ja": "和暦の発行日、漢数字の金額、結合セルのある帳票、口頭での注文訂正などを含む百問を筆者が作り、三モデルの出力を比較した報告です。"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Schema checking passed the outputs; exact match differed. Interval start date and budget labels account for individual disagreements.",
+          "quote": "完全一致率",
+          "locator": "1. まず結論",
+          "conditions": "Same 100 author-written records per model, exact match relative to evaluation labels; no validation on real population of invoices.",
+          "usedIn": {
+            "zh": "作者报告 300 个结果均通过结构检查，Gemini 4 Hydrogen、GPT-6.1 Sol 和 Claude Sonnet 5.5 的完全匹配率分别为 93%、90% 和 89%。",
+            "ja": "三百件の構文検査はすべて通過しました。",
+            "interview": "Pydantic Strict を通っても、正解と値が一致するとは限りません。"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "An expected field may encode an organization decision: selecting a period start, preserving an unknown date, or separating desired from confirmed amounts.",
+          "quote": "正解ラベル",
+          "locator": "5. 珍解答・ワースト失敗パターン集",
+          "conditions": "Same 100 author-written records per model, exact match relative to evaluation labels; no validation on real population of invoices.",
+          "usedIn": {
+            "zh": "样本为作者自制，分数取决于提示词、标签规则和类别构成。",
+            "ja": "正解の決め方が曖昧なままだと、単に点数を見るだけでは直す場所が分かりません。"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "用日期区间和预算字段说明，类型门禁通过后还要核对标注规则。",
+            "ja": "見積依頼の予算や発行日を、現場が使える項目として扱う条件を考えられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-16-top-5",
+      "url": "https://zenn.dev/itaraiguma/articles/faulthandler-stall-watchdog-segfault",
+      "source": "Zenn",
+      "topic": "Pythonの停止診断",
+      "capturedAt": "2026-11-16T01:05:47.603767+00:00",
+      "snapshotSha256": "4f25a1317f7af079cc157872165cdb14d2bfc30603652d1d2369eb0f1fe753fb",
+      "accessNote": "Full public body read and captured. Measurements and implementation outcomes are reported by the author; not independently rerun.",
+      "originalTitle": "「止まっても書き出せる」から選んだ停止検知が、高負荷の夜にワーカーを落としていた話",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "A three-second delayed stack dump is rearmed each second; the C watchdog can write without taking the GIL in this setup.",
+          "quote": "1秒ごとに",
+          "locator": "選んだ理由は「GILを取らないこと」だった",
+          "conditions": "One VPS, two uvicorn workers; five crashes in a fifty-minute concentrated burst and only three inspected dumps.",
+          "usedIn": {
+            "zh": "DevPick 在一台可用内存不到 1 GB 的 VPS 上跑两个 uvicorn worker，并和博客共用主机。",
+            "ja": "メモリ1GB弱のVPSで、DevPickのuvicornワーカー二つとブログを動かしていた事例です。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "In fifty minutes of concentrated load the author counted five crashes and obtained three dumps identifying the diagnostic thread.",
+          "quote": "ワーカーがSIGSEGVで5回",
+          "locator": "高負荷の夜に起きたこと",
+          "conditions": "One VPS, two uvicorn workers; five crashes in a fifty-minute concentrated burst and only three inspected dumps.",
+          "usedIn": {
+            "zh": "11 月 14 日晚有集中访问，50 分钟内记录了五次 SIGSEGV。",
+            "ja": "11月14日夜の集中アクセスでは、50分でワーカーのSIGSEGVが五回ありました。",
+            "interview": "元の faulthandler は一秒ずつ予約をかけ直し、三秒止まるとスタックを出します。"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Same-scale validation remains pending; the new watchdog may fail to record a long GIL-holding pause before its worker is replaced.",
+          "quote": "まだ確かめられていない",
+          "locator": "まだ確かめられていないこと",
+          "conditions": "One VPS, two uvicorn workers; five crashes in a fifty-minute concentrated burst and only three inspected dumps.",
+          "usedIn": {
+            "zh": "替代方案让 Python 监视线程取得 GIL，并把每个 worker 的栈输出限制在三次。",
+            "ja": "置き換え後はGILを取って読み、出力を一ワーカー三回までに抑えます。"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "结合核心转储与重启开销判断，诊断采样是否加剧了服务停顿。",
+            "ja": "監視のための処理が、障害時にはどんな負担になるかを具体的に追えます。"
+          }
+        }
+      ]
+    }
+  ]
+}
