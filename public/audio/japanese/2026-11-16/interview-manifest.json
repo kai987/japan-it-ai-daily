@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-16",
+  "generatedAt": "2026-11-16T01:31:20.219Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "EC2 の起動スクリプトが終わるまで、固定 IP の移動をどう待たせますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "451c9d6d2e90a663c9f26f5b2cb6c410b45187565ca3a799b9955928b3849573",
+      "audioSha256": "69dc312a9c685c617acc2c7f4bedae5419c2f07f95bd6617043e4281acec3a31",
+      "durationSeconds": 5.424
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "今回は dnf がメモリ不足で落ちたのに、固定 IP が新しい台に移りました。そこで CreationPolicy で一台につき一件の成功通知を待たせ、EIP はその台の完了に依存させます。通知がなければ待機上限で失敗します。ただし、成功通知は起動時の確認なので、外からつながるかは切り替え後に別途確かめます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "9ccd993b4314b329dbef49647499b75ed8d0f602669977c6e8a827fd1a0b355b",
+      "audioSha256": "e807a90ee6aebeea80d90c49fcde5570fe77b337f5e1a53f0d5813269723810d",
+      "durationSeconds": 25.257,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "素の Node で D1 と R2 の代替を使う場合、どこまで確かめられますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "0f95c1b173e46f3adc277c82b65f0e7b38466396e6f74528d883fc7d6a203aa8",
+      "audioSha256": "74f4652639cb52e932180ba104a617f020dfce85bfdfb9829f5bcda3fcd686af",
+      "durationSeconds": 6.106
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "D1 の代替は、prepare と bind を受けて、登録した正規表現に合う行を返します。引数が残るので、同じ入力で書き込みのキーが変わらないかを確認できます。R2 側では uploadPart と complete の間でパートの順序を見ます。ただし、本物の SQL は実行しないので、索引の効き方は実環境で調べます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "5440f0af2184c677bb4a80ebecc9f9f9d6c09d597bb04fbe20a497d781b88c60",
+      "audioSha256": "c814a253c0d56373bd27608288bc23aa0f7ff94297443ce68e5684cff3fbb831",
+      "durationSeconds": 24.403,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "Astro 更新後、どのソースが CSS 圧縮を止めたのかをどう調べましたか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "7f33f1b89490e06baeb8bdeb6786c5424ea2b1871961f3019308acf3af4303ec",
+      "audioSha256": "11f08a50e288cd61956e5402d6797ac1ffaf3754d4bc018439a7825ae480eb8e",
+      "durationSeconds": 5.746
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "lightningcss のエラーが指したのは、元のファイルではなく連結後の CSS です。圧縮を外して見たら、Tailwind が border のバリアントを展開し、file-selector-button の後ろに first-of-type を置いていました。属性セレクターに変えて展開を止めます。ただし、それで画面まで同じとは言えないので、旧版とも比べます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "989636c4685160939543744a9777956159fb03628622ee4b170b8bd23f7d9cdd",
+      "audioSha256": "8cb3b580c9efe872d55c88a7e51005970a97994d418d585e2eff111cce275c06",
+      "durationSeconds": 22.3,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "帳票抽出で Pydantic の検証が全件通っても、どの入力を見直しますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "c208b9a8c1aacd9a38a04d841aa9e0c970c81a777dd7683d042fd74bfb34a5eb",
+      "audioSha256": "23724cc2754ffbabe6079eaeed3d766355d395e1ba6bdbf409469135d05345e6",
+      "durationSeconds": 6.208
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "Pydantic Strict を通っても、正解と値が一致するとは限りません。この百問では、期間の開始日を採るか、issue_date を null にするかで答えがずれました。見積もり依頼の希望予算も、確定した小計とは意味が違います。まず業務側でその扱いを決めて、完全一致率を別に測ります。ただし、記事の点数は自作の入力に限った結果です。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "c1248fde52c079aa5fa95d20142655244c6111c3bcb23ace7ad81cd93fe55c16",
+      "audioSha256": "1b8f67c83ee77ea8e5ea0701b9e94d13c2b801cb14dea19a639b761751147b22",
+      "durationSeconds": 26.261,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "Python の監視を GIL を取る方式に変更したのはなぜですか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "afd76012e0c503c4f42566bda3796c3885aac7d851fda83d97485562ddd06e0b",
+      "audioSha256": "49bb723d10c1b619b3c13d498d0394c88b854588500a019bac51378932fc3781",
+      "durationSeconds": 4.527
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "元の faulthandler は一秒ずつ予約をかけ直し、三秒止まるとスタックを出します。高負荷の夜には監視スレッドの途中で落ちた記録が三件ありました。そこで GIL を取る側へ移し、記録も三回までに絞ります。ただし、GIL が長く解放されない間は書けないので、止まっていた長さは復帰時にもログに残します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "830b7bc951bc8e4bddcd5e5ebff188369f70f28769571da588cbb5389e9337af",
+      "audioSha256": "d75070507ef88d56b9432e56817772d280c846aa3f70f3f894120e486db12dae",
+      "durationSeconds": 23.533,
+      "durationStatus": "warn"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "サーバーの起動と、サービスの準備完了をどう見分けますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "224996b52bc4396c3f6b3f462972339f11583959456df4cedb89e229473d1aa1",
+      "audioSha256": "355f0ddb0a971d839fc19b03fed2614274d39cbe9c2839e08f407d0630cd22cd",
+      "durationSeconds": 4.562
+    },
+    {
+      "index": 2,
+      "text": "テストが通った後、別の環境で確かめることは何ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "50ca8eb5fb759861349751837d1008083f6ec9a2bb6dc4a899927803809175a8",
+      "audioSha256": "f768d59061bdda9c3235aa1ae7433d24f5749162dd789ea23af767e88a0d30c4",
+      "durationSeconds": 4.829
+    },
+    {
+      "index": 3,
+      "text": "抽出した値が業務で使えるか、形式のほかに何を見ますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "2a45955ad5a84d700aeee659c3f12e5ecbf3e2da7a02fb4754e948cac28dbd86",
+      "audioSha256": "0f45d12f365b692a479588d32b8017bd71e313d470ccc5236de283fae75b1a3c",
+      "durationSeconds": 5.224
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-16T01:31:22.598Z"
+}
