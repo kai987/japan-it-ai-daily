@@ -3,7 +3,7 @@
   "date": "2026-11-16",
   "status": "reviewed",
   "reviewedBy": "Codex local daily author",
-  "reviewedAt": "2026-11-16T01:15:55.948388+00:00",
+  "reviewedAt": "2026-11-16T01:17:06.704409+00:00",
   "scope": "Five published original accounts in the frozen Tokyo window. Source claims and separately identified editorial interpretation.",
   "articles": [
     {
@@ -51,7 +51,7 @@
           "conditions": "Specific two-instance EC2 VPN replacement; public code example was checked with synthesis and stubs. No injected real rollback.",
           "usedIn": {
             "zh": "改造后的实际部署中，两台就绪信号先到，随后分别迁移了 EIP，作者也核对了连接配置。",
-            "ja": "修正後の更新では、二台から通知が届いた後に固定IPが移り、接続先の設定も確認できました。"
+            "ja": "修正後の更新では、二台から通知が届いた後にEIPが移り、接続先の設定も確認できました。"
           }
         },
         {
@@ -229,7 +229,7 @@
           "locator": "1. まず結論",
           "conditions": "Same 100 author-written records per model, exact match relative to evaluation labels; no validation on real population of invoices.",
           "usedIn": {
-            "zh": "作者报告 300 个结果均通过结构检查，三种模型的完全匹配率分别为 93%、90% 和 89%。",
+            "zh": "作者报告 300 个结果均通过结构检查，Gemini 4 Hydrogen、GPT-6.1 Sol 和 Claude Sonnet 5.5 的完全匹配率分别为 93%、90% 和 89%。",
             "ja": "三百件の構文検査はすべて通過しました。",
             "interview": "Pydantic Strict を通っても、正解と値が一致するとは限りません。"
           }
