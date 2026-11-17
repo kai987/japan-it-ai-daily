@@ -1,0 +1,288 @@
+{
+  "targetDate": "2026-11-17",
+  "sourceWindow": {
+    "from": "2026-11-16T10:00:00+09:00",
+    "to": "2026-11-17T10:00:00+09:00"
+  },
+  "previousTop5": [
+    {
+      "title": "起動スクリプトが落ちても、デプロイは成功する",
+      "url": "https://zenn.dev/miyakona/articles/ec2-replacement-waits-for-user-data"
+    },
+    {
+      "title": "Cloudflare Workers のテスト40項目を Node で動かす構成：D1 と R2 の代替",
+      "url": "https://zenn.dev/sakidori/articles/20261030-workers-test-d1-r2-fake-node"
+    },
+    {
+      "title": "Astro 5から7へ上げたら、Tailwindの1行でビルドが落ちた",
+      "url": "https://zenn.dev/a1221/articles/astro-7-upgrade-build-failures"
+    },
+    {
+      "title": "【100本ノック実測】和暦・漢数字・結合セル…日本の泥臭い業務データを最新LLM 3モデルに構造化させて見えた「現場の壁」",
+      "url": "https://zenn.dev/ai_nexus_jp/articles/dirty-jp-data-extraction-benchmark"
+    },
+    {
+      "title": "「止まっても書き出せる」から選んだ停止検知が、高負荷の夜にワーカーを落としていた話",
+      "url": "https://zenn.dev/itaraiguma/articles/faulthandler-stall-watchdog-segfault"
+    }
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "observedAt": "2026-11-17T01:00:58.071509+00:00",
+      "htmlSha256": "e2d5377dcf2fdea35259e2ea268f88961ea5700450f216e9d7cb9fe9a0413815",
+      "linksObserved": 79
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-17T01:00:57.477159+00:00",
+      "htmlSha256": "8adbab83723a56bfb0b30fc2245be8daefdb008c841c00525ff173b743f973f0",
+      "linksObserved": 3
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-17T01:00:57.530527+00:00",
+      "htmlSha256": "031732b7971ddc00afc3a20cb9d244d48be0396fd9f04b3f16833a4175b9b24e",
+      "linksObserved": 20
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-17T01:00:57.728146+00:00",
+      "htmlSha256": "fd340443bb1aa1c4135e00be4f1037cf9cda2e918010fcc33edc7bb168dbbe33",
+      "linksObserved": 75
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-17T01:00:57.704987+00:00",
+      "htmlSha256": "cef7f8d67ea91a9e0db50bb5b3aa7c10e6c370fb0236b8006eeb887144a93445",
+      "linksObserved": 33
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-17T01:00:57.663966+00:00",
+      "htmlSha256": null,
+      "linksObserved": 0
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-17T01:00:57.495575+00:00",
+      "htmlSha256": "1ee1f6901060c24623d76d2a6c82c57bbc324f3840b68abd870d03a063427ee0",
+      "linksObserved": 38
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-17T01:00:57.675898+00:00",
+      "htmlSha256": "fdca28c6b27fdbea9b4a436088993f59d167556c6aa96de8ff6dd531e588e023",
+      "linksObserved": 47
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-17T01:00:57.599111+00:00",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533",
+      "linksObserved": 10
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-17T01:00:57.636350+00:00",
+      "htmlSha256": "04e3044c440e2b1de0f3479fbc61c496f0504dce7bb87b0ab5e7853193852a26",
+      "linksObserved": 30
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-17T01:00:57.770399+00:00",
+      "htmlSha256": "d08660bd76365428539e6f571d9583fe6b4caf53cb089f4bc79ee574c8be93d4",
+      "linksObserved": 117
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-17T01:00:57.742063+00:00",
+      "htmlSha256": "4f82c92a1552a69294f2a513ec3ae26f4385ee7f1e91614c1c15718f4895978b",
+      "linksObserved": 14
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-17T01:00:57.709665+00:00",
+      "htmlSha256": "47264eddec7bbd0cae52d58f24c21fee8a0c45c230c488e72dece935007bd0b9",
+      "linksObserved": 50
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-17T01:00:59.747340+00:00",
+      "htmlSha256": "56dea9d033b875c08e9c59e537437bfedb30f23b195abf7b937929074a069692",
+      "linksObserved": 20
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-17T01:00:57.504750+00:00",
+      "htmlSha256": "59be3d48a633ceff690f30947319077705851533f413ef740c4be7c9f8de53a2",
+      "linksObserved": 20
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "status": 200,
+      "actualUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-17T01:00:57.681253+00:00",
+      "htmlSha256": "94d1dc98bf07549e51a95174e7ba099cccddb15e23a8499c33a4903a0e2e8232",
+      "linksObserved": 12
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-17T01:00:57.581217+00:00",
+      "htmlSha256": "5a5a211caab8fa3216bff8ac0060a1b6847deda08dd647494fb6d974b9906704",
+      "linksObserved": 17
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-17T01:00:57.663870+00:00",
+      "htmlSha256": "81e5ad9474cbb9c97b50d1dcb2e062cb4485edcbce6278229b24e7e44f952f46",
+      "linksObserved": 32
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-17T01:00:57.542884+00:00",
+      "htmlSha256": "320be58d4bedff7e3763b585098cd7158678f1b0fb89e1b5cc1e8a6a2a0647ee",
+      "linksObserved": 27
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-17T01:00:57.643350+00:00",
+      "htmlSha256": "96ce88d69eac0cb025dd9208afee1380ed71707a38a218d9f1484e136901532a",
+      "linksObserved": 19
+    }
+  ],
+  "articles": [
+    {
+      "status": 200,
+      "url": "https://zenn.dev/kyrenzk/articles/external-dependency-async-boundary-design",
+      "title": "遅い外部依存 1 つで全 Worker が止まる — タイムアウト・サーキットブレーカー・バルクヘッドを実測で使い分ける",
+      "publishedAt": "2026-11-17T08:45:36.965+09:00",
+      "capturedAt": "2026-11-17T00:58:48.484946+00:00",
+      "bodySha256": "ac231949c6747f9cb3637c390ebc736edff6ea20cd037a6e4e9d231cc0b848b9",
+      "htmlSha256": "be096fb965bd004406c248147c387d338f35d13632e2735575c7947ae375e358",
+      "length": 6662,
+      "captureKey": "bulkhead",
+      "topic": "依存先ごとの同時実行上限",
+      "articleId": "2026-11-17-top-1",
+      "access": "full",
+      "review": "The Go experiment uses a 20-worker shared pool and virtual time. A 2 s cap finished 100 of A’s 2000 arrivals; B capped at 4 preserved A at 1996 and 20 ms p95, while leaving 1980 B jobs queued. The combined run parked B jobs; reprocessing was not implemented."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/nttdata_tech/articles/c872346ff107f2",
+      "title": "MMMの入口として、広告費・季節性・外部要因を用いた需要予測をDataRobotで試す",
+      "publishedAt": "2026-11-17T09:35:37.460+09:00",
+      "capturedAt": "2026-11-17T00:58:48.523827+00:00",
+      "bodySha256": "de8db1c53705a248c9463bc02481375e0ec2f08bda01b04314f5c944aaf64ce7",
+      "htmlSha256": "31f115c8e5e310f32c3a7bfce1215c696f01648095e326297f430d3a94c77665",
+      "length": 18947,
+      "captureKey": "datarobot",
+      "topic": "火災保険の需要予測",
+      "articleId": "2026-11-17-top-2",
+      "access": "full",
+      "review": "The author generates 2021–26 weekly data for three products, with lag-one and lag-four features and three yearly partitions. Fold 3 trains on 2023–24, validates 2025 and tests 2026. Feature Impact charts describe model dependence; this synthetic example estimates neither causal lift nor channel ROI."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/sponge841841/articles/2026-11-08-pencil-multistroke-atomic-undo",
+      "title": "Apple Pencilの複数筆を一括確定する設計：草稿・世代検証・Undo",
+      "publishedAt": "2026-11-16T11:13:13.922+09:00",
+      "capturedAt": "2026-11-17T00:58:48.484923+00:00",
+      "bodySha256": "c1817afe3b4883b275407c47ab80d7eddc406f90dccf12bfe8d1e33df3ca43fb",
+      "htmlSha256": "71225389caac185116835861a8cec9eb6b97c2fd10a3a6ed7112f211190b28a4",
+      "length": 5411,
+      "captureKey": "pencil",
+      "topic": "複数筆の一括確定",
+      "articleId": "2026-11-17-top-3",
+      "access": "full",
+      "review": "The sample separates in-progress stroke, DraftBatch and committed document. MainActor replaces the finished document once and registers Undo. An asynchronous ticket binds document, generation and draft session. Reported simulator/core tests do not establish durability or physical Pencil behavior."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/finatext/articles/cortex-search-least-privilege-dbt-terraform",
+      "title": "dbt + TerraformでCortex Searchを構築し，最小権限を目指すためにハマったこと",
+      "publishedAt": "2026-11-17T09:19:31.631+09:00",
+      "capturedAt": "2026-11-17T00:58:48.494833+00:00",
+      "bodySha256": "f8206518cc53d298b3ab7e2285262c8ecc87e19ced6db68c63db899d2101a1bb",
+      "htmlSha256": "8dec8179146d7d241c2292dee285b347992ba6424a0ab2aa30b803a55c686c43",
+      "length": 5781,
+      "captureKey": "cortex",
+      "topic": "検索インデックスの所有権",
+      "articleId": "2026-11-17-top-4",
+      "access": "full",
+      "review": "ON_SCHEDULE allowed creation but refresh was skipped after a future grant moved ownership to a database role without warehouse USAGE. The design uses a dedicated account role through a Terraform provider alias and enables change tracking through a dbt post_hook. The internal Dynamic Table ownership relationship is inferred from observed behavior."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/noriyuk/articles/1ef9eb3ca98f3d",
+      "title": "国立国会図書館の書誌をGitHub Actionsで毎日取り込む：止まっても次の回で続きを取る仕組み",
+      "publishedAt": "2026-11-17T07:33:19.501+09:00",
+      "capturedAt": "2026-11-17T00:58:48.436303+00:00",
+      "bodySha256": "5bb01332f1561f70b86aff620b2bc6ff52086f37fb2516ffa201e73a623edaaf",
+      "htmlSha256": "925cffb6a599e0705beabf94db85f548e61b05f752659ebb175f339ea3891eb3",
+      "length": 10540,
+      "captureKey": "catalog",
+      "topic": "書誌の差分取り込み",
+      "articleId": "2026-11-17-top-5",
+      "access": "full",
+      "review": "BookConnect stores roughly 3.85 million qualified records. The workflow advances an uninterrupted UTC-day checkpoint only after all pages for the day, upserts by bibliographic ID, and caps a run at seven days. The author observed interruption and next-run replay; late entry in the upstream catalog still delays visibility."
+    }
+  ]
+}
