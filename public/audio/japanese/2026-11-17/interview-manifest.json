@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-17",
+  "generatedAt": "2026-11-17T01:24:00.640Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "共有 Worker で一つの依存先が応答しないとき、もう一つの依存先をどう守りますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "8b14fc1fcf303e781a2492a59fbd7b003b83a576a14b3c18aa94ce4abdca7ff1",
+      "audioSha256": "ce77aae890d4f07a09c6503a1b44b79649d59789dedb30025929a9cca6950e5a",
+      "durationSeconds": 6.581
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "共有の Worker では、応答しない B が枠を使い切るので、タイムアウトを短くしても正常な A が待ちます。この実験ではバルクヘッドで B を四本に絞ると、A の p95 は基準と同じ二十ミリ秒でした。回路遮断も併用すれば滞留を減らせます。ただし、退避した仕事は実験では捌いていないので、実装では保管の上限と戻し方まで決めます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "78d41b6592c260ceb0dbc4f8946e9f6e619ab29db64bfcfa53809199324d8084",
+      "audioSha256": "fa05508859c61695e36dcaa8342400d0fa3d0e057fe534b4f16ce67cda6563ea",
+      "durationSeconds": 26.168,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "広告費を使った需要予測で、データの分け方と結果の読み方をどう設計しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "11cbbe51656fd134ea330f8592e38d6196573cb8d86854843cbee147366eb0c5",
+      "audioSha256": "a5ce49748059f930926b7ceb1a4a3c6b57579d0c1cb9427fa8afe741ea7e65fa",
+      "durationSeconds": 6.791
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "商品別の週次データに一週と四週のラグ特徴量を作り、fold3 では二〇二三年と二〇二四年で学習し、二〇二五年で検証して翌年をテストします。DataRobot の Feature Impact で入力の使われ方を見ます。ただし、記事は仮想データなので、実際の広告効果は別に検証し、外部指標も予測日までに入手できた値だけを使います。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "cd271eff9c343045df241abbcfeab20cd055ec00898e29cdd6994d6c04430ee3",
+      "audioSha256": "f30ed61cd69c43428411054fcb80f4e32b270f9ad5360dbdff418478f088994d",
+      "durationSeconds": 28.003,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "複数の筆跡をまとめて保存し、古い生成結果から文書を守るにはどうしますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "56f988f03b774a55a2d119c7fd3723543c3e934ea662431d4932043bc511c3df",
+      "audioSha256": "906e66b659a97f8dcd328487040814fbab823395b769ac0a9d708080048b0aad",
+      "durationSeconds": 6.362
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "描きかけの線は DraftBatch に置いて、確定するときは全て変換してから文書を一度だけ置き換えます。UndoManager に前の文書を一件だけ登録すれば、まとめて元に戻せます。非同期処理では文書と世代、草稿の識別子を採用直前に照合します。ただし、例の置き換えはメモリー上なので、書き込みの途中で端末が落ちた場合は別に設計します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "ff010c6043d80121aeb3db3dc4b65f93ee4e3766d2a3b0b8bcbe158d41e69164",
+      "audioSha256": "17777fa841c3418c43d935529a05febc8a68b292d3cff82a3a32291ab5513889",
+      "durationSeconds": 27.271,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "検索サービスを作成できても索引が更新されない場合、どこの権限を調べますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "0ad5a1120b76ca51633352ce4a767586a348c03180d92947754307fecb589fdd",
+      "audioSha256": "ec48ab59d4476c50025f86096564d488831ca48093e0ee31949a1025b46a3d11",
+      "durationSeconds": 6.373
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "作ったときのロールだけでなく、OWNERSHIP を持つロールを確かめます。記事ではデータベースロールに所有権が移り、ウェアハウスを使えず更新が止まりました。provider alias で検索専用のアカウントロールを選び、基表の追跡は dbt の post_hook で先に有効にします。ただし、内部テーブルの所有者については動作からの推定です。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "019f0624a5e0ee1da6e2a1dc858cca52660d9888732b5d99509bbafbde35591b",
+      "audioSha256": "30dfb24b8b8b9ab335f09f7650bda63d5e36151d2cb4f9d1f5878cae283fdb48",
+      "durationSeconds": 24.682,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "公開書誌の取り込みが一日の途中で止まったら、次回はどこから再開しますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "c8df74e075c7c0fd9fb076f45b715c637cda6a4adbcbdbe3c7f3a9d7f7b99424",
+      "audioSha256": "5b6620da504af75b01c8c3091c19aac2f32adeb290f2549bcda45d61a249b6a0",
+      "durationSeconds": 6.442
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "UTC で最後に取り終えた日の翌日からやり直します。全ページが書き込めるまでは日付を進めず、同じ書誌 ID は upsert するので途中まで入れた行が増えません。BookConnect では一回で追うのは七日までです。ただし、発売された本がまだ図書館に登録されていなければ、毎日更新していても検索には出てこないので、取得漏れと区別します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "5420a49c3c5286edb1831736925abe44538bb808a51e2550938384b89674f92c",
+      "audioSha256": "4e226b060e1e99d6e43d5091bfde2a8b5a031d477a49613d8082fcc0748b8e98",
+      "durationSeconds": 26.458,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "遅い依存先に仕事が積もったとき、正常側を守りながらどう再開しますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "0b059a773071bb8a737b2733683fb59ba4efd44ea6997d878500acdb5aeaf852",
+      "audioSha256": "41d39fcfa8003ad9099873404310a51702b4d1e235b3ad973c970f0e7b0a68ac",
+      "durationSeconds": 6.05
+    },
+    {
+      "index": 2,
+      "text": "処理が途中で成功したとき、どの状態を確定させるべきですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "9003d31fa980363e11fa386010163784427b581ad39699360ed1086ad833fd44",
+      "audioSha256": "5822f7d5104033505fae671c6e5c80933b77c7efa4fd19c832bc83d540fe197b",
+      "durationSeconds": 5.165
+    },
+    {
+      "index": 3,
+      "text": "設定が通ったことと、実際の条件で狙いどおり動くことをどう見分けますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "10f5a945edded9f72181122bbceed2346a2d050800d41504458d6b367b943977",
+      "audioSha256": "e26c49a91f9217c163c27d5a9717da29886c2a1e1429d72daee208de5d9d2996",
+      "durationSeconds": 5.92
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-17T01:24:03.195Z"
+}
