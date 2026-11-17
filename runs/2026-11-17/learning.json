@@ -1,0 +1,226 @@
+{
+  "targetDate": "2026-11-17",
+  "issueNumber": 98,
+  "totalDays": 98,
+  "newVocabulary": [
+    "損害",
+    "諸々",
+    "写す",
+    "発売",
+    "後ろ"
+  ],
+  "reviewVocabulary": [
+    {
+      "term": "検証する",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "検証",
+        "excerpt": "例に使った fold3 は2023年と2024年を学習、2025年を検証、2026年をテストにします。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "ただし",
+      "firstIntroducedDate": "2026-09-07",
+      "reviewEvidence": {
+        "form": "ただし",
+        "excerpt": "ただし、その再処理は実装されていません。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "判断する",
+      "firstIntroducedDate": "2026-08-13",
+      "reviewEvidence": {
+        "form": "判断",
+        "excerpt": "共有 Worker の実験と組み合わせるなら、待てる時間、並行して使える枠、受理した後の保存先をそれぞれ測ると、どこで判断を見直すべきかが分かります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "実行する",
+      "firstIntroducedDate": "2026-08-15",
+      "reviewEvidence": {
+        "form": "実行",
+        "excerpt": "バルクヘッドで B の同時実行を4本に抑えると、A は1996件で p95 が基準と同じ20msでした。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "区別する",
+      "firstIntroducedDate": "2026-09-30",
+      "reviewEvidence": {
+        "form": "区別",
+        "excerpt": "読む価値: 需要を当てるための入力と、広告の効果を推定するための検証を区別できます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "評価する",
+      "firstIntroducedDate": "2026-08-15",
+      "reviewEvidence": {
+        "form": "評価する",
+        "excerpt": "実務なら予測を出す日までに入手できた変数だけで評価する必要があります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "構成",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "構成",
+        "excerpt": "上限だけを入れた構成では、B 側に1980件が残ります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "保証",
+      "firstIntroducedDate": "2026-08-16",
+      "reviewEvidence": {
+        "form": "保証",
+        "excerpt": "ただし、コードは設計説明用で、ディスクへの原子的保存を保証しません。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "接続する",
+      "firstIntroducedDate": "2026-08-28",
+      "reviewEvidence": {
+        "form": "接続",
+        "excerpt": "ベジェ曲線や筆圧を線ごとに残せば、離れた線に不要な接続が入るのを避けられます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "指定する",
+      "firstIntroducedDate": "2026-09-04",
+      "reviewEvidence": {
+        "form": "指定",
+        "excerpt": "指定20サイトの入口を確認し、CodeZineは403で記事一覧を開けませんでした。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "生成する",
+      "firstIntroducedDate": "2026-08-27",
+      "reviewEvidence": {
+        "form": "生成",
+        "excerpt": "ただし、仮想データは生成時点で要因の関係を組み込んでおり、実際のキャンペーンの増分効果を検証していません。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "境界",
+      "firstIntroducedDate": "2026-08-25",
+      "reviewEvidence": {
+        "form": "境界",
+        "excerpt": "実装の境界は同じではありません。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "依存",
+      "firstIntroducedDate": "2026-08-26",
+      "reviewEvidence": {
+        "form": "依存",
+        "excerpt": "Go の仮想時間で、20本の Worker が二つの依存先を兼務する状況を作っています。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "権限",
+      "firstIntroducedDate": "2026-08-13",
+      "reviewEvidence": {
+        "form": "権限",
+        "excerpt": "権限を調べると future grant で OWNERSHIP が Database Role に移っていました。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "扱う",
+      "firstIntroducedDate": "2026-09-22",
+      "reviewEvidence": {
+        "form": "扱う",
+        "excerpt": "読む価値: 未確定の線、保存する図案、古い非同期結果の三つをどう扱うかが分かります。",
+        "sourceKind": "report-body"
+      }
+    }
+  ],
+  "newGrammar": [],
+  "reviewGrammar": [
+    {
+      "pattern": "～とは限らない",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "とは限りません",
+        "excerpt": "実ネットワーク、即時エラー、複数プロセスで状態を共有する条件でも同じ数字になるとは限りません。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～だけで",
+      "firstIntroducedDate": "2026-10-01",
+      "reviewEvidence": {
+        "form": "だけで",
+        "excerpt": "5回連続の失敗で開く回路遮断だけでは A は1996件まで戻る一方、p95 は1580msです。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～だけでなく",
+      "firstIntroducedDate": "2026-09-25",
+      "reviewEvidence": {
+        "form": "だけでなく",
+        "excerpt": "広告費も当週の値だけでなく、1週前と4週前をラグ特徴量として用意します。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～ごとに",
+      "firstIntroducedDate": "2026-11-16",
+      "reviewEvidence": {
+        "form": "ごとに",
+        "excerpt": "ベジェ曲線や筆圧を線ごとに残せば、離れた線に不要な接続が入るのを避けられます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～ために",
+      "firstIntroducedDate": "2026-08-31",
+      "reviewEvidence": {
+        "form": "ための",
+        "excerpt": "読む価値: 需要を当てるための入力と、広告の効果を推定するための検証を区別できます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～べきだ",
+      "firstIntroducedDate": "2026-09-10",
+      "reviewEvidence": {
+        "form": "べき",
+        "excerpt": "共有 Worker の実験と組み合わせるなら、待てる時間、並行して使える枠、受理した後の保存先をそれぞれ測ると、どこで判断を見直すべきかが分かります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～たびに",
+      "firstIntroducedDate": "2026-10-06",
+      "reviewEvidence": {
+        "form": "たびに",
+        "excerpt": "線を描くたびに編集へ移ると、次の線を続けて描けません。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～しかない",
+      "firstIntroducedDate": "2026-09-01",
+      "reviewEvidence": {
+        "form": "しかない",
+        "excerpt": "ただし、責任表示まで英字しかない本はカタカナで当たらず、発売直後の本は元の書誌が入るまで検索に出ません。",
+        "sourceKind": "report-body"
+      }
+    }
+  ],
+  "grammarNote": null,
+  "vocabularyNote": null
+}
