@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-17",
+  "status": "reviewed",
+  "reviewedBy": "Codex local daily author",
+  "reviewedAt": "2026-11-17T01:07:20.993446+00:00",
+  "scope": "Five original public Japanese accounts in the locked JST window. Editorial explanations distinguish results from inferred practice.",
+  "articles": [
+    {
+      "articleId": "2026-11-17-top-1",
+      "url": "https://zenn.dev/kyrenzk/articles/external-dependency-async-boundary-design",
+      "source": "Zenn",
+      "topic": "依存先ごとの同時実行上限",
+      "capturedAt": "2026-11-17T00:58:48.484946+00:00",
+      "snapshotSha256": "ac231949c6747f9cb3637c390ebc736edff6ea20cd037a6e4e9d231cc0b848b9",
+      "accessNote": "Full public source read and captured. Implementation and measurements are reported by each original author.",
+      "originalTitle": "遅い外部依存 1 つで全 Worker が止まる — タイムアウト・サーキットブレーカー・バルクヘッドを実測で使い分ける",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "A completes 100 of 2000 arrivals with the 2000 ms shared timeout.",
+          "quote": "A完了= 100/2000",
+          "locator": "実測結果",
+          "conditions": "Deterministic virtual time; fixed worker pool and two dependency states. Does not exercise a real provider or replay parked work.",
+          "usedIn": {
+            "zh": "这篇实验特意让 B 一直不响应，而不是立刻返回错误。",
+            "ja": "Go の仮想時間で、20本の Worker が二つの依存先を兼務する状況を作っています。"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Capping inflight B to 4 keeps A at 1996 completions and 20 ms p95.",
+          "quote": "bulkhead B<=4",
+          "locator": "実測結果",
+          "conditions": "Deterministic virtual time; fixed worker pool and two dependency states. Does not exercise a real provider or replay parked work.",
+          "usedIn": {
+            "zh": "仅设两秒时限，正常端 A 也只完成 100 项。",
+            "ja": "タイムアウトが2000msのとき、A は2000件中100件しか完了しません。",
+            "interview": "共有の Worker では、応答しない B が枠を使い切るので、タイムアウトを短くしても正常な A が待ちます。"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Replay of the parked jobs is outside the model.",
+          "quote": "実装していません",
+          "locator": "読み取れること",
+          "conditions": "Deterministic virtual time; fixed worker pool and two dependency states. Does not exercise a real provider or replay parked work.",
+          "usedIn": {
+            "zh": "隔离把资源留给了 A，却给 B 留下 1980 项排队任务。",
+            "ja": "上限だけを入れた構成では、B 側に1980件が残ります。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "同一套模拟让读者看清超时、熔断和并发隔离各在什么时候起作用。",
+            "ja": "障害を検出するまでに、正常な処理にもどのくらい影響が及ぶかを数字で追えます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-17-top-2",
+      "url": "https://zenn.dev/nttdata_tech/articles/c872346ff107f2",
+      "source": "Zenn",
+      "topic": "火災保険の需要予測",
+      "capturedAt": "2026-11-17T00:58:48.523827+00:00",
+      "snapshotSha256": "de8db1c53705a248c9463bc02481375e0ec2f08bda01b04314f5c944aaf64ce7",
+      "accessNote": "Full public source read and captured. Implementation and measurements are reported by each original author.",
+      "originalTitle": "MMMの入口として、広告費・季節性・外部要因を用いた需要予測をDataRobotで試す",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "The synthetic dataset is keyed by year, week and insurance product.",
+          "quote": "年×週×商品",
+          "locator": "データ準備",
+          "conditions": "Synthetic fire insurance data. No real effectiveness validation or causal measurement.",
+          "usedIn": {
+            "zh": "营销团队希望提前看到各保险产品下一年的签约量走势。",
+            "ja": "NTTデータの筆者は、戸建て、マンション、家財の保険を想定し、2021年から2026年までの商品別・週次データを Python で作りました。"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "The third fold trains on 2023–24 and separates 2025 validation from 2026 test.",
+          "quote": "2023～2024年",
+          "locator": "パーティション設計",
+          "conditions": "Synthetic fire insurance data. No real effectiveness validation or causal measurement.",
+          "usedIn": {
+            "zh": "示例将问题设为 DataRobot 连续值预测，并用标记列划分训练、验证和测试集合。",
+            "ja": "DataRobot には年ごとの区分を指定し、一つの年をずらしながら比較する3組の分割を用意します。",
+            "interview": "商品別の週次データに一週と四週のラグ特徴量を作り、fold3 では二〇二三年と二〇二四年で学習し、二〇二五年で検証して翌年をテストします。"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Feature contribution is a model diagnostic, not a causal effect.",
+          "quote": "因果効果を示すものではない",
+          "locator": "モデリング結果",
+          "conditions": "Synthetic fire insurance data. No real effectiveness validation or causal measurement.",
+          "usedIn": {
+            "zh": "这里的季节和渠道关系由合成规则预设。",
+            "ja": "可視化した寄与度は、モデルがどの入力を予測に使ったかの手掛かりです。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "这个教学案例适合练习时序切分，也展示了怎样避免把预测贡献当广告收益。",
+            "ja": "需要を当てるための入力と、広告の効果を推定するための検証を区別できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-17-top-3",
+      "url": "https://zenn.dev/sponge841841/articles/2026-11-08-pencil-multistroke-atomic-undo",
+      "source": "Zenn",
+      "topic": "複数筆の一括確定",
+      "capturedAt": "2026-11-17T00:58:48.484923+00:00",
+      "snapshotSha256": "c1817afe3b4883b275407c47ab80d7eddc406f90dccf12bfe8d1e33df3ca43fb",
+      "accessNote": "Full public source read and captured. Implementation and measurements are reported by each original author.",
+      "originalTitle": "Apple Pencilの複数筆を一括確定する設計：草稿・世代検証・Undo",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "The draft holds strokes separately from the document.",
+          "quote": "DraftBatch",
+          "locator": "草稿と確定済みオブジェクトを別の型にする",
+          "conditions": "Simplified example for an unreleased app; no disk durability or physical Pencil verification.",
+          "usedIn": {
+            "zh": "在这个未发布的 iPad 刺绣图案编辑器里，每抬一次笔就完成编辑，会妨碍用户继续添加多条分离的线。",
+            "ja": "刺しゅう図案アプリの実装記録です。"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "A result is bound to document identity, generation and draft identity.",
+          "quote": "GenerationTicket",
+          "locator": "非同期生成が遅れて戻ってきたときの事故",
+          "conditions": "Simplified example for an unreleased app; no disk durability or physical Pencil verification.",
+          "usedIn": {
+            "zh": "示例在主执行域构造下一份文档，统一提交，同时注册一条撤销操作。",
+            "ja": "MainActor 上の処理例では、採用する全ての線を変換して次の文書を作り、UndoManager に前の文書を一度だけ登録して反映します。",
+            "interview": "描きかけの線は DraftBatch に置いて、確定するときは全て変換してから文書を一度だけ置き換えます。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "The sample is about in-memory editing and the unreleased application has gaps in device verification.",
+          "quote": "アプリは未リリースです",
+          "locator": "自作アプリでの学びと現在の公開状況",
+          "conditions": "Simplified example for an unreleased app; no disk durability or physical Pencil verification.",
+          "usedIn": {
+            "zh": "作者报告核心测试通过 1306 项、相关应用测试通过 50 项。",
+            "ja": "描画領域と設定フォームで Scribble の扱いを分ける案も示されます。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "这个例子提供了能直接用于设计评审的测试场景，例如切换文档后收到旧结果。",
+            "ja": "未確定の線、保存する図案、古い非同期結果の三つをどう扱うかが分かります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-17-top-4",
+      "url": "https://zenn.dev/finatext/articles/cortex-search-least-privilege-dbt-terraform",
+      "source": "Zenn",
+      "topic": "検索インデックスの所有権",
+      "capturedAt": "2026-11-17T00:58:48.494833+00:00",
+      "snapshotSha256": "f8206518cc53d298b3ab7e2285262c8ecc87e19ced6db68c63db899d2101a1bb",
+      "accessNote": "Full public source read and captured. Implementation and measurements are reported by each original author.",
+      "originalTitle": "dbt + TerraformでCortex Searchを構築し，最小権限を目指すためにハマったこと",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Delayed initialization allowed creation but scheduled index refresh skipped.",
+          "quote": "SKIPPED",
+          "locator": "エラー",
+          "conditions": "Observed Snowflake configuration and refresh behavior; internal ownership attribution is inferred.",
+          "usedIn": {
+            "zh": "问题出在 Snowflake 搜索索引。",
+            "ja": "筆者の Snowflake 構成では、データベースとスキーマは Terraform、表は dbt で管理します。"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Terraform creates the service directly with a dedicated owner account role.",
+          "quote": "provider の alias",
+          "locator": "1と2に対する解決策",
+          "conditions": "Observed Snowflake configuration and refresh behavior; internal ownership attribution is inferred.",
+          "usedIn": {
+            "zh": "数据库角色权限只能覆盖所在数据库，计算仓库的使用权限无法授给它。",
+            "ja": "権限を調べると future grant で OWNERSHIP が Database Role に移っていました。",
+            "interview": "作ったときのロールだけでなく、OWNERSHIP を持つロールを確かめます。"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Ownership of the internal dynamic table is an inference, while the base table change-tracking setup was tested.",
+          "quote": "結果からの推定",
+          "locator": "原因と解決策",
+          "conditions": "Observed Snowflake configuration and refresh behavior; internal ownership attribution is inferred.",
+          "usedIn": {
+            "zh": "服务创建时还可能尝试开启基表变更跟踪，这需要修改表的权限。",
+            "ja": "索引が参照する表の change tracking は、表を管理する dbt の post_hook で先に有効にします。"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "把索引建立和索引更新区分开，可以解释为什么创建成功后依然报仓库不可用。",
+            "ja": "作成に使う権限と、作成後の索引更新に必要な権限を、同じエラーから切り分けられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-17-top-5",
+      "url": "https://zenn.dev/noriyuk/articles/1ef9eb3ca98f3d",
+      "source": "Zenn",
+      "topic": "書誌の差分取り込み",
+      "capturedAt": "2026-11-17T00:58:48.436303+00:00",
+      "snapshotSha256": "5bb01332f1561f70b86aff620b2bc6ff52086f37fb2516ffa201e73a623edaaf",
+      "accessNote": "Full public source read and captured. Implementation and measurements are reported by each original author.",
+      "originalTitle": "国立国会図書館の書誌をGitHub Actionsで毎日取り込む：止まっても次の回で続きを取る仕組み",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "The author imported roughly 3.85 million eligible and ISBN-bearing records.",
+          "quote": "約385万件",
+          "locator": "書誌を自分のデータベースに持った",
+          "conditions": "A single site and upstream bibliographic publication calendar; late catalog entries remain invisible until upstream entry.",
+          "usedIn": {
+            "zh": "BookConnect 把许可条件明确、带有效 ISBN 的日本国会图书馆书目落到自有库，共约 385 万条。",
+            "ja": "BookConnect は、有効な ISBN があり、条件を確認した約385万件の図書書誌を、検索時に外部へ問い合わせないよう自分のデータベースに置きました。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "The importer advances through consecutive UTC days only after all their pages finish.",
+          "quote": "取り終えた日だけ",
+          "locator": "取り漏れを防ぐ",
+          "conditions": "A single site and upstream bibliographic publication calendar; late catalog entries remain invisible until upstream entry.",
+          "usedIn": {
+            "zh": "日常增量从最后完整的 UTC 日期之后开始。",
+            "ja": "GitHub Actions の処理は、最後に取り終えた UTC 日付の翌日から差分を取得します。",
+            "interview": "UTC で最後に取り終えた日の翌日からやり直します。"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "A limit of seven days bounds one run; earlier missed days are replayed.",
+          "quote": "7日分まで",
+          "locator": "取り漏れを防ぐ",
+          "conditions": "A single site and upstream bibliographic publication calendar; late catalog entries remain invisible until upstream entry.",
+          "usedIn": {
+            "zh": "首次解析只保存了规范名称及读音，没有留下责任表示，使部分外文作家无法用片假名命中。",
+            "ja": "最初の取り込みでは責任表示を保存せず、カタカナの著者名で検索できない本が残りました。"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "这篇记录具体说明了如何用连续日期和幂等更新弥补漏跑，也说明何时值得保留原始文件。",
+            "ja": "定刻実行が抜けても、その日の全ページが終わる前に取り込み位置を進めない設計が参考になります。"
+          }
+        }
+      ]
+    }
+  ]
+}
