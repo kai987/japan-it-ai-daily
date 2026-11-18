@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-18",
+  "generatedAt": "2026-11-18T06:48:22.115Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "静的解析をoxlintへ移すとき、失う検査をどう確かめますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "6e227fcea6b766b16bd0e0985d4e31d7204c2578128a868a9a491ea333f83d0c",
+      "audioSha256": "c346d92c05bb2611404f7634d58ad09c5d1be694898782f2b5141ca402386f67",
+      "durationSeconds": 5.697
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "まず同じ三千九十一ファイルで、キャッシュを外して比べます。この記事では二百七十一秒台から五秒台に縮みました。ただし仕事は速度だけでは終わりません。移せない百十五ルールを調べ、画面に意図しないゼロが出るような不具合を拾う検査はESLintに残します。型を使うルールは、type-awareの指定と、実際に違反を見つけるかの両方を確かめます。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "ff7d373c1c5156c8e2d5132412cf92c541654e06d6b9046c4c79938930648b75",
+      "audioSha256": "5a0d2bfb4752ea2c7612e049976cab888d7adca3516f4367b1c1cdc94d89ca16",
+      "durationSeconds": 26.646,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "手元で使う日英翻訳を試すなら、どんな手順で結果を確かめますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "4c0de03f134a965f7fa5211592351a245d4f6e763f79cc33c2bdef7918392ae0",
+      "audioSha256": "f9bde39aa0a1ee6da7ace28b6868618c1b77e655ebd69d4510399032f915888c",
+      "durationSeconds": 5.711
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "記事では、DockerのCPU環境でPLaMoの二十億パラメータ版をQ4_K_Mで動かしています。ことわざとビジネスメールを英訳して、日本語に戻したときの表現を比べました。同じ英訳でも元のことわざに戻る場合と、場面をそのまま訳す場合があります。ただし試した文は少ないので、使う文書に合わせて、英訳で条件や数字が落ちていないかも見ます。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "20ecb509a8397a0532197f7bc067cc2fc97a2d1afcafaaf863f25c8285b9f0cf",
+      "audioSha256": "987b9a579306343f81d455efca31686615fb1bb67ad3fff272ae47176e876375",
+      "durationSeconds": 26.622,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "S3のログを別チームが取り込むとき、デプロイと実行の権限はどうしますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "9b199b0096f6d89cfab0aedfbd74829fad75338c7ee14b1e6e6850bb150205f7",
+      "audioSha256": "99e119a9e064b954987faf48c06d393d540a597250a820ea695b9f2741774926",
+      "durationSeconds": 6.002
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "今回は接続元に制限があるので、開発者はVPNからDABsで共通フォルダへ配布します。実行はrun_asで指定したサービスプリンシパルに任せます。S3は読み取り専用のExternal Locationで開き、表を書ける場所は環境別のスキーマに分けます。ただし、この配布方法は一つのワークスペースで急いで始めた例です。頻度が増えたら自動配布を検討します。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "3502a73fa4886aea9060e357608c3ed734aa3f8b0976d166d149973b399999f8",
+      "audioSha256": "513313bd6cba1da929350a854967824c3315acc374aaadbe290bf28c241ab00a",
+      "durationSeconds": 27.78,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "画面のスクリーンショットで短いアニメーションを作るとき、何を測りますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "b0fe93a5d73d27f9a2ddde5babd309a5dd63ae53924e2eebf1679ed9c1bc0ec4",
+      "audioSha256": "bc2cc4624bf08956335fdbffbb8a33cdbe8ff91ce4de3b57b6694fc9577372e9",
+      "durationSeconds": 5.409
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "記事では、七百二十かける四百八十の画像五枚を使い、WebPで九十九キロバイトでした。まず、sharpのdelayをコマごとの配列で設定して、実際の表示時間をメタデータで見ます。圧縮のeffortを四から六に上げると、二キロバイト減る代わりに、処理はほぼ三秒になりました。ただし画面によって値は違うので、掲載する実物で文字と容量を確かめます。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "154551bbdf2e185f94e5a13a3630eeffb8058a0f6330a3401b76a1ddf5e53942",
+      "audioSha256": "842ebc6d2b8e988a3afcc23bc3322c07164ba0d42fba550fc6194a25d24e6103",
+      "durationSeconds": 27.666,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "古い記事サイトを静的配信へ移したとき、利用者が困らないように何を確かめますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "1afa7c4c7fa163f107daa23c1e5bd0deb4e544039c5839e971a9b4d0de9ae3cf",
+      "audioSha256": "85aba77ae350e235eac63f817a862c8c604e5b030c7423d04d84346b6d5d9e1a",
+      "durationSeconds": 6.965
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "旧URLから記事を開けるか、HTMLとJSON-LDが残っているかを確かめます。Pagefindは本文と見出しを索引に入れ、日本語の検索と該当なしの場合を試します。旧サイトを一度止めて、記事が読めてから設備を撤去します。更新はGitHub経由になるので、編集担当者にも手順を試してもらいます。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "c2c990f25555c945d058dce78a1750ece49b7d9d22d1c7dc30aae41e5b668b39",
+      "audioSha256": "4aaab26b6c792d54c4fc3b26b3b18c26dd6a77796af9e52576825dc5a190be83",
+      "durationSeconds": 23.718,
+      "durationStatus": "warn"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "速度や容量の改善を比較するとき、条件をどうそろえますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "25661cf57b47484de635bcd203c3872ef1cb256a7f4845b4f53cf1f54de8efc4",
+      "audioSha256": "1d921c4e43c11898275011fe43983c2be047a66593846c6aefdf7309a0a500c0",
+      "durationSeconds": 5.119
+    },
+    {
+      "index": 2,
+      "text": "新しい仕組みで以前と同じ情報を探せるか、どう確認しますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "21465d3b3f2396c334027e2fd31010df4d21e33a50a38eefe2ccb5ec75c1204b",
+      "audioSha256": "5d60f716c7eb3659a4e325df6343ed383ac23b3867230add76738c65203d5300",
+      "durationSeconds": 5.328
+    },
+    {
+      "index": 3,
+      "text": "移行にあたって、誰が更新し、誰が使うかをどう整理しますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "b8f8532e5412f742951bd14a5cbad07c18949de62317229f66e2197598e32062",
+      "audioSha256": "715e66cc2530af8c2fe1fdb17a04878893a311c78094d921684e9a4aba47b28a",
+      "durationSeconds": 5.165
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      22,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-18T06:48:25.233Z"
+}
