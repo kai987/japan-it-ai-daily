@@ -8,7 +8,7 @@
     "to": "2026-11-18T10:00:00+09:00"
   },
   "createdAt": "2026-11-18T01:00:14.524Z",
-  "updatedAt": "2026-11-18T01:17:46.687Z",
+  "updatedAt": "2026-11-18T01:17:51.639Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-11-18/checks.json",
@@ -55,6 +55,26 @@
       "blobSha": "76fa55f8d17c9af8dbbbe198a7970ac82ed1cfd3"
     }
   ],
-  "lastError": null,
-  "nextAction": "Push exact six-file draft and wait for successful preflight"
+  "lastError": {
+    "kind": "deterministic_dependency_audit",
+    "stage": "preflight",
+    "command": "npm audit --audit-level=high",
+    "package": "picomatch",
+    "advisory": "GHSA-fc5q-39xc-vjpf",
+    "severity": "high",
+    "vulnerableRange": "<= 4.0.7",
+    "firstPatchedVersion": null,
+    "npmLatestVersion": "4.0.7",
+    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/44214346548",
+    "logStep": "build / Audit dependencies",
+    "exitCode": 1
+  },
+  "nextAction": "In the next scheduled run, fetch complete main; check the official patched release and a validated dependency fix. Reuse the frozen drafts and source evidence, refresh full-history validation against any changed main, and require clean local gates plus exact draft deploy.yml success before request submission.",
+  "draftBranch": "draft/daily-2026-11-18",
+  "draftCommit": "7fe19edc7d4eb3c5c626c0548e811dc227fd652c",
+  "localGatePassed": false,
+  "failedPreflightRunId": 44214346548,
+  "preflightWorkflowPath": ".github/workflows/deploy.yml",
+  "resumeFrom": "drafts_ready",
+  "publicationRequestSubmitted": false
 }
