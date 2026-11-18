@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-18",
+  "status": "reviewed",
+  "reviewedBy": "Codex local daily author",
+  "reviewedAt": "2026-11-18T01:11:39.463564+00:00",
+  "scope": "Five original public Japanese accounts in the locked JST window. Editorial explanations distinguish results from inferred practice.",
+  "articles": [
+    {
+      "articleId": "2026-11-18-top-1",
+      "url": "https://zenn.dev/rimo/articles/12d6a7b1c58fcd",
+      "source": "Zenn",
+      "topic": "二つのリンターの役割分担",
+      "capturedAt": "2026-11-18T00:58:20.837488+00:00",
+      "snapshotSha256": "bbca435a798c36a5a73dc7191cae2cb1ecb05d6049e06b5956e8cf99a6d7cb0c",
+      "accessNote": "Full public source read and captured. Implementation and measurements are reported by each original author.",
+      "originalTitle": "ESLint から oxlint へ。lint が 50 倍速くなるまでの移行の記録",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "The median of three uncached lint runs over 3,091 files was 271.5 s in ESLint and 5.4 s in oxlint.",
+          "quote": "271.5 秒",
+          "locator": "冒頭の測定条件",
+          "conditions": "A particular 3,091-file Next.js and TypeScript tree, tool versions, and local CI setup. Does not imply runtime equivalence for all rules.",
+          "usedIn": {
+            "zh": "Rimo 希望减少编辑一个文件后的反馈等待，先在 PostToolUse 试用 oxlint。",
+            "ja": "RimoはNext.jsとTypeScriptのコードでESLintを使っていました。"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "The comparison identified 115 preset rules without an oxlint equivalent in the tested versions, and three detectors were retained in ESLint.",
+          "quote": "115 ルール",
+          "locator": "削るルールと残すルール",
+          "conditions": "A particular 3,091-file Next.js and TypeScript tree, tool versions, and local CI setup. Does not imply runtime equivalence for all rules.",
+          "usedIn": {
+            "zh": "以迁移前同一组 3091 个文件为样本，关闭缓存跑三回，ESLint 和 oxlint 的中位数是 271.5 与 5.4 秒。",
+            "ja": "プリセットのルールを照合すると、比較した版では115個がoxlintに見当たりませんでした。",
+            "interview": "まず同じ三千九十一ファイルで、キャッシュを外して比べます。"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "A lint invocation without the type-aware flag skipped the relevant rules with no message and exited successfully.",
+          "quote": "終了コードは 0",
+          "locator": "型情報を使うルール",
+          "conditions": "A particular 3,091-file Next.js and TypeScript tree, tool versions, and local CI setup. Does not imply runtime equivalence for all rules.",
+          "usedIn": {
+            "zh": "进程返回退出码 0 时，类型感知规则仍可能被跳过，文章展示了漏加 --type-aware 的经历。",
+            "ja": "3091ファイルを対象にキャッシュなしで三回測った中央値は、271.5秒から5.4秒でした。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "迁移记录把时间差、规则兼容和实际检出能力放在同一篇报告里。",
+            "ja": "速度を上げつつ、機械的な移行で失う検査を見つける方法が分かります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-18-top-2",
+      "url": "https://zenn.dev/aiforall/articles/8aa2637ea04da4",
+      "source": "Zenn",
+      "topic": "手元で行う日英翻訳",
+      "capturedAt": "2026-11-18T00:58:20.800346+00:00",
+      "snapshotSha256": "78414f29cf410c9fb408175db2bf031596d5974d4f902e2d2a4cc98e82770d4c",
+      "accessNote": "Full public source read and captured. Implementation and measurements are reported by each original author.",
+      "originalTitle": "PLaMo 3 TranslateをDockerで動かしてDeepLと翻訳精度を比較してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "The author ran a two-billion parameter GGUF model quantized as Q4_K_M with llama.cpp on a Docker CPU.",
+          "quote": "Q4_K_M",
+          "locator": "Docker 環境とモデルの起動",
+          "conditions": "A small qualitative Japanese-English round-trip comparison, with one fixed CPU quantization and selected proverbs and email.",
+          "usedIn": {
+            "zh": "作者用 Linux 容器的 CPU 运行 llama.cpp，以 2B 的 PLaMo 3 Translate Q4_K_M 作为推理权重。",
+            "ja": "筆者は日英翻訳を手元で行うため、Docker内のLinuxでllama.cppをCPU実行しました。"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Tests returned each English output to Japanese for proverbs and a business email.",
+          "quote": "逆翻訳（日→英→日）",
+          "locator": "翻訳精度の比較",
+          "conditions": "A small qualitative Japanese-English round-trip comparison, with one fixed CPU quantization and selected proverbs and email.",
+          "usedIn": {
+            "zh": "对照材料由三条谚语和一封商务邮件组成，先英译再将输出译回日语。",
+            "ja": "比較ではことわざ三つとビジネスメールを英訳し、出力された英文を日本語に戻しました。",
+            "interview": "記事では、DockerのCPU環境でPLaMoの二十億パラメータ版をQ4_K_Mで動かしています。"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "For the email closing, the author found the PLaMo output more idiomatic in Japanese.",
+          "quote": "結びの挨拶",
+          "locator": "ビジネスメールの逆翻訳",
+          "conditions": "A small qualitative Japanese-English round-trip comparison, with one fixed CPU quantization and selected proverbs and email.",
+          "usedIn": {
+            "zh": "有限样本只说明这些例子中能看到的措辞差别。",
+            "ja": "逆翻訳は元の表現がどう戻るかを観察する手段です。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "小规模的回译对照能练习如何记录环境，以及如何描述样本能支持的结果。",
+            "ja": "同じ英訳から再び日本語にしたとき、訳し方にどんな差が出るかが見えます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-18-top-3",
+      "url": "https://zenn.dev/guri_03/articles/ad28087e995349",
+      "source": "Zenn",
+      "topic": "取り込みの権限分担",
+      "capturedAt": "2026-11-18T00:58:20.807786+00:00",
+      "snapshotSha256": "45e716d552a4cf5a10f22e475acd050b72ae24046c6f896e0739e990d689c08d",
+      "accessNote": "Full public source read and captured. Implementation and measurements are reported by each original author.",
+      "originalTitle": "S3のデータを Databricks に取り込むために、データ基盤チームが用意したもの",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "The design uses separate S3 buckets and two schemas in the only allowed Databricks workspace.",
+          "quote": "ワークスペースが1つ",
+          "locator": "環境・境界の設計",
+          "conditions": "A project design under network and workspace restrictions. No performance benchmark is reported.",
+          "usedIn": {
+            "zh": "业务团队需要把自己 AWS 账号中 JSON Lines 日志接入现有数据分析。",
+            "ja": "依頼元のAWSアカウントには、検証用と本番用のS3バケットがあり、JSON Linesのログが置かれます。"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "The catalog configuration limits reads to the designated storage locations.",
+          "quote": "External Location",
+          "locator": "S3の取り込み権限",
+          "conditions": "A project design under network and workspace restrictions. No performance benchmark is reported.",
+          "usedIn": {
+            "zh": "平台团队用 IAM 角色建立 Unity Catalog 的只读 External Location，并限制可以使用它的工作区。",
+            "ja": "今回は接続元IPに制限があり、GitHub Actionsのランナーをすぐ用意するのは難しい状況でした。",
+            "interview": "今回は接続元に制限があるので、開発者はVPNからDABsで共通フォルダへ配布します。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "A service principal runs the jobs even though humans deploy the bundle manually over VPN.",
+          "quote": "run_as",
+          "locator": "デプロイと実行者",
+          "conditions": "A project design under network and workspace restrictions. No performance benchmark is reported.",
+          "usedIn": {
+            "zh": "目标是一个专用目录并划分测试、生产两个模式。",
+            "ja": "External Locationは読み取り専用とし、利用できるワークスペースも絞りました。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "这里可以看到团队边界怎样转换成部署、运行、源数据和表权限的边界。",
+            "ja": "コードを届ける人と、ログを読む実行者の権限をどう切り分けたかが具体的です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-18-top-4",
+      "url": "https://zenn.dev/sakidori/articles/20261031-headless-screenshot-animated-webp",
+      "source": "Zenn",
+      "topic": "動くスクリーンショットの計測",
+      "capturedAt": "2026-11-18T00:58:20.823745+00:00",
+      "snapshotSha256": "fa49cb8eafeb3d172b853bfbb16602eb0246365bf5fb845b941addaab8998b96",
+      "accessNote": "Full public source read and captured. Implementation and measurements are reported by each original author.",
+      "originalTitle": "スクリーンショット5枚から作るアニメーションWebP：sharp の delay と99KBの実測",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "For five frames at 720 by 480 pixels, animated WebP was measured at 99 KB and was the smallest tested format.",
+          "quote": "99KB",
+          "locator": "5コマの実測表",
+          "conditions": "Five selected Chromium frames at DPR 1, Node 22, sharp 0.35.5 and libvips 8.18.7. Deployed image sizes varied with content and width.",
+          "usedIn": {
+            "zh": "产品演示图要随着界面更新，作者用 Chromium 自动拍摄五个步骤。",
+            "ja": "サービス紹介の画像を更新しやすくするため、筆者はPlaywrightのChromiumで公開デモの画面を撮りました。"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "A single delay set only the initial frame in this environment and the remaining frames defaulted to 100 ms.",
+          "quote": "最初のコマにしか効かない",
+          "locator": "コマの delay",
+          "conditions": "Five selected Chromium frames at DPR 1, Node 22, sharp 0.35.5 and libvips 8.18.7. Deployed image sizes varied with content and width.",
+          "usedIn": {
+            "zh": "实际播放时第一帧停留较久、后面很快掠过。",
+            "ja": "コマはjoinにanimatedを指定してつなぎます。",
+            "interview": "記事では、七百二十かける四百八十の画像五枚を使い、WebPで九十九キロバイトでした。"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "At quality 70, increasing effort from 4 to 6 saved 2 KB while runtime rose from 212 ms to 2,879 ms.",
+          "quote": "2,879ミリ秒",
+          "locator": "quality と effort",
+          "conditions": "Five selected Chromium frames at DPR 1, Node 22, sharp 0.35.5 and libvips 8.18.7. Deployed image sizes varied with content and width.",
+          "usedIn": {
+            "zh": "质量档保持在 70 时，作者测得 effort 4 输出 101 KB、耗时 212 毫秒，effort 6 输出 99 KB、耗时 2879 毫秒。",
+            "ja": "qualityを70にそろえ、effortを4から6に上げると、101KBから99KBになる一方、生成時間は212ミリ秒から2879ミリ秒になりました。"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "同一批截图的输出数据，展示了帧时长和压缩参数为何需要单独核对。",
+            "ja": "画質の感想だけで判断せず、出力バイト数とコマの時間を調べています。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-18-top-5",
+      "url": "https://zenn.dev/iototaku/articles/2328447c65a9c8",
+      "source": "Zenn",
+      "topic": "静的化と検索の移行",
+      "capturedAt": "2026-11-18T00:58:20.823574+00:00",
+      "snapshotSha256": "9febefd9ec1f532a8873665af2bedbe03f6f573d357aebed6ec8a7731b64e0d9",
+      "accessNote": "Full public source read and captured. Implementation and measurements are reported by each original author.",
+      "originalTitle": "WordPressを廃止し、静的サイト＋Pagefindに移行した",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "The migration captured 139 posts within 324 HTML files, preserving URLs and metadata for comparison.",
+          "quote": "324個",
+          "locator": "対象範囲と保存",
+          "conditions": "One site and operating bill. Migration includes a change to GitHub-based updates, and the reported savings depend on the infrastructure used.",
+          "usedIn": {
+            "zh": "旧站主要用来阅读已有文章，维护动态运行时的成本逐渐显得过高。",
+            "ja": "MAMORIO Laboでは、既存の文章を読めることと、サイト内で探せることが主な要件でした。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "The checks compared URL handling, article text and metadata. Pagefind indexed article regions, and browser checks included Japanese and no-result queries.",
+          "quote": "JSON-LD",
+          "locator": "移行の確認",
+          "conditions": "One site and operating bill. Migration includes a change to GitHub-based updates, and the reported savings depend on the infrastructure used.",
+          "usedIn": {
+            "zh": "发布到非公开 S3 后由 CloudFront 对外提供访问。",
+            "ja": "移行前後で本文とURLだけでなく、メタタグやJSON-LDも突き合わせました。",
+            "interview": "旧URLから記事を開けるか、HTMLとJSON-LDが残っているかを確かめます。"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "The author reports saving about 15,000 yen per month after replacing the old platform with S3 and CloudFront.",
+          "quote": "月額約1.5万円",
+          "locator": "移行後の構成と費用",
+          "conditions": "One site and operating bill. Migration includes a change to GitHub-based updates, and the reported savings depend on the infrastructure used.",
+          "usedIn": {
+            "zh": "切换前对照元标签、JSON-LD 和不带扩展名的既有地址，旧站停机验证后再撤下动态组件。",
+            "ja": "非公開S3とCloudFrontで配信し、旧URLを確認してから動的環境を撤去しました。"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "站点迁移涉及检索入口和已有引用。作者记录了需要逐一验收的对象。",
+            "ja": "記事と検索を残しながら、更新経路と配信基盤を変えた事例です。"
+          }
+        }
+      ]
+    }
+  ]
+}
