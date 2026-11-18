@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-18",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "4888f1eea92043e31f2da6919156287fe6739dca",
   "sourceWindow": {
     "from": "2026-11-17T10:00:00+09:00",
     "to": "2026-11-18T10:00:00+09:00"
   },
   "createdAt": "2026-11-18T01:00:14.524Z",
-  "updatedAt": "2026-11-18T06:22:15.954Z",
+  "updatedAt": "2026-11-18T06:26:03.268Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-11-18/checks.json",
@@ -56,14 +56,16 @@
     }
   ],
   "lastError": null,
-  "nextAction": "Save and submit exact source-bound publication request",
+  "nextAction": "Wait for the exact publisher run, then verify main Pages, public report bytes and the complete study snapshot",
   "draftBranch": "draft/daily-2026-11-18",
   "draftCommit": "f7f5118eec6c0846bf9193884f91622acc70df34",
   "localGatePassed": true,
   "failedPreflightRunId": 44214346548,
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
   "resumeFrom": "drafts_ready",
-  "publicationRequestSubmitted": false,
+  "publicationRequestSubmitted": true,
   "baseCommit": "24edd61bbc1f0b5d7adaee9c044367c78772eacb",
-  "preflightRunId": 44250229667
+  "preflightRunId": 44250229667,
+  "requestCommit": "ea950d8dc3d495cd80d4970043721fa18374ec96",
+  "requestBlob": "f962511c0aeb81ac14fd205fa01eb24ef39d565d"
 }
