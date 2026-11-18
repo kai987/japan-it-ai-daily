@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-18",
-  "stage": "publisher_queued",
-  "sourceCommit": "4888f1eea92043e31f2da6919156287fe6739dca",
+  "stage": "published",
+  "sourceCommit": "aae6a7b219d682f5690165f263899bff3f200aea",
   "sourceWindow": {
     "from": "2026-11-17T10:00:00+09:00",
     "to": "2026-11-18T10:00:00+09:00"
   },
   "createdAt": "2026-11-18T01:00:14.524Z",
-  "updatedAt": "2026-11-18T06:26:03.268Z",
+  "updatedAt": "2026-11-18T06:33:24.000Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-11-18/checks.json",
-      "blobSha": "536825c8167f1a78136843910974af517139f8a9"
+      "blobSha": "14ca135a323402d41a2c5f9978877da661d6ce40"
     },
     {
       "path": "runs/2026-11-18/drafts/daily-ja.md",
@@ -51,12 +51,24 @@
       "blobSha": "7beb70f0bdfbbed05a30c17da89576c38ccecf06"
     },
     {
+      "path": "runs/2026-11-18/publisher.json",
+      "blobSha": "38dec2e28dddb8eb83e5fb875943d4c208f6f8a5"
+    },
+    {
+      "path": "runs/2026-11-18/release.json",
+      "blobSha": "c02f4a9c649b67203011398c5c8728be13341ede"
+    },
+    {
+      "path": "runs/2026-11-18/request.json",
+      "blobSha": "f962511c0aeb81ac14fd205fa01eb24ef39d565d"
+    },
+    {
       "path": "runs/2026-11-18/sources.json",
       "blobSha": "76fa55f8d17c9af8dbbbe198a7970ac82ed1cfd3"
     }
   ],
   "lastError": null,
-  "nextAction": "Wait for the exact publisher run, then verify main Pages, public report bytes and the complete study snapshot",
+  "nextAction": "Text and live snapshot verified. Persist audio pending before independent audio and one N1 handoff.",
   "draftBranch": "draft/daily-2026-11-18",
   "draftCommit": "f7f5118eec6c0846bf9193884f91622acc70df34",
   "localGatePassed": true,
@@ -67,5 +79,154 @@
   "baseCommit": "24edd61bbc1f0b5d7adaee9c044367c78772eacb",
   "preflightRunId": 44250229667,
   "requestCommit": "ea950d8dc3d495cd80d4970043721fa18374ec96",
-  "requestBlob": "f962511c0aeb81ac14fd205fa01eb24ef39d565d"
+  "requestBlob": "f962511c0aeb81ac14fd205fa01eb24ef39d565d",
+  "label": "text",
+  "runId": 44251605321,
+  "releaseCommit": "aae6a7b219d682f5690165f263899bff3f200aea",
+  "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/44251605321",
+  "artifacts": [
+    {
+      "id": 14404606027,
+      "name": "it-study-snapshot",
+      "digest": "sha256:9b7ff9353633808e8b32d00f42b63298d05dc3792464ded719b14e2215423365"
+    },
+    {
+      "id": 14403734123,
+      "name": "github-pages",
+      "digest": "sha256:4a4f3e02a035a1fe2fae1b1155a1c85fbfc266a806842e37b5f1e76ae7be4397"
+    }
+  ],
+  "totalDays": 99,
+  "issueNumber": 99,
+  "grammarLessonDates": [
+    "2026-08-12",
+    "2026-08-13",
+    "2026-08-14",
+    "2026-08-15",
+    "2026-08-16",
+    "2026-08-17",
+    "2026-08-18",
+    "2026-08-19",
+    "2026-08-20",
+    "2026-08-21",
+    "2026-08-22",
+    "2026-08-23",
+    "2026-08-24",
+    "2026-08-25",
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28",
+    "2026-08-29",
+    "2026-08-30",
+    "2026-08-31",
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03",
+    "2026-09-04",
+    "2026-09-05",
+    "2026-09-06",
+    "2026-09-07",
+    "2026-09-08",
+    "2026-09-09",
+    "2026-09-10",
+    "2026-09-11",
+    "2026-09-12",
+    "2026-09-13",
+    "2026-09-14",
+    "2026-09-15",
+    "2026-09-16",
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-19",
+    "2026-09-20",
+    "2026-09-21",
+    "2026-09-22",
+    "2026-09-23",
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-26",
+    "2026-09-27",
+    "2026-09-28",
+    "2026-09-29",
+    "2026-09-30",
+    "2026-10-01",
+    "2026-10-02",
+    "2026-10-03",
+    "2026-10-04",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-09",
+    "2026-10-10",
+    "2026-10-11",
+    "2026-10-12",
+    "2026-10-13",
+    "2026-10-14",
+    "2026-10-15",
+    "2026-10-16",
+    "2026-10-17",
+    "2026-10-18",
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24",
+    "2026-10-25",
+    "2026-10-26",
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30",
+    "2026-10-31",
+    "2026-11-01",
+    "2026-11-02",
+    "2026-11-03",
+    "2026-11-04",
+    "2026-11-05",
+    "2026-11-06",
+    "2026-11-07",
+    "2026-11-08",
+    "2026-11-09",
+    "2026-11-10",
+    "2026-11-11",
+    "2026-11-12",
+    "2026-11-13",
+    "2026-11-14",
+    "2026-11-15",
+    "2026-11-16",
+    "2026-11-17",
+    "2026-11-18"
+  ],
+  "fullSnapshotCompared": true,
+  "snapshotHash": "0148e45b53f0051dc5262b5fafb3647f2808f6028ad6158dec976f5ea931a55e",
+  "expected": {
+    "version": 1,
+    "commit": "aae6a7b219d682f5690165f263899bff3f200aea",
+    "date": "2026-11-18",
+    "snapshotHash": "0148e45b53f0051dc5262b5fafb3647f2808f6028ad6158dec976f5ea931a55e",
+    "pages": [
+      {
+        "path": "daily/2026-11-18/",
+        "sha256": "cb4c247088aade57146497279cf32969394b90abb454ae5564e035d18b48e5ea"
+      },
+      {
+        "path": "ja/daily/2026-11-18/",
+        "sha256": "fa8cebd9acaa1325dd411324cf355c6e4a91817d42daa67a7ce5d6babe67027b"
+      }
+    ]
+  },
+  "live": {
+    "commit": "aae6a7b219d682f5690165f263899bff3f200aea",
+    "date": "2026-11-18",
+    "attempt": 1
+  },
+  "verifiedAt": "2026-11-18T06:28:58.918Z",
+  "publisherRunId": 44251292072,
+  "requestId": "codex-2026-11-18-81a1ff05-133a-4333-8524-913d0196a4e3",
+  "sixDraftBytesEqual": true,
+  "pagesRunId": 44251605321,
+  "pagesStatus": "completed",
+  "pagesConclusion": "success"
 }
