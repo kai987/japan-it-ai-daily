@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "targetDate": "2026-11-18",
+  "checkedBaseCommit": "4888f1eea92043e31f2da6919156287fe6739dca",
+  "draftBranch": "draft/daily-2026-11-18",
+  "draftCommit": "7fe19edc7d4eb3c5c626c0548e811dc227fd652c",
+  "fileHashes": {
+    "src/content/daily/2026-11-18.md": "1d53d3298b3ccd3294fb7b68e69676856231855d895e5805726c127e40da9f99",
+    "src/content/daily-ja/2026-11-18.md": "cb232fd3d80fa95ff98cc3ad7c5933062e7b037e601d949f27f7483551f46f68",
+    "src/content/japanese/2026-11-18.md": "77059d6864066026c037b23bfc4135e94c245e5a378037d6d90b95d107fc4e11",
+    "src/content/japanese-ja/2026-11-18.md": "6e568f3b6aabb1cbb420fcf29e67d9ad2fa097ec926466eff5c02cd41526c114",
+    "src/content/evidence/2026-11-18.json": "291fbe9a1703e16c83ba25080cb2b11b406cfe55dd7d2fc2deb17ba032e4b109",
+    "src/data/interviews/2026-11-18.json": "3d564abfb3a7fc9b4fe3441c9c12f8dc330722d7e8712f28f3df096852d96034"
+  },
+  "checks": [
+    {
+      "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
+      "startedAt": "2026-11-18T01:12:27.914Z",
+      "completedAt": "2026-11-18T01:12:28.200Z",
+      "exitCode": 0,
+      "logSha256": "e6b0c07c716ab00dd2379222b005844a3558afedf54176c6b9463f806680ef85"
+    },
+    {
+      "command": "npm audit --audit-level=high",
+      "startedAt": "2026-11-18T01:12:28.201Z",
+      "completedAt": "2026-11-18T01:12:28.890Z",
+      "exitCode": 1,
+      "logSha256": "7984e37a901c492dbc5038faf3f08eeeb5cd6c13a2d33b7599ed1a53d2bcd2f6"
+    },
+    {
+      "command": "npm run check",
+      "startedAt": "2026-11-18T01:12:28.890Z",
+      "completedAt": "2026-11-18T01:12:36.205Z",
+      "exitCode": 0,
+      "logSha256": "8bf729df6238a294ac22c03ceca5bc44c691f3c334d2558c5d2980505d503acc"
+    },
+    {
+      "command": "npm run content:integrity:check",
+      "startedAt": "2026-11-18T01:12:36.205Z",
+      "completedAt": "2026-11-18T01:12:40.091Z",
+      "exitCode": 0,
+      "logSha256": "f7cff82d3750a99f136ba0abcb277e6dd58e1fc3d3d8d393490cfa0d85675aa8"
+    },
+    {
+      "command": "npm run evidence:check",
+      "startedAt": "2026-11-18T01:12:40.092Z",
+      "completedAt": "2026-11-18T01:12:40.388Z",
+      "exitCode": 0,
+      "logSha256": "953a5e515e926901ee9d1f4e5a35a80f124a7974587fd2bde60a8093d2d7cc9b"
+    },
+    {
+      "command": "npm run evidence:pilot",
+      "startedAt": "2026-11-18T01:12:40.388Z",
+      "completedAt": "2026-11-18T01:12:40.555Z",
+      "exitCode": 0,
+      "logSha256": "bc9f9d50f463f1de3ed2a202a855c5779be3253b60227b9629863e7094f98041"
+    },
+    {
+      "command": "npm run bilingual:check-interview",
+      "startedAt": "2026-11-18T01:12:40.555Z",
+      "completedAt": "2026-11-18T01:12:40.737Z",
+      "exitCode": 0,
+      "logSha256": "13040ca13896b3836d86aaddacae4902993e08f1a0659b4d4f3e29e92cc81575"
+    },
+    {
+      "command": "npm run quality:check",
+      "startedAt": "2026-11-18T01:12:40.737Z",
+      "completedAt": "2026-11-18T01:12:41.165Z",
+      "exitCode": 0,
+      "logSha256": "4cc98ca9e42cb6d19ebd60b4b33f88ca90369030e1bbce1fa45c085a22178cfd"
+    },
+    {
+      "command": "npm run audio:check",
+      "startedAt": "2026-11-18T01:12:41.165Z",
+      "completedAt": "2026-11-18T01:12:41.774Z",
+      "exitCode": 0,
+      "logSha256": "061b187628e03166181c35f52228c7e53dfd4983f78221b97e262a490879b3a6"
+    },
+    {
+      "command": "npm run audio:integrity:check",
+      "startedAt": "2026-11-18T01:12:41.775Z",
+      "completedAt": "2026-11-18T01:12:43.590Z",
+      "exitCode": 0,
+      "logSha256": "32180ebf516a85825e6c1fcbcf7f27c53dc7e671a1cc0a3cf972ed2545179c5c"
+    },
+    {
+      "command": "npm run audio:duration:check",
+      "startedAt": "2026-11-18T01:12:43.590Z",
+      "completedAt": "2026-11-18T01:13:20.827Z",
+      "exitCode": 0,
+      "logSha256": "bd4ac678335254bac1878f09d2b67a4d778ce9383f2596d093e3a56baff4440d"
+    },
+    {
+      "command": "npm run audio:versions:check",
+      "startedAt": "2026-11-18T01:13:20.828Z",
+      "completedAt": "2026-11-18T01:13:22.027Z",
+      "exitCode": 0,
+      "logSha256": "6ad57441094fd2a47af4e29da8797a63531eee5db0b87e2695eddc26a554b55c"
+    },
+    {
+      "command": "npm run test",
+      "startedAt": "2026-11-18T01:13:22.027Z",
+      "completedAt": "2026-11-18T01:13:28.450Z",
+      "exitCode": 0,
+      "logSha256": "3138f54907f25d2409926632fc1171d676b59e7e450af0cef1bd0e2b61a6047c"
+    },
+    {
+      "command": "npm run build",
+      "startedAt": "2026-11-18T01:13:28.450Z",
+      "completedAt": "2026-11-18T01:13:36.886Z",
+      "exitCode": 0,
+      "logSha256": "a96f36c8eb9803230b2800121950ac28ac8f6c6131b4a3a8adce1629c93dad31"
+    },
+    {
+      "command": "npm run test:browser:speech-smoke",
+      "startedAt": "2026-11-18T01:13:36.886Z",
+      "completedAt": "2026-11-18T01:13:39.942Z",
+      "exitCode": 0,
+      "logSha256": "819e15cf87fb1b7face2bc89cb1c7797d260ad2212c2e8a20867e643f17d003c"
+    },
+    {
+      "command": "npm run test:browser",
+      "startedAt": "2026-11-18T01:13:39.942Z",
+      "completedAt": "2026-11-18T01:14:20.489Z",
+      "exitCode": 0,
+      "logSha256": "882f8b52e902b2bf12c6e41111d9a73e4b1fc1cb34b905ed1ef31b9d35608efc"
+    },
+    {
+      "command": "npm run security:check",
+      "startedAt": "2026-11-18T01:14:20.490Z",
+      "completedAt": "2026-11-18T01:14:21.112Z",
+      "exitCode": 0,
+      "logSha256": "b7a7064afeaa543be145fb8ec5a1e0cf580a891a41701b3af0d07d07d85ca8b6"
+    },
+    {
+      "command": "npm run evidence:check -- --date 2026-11-18",
+      "startedAt": "2026-11-18T01:14:21.112Z",
+      "completedAt": "2026-11-18T01:14:21.271Z",
+      "exitCode": 0,
+      "logSha256": "609b25038fba740ceb76c0132db34ce504458aa26251e972fa2109b455bd46aa"
+    }
+  ],
+  "localGatePassed": false,
+  "passedLocalChecks": 17,
+  "audit": {
+    "package": "picomatch",
+    "advisory": "GHSA-fc5q-39xc-vjpf",
+    "severity": "high",
+    "vulnerableRange": "<= 4.0.7",
+    "firstPatchedVersion": null,
+    "npmLatestVersion": "4.0.7"
+  },
+  "ci": {
+    "runId": 44214346548,
+    "headSha": "7fe19edc7d4eb3c5c626c0548e811dc227fd652c",
+    "workflow": ".github/workflows/deploy.yml",
+    "failedJob": "build",
+    "failedStep": "Audit dependencies",
+    "url": "https://github.com/kai987/japan-it-ai-daily/actions/runs/44214346548",
+    "conclusion": "failure",
+    "logSha256": "e136b67f3b5d1e9ac4ec3b1bf1d1710c50d1ae70bba1fd25cb58beaffd723ac3"
+  }
+}
