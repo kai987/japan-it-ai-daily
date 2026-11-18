@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-18",
-  "stage": "drafts_ready",
+  "stage": "preflight_passed",
   "sourceCommit": "4888f1eea92043e31f2da6919156287fe6739dca",
   "sourceWindow": {
     "from": "2026-11-17T10:00:00+09:00",
     "to": "2026-11-18T10:00:00+09:00"
   },
   "createdAt": "2026-11-18T01:00:14.524Z",
-  "updatedAt": "2026-11-18T01:17:51.639Z",
+  "updatedAt": "2026-11-18T06:22:06.271Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-11-18/checks.json",
@@ -55,26 +55,15 @@
       "blobSha": "76fa55f8d17c9af8dbbbe198a7970ac82ed1cfd3"
     }
   ],
-  "lastError": {
-    "kind": "deterministic_dependency_audit",
-    "stage": "preflight",
-    "command": "npm audit --audit-level=high",
-    "package": "picomatch",
-    "advisory": "GHSA-fc5q-39xc-vjpf",
-    "severity": "high",
-    "vulnerableRange": "<= 4.0.7",
-    "firstPatchedVersion": null,
-    "npmLatestVersion": "4.0.7",
-    "workflowUrl": "https://github.com/kai987/japan-it-ai-daily/actions/runs/44214346548",
-    "logStep": "build / Audit dependencies",
-    "exitCode": 1
-  },
-  "nextAction": "In the next scheduled run, fetch complete main; check the official patched release and a validated dependency fix. Reuse the frozen drafts and source evidence, refresh full-history validation against any changed main, and require clean local gates plus exact draft deploy.yml success before request submission.",
+  "lastError": null,
+  "nextAction": "Save and submit exact source-bound publication request",
   "draftBranch": "draft/daily-2026-11-18",
-  "draftCommit": "7fe19edc7d4eb3c5c626c0548e811dc227fd652c",
-  "localGatePassed": false,
+  "draftCommit": "f7f5118eec6c0846bf9193884f91622acc70df34",
+  "localGatePassed": true,
   "failedPreflightRunId": 44214346548,
   "preflightWorkflowPath": ".github/workflows/deploy.yml",
   "resumeFrom": "drafts_ready",
-  "publicationRequestSubmitted": false
+  "publicationRequestSubmitted": false,
+  "baseCommit": "24edd61bbc1f0b5d7adaee9c044367c78772eacb",
+  "preflightRunId": 44250229667
 }
