@@ -1,0 +1,35 @@
+{
+  "name": "picomatch",
+  "description": "Private build-time security patch of the picomatch glob matcher",
+  "version": "4.0.7",
+  "homepage": "https://github.com/micromatch/picomatch",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "funding": "https://github.com/sponsors/jonschlinkert",
+  "repository": "micromatch/picomatch",
+  "bugs": {
+    "url": "https://github.com/micromatch/picomatch/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "posix.js",
+    "lib"
+  ],
+  "sideEffects": false,
+  "main": "index.js",
+  "engines": {
+    "node": ">=12"
+  },
+  "keywords": [
+    "glob",
+    "match",
+    "picomatch"
+  ],
+  "private": true,
+  "x-local-security-patch": {
+    "advisory": "GHSA-fc5q-39xc-vjpf",
+    "upstreamVersion": "4.0.7",
+    "upstreamGitHead": "6bb40679c218cefba5d4e9662408c5fdf699a8bb",
+    "upstreamIntegrity": "sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA=="
+  }
+}
