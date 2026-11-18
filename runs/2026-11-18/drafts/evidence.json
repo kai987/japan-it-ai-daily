@@ -3,7 +3,7 @@
   "date": "2026-11-18",
   "status": "reviewed",
   "reviewedBy": "Codex local daily author",
-  "reviewedAt": "2026-11-18T01:07:05.811921+00:00",
+  "reviewedAt": "2026-11-18T01:08:37.662601+00:00",
   "scope": "Five original public Japanese accounts in the locked JST window. Editorial explanations distinguish results from inferred practice.",
   "articles": [
     {
@@ -50,7 +50,7 @@
           "locator": "型情報を使うルール",
           "conditions": "A particular 3,091-file Next.js and TypeScript tree, tool versions, and local CI setup. Does not imply runtime equivalence for all rules.",
           "usedIn": {
-            "zh": "源码里留下退出码 0 也可能意味着型别规则没有执行，文章展示了漏加 --type-aware 的经历。",
+            "zh": "进程返回退出码 0 时，类型感知规则仍可能被跳过，文章展示了漏加 --type-aware 的经历。",
             "ja": "3091ファイルを対象にキャッシュなしで三回測った中央値は、271.5秒から5.4秒でした。"
           }
         },
