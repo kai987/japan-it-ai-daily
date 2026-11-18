@@ -32,6 +32,13 @@ export default defineConfig({
   site: 'https://kai987.github.io',
   base: '/japan-it-ai-daily/',
   trailingSlash: 'always',
+  vite: {
+    // Keep the linked CommonJS build dependency on Node's module loader.
+    environments: {
+      astro: { resolve: { external: ['picomatch'] } },
+      ssr: { resolve: { external: ['picomatch'] } },
+    },
+  },
   security: {
     csp: {
       algorithm: 'SHA-256',
