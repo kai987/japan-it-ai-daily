@@ -1,0 +1,288 @@
+{
+  "targetDate": "2026-11-18",
+  "sourceWindow": {
+    "from": "2026-11-17T10:00:00+09:00",
+    "to": "2026-11-18T10:00:00+09:00"
+  },
+  "previousTop5": [
+    {
+      "title": "遅い外部依存 1 つで全 Worker が止まる — タイムアウト・サーキットブレーカー・バルクヘッドを実測で使い分ける",
+      "url": "https://zenn.dev/kyrenzk/articles/external-dependency-async-boundary-design"
+    },
+    {
+      "title": "MMMの入口として、広告費・季節性・外部要因を用いた需要予測をDataRobotで試す",
+      "url": "https://zenn.dev/nttdata_tech/articles/c872346ff107f2"
+    },
+    {
+      "title": "Apple Pencilの複数筆を一括確定する設計：草稿・世代検証・Undo",
+      "url": "https://zenn.dev/sponge841841/articles/2026-11-08-pencil-multistroke-atomic-undo"
+    },
+    {
+      "title": "dbt + TerraformでCortex Searchを構築し，最小権限を目指すためにハマったこと",
+      "url": "https://zenn.dev/finatext/articles/cortex-search-least-privilege-dbt-terraform"
+    },
+    {
+      "title": "国立国会図書館の書誌をGitHub Actionsで毎日取り込む：止まっても次の回で続きを取る仕組み",
+      "url": "https://zenn.dev/noriyuk/articles/1ef9eb3ca98f3d"
+    }
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "observedAt": "2026-11-18T01:00:57.054553+00:00",
+      "htmlSha256": "45e7d8e627eae574a059cfe2caad79e2c7078342c6978e74d2f58d999f5373ec",
+      "linksObserved": 78
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-18T01:00:56.613734+00:00",
+      "htmlSha256": "d22cb6991451101c646951115b4da76630f52a22074185a5c78a65c1cc5c5354",
+      "linksObserved": 3
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-18T01:00:56.639078+00:00",
+      "htmlSha256": "3e6f1cd86a86ac94a565316306e49a281772514e36e373caf9c88d452d1502a3",
+      "linksObserved": 20
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-18T01:00:56.556247+00:00",
+      "htmlSha256": "9954504e2f3e1f8517a3452a417e79e8501e4da26f0b28dc8b1cdb6edc55ef64",
+      "linksObserved": 75
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-18T01:00:56.652731+00:00",
+      "htmlSha256": "e410226b877fbb7d2c7647baed05f74230b446aa075626d41a6b3f7c1bbbae08",
+      "linksObserved": 33
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-18T01:00:56.455932+00:00",
+      "htmlSha256": null,
+      "linksObserved": 0
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-18T01:00:56.448081+00:00",
+      "htmlSha256": "f998ff77c2b5b082e6c704afb8d132ab85c571c4c23acf7a66f8a10ecc0a1c72",
+      "linksObserved": 38
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-18T01:00:56.722017+00:00",
+      "htmlSha256": "418ade09ba057e8c6ce4feb01a62719d4caa4e88e3ed4b350296a68ca3eb1f73",
+      "linksObserved": 48
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-18T01:00:56.580291+00:00",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533",
+      "linksObserved": 10
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-18T01:00:56.499190+00:00",
+      "htmlSha256": "e25f9a68ce31c4b25333ec992eac9c11f7b3fe7ebaa3c34fc2d37f4a7063900e",
+      "linksObserved": 35
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-18T01:00:56.534069+00:00",
+      "htmlSha256": "71d82ed8c97b7c62600493e73b4efac7839dcc3abb2434a293923024b6930294",
+      "linksObserved": 117
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-18T01:00:56.937725+00:00",
+      "htmlSha256": "1b6278cf27b3dfab1fbf3ef97aac68b56f7d0f265fd276d35f9e3dadcbf9b883",
+      "linksObserved": 14
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-18T01:00:56.585157+00:00",
+      "htmlSha256": "273e255a276b752000c45b9297e8a71970b339671a8deae1d3ff85f1a450389c",
+      "linksObserved": 50
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-18T01:00:57.368241+00:00",
+      "htmlSha256": "7d470f26177be8583fea8e8f0225c8c2ff3da414bf0b76263872bcc9398e91cd",
+      "linksObserved": 20
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-18T01:00:56.546172+00:00",
+      "htmlSha256": "59be3d48a633ceff690f30947319077705851533f413ef740c4be7c9f8de53a2",
+      "linksObserved": 20
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "status": 200,
+      "actualUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-18T01:00:56.618863+00:00",
+      "htmlSha256": "38b981f75dbd013a6e71f7af697525689dfcaac7e7a603342fc44964eaae8c14",
+      "linksObserved": 12
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-18T01:00:56.636495+00:00",
+      "htmlSha256": "91f2cc3b94cbee9a8a70b2b1f6311dca7c177196c22aadb380311ef641d9966c",
+      "linksObserved": 17
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-18T01:00:56.606703+00:00",
+      "htmlSha256": "f20b82567261308e9221597a6e5d905b2099be97f7abec7da0a5b89519b9c8c6",
+      "linksObserved": 33
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-18T01:00:56.489880+00:00",
+      "htmlSha256": "80fe94e7187560a91435805e5d2bf56297c2ff7c5a9f12b1fd89147becaf5847",
+      "linksObserved": 29
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-18T01:00:56.562036+00:00",
+      "htmlSha256": "018b2c167b1ad10ea845d274f845677ca0606f72241c61ece9c269388809236e",
+      "linksObserved": 19
+    }
+  ],
+  "articles": [
+    {
+      "status": 200,
+      "url": "https://zenn.dev/rimo/articles/12d6a7b1c58fcd",
+      "title": "ESLint から oxlint へ。lint が 50 倍速くなるまでの移行の記録",
+      "publishedAt": "2026-11-18T09:51:16.331+09:00",
+      "capturedAt": "2026-11-18T00:58:20.837488+00:00",
+      "bodySha256": "bbca435a798c36a5a73dc7191cae2cb1ecb05d6049e06b5956e8cf99a6d7cb0c",
+      "htmlSha256": "7fdd02d87243f8c37ac6af4844bd9107e95e2cebeab66e0d6a2633a940756cbc",
+      "length": 9419,
+      "captureKey": "lint",
+      "topic": "二つのリンターの役割分担",
+      "articleId": "2026-11-18-top-1",
+      "access": "full",
+      "review": "In one Next.js/TypeScript repository, three cache-disabled runs across 3091 files had medians of 271.5 s and 5.4 s. CI lint medians went from 146 s to 32 s. Of 115 unmatched rules in the assessed preset, 3 bug-detection rules stayed on ESLint. Type-aware mode, nested config and Node-based JS plug-ins affect coverage and timing."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/aiforall/articles/8aa2637ea04da4",
+      "title": "PLaMo 3 TranslateをDockerで動かしてDeepLと翻訳精度を比較してみた",
+      "publishedAt": "2026-11-17T16:30:10.126+09:00",
+      "capturedAt": "2026-11-18T00:58:20.800346+00:00",
+      "bodySha256": "78414f29cf410c9fb408175db2bf031596d5974d4f902e2d2a4cc98e82770d4c",
+      "htmlSha256": "ad0b1745a8b96af636901743a203e646499946b7a96bf185121c105f271a5513",
+      "length": 6402,
+      "captureKey": "plamo",
+      "topic": "手元で行う日英翻訳",
+      "articleId": "2026-11-18-top-2",
+      "access": "full",
+      "review": "One Linux CPU Docker setup used Python 3.14.10, plamo-translate 1.2.0, llama.cpp b11960 and 2B Q4_K_M. Both services gave the same English for one proverb; the back translations differed. The examples are three proverbs and a business email, not a broad translation or performance benchmark."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/guri_03/articles/ad28087e995349",
+      "title": "S3のデータを Databricks に取り込むために、データ基盤チームが用意したもの",
+      "publishedAt": "2026-11-17T18:39:05.745+09:00",
+      "capturedAt": "2026-11-18T00:58:20.807786+00:00",
+      "bodySha256": "45e716d552a4cf5a10f22e475acd050b72ae24046c6f896e0739e990d689c08d",
+      "htmlSha256": "bdbfd428a445c3849eafea698f4a507c6ce9c5f57e4bfde4ae150123949c5edd",
+      "length": 2298,
+      "captureKey": "lake",
+      "topic": "取り込みの権限分担",
+      "articleId": "2026-11-18-top-3",
+      "access": "full",
+      "review": "The upstream team drops JSON Lines in separate AWS S3 buckets and owns the pipeline. For one IP-restricted workspace, DABs are deployed via developer VPN to a fixed shared folder. Read-only External Location limits workspace access; a service principal runs the pipeline and writes to catalog schemas. Automated deployment remains a future option."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/sakidori/articles/20261031-headless-screenshot-animated-webp",
+      "title": "スクリーンショット5枚から作るアニメーションWebP：sharp の delay と99KBの実測",
+      "publishedAt": "2026-11-18T06:12:16.003+09:00",
+      "capturedAt": "2026-11-18T00:58:20.823745+00:00",
+      "bodySha256": "fa49cb8eafeb3d172b853bfbb16602eb0246365bf5fb845b941addaab8998b96",
+      "htmlSha256": "5193ebb9545bd03752559909be2a921b1140139cc64431063d137e6e9a7239ea",
+      "length": 5214,
+      "captureKey": "webp",
+      "topic": "動くスクリーンショットの計測",
+      "articleId": "2026-11-18-top-4",
+      "access": "full",
+      "review": "Node 22, sharp 0.35.5 and libvips 8.18.7. Five 720×480 frames came to 99 KB as WebP in the comparison; GIF was 246 KB, APNG 320 KB and PNG total 378 KB. A scalar delay affected only the first WebP frame. At quality 70, effort 4 took 212 ms/101 KB and effort 6 took 2879 ms/99 KB; production images differ."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/iototaku/articles/2328447c65a9c8",
+      "title": "WordPressを廃止し、静的サイト＋Pagefindに移行した",
+      "publishedAt": "2026-11-17T19:56:38.717+09:00",
+      "capturedAt": "2026-11-18T00:58:20.823574+00:00",
+      "bodySha256": "9febefd9ec1f532a8873665af2bedbe03f6f573d357aebed6ec8a7731b64e0d9",
+      "htmlSha256": "0c5024b23a6bc873df9f79e0bd44b19dcf214a18f2b8620cdd707596643b590d",
+      "length": 1579,
+      "captureKey": "pagefind",
+      "topic": "静的化と検索の移行",
+      "articleId": "2026-11-18-top-5",
+      "access": "full",
+      "review": "Custom Python crawl saved public HTML without reserializing it, supporting assets, URL records and hashes. Migration covered 139 articles and 324 HTML files, including indexes and fixed pages. Pagefind selects article text and loads the index in the browser. S3 and CloudFront replaced a dynamic stack in this site; author reports around 15000 yen per month lower infra cost."
+    }
+  ]
+}
