@@ -1,0 +1,288 @@
+{
+  "targetDate": "2026-11-19",
+  "sourceWindow": {
+    "from": "2026-11-18T10:00:00+09:00",
+    "to": "2026-11-19T10:00:00+09:00"
+  },
+  "previousTop5": [
+    {
+      "title": "ESLint から oxlint へ。lint が 50 倍速くなるまでの移行の記録",
+      "url": "https://zenn.dev/rimo/articles/12d6a7b1c58fcd"
+    },
+    {
+      "title": "PLaMo 3 TranslateをDockerで動かしてDeepLと翻訳精度を比較してみた",
+      "url": "https://zenn.dev/aiforall/articles/8aa2637ea04da4"
+    },
+    {
+      "title": "S3のデータを Databricks に取り込むために、データ基盤チームが用意したもの",
+      "url": "https://zenn.dev/guri_03/articles/ad28087e995349"
+    },
+    {
+      "title": "スクリーンショット5枚から作るアニメーションWebP：sharp の delay と99KBの実測",
+      "url": "https://zenn.dev/sakidori/articles/20261031-headless-screenshot-animated-webp"
+    },
+    {
+      "title": "WordPressを廃止し、静的サイト＋Pagefindに移行した",
+      "url": "https://zenn.dev/iototaku/articles/2328447c65a9c8"
+    }
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "observedAt": "2026-11-19T01:00:26.784878+00:00",
+      "htmlSha256": "9d8cf85a0495ec8e3df18c1a25642cfe6fe018911d795acf243c299f36ac33b4",
+      "linksObserved": 77
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-19T01:00:26.526149+00:00",
+      "htmlSha256": "3d3420bd9917c9d6ed4b581049c929466a5ab2e48b393792599b965eb0d0fe9a",
+      "linksObserved": 3
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-19T01:00:26.554133+00:00",
+      "htmlSha256": "d158b8e7e5d21dbf7b20ea5e9e274c4bed6edd806d0d8fbc7313d683901750c8",
+      "linksObserved": 20
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-19T01:00:26.519090+00:00",
+      "htmlSha256": "62bda451fa59f5ada787af1ec2bd4b64db0a2fa5f0c083a989455338b400cf6e",
+      "linksObserved": 75
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-19T01:00:26.590194+00:00",
+      "htmlSha256": "c4b54c9210e8ab950e2c1dd347775dbffd75409f3b6f3c79d9d9491beca12518",
+      "linksObserved": 32
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-19T01:00:26.442804+00:00",
+      "htmlSha256": null,
+      "linksObserved": 0
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-19T01:00:26.419932+00:00",
+      "htmlSha256": "c5870d78aea6427e9e04c7dfab33845e284bf3d2376ff226c0ed91526f8117a7",
+      "linksObserved": 38
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-19T01:00:26.622504+00:00",
+      "htmlSha256": "a2327f9b3b5b30658b0a58128ac728aa741df569662e6dfede543c7fe4db7839",
+      "linksObserved": 47
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-19T01:00:26.558694+00:00",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533",
+      "linksObserved": 10
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-19T01:00:26.475185+00:00",
+      "htmlSha256": "2e701a17f33277bcbd6f78e5661225ed43792510ed4bf3dccafa0df91abca2a3",
+      "linksObserved": 29
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-19T01:00:30.394416+00:00",
+      "htmlSha256": "ff36d76648cab780c802cbab9c4a209c54e390b971e9ec71d63222c66dd6eff2",
+      "linksObserved": 116
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-19T01:00:26.612526+00:00",
+      "htmlSha256": "aec42023ad696e4748b06d9494164ce8dce05192b8fbcbc13a7e6688334ba4b7",
+      "linksObserved": 14
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-19T01:00:26.551976+00:00",
+      "htmlSha256": "2f54ce9d9e0679c1c75fc2ccf593f5e40f6cbca50f0ae26fd8e123f21afa0500",
+      "linksObserved": 50
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-19T01:00:27.798381+00:00",
+      "htmlSha256": "e842c6ff09e35aa8c6dd9a08e950a1c02812fce087215f9a76b66395b104c8e0",
+      "linksObserved": 20
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-19T01:00:26.386926+00:00",
+      "htmlSha256": "59be3d48a633ceff690f30947319077705851533f413ef740c4be7c9f8de53a2",
+      "linksObserved": 20
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "status": 200,
+      "actualUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-19T01:00:26.597372+00:00",
+      "htmlSha256": "38b981f75dbd013a6e71f7af697525689dfcaac7e7a603342fc44964eaae8c14",
+      "linksObserved": 12
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-19T01:00:26.500990+00:00",
+      "htmlSha256": "31dc8dbfcd77e789caec5408fd7d0208ecee2a6b9975d7ce3aefe91821e51abe",
+      "linksObserved": 17
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-19T01:00:26.578768+00:00",
+      "htmlSha256": "0428464b9b685bfa47522e07e1d47596d506e084be687266997dade2bb90650a",
+      "linksObserved": 34
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-19T01:00:26.474476+00:00",
+      "htmlSha256": "80fe94e7187560a91435805e5d2bf56297c2ff7c5a9f12b1fd89147becaf5847",
+      "linksObserved": 29
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-19T01:00:26.496411+00:00",
+      "htmlSha256": "899d3d617d5d6349f573b1ba800c7cc7c46dd54f983628ab88b78826daa8106a",
+      "linksObserved": 19
+    }
+  ],
+  "articles": [
+    {
+      "status": 200,
+      "url": "https://zenn.dev/google_cloud_jp/articles/b112447edb6af8",
+      "title": "SpannerのRepeatable Readによるレイテンシ改善効果と仕組み",
+      "publishedAt": "2026-11-19T08:00:06.089+09:00",
+      "capturedAt": "2026-11-19T00:58:13.496171+00:00",
+      "bodySha256": "eba1abe35464ec9ee077e8a555c4eceb8263fb28ba095a0b13ab30ce0ab314b2",
+      "htmlSha256": "4cf55092c24a4dfa8e5fd93a495021b2281b8e5f32d4dd46d02c6b4e9bed5f11",
+      "length": 17898,
+      "captureKey": "spanner",
+      "topic": "DB分離レベルとロック競合",
+      "articleId": "2026-11-19-top-1",
+      "access": "full",
+      "review": "Official engineering report testing two default isolation/lock configurations in Tokyo with Go SDK. Repeatable Read ordinary reads use a shared snapshot without acquiring read locks. 12 read-and-append workers and 4 update workers cut foreground p99 41.08 to 20.09 ms. High same-row update contention increased p99 from 34.02 to 65.68 ms and yielded 80 aborts in 480 attempts."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/playpark/articles/nodejs-heavy-compute-worker-threads-pool",
+      "title": "Nodeの重い計算でヘルスチェックが6秒止まった。worker_threadsのプールで踏んだ落とし穴",
+      "publishedAt": "2026-11-19T03:58:31.962+09:00",
+      "capturedAt": "2026-11-19T00:58:13.476122+00:00",
+      "bodySha256": "04720b7406874e3aff0bd88ac1ea6152de93c12e7b500e8a81bfd5286d364e4f",
+      "htmlSha256": "98519fc261e3205cd036f6e92cc63a694c8dee1153160ec0b203b1aa3e55187c",
+      "length": 4621,
+      "captureKey": "node",
+      "topic": "CPU負荷と応答性の分離",
+      "articleId": "2026-11-19-top-2",
+      "access": "full",
+      "review": "Node worker_threads pool separates synchronous work from the event loop. A 10-core Mac sample with two 3-second jobs observed max health response 6.0 to 0.01 s in the worker cases. Separate 2-vCPU/1-GiB container trial gave completion 13.2 versus 7.75 s for one versus two workers. Bounds on queueing and native crashes remain."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/tosshi/articles/35ef2467d84b63",
+      "title": "小さな GPT で Engram を試す",
+      "publishedAt": "2026-11-19T08:41:39.066+09:00",
+      "capturedAt": "2026-11-19T00:58:13.506292+00:00",
+      "bodySha256": "da0cc9541fd38dbc72b7deca92b3175eb6dad83a3bcce841a2a5bff2ba9dafea",
+      "htmlSha256": "0a753112479c6dd7f93e5f9ab856f039a244508951fcaa84c7472c1c79b3db07",
+      "length": 11547,
+      "captureKey": "engram",
+      "topic": "学習済みの表を引く言語モデル",
+      "articleId": "2026-11-19-top-3",
+      "access": "full",
+      "review": "A small GPT-2-type, 12-block model looked up 16 rows for 2- and 3-grams and used a hidden-state gate. Three seeds, WikiText-103, 2.36e8 training tokens. Test perplexity was 29.40 vs 29.36. Early loss improved and the prediction stabilized earlier in the measured examples. Unequal parameters, no token-by-token decoding benchmark."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/susiyaki/articles/voicefloat-floating-voice-input",
+      "title": "キーボードを開かない音声入力を作ったら、大変だったのは音声認識じゃなかった",
+      "publishedAt": "2026-11-19T09:30:05.761+09:00",
+      "capturedAt": "2026-11-19T00:58:13.462804+00:00",
+      "bodySha256": "a6909636c066a6ce781f09b39dfff2c6c83192de6a6c441e67e4610fb9b06e77",
+      "htmlSha256": "4edc509b4bb32a0d981ab03192e0968bc6e70925cea945a8b47dd364bf677c18",
+      "length": 8847,
+      "captureKey": "voice",
+      "topic": "端末内音声入力と確定制御",
+      "articleId": "2026-11-19-top-4",
+      "access": "full",
+      "review": "Android voice IME buffers recognized text when TYPE_NULL has no editor, keeps overlays non-focusable and rejects stale recognition using input epochs. Parakeet int8 490 MB, optional Gemma 4 E2B around 2.6 GB. Author reports 90 to 32 omissions with a shorter prompt on held-out sentences. Corrections of spoken revisions remain difficult and the ASR comparison is small."
+    },
+    {
+      "status": 200,
+      "url": "https://zenn.dev/itaraiguma/articles/gtm-web-vitals-zero-events",
+      "title": "別のサービスから移した計測が、ブログでは4日間1件も届いていなかった話",
+      "publishedAt": "2026-11-19T08:46:36.211+09:00",
+      "capturedAt": "2026-11-19T00:58:13.444565+00:00",
+      "bodySha256": "575d583d3e41f7b2f383a6725949c55068d144fcda68066add8e073d0225c67f",
+      "htmlSha256": "d3ac315653c2e89c49b3775805f4c70ae14927b1fb9638438b92581feda1cbad",
+      "length": 3125,
+      "captureKey": "vitals",
+      "topic": "実利用のWeb計測と到達確認",
+      "articleId": "2026-11-19-top-5",
+      "access": "full",
+      "review": "A WordPress integration using GTM did not define window.gtag, causing a guard to return quietly despite other GA4 events. Uses dataLayer commands and measured that send_to was needed in this setup. Four days without custom events, then two LCP and two CLS events in the queried three-day period after the change. Volume is too small for a performance conclusion."
+    }
+  ]
+}
