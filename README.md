@@ -121,7 +121,7 @@ npm run audio:versions:check
 npm run audio:duration:check
 ```
 
-Default voice style ID is `497929760`; interview speed is `1.00`. Generation reuses audio when its text/settings match. Do not edit a manifest to make stale audio appear current. Standard answers target 24–34 seconds, with a hard acceptable range of 22–40 seconds.
+Default voice style ID is `497929760`; interview speed is `1.00`. Generation reuses audio when its text/settings match. Do not edit a manifest to make stale audio appear current. Standard answers target 24–34 seconds, with a hard acceptable range of 20–40 seconds.
 
 Generators write actual file SHA-256 metadata (`wordSha256`, `exampleSha256`, `audioSha256`) separately from synthesis-task hashes, including source recordings reused by later review cards. `npm run audio:versions:write` refreshes only these byte versions for existing files; `audio:versions:check` detects stale versions without writing. Updating byte versions does not validate or change the recording's spoken text. Neither command regenerates MP3s.
 

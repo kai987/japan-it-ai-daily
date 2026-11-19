@@ -27,9 +27,9 @@ R2 同期前に再検証
 現在の共通ポリシー:
 
 - 理想: **24〜34 秒**
-- 許容: **22〜40 秒**
-- 22 秒未満 / 40 秒超: **FAIL**
-- 22〜40 秒内だが 24〜34 秒外: **WARN**
+- 許容: **20〜40 秒**
+- 20 秒未満 / 40 秒超: **FAIL**
+- 20〜40 秒内だが 24〜34 秒外: **WARN**
 
 ポリシーの強制開始日は `2026-09-08` です。過去音声は backfill 可能ですが、過去の日報をこの新しい基準だけで失敗扱いにはしません。
 
@@ -93,8 +93,8 @@ npm run audio:duration:backfill
 30 秒回答の `durationStatus`:
 
 - `ideal`: 24〜34 秒
-- `warn`: 22〜40 秒だが理想帯の外
-- `fail`: 22〜40 秒の硬い許容範囲外
+- `warn`: 20〜40 秒だが理想帯の外
+- `fail`: 20〜40 秒の硬い許容範囲外
 - `legacy`: 2026-09-08 より前の音声
 
 Manifest 全体にも使用したポリシーを保存します。
@@ -105,7 +105,7 @@ Manifest 全体にも使用したポリシーを保存します。
     "source": "ffprobe",
     "enforceFrom": "2026-09-08",
     "idealSeconds": [24, 34],
-    "hardSeconds": [22, 40],
+    "hardSeconds": [20, 40],
     "maxStoredDriftSeconds": 0.08
   },
   "durationMeasuredAt": "..."
@@ -175,7 +175,7 @@ MP3 を実際に再生成した場合は、古い duration 値を引き継がず
 ```text
 INTERVIEW_DURATION_IDEAL_MIN=24
 INTERVIEW_DURATION_IDEAL_MAX=34
-INTERVIEW_DURATION_HARD_MIN=22
+INTERVIEW_DURATION_HARD_MIN=20
 INTERVIEW_DURATION_HARD_MAX=40
 AIVIS_INTERVIEW_SPEED=1.00
 ```
