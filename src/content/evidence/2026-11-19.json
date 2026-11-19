@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-19",
+  "status": "reviewed",
+  "reviewedBy": "Codex local daily author",
+  "reviewedAt": "2026-11-19T01:10:35.412677+00:00",
+  "scope": "Five Japanese primary engineering articles published within the locked JST window. Measurements are separated from takeaways.",
+  "articles": [
+    {
+      "articleId": "2026-11-19-top-1",
+      "url": "https://zenn.dev/google_cloud_jp/articles/b112447edb6af8",
+      "source": "Zenn",
+      "topic": "DB分離レベルとロック競合",
+      "capturedAt": "2026-11-19T00:58:13.496171+00:00",
+      "snapshotSha256": "eba1abe35464ec9ee077e8a555c4eceb8263fb28ba095a0b13ab30ce0ab314b2",
+      "accessNote": "Full public source read and captured. Conditions and results belong to the described configurations.",
+      "originalTitle": "SpannerのRepeatable Readによるレイテンシ改善効果と仕組み",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Default Serializable acquires shared locks for normal reads; the default optimistic Repeatable Read uses snapshot reads and checks specified cells at commit.",
+          "quote": "ReaderShared",
+          "locator": "Spanner内部でのロックと検証の動作",
+          "conditions": "Tokyo Spanner / Go SDK benchmark at 1,000 processing units, two default isolation/lock combinations. Results vary with workload and read/write conflicts.",
+          "usedIn": {
+            "zh": "订单事务先读商品主表，再写入独立的订单表。",
+            "ja": "Spannerの標準のSerializableでは、通常のSELECTで共有ロックを取得します。"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "In the 12 foreground plus 4 update-worker case, foreground p99 changed from 41.08 to 20.09 milliseconds.",
+          "quote": "41.08 ms",
+          "locator": "Scenario 2 の結果",
+          "conditions": "Tokyo Spanner / Go SDK benchmark at 1,000 processing units, two default isolation/lock combinations. Results vary with workload and read/write conflicts.",
+          "usedIn": {
+            "zh": "作者用 Go SDK 从东京的虚拟机直连同区域的 Spanner。",
+            "ja": "東京リージョンの環境にGo SDKからDirect Connectivityで接続した検証です。",
+            "interview": "まず、商品マスタを読んで注文へ追記する処理の待ち時間を見ます。"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "With 8 workers updating hot product inventory, p99 was 65.68 ms in Repeatable Read versus 34.02 ms in Serializable, with 80 aborts in 480 attempts in the optimistic case.",
+          "quote": "65.68 ms",
+          "locator": "Scenario 3 の結果",
+          "conditions": "Tokyo Spanner / Go SDK benchmark at 1,000 processing units, two default isolation/lock combinations. Results vary with workload and read/write conflicts.",
+          "usedIn": {
+            "zh": "换成八路并发更新 20 个商品库存后，采用 Repeatable Read 的 p99 从 34.02 毫秒上升至 65.68 毫秒，480 次试行有 80 次中断。",
+            "ja": "一方、二十件の在庫を八並列で更新したケースでは、Repeatable Readでp99が34.02ミリ秒から65.68ミリ秒に伸びました。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "实测同时给出减少读锁的收益和争用同一写入目标时的代价。",
+            "ja": "どの値の整合性を守るかによって、同じ分離レベルでも利点と負担が変わる実測例です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-19-top-2",
+      "url": "https://zenn.dev/playpark/articles/nodejs-heavy-compute-worker-threads-pool",
+      "source": "Zenn",
+      "topic": "CPU負荷と応答性の分離",
+      "capturedAt": "2026-11-19T00:58:13.476122+00:00",
+      "snapshotSha256": "04720b7406874e3aff0bd88ac1ea6152de93c12e7b500e8a81bfd5286d364e4f",
+      "accessNote": "Full public source read and captured. Conditions and results belong to the described configurations.",
+      "originalTitle": "Nodeの重い計算でヘルスチェックが6秒止まった。worker_threadsのプールで踏んだ落とし穴",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "The sample uses a persistent limited worker pool, queues excess tasks, and replaces workers which fail.",
+          "quote": "worker_threads のプールに出す",
+          "locator": "worker_threads のプール",
+          "conditions": "Two-job Mac benchmark and a single two-vCPU one-GiB environment. Higher concurrency, native failure isolation, and warmup need separate evaluation.",
+          "usedIn": {
+            "zh": "两个各需三秒的同步任务占住 Node.js 主线程，原本轻量的健康检查六秒才返回。",
+            "ja": "Node.jsのイベントループを同期計算が占めると、ヘルスチェックも実行順を待ちます。"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "For two three-second compute jobs on a 10-core Mac, the worst health-check time reported with either worker configuration was 0.01 s.",
+          "quote": "0.01秒",
+          "locator": "十コアMacの計測",
+          "conditions": "Two-job Mac benchmark and a single two-vCPU one-GiB environment. Higher concurrency, native failure isolation, and warmup need separate evaluation.",
+          "usedIn": {
+            "zh": "池限制活跃线程数，容量满时把任务排队。",
+            "ja": "プールの同時実行数に上限を設け、あふれた仕事を待ち行列へ入れます。",
+            "interview": "同期計算をworker_threadsのプールに移し、同時に動く本数を決めます。"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "For two simultaneous jobs in a two-vCPU one-GiB container, the single-worker and two-worker completion times were 13.2 and 7.75 s.",
+          "quote": "13.2秒",
+          "locator": "コンテナでの計測",
+          "conditions": "Two-job Mac benchmark and a single two-vCPU one-GiB environment. Higher concurrency, native failure isolation, and warmup need separate evaluation.",
+          "usedIn": {
+            "zh": "实际任务在 2 vCPU、1 GiB 的容器中运行。",
+            "ja": "二vCPU・一GiBのコンテナで二件を流した結果は、一本で13.2秒、二本で7.75秒でした。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "这组样本把服务是否及时响应和计算任务何时完成分开记录。",
+            "ja": "計算の完了と、同じサーバーへの軽い問い合わせを別々に測っています。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-19-top-3",
+      "url": "https://zenn.dev/tosshi/articles/35ef2467d84b63",
+      "source": "Zenn",
+      "topic": "学習済みの表を引く言語モデル",
+      "capturedAt": "2026-11-19T00:58:13.506292+00:00",
+      "snapshotSha256": "da0cc9541fd38dbc72b7deca92b3175eb6dad83a3bcce841a2a5bff2ba9dafea",
+      "accessNote": "Full public source read and captured. Conditions and results belong to the described configurations.",
+      "originalTitle": "小さな GPT で Engram を試す",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "The measured small model concatenates 16 table rows and gates an added value with the current hidden state.",
+          "quote": "16 × 64 = 1,024",
+          "locator": "Engramの中身",
+          "conditions": "Three seeds and one WikiText-103 training size, unequal parameter counts. Batch evaluation does not measure token-by-token decode.",
+          "usedIn": {
+            "zh": "Engram 用当前 token 结尾的二元、三元序列计算表地址。",
+            "ja": "Engramは、現在位置で終わる二グラムと三グラムから学習済みの表を引きます。"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Validation loss was 0.20 to 0.23 lower at 400 updates, and LogitLens showed more predictions stabilizing at block 1.",
+          "quote": "0.20〜0.23",
+          "locator": "学習中の損失",
+          "conditions": "Three seeds and one WikiText-103 training size, unequal parameter counts. Batch evaluation does not measure token-by-token decode.",
+          "usedIn": {
+            "zh": "两种十二块的 GPT 模型在 WikiText-103 各训练约 2.36 亿 token，使用三组同样的种子。",
+            "ja": "十二ブロックのGPT型モデルを、WikiText-103の約二億三千六百万トークンで三回ずつ学習させています。",
+            "interview": "二グラムと三グラムから十六行を読み、隠れ状態で足す量を決めます。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Held-out test perplexity was close: 29.40 with Engram and 29.36 without. The models had unequal parameter counts.",
+          "quote": "29.40 ± 0.16",
+          "locator": "学習後の性能",
+          "conditions": "Three seeds and one WikiText-103 training size, unequal parameter counts. Batch evaluation does not measure token-by-token decode.",
+          "usedIn": {
+            "zh": "最后的测试困惑度分别为 29.40 和 29.36。",
+            "ja": "学習後のテストのパープレキシティは29.40と29.36で差は小さく、表を足した側には約六千八百二十一万個多い重みがあります。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "把查表过程、早期训练曲线及最终评估放在同一份记录里，可看清实验边界。",
+            "ja": "小規模な再実装で、学習途中の差と終了後の性能を分けています。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-19-top-4",
+      "url": "https://zenn.dev/susiyaki/articles/voicefloat-floating-voice-input",
+      "source": "Zenn",
+      "topic": "端末内音声入力と確定制御",
+      "capturedAt": "2026-11-19T00:58:13.462804+00:00",
+      "snapshotSha256": "a6909636c066a6ce781f09b39dfff2c6c83192de6a6c441e67e4610fb9b06e77",
+      "accessNote": "Full public source read and captured. Conditions and results belong to the described configurations.",
+      "originalTitle": "キーボードを開かない音声入力を作ったら、大変だったのは音声認識じゃなかった",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "The IME buffers text in a nonfocusable overlay when an input notification does not correspond to an editable field.",
+          "quote": "TYPE_NULL",
+          "locator": "入力欄を見失わない",
+          "conditions": "One Android IME implementation and modest held-out experimental data. Spoken revisions remained difficult.",
+          "usedIn": {
+            "zh": "VoiceFloat 是 Android 输入法。",
+            "ja": "VoiceFloatはAndroidのIMEで、キーを開かずに話して入力します。"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "The recognition result is associated with the epoch observed at utterance start and discarded when the current editor epoch has advanced.",
+          "quote": "epoch",
+          "locator": "送信ボタンとの競合",
+          "conditions": "One Android IME implementation and modest held-out experimental data. Spoken revisions remained difficult.",
+          "usedIn": {
+            "zh": "说话开始时保存一个 epoch 值。",
+            "ja": "発話開始時のepochを記録し、送信で入力欄が空になるなどして世代が変わったら、その前の結果は捨てます。",
+            "interview": "入力欄がないTYPE_NULLでは、認識した文を吹き出しへ出します。"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "The report counts 90 versus 32 factual omissions on holdout after shortening the prompt; spoken corrections remained difficult.",
+          "quote": "90 から 32",
+          "locator": "評価を回しながら作る",
+          "conditions": "One Android IME implementation and modest held-out experimental data. Spoken revisions remained difficult.",
+          "usedIn": {
+            "zh": "字母数字消失、问题变陈述时，应用拒绝相应补正。",
+            "ja": "補正で英数字や疑問文を落とした場合、結果を捨てて入力文を残します。"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "在手机输入框、语音结果和发送按钮之间，案例给出了可重现的异步顺序。",
+            "ja": "端末内で動く音声入力の例から、入力先と遅れて戻る結果の管理を学べます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-19-top-5",
+      "url": "https://zenn.dev/itaraiguma/articles/gtm-web-vitals-zero-events",
+      "source": "Zenn",
+      "topic": "実利用のWeb計測と到達確認",
+      "capturedAt": "2026-11-19T00:58:13.444565+00:00",
+      "snapshotSha256": "575d583d3e41f7b2f383a6725949c55068d144fcda68066add8e073d0225c67f",
+      "accessNote": "Full public source read and captured. Conditions and results belong to the described configurations.",
+      "originalTitle": "別のサービスから移した計測が、ブログでは4日間1件も届いていなかった話",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "The migrated script submitted no custom metrics for four days because its gtag guard returned before sending in a GTM setup.",
+          "quote": "4日後に確かめると",
+          "locator": "移植直後の計測",
+          "conditions": "One WordPress/GTM/GA4 configuration, with only a few measurements after the change. send_to observation is setup-specific.",
+          "usedIn": {
+            "zh": "作者将 Web Vitals 采集从 Next.js 迁到 WordPress 博客。",
+            "ja": "DevPickはタグを直接読み込むため、window.gtagを呼べます。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "The author retained the payload via dataLayer and observed delivery after specifying the measurement ID in this deployment.",
+          "quote": "send_to",
+          "locator": "直し方",
+          "conditions": "One WordPress/GTM/GA4 configuration, with only a few measurements after the change. send_to observation is setup-specific.",
+          "usedIn": {
+            "zh": "诊断时，作者看到普通浏览及滚动事件仍正常。",
+            "ja": "確認するとpage_viewやscrollは届いており、欠けたのはweb_vital系のイベントでした。",
+            "interview": "GA4でページビューとweb_vital系の件数を比べます。"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "The first post-change query returned two LCP and two CLS events in the three-day range, suitable only as a delivery check.",
+          "quote": "それぞれ2件ずつ",
+          "locator": "反映した後",
+          "conditions": "One WordPress/GTM/GA4 configuration, with only a few measurements after the change. send_to observation is setup-specific.",
+          "usedIn": {
+            "zh": "修正后三天范围的查询返回两条 LCP 和两条 CLS。",
+            "ja": "修正後の三日分を取得すると、LCPとCLSが二件ずつ返りました。"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "Teaching relevance inferred from the recorded conditions and outcomes.",
+          "conditions": "Editorial takeaway, not an additional experiment.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "把监测验收到后台可查询的记录，能及时发现浏览器里的静默返回。",
+            "ja": "計測を移す際、実データが集計まで届くかを確かめる例です。"
+          }
+        }
+      ]
+    }
+  ]
+}
