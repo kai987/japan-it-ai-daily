@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-19",
+  "checkedBaseCommit": "349953f84d59161c20ea7b3086613a8cc5544a61",
+  "worktree": "six uncommitted target files",
+  "checks": [
+    {
+      "command": "node --test tests/publication/recovery.node.mjs tests/publication/request.node.mjs tests/publication/publisher-origin.node.mjs",
+      "startedAt": "2026-11-19T01:11:27.785Z",
+      "completedAt": "2026-11-19T01:11:28.093Z",
+      "exitCode": 0,
+      "log": "00-tests-publication-recovery-node-mjs.log"
+    },
+    {
+      "command": "npm audit --audit-level=high",
+      "startedAt": "2026-11-19T01:11:28.094Z",
+      "completedAt": "2026-11-19T01:11:29.017Z",
+      "exitCode": 0,
+      "log": "01---audit-level-high.log"
+    },
+    {
+      "command": "npm run check",
+      "startedAt": "2026-11-19T01:11:29.017Z",
+      "completedAt": "2026-11-19T01:11:37.617Z",
+      "exitCode": 0,
+      "log": "02-check.log"
+    },
+    {
+      "command": "npm run content:integrity:check",
+      "startedAt": "2026-11-19T01:11:37.617Z",
+      "completedAt": "2026-11-19T01:11:41.489Z",
+      "exitCode": 0,
+      "log": "03-content-integrity-check.log"
+    },
+    {
+      "command": "npm run evidence:check",
+      "startedAt": "2026-11-19T01:11:41.489Z",
+      "completedAt": "2026-11-19T01:11:41.778Z",
+      "exitCode": 0,
+      "log": "04-evidence-check.log"
+    },
+    {
+      "command": "npm run evidence:pilot",
+      "startedAt": "2026-11-19T01:11:41.778Z",
+      "completedAt": "2026-11-19T01:11:41.931Z",
+      "exitCode": 0,
+      "log": "05-evidence-pilot.log"
+    },
+    {
+      "command": "npm run bilingual:check-interview",
+      "startedAt": "2026-11-19T01:11:41.932Z",
+      "completedAt": "2026-11-19T01:11:42.092Z",
+      "exitCode": 0,
+      "log": "06-bilingual-check-interview.log"
+    },
+    {
+      "command": "npm run quality:check",
+      "startedAt": "2026-11-19T01:11:42.092Z",
+      "completedAt": "2026-11-19T01:11:42.509Z",
+      "exitCode": 0,
+      "log": "07-quality-check.log"
+    },
+    {
+      "command": "npm run audio:check",
+      "startedAt": "2026-11-19T01:11:42.509Z",
+      "completedAt": "2026-11-19T01:11:43.118Z",
+      "exitCode": 0,
+      "log": "08-audio-check.log"
+    },
+    {
+      "command": "npm run audio:integrity:check",
+      "startedAt": "2026-11-19T01:11:43.118Z",
+      "completedAt": "2026-11-19T01:11:44.943Z",
+      "exitCode": 0,
+      "log": "09-audio-integrity-check.log"
+    },
+    {
+      "command": "npm run audio:duration:check",
+      "startedAt": "2026-11-19T01:11:44.943Z",
+      "completedAt": "2026-11-19T01:12:22.056Z",
+      "exitCode": 0,
+      "log": "10-audio-duration-check.log"
+    },
+    {
+      "command": "npm run audio:versions:check",
+      "startedAt": "2026-11-19T01:12:22.056Z",
+      "completedAt": "2026-11-19T01:12:22.552Z",
+      "exitCode": 0,
+      "log": "11-audio-versions-check.log"
+    },
+    {
+      "command": "npm run test",
+      "startedAt": "2026-11-19T01:12:22.552Z",
+      "completedAt": "2026-11-19T01:12:28.745Z",
+      "exitCode": 0,
+      "log": "12-test.log"
+    },
+    {
+      "command": "npm run build",
+      "startedAt": "2026-11-19T01:12:28.745Z",
+      "completedAt": "2026-11-19T01:12:37.288Z",
+      "exitCode": 0,
+      "log": "13-build.log"
+    },
+    {
+      "command": "npm run test:browser:speech-smoke",
+      "startedAt": "2026-11-19T01:12:37.288Z",
+      "completedAt": "2026-11-19T01:12:40.329Z",
+      "exitCode": 0,
+      "log": "14-test-browser-speech-smoke.log"
+    },
+    {
+      "command": "npm run test:browser",
+      "startedAt": "2026-11-19T01:12:40.329Z",
+      "completedAt": "2026-11-19T01:13:21.290Z",
+      "exitCode": 0,
+      "log": "15-test-browser.log"
+    },
+    {
+      "command": "npm run security:check",
+      "startedAt": "2026-11-19T01:13:21.290Z",
+      "completedAt": "2026-11-19T01:13:21.931Z",
+      "exitCode": 0,
+      "log": "16-security-check.log"
+    },
+    {
+      "command": "npm run evidence:check -- --date 2026-11-19",
+      "startedAt": "2026-11-19T01:13:21.931Z",
+      "completedAt": "2026-11-19T01:13:22.091Z",
+      "exitCode": 0,
+      "log": "17-evidence-check.log"
+    }
+  ]
+}
