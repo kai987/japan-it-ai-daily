@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-20",
+  "status": "reviewed",
+  "reviewedBy": "Codex local daily author",
+  "reviewedAt": "2026-11-20T01:47:57.355359+00:00",
+  "scope": "Five Japanese source articles within the locked JST window, with supplemental official corroboration where used. The evidence distinguishes workshop and deployment experience from evaluator and vendor metrics.",
+  "articles": [
+    {
+      "articleId": "2026-11-20-top-1",
+      "url": "https://techblog.lycorp.co.jp/ja/20261119b",
+      "source": "LINEヤフー Tech Blog",
+      "topic": "既存機能のAIDD改修",
+      "capturedAt": "2026-11-20T01:41:06.600621+00:00",
+      "snapshotSha256": "064e102cae75dda146e699ce6ed6548ee538680801c5f0f86698a062dc26598d",
+      "accessNote": "Public engineering article captured from LINE Yahoo. Workshop evidence, not a production outcome study.",
+      "originalTitle": "Yahoo! JAPANトップページのレガシー機能改修をAIDDで1Day実践して見えたこと",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "The one-day workshop prototyped category tabs for the existing Yahoo! JAPAN theme gallery, organizing the legacy data and applying AI classification.",
+          "quote": "カテゴリタブを追加",
+          "locator": "今回扱った課題",
+          "conditions": "One day, one existing feature and a workshop prototype. No production compatibility, latency or labor savings were tested.",
+          "usedIn": {
+            "zh": "Yahoo! JAPAN 团队在一次为期一天的 AIDD 工作坊里，给主题图库试做分类标签。",
+            "ja": "LINEヤフーの技術ブログは、Yahoo! JAPANのきせかえギャラリーにカテゴリタブを付ける一日の試作を報告しています。"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Single-category membership and the all-items initial view were fixed. Compatibility with existing search and ordering was outside the workshop scope.",
+          "quote": "初期表示は全件表示を採用",
+          "locator": "要件定義で実際に詰めたこと",
+          "conditions": "One day, one existing feature and a workshop prototype. No production compatibility, latency or labor savings were tested.",
+          "usedIn": {
+            "zh": "试作把每个主题限定为一个类别，打开页面先展示全部，暂不把现有搜索与排序纳入改造。",
+            "ja": "要件分析ではテーマは単一カテゴリ、初期表示は全件と決めました。",
+            "interview": "私なら、まず一つのテーマがいくつのカテゴリに属せるかと、最初に何を表示するかを決めます。記事では単一カテゴリで全件表示に絞り、既存の検索や並び順は別の課題にしました。生成された画面だけでは手順の抜けに気づきにくいので、途中の成果物も確認します。一日の試作で本番の互換性まで判断はしません。"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "The workshop exposed an omitted step, insufficient UI detail, limited design alternatives and formatting that did not satisfy the eventual guidelines.",
+          "quote": "途中の手順を一つ飛ばして",
+          "locator": "それでも、人間のレビューは不可欠だった",
+          "conditions": "One day, one existing feature and a workshop prototype. No production compatibility, latency or labor savings were tested.",
+          "usedIn": {
+            "zh": "这个过程也暴露出一次中间步骤被跳过，需求产物与既定模板不符，UI 细节和选型比较材料欠缺。",
+            "ja": "実装へ進む途中、AIが手順を一つ飛ばしたため、人間が確認しました。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "面试中可以用这个案例说明怎样把一个小 UI 需求拆成可验收的产品约束。",
+            "ja": "画面変更に見える案件でも、既存データと表示の契約を先に決める必要があると分かります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-20-top-2",
+      "url": "https://dev.classmethod.jp/articles/agentcore-gateway-policy-per-user-access-control/",
+      "source": "DevelopersIO",
+      "topic": "AIツール呼び出しの事前認可",
+      "capturedAt": "2026-11-20T01:41:06.582974+00:00",
+      "snapshotSha256": "bc37540d0316874d5376ded26ba614f39cf6cf06a01f19242196310fc24efcca",
+      "accessNote": "Public implementation article captured from DevelopersIO. The article tests defensive authorization of a fixture.",
+      "originalTitle": "Amazon Bedrock AgentCore Policyでユーザーごとにツールの呼び出しを制御できるか検証してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "AgentCore Gateway evaluates token claims and requested tool arguments with Cedar before deciding whether to call Lambda.",
+          "quote": "ツールへのアクセスを許可する前に",
+          "locator": "AgentCore Policyとインターセプターの違い",
+          "conditions": "Cognito, Cedar and Lambda in a named test configuration; curl only. Tool listing evaluates no arguments. The report does not cover every client.",
+          "usedIn": {
+            "zh": "在 DevelopersIO 的验证环境里，AgentCore Gateway 先确认 Cognito 发给用户的令牌，接着由 Cedar 读取其中的组信息和工具参数作授权。",
+            "ja": "DevelopersIOでは、AgentCore GatewayがCognitoのトークンを確認した後、Cedarでツール呼び出しを実行前に評価する構成を検証しました。"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "In the test, group membership and argument-to-username matching controlled execution. Enforced refusal prevented invocation and returned JSON-RPC error.",
+          "quote": "拒否されれば JSON-RPC のエラーを返す",
+          "locator": "処理の流れ／まとめ",
+          "conditions": "Cognito, Cedar and Lambda in a named test configuration; curl only. Tool listing evaluates no arguments. The report does not cover every client.",
+          "usedIn": {
+            "zh": "强制模式中，样例将用户传入的查询对象与令牌中的 username 对照，以约束查询本人信息。",
+            "ja": "強制モードの検証では、本人の従業員情報を判定するときに、引数とトークンのusernameを比べました。",
+            "interview": "ツールが動く前に、ゲートウェイで認可したいです。この検証ではCognitoのトークンを確認し、Cedarでクレームと引数を比べ、本人以外の呼び出しをLambdaまで通しません。ただ、一覧の評価には引数がないので、表示されることと実行できることは別です。使うクライアントでも拒否された場合の表示を確認します。"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Tool visibility is evaluated without call arguments. This curl-based test does not establish how individual AI clients display denied calls.",
+          "quote": "ツールの一覧は引数なしで判定",
+          "locator": "まとめ",
+          "conditions": "Cognito, Cedar and Lambda in a named test configuration; curl only. Tool listing evaluates no arguments. The report does not cover every client.",
+          "usedIn": {
+            "zh": "作者发现目录展示没有具体参数，按参数限制的工具即使出现在列表里，也可能在执行时被拒。",
+            "ja": "注意したいのは、ツールの一覧が引数なしで評価される点です。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "这个测试把「能登录」和「能执行某个工具及其参数」区别得很清楚。",
+            "ja": "認証が通った後に、操作とデータの境界をどの層で守るか説明できる実験です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-20-top-3",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2611/19/2000003322/",
+      "source": "ITmedia AI＋",
+      "topic": "モデル評価と費用",
+      "capturedAt": "2026-11-20T01:41:06.657414+00:00",
+      "snapshotSha256": "0340ce2ecc28008d7090490402f2100eafb90e78f44b3f9201ed8ccfda49faca",
+      "accessNote": "The public reporting text and linked second page were read, with Google’s announcement checked separately. No experimental outcomes beyond the published evaluator and vendor setup are inferred.",
+      "originalTitle": "Google、わずか2カ月で4つ目のモデル公開「Gemini 4 Neon」　一部「Fable同等」性能をコスト半分で",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Google based Neon on Carbon and positions it between Carbon and Hydrogen.",
+          "quote": "上位モデルのCarbonを基にしたモデル",
+          "locator": "第1ページ、モデルの位置づけ",
+          "conditions": "A Japanese report covering vendor and external published benchmark results. Tools, effort, task suite and pricing differ; no local workload extrapolation.",
+          "usedIn": {
+            "zh": "Google 发布的 Gemini 4 Neon 基于 Carbon，定位在适合长任务的 Carbon 与偏快速任务的 Hydrogen 之间。",
+            "ja": "ITmedia AI＋が取り上げたGemini 4 Neonは、GoogleがCarbonを基にして公開したモデルです。"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Artificial Analysis reports 59 and 58 points, respectively, for Neon under Antigravity CLI xhigh and Fable 5.2 under Claude Code xhigh, with per-task costs of 6.86 and 15.47 USD.",
+          "quote": "タスク当たりの平均コストは6.86ドル",
+          "locator": "第1ページ、Coding Agent Index",
+          "conditions": "A Japanese report covering vendor and external published benchmark results. Tools, effort, task suite and pricing differ; no local workload extrapolation.",
+          "usedIn": {
+            "zh": "Artificial Analysis 的编码智能体指数给 Antigravity CLI 中、xhigh 设定的 Neon 59 分，给 Claude Code 中、同样标作 xhigh 的 Fable 5.2 58 分。",
+            "ja": "Artificial AnalysisのCoding Agent Indexで、Antigravity CLI上のNeonをxhighで実行すると59点でした。",
+            "interview": "まず評価に使った構成を確認します。記事の六ドル台と十五ドル台は、同じ思考量の表記でも、NeonはAntigravity、FableはClaude Codeで測っています。単価だけでなくキャッシュや再実行も効くので、自社の課題を同じ条件で解いて、合格した一件当たりの費用を比べます。導入価格が終わった場合も試算します。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Google reports Terminal-Bench 4.1 scores of 65.2% and 65.8% for Neon and Opus 5.5. Temporary Carbon pricing changes the standard-price comparison.",
+          "quote": "65.2％でOpus 5.5（65.8％）を下回る",
+          "locator": "第1ページ、Googleの評価／API価格",
+          "conditions": "A Japanese report covering vendor and external published benchmark results. Tools, effort, task suite and pricing differ; no local workload extrapolation.",
+          "usedIn": {
+            "zh": "Google 的 Terminal-Bench 4.1 公布 Neon 65.2％、Opus 5.5 65.8％。",
+            "ja": "Googleが公開した別の測定では、Terminal-Bench 4.1でNeonは65.2％、Opus 5.5は65.8％でした。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "成本差异适合用来设计迁移实验，尤其值得核对两个测试是否使用同一工具和推理预算。",
+            "ja": "スコアと費用を読むとき、モデル名以外にそろえる条件を考えられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-20-top-4",
+      "url": "https://gihyo.jp/admin/clip/01/ubuntu-topics/202611/20",
+      "source": "gihyo.jp",
+      "topic": "Ubuntuパッチの先行提供",
+      "capturedAt": "2026-11-20T01:41:06.508657+00:00",
+      "snapshotSha256": "fd1c84c729953cc9b03a01ecf4769b0725bf4879f07c514d373bc59c55171837",
+      "accessNote": "Public Ubuntu column captured from gihyo.jp. Linked Canonical announcement confirms opt-in, escalation and separate kernel route.",
+      "originalTitle": "“Edge”アーカイブによる先行パッチ、Ubuntu 27.04（tenacious）の開発：「AI Tutor」、メーリングリストのマイグレーション",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Surge evaluates Ubuntu applicability and attempts a candidate security fix backport for non-kernel packages.",
+          "quote": "該当パッケージに対して自動的にパッチのバックポートを試み",
+          "locator": "“Edge” アーカイブによる先行パッチ",
+          "conditions": "Ubuntu Pro opt-in preview and eligible non-kernel packages, as reported by gihyo.jp and corroborated by Canonical. No general production effect benchmark.",
+          "usedIn": {
+            "zh": "gihyo.jp 介绍了 Ubuntu Pro 可选择启用的 Edge 补丁库。",
+            "ja": "gihyo.jpは、Ubuntu Pro向けのEdgeアーカイブを、正式な対応パッケージに先立つ選択制の提供経路として紹介しています。"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Potentially valid candidates may be explicitly selected from Edge before additional human QA; other cases go to humans.",
+          "quote": "人間にエスカレーションするようになっている",
+          "locator": "“Edge” アーカイブによる先行パッチ",
+          "conditions": "Ubuntu Pro opt-in preview and eligible non-kernel packages, as reported by gihyo.jp and corroborated by Canonical. No general production effect benchmark.",
+          "usedIn": {
+            "zh": "对于不够可靠或意见不一致的结果，流水线交给维护人员处理。",
+            "ja": "候補を妥当と判断できた場合は、正式なQAが終わる前にEdgeで選べるようになります。",
+            "interview": "Ubuntu ProのEdgeは、Surgeが対象を調べ、バックポートを評価して出す先行候補です。まず検証機で明示的に版を選び、アプリの動作と元に戻せることを確認します。通常のセキュリティ更新は人が検証する経路のままですし、カーネルには別の認定手順があります。同じやり方を全パッケージに広げません。"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "The preview is limited to non-kernel fixes. The kernel follows a different two-week process.",
+          "quote": "カーネル以外",
+          "locator": "“Edge” アーカイブによる先行パッチ",
+          "conditions": "Ubuntu Pro opt-in preview and eligible non-kernel packages, as reported by gihyo.jp and corroborated by Canonical. No general production effect benchmark.",
+          "usedIn": {
+            "zh": "Edge 面向非内核软件包，内核另有两周的先行与认证流程。",
+            "ja": "この経路で扱うのはカーネル以外です。"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "读完可以区分补丁生成、先行试用和正式分发，对维护有稳定性要求的主机尤其重要。",
+            "ja": "早く試せる修正候補と、通常の更新で求められる検証を分ける設計です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-20-top-5",
+      "url": "https://tech.smarthr.jp/entry/2026/11/19/113553",
+      "source": "SmartHR Tech Blog",
+      "topic": "ユーザー影響とSREリスク管理",
+      "capturedAt": "2026-11-20T01:41:13.316994+00:00",
+      "snapshotSha256": "3fcf179646e5b00e17969b91353102e3a3dd908be68e1c8feedd9ca1f1fe444c",
+      "accessNote": "Public product team case from SmartHR; the sample rollback scenario is explicitly hypothetical.",
+      "originalTitle": "漠然とした不安を見える形に —— System Risk Recordsを導入して得た3つの安心",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "The SmartHR team logged 22 risks in Notion and used completing and sending an electronic application as the critical user journey.",
+          "quote": "書き出したリスクは22件",
+          "locator": "個人の頭の中にあったリスクを書き出す",
+          "conditions": "One product team, subjective bins and an observation at the time of reporting. These counts do not measure avoided outages.",
+          "usedIn": {
+            "zh": "SmartHR 届出书类团队先用便签收集团队成员想到的事情，共整理 22 项风险到 Notion。",
+            "ja": "SmartHRの届出書類チームは、個々のメンバーが気にしていたことを付箋に出し、二十二件のリスクをNotionで一覧化しました。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Risk score multiplies impact, likelihood and reach and divides by remediation effort. Humans adjusted rankings for security and indirect load.",
+          "quote": "優先度 =（インパクト × 発生可能性 × 影響範囲）÷ 対応工数",
+          "locator": "チームで話し合いながら優先順位を決める",
+          "conditions": "One product team, subjective bins and an observation at the time of reporting. These counts do not measure avoided outages.",
+          "usedIn": {
+            "zh": "表格以影响、发生可能性、波及范围相乘，再除以处理工数，给出处理排序的起点。",
+            "ja": "優先度はインパクト、発生可能性、影響範囲を掛け、対応工数で割って求めます。",
+            "interview": "あります。記事では電子申請のような重要な操作を基準に、影響と起こりやすさと範囲を掛けて工数で割っています。ただ、画面に影響が出ないセキュリティ上の問題や、負荷が他の利用者に広がる場合は低く見えることがあります。理由を残して順番を変え、記録した件数とは別に修正が済んだかを追います。"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Of 22 registered risks, 1 had been addressed and 2 were underway. Sprint intake and broad team ownership remained work in progress.",
+          "quote": "対応を終えたのは1件で、2件が対応中",
+          "locator": "これからの課題",
+          "conditions": "One product team, subjective bins and an observation at the time of reporting. These counts do not measure avoided outages.",
+          "usedIn": {
+            "zh": "文中进度为 22 项中 1 项已处理，2 项进行中。",
+            "ja": "記事の時点では二十二件のうち一件を完了し、二件が対応中です。"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "评分能把讨论具体化，团队也能说明为何某项影响没有被分数完整捕捉。",
+            "ja": "利用者の重要な操作と、式からこぼれる懸念の両方で優先順位を説明できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
