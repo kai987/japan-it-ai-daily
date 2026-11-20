@@ -1,0 +1,373 @@
+{
+  "targetDate": "2026-11-20",
+  "sourceWindow": {
+    "from": "2026-11-19T10:00:00+09:00",
+    "to": "2026-11-20T10:00:00+09:00"
+  },
+  "previousTop5": [
+    {
+      "title": "SpannerのRepeatable Readによるレイテンシ改善効果と仕組み",
+      "url": "https://zenn.dev/google_cloud_jp/articles/b112447edb6af8"
+    },
+    {
+      "title": "Nodeの重い計算でヘルスチェックが6秒止まった。worker_threadsのプールで踏んだ落とし穴",
+      "url": "https://zenn.dev/playpark/articles/nodejs-heavy-compute-worker-threads-pool"
+    },
+    {
+      "title": "小さな GPT で Engram を試す",
+      "url": "https://zenn.dev/tosshi/articles/35ef2467d84b63"
+    },
+    {
+      "title": "キーボードを開かない音声入力を作ったら、大変だったのは音声認識じゃなかった",
+      "url": "https://zenn.dev/susiyaki/articles/voicefloat-floating-voice-input"
+    },
+    {
+      "title": "別のサービスから移した計測が、ブログでは4日間1件も届いていなかった話",
+      "url": "https://zenn.dev/itaraiguma/articles/gtm-web-vitals-zero-events"
+    }
+  ],
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "observedAt": "2026-11-20T01:39:38.653450+00:00",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "htmlSha256": "6615999facc7cf171f53b2030ae7d070163439286655a8859070c40e49218407",
+      "feeds": [],
+      "linksObserved": 94
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-20T01:39:38.653843+00:00",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "htmlSha256": "1e94da14ca4d2b958a48373fff2f0c392f4e2abc35189c445e37b9ebe5cc7d58",
+      "feeds": [
+        "https://zenn.dev/feed"
+      ],
+      "linksObserved": 4
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-20T01:39:38.653965+00:00",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "htmlSha256": "e7304ea6d4c84f738aaf607004955f4996333ac52180583192db171813aae722",
+      "feeds": [
+        "https://www.publickey1.jp/atom.xml"
+      ],
+      "linksObserved": 20
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-20T01:39:38.654097+00:00",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "htmlSha256": "5c09ccf75f7037b601d8fc37e26a9eccc424b4f81f765c4e1c97dbbdc925246a",
+      "feeds": [],
+      "linksObserved": 54
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-20T01:39:38.654165+00:00",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "htmlSha256": "3ed2395bbfb0a26f2336575b0fb29a6d287a8ba9a874f07d52c4aa195effb6fd",
+      "feeds": [
+        "https://rss.itmedia.co.jp/rss/0.91/ait.xml",
+        "https://rss.itmedia.co.jp/rss/1.0/ait.xml",
+        "https://rss.itmedia.co.jp/rss/2.0/ait.xml"
+      ],
+      "linksObserved": 39
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-20T01:39:38.654221+00:00",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "htmlSha256": "5e7a5af9156d202c80f637576f4ecc6a2b131c32e7e74c4786d7e9cb973daac1",
+      "linksObserved": 0
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-20T01:39:38.654273+00:00",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "htmlSha256": "207a51fc2a2f7e008f08a99c3958bcd27efca4fbb3bf70f1cdaf7f9e424e2a09",
+      "feeds": [
+        "https://gihyo.jp/feed/rss1",
+        "https://gihyo.jp/feed/rss2",
+        "https://gihyo.jp/feed/atom"
+      ],
+      "linksObserved": 39
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-20T01:39:38.654338+00:00",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "htmlSha256": "029f7a184dfa913d9183680ed1d7aadde3eb536f858ad82e0a814ba6d78799c3",
+      "feeds": [],
+      "linksObserved": 58
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-20T01:39:38.654419+00:00",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533",
+      "feeds": [
+        "https://techfeed.io/feeds/categories/all"
+      ],
+      "linksObserved": 2
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-20T01:39:38.654484+00:00",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "htmlSha256": "c6a1bd2af4ee4e0d91e29caef409deaf336490a316ebde4cfa7aacb633e2db11",
+      "feeds": [
+        "https://b.hatena.ne.jp/hotentry/it.rss"
+      ],
+      "linksObserved": 125
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-20T01:39:38.722250+00:00",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "htmlSha256": "f78c3506054a1ef915e572e0e0dfd77f2db16c995583f4d361106bc5482e1591",
+      "feeds": [],
+      "linksObserved": 152
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-20T01:39:38.772024+00:00",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "htmlSha256": "2c55025e8b6196597979c1a5d7ddf20e62e117a41d98c90a11cbb90252a2f227",
+      "feeds": [],
+      "linksObserved": 10
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-20T01:39:38.789246+00:00",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "htmlSha256": "9528c5662d5959d89308dc76e5f6ba600aa3e7073645934b098c33c8a93e844f",
+      "feeds": [],
+      "linksObserved": 34
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-20T01:39:38.793668+00:00",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "htmlSha256": "39aadc838ad07e42bbc85d56f62f6ffd546ad1b5dd67f519d6d992c85ffb725f",
+      "feeds": [
+        "https://developers.cyberagent.co.jp/blog/feed/"
+      ],
+      "linksObserved": 23
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-20T01:39:38.810986+00:00",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "htmlSha256": "4cc22af71ab71b5c1095cee8985fc301041d50c2fea3eb2169bdf5072c5e7ab1",
+      "feeds": [
+        "https://techblog.lycorp.co.jp/ja/feed/index.xml"
+      ],
+      "linksObserved": 23
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-20T01:39:38.853601+00:00",
+      "status": 200,
+      "actualUrl": "https://engineering.mercari.com/",
+      "htmlSha256": "ea3e67d45db4080f6980d365cb4dc9b814f2190fc569546408bb6f51b4c764d1",
+      "feeds": [
+        "https://engineering.mercari.com/blog/feed.xml",
+        "https://engineering.mercari.com/en/blog/feed.xml"
+      ],
+      "linksObserved": 17
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-20T01:39:38.873300+00:00",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "htmlSha256": "6d75b9451d77b5420d5d46668988efba28d0f84629434c2e4a4c554e5ee9584b",
+      "feeds": [
+        "https://tech.smarthr.jp/feed",
+        "https://tech.smarthr.jp/rss"
+      ],
+      "linksObserved": 16
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-20T01:39:38.877726+00:00",
+      "error": "HTTPSConnectionPool(host='tech.layerx.co.jp', port=443): Read timed out. (read timeout=18)",
+      "linksObserved": 0
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-20T01:39:38.879028+00:00",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "htmlSha256": "80fe94e7187560a91435805e5d2bf56297c2ff7c5a9f12b1fd89147becaf5847",
+      "feeds": [
+        "https://engineering.dena.com/blog/index.xml"
+      ],
+      "linksObserved": 44
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-20T01:39:38.922910+00:00",
+      "error": "('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))",
+      "linksObserved": 0
+    }
+  ],
+  "articles": [
+    {
+      "captureKey": "ly",
+      "source": "LINEヤフー Tech Blog",
+      "title": "Yahoo! JAPANトップページのレガシー機能改修をAIDDで1Day実践して見えたこと",
+      "topic": "既存機能のAIDD改修",
+      "articleId": "2026-11-20-top-1",
+      "url": "https://techblog.lycorp.co.jp/ja/20261119b",
+      "publishedAt": "2026-11-19T11:00:00+09:00",
+      "capturedAt": "2026-11-20T01:41:06.600621+00:00",
+      "htmlSha256": "73bb20b1d47dd97736dee567500d014686beb877477a823f06cd3bce8c7b10c5",
+      "bodySha256": "064e102cae75dda146e699ce6ed6548ee538680801c5f0f86698a062dc26598d",
+      "access": "full",
+      "review": "A one-day prototype clarified theme categorization, narrowed the data/UI scope, and exposed missed steps and insufficient UI requirements. It did not establish production performance.",
+      "status": 200
+    },
+    {
+      "captureKey": "core",
+      "source": "DevelopersIO",
+      "title": "Amazon Bedrock AgentCore Policyでユーザーごとにツールの呼び出しを制御できるか検証してみた | DevelopersIO",
+      "topic": "AIツール呼び出しの事前認可",
+      "articleId": "2026-11-20-top-2",
+      "url": "https://dev.classmethod.jp/articles/agentcore-gateway-policy-per-user-access-control/",
+      "publishedAt": "2026-11-20T09:00:18.451000+09:00",
+      "capturedAt": "2026-11-20T01:41:06.582974+00:00",
+      "htmlSha256": "958fdd6e818c2f0c3860649bc5c759f5830e4bce2e08c9be44d7910dd8812e7e",
+      "bodySha256": "bc37540d0316874d5376ded26ba614f39cf6cf06a01f19242196310fc24efcca",
+      "access": "full",
+      "review": "Cognito group claims and per-call arguments are evaluated with Cedar before Lambda invocation. Enforced denial and list visibility were tested in one curl fixture.",
+      "status": 200
+    },
+    {
+      "captureKey": "neon",
+      "source": "ITmedia AI＋",
+      "title": "Google、わずか2カ月で4つ目のモデル公開「Gemini 4 Neon」　一部「Fable同等」性能をコスト半分で",
+      "topic": "モデル評価と費用",
+      "articleId": "2026-11-20-top-3",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2611/19/2000003322/",
+      "publishedAt": "2026-11-19T11:25:30+09:00",
+      "capturedAt": "2026-11-20T01:41:06.657414+00:00",
+      "htmlSha256": "dc0aefbd851ec9419df6aba2b3c4b81fe28626431c48365d247286a9586e3708",
+      "bodySha256": "0340ce2ecc28008d7090490402f2100eafb90e78f44b3f9201ed8ccfda49faca",
+      "access": "full",
+      "review": "Benchmarks selected by an independent evaluator and Google have distinct tools, effort and price assumptions; deployment results are workload dependent.",
+      "status": 200
+    },
+    {
+      "captureKey": "edge",
+      "source": "gihyo.jp",
+      "title": "“Edge”アーカイブによる先行パッチ、Ubuntu 27.04（tenacious）の開発：「AI Tutor」、メーリングリストのマイグレーション",
+      "topic": "Ubuntuパッチの先行提供",
+      "articleId": "2026-11-20-top-4",
+      "url": "https://gihyo.jp/admin/clip/01/ubuntu-topics/202611/20",
+      "publishedAt": "2026-11-20T09:27:00+09:00",
+      "capturedAt": "2026-11-20T01:41:06.508657+00:00",
+      "htmlSha256": "c519f8db3b8035aa432b79240eb45d4d7838af81de4980921ee55de12397ae08",
+      "bodySha256": "fd1c84c729953cc9b03a01ecf4769b0725bf4879f07c514d373bc59c55171837",
+      "access": "full",
+      "review": "Canonical describes opt-in, non-kernel AI-assisted backports before formal human approval. Distinguish candidate stages from stable distribution and avoid unmeasured effects.",
+      "status": 200
+    },
+    {
+      "captureKey": "risk",
+      "source": "SmartHR Tech Blog",
+      "title": "漠然とした不安を見える形に —— System Risk Recordsを導入して得た3つの安心",
+      "topic": "ユーザー影響とSREリスク管理",
+      "articleId": "2026-11-20-top-5",
+      "url": "https://tech.smarthr.jp/entry/2026/11/19/113553",
+      "publishedAt": "2026-11-19T11:35:53+09:00",
+      "capturedAt": "2026-11-20T01:41:13.316994+00:00",
+      "htmlSha256": "85474de1c4b22aa00fa0845112f7f911a46da44dd157fc98bf17262cd900ad11",
+      "bodySha256": "3fcf179646e5b00e17969b91353102e3a3dd908be68e1c8feedd9ca1f1fe444c",
+      "access": "full",
+      "review": "One product team recorded 22 risk items; scoring was adjusted by humans for security and propagation impact. One item finished and two were underway.",
+      "status": 200
+    }
+  ],
+  "supplementalDiscovery": {
+    "neon-page2": {
+      "url": "https://www.itmedia.co.jp/aiplus/article/2611/19/2000003322/2",
+      "observedAt": "2026-11-20T01:42:16.305682+00:00",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/article/2611/19/2000003322/2",
+      "sha256": "e5039753a849a776afd99604d9dd55408c3d315add23f412e4d9d331c7e9608c"
+    },
+    "neon-vendor": {
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "observedAt": "2026-11-20T01:42:16.306110+00:00",
+      "status": 200,
+      "actualUrl": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "sha256": "c12596ae8d00346263c1b8e51eff9b76bb7ac7a8f13737536a4650f3434904f4"
+    },
+    "edge-vendor": {
+      "url": "https://canonical.com/blog/new-edge-archive-offers-opt-in-ai-driven-security-remediation-and-backports",
+      "observedAt": "2026-11-20T01:42:16.306203+00:00",
+      "status": 200,
+      "actualUrl": "https://canonical.com/blog/new-edge-archive-offers-opt-in-ai-driven-security-remediation-and-backports",
+      "sha256": "42c461a7347dbc6b9d3ce6b9b075919613ba987fde0b42db0d7452a074649ca5"
+    },
+    "zenn-feed": {
+      "url": "https://zenn.dev/feed",
+      "observedAt": "2026-11-20T01:42:16.306802+00:00",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/feed",
+      "sha256": "c9b77b2a240bcf25a57e73f218d5ca89a6b6e1808d4cedf265618c428a61b637"
+    },
+    "LayerX Engineering Blog": {
+      "url": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-20T01:42:16.306943+00:00",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "sha256": "3431b489dc2f9e315a95caa6afcb9185799cef94c462109e45b3688682ebc24c"
+    },
+    "Money Forward Developers Blog": {
+      "url": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-20T01:42:16.307130+00:00",
+      "status": 502,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "sha256": "62b5794f948eb100d902f5d0fd9f7a456b96927096a236b7e1d91b0a8afdb7ce"
+    }
+  }
+}
