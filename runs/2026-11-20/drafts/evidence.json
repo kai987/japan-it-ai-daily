@@ -3,7 +3,7 @@
   "date": "2026-11-20",
   "status": "reviewed",
   "reviewedBy": "Codex local daily author",
-  "reviewedAt": "2026-11-20T01:47:57.355359+00:00",
+  "reviewedAt": "2026-11-20T01:49:28.331132+00:00",
   "scope": "Five Japanese source articles within the locked JST window, with supplemental official corroboration where used. The evidence distinguishes workshop and deployment experience from evaluator and vendor metrics.",
   "articles": [
     {
@@ -103,7 +103,7 @@
           "usedIn": {
             "zh": "强制模式中，样例将用户传入的查询对象与令牌中的 username 对照，以约束查询本人信息。",
             "ja": "強制モードの検証では、本人の従業員情報を判定するときに、引数とトークンのusernameを比べました。",
-            "interview": "ツールが動く前に、ゲートウェイで認可したいです。この検証ではCognitoのトークンを確認し、Cedarでクレームと引数を比べ、本人以外の呼び出しをLambdaまで通しません。ただ、一覧の評価には引数がないので、表示されることと実行できることは別です。使うクライアントでも拒否された場合の表示を確認します。"
+            "interview": "ツールが動く前に、ゲートウェイで認可したいです。この検証ではCognitoのトークンを確認し、Cedarでクレームと引数を比べ、本人以外の呼び出しをLambdaまで通しません。ただし、一覧の評価には引数がないので、表示されることと実行できることは別です。使うクライアントでも拒否された場合の表示を確認します。"
           }
         },
         {
@@ -243,7 +243,7 @@
           "conditions": "Ubuntu Pro opt-in preview and eligible non-kernel packages, as reported by gihyo.jp and corroborated by Canonical. No general production effect benchmark.",
           "usedIn": {
             "zh": "Edge 面向非内核软件包，内核另有两周的先行与认证流程。",
-            "ja": "この経路で扱うのはカーネル以外です。"
+            "ja": "ただし、先行アーカイブで扱うのはカーネル以外です。"
           }
         },
         {
