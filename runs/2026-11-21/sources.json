@@ -1,0 +1,3626 @@
+{
+  "targetDate": "2026-11-21",
+  "sourceWindow": {
+    "from": "2026-11-20T10:00:00+09:00",
+    "to": "2026-11-21T10:00:00+09:00"
+  },
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "observedAt": "2026-11-21T01:02:32.455797+00:00",
+      "links": [
+        {
+          "title": "Go to Qiita Advent Calendar Top",
+          "url": "https://qiita.com/advent-calendar"
+        },
+        {
+          "title": "Qiita Zine open_in_new",
+          "url": "https://qiita.com/official-columns"
+        },
+        {
+          "title": "Qiita Careers open_in_new",
+          "url": "https://careers.qiita.com"
+        },
+        {
+          "title": "AI x Dev x Team open_in_new",
+          "url": "https://qiita.com/official-campaigns/ai-dev-team"
+        },
+        {
+          "title": "Functions that can be used after logging in",
+          "url": "https://help.qiita.com/ja/articles/qiita-login-user"
+        },
+        {
+          "title": "2 Python 201 users",
+          "url": "https://qiita.com/tags/python"
+        },
+        {
+          "title": "3 生成AI 175 users",
+          "url": "https://qiita.com/tags/%e7%94%9f%e6%88%90ai"
+        },
+        {
+          "title": "4 ClaudeCode 162 users",
+          "url": "https://qiita.com/tags/claudecode"
+        },
+        {
+          "title": "5 Security 159 users",
+          "url": "https://qiita.com/tags/security"
+        },
+        {
+          "title": "6 AIエージェント 149 users",
+          "url": "https://qiita.com/tags/ai%e3%82%a8%e3%83%bc%e3%82%b8%e3%82%a7%e3%83%b3%e3%83%88"
+        },
+        {
+          "title": "7 LLM 133 users",
+          "url": "https://qiita.com/tags/llm"
+        },
+        {
+          "title": "8 AWS 122 users",
+          "url": "https://qiita.com/tags/aws"
+        },
+        {
+          "title": "9 個人開発 118 users",
+          "url": "https://qiita.com/tags/%e5%80%8b%e4%ba%ba%e9%96%8b%e7%99%ba"
+        },
+        {
+          "title": "10 初心者 98 users",
+          "url": "https://qiita.com/tags/%e5%88%9d%e5%bf%83%e8%80%85"
+        },
+        {
+          "title": "1 @ kotowazaman (kotowazaman) 749 Contributions",
+          "url": "https://qiita.com/kotowazaman"
+        },
+        {
+          "title": "2 @ nuco_d (nuco_ d) 482 Contributions",
+          "url": "https://qiita.com/nuco_d"
+        },
+        {
+          "title": "3 @ takumi_engineer (AI・Webエンジニア 匠（たくみ）) 185 Contributions",
+          "url": "https://qiita.com/takumi_engineer"
+        },
+        {
+          "title": "4 @ tsutorm 163 Contributions",
+          "url": "https://qiita.com/tsutorm"
+        },
+        {
+          "title": "5 @ maskot1977 (Ikemen Mas Kot) 142 Contributions",
+          "url": "https://qiita.com/maskot1977"
+        },
+        {
+          "title": "6 @ kikuziro (山 ちゃん) 124 Contributions",
+          "url": "https://qiita.com/kikuziro"
+        },
+        {
+          "title": "7 @ Sicut_study (渡邉 臣 | JISOU) 118 Contributions",
+          "url": "https://qiita.com/Sicut_study"
+        },
+        {
+          "title": "8 @ shahin0809 (ロホマン シャヒン) 110 Contributions",
+          "url": "https://qiita.com/shahin0809"
+        },
+        {
+          "title": "9 @ Dingu-suke 106 Contributions",
+          "url": "https://qiita.com/Dingu-suke"
+        },
+        {
+          "title": "10 @ kohYoung_I 90 Contributions",
+          "url": "https://qiita.com/kohYoung_I"
+        },
+        {
+          "title": "Qiita Award Information",
+          "url": "https://qiita.com/qiita-award"
+        },
+        {
+          "title": "AIが書いたコードのレビュー、どうしてる？工夫・苦労話・あるあるを何でもシェアしよう！ by CodeRabbit",
+          "url": "https://qiita.com/advent-calendar/2026/coderabbit"
+        },
+        {
+          "title": "はじめてのアドベントカレンダー",
+          "url": "https://qiita.com/advent-calendar/2026/first-time"
+        },
+        {
+          "title": "開発をちょっと楽にしたTipsを投稿しよう！by DoctorNet",
+          "url": "https://qiita.com/advent-calendar/2026/doctornet"
+        },
+        {
+          "title": "Remarkable items.Refreshed at every 5 a.m.and 5 p.m. rss_feed",
+          "url": "https://qiita.com/popular-items/feed"
+        },
+        {
+          "title": "@ yuyanz ( yuya )",
+          "url": "https://qiita.com/yuyanz"
+        },
+        {
+          "title": "【朗報】Microsoft 365 CopilotがOneDriveのファイルを直接編集できるようになってた！CoworkなしでGitHub Copilotみたいに使える件",
+          "url": "https://qiita.com/yuyanz/items/c3bb4801c105d96fa79d"
+        },
+        {
+          "title": "Joining Advent Calendar",
+          "url": "https://qiita.com/advent-calendar/2026"
+        },
+        {
+          "title": "Muse の VM は約2時間で入れ替わる（実測と対策）",
+          "url": "https://qiita.com/mryo0826/items/c05efd7ac228fe85ab44"
+        },
+        {
+          "title": "@ katohiro_fi ( かとひろ )",
+          "url": "https://qiita.com/katohiro_fi"
+        },
+        {
+          "title": "【随時更新】Microsoft Ignite 2026 現地参加レポート（技術情報少なめ・画像多め）",
+          "url": "https://qiita.com/katohiro_fi/items/0f03ceb4cf0aa4ecbc03"
+        },
+        {
+          "title": "紫のうさぎ3DモデルとアニメーションPurple Rabbit",
+          "url": "https://qiita.com/yangon/items/82ccc38c04c3ea1e8d3b"
+        },
+        {
+          "title": "【実験】Direct Connectの片系を落とすと、実際どれくらいで切り替わり、行きと戻りはどの回線を通るのか",
+          "url": "https://qiita.com/sh_fukatsu/items/5a069f9fce99a86efb05"
+        },
+        {
+          "title": "@ KYoshiyama ( 吉山 恭平 )",
+          "url": "https://qiita.com/KYoshiyama"
+        },
+        {
+          "title": "AI も「一晩寝かせる」と考えがまとまる🥱 寝ている間に記憶を整理する Dreaming の仕組み",
+          "url": "https://qiita.com/KYoshiyama/items/623e13ced9c119b614aa"
+        },
+        {
+          "title": "緊縮の痛みは成長に変わるか——実証的に棄却された仮説が政策に残り続ける認知設計 : システム設計視点の行動経済学 (66)",
+          "url": "https://qiita.com/maskot1977/items/96098e2d0016cf85e7e3"
+        },
+        {
+          "title": "【紫のうさぎ ホラーゲーム】終電後の「新宿駅B1F＆地下街全域（180m×116m）」を外部画像ゼロ・プロシージャルPBRで超精密再現した3Dサバイバルホラーを作ってGitHub Pagesに公開した",
+          "url": "https://qiita.com/yangon/items/0f4a8fce9954e472e70d"
+        },
+        {
+          "title": "@ Syoitu ( Syoitu den )",
+          "url": "https://qiita.com/Syoitu"
+        },
+        {
+          "title": "KDDIアジャイル開発センター株式会社",
+          "url": "https://qiita.com/organizations/kddiagile"
+        },
+        {
+          "title": "人間がボトルネックになった時代のAIエージェント設計",
+          "url": "https://qiita.com/Syoitu/items/5bb47c01a8513e52d1b5"
+        },
+        {
+          "title": "pypdfでPDFのプルダウンに値を入れたのにAcrobatだけ空欄になる：原因は/Iだった",
+          "url": "https://qiita.com/sionic_issa/items/adf42ca26f22e238793e"
+        },
+        {
+          "title": "@ ditchcrimson ( 赤堀 広志 )",
+          "url": "https://qiita.com/ditchcrimson"
+        },
+        {
+          "title": "AIコーディングで本格的なプロダクト開発をするために知っておきたいこと",
+          "url": "https://qiita.com/ditchcrimson/items/0b312db230db8d0bb566"
+        },
+        {
+          "title": "AIトークノミクスは観測から始めよう - AIコーディングのコスト・無駄・成果を測る",
+          "url": "https://qiita.com/kobadain/items/7ff26c584cd9b83f7a5a"
+        },
+        {
+          "title": "エンジニアのAIとの付き合い方 #1 はじめに 〜今、何が起きているのか〜",
+          "url": "https://qiita.com/jun-trick/items/efafd8eec3102a7b3754"
+        },
+        {
+          "title": "CAD図面のPDFをAIに読ませる前に確認したい2つのこと：文字が線になっていないか、縮小で潰れないか",
+          "url": "https://qiita.com/sionic_issa/items/345570e589cb1e562ea9"
+        },
+        {
+          "title": "AI に作らせた Skill を「期待値」で評価する",
+          "url": "https://qiita.com/rioriver/items/17308685b10b3a413427"
+        },
+        {
+          "title": "Docker SandboxesでAIエージェントを隔離する",
+          "url": "https://qiita.com/aratakaji/items/795a248f6398b03eb9cf"
+        },
+        {
+          "title": "DockerSandboxes",
+          "url": "https://qiita.com/tags/dockersandboxes"
+        },
+        {
+          "title": "Playwrightでtime.sleepを使ったら、ログインの完了に気づけなかった話（Hevyの記録を自動で取り込む）",
+          "url": "https://qiita.com/annkonabe/items/c2f328456568cfd38b59"
+        },
+        {
+          "title": "JISOU | プログラミングコーチング",
+          "url": "https://qiita.com/organizations/jisou"
+        },
+        {
+          "title": "【TypeScript】型定義をimportしたらエラーが出た",
+          "url": "https://qiita.com/ryu0947/items/00eaf72afe4fe734ba2f"
+        },
+        {
+          "title": "@ kataoka_se_sionic ( 片岡 誠一 )",
+          "url": "https://qiita.com/kataoka_se_sionic"
+        },
+        {
+          "title": "判定モデル を AI エージェントワークフローへ組み込む",
+          "url": "https://qiita.com/kataoka_se_sionic/items/e7c6b83c6291daedbb62"
+        },
+        {
+          "title": "New Relic Change TrackingでBlue/Greenの変更履歴を整理してみた",
+          "url": "https://qiita.com/seamoooooo/items/38b03472b8d1c3d501c9"
+        },
+        {
+          "title": "PHP が再び重大な脆弱性を修正。その修正版はもうあなたの PHP に届いているのか、公開から9時間で6つの入手先を調べたら、Ubuntu と brew install php はまだだった",
+          "url": "https://qiita.com/suwa_nobu/items/83e35e3be86b236cc807"
+        },
+        {
+          "title": "2026年11月20日 今日のQiitaトレンド記事をポッドキャストで聴こう！",
+          "url": "https://qiita.com/ennagara128/items/2367588703fbee1cf6bb"
+        },
+        {
+          "title": "@ derekwang8866",
+          "url": "https://qiita.com/derekwang8866"
+        },
+        {
+          "title": "オンプレミスAIエージェントの二重実行と記憶劣化を防ぐ：ZeroOS（PostgreSQL 12状態リース）と LongMemOS（約3.1MB）の設計",
+          "url": "https://qiita.com/derekwang8866/items/533681c013a98058359e"
+        },
+        {
+          "title": "PHPの11月19日セキュリティリリース：RHEL互換ディストリビューション・Amazon Linux・Remiリポジトリの修正公開状況（2026年11月21日 08:00 JST時点）",
+          "url": "https://qiita.com/k2_naka/items/0449fe452339950649e4"
+        },
+        {
+          "title": "RAGの「分からない」と参照元を自動検証するPython評価スクリプトの作り方",
+          "url": "https://qiita.com/takumi_engineer/items/8287c5fb775d834086a4"
+        },
+        {
+          "title": "JSON.parseのreviverで項目が消える理由：return忘れと配列の穴をNode.jsで実測",
+          "url": "https://qiita.com/ennagara128/items/65bb10ddfcd03293bc23"
+        },
+        {
+          "title": "Setで同じIDの行が消えない理由：オブジェクトの重複除去と残す順をNode.jsで実測",
+          "url": "https://qiita.com/ennagara128/items/77b9ad11f6b7014a4ad7"
+        },
+        {
+          "title": "オプショナルチェイニングでもTypeErrorになる3つの境界：階層・括弧・関数をNode.jsで実測",
+          "url": "https://qiita.com/ennagara128/items/e5f6fc635bd4a31dd010"
+        },
+        {
+          "title": "[AWS] 徹底比較！ OpenSearch Memory vs AgentCore Memory",
+          "url": "https://qiita.com/kikuziro/items/939887bcd8fbb3a78ba0"
+        },
+        {
+          "title": "@ ikuosaito1989 ( Ikuo Saito )",
+          "url": "https://qiita.com/ikuosaito1989"
+        },
+        {
+          "title": "Linuxのバックポートという仕組みでnginxを最新版にしなくても安全にできるらしい",
+          "url": "https://qiita.com/ikuosaito1989/items/01edecc9eb66abeba5d7"
+        },
+        {
+          "title": "Qiita Advent Calendar 2026 プレゼントカレンダーのご紹介🎁",
+          "url": "https://blog.qiita.com/adventcalendar-2026-presents/?utm_source=qiita&utm_medium=referral&utm_content=sidebar%20feed"
+        },
+        {
+          "title": "Qiita Advent Calendar 2026 Qiita賞・特別企画の参加方法・選定基準について",
+          "url": "https://blog.qiita.com/adventcalendar-2026-qiitapresents/?utm_source=qiita&utm_medium=referral&utm_content=sidebar%20feed"
+        },
+        {
+          "title": "About community sponsors navigate_next",
+          "url": "https://business.qiita.com/?utm_source=qiita&utm_medium=referral&utm_campaign=community_sponsor_link"
+        },
+        {
+          "title": "Feedback/Requests",
+          "url": "https://github.com/increments/qiita-discussions/discussions/116"
+        },
+        {
+          "title": "Qiita Tech Festa",
+          "url": "https://qiita.com/tech-festa/2026"
+        },
+        {
+          "title": "Engineer White Paper",
+          "url": "https://qiita.com/white_papers/2026"
+        },
+        {
+          "title": "@qiita_milestone",
+          "url": "https://x.com/qiita_milestone"
+        },
+        {
+          "title": "E-desu: Financial Information Media Platform",
+          "url": "https://www.a-tm.co.jp/top/"
+        },
+        {
+          "title": "Navinavi cashing: Cash advance & credit loan comparison site",
+          "url": "https://a-cashing.com/"
+        },
+        {
+          "title": "Hikkoshizamurai: Moving quote comparison service",
+          "url": "https://hikkoshizamurai.jp/"
+        },
+        {
+          "title": "Moving price guide: Find the cheapest quote for relocation",
+          "url": "https://moving.a-tm.co.jp/"
+        },
+        {
+          "title": "Soldi: Recommended low-cost SIM & fiber-optic internet comparison site",
+          "url": "https://soldi.hikkoshizamurai.jp/"
+        },
+        {
+          "title": "Piano purchase center",
+          "url": "https://www.pianocenter.jp/"
+        },
+        {
+          "title": "Navikuru: Car purchase & used car assessment site",
+          "url": "https://www.navikuru.jp/"
+        },
+        {
+          "title": "Hanayume: Find your wedding & wedding venue",
+          "url": "https://hana-yume.net/"
+        },
+        {
+          "title": "Qiita Job Change",
+          "url": "https://jobs.qiita.com/"
+        },
+        {
+          "title": "microCMS: API-based headless CMS",
+          "url": "https://microcms.io/"
+        },
+        {
+          "title": "About Ateam's M&A",
+          "url": "https://www.a-tm.co.jp/ma/"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "htmlSha256": "160abc00685efc34dedb0f4bebfcff15141d80a8f0f65498e7b8b0bb57d4704b",
+      "feeds": [],
+      "linksObserved": 89
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-21T01:02:32.456129+00:00",
+      "links": [
+        {
+          "title": "Zennの法人向けメニュー 法人向けメニュー",
+          "url": "https://zenn.dev/biz-lp"
+        },
+        {
+          "title": "Zennfes Autumn 2026 開催中！多数の投稿テーマとオフラインイベントと",
+          "url": "https://zenn.dev/events/zennfes-autumn-2026"
+        },
+        {
+          "title": "第5回ハッカソン、最終ピッチ&作品紹介LT大会。12月1日、渋谷でAgentic AI 文化祭開催！",
+          "url": "https://zenn.dev/hackathons/google-cloud-japan-ai-hackathon-vol5"
+        },
+        {
+          "title": "Publication / Pro",
+          "url": "https://zenn.dev/publications"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "htmlSha256": "d69a9f942501e999e5d447ab0276383a5cbbd26f72fd7e999b2334a7174b6dc2",
+      "feeds": [
+        "https://zenn.dev/feed"
+      ],
+      "linksObserved": 4,
+      "feedsObserved": 20
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-21T01:02:32.456219+00:00",
+      "links": [
+        {
+          "title": "マイクロソフト、クラウドやオンプレミスのデータベースを一元管理する「Database Hub」正式リリース。AIエージェントによる運用監視の自動化も",
+          "url": "https://www.publickey1.jp/blog/26/database_hubai.html"
+        },
+        {
+          "title": "マイクロソフト、AIによるサイバー攻撃にAIエージェントで対抗する新サービス「Microsoft Perception」提供開始",
+          "url": "https://www.publickey1.jp/blog/26/aiaimicrosoft_perception.html"
+        },
+        {
+          "title": "マイクロソフト、AIが生成したアプリを企業内で安全に実行するランタイム「Copilot Managed Runtime」正式リリース",
+          "url": "https://www.publickey1.jp/blog/26/aicopilot_managed_runtime.html"
+        },
+        {
+          "title": "Windows Server 2028がパブリックプレビュー公開。Microsoft FoundryなどAIによる推論の実行基盤へと拡張",
+          "url": "https://www.publickey1.jp/blog/26/windows_server_2028microsoft_foundryai.html"
+        },
+        {
+          "title": "［速報］マイクロソフト、コーディング用AIモデルとして高性能かつ低価格「MAI Code 2」「MAI Code 2 Flash」発表",
+          "url": "https://www.publickey1.jp/blog/26/aimai_code_2mai_code_2_flash.html"
+        },
+        {
+          "title": "［速報］マイクロソフト、PostgreSQL互換のミッションクリティカル向けデータベースサービス「Azure HorizonDB」正式リリース",
+          "url": "https://www.publickey1.jp/blog/26/postgresqlazure_horizondb.html"
+        },
+        {
+          "title": "［速報］PostgreSQL互換のサーバレスでOLTPとOLAP両対応を実現する「Microsoft Fabric HorizonDB」パブリックプレビュー",
+          "url": "https://www.publickey1.jp/blog/26/postgresqloltpolapmicrosoft_fabric_horizondb.html"
+        },
+        {
+          "title": "［速報］AIがOracle DBからPostgreSQLへの移行を支援、「Azure Database Migration Service」プレビュー",
+          "url": "https://www.publickey1.jp/blog/26/aioracle_dbpostgresqlazure_database_migration_service.html"
+        },
+        {
+          "title": "［速報］Azure SQL Databaseをローカルで実行する「Azure SQL Database local development container」パブリックプレビュー",
+          "url": "https://www.publickey1.jp/blog/26/azure_sql_databaseazure_sql_database_local_development_container.html"
+        },
+        {
+          "title": "軽量なマイクロVMでネイティブよりアプリを高速起動できる「Hyperlight-Unikraft」登場",
+          "url": "https://www.publickey1.jp/blog/26/vmhyperlight-unikraft.html"
+        },
+        {
+          "title": "Node.jsとnpmをWebブラウザ上で実行可能にする「OpenVessel」、神戸ソフトがオープンソースで公開",
+          "url": "https://www.publickey1.jp/blog/26/nodejsnpmwebopenvessel.html"
+        },
+        {
+          "title": "PostgreSQL 19リリース延期の背景。β4で多くの新機能取り下げが発生、原因はAIによるコードレビューか",
+          "url": "https://www.publickey1.jp/blog/26/postgresql_194ai.html"
+        },
+        {
+          "title": "Cloudflare、AI専用でタブやテーマや拡張などない軽量ヘッドレスブラウザ「Kitesurf」、オープンソースで公開",
+          "url": "https://www.publickey1.jp/blog/26/cloudflareaikitesurf.html"
+        },
+        {
+          "title": "Google Antigravity、クラウド上でAIエージェントが働く「リモートエージェント」機能を搭載。就業時間外でもAIエージェントは働き続ける",
+          "url": "https://www.publickey1.jp/blog/26/google_antigravityaiai.html"
+        },
+        {
+          "title": "AWSをローカルマシン上でエミュレートする、AWS公式の「AWSエミュレータ」正式リリース",
+          "url": "https://www.publickey1.jp/blog/26/awsawsaws_1.html"
+        },
+        {
+          "title": "テストフレームワーク「Playwright」がBunを正式サポート。テストランナーの実行を可能に",
+          "url": "https://www.publickey1.jp/blog/26/playwrightbun.html"
+        },
+        {
+          "title": "AWS、AIエージェント向けに強力な隔離環境とネイティブなEC2性能を備えた軽量VM「AWS Nitro Sandboxes」提供開始",
+          "url": "https://www.publickey1.jp/blog/26/awsaiec2vmaws_nitro_sandboxes.html"
+        },
+        {
+          "title": "ITエンジニアが選ぶ「ITエンジニア本大賞2027」投票スタート",
+          "url": "https://www.publickey1.jp/blog/26/itit2027.html"
+        },
+        {
+          "title": "Publickeyについて／運営者について",
+          "url": "https://www.publickey1.jp/about-us.html"
+        },
+        {
+          "title": "読者が安心して記事を読めるようにするための取り組みについて",
+          "url": "https://www.publickey1.jp/blog/24/publickey_5.html"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "htmlSha256": "f2197037d4ae3028a7de3a202e5d0e5694cee4443eab5482ca285cc3b385f278",
+      "feeds": [
+        "https://www.publickey1.jp/atom.xml"
+      ],
+      "linksObserved": 20
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-21T01:02:32.456331+00:00",
+      "links": [
+        {
+          "title": "Antigravityを他社AIから操作すると「垢BAN」？　注意点をGoogle Cloud日本法人に聞いた 2026年11月20日 08時15分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/20/2000003353/"
+        },
+        {
+          "title": "Google、わずか2カ月で4つ目のモデル公開「Gemini 4 Neon」　一部「Fable同等」性能をコスト半分で 2026年11月19日 11時25分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/19/2000003322/"
+        },
+        {
+          "title": "ソブリンAI実現に向けて再び立ちはだかる「旧来の課題」　データ・インフラ・モデルの自由度をどう保つか 2026年11月19日 08時00分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/19/2000002979/"
+        },
+        {
+          "title": "日本の音声AIスタートアップに159億円　ElevenLabsはなぜ、社員15人のKotobaを買収するのか 2026年11月19日 07時55分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/19/2000003306/"
+        },
+        {
+          "title": "「GPT-6.2 Astra／Sol」登場　前世代超える性能を「コスト1/3で実現」　Ultrafast提供も拡大 2026年11月18日 10時32分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/18/2000003282/"
+        },
+        {
+          "title": "脱「成果が出ないAI活用」　AI推進は経営指標までつながるか？",
+          "url": "https://www.itmedia.co.jp/aiplus/feature/ai_enablement"
+        },
+        {
+          "title": "「AIデバイス」は業務を加速させるのか？ PC、スマホ……“エッジ処理”の魅力に迫る",
+          "url": "https://www.itmedia.co.jp/aiplus/feature/aidevices"
+        },
+        {
+          "title": "「おもてなし以外」はAIで――多忙化する美容部員、資生堂はGeminiでどう変えたか 2026年11月20日 08時00分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/20/2000003336/"
+        },
+        {
+          "title": "九州国立博物館、特別展ポスターに生成AI使用　当初「使用していない」と説明 2026年09月17日 21時55分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2609/17/2000001595/"
+        },
+        {
+          "title": "タツノがAI給油許可システム「AIGO」を販売開始　店舗運営の省人化を支援 2026年08月13日 16時00分",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2608/13/news006.html"
+        },
+        {
+          "title": "はてな、個人向けフォーラムサービス開始へ　「安心して語り合える場」目指す　開発・運営にはAI活用 2026年05月26日 17時04分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2605/26/2000000022/"
+        },
+        {
+          "title": "相次ぐ情報漏えい、攻撃側のAI活用「間違いない」　防御側はどう使うか　傾向と対策を大手ベンダー各社に聞く 2026年10月08日 17時18分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2610/08/2000002136/"
+        },
+        {
+          "title": "M365 Copilotのための「Teams活用術3選」　北大DX業務推進室が解説 2026年08月05日 07時55分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2608/05/2000000379/"
+        },
+        {
+          "title": "MIXI、新卒エンジニア向け研修資料＆動画を無料公開　「実践的なAI活用術」を12科目で紹介 2026年07月27日 15時08分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2607/27/2000000223/"
+        },
+        {
+          "title": "国立国会図書館、「AI動向」に関する調査資料を無料公開中 2026年05月08日 17時30分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2605/08/1260508109/"
+        },
+        {
+          "title": "「成果志向のBIM」とは何か？　Autodeskが描くAI時代の鉄道インフラ 2026年11月12日 07時00分",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/12/news016.html"
+        },
+        {
+          "title": "横浜ゴムがRAGを活用した生成AIシステムを開発　タイヤ開発の意思決定を高度化 2026年08月31日 06時45分",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2608/31/news041.html"
+        },
+        {
+          "title": "20年かけて培った設計技術を数十秒で再現　オートデスクが語るAI×CADの可能性 2026年07月08日 07時45分",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2607/08/news047.html"
+        },
+        {
+          "title": "「4項目のAI検査」で高密度基板の目視検査時間を約8割削減　OKIの新検査技術とは 2026年06月29日 07時45分",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2606/29/news041.html"
+        },
+        {
+          "title": "AIエージェントに対する製造業のリアルな声 2026年06月08日 05時30分",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2606/08/news025.html"
+        },
+        {
+          "title": "IBMとArmが戦略的提携　AI対応でメインフレームの柔軟性確保へ 2026年04月03日 19時29分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2604/03/1260403113/"
+        },
+        {
+          "title": "【Excelで学ぶデータ分析】うどん・そばの好みは出身地域で差があるか？（独立性の検定） 2025年11月27日 05時00分",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2511/27/news004.html"
+        },
+        {
+          "title": "東武ホテルが直面する人手不足　社長が提唱する「観光業界のAI活用」 2025年06月24日 08時00分",
+          "url": "https://www.itmedia.co.jp/business/articles/2506/24/news019.html"
+        },
+        {
+          "title": "IT調査ピックアップ： AIで成果を出す企業ほど「人を増やす」？　“通説”を否定する調査結果をIDCが発表 2026年11月21日 09時00分",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2611/21/news003.html"
+        },
+        {
+          "title": "京大がAI依存チェックリスト公開　「当てはまるものあれば、しばらくAI触らないで」 2026年11月20日 19時13分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/20/2000003378/"
+        },
+        {
+          "title": "「Muse」専用メアド、無料で作成可能に　AIが送受信を代理 2026年11月20日 16時52分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/20/2000003372/"
+        },
+        {
+          "title": "Microsoft、AIによるサイバー攻撃にAIエージェントで対抗する新サービス「Microsoft Perception」提供開始 2026年11月20日 13時29分",
+          "url": "https://www.itmedia.co.jp/news/article/2611/20/2000003368/"
+        },
+        {
+          "title": "日立が「フィジカルAI」で狙う“5年で事業規模2倍”の勝算　3.5万人の新会社トップが語る「戦略の2本柱」とは？ 2026年11月20日 11時15分",
+          "url": "https://www.itmedia.co.jp/business/articles/2611/20/news024.html"
+        },
+        {
+          "title": "CAEニュース： 車体形状を変えながら空力性能をAI予測、AutodeskがNVIDIAとの技術統合を計画 2026年11月20日 11時00分",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/20/news029.html"
+        },
+        {
+          "title": "ChatGPT「Plus」プラン一部ユーザーに「dots」解禁　「Business Standard」全ユーザーにも 2026年11月20日 09時46分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/20/2000003359/"
+        },
+        {
+          "title": "AIに面談させてノウハウを引き出す： ベテランPMが辞めても失いたくない「暗黙知」を“生成AI面談”で残す　東京ガス系が実践したノウハウ継承術 2026年11月20日 09時45分",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/20/news021.html"
+        },
+        {
+          "title": "三菱電機の新たな挑戦（後編）： ヒューマノイドからAIビジョンまで、三菱電機「Serendie Automation」の具体像 2026年11月20日 09時00分",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/20/news045.html"
+        },
+        {
+          "title": "Mac版「Gemini」にユーザーの代わりにアプリを操作する「computer use」機能追加　まず米国で 2026年11月20日 08時41分",
+          "url": "https://www.itmedia.co.jp/news/article/2611/20/2000003356/"
+        },
+        {
+          "title": "IT調査ピックアップ： 「名ばかりFDE」を見抜けるか？　依頼検討時に確認したい10項目 2026年11月20日 08時00分",
+          "url": "https://www.itmedia.co.jp/enterprise/articles/2611/20/news028.html"
+        },
+        {
+          "title": "FAイベントレポート： なぜ中国はヒューマノイドを量産するのか　突き動かす「焦り」と足踏みの正体 2026年11月20日 07時00分",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/20/news014.html"
+        },
+        {
+          "title": "伊藤忠が月1.3万時間削減、数千件の「二重業務」解消へ　AI推進で経営陣を動かした「定量の匂い」とは？ 2026年11月20日 07時00分",
+          "url": "https://www.itmedia.co.jp/business/articles/2611/20/news042.html"
+        },
+        {
+          "title": "AI需要で「シェア0→50％」急成長　半導体設計のアーム社が仕掛ける“新ビジネス“の正体は？ 2026年11月20日 07時00分",
+          "url": "https://www.itmedia.co.jp/business/articles/2611/20/news041.html"
+        },
+        {
+          "title": "SlackやTeamsで情シス問い合わせを自動化　Salesforceの新AI「Paige」とは 2026年11月20日 07時00分",
+          "url": "https://kn.itmedia.co.jp/kn/article/2611/20/2000003331/"
+        },
+        {
+          "title": "さよなら「Claude Code」　人気AIに愛想を尽かしたエンジニアの意外な移行先：906th Lap 2026年11月20日 06時00分",
+          "url": "https://kn.itmedia.co.jp/kn/article/2611/20/2000003337/"
+        },
+        {
+          "title": "「GLM-5.3-Flash」「DeepSeek-V4.1-Flash-1017」が月3000リクエストまで無料　さくらのAI推論基盤で提供 2026年11月19日 16時43分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/19/2000003339/"
+        },
+        {
+          "title": "ファミマが「AIロボット」本格導入へ　飲料補充に活用、作業時間の約7割を削減 2026年11月19日 13時27分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/19/2000003329/"
+        },
+        {
+          "title": "ちょっと昔のInnovative Tech AIモデルとAIエージェントをつなぐ「APIルーター」に注意？　428件を調べてわかった乗っ取り手口　暗号資産を盗む例も 2026年11月19日 12時00分",
+          "url": "https://www.itmedia.co.jp/news/article/2611/19/2000003310/"
+        },
+        {
+          "title": "Innovative Tech ちまたの“格安GPT”、中身は偽物？　非公式APIのモデル偽装を調査した結果…… 2026年11月19日 12時00分",
+          "url": "https://www.itmedia.co.jp/news/article/2611/19/2000003309/"
+        },
+        {
+          "title": "AIによるAI研究「指数関数的に増加」でも「依然として人間中心」　OpenAIがレポート公開 2026年11月19日 09時48分",
+          "url": "https://www.itmedia.co.jp/aiplus/article/2611/19/2000003318/"
+        },
+        {
+          "title": "EdgeTech+ 2026： PFUがファンレスエッジAIデバイスを開発、自然言語入力でAI解析機能を簡単構築 2026年11月19日 08時30分",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/19/news044.html"
+        },
+        {
+          "title": "三菱電機の新たな挑戦（前編）： 「e-F@ctory」から次の進化へ、三菱電機が描くAI主体の自律型工場 2026年11月19日 07時30分",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/19/news045.html"
+        },
+        {
+          "title": "メカ設計インタビュー： コマツ油機開発センタが挑む設計プロセス改革、ナレッジ検索／整備に生成AI活用 2026年11月19日 07時00分",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/19/news001.html"
+        },
+        {
+          "title": "孫正義氏が「墓石に刻んでほしい」と明かした言葉　流した涙、もう「時間との勝負」やり残したことは？ 2026年11月19日 07時00分",
+          "url": "https://www.itmedia.co.jp/business/articles/2611/19/news036.html"
+        },
+        {
+          "title": "3 「オントロジー」とは結局何なのか　Palantir、Databricks、Snowflake、NVIDIAで中身が違う理由",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/19/news008.html"
+        },
+        {
+          "title": "4 農水省の“クソダサ”ポスター話題　「AIよりよっぽど良い」の声も　担当者に狙いを聞いた",
+          "url": "https://www.itmedia.co.jp/news/article/2606/30/1260630158/"
+        },
+        {
+          "title": "9 AIモデリングもできる無償3D CAD「SolidCraft」を試してみた！",
+          "url": "https://monoist.itmedia.co.jp/mn/articles/2611/16/news011.html"
+        },
+        {
+          "title": "ジェンスン・フアン氏退任は「NVIDIAバブル崩壊」の序章か？　どうなる今後の半導体業界",
+          "url": "https://mailmag.itmedia.co.jp/backnumbers/ai/20261118_0.html"
+        },
+        {
+          "title": "ローカルLLM利用のクリニックを受診してみた　PCマニアの院長が自力で構築、その導入効果は？",
+          "url": "https://mailmag.itmedia.co.jp/backnumbers/ai/20261111_0.html"
+        },
+        {
+          "title": "@itm_aiplusをフォロー",
+          "url": "https://x.com/itm_aiplus"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "htmlSha256": "7e31d110136e32e701fbc28cdf71bbc42f3f3b9415bd0ec87f632da1fe4474fe",
+      "feeds": [],
+      "linksObserved": 54
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-21T01:02:32.456405+00:00",
+      "links": [
+        {
+          "title": "連載まとめ読み＠IT eBook",
+          "url": "https://atmarkit.itmedia.co.jp/ait/series/1567/"
+        },
+        {
+          "title": "Server & Storage",
+          "url": "https://atmarkit.itmedia.co.jp/ait/subtop/server/index.html"
+        },
+        {
+          "title": "Database Expert",
+          "url": "https://atmarkit.itmedia.co.jp/ait/subtop/db/index.html"
+        },
+        {
+          "title": "Master of IP Network",
+          "url": "https://atmarkit.itmedia.co.jp/ait/subtop/network/index.html"
+        },
+        {
+          "title": "Security & Trust",
+          "url": "https://atmarkit.itmedia.co.jp/ait/subtop/security/index.html"
+        },
+        {
+          "title": "Microsoft&Windows",
+          "url": "https://atmarkit.itmedia.co.jp/ait/subtop/features/server/ms_win_2026.html"
+        },
+        {
+          "title": "Javaに重大な脆弱性、JenkinsやKeycloakも突破口に　影響範囲と暫定対策は？",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/20/news016.html"
+        },
+        {
+          "title": "「マルチエージェント設計“15のパターン”」「GoogleのSRE教科書、10年ぶり改訂」　AI時代の新たな常識",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/21/news002.html"
+        },
+        {
+          "title": "AIが脆弱性を探し、ランサムウェア構築を支援　5つのAI悪用手口と対策リスト",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/20/news061.html"
+        },
+        {
+          "title": "ベテランPMが辞めても失いたくない「暗黙知」を“生成AI面談”で残す　東京ガス系が実践したノウハウ継承術",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/20/news021.html"
+        },
+        {
+          "title": "テスト環境に本番データを置く危うさ　楽天証券、最大約1125万口座の情報漏えいを報告　どうすれば防げたのか？",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/20/news018.html"
+        },
+        {
+          "title": "「Excel・紙の手作業が残る。システムを導入したのに」　8割の企業が“理想の自社専用システム”を断念する理由",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/20/news027.html"
+        },
+        {
+          "title": "タイムズ、デジタル庁、不正アクセス続出の“魔の9月”　一連の背景にはAIの悪用？",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/11/news002.html"
+        },
+        {
+          "title": "IPA、ランサムウェア被害組織の生の声から得た“11の教訓”を公開",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/14/news020.html"
+        },
+        {
+          "title": "安全なAIモデルを使っても安心できない　攻撃者が狙う「AIの外側」",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2610/08/news008.html"
+        },
+        {
+          "title": "だから「SASE」と「ゼロトラスト」を混同してはいけない――企業が陥る“幻想”の正体",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2609/03/news010.html"
+        },
+        {
+          "title": "AI時代、企業の競争優位はどこから生まれるのか",
+          "url": "https://el.jibun.atmarkit.co.jp/humancybersecurity/2026/11/ai_23.html?ref=rss"
+        },
+        {
+          "title": "タスクを終える仕事から、成果を実現する仕事へ",
+          "url": "https://el.jibun.atmarkit.co.jp/humancybersecurity/2026/11/post_73.html?ref=rss"
+        },
+        {
+          "title": "AIと仕事の未来を考える　第1回",
+          "url": "https://el.jibun.atmarkit.co.jp/humancybersecurity/2026/11/ai1.html?ref=rss"
+        },
+        {
+          "title": "クリック率の先へ | AI時代のサイバー判断力を、行動の過程から育てる",
+          "url": "https://el.jibun.atmarkit.co.jp/humancybersecurity/2026/11/_ai_2.html?ref=rss"
+        },
+        {
+          "title": "70歳のネット古参から反論が届きました。ホワイトと心の病。",
+          "url": "https://el.jibun.atmarkit.co.jp/searchman/2026/11/70.html?ref=rss"
+        },
+        {
+          "title": "キャリア採用の応募を受け付けています",
+          "url": "https://hrmos.co/pages/itmedia/jobs?jobType=FULL"
+        },
+        {
+          "title": "“AIで揺らぐ統制”への対処法を知る【登録無料／視聴条件を満たした方にAmazonギフト券進呈】",
+          "url": "https://members09.live.itmedia.co.jp/library/MTA5Nzky?group=2611_SecurityWeek&utm_source=itm_ait&utm_medium=content_text&utm_campaign=dx_mm_ait_side#utm_source=ait&utm_content=rightcolumn_info"
+        },
+        {
+          "title": "AIに「絶対するな」は通じない、Anthropicが明かすClaude Code使いこなし術まとめ",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/21/news061.html#utm_medium=rightcol_ebook&utm_content=textlink1"
+        },
+        {
+          "title": "5大コーディングエージェントを検証　バイブコーディング時代のリスクと対策",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/14/news045.html#utm_medium=rightcol_ebook&utm_content=textlink2"
+        },
+        {
+          "title": "“応用情報が消える”って本当？　「生成AIパスポート」って何？　IT資格の今を読む",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/07/news035.html#utm_medium=rightcol_ebook&utm_content=textlink3"
+        },
+        {
+          "title": "「光ファイバーはもう古い」「2035年宇宙の旅」　実運用へ向かうデータセンター新技術",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2607/31/news047.html#utm_medium=rightcol_ebook&utm_content=textlink4"
+        },
+        {
+          "title": "従業員が次々辞める「有害な職場」の残念すぎる共通点",
+          "url": "https://techtarget.itmedia.co.jp/tt/news/2602/04/news12.html"
+        },
+        {
+          "title": "瞬時にM365が乗っ取られる――全社員に周知すべき“新フィッシング”の教訓",
+          "url": "https://techtarget.itmedia.co.jp/tt/news/2603/06/news07.html"
+        },
+        {
+          "title": "どこでも通用するはずの情シス管理職が“詰む瞬間”　前もってしておくことは？",
+          "url": "https://techtarget.itmedia.co.jp/tt/news/2603/04/news02.html"
+        },
+        {
+          "title": "ITmedia Security Week 2026 秋 [11月24日（火）〜 12月1日（火）]",
+          "url": "https://members09.live.itmedia.co.jp/library/MTA5Nzky?group=2611_SecurityWeek&np_source=itm_atit_ev&utm_source=itm_ait&utm_medium=content_text&utm_campaign=20261021&utm_content=seminar"
+        },
+        {
+          "title": "ITmedia AI Developer Live 2026 秋 [12月2日（水）]",
+          "url": "https://members11.live.itmedia.co.jp/library/MTEwNTA4?group=2612_AIDeveloperLive&np_source=itm_atit_ev&utm_source=itm_ait&utm_medium=content_text&utm_campaign=20261102&utm_content=seminar"
+        },
+        {
+          "title": "パワーエレクトロニクス イニシアチブ 2026 [12月3日（木）〜 12月4日（金）]",
+          "url": "https://members13.live.itmedia.co.jp/library/MTEwMTY0?group=2612_PowerElectronics&np_source=itm_atit_ev&utm_source=itm_ait&utm_medium=content_text&utm_campaign=20261102&utm_content=seminar"
+        },
+        {
+          "title": "ITmedia Agentic AI Live 2026 秋 [12月7日（月）]",
+          "url": "https://members08.live.itmedia.co.jp/library/MTEwODQ5?group=2612_AgenticAI&np_source=itm_atit_ev&utm_source=itm_ait&utm_medium=content_text&utm_campaign=20261116&utm_content=seminar"
+        },
+        {
+          "title": "変わる情シス 2026 秋 [12月8日（火）〜12月10日（木）]",
+          "url": "https://members07.live.itmedia.co.jp/library/MTEwNjE3?group=2612_InformationSystemManager&np_source=itm_atit_ev&utm_source=itm_ait&utm_medium=content_text&utm_campaign=20261109&utm_content=seminar"
+        },
+        {
+          "title": "MONOist AI Forum 2026 秋 [12月14日（月）〜12月16日（水）]",
+          "url": "https://members14.live.itmedia.co.jp/library/MTExMTc3?group=2612_MONOistAI&np_source=itm_atit_ev&utm_source=itm_ait&utm_medium=content_text&utm_campaign=20261116&utm_content=seminar"
+        },
+        {
+          "title": "ITmedia Tech Highlights 2026 Autumn [12月17日（木）]",
+          "url": "https://members05.live.itmedia.co.jp/library/MTExMzMw?group=2612_TechHighlights&np_source=itm_atit_ev&utm_source=itm_ait&utm_medium=content_text&utm_campaign=20261116&utm_content=seminar"
+        },
+        {
+          "title": "SemiTest 2027 半導体テストサミット [2月2日（火）〜 2月4日（木）]",
+          "url": "https://members12.live.itmedia.co.jp/library/MTEwNDk4?group=2702_SemiTest&np_source=itm_atit_ev&utm_source=itm_ait&utm_medium=content_text&utm_campaign=20261116&utm_content=seminar"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "htmlSha256": "c76180c2612f551478f168f3190e913232612ba254924fb170ebca163f57071b",
+      "feeds": [
+        "https://rss.itmedia.co.jp/rss/0.91/ait.xml",
+        "https://rss.itmedia.co.jp/rss/1.0/ait.xml",
+        "https://rss.itmedia.co.jp/rss/2.0/ait.xml"
+      ],
+      "linksObserved": 38
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-21T01:02:32.456492+00:00",
+      "links": [],
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "htmlSha256": "b70a976e71d5de9753d65f44ea3b1c917198ae59b4e909951e2761965b43d5fa",
+      "linksObserved": 0
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-21T01:02:32.456542+00:00",
+      "links": [
+        {
+          "title": "gihyo.jp サイトのロゴ",
+          "url": "https://gihyo.jp/"
+        },
+        {
+          "title": "“Edge” アーカイブに よる 先行パッチ⁠ ⁠ 、 Ubuntu 27. 04 （tenacious） の 開発⁠ ⁠ ： 「AI Tutor」⁠ ⁠ 、 メーリングリストの マイグレーション OS・デスクトップ Ubuntu Japanese Team 54 2026-11-20",
+          "url": "https://gihyo.jp/admin/clip/01/ubuntu-topics/202611/20?summary"
+        },
+        {
+          "title": "Titan M3は 前進⁠ ⁠ 、 MTEは 後退か⁠ ⁠ 。 評価を 分けたGrapheneOSの 異議 デバイス・IoT 傍島康雄 58 2026-11-19",
+          "url": "https://gihyo.jp/article/2026/11/android-weekly-topics-261119?summary"
+        },
+        {
+          "title": "電子書籍販売 - Gihyo Digital Publishing",
+          "url": "https://gihyo.jp/dp"
+        },
+        {
+          "title": "トレードオフを AIと 比較し⁠ ⁠ 、 技術選定の 判断を 行う 機械学習・AI 平湯太郎，髙槻大貴，米道卓音 書籍関連 43 2026-11-19",
+          "url": "https://gihyo.jp/article/2026/10/engineer-ai-sounding-board-04?summary"
+        },
+        {
+          "title": "第935回 ログ管理サーバー 「VictoriaLogs」 で⁠ ⁠ 、 家庭内の ログを 集中管理する バックエンド開発 水野源 300 2026-11-18",
+          "url": "https://gihyo.jp/admin/serial/01/ubuntu-recipe/0935?summary"
+        },
+        {
+          "title": "第2回 言い直しまで 直す 入力⁠ ⁠ 。 AI音声入力と 文章作成ツールを 試す デバイス・IoT 傍島康雄 32 2026-11-18",
+          "url": "https://gihyo.jp/article/2026/11/gemini-intelligence-02?summary"
+        },
+        {
+          "title": "Claude Codeで AIエージェントの 環境設定を 非エンジニア向けに 最適化しよう プログラミング一般 西俊明 128 2026-11-17",
+          "url": "https://gihyo.jp/article/2026/11/claude-business-guide-04?summary"
+        },
+        {
+          "title": "Ubuntu Core 26の プレビュー⁠ ⁠ 、 Ubuntu 27. 04 （tenacious） の 開発⁠ ⁠ ： linux-firmware-hweの 準備⁠ ⁠ 、 .NET 11の サポート OS・デスクトップ Ubuntu Japanese Team 155 2026-11-13",
+          "url": "https://gihyo.jp/admin/clip/01/ubuntu-topics/202611/13?summary"
+        },
+        {
+          "title": "第68回 QEMUと ネットワーク設定 OS・デスクトップ こじまみつひろ 99 2026-11-12",
+          "url": "https://gihyo.jp/article/2026/11/zoku-gansiki-0068?summary"
+        },
+        {
+          "title": "第934回 今あえての CDリッピングアプリ⁠ ⁠ 、 GrimRipper OS・デスクトップ あわしろいくや 357 2026-11-12",
+          "url": "https://gihyo.jp/admin/serial/01/ubuntu-recipe/0934?summary"
+        },
+        {
+          "title": "「UIを 作る 手前」 を 伝える 仕事の 型 ――cenco岡部千幸さんが 現場に 根づかせる 人間中心設計 フロントエンド開発 森川裕美 59 2026-11-12",
+          "url": "https://gihyo.jp/article/2026/11/hcd-net-2026?summary"
+        },
+        {
+          "title": "Google検索⁠ ⁠ 、 AIモードの 履歴を 開く サイドバーを トップページにも 順次展開 Google検索のプロダクト担当バイスプレジデント、Robby Stein氏は2026年11月19日、パソコン向けのGoogle検索トップページに折りたたみ式のサイドバーを世界各地で順次展開しているとXで案内した。AIモードでのやり取りを、検索トップページから直接再開できるようになる。 2026-11-20",
+          "url": "https://gihyo.jp/article/2026/11/google-search-homepage-sidebar"
+        },
+        {
+          "title": "ChatGPTの AIエージェントdots⁠ ⁠ 、 米国の Business Standardで 提供開始⁠ ⁠ 。 Plusでは 少数の ユーザーを 対象に テスト —⁠—ChatGPTモバイルアプリに 自分の dotとの 会話を 開く 専用タブ 2026-11-20",
+          "url": "https://gihyo.jp/article/2026/11/chatgpt-dots-expanded-access-and-mobile-app-redesign?summary"
+        },
+        {
+          "title": "Claude Codeに 実験機能 「Code Mode」 を 追加 —⁠—Claudeが 複数の ツールを つなぐJavaScriptを 生成 2026-11-20",
+          "url": "https://gihyo.jp/article/2026/11/claude-code-mode?summary"
+        },
+        {
+          "title": "Geminiアプリで タスクを 定期実行できる 「Tasks」⁠ ⁠ 、 日本など6カ国で 無料提供を 開始 —⁠—米国では 電話や 買い物も 代行可能に 2026-11-19",
+          "url": "https://gihyo.jp/article/2026/11/gemini-app-tasks?summary"
+        },
+        {
+          "title": "Google⁠ ⁠ 、 Gemini 4 Neonを 発表 —⁠—Carbonを もとに 開発⁠ ⁠ 、 複雑な 作業を より 短時間で 2026-11-19",
+          "url": "https://gihyo.jp/article/2026/11/gemini-4-neon?summary"
+        },
+        {
+          "title": "Microsoft⁠ ⁠ 、 次期Windowsから PowerShell 7を 標準搭載へ⁠ ⁠ 、 Windows PowerShell 5. 1の 非推奨化も 発表 2026-11-19",
+          "url": "https://gihyo.jp/article/2026/11/powershell-7-in-next-windows?summary"
+        },
+        {
+          "title": "NGINX⁠ ⁠ 、 HTTP/ 2処理の 脆弱性を 修正 —⁠—静的ファイルだけを 配信する 構成でも リモートコード実行を 確認 2026-11-19",
+          "url": "https://gihyo.jp/article/2026/11/nginx-http2-rce?summary"
+        },
+        {
+          "title": "今回の テーマは 「MTが もたらすWeb運用と 開発者体験の 新しい 形」 ――MTDDC Meetup TOKYO 2026⁠ ⁠ 、 12/ 5に 開催 馮富久 2026-11-19",
+          "url": "https://gihyo.jp/article/2026/11/mtddc2026?summary"
+        },
+        {
+          "title": "Microsoft⁠ ⁠ 、 コーディング向けMAI Code 2⁠ ⁠ 、 画像生成⁠ ⁠ ・ 編集の MAI Image 2. 7⁠ ⁠ 、 音声対話の MAI Realtime 1など 7つの AIモデルを 発表 —⁠—GitHubとともに Codename MDASHで オープンソースの コードを 検査し⁠ ⁠ 、 脆弱性99件を 修正案とともに 報告 2026-11-18",
+          "url": "https://gihyo.jp/article/2026/11/microsoft-seven-new-models?summary"
+        },
+        {
+          "title": "OpenAI⁠ ⁠ 、 専門業務向けの GPT-6. 2 Astraと 日常業務向けの GPT-6. 2 Solを 発表 2026-11-18",
+          "url": "https://gihyo.jp/article/2026/11/gpt-6.2-astra-and-sol?summary"
+        },
+        {
+          "title": "Microsoft⁠ ⁠ 、 AIコーディングの トークン費用を 抑える TokenEconomizerプラグインを 紹介 2026-11-17",
+          "url": "https://gihyo.jp/article/2026/11/tokeneconomizer?summary"
+        },
+        {
+          "title": "Gemini Notebookで アップロードした 資料から インタラクティブな Web サイト作成が 可能に 2026-11-17",
+          "url": "https://gihyo.jp/article/2026/11/gemini-notebook-interactive-sites?summary"
+        },
+        {
+          "title": "Anthropic⁠ ⁠ 、 深刻な 脆弱性の 公開スケジュールを 短縮へ ―AIを 活用した 脆弱性発見に 対応 2026-11-17",
+          "url": "https://gihyo.jp/article/2026/11/anthropic-update-vulnerability-disclosure-timelines?summary"
+        },
+        {
+          "title": "「中高生Rubyプログラミングコンテスト2026」 の 最終審査会進出者12組が 決定⁠ ⁠ 、 2026年11月28日三鷹で 最終審査会を 開催 2026-11-17",
+          "url": "https://gihyo.jp/article/2026/11/ruby-procon2026-11?summary"
+        },
+        {
+          "title": "Google⁠ ⁠ 、 「Stitch Rapid」 を 実験公開 —⁠—複数画面からなる プロトタイプを 約5秒で 生成 2026-11-16",
+          "url": "https://gihyo.jp/article/2026/11/stitch-rapid?summary"
+        },
+        {
+          "title": "Cloudflare⁠ ⁠ 、 AIエージェント向け軽量ブラウザ 「Kitesurf」 を オープンソースと して 公開 2026-11-16",
+          "url": "https://gihyo.jp/article/2026/11/cloudflare-kitesurf?summary"
+        },
+        {
+          "title": "Personal Agent Protocol 1. 0公開⁠ ⁠ 、 ShopifyやMetaの Museが 対応 2026-11-16",
+          "url": "https://gihyo.jp/article/2026/11/personal-agent-protocol?summary"
+        },
+        {
+          "title": "Google⁠ ⁠ 、 Microsoft⁠ ⁠ 、 AWS⁠ ⁠ 、 Cloudflareが AI侵入テストツールARTEXの 悪用を 報告⁠ ⁠ 、 FBIも 注意喚起 2026-11-16",
+          "url": "https://gihyo.jp/article/2026/10/artex-ai-agent-abuse?summary"
+        },
+        {
+          "title": "llama. cpp 1. 0.0リリース —⁠—API⁠ ⁠ ・ ABIの 非互換変更を メジャーバージョンの 更新で 明示へ 2026-11-14",
+          "url": "https://gihyo.jp/article/2026/11/llama.cpp-v1.0.0?summary"
+        },
+        {
+          "title": "Anthropic⁠ ⁠ 、 Claude Meetingsを ベータ提供 —⁠—Claudeが 会議に 参加し⁠ ⁠ 、 文書や ホワイトボードを 参加者と 共同作成 2026-11-13",
+          "url": "https://gihyo.jp/article/2026/11/claude-meetings?summary"
+        },
+        {
+          "title": "Rust 1. 100. 0リリース —⁠—never型と Vec⁠ ⁠ ・ Box向けの 独自アロケーターAPIを 安定化 2026-11-13",
+          "url": "https://gihyo.jp/article/2026/11/rust-1.100.0?summary"
+        },
+        {
+          "title": "Google⁠ ⁠ 、 Gemini 4 Hydrogenを 発表⁠ ⁠ 、 Antigravityに モデルを 自動で 切り替える Orchestratorを 導入 —⁠—検索の AIモードにも 展開⁠ ⁠ 、 複雑な 質問の 理解や 回答の 見やすさを 改善し⁠ ⁠ 、 より 幅広い 関連リンクを 提示 2026-11-13",
+          "url": "https://gihyo.jp/article/2026/11/gemini-4-hydrogen?summary"
+        },
+        {
+          "title": "Google DeepMind⁠ ⁠ 、 AlphaProof Codeを 発表 —⁠—Signalプロトコルの 実装を 機械語レベルで 形式検証 2026-11-13",
+          "url": "https://gihyo.jp/article/2026/11/alphaproof-code?summary"
+        },
+        {
+          "title": "Google⁠ ⁠ 、 AIエージェント向けUIプロトコル 「A2UI」 バージョン1. 0を 公開 2026-11-12",
+          "url": "https://gihyo.jp/article/2026/11/a2ui-1.0?summary"
+        },
+        {
+          "title": "Google⁠ ⁠ 、 新しい 意思決定モデル 「Gemini Decision 1」 を 搭載⁠ ⁠ 、 最大1,000問を 一度に 高速判定する 「Gemini Decisions API」 を 発表 2026-11-12",
+          "url": "https://gihyo.jp/article/2026/11/gemini-decisions?summary"
+        },
+        {
+          "title": "Modern Web Guidance 1. 0公開⁠ ⁠ 、 エージェントに よる フロントエンドの 改修を 支援 2026-11-12",
+          "url": "https://gihyo.jp/article/2026/11/modern-web-guidance-1.0?summary"
+        },
+        {
+          "title": "AWS Emulatorの 一般提供が 開始 ―ローカルマシン内で AWS APIを エミュレート⁠ ⁠ 、 コーディングエージェントに よる 安全な テスト実行が 可能に 2026-11-12",
+          "url": "https://gihyo.jp/article/2026/11/aws-emulator?summary"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "htmlSha256": "a89a61bd56af9db2531710b71b340d6fe1d1bdcc34d362e323d40737882473e1",
+      "feeds": [
+        "https://gihyo.jp/feed/rss1",
+        "https://gihyo.jp/feed/rss2",
+        "https://gihyo.jp/feed/atom"
+      ],
+      "linksObserved": 39
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-21T01:02:32.456589+00:00",
+      "links": [
+        {
+          "title": "produced by Classmethod",
+          "url": "https://classmethod.jp/"
+        },
+        {
+          "title": "ACCOUNT_USAGEの履歴はACCOUNTADMINでなくても見られる。SNOWFLAKEデータベースロールで付与する方法",
+          "url": "https://dev.classmethod.jp/articles/snowflake-database-role-system-views/"
+        },
+        {
+          "title": "AWS Lambda durable functions の OpenTelemetry サポートを試してみた",
+          "url": "https://dev.classmethod.jp/articles/lambda-durable-functions-opentelemetry-tracing/"
+        },
+        {
+          "title": "Amazon EMR Serverless の新機能「Flex execution」を試してみた",
+          "url": "https://dev.classmethod.jp/articles/amazon-emr-serverless-flex-execution/"
+        },
+        {
+          "title": "[アップデート] AWS SAM CLI でも customer-managed runtimes を使えるようになったので、awk でカスタムランタイムを作ってみた",
+          "url": "https://dev.classmethod.jp/articles/sam-cli-lambda-customer-managed-runtime/"
+        },
+        {
+          "title": "[アップデート] Amazon S3 Tables のレプリカを書き込み可能なテーブルに昇格できるようになったので試してみた",
+          "url": "https://dev.classmethod.jp/articles/20261120-amazon-s3-tables-replication-writable-tables/"
+        },
+        {
+          "title": "Amazon ECR のプライベートレジストリがサポートしたグローバル認証トークンを試してみた",
+          "url": "https://dev.classmethod.jp/articles/aws-ecr-global-authentication-token/"
+        },
+        {
+          "title": "Amazon S3 の PQ-TLS を CloudTrail のログ記録（keyExchange）で確認してみた",
+          "url": "https://dev.classmethod.jp/articles/amazon-s3-pq-tls-cloudtrail-key-exchange/"
+        },
+        {
+          "title": "AWS Site-to-Site VPN がポスト量子の追加鍵交換（ML-KEM-768）に対応したので、接続して VPN ログを見てみた",
+          "url": "https://dev.classmethod.jp/articles/aws-site-to-site-vpn-post-quantum-key-exchange/"
+        },
+        {
+          "title": "AWS STS の GetScopedCredentials で一時認証情報の権限とセッション期間を絞ってみた",
+          "url": "https://dev.classmethod.jp/articles/aws-sts-getscopedcredentials-scope-down/"
+        },
+        {
+          "title": "Amazon Route 53 の Private Endpoint Health Checks を試してみた",
+          "url": "https://dev.classmethod.jp/articles/route53-private-endpoint-health-checks/"
+        },
+        {
+          "title": "[アップデート] Amazon Cognito のアプリクライアントシークレットを AWS Secrets Manager で管理できるようになったので試してみた",
+          "url": "https://dev.classmethod.jp/articles/cognito-client-secret-secrets-manager/"
+        },
+        {
+          "title": "AWS Lambda Durable Execution SDK for Rust が GA になったので試してみた",
+          "url": "https://dev.classmethod.jp/articles/aws-lambda-durable-sdk-rust-ga/"
+        },
+        {
+          "title": "Claude Code v2.1.329 の主要アップデート - 信頼ダイアログのフック警告と Code Mode のフック失敗時の挙動変更",
+          "url": "https://dev.classmethod.jp/articles/20261120-cc-updates-v2-1-329/"
+        },
+        {
+          "title": "Amazon Cognito のアプリクライアントシークレットを AWS Secrets Manager で管理できるようになったので試してみた",
+          "url": "https://dev.classmethod.jp/articles/cognito-app-client-secret-secrets-manager/"
+        },
+        {
+          "title": "[アップデート] AWS STS の GetScopedCredentials で権限と有効期間を絞った認証情報を作ってみた",
+          "url": "https://dev.classmethod.jp/articles/aws-sts-get-scoped-credentials/"
+        },
+        {
+          "title": "【Security Hub修復手順】[ELB.13] Application、Network、Gateway Load Balancer は、複数のアベイラビリティーゾーンにまたがっている必要があります",
+          "url": "https://dev.classmethod.jp/articles/securityhub-fsbp-remediation-elb-13/"
+        },
+        {
+          "title": "Amazon EC2 Detailed Monitoring のメトリクスカテゴリで CPU 使用率を 10 秒周期で取得してみた",
+          "url": "https://dev.classmethod.jp/articles/ec2-detailed-monitoring-10-second-cpu-metrics/"
+        },
+        {
+          "title": "t9g.medium と t4g.medium の性能を Next.js ビルド・OpenSSL・dd で実測してみた",
+          "url": "https://dev.classmethod.jp/articles/ec2-t9g-vs-t4g-medium-performance/"
+        },
+        {
+          "title": "Amazon Aurora DSQL で大陸をまたぐマルチリージョンクラスター（東京とバージニア）を作成してみた",
+          "url": "https://dev.classmethod.jp/articles/aws-aurora-dsql-intercontinental-multi-region/"
+        },
+        {
+          "title": "Aurora DSQL の書き込みスループットが最大 50% 向上すると発表されたので確かめてみた",
+          "url": "https://dev.classmethod.jp/articles/aurora-dsql-higher-write-throughput/"
+        },
+        {
+          "title": "[Claude Code] 自律ループの完了判定は\"検証\"で行う",
+          "url": "https://dev.classmethod.jp/articles/claude-code-verification-loop/"
+        },
+        {
+          "title": "PowerShell 7がWindows組み込みのシェルになります (Windows PowerShell 5.1は非推奨に)",
+          "url": "https://dev.classmethod.jp/articles/powershell-7-will-ship-in-box-windows/"
+        },
+        {
+          "title": "Snowflakeのウェアハウスが停止中でも、クエリの結果は返るのか確かめてみた",
+          "url": "https://dev.classmethod.jp/articles/202611-mitsuguchi-snowflake-query-kensho/"
+        },
+        {
+          "title": "三ツ口寛太（Kanta Mitsuguchi）",
+          "url": "https://dev.classmethod.jp/author/mitsuguchi-kanta/"
+        },
+        {
+          "title": "[アップデート] AWS DevOps Agent にスキルカタログ機能が追加されたので試してみる",
+          "url": "https://dev.classmethod.jp/articles/devops-agent-skills-catalog/"
+        },
+        {
+          "title": "Amazon Aurora DSQL の PL/pgSQL で関数とプロシージャを試してみた",
+          "url": "https://dev.classmethod.jp/articles/aurora-dsql-plpgsql-functions-procedures/"
+        },
+        {
+          "title": "Amazon EMR 8.2で対応したS3条件付き書き込みによるDelta Lakeの同時書き込みを検証してみた",
+          "url": "https://dev.classmethod.jp/articles/emr-8-2-delta-lake-concurrent/"
+        },
+        {
+          "title": "Amazon SES の SMTP 認証情報に使っている IAM ユーザーのアクセスキーをなくす",
+          "url": "https://dev.classmethod.jp/articles/ses-smtp-credentials-without-access-keys/"
+        },
+        {
+          "title": "[アップデート] Amazon EC2にGraviton5搭載のT9gインスタンスが追加されました",
+          "url": "https://dev.classmethod.jp/articles/update-amazon-ec2-graviton5-t9g-instance/"
+        },
+        {
+          "title": "Amazon CloudWatch Network Monitoring のパフォーマンスモニターを試してみた",
+          "url": "https://dev.classmethod.jp/articles/cloudwatch-network-monitoring-performance-monitor/"
+        },
+        {
+          "title": "Aurora PostgreSQL のエクスプレス構成の VPC サポートと、クラスターの VPC 変更を試してみた",
+          "url": "https://dev.classmethod.jp/articles/aurora-move-cluster-to-different-vpc/"
+        },
+        {
+          "title": "Transit Gateway と Gateway Load Balancer を network function attachment で直接つないでみた",
+          "url": "https://dev.classmethod.jp/articles/transit-gateway-gwlb-network-function-attachment/"
+        },
+        {
+          "title": "AWS マネジメントコンソールで複数回スイッチロールする場合の許可する信頼ポリシーを教えてください",
+          "url": "https://dev.classmethod.jp/articles/tsnote-iam-multiple-switch-role-trust-policy-management-console/"
+        },
+        {
+          "title": "2026年11月の PHP セキュリティリリースに対する AWS の告知を確認してみた",
+          "url": "https://dev.classmethod.jp/articles/php-security-release-nov2026-al2023-aws/"
+        },
+        {
+          "title": "AWS Lambda の Event Function の 30 分タイムアウトを非同期呼び出しと Step Functions で試してみた",
+          "url": "https://dev.classmethod.jp/articles/aws-lambda-event-function-30-minute-timeout/"
+        },
+        {
+          "title": "Slack 検索の返信がメインの行に出る問題を解決した話（GAS）",
+          "url": "https://dev.classmethod.jp/articles/Slack-search-permalink/"
+        },
+        {
+          "title": "Amazon Bedrock AgentCore Policyでユーザーごとにツールの呼び出しを制御できるか検証してみた",
+          "url": "https://dev.classmethod.jp/articles/agentcore-gateway-policy-per-user-access-control/"
+        },
+        {
+          "title": "斉藤 武蔵 / Musashi Saito",
+          "url": "https://dev.classmethod.jp/author/musashi-saito/"
+        },
+        {
+          "title": "classmethod クラスメソッド株式会社",
+          "url": "https://classmethod.jp/?utm_source=dev.classmethod.jp&utm_medium=blog&utm_campaign=footer&utm_content=classmethod"
+        },
+        {
+          "title": "AWS Security Hub",
+          "url": "https://dev.classmethod.jp/tags/aws-security-hub/"
+        },
+        {
+          "title": "AWS Organizations",
+          "url": "https://dev.classmethod.jp/tags/aws-organizations/"
+        },
+        {
+          "title": "AWS Control Tower",
+          "url": "https://dev.classmethod.jp/tags/aws-control-tower/"
+        },
+        {
+          "title": "Amazon QuickSight",
+          "url": "https://dev.classmethod.jp/tags/amazon-quicksight/"
+        },
+        {
+          "title": "Amazon Redshift",
+          "url": "https://dev.classmethod.jp/tags/amazon-redshift/"
+        },
+        {
+          "title": "Amazon CloudFront",
+          "url": "https://dev.classmethod.jp/tags/amazon-cloudfront/"
+        },
+        {
+          "title": "Microsoft Azure",
+          "url": "https://dev.classmethod.jp/tags/azure/"
+        },
+        {
+          "title": "Google Cloud Next ’25",
+          "url": "https://dev.classmethod.jp/referencecat/google-cloud-next-25/"
+        },
+        {
+          "title": "AWS re:Invent 2025",
+          "url": "https://dev.classmethod.jp/referencecat/aws-reinvent-2025/"
+        },
+        {
+          "title": "Vietnamese Blog",
+          "url": "https://dev.classmethod.jp/tags/vietnamese-blog/"
+        },
+        {
+          "title": "DevelopersIOへのご意見",
+          "url": "https://forms.gle/cTqKP7E5XyseTeX46"
+        },
+        {
+          "title": "【AI/データ/インフラ/アプリ案件特集】ITフリーランス向け 「CMパートナーズ」 説明会 by クラスメソッド 開催前 2026年11月25日(水) 19:00",
+          "url": "https://events.classmethod.jp/meetup/jobfair-freelance/"
+        },
+        {
+          "title": "【12/11（金）】複数AIの管理、どう変わる？Amazon BedrockにGPT・Codexが追加 開催前 2026年12月11日(金) 13:00",
+          "url": "https://events.classmethod.jp/seminar/261211-bedrock-webinar/"
+        },
+        {
+          "title": "【11/24（火）】ChatGPTセミナー セキュリティ/ガバナンス編｜安全に利用するための設定と考え方 開催前 2026年11月24日(火) 13:00",
+          "url": "https://events.classmethod.jp/seminar/261124-chatgpt-webinar/"
+        },
+        {
+          "title": "【12/16（火）】AWS Security Heroが語る その“管理の穴”、セキュリティリスクになっていませんか？AWSマルチアカウント管理の基本 開催前 2026年12月16日(水) 13:00",
+          "url": "https://events.classmethod.jp/seminar/261216-mssp-webinar/"
+        },
+        {
+          "title": "[12/10開催]AWSトレンドチェック勉強会 2026年11月分その1 開催前 2026年12月10日(木) 15:30",
+          "url": "https://events.classmethod.jp/study-club/connpass-412188/"
+        },
+        {
+          "title": "【11/26（木）】AWSアカウントごと侵害されても、データを元に戻せますか？ 2025 Japan AWS Top Engineers が解説、ランサムウェア対策の\"最終防衛ライン\"をどう築くか 開催前 2026年11月26日(木) 13:00",
+          "url": "https://events.classmethod.jp/seminar/261126-security-webinar/"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "htmlSha256": "454f41b8b566d0dcd6212c704e30f21fadc5f98c8b8b5d5c6c62fc6bc41a016b",
+      "feeds": [],
+      "linksObserved": 57
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-21T01:02:32.456638+00:00",
+      "links": [
+        {
+          "title": "今すぐ無料で登録する メールアドレスのみで登録できます",
+          "url": "https://techfeed.io/app"
+        },
+        {
+          "title": "Tech Company Internals",
+          "url": "https://techfeed.io/series/tech-company-internals"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533",
+      "feeds": [
+        "https://techfeed.io/feeds/categories/all"
+      ],
+      "linksObserved": 2
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-21T01:02:32.456706+00:00",
+      "links": [
+        {
+          "title": "サクサク読めて、 アプリ限定の機能も多数！ アプリで開く",
+          "url": "https://hatenabookmark.page.link/app"
+        },
+        {
+          "title": "はてなブログ（アニメとゲーム）",
+          "url": "https://b.hatena.ne.jp/entrylist/game/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%EF%BC%88%E3%82%A2%E3%83%8B%E3%83%A1%E3%81%A8%E3%82%B2%E3%83%BC%E3%83%A0%EF%BC%89"
+        },
+        {
+          "title": "SSDの価格は2027年後半に下落し始める可能性あり",
+          "url": "https://gigazine.net/news/20261120-ssd-prices-outlook/"
+        },
+        {
+          "title": "アナリストの分析により、HDDの価格が今後2年で高止まりする一方、SSDは価格が落ち着くという予測が出てきました。 When Will Hard Drive Prices Come Down? The 2026-2028 Outlook | DriveVault https://www.drivevault.io/blog/when-will-hard-drive-prices-come-down.html 外付けドライブを管理するアプリを展開し、ドライブに関する分析も行っているDriveVaultは、SeagateやWestern Digitalなどの販売データなどを追跡して将来的な価格の見通しを公開しています。 2026年9月時点の価格状況としては、HDDの平均価格は1年前と比較して134％上昇しており、1カ月前の129％からさらに上昇しているとのこと。SSDは129％高く、1カ月前の",
+          "url": "https://b.hatena.ne.jp/entry/s/gigazine.net/news/20261120-ssd-prices-outlook/"
+        },
+        {
+          "title": "「Windows Server 2028」で「WSUS」や「SMB 1.0」、「VBScript」などが削除へ／「Windows PowerShell 5.1」「WDS」は非推奨に、レガシーBIOSでの起動も不可",
+          "url": "https://forest.watch.impress.co.jp/docs/news/2158261.html"
+        },
+        {
+          "title": "forest.watch.impress.co.jp",
+          "url": "https://b.hatena.ne.jp/site/forest.watch.impress.co.jp/"
+        },
+        {
+          "title": "【速報】三井住友銀で情報漏えい、最大1400万件",
+          "url": "https://www.47news.jp/15262461.html"
+        },
+        {
+          "title": "三井住友銀行は20日、顧客情報が最大約1400万件漏えいしたと発表した。業務委託先のプレイドのサービスが不正アクセスを受けたため。",
+          "url": "https://b.hatena.ne.jp/entry/s/www.47news.jp/15262461.html"
+        },
+        {
+          "title": "1万円のシンセをAIで魔改造。電子楽器のファームウェア開放が始まった | ギズモード・ジャパン",
+          "url": "https://www.gizmodo.jp/article/0b0516f2-94f8-442e-bdae-2987f090be13/"
+        },
+        {
+          "title": "中国のM-VAVEという楽器メーカーが販売している小型FMシンセ「FM-1」が、ちょっとした話題になっています。きっかけはユーザーによるカスタムファームウェアの開発です。 FM-1はアリエクなどを覗くと、だいたい1万円以下で買えるガジェットシンセ。音源方式はFMで、6オペレーター、32アルゴリズム、同時発音数12とシンプルな構成です。 今年の夏ごろから有志がこのFM-1の内部プログラムの解析を始め、秋になってAIコーディングツールを活用したカスタムファームウェアが急加速。FM以外のシンセエンジンやら、リズムマシンやサンプラーの機能を盛り込むやらで、グルーブボックス化する猛者も現れ、SNSで情報共有しています。ツマミが多いインターフェースがグルーブボックス向きだったのも目をつけられた理由でしょう。しかも安いし。 注目すべきは、これに対するM-VAVE側の反応です。非公式でやりたい放題な改造ブ",
+          "url": "https://b.hatena.ne.jp/entry/s/www.gizmodo.jp/article/0b0516f2-94f8-442e-bdae-2987f090be13/"
+        },
+        {
+          "title": "メモリ圧縮を使えばCPUの処理能力を少し犠牲にするだけでメモリ使用量を大幅に削減できる",
+          "url": "https://gigazine.net/news/20261120-memory-compress/"
+        },
+        {
+          "title": "ウェブブラウザで大量のタブを開いたり複数のアプリを同時に動かしたりすると、PCのメモリ(RAM)が不足して動作が遅くなることがあります。メモリ不足を解消するにはRAMの増設が効果的ですが、CPUを使ってメモリ内のデータを圧縮すればRAMを増設せずに多くのデータを保持できるとのこと。ソフトウェアエンジニアのテリー・ファン・ネールフェン氏がLinuxにおけるメモリ圧縮の効果を実際に検証しています。 Do not buy RAM, compress! | Therry van Neerven https://curiousbits.nl/blog/do-not-buy-ram-compress/ 近年はAIの普及によって複数の作業を並行して進める機会が増えており、PCに求められるメモリ容量も増加しています。一方でRAMは高価であり、ノートPCなどでは購入後に増設できない場合もあります。 メモリが",
+          "url": "https://b.hatena.ne.jp/entry/s/gigazine.net/news/20261120-memory-compress/"
+        },
+        {
+          "title": "MetaのAIアシスタント搭載小型デバイス「Muse Charm」の価格は4万円台か",
+          "url": "https://gigazine.net/news/20261120-muse-charm-may-cost-300-usd/"
+        },
+        {
+          "title": "2026年12月のホリデーシーズンまでに発売されると予想されているMetaのAIアシスタント搭載小型デバイス「Muse Charm」が300ドル(約4万7700円)ほどになると、ニュースサイト・The Informationが報じました。Metaはこの数字を否定していません。 Meta Bets on $300 Muse Charm to Boost AI Hardware Business — The Information https://www.theinformation.com/articles/meta-bets-300-muse-charm-boost-ai-hardware-business Meta's new Muse Charm device may cost $300 | TechCrunch https://techcrunch.com/2026/11/19/me",
+          "url": "https://b.hatena.ne.jp/entry/s/gigazine.net/news/20261120-muse-charm-may-cost-300-usd/"
+        },
+        {
+          "title": "モダンな情シスは、AIエージェントを育て、任せ、圧倒的な生産性を生む｜kajinari | モダンな情シス",
+          "url": "https://note.com/kajinari/n/n19c73d819b14"
+        },
+        {
+          "title": "note.com/kajinari",
+          "url": "https://b.hatena.ne.jp/site/note.com/kajinari"
+        },
+        {
+          "title": "おはようございます！こんにちは！おやすみなさい！NOTA で Corp IT（情シス）を担当している kajinari です。 この 1 年で、Corp IT の日々の運用作業のほとんどを Claude の Skill として定義しました。アカウントの発行、クラウドサービス権限の付与、クラウドサービスの設定変更、PC や iPhone の手配、Zoom Phone の払い出し、各種台帳の更新まで、AI が作業して依頼者への報告まで行います。 この記事では、AI に任せるようになった理由と任せている仕事、それを支える AI の育て方とチームへの広げ方を紹介します。 なぜ AI に任せるのかNOTA は社員数が増え続けています。2025 年 6 月には 322 名でした。それが 2026 年 9 月には 564 名（常勤アルバイトを含む）になりました。 管理する SaaS や社員の数が増えると",
+          "url": "https://b.hatena.ne.jp/entry/s/note.com/kajinari/n/n19c73d819b14"
+        },
+        {
+          "title": "[アップデート] AWS STS の GetScopedCredentials で権限と有効期間を絞った認証情報を作ってみた | DevelopersIO",
+          "url": "https://dev.classmethod.jp/articles/aws-sts-get-scoped-credentials/"
+        },
+        {
+          "title": "dev.classmethod.jp",
+          "url": "https://b.hatena.ne.jp/site/dev.classmethod.jp/"
+        },
+        {
+          "title": "「KARTE」への不正アクセスに関する当社調査結果と、サービス再開の見通し等のお知らせ",
+          "url": "https://plaid.co.jp/news/20261120/"
+        },
+        {
+          "title": "2026年11月13日に発生した、株式会社プレイド（本社：東京都中央区、代表取締役CEO：倉橋 健太）が提供する「KARTE」への不正アクセスについて、影響範囲および漏えいした情報を特定する当社における調査結果をお知らせいたします。あわせて、「KARTEのサービス再開の見通し」「サービス停止期間のKARTE利用料金の取り扱い」「各種お問い合わせ窓口のご案内」などについてもお知らせいたします。 本件で影響を受けた全ての企業の皆さま、エンドユーザー（※1）の皆さま、および関係する皆さまに、多大なるご迷惑とご心配をおかけしておりますことを、深くお詫び申し上げます。 当社では、2026年11月19日までに、今回の不正アクセスによって漏えいした可能性のあるデータの当社における調査を完了し、影響範囲および対象件数の特定を完了いたしました。今回の不正アクセスおよび調査にて明らかになった課題などをもとに、",
+          "url": "https://b.hatena.ne.jp/entry/s/plaid.co.jp/news/20261120/"
+        },
+        {
+          "title": "情報漏洩3億件超の時代、経営者が問われるのは「どう守るか」よりも「何を持たないか」、顧客情報を預かる資格 KARTEへの不正アクセスとソースネクストの大量流出が示した、顧客情報を持ちすぎる経営の死角 | JBpress (ジェイビープレス)",
+          "url": "https://jbpress.ismedia.jp/articles/-/98148"
+        },
+        {
+          "title": "jbpress.ismedia.jp",
+          "url": "https://b.hatena.ne.jp/site/jbpress.ismedia.jp/"
+        },
+        {
+          "title": "昨今、死ぬほど情報漏洩の事案が急増し、生成AIの発展に伴う脅威が安全で快適なインターネットとやらの根底を脅かす機会が増えました。大変なことなんですが、「どうしてこうもやられるんか」って話を事業関係先やコンサル先でした時に感じるのは、「経営陣が、技術に詳しくなさ過ぎて、いまネットで起きていることを理解するリテラシーがない」ことに尽きます。 いや、お前の会社の売り上げの8割がネット経由で、業務フローは完全にクラウドに依存してるのに、お前の会社の内部やお客様の情報がどう処理されているのか知らないでどうやって経営するつもりなの。 現場からすれば、次々とインシデントがやってきて新たな穴ぼこの報告を受ける脆弱性だらけの環境なのに、情シス担当者には事態を収拾させるだけの予算やワークフローをいったん止めるなどの裁量はなく、カーネルからミドルウェア、各種アプリケーションまで、あらゆる階層について経営陣や管理",
+          "url": "https://b.hatena.ne.jp/entry/s/jbpress.ismedia.jp/articles/-/98148"
+        },
+        {
+          "title": "政府の内部資料流出か、基幹システムに不正アクセス　デジタル庁発表：朝日新聞",
+          "url": "https://www.asahi.com/articles/ASVCN30WCVCNULFA01NM.html"
+        },
+        {
+          "title": "デジタル庁は20日、政府の基幹ネットワークシステムに不正アクセスがあり、政府の内部資料が漏洩（ろうえい）した可能性があると発表した。個人情報が含まれている可能性があるが、件数などの詳細については「調…",
+          "url": "https://b.hatena.ne.jp/entry/s/www.asahi.com/articles/ASVCN30WCVCNULFA01NM.html"
+        },
+        {
+          "title": "「httpS://」だと暗号化されず平文で送信……「PHP」に約20年潜んでいた脆弱性が解決／問題はいたってシンプル、なんともはや……【やじうまの杜】",
+          "url": "https://forest.watch.impress.co.jp/docs/serial/yajiuma/2158241.html"
+        },
+        {
+          "title": "ZOZO、1518万人分の顧客情報流出　委託先に不正アクセス - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOUC20APN0Q6A121C2000000/"
+        },
+        {
+          "title": "ZOZOは20日、通販サイト「ZOZOTOWN」に登録された1518万人分の顧客情報などが流出したと発表した。委託先のプレイドが提供するサービス「KARTE（カルテ）」が不正アクセスを受けた。ZOZOTOWNに登録された会員IDや年齢、性別などの個人情報1518万人分が該当する。ファッションアプリ「WEAR by ZOZO」に登録された約1393万人、ZOZOT",
+          "url": "https://b.hatena.ne.jp/entry/s/www.nikkei.com/article/DGXZQOUC20APN0Q6A121C2000000/"
+        },
+        {
+          "title": "「Microsoft To Do」アプリが2027年6月で廃止、個人の場合は別アプリへの乗り換えが必要に／法人向けは「Planner」が後継",
+          "url": "https://forest.watch.impress.co.jp/docs/news/2158040.html"
+        },
+        {
+          "title": "はてなエンジニアの自作RSSリーダーをご紹介します 2026 - Hatena Developer Blog",
+          "url": "https://developer.hatenastaff.com/entry/2026/11/20/162322"
+        },
+        {
+          "title": "developer.hatenastaff.com",
+          "url": "https://b.hatena.ne.jp/site/developer.hatenastaff.com/"
+        },
+        {
+          "title": "はてなには多くのエンジニアが在籍していますが、普段から開発が好きな人が多く、業務以外でも各自が欲しいものなどを自作していることがあります。特に近年では生成AIによって自作のハードルはかなり下がったと思われます。そんな自作ツールたちですが、今回はRSSリーダーに絞って紹介していきます。 自作RSSリーダー紹介 id:yset0 職種: ウェブアプリケーションエンジニア フィード解析 github.com/mmcdole/gofeed XMLの処理、手でやるには大変すぎたので任せた。 OpenAPI github.com/oapi-codegen/oapi-codegen OpenAPIを一応使っている。 ⭐️コンセプト 知人が欲しい。と言ってかれこれ10年以上稼働しているRSSリーダー（初期実装はPerl、jQuery）、要件定義は知人が行い、キーボードで操作したい、ピン留めがしたいなど 当",
+          "url": "https://b.hatena.ne.jp/entry/s/developer.hatenastaff.com/entry/2026/11/20/162322"
+        },
+        {
+          "title": "POS端末700台超がマルウェア感染、Windowsの脆弱性悪用でカード情報100万件超が流出",
+          "url": "https://news.mynavi.jp/techplus/article/20261120-5367457/"
+        },
+        {
+          "title": "CyberNewsは2026年11月18日(現地時間)、「Over 1 million credit cards stolen in attack spanning 20 countries｜Cybernews」において、20かカ以上に設置された700台超のPOS(販売時点情報管理)端末を標的とするサイバー攻撃が発生し、100万枚を超えるクレジットカードおよびデビットカード情報が窃取されたと報じた。 CyberNewsの研究チームは攻撃者が公開状態にしていたサーバを発見し、マルウェアのソースコードや攻撃ツール、盗難カード情報を管理するシステムを確認した。攻撃者はPOS端末に遠隔操作型トロイの木馬(RAT: Remote Administration Trojan)を感染させ、顧客の決済処理時にカード情報を継続的に収集していたという。 Windowsの脆弱性「CVE-2024-49138」を",
+          "url": "https://b.hatena.ne.jp/entry/s/news.mynavi.jp/techplus/article/20261120-5367457/"
+        },
+        {
+          "title": "政府システムからファイル流出か、個人情報含む恐れ　デジタル庁発表 - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOUA20A0V0Q6A121C2000000/"
+        },
+        {
+          "title": "デジタル庁は20日、政府のネットワークシステムに不正アクセスがあり、各府省庁間や企業と共有した会議資料を含むファイルが流出した可能性があると発表した。個人情報が含まれている恐れがある。機密性が高い文書の漏洩の有無については調査中という。同庁によれば、個人情報の悪用など二次被害の確認はされていない。警察や専門機関の協力を得て詳細な調査を進める。政府共通のパソコンや通信ネットワークの環境「ガバメ",
+          "url": "https://b.hatena.ne.jp/entry/s/www.nikkei.com/article/DGXZQOUA20A0V0Q6A121C2000000/"
+        },
+        {
+          "title": "斜め上からやってきた「SaaSの死」｜ninoya 古越",
+          "url": "https://note.com/aatoku/n/n129df4db50ba"
+        },
+        {
+          "title": "note.com/aatoku",
+          "url": "https://b.hatena.ne.jp/site/note.com/aatoku"
+        },
+        {
+          "title": "先日出てたKARTEさんの情報流出についてまとめた記事を読んだんですが、なかなかすごいことになってるなと。 というのも、これだけの大手企業の漏洩が並ぶと、経営者からすれば「そもそも大事な顧客データや連携情報まで外部のSaaSに預けていいんだっけ？」という話になるわけです。 もちろん自社で管理すれば安全というわけでもないんですが、外部サービスで起きた事故に自社の顧客が巻き込まれるとなると、経営判断としてはかなり重いですよね。 で、この流れが進むと何が困るかというと、これまでSaaSを支えてきた「ロックイン前提の勝ちパターン」が効きにくくなること。 SaaSの競争力って「便利な機能」や「業務を効率化するノウハウ」にあると思われがちです。もちろんそれも大事なんですが、ビジネスの構造を見ると、SaaSの利益を支えてきたのは「一度導入したら簡単に乗り換えられない」という仕組みだったりします。 顧客情",
+          "url": "https://b.hatena.ne.jp/entry/s/note.com/aatoku/n/n129df4db50ba"
+        },
+        {
+          "title": "「あと10年もたないかもしれない」Rubyの父 まつもとゆきひろが危惧するOSS文化の消滅 - エンジニアtype | 転職type",
+          "url": "https://type.jp/et/feature/32219/"
+        },
+        {
+          "title": "NEW! 2026.11.20 ITニュース OSSRubyまつもとゆきひろAI 2026年10月、プログラミング言語「PHP」で深刻な脆弱性が発覚し、世界中の利用者に緊急のアップデートが呼びかけられた。 11月にはJavaのオープンソース実装「OpenJDK」でも重大な脆弱性が明らかになるなど、ソフトウエア開発の基盤を支える技術の安全性が、相次いで問題となっている。 世界中の企業が当たり前のようにOSSを利用する一方、その開発や維持管理は、限られた開発者たちの努力によって支えられているのが実情だ。 プログラミング言語「Ruby」の生みの親であるまつもとゆきひろさんは、OSS文化の未来について「あと10年もたないかもしれない」と強い焦燥感を口にする。 もしこの文化が消滅したとき、エンジニアは何を失ってしまうのだろうか。まつもとさんに、OSSの未来について話を聞いた。 Rubyアソシエーショ",
+          "url": "https://b.hatena.ne.jp/entry/s/type.jp/et/feature/32219/"
+        },
+        {
+          "title": "Codex App の Computer Use はどういう仕組みで動いているのか - Qiita",
+          "url": "https://qiita.com/TaigoKuriyama/items/850a26760fc3c8d111ad"
+        },
+        {
+          "title": "qiita.com/TaigoKuriyama",
+          "url": "https://b.hatena.ne.jp/site/qiita.com/TaigoKuriyama"
+        },
+        {
+          "title": "--- name: computer-use description: Control local Mac apps through Computer Use. Use for tasks that require reading or operating app UI by clicking, typing, scrolling, dragging, pressing keys, or setting values. --- # Computer Use Computer Use lets Codex interact with local Mac apps by reading the screen and performing UI actions. Prefer a dedicated plugin or skill when it can complete the task; u",
+          "url": "https://b.hatena.ne.jp/entry/s/qiita.com/TaigoKuriyama/items/850a26760fc3c8d111ad"
+        },
+        {
+          "title": "業務委託先への不正アクセスによる情報漏えいについて",
+          "url": "https://www.smbc.co.jp/news/pdf/j20261120_01.pdf"
+        },
+        {
+          "title": "1 2 0 2 6 年 1 1 月 2 0 日 各 位 株式会社三井住友銀行 業務委託先への不正アクセスによる情報漏えいについて 株式会社三井住友銀行（以下、弊行）が、弊行ホームページおよびスマートフォンアプリに おけるお客さまへのお知らせの表示・配信等で利用している、株式会社プレイドが提供する サービス「KARTE」において、今般、第三者による不正アクセスにより、弊行の一部のお客さまの 情報が外部に漏えいしたとの報告を受けましたので、お知らせいたします。尚、今回漏えいした 情報には、お客さまの連絡先に関する情報やお客さまを特定できる情報は含まれておりません。 お客さまならびに関係者の皆さまに、多大なご心配とご迷惑をおかけしておりますことを、深く お詫び申し上げます。 １．経緯 11 月 13 日(金)： 株式会社プレイドより、第三者による不正アクセスが発生し、サービスを 停止した旨の報告",
+          "url": "https://b.hatena.ne.jp/entry/s/www.smbc.co.jp/news/pdf/j20261120_01.pdf"
+        },
+        {
+          "title": "職業訓練でHTMLを学んだ後にSES会社に入社、Javaとphpの開発経験ありと経歴詐称でPythonの現場に送り込まれ、初日にリーダーから「君何ができんの？」と詰められた話",
+          "url": "https://togetter.com/li/2772850"
+        },
+        {
+          "title": "パワーグライド @uchu_kurage 職業訓練でHTMLをちょっと勉強して入ったSES会社で、研修(PCで好きなことをしてればいいと言われYahooニュースを1ヶ月見た)後、Javaと phpの開発経験があると経歴詐称させられ、ブチ込まれたpythonの現場の初日にリーダーから「君何ができんの？」と詰められ、定時で現場出た瞬間ボロ泣きしたあの日 2026-11-19 21:25:54 パワーグライド @uchu_kurage 思ったより反応多くてびっくりしてます…。 こういう状況になったのは会社も良くなかったんですが、自分の怠慢によるところが大きいと今は思ってます。(良くないことですが、経歴詐称は2次請け以降のSES会社では普通にあることとも思ってます) 2026-11-20 15:09:41 パワーグライド @uchu_kurage この現場は本当に力になれず2ヶ月ちょっとでリリース",
+          "url": "https://b.hatena.ne.jp/entry/s/togetter.com/li/2772850"
+        },
+        {
+          "title": "政府の内部資料流出か、基幹システムに不正アクセス　デジタル庁発表：朝日新聞",
+          "url": "https://www.asahi.com/sp/articles/ASVCN30WCVCNULFA01NM.html?linkType=article&id=ASVCN30WCVCNULFA01NM"
+        },
+        {
+          "title": "デジタル庁は20日、政府の基幹ネットワークシステムに不正アクセスがあり、政府の内部資料が漏洩（ろうえい）した可能性があると発表した。個人情報が含まれている可能性があるが、件数などの詳細については「調…",
+          "url": "https://b.hatena.ne.jp/entry/s/www.asahi.com/sp/articles/ASVCN30WCVCNULFA01NM.html?linkType=article&id=ASVCN30WCVCNULFA01NM"
+        },
+        {
+          "title": "AIが追加学習なしで自らのウェイトを書き換えて「自分自身を賢くする」ことに成功",
+          "url": "https://gigazine.net/news/20261120-large-language-model-can-rewrite-itself/"
+        },
+        {
+          "title": "大規模言語モデル(LLM)は通常、学習が完了すると内部のウェイト(重み)が固定され、性能を向上させるには追加学習などが必要になります。こうした従来の仕組みとは異なり、AIが自分自身のウェイトを分析して書き換え、性能を向上させられることを示した研究論文が発表されました。研究チームは、この成果がAIによる「再帰的自己改善」の実現につながる可能性があるとしています。 [2611.21885] Language Models Can Rewrite Their Own Weights https://arxiv.org/abs/2611.21885 Preprint Says 27B Model Rewrote Own Weights, Gained 6.6 Points https://theagenttimes.com/articles/preprint-says-27b-model-rewr",
+          "url": "https://b.hatena.ne.jp/entry/s/gigazine.net/news/20261120-large-language-model-can-rewrite-itself/"
+        },
+        {
+          "title": "PostgreSQL 19 Released!",
+          "url": "https://www.postgresql.org/about/news/postgresql-19-released-3449/"
+        },
+        {
+          "title": "www.postgresql.org",
+          "url": "https://b.hatena.ne.jp/site/www.postgresql.org/"
+        },
+        {
+          "title": "November 19, 2026 - The PostgreSQL Global Development Group today announced the release of PostgreSQL 19, the latest version of the world's most advanced open source database. Mission-critical usage of PostgreSQL continues to rapidly rise, and PostgreSQL 19 responds to this by simplifying both administration and development for these workloads at scale. This release introduces the REPACK (CONCURRE",
+          "url": "https://b.hatena.ne.jp/entry/s/www.postgresql.org/about/news/postgresql-19-released-3449/"
+        },
+        {
+          "title": "TSMCやサムスン、対中半導体出荷を一部停止　AIチップの米輸出規制で - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOGN200HL0Q6A121C2000000/"
+        },
+        {
+          "title": "【シリコンバレー=山田航平】台湾積体電路製造（TSMC）や韓国サムスン電子が中国向けの半導体出荷を一部停止したことが19日までに分かった。米政府が人工知能（AI）半導体の対中輸出を厳しくする方針を示したことを受けて対応を変えた。中国ではAI開発への影響を警戒する声が出始めた。英紙フィナンシャル・タイムズは同日、半導体製造受託のTSMCと韓国サムスン電子が、中国顧客への一部半導体出荷を停止したと",
+          "url": "https://b.hatena.ne.jp/entry/s/www.nikkei.com/article/DGXZQOGN200HL0Q6A121C2000000/"
+        },
+        {
+          "title": "先頭に貼るだけのキラープロンプト7選、コピペOK。→「所見を頼む前に「中学校の担任として、前向きな言葉で」と1行足すだけで、書き直しが半分に減りました。」",
+          "url": "https://posfie.com/@techjiho/p/3QDGKHH"
+        },
+        {
+          "title": "イカヤキ @ikayaki_aiafi ①専門家モード 「あなたはこの分野で20年以上の実務経験を持つ専門家として、一次情報に基づき回答してください」 汎用回答が、一気に専門家インタビュー級に変わる ②結論ファースト 「結論を1行で示し、その後に根拠を3つ箇条書きで。最後に例外があれば添えて」 長文でダラダラ返してくる問題、これで解決 2026-11-15 11:26:25 イカヤキ @ikayaki_aiafi ③3行要約モード 「小学6年生でも理解できるよう、難しい用語は使わず、3行で要約してください」 \"専門家回答\"と組み合わせると最強 ④反論自動生成 「あなたの回答に対する、最も鋭い反論と、その反論への再反論も併せて出してください」 自分の思考の穴が全部見える 2026-11-15 11:26:31",
+          "url": "https://b.hatena.ne.jp/entry/s/posfie.com/@techjiho/p/3QDGKHH"
+        },
+        {
+          "title": "ログの種別を整理して、何をどこまで残すか決めた話",
+          "url": "https://zenn.dev/dress_code/articles/a3bf34274af03f"
+        },
+        {
+          "title": "zenn.dev/dress_code",
+          "url": "https://b.hatena.ne.jp/site/zenn.dev/dress_code"
+        },
+        {
+          "title": "監査ログとセキュリティログの扱い 監査ログとセキュリティログは、記録の中身ではなく使い道を表す名前なので、2軸のどこにも入りません。この2つは、記録の中から目的に合うものを選んだときの呼び名と定義しました。主に3種別から選び、必要に応じて運用記録も含めます。監査ログは監査の要件に合う記録を、セキュリティログは不正の兆候を探すための記録を選びます。セキュリティログには、失敗や拒否だけでなく、権限の変更や大量の持ち出しのような成功した操作も入ります。 要件が増えても選び方を変えるだけで、記録の側は変わりません。先に監査ログという記録先を作ると、要件が来るたびにそこへ足すことになり、性質の違う記録が1か所にたまります。 3. どこまで残すかを決める Tier どこまで残すかは、種別とは別に Tier 0〜3 で決めます。Tier は社内で決めた区分で、業界で共通の呼び名ではありません。 T1 と",
+          "url": "https://b.hatena.ne.jp/entry/s/zenn.dev/dress_code/articles/a3bf34274af03f"
+        },
+        {
+          "title": "ドンキのAI社員「近藤あい」が正式デビュー　販促POPや動画で活躍へ　運営元「すでに裏に20人ぐらいいる」",
+          "url": "https://www.itmedia.co.jp/news/article/2611/20/2000003369/"
+        },
+        {
+          "title": "www.itmedia.co.jp",
+          "url": "https://b.hatena.ne.jp/site/www.itmedia.co.jp/"
+        },
+        {
+          "title": "ドン・キホーテを運営するパン・パシフィック・インターナショナルホールディングス（PPIH）は11月19日、生成AIで制作したAI社員「近藤あい」を23日に正式デビューさせると発表した。同日に東京・品川で開催した新商品展示会では、入り口のディスプレイに近藤あいが登場し、来場者を出迎えた。担当者にAI社員を打ち出した狙いを聞いた。 近藤あいは、ドン・キホーテの公式キャラクター「ドンコ」をイメージした、ピンク色の髪とポニーテールが特徴のAIキャラクター。ドン・キホーテの宣伝担当・公式アンバサダーとして、店頭の販促POPや商品紹介動画、SNSなどに登場する。7月から試験的な運用を進めており、11月23日の勤労感謝の日に正式デビューする。 なぜ「AI社員」なのか　従来の販促物が抱える課題 そもそも、なぜPPIHはAI社員を生み出したのか。背景には、従来の販促物の制作をめぐる課題がある。例えば、手書き",
+          "url": "https://b.hatena.ne.jp/entry/s/www.itmedia.co.jp/news/article/2611/20/2000003369/"
+        },
+        {
+          "title": "プレイド「KARTE」の情報漏洩2200社　サービス停止で20億円の赤字へ - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOUC204SK0Q6A121C2000000/"
+        },
+        {
+          "title": "マーケティング支援サービスを手がけるプレイドは20日、不正アクセスを受けた主力サービス「KARTE（カルテ）」の情報漏洩の規模がのべ約2200社に上ると発表した。カルテの停止により業績も下方修正し、2026年12月期の最終損益は6億円の黒字予想から一転、20億円の赤字を見込む。カルテに連携されていた顧客データなどの漏洩では計570社に被害の可能性がある。顧客企業のウェブサイトを訪れた消費者の行",
+          "url": "https://b.hatena.ne.jp/entry/s/www.nikkei.com/article/DGXZQOUC204SK0Q6A121C2000000/"
+        },
+        {
+          "title": "ノンフライヤーで唐揚げ選手権! 最新4モデルどう違う?",
+          "url": "https://kaden.watch.impress.co.jp/docs/topic/topic/2151258.html"
+        },
+        {
+          "title": "kaden.watch.impress.co.jp",
+          "url": "https://b.hatena.ne.jp/site/kaden.watch.impress.co.jp/"
+        },
+        {
+          "title": "政府、サイバー攻撃「緊急対策パッケージ」に強制遮断「ブロッキング」の検討盛り込む方針…法的課題の検討急ぐ",
+          "url": "https://www.yomiuri.co.jp/economy/20261105-GYT1T00350/"
+        },
+        {
+          "title": "www.yomiuri.co.jp",
+          "url": "https://b.hatena.ne.jp/site/www.yomiuri.co.jp/"
+        },
+        {
+          "title": "【読売新聞】　政府が近くまとめるサイバーセキュリティー緊急対策パッケージに、二次被害の防止対策として、ウェブサイトへの接続を強制的に遮断する「ブロッキング」の検討が盛り込まれることが分かった。「アクセス抑止策」として検討する。ＧＭＯ",
+          "url": "https://b.hatena.ne.jp/entry/s/www.yomiuri.co.jp/economy/20261105-GYT1T00350/"
+        },
+        {
+          "title": "キオクシア株の下げ止まらず　PER1倍台目前、AI需要を警戒 - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOUB184O30Y6A111C2000000/"
+        },
+        {
+          "title": "キオクシアホールディングス株の下落が止まらない。20日の東京株式市場で前日比13%安の7186円まで下げ、7カ月半ぶりの安値を付けた。予想PER（株価収益率）は一時2.0倍と1倍台目前まで切り下がった。人工知能（AI）半導体の需要拡大による中長期的な利益成長シナリオへの警戒感が広がっている。市場予想平均（QUICKコンセンサス）ベースの予想PERを用いた。PERは1株当たり利益（EPS）の何倍",
+          "url": "https://b.hatena.ne.jp/entry/s/www.nikkei.com/article/DGXZQOUB184O30Y6A111C2000000/"
+        },
+        {
+          "title": "自分の代わりに動くAgentへ。Claude CodeとCodexで作る自律改善ハーネス",
+          "url": "https://zenn.dev/nttdata_tech/articles/9562962cc181a1"
+        },
+        {
+          "title": "zenn.dev/nttdata_tech",
+          "url": "https://b.hatena.ne.jp/site/zenn.dev/nttdata_tech"
+        },
+        {
+          "title": "自分の仕事を、コーディングAgentに自律的に進めてほしい。 一度伝えたことは覚えていて、それを踏まえて、仕事の種類を問わず「私の代わりに」動いてほしい。 これが一番の動機で、2026年7月に、自律作業のための個人のハーネスを作り始めました。 ほかにも困っていたことがあります。今でこそOrcaのように、いろいろなコーディングAgentを複数のターミナルで同じように扱える開発環境（ADE: Agentic Development Environment）がありますが、当時は過去の作業を追えない、同じ指示を何度もしている、Claude CodeとCodexで設定が分かれていく、という状態でした。 どれも、Agentの賢さでは解決しない問題です。 それから約4か月、開発だけでなく調査や資料作成、チャットの確認まで任せながら運用してきました。 今は、セッションをいくつも同時に立ち上げて、思いついた",
+          "url": "https://b.hatena.ne.jp/entry/s/zenn.dev/nttdata_tech/articles/9562962cc181a1"
+        },
+        {
+          "title": "丸井G、顧客情報延べ1733万件が漏洩　委託先に不正アクセス - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOUC209MW0Q6A121C2000000/"
+        },
+        {
+          "title": "丸井グループは20日、延べ1733万件の顧客情報が漏洩したと発表した。委託先のプレイドが提供するサービス「KARTE（カルテ）」が不正アクセスを受けた。電子商取引（EC）サイト利用者や丸井グループのクレジットカード利用者の氏名、性別、生年月日、メールアドレス、顧客管理番号などが漏洩した。13日に委託先から不正アクセスを検知したとの報告を受け、委託先システムとのアクセスを遮断した。ECサイト「",
+          "url": "https://b.hatena.ne.jp/entry/s/www.nikkei.com/article/DGXZQOUC209MW0Q6A121C2000000/"
+        },
+        {
+          "title": "スーパーコンピュータ「富岳」および「理究（りきゅう）」への不正アクセスに関する調査状況について（第2報） | 理化学研究所",
+          "url": "https://www.riken.jp/pr/news/2026/20261120_1/index.html"
+        },
+        {
+          "title": "利用者の皆さまをはじめ、関係者の皆さまに多大なご心配とご迷惑をおかけしておりますことを、改めて深くお詫び申し上げます。 理化学研究所（理研）計算科学研究センターが運用するスーパーコンピュータ「富岳」および「理究」への不正アクセスについて、11月16日のプレスリリース（第1報）以降の調査で判明した、現時点における情報をご報告いたします。 理研では、現在も詳細な調査を継続し、引き続き運用再開に向けて全容の解明に努めております。お知らせするべき新たな事実が判明し次第、改めてお知らせいたします。 漏えいした可能性がある利用者情報について 「富岳」利用者への影響（4,222名） 調査結果と対応方針 AIを活用した高度なログ解析等により徹底調査を行った結果、侵入者が対象情報へアクセスした痕跡を特定いたしました。外部での悪用等の事実は確認されておりませんが、アクセス痕跡が確認された事実を重く受け止め、被",
+          "url": "https://b.hatena.ne.jp/entry/s/www.riken.jp/pr/news/2026/20261120_1/index.html"
+        },
+        {
+          "title": "GeminiがMacを代わりに操作可能に　アプリやファイルをまたぐ作業も自動化",
+          "url": "https://japan.cnet.com/article/35255218/"
+        },
+        {
+          "title": "どのアプリへのアクセスを許可するかはユーザーが選択する。実行中の作業はいつでも一時停止でき、重要な操作に移る前にはユーザーに承認が求められる。アプリをまたぐ作業を任せたい場合は、使うアプリや参照するファイル、成果物を指示に含められる。 使い方の例として、Googleは複数地域のダッシュボードから数値やスクリーンショットを集め、「Googleスライド」にまとめる作業を挙げた。また、Mac内のフォルダーにある衣類の写真を調べ、ウェブで価格の参考情報を探し、フリーマーケットサービスへの出品準備をする例も紹介した。いずれも複数の画面で繰り返していた作業を、まとめて指示できる。 利用には、「Appleシリコン」と「macOS Sequoia 15.0」以降を搭載するMacと、Mac版Geminiアプリが必要だ。対象は18歳以上で個人用Googleアカウントを保有し、「Google AI Plus」「",
+          "url": "https://b.hatena.ne.jp/entry/s/japan.cnet.com/article/35255218/"
+        },
+        {
+          "title": "ネットもLINEも非対応の「INFOBAR ZERO」は誰が買う？　3万2780円の価値や向き合い方を考える",
+          "url": "https://www.itmedia.co.jp/mobile/articles/2611/19/news071.html"
+        },
+        {
+          "title": "KDDIが発表した「INFOBAR ZERO」は、インターネットやLINEに非対応で通話とSMSに特化した異色の端末だ。価格は3万2780円で12月25日に発売され、povo2.0やセカンドナンバーなど柔軟な回線運用にも対応する。開発陣の発言を手掛かりに、本機の割り切った仕様と価格に納得できるターゲット像を探る。",
+          "url": "https://b.hatena.ne.jp/entry/s/www.itmedia.co.jp/mobile/articles/2611/19/news071.html"
+        },
+        {
+          "title": "必死で資料を作った会議、上役の「直近のセキュリティ危機は大丈夫なのか」って質問に上司が「あなたが予算を減らしたのでダメです」って返して15分で終わった",
+          "url": "https://togetter.com/li/2772854"
+        },
+        {
+          "title": "鳥野花菜 @torino212 必死で作った資料の会議、開始15分で最後のだけ使って終わったんだけどどういうことなの…？ 上役が「直近のセキュリティ危機は大丈夫なのか(意訳)」って言ったら、上司が「いえ、全く駄目です。あなたが5年連続で予算減額したので、対策費用ないです」で上役が役員に連行されて終わり。マジかよ 2026-11-20 11:55:13 鳥野花菜 @torino212 会議の合間に見たら伸びててびっくり。みんな苦労してんだなぁ。 伸びたら宣伝していいって聞くけど、宣伝するものがないので推しのぶいすぽ「花芽なずな」さんの生誕祭ライブを是非。 歌唱・セトリ・カメラワークが揃った最高のライブ。私はこれで自分を保ってる。 youtube.com/live/7je9r5tov… 2026-11-20 16:00:13",
+          "url": "https://b.hatena.ne.jp/entry/s/togetter.com/li/2772854"
+        },
+        {
+          "title": "当社グループが利用するクラウドサービスの委託先への不正アクセスによる情報流出の可能性について",
+          "url": "https://about.mercari.com/press/news/articles/20261120_incidentreport/"
+        },
+        {
+          "title": "about.mercari.com",
+          "url": "https://b.hatena.ne.jp/site/about.mercari.com/"
+        },
+        {
+          "title": "株式会社メルカリは、当社グループ（株式会社メルカリ、株式会社メルペイ、株式会社メルコイン）が社内の業務で利用しているクラウドサービス「Notion」（提供元：Notion Labs, Inc.、以下、Notion社）のNotion AIについて、Notion社が処理の一部を委託していたFireworks AI, Inc.（以下、Fireworks社）が第三者による不正アクセスを受け、当社グループの従業員がNotion AIに入力した内容と、それに対するAIによる回答の記録の一部（以下、対象記録）が、外部に流出した可能性があることを確認いたしましたので、お知らせいたします。 対象記録には、当社グループのお客さま、お取引先さま、採用にご応募いただいた方、当社グループの従業員等に関する個人情報が含まれていることを確認しております。 なお、当社グループのサービスやシステムへの不正アクセスおよび脆弱",
+          "url": "https://b.hatena.ne.jp/entry/s/about.mercari.com/press/news/articles/20261120_incidentreport/"
+        },
+        {
+          "title": "Appleの会話要約AI「Siri Recap」を2週間使った結果「自分が救急搬送された」という架空の記録が生成される",
+          "url": "https://gigazine.net/news/20261120-siri-recap-hands-on/"
+        },
+        {
+          "title": "IT系ニュースサイトのThe VergeがApple Watchで周囲の会話を自動的に要約する新機能「Siri Recap」を2週間にわたって試した体験談を公開しました。 I let Apple’s always-listening AI summarize my life for two weeks | The Verge https://www.theverge.com/tech/1037100/apple-siri-recap-audio-intelligence-hands-on Appleの「Siri Recap」は2026年に登場したApple Watch Series 12とApple Watch Ultra 4向けの新機能で、記事作成時点ではベータ版として提供されています。周囲の音声をAIが分析する「Audio Intelligence」の一部として提供されており、会議や学",
+          "url": "https://b.hatena.ne.jp/entry/s/gigazine.net/news/20261120-siri-recap-hands-on/"
+        },
+        {
+          "title": "Mac版Geminiに「Computer use」　PC作業をAIが代行",
+          "url": "https://www.watch.impress.co.jp/docs/news/2158164.html"
+        },
+        {
+          "title": "www.watch.impress.co.jp",
+          "url": "https://b.hatena.ne.jp/site/www.watch.impress.co.jp/"
+        },
+        {
+          "title": "三井住友銀行、委託先で不正アクセス　顧客情報最大1400万件漏洩 - 日本経済新聞",
+          "url": "https://www.nikkei.com/article/DGXZQOUB208VL0Q6A121C2000000/"
+        },
+        {
+          "title": "三井住友銀行は20日、業務を委託するプレイドのサービスで不正アクセスが発生し、顧客の生年月日など最大1400万件ほどの情報が漏洩したと発表した。情報は顧客の氏名などとひも付いていないため、個人を特定することはでき",
+          "url": "https://b.hatena.ne.jp/entry/s/www.nikkei.com/article/DGXZQOUB208VL0Q6A121C2000000/"
+        },
+        {
+          "title": "Metaが学校に狙い、10代を「Instagram」へ引き込む計画が社内文書で判明",
+          "url": "https://japan.cnet.com/article/35255211/"
+        },
+        {
+          "title": "NPRが入手して報道した文書によると、MetaはInstagram上に学校ごとのコミュニティーを作り、ユーザー数とエンゲージメントを伸ばすため、「Project Gryffindor」と名付けた取り組みを始めた。名称は「ハリー・ポッター」シリーズに登場するホグワーツ魔法魔術学校の寮、グリフィンドールに由来する。 若いユーザーがネットの外で長時間を過ごす学校で接点を持とうとするMetaの狙いは、以前から明らかだった。同社は9月下旬にも、「生徒と保護者が学校の情報を把握できるようにする」ことを目的に、1万7000校近くが参加する学校連携プログラムを拡大すると発表した。 社内文書からは、Metaが学校への導入を進める狙いの一端と、Project Gryffindorで提案された機能が分かる。ティーンのユーザーのプロフィールに学校のバナーを表示したり、学校の生徒名簿を卒業予定年で検索したりする機能",
+          "url": "https://b.hatena.ne.jp/entry/s/japan.cnet.com/article/35255211/"
+        },
+        {
+          "title": "NANDフラッシュ、ついに値下がりへ。2027年第1四半期に最大-5%の予測",
+          "url": "https://pc.watch.impress.co.jp/docs/news/2158129.html"
+        },
+        {
+          "title": "pc.watch.impress.co.jp",
+          "url": "https://b.hatena.ne.jp/site/pc.watch.impress.co.jp/"
+        },
+        {
+          "title": "政府の内部資料流出か、基幹システムに不正アクセス　デジタル庁発表（朝日新聞） - Yahoo!ニュース",
+          "url": "https://news.yahoo.co.jp/articles/246b6f0c25a2454bf6e574e05d3c88581fe2f8fa"
+        },
+        {
+          "title": "news.yahoo.co.jp",
+          "url": "https://b.hatena.ne.jp/site/news.yahoo.co.jp/"
+        },
+        {
+          "title": "デジタル庁（朝日新聞）　デジタル庁は20日、政府の基幹ネットワークシステムに不正アクセスがあり、政府の内部資料が漏洩（ろうえい）した可能性があると発表した。流出した件数や個人情報が含まれていたかなどの詳細については、「調査中」としている。 【一覧で見る】主な情報流出や不正アクセス 11月12日に政府の基幹ネットワークシステム「ガバメントソリューションサービス」上のファイル共有サービスに不正アクセスがあることを検知した。この日にサービスを停止した。 調査の結果、7月30日～11月12日に不正アクセスが続いていたことが分かった。政府内部の資料が流出した可能性があり、機密性の高いものや個人情報が含まれていたかは「調査中」としている。（福岡龍一郎）",
+          "url": "https://b.hatena.ne.jp/entry/s/news.yahoo.co.jp/articles/246b6f0c25a2454bf6e574e05d3c88581fe2f8fa"
+        },
+        {
+          "title": "月で1000年動く半導体、AlNの高放射線耐性を実証",
+          "url": "https://eetimes.itmedia.co.jp/ee/articles/2611/18/news073.html"
+        },
+        {
+          "title": "eetimes.itmedia.co.jp",
+          "url": "https://b.hatena.ne.jp/site/eetimes.itmedia.co.jp/"
+        },
+        {
+          "title": "NTTの最新技術や研究を紹介する「NTT R&D FORUM 2026」が、2026年11月18～20日、24～25日にかけてNTT武蔵野研究開発センタ（東京都武蔵野市）で開催される。展示ブースでは、窒化アルミニウム（AlN）の宇宙空間における有用性を紹介していた。 半導体最高クラスの放射線耐性を実証 窒化ガリウム（GaN）や炭化ケイ素（SiC）などのワイドバンドギャップ（WBG）半導体は、その特性からパワーデバイスや高周波デバイスなどでの活用が進んでいるが、同時に熱や放射線耐性の高さから宇宙空間での活用が期待される。AlNはバンドギャップエネルギー6eVと、GaN（3.4eV）やSiC（3.26eV）よりもバンドギャップが広く、次世代のウルトラワイドバンドギャップ（UWBG）半導体とされている。 ブース担当者によると「AlNはNTT物性科学基礎研究所が世界で初めて半導体化に成功した、いわ",
+          "url": "https://b.hatena.ne.jp/entry/s/eetimes.itmedia.co.jp/ee/articles/2611/18/news073.html"
+        },
+        {
+          "title": "お財布のヒモが爆散！　A20 Pro搭載の新型「iPad mini」を買って分かった魅力と“惜しい点”",
+          "url": "https://www.itmedia.co.jp/pcuser/articles/2611/20/news009.html"
+        },
+        {
+          "title": "最近のiPad miniは、Appleにとって大事な製品ラインではないような印象を、ほんのりと受ける状況が続いていました。製品が更新されても刺激が少なく、ファンにとっては依然重要な製品ながら、存在感が薄かったと思います。 自分もミニタブレットは好きなものの、しばらく手を出していない状態でした。そして、先日「Galaxy Z Fold8」をレビューしたときに「軽量のミニタブレット、やっぱ良いな」という気持ちになり、“折りたたみスマホ物欲”もムクムクと膨れ上がっていました。 それを何とか鎮めて「勝った！」という気分になっていたら本機が発売され、折あしく“やる気のあるスペック”になっているのを見てしまい、結局は負けてしまった次第です。 それでは、物欲に負けたかいがあったのか、実力を見ていきましょう。 最新のiPhoneと同等になったスペック まずはタブレットとしてのスペックをざっと見ておきましょ",
+          "url": "https://b.hatena.ne.jp/entry/s/www.itmedia.co.jp/pcuser/articles/2611/20/news009.html"
+        },
+        {
+          "title": "情報漏洩・不正アクセスでやばい会社TOP5",
+          "url": "https://anond.hatelabo.jp/20261119233504"
+        },
+        {
+          "title": "anond.hatelabo.jp",
+          "url": "https://b.hatena.ne.jp/site/anond.hatelabo.jp/"
+        },
+        {
+          "title": "あえてこの5社の中でランクはつけない タイムズモビリティ（タイムズカーシェア） 今思えば情報漏洩ブームのパイオニア。運転免許証の「本人確認書類」としての地位を剥奪した功績と、集団訴訟の動きも励起した功績は計り知れない 良品計画 100万枚以上のクレカ全桁流出に加え、クレカ番号を顧客識別のためのユニークキーとして使っていたという想像の斜め下にあるシステム仕様で全国のまともなSEとシステムアーキテクトを戦慄させた唯一無二の存在 GMO 顧客のパソコンを遠隔操作可能にするというハッカーウハウハ仕様を元にサービス展開し、脆弱性の指摘を「うっさいんじゃボケ」と一蹴し続けた結果、万単位の顧客の資産を流出させることに成功。社長の記者会見は「令和の野々村竜太郎」と絶賛されている 楽天証券 トクリュウの企画管理グループが最も欲しがる「資産情報付の信頼性が高い個人情報」をテストデータセットという名前で450万",
+          "url": "https://b.hatena.ne.jp/entry/s/anond.hatelabo.jp/20261119233504"
+        },
+        {
+          "title": "Claudeを使い「リーマン予想」を証明か　Anthropic数学者が発表　Lean検証も通過、数学界が精査へ",
+          "url": "https://japan.cnet.com/article/35255245/"
+        },
+        {
+          "title": "プレイド、「KARTE」不正アクセスの調査結果を公表、2027年1月中旬の段階的な再開を目指す　契約が終了した企業の情報も漏えいの対象に",
+          "url": "https://internet.watch.impress.co.jp/docs/news/2158284.html"
+        },
+        {
+          "title": "セキュリティ技術の新着エントリー",
+          "url": "https://b.hatena.ne.jp/entrylist/it/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E6%8A%80%E8%A1%93"
+        },
+        {
+          "title": "PHPカンファレンス関西2026のお誘いチケットを学生・若手エンジニアの方へ先着2名に譲渡します - おうさまのみみはロバのみみ",
+          "url": "https://luccafort.hatenablog.com/entry/2026/11/20/193344"
+        },
+        {
+          "title": "北海道3市町委託先のマルウェア感染についてまとめてみた - piyolog",
+          "url": "https://piyolog.hatenadiary.jp/entry/2026/11/20/130214"
+        },
+        {
+          "title": "はてなブログ（テクノロジー）の新着エントリー",
+          "url": "https://b.hatena.ne.jp/entrylist/it/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%EF%BC%88%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E3%83%BC%EF%BC%89"
+        },
+        {
+          "title": "AI・機械学習の新着エントリー",
+          "url": "https://b.hatena.ne.jp/entrylist/it/AI%E3%83%BB%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92"
+        },
+        {
+          "title": "「オントロジー」とは結局何なのか　Palantir、Databricks、Snowflake、NVIDIAで中身が違う理由",
+          "url": "https://atmarkit.itmedia.co.jp/ait/articles/2611/19/news008.html"
+        },
+        {
+          "title": "プログラミングの新着エントリー",
+          "url": "https://b.hatena.ne.jp/entrylist/it/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0"
+        },
+        {
+          "title": "人気エントリー - はてなブログ（テクノロジー）",
+          "url": "https://b.hatena.ne.jp/hotentry/it/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%EF%BC%88%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E3%83%BC%EF%BC%89"
+        },
+        {
+          "title": "piyolog.hatenadiary.jp",
+          "url": "https://b.hatena.ne.jp/site/piyolog.hatenadiary.jp/"
+        },
+        {
+          "title": "2026年11月18日から19日にかけて、北海道の岩見沢市、新得町、留萌市が委託先の協力会社の端末がマルウェアに感染し、委託したデータが漏えいした可能性があると公表しました。ここでは関連する情報をまとめます。 3市町の委託データに漏えいのおそれ 岩見沢市と新得町は2026年11月18日、留萌市は19日に、GIS北海道に委託した業務のデータが漏えいしたおそれがあると公表。データはGIS北海道の協力会社である有限会社リムゲートの端末に保存されており、端末のマルウェア感染で漏えいした可能性がある。3市町とも現時点で外部への漏えいや不正利用は確認しておらず、対象データにマイナンバーは含まれない(出典: 1, 2, 3)。 市町 委託業務 漏えいのおそれがあるデータ 公表日 留萌市 統合型GIS導入事業(2020年8月委託) ・住民基本台帳データ 最大71,002件(2022年2月3日時点) ・要支",
+          "url": "https://b.hatena.ne.jp/entry/s/piyolog.hatenadiary.jp/entry/2026/11/20/130214"
+        },
+        {
+          "title": "AIの返答が理解しづらいので、自分の認知特性をAIに分析させてSkillにした - $shibayu36->blog;",
+          "url": "https://blog.shibayu36.org/entry/2026/11/17/120000"
+        },
+        {
+          "title": "blog.shibayu36.org",
+          "url": "https://b.hatena.ne.jp/site/blog.shibayu36.org/"
+        },
+        {
+          "title": "最近AIの返答を理解するのに時間がかかってつらかった。そこで自分の認知特性をClaude Codeに分析させ、それに合わせて返答を書かせるSkillを作った。かなり読みやすくなったので作ったものと作り方を紹介する。 作りたいと思った理由: 記憶力が低く、AIの返答を理解するのがつらかった Claude Codeの返答を読んでいて「案Bって何だっけ？」「準備PRってなんだっけ」と聞き返すことがとても多かった。これだとチャットの返答や調査結果を理解するのに時間がかかってしまう。困る。 原因は短期記憶力がとても低いことだと自分では感じていた。返答の上のほうにまとめた案を「案A」のように指して判断を求められると、上下を行き来しないといけない。しかも行き来しても覚えていられないので全く理解できなくなる。 AIの書き方をこの特性に合わせられればもっと速く理解できるはずだと思った。 作ったもの: 自分の",
+          "url": "https://b.hatena.ne.jp/entry/s/blog.shibayu36.org/entry/2026/11/17/120000"
+        },
+        {
+          "title": "11月に修正されたPHPの脆弱性についてまとめてみた - piyolog",
+          "url": "https://piyolog.hatenadiary.jp/entry/2026/11/20/003148"
+        },
+        {
+          "title": "2026年11月19日、PHPの開発元であるThe PHP Groupは4系統のセキュリティリリース(PHP 8.5.13、8.4.28、8.3.37、8.2.36)を公開し、複数の脆弱性を修正しました。ここでは関連する情報をまとめます。 どんな脆弱性が修正されたの? The PHP Groupは11月18日、19日14時から14時30分(協定世界時、日本時間23時から23時30分)にセキュリティリリースを行うと予告(出典: 2)。最高の深刻度の CRITICAL は「既定ではない設定または一般的ではないセットアップ」が条件と説明していた*1。 国内ではIPAが19日に事前準備を呼びかけ、今回は10月の予告時と異なり「デフォルトではない設定、または、一般的ではないセットアップ」で影響するものと記載されていると伝えた(出典: 22)。国家サイバー統括室も同日18時37分、X で「前回とは異な",
+          "url": "https://b.hatena.ne.jp/entry/s/piyolog.hatenadiary.jp/entry/2026/11/20/003148"
+        },
+        {
+          "title": "『 テクノロジー 』の新着エントリーを見る",
+          "url": "https://b.hatena.ne.jp/hotentry/it"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "htmlSha256": "1fd76be257603a0d21bbb24b3d74d7449f33157b064c3777b961f913ab8c3852",
+      "feeds": [
+        "https://b.hatena.ne.jp/hotentry/it.rss"
+      ],
+      "linksObserved": 130
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-21T01:02:32.575515+00:00",
+      "links": [
+        {
+          "title": "静音性を極めるために無響室を社内に作ったサイコムを取材、「静かなパーツを使っているだけ」の自称・静音PCとはひと味違う止まらぬこだわり",
+          "url": "https://ascii.jp/elem/000/004/451/4451640/?topnew=1"
+        },
+        {
+          "title": "VRChatで全身を動かせる「フルトラ」が楽しすぎる！ HaritoraX 2を試したらダンスにハマってしまった",
+          "url": "https://ascii.jp/elem/000/004/450/4450713/?topnew=2"
+        },
+        {
+          "title": "ゴアテックス防水＆ファスナー付きで脱ぎ履き楽々！アシックスの「ハダシウォーカー」",
+          "url": "https://ascii.jp/elem/000/004/453/4453619/?topnew=3"
+        },
+        {
+          "title": "1kg切ってるのに、18コア!? ASUS「Zenbook SORA」が5万円引き、29万9800円",
+          "url": "https://ascii.jp/elem/000/004/452/4452979/?topnew=4"
+        },
+        {
+          "title": "RTX 5080搭載PCが6万7000円引き！ パソコンショップSEVEN、11月21日限定セール",
+          "url": "https://ascii.jp/elem/000/004/453/4453399/?topnew=5"
+        },
+        {
+          "title": "17万5460円のASUS一体型PC、何が入ってる？ Office 2年分に16GBメモリ、1TB SSDまで！",
+          "url": "https://ascii.jp/elem/000/004/453/4453226/?topnew=6"
+        },
+        {
+          "title": "「32GBメモリー」へのアップグレードが、なんと1万6500円。めちゃお得なキャンペーンを発見！",
+          "url": "https://ascii.jp/elem/000/004/451/4451846/?topnew=7"
+        },
+        {
+          "title": "RTX 50シリーズ搭載で23万円台のお買い得ゲーミングノートPCがBFS中！",
+          "url": "https://ascii.jp/elem/000/004/452/4452017/?topnew=8"
+        },
+        {
+          "title": "仕事だけじゃもったいない！ 軽めのゲームも楽しめる15.6型ノートPC「mouse K5」",
+          "url": "https://ascii.jp/elem/000/004/453/4453710/?topnew=9"
+        },
+        {
+          "title": "薄くて美しい、しかもAI対応！ レノボ「Yoga Slim 7a Gen 11」は仕事にも普段使いにも",
+          "url": "https://ascii.jp/elem/000/004/453/4453657/?topnew=10"
+        },
+        {
+          "title": "6万円切りの“買い”な全部入りアンドロイド発見！ 独特デザインも魅力の「Phone (4b)」を試した",
+          "url": "https://ascii.jp/elem/000/004/449/4449941/?writer_rec_main=1"
+        },
+        {
+          "title": "iPhoneが高い？ アンドロイドなら6万円までで買えます！ 格安スマホ全特集【2026年秋】",
+          "url": "https://ascii.jp/elem/000/004/449/4449060/?writer_rec_main_sub=1"
+        },
+        {
+          "title": "全部入りアンドロイドが3万円台　防滴、防塵、FeliCaでこの見た目「Nothing Phone (3a) Lite」",
+          "url": "https://ascii.jp/elem/000/004/449/4449055/?writer_rec_main_sub=2"
+        },
+        {
+          "title": "VRChatで全身を動かせる「フルトラ」が楽しすぎる！ HaritoraX 2を試したらダンスにハマってしまった",
+          "url": "https://ascii.jp/elem/000/004/450/4450713/?topac=1"
+        },
+        {
+          "title": "トランプ氏の長男、「予測市場」最大手の顧問を退任　民主党の議会奪還で逆風か",
+          "url": "https://ascii.jp/elem/000/004/451/4451753/?topac=2"
+        },
+        {
+          "title": "高市首相、能動的サイバー防御の法改正を指示　民間企業への不審な通信も政府が監視・分析へ？",
+          "url": "https://ascii.jp/elem/000/004/449/4449713/?topac=3"
+        },
+        {
+          "title": "1兆円の仮想通貨盗難、FBIが北朝鮮の犯行と指摘　狙われたのは社員のPCか",
+          "url": "https://ascii.jp/elem/000/004/447/4447863/?topac=4"
+        },
+        {
+          "title": "12月19日（土）開催！ 「TOKYO Gaming-PC STREET 10（GPS 10）」情報まとめ",
+          "url": "https://ascii.jp/featuredarticles/3001385/?topics=1"
+        },
+        {
+          "title": "アップル新製品がこの秋、大量登場！ 製品レビュー記事を一気見【2026年秋】",
+          "url": "https://ascii.jp/featuredarticles/3001386/?topics=2"
+        },
+        {
+          "title": "ゴアテックス防水＆ファスナー付きで脱ぎ履き楽々！アシックスの「ハダシウォーカー」",
+          "url": "https://ascii.jp/elem/000/004/453/4453619/"
+        },
+        {
+          "title": "1kg切ってるのに、18コア!? ASUS「Zenbook SORA」が5万円引き、29万9800円",
+          "url": "https://ascii.jp/elem/000/004/452/4452979/"
+        },
+        {
+          "title": "ゴジラとコラボしたFMVノートPCが、直販サイトで10%オフだ！",
+          "url": "https://ascii.jp/elem/000/004/453/4453674/"
+        },
+        {
+          "title": "17万5460円のASUS一体型PC、何が入ってる？ Office 2年分に16GBメモリ、1TB SSDまで！",
+          "url": "https://ascii.jp/elem/000/004/453/4453226/"
+        },
+        {
+          "title": "仕事だけじゃもったいない！ 軽めのゲームも楽しめる15.6型ノートPC「mouse K5」",
+          "url": "https://ascii.jp/elem/000/004/453/4453710/"
+        },
+        {
+          "title": "2200円オフクーポン配布中！ 23.8型の一体型デスクトップPCがFMV直販で24万4200円！",
+          "url": "https://ascii.jp/elem/000/004/453/4453671/"
+        },
+        {
+          "title": "薄くて美しい、しかもAI対応！ レノボ「Yoga Slim 7a Gen 11」は仕事にも普段使いにも",
+          "url": "https://ascii.jp/elem/000/004/453/4453657/"
+        },
+        {
+          "title": "日本未発売のアップル「HomeView」を米国で購入　使って見えた意外な魅力",
+          "url": "https://ascii.jp/elem/000/004/453/4453618/"
+        },
+        {
+          "title": "RTX 50シリーズ搭載で23万円台のお買い得ゲーミングノートPCがBFS中！",
+          "url": "https://ascii.jp/elem/000/004/452/4452017/"
+        },
+        {
+          "title": "「32GBメモリー」へのアップグレードが、なんと1万6500円。めちゃお得なキャンペーンを発見！",
+          "url": "https://ascii.jp/elem/000/004/451/4451846/"
+        },
+        {
+          "title": "アップルユーザーならFire TVよりこっち！ HomePodと連動でド迫力の音が出せる新Apple TV 4K",
+          "url": "https://ascii.jp/elem/000/004/452/4452443/"
+        },
+        {
+          "title": "約1.23kgの軽量ボディで快適動作！ A18 Pro搭載の13型「MacBook Neo」",
+          "url": "https://ascii.jp/elem/000/004/453/4453596/"
+        },
+        {
+          "title": "アップル新製品がこの秋、大量登場！ 製品レビュー記事を一気見【2026年秋】",
+          "url": "https://ascii.jp/elem/000/004/453/4453380/"
+        },
+        {
+          "title": "進化したノイキャン搭載で2万円台！「AirPods 5」を試すと完成度の向上を感じられた",
+          "url": "https://ascii.jp/elem/000/004/453/4453374/"
+        },
+        {
+          "title": "有機ELの黒か、液晶の明るさか。タッチ対応OLED版とM6版、2つの新型MacBook Proの選び方",
+          "url": "https://ascii.jp/elem/000/004/453/4453372/"
+        },
+        {
+          "title": "やっぱりApple Watchで決まり！ Series 12は計測が大きく進化、健康になりたい俺が本気で試してみた",
+          "url": "https://ascii.jp/elem/000/004/453/4453371/"
+        },
+        {
+          "title": "ついに風呂でも使える！  A20 Pro搭載iPad miniは感動モノの薄さ・軽さ・高画質だった！",
+          "url": "https://ascii.jp/elem/000/004/453/4453370/"
+        },
+        {
+          "title": "iPhone Duo＆iPhone 18 Proと過去のほぼ全部のiPhoneを詳細表でスペック比較！",
+          "url": "https://ascii.jp/elem/000/004/453/4453369/"
+        },
+        {
+          "title": "iPhone 18 Pro実機レビュー。さすが20万円超え！ バツグンの安定感",
+          "url": "https://ascii.jp/elem/000/004/453/4453368/"
+        },
+        {
+          "title": "36万円超の「iPhone Duo」を使ってわかった「いつものiPhone」の安心感と大画面の課題",
+          "url": "https://ascii.jp/elem/000/004/453/4453367/"
+        },
+        {
+          "title": "「萌え萌えキュン！」もあるだと!? 「ラプラス」瀬戸真凜の4th DVDは、南国で始まる恋物語",
+          "url": "https://ascii.jp/elem/000/004/452/4452459/"
+        },
+        {
+          "title": "やっぱり好き♡すぐそばにいる超能力少女を描いた藤子Ｆ不二雄『エスパー魔美』が50%還元【Amazonマンガ週末祭】",
+          "url": "https://ascii.jp/elem/000/004/453/4453589/"
+        },
+        {
+          "title": "宇宙の破壊王に立ち向かう超能力者たちの奮闘を描く石ノ森章太郎『幻魔大戦』が50%還元で1巻220円【Amazonマンガ週末祭】",
+          "url": "https://ascii.jp/elem/000/004/453/4453584/"
+        },
+        {
+          "title": "【GPS10】ゲーミングPCもマウスも触り放題!? 秋葉原でガジェット体験イベント「TOKYO Gaming-PC STREET 10」開催決定！【参加無料】",
+          "url": "https://ascii.jp/elem/000/004/453/4453011/"
+        },
+        {
+          "title": "【東海・中部の紅葉名所Best5】3年ぶりの「逆さもみじ」復活を狙う！ 香嵐渓の渋滞を回避する極上の秋景色",
+          "url": "https://ascii.jp/elem/000/004/451/4451664/"
+        },
+        {
+          "title": "清楚なイメージがたまらなく良い！ 「ポップキャスト」の山下みりがDVDデビュー",
+          "url": "https://ascii.jp/elem/000/004/452/4452458/"
+        },
+        {
+          "title": "【関西の百人一首・紅葉名所Best5】百人一首の歌に浸る、和歌に詠まれた艶やかな紅葉名所を巡る大人の旅",
+          "url": "https://ascii.jp/elem/000/004/451/4451637/"
+        },
+        {
+          "title": "これ読んでカポエイラはじめよう！『バトゥーキ』全巻100円セール【Kindle漫画セール情報】",
+          "url": "https://ascii.jp/elem/000/004/453/4453191/"
+        },
+        {
+          "title": "可愛いメイドになる姿も！「制コレ22」出身の松島かのん、20歳を迎えてついにDVDデビュー",
+          "url": "https://ascii.jp/elem/000/004/451/4451994/"
+        },
+        {
+          "title": "安っ！飛行機3696円〜、ホテル最大75％オフ！ 冬旅ブラックフライデーの目玉セールは？",
+          "url": "https://ascii.jp/elem/000/004/451/4451960/"
+        },
+        {
+          "title": "厚さ13.4mmで10000mAh！ SUNEAST、Qi2最大25W対応の半固体モバイルバッテリー「SSA10K」予約開始",
+          "url": "https://ascii.jp/elem/000/004/453/4453398/"
+        },
+        {
+          "title": "ケーブルを抜かずに映像・音声を一時オフ　エレコム、画面オフボタン付きUSB-Cハブ発売",
+          "url": "https://ascii.jp/elem/000/004/453/4453396/"
+        },
+        {
+          "title": "ASUS、2.5スロット設計のRTX 5070／5060搭載グラボ発売　デュアルファンで冷却と静音性を追求",
+          "url": "https://ascii.jp/elem/000/004/453/4453393/"
+        },
+        {
+          "title": "眠っているVHSをPCにデジタル保存！ USB-A／C対応ビデオキャプチャー「400-MEDI056」発売",
+          "url": "https://ascii.jp/elem/000/004/452/4452984/"
+        },
+        {
+          "title": "PCファンの配線をすっきり！ CORSAIR「iCUE LINK LX360/LX360-R RGB」、一体型フレームで11月26日発売",
+          "url": "https://ascii.jp/elem/000/004/452/4452983/"
+        },
+        {
+          "title": "手のひらサイズでローカルAIを実行　ドスパラ、RTX Spark搭載「ProArt GR1X」を発売",
+          "url": "https://ascii.jp/elem/000/004/452/4452965/"
+        },
+        {
+          "title": "TDP 140WのデスクトップPC版RTX Sparkの性能をTDP 45W〜80WのノートPC版と比較、真価は電力制限で変わる!?",
+          "url": "https://ascii.jp/elem/000/004/452/4452878/"
+        },
+        {
+          "title": "最上位ビデオカードでも動かせない巨大AIモデルを128GBユニファイドメモリーでブン回すスゴいヤツ。価格もスゴい……！：PCワンズ",
+          "url": "https://ascii.jp/elem/000/004/451/4451706/"
+        },
+        {
+          "title": "HAVN「HS 360 VGPU」11月20日発売　曲面ガラスでGPUを魅せるPCケース、39,880円前後",
+          "url": "https://ascii.jp/elem/000/004/452/4452468/"
+        },
+        {
+          "title": "VRChatで全身を動かせる「フルトラ」が楽しすぎる！ HaritoraX 2を試したらダンスにハマってしまった",
+          "url": "https://ascii.jp/elem/000/004/450/4450713/"
+        },
+        {
+          "title": "RTX 5080搭載PCが6万7000円引き！ パソコンショップSEVEN、11月21日限定セール",
+          "url": "https://ascii.jp/elem/000/004/453/4453399/"
+        },
+        {
+          "title": "軽さ、堅牢性、高いAI性能を備えた次世代ビジネスPCの決定版！「HP EliteBook X G2a 14 AI PC」レビュー",
+          "url": "https://ascii.jp/elem/000/004/435/4435172/"
+        },
+        {
+          "title": "水玉顕微鏡と半球ビデオプレイヤーを目玉時計にした話",
+          "url": "https://ascii.jp/elem/000/004/453/4453300/"
+        },
+        {
+          "title": "はんだ付け不要でIoT開発入門！ ソラコム、LTE-M・7種のモジュール付きキットを2万2000円で発売",
+          "url": "https://ascii.jp/elem/000/004/453/4453195/"
+        },
+        {
+          "title": "中安祐太：薪を割り、米を作り、電池材料を研究する里山の工学者",
+          "url": "https://ascii.jp/elem/000/004/453/4453192/"
+        },
+        {
+          "title": "バイブコーディング＋FDE伴走で“パーソナライズSaaS”　SMFLが「Replit」で個別開発を高速化",
+          "url": "https://ascii.jp/elem/000/004/452/4452749/"
+        },
+        {
+          "title": "AIに嗅覚を、スタートアップが挑む「匂いの基盤モデル」",
+          "url": "https://ascii.jp/elem/000/004/452/4452959/"
+        },
+        {
+          "title": "米南西部の水力発電が過去最低、温室効果ガス削減に陰り",
+          "url": "https://ascii.jp/elem/000/004/452/4452956/"
+        },
+        {
+          "title": "AI監視塔の近くで相次ぐ死、米国境警備当局が取るべき4つの対策",
+          "url": "https://ascii.jp/elem/000/004/452/4452955/"
+        },
+        {
+          "title": "情シスの約7割がセキュリティに不安!? 12/3開催の無料懇親会で、今年の苦労を語り合おう！",
+          "url": "https://ascii.jp/elem/000/004/452/4452178/"
+        },
+        {
+          "title": "ナレーション作成を1時間から数分に短縮!? TBS開発の「音六AI」がテレビ制作を変える【Inter BEE 2026特集】",
+          "url": "https://ascii.jp/elem/000/004/452/4452844/"
+        },
+        {
+          "title": "キリギリスの超音波をヒントに！ 農薬を使わずガを遠ざける新装置",
+          "url": "https://ascii.jp/elem/000/004/449/4449068/"
+        },
+        {
+          "title": "「完璧な研修」より「必ず届く研修」を！ 【エスカとレンのセキュリティ通信】",
+          "url": "https://ascii.jp/elem/000/004/446/4446250/"
+        },
+        {
+          "title": "自分だけのAIエージェントををサクッっと作る！ Microsoft 365 Copilot「Agent Builder」の使い方を解説",
+          "url": "https://ascii.jp/elem/000/004/446/4446236/"
+        },
+        {
+          "title": "「さきがけ」最新研究成果レポート　これからヒーロー！コラボ企画　猫田とワンが聞いてみた",
+          "url": "https://ascii.jp/elem/000/004/449/4449067/"
+        },
+        {
+          "title": "マイケル・デルCEOが「AI出遅れ」に警鐘　Dell Technologies Forumで示されたエージェント実装の道筋",
+          "url": "https://ascii.jp/elem/000/004/452/4452466/"
+        },
+        {
+          "title": "機密会議の議事録を社内AIで作成　FIXER「GaiXerScribe」、話者分離とToDo整理に対応",
+          "url": "https://ascii.jp/elem/000/004/452/4452469/"
+        },
+        {
+          "title": "ヤマハ「RTX1300」「RTX840」がDNSセキュリティー拡張ライセンスに対応　新ファームウェア公開",
+          "url": "https://ascii.jp/elem/000/004/452/4452912/"
+        },
+        {
+          "title": "さきがけ35周年記念シンポジウム開催レポート",
+          "url": "https://ascii.jp/elem/000/004/449/4449066/"
+        },
+        {
+          "title": "背脂の甘みと唐辛子の辛みが決め手の「凄麺京都」が34％オフ",
+          "url": "https://ascii.jp/elem/000/004/453/4453601/"
+        },
+        {
+          "title": "気分が上がるKing Gnuデザイン缶「オールフリー」が1本約104円でセール中！",
+          "url": "https://ascii.jp/elem/000/004/453/4453622/"
+        },
+        {
+          "title": "2本で7764円って安くない？ Switch 2『モンハンワイルズ 狩友ダブルパック』が予約受付中",
+          "url": "https://ascii.jp/elem/000/004/453/4453712/"
+        },
+        {
+          "title": "牛めし・豚めし・カレーが全部そろう！ 松屋の冷凍セット30食が54％オフ",
+          "url": "https://ascii.jp/elem/000/004/453/4453594/"
+        },
+        {
+          "title": "夜食にもうれしい大盛り麺90g！「デカうま わかめそば」12個セットが31％オフ",
+          "url": "https://ascii.jp/elem/000/004/453/4453598/"
+        },
+        {
+          "title": "ゴアテックス防水＆ファスナー付きで脱ぎ履き楽々！アシックスの「ハダシウォーカー」",
+          "url": "https://ascii.jp/elem/000/004/453/4453619/?series=1"
+        },
+        {
+          "title": "VRChatで全身を動かせる「フルトラ」が楽しすぎる！ HaritoraX 2を試したらダンスにハマってしまった",
+          "url": "https://ascii.jp/elem/000/004/450/4450713/?series=2"
+        },
+        {
+          "title": "1kg切ってるのに、18コア!? ASUS「Zenbook SORA」が5万円引き、29万9800円",
+          "url": "https://ascii.jp/elem/000/004/452/4452979/?series=3"
+        },
+        {
+          "title": "17万5460円のASUS一体型PC、何が入ってる？ Office 2年分に16GBメモリ、1TB SSDまで！",
+          "url": "https://ascii.jp/elem/000/004/453/4453226/?series=4"
+        },
+        {
+          "title": "仕事だけじゃもったいない！ 軽めのゲームも楽しめる15.6型ノートPC「mouse K5」",
+          "url": "https://ascii.jp/elem/000/004/453/4453710/?series=5"
+        },
+        {
+          "title": "大型カメラがずらりと並ぶ！ さすがのソニーブース【Inter BEE 2026特集】",
+          "url": "https://ascii.jp/elem/000/004/452/4452874/"
+        },
+        {
+          "title": "ヒューマノイド派遣サービスに掃除を頼んでみた／AIの「断る力」に危うさ",
+          "url": "https://ascii.jp/elem/000/004/451/4451636/"
+        },
+        {
+          "title": "ファーウェイのWi-Fiルーターは約8000円で設定も手軽！ 「HUAWEI WiFi Mesh 3+」レビュー",
+          "url": "https://ascii.jp/elem/000/004/449/4449574/"
+        },
+        {
+          "title": "全世界が注目！ついに発売された「グランド・セフト・オートVI」の魅力を総まとめ",
+          "url": "https://ascii.jp/elem/000/004/442/4442267/"
+        },
+        {
+          "title": "トークンコスト、データ主権、コンテキスト腐敗　AI時代を生き残るためのデータ戦略とは？",
+          "url": "https://ascii.jp/elem/000/004/452/4452212/"
+        },
+        {
+          "title": "PRTIMES提供ニュースリリース",
+          "url": "https://ascii.jp/newsrelease/"
+        },
+        {
+          "title": "総務省後援「ASPIC AI・クラウドアワード2026」で、ミライAIがAI支援業務系ASP・SaaS部門「AX貢献賞」を受賞",
+          "url": "https://ascii.jp/elem/000/004/453/4453802/"
+        },
+        {
+          "title": "「final福袋2027」いよいよ明日11/21（土）正午より販売開始！ 発売に先がけ本日11/20 18時より福袋ごとの個別ページを公開！",
+          "url": "https://ascii.jp/elem/000/004/453/4453803/"
+        },
+        {
+          "title": "【ブラックフライデー 2026開催】ヘアアイロンやヘルスケア炊飯器など人気家電が勢揃い",
+          "url": "https://ascii.jp/elem/000/004/453/4453805/"
+        },
+        {
+          "title": "会話の内容の文字起こしやAIエージェントでのタスク割り当てができる、Mac版とWindows版の「Vocciデスクトップアプリ」を公開",
+          "url": "https://ascii.jp/elem/000/004/453/4453804/"
+        },
+        {
+          "title": "【11月22日はいい夫婦の日】手作りドリンクで夫婦の時間をもっと豊かに。ミキサー「MM-20」新登場。",
+          "url": "https://ascii.jp/elem/000/004/453/4453806/"
+        },
+        {
+          "title": "週刊アスキー特別編集　週アス2026November",
+          "url": "https://ascii.jp/elem/000/004/442/4442291/?writer_rec_left=1"
+        },
+        {
+          "title": "週刊アスキー特別編集　週アス2026October",
+          "url": "https://ascii.jp/elem/000/004/434/4434694/?writer_rec_left=2"
+        },
+        {
+          "title": "トランプ氏の長男、「予測市場」最大手の顧問を退任　民主党の議会奪還で逆風か",
+          "url": "https://ascii.jp/elem/000/004/451/4451753/"
+        },
+        {
+          "title": "高市首相、能動的サイバー防御の法改正を指示　民間企業への不審な通信も政府が監視・分析へ？",
+          "url": "https://ascii.jp/elem/000/004/449/4449713/"
+        },
+        {
+          "title": "1兆円の仮想通貨盗難、FBIが北朝鮮の犯行と指摘　狙われたのは社員のPCか",
+          "url": "https://ascii.jp/limit/group/ida/elem/000/004/447/4447863/"
+        },
+        {
+          "title": "GMO、政府に「能動的サイバー防御」求める　民間企業の要請で発動できるものなのか",
+          "url": "https://ascii.jp/limit/group/ida/elem/000/004/445/4445701/"
+        },
+        {
+          "title": "【超希少】4万円台の全部入りアンドロイド！ 大画面でも軽量で頑丈。日本メーカーのスマホはやっぱり安心！",
+          "url": "https://ascii.jp/elem/000/004/450/4450787/?crank&rank=1"
+        },
+        {
+          "title": "スマホ料金は実は1500円でOK!? 【決定版】月1500円以下の格安SIMのおすすめベスト5【2026年11月版】",
+          "url": "https://ascii.jp/elem/000/004/452/4452457/?crank&rank=2"
+        },
+        {
+          "title": "タブレットに変形する「VAIO T」が発売記念で3万3000円オフに。手に入れるなら、いまだ！",
+          "url": "https://ascii.jp/elem/000/004/451/4451456/?crank&rank=3"
+        },
+        {
+          "title": "ガソリン車より150万円高価なディーゼル版「ランクル250 ZX」。一生モノとして推せる理由と悩ましい弱点",
+          "url": "https://ascii.jp/elem/000/004/451/4451567/?crank&rank=4"
+        },
+        {
+          "title": "「ラヴ上等」あっすん逮捕に波紋　ひろゆき氏は疑問、ホリエモンは「完璧に見せしめ」",
+          "url": "https://ascii.jp/elem/000/004/451/4451656/?crank&rank=5"
+        },
+        {
+          "title": "10年間作れなかったアプリが、AIでわずか10日で完成して感動　好きなキャラが踊る3Dライブをついに実現",
+          "url": "https://ascii.jp/elem/000/004/451/4451644/?crank&rank=6"
+        },
+        {
+          "title": "米軍由来の防寒ジャケットが34％オフ！ 中綿に高機能素材を使用したヒューストン「LEVEL7」が狙い目",
+          "url": "https://ascii.jp/elem/000/004/452/4452355/?crank&rank=7"
+        },
+        {
+          "title": "「ほぼ全人類が永久に失業する」Anthropic研究者がAIの未来を予測",
+          "url": "https://ascii.jp/elem/000/004/452/4452982/?crank&rank=8"
+        },
+        {
+          "title": "燃費のプレリュードか、VTECターボのTYPE Rか。617万円を握りしめて本気で悩むホンダスポーツの最適解",
+          "url": "https://ascii.jp/elem/000/004/451/4451231/?crank&rank=9"
+        },
+        {
+          "title": "俺、8210円で買える「透明レトロカメラ」に夢中なんだ。これ面白いんだぜ！",
+          "url": "https://ascii.jp/elem/000/004/451/4451322/?crank&rank=10"
+        },
+        {
+          "title": "■2026年11月16日（月）20時から生放送",
+          "url": "https://ascii.jp/elem/000/004/451/4451627/"
+        },
+        {
+          "title": "■2026年11月18日（水）14時から生放送",
+          "url": "https://ascii.jp/elem/000/004/445/4445402/"
+        },
+        {
+          "title": "■2026年11月19日（木）20時から生放送",
+          "url": "https://ascii.jp/elem/000/004/451/4451318/"
+        },
+        {
+          "title": "■2026年11月20日（金）お昼12時から生放送",
+          "url": "https://ascii.jp/elem/000/004/451/4451530/"
+        },
+        {
+          "title": "■11月20日（金）の「今週のASCII.jp注目ニュース」はお休みです！",
+          "url": "https://ascii.jp/elem/000/004/451/4451568/"
+        },
+        {
+          "title": "■2026年11月21日（土）12時から生放送",
+          "url": "https://ascii.jp/elem/000/004/451/4451454/"
+        },
+        {
+          "title": "ファーウェイのWi-Fiルーターは約8000円で設定も手軽！ 「HUAWEI WiFi Mesh 3+」レビュー",
+          "url": "https://ascii.jp/elem/000/004/449/4449574/?pickup=1"
+        },
+        {
+          "title": "アールスリーと語りあうkintone SIの哲学　ユーザーが本当に必要なものとは？",
+          "url": "https://ascii.jp/elem/000/004/447/4447258/?pickup=2"
+        },
+        {
+          "title": "全世界が注目！ついに発売された「グランド・セフト・オートVI」の魅力を総まとめ",
+          "url": "https://ascii.jp/elem/000/004/442/4442267/?pickup=3"
+        },
+        {
+          "title": "ファミマの揚げ物「2個」買う→次96円引きに！ 夕食も晩酌も試してみてウハウハ",
+          "url": "https://ascii.jp/elem/000/004/449/4449053/?pickup=4"
+        },
+        {
+          "title": "NASの代わりに買い切り型クラウドストレージ「pCloud」を選ぶってどうなん？ HDD高騰の今なら実はオトク説と活用術を試してみた！",
+          "url": "https://ascii.jp/elem/000/004/450/4450360/?pickup=5"
+        },
+        {
+          "title": "3面ガラスが映えるRyzen 7 9800X3D＆RTX 5070 Ti搭載PCはAI生成や鬼武者WS/CoD: MW4の4Kゲーミングでも頼りになる性能だった",
+          "url": "https://ascii.jp/elem/000/004/449/4449593/?pickup=6"
+        },
+        {
+          "title": "島根にいながら長野のネットワークトラブルを解決　ヤマハの「YNO」は情シスとエンジニアの働き方を変えた",
+          "url": "https://ascii.jp/elem/000/004/446/4446056/?pickup=7"
+        },
+        {
+          "title": "kintoneの市民開発にブレーキをかけない！ ＪＢＣＣが開発した「ガバナンスのシートベルト」",
+          "url": "https://ascii.jp/elem/000/004/443/4443275/?pickup=8"
+        },
+        {
+          "title": "軽さ、堅牢性、高いAI性能を備えた次世代ビジネスPCの決定版！「HP EliteBook X G2a 14 AI PC」レビュー",
+          "url": "https://ascii.jp/elem/000/004/435/4435172/?pickup=9"
+        },
+        {
+          "title": "机の下にモニターアームを設置して1畳未満の超省スペースな4画面環境を作った話",
+          "url": "https://ascii.jp/elem/000/004/448/4448075/?pickup=10"
+        },
+        {
+          "title": "Retina級の精細感と300Hz駆動が合体。8万円台の27型MSIモニター「MAG 271KPD7」の実力を探る",
+          "url": "https://ascii.jp/elem/000/004/443/4443111/?pickup=11"
+        },
+        {
+          "title": "導入が何度も見送られたkintone　明治とリコージャパンが2000人規模のシステムを半年足らずで刷新した舞台裏",
+          "url": "https://ascii.jp/elem/000/004/445/4445830/?pickup=12"
+        },
+        {
+          "title": "Win＋Qで何ができるか知っている？　Windows 11 Proを使いこなすなら絶対知っておくべき3大機能",
+          "url": "https://ascii.jp/elem/000/004/419/4419935/?pickup=13"
+        },
+        {
+          "title": "ハイブリッドワーク時代のPCとは？　「HP ProBook 4 G2i AI PC」が示すPC選びの新基準",
+          "url": "https://ascii.jp/elem/000/004/430/4430453/?pickup=14"
+        },
+        {
+          "title": "まるでステージ？ ショウケース？ パノラマビューがたまらない 魅せるPCケース「ROG Cronox ARGB」の魅力に迫る",
+          "url": "https://ascii.jp/elem/000/004/445/4445449/?pickup=15"
+        },
+        {
+          "title": "ノートPCの「ポート足りない」をケーブル1本で解決！　Thunderbolt 5対応製品を中心にベルキンの最新ドック＆ハブ5製品を選ぶ",
+          "url": "https://ascii.jp/elem/000/004/437/4437074/?pickup=16"
+        },
+        {
+          "title": "テレワーク中心の生活にLiberNovo「Omni SE」をおすすめする理由",
+          "url": "https://ascii.jp/elem/000/004/445/4445580/?pickup=17"
+        },
+        {
+          "title": "約19LのコンパクトさにハイエンドPC性能を凝縮「GALLERIA E series」の魅力",
+          "url": "https://ascii.jp/elem/000/004/444/4444451/?pickup=18"
+        },
+        {
+          "title": "200Hzの27インチWQHDゲーミングモニターが3万円切りで高コスパ！ヘッドセット置きにもなる昇降式多機能スタンドも秀逸だった",
+          "url": "https://ascii.jp/elem/000/004/444/4444389/?pickup=19"
+        },
+        {
+          "title": "「運用負荷を下げなければ、セキュリティは高まらない」 企業が直面するネットワーク運用の難題にどう向き合うか",
+          "url": "https://ascii.jp/elem/000/004/446/4446125/?pickup=20"
+        },
+        {
+          "title": "軽くて頑丈な1kgパソコンが誕生！　日本起点、世界基準で開発した新世代のノートパソコン「HP EliteBook 8 G2iW 14」とは？",
+          "url": "https://ascii.jp/elem/000/004/444/4444710/?pickup=21"
+        },
+        {
+          "title": "電池交換なしで4年稼働！ YEデジタルのタンク残量見える化サービス「みるタンク」を支える1NCE",
+          "url": "https://ascii.jp/elem/000/004/444/4444722/?pickup=22"
+        },
+        {
+          "title": "「注目選手」も「観戦グルメ」もZoomのAIに聞こう！ Bリーグの試合にZoomが登場した理由",
+          "url": "https://ascii.jp/elem/000/004/445/4445440/?pickup=23"
+        },
+        {
+          "title": "「迷ったらこれ」な27型WQHDディスプレー、リフレッシュレート100Hz・USB Type-C給電・KVM・昇降式多機能スタンドで3万円切りはお買い得だもの",
+          "url": "https://ascii.jp/elem/000/004/443/4443486/?pickup=24"
+        },
+        {
+          "title": "【お詫びと訂正】週刊アスキー No.1595（2026年5月12日発行）につきまして",
+          "url": "https://ascii.jp/elem/000/004/401/4401891/"
+        },
+        {
+          "title": "【お詫びと訂正】週刊アスキー特別編集 週アス2026April（2026年3月23日発売）につきまして",
+          "url": "https://ascii.jp/elem/000/004/382/4382768/"
+        },
+        {
+          "title": "【お詫びと訂正】週刊アスキー秋葉原限定版6月号（2025年5月30日配布）につきまして",
+          "url": "https://ascii.jp/elem/000/004/294/4294453/"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "htmlSha256": "9845d1d483e2c71c31e1d23836deb671d805e829b835735389e1d1d5feef6268",
+      "feeds": [],
+      "linksObserved": 148
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-21T01:02:32.595695+00:00",
+      "links": [
+        {
+          "title": "AI.Accelerator記事",
+          "url": "https://ainow.ai/category/ainoweditor/ai-accelerator/"
+        },
+        {
+          "title": "AIエージェントおすすめ17選！料金・無料枠・セキュリティを種類別に比較",
+          "url": "https://ainow.ai/2026/10/20/278446/"
+        },
+        {
+          "title": "パターン認識の基本と応用を学ぶ5つのステップ",
+          "url": "https://ainow.ai/2025/08/16/277715/"
+        },
+        {
+          "title": "【保存版】オープンデータ・データセット100選  -膨大なデータを活用しよう！",
+          "url": "https://ainow.ai/2020/03/02/183280/"
+        },
+        {
+          "title": "AIエージェントを人事・採用に活用！自動化できる4つの業務と注意点",
+          "url": "https://ainow.ai/2026/11/14/278521/"
+        },
+        {
+          "title": "【図解】注目される自然言語処理 -episode 2-",
+          "url": "https://ainow.ai/2021/04/07/254309/"
+        },
+        {
+          "title": "人間にしかできないこと一覧｜人間の能力とAIの能力を比較して解説！",
+          "url": "https://ainow.ai/2021/12/21/261260/"
+        },
+        {
+          "title": "#【図解】注目される自然言語処理",
+          "url": "https://ainow.ai/tag/illustrated-nlp"
+        },
+        {
+          "title": "メルマガ配信中  AIトレンドを見逃すな ▶︎",
+          "url": "https://form.run/@ainowmagazine3?cid=test01"
+        },
+        {
+          "title": "SDGs専門メデイア – SDGs CONNECT",
+          "url": "https://sdgs-connect.com/"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "htmlSha256": "a5a354248c4be61d6b1031eedca76148e547cf72d3a6a2335118df2a315e9aeb",
+      "feeds": [],
+      "linksObserved": 10
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-21T01:02:32.612866+00:00",
+      "links": [
+        {
+          "title": "エンジニアリング ENGINEERING",
+          "url": "https://ledge.ai/categories/engineering"
+        },
+        {
+          "title": "学術＆研究 ACADEMICS & STUDY",
+          "url": "https://ledge.ai/categories/academic"
+        },
+        {
+          "title": "エンタメ＆アート ENTERTAINMENT & ART",
+          "url": "https://ledge.ai/categories/entertainment"
+        },
+        {
+          "title": "AnthropicがNASDAQ上場、813億ドルの史上最大IPO　初値で企業評価額2兆ドル、終値は1.77兆ドル",
+          "url": "https://ledge.ai/articles/anthropic_nasdaq_ipo"
+        },
+        {
+          "title": "ビジネス 2026 / 11 / 16 [MON] 「人類はAIを使いこなせるか？」Ledge.ai年末年始特集「26to27」の無料事前登録を開始",
+          "url": "https://ledge.ai/articles/ledgeai26to27_pre"
+        },
+        {
+          "title": "ビジネス 2026 / 11 / 18 [WED] OpenAI、GPT-6.2 Astra・Solを発表　専門業務や科学研究の性能向上、AstraのAPI入力・出力単価を20％引き下げ",
+          "url": "https://ledge.ai/articles/openai_gpt_6_2_astra_sol"
+        },
+        {
+          "title": "ビジネス 2026 / 11 / 16 [MON] NVIDIAフアン前CEOの復帰を求める署名が16万筆超　独立調査中の復帰と取締役会の説明を要求",
+          "url": "https://ledge.ai/articles/nvidia_jensen_huang_reinstatement_petition"
+        },
+        {
+          "title": "ビジネス 2026 / 11 / 19 [THU] Google Gemini、自分についてAIが記憶した情報を一覧表示する「メモリーの要約」登場　修正・削除や変更履歴の確認も可能に",
+          "url": "https://ledge.ai/articles/google_gemini_memory_summary"
+        },
+        {
+          "title": "OpenAI、常時稼働AIエージェント「dots」をChatGPT Plusの一部ユーザーに試験提供　Business Standardにも対象拡大",
+          "url": "https://ledge.ai/articles/openai_dots_chatgpt_plus_rollout"
+        },
+        {
+          "title": "OpenAI、Apollo ResearchやMETRなど外部4機関にAI内部モデル・システムへのアクセスを許可　安全性を第三者が検証",
+          "url": "https://ledge.ai/articles/openai_embedded_assessments"
+        },
+        {
+          "title": "MUFG、松尾研究所・Third Intelligenceと包括提携　次世代AI「遍在型AGI」を金融に活用へ、相続分野で実証開始",
+          "url": "https://ledge.ai/articles/mufg_third_intelligence_matsuo_partnership"
+        },
+        {
+          "title": "Google Cloud、日本の行政機関にサイバー防御AI「Gemini 4 Carbon for Cyber」を早期提供へ　無償の脆弱性診断も提供",
+          "url": "https://ledge.ai/articles/google_cloud_japan_cybersecurity_ai"
+        },
+        {
+          "title": "日本リスキリングコンソーシアム、2027年3月で活動終了へ　GoogleのAI講座無料枠1万人は再び即日定員",
+          "url": "https://ledge.ai/articles/japan_reskilling_consortium_closure_google_ai_certificate"
+        },
+        {
+          "title": "NVIDIA、ロボット用世界行動モデル「GR00T 2」発表　人間の動画から技能を学習、選定50タスクで実演5回後の平均成功率95％",
+          "url": "https://ledge.ai/articles/nvidia_gr00t_2_world_action_model"
+        },
+        {
+          "title": "ゲーム業界の生成AI、業務で「使う」40％、「業界に悪影響」55％　GDC調査で見えた用途の差",
+          "url": "https://ledge.ai/articles/gdc_game_industry_generative_ai_survey_2026"
+        },
+        {
+          "title": "データセンターの排熱でバナメイエビを養殖へ　NTTドコモビジネスなど4社が実証、2027年度に飼育",
+          "url": "https://ledge.ai/articles/data_center_waste_heat_shrimp_farming"
+        },
+        {
+          "title": "AIに障害対応の95%を任せたら、人は残りの難しい5%に対応できるか　SigNozの論考が問う「自動化の皮肉」",
+          "url": "https://ledge.ai/articles/ai_incident_response_deskilling"
+        },
+        {
+          "title": "Anthropic、Claude 4モデルの選び方を解説　迷ったら「Opus 5.5」、大量処理は「Haiku 5.5」",
+          "url": "https://ledge.ai/articles/anthropic_claude_model_selection_guide"
+        },
+        {
+          "title": "OpenAI「ChatGPT Wallet」、AIエージェントにも販売店にもカード情報を渡さず決済　購入ごとに本人が生体認証で承認",
+          "url": "https://ledge.ai/articles/openai_chatgpt_wallet"
+        },
+        {
+          "title": "AIが当たり前になる社会で、企業は何で選ばれるか――KDDI SUMMIT 2026で示したAI実装の道筋",
+          "url": "https://ledge.ai/articles/kddi_summit_2026"
+        },
+        {
+          "title": "GoogleとSamsung、見ている物をGeminiに聞けるスマートグラス「Intelligent Eyewear」を12月10日発売　米国では2ブランド、395ドルから",
+          "url": "https://ledge.ai/articles/google_samsung_gemini_smart_glasses_launch"
+        },
+        {
+          "title": "カナダのAI企業Cohere、日本法人を設立へ　生成AIへの入力と応答を国内で処理する「Model Vault」も提供方針",
+          "url": "https://ledge.ai/articles/cohere_japan_expansion_model_vault"
+        },
+        {
+          "title": "Amazon傘下のRing、家の中を飛ぶ防犯ドローンを発表　センサー作動で現場へ、事業者向け巡回ロボットも米国で展開",
+          "url": "https://ledge.ai/articles/ring_robotics_drone_cam_rover_cam"
+        },
+        {
+          "title": "Mail Magazine 編集部おすすめの厳選記事や有用情報を定期的にお届け",
+          "url": "https://ledgeai.zoholandingpage.com/mailmagazine/"
+        },
+        {
+          "title": "Sign Up 厳選記事のお届けやお気に入りをクリップできる無料サービス",
+          "url": "https://ledge.ai/mypage/register"
+        },
+        {
+          "title": "Solution 業務で必要なAIソリューションの情報を収集比較",
+          "url": "https://ledge.ai/brand_solution"
+        },
+        {
+          "title": "非エンジニアも知っておくべきデータモデリングの基礎",
+          "url": "https://ledge.ai/videos/expo-2025-summer-ledge-1"
+        },
+        {
+          "title": "【注目ツール紹介】複数モデルが自律的に動いて業務を行う？協働エージェント「Genspark」とは",
+          "url": "https://ledge.ai/videos/expo-2025-summer-ledge-2"
+        },
+        {
+          "title": "実務に効くRAG設計　自社専用のAIを低コストで作るための実務に効くRAG設計と導入のポイント",
+          "url": "https://ledge.ai/videos/expo-2025-summer-rag"
+        },
+        {
+          "title": "答えのない課題を、どう前に進めるか。AI時代のPMに求められる力とは",
+          "url": "https://ledge.ai/articles/jsol_career_interview_pm"
+        },
+        {
+          "title": "AIの「頭の中」を文章にするAI「MAEM」　Anthropicの研究者ら、削除を告げる模擬メールで検証",
+          "url": "https://ledge.ai/articles/maem_ai_activation_interpretability"
+        },
+        {
+          "title": "Google、AIエージェントの判断に特化した「Gemini Decision 1」を発表　画像や音声をもとに最大1,000問を一括判定",
+          "url": "https://ledge.ai/articles/gemini_decision_1"
+        },
+        {
+          "title": "東京科学大、AIエージェントだけで構成した実験チームがダイヤモンドの量子スピン応答を予測する法則を導出　実機で検証",
+          "url": "https://ledge.ai/articles/science_tokyo_ai_agents_quantum_spins"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "htmlSha256": "2ef4c040bbf5d58fe047a6bd53ffa539baf99ced710124dcea7e0361dd3e425c",
+      "feeds": [],
+      "linksObserved": 33
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-21T01:02:32.632698+00:00",
+      "links": [
+        {
+          "title": "インターンシップ / 117件",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/tag/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%bc%e3%83%b3%e3%82%b7%e3%83%83%e3%83%97/"
+        },
+        {
+          "title": "kubernetes / 53件",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/tag/kubernetes/"
+        },
+        {
+          "title": "WINTICKET / 36件",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/tag/winticket/"
+        },
+        {
+          "title": "Kubernetes におけるアプリケーションの負荷予測に基づいたスケーリングツールを拡張する",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/67518/"
+        },
+        {
+          "title": "タップルのiPhone Duo発売日対応：限られた時間での判断と実装",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/67216/"
+        },
+        {
+          "title": "Kotlin Multiplatform(KMP)撤退の意思決定と得られたもの",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/67436/"
+        },
+        {
+          "title": "Google Cloud知識0から1ヶ月でインフラ移行に挑んだ話",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/67406/"
+        },
+        {
+          "title": "『Unity パフォーマンスチューニング バイブル』の続編『Unity パフォーマンスチューニング ティップス 2026』を無料公開しました",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/67318/"
+        },
+        {
+          "title": "2026年度 新卒研修『AWS インフラハンズオン』の資料を公開します",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/66422/"
+        },
+        {
+          "title": "2026/11/09 AI SHIFT",
+          "url": "https://zenn.dev/aishift/articles/e761cff4f079cd"
+        },
+        {
+          "title": "Knowledge Catalog で AI エージェントに社内の知識を渡す基盤づくり – ミッション型インターン体験記",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/67259/"
+        },
+        {
+          "title": "【イベントレポート】PdMオフレコ会議「キャリアの壁編 〜次のステージに進む人は何を手放したのか〜」に参加してきました【DMM/CA/グッドパッチ合同】",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/67267/"
+        },
+        {
+          "title": "2026/11/02 AI SHIFT",
+          "url": "https://zenn.dev/aishift/articles/aaf1293baffb9b"
+        },
+        {
+          "title": "コピーではなく翻訳する 〜Amebaブログのレガシー Node.js アプリを止めずに Next.js / EKS へ移した話〜",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/66932/"
+        },
+        {
+          "title": "生成AIと進める稼働中Lambdaの一括管理",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/66969/"
+        },
+        {
+          "title": "AI Nativeな生成クリエイティブ評価基盤の高速化と縦画面広告シーン分割アプリ開発",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/67181/"
+        },
+        {
+          "title": "GitHub Actions × AWS CodeBuild でつくる広告配信タグのハイブリッド CI 基盤",
+          "url": "https://developers.cyberagent.co.jp/blog/archives/66439/"
+        },
+        {
+          "title": "CyberAgent Game & Entertainment",
+          "url": "https://creator.game.cyberagent.co.jp/"
+        },
+        {
+          "title": "Colorful Palette",
+          "url": "https://media.colorfulpalette.co.jp/m/m753f507dae79"
+        },
+        {
+          "title": "SGEコア技術本部(コアテク)",
+          "url": "https://blog.sge-coretech.com/"
+        },
+        {
+          "title": "Media Data Tech Studio技術報告書",
+          "url": "https://www.cyberagent.co.jp/akihabaralabo/paper/"
+        },
+        {
+          "title": "AI/ Data Technology Map",
+          "url": "https://www.cyberagent.co.jp/techinfo/info/detail/id=26111"
+        },
+        {
+          "title": "Connpass -Cyberagent",
+          "url": "https://cyberagent.connpass.com/"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "htmlSha256": "fd143ee0893da5000b8ff806870e1c8abf284f4040b82e21598f77a5882b4131",
+      "feeds": [
+        "https://developers.cyberagent.co.jp/blog/feed/"
+      ],
+      "linksObserved": 23
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-21T01:02:32.633004+00:00",
+      "links": [
+        {
+          "title": "Skip to main content",
+          "url": "https://techblog.lycorp.co.jp/ja/#container"
+        },
+        {
+          "title": "LINEヤフー Tech Blog",
+          "url": "https://techblog.lycorp.co.jp/ja"
+        },
+        {
+          "title": "2026.11.19 2026年12月の技術系イベント予定",
+          "url": "https://techblog.lycorp.co.jp/ja/20261119a"
+        },
+        {
+          "title": "2026.11.19 Yahoo! JAPANトップページのレガシー機能改修をAIDDで1Day実践して見えたこと",
+          "url": "https://techblog.lycorp.co.jp/ja/20261119b"
+        },
+        {
+          "title": "2026.11.16 第59回情報科学若手の会にスポンサーとして参加・発表しました",
+          "url": "https://techblog.lycorp.co.jp/ja/20261116c"
+        },
+        {
+          "title": "手元からクラウドへ：LINEクライアントチームがエージェント基盤でAIワークフローを広げるまで",
+          "url": "https://techblog.lycorp.co.jp/ja/20261116b"
+        },
+        {
+          "title": "AIエージェントのコストと成果をどう比べるか。ログの集計単位とモデル選択から考える",
+          "url": "https://techblog.lycorp.co.jp/ja/20261111b"
+        },
+        {
+          "title": "AttributedString構造で実現した大規模なiOS設定システム",
+          "url": "https://techblog.lycorp.co.jp/ja/20261019a"
+        },
+        {
+          "title": "Infrastructureの記事をさらに見る",
+          "url": "https://techblog.lycorp.co.jp/ja/tag/Infrastructure"
+        },
+        {
+          "title": "Vue Fes Japan 2026 クイズ解説",
+          "url": "https://techblog.lycorp.co.jp/ja/20261105a"
+        },
+        {
+          "title": "フロントエンドに関わる「みんな」の話が詰まった一日！フロントエンドカンファレンス関西2026 参加・協賛レポート",
+          "url": "https://techblog.lycorp.co.jp/ja/20261129b"
+        },
+        {
+          "title": "LINEスキマニのトップページにおけるパフォーマンス改善（インターンレポート）",
+          "url": "https://techblog.lycorp.co.jp/ja/20261013a"
+        },
+        {
+          "title": "Frontendの記事をさらに見る",
+          "url": "https://techblog.lycorp.co.jp/ja/tag/Frontend"
+        },
+        {
+          "title": "Engineering management",
+          "url": "https://techblog.lycorp.co.jp/ja/tag/Engineering management"
+        },
+        {
+          "title": "Product management",
+          "url": "https://techblog.lycorp.co.jp/ja/tag/Product management"
+        },
+        {
+          "title": "LINE Developers",
+          "url": "https://developers.line.biz/ja/"
+        },
+        {
+          "title": "Yahoo!デベロッパーネットワーク",
+          "url": "https://developer.yahoo.co.jp"
+        },
+        {
+          "title": "GitHub (@yahoojapan)",
+          "url": "https://github.com/yahoojapan"
+        },
+        {
+          "title": "X (@lycorptech_jp)",
+          "url": "https://x.com/lycorptech_jp"
+        },
+        {
+          "title": "Speaker Deck (@lycorptech_jp)",
+          "url": "https://speakerdeck.com/lycorptech_jp"
+        },
+        {
+          "title": "YouTube (@lycorptech_jp)",
+          "url": "https://www.youtube.com/@lycorptech_jp"
+        },
+        {
+          "title": "旧LINE Engineering Blog",
+          "url": "https://engineering.linecorp.com/ja/blog"
+        },
+        {
+          "title": "旧Yahoo! JAPAN Tech Blog",
+          "url": "https://techblog.yahoo.co.jp"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "htmlSha256": "4cc22af71ab71b5c1095cee8985fc301041d50c2fea3eb2169bdf5072c5e7ab1",
+      "feeds": [
+        "https://techblog.lycorp.co.jp/ja/feed/index.xml"
+      ],
+      "linksObserved": 23
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-21T01:02:32.642866+00:00",
+      "links": [
+        {
+          "title": "Technology-stack",
+          "url": "https://engineering.mercari.com/technology-stack"
+        },
+        {
+          "title": "Learning-materials",
+          "url": "https://engineering.mercari.com/learning-materials"
+        },
+        {
+          "title": "Research & Advanced Tech",
+          "url": "https://engineering.mercari.com/blog/category/research-advanced-tech/"
+        },
+        {
+          "title": "2026/11/19 「Merpay Tech Talk 〜QAはAIでどう進化する？メルカリグループのAI × QA実践〜」を開催しました！ #merpay_techtalk QA Author: hozuki",
+          "url": "https://engineering.mercari.com/blog/entry/20261118-mptechtalk_report/"
+        },
+        {
+          "title": "2026/11/17 iOSDC Japan 2026に参加しました Client side Author: takeshi-sato",
+          "url": "https://engineering.mercari.com/blog/entry/20261117-report-iosdc-2026/"
+        },
+        {
+          "title": "2026/11/16 ベクトル検索とRerankingモデルを活用した商品ページのクエリサジェストの改善 AI Backend Author: YadaYuki",
+          "url": "https://engineering.mercari.com/blog/entry/20261113-query-suggest-vector-search-reranking/"
+        },
+        {
+          "title": "connpass\r\nメルカリグループ",
+          "url": "https://mercari.connpass.com/"
+        },
+        {
+          "title": "Mercari Gears\r\nYouTubeチャンネル",
+          "url": "https://www.youtube.com/c/MercariGears"
+        },
+        {
+          "title": "Output メルカリに所属するエンジニアによる論文掲載と登壇の実績を紹介します",
+          "url": "https://engineering.mercari.com/output"
+        },
+        {
+          "title": "Roles メルカリのエンジニアリング組織内の役割を紹介します。",
+          "url": "https://engineering.mercari.com/roles"
+        },
+        {
+          "title": "Culture メルカリのエンジニアリング組織において、常に大切にしている考え方を紹介します。",
+          "url": "https://engineering.mercari.com/culture"
+        },
+        {
+          "title": "オープンソース メルカリは、開発および運用によって培った技術をオープンソースとして公開し、世の中のイノベーション推進に協力していきます。",
+          "url": "https://engineering.mercari.com/open-source"
+        },
+        {
+          "title": "このサイトについて詳しくはこちら",
+          "url": "https://engineering.mercari.com/about/"
+        },
+        {
+          "title": "Engineering blog (USA)",
+          "url": "https://blog.mercari.com/making-mercari/home"
+        },
+        {
+          "title": "Mercari (India)",
+          "url": "https://about.in.mercari.com/join-us/"
+        },
+        {
+          "title": "GitHub - mercari",
+          "url": "https://github.com/mercari"
+        },
+        {
+          "title": "Speakerdeck - mercari",
+          "url": "https://speakerdeck.com/mercari"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://engineering.mercari.com/",
+      "htmlSha256": "6a0e21085c82e36a8dfcb38fed35a4d6930e8c1e3d642c1a6f54ad04cc714316",
+      "feeds": [
+        "https://engineering.mercari.com/blog/feed.xml",
+        "https://engineering.mercari.com/en/blog/feed.xml"
+      ],
+      "linksObserved": 17
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-21T01:02:32.647537+00:00",
+      "links": [
+        {
+          "title": "SmartHR Tech Blog",
+          "url": "https://tech.smarthr.jp/"
+        },
+        {
+          "title": "第18回SmartHR LT大会レポート —— 毎年恒例の夏の自由研究発表！",
+          "url": "https://tech.smarthr.jp/entry/lt18"
+        },
+        {
+          "title": "KomeKaigi 2026レポート —— プロダクトエンジニア、デザイナー、DevRelがそれぞれのおむすびを結んだ一日",
+          "url": "https://tech.smarthr.jp/entry/2026/11/19/144258"
+        },
+        {
+          "title": "「第16回 中高生Rubyプログラミングコンテスト 2026」にSmartHRが協賛します",
+          "url": "https://tech.smarthr.jp/entry/2026/11/19/134254"
+        },
+        {
+          "title": "SmartHRはYAPC::Tokyo 2026に協賛し、12名が参加、2名が登壇します！ そして、ランチセッションと事後勉強会も開催します!! Let's “Glue”vy & Patchworks!!!",
+          "url": "https://tech.smarthr.jp/entry/2026/11/19/132918"
+        },
+        {
+          "title": "漠然とした不安を見える形に —— System Risk Recordsを導入して得た3つの安心",
+          "url": "https://tech.smarthr.jp/entry/2026/11/19/113553"
+        },
+        {
+          "title": "SmartHRはRubyWorld Conference 2026に協賛し、1名が登壇します！",
+          "url": "https://tech.smarthr.jp/entry/2026/11/17/114939"
+        },
+        {
+          "title": "1人PMでも悩まない！SmartHRのサービス開発——入社半年で感じた、PMを支える3つの仕組み",
+          "url": "https://tech.smarthr.jp/entry/2026/11/16/140258"
+        },
+        {
+          "title": "Kaigi on Rails (13)",
+          "url": "https://tech.smarthr.jp/archive/category/Kaigi%20on%20Rails"
+        },
+        {
+          "title": "Ruby on Rails (69)",
+          "url": "https://tech.smarthr.jp/archive/category/Ruby%20on%20Rails"
+        },
+        {
+          "title": "SmartHR UI (16)",
+          "url": "https://tech.smarthr.jp/archive/category/SmartHR%20UI"
+        },
+        {
+          "title": "Schedule.select (16)",
+          "url": "https://tech.smarthr.jp/archive/category/Schedule.select"
+        },
+        {
+          "title": "タレントマネジメント (32)",
+          "url": "https://tech.smarthr.jp/archive/category/%E3%82%BF%E3%83%AC%E3%83%B3%E3%83%88%E3%83%9E%E3%83%8D%E3%82%B8%E3%83%A1%E3%83%B3%E3%83%88"
+        },
+        {
+          "title": "コーポレートエンジニアリング (13)",
+          "url": "https://tech.smarthr.jp/archive/category/%E3%82%B3%E3%83%BC%E3%83%9D%E3%83%AC%E3%83%BC%E3%83%88%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0"
+        },
+        {
+          "title": "Rails Girls (6)",
+          "url": "https://tech.smarthr.jp/archive/category/Rails%20Girls"
+        },
+        {
+          "title": "アジャイル組織変革連載 (2)",
+          "url": "https://tech.smarthr.jp/archive/category/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E7%B5%84%E7%B9%94%E5%A4%89%E9%9D%A9%E9%80%A3%E8%BC%89"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "htmlSha256": "34741e5d07370fd9918a23c2586c570745b44eec6882b55a23203e86f7f9da33",
+      "feeds": [
+        "https://tech.smarthr.jp/feed",
+        "https://tech.smarthr.jp/rss"
+      ],
+      "linksObserved": 16
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-21T01:02:32.687976+00:00",
+      "links": [
+        {
+          "title": "LayerX エンジニアブログ",
+          "url": "https://tech.layerx.co.jp/"
+        },
+        {
+          "title": "内製 Background Agent \"haro\" を \"haro\" の中で開発しターミナルを捨てる",
+          "url": "https://tech.layerx.co.jp/entry/haro-in-haro"
+        },
+        {
+          "title": "PR が1年で5倍になった monorepo で、フロントエンドの基盤をつくる — バクラク Frontend Enabling を募集しています",
+          "url": "https://tech.layerx.co.jp/entry/bakuraku-monorepo-and-frontend-enabling"
+        },
+        {
+          "title": "Frontend Enabling",
+          "url": "https://tech.layerx.co.jp/archive/category/Frontend%20Enabling"
+        },
+        {
+          "title": "内製 Coding Agent \"haro\" を使った全サービス横断レッドチーミング基盤",
+          "url": "https://tech.layerx.co.jp/entry/haro-readteam"
+        },
+        {
+          "title": "Platform Engineering",
+          "url": "https://tech.layerx.co.jp/archive/category/Platform%20Engineering"
+        },
+        {
+          "title": "Snowflake Parquet Direct の仕様をドキュメントと実測から理解する",
+          "url": "https://tech.layerx.co.jp/entry/snowflake-parquet-direct"
+        },
+        {
+          "title": "内製 Background Agent “haro”に アラート対応を任せたら 回すたびに賢くなっていった",
+          "url": "https://tech.layerx.co.jp/entry/haro-alert-loop"
+        },
+        {
+          "title": "# Background Coding Agent",
+          "url": "https://d.hatena.ne.jp/keyword/Background%20Coding%20Agent"
+        },
+        {
+          "title": "内製 Coding Agent \"haro\" と社内 GPU で、探索的テスト AI Agent をぶん回している",
+          "url": "https://tech.layerx.co.jp/entry/haro-et-agent"
+        },
+        {
+          "title": "YAPC::Tokyo 2026 にスポンサー＆4名が登壇します！",
+          "url": "https://tech.layerx.co.jp/entry/yapc-tokyo-2026-sponsor"
+        },
+        {
+          "title": "QA チームで Jev 勉強会を開いたら、AI に任せる範囲と人に残したい範囲が見えてきた",
+          "url": "https://tech.layerx.co.jp/entry/qa-jev-study"
+        },
+        {
+          "title": "業務ごとにデータ構造が変わるプラットフォームで、AIエージェントにテーブル設計を任せる",
+          "url": "https://tech.layerx.co.jp/entry/agent-table-design"
+        },
+        {
+          "title": "「見た目はいいけど、伝わらない」AIスライドを改善する試行錯誤",
+          "url": "https://tech.layerx.co.jp/entry/ai-slide-challenge"
+        },
+        {
+          "title": "💬 公式 X (@LayerX_Tech)",
+          "url": "https://x.com/LayerX_Tech"
+        },
+        {
+          "title": "🎙️ LayerX NOW!(Podcast)",
+          "url": "https://open.spotify.com/show/7pIHZw1tEpwX2M6ifoEAbr"
+        },
+        {
+          "title": "📹️ YouTube チャンネル",
+          "url": "https://www.youtube.com/channel/UCKu0R6kOcqd62QstxKxoNhA"
+        },
+        {
+          "title": "📎 バクラク開発チーム Deck",
+          "url": "https://speakerdeck.com/layerx/bakuraku-engineering-team-deck"
+        },
+        {
+          "title": "Fintech事業部 (23)",
+          "url": "https://tech.layerx.co.jp/archive/category/Fintech%E4%BA%8B%E6%A5%AD%E9%83%A8"
+        },
+        {
+          "title": "Ai Workforce事業部 (10)",
+          "url": "https://tech.layerx.co.jp/archive/category/Ai%20Workforce%E4%BA%8B%E6%A5%AD%E9%83%A8"
+        },
+        {
+          "title": "AWS-SecurityLake (5)",
+          "url": "https://tech.layerx.co.jp/archive/category/AWS-SecurityLake"
+        },
+        {
+          "title": "Google Cloud (3)",
+          "url": "https://tech.layerx.co.jp/archive/category/Google%20Cloud"
+        },
+        {
+          "title": "Confidential Computing (2)",
+          "url": "https://tech.layerx.co.jp/archive/category/Confidential%20Computing"
+        },
+        {
+          "title": "Microsoft Entra ID (1)",
+          "url": "https://tech.layerx.co.jp/archive/category/Microsoft%20Entra%20ID"
+        },
+        {
+          "title": "Cloud Native (1)",
+          "url": "https://tech.layerx.co.jp/archive/category/Cloud%20Native"
+        },
+        {
+          "title": "id:t-yamasaki11",
+          "url": "https://tech.layerx.co.jp/archive/author/t-yamasaki11"
+        },
+        {
+          "title": "id:konken-layerx",
+          "url": "https://tech.layerx.co.jp/archive/author/konken-layerx"
+        },
+        {
+          "title": "id:maruchiho_layerx",
+          "url": "https://tech.layerx.co.jp/archive/author/maruchiho_layerx"
+        },
+        {
+          "title": "id:monoke_layerx",
+          "url": "https://tech.layerx.co.jp/archive/author/monoke_layerx"
+        },
+        {
+          "title": "id:tosho_layerx",
+          "url": "https://tech.layerx.co.jp/archive/author/tosho_layerx"
+        },
+        {
+          "title": "id:sadayoshi_tada",
+          "url": "https://tech.layerx.co.jp/archive/author/sadayoshi_tada"
+        },
+        {
+          "title": "id:shuya_yamamoto_001",
+          "url": "https://tech.layerx.co.jp/archive/author/shuya_yamamoto_001"
+        },
+        {
+          "title": "id:sakajunquality",
+          "url": "https://tech.layerx.co.jp/archive/author/sakajunquality"
+        },
+        {
+          "title": "id:LX-DouglasTakeuchi",
+          "url": "https://tech.layerx.co.jp/archive/author/LX-DouglasTakeuchi"
+        },
+        {
+          "title": "id:koichiro_otani_layerx",
+          "url": "https://tech.layerx.co.jp/archive/author/koichiro_otani_layerx"
+        },
+        {
+          "title": "id:budougumi0617",
+          "url": "https://tech.layerx.co.jp/archive/author/budougumi0617"
+        },
+        {
+          "title": "id:yyoshiki41-lx",
+          "url": "https://tech.layerx.co.jp/archive/author/yyoshiki41-lx"
+        },
+        {
+          "title": "id:zunchachacha",
+          "url": "https://tech.layerx.co.jp/archive/author/zunchachacha"
+        },
+        {
+          "title": "id:mikamimikami60",
+          "url": "https://tech.layerx.co.jp/archive/author/mikamimikami60"
+        },
+        {
+          "title": "id:yukisakai1225",
+          "url": "https://tech.layerx.co.jp/archive/author/yukisakai1225"
+        },
+        {
+          "title": "id:y_matsuwitter",
+          "url": "https://tech.layerx.co.jp/archive/author/y_matsuwitter"
+        },
+        {
+          "title": "id:yudetamago08",
+          "url": "https://tech.layerx.co.jp/archive/author/yudetamago08"
+        },
+        {
+          "title": "id:naoki-nakano",
+          "url": "https://tech.layerx.co.jp/archive/author/naoki-nakano"
+        },
+        {
+          "title": "id:masashisalvador",
+          "url": "https://tech.layerx.co.jp/archive/author/masashisalvador"
+        },
+        {
+          "title": "はてなブログ for DevBlog",
+          "url": "https://blog.hatena.ne.jp/guide/corporation"
+        },
+        {
+          "title": "[f:id:ipod_nana:20260722215632p:plain]",
+          "url": "https://layerx.co.jp/events/2026/bet-ai-day/"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "htmlSha256": "358275a884352164bd3922333f518ac43fca549812443cad05cda94c6cdb6985",
+      "feeds": [
+        "https://tech.layerx.co.jp/feed",
+        "https://tech.layerx.co.jp/rss"
+      ],
+      "linksObserved": 46
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-21T01:02:32.691496+00:00",
+      "links": [
+        {
+          "title": "Interspeech 2026でDeNAの音声開発者が見た音声技術の最前線",
+          "url": "https://engineering.dena.com/blog/2026/11/interspeech-2026/"
+        },
+        {
+          "title": "#speech-synthesis",
+          "url": "https://engineering.dena.com/blog/tags/speech-synthesis/"
+        },
+        {
+          "title": "#spoken-dialog-system",
+          "url": "https://engineering.dena.com/blog/tags/spoken-dialog-system/"
+        },
+        {
+          "title": "#speech-recognition",
+          "url": "https://engineering.dena.com/blog/tags/speech-recognition/"
+        },
+        {
+          "title": "姿勢推定を用いたバスケットボールにおけるショット期待値モデルの改善",
+          "url": "https://engineering.dena.com/blog/2026/11/kbt-shot-expected-value/"
+        },
+        {
+          "title": "#computer-vision",
+          "url": "https://engineering.dena.com/blog/tags/computer-vision/"
+        },
+        {
+          "title": "#pose-estimation",
+          "url": "https://engineering.dena.com/blog/tags/pose-estimation/"
+        },
+        {
+          "title": "#3d-reconstruction",
+          "url": "https://engineering.dena.com/blog/tags/3d-reconstruction/"
+        },
+        {
+          "title": "#machine-learning",
+          "url": "https://engineering.dena.com/blog/tags/machine-learning/"
+        },
+        {
+          "title": "厳格なバックアップ要件を満たす、Cloud SQL の Backup Vault 導入 [DeNA インフラ SRE]",
+          "url": "https://engineering.dena.com/blog/2026/10/cloudsql-backupvault/"
+        },
+        {
+          "title": "#infrastructure",
+          "url": "https://engineering.dena.com/blog/tags/infrastructure/"
+        },
+        {
+          "title": "EDGE POKERにおけるエクスプロイト戦略AI実現への挑戦",
+          "url": "https://engineering.dena.com/blog/2026/10/intern-edge-poker-exploit/"
+        },
+        {
+          "title": "仕様書インスペクションの Agent 試作と評価の仕組み",
+          "url": "https://engineering.dena.com/blog/2026/10/intern-2026-daaq-agent/"
+        },
+        {
+          "title": "数学の勉強のKnowledge Tracingと個人別ロードマップの検証",
+          "url": "https://engineering.dena.com/blog/2026/10/intern-sirus-knowledge-tracing/"
+        },
+        {
+          "title": "#knowledge-tracing",
+          "url": "https://engineering.dena.com/blog/tags/knowledge-tracing/"
+        },
+        {
+          "title": "没入型体験施設の写真から人を消す──サマーインターンで挑んだワンダリア横浜の技術検証",
+          "url": "https://engineering.dena.com/blog/2026/10/wonderia-kashikiri/"
+        },
+        {
+          "title": "#image-inpainting",
+          "url": "https://engineering.dena.com/blog/tags/image-inpainting/"
+        },
+        {
+          "title": "カスケード型音声対話で宿泊予約の電話応対デモを作る 〜投機的実行で待ち時間を減らす〜",
+          "url": "https://engineering.dena.com/blog/2026/10/cascaded-voice-interaction-demo/"
+        },
+        {
+          "title": "英語リスニングプロダクト「キコエルート」におけるKnowledge Tracingの改善提案〜英語リスニングの技能に焦点を当てて〜",
+          "url": "https://engineering.dena.com/blog/2026/10/intern-ai-summer-roy-kt/"
+        },
+        {
+          "title": "DeNAにおけるAI時代のネットワーク管理システム [DeNA インフラ SRE]",
+          "url": "https://engineering.dena.com/blog/2026/10/nwcli/"
+        },
+        {
+          "title": "テスト設計工数を約50%削減——QA業務効率化システム「DAAQ」を支える技術の裏側",
+          "url": "https://engineering.dena.com/blog/2026/10/daaq-growth-and-impact/"
+        },
+        {
+          "title": "#software-testing",
+          "url": "https://engineering.dena.com/blog/tags/software-testing/"
+        },
+        {
+          "title": "オンボーディングをAIエージェントに任せたら、もはや別ゲーだった",
+          "url": "https://engineering.dena.com/blog/2026/10/ai-agent-onboarding/"
+        },
+        {
+          "title": "#developer-experience",
+          "url": "https://engineering.dena.com/blog/tags/developer-experience/"
+        },
+        {
+          "title": "あなたに憑いているのはどの妖怪？ DeNAブースのiOS開発妖怪診断 iOSDC Japan 2026参加レポート",
+          "url": "https://engineering.dena.com/blog/2026/10/iosdc-japan-2026-yokai-check/"
+        },
+        {
+          "title": "#swiftwednesday",
+          "url": "https://engineering.dena.com/blog/tags/swiftwednesday/"
+        },
+        {
+          "title": "仕組みの奥深くから AI の最前線まで ── DroidKaigi 2026 参加レポート",
+          "url": "https://engineering.dena.com/blog/2026/10/droidkaigi-report/"
+        },
+        {
+          "title": "原因不明のメモリ高騰を追う！GCEの「見掛け上のメモリ増加」解明による50%コスト削減 [DeNA インフラ SRE]",
+          "url": "https://engineering.dena.com/blog/2026/10/gce-e2-memory-rightsizing/"
+        },
+        {
+          "title": "#cost-optimization",
+          "url": "https://engineering.dena.com/blog/tags/cost-optimization/"
+        },
+        {
+          "title": "詳説 BigQuery の課金モデルの選定と Editions への移行手順 [DeNA インフラ SRE]",
+          "url": "https://engineering.dena.com/blog/2026/09/bigquery-editions-migration/"
+        },
+        {
+          "title": "#bigquery-editions",
+          "url": "https://engineering.dena.com/blog/tags/bigquery-editions/"
+        },
+        {
+          "title": "#data-engineering",
+          "url": "https://engineering.dena.com/blog/tags/data-engineering/"
+        },
+        {
+          "title": "PC手配の業務改善を、要件定義から開発依頼までAIと進めてみた",
+          "url": "https://engineering.dena.com/blog/2026/09/pc-arrangement-with-ai/"
+        },
+        {
+          "title": "#operational-improvement",
+          "url": "https://engineering.dena.com/blog/tags/operational-improvement/"
+        },
+        {
+          "title": "Jamfのブループリント機能(DDM)で新macOSのアップデート抑止を試してみた",
+          "url": "https://engineering.dena.com/blog/2026/09/jamf-ddm-blueprint/"
+        },
+        {
+          "title": "#device-management",
+          "url": "https://engineering.dena.com/blog/tags/device-management/"
+        },
+        {
+          "title": "生成 AI 機能開発を加速するゴールデンパス [DeNA インフラ SRE]",
+          "url": "https://engineering.dena.com/blog/2026/09/golden-path-for-generative-ai-platform/"
+        },
+        {
+          "title": "#platform-engineering",
+          "url": "https://engineering.dena.com/blog/tags/platform-engineering/"
+        },
+        {
+          "title": "AIとGrafana Foundation SDKで進めるGrafanaダッシュボードのIaC化",
+          "url": "https://engineering.dena.com/blog/2026/09/grafana-dashboard-iac-with-ai-typescript/"
+        },
+        {
+          "title": "#infrastructure-as-code",
+          "url": "https://engineering.dena.com/blog/tags/infrastructure-as-code/"
+        },
+        {
+          "title": "DeNAインフラノウハウ発信プロジェクト (38)",
+          "url": "https://engineering.dena.com/blog/series/infra-2019"
+        },
+        {
+          "title": "新卒研修振り返りレポート (34)",
+          "url": "https://engineering.dena.com/blog/series/new-employee-training"
+        },
+        {
+          "title": "AIジャーニーの足跡 (10)",
+          "url": "https://engineering.dena.com/blog/series/ai-journey-footprints"
+        },
+        {
+          "title": "Google Analyticsの利用について",
+          "url": "https://policies.google.com/technologies/partner-sites"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "htmlSha256": "80fe94e7187560a91435805e5d2bf56297c2ff7c5a9f12b1fd89147becaf5847",
+      "feeds": [
+        "https://engineering.dena.com/blog/index.xml"
+      ],
+      "linksObserved": 44
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-21T01:02:32.753468+00:00",
+      "links": [
+        {
+          "title": "Money Forward Developers Blog",
+          "url": "https://moneyforward-dev.jp/"
+        },
+        {
+          "title": "JSConf JP 2026にPremium Sponsorとして協賛します！",
+          "url": "https://moneyforward-dev.jp/entry/2026/11/17/jsconf-jp-2026-sponsor"
+        },
+        {
+          "title": "マネーフォワードはKotlin Fest 2026にGold Sponsorとして協賛します！",
+          "url": "https://moneyforward-dev.jp/entry/2026/11/11/140000"
+        },
+        {
+          "title": "Kaigi on Rails 2026参加レポート",
+          "url": "https://moneyforward-dev.jp/entry/2026/11/06/174418"
+        },
+        {
+          "title": "DroidKaigi 2026：232人のAndroid開発者を本気で悩ませたクイズ。その答えを公開します！",
+          "url": "https://moneyforward-dev.jp/entry/2026/10/21/130342"
+        },
+        {
+          "title": "マネーフォワードはKaigi on Rails 2026でSnacks sponsorをします！",
+          "url": "https://moneyforward-dev.jp/entry/2026/10/14/kaigionrails_2026"
+        },
+        {
+          "title": "iOSDC Japan 2026参加レポート",
+          "url": "https://moneyforward-dev.jp/entry/2026/10/02/172012"
+        },
+        {
+          "title": "退職エントリを書いたあとにCI改善がうまくいきすぎてしまったので話をさせてくれ",
+          "url": "https://moneyforward-dev.jp/entry/2026/09/11/100000"
+        },
+        {
+          "title": "YANS2026に参加してきました",
+          "url": "https://moneyforward-dev.jp/entry/2026/09/01/135314"
+        },
+        {
+          "title": "マネーフォワードはiOSDC Japan 2026に協賛します",
+          "url": "https://moneyforward-dev.jp/entry/2026/09/01/090707"
+        },
+        {
+          "title": "誰でもできるけど、誰もやらない「仕事」をした7年間について語らせてくれ",
+          "url": "https://moneyforward-dev.jp/entry/2026/08/21/100000"
+        },
+        {
+          "title": "id:moneyforwardDev",
+          "url": "https://moneyforward-dev.jp/about"
+        },
+        {
+          "title": "はてなブログ for DevBlog",
+          "url": "https://blog.hatena.ne.jp/guide/corporation"
+        }
+      ],
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "htmlSha256": "df63112ee726414f7d163f7b515341e82c53842b494cc7934fcf21d3878f80a6",
+      "feeds": [
+        "https://moneyforward-dev.jp/feed",
+        "https://moneyforward-dev.jp/rss"
+      ],
+      "linksObserved": 13
+    }
+  ],
+  "supplementalDiscovery": [
+    {
+      "url": "https://zenn.dev/feed",
+      "observedAt": "2026-11-21T01:05:44.006000+00:00",
+      "status": 200,
+      "sha256": "ff449ff25c2ee4b8de29dcfe118123a91495c7fe6c864fd7f5769c426c8bfe78",
+      "itemCount": 20
+    },
+    {
+      "url": "https://techfeed.io/feed",
+      "observedAt": "2026-11-21T01:05:44.006722+00:00",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://www.publickey1.jp/atom.xml",
+      "observedAt": "2026-11-21T01:05:44.006822+00:00",
+      "status": 200,
+      "sha256": "13d20c915ad63c54bad5b05513ea1c15851653f716ca145d7e435047c9d85d81",
+      "itemCount": 15
+    }
+  ],
+  "previousTop5": [
+    {
+      "title": "Yahoo! JAPANトップページのレガシー機能改修をAIDDで1Day実践して見えたこと",
+      "url": "https://techblog.lycorp.co.jp/ja/20261119b"
+    },
+    {
+      "title": "Amazon Bedrock AgentCore Policyでユーザーごとにツールの呼び出しを制御できるか検証してみた",
+      "url": "https://dev.classmethod.jp/articles/agentcore-gateway-policy-per-user-access-control/"
+    },
+    {
+      "title": "Google、わずか2カ月で4つ目のモデル公開「Gemini 4 Neon」　一部「Fable同等」性能をコスト半分で",
+      "url": "https://www.itmedia.co.jp/aiplus/article/2611/19/2000003322/"
+    },
+    {
+      "title": "“Edge”アーカイブによる先行パッチ、Ubuntu 27.04（tenacious）の開発：「AI Tutor」、メーリングリストのマイグレーション",
+      "url": "https://gihyo.jp/admin/clip/01/ubuntu-topics/202611/20"
+    },
+    {
+      "title": "漠然とした不安を見える形に —— System Risk Recordsを導入して得た3つの安心",
+      "url": "https://tech.smarthr.jp/entry/2026/11/19/113553"
+    }
+  ],
+  "articles": [
+    {
+      "captureKey": "ocr",
+      "source": "Zenn",
+      "title": "日本のレシートを自宅PCでOCRする：15構成を実レシート11枚で比べた",
+      "topic": "レシートOCRの比較",
+      "articleId": "2026-11-21-top-1",
+      "url": "https://zenn.dev/chaki/articles/4545be3475fdb4",
+      "publishedAt": "2026-11-20T13:33:15+09:00",
+      "capturedAt": "2026-11-21T01:06:12.226949+00:00",
+      "htmlSha256": "492f9031a7fbe1f97b4f4f05e88f11b11f70ed8f8d5174c67aa3191486984d68",
+      "bodySha256": "e8918663157f4c143e893c65893a050ae844ad75eee17ec569a02e38338c4d46",
+      "access": "full",
+      "review": "11 receipts, 43 printed items and 15 configurations. The two-pass reader achieves 93% exact names, 100% amount recall and circa 1.8s/receipt; skew and hardware limit generalization.",
+      "status": 200
+    },
+    {
+      "captureKey": "trace",
+      "source": "DevelopersIO",
+      "title": "AWS Lambda durable functions の OpenTelemetry サポートを試してみた",
+      "topic": "Lambdaの分散トレース",
+      "articleId": "2026-11-21-top-2",
+      "url": "https://dev.classmethod.jp/articles/lambda-durable-functions-opentelemetry-tracing/",
+      "publishedAt": "2026-11-21T03:43:50.924000+09:00",
+      "capturedAt": "2026-11-21T01:03:01.253242+00:00",
+      "htmlSha256": "142f35094103fe4d9b56a9335f79f6c3876a925fd194aaf5d1a4ec70952f2aaf",
+      "bodySha256": "9665c2b7052259fcf6dcd13b9d8ae6572985eabf041cb6bc30310dcb74d0f1d9",
+      "access": "full",
+      "review": "In Tokyo Python and ADOT setup, five parent invocations share a trace ID. The view affects wait-span segmentation; retry attempt durations differ from total step time.",
+      "status": 200
+    },
+    {
+      "captureKey": "flex",
+      "source": "DevelopersIO",
+      "title": "Amazon EMR Serverless の新機能「Flex execution」を試してみた",
+      "topic": "Sparkバッチの余剰容量",
+      "articleId": "2026-11-21-top-3",
+      "url": "https://dev.classmethod.jp/articles/amazon-emr-serverless-flex-execution/",
+      "publishedAt": "2026-11-21T03:36:31.778000+09:00",
+      "capturedAt": "2026-11-21T01:03:01.485627+00:00",
+      "htmlSha256": "7b8c7995986b9fac5af53d3236cb00325fd6cb2504381b2d9507c92d5bd2660f",
+      "bodySha256": "7e18bc3a739719ac566836c5f918457c5aca0db85763e82adedb2342eb63546b",
+      "access": "full",
+      "review": "Identical synthetic 20M-row aggregation in Standard and Flex succeeded. Reported resource usage combines both worker types; no measured cost saving.",
+      "status": 200
+    },
+    {
+      "captureKey": "table",
+      "source": "DevelopersIO",
+      "title": "[アップデート] Amazon S3 Tables のレプリカを書き込み可能なテーブルに昇格できるようになったので試してみた",
+      "topic": "Icebergテーブルの書き込み切替",
+      "articleId": "2026-11-21-top-4",
+      "url": "https://dev.classmethod.jp/articles/20261120-amazon-s3-tables-replication-writable-tables/",
+      "publishedAt": "2026-11-21T02:12:58.221000+09:00",
+      "capturedAt": "2026-11-21T01:03:01.385173+00:00",
+      "htmlSha256": "f8fa508da8ec25d54e724f9ab3e869af9c53eec83e7c52c309e31a83e3db8ff0",
+      "bodySha256": "c4dbf90d5f2d5c968f7342662b2d0905d02cf023942e407ebf2b0ae1b658ec0e",
+      "access": "full",
+      "review": "Author tested Tokyo to Osaka Athena reads and writes. Detachment is irreversible. Check source metadata, wait for destination catch-up, and handle possible post-detach 403.",
+      "status": 200
+    },
+    {
+      "captureKey": "dns",
+      "source": "DevelopersIO",
+      "title": "Amazon Route 53 の Private Endpoint Health Checks を試してみた",
+      "topic": "内部ALBのDNS切替",
+      "articleId": "2026-11-21-top-5",
+      "url": "https://dev.classmethod.jp/articles/route53-private-endpoint-health-checks/",
+      "publishedAt": "2026-11-20T23:02:33.301000+09:00",
+      "capturedAt": "2026-11-21T01:03:01.486015+00:00",
+      "htmlSha256": "f48f9a2dd6a5d9f94ed9ba25fa1e6fc724f6e59f28c9e964e8082ec9bf09a2ad",
+      "bodySha256": "46833412b3262e1e436ed0c0886156b62de30d6b36c12bc53dcb54525b67594c",
+      "access": "full",
+      "review": "One Tokyo VPC with two internal ALBs. Observed Route 53 answer and VPC client switching at approximately 90 and 135 seconds after isolation under specific settings.",
+      "status": 200
+    }
+  ]
+}
