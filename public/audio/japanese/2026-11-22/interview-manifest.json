@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-22",
+  "generatedAt": "2026-11-22T08:47:30.880Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "ローカルで動く日本語モデルを、文章とツール操作に使うとき、何を確認しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "27f2d171d58931bed11b0d3306862439ea6d1d46c034b2e0308352cd70a02fef",
+      "audioSha256": "29a3bff70f37826c2aecae58677ff31f7934e1c947efed1c5617a4ffbb279a7c",
+      "durationSeconds": 6.767
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "日本語の回答とツール操作を分けて測ります。記事では、思考の強さを下げても機械で採点した九問は通り、全体の時間は短くなりました。ただし、四十個のツールから選ぶ試験は六問中一問でした。必須の指定でも呼び出しが空の例があるので、返答だけでなく実際の呼び出しも確認します。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "ebe15c02f95831698937a4538a2db954a89f0e8728610c35b290c6f7cb7aa583",
+      "audioSha256": "84620ec17a9e924d08117a2321a8ccf29e3a5b4cf561199acbe8331e12caa7b4",
+      "durationSeconds": 22.882,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "似た商品から、予算内の候補を五件まで返すには、どこで価格を絞りますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "5d1d50bf2d68bc61a9145dc514d4a6b4eddd7bb066d0813a839f461f9e057d99",
+      "audioSha256": "afe5a2c4f417c2179e516482f8ae25e4c1bc4cb692e4e9b0071bb3b2b20edef3",
+      "durationSeconds": 6.419
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "価格を索引のフィルタ属性に用意して、検索の途中で上限を指定します。記事では、無条件で取った上位五件を後から一万円以下に絞るとゼロ件で、検索中に絞ると五件でした。ただし、条件に合う商品が二件なら戻るのも二件です。本番の再現率と新しい商品が出るまでの遅れは別に測ります。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "9b16cba84a25cf7649c1390ba6d92234f0c7d24534599fa41399109aa2f4f5f6",
+      "audioSha256": "c1b05f83f2ad9fb48b6eb52babc384872d68da6f86098bcb4129c54fd776ae05",
+      "durationSeconds": 24.259,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "予約の同時操作で在庫の規則が守られるか、どうテストしますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "fe41812f7fb4b24d24759cdba84324f06c00935c545af47923f1f8f3dc7d72d9",
+      "audioSha256": "cc69ce99f8728c42c35c47edd7294b6a1b43bfd2f702c3e4a577390712f4cb5c",
+      "durationSeconds": 5.479
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "売れた数が最初の在庫を超えないという条件を決めます。次にクイントで操作の列を作り、同じ操作を実装にも流して、一つずつ状態を照らし合わせます。記事では千本のうち五百七十八本で違いが出て、修正後はゼロでした。ただし、乱数で作った列と模型に含めた範囲での結果です。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "7d69f40be093741a688aa9f270574e9543cc4acfaede98ea3f78c885682c2207",
+      "audioSha256": "06cf0141f4df2c25ee60a4e78a9e445b5c9ed1ce0331454dbd003e3181e74fe2",
+      "durationSeconds": 22.534,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "内部の作りを変えても壊れにくい受け入れテストにするには、何を基準にしますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "8c757d509efb985b4b9c5ca128286d5776352a54288b23388bde42603181b09a",
+      "audioSha256": "c9c1131be756f78dc8edc734687e6c6a35b9963a608122721c362e1e6ed02320",
+      "durationSeconds": 6.199
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "利用者が画面や応答で見られる結果を基準にします。型やリントで確かめる決まりは分け、実装前に新しい機能のテストだけが予定どおり失敗するか見ます。記事では、十五日間で固定した六十三件のうち十五件が基準の差し替えでした。ただし、条件が緩められた場合を自動で止める仕組みではありません。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "4d97b2762a37e313dce3bcb7a9373d074c81e2e54d7748d17e725eac8775c9f0",
+      "audioSha256": "c9fb97dd84d624e7efc5ea46ad91795ad621590a72ed5a7a03c18b5b5fe49b2e",
+      "durationSeconds": 23.37,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "NotebookからS3のCSVが読めないとき、どこから確かめますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "7e1f20346e353bbbe438c6b7f9c03c6917154a476e10706c5c9ffc0e9645a73f",
+      "audioSha256": "cb5c11c216c7263cf1bd6d90e66001f3537980dbae400d950ab57603c3e03606",
+      "durationSeconds": 5.583
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "まずノートブックで選んだカーネルに必要なライブラリが入っているか確認します。次に、スペースが引き継ぐ実行ロールで対象のファイルを読めるか、エススリーまで通信できるかを分けて見ます。記事の百万行では三回とも二秒前後でした。ただし、その時間は同じファイルと機種で試した値です。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "791ab973a1e1909a38191c4f63f3d34201f79be629a218b23f14ad2036e93fde",
+      "audioSha256": "4179f1161217093b3048ac335581534637a6d840d108ad8e5be3ad3399e97111",
+      "durationSeconds": 21.791,
+      "durationStatus": "warn"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "別の環境の速度を比べる前に、何をそろえますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "a26a3c2c98c230bcc62c891688330b97185abddc875e07fbfe59b94b69119e05",
+      "audioSha256": "f7a664fcad7146b50183cdf6c6dc9dc638d3a2cf8717c0981d989c1045476cdc",
+      "durationSeconds": 4.445
+    },
+    {
+      "index": 2,
+      "text": "フィルタを検索中に使った結果が五件未満なら、何を調べますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "c7c7d373bf006588544c27c57416c1a5f0f436d98a192861b1a1618f58ff54d4",
+      "audioSha256": "d3e409bd25b4e8cdbb63b0e46d78bba61f3a34c9e4d8f270dce49c147be52099",
+      "durationSeconds": 5.421
+    },
+    {
+      "index": 3,
+      "text": "テストが合格したとき、どの範囲の正しさを説明できますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "d9905ae747c89bdb9a0b461b657065ece263f592ed98061d01303315533341e5",
+      "audioSha256": "f7bd66bea1e3d2634b11bffa422ed1eea352f4bac6daed698b79c22b297f206e",
+      "durationSeconds": 5.003
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      20,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-22T08:47:33.508Z"
+}
