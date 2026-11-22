@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-22",
+  "status": "reviewed",
+  "reviewedBy": "Codex local daily author",
+  "reviewedAt": "2026-11-22T08:33:01.804041+00:00",
+  "scope": "Five Japanese source articles within the locked JST window, with supplemental official corroboration where used. The evidence records original test conditions and distinguishes measurements from extrapolations.",
+  "articles": [
+    {
+      "articleId": "2026-11-22-top-1",
+      "url": "https://dev.classmethod.jp/articles/dgx-spark-inkling-2-mini-first-touch/",
+      "source": "DevelopersIO",
+      "topic": "手元でのマルチモーダル推論",
+      "capturedAt": "2026-11-22T08:24:36.939241+00:00",
+      "snapshotSha256": "2f85a4f4a4c544ad1c787d91db4aa6a3f13ddcea36d3b5c2d78d774abc2e91b0",
+      "accessNote": "Public original implementation report on DGX Spark.",
+      "originalTitle": "層を 3 回通す 26B の MoE「Inkling 2 Mini」を DGX Spark で動かしてみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Inkling 2 Mini reuses weights across three passes through the middle 12 of 24 decoder layers. The DGX Spark vLLM recipe ran at 262,144 context.",
+          "quote": "中央の 12 層を",
+          "locator": "Inkling 2 Mini の素性",
+          "conditions": "One DGX Spark with the vLLM recipe. Local tests and prior comparison configurations differ in context and cache settings. Tool selection and long context are not covered by the Japanese short-task score.",
+          "usedIn": {
+            "zh": "作者在一台 DGX Spark 上按 vLLM 为该平台提供的配置启动 Inkling 2 Mini。",
+            "ja": "Inkling 2 Miniは26.4Bの画像・テキスト対応モデルです。"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "The Japanese 10-task high versus low probe was one run per setting. Nine automatically scored tasks passed under both settings. Single-request recipe throughput was 37.83 tokens/s.",
+          "quote": "所要が 413.1 秒から 110.2 秒",
+          "locator": "思考の強さを変えた日本語課題",
+          "conditions": "One DGX Spark with the vLLM recipe. Local tests and prior comparison configurations differ in context and cache settings. Tool selection and long context are not covered by the Japanese short-task score.",
+          "usedIn": {
+            "zh": "用 262,144 token 上下文的配方启动后，单请求的生成速度为 37.83 token/秒。",
+            "ja": "単発の生成は設定どおりの構成で毎秒37.83トークンでした。",
+            "interview": "日本語の回答とツール操作を分けて測ります。記事では、思考の強さを下げても機械で採点した九問は通り、全体の時間は短くなりました。ただし、四十個のツールから選ぶ試験は六問中一問でした。必須の指定でも呼び出しが空の例があるので、返答だけでなく実際の呼び出しも確認します。"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Selecting from 40 tools passed one of six tasks in the initial setting, and a required call was absent in a tested response. A million-token context and isolated DSpark contribution were outside scope.",
+          "quote": "呼び出しが 0 件",
+          "locator": "ツール呼び出し／まとめ",
+          "conditions": "One DGX Spark with the vLLM recipe. Local tests and prior comparison configurations differ in context and cache settings. Tool selection and long context are not covered by the Japanese short-task score.",
+          "usedIn": {
+            "zh": "限制主要出现在复杂工具使用上：从 40 个工具选一个的样本仅答对 6 题中的 1 题，强制工具调用的一次响应仍没有调用记录。",
+            "ja": "一方、40個から目的のツールを選ぶ課題は、先に試した設定で6問中1問でした。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "同一台设备上的小规模测试说明，日语文字任务的通过情况和从大量工具中正确选用的能力要分别考虑。",
+            "ja": "日本語で答える速さと、ツールを選ぶ確かさを別々の試験で判断できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-22-top-2",
+      "url": "https://dev.classmethod.jp/articles/20211121-amazon-dynamodb-vector-filters/",
+      "source": "DevelopersIO",
+      "topic": "ベクトル検索のインライン絞り込み",
+      "capturedAt": "2026-11-22T08:24:37.023577+00:00",
+      "snapshotSha256": "ed2ab981c4c9032228ea9cc108e5930c3f261f224c33ac0d05facc3796b861e4",
+      "accessNote": "Public original Tokyo service experiment with synthetic embeddings.",
+      "originalTitle": "[アップデート] Amazon DynamoDB のベクトル検索で範囲比較・IN・OR/NOT のインラインフィルタが使えるようになったので試してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Filter values are declared in SearchSchema and checked during ANN search. The author used a known distance ranking with 20 synthetic items in Tokyo.",
+          "quote": "フィルタは検索の途中で適用",
+          "locator": "SearchVectors のインラインフィルタとは／検証用データ",
+          "conditions": "Twenty synthetic items, controlled four-dimensional embeddings, Tokyo and one tested index. Filter inclusion checks do not measure recall or freshness with live large datasets.",
+          "usedIn": {
+            "zh": "DynamoDB 的向量查询可以在搜索时就使用价格范围、备选值列表和属性是否存在等条件。",
+            "ja": "DynamoDBのSearchVectorsでは、検索中に価格帯、複数の候補値、属性の有無などを条件にできます。"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "The application-side price cutoff produced zero from the unfiltered top five. The same inline cutoff returned five; a filter with only two eligible items returned two.",
+          "quote": "ポストフィルタの結果は 0 件",
+          "locator": "ポストフィルタとの比較",
+          "conditions": "Twenty synthetic items, controlled four-dimensional embeddings, Tokyo and one tested index. Filter inclusion checks do not measure recall or freshness with live large datasets.",
+          "usedIn": {
+            "zh": "在这组商品里，不加条件取前五名，最便宜的也不少于 13,000。",
+            "ja": "20件のうち、価格条件を付けずに取った類似上位5件はすべて13,000以上でした。",
+            "interview": "価格を索引のフィルタ属性に用意して、検索の途中で上限を指定します。記事では、無条件で取った上位五件を後から一万円以下に絞るとゼロ件で、検索中に絞ると五件でした。ただし、条件に合う商品が二件なら戻るのも二件です。本番の再現率と新しい商品が出るまでの遅れは別に測ります。"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "These trials do not estimate ANN recall at scale. Numeric ranges require Number, schema additions require a new index, and index updates are asynchronous.",
+          "quote": "大規模なデータでの再現率",
+          "locator": "その他の注意点／インラインフィルタ属性の設計",
+          "conditions": "Twenty synthetic items, controlled four-dimensional embeddings, Tokyo and one tested index. Filter inclusion checks do not measure recall or freshness with live large datasets.",
+          "usedIn": {
+            "zh": "这次测试的规模无法说明大量真实嵌入的近邻召回率。",
+            "ja": "ただし、本番件数における近似検索の再現率は、この実験から判断できません。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "文章把同一价格条件分别放进检索和应用后处理，便于控制输入并解释为何结果条数不同。",
+            "ja": "類似検索の条件を掛ける場所によって、同じTopKから戻る候補が変わる理由を理解できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-22-top-3",
+      "url": "https://zenn.dev/karamage/articles/73027ee36796dc",
+      "source": "Zenn",
+      "topic": "モデルに基づく同時実行テスト",
+      "capturedAt": "2026-11-22T08:25:07.094819+00:00",
+      "snapshotSha256": "0f7ff0d934be37edaabcae3d14f79c597ffb510e23c7a5d0740a24cdaf657dce",
+      "accessNote": "Public Zenn author’s original model-testing demonstration.",
+      "originalTitle": "【TLA+】AIにテストケースを書かせるな。ルールを書け",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "The toy ticket model uses an invariant limiting sales to initial stock, an explicit specification to judge implementation behavior.",
+          "quote": "最初の在庫数を超えない",
+          "locator": "在庫の不変条件／テストオラクル問題",
+          "conditions": "Small modeled ticket fixture and repeated random state sequences. Counts depend on sampled traces and do not cover unspecified behaviors.",
+          "usedIn": {
+            "zh": "这篇文章为虚构售票流程定义了一个可检查的条件：卖出的票不能多于初始库存。",
+            "ja": "Quintの記事は、チケット販売の小さな模型を使って、同時に操作されても販売済み枚数が在庫を超えない条件を記述します。"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "The model generated 1,000 traces for state comparison. The original implementation disagreed on 578 traces and the corrected fixture disagreed on none in the reported runs.",
+          "quote": "578 本で不一致",
+          "locator": "本物の実装に1000問解かせる",
+          "conditions": "Small modeled ticket fixture and repeated random state sequences. Counts depend on sampled traces and do not cover unspecified behaviors.",
+          "usedIn": {
+            "zh": "作者让实际实现执行模型生成的 1,000 条随机操作序列，并对照每一步的状态。",
+            "ja": "著者はQuintで生成した1,000本の操作列を使い、実装の状態と仕様の状態を各段階で照合しました。",
+            "interview": "売れた数が最初の在庫を超えないという条件を決めます。次にクイントで操作の列を作り、同じ操作を実装にも流して、一つずつ状態を照らし合わせます。記事では千本のうち五百七十八本で違いが出て、修正後はゼロでした。ただし、乱数で作った列と模型に含めた範囲での結果です。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Random samples can differ across runs. The example only covers modeled state and does not replace simple tests for UI or input checks.",
+          "quote": "件数は実行ごとに少し変わります",
+          "locator": "実装の修正後／それでもテストケースはなくならない",
+          "conditions": "Small modeled ticket fixture and repeated random state sequences. Counts depend on sampled traces and do not cover unspecified behaviors.",
+          "usedIn": {
+            "zh": "随机样本每次可不相同，模型也只覆盖写进去的状态和规则。",
+            "ja": "ただし、操作列の生成には乱数を使うため、不一致の本数は実行ごとに変わり得ます。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "售票样例展示了如何先确定库存规则，再让工具补充人工不易列全的输入组合。",
+            "ja": "操作の組み合わせが多い処理で、判定条件を決めてから試す順番を考えられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-22-top-4",
+      "url": "https://zenn.dev/yasuakiomokawa/articles/3ac970c3a3a1c7",
+      "source": "Zenn",
+      "topic": "振る舞いに基づく受け入れテスト",
+      "capturedAt": "2026-11-22T08:25:07.115448+00:00",
+      "snapshotSha256": "886b937b76db74ef5081e24dcfe84e2c80de9ef07cc4918b2c570a1ac87eca26",
+      "accessNote": "Public Zenn author’s original 15-day project study with evaluation conditions.",
+      "originalTitle": "堅牢な受け入れテストを書くには？",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "The proposed acceptance process uses observable behavior, existing equivalent test surfaces, separate lint/type rules, and verifies intended failure before implementation.",
+          "quote": "外から見える振る舞いだけ",
+          "locator": "サマリー／手順1〜4",
+          "conditions": "One repository, 15 days and small evaluation runs. Zero rewrites came from one issue; browser-driven tests and intentional weakening remain outside the demonstrated conclusions.",
+          "usedIn": {
+            "zh": "作者把验收条件改成可以从页面、接口响应或存储结果确认的行为，并参照仓库已有测试来写用例。",
+            "ja": "受け入れ基準は、利用者や他のサービスが観察できる結果から書きます。"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Fifteen out of 63 freeze commits replaced an earlier criterion during the author’s 15-day project experience. A separate small comparison reduced criterion sets with implementation details from three out of three to zero.",
+          "quote": "凍結の commit 63 本",
+          "locator": "壊れやすいテストが生まれる理由／手順1 結果",
+          "conditions": "One repository, 15 days and small evaluation runs. Zero rewrites came from one issue; browser-driven tests and intentional weakening remain outside the demonstrated conclusions.",
+          "usedIn": {
+            "zh": "作者在一个产品里试行 15 天，63 个冻结提交中有 15 个用来替换之前的条件。",
+            "ja": "筆者の製品では、15日間の凍結コミット63本のうち15本が前の基準を差し替えていました。",
+            "interview": "利用者が画面や応答で見られる結果を基準にします。型やリントで確かめる決まりは分け、実装前に新しい機能のテストだけが予定どおり失敗するか見ます。記事では、十五日間で固定した六十三件のうち十五件が基準の差し替えでした。ただし、条件が緩められた場合を自動で止める仕組みではありません。"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Zero test rewrites came from one task; live-browser evaluation was outside the experiment. Automatic safeguards did not cover removing tests or weakening assertions.",
+          "quote": "評価実験もまだ回していません",
+          "locator": "限界",
+          "conditions": "One repository, 15 days and small evaluation runs. Zero rewrites came from one issue; browser-driven tests and intentional weakening remain outside the demonstrated conclusions.",
+          "usedIn": {
+            "zh": "零重写只在一个任务中观察到，文章还没有在启动服务并实际开网页的测试里重复对照。",
+            "ja": "ただし、既存テストの削除や条件の緩和が提案された事例もあり、提案を自動で止める仕組みはありません。"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "作者公开了试行成本和边界，便于区分因设计而反复修测试与有人主动降低测试覆盖。",
+            "ja": "合格基準を改善したとき、テストの手直しとカバレッジの削減を別の問題として扱えます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-22-top-5",
+      "url": "https://dev.classmethod.jp/articles/amazon-sagemaker-studio-s3fs/",
+      "source": "DevelopersIO",
+      "topic": "NotebookからのS3直接読み込み",
+      "capturedAt": "2026-11-22T08:24:36.920437+00:00",
+      "snapshotSha256": "cab855e7f835dc0cef15f9be014b0a84ed29d930a169d50c9d4999bdd547ccde",
+      "accessNote": "Public original SageMaker Studio notebook implementation report.",
+      "originalTitle": "Amazon SageMaker Studio でマウントせずに s3fs で Amazon S3 のファイルを直接読めるか確認してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "The Tokyo private JupyterLab space used a registered Python virtual environment and s3fs to read S3 without a filesystem mount.",
+          "quote": "ノートブックから venv を使える",
+          "locator": "検証環境／venv をカーネルとして登録する",
+          "conditions": "Tokyo SageMaker Studio CPU instance with S3 and package access configured; three reads of a single roughly 77 MiB CSV. No cross-instance or concurrent-read conclusions.",
+          "usedIn": {
+            "zh": "东京的 SageMaker Studio 测试从已创建的私有 JupyterLab 空间出发。",
+            "ja": "東京のSageMaker Studioでは、JupyterLabのプライベートスペースからs3fsでS3オブジェクトを直接読みました。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "The author read a 100,000-row CSV and timed three reads of a roughly 77 MiB million-row CSV on ml.t3.medium.",
+          "quote": "経過時間（Wall time）は 1.26〜2.16 秒",
+          "locator": "100 万行の CSV の読み込み時間を確認する",
+          "conditions": "Tokyo SageMaker Studio CPU instance with S3 and package access configured; three reads of a single roughly 77 MiB CSV. No cross-instance or concurrent-read conclusions.",
+          "usedIn": {
+            "zh": "对象访问使用空间继承的执行角色，测试分开配置了连往 S3 和访问依赖仓库的网络路径。",
+            "ja": "読み込みにはスペースが引き継ぐ実行ロールを使います。",
+            "interview": "まずノートブックで選んだカーネルに必要なライブラリが入っているか確認します。次に、スペースが引き継ぐ実行ロールで対象のファイルを読めるか、エススリーまで通信できるかを分けて見ます。記事の百万行では三回とも二秒前後でした。ただし、その時間は同じファイルと機種で試した値です。"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "The inherited role needs access to the target S3 objects. Private networking needs a route for S3 and package installation; timing is from this single instance and file.",
+          "quote": "対象のバケットを許可",
+          "locator": "スペースの実行ロールを確認する／おわりに",
+          "conditions": "Tokyo SageMaker Studio CPU instance with S3 and package access configured; three reads of a single roughly 77 MiB CSV. No cross-instance or concurrent-read conclusions.",
+          "usedIn": {
+            "zh": "这组数字只反映单台 CPU 实例和指定文件。",
+            "ja": "ただし、測ったのはそのデータと機器での読み込みであり、大容量や他の利用者との同時利用の特性は示していません。"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "将软件环境、网络可达和 S3 权限一起核对，有助于把访问失败定位到正确的一层。",
+            "ja": "マウントせずに始めるときも、カーネル、ネットワーク、実行ロールの条件を明確にできます。"
+          }
+        }
+      ]
+    }
+  ]
+}
