@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-23",
-  "stage": "request_ready",
+  "stage": "publisher_queued",
   "sourceCommit": "ada7462bdc53867dcc7c1d320099c4787f805dc4",
   "sourceWindow": {
     "from": "2026-11-22T10:00:00+09:00",
     "to": "2026-11-23T10:00:00+09:00"
   },
   "createdAt": "2026-11-23T01:09:46.490Z",
-  "updatedAt": "2026-11-23T01:25:52.861Z",
+  "updatedAt": "2026-11-23T01:26:01.510Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-11-23/checks.json",
@@ -56,8 +56,10 @@
     }
   ],
   "lastError": null,
-  "nextAction": "Save and submit exact source-bound publication request",
+  "nextAction": "Wait exact publisher and main Pages, then verify public snapshot and report bytes",
   "draftCommit": "1d9024d39bacbc346f8edca9f6986dbf3306bb32",
   "preflightRunId": 45094201999,
-  "preflightWorkflowPath": ".github/workflows/deploy.yml"
+  "preflightWorkflowPath": ".github/workflows/deploy.yml",
+  "requestCommit": "3d96702d298ada89dcbae0243bb4684e4dc6f3b7",
+  "requestBlob": "e1b52154271c4031d5a6e30ff896166dfc11dc9f"
 }
