@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-23",
+  "status": "reviewed",
+  "reviewedBy": "Codex local daily author",
+  "reviewedAt": "2026-11-23T01:19:16.594075+00:00",
+  "scope": "Five Japanese source articles within the locked JST window, with supplemental official corroboration where used. The evidence records original test conditions and distinguishes measurements from extrapolations.",
+  "articles": [
+    {
+      "articleId": "2026-11-23-top-1",
+      "url": "https://dev.classmethod.jp/articles/bigquery-dea-agent-observability-ga/",
+      "source": "DevelopersIO",
+      "topic": "データエージェントの可観測性",
+      "capturedAt": "2026-11-23T01:10:32.500856+00:00",
+      "snapshotSha256": "97f0bf2f0dd007f0c81ff54d8862f7c98a7305d92b53f36099feedd0a73fa977",
+      "accessNote": "Original DevelopersIO verified-data lab report.",
+      "originalTitle": "BigQuery Daya Engineering AgentのAgent Observabilityを試してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "The Tokyo public-data SQLX experiment compared the monitoring settings before and after enabling collections. A2A quota usage already existed.",
+          "quote": "監視（トークンと Trace の収集）を有効にする前後",
+          "locator": "実験環境／手元での結果",
+          "conditions": "Single Tokyo test project with public taxi data, two turns, validation only. No billing proof or backfill.",
+          "usedIn": {
+            "zh": "BigQuery 的 Data Engineering Agent 开放了面向代理的观测能力。",
+            "ja": "BigQueryのData Engineering Agentでは、プロジェクトの監視設定を有効にすると、Cloud Monitoringでトークンやモデル遅延を、Cloud Traceでモデルとツールの実行を調べられます。"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Two SendStreamingMessage traces corresponded to the design and implementation turns. Subspans identify model and tool execution.",
+          "quote": "トレースが\n2 本\n取れました",
+          "locator": "Trace を見ると（Enable all 後）",
+          "conditions": "Single Tokyo test project with public taxi data, two turns, validation only. No billing proof or backfill.",
+          "usedIn": {
+            "zh": "Cloud Monitoring 中，作者用 agent_type=DEA 区分时序数据。",
+            "ja": "監視前にもA2Aの依頼回数は取得できました。",
+            "interview": "まず、プロジェクトで監視を有効にした時刻を確認します。その上で、エージェントの種類をディーイーエーに絞り、モデルの遅延を読みます。トレースでは依頼ごとのモデル呼び出しと、データフォームの検証などのツール実行を分けて見ます。ただし、監視を有効にする前のトークンはさかのぼって確認できません。"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Model latency sample count was 15 against 12 history calls. The source treats the reason as inference. No table was executed and pre-enable token metrics were absent.",
+          "quote": "会話の履歴に残った 12 回より多い",
+          "locator": "conversation token の usageMetadata との突き合わせ",
+          "conditions": "Single Tokyo test project with public taxi data, two turns, validation only. No billing proof or backfill.",
+          "usedIn": {
+            "zh": "此次流程未创建实际数据表。",
+            "ja": "二つのターンではSQLXの検証まで行い、テーブルの作成や定期実行は見送っています。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "有了分阶段跟踪，团队能追查一次请求慢在模型、工具还是等待用户确认。",
+            "ja": "呼び出し数と遅さの原因を、集計とターン単位のトレースから別々に調べられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-23-top-2",
+      "url": "https://dev.classmethod.jp/articles/amazon-s3-storage-lens-intelligent-tiering-access-tiers/",
+      "source": "DevelopersIO",
+      "topic": "オブジェクトのアクセス階層集計",
+      "capturedAt": "2026-11-23T01:10:32.420533+00:00",
+      "snapshotSha256": "08a4cab5786189933fbefeeb309a285152d19469991b60d61ab5e75743ec7347",
+      "accessNote": "Original DevelopersIO dashboard experiment.",
+      "originalTitle": "S3 Storage Lens がインテリジェント階層化ストレージクラスのアクセス階層別の内訳に対応したので確認してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "The account-wide Storage Lens dashboard reported access tiers after enabling the Advanced metric category. Three considered buckets had versioning enabled.",
+          "quote": "3 つともバージョニングを有効にしています",
+          "locator": "検証環境",
+          "conditions": "Three versioned buckets in the Advanced dashboard; individual checks at specific times and dates.",
+          "usedIn": {
+            "zh": "AWS S3 Storage Lens 把 Intelligent-Tiering 的访问层拆进了仪表板。",
+            "ja": "S3 Storage Lensのアドバンスト階層では、Intelligent-Tieringのアクセス階層ごとにバイト数とオブジェクト数を確認できます。"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "One Singapore bucket showed four frequent and one instant archive. The instant archive entry was a noncurrent version.",
+          "quote": "高頻度アクセスが 4 個、Archive Instant Access が 1 個",
+          "locator": "バージョニングで残る旧バージョンもカウントされるのか",
+          "conditions": "Three versioned buckets in the Advanced dashboard; individual checks at specific times and dates.",
+          "usedIn": {
+            "zh": "启用约31.5小时后，作者在存储类别页看到了启用日的分层数据，用临时筛选核对了新加坡桶中的五个对象版本。",
+            "ja": "設定して約31.5時間後、ストレージクラスの表やグラフで、有効化当日の内訳を確認できました。",
+            "interview": "ストレージレンズのアドバンスト階層で、アクセス層のメトリクスを有効にします。ストレージクラスのタブで、階層ごとの容量と件数を見比べます。実験では、五つのうち旧バージョン一つが即時アクセスのアーカイブ層にありました。ただし、設定前の二日分には内訳が出なかったので、集計を始めた日も確認します。"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "The author did not observe breakdowns for either of two earlier dates. The enable-day display was observed about 31.5 hours after switching on.",
+          "quote": "有効化前の日付に内訳は表示されませんでした",
+          "locator": "有効化前の日付には内訳はでない",
+          "conditions": "Three versioned buckets in the Advanced dashboard; individual checks at specific times and dates.",
+          "usedIn": {
+            "zh": "作者检查的两个启用前日期仍没有分层明细。",
+            "ja": "有効化前の二日には、同じ階層別表示がなかったと報告されています。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "可用同一套仪表板检查容量与对象数量，并识别旧版本在盘点里占的位置。",
+            "ja": "バージョンを保持するバケットで、見えている件数と復元が必要なデータ量を読み分けられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-23-top-3",
+      "url": "https://dev.classmethod.jp/articles/azure-service-bus-duplicate-boundaries/",
+      "source": "DevelopersIO",
+      "topic": "メッセージ重複と再配信",
+      "capturedAt": "2026-11-23T01:10:32.581522+00:00",
+      "snapshotSha256": "c2247d9d71754d0d6eec6b92ad3d0edbf24aebd99231037a367cd23cf824d283",
+      "accessNote": "Original DevelopersIO Service Bus test.",
+      "originalTitle": "Azure Service Busの重複検出で二重処理は防げる？同じMessageIdの再送と再配信を試した",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "In Japan East Standard, a non-partitioned queue had 60-second duplicate detection and a 30-second lock.",
+          "quote": "重複検出の時間窓は1分、ロックの期間は30秒",
+          "locator": "Basicでは作れず、Standardで時間窓1分のキューを用意した",
+          "conditions": "One regional Standard queue, unpartitioned. Graceful receiver close used as a simulation; neither lock early expiry nor abnormal termination was isolated.",
+          "usedIn": {
+            "zh": "Azure Service Bus 的重复检测关注发送时的 MessageId。",
+            "ja": "Azure Service Busの重複検出は、設定した時間窓に登録済みのMessageIdを覚えます。"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Both duplicate sends returned success, but only one was observed on the queue. A send after the window could enter.",
+          "quote": "約17秒後にキューの件数を確かめると、1件でした。",
+          "locator": "同じMessageIdの再送は、送信が成功しても捨てられた",
+          "conditions": "One regional Standard queue, unpartitioned. Graceful receiver close used as a simulation; neither lock early expiry nor abnormal termination was isolated.",
+          "usedIn": {
+            "zh": "两次发送都正常返回，约17秒后查询到的活跃消息只有一条。",
+            "ja": "同じIDで2回送ると送信処理はどちらも成功し、キューの有効件数は1件でした。",
+            "interview": "まず、同じメッセージアイディーで再送して、一分の重複検出窓にある間は送信成功でもキューが増えないことを確かめます。それから、ピークロックで受信した側が完了通知の前に止まる状況を試します。記事では、このとき同じメッセージが再配信されました。ただし、この設定だけで注文の二重登録は防げないので、データベースの一意制約も確認します。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "After closing an unsettled receiver and waiting 35 seconds, the message reappeared with a higher delivery count. Immediate lock release was not tested.",
+          "quote": "0 から 1 に増えていました",
+          "locator": "完了を通知しないと、同じメッセージがもう一度届いた",
+          "conditions": "One regional Standard queue, unpartitioned. Graceful receiver close used as a simulation; neither lock early expiry nor abnormal termination was isolated.",
+          "usedIn": {
+            "zh": "作者还在首次接收后直接关闭了接收方，未发送 Complete。",
+            "ja": "PeekLockで受けた側が完了を通知せずに接続を閉じると、35秒待って再受信した時点で同じメッセージが届き、delivery_countは0から1に変わりました。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "原文把发送去重与接收侧重做拆成了两个可单独复现的场景。",
+            "ja": "同じ送信IDの記憶期間と、処理途中の再配信を分けて考えられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-23-top-4",
+      "url": "https://dev.classmethod.jp/articles/aws-cloudformation-stacksets-progress-visibility/",
+      "source": "DevelopersIO",
+      "topic": "スタック配布の進捗計測",
+      "capturedAt": "2026-11-23T01:10:32.524500+00:00",
+      "snapshotSha256": "deb361d0dcde4ff28858bb22423bb957e4b1ed217704268a2a4a9ce2efcf8047",
+      "accessNote": "Original DevelopersIO multi-region deployment test.",
+      "originalTitle": "CloudFormation StackSets の操作の進捗が ステージ別・リージョン別に確認可能になったので試してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "The self-managed configuration specified sequential regional operations in three regions.",
+          "quote": "リージョンを1つずつ順番に処理する指定",
+          "locator": "スタックインスタンスの作成",
+          "conditions": "Self-managed experiments, controlled regions and template. Percentages are instance counts; resource-level evidence arrives elsewhere.",
+          "usedIn": {
+            "zh": "CloudFormation StackSets 新增了按阶段和区域展示操作进度的方式。",
+            "ja": "CloudFormation StackSetsの操作結果は、ステージとリージョンに分けて進捗を返します。"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Completion rose per instance. Regional aggregate IN_PROGRESS did not distinguish waiting and execution; per-instance DetailedStatus did in a separate observation.",
+          "quote": "IN_PROGRESS / 1 / 2 / 1 / 33.3",
+          "locator": "実行中の推移",
+          "conditions": "Self-managed experiments, controlled regions and template. Percentages are instance counts; resource-level evidence arrives elsewhere.",
+          "usedIn": {
+            "zh": "顺序发布每完成一个实例，进度从0跳到33.3%、66.6%和100%。",
+            "ja": "約10秒おきに取得した結果は、スタックインスタンスが終わるごとに33.3%、66.6%、100.0%と更新されました。",
+            "interview": "割合は完了したスタックインスタンスの数で変わるので、まずリージョンとステージごとの件数を見ます。すべて進行中と出たら、各インスタンスの詳細状態で実行中と順番待ちを分けます。記事では、通知用のリソースを作り終えても、証明書の検証中はゼロでした。ただし、個々の待機理由は、スタックのイベントまで開いて確認します。"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "SNS resources completed inside a stack while ACM validation was pending and total progress was zero. Self-managed RoleProvisioning was not applicable.",
+          "quote": "スタック内の一部のリソースが完了しても動きません。",
+          "locator": "進捗率の単位",
+          "conditions": "Self-managed experiments, controlled regions and template. Percentages are instance counts; resource-level evidence arrives elsewhere.",
+          "usedIn": {
+            "zh": "两区域并行的另一轮实验里，三项 SNS 资源已经建好，只剩 ACM 证书仍在验证，当时总进度仍为0。",
+            "ja": "別の二リージョン並列実験では、スタック内の三つのSNSトピックが作成済みでも、証明書が残っている間は0%でした。"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "这一实验给出了识别灰度发布进度停滞的两个观测层级。",
+            "ja": "配布がどこまで終わったかと、個々のスタックが何を待っているかを順に調べられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-23-top-5",
+      "url": "https://zenn.dev/ryota_09/articles/nextjs-suspense-streaming-lambda-web-functions",
+      "source": "Zenn",
+      "topic": "サーバー描画の段階配信",
+      "capturedAt": "2026-11-23T01:10:32.651175+00:00",
+      "snapshotSha256": "533455784fd685e74157a92806acc2e3767f655e2be29dbc6341fc89574ab394",
+      "accessNote": "Original Zenn implementation and timings, with controls and measurement method.",
+      "originalTitle": "Next.jsのストリーミングはLambda Web Functionsで動くか",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "The author used known independent asynchronous delays, observing shell and boundary bytes via Node fetch, curl and browser.",
+          "quote": "Suspense 境界ごとのチャンクがいつ届いたか",
+          "locator": "ヘッダーと TTFB では判定できない",
+          "conditions": "One author’s November 21 deployment benchmark, version-controlled workload, Tokyo and limited home measurements. No blanket latency or proxy guarantee.",
+          "usedIn": {
+            "zh": "Zenn 作者借两段可控的异步等待来判断 Next.js 在 Lambda Web Functions 上能否真的流式展示。",
+            "ja": "Next.jsのサーバー描画を載せたLambda Web Functionsで、ページが段階的に届くかを調べた実験です。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Both measured CloudFront settings preserved the roughly one and three second boundary arrivals. The no-Suspense control was buffered.",
+          "quote": "1,002 / 3,005ms",
+          "locator": "CloudFront 経由／実測値",
+          "conditions": "One author’s November 21 deployment benchmark, version-controlled workload, Tokyo and limited home measurements. No blanket latency or proxy guarantee.",
+          "usedIn": {
+            "zh": "热启动条件下，外壳先到，两个组件约在预设的一秒和三秒处到达。",
+            "ja": "待ち時間を1秒と3秒にした条件では、ウォーム時の直接アクセスで二つの部分がシェルの約1秒後と3秒後に届きました。",
+            "interview": "サスペンスで一秒と三秒待つ部品を置き、ページの骨組みと両方の中身が届く時刻を測ります。フェッチとカールで到着の順序を突き合わせ、サスペンスなしの対照ページも試します。記事の二つのクラウドフロント設定では段階的に届きました。ただし、最初のバイトが早いだけでは、その後の配信方法を判定できません。"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "The reported Web Functions cold-start test had about 1.2 seconds to first byte. The reported workload and configurations bound the comparison.",
+          "quote": "最初のバイトが届くまでに約1.2秒",
+          "locator": "結果／コールドスタート",
+          "conditions": "One author’s November 21 deployment benchmark, version-controlled workload, Tokyo and limited home measurements. No blanket latency or proxy guarantee.",
+          "usedIn": {
+            "zh": "冷启动实验里的首次字节延迟可达约1.2秒。",
+            "ja": "コールドスタート条件では、Web Functionsの最初のバイトまで約1.2秒かかる例がありました。"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "测试把首段响应和用户实际等到两个内容区块的时间都量化了。",
+            "ja": "早い応答開始と段階的な中身の到着を、独立した測定結果として扱えます。"
+          }
+        }
+      ]
+    }
+  ]
+}
