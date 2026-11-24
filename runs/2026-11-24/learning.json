@@ -1,0 +1,345 @@
+{
+  "targetDate": "2026-11-24",
+  "issueNumber": 105,
+  "totalDays": 105,
+  "newVocabulary": [
+    {
+      "term": "軽快",
+      "reading": "けいかい",
+      "level": "N1",
+      "partOfSpeech": "名詞・形容動詞",
+      "collocations": [
+        "軽快な操作",
+        "軽快な足取り",
+        "軽快に切り替える"
+      ],
+      "exampleJa": "キーだけで画面を切り替えられるので、操作が軽快です。",
+      "meaning": "軽やかで動きやすい様子です。",
+      "note": "キーを一回押せばファイラーへすぐ移れる操作を述べています。",
+      "exampleMeaning": "キーボードで画面を切り替えられて、すいすい作業できます。",
+      "nuance": "「軽量」は重さや容量が小さいことです。「軽快」は動きや手触りに焦点を置きます。",
+      "studyKind": "new",
+      "identity": "軽快",
+      "firstIntroducedDate": "2026-11-24",
+      "lexicalIdentity": "軽快",
+      "lexicalFirstIntroducedDate": "2026-11-24",
+      "reportFrequency": {
+        "appearedDays": 1,
+        "totalDays": 105,
+        "percent": 1,
+        "appearedDates": [
+          "2026-11-24"
+        ],
+        "appearanceForms": {
+          "2026-11-24": "軽快"
+        }
+      }
+    },
+    {
+      "term": "蘇る",
+      "reading": "よみがえる",
+      "level": "N2",
+      "partOfSpeech": "五段自動詞",
+      "collocations": [
+        "記憶が蘇る",
+        "伝統が蘇る",
+        "昔の道具を蘇らせる"
+      ],
+      "exampleJa": "古い写真を見ると、当時の記憶が蘇ります。",
+      "meaning": "いったん失われたものや忘れていたものが再び現れることです。",
+      "note": "記事では使役形の「蘇らせた」で、昔の操作を今の環境で使えるようにしたことを述べています。",
+      "exampleMeaning": "写真を見て、そのころのことを再び思い出します。",
+      "nuance": "「再現する」は状態をもう一度作る行為です。「蘇る」には忘れられたものが戻ってくる響きがあります。",
+      "studyKind": "new",
+      "identity": "蘇る",
+      "firstIntroducedDate": "2026-11-24",
+      "lexicalIdentity": "蘇る",
+      "lexicalFirstIntroducedDate": "2026-11-24",
+      "reportFrequency": {
+        "appearedDays": 1,
+        "totalDays": 105,
+        "percent": 1,
+        "appearedDates": [
+          "2026-11-24"
+        ],
+        "appearanceForms": {
+          "2026-11-24": "蘇る"
+        }
+      }
+    },
+    {
+      "term": "慣れる",
+      "reading": "なれる",
+      "level": "N5/N4",
+      "partOfSpeech": "一段自動詞",
+      "collocations": [
+        "操作に慣れる",
+        "新しい環境に慣れる",
+        "手順に慣れる"
+      ],
+      "exampleJa": "毎週使っているうちに、新しい手順に慣れてきました。",
+      "meaning": "繰り返し経験して、自然に扱えるようになることです。",
+      "note": "小規模なワークショップの所要時間を考える際、分析手順に習熟していることを条件に挙げています。",
+      "exampleMeaning": "週に一回ずつ使い、手順を自然に行えるようになってきました。",
+      "nuance": "「見慣れる」は目で見るものに限ります。「慣れる」は作業や環境を含めて使えます。",
+      "studyKind": "new",
+      "identity": "慣れる",
+      "firstIntroducedDate": "2026-11-24",
+      "lexicalIdentity": "慣れる",
+      "lexicalFirstIntroducedDate": "2026-11-24",
+      "reportFrequency": {
+        "appearedDays": 6,
+        "totalDays": 105,
+        "percent": 5.7,
+        "appearedDates": [
+          "2026-08-18",
+          "2026-08-23",
+          "2026-10-20",
+          "2026-10-30",
+          "2026-11-02",
+          "2026-11-24"
+        ],
+        "appearanceForms": {
+          "2026-08-18": "慣れる",
+          "2026-08-23": "慣れる",
+          "2026-10-20": "慣れる",
+          "2026-10-30": "慣れる",
+          "2026-11-02": "慣れる",
+          "2026-11-24": "慣れる"
+        }
+      }
+    }
+  ],
+  "newGrammar": [],
+  "reviewVocabulary": [
+    {
+      "term": "検証する",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "検証",
+        "excerpt": "リージョン切替の訓練では、クライアントの経路、署名検証に使う発行者情報、復旧までの時間を別々に確認します。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "ただし",
+      "firstIntroducedDate": "2026-09-07",
+      "reviewEvidence": {
+        "form": "ただし",
+        "excerpt": "ただし、過去の会話で内容がどこまでそろうかには留意が必要です。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "判断する",
+      "firstIntroducedDate": "2026-08-13",
+      "reviewEvidence": {
+        "form": "判断",
+        "excerpt": "設計レビューでは、指示だけでなく結果がどこへ返るかも図に入れると、再試行の判断に不足する記録が分かります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "実行する",
+      "firstIntroducedDate": "2026-08-15",
+      "reviewEvidence": {
+        "form": "実行",
+        "excerpt": "記事ではOTel enrichmentを有効にしたアカウントからALBのメトリクスを読み、東京で範囲クエリを実行しました。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "評価する",
+      "firstIntroducedDate": "2026-08-15",
+      "reviewEvidence": {
+        "form": "評価",
+        "excerpt": "評価対象となる失敗や欠測の扱いはサービスごとに決めます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "運用",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "運用",
+        "excerpt": "運用の数字や保存件数を読むとき、その値が表している状態を元の試験で確かめます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "構成",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "構成",
+        "excerpt": "東京で運用中のユーザープールに対して、大阪へレプリカを置く構成が試されました。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "保証",
+      "firstIntroducedDate": "2026-08-16",
+      "reviewEvidence": {
+        "form": "保証",
+        "excerpt": "モデルに入れていない要求や相互作用まで、この手法で見つかる保証はありません。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "指定する",
+      "firstIntroducedDate": "2026-09-04",
+      "reviewEvidence": {
+        "form": "指定",
+        "excerpt": "読む価値: 同じ30日という指定でも、式が追加で読む期間によって結果が変わる理由を実測から説明できます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "生成する",
+      "firstIntroducedDate": "2026-08-27",
+      "reviewEvidence": {
+        "form": "生成",
+        "excerpt": "タグを基にx86_64とARM64向けにパッケージを生成します。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "手順",
+      "firstIntroducedDate": "2026-11-20",
+      "reviewEvidence": {
+        "form": "手順",
+        "excerpt": "ただし、この手順だけでは障害時の切り替え時間までは分かりません。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "依存",
+      "firstIntroducedDate": "2026-08-26",
+      "reviewEvidence": {
+        "form": "依存",
+        "excerpt": "作者によると、画像の処理やMarkdown表示の外部依存を抑えたリリースバイナリは約5.1MBです。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "そのまま",
+      "firstIntroducedDate": "2026-09-08",
+      "reviewEvidence": {
+        "form": "そのまま",
+        "excerpt": "読む価値: 長期記憶をそのまま会話へ戻す際に、最新の合意をどの単位で渡すかを具体的に考えられます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "経路",
+      "firstIntroducedDate": "2026-08-17",
+      "reviewEvidence": {
+        "form": "経路",
+        "excerpt": "リージョン切替の訓練では、クライアントの経路、署名検証に使う発行者情報、復旧までの時間を別々に確認します。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "固定する",
+      "firstIntroducedDate": "2026-08-23",
+      "reviewEvidence": {
+        "form": "固定",
+        "excerpt": "関連プロジェクト例: 可用性の月報を作り、結果区間・比較式・対象エラーを固定した上で、週次比較と残り予算を表示する。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "再現する",
+      "firstIntroducedDate": "2026-08-23",
+      "reviewEvidence": {
+        "form": "再現する",
+        "excerpt": "読む価値: キーボードの操作感を再現する作業から、デスクトップ環境へ入力位置やアプリの識別子を伝える設計まで読めます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "影響",
+      "firstIntroducedDate": "2026-08-22",
+      "reviewEvidence": {
+        "form": "影響",
+        "excerpt": "年代とリージョンの影響は切り分けられていません。",
+        "sourceKind": "report-body"
+      }
+    }
+  ],
+  "reviewGrammar": [
+    {
+      "pattern": "～に加えて",
+      "firstIntroducedDate": "2026-09-12",
+      "reviewEvidence": {
+        "form": "に加え",
+        "excerpt": "AgentCore Memoryのサマリー戦略は、会話の部分要約に加え、セッションごとに全体要約を一件作ります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～に応じて",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "に応じて",
+        "excerpt": "2. 入力候補の位置は、実際のフォントと現在の倍率に応じて計算し直す。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～たうえで",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "した上で",
+        "excerpt": "損失と危険な状態を整理した上で、同じ利用者と契約更新期の組に二度送信指示を出さない、という安全制約を置きました。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～をもとに",
+      "firstIntroducedDate": "2026-09-16",
+      "reviewEvidence": {
+        "form": "を基に",
+        "excerpt": "タグを基にx86_64とARM64向けにパッケージを生成します。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～たところ",
+      "firstIntroducedDate": "2026-09-15",
+      "reviewEvidence": {
+        "form": "たところ",
+        "excerpt": "送信を依頼した100人のうち80人分が受理されたところで処理が止まった場合、全体を再試行するとその80人に重ねて指示するおそれがあります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～によれば",
+      "firstIntroducedDate": "2026-08-25",
+      "reviewEvidence": {
+        "form": "によると",
+        "excerpt": "作者によると、画像の処理やMarkdown表示の外部依存を抑えたリリースバイナリは約5.1MBです。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～恐れがある",
+      "firstIntroducedDate": "2026-08-17",
+      "reviewEvidence": {
+        "form": "おそれがあります",
+        "excerpt": "送信を依頼した100人のうち80人分が受理されたところで処理が止まった場合、全体を再試行するとその80人に重ねて指示するおそれがあります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～だけで",
+      "firstIntroducedDate": "2026-10-01",
+      "reviewEvidence": {
+        "form": "だけで",
+        "excerpt": "24時間の値を一週間前と比べると、式だけで八日分の時刻を参照します。",
+        "sourceKind": "report-body"
+      }
+    }
+  ],
+  "vocabularyNote": null,
+  "grammarNote": null
+}
