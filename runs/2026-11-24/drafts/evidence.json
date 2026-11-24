@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-24",
+  "status": "reviewed",
+  "reviewedBy": "Codex local daily author",
+  "reviewedAt": "2026-11-24T01:11:07.397072+00:00",
+  "scope": "Five Japanese source articles within the locked JST window, with supplemental official corroboration where used. The evidence records original test conditions and distinguishes measurements from extrapolations.",
+  "articles": [
+    {
+      "articleId": "2026-11-24-top-1",
+      "url": "https://dev.classmethod.jp/articles/agentcore-memory-full-session-summary/",
+      "source": "DevelopersIO",
+      "topic": "会話セッションの記憶",
+      "capturedAt": "2026-11-24T01:04:54.672238+00:00",
+      "snapshotSha256": "1b0c71d38c8b2b269128acfdf1df7e594fe528de4d9a7dfd192dddaed7907d1c",
+      "accessNote": "Original DevelopersIO dialogue implementation trial.",
+      "originalTitle": "[アップデート] Amazon Bedrock AgentCore Memoryでセッション全体の要約が作られるようになりました！",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Trial in us-east-1 sent three batches of two dialogue turns. The final batch changed trip length and budget.",
+          "quote": "2往復ずつ3回に分けてイベントを送ります",
+          "locator": "旅行の相談を送る",
+          "conditions": "Single new-session flow plus two small historical samples with mixed region and date. A resumed conversation is one observed result.",
+          "usedIn": {
+            "zh": "AgentCore Memory 的同一套摘要策略现在会保存两种长期记忆。",
+            "ja": "予約の相談には、途中で変わった日程も残ります。"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Full summary record retained its identifier as content was updated. Fragment one kept its earlier conditions. The author then filtered FULL_SESSION and resumed from one summary.",
+          "quote": "レコードID（",
+          "locator": "全体要約と断片の比較",
+          "conditions": "Single new-session flow plus two small historical samples with mixed region and date. A resumed conversation is one observed result.",
+          "usedIn": {
+            "zh": "头一条片段仍记录两晚三天和每晚两万日元，后续片段另行记下变更。",
+            "ja": "全体要約は最初と同じレコードIDを保ち、三泊四日と一泊二万五千円までという条件に更新されました。",
+            "interview": "全体要約と部分要約を分けて使います。記事では三回に分けて会話を送り、日程と予算を変えると、全体要約のレコードは同じアイディーのまま更新されました。再開時はレコードの種類で全体要約だけを選び、新しい条件を渡します。ただし、古い会話では履歴が欠ける例もあったので、使う前に元の記録と照合します。"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "The two historical samples come from different regions and periods; the study did not isolate either variable.",
+          "quote": "リージョンの違いか古さの違いかまでは切り分けられていない",
+          "locator": "既存のセッションも確認してみる",
+          "conditions": "Single new-session flow plus two small historical samples with mixed region and date. A resumed conversation is one observed result.",
+          "usedIn": {
+            "zh": "旧记录的覆盖范围仍有边界。",
+            "ja": "ただし、過去の会話で内容がどこまでそろうかには留意が必要です。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "适合用来拆解代理的会话恢复，比较一次读取当前状态与按需检索片段时需要做的额外校验。",
+            "ja": "長期記憶をそのまま会話へ戻す際に、最新の合意をどの単位で渡すかを具体的に考えられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-24-top-2",
+      "url": "https://dev.classmethod.jp/articles/cloudwatch-promql-30day-query-window/",
+      "source": "DevelopersIO",
+      "topic": "長期間の可用性集計",
+      "capturedAt": "2026-11-24T01:04:54.668069+00:00",
+      "snapshotSha256": "a26a4121975faf4795fe0a3defd7dc0e3b45ebf56e9900b477dfaeb9cff176fe",
+      "accessNote": "Original DevelopersIO CloudWatch query trial.",
+      "originalTitle": "Amazon CloudWatch の PromQL でサポートされた 30 日幅のクエリを試してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "The simple Tokyo ALB range query on an account with OTel enrichment passed with 721 hourly points at 30 days and 745 at 31 days. The next second failed.",
+          "quote": "成功（721 点）",
+          "locator": "start と end の幅",
+          "conditions": "Tokyo ALB test with OTel enrichment. Query limits are for the tested arguments. ALB error population and any absent-data behavior require separate validation.",
+          "usedIn": {
+            "zh": "CloudWatch 面向 OpenTelemetry 指标的 PromQL 支持更长的查询。",
+            "ja": "可用性を月単位で見たいとき、CloudWatchのPromQLでは以前より長い結果を一度に取得できます。"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "The observed selector limit was 24 hours. Comparing the day against a seven-day offset requires eight days of input; a 23-day output fitted the observed total.",
+          "quote": "range selector は 24 時間まで指定できます",
+          "locator": "range selector の長さ／式全体の幅",
+          "conditions": "Tokyo ALB test with OTel enrichment. Query limits are for the tested arguments. ALB error population and any absent-data behavior require separate validation.",
+          "usedIn": {
+            "zh": "查询起止时间的宽度与表达式内的回看时间各有限制。",
+            "ja": "週次比較では結果の幅を決める前に式の中身を確認します。",
+            "interview": "結果を並べる期間と、式がさかのぼって読む期間を分けます。記事では三十日の範囲で七百二十一点取れましたが、一つの範囲セレクターは二十四時間まででした。週次比較では七日前まで読むので結果の幅を二十三日に絞りました。ただし、可用性を出す場合は、どのエラーを数えるかと欠測時の扱いも先に決めます。"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "The ALB example derives roughly 99.9053% and 5.3% remaining under a 99.9% SLO, using ALB 5XX and request counts across daily offset windows.",
+          "quote": "エラーバジェットの約 5.3% が残っている",
+          "locator": "可用性とエラーバジェット残量",
+          "conditions": "Tokyo ALB test with OTel enrichment. Query limits are for the tested arguments. ALB error population and any absent-data behavior require separate validation.",
+          "usedIn": {
+            "zh": "计算 30 天的 SLO 指标时，作者把三十个 24 小时窗口按天偏移，在同一评估时刻合计 RequestCount 和负载均衡器自身的 5XX。",
+            "ja": "著者は24時間窓を一日ずつずらして30日合計を作り、総リクエスト数とALBが返した5XX件数から可用性を約99.9053%と計算しました。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "一篇文章同时给出了输出时间轴、回看跨度与失败边界，适合面试时解释月底 SLO 计算为什么会触发查询上限。",
+            "ja": "同じ30日という指定でも、式が追加で読む期間によって結果が変わる理由を実測から説明できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-24-top-3",
+      "url": "https://dev.classmethod.jp/articles/amazon-cognito-mrr-osaka-replica/",
+      "source": "DevelopersIO",
+      "topic": "認証基盤のリージョン冗長化",
+      "capturedAt": "2026-11-24T01:04:54.672894+00:00",
+      "snapshotSha256": "96b62f12417595e9198fb7423f7fa53ccfb18a3ed6441f50a2668db3f9986a7b",
+      "accessNote": "Original DevelopersIO regional replication trial.",
+      "originalTitle": "Amazon Cognito のマルチリージョンレプリケーションで、東京のユーザープールのレプリカを大阪に作ってみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "The author set Essentials and a customer-managed KMS multi-region key in Tokyo, creating a copy in Osaka. Inactive replica read observed same pool ID.",
+          "quote": "フィーチャープランに ESSENTIALS",
+          "locator": "東京のユーザープールの作成",
+          "conditions": "One Essentials pool and one Osaka replica, manual activation. No primary-outage experiment or guaranteed synchronization latency.",
+          "usedIn": {
+            "zh": "为了在日本境内给 Cognito 做区域冗余，作者把东京的 Essentials 用户池复制到大阪。",
+            "ja": "東京で運用中のユーザープールに対して、大阪へレプリカを置く構成が試されました。"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "The first list query about two seconds later saw the newly added user and app client. Osaka produced tokens after activation, with Tokyo code in the issuer.",
+          "quote": "最初の取得で同期済みだった",
+          "locator": "同期確認／大阪で認証",
+          "conditions": "One Essentials pool and one Osaka replica, manual activation. No primary-outage experiment or guaranteed synchronization latency.",
+          "usedIn": {
+            "zh": "副本建立后，作者在东京再建一个用户和一个应用客户端。",
+            "ja": "レプリカ作成後に東京でユーザーとアプリクライアントを追加すると、約二秒後に行った大阪での初回取得に両方が含まれていました。",
+            "interview": "両方の地域で使える暗号化キーを用意し、大阪のレプリカで東京のユーザーを読めるか確認します。次にレプリカを有効にし、大阪のエンドポイントでログインします。記事では、ここで発行されたアイディートークンの発行者には東京のコードが含まれていました。ただし、この手順だけでは障害時の切り替え時間までは分かりません。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "The one creation measurement and one synchronization probe are observations. Only certain operations work before activation. No real primary outage was simulated.",
+          "quote": "この所要時間は1回だけ測った値です",
+          "locator": "レプリカ作成時間",
+          "conditions": "One Essentials pool and one Osaka replica, manual activation. No primary-outage experiment or guaranteed synchronization latency.",
+          "usedIn": {
+            "zh": "这次只测了一个账户的创建、同步和显式激活，副本创建约五分钟及首次列表结果都只是观测值。",
+            "ja": "ただし、反映時間は一回の試験を観測した値です。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "用一个实测把副本同步、认证可用以及令牌签发者这三件事分别讲清楚，便于列出跨区演练检查项。",
+            "ja": "ユーザーが複製された時点と、別のリージョンで認証できる時点の違いが順を追って分かります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-24-top-4",
+      "url": "https://zenn.dev/maruloop/articles/7ff108e29741b5",
+      "source": "Zenn",
+      "topic": "安全制約を用いた設計レビュー",
+      "capturedAt": "2026-11-24T01:04:54.773914+00:00",
+      "snapshotSha256": "12593ba84974ffeaa5973030838044cb06e7946cefd820c5eedb6ccc1f04578c",
+      "accessNote": "Original Zenn worked STPA example and limitations.",
+      "originalTitle": "Googleが実践するSTAMP/STPAとは何か？ 私たちのSREにも使えるのか",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "The hypothetical notice app defines loss, hazard and a safety constraint keyed by user and renewal period.",
+          "quote": "同じユーザー・契約更新期に対し",
+          "locator": "実践例／安全制御",
+          "conditions": "Fictional notification workflow and model-scoped hazards. Stakeholder judgment is required, and no measured production outcome was reported.",
+          "usedIn": {
+            "zh": "STPA 从系统需要防止的损失出发，把有危险的状态写成约束，再画出控制方、控制指令和反馈关系。",
+            "ja": "複数のバッチが仕様どおり終わっても、サービス全体では通知を送り損ねることがあります。"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Thought experiment: redoing an entire 100-person batch can repeat requests for 80 already accepted. Control-action timing and feedback are separately analyzed.",
+          "quote": "80人に送信要求を受け付けてもらった時点で異常終了する",
+          "locator": "シナリオB",
+          "conditions": "Fictional notification workflow and model-scoped hazards. Stakeholder judgment is required, and no measured production outcome was reported.",
+          "usedIn": {
+            "zh": "在这套模型里，发送未完成、发送太早以及已发状态不明时重发，都是要检查的危险控制动作。",
+            "ja": "分析の中心は、誰が指示を出し、結果をどう受け取るかです。",
+            "interview": "同じユーザーと更新時期の組に、通知を二度出さないという制約を置きます。次に、百人のうち八十人分が受理されたところで処理が止まる場合を考えます。対象者と送信を指示した相手、配信基盤が受理した相手を別々に記録できれば、続きから送れます。ただし、応答が戻らない場合は、受理されたかを確認してから再試行します。"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Three sets are distinguished for monitoring, including provider acceptance. Stakeholders choose tradeoffs and the model leaves scope limitations.",
+          "quote": "期待した対象者集合、実際に送信を指示した集合",
+          "locator": "シナリオD／STAMP/STPAにも課題",
+          "conditions": "Fictional notification workflow and model-scoped hazards. Stakeholder judgment is required, and no measured production outcome was reported.",
+          "usedIn": {
+            "zh": "建议的观察量有三份集合：预计应通知的人、实际发出指令的人、以及投递平台已受理的人。",
+            "ja": "記事では、送るべき対象、指示した対象、配信基盤が受理した対象を分けて記録する案が示されました。"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "把全绿的作业状态拆成可核对的名单和反馈，让设计评审能找到跨作业的漏发、误发与重发。",
+            "ja": "ジョブの成功だけを見ていては拾えない不具合を、業務の制約とフィードバックから探せます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-24-top-5",
+      "url": "https://qiita.com/Tamane/items/f67fb1745ad81480f75f?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "source": "Qiita",
+      "topic": "エディタの操作とIME統合",
+      "capturedAt": "2026-11-24T01:04:55.003929+00:00",
+      "snapshotSha256": "e0e0db7b8a2f1834c0b7645251af3050052190be5bd5f8b9b5b1f0cb1976d906",
+      "accessNote": "Original Qiita implementation by the editor author.",
+      "originalTitle": "伝説の「VZ Editor」を Rust + egui で現代の Linux (x86_64 / ARM64) 向けに蘇らせた話",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Original author implements an ESC switch between editor and the dual-pane file manager in a native Rust GUI.",
+          "quote": "キーひとつでエディタと 2画面ファイラーを瞬時に往来",
+          "locator": "VZ キーバインド",
+          "conditions": "Author’s release build and geometry design. Specific Markdown and input-method compatibility depends on the environment.",
+          "usedIn": {
+            "zh": "LZ Editor 用 Rust 和 eframe/egui 在 Linux 上实现了 VZ 风格的键盘编辑。",
+            "ja": "LZ Editorの作者は、VZのキー操作を現代のLinuxで使いたいと考え、eframeとeguiを使ってエディタを作りました。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Recompute line height, gutter and cursor position with measured fonts. Each frame forwards the caret rect and app identity is separately configured.",
+          "quote": "現在のフォントサイズと実フォント計測値から行高さ",
+          "locator": "日本語入力の変換候補位置追従",
+          "conditions": "Author’s release build and geometry design. Specific Markdown and input-method compatibility depends on the environment.",
+          "usedIn": {
+            "zh": "字号从 10 到 36 点变化时，输入法候选框需要跟着插入点移动。",
+            "ja": "日本語変換の候補を文字の近くに出すには、拡大した後も入力位置が正しく伝わる必要があります。",
+            "interview": "現在のフォントを計測して、行の高さと行番号欄の幅を取り直します。記事では、その値で入力カーソルの矩形を毎フレーム更新し、エグイに渡していました。画面を拡大した後に日本語を入力し、候補が文字の近くに出るかを確認します。ただし、表示環境と入力方式の組み合わせが違うと動きも変わるので、実機で試します。"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Reported release build is about 5.1 MB with a custom lightweight Markdown parser. Tag-driven packaging targets x86_64 and ARM64. No comparative compatibility benchmark.",
+          "quote": "5.1 MB",
+          "locator": "単一バイナリ／マルチパッケージ",
+          "conditions": "Author’s release build and geometry design. Specific Markdown and input-method compatibility depends on the environment.",
+          "usedIn": {
+            "zh": "原文给出的发布构建约 5.1 MB，图标和轻量 Markdown 解析采用自有实现，GitHub Actions 打包 x86_64 和 ARM64 的 Linux 版本。",
+            "ja": "作者によると、画像の処理やMarkdown表示の外部依存を抑えたリリースバイナリは約5.1MBです。"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "把键盘手感落实成焦点、字体几何和应用身份三个可以独立验证的实现细节。",
+            "ja": "キーボードの操作感を再現する作業から、デスクトップ環境へ入力位置やアプリの識別子を伝える設計まで読めます。"
+          }
+        }
+      ]
+    }
+  ]
+}
