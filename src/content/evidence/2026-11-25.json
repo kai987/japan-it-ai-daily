@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-25",
+  "status": "reviewed",
+  "reviewedBy": "Codex local daily author",
+  "reviewedAt": "2026-11-25T01:08:39.583533+00:00",
+  "scope": "Five Japanese source articles within the locked JST window, with supplemental official corroboration where used. The evidence records original test conditions and distinguishes measurements from extrapolations.",
+  "articles": [
+    {
+      "articleId": "2026-11-25-top-1",
+      "url": "https://dev.classmethod.jp/articles/aws-appconfig-native-ai-model-invocation-prompt-configurations/",
+      "source": "DevelopersIO",
+      "topic": "生成AIの構成配信",
+      "capturedAt": "2026-11-25T01:03:39.408459+00:00",
+      "snapshotSha256": "901f40ee824ac29d562bc26b9f0438ba9267450d76f3898f0a6ac3a66c931ad5",
+      "accessNote": "Original AWS AppConfig hands-on test.",
+      "originalTitle": "[アップデート] AWS AppConfig で AI のモデル設定とプロンプトを管理できるようになったので使ってみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Two profiles hold prompt text and model invocation fields. The console example includes a model ID, general inference parameters and custom parameters.",
+          "quote": "AI prompt configuration",
+          "locator": "構成プロファイル",
+          "conditions": "Console/profile and Data API experiment. The missing model result is bounded to persistence, not deployment or runtime.",
+          "usedIn": {
+            "zh": "在代码里写死模型和系统提示词时，修改一个值也可能触发应用重新构建。",
+            "ja": "モデルを切り替えるたびにアプリを配り直す運用を見直すため、著者はAppConfigの新しい構成プロファイルを試しました。"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "After deploying the updated prompt, the author retrieved version 2 via the Data API. App-side use is required.",
+          "quote": "バージョン 2 の内容を取得できました",
+          "locator": "デプロイ戦略／Data API",
+          "conditions": "Console/profile and Data API experiment. The missing model result is bounded to persistence, not deployment or runtime.",
+          "usedIn": {
+            "zh": "作者在管理控制台创建了两类档案，实际将提示词升级到版本 2，并以应用侧方式调用 Data API，成功拿到新版文本。",
+            "ja": "コンソールで設定を作り、プロンプトだけを第2版にして配信したところ、読み手を模したData APIの呼び出しで第2版を取得できました。",
+            "interview": "プロンプトの本文と、モデル名や温度を持つ呼び出し設定を分けて管理します。記事ではプロンプトだけを第二版にし、データエーピーアイで読み直せました。私ならアプリが読み込んだ版を記録し、その設定で推論まで試します。ただし、必須のモデル名を省いても保存できた例があるので、登録成功だけで有効とは判断しません。"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "In the author’s console observation a JSON without model persisted despite documentation. No claim that deployment or model invocation accepts it.",
+          "quote": "を省いた JSON もなんか登録できました",
+          "locator": "仕様と実際の登録挙動",
+          "conditions": "Console/profile and Data API experiment. The missing model result is bounded to persistence, not deployment or runtime.",
+          "usedIn": {
+            "zh": "原文还记录了一处限制：文档将 model 列为必填，但在作者尝试的注册环节，缺少 model 的 JSON 仍可保存并读回。",
+            "ja": "ただし、モデルを実際に呼び出すのは設定を受け取ったアプリです。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "可拿来讨论模型参数如何小步发布，以及谁负责从配置合法性一路验证到真正的推理。",
+            "ja": "プロンプトの変更を試す際に、配信と読み取りの間にどんな確認を置くべきかが分かります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-25-top-2",
+      "url": "https://dev.classmethod.jp/articles/aws-cdk-blocks-ga-hands-on/",
+      "source": "DevelopersIO",
+      "topic": "ローカル実行とクラウド展開",
+      "capturedAt": "2026-11-25T01:03:39.395410+00:00",
+      "snapshotSha256": "b959cddf1b5b4bfbb51db14118d2dcb5d32008192a9fdc367367a6d49e4e7bc5",
+      "accessNote": "Original CDK Blocks hands-on test.",
+      "originalTitle": "GA になった AWS CDK Blocks を試してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "The experiment used Node 22 in Docker and Tokyo sandbox. Local storage and queue differ from deployed AWS resources.",
+          "quote": "ローカルではファイル、AWS では DynamoDB テーブル",
+          "locator": "KVStore／AsyncJob",
+          "conditions": "Node 22 locally, Tokyo AWS sandbox. Fault sequences are local; deployed attributes and nominal execution observed separately.",
+          "usedIn": {
+            "zh": "CDK Blocks 将 CDK 构件、应用连接代码和本地实现打包在一起。",
+            "ja": "CDK Blocksを使うと、開発用の実装とAWSで使う構成を同じBlockから選べます。"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Local success/retry/failure cases establish behavior at three deliveries. Synth and deployed queue attribute maxReceiveCount agree.",
+          "quote": "最初の配信を含む総配信回数",
+          "locator": "ローカル実行／cdk synth",
+          "conditions": "Node 22 locally, Tokyo AWS sandbox. Fault sequences are local; deployed attributes and nominal execution observed separately.",
+          "usedIn": {
+            "zh": "测试作者分别提交一次成功、先失败两次再成功、以及持续失败的作业。",
+            "ja": "手元では、すぐ終わるジョブ、二度失敗するジョブ、失敗し続けるジョブを順に投入しました。",
+            "interview": "手元のキューで、二回失敗して三回目に成功するジョブと、失敗し続けるジョブを流します。三回という上限には最初の配信も含まれ、全部失敗した例はデッドレターキューに移りました。クラウドではエスキューエスの最大受信回数を確認します。ただし、手元で通ったことだけで、クラウドでの再配信の間隔までは分かりません。"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Cloud tested nominal cases; two helper log groups remained after sandbox deletion. Production presets can retain tables and buckets.",
+          "quote": "ロググループが残りました",
+          "locator": "AWS で実行／撤去",
+          "conditions": "Node 22 locally, Tokyo AWS sandbox. Fault sequences are local; deployed attributes and nominal execution observed separately.",
+          "usedIn": {
+            "zh": "云端案例验证了正常作业、键值读写和自定义块的结果。",
+            "ja": "AWSのサンドボックスでは正常系のジョブやキーの読み書きが動きました。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "用同一个作业例子串起本地模拟、生成模板与云端实物，方便说明抽象层以下要验证什么。",
+            "ja": "ローカルで作業を素早く確認し、その後どの設定をクラウドで確かめるか具体化できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-25-top-3",
+      "url": "https://dev.classmethod.jp/articles/reona-ladybird-alpha-macos/",
+      "source": "DevelopersIO",
+      "topic": "ブラウザの互換性と応答測定",
+      "capturedAt": "2026-11-25T01:03:39.427957+00:00",
+      "snapshotSha256": "aa8b662c1ae8a194bd7893fc153c87053becb363265c7f68bb7b51a21214fd9d",
+      "accessNote": "Original browser author benchmark and observed compatibility.",
+      "originalTitle": "Ladybird の Alpha 版が出たので macOS で Chrome、Safari と比べてみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "WebDriver samples advanced; the GUI separately confirmed picture and sound in the observed setup.",
+          "quote": "再生位置は 5 秒ごとに 5 秒ずつ進み",
+          "locator": "表示／YouTube",
+          "conditions": "Single host on early browser builds, only a few tested pages, three runs and differing execution modes.",
+          "usedIn": {
+            "zh": "作者在 Apple Silicon 的 macOS 环境中尝试 Ladybird 首个 Alpha。",
+            "ja": "独自のブラウザエンジンを持つLadybirdの初期版を、著者がmacOSで試しました。"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "Median 21.7 for Ladybird, 51.3 Safari and 60.6 Chrome; Safari used a window.",
+          "quote": "3 つのブラウザで 3 回ずつ",
+          "locator": "Speedometer 3.1",
+          "conditions": "Single host on early browser builds, only a few tested pages, three runs and differing execution modes.",
+          "usedIn": {
+            "zh": "同一天各运行三次 Speedometer 3.1，Ladybird Alpha 2026.47.7 的中位数为 21.7，Safari 27.2 为 51.3，Chrome 158 为 60.6。",
+            "ja": "三つのブラウザを同じ日に三回ずつSpeedometer 3.1にかけた結果、中央値はLadybirdが21.7、Safariが51.3、Chromeが60.6でした。",
+            "interview": "実際のサイトを開き、文字の表示や動画の再生を確かめます。記事では動画の再生位置を五秒おきに取り、画面と音も別に確認しました。スピードメーターは各ブラウザで三回実行して中央値を使っています。ただし、サファリだけウィンドウを開いていたので条件を記録し、得点だけで遅い処理を決めつけません。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "A composite benchmark is not a diagnosis of specific code. The alpha has known compatibility limitations; site tests are bounded.",
+          "quote": "どの部分の差が大きいのかはこのスコアからは分かりません",
+          "locator": "速さ／触ってみた感想",
+          "conditions": "Single host on early browser builds, only a few tested pages, three runs and differing execution modes.",
+          "usedIn": {
+            "zh": "真实站点测试中，多数所选页面能显示，也观察到了含文字广告的编码问题。",
+            "ja": "試した範囲ではページの多くが表示できましたが、広告の文字が化ける例も出ています。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "既有带条件的可复核测量，也有页面与视频验证，适合做跨引擎验收的讨论。",
+            "ja": "Web標準の試験数、応答のベンチマーク、実際の閲覧で得られる判断材料を分けて読めます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-25-top-4",
+      "url": "https://zenn.dev/kentaro_tak/articles/mcp-logger-append-only-corrections",
+      "source": "Zenn",
+      "topic": "訂正可能な記録と集計",
+      "capturedAt": "2026-11-25T01:03:39.480567+00:00",
+      "snapshotSha256": "3d1ffec97053f456a5cef774b55a409b5e9a6a7c39d14007cc7ef9d66957c75f",
+      "accessNote": "Original Zenn controlled recording experiment.",
+      "originalTitle": "MCPの記録ツールを追記だけで作ると、訂正のたびに重複が残る。AIは「消せない」と正直に言うが、集計は間違える",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Three model x three write modes x three runs using restricted MCP with SQLite. New chat for read-back.",
+          "quote": "全部で27回試した",
+          "locator": "試し方",
+          "conditions": "Small controlled sample, three Claude models and one simple correction task. No concurrency or generalized key design findings.",
+          "usedIn": {
+            "zh": "原文作者重建了一个只允许通过 MCP 工具访问的 SQLite 记录器，以测试更正能否真正落库。",
+            "ja": "日々の記録を残すMCPツールに、後から間違いを直す役割を持たせる実験です。"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Append only produced an incorrect SQL count in all nine runs. Eight later chats interpreted note correctly; both alternatives repaired all nine.",
+          "quote": "①では、9回とも「◯の日」が1日多く数えられた",
+          "locator": "結果／集計",
+          "conditions": "Small controlled sample, three Claude models and one simple correction task. No concurrency or generalized key design findings.",
+          "usedIn": {
+            "zh": "作者检查数据库中是否只剩更正后的单行，并用 SQL 检查统计值。",
+            "ja": "訂正を依頼した後、結果を返答で判断せず、正しい内容の行が一つだけ残ったかを数えています。",
+            "interview": "日付と種類で一件に決まる記録なら、前の値を置き換えるようにします。記事では追記だけの九回は全部、集計が一日多くなりました。別の会話で正しく答えた場合もあったので、私は保存先に正しい一行だけ残り、エスキューエルの件数も直ることを確かめます。ただし、一日に複数ある記録には別の識別子を使います。"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Date and category uniquely identify some records. Multi-entry categories require different identity or correction semantics; no concurrent-write validation.",
+          "quote": "1日に何件あってもいい",
+          "locator": "置き換えられない記録",
+          "conditions": "Small controlled sample, three Claude models and one simple correction task. No concurrency or generalized key design findings.",
+          "usedIn": {
+            "zh": "这项实验的适用条件是日期和类别能唯一定位要改的那条记录。",
+            "ja": "ただし、置き換えは訂正する対象が日付と種類の組で一意に決まる場合の案です。"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "把模型口头说明、数据库状态和聚合结果都纳入验收，能发现只看代理回答时漏掉的错误。",
+            "ja": "AIの返答だけで記録の修正を確かめる危うさが、行の状態と集計を比べることで分かります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-25-top-5",
+      "url": "https://qiita.com/har1101/items/a6e5f0d2039bd0932511?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items",
+      "source": "Qiita",
+      "topic": "イメージ取得とプライベート接続",
+      "capturedAt": "2026-11-25T01:03:39.558300+00:00",
+      "snapshotSha256": "d7186e3bd356079d64b495d46fcf7052eabc6bbe0be1738a2308682271663678",
+      "accessNote": "Original Qiita ECS troubleshooting writeup.",
+      "originalTitle": "ECR/S3からのimage pullの仕組みを深掘りする",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "Private ECS deployment already configured ECR endpoints; after registry metadata retrieval actual image layers are downloaded from S3 using the returned signed location.",
+          "quote": "その後実際のイメージレイヤーをダウンロードするためにAmazon S3",
+          "locator": "ECRとS3",
+          "conditions": "One ECS incident with private connectivity. Address comparison and route diagnosis are observed; a post-fix run is not reported.",
+          "usedIn": {
+            "zh": "作者在私有子网启动 ECS 任务时遇到容器镜像拉取超时。",
+            "ja": "プライベートサブネットのECSタスクがイメージを取得できず、著者はタイムアウトの行き先を調べました。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "The timeout destination was in the Tokyo S3 ranges. The author identifies route-table prefix and task outbound checks as distinct from private DNS for ECR.",
+          "quote": "東京リージョンのS3パブリックIPレンジの中",
+          "locator": "結論／IPアドレスの照合",
+          "conditions": "One ECS incident with private connectivity. Address comparison and route diagnosis are observed; a post-fix run is not reported.",
+          "usedIn": {
+            "zh": "作者将超时目的地址与 AWS 公布的东京地址段核对，发现它属于 S3。",
+            "ja": "表示された宛先は、AWSの公開一覧にある東京のS3アドレスの範囲でした。",
+            "interview": "まず、失敗した接続先をログで見ます。イーシーアールで目次を受け取っても、実際のレイヤーは署名付きのユーアールエルを使ってエススリーから取ります。記事では、タイムアウト先が東京のエススリーの範囲でした。ルートとタスクの送信許可を見直します。ただし、修正後に同じ条件で起動できるところまで確認します。"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Diagnosis and address verification reported; no post-change controlled measurement or explicit verified rerun included.",
+          "quote": "ゲートウェイVPCエンドポイント近辺でのエラー",
+          "locator": "結論とまとめ",
+          "conditions": "One ECS incident with private connectivity. Address comparison and route diagnosis are observed; a post-fix run is not reported.",
+          "usedIn": {
+            "zh": "这个案例的限制是只确认了错误地址和配置原因，原文没有给出修改后再次拉取的测量结果。",
+            "ja": "ただし、記事が示したのは通信の失敗箇所を絞った根拠です。"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "把镜像元数据和大文件下载拆开定位，解释了为什么注册表可访问时任务仍可能启动失败。",
+            "ja": "ECRへ名前解決できるかの確認から一歩進めて、レイヤーが届くまでの経路を考えられます。"
+          }
+        }
+      ]
+    }
+  ]
+}
