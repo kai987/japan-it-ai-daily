@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-25",
+  "generatedAt": "2026-11-25T01:24:30.785Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "AppConfigでプロンプトの変更を配るとき、何を確認しますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "b01d0074c736fbac6c3dfa000714e192e09e394fa5d668c74d7b2f0ce81128bc",
+      "audioSha256": "bad009239a44e00367b57df9334d7c93391c7f08572e27c11c04cbc6e48117df",
+      "durationSeconds": 5.211
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "プロンプトの本文と、モデル名や温度を持つ呼び出し設定を分けて管理します。記事ではプロンプトだけを第二版にし、データエーピーアイで読み直せました。私ならアプリが読み込んだ版を記録し、その設定で推論まで試します。ただし、必須のモデル名を省いても保存できた例があるので、登録成功だけで有効とは判断しません。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "d2e4061c3017b15dccb068d399787032875c3bd885e3e3e0f96eed5f8be6748d",
+      "audioSha256": "08d948a7fcacde087c1dc1d918de49592b5a3fb1c9c3a6ed814fc78f33f6776b",
+      "durationSeconds": 23.982,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "CDK Blocksでジョブを作るとき、手元とAWSで何を試しますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "64cb803447c087a954164d833f99d2744a92491e4c1d3e08efbd55d39d8177ab",
+      "audioSha256": "d3d0884780a034a0ab08ba7393e270b66165642fde1c920b68b751a85d1be192",
+      "durationSeconds": 6.164
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "手元のキューで、二回失敗して三回目に成功するジョブと、失敗し続けるジョブを流します。三回という上限には最初の配信も含まれ、全部失敗した例はデッドレターキューに移りました。クラウドではエスキューエスの最大受信回数を確認します。ただし、手元で通ったことだけで、クラウドでの再配信の間隔までは分かりません。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "7e40912197c9c7d2ee24863cc88cf8e0550859c1c34b5b060e4d020f2d22a865",
+      "audioSha256": "762d0471d2cb5d4a67b0d5a080df9d29c849daef2ebfa0a4f10de76091623c4b",
+      "durationSeconds": 24.148,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "Ladybirdのような新しいブラウザを、既存のブラウザとどう比べますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "a46da0cc14be05aaeae2a8267d6756295868d9514070e3fa5b1ce3cb11a59ec4",
+      "audioSha256": "ce8a6b47ccc5e3d09eca47780c69bb759047c66fb028087f084c979b49bac6b2",
+      "durationSeconds": 5.316
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "実際のサイトを開き、文字の表示や動画の再生を確かめます。記事では動画の再生位置を五秒おきに取り、画面と音も別に確認しました。スピードメーターは各ブラウザで三回実行して中央値を使っています。ただし、サファリだけウィンドウを開いていたので条件を記録し、得点だけで遅い処理を決めつけません。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "2b6ce94ef749ff456afd623ba6387fc7d87c24554f0748444c7f5e6788542c7d",
+      "audioSha256": "cca5383841b5a7201f8f20d84656be65d5669fa5db11f10df18dbc9f4c7dcf3c",
+      "durationSeconds": 23.267,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "MCPの記録ツールで訂正が反映されたか、何を見ますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "7ce43020de760aabace5d45d67b6d7290d1d9c335e21639b1584dd9e7fc56477",
+      "audioSha256": "483b2d72c7492216938989a4b0722b88a20f0d61d9ddfaeaa82ec860e7803d96",
+      "durationSeconds": 5.096
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "日付と種類で一件に決まる記録なら、前の値を置き換えるようにします。記事では追記だけの九回は全部、集計が一日多くなりました。別の会話で正しく答えた場合もあったので、私は保存先に正しい一行だけ残り、エスキューエルの件数も直ることを確かめます。ただし、一日に複数ある記録には別の識別子を使います。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "ca808cb2b818b01ff3a8fdcd6750a623247d5090c8a82b68a1f0fca0f4e8a1bc",
+      "audioSha256": "044325431417453749fccd75631839b7a1fde691b9300362aaddc085073e615a",
+      "durationSeconds": 24.949,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "プライベートサブネットのECSでイメージの取得が止まったら、どこを見ますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "5d8c698e2547cf48751afed96165af397875ca994b292cd15260e7b972975017",
+      "audioSha256": "3e5f47d6c48a0d2ce12027011b56e9c4e953a93c8fd4db997148acf83927f4ba",
+      "durationSeconds": 5.607
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "まず、失敗した接続先をログで見ます。イーシーアールで目次を受け取っても、実際のレイヤーは署名付きのユーアールエルを使ってエススリーから取ります。記事では、タイムアウト先が東京のエススリーの範囲でした。ルートとタスクの送信許可を見直します。ただし、修正後に同じ条件で起動できるところまで確認します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "aa83d3e5bc9ae8df5297b57fd7a6e049afccf45cf949b45efff4c4ff8a5b3c5b",
+      "audioSha256": "e72415f113ef4888fd69ccf0b37ad36986a551bde3f4105fefc409a888ec7247",
+      "durationSeconds": 23.439,
+      "durationStatus": "warn"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "更新を受け付けたという表示のあとに、何を試しますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "fda131f0685f9df317ea17b69bc87a9e3341ec4a8accc08635494f5ae6f79296",
+      "audioSha256": "c983b5e39489be428a645bf1ffca799fdaf10942195d2ba64357954467fe1e78",
+      "durationSeconds": 4.269
+    },
+    {
+      "index": 2,
+      "text": "手元で見た動きが本番でも起こるか、どう確認しますか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "e4968fe91cbc8bb38ca0a963e7fdae693b9330e6b0725132e2eea779ea41466d",
+      "audioSha256": "8de679625f1e82b985482d18f3f10a61d30f8d301c7f23dc19b848fb26c386a0",
+      "durationSeconds": 4.841
+    },
+    {
+      "index": 3,
+      "text": "一つの観測値から判断できる範囲を、どう伝えますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "cc9e8b057f07fb8b835b2daa34571eb588b0b61f1a2a456c32a58584bb06f234",
+      "audioSha256": "d58ee0f265c5f9d8aaf0178a78d91342fa81a4ff95fba1fe494770d5430c8609",
+      "durationSeconds": 4.422
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      20,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-25T01:24:33.838Z"
+}
