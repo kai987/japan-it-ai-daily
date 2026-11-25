@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-25",
-  "stage": "drafts_ready",
+  "stage": "preflight_passed",
   "sourceCommit": "b032c662ae356d590eb2c3c6a00db1ef3e5fc54c",
   "sourceWindow": {
     "from": "2026-11-24T10:00:00+09:00",
     "to": "2026-11-25T10:00:00+09:00"
   },
   "createdAt": "2026-11-25T01:03:57.172Z",
-  "updatedAt": "2026-11-25T01:11:51.050Z",
+  "updatedAt": "2026-11-25T01:16:04.170Z",
   "completedArtifacts": [
     {
       "path": "runs/2026-11-25/checks.json",
@@ -56,5 +56,8 @@
     }
   ],
   "lastError": null,
-  "nextAction": "Push exact six-file draft and wait for successful preflight"
+  "nextAction": "Save and submit exact source-bound publication request",
+  "draftCommit": "ac73d8b06f317b8fd38354abc77c8d01498acd97",
+  "preflightRunId": 45523964377,
+  "preflightWorkflowPath": ".github/workflows/deploy.yml"
 }
