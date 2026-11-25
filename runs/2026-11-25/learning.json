@@ -1,0 +1,361 @@
+{
+  "targetDate": "2026-11-25",
+  "issueNumber": 106,
+  "totalDays": 106,
+  "newVocabulary": [
+    {
+      "term": "寄付",
+      "reading": "きふ",
+      "level": "N3",
+      "partOfSpeech": "名詞・サ変他動詞",
+      "collocations": [
+        "寄付を募る",
+        "寄付を受け付ける",
+        "団体に寄付する"
+      ],
+      "exampleJa": "開発を続けられるよう、利用者から寄付を募っています。",
+      "meaning": "団体や事業を助けるために、お金や品物を提供することです。",
+      "note": "独自ブラウザの運営を支える資金の種類として出てきます。",
+      "exampleMeaning": "開発の費用をまかなうため、使っている人にお金を出してもらうよう呼びかけています。",
+      "nuance": "「寄贈」は本など具体的な物品を贈る場面にもよく使われます。「寄付」は金銭による支援にも自然です。",
+      "studyKind": "new",
+      "identity": "寄付",
+      "firstIntroducedDate": "2026-11-25",
+      "lexicalIdentity": "寄付",
+      "lexicalFirstIntroducedDate": "2026-11-25",
+      "reportFrequency": {
+        "appearedDays": 1,
+        "totalDays": 106,
+        "percent": 0.9,
+        "appearedDates": [
+          "2026-11-25"
+        ],
+        "appearanceForms": {
+          "2026-11-25": "寄付"
+        }
+      }
+    },
+    {
+      "term": "化ける",
+      "reading": "ばける",
+      "level": "N1",
+      "partOfSpeech": "一段自動詞",
+      "collocations": [
+        "文字が化ける",
+        "記号が別の文字に化ける",
+        "思わぬ形に化ける"
+      ],
+      "exampleJa": "古いファイルを別の文字コードで開くと、一部の記号が化けます。",
+      "meaning": "別の姿や形になることです。文字の話では、意図と異なる文字に見えることを指します。",
+      "note": "ウェブページの文字が想定どおりに表示されない問題に使っています。",
+      "exampleMeaning": "古いファイルの読み方を変えると、元と違う記号が見えることがあります。",
+      "nuance": "「変わる」は変化一般に使えます。「化ける」は姿が大きく変わったり、予期しない見え方になったりする場面に合います。",
+      "studyKind": "new",
+      "identity": "化ける",
+      "firstIntroducedDate": "2026-11-25",
+      "lexicalIdentity": "化ける",
+      "lexicalFirstIntroducedDate": "2026-11-25",
+      "reportFrequency": {
+        "appearedDays": 2,
+        "totalDays": 106,
+        "percent": 1.9,
+        "appearedDates": [
+          "2026-08-23",
+          "2026-11-25"
+        ],
+        "appearanceForms": {
+          "2026-08-23": "化ける",
+          "2026-11-25": "化ける"
+        }
+      }
+    },
+    {
+      "term": "引く",
+      "reading": "ひく",
+      "level": "N5/N4",
+      "partOfSpeech": "五段他動詞",
+      "collocations": [
+        "辞書を引く",
+        "索引を引く",
+        "DNSを引く"
+      ],
+      "exampleJa": "接続を調べるため、まずその名前を社内のDNSで引きました。",
+      "meaning": "この用法では、辞書や参照先を使って必要な項目の情報を求めることです。",
+      "note": "サービスの名前をDNSで問い合わせ、対応するIPアドレスを得る場面です。",
+      "exampleMeaning": "どこに接続する名前か調べるため、社内のDNSへ問い合わせました。",
+      "nuance": "「引っ張る」は物を手前へ動かす語です。「辞書を引く」のような参照の用法にはそのまま置き換えられません。",
+      "studyKind": "new",
+      "identity": "引く",
+      "firstIntroducedDate": "2026-11-25",
+      "lexicalIdentity": "引く",
+      "lexicalFirstIntroducedDate": "2026-11-25",
+      "reportFrequency": {
+        "appearedDays": 13,
+        "totalDays": 106,
+        "percent": 12.3,
+        "appearedDates": [
+          "2026-09-17",
+          "2026-09-20",
+          "2026-09-29",
+          "2026-10-01",
+          "2026-10-06",
+          "2026-10-07",
+          "2026-10-13",
+          "2026-10-21",
+          "2026-10-24",
+          "2026-11-15",
+          "2026-11-16",
+          "2026-11-18",
+          "2026-11-25"
+        ],
+        "appearanceForms": {
+          "2026-09-17": "引く",
+          "2026-09-20": "引く",
+          "2026-09-29": "引く",
+          "2026-10-01": "引く",
+          "2026-10-06": "引く",
+          "2026-10-07": "引く",
+          "2026-10-13": "引く",
+          "2026-10-21": "引く",
+          "2026-10-24": "引く",
+          "2026-11-15": "引く",
+          "2026-11-16": "引く",
+          "2026-11-18": "引く",
+          "2026-11-25": "引く"
+        }
+      }
+    }
+  ],
+  "newGrammar": [],
+  "reviewVocabulary": [
+    {
+      "term": "ただし",
+      "firstIntroducedDate": "2026-09-07",
+      "reviewEvidence": {
+        "form": "ただし",
+        "excerpt": "ただし、モデルを実際に呼び出すのは設定を受け取ったアプリです。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "判断する",
+      "firstIntroducedDate": "2026-08-13",
+      "reviewEvidence": {
+        "form": "判断",
+        "excerpt": "応答の速さの差を一つの処理へ帰属させたり、すべてのサイトでの利用を判断したりはできません。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "実行する",
+      "firstIntroducedDate": "2026-08-15",
+      "reviewEvidence": {
+        "form": "実行",
+        "excerpt": "合成スコアには、JavaScriptの実行に加えて画面の要素を更新する処理やレイアウトも含まれます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "評価する",
+      "firstIntroducedDate": "2026-08-15",
+      "reviewEvidence": {
+        "form": "評価",
+        "excerpt": "二つの設定に別々の配信戦略を使えるため、適用した版をアプリの記録から確認できるようにしておくと、評価を進めやすくなります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "運用",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "運用",
+        "excerpt": "モデルを切り替えるたびにアプリを配り直す運用を見直すため、著者はAppConfigの新しい構成プロファイルを試しました。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "構成",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "構成",
+        "excerpt": "モデルを切り替えるたびにアプリを配り直す運用を見直すため、著者はAppConfigの新しい構成プロファイルを試しました。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "仕組み",
+      "firstIntroducedDate": "2026-09-03",
+      "reviewEvidence": {
+        "form": "仕組み",
+        "excerpt": "レジストリからマニフェストを受け取った後、実際のレイヤーは署名付きURLでS3から取る仕組みです。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "接続する",
+      "firstIntroducedDate": "2026-08-28",
+      "reviewEvidence": {
+        "form": "接続",
+        "excerpt": "> まず、失敗した接続先をログで見ます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "生成する",
+      "firstIntroducedDate": "2026-08-27",
+      "reviewEvidence": {
+        "form": "生成",
+        "excerpt": "生成したAWSテンプレートと本物のSQSでも最大受信回数三回が一致しました。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "手順",
+      "firstIntroducedDate": "2026-11-20",
+      "reviewEvidence": {
+        "form": "手順",
+        "excerpt": "関連プロジェクト例: ECSの起動トラブルに備え、ECRの応答とS3レイヤーへの接続を段階別に確認する手順を作る。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "経路",
+      "firstIntroducedDate": "2026-08-17",
+      "reviewEvidence": {
+        "form": "経路",
+        "excerpt": "S3のゲートウェイエンドポイントを使う経路はルートテーブルで決まり、タスクの送信ルールにもサービスのプレフィックスを許可する必要があります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "確かめる",
+      "firstIntroducedDate": "2026-09-10",
+      "reviewEvidence": {
+        "form": "確かめる",
+        "excerpt": "設定を作って終わりにせず、利用側が取得した値や、処理後のデータから動きを確かめる記事を選びました。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "扱う",
+      "firstIntroducedDate": "2026-09-22",
+      "reviewEvidence": {
+        "form": "扱う",
+        "excerpt": "注記で人が理解できる記録でも、集計プログラムが扱う値は別です。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "照合する",
+      "firstIntroducedDate": "2026-08-26",
+      "reviewEvidence": {
+        "form": "照合する",
+        "excerpt": "| クラウド開発 | 手元の結果とデプロイ先の設定を照合する |",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "適用する",
+      "firstIntroducedDate": "2026-08-16",
+      "reviewEvidence": {
+        "form": "適用",
+        "excerpt": "二つの設定に別々の配信戦略を使えるため、適用した版をアプリの記録から確認できるようにしておくと、評価を進めやすくなります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "根拠",
+      "firstIntroducedDate": "2026-08-17",
+      "reviewEvidence": {
+        "form": "根拠",
+        "excerpt": "ただし、記事が示したのは通信の失敗箇所を絞った根拠です。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "term": "まれ",
+      "firstIntroducedDate": "2026-10-22",
+      "reviewEvidence": {
+        "form": "まれ",
+        "excerpt": "合成スコアには、JavaScriptの実行に加えて画面の要素を更新する処理やレイアウトも含まれます。",
+        "sourceKind": "report-body"
+      }
+    }
+  ],
+  "reviewGrammar": [
+    {
+      "pattern": "～に加えて",
+      "firstIntroducedDate": "2026-09-12",
+      "reviewEvidence": {
+        "form": "に加えて",
+        "excerpt": "合成スコアには、JavaScriptの実行に加えて画面の要素を更新する処理やレイアウトも含まれます。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～たうえで",
+      "firstIntroducedDate": "2026-08-12",
+      "reviewEvidence": {
+        "form": "た上で",
+        "excerpt": "2. 動画は再生位置を見た上で、必要なら画面と音も人が確かめる。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～たところ",
+      "firstIntroducedDate": "2026-09-15",
+      "reviewEvidence": {
+        "form": "たところ",
+        "excerpt": "コンソールで設定を作り、プロンプトだけを第2版にして配信したところ、読み手を模したData APIの呼び出しで第2版を取得できました。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～だけで",
+      "firstIntroducedDate": "2026-10-01",
+      "reviewEvidence": {
+        "form": "だけで",
+        "excerpt": "読む価値: AIの返答だけで記録の修正を確かめる危うさが、行の状態と集計を比べることで分かります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～ごとに",
+      "firstIntroducedDate": "2026-11-16",
+      "reviewEvidence": {
+        "form": "ごとに",
+        "excerpt": "異なる箇所ごとに時刻、状態、対象の版を確認し、確かめていない条件も記録して次の試験に残します。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～べきだ",
+      "firstIntroducedDate": "2026-09-10",
+      "reviewEvidence": {
+        "form": "べき",
+        "excerpt": "読む価値: プロンプトの変更を試す際に、配信と読み取りの間にどんな確認を置くべきかが分かります。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～わりに",
+      "firstIntroducedDate": "2026-10-24",
+      "reviewEvidence": {
+        "form": "わりに",
+        "excerpt": "設定を作って終わりにせず、利用側が取得した値や、処理後のデータから動きを確かめる記事を選びました。",
+        "sourceKind": "report-body"
+      }
+    },
+    {
+      "pattern": "～たびに",
+      "firstIntroducedDate": "2026-10-06",
+      "reviewEvidence": {
+        "form": "たびに",
+        "excerpt": "モデルを切り替えるたびにアプリを配り直す運用を見直すため、著者はAppConfigの新しい構成プロファイルを試しました。",
+        "sourceKind": "report-body"
+      }
+    }
+  ],
+  "vocabularyNote": null,
+  "grammarNote": null
+}
