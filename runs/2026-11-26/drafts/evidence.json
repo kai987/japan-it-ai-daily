@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-26",
+  "status": "reviewed",
+  "reviewedBy": "Codex local daily author",
+  "reviewedAt": "2026-11-26T01:07:04.166215+00:00",
+  "scope": "Five Japanese source articles within the locked JST window, with supplemental official corroboration where used. The evidence records original test conditions and distinguishes measurements from extrapolations.",
+  "articles": [
+    {
+      "articleId": "2026-11-26-top-1",
+      "url": "https://zenn.dev/aiforall/articles/133752ce2d97ad",
+      "source": "Zenn",
+      "topic": "検索拡張生成の失敗分析",
+      "capturedAt": "2026-11-26T01:02:33.967304+00:00",
+      "snapshotSha256": "7ef576054d1ca58f3bfbcb74253821e7b9fea4f70f2b15aa7a2b21d8373e884e",
+      "accessNote": "Original Zenn experiment and assessor review.",
+      "originalTitle": "Corpus2Skillに近づけた「階層ナビゲーション型RAG」と、ベクトルDB版RAGを「どの段階で失敗したか」まで比べてみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "The experiment compares hierarchical navigation with vector retrieval using 130 Bedrock documents and 40 questions, tracking 86 literal evidence spans.",
+          "quote": "130文書・40問の比較",
+          "locator": "比較データと設問設計",
+          "conditions": "130 documents, 40 questions; post-review labels and limited repeats, resource cost specific to the tested workflow.",
+          "usedIn": {
+            "zh": "作者用 130 篇 Bedrock 文档和 40 道题，比较向量检索与借鉴 Corpus2Skill 的层级导航。",
+            "ja": "複数の資料を読まないと答えが出ないとき、似た文章を集める検索と、目次をたどり直せる検索に違いが出ます。"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "Nine false negatives in the audited 84 occurred on hierarchical-agent answers. Review scores differed, with cross-document questions driving most of the gap.",
+          "quote": "不正解とされた84件を確認し直すと、9件",
+          "locator": "採点のLLM／結果",
+          "conditions": "130 documents, 40 questions; post-review labels and limited repeats, resource cost specific to the tested workflow.",
+          "usedIn": {
+            "zh": "按复查后的评分，向量方案总正确率约 0.63，代理方案约 0.80–0.85。",
+            "ja": "判定を見直した後の正答率は、階層型の各方式で0.80から0.85、ベクトルDB版は約0.63でした。",
+            "interview": "まず必要な文書に届いたかを見ます。次に、八千文字に切った後も、答えに必要な箇所が残っていたかを調べます。記事では、最後の五文書に絞ると早く読んだ根拠を見落とす例がありました。根拠があれば、元の文章と採点理由を照らし合わせます。ただし、百三十文書の試験なので、別の規模でも同じ結果になるとは限りません。"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "Higher measured cost and latency are workload-specific. Small sample and repeat variation limit conclusions about optional navigation features.",
+          "quote": "料金がベクトルDB版の約15倍",
+          "locator": "今後／費用・時間",
+          "conditions": "130 documents, 40 questions; post-review labels and limited repeats, resource cost specific to the tested workflow.",
+          "usedIn": {
+            "zh": "价格和时间有明显差异：作者记录的单题费用约为向量方案的 15 倍，耗时约 7 倍。",
+            "ja": "ただし、文書数や設問数は限られ、工夫の効果と実行ごとのぶれをすべて分けられたわけではありません。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "除了总分，文章还逐层展示为什么会答错，便于决定应该改检索、上下文截断还是评分。",
+            "ja": "根拠が渡らなかった場合と採点に問題があった場合を分ける手順を、実験結果と合わせて学べます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-26-top-2",
+      "url": "https://dev.classmethod.jp/articles/api-gateway-api-portal-discovery-managed-api/",
+      "source": "DevelopersIO",
+      "topic": "APIの探索と管理",
+      "capturedAt": "2026-11-26T01:02:33.942436+00:00",
+      "snapshotSha256": "9f166687eb4a238dc62f42803262a6c3dd72aeb83339ea01a3a6b35993cb909b",
+      "accessNote": "Original DevelopersIO REST API hands-on.",
+      "originalTitle": "Amazon API Gateway の API Portal で REST API の探索と管理 API への昇格を試してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "Tokyo REST endpoints with public and private settings, mock integrations. Explicitly enabling the discovery run was needed in the observed account.",
+          "quote": "status は RUNNING になっていました",
+          "locator": "探索設定と検証",
+          "conditions": "Mock REST APIs in one account and Tokyo. The timings are individual observations; other endpoint classes have distinct conditions.",
+          "usedIn": {
+            "zh": "作者在东京创建 REGIONAL 和 PRIVATE 两种 REST API，以 MOCK 集成部署后测试 API Portal。",
+            "ja": "自社のREST APIを管理対象に入れるまでを、著者が東京リージョンのAPI Portalで試しました。"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "Three entries surfaced during polling and produced nine posture results after promotion. Existing REST API settings and timestamp showed no change.",
+          "quote": "3 項目とも 9 つのポスチャ",
+          "locator": "セキュリティポスチャ",
+          "conditions": "Mock REST APIs in one account and Tokyo. The timings are individual observations; other endpoint classes have distinct conditions.",
+          "usedIn": {
+            "zh": "制造这组测试数据后，作者按约一分钟间隔查询，第三次看到三个条目。",
+            "ja": "およそ一分おきに確認すると、三回目に二つのAPIから計三項目が見つかりました。",
+            "interview": "まず東京の例と同じように探索を開始し、実行中になってから、ステージとパスとメソッドで対象を探します。記事では未管理の三項目が見つかり、管理対象にすると九つのポスチャが取れました。元の設定と更新時刻も前後で見比べます。ただし、数分で表示されたのは一回の結果で、ほかの環境での反映時刻は個別に確かめます。"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "Single poll experiment; REST discovery differs from HTTP, WebSocket or traffic-based discovery on other services.",
+          "quote": "1 分間隔で確認した 1 回だけの結果",
+          "locator": "インベントリ反映時間",
+          "conditions": "Mock REST APIs in one account and Tokyo. The timings are individual observations; other endpoint classes have distinct conditions.",
+          "usedIn": {
+            "zh": "限制在于两分钟多的检测时间只来自一次轮询，受发现何时启动、扫描与请求等条件影响。",
+            "ja": "ただし、数分で見えたのはこの一回の測定です。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "适合讲清发现、纳管和配置变更是三个动作，方便制定存量 API 盘点的验收条件。",
+            "ja": "手元の一覧に載せるところから、管理の対象として情報を取得するところまでの段階が明確です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-26-top-3",
+      "url": "https://dev.classmethod.jp/articles/cortex-code-for-excel-org-deployment/",
+      "source": "DevelopersIO",
+      "topic": "組織向けデータアドインの配布",
+      "capturedAt": "2026-11-26T01:02:33.942682+00:00",
+      "snapshotSha256": "d22fa4c8c0769ea2761740891183135e75f355a19087c7c000ce040b8d68685f",
+      "accessNote": "Original DevelopersIO test tenant and web add-in verification.",
+      "originalTitle": "Snowflake の CoCo for Excel を Microsoft 365 管理センターから組織配布して使ってみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "Preview distribution through a Microsoft 365 test tenant with a custom XML manifest. Data access is scoped through the user’s Snowflake role.",
+          "quote": "マニフェストからカスタムアドインとしてデプロイ",
+          "locator": "導入方法と前提条件",
+          "conditions": "One preview tenant and Excel web. OAuth roles still apply; observed propagation is not a service guarantee.",
+          "usedIn": {
+            "zh": "CoCo for Excel 在工作簿侧边栏接入 Snowflake。",
+            "ja": "Excelの横でSnowflakeのデータを扱えるCoCoのプレビューを、管理センターから配る試験です。"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "One successful appearance observation at roughly two hours; workbook write followed approval and another assigned user with SSO worked.",
+          "quote": "約2時間後に確認すると",
+          "locator": "管理センター／Excel for the web",
+          "conditions": "One preview tenant and Excel web. OAuth roles still apply; observed propagation is not a service guarantee.",
+          "usedIn": {
+            "zh": "作者先只把扩展分配给自己，约两小时后在 Excel 网页版看到它。",
+            "ja": "まず自分だけに割り当て、約二時間後にExcelのウェブ版で表示を確認できました。",
+            "interview": "少数の利用者にマニフェストを配り、エクセルのウェブ版で表示を確かめます。次に、利用者自身のスノーフレークのロールで接続して、書き込みのプレビューを承認すると表ができるかを試します。対象外の人に出ないことも見ます。ただし、記事で二時間後に見えたのは一例です。反映を待つ時間とデータの権限は別々に確認します。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "Particular test tenant and web client. Provider documentation permits longer propagation. Assignment, authentication, user access and write are distinct.",
+          "quote": "反映まで最大72時間かかる場合",
+          "locator": "組織配布の反映条件",
+          "conditions": "One preview tenant and Excel web. OAuth roles still apply; observed propagation is not a service guarantee.",
+          "usedIn": {
+            "zh": "文档称分发传播可能最多需要 72 小时，单次观察无法为新用户保证两小时内生效。",
+            "ja": "ただし、二時間は確認した時点の値です。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "从租户分配一直验证到数据进入表格，给桌面扩展的可见性与数据访问提供两条证据。",
+            "ja": "配布の成否だけでなく、利用者の画面とSnowflake側の権限がどうつながるか追えます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-26-top-4",
+      "url": "https://tech.smarthr.jp/entry/2026/11/25/182704",
+      "source": "SmartHR Tech Blog",
+      "topic": "開発工程の待ち時間",
+      "capturedAt": "2026-11-26T01:02:33.942535+00:00",
+      "snapshotSha256": "94e1c31d4c0cd3fc52ce8590d5b31d35e44fad29d33999a50efde846039f0258",
+      "accessNote": "Original SmartHR team case report.",
+      "originalTitle": "AIが速く作っても人の待ちが残っていた —— 開発プロセス全体で減らした合意と、残した確認",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Single Scrum team redistributed feature decision and individual ticket execution. AI reads documented criteria rather than owning final approval.",
+          "quote": "開発メンバー4〜5人",
+          "locator": "改善前の状態／チケット責任",
+          "conditions": "Observational four-to-five-member team with changed ticket granularity. Quality and per-hour gains not established.",
+          "usedIn": {
+            "zh": "SmartHR 的四至五人团队已有 AI 辅助实现，开发仍会等负责人准备材料或等全员集中确认。",
+            "ja": "実装が早くなっても、作業の前後で人がそろうのを待てば、チームの時間は空きません。"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Team weekly available time changed from ~69h to ~93h while completed points per hour stayed ~0.14. Independent review and evidence remained.",
+          "quote": "時間あたりの完了SPは両期間とも約0.14",
+          "locator": "開発に使える時間と完了SP",
+          "conditions": "Observational four-to-five-member team with changed ticket granularity. Quality and per-hour gains not established.",
+          "usedIn": {
+            "zh": "团队保留了实施者之外的复核流程，复核人检查设计目的和测试证据，必要时补操作或探索性测试。",
+            "ja": "減らした合意の代わりに、着手や完了の基準をリポジトリに置き、AIが参照できるようにしました。",
+            "interview": "チケットごとに完了まで担当する人を決め、受け入れ条件とレビューの証跡を残します。その上で、会議などを引いた開発時間と、時間あたりの完了量を別々に見ます。記事では週に使える時間は約六十九時間から九十三時間に増えました。ただし、時間あたりの完了量はほぼ同じで、品質への効果は手戻りなどを別に測って確かめます。"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "Observational before/after with changed work granularity and no independently demonstrated quality effect.",
+          "quote": "品質への効果は、まだ確かめられていません",
+          "locator": "ふりかえり",
+          "conditions": "Observational four-to-five-member team with changed ticket granularity. Quality and per-hour gains not established.",
+          "usedIn": {
+            "zh": "结果的适用条件是这一个团队的流程和估点方式，前后工单粒度也有变化。",
+            "ja": "ただし、計測はメンバー四、五人の取り組みで、作業の分け方も変えています。"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "给出了工单责任、评审证据和度量口径，适合解释为什么 AI 代码生成加速后，团队交付仍可能卡在交接。",
+            "ja": "どこで人が待っていたのかと、どの確認は残したのかが分かり、改善の測り方まで考えられます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-26-top-5",
+      "url": "https://dev.classmethod.jp/articles/kiro-mobile-android-iphone-cloud-session/",
+      "source": "DevelopersIO",
+      "topic": "端末をまたぐ開発セッション",
+      "capturedAt": "2026-11-26T01:02:33.919245+00:00",
+      "snapshotSha256": "d57564b16dcaa876a01d7efa78ac832be4d1706f888e617ddb103c60970e2975",
+      "accessNote": "Original DevelopersIO mobile and web hands-on.",
+      "originalTitle": "Kiro Mobile アプリがリリースされたので試してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "A repository-free Android session generated three spec files and the toy Python test ran successfully.",
+          "quote": "リポジトリを接続しなくてもセッションを始められます",
+          "locator": "Android／Build with spec",
+          "conditions": "Same organization account in a toy repository-free sandbox. A separate search session tested iPhone access; full production delivery was not tested.",
+          "usedIn": {
+            "zh": "Kiro Mobile 连到与 Web 版同一类的云端会话。",
+            "ja": "クラウドの作業を携帯から始め、後でウェブ版で確認できるかを試した記事です。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "Web displayed the Android-created spec, and iPhone opened a separate search session created on Android.",
+          "quote": "iPhone の Kiro Enterprise でも同じセッションを開けました",
+          "locator": "Kiro Web／iPhone",
+          "conditions": "Same organization account in a toy repository-free sandbox. A separate search session tested iPhone access; full production delivery was not tested.",
+          "usedIn": {
+            "zh": "同账号在 Kiro Web 能看到这条需求会话和任务状态。",
+            "ja": "同じアカウントでKiro Webに入ると、その会話と仕様のタブが表示され、対応済みのタスクも見えました。",
+            "interview": "同じ組織アカウントでウェブ版を開き、要求、設計、タスクが見えるか確かめます。記事ではアンドロイドから作った仕様と、三件のパイテストの結果を確認できました。アイフォーンでは別の検索会話を開けています。ただし、仕様を試した場所はリポジトリの外でした。チームに渡すときは、テストに加えてコミットが残ったかを確認します。"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "Sandbox toy program was not committed. Repository connection and file explorer require Web. No claim of repository end-to-end deployment.",
+          "quote": "コミットや push はしていません",
+          "locator": "実装結果／設定",
+          "conditions": "Same organization account in a toy repository-free sandbox. A separate search session tested iPhone access; full production delivery was not tested.",
+          "usedIn": {
+            "zh": "试验的限制是 Python 例子在没有连接 Git 仓库的工作区，未提交或推送。",
+            "ja": "ただし、Pythonの試験ではクラウドの作業場所を使い、Gitにコミットしていません。"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "把跨设备接续、云端运行以及向团队仓库交付拆成可观察的事实。",
+            "ja": "モバイルで作業を進められる範囲と、ウェブ版に移って確かめる作業が具体的です。"
+          }
+        }
+      ]
+    }
+  ]
+}
