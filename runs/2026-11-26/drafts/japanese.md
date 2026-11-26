@@ -1,7 +1,7 @@
 ---
 title: 日语学习｜2026年11月26日
 date: '2026-11-26'
-description: 学习表达对照依据、分发给使用者以及开始工作的词汇。
+description: 学习表达对照依据、分发给使用者及按条件调整步骤的词汇。
 topics:
 - 検索拡張生成の失敗分析
 - APIの探索と管理
@@ -10,7 +10,7 @@ topics:
 - 端末をまたぐ開発セッション
 levels:
 - N2
-- N1
+- N3
 - IT/AI
 vocabularyCount: 3
 grammarCount: 0
@@ -41,24 +41,24 @@ vocabulary:
   noteZh: 管理员将 Office 扩展分发给指定用户。
   exampleZh: 说明会开始前，负责人发放了写有注册步骤的资料。
   nuanceZh: 「届ける」侧重到达目的地，「配る」侧重把东西分发给多个对象。
-- term: 着手
-  reading: ちゃくしゅ
-  level: N1
-  partOfSpeech: 名詞・サ変自動詞
+- term: 応じる
+  reading: おうじる
+  level: N3
+  partOfSpeech: 一段自動詞
   collocations:
-  - 実装に着手する
-  - 調査に着手する
-  - 着手前に条件を確認する
-  exampleJa: 仕様と確認方法が決まったので、担当者が実装に着手しました。
-  meaningZh: 着手开始一项工作或课题。
-  noteZh: 原文要求在实现前核对工单条件和工作范围。
-  exampleZh: 确定规格和核验方法后，负责人开始实现。
-  nuanceZh: 「着工」主要用于工程开工，「着手」也可用于开发和调查。
+  - 依頼に応じる
+  - 条件に応じて手順を変える
+  - 状況に応じて対応する
+  exampleJa: 作業の規模に応じて、確認する項目を変えます。
+  meaningZh: 接受请求，或根据条件和情境调整做法。
+  noteZh: 案例按收到的需求选择使用 AI 的调查、实现和验证步骤。
+  exampleZh: 按任务规模调整需要检查的项目。
+  nuanceZh: 「応える」常指回应期待或呼唤。「条件に応じて」强调依据不同条件作相应调整。
 grammar: []
 mustRememberWords:
 - 照らす
 - 配る
-- 着手
+- 応じる
 mustRememberGrammar: []
 grammarSelectionNote: 已查对全部106期。原文可复习「によって」「に加えて」等已有用法，本期没有另列新学语法。
 technicalTerms:
