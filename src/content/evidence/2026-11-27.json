@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-27",
+  "status": "reviewed",
+  "reviewedBy": "Codex local daily author",
+  "reviewedAt": "2026-11-27T01:13:36.948883+00:00",
+  "scope": "Five Japanese source articles within the locked JST window, with supplemental official corroboration where used. The evidence records original test conditions and distinguishes measurements from extrapolations.",
+  "articles": [
+    {
+      "articleId": "2026-11-27-top-1",
+      "url": "https://dev.classmethod.jp/articles/dgx-spark-vllm-decisions-first-touch/",
+      "source": "DevelopersIO",
+      "topic": "AI推論",
+      "capturedAt": "2026-11-27T01:06:57.882437+00:00",
+      "snapshotSha256": "e1994267cbb5b63ac5eb38c5ccacc9dc430ffaa12ca8d6d7b3365a6896876a61",
+      "accessNote": "Full original article and detailed tables captured. Configuration, stability, and accuracy scope were reviewed separately.",
+      "originalTitle": "vLLM の /v1/decisions は同じ質問に同じ確率を返すか NVIDIA DGX Spark で確かめてみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "该测试把首 token 的标签对数概率在候选标签间归一化。",
+          "quote": "ラベルの間で softmax",
+          "locator": "返値の形と仕組み",
+          "conditions": "One Qwen3-0.6B on one DGX Spark GB10. Same input repeated by cache and background load conditions; classification accuracy was not evaluated.",
+          "usedIn": {
+            "zh": "文章在 DGX Spark（GB10）上运行 Qwen3-0.6B，研究 vLLM 提供的 /v1/decisions。",
+            "ja": "今回の検証では、DGX Spark上のQwen3-0.6Bを分類器として読み出します。"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "各版本在特定混合负载条件下，边界题三十次判定各十五。",
+          "quote": "negative 15、positive 15",
+          "locator": "既定設定・cache_salt ありの混在結果",
+          "conditions": "One Qwen3-0.6B on one DGX Spark GB10. Same input repeated by cache and background load conditions; classification accuracy was not evaluated.",
+          "usedIn": {
+            "zh": "作者分别改变 prefix cache 与并发背景流量，每个条件重复提交同一问题三十次。",
+            "ja": "境界に近い質問を同じ条件で三十回ずつ送り、prefix cacheの再利用と別リクエストの混在を切り分けました。",
+            "interview": "同じ質問でも、同時に流れるリクエストとキャッシュの条件を変えて試します。記事では、境界に近い質問を三十回流すと、判定が十五回ずつに割れました。バッチに依存しない設定では判定がそろいましたが、既定時の値をそのまま保つわけではありません。しかも一つのモデルの測定なので、私なら境界には保留を設け、別データで正答率も確認します。"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "取决于设置的执行路径，同一边界题四条件共一百二十次选中 negative。",
+          "quote": "判定は 120 回すべて negative",
+          "locator": "バッチに依存しない設定の結果",
+          "conditions": "One Qwen3-0.6B on one DGX Spark GB10. Same input repeated by cache and background load conditions; classification accuracy was not evaluated.",
+          "usedIn": {
+            "zh": "开启 VLLM_BATCH_INVARIANT 后，边界问题在四种条件合计一百二十次都选 negative，表中概率固定在 0.5。",
+            "ja": "VLLM_BATCH_INVARIANTを有効にした境界題材では、四条件で計百二十回の判定がそろいました。"
+          }
+        },
+        {
+          "id": "top1-fact4",
+          "kind": "source-fact",
+          "statement": "该实验不提供分类准确率或概率校准结果。",
+          "quote": "分類がどのくらい正しいかは測っていない",
+          "locator": "冒頭の検証範囲",
+          "conditions": "One Qwen3-0.6B on one DGX Spark GB10. Same input repeated by cache and background load conditions; classification accuracy was not evaluated.",
+          "usedIn": {
+            "zh": "本文只测了一台机器和一个小模型，未验证分类正确率或概率校准。",
+            "ja": "この結果は一種類の小型モデルと手元の環境での測定です。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "能把接口返回得稳定、判断选得正确和概率适合定门槛这三个问题分开检验。",
+            "ja": "判定の再現性と分類の正しさを混同せず、負荷を変えて境界の入力を調べる方法が分かります。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-27-top-2",
+      "url": "https://dev.classmethod.jp/articles/lambda-cmr-vs-zip-coldstart/",
+      "source": "DevelopersIO",
+      "topic": "クラウド",
+      "capturedAt": "2026-11-27T01:06:57.838225+00:00",
+      "snapshotSha256": "90ea6b0c4cd18c7a47b17a46c5d7259196b7598c4346fb207da78546a8c3f8fe",
+      "accessNote": "Full original article, actual X-Ray query, and both summary tables captured. The explanation for the longest trace is an author inference.",
+      "originalTitle": "Customer-managed runtimesでコールドスタートは速くなる?サイズの大きなライブラリをZIPにパッケージングする場合と比較してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "文章比较函数 ZIP 携带大依赖与在自管运行时镜像内安装依赖。",
+          "quote": "独自のランタイムを作成",
+          "locator": "検証の流れ",
+          "conditions": "Observed AWS-managed ZIP and CMR packages differ in size. The offset is an approximation, not a total or a separately observed image transfer.",
+          "usedIn": {
+            "zh": "作者比较 Lambda 的两种部署方式。",
+            "ja": "大きなPython依存を関数のZIPに同梱する代わりに、ECRのイメージから作るCustomer-managed runtimeへ入れると、起動前の待ち方はどう変わるでしょうか。"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "按 traceId 对齐调用与初始化跨度，以起始时差估算启动等待。",
+          "quote": "startupDuration",
+          "locator": "X-Ray のクエリと結果",
+          "conditions": "Observed AWS-managed ZIP and CMR packages differ in size. The offset is an approximation, not a total or a separately observed image transfer.",
+          "usedIn": {
+            "zh": "文章通过 API Gateway 产生调用，再在 X-Ray 的 Transaction Search 按 traceId 对齐服务跨度与初始化跨度。",
+            "ja": "X-RayのTransaction Searchで呼び出しのスパンとInitのスパンをtraceIdでつなぎます。",
+            "interview": "X-Rayで呼び出しと初期化の開始時刻をそろえて、起動前の待ち時間を比べます。記事では、中央値が約五百二十五ミリ秒から百八十六ミリ秒に縮みましたが、新しい方式では十秒を超えて初期化をやり直した例もありました。ただしこの差は起動の近似値です。私なら初回と繰り返しの両方を測り、応答全体が要件に収まるかで選びます。"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "所测自管运行时估算中位数约186 ms，报告还检查了初始化重试造成的长尾。",
+          "quote": "185.9648ms",
+          "locator": "Customer-managed runtimes の集計",
+          "conditions": "Observed AWS-managed ZIP and CMR packages differ in size. The offset is an approximation, not a total or a separately observed image transfer.",
+          "usedIn": {
+            "zh": "这次比较中，ZIP 样本 108 次、估算中位数约 525 ms，自管运行时样本 105 次、中位数约 186 ms。",
+            "ja": "ZIPの百八件では中央値がおよそ五百二十五ミリ秒、ライブラリをランタイムに入れた百五件ではおよそ百八十六ミリ秒でした。"
+          }
+        },
+        {
+          "id": "top2-fact4",
+          "kind": "source-fact",
+          "statement": "缓存未命中与分块按需加载是作者根据实验提出的解释。",
+          "quote": "どういうアーキテクチャになっているのかは公表されていません",
+          "locator": "まとめ・検証の限界",
+          "conditions": "Observed AWS-managed ZIP and CMR packages differ in size. The offset is an approximation, not a total or a separately observed image transfer.",
+          "usedIn": {
+            "zh": "镜像与 ZIP 的大小不一致，且平台底层实现未公开。",
+            "ja": "著者はチャンクのオンデマンド読み込みとキャッシュで外れ値を説明していますが、AWSが内部構成を公表したものではありません。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "同一改动改善了典型启动，却出现罕见的长等待，正适合讨论尾延迟与首次部署体验。",
+            "ja": "中央値の改善と初回の長い待ちが同時に起きる例から、どの時刻を比較するべきかが見えます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-27-top-3",
+      "url": "https://zenn.dev/dress_code/articles/88b55221eea4e0",
+      "source": "Zenn",
+      "topic": "開発基盤",
+      "capturedAt": "2026-11-27T01:06:57.948997+00:00",
+      "snapshotSha256": "d2fd98b5fede1cbbab220d914348c5b5bb604ccc9df6ca7b8062f953b4580329",
+      "accessNote": "Full original including diagnostics, SQL comparison and residual risks captured.",
+      "originalTitle": "型チェックが重かったので、クエリの型推論を手放してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "主要开销集中在一条连接数超过50的旧 Kysely 表达式。",
+          "quote": "50 以上の join",
+          "locator": "シグネチャ変更時の再検査",
+          "conditions": "One Dress Code repository, TypeScript 7.0.2, --checkers 1 and --incremental false. Wall time is affected by actual machine load and peak RSS was not measured.",
+          "usedIn": {
+            "zh": "团队在一台 24 GB Mac 遇到 TypeScript 检查挤占内存和磁盘。",
+            "ja": "Dress Codeでは型検査中のメモリ使用を追って、Prismaの生成ファイルよりも古いKyselyクエリの推論に仕事が偏っていることを見つけました。"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "即使公开签名使用显式行型，SameRow 一致检查仍需长查询的推断结果。",
+          "quote": "行型のずれを防ぐための検査",
+          "locator": "クエリ単位の計測",
+          "conditions": "One Dress Code repository, TypeScript 7.0.2, --checkers 1 and --incremental false. Wall time is affected by actual machine load and peak RSS was not measured.",
+          "usedIn": {
+            "zh": "给公开方法写清返回行类型以后，调用侧增量检查确实变轻。",
+            "ja": "五十以上の結合を持つ式を隠すため、まず取得メソッドの公開戻り値に行型を書きました。",
+            "interview": "単一チェッカーでキャッシュなしの型検査を回して、時間だけでなく型のインスタンス化の回数を見ます。記事では五十以上の結合がある式で、行型を書いても一致検査が推論を呼び戻していました。対象を移行中の一クラスに絞り、生成SQLとパラメータの一致を確かめます。ただし、既存のテストでは行全体の型のずれは拾えません。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "相同 checker 数量的冷态全量检查，类型实例化降至约2268万。",
+          "quote": "Instantiations: 22677981",
+          "locator": "変更後の出力",
+          "conditions": "One Dress Code repository, TypeScript 7.0.2, --checkers 1 and --incremental false. Wall time is affected by actual machine load and peak RSS was not measured.",
+          "usedIn": {
+            "zh": "在 TypeScript 7.0.2、单 checker、关闭增量的全库测试中，Instantiations 从约 3373 万降到 2268 万。",
+            "ja": "Go実装のTypeScript 7.0.2で単一チェッカーとコールド実行をそろえ、全件のInstantiationsが約三千三百七十三万から約二千二百六十八万へ減ったことを確認しました。"
+          }
+        },
+        {
+          "id": "top3-fact4",
+          "kind": "source-fact",
+          "statement": "编译 SQL 与类型化参数无差异，运行时测试只检查部分列。",
+          "quote": "行全体の一致は見ていません",
+          "locator": "代わりの守り",
+          "conditions": "One Dress Code repository, TypeScript 7.0.2, --checkers 1 and --incremental false. Wall time is affected by actual machine load and peak RSS was not measured.",
+          "usedIn": {
+            "zh": "文章用 query.compile() 对比变更前后的 SQL 文本和类型化参数，得到相同输出。",
+            "ja": "変更前後でquery.compile()のSQLと型付きパラメータを比較し、同じ出力であることを確かめています。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "既有清晰的诊断量，也交代了移除静态保障后还剩哪些证据，方便评估同类取舍。",
+            "ja": "コンパイラが行った仕事と実行時の確認を対比でき、型で担保しなくなった範囲が具体的です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-27-top-4",
+      "url": "https://dev.classmethod.jp/articles/vercel-audit-log-drains/",
+      "source": "DevelopersIO",
+      "topic": "監査・運用",
+      "capturedAt": "2026-11-27T01:06:57.849947+00:00",
+      "snapshotSha256": "248436bfe203773d2470de217590062443343a9f0b523995086c5b47c4b80517",
+      "accessNote": "Full original including configuration, received events and deletion test captured. Identifiers in article screenshots were already masked.",
+      "originalTitle": "Vercel Audit Log Drainsでチームの操作記録をHTTPSで受け取ってみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "原文为自有 Vercel Enterprise 团队配置 HTTPS 监控接收。",
+          "quote": "Enterpriseプラン限定",
+          "locator": "はじめに",
+          "conditions": "One Enterprise Custom Endpoint experiment. Fields can vary per event; absence of receipt is for the deleted route in this setup.",
+          "usedIn": {
+            "zh": "作者在 Vercel Enterprise 团队里把 Audit Log Drain 指向自己的 HTTPS 函数。",
+            "ja": "VercelのAudit Logは、チームが行った操作の記録です。"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "开启验证时，创建阶段确认请求与运行时投递都需要预先匹配签名密钥。",
+          "quote": "作成時の確認リクエストにも署名",
+          "locator": "ドレインを作成する",
+          "conditions": "One Enterprise Custom Endpoint experiment. Fields can vary per event; absence of receipt is for the deleted route in this setup.",
+          "usedIn": {
+            "zh": "接收端用 x-vercel-signature 核验请求。",
+            "ja": "送り先にCustom Endpointを選び、関数でx-vercel-signatureを検証しています。",
+            "interview": "受信側では、まず署名を検証し、イベント種別ごとに必要な項目を保存します。記事では、本番URLの割り当てとプロジェクト再開で、届く項目が違いました。さらに、ドレインを削除した操作は同じ受信先に届きませんでした。ただし一つのHTTPS設定での観察です。私は転送とは別に管理画面や構成を確認し、無通信だけで異常なしとは判断しません。"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "实验中生产别名绑定事件与项目恢复事件字段不同。",
+          "quote": "には含まれていませんでした",
+          "locator": "届いた監査ログを見てみた",
+          "conditions": "One Enterprise Custom Endpoint experiment. Fields can vary per event; absence of receipt is for the deleted route in this setup.",
+          "usedIn": {
+            "zh": "收到的 action 中包含 aliases-assigned、project-paused 和 project-unpaused。",
+            "ja": "本番URLを割り当てたときはaliases-assignedが見え、プロジェクトの停止と再開も別イベントとして届きました。"
+          }
+        },
+        {
+          "id": "top4-fact4",
+          "kind": "source-fact",
+          "statement": "删除事件未通过被删除的这条路径送到测试函数。",
+          "quote": "削除の操作の記録は、受け取り用の関数には届きませんでした",
+          "locator": "ドレインを削除するとどうなるか",
+          "conditions": "One Enterprise Custom Endpoint experiment. Fields can vary per event; absence of receipt is for the deleted route in this setup.",
+          "usedIn": {
+            "zh": "删除 Drain 后，作者没有在原 HTTPS 接收端收到这次删除事件。",
+            "ja": "今回のHTTPS設定でドレインを削除した操作は、そのドレインから受信できませんでした。"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "实测展示了转发接收、字段变化到停止投递的一整条链路，便于区分投递与审计覆盖。",
+            "ja": "署名の用意、ログの違い、転送が止まる場面まで、一つの受信実験から学べます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-27-top-5",
+      "url": "https://zenn.dev/turing_motors/articles/cbf9872ca90166",
+      "source": "Zenn",
+      "topic": "クラウド",
+      "capturedAt": "2026-11-27T01:06:57.915233+00:00",
+      "snapshotSha256": "7ba29a77f250779580cb057ea8aa3d388ead0ce1dd522d5f1fcf6bf1ef8903b9",
+      "accessNote": "Full original including setup, timing tables, queue policy, image encoding and footnotes captured.",
+      "originalTitle": "自動運転の予測軌跡の可視化動画を誰でも高速に作れるようにする",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "原始流水线仍需等待上游流程，容器内优化未同幅缩短通知时间。",
+          "quote": "上流の処理が終わるまで",
+          "locator": "学習用データセットを作るのをやめる",
+          "conditions": "Fixed L4 and 16 scenes for the component test. Production cohorts differ by scene count and other changes; last cohort spans nine days.",
+          "usedIn": {
+            "zh": "Turing 把自动驾驶模型的预测轨迹叠在道路视频上。",
+            "ja": "Turingの動画生成では、予測軌跡を走行映像の帯として表示します。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "将排队超时与运行上限分开，直接读取所需区间的两类原始数据。",
+          "quote": "起動を待っている時間だけを数える",
+          "locator": "Spot の起動待ちと実行時間を分ける",
+          "conditions": "Fixed L4 and 16 scenes for the component test. Production cohorts differ by scene count and other changes; last cohort spans nine days.",
+          "usedIn": {
+            "zh": "新路径用场景 ID 和连续区间直接定位 S3 的 HEVC 与 Databricks 的预测轨迹。",
+            "ja": "場面を特定するシーンIDを基に、S3の元HEVCとDatabricksの軌跡を取り出す経路に替えました。",
+            "interview": "利用者が依頼してから通知を受けるまでを分けて測ります。記事では、画像を速く処理しても、上流のデータセットを作る待ち時間が残りました。長い処理では、先にフレーム一覧を用意し、抽出とぼかし検出、描画をそろった分から進めています。ただし十六シーンの比較は同じL4での結果なので、別の実行環境では起動待ちも測り直します。"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "使用预先写出的帧清单和写完再改名规避并行读取半成品与漏帧。",
+          "quote": "PNG は一時名で書き終えてからリネーム",
+          "locator": "3 つの工程を並行して進める",
+          "conditions": "Fixed L4 and 16 scenes for the component test. Production cohorts differ by scene count and other changes; last cohort spans nine days.",
+          "usedIn": {
+            "zh": "长视频按目标片段前的 I 帧开始解码，用 Up 过滤与 ISA-L 压缩写 PNG。",
+            "ja": "長い動画はIフレームへシークして不要なデコードを減らし、PNGの書き出しにはUpフィルタとISA-Lを採用しました。"
+          }
+        },
+        {
+          "id": "top5-fact4",
+          "kind": "source-fact",
+          "statement": "在同一 L4 的同样16场景，抽取到GIF完成缩短，生产统计另有样本变化。",
+          "quote": "9 分 11 秒から 4 分 32 秒",
+          "locator": "同じ入力で処理時間を比べる",
+          "conditions": "Fixed L4 and 16 scenes for the component test. Production cohorts differ by scene count and other changes; last cohort spans nine days.",
+          "usedIn": {
+            "zh": "同一 L4 和 16 个场景，抽取到成品 GIF 从 9 分 11 秒降到 4 分 32 秒，原文还核对了结果一致。",
+            "ja": "同じL4の十六シーンでは、抽出開始からGIF完成までが九分十一秒から四分三十二秒になり、出力の一致も確認されています。"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "例子把单个算子、队列等待和面向使用者的总耗时放在同一条工程链路上。",
+            "ja": "動画を速くする話を、待ち行列、工程の依存、利用者に届く時間まで広げて読めます。"
+          }
+        }
+      ]
+    }
+  ]
+}
