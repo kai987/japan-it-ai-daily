@@ -1,0 +1,423 @@
+{
+  "targetDate": "2026-11-27",
+  "sourceWindow": {
+    "from": "2026-11-26T10:00:00+09:00",
+    "to": "2026-11-27T10:00:00+09:00"
+  },
+  "discovery": [
+    {
+      "name": "Qiita",
+      "requestedUrl": "https://qiita.com/",
+      "observedAt": "2026-11-27T01:06:39.684041+00:00",
+      "status": 200,
+      "actualUrl": "https://qiita.com/",
+      "htmlSha256": "7caf5d3808a89c5781826279e8ebf19a7462c92350ea04be267d0f9e3576f355",
+      "feeds": [],
+      "linksObserved": 91
+    },
+    {
+      "name": "Zenn",
+      "requestedUrl": "https://zenn.dev/",
+      "observedAt": "2026-11-27T01:06:39.684410+00:00",
+      "status": 200,
+      "actualUrl": "https://zenn.dev/",
+      "htmlSha256": "a4bc43b9b7be3f63e3221ac646e8ed7e5db438c47b7fd406ce56d1a3e509b3e4",
+      "feeds": [
+        "https://zenn.dev/feed"
+      ],
+      "linksObserved": 9
+    },
+    {
+      "name": "Publickey",
+      "requestedUrl": "https://www.publickey1.jp/",
+      "observedAt": "2026-11-27T01:06:39.684504+00:00",
+      "status": 200,
+      "actualUrl": "https://www.publickey1.jp/",
+      "htmlSha256": "5479008c58cb4fcf0a831f3c82f08f38ac3fcd75aff49baf5cb556a17704be5e",
+      "feeds": [
+        "https://www.publickey1.jp/atom.xml"
+      ],
+      "linksObserved": 20
+    },
+    {
+      "name": "ITmedia AI+",
+      "requestedUrl": "https://www.itmedia.co.jp/aiplus/",
+      "observedAt": "2026-11-27T01:06:39.684605+00:00",
+      "status": 200,
+      "actualUrl": "https://www.itmedia.co.jp/aiplus/",
+      "htmlSha256": "44b72159f6ac169699eb4ce2b9f45219140f29b486ede5cde7b5405564f92cef",
+      "feeds": [],
+      "linksObserved": 55
+    },
+    {
+      "name": "@IT",
+      "requestedUrl": "https://atmarkit.itmedia.co.jp/",
+      "observedAt": "2026-11-27T01:06:39.684683+00:00",
+      "status": 200,
+      "actualUrl": "https://atmarkit.itmedia.co.jp/",
+      "htmlSha256": "12617a615452457d89b48f464be0fa51968a4c1488c90887abe710343223576e",
+      "feeds": [
+        "https://rss.itmedia.co.jp/rss/0.91/ait.xml",
+        "https://rss.itmedia.co.jp/rss/1.0/ait.xml",
+        "https://rss.itmedia.co.jp/rss/2.0/ait.xml"
+      ],
+      "linksObserved": 37
+    },
+    {
+      "name": "CodeZine",
+      "requestedUrl": "https://codezine.jp/",
+      "observedAt": "2026-11-27T01:06:39.684790+00:00",
+      "status": 403,
+      "actualUrl": "https://codezine.jp/",
+      "htmlSha256": "3b1c2802938ed042b284051eb41fc53d8def7507ec44cd9ca3a317019ba690fd",
+      "linksObserved": 0
+    },
+    {
+      "name": "gihyo.jp",
+      "requestedUrl": "https://gihyo.jp/",
+      "observedAt": "2026-11-27T01:06:39.684864+00:00",
+      "status": 200,
+      "actualUrl": "https://gihyo.jp/",
+      "htmlSha256": "2cae5e1243a5955f9ef8a570bfea2cd1719d1bffca1df040c4c8163f57a7a2d3",
+      "feeds": [
+        "https://gihyo.jp/feed/rss1",
+        "https://gihyo.jp/feed/rss2",
+        "https://gihyo.jp/feed/atom"
+      ],
+      "linksObserved": 39
+    },
+    {
+      "name": "DevelopersIO",
+      "requestedUrl": "https://dev.classmethod.jp/",
+      "observedAt": "2026-11-27T01:06:39.684927+00:00",
+      "status": 200,
+      "actualUrl": "https://dev.classmethod.jp/",
+      "htmlSha256": "3922623b78ff1229b126f1ea4e3cc9fd387a8873f456b6b6958eced91b1af00e",
+      "feeds": [],
+      "linksObserved": 58
+    },
+    {
+      "name": "TechFeed",
+      "requestedUrl": "https://techfeed.io/",
+      "observedAt": "2026-11-27T01:06:39.684983+00:00",
+      "status": 200,
+      "actualUrl": "https://techfeed.io/",
+      "htmlSha256": "116a1f9b19f4db599c51ecc19172c38c541d2a7284b09f27a3fff4a92b53b533",
+      "feeds": [
+        "https://techfeed.io/feeds/categories/all"
+      ],
+      "linksObserved": 2
+    },
+    {
+      "name": "Hatena Technology",
+      "requestedUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "observedAt": "2026-11-27T01:06:39.685028+00:00",
+      "status": 200,
+      "actualUrl": "https://b.hatena.ne.jp/hotentry/it",
+      "htmlSha256": "d38cb59b441fdd66d24a0301934c7febc39dd22750d28240e73477df826beb2c",
+      "feeds": [
+        "https://b.hatena.ne.jp/hotentry/it.rss"
+      ],
+      "linksObserved": 127
+    },
+    {
+      "name": "ASCII AI",
+      "requestedUrl": "https://ascii.jp/",
+      "observedAt": "2026-11-27T01:06:39.810208+00:00",
+      "status": 200,
+      "actualUrl": "https://ascii.jp/",
+      "htmlSha256": "3ce3a082ddaa344ef4cfc669c02ae6fc18858777d69a86c6d1f5d0453b598aae",
+      "feeds": [],
+      "linksObserved": 156
+    },
+    {
+      "name": "AINOW",
+      "requestedUrl": "https://ainow.ai/",
+      "observedAt": "2026-11-27T01:06:39.827488+00:00",
+      "status": 200,
+      "actualUrl": "https://ainow.ai/",
+      "htmlSha256": "2d07c93ebd82c7db225a210f5edc92d5524e27c5c6056b58bf6dc58ec5405610",
+      "feeds": [],
+      "linksObserved": 10
+    },
+    {
+      "name": "Ledge.ai",
+      "requestedUrl": "https://ledge.ai/",
+      "observedAt": "2026-11-27T01:06:39.836291+00:00",
+      "status": 200,
+      "actualUrl": "https://ledge.ai/",
+      "htmlSha256": "1006dd2154082fcbec77c0e160f83217c0e3670c2cb12ce64c3d39f9fc93e4dc",
+      "feeds": [],
+      "linksObserved": 34
+    },
+    {
+      "name": "CyberAgent Developers Blog",
+      "requestedUrl": "https://developers.cyberagent.co.jp/blog/",
+      "observedAt": "2026-11-27T01:06:39.841486+00:00",
+      "status": 200,
+      "actualUrl": "https://developers.cyberagent.co.jp/blog/",
+      "htmlSha256": "96d51ff3045052b8f8e22466e6a56496f4b512dbe2c763ac1b6d48602cb2bfa3",
+      "feeds": [
+        "https://developers.cyberagent.co.jp/blog/feed/"
+      ],
+      "linksObserved": 23
+    },
+    {
+      "name": "LINE Yahoo Tech Blog",
+      "requestedUrl": "https://techblog.lycorp.co.jp/ja/",
+      "observedAt": "2026-11-27T01:06:39.862245+00:00",
+      "status": 200,
+      "actualUrl": "https://techblog.lycorp.co.jp/ja/",
+      "htmlSha256": "cf8ffbd66a79eaf8fe4e7f4358f02c0d589d92cf8e75eda1728db9e619e7d520",
+      "feeds": [
+        "https://techblog.lycorp.co.jp/ja/feed/index.xml"
+      ],
+      "linksObserved": 22
+    },
+    {
+      "name": "Mercari Engineering",
+      "requestedUrl": "https://engineering.mercari.com/",
+      "observedAt": "2026-11-27T01:06:39.872668+00:00",
+      "status": 503,
+      "actualUrl": "https://engineering.mercari.com/",
+      "htmlSha256": "7d8e073340ed5b6d06aab291655714a5ef55daca38275832c5195673bb5a4a1f",
+      "linksObserved": 0
+    },
+    {
+      "name": "SmartHR Tech Blog",
+      "requestedUrl": "https://tech.smarthr.jp/",
+      "observedAt": "2026-11-27T01:06:39.884427+00:00",
+      "status": 200,
+      "actualUrl": "https://tech.smarthr.jp/",
+      "htmlSha256": "97000a5990ca2fd7af1b848296eccf476c443c1e8481596a85ca5892757b69fe",
+      "feeds": [
+        "https://tech.smarthr.jp/feed",
+        "https://tech.smarthr.jp/rss"
+      ],
+      "linksObserved": 16
+    },
+    {
+      "name": "LayerX Engineering Blog",
+      "requestedUrl": "https://tech.layerx.co.jp/",
+      "observedAt": "2026-11-27T01:06:39.884831+00:00",
+      "status": 200,
+      "actualUrl": "https://tech.layerx.co.jp/",
+      "htmlSha256": "608418ab4948c30fc9a57250ca48488ad2116fdd53fc0ee2d21d31a8488ee640",
+      "feeds": [
+        "https://tech.layerx.co.jp/feed",
+        "https://tech.layerx.co.jp/rss"
+      ],
+      "linksObserved": 45
+    },
+    {
+      "name": "DeNA Engineering",
+      "requestedUrl": "https://engineering.dena.com/blog/",
+      "observedAt": "2026-11-27T01:06:39.960559+00:00",
+      "status": 200,
+      "actualUrl": "https://engineering.dena.com/blog/",
+      "htmlSha256": "5c6e19d3490d2128f81e0607c663a34470633d1c992f6ee458e63bb384424b44",
+      "feeds": [
+        "https://engineering.dena.com/blog/index.xml"
+      ],
+      "linksObserved": 43
+    },
+    {
+      "name": "Money Forward Developers Blog",
+      "requestedUrl": "https://moneyforward-dev.jp/",
+      "observedAt": "2026-11-27T01:06:40.018478+00:00",
+      "status": 200,
+      "actualUrl": "https://moneyforward-dev.jp/",
+      "htmlSha256": "da01c993c80e635ac943890721f6cb25fe5cbf667204aaf024150d4a5dfe49ff",
+      "feeds": [
+        "https://moneyforward-dev.jp/feed",
+        "https://moneyforward-dev.jp/rss"
+      ],
+      "linksObserved": 13
+    }
+  ],
+  "supplementalDiscovery": [
+    {
+      "source": "Zenn",
+      "url": "https://zenn.dev/feed",
+      "itemCount": 7,
+      "status": 200
+    },
+    {
+      "source": "Publickey",
+      "url": "https://www.publickey1.jp/atom.xml",
+      "itemCount": 4,
+      "status": 200
+    },
+    {
+      "source": "@IT",
+      "url": "https://rss.itmedia.co.jp/rss/0.91/ait.xml",
+      "itemCount": 10,
+      "status": 200
+    },
+    {
+      "source": "gihyo.jp",
+      "url": "https://gihyo.jp/feed/rss1",
+      "itemCount": 0,
+      "status": 200
+    },
+    {
+      "source": "TechFeed",
+      "url": "https://techfeed.io/feeds/categories/all",
+      "itemCount": 9,
+      "status": 200
+    },
+    {
+      "source": "Hatena Technology",
+      "url": "https://b.hatena.ne.jp/hotentry/it.rss",
+      "itemCount": 28,
+      "status": 200
+    },
+    {
+      "source": "CyberAgent Developers Blog",
+      "url": "https://developers.cyberagent.co.jp/blog/feed/",
+      "itemCount": 0,
+      "status": 200
+    },
+    {
+      "source": "LINE Yahoo Tech Blog",
+      "url": "https://techblog.lycorp.co.jp/ja/feed/index.xml",
+      "itemCount": 0,
+      "status": 200
+    },
+    {
+      "source": "SmartHR Tech Blog",
+      "url": "https://tech.smarthr.jp/feed",
+      "itemCount": 0,
+      "status": 200
+    },
+    {
+      "source": "LayerX Engineering Blog",
+      "url": "https://tech.layerx.co.jp/feed",
+      "itemCount": 0,
+      "status": 200
+    },
+    {
+      "source": "DeNA Engineering",
+      "url": "https://engineering.dena.com/blog/index.xml",
+      "itemCount": 0,
+      "status": 200
+    },
+    {
+      "source": "Money Forward Developers Blog",
+      "url": "https://moneyforward-dev.jp/feed",
+      "itemCount": 0,
+      "status": 200
+    },
+    {
+      "source": "DevelopersIO",
+      "url": "https://dev.classmethod.jp/feed/",
+      "itemCount": 24,
+      "status": 200
+    },
+    {
+      "source": "Qiita",
+      "url": "https://qiita.com/popular-items/feed",
+      "itemCount": 6,
+      "status": 200
+    }
+  ],
+  "previousTop5": [
+    {
+      "title": "Corpus2Skillに近づけた「階層ナビゲーション型RAG」と、ベクトルDB版RAGを「どの段階で失敗したか」まで比べてみた",
+      "url": "https://zenn.dev/aiforall/articles/133752ce2d97ad"
+    },
+    {
+      "title": "Amazon API Gateway の API Portal で REST API の探索と管理 API への昇格を試してみた",
+      "url": "https://dev.classmethod.jp/articles/api-gateway-api-portal-discovery-managed-api/"
+    },
+    {
+      "title": "Snowflake の CoCo for Excel を Microsoft 365 管理センターから組織配布して使ってみた",
+      "url": "https://dev.classmethod.jp/articles/cortex-code-for-excel-org-deployment/"
+    },
+    {
+      "title": "AIが速く作っても人の待ちが残っていた —— 開発プロセス全体で減らした合意と、残した確認",
+      "url": "https://tech.smarthr.jp/entry/2026/11/25/182704"
+    },
+    {
+      "title": "Kiro Mobile アプリがリリースされたので試してみた",
+      "url": "https://dev.classmethod.jp/articles/kiro-mobile-android-iphone-cloud-session/"
+    }
+  ],
+  "articles": [
+    {
+      "captureKey": "decisions",
+      "source": "DevelopersIO",
+      "title": "vLLM の /v1/decisions は同じ質問に同じ確率を返すか NVIDIA DGX Spark で確かめてみた",
+      "topic": "AI推論",
+      "articleId": "2026-11-27-top-1",
+      "url": "https://dev.classmethod.jp/articles/dgx-spark-vllm-decisions-first-touch/",
+      "publishedAt": "2026-11-26T11:36:30.818000+09:00",
+      "capturedAt": "2026-11-27T01:06:57.882437+00:00",
+      "bodySha256": "e1994267cbb5b63ac5eb38c5ccacc9dc430ffaa12ca8d6d7b3365a6896876a61",
+      "htmlSha256": "35f8fc625348b410f375fe982c6e9454875b37817156c5ca177944f463ffd01b",
+      "access": "full",
+      "review": "DGX Spark GB10の同一モデルで同時リクエストとprefix cacheの条件を操作し、判定の反転と確率を比較。",
+      "status": 200
+    },
+    {
+      "captureKey": "lambda",
+      "source": "DevelopersIO",
+      "title": "Customer-managed runtimesでコールドスタートは速くなる?サイズの大きなライブラリをZIPにパッケージングする場合と比較してみた",
+      "topic": "クラウド",
+      "articleId": "2026-11-27-top-2",
+      "url": "https://dev.classmethod.jp/articles/lambda-cmr-vs-zip-coldstart/",
+      "publishedAt": "2026-11-26T16:16:53.340000+09:00",
+      "capturedAt": "2026-11-27T01:06:57.838225+00:00",
+      "bodySha256": "90ea6b0c4cd18c7a47b17a46c5d7259196b7598c4346fb207da78546a8c3f8fe",
+      "htmlSha256": "3b11fb52269f28abea44b9dc678edc51e957d89ab38d99abfed99f30fcf131c9",
+      "access": "full",
+      "review": "AWS管理ZIPとCustomer-managed runtimeをX-Rayの時刻差で比較。中央値と最大値、別リージョン追試から推測できる範囲を区別。",
+      "status": 200
+    },
+    {
+      "captureKey": "types",
+      "source": "Zenn",
+      "title": "型チェックが重かったので、クエリの型推論を手放してみた",
+      "topic": "開発基盤",
+      "articleId": "2026-11-27-top-3",
+      "url": "https://zenn.dev/dress_code/articles/88b55221eea4e0",
+      "publishedAt": "2026-11-26T11:15:05+09:00",
+      "capturedAt": "2026-11-27T01:06:57.948997+00:00",
+      "bodySha256": "d2fd98b5fede1cbbab220d914348c5b5bb604ccc9df6ca7b8062f953b4580329",
+      "htmlSha256": "972446868045a2c7525155359f983e8df97b08e92c1ec8d313daf95678305068",
+      "access": "full",
+      "review": "TypeScript 7.0.2の一リポジトリでKyselyの推論回数と時間の前後比較、SQL一致および失った行型検査を確認。",
+      "status": 200
+    },
+    {
+      "captureKey": "audit",
+      "source": "DevelopersIO",
+      "title": "Vercel Audit Log Drainsでチームの操作記録をHTTPSで受け取ってみた",
+      "topic": "監査・運用",
+      "articleId": "2026-11-27-top-4",
+      "url": "https://dev.classmethod.jp/articles/vercel-audit-log-drains/",
+      "publishedAt": "2026-11-26T13:10:01.314000+09:00",
+      "capturedAt": "2026-11-27T01:06:57.849947+00:00",
+      "bodySha256": "248436bfe203773d2470de217590062443343a9f0b523995086c5b47c4b80517",
+      "htmlSha256": "4fe77c73ecf049cbc0202dd4693a08823ffebceb60bd005bae1cd10fa50601cb",
+      "access": "full",
+      "review": "Enterpriseで自作HTTPS受信先と署名を使い、イベントの項目差およびDrainの削除時の配信を確認。",
+      "status": 200
+    },
+    {
+      "captureKey": "trajectory",
+      "source": "Zenn",
+      "title": "自動運転の予測軌跡の可視化動画を誰でも高速に作れるようにする",
+      "topic": "クラウド",
+      "articleId": "2026-11-27-top-5",
+      "url": "https://zenn.dev/turing_motors/articles/cbf9872ca90166",
+      "publishedAt": "2026-11-26T17:00:08+09:00",
+      "capturedAt": "2026-11-27T01:06:57.915233+00:00",
+      "bodySha256": "7ba29a77f250779580cb057ea8aa3d388ead0ce1dd522d5f1fcf6bf1ef8903b9",
+      "htmlSha256": "5f51ff6dc8b06c8495cd093db470cac6131633d680b0dc61aa0eacea3cc7cfa7",
+      "access": "full",
+      "review": "TuringのStep FunctionsとBatch、同条件L4 16シーンと本番期間比較、同等出力・集計期間の境界を確認。",
+      "status": 200
+    }
+  ]
+}
