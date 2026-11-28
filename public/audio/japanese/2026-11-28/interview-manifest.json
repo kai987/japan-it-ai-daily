@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-28",
+  "generatedAt": "2026-11-28T01:27:04.763Z",
+  "audioCache": {
+    "version": 1,
+    "algorithm": "sha256"
+  },
+  "engineUrl": "http://127.0.0.1:10101",
+  "voice": {
+    "name": "morioki",
+    "style": "ノーマル",
+    "styleId": 497929760,
+    "speakerUuid": "396a746d-742f-4e43-b722-1182a7fab9af",
+    "modelVersion": "1.0.0"
+  },
+  "format": {
+    "container": "mp3",
+    "sampleRate": 24000,
+    "bitrate": "96k",
+    "channels": 1
+  },
+  "settings": {
+    "speed": 1,
+    "intonationScale": 1
+  },
+  "interview": [
+    {
+      "index": 1,
+      "type": "question",
+      "text": "全二重の日本語音声モデルを導入するなら、何を別々に測りますか。",
+      "audio": "interview-question-01.mp3",
+      "audioHash": "1139602e159cdeaefeb6b9ad3f720195db9f99ed2cef01444cf4d6f3af682b4e",
+      "audioSha256": "838195e1cb7070ed6d58cce90ad9658b3a82a88716238d1b868eae134ce17260",
+      "durationSeconds": 5.688
+    },
+    {
+      "index": 1,
+      "type": "answer",
+      "text": "Mimiで同時に聞いて話せても、相手をうまく受け止められるとは限りません。記事ではM4 ProでJ-Moshi-extのBF16版を動かし、長めの対話三回で約四分付近に崩れが出ています。ただし一台のMacでの試行で、停止時間は測っていません。私は同じ録音で割り込みから声が止まるまでと、話題の切り替えを別々に測ります。",
+      "audio": "interview-answer-01.mp3",
+      "audioHash": "64b3b3a79e75ccfccf99724e16e4d2af9c8e3e2748887438413f0670a2eba7d8",
+      "audioSha256": "d6373ee5d6f7ba807aa3c8c776af72f5985b0a8d48b2f9d3b2293f61bb7f1e79",
+      "durationSeconds": 25.835,
+      "durationStatus": "ideal"
+    },
+    {
+      "index": 2,
+      "type": "question",
+      "text": "Oracleの移行で全量コピーだけが成功したら、どこを調べますか。",
+      "audio": "interview-question-02.mp3",
+      "audioHash": "a49a2b7c81e9963886daf9aa1664b3adf12e48b024bc2fca35c90005192e5710",
+      "audioSha256": "3f2d4cda90b56923ea78c93588fc9820c80f35c9b5e0bff154c836fac603c86b",
+      "durationSeconds": 5.316
+    },
+    {
+      "index": 2,
+      "type": "answer",
+      "text": "まず、DMSがCDCで読めるアーカイブログが残っているかを調べます。記事ではサプリメンタルロギングを入れ、rdsadminでログを二十四時間残して差分が届きました。切り替え後も旧側が書き込み、新側は参照に限る条件です。私なら遅れと空き容量を見て、同期を止められる状態を確認します。",
+      "audio": "interview-answer-02.mp3",
+      "audioHash": "a084def422e6fb1e66d30876eb64fd2c8cd2c36349ed29f3b27723c495fc1117",
+      "audioSha256": "b2119193eecad39869fd807f55e379546a9c95b78944ae8f5df4afe6b31f03ef",
+      "durationSeconds": 23.21,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 3,
+      "type": "question",
+      "text": "ログにトレースを結合したとき、件数が増えたら何を確認しますか。",
+      "audio": "interview-question-03.mp3",
+      "audioHash": "c287adfcd674b40fb0297429a836828d70cfdd1187adfa460cb8519b077459ea",
+      "audioSha256": "0a360dd9c699db3e2eea6a136d4a02dc6d434bfec27ce0d14db03ff0727cc55c",
+      "durationSeconds": 5.502
+    },
+    {
+      "index": 3,
+      "type": "answer",
+      "text": "trace_idで結ぶと、一つのログに複数のspanが対応するので、結合行をそのまま障害件数にはしません。記事のleft joinではspanのないエラーログも確認しています。合成データの単一ノードという条件なので、私は期待件数、未対応の行、それから実負荷でのquery DSLの往復時間を別に見ます。",
+      "audio": "interview-answer-03.mp3",
+      "audioHash": "8a67b0612f5ee80d8de836772a51bf9d09702b6de48c475c03866bb8451a732d",
+      "audioSha256": "fe48c0c4134b72ab11cf21224508ff9e538452a170e807e6c7e1f162b7e01570",
+      "durationSeconds": 23.602,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 4,
+      "type": "question",
+      "text": "ログの収集先を変えたとき、適用完了をどう確かめますか。",
+      "audio": "interview-question-04.mp3",
+      "audioHash": "f74a9c69320c23b8b69090015b687f69869b87af4e4da8756ef173947ffc8669",
+      "audioSha256": "6e4929c176f6cddf9e24ce1bdd8c5173a51300974296b8d4f8af21797606084a",
+      "durationSeconds": 4.968
+    },
+    {
+      "index": 4,
+      "type": "answer",
+      "text": "起動時に一回だけ設定を読む構成なら、file_pathを書き換えたあとAmazonCloudWatch-ManageAgentで取り込み直します。エージェントの再起動中は送信が止まるので、対象インスタンスのログ到着まで確認します。CloudFormation管理ならテンプレートも直し、次回更新で戻らないようにします。",
+      "audio": "interview-answer-04.mp3",
+      "audioHash": "bba2d327f4cbe00f1731960f8596dc8930cb9f49791baa87c1a453b1b904def3",
+      "audioSha256": "2b8acd032764c403fc104c88de0cdbe0ca9decac3f3c722c3e7f6e97381bccd3",
+      "durationSeconds": 21.231,
+      "durationStatus": "warn"
+    },
+    {
+      "index": 5,
+      "type": "question",
+      "text": "複数チームの品質保証で、テストのやり方をどこまでそろえますか。",
+      "audio": "interview-question-05.mp3",
+      "audioHash": "055c5ef0498908433f5814c08f978883274a546f6f175c8be2e253591ee48fce",
+      "audioSha256": "2a6e474641d8055c3ec3e13e564f18e67349050840591ae88ad884327cecb94e",
+      "durationSeconds": 5.258
+    },
+    {
+      "index": 5,
+      "type": "answer",
+      "text": "エリアQALとして早い段階でリスクを出すテスト戦略はそろえます。入社手続きの入力と給与明細のスマートフォン表示では困る場面が違うので、試験はテスト計画で選びます。記事はNotionに集めた情報をAIの支援に使っています。ただし工数は測っていません。私なら見落としと確認時間を分けて記録します。",
+      "audio": "interview-answer-05.mp3",
+      "audioHash": "b1a92e3d2ab8d89e8fdce5ea1b8c3e3640c79e7e6980a44647537685a0720c3e",
+      "audioSha256": "2dfb3d3192bee71ad8f2846d4b1656d3942d805d87ab8a825fcd77900de5261e",
+      "durationSeconds": 24.862,
+      "durationStatus": "ideal"
+    }
+  ],
+  "review": [
+    {
+      "index": 1,
+      "text": "動作確認と性能評価を分けるには、何を測りますか。",
+      "audio": "review-question-01.mp3",
+      "audioHash": "cf58be5577d9b9f259164999c45bc67e60e57b6603a4f9ba36913cf9284de673",
+      "audioSha256": "b2196c08313155a6c88e69411f9527d08571ee70e8751e555dfbda2abd81003e",
+      "durationSeconds": 4.539
+    },
+    {
+      "index": 2,
+      "text": "切り替えが成功したあと、確認を続ける理由は何ですか。",
+      "audio": "review-question-02.mp3",
+      "audioHash": "a4bf8e818fe5676b19bead48e334d92fdda58c34eaf1af66e99bbfdda4650b21",
+      "audioSha256": "7bb0d57ea698a5c9051b0f3e4e6ce8a7e752b35e4d492d2b948006b34b1634a2",
+      "durationSeconds": 4.504
+    },
+    {
+      "index": 3,
+      "text": "共通にする品質の判断と、案件ごとの選択をどう分けますか。",
+      "audio": "review-question-03.mp3",
+      "audioHash": "9c8ce7374f8958e2f4bcf0e77c6ccac650af2dbd93599e46f9986c5fe44a3f27",
+      "audioSha256": "938efe3cd8e7c5b01a9fa568c9412f8b84df7ae303d7566209d4ec64af9a7e5d",
+      "durationSeconds": 5.306
+    }
+  ],
+  "durationPolicy": {
+    "source": "ffprobe",
+    "enforceFrom": "2026-08-12",
+    "idealSeconds": [
+      24,
+      34
+    ],
+    "hardSeconds": [
+      20,
+      40
+    ],
+    "maxStoredDriftSeconds": 0.08
+  },
+  "durationMeasuredAt": "2026-11-28T01:27:07.625Z"
+}
