@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-28",
+  "status": "reviewed",
+  "reviewedBy": "Codex local daily author",
+  "reviewedAt": "2026-11-28T01:10:49.139545+00:00",
+  "scope": "Five Japanese source articles within the locked JST window, with explicit boundaries for each evidence type. The evidence records original test conditions and distinguishes measurements from extrapolations.",
+  "articles": [
+    {
+      "articleId": "2026-11-28-top-1",
+      "url": "https://zenn.dev/knowledgework/articles/12a80d8cd4b21f",
+      "source": "Zenn",
+      "topic": "音声AI",
+      "capturedAt": "2026-11-28T01:03:45.631535+00:00",
+      "snapshotSha256": "ffa68b241926fdf39e7cd57bdde4ff03239efc6f51825755227b12c9800044a1",
+      "accessNote": "Full public article body. Embedded screenshots and speech transcripts are described within the article; no separate independent audio testing claimed.",
+      "originalTitle": "日本語のFull-duplex音声対話モデルを実際に動かしてみた話",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top1-fact1",
+          "kind": "source-fact",
+          "statement": "Moshi 的时间与单步 token 依赖由不同 Transformer 处理，Mimi 逐步编码音频。",
+          "quote": "Temporal Transformerが時間方向の文脈",
+          "locator": "2.2 Moshiの仕組み",
+          "conditions": "One third-party MLX conversion, non-quantized BF16 on a single 48GB Mac. The long-conversation trials number three and the interruption test one.",
+          "usedIn": {
+            "zh": "Moshi 通过流式音频编解码器 Mimi 持续处理声音，同时维护用户与模型的语音流。",
+            "ja": "Kyutai の Moshi は、音声コーデック Mimi が逐次処理する利用者とモデルの音声を、並行するストリームとして扱います。"
+          }
+        },
+        {
+          "id": "top1-fact2",
+          "kind": "source-fact",
+          "statement": "M4 Pro 48GB 下运行 BF16 MLX 转换版，推理进程内存观察峰值约为25.9GB。",
+          "quote": "最大約25.9GB",
+          "locator": "4.2 実行環境",
+          "conditions": "One third-party MLX conversion, non-quantized BF16 on a single 48GB Mac. The long-conversation trials number three and the interruption test one.",
+          "usedIn": {
+            "zh": "作者在配有 48 GB 统一内存的 M4 Pro Mac 上，运行第三方转换的 J-Moshi-ext MLX 版，使用未量化的 BF16 权重。",
+            "ja": "検証に使ったのは、M4 Pro とメモリ48GBを備えた Mac 上の J-Moshi-ext の第三者による MLX 変換版で、重みは量子化していない BF16 です。",
+            "interview": "Mimiで同時に聞いて話せても、相手をうまく受け止められるとは限りません。記事ではM4 ProでJ-Moshi-extのBF16版を動かし、長めの対話三回で約四分付近に崩れが出ています。ただし一台のMacでの試行で、停止時間は測っていません。私は同じ録音で割り込みから声が止まるまでと、話題の切り替えを別々に測ります。"
+          }
+        },
+        {
+          "id": "top1-fact3",
+          "kind": "source-fact",
+          "statement": "三次持续对话都在约四分钟附近出现明显发言质量下降。",
+          "quote": "3回すべての試行で、約4分付近",
+          "locator": "5.4 会話を続けたときの挙動",
+          "conditions": "One third-party MLX conversion, non-quantized BF16 on a single 48GB Mac. The long-conversation trials number three and the interruption test one.",
+          "usedIn": {
+            "zh": "简短闲聊中有衔接自然的片段。",
+            "ja": "約一分の雑談を三回試すと発話が自然につながる場面がありましたが、長めに話しかけると相槌が反復しました。"
+          }
+        },
+        {
+          "id": "top1-fact4",
+          "kind": "source-fact",
+          "statement": "一次打断没有测停止延时，原版、转换和实现的影响也未分离。",
+          "quote": "発話停止までの時間は測定していない",
+          "locator": "5.3 割り込み・6.2 考察",
+          "conditions": "One third-party MLX conversion, non-quantized BF16 on a single 48GB Mac. The long-conversation trials number three and the interruption test one.",
+          "usedIn": {
+            "zh": "试验只安排了一次中途打断，并没有量化语音停止的延时，也不能判断未切换主题是听取失败还是生成控制失败。",
+            "ja": "割り込みは一回の観察で、旧話題を続けた理由を入力の聞き取り失敗と応答の切り替え失敗に分けられていません。"
+          }
+        },
+        {
+          "id": "top1-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top1-fact1",
+            "top1-fact3"
+          ],
+          "usedIn": {
+            "zh": "这次试验把能同时听说，与能自然回应且持续稳定地区分开，给语音产品设计提供了可检验的切入点。",
+            "ja": "Mimi が支える同時入出力を、相槌の繰り返しや長時間の安定性と分けて評価する視点が得られます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-28-top-2",
+      "url": "https://zenn.dev/kiri0728/articles/c8d5f349b047dd",
+      "source": "Zenn",
+      "topic": "DB移行",
+      "capturedAt": "2026-11-28T01:03:45.613171+00:00",
+      "snapshotSha256": "2521f47ca156a65fc63e7edd9d4f558b380a21e2f2115049410b65392ef8c419",
+      "accessNote": "Full public article body including procedure, approximate downtime and handover boundary.",
+      "originalTitle": "止められないDBをAWS DMSで移行してハマったこと（RDS for Oracle）",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top2-fact1",
+          "kind": "source-fact",
+          "statement": "约150GB的 RDS for Oracle 用 DMS 全量加载和 CDC 迁移。",
+          "quote": "DMSのフルロード＋CDC",
+          "locator": "TL;DR および移行の概要",
+          "conditions": "One approximately 150GB Oracle migration with an asymmetric writer/reader arrangement. Final CDC shutdown was handed off.",
+          "usedIn": {
+            "zh": "这不是单次停机搬库。",
+            "ja": "約150GBの RDS for Oracle を別の AWS 環境へ移した事例で、既存行は AWS DMS のフルロードで転送し、その後の更新は CDC で追いかけました。"
+          }
+        },
+        {
+          "id": "top2-fact2",
+          "kind": "source-fact",
+          "statement": "使用 rdsadmin 启用补充日志并保留归档日志，额外增加20GB后差分同步。",
+          "quote": "アーカイブログを24時間保持",
+          "locator": "ハマりどころ① 対応",
+          "conditions": "One approximately 150GB Oracle migration with an asymmetric writer/reader arrangement. Final CDC shutdown was handed off.",
+          "usedIn": {
+            "zh": "在验证中，全量成功并没有带动增量同步，原因是源 Oracle 日志未提供 CDC 需要的定位信息和保留期。",
+            "ja": "フルロードが進む一方で CDC が止まった原因は、移行元にサプリメンタルロギングとアーカイブログの保持設定がなかったことです。",
+            "interview": "まず、DMSがCDCで読めるアーカイブログが残っているかを調べます。記事ではサプリメンタルロギングを入れ、rdsadminでログを二十四時間残して差分が届きました。切り替え後も旧側が書き込み、新側は参照に限る条件です。私なら遅れと空き容量を見て、同期を止められる状態を確認します。"
+          }
+        },
+        {
+          "id": "top2-fact3",
+          "kind": "source-fact",
+          "statement": "同一目的地用 IP 测试可连，最后定位到主机名称拼写错误。",
+          "quote": "IPアドレスで直接指定してみると",
+          "locator": "ハマりどころ② 切り分け",
+          "conditions": "One approximately 150GB Oracle migration with an asymmetric writer/reader arrangement. Final CDC shutdown was handed off.",
+          "usedIn": {
+            "zh": "端点报 ORA-12545 时，直接填 IP 的对照连接成功，把排查从网络可达性转向了域名。",
+            "ja": "接続テストの ORA-12545 は、同じ宛先を IP アドレスで指定すると通ったため、調査対象を名前解決側に絞れました。"
+          }
+        },
+        {
+          "id": "top2-fact4",
+          "kind": "source-fact",
+          "statement": "DNS 切换停机约十分钟，旧库仍写入、新库只读，CDC 继续。",
+          "quote": "新DBは参照だけに使い",
+          "locator": "本番切り替え",
+          "conditions": "One approximately 150GB Oracle migration with an asymmetric writer/reader arrangement. Final CDC shutdown was handed off.",
+          "usedIn": {
+            "zh": "DNS 切换的实际停机约十分钟。",
+            "ja": "実作業では DNS を切り替え、停止は約十分でした。"
+          }
+        },
+        {
+          "id": "top2-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top2-fact1",
+            "top2-fact3"
+          ],
+          "usedIn": {
+            "zh": "这次迁移在旧系统持续写入的条件下拆开复制、追差分和切换三步，也给出了排错线索。",
+            "ja": "切り替え時間の短縮は、Oracle が差分を残す条件と、切り替え後の書き込みの持ち主に依存します。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-28-top-3",
+      "url": "https://dev.classmethod.jp/articles/opensearch-new-engine-joins-and-dsl/",
+      "source": "DevelopersIO",
+      "topic": "検索基盤",
+      "capturedAt": "2026-11-28T01:03:45.547868+00:00",
+      "snapshotSha256": "10ec8c55a7ea826bc30a7ae3f5f70fbe077ff7dfc89111b23a6d546c50a722dc",
+      "accessNote": "Full public worked example, with its configuration and measured tables.",
+      "originalTitle": "OpenSearch Service の新エンジンがサポートした join、高カーディナリティ集計、query DSL を試してみた",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top3-fact1",
+          "kind": "source-fact",
+          "statement": "东京 OPTIMIZED 3.9.0 单节点，合成四索引、无副本，计时为三次端到端往返。",
+          "quote": "レプリカは 0",
+          "locator": "検証環境・検証データ",
+          "conditions": "Synthetic data, single node in Tokyo, zero replicas, three round trips. The supported DSL examples do not measure per-request acceleration.",
+          "usedIn": {
+            "zh": "这篇实测在东京区配置了 OpenSearch 3.9.0 的 OPTIMIZED 模式，运行一个 or2.medium.search 节点，索引副本数为零。",
+            "ja": "東京リージョンの OpenSearch 3.9.0 で OPTIMIZED モードを有効にし、or2.medium.search 一台、レプリカゼロで検証しました。"
+          }
+        },
+        {
+          "id": "top3-fact2",
+          "kind": "source-fact",
+          "statement": "PPL 和 SQL 对 trace_id 的连接结果一致为176806行、49905个 trace，外连接检查缺失匹配。",
+          "quote": "3 回とも変わりませんでした",
+          "locator": "PPL と SQL・結合した行",
+          "conditions": "Synthetic data, single node in Tokyo, zero replicas, three round trips. The supported DSL examples do not measure per-request acceleration.",
+          "usedIn": {
+            "zh": "对 ERROR 日志和 span 用 trace_id 连接时，PPL、SQL 三次都返回 176,806 条连接行、49,905 个不同的 trace。",
+            "ja": "trace_id で ERROR ログと span を結合すると、PPL と SQL は三回とも176,806行と49,905トレースで一致しました。",
+            "interview": "trace_idで結ぶと、一つのログに複数のspanが対応するので、結合行をそのまま障害件数にはしません。記事のleft joinではspanのないエラーログも確認しています。合成データの単一ノードという条件なので、私は期待件数、未対応の行、それから実負荷でのquery DSLの往復時間を別に見ます。"
+          }
+        },
+        {
+          "id": "top3-fact3",
+          "kind": "source-fact",
+          "statement": "按 service 匹配部署历史会展开记录，前三条 ERROR 扩为十九行。",
+          "quote": "3 件のログは 19 行に展開",
+          "locator": "lookup デプロイ記録",
+          "conditions": "Synthetic data, single node in Tokyo, zero replicas, three round trips. The supported DSL examples do not measure per-request acceleration.",
+          "usedIn": {
+            "zh": "另一个 lookup 实验给前三条 ERROR 添加部署历史，因同一服务对应多次部署而扩为十九行。",
+            "ja": "サービスのデプロイ履歴を lookup すると、先頭のエラーログ三件から十九行が返りました。"
+          }
+        },
+        {
+          "id": "top3-fact4",
+          "kind": "source-fact",
+          "statement": "两类 DSL 请求响应成功，实际是否走加速路径由每个请求决定。",
+          "quote": "リクエストごとに OpenSearch が選びます",
+          "locator": "query DSL",
+          "conditions": "Synthetic data, single node in Tokyo, zero replicas, three round trips. The supported DSL examples do not measure per-request acceleration.",
+          "usedIn": {
+            "zh": "针对客户端兼容性，作者向 _search 发送过滤聚合和文本检索两种 query DSL，均返回 HTTP 200。",
+            "ja": "既存アプリと同じ query DSL の _search は、フィルター集計とメッセージ検索の二例に HTTP 200 を返しました。"
+          }
+        },
+        {
+          "id": "top3-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top3-fact1",
+            "top3-fact3"
+          ],
+          "usedIn": {
+            "zh": "从已知答案的合成数据核对结果，比只看一次查询成功更能暴露连接和计数语义。",
+            "ja": "join 後の行と障害の件数を分け、HTTP の成功と検索の加速を混同しない検証例です。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-28-top-4",
+      "url": "https://dev.classmethod.jp/articles/cloudwatch-agent-change-log-path/",
+      "source": "DevelopersIO",
+      "topic": "運用",
+      "capturedAt": "2026-11-28T01:03:45.487656+00:00",
+      "snapshotSha256": "59cdb3cc0de19b757330043fdb8f8c90829e8ca10d3141991bed9af5d1be441f",
+      "accessNote": "Full public walkthrough for the Windows EC2 setup and described verification.",
+      "originalTitle": "CloudWatch エージェントのログ収集パスを変更する手順（SSM パラメータストア + Run Command）",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top4-fact1",
+          "kind": "source-fact",
+          "statement": "Windows EC2 只有启动时读取一次 SSM 中的设置，手工保存不能实时替换。",
+          "quote": "起動スクリプトでそのパラメータを 1 回だけ取得",
+          "locator": "前提条件",
+          "conditions": "Windows EC2 and startup-only configuration reads. Example includes agent restart, one top-level path and a CloudFormation-managed drift caveat.",
+          "usedIn": {
+            "zh": "这套 Windows EC2 只在实例启动时读一次 SSM 参数存储中的配置。",
+            "ja": "対象は、起動時に一度だけ SSM パラメータストアから設定を取得する Windows EC2 です。"
+          }
+        },
+        {
+          "id": "top4-fact2",
+          "kind": "source-fact",
+          "statement": "Run Command 的配置重新获取只重启 Agent，该期间日志和指标发送短暂中断。",
+          "quote": "エージェントだけで、サーバーの再起動は不要",
+          "locator": "仕組みを押さえる",
+          "conditions": "Windows EC2 and startup-only configuration reads. Example includes agent restart, one top-level path and a CloudFormation-managed drift caveat.",
+          "usedIn": {
+            "zh": "通过 Systems Manager 的 Run Command，调用 AmazonCloudWatch-ManageAgent 的 configure 来重新取配置。",
+            "ja": "Run Command の AmazonCloudWatch-ManageAgent を configure にして、SSM の対象パラメータを取得し直す手順です。",
+            "interview": "起動時に一回だけ設定を読む構成なら、file_pathを書き換えたあとAmazonCloudWatch-ManageAgentで取り込み直します。エージェントの再起動中は送信が止まるので、対象インスタンスのログ到着まで確認します。CloudFormation管理ならテンプレートも直し、次回更新で戻らないようにします。"
+          }
+        },
+        {
+          "id": "top4-fact3",
+          "kind": "source-fact",
+          "statement": "验收需要实例流出现新写的日志，远端显示可能等几分钟。",
+          "quote": "ログファイルの作成から表示まで、数分",
+          "locator": "手順3 反映を確認する",
+          "conditions": "Windows EC2 and startup-only configuration reads. Example includes agent restart, one top-level path and a CloudFormation-managed drift caveat.",
+          "usedIn": {
+            "zh": "文章按具体实例做验证，在变更后路径写出日志，到对应日志组查看按实例标识生成的流。",
+            "ja": "手順の確認では、指定フォルダーの直下に新しいログを出し、対象インスタンスのログストリームに表示されるところまで見ています。"
+          }
+        },
+        {
+          "id": "top4-fact4",
+          "kind": "source-fact",
+          "statement": "手工修改和模板产生漂移，下一次栈更新可能改回原值。",
+          "quote": "変更が元の値に戻る場合",
+          "locator": "CloudFormation で管理している場合",
+          "conditions": "Windows EC2 and startup-only configuration reads. Example includes agent restart, one top-level path and a CloudFormation-managed drift caveat.",
+          "usedIn": {
+            "zh": "参数如果由 CloudFormation 管理，手动改值会使运行配置与模板发生漂移，下一次更新还可能覆盖修改。",
+            "ja": "パラメータを CloudFormation で管理している場合は、画面から変えた値がスタックのテンプレートとずれる制約があります。"
+          }
+        },
+        {
+          "id": "top4-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top4-fact1",
+            "top4-fact3"
+          ],
+          "usedIn": {
+            "zh": "从配置保存到日志到达有两个可独立失败的过渡环节，这个案例给出了检查方法。",
+            "ja": "設定を書いた時点、エージェントに反映した時点、ログが届く時点を区別できます。"
+          }
+        }
+      ]
+    },
+    {
+      "articleId": "2026-11-28-top-5",
+      "url": "https://tech.smarthr.jp/entry/2026/11/27/120641",
+      "source": "SmartHR Tech Blog",
+      "topic": "品質保証",
+      "capturedAt": "2026-11-28T01:03:45.570718+00:00",
+      "snapshotSha256": "4f5cc12fd6500ee50efc30148b50920b2115af41544bb36284ae9b8e61a38867",
+      "accessNote": "Full publicly available SmartHR account, including the author's statement that their approach is still evolving.",
+      "originalTitle": "SmartHRの「フロントシステム」の品質保証は、なぜ一言で語れないのか —— むずかしさに向き合う現場の取り組み",
+      "access": "full",
+      "claims": [
+        {
+          "id": "top5-fact1",
+          "kind": "source-fact",
+          "statement": "SmartHR 所称的功能群兼顾入职信息收集和资料发放，面对不同角色及设备。",
+          "quote": "従業員情報を正しく収集・蓄積",
+          "locator": "フロントシステムとは",
+          "conditions": "Area QA Lead's qualitative account of one business area. Expected benefit is not a result of a measured comparison.",
+          "usedIn": {
+            "zh": "案例中的「フロントシステム」是 SmartHR 的业务分工，用于收集员工资料并向相关人发放信息。",
+            "ja": "SmartHR が人給基幹でいうフロントシステムは、ブラウザー側実装だけを指さず、従業員の情報を集めて必要な情報を届ける機能群です。"
+          }
+        },
+        {
+          "id": "top5-fact2",
+          "kind": "source-fact",
+          "statement": "功能目标和使用者不同，团队已可视化部分质量数据但难找出区域的共同弱点。",
+          "quote": "データから「このエリアはここが弱い」",
+          "locator": "データを集めても",
+          "conditions": "Area QA Lead's qualitative account of one business area. Expected benefit is not a result of a measured comparison.",
+          "usedIn": {
+            "zh": "团队已经能看见事故和缺陷的分布，但各功能的目的不同，汇总数量并不能导出共同的优先级。",
+            "ja": "インシデントや不具合の可視化は進んだものの、利用者や目的が違うため、集計からエリア全体の弱点を導きにくいのが現状です。",
+            "interview": "エリアQALとして早い段階でリスクを出すテスト戦略はそろえます。入社手続きの入力と給与明細のスマートフォン表示では困る場面が違うので、試験はテスト計画で選びます。記事はNotionに集めた情報をAIの支援に使っています。ただし工数は測っていません。私なら見落としと確認時間を分けて記録します。"
+          }
+        },
+        {
+          "id": "top5-fact3",
+          "kind": "source-fact",
+          "statement": "早期发现风险与为单个改动选择合适测试属不同工作。",
+          "quote": "「テスト戦略」と「テスト計画」の区別",
+          "locator": "品質保証のプロセスを整備",
+          "conditions": "Area QA Lead's qualitative account of one business area. Expected benefit is not a result of a measured comparison.",
+          "usedIn": {
+            "zh": "区域 QAL 和 EM、PO 一起定方向，并将测试战略与测试计划分开。",
+            "ja": "エリア QAL は EM と PO と方向性を議論し、開発の早い段階でリスクや取り組むべきことを見つけるテスト戦略と、個別の案件で試験を選ぶテスト計画を分けています。"
+          }
+        },
+        {
+          "id": "top5-fact4",
+          "kind": "source-fact",
+          "statement": "集中用例和相关资料帮助 AI 提示漏项，减少工时是期望，原文没有给量化效果。",
+          "quote": "テストケースをNotionの特定のデータベースに集約",
+          "locator": "個人の知見・経験頼りからの脱却",
+          "conditions": "Area QA Lead's qualitative account of one business area. Expected benefit is not a result of a measured comparison.",
+          "usedIn": {
+            "zh": "团队先把用例集中到 Notion，再让 AI 参考用例、事故、缺陷和规格以提示遗漏。",
+            "ja": "Notion のデータベースにテストケースを集約し、仕様書と不具合なども参照できるようにして、AI で考慮漏れを減らす取り組みを導入しました。"
+          }
+        },
+        {
+          "id": "top5-reading",
+          "kind": "author-interpretation",
+          "statement": "Application to engineering interviews inferred from the cited conditions and results.",
+          "conditions": "Editorial interpretation. No new experiment.",
+          "basedOn": [
+            "top5-fact1",
+            "top5-fact3"
+          ],
+          "usedIn": {
+            "zh": "这篇团队实践把公共质量边界落实到具体的入职、审批或发放场景，适合讨论测试如何因风险而异。",
+            "ja": "正しい情報を集める入口と給与明細を届ける出口で、異なる品質基準を持つ理由を具体化できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
