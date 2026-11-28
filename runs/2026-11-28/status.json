@@ -1,14 +1,20 @@
 {
   "schemaVersion": 1,
   "targetDate": "2026-11-28",
-  "stage": "registered",
+  "stage": "sources_verified",
   "sourceCommit": "4b36d968c331a3ca0cdd88d31390ce6af5fdd361",
   "sourceWindow": {
     "from": "2026-11-27T10:00:00+09:00",
     "to": "2026-11-28T10:00:00+09:00"
   },
   "createdAt": "2026-11-28T01:02:49.312Z",
-  "updatedAt": "2026-11-28T01:02:49.312Z",
-  "completedArtifacts": [],
-  "lastError": null
+  "updatedAt": "2026-11-28T01:05:15.957Z",
+  "completedArtifacts": [
+    {
+      "path": "runs/2026-11-28/sources.json",
+      "blobSha": "2435dd251a1c82391c60be85e15f9f706f49bc7f"
+    }
+  ],
+  "lastError": null,
+  "nextAction": "Finish all-history semantic review, canonical Q&A and independent drafts"
 }
